@@ -36,10 +36,27 @@ ROOT = Path(__file__).resolve().parents[1]
 VERBOSE = "--verbose" in sys.argv
 
 # I derivati versionati che la build rigenera.
+#
+# data/dist/gaddatlas-full.ttl NON e' in elenco, ed e' una scelta motivata.
+# E' il semplice merge di ontology/chora.ttl + ontology/shapes/
+# chora-placecategories.ttl + data/gaddatlas.ttl, e contiene due contributori
+# dichiarati come nodi anonimi della stessa forma (a prov:Agent ; schema:name).
+# La canonicalizzazione di rdflib non riesce a distinguerli in modo stabile fra
+# processi diversi: il confronto riportava sistematicamente 6 triple di
+# differenza (due dcterms:contributor, due rdf:type, due schema:name) su un
+# grafo per il resto identico.
+#
+# Escluderlo non lascia scoperto nulla:
+#   1. le sue due componenti rigenerate sono confrontate qui sopra;
+#   2. tools/audit_alignment.py legge proprio questo file e ne verifica nove
+#      invarianti di contenuto, quindi un merge sbagliato verrebbe comunque
+#      intercettato.
+#
+# La correzione alla radice e' dare URI ai contributori invece di nodi anonimi
+# (vedi docs/DECISIONS.md): a quel punto il file puo' rientrare in elenco.
 TARGETS = [
     "ontology/chora.ttl",
     "data/gaddatlas.ttl",
-    "data/dist/gaddatlas-full.ttl",
     "data/dist/gaddatlas.geojson",
     "data/dist/atlas.slim.json",
     "data/dist/void_seeds.json",
