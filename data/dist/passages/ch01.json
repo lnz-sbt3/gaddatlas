@@ -1,0 +1,1095 @@
+{
+ "chapter": 1,
+ "count": 121,
+ "passages": {
+  "ref_00001": {
+   "id": "ref_00001",
+   "chapter": 1,
+   "page": 11,
+   "sourceReference": "A 11",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "[...] e con una o due macchioline d’olio sul bavero, quasi impercettibili però, quasi un ricordo della collina molisana.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00001"
+  },
+  "ref_00002": {
+   "id": "ref_00002",
+   "chapter": 1,
+   "page": 14,
+   "sourceReference": "A 14",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Era, disse la signora, «il genetliaco di Remo»: e infatti Remo, all’anagrafe, era stato inscritto come Remo Eleuterio, e poi battezzato per tale a San Martino ai Monti, così da rammentare il natalizio.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00002"
+  },
+  "ref_00003": {
+   "id": "ref_00003",
+   "chapter": 1,
+   "page": 14,
+   "sourceReference": "A 14",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "L’invito, comme l’ata vota, gli era stato fatto per telefono due giorni avanti, con una chiamata «dall’esterno» al Collegio Romano, cioè a Santo Stefano del Cacco.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00003"
+  },
+  "ref_00004": {
+   "id": "ref_00004",
+   "chapter": 1,
+   "page": 14,
+   "sourceReference": "A 14",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "L’invito, comme l’ata vota, gli era stato fatto per telefono due giorni avanti, con una chiamata «dall’esterno» al Collegio Romano, cioè a Santo Stefano del Cacco.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00004"
+  },
+  "ref_00005": {
+   "id": "ref_00005",
+   "chapter": 1,
+   "page": 14,
+   "sourceReference": "A 14",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Don Ciccio, dopo aver santificato la festa dal barbiere, portò una bottiglia d’uoglie alla signora.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00005"
+  },
+  "ref_00006": {
+   "id": "ref_00006",
+   "chapter": 1,
+   "page": 16,
+   "sourceReference": "A 16",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "suo marito stava bene, viaggiava tredici mesi all’anno, sempre in un gran da fare con quelli là di Vicenza.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00006"
+  },
+  "ref_00007": {
+   "id": "ref_00007",
+   "chapter": 1,
+   "page": 16,
+   "sourceReference": "A 16",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Già in quer gran palazzo der ducentodicinnove nun ce staveno che signori grossi: quarche famija der generone: ma soprattutto signori novi de commercio, de quelli che un po’ d’anni avanti li chiamaveno ancora pescicani.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00007"
+  },
+  "ref_00008": {
+   "id": "ref_00008",
+   "chapter": 1,
+   "page": 16,
+   "sourceReference": "A 16",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "E il palazzo, poi, la gente der popolo lo chiamaveno er palazzo dell’oro.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00008"
+  },
+  "ref_00009": {
+   "id": "ref_00009",
+   "chapter": 1,
+   "page": 16,
+   "sourceReference": "A 16",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Drento poi, c’ereno du scale, A e B, co sei piani e co dodici inquilini cadauna, due per piano.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00009"
+  },
+  "ref_00010": {
+   "id": "ref_00010",
+   "chapter": 1,
+   "page": 16,
+   "sourceReference": "A 16",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Ma il trionfo più granne era su la scala A, piano terzo, dove che ce staveno de qua li Balducci ch’ereno signori co li fiocchi pure loro, e in faccia a li Balducci ce steva na signora, na contessa, che teneva nu sacco ’e solde pure essa, na vedova: la signora Menecacci",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00010"
+  },
+  "ref_00011": {
+   "id": "ref_00011",
+   "chapter": 1,
+   "page": 17,
+   "sourceReference": "A 17",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "un senso d’aria dei giorni sereni e lontani tra frascatano e tiburtino",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00011"
+  },
+  "ref_00012": {
+   "id": "ref_00012",
+   "chapter": 1,
+   "page": 17,
+   "sourceReference": "A 17",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "un senso d’aria dei giorni sereni e lontani tra frascatano e tiburtino",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00012"
+  },
+  "ref_00013": {
+   "id": "ref_00013",
+   "chapter": 1,
+   "page": 20,
+   "sourceReference": "A 20",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Dal folto brulicare delle generazioni, dalle guardine delle questure, tra il Lazio e la Marsica, tra il Piceno e il Sannio, o fino alla sua collina molisana: duri monti, dure cervici, duro il diavolo!",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00013"
+  },
+  "ref_00014": {
+   "id": "ref_00014",
+   "chapter": 1,
+   "page": 20,
+   "sourceReference": "A 20",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Dal folto brulicare delle generazioni, dalle guardine delle questure, tra il Lazio e la Marsica, tra il Piceno e il Sannio, o fino alla sua collina molisana: duri monti, dure cervici, duro il diavolo!",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00014"
+  },
+  "ref_00015": {
+   "id": "ref_00015",
+   "chapter": 1,
+   "page": 20,
+   "sourceReference": "A 20",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Dal folto brulicare delle generazioni, dalle guardine delle questure, tra il Lazio e la Marsica, tra il Piceno e il Sannio, o fino alla sua collina molisana: duri monti, dure cervici, duro il diavolo!",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00015"
+  },
+  "ref_00016": {
+   "id": "ref_00016",
+   "chapter": 1,
+   "page": 20,
+   "sourceReference": "A 20",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Dal folto brulicare delle generazioni, dalle guardine delle questure, tra il Lazio e la Marsica, tra il Piceno e il Sannio, o fino alla sua collina molisana: duri monti, dure cervici, duro il diavolo!",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00016"
+  },
+  "ref_00017": {
+   "id": "ref_00017",
+   "chapter": 1,
+   "page": 20,
+   "sourceReference": "A 20",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Dal folto brulicare delle generazioni, dalle guardine delle questure, tra il Lazio e la Marsica, tra il Piceno e il Sannio, o fino alla sua collina molisana: duri monti, dure cervici, duro il diavolo!",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00017"
+  },
+  "ref_00018": {
+   "id": "ref_00018",
+   "chapter": 1,
+   "page": 17,
+   "sourceReference": "A 17",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "[...] un fascino, un imperio tutto latino e sabellico, per cui gli andavano insieme i nomi antichi, d’antiche vergini guerriere e latine o di mogli non reluttanti già tolte a forza ne la sagra lupercale, con l’idea dei colli e delle vigne e degli scabri palazzi, e con le sagre e col Papa in carrozza, e coi bei moccoloni di Sant’Agnese in Agone e di Santa Maria in Porta Paradisi a la Candelora, a la benedizione dei ceri [...].",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00018"
+  },
+  "ref_00019": {
+   "id": "ref_00019",
+   "chapter": 1,
+   "page": 17,
+   "sourceReference": "A 17",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "[...] un fascino, un imperio tutto latino e sabellico, per cui gli andavano insieme i nomi antichi, d’antiche vergini guerriere e latine o di mogli non reluttanti già tolte a forza ne la sagra lupercale, con l’idea dei colli e delle vigne e degli scabri palazzi, e con le sagre e col Papa in carrozza, e coi bei moccoloni di Sant’Agnese in Agone e di Santa Maria in Porta Paradisi a la Candelora, a la benedizione dei ceri [...].",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00019"
+  },
+  "ref_00020": {
+   "id": "ref_00020",
+   "chapter": 1,
+   "page": 19,
+   "sourceReference": "A 19",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Tutto questo il dottor Ingravallo lo aveva in parte intuito, in parte integrato da qualche accenno del Balducci, o dai dolcissimi «momenti» della tristezza di lei: anche don Corpi, don Lorenzo, don Lorenzo Corpi, don Corpi Lorenzo dei Santi Quattro brillava spesso lui pure, nei ragionamenti della signora Liliana.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00020"
+  },
+  "ref_00021": {
+   "id": "ref_00021",
+   "chapter": 1,
+   "page": 20,
+   "sourceReference": "A 20",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "«Ccà ce sta una nepote cchiù ’mbrogliata,» rimuginò tra sé e sé, con quel bianco secco in Porta Paradisi che ancora gli titillava il velopendolo. Sì, sì. Dietro quel nome «nipote», ci doveva star nascosto tutto un groviglio... di fili, un ragnatelo di sentimenti, dei più rari,... delicati.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00021"
+  },
+  "ref_00022": {
+   "id": "ref_00022",
+   "chapter": 1,
+   "page": 21,
+   "sourceReference": "A 21",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "[…] e speranze, e cure di Salsomaggiore, sia in loco che a domicilio, e visite del professor Beltramelli e del professor Macchioro.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00022"
+  },
+  "ref_00023": {
+   "id": "ref_00023",
+   "chapter": 1,
+   "page": 21,
+   "sourceReference": "A 21",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "e prima della Virginia, chell’ata ’e Monteleone: comme se chiamava?",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00023"
+  },
+  "ref_00024": {
+   "id": "ref_00024",
+   "chapter": 1,
+   "page": 21,
+   "sourceReference": "A 21",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "«Jedes Jahr ein Kind, jedes Jahr ein Kind... » gli cantava quel tedesco, ad Anzio: che pareva una foca.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00024"
+  },
+  "ref_00025": {
+   "id": "ref_00025",
+   "chapter": 1,
+   "page": 21,
+   "sourceReference": "A 21",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Per lei, dal Tevere in giù, là, là, dietro i diroccati castelli e dopo le bionde vigne, c’era, sui colli e sui monti e nelle brevi piane d’Italia, come un grande ventre fecondo, due salpingi grasse, zigrinate d’una dovizia di granuli, il granuloso e untuoso, il felice caviale della gente.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00025"
+  },
+  "ref_00026": {
+   "id": "ref_00026",
+   "chapter": 1,
+   "page": 22,
+   "sourceReference": "A 22",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "E a via Merulana 219, scala A, piano terzo, ci rifioriva la nipote, nel meglio grumolo, propio, del palazzo dell’Oro.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00026"
+  },
+  "ref_00027": {
+   "id": "ref_00027",
+   "chapter": 1,
+   "page": 22,
+   "sourceReference": "A 22",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "E a via Merulana 219, scala A, piano terzo, ci rifioriva la nipote, nel meglio grumolo, propio, del palazzo dell’Oro.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00027"
+  },
+  "ref_00029": {
+   "id": "ref_00029",
+   "chapter": 1,
+   "page": 24,
+   "sourceReference": "A 24",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Quando i due agenti gli dissero: «Se so’ sparati a via Merulana: ar ducentodicinnove: su le scale: ner palazzo de li pescicani...», un fiotto di sangue incuriosito, forse angosciato, gli inondò il ventricolo di destra.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00029"
+  },
+  "ref_00030": {
+   "id": "ref_00030",
+   "chapter": 1,
+   "page": 24,
+   "sourceReference": "A 24",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Quando i due agenti gli dissero: «Se so’ sparati a via Merulana: ar ducentodicinnove: su le scale: ner palazzo de li pescicani...», un fiotto di sangue incuriosito, forse angosciato, gli inondò il ventricolo di destra.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00030"
+  },
+  "ref_00031": {
+   "id": "ref_00031",
+   "chapter": 1,
+   "page": 25,
+   "sourceReference": "A 25",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "«Ci andate voi, Ingravallo, a via Merulana? Vedete nu poco. Na fesseria, m’hanno detto. E stamattina, con chell’ata storia della marchesa di viale Liegi... e poi ’o pasticcio ccà vicino, alle Botteghe Oscure: e poi chillo buchè ’e violette: e ddoje cugnate e ’e ttre nepote: e poi avimmo de pelà la coda dell’affare nuosto: e poi, e poi,»",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00031"
+  },
+  "ref_00032": {
+   "id": "ref_00032",
+   "chapter": 1,
+   "page": 25,
+   "sourceReference": "A 25",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "«Ci andate voi, Ingravallo, a via Merulana? Vedete nu poco. Na fesseria, m’hanno detto. E stamattina, con chell’ata storia della marchesa di viale Liegi... e poi ’o pasticcio ccà vicino, alle Botteghe Oscure: e poi chillo buchè ’e violette: e ddoje cugnate e ’e ttre nepote: e poi avimmo de pelà la coda dell’affare nuosto: e poi, e poi,»",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00032"
+  },
+  "ref_00033": {
+   "id": "ref_00033",
+   "chapter": 1,
+   "page": 25,
+   "sourceReference": "A 25",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "«Ci andate voi, Ingravallo, a via Merulana? Vedete nu poco. Na fesseria, m’hanno detto. E stamattina, con chell’ata storia della marchesa di viale Liegi... e poi ’o pasticcio ccà vicino, alle Botteghe Oscure: e poi chillo buchè ’e violette: e ddoje cugnate e ’e ttre nepote: e poi avimmo de pelà la coda dell’affare nuosto: e poi, e poi,» si portò una mano alla fronte, «mo’ ce vo’, chella scocciatura d’o sottosegretario. Fin a ’ncoppa a ’a capa, ve dico. Sicché faciteme ’o favore, jàtece vuje.»",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00033"
+  },
+  "ref_00039": {
+   "id": "ref_00039",
+   "chapter": 1,
+   "page": 26,
+   "sourceReference": "A 26",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Ingravallo, si può dire, la conosceva col cuore: e difatti un lieve batticuore lo prese, ad avvicinare coi due agenti la ben nota architettura, investito di tanta e tanto risolutiva autorità.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00039"
+  },
+  "ref_00041": {
+   "id": "ref_00041",
+   "chapter": 1,
+   "page": 26,
+   "sourceReference": "A 26",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Sto palazzo, drento c’è più oro che monnezza.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00041"
+  },
+  "ref_00042": {
+   "id": "ref_00042",
+   "chapter": 1,
+   "page": 26,
+   "sourceReference": "A 26",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Il portone socchiuso era guardato da un brigadiere di pubblica sicurezza del commissariato San Giovanni.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00042"
+  },
+  "ref_00043": {
+   "id": "ref_00043",
+   "chapter": 1,
+   "page": 27,
+   "sourceReference": "A 27",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Ingravallo, seguito dalla portinaia e dai due, e dai commenti di tutti, « ’a polizzia, ’a polizzia », salì al terzo piano, scala A, dove abitava la derubata.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00043"
+  },
+  "ref_00044": {
+   "id": "ref_00044",
+   "chapter": 1,
+   "page": 28,
+   "sourceReference": "A 28",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "La Gina era a scuola tutto il giorno: ar Sacro Core, da le moniche: dove ci faceva colazione e anche merenda, alle volte.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00044"
+  },
+  "ref_00045": {
+   "id": "ref_00045",
+   "chapter": 1,
+   "page": 30,
+   "sourceReference": "A 30",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Quanto alle camere dei piani alti del ducentodiciannove, esse figuravano senza dubbio tra le più romanamente assolate di Roma.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00045"
+  },
+  "ref_00046": {
+   "id": "ref_00046",
+   "chapter": 1,
+   "page": 32,
+   "sourceReference": "A 32",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Il ducentodiciannove, cinque piani a strada più l’attico e le due scale A e B, con alcuni uffici sulla B, al mezzanino, era un porto di mare.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00046"
+  },
+  "ref_00047": {
+   "id": "ref_00047",
+   "chapter": 1,
+   "page": 32,
+   "sourceReference": "A 32",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Le scale, agiate tutte e due, l’una più buia dell’altra.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00047"
+  },
+  "ref_00048": {
+   "id": "ref_00048",
+   "chapter": 1,
+   "page": 32,
+   "sourceReference": "A 32",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "La A più tranquilla della consorella: tutti signori autentici da quella parte, du côté de chez madame.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00048"
+  },
+  "ref_00049": {
+   "id": "ref_00049",
+   "chapter": 1,
+   "page": 33,
+   "sourceReference": "A 33",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "E nessuno l’avea visto più. «Io sì! sul marciapiede! Venivo da Santa Maria Maggiore! Lui è scappato via...» Il patema testimoniale, appiccato il foco alle anime, deflagrava ad epos.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00049"
+  },
+  "ref_00050": {
+   "id": "ref_00050",
+   "chapter": 1,
+   "page": 34,
+   "sourceReference": "A 34",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "« Ecché macché! Macché un cavolo, sora Teresa mia! Che ci avrò l’occhi pe nun vedecce! ... Staressimo bene... co tutto sto viavai der palazzo... »",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00050"
+  },
+  "ref_00051": {
+   "id": "ref_00051",
+   "chapter": 1,
+   "page": 36,
+   "sourceReference": "A 36",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Era nel bagno. Non aveva potuto aprire: forse, nemmeno avrebbe aperto. In quel torno di tempo i giornali avevano molto parlato del «tenebroso» delitto di via Valadier, poi di quell’altro, ancor più «fosco», di via Montebello.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00051"
+  },
+  "ref_00052": {
+   "id": "ref_00052",
+   "chapter": 1,
+   "page": 36,
+   "sourceReference": "A 36",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Era nel bagno. Non aveva potuto aprire: forse, nemmeno avrebbe aperto. In quel torno di tempo i giornali avevano molto parlato del «tenebroso» delitto di via Valadier, poi di quell’altro, ancor più «fosco», di via Montebello.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00052"
+  },
+  "ref_00053": {
+   "id": "ref_00053",
+   "chapter": 1,
+   "page": 36,
+   "sourceReference": "A 36",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Un biglietto azzurrino, quasi appallottolato, der tramme. Si chinò, lo raccattò, lo spiegò molto cautamente, col faccione chino su quel nulla: che apparve logoro, quasi. Tranvie de li Castelli. Bucato alla data del dì avanti.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00053"
+  },
+  "ref_00054": {
+   "id": "ref_00054",
+   "chapter": 1,
+   "page": 36,
+   "sourceReference": "A 36",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "« Tor... Tor… Mannaggia! la fermata prima di... Due Santi. »",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00054"
+  },
+  "ref_00055": {
+   "id": "ref_00055",
+   "chapter": 1,
+   "page": 36,
+   "sourceReference": "A 36",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "« Tor... Tor… Mannaggia! la fermata prima di... Due Santi. » « È il Torraccio, » disse allora Gaudenzio, allungato il collo dietro le spalle di don Ciccio.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00055"
+  },
+  "ref_00056": {
+   "id": "ref_00056",
+   "chapter": 1,
+   "page": 37,
+   "sourceReference": "A 37",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "No, la servente no la gera de Marino, no la gera dei Castelli Romanni...",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00056"
+  },
+  "ref_00057": {
+   "id": "ref_00057",
+   "chapter": 1,
+   "page": 37,
+   "sourceReference": "A 37",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Abitava difatti, da epoca immemorabile, in una catapecchiucola delle più tignose a via de’ Querceti, a metà, soto el dedrìo dei Santi Quattro, con una sorella, una gemella, un poco più piccina di lei, poco poco.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00057"
+  },
+  "ref_00058": {
+   "id": "ref_00058",
+   "chapter": 1,
+   "page": 37,
+   "sourceReference": "A 37",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Abitava difatti, da epoca immemorabile, in una catapecchiucola delle più tignose a via de’ Querceti, a metà, soto el dedrìo dei Santi Quattro, con una sorella, una gemella, un poco più piccina di lei, poco poco.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00058"
+  },
+  "ref_00059": {
+   "id": "ref_00059",
+   "chapter": 1,
+   "page": 37,
+   "sourceReference": "A 37",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Anche don Corpi avrebbe potuto dare informazioni, don Lorenzo, non lo conosceva?... Ah! che sant’uomo! propio: dei Santi Quattro Coronati: sì, perché si confessava da lui: qualche volta faceva servizio anche da lui: come rincalzo alla Rosa, la servente in titolo.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00059"
+  },
+  "ref_00060": {
+   "id": "ref_00060",
+   "chapter": 1,
+   "page": 39,
+   "sourceReference": "A 39",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "« E come no? » fece la Pettacchioni, « co sto porto de mare der palazzo?... Qua ce stanno fior de signori, gente de commercio, che se crede, sor commissario? » tutti sorrisero: « de quelli che poco je piace de magnà l’indivia. »",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00060"
+  },
+  "ref_00061": {
+   "id": "ref_00061",
+   "chapter": 1,
+   "page": 40,
+   "sourceReference": "A 40",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Uno strano corbacchione, dio birbo, infagottato in quel suo bavero e in quella ciarpa elegiaca: un chiericone del catasto di quelli neri neri, che annidano di preferenza tra San Luigi de’ Francesi e la Minerva.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00061"
+  },
+  "ref_00062": {
+   "id": "ref_00062",
+   "chapter": 1,
+   "page": 40,
+   "sourceReference": "A 40",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Uno strano corbacchione, dio birbo, infagottato in quel suo bavero e in quella ciarpa elegiaca: un chiericone del catasto di quelli neri neri, che annidano di preferenza tra San Luigi de’ Francesi e la Minerva.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00062"
+  },
+  "ref_00063": {
+   "id": "ref_00063",
+   "chapter": 1,
+   "page": 40,
+   "sourceReference": "A 40",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Impercepiti dal passante distratto e da quello che va de prescia, a ora d’agio, un piede appresso l’altro, sogliono deambulare le loro dilette stradicce, dall’arco de Sant’Agostino e da la Scrofa, pe via de le Coppelle o pel Pozzo de le Cornacchie, fin su, a Santa Maria in Aquiro.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00063"
+  },
+  "ref_00064": {
+   "id": "ref_00064",
+   "chapter": 1,
+   "page": 40,
+   "sourceReference": "A 40",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Impercepiti dal passante distratto e da quello che va de prescia, a ora d’agio, un piede appresso l’altro, sogliono deambulare le loro dilette stradicce, dall’arco de Sant’Agostino e da la Scrofa, pe via de le Coppelle o pel Pozzo de le Cornacchie, fin su, a Santa Maria in Aquiro.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00064"
+  },
+  "ref_00065": {
+   "id": "ref_00065",
+   "chapter": 1,
+   "page": 40,
+   "sourceReference": "A 40",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Impercepiti dal passante distratto e da quello che va de prescia, a ora d’agio, un piede appresso l’altro, sogliono deambulare le loro dilette stradicce, dall’arco de Sant’Agostino e da la Scrofa, pe via de le Coppelle o pel Pozzo de le Cornacchie, fin su, a Santa Maria in Aquiro.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00065"
+  },
+  "ref_00066": {
+   "id": "ref_00066",
+   "chapter": 1,
+   "page": 40,
+   "sourceReference": "A 40",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Impercepiti dal passante distratto e da quello che va de prescia, a ora d’agio, un piede appresso l’altro, sogliono deambulare le loro dilette stradicce, dall’arco de Sant’Agostino e da la Scrofa, pe via de le Coppelle o pel Pozzo de le Cornacchie, fin su, a Santa Maria in Aquiro.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00066"
+  },
+  "ref_00067": {
+   "id": "ref_00067",
+   "chapter": 1,
+   "page": 40,
+   "sourceReference": "A 40",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Impercepiti dal passante distratto e da quello che va de prescia, a ora d’agio, un piede appresso l’altro, sogliono deambulare le loro dilette stradicce, dall’arco de Sant’Agostino e da la Scrofa, pe via de le Coppelle o pel Pozzo de le Cornacchie, fin su, a Santa Maria in Aquiro.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00067"
+  },
+  "ref_00068": {
+   "id": "ref_00068",
+   "chapter": 1,
+   "page": 40,
+   "sourceReference": "A 40",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Impercepiti dal passante distratto e da quello che va de prescia, a ora d’agio, un piede appresso l’altro, sogliono deambulare le loro dilette stradicce, dall’arco de Sant’Agostino e da la Scrofa, pe via de le Coppelle o pel Pozzo de le Cornacchie, fin su, a Santa Maria in Aquiro.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00068"
+  },
+  "ref_00069": {
+   "id": "ref_00069",
+   "chapter": 1,
+   "page": 40,
+   "sourceReference": "A 40",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Alle rare occasioni si avventurano chiane chiane per via Colonna o s’inoltrano agorafobici su li serci de piazza de Pietra, non senza disdegnare la fojetta, e la pizza snobistica der napoletano: e poi pe quer budello de via de Pietra arriveno magari a sfociar sul Corso, ma sabato grasso ha da essere, dirimpetto all’Enciclopedia Treccani, ai più invitanti orologi del gioielliere Catellani.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00069"
+  },
+  "ref_00070": {
+   "id": "ref_00070",
+   "chapter": 1,
+   "page": 40,
+   "sourceReference": "A 40",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Alle rare occasioni si avventurano chiane chiane per via Colonna o s’inoltrano agorafobici su li serci de piazza de Pietra, non senza disdegnare la fojetta, e la pizza snobistica der napoletano: e poi pe quer budello de via de Pietra arriveno magari a sfociar sul Corso, ma sabato grasso ha da essere, dirimpetto all’Enciclopedia Treccani, ai più invitanti orologi del gioielliere Catellani.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00070"
+  },
+  "ref_00071": {
+   "id": "ref_00071",
+   "chapter": 1,
+   "page": 40,
+   "sourceReference": "A 40",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Alle rare occasioni si avventurano chiane chiane per via Colonna o s’inoltrano agorafobici su li serci de piazza de Pietra, non senza disdegnare la fojetta, e la pizza snobistica der napoletano: e poi pe quer budello de via de Pietra arriveno magari a sfociar sul Corso, ma sabato grasso ha da essere, dirimpetto all’Enciclopedia Treccani, ai più invitanti orologi del gioielliere Catellani.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00071"
+  },
+  "ref_00072": {
+   "id": "ref_00072",
+   "chapter": 1,
+   "page": 40,
+   "sourceReference": "A 40",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Alle rare occasioni si avventurano chiane chiane per via Colonna o s’inoltrano agorafobici su li serci de piazza de Pietra, non senza disdegnare la fojetta, e la pizza snobistica der napoletano: e poi pe quer budello de via de Pietra arriveno magari a sfociar sul Corso, ma sabato grasso ha da essere, dirimpetto all’Enciclopedia Treccani, ai più invitanti orologi del gioielliere Catellani.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00072"
+  },
+  "ref_00073": {
+   "id": "ref_00073",
+   "chapter": 1,
+   "page": 40,
+   "sourceReference": "A 40",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Alle rare occasioni si avventurano chiane chiane per via Colonna o s’inoltrano agorafobici su li serci de piazza de Pietra, non senza disdegnare la fojetta, e la pizza snobistica der napoletano: e poi pe quer budello de via de Pietra arriveno magari a sfociar sul Corso, ma sabato grasso ha da essere, dirimpetto all’Enciclopedia Treccani, ai più invitanti orologi del gioielliere Catellani.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00073"
+  },
+  "ref_00074": {
+   "id": "ref_00074",
+   "chapter": 1,
+   "page": 40,
+   "sourceReference": "A 40",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Alle rare occasioni si avventurano chiane chiane per via Colonna o s’inoltrano agorafobici su li serci de piazza de Pietra, non senza disdegnare la fojetta, e la pizza snobistica der napoletano: e poi pe quer budello de via de Pietra arriveno magari a sfociar sul Corso, ma sabato grasso ha da essere, dirimpetto all’Enciclopedia Treccani, ai più invitanti orologi del gioielliere Catellani.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00074"
+  },
+  "ref_00075": {
+   "id": "ref_00075",
+   "chapter": 1,
+   "page": 40,
+   "sourceReference": "A 40",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Alle rare occasioni si avventurano chiane chiane per via Colonna o s’inoltrano agorafobici su li serci de piazza de Pietra, non senza disdegnare la fojetta, e la pizza snobistica der napoletano: e poi pe quer budello de via de Pietra arriveno magari a sfociar sul Corso, ma sabato grasso ha da essere, dirimpetto all’Enciclopedia Treccani, ai più invitanti orologi del gioielliere Catellani.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00075"
+  },
+  "ref_00076": {
+   "id": "ref_00076",
+   "chapter": 1,
+   "page": 41,
+   "sourceReference": "A 41",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Di quaresima, luttuosi e boffici, si contentano lungheggiar Santa Chiara, sotto ai due globi de’ due alberghi, fino all’elefante e al suo gentile obelisco, e alle vetrine dei rosari e delle madonne: passo passo: oppure, passo passo, riscendono: schivata per un pelo una bicicletta, imboccheno la Palommella e sfioreno er dedietro ar Panteone, già oramai però sulla via del ritorno, e come un po’ delusi del crepuscolo.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00076"
+  },
+  "ref_00077": {
+   "id": "ref_00077",
+   "chapter": 1,
+   "page": 41,
+   "sourceReference": "A 41",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Di quaresima, luttuosi e boffici, si contentano lungheggiar Santa Chiara, sotto ai due globi de’ due alberghi, fino all’elefante e al suo gentile obelisco, e alle vetrine dei rosari e delle madonne: passo passo: oppure, passo passo, riscendono: schivata per un pelo una bicicletta, imboccheno la Palommella e sfioreno er dedietro ar Panteone, già oramai però sulla via del ritorno, e come un po’ delusi del crepuscolo.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00077"
+  },
+  "ref_00078": {
+   "id": "ref_00078",
+   "chapter": 1,
+   "page": 41,
+   "sourceReference": "A 41",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Di quaresima, luttuosi e boffici, si contentano lungheggiar Santa Chiara, sotto ai due globi de’ due alberghi, fino all’elefante e al suo gentile obelisco, e alle vetrine dei rosari e delle madonne: passo passo: oppure, passo passo, riscendono: schivata per un pelo una bicicletta, imboccheno la Palommella e sfioreno er dedietro ar Panteone, già oramai però sulla via del ritorno, e come un po’ delusi del crepuscolo.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00078"
+  },
+  "ref_00079": {
+   "id": "ref_00079",
+   "chapter": 1,
+   "page": 41,
+   "sourceReference": "A 41",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Di quaresima, luttuosi e boffici, si contentano lungheggiar Santa Chiara, sotto ai due globi de’ due alberghi, fino all’elefante e al suo gentile obelisco, e alle vetrine dei rosari e delle madonne: passo passo: oppure, passo passo, riscendono: schivata per un pelo una bicicletta, imboccheno la Palommella e sfioreno er dedietro ar Panteone, già oramai però sulla via del ritorno, e come un po’ delusi del crepuscolo.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00079"
+  },
+  "ref_00080": {
+   "id": "ref_00080",
+   "chapter": 1,
+   "page": 41,
+   "sourceReference": "A 41",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Da qualche anno il commendator Angeloni s’era trasferito a via Merulana, in seguito alle demolizioni di via del Parlamento-Campo Marzio. Là ci aveva abitato da sempre.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00080"
+  },
+  "ref_00081": {
+   "id": "ref_00081",
+   "chapter": 1,
+   "page": 41,
+   "sourceReference": "A 41",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Da qualche anno il commendator Angeloni s’era trasferito a via Merulana, in seguito alle demolizioni di via del Parlamento-Campo Marzio. Là ci aveva abitato da sempre.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00081"
+  },
+  "ref_00082": {
+   "id": "ref_00082",
+   "chapter": 1,
+   "page": 41,
+   "sourceReference": "A 41",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Da qualche anno il commendator Angeloni s’era trasferito a via Merulana, in seguito alle demolizioni di via del Parlamento-Campo Marzio. Là ci aveva abitato da sempre.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00082"
+  },
+  "ref_00083": {
+   "id": "ref_00083",
+   "chapter": 1,
+   "page": 41,
+   "sourceReference": "A 41",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "E qualche volta, del resto, glie li mandavano anche a casa ar ducentodicinnove su in cima",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00083"
+  },
+  "ref_00085": {
+   "id": "ref_00085",
+   "chapter": 1,
+   "page": 43,
+   "sourceReference": "A 43",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "«Come ve pare, commendatore. In ogni caso, quanno che volete, er Maccheronaro, qui a via der Gesù, ce sta apposta. Ce conosce tutti, che semo boni clienti. Er rosbiffe ar sangue è la specialità de Peppì.»",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00085"
+  },
+  "ref_00086": {
+   "id": "ref_00086",
+   "chapter": 1,
+   "page": 43,
+   "sourceReference": "A 43",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "«Come ve pare, commendatore. In ogni caso, quanno che volete, er Maccheronaro, qui a via der Gesù, ce sta apposta. Ce conosce tutti, che semo boni clienti. Er rosbiffe ar sangue è la specialità de Peppì.»",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00086"
+  },
+  "ref_00087": {
+   "id": "ref_00087",
+   "chapter": 1,
+   "page": 43,
+   "sourceReference": "A 43",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "« A Santo Stefano der Cacco avemio da capità. Brutti posti!»",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00087"
+  },
+  "ref_00089": {
+   "id": "ref_00089",
+   "chapter": 1,
+   "page": 44,
+   "sourceReference": "A 44",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Via Venti Settembre, co’ suoi fattorini, i suoi uscieri, gli dovette sembrare in quell’ora implacabile un paradiso più pericolante che mai: un lontano Olimpo, soprastato da un Quirino Commendatore, anzi Grand’Ufficiale, ma ahimè, poco atto a soccorrerlo.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00089"
+  },
+  "ref_00090": {
+   "id": "ref_00090",
+   "chapter": 1,
+   "page": 45,
+   "sourceReference": "A 45",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "«Alla portiera avete detto, una volta» (don Ciccio sbadigliò), «che compravate il prosciutto magro a via Panisperna...»",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00090"
+  },
+  "ref_00091": {
+   "id": "ref_00091",
+   "chapter": 1,
+   "page": 45,
+   "sourceReference": "A 45",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "«Giusto me lo so’ fatto mannà a casa. Dar salumaro de via Panisperna, già, in fonno in fonno, quasi all’angolo de li Serpenti... È un bolognese.»",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00091"
+  },
+  "ref_00092": {
+   "id": "ref_00092",
+   "chapter": 1,
+   "page": 45,
+   "sourceReference": "A 45",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Il giovanotto che Gaudenzio era pervenuto a racimolare a li Serpenti fu introdotto a sua volta.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00092"
+  },
+  "ref_00093": {
+   "id": "ref_00093",
+   "chapter": 1,
+   "page": 45,
+   "sourceReference": "A 45",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Fu spedito Gaudenzio a via Panisperna.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00093"
+  },
+  "ref_00094": {
+   "id": "ref_00094",
+   "chapter": 1,
+   "page": 46,
+   "sourceReference": "A 46",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "«È venuto a bottega l’anno passato, quarche vorta: poi nun s’è più visto. Una vorta j’ho portato a casa un presciutto de montagna, fino su, a via Merulana. Pioveva forte, che me so’ fracicato.»",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00094"
+  },
+  "ref_00095": {
+   "id": "ref_00095",
+   "chapter": 1,
+   "page": 47,
+   "sourceReference": "A 47",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "« E poi, e poi, quann’è ch’è venuto, questo qui, a via Merulana? Un anno fa? Quello che dich’io saranno dua o tre mesi, pe dì tanto. Era poco doppo li morti.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00095"
+  },
+  "ref_00096": {
+   "id": "ref_00096",
+   "chapter": 1,
+   "page": 48,
+   "sourceReference": "A 48",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "«[…] Pe sentì dì da la gente: avemo visto er commendator Angeloni a via Panisperna che arrancava co un caciocavallo in collo? co du fiaschi uno de qua uno de là? che pareveno du gemelli, in collo a la balia…?»",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00096"
+  },
+  "ref_00097": {
+   "id": "ref_00097",
+   "chapter": 1,
+   "page": 49,
+   "sourceReference": "A 49",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Era scritto che il ducentodiciannove de via Merulana, il palazzo dell’Oro, o dei pescicani che fosse, era scritto: che doveva fiorire anche lui un bel viore, come tant’altri fabbricati ’e sto munno, del resto.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00097"
+  },
+  "ref_00100": {
+   "id": "ref_00100",
+   "chapter": 1,
+   "page": 51,
+   "sourceReference": "A 51",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Ai giardinetti di San Giovanni, dove la Tina la conduceva a passeggio, quella smemorata: e invece di badarle, c’era dimolti perdigiorno che le badavan loro a lei: all’Assunta.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00100"
+  },
+  "ref_00101": {
+   "id": "ref_00101",
+   "chapter": 1,
+   "page": 52,
+   "sourceReference": "A 52",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "der terzo piano der ducentodicinnove (scala A, spiegamese bene, che la B è un artro conto)",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00101"
+  },
+  "ref_00102": {
+   "id": "ref_00102",
+   "chapter": 1,
+   "page": 52,
+   "sourceReference": "A 52",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "der terzo piano der ducentodicinnove (scala A, spiegamese bene, che la B è un artro conto)",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00102"
+  },
+  "ref_00103": {
+   "id": "ref_00103",
+   "chapter": 1,
+   "page": 52,
+   "sourceReference": "A 52",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "der terzo piano der ducentodicinnove (scala A, spiegamese bene, che la B è un artro conto)",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00103"
+  },
+  "ref_00104": {
+   "id": "ref_00104",
+   "chapter": 1,
+   "page": 52,
+   "sourceReference": "A 52",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Di quel nome e di quelle gioie, vere o supposte, di quel mucchio d’ori della «contessa» der terzo piano der ducentodicinnove (scala A, spiegamese bene, che la B è un artro conto) pe tutta via Merulana e Labbicana insino a Sant’Antonio de Padova e a San Clemente e a li Santi Quattro, l’epos omai s’era insignorito, e mannava fora bagliori, lividori: come fiamma dalla carta unta.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00104"
+  },
+  "ref_00105": {
+   "id": "ref_00105",
+   "chapter": 1,
+   "page": 52,
+   "sourceReference": "A 52",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Di quel nome e di quelle gioie, vere o supposte, di quel mucchio d’ori della «contessa» der terzo piano der ducentodicinnove (scala A, spiegamese bene, che la B è un artro conto) pe tutta via Merulana e Labbicana insino a Sant’Antonio de Padova e a San Clemente e a li Santi Quattro, l’epos omai s’era insignorito, e mannava fora bagliori, lividori: come fiamma dalla carta unta.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00105"
+  },
+  "ref_00106": {
+   "id": "ref_00106",
+   "chapter": 1,
+   "page": 52,
+   "sourceReference": "A 52",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Di quel nome e di quelle gioie, vere o supposte, di quel mucchio d’ori della «contessa» der terzo piano der ducentodicinnove (scala A, spiegamese bene, che la B è un artro conto) pe tutta via Merulana e Labbicana insino a Sant’Antonio de Padova e a San Clemente e a li Santi Quattro, l’epos omai s’era insignorito, e mannava fora bagliori, lividori: come fiamma dalla carta unta.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00106"
+  },
+  "ref_00107": {
+   "id": "ref_00107",
+   "chapter": 1,
+   "page": 52,
+   "sourceReference": "A 52",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Di quel nome e di quelle gioie, vere o supposte, di quel mucchio d’ori della «contessa» der terzo piano der ducentodicinnove (scala A, spiegamese bene, che la B è un artro conto) pe tutta via Merulana e Labbicana insino a Sant’Antonio de Padova e a San Clemente e a li Santi Quattro, l’epos omai s’era insignorito, e mannava fora bagliori, lividori: come fiamma dalla carta unta.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00107"
+  },
+  "ref_00108": {
+   "id": "ref_00108",
+   "chapter": 1,
+   "page": 52,
+   "sourceReference": "A 52",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Di quel nome e di quelle gioie, vere o supposte, di quel mucchio d’ori della «contessa» der terzo piano der ducentodicinnove (scala A, spiegamese bene, che la B è un artro conto) pe tutta via Merulana e Labbicana insino a Sant’Antonio de Padova e a San Clemente e a li Santi Quattro, l’epos omai s’era insignorito, e mannava fora bagliori, lividori: come fiamma dalla carta unta.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00108"
+  },
+  "ref_00109": {
+   "id": "ref_00109",
+   "chapter": 1,
+   "page": 53,
+   "sourceReference": "A 53",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "sicché lo aveva lasciato da Cobianchi a San Lorenzo in Lucina, l’anello, sapete bene, là dentro l’angolo di Palazzo Ruspoli, un po’ sottoterra però, e poi però miracolosamente lo ritrovò",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00109"
+  },
+  "ref_00110": {
+   "id": "ref_00110",
+   "chapter": 1,
+   "page": 53,
+   "sourceReference": "A 53",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "sicché lo aveva lasciato da Cobianchi a San Lorenzo in Lucina, l’anello, sapete bene, là dentro l’angolo di Palazzo Ruspoli, un po’ sottoterra però, e poi però miracolosamente lo ritrovò",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00110"
+  },
+  "ref_00111": {
+   "id": "ref_00111",
+   "chapter": 1,
+   "page": 53,
+   "sourceReference": "A 53",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "sicché lo aveva lasciato da Cobianchi a San Lorenzo in Lucina, l’anello, sapete bene, là dentro l’angolo di Palazzo Ruspoli, un po’ sottoterra però, e poi però miracolosamente lo ritrovò",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00111"
+  },
+  "ref_00112": {
+   "id": "ref_00112",
+   "chapter": 1,
+   "page": 53,
+   "sourceReference": "A 53",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "previa accensione d’una candela a sant’Antonio ch’entrò apposta a San Silvestro a falla accenne, e solo dopo avella accesa ritornò addietro a cercallo;",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00112"
+  },
+  "ref_00113": {
+   "id": "ref_00113",
+   "chapter": 1,
+   "page": 53,
+   "sourceReference": "A 53",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Solo che mercoledì alle nove il dottor Fumi, allo scorrere un po’ di malavoglia e con uno sbadiglio ritardatario la nota (de le belle donne del dì prima), sostò con l’occhio sulle generalità d’una tizia fermata al Celio, e qualificata... cucitrice senza dimora fissa, da... Torraccio.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00113"
+  },
+  "ref_00114": {
+   "id": "ref_00114",
+   "chapter": 1,
+   "page": 53,
+   "sourceReference": "A 53",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Solo che mercoledì alle nove il dottor Fumi, allo scorrere un po’ di malavoglia e con uno sbadiglio ritardatario la nota (de le belle donne del dì prima), sostò con l’occhio sulle generalità d’una tizia fermata al Celio, e qualificata... cucitrice senza dimora fissa, da... Torraccio.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00114"
+  },
+  "ref_00115": {
+   "id": "ref_00115",
+   "chapter": 1,
+   "page": 54,
+   "sourceReference": "A 54",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Il nome de la località, il Torraccio, non appena intravisto da la coda dell’occhio destro, lo indusse a riflettere.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00115"
+  },
+  "ref_00116": {
+   "id": "ref_00116",
+   "chapter": 1,
+   "page": 54,
+   "sourceReference": "A 54",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "E la schedina ripeté: Cionini Ines, anni 20, da Torraccio, nubbile: al « senza fissa dimora » una crocetta, che voleva dire: sì, propio senza",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00116"
+  },
+  "ref_00117": {
+   "id": "ref_00117",
+   "chapter": 1,
+   "page": 54,
+   "sourceReference": "A 54",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Aveva ingiuriato gli agenti con l’epiteto cafoni. «Pattuglione Celio-Santo Stefano, commissariato San Giovanni».",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00117"
+  },
+  "ref_00118": {
+   "id": "ref_00118",
+   "chapter": 1,
+   "page": 54,
+   "sourceReference": "A 54",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Aveva ingiuriato gli agenti con l’epiteto cafoni. «Pattuglione Celio-Santo Stefano, commissariato San Giovanni».",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00118"
+  },
+  "ref_00119": {
+   "id": "ref_00119",
+   "chapter": 1,
+   "page": 54,
+   "sourceReference": "A 54",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Il fatto era una specie di limosina, quattro lire (di allora, però), ch’ella aveva implorato e ottenuto da un passante: col quale s’ereno confabulati all’impiedi un minuto e mezzo, nel favore della tenebra e di Santo Stefano Rotondo.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00119"
+  },
+  "ref_00120": {
+   "id": "ref_00120",
+   "chapter": 1,
+   "page": 54,
+   "sourceReference": "A 54",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Due o tre fermi a casaccio, «nei soliti ambienti»: che furono, per quella volta, una bigia latteria, un casino di quint’ordine a via Frangipane, e una panchina a Santa Croce.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00120"
+  },
+  "ref_00121": {
+   "id": "ref_00121",
+   "chapter": 1,
+   "page": 54,
+   "sourceReference": "A 54",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Due o tre fermi a casaccio, «nei soliti ambienti»: che furono, per quella volta, una bigia latteria, un casino di quint’ordine a via Frangipane, e una panchina a Santa Croce.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00121"
+  },
+  "ref_00028": {
+   "id": "ref_00028",
+   "chapter": 1,
+   "page": 22,
+   "sourceReference": "A 22",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "lui, no, no, non era « bello »: e nemmeno gli riusciva di consolarsi con quel proverbio che aveva udito a Milano da una ragazza, al dispensario celtico di via delle Oche: « I òmen hin semper bèi. »",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00028"
+  },
+  "ref_00084": {
+   "id": "ref_00084",
+   "chapter": 1,
+   "page": 43,
+   "sourceReference": "A 43",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "« Tenersi a disposizione » significò, in pratica, accompagnare don Ciccio sul saliscendi vario dei tramme, degli autobus, fino a Santo Stefano del Cacco.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00084"
+  },
+  "ref_00088": {
+   "id": "ref_00088",
+   "chapter": 1,
+   "page": 44,
+   "sourceReference": "A 44",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Più Ingravallo si buttava al folklore, tra Tevere e Biferno, più lo pizzicava dicendo pizzicarolo e guaglione",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00088"
+  },
+  "ref_00034": {
+   "id": "ref_00034",
+   "chapter": 1,
+   "page": 25,
+   "sourceReference": "A 25",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Saliti sul PV e discesi appunto al Viminale, presero il tram di San Giovanni. Sicché in una ventina di minuti raggiunsero il civico ducentodicinnove.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00034"
+  },
+  "ref_00035": {
+   "id": "ref_00035",
+   "chapter": 1,
+   "page": 25,
+   "sourceReference": "A 25",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Saliti sul PV e discesi appunto al Viminale, presero il tram di San Giovanni. Sicché in una ventina di minuti raggiunsero il civico ducentodicinnove.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00035"
+  },
+  "ref_00036": {
+   "id": "ref_00036",
+   "chapter": 1,
+   "page": 25,
+   "sourceReference": "A 25",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Saliti sul PV e discesi appunto al Viminale, presero il tram di San Giovanni. Sicché in una ventina di minuti raggiunsero il civico ducentodicinnove.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00036"
+  },
+  "ref_00037": {
+   "id": "ref_00037",
+   "chapter": 1,
+   "page": 25,
+   "sourceReference": "A 25",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Saliti sul PV e discesi appunto al Viminale, presero il tram di San Giovanni. Sicché in una ventina di minuti raggiunsero il civico ducentodicinnove.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00037"
+  },
+  "ref_00038": {
+   "id": "ref_00038",
+   "chapter": 1,
+   "page": 25,
+   "sourceReference": "A 25",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Il palazzo dell’Oro, o dei pescicani che fusse, era là: cinque piani, più il mezzanino. Intignazzato e grigio.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00038"
+  },
+  "ref_00040": {
+   "id": "ref_00040",
+   "chapter": 1,
+   "page": 26,
+   "sourceReference": "A 26",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Davanti al casermone color pidocchio, una folla: circonfusa d’una rete protettiva di biciclette.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00040"
+  },
+  "ref_00099": {
+   "id": "ref_00099",
+   "chapter": 1,
+   "page": 49,
+   "sourceReference": "A 49",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "oppure via Manuela – Orestino Bozzi – sora Elodia – Enea Cucco (scala B)",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00099"
+  },
+  "ref_00098": {
+   "id": "ref_00098",
+   "chapter": 1,
+   "page": 49,
+   "sourceReference": "A 49",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "via Manuela – Menegazzi – Bottafavi – Pernetti Alda e fratello (scala A)",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00098"
+  }
+ }
+}

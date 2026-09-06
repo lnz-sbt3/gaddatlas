@@ -1,0 +1,2110 @@
+{
+  "@context": {
+    "brick": "https://brickschema.org/schema/Brick#",
+    "csvw": "http://www.w3.org/ns/csvw#",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "dcam": "http://purl.org/dc/dcam/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dcmitype": "http://purl.org/dc/dcmitype/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "doap": "http://usefulinc.com/ns/doap#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "geo": "http://www.opengis.net/ont/geosparql#",
+    "odrl": "http://www.w3.org/ns/odrl/2/",
+    "org": "http://www.w3.org/ns/org#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "prof": "http://www.w3.org/ns/dx/prof/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "qb": "http://purl.org/linked-data/cube#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "ssn": "http://www.w3.org/ns/ssn/",
+    "time": "http://www.w3.org/2006/time#",
+    "vann": "http://purl.org/vocab/vann/",
+    "void": "http://rdfs.org/ns/void#",
+    "wgs": "https://www.w3.org/2003/01/geo/wgs84_pos#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "http://vocab.getty.edu/aat/300007203",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300007166",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q4022",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q1076486",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#Imported",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "owl:differentFrom": [
+        {
+          "@id": "https://w3id.org/chora#Invented"
+        },
+        {
+          "@id": "https://w3id.org/chora#Transformed"
+        }
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Importato"
+      },
+      "skos:definition": "The setting corresponds with the geographical reality by realistically portraying the surrounding",
+      "skos:inScheme": {
+        "@id": "https://w3id.org/chora#RealityStatusScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Imported"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/chora#RealityStatusScheme"
+      }
+    },
+    {
+      "@id": "geo:Geometry",
+      "@type": "owl:Class",
+      "rdfs:isDefinedBy": {
+        "@id": "http://www.opengis.net/ont/geosparql"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Geometria"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "A coherent set of direct positions in space"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Geometry"
+      }
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300007557",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#presentLocation",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Describes the present-day location or administrative context of a gazetteer entity."
+      },
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#GazetteerEntity"
+      },
+      "rdfs:range": {
+        "@id": "rdf:langString"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "localizzazione attuale"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "present location"
+      }
+    },
+    {
+      "@id": "geo:asGeoJSON",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:domain": {
+        "@id": "geo:Geometry"
+      },
+      "rdfs:range": {
+        "@id": "rdfs:Literal"
+      }
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q11707",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "skos:narrowMatch",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "https://w3id.org/chora#Setting",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Ambientazione"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "Place where the action occurs, with characters physically present"
+      },
+      "skos:inScheme": {
+        "@id": "https://w3id.org/chora#NarrativeRoleScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Setting"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/chora#NarrativeRoleScheme"
+      }
+    },
+    {
+      "@id": "skos:definition",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "https://w3id.org/chora#Contains",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "dcterms:description": "A contiene spazialmente B. Relazione inversa di Inside.",
+      "rdfs:comment": {
+        "@language": "it",
+        "@value": "Inverso di Inside, basato su GeoSPARQL sfContains"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Contiene"
+      },
+      "skos:inScheme": {
+        "@id": "https://w3id.org/chora#SpatialRelationTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Contains"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/chora#SpatialRelationTypeScheme"
+      }
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300005433",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300008217",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q2983893",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#isPartOf",
+      "@type": [
+        "owl:ObjectProperty",
+        "owl:TransitiveProperty"
+      ],
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Meronymic relation between narrative places: the subject place is a structural component of the object place (e.g. a staircase of a building). Invariant with respect to focalizer. A place with isPartOf inherits its geographic anchoring from the parent and should NOT carry its own anchorsToEntity."
+      },
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#NarrativePlace"
+      },
+      "rdfs:range": {
+        "@id": "https://w3id.org/chora#NarrativePlace"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "è parte di"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "is part of"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#interpretationType",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Classifies the kind of spatial interpretation asserted by the annotation."
+      },
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#SpatialInterpretation"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "tipo di interpretazione"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "interpretation type"
+      }
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300343479",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#NarrativeRoute",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "A route (tragitto): an ordered aggregate of narrative places traversed by a focalizer. Distinct from NarrativePlace — a route is not a place but a second-order sequence of places. Carries its own interpretations (per focalizer) via SpatialInterpretation, and aggregates ordered nodes via isNodeOfRoute / routeOrder."
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Tragitto"
+      },
+      "skos:definition": [
+        {
+          "@language": "en",
+          "@value": "A second-order spatial entity representing an ordered path connecting multiple narrative places, as perceived by one or more focalizers."
+        },
+        {
+          "@language": "it",
+          "@value": "Entità spaziale di secondo livello che rappresenta un percorso ordinato che connette più luoghi narrativi, così come percepito da uno o più focalizzatori."
+        }
+      ],
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Narrative Route"
+      }
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q22687",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#Precise",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "owl:differentFrom": {
+        "@id": "https://w3id.org/chora#Relative"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Precisa"
+      },
+      "skos:inScheme": {
+        "@id": "https://w3id.org/chora#SpatialDeterminationScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Precise"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/chora#SpatialDeterminationScheme"
+      }
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q144313",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#Narrator",
+      "@type": "owl:Class",
+      "rdfs:subClassOf": {
+        "@id": "https://w3id.org/chora#FocalizingAgent"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Narratore"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Narrator"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#pageRange",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#Chapter"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "intervallo di pagine"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "page range"
+      }
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q1497375",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#hasFocalizer",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "it",
+        "@value": "Collega una SpatialInterpretation all'agente attraverso cui lo spazio è percepito; la coppia luogo×focalizzatore è l'unità base del dataset."
+      },
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#SpatialInterpretation"
+      },
+      "rdfs:range": {
+        "@id": "https://w3id.org/chora#FocalizingAgent"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "ha focalizzatore"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "has focalizer"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#Near",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "dcterms:description": {
+        "@language": "it",
+        "@value": "A è in prossimità di B, senza specificare distanza esatta. Relazione qualitativa di vicinanza."
+      },
+      "rdfs:comment": {
+        "@language": "it",
+        "@value": "Basato su Distance Relations in narratologia spaziale (Ryan 2001)"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Vicino a"
+      },
+      "skos:inScheme": {
+        "@id": "https://w3id.org/chora#SpatialRelationTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Near"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/chora#SpatialRelationTypeScheme"
+      }
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q82117",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "skos:hasTopConcept",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "https://w3id.org/chora#Overlaps",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "dcterms:description": {
+        "@language": "it",
+        "@value": "A e B condividono una porzione di spazio senza che l'uno contenga l'altro. Sovrapposizione parziale."
+      },
+      "rdfs:comment": {
+        "@language": "it",
+        "@value": "Basato su RCC-8 PO (Partial Overlap) e GeoSPARQL sfOverlaps"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Sovrapposto"
+      },
+      "skos:inScheme": {
+        "@id": "https://w3id.org/chora#SpatialRelationTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Overlaps"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/chora#SpatialRelationTypeScheme"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#assignsNarrativeRole",
+      "@type": "owl:ObjectProperty",
+      "dcterms:references": {
+        "@id": "https://w3id.org/chora#NarrativeRoleScheme"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Assigns a narrative role to a place reference as part of a critical spatial interpretation."
+      },
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#SpatialInterpretation"
+      },
+      "rdfs:range": {
+        "@id": "skos:Concept"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "assegna ruolo narrativo"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "assigns narrative role"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#Below",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "dcterms:description": {
+        "@language": "it",
+        "@value": "A è verticalmente sotto B lungo l'asse gravitazionale. Relazione inversa di Above."
+      },
+      "rdfs:comment": {
+        "@language": "it",
+        "@value": "Inverso di Above, basato su Verticality e preposizioni cognitive"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Sotto"
+      },
+      "skos:inScheme": {
+        "@id": "https://w3id.org/chora#SpatialRelationTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Below"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/chora#SpatialRelationTypeScheme"
+      }
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q40357",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300006165",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300007588",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300006958",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q861951",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300000810",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q839954",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q483453",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q24354",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#historicalLocation",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Describes the historical location or historical-toponymic context of a gazetteer entity."
+      },
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#GazetteerEntity"
+      },
+      "rdfs:range": {
+        "@id": "rdf:langString"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "localizzazione storica"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "historical location"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#PlaceReference",
+      "@type": "owl:Class",
+      "rdfs:comment": [
+        {
+          "@language": "en",
+          "@value": "A PlaceReference does not “resolve” a referent nor determine the place type: disambiguation, classification, and any topographic anchoring are asserted at the level of SpatialInterpretation."
+        },
+        {
+          "@language": "it",
+          "@value": "PlaceReference non “risolve” il referente né determina il tipo di luogo: la disambiguazione, la classificazione e l’eventuale ancoraggio topografico sono esplicitati a livello di SpatialInterpretation."
+        }
+      ],
+      "skos:definition": [
+        {
+          "@language": "en",
+          "@value": "A textual occurrence in which the text mentions or evokes a spatial element; it is the basic evidential unit and includes bibliographic and contextual information (e.g., source, page, passage, quotation)."
+        },
+        {
+          "@language": "it",
+          "@value": "Occorrenza testuale in cui il testo menziona o richiama un elemento spaziale; costituisce l’unità attestativa di base e include informazioni bibliografiche e contestuali (es. fonte, pagina, segmento, citazione)."
+        }
+      ]
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q44539",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://ror.org/01111rn36",
+      "@type": "prov:Agent",
+      "schema:name": "Università di Bologna"
+    },
+    {
+      "@id": "skos:inScheme",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "https://w3id.org/chora#RelatedTo",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "dcterms:description": {
+        "@language": "it",
+        "@value": "Relazione spaziale generica tra A e B, non ulteriormente specificata sul piano topologico."
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "In relazione con"
+      },
+      "skos:inScheme": {
+        "@id": "https://w3id.org/chora#SpatialRelationTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Related to"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/chora#SpatialRelationTypeScheme"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#annotationMethod",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Records the method or procedure used to create a spatial interpretation."
+      },
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#SpatialInterpretation"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "metodo di annotazione"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "annotation method"
+      }
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q54050",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q22698",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300007549",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#AdjacentTo",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "dcterms:description": {
+        "@language": "it",
+        "@value": "A è adiacente a B, i loro confini si toccano senza sovrapporsi."
+      },
+      "rdfs:comment": "Basato su RCC-8 EC (Externally Connected) e GeoSPARQL sfTouches",
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Adiacente a"
+      },
+      "skos:inScheme": {
+        "@id": "https://w3id.org/chora#SpatialRelationTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Adjacent to"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/chora#SpatialRelationTypeScheme"
+      }
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q123705",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300008591",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300005734",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#Transformed",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Trasformato"
+      },
+      "skos:definition": "The setting is transformed, with techniques of remodelling, renaming, relocation or a synthesis of several places",
+      "skos:inScheme": {
+        "@id": "https://w3id.org/chora#RealityStatusScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Transformed"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/chora#RealityStatusScheme"
+      }
+    },
+    {
+      "@id": "skos:exactMatch",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q1778821",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#sourceReference",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#PlaceReference"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#appearsInWork",
+      "@type": "owl:ObjectProperty",
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#PlaceReference"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "appears in work"
+      },
+      "rdfs:range": {
+        "@id": "https://w3id.org/chora#LiteraryWork"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "compare nell'opera"
+      }
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300008375",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "skos:prefLabel",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "https://w3id.org/chora#Imagined",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "owl:differentFrom": [
+        {
+          "@id": "https://w3id.org/chora#Imported"
+        },
+        {
+          "@id": "https://w3id.org/chora#Invented"
+        },
+        {
+          "@id": "https://w3id.org/chora#Transformed"
+        }
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Immaginato"
+      },
+      "skos:definition": "An invented setting within familiar geographical reality",
+      "skos:inScheme": {
+        "@id": "https://w3id.org/chora#RealityStatusScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Imagined"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/chora#RealityStatusScheme"
+      }
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q23413",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q728937",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#RealityStatusScheme",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Reality Status"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Stato di Realtà"
+      },
+      "skos:hasTopConcept": [
+        {
+          "@id": "https://w3id.org/chora#Imagined"
+        },
+        {
+          "@id": "https://w3id.org/chora#Imported"
+        },
+        {
+          "@id": "https://w3id.org/chora#Invented"
+        },
+        {
+          "@id": "https://w3id.org/chora#Transformed"
+        }
+      ],
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Reality Status"
+      }
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300005678",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#targetsPlace",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Links a spatial interpretation to the diegetic narrative place it activates."
+      },
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#SpatialInterpretation"
+      },
+      "rdfs:range": {
+        "@id": "https://w3id.org/chora#NarrativePlace"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "ha come target il luogo"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "targets place"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#isNodeOfRoute",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Declares that a spatial interpretation is a node (stop) of a narrative route. The node's place is reached via targetsPlace; its position via routeOrder; its focalizer via hasFocalizer. The route of a node and the node share the same focalizer."
+      },
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#SpatialInterpretation"
+      },
+      "rdfs:range": {
+        "@id": "https://w3id.org/chora#NarrativeRoute"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "è nodo del tragitto"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "is node of route"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#ZoneOfAction",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Zona dell'Azione"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "Several settings or projected spaces logically connected in the narrative by the scholar"
+      },
+      "skos:inScheme": {
+        "@id": "https://w3id.org/chora#NarrativeRoleScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Zone of Action"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/chora#NarrativeRoleScheme"
+      }
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300008680",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q39614",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#Above",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "dcterms:description": {
+        "@language": "it",
+        "@value": "A è verticalmente sopra B lungo l'asse gravitazionale."
+      },
+      "rdfs:comment": {
+        "@language": "it",
+        "@value": "Basato su Verticality in narratologia (Ryan 2001) e preposizioni cognitive (Talmy 2000)"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Sopra"
+      },
+      "skos:inScheme": {
+        "@id": "https://w3id.org/chora#SpatialRelationTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Above"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/chora#SpatialRelationTypeScheme"
+      }
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q16917",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "prov:Entity",
+      "@type": "owl:Class",
+      "rdfs:isDefinedBy": {
+        "@id": "http://www.w3.org/ns/prov-o"
+      }
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q16970",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q55488",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#Indeterminate",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "owl:differentFrom": [
+        {
+          "@id": "https://w3id.org/chora#Precise"
+        },
+        {
+          "@id": "https://w3id.org/chora#Relative"
+        }
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Indeterminata"
+      },
+      "skos:inScheme": {
+        "@id": "https://w3id.org/chora#SpatialDeterminationScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Indeterminate"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/chora#SpatialDeterminationScheme"
+      }
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q174782",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#criticalNote",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Stores an interpretive or editorial note attached to a spatial interpretation."
+      },
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#SpatialInterpretation"
+      },
+      "rdfs:range": {
+        "@id": "rdf:langString"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "nota critica"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "critical note"
+      }
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300008247",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "dcterms:description",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300005390",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#SpatialInterpretation",
+      "@type": "owl:Class",
+      "rdfs:comment": [
+        {
+          "@language": "en",
+          "@value": "SpatialInterpretation makes the declarative and traceable nature of annotation explicit: multiple interpretations may coexist for the same PlaceReference, with different assumptions and confidence levels; therefore the model privileges “targets/assigns/anchors” properties at this level."
+        },
+        {
+          "@language": "it",
+          "@value": "SpatialInterpretation esplicita la natura dichiarativa e tracciabile dell’annotazione: diverse interpretazioni possono coesistere per lo stesso PlaceReference, con diverse assunzioni e livelli di confidenza; per questo il modello privilegia proprietà “targets/assigns/anchors” a questo livello."
+        }
+      ],
+      "rdfs:subClassOf": {
+        "@id": "prov:Entity"
+      },
+      "skos:definition": [
+        {
+          "@language": "en",
+          "@value": "An interpretive act that operates on a PlaceReference and asserts (i) the diegetic place it activates (target), (ii) semantic qualifications via controlled vocabularies (e.g., narrative role, reality status, degree of spatial determination, spatial relation type), and (iii) any anchoring to an external topographic referent (gazetteer)."
+        },
+        {
+          "@language": "it",
+          "@value": "Atto interpretativo che prende in carico un PlaceReference e asserisce (i) quale luogo diegetico esso attiva (target), (ii) le qualificazioni semantiche tramite vocabolari controllati (es. ruolo narrativo, status di realtà, grado di determinazione spaziale, tipo di relazione spaziale), e (iii) l’eventuale ancoraggio a un referente topografico esterno (gazetteer)."
+        }
+      ]
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300000745",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#hasSpatialGeometry",
+      "@type": "owl:ObjectProperty",
+      "rdfs:range": {
+        "@id": "geo:Geometry"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "ha geometria spaziale"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "has spatial geometry"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#routeOrder",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Ordinal position (1-based) of a node within its narrative route. Meaningful only together with isNodeOfRoute."
+      },
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#SpatialInterpretation"
+      },
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "route order"
+      }
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q474",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#targetsRoute",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Links a spatial interpretation to the narrative route it activates (used for route-level rows, where narrative role is 'route'), as the analogue of targetsPlace for routes."
+      },
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#SpatialInterpretation"
+      },
+      "rdfs:range": {
+        "@id": "https://w3id.org/chora#NarrativeRoute"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "ha come target il tragitto"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "targets route"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#FocalizingAgent",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "it",
+        "@value": "Entità attraverso cui lo spazio è percepito/descritto"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Agente Focalizzatore"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Focalizing Agent"
+      }
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q4989906",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#NarrativeRoleScheme",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Narrative Role"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Ruolo Narrativo"
+      },
+      "skos:hasTopConcept": [
+        {
+          "@id": "https://w3id.org/chora#Marker"
+        },
+        {
+          "@id": "https://w3id.org/chora#ProjectedSpace"
+        },
+        {
+          "@id": "https://w3id.org/chora#Route"
+        },
+        {
+          "@id": "https://w3id.org/chora#Setting"
+        },
+        {
+          "@id": "https://w3id.org/chora#ZoneOfAction"
+        }
+      ],
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Narrative Role"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#Marker",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "owl:differentFrom": [
+        {
+          "@id": "https://w3id.org/chora#ProjectedSpace"
+        },
+        {
+          "@id": "https://w3id.org/chora#Setting"
+        }
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Marcatore"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "Place only mentioned in passing, without active role in the plot"
+      },
+      "skos:inScheme": {
+        "@id": "https://w3id.org/chora#NarrativeRoleScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Marker"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/chora#NarrativeRoleScheme"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#Inside",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "dcterms:description": {
+        "@language": "it",
+        "@value": "A è contenuto spazialmente in B. Relazione topologica di contenimento."
+      },
+      "rdfs:comment": {
+        "@language": "it",
+        "@value": "Basato su RCC-8 TPP (Tangential Proper Part) e GeoSPARQL sfWithin"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Dentro"
+      },
+      "skos:inScheme": {
+        "@id": "https://w3id.org/chora#SpatialRelationTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Inside"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/chora#SpatialRelationTypeScheme"
+      }
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300007395",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#Route",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Percorso"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "Path along which characters move, connecting multiple settings or projected spaces"
+      },
+      "skos:inScheme": {
+        "@id": "https://w3id.org/chora#NarrativeRoleScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Route"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/chora#NarrativeRoleScheme"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora",
+      "@type": "owl:Ontology",
+      "dc:creator": {
+        "@id": "https://orcid.org/0009-0007-1496-722X"
+      },
+      "dc:description": {
+        "@language": "en",
+        "@value": "An ontology for modelling narrative spatiality in Carlo Emilio Gadda's \"Quer pasticciaccio brutto de via Merulana\", integrating place references, critical spatial interpretations, and geographic anchoring across a three-tier data model."
+      },
+      "dc:title": "GaddAtlas Ontology",
+      "dcterms:bibliographicCitation": {
+        "@language": "en",
+        "@value": "[Sabatino, Lorenzo]. (2026). GaddAtlas Ontology. Università di Bologna."
+      },
+      "dcterms:contributor": [
+        {
+          "@id": "_:n76bdc3ddf41d4079b2bd2dc8641e1ceab1"
+        },
+        {
+          "@id": "_:n76bdc3ddf41d4079b2bd2dc8641e1ceab2"
+        }
+      ],
+      "dcterms:created": {
+        "@type": "xsd:date",
+        "@value": "2025-10-01"
+      },
+      "dcterms:license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "dcterms:modified": {
+        "@type": "xsd:date",
+        "@value": "2026-08-11"
+      },
+      "dcterms:publisher": {
+        "@id": "https://ror.org/01111rn36"
+      },
+      "owl:versionIRI": {
+        "@id": "https://w3id.org/chora/4.1.1"
+      },
+      "owl:versionInfo": "4.1.1",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "GaddAtlas reuses terms from SKOS, PROV-O, GeoSPARQL, and Web Annotation without importing the complete ontologies, to maintain lightweight reasoning and avoid unintended inferences."
+      },
+      "rdfs:label": "GaddAtlas Ontology",
+      "rdfs:seeAlso": [
+        {
+          "@id": "http://www.w3.org/2004/02/skos/core"
+        },
+        {
+          "@id": "http://www.w3.org/ns/prov-o"
+        },
+        {
+          "@id": "https://w3id.org/chora/vocab/placecategory"
+        }
+      ],
+      "vann:preferredNamespacePrefix": "ga",
+      "vann:preferredNamespaceUri": "https://w3id.org/chora#"
+    },
+    {
+      "@id": "_:n76bdc3ddf41d4079b2bd2dc8641e1ceab1",
+      "@type": "prov:Agent",
+      "schema:name": "Francesca Tomasi"
+    },
+    {
+      "@id": "_:n76bdc3ddf41d4079b2bd2dc8641e1ceab2",
+      "@type": "prov:Agent",
+      "schema:name": "Paola Maria Carmela Italia"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q27686",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q79007",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q22667",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#GazetteerEntity",
+      "@type": "owl:Class",
+      "rdfs:comment": [
+        {
+          "@language": "en",
+          "@value": "GazetteerEntity does not belong to the world of the text: it models the external topographic counterpart. The relation to a NarrativePlace is not assumed as identity but as a typed anchoring, asserted by SpatialInterpretation."
+        },
+        {
+          "@language": "it",
+          "@value": "GazetteerEntity non appartiene al mondo del testo: modella la controparte topografica esterna. La relazione con NarrativePlace non è assunta come identità, ma come ancoraggio tipizzato, espresso da SpatialInterpretation."
+        }
+      ],
+      "skos:definition": [
+        {
+          "@language": "en",
+          "@value": "An extra-textual georeferenceable place described as an authority/gazetteer entity, typically endowed with stable geometry (coordinates or GeoJSON) and persistent identifiers; it provides the external topographic referent to which narrative places may be anchored."
+        },
+        {
+          "@language": "it",
+          "@value": "Luogo extra-testuale georeferenziabile, descritto come entità di authority/gazetteer e tipicamente dotato di geometria stabile (coordinate o GeoJSON) e identificatori persistenti; costituisce il referente topografico esterno a cui possono essere ancorati i luoghi narrativi."
+        }
+      ]
+    },
+    {
+      "@id": "https://w3id.org/chora#interpretsReference",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Links a spatial interpretation to the specific textual place reference it interprets"
+      },
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#SpatialInterpretation"
+      },
+      "rdfs:range": {
+        "@id": "https://w3id.org/chora#PlaceReference"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "interpreta il riferimento"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "interprets reference"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#lat",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#GazetteerEntity"
+      },
+      "rdfs:range": {
+        "@id": "xsd:decimal"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "latitudine"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "latitude"
+      }
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q2221906",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#characterName",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#FocalizingAgent"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "nome personaggio"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "character name"
+      }
+    },
+    {
+      "@id": "skos:topConceptOf",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "skos:broadMatch",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q3950",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#partOfWork",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Relates a chapter to the literary work it belongs to."
+      },
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#Chapter"
+      },
+      "rdfs:range": {
+        "@id": "https://w3id.org/chora#LiteraryWork"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "fa parte dell'opera"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "part of work"
+      }
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300005200",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q3947",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#mentionedInChapter",
+      "@type": "owl:ObjectProperty",
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#PlaceReference"
+      },
+      "rdfs:range": {
+        "@id": "https://w3id.org/chora#Chapter"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "è citato nel capitolo"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "mentioned in Chapter"
+      }
+    },
+    {
+      "@id": "skos:altLabel",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300005767",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "geo:hasGeometry",
+      "@type": "owl:ObjectProperty",
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#GazetteerEntity"
+      },
+      "rdfs:range": {
+        "@id": "geo:Geometry"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "https://w3id.org/chora#hasSpatialGeometry"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "has geometry"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#hasRealityStatus",
+      "@type": "owl:ObjectProperty",
+      "dcterms:references": {
+        "@id": "https://w3id.org/chora#RealityStatusScheme"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Assigns the reality–fiction status (imported, transformed, imagined, invented) of a narrative place. This is an invariant property of the place as an authorial transposition of the real world into the text, NOT dependent on focalizer or interpretation."
+      },
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#NarrativePlace"
+      },
+      "rdfs:range": {
+        "@id": "skos:Concept"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "ha stato di realtà"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "has reality status"
+      }
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300386699",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300005080",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#excerpt",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#PlaceReference"
+      },
+      "rdfs:range": {
+        "@id": "rdf:langString"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "estratto"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "excerpt"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#anchorsToEntity",
+      "@type": "owl:ObjectProperty",
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#SpatialInterpretation"
+      },
+      "rdfs:range": {
+        "@id": "https://w3id.org/chora#GazetteerEntity"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "anchors to entity"
+      }
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300007501",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q93352",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300343473",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#hasFuzzinessLevel",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Encodes the degree of spatial determination (i.e., how approximate or blurred the place's location is), as an invariant property of the place itself."
+      },
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#NarrativePlace"
+      },
+      "rdfs:range": {
+        "@id": "xsd:decimal"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "ha livello di sfocatura"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "has fuzziness level"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#long",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#GazetteerEntity"
+      },
+      "rdfs:range": {
+        "@id": "xsd:decimal"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "longitudine"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "longitude"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#chapterNumber",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#Chapter"
+      },
+      "rdfs:range": {
+        "@id": "xsd:integer"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "numero capitolo"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "chapter number"
+      }
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300006179",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#hasPlaceCategory",
+      "@type": "owl:ObjectProperty",
+      "dcterms:references": {
+        "@id": "https://w3id.org/chora#PlaceCategoryScheme"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Assigns a place category from a controlled vocabulary to any narrative place (discrete or vague)."
+      },
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#NarrativePlace"
+      },
+      "rdfs:range": {
+        "@id": "skos:Concept"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "categoria di luogo"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "has place category"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#Approximate",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "owl:differentFrom": [
+        {
+          "@id": "https://w3id.org/chora#Indeterminate"
+        },
+        {
+          "@id": "https://w3id.org/chora#Precise"
+        },
+        {
+          "@id": "https://w3id.org/chora#Relative"
+        }
+      ],
+      "skos:altLabel": "Approssimata",
+      "skos:inScheme": {
+        "@id": "https://w3id.org/chora#SpatialDeterminationScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Approximate"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/chora#SpatialDeterminationScheme"
+      }
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300007595",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#SpatialRelationTypeScheme",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:ConceptScheme"
+      ],
+      "dcterms:description": {
+        "@language": "it",
+        "@value": "Vocabolario di relazioni spaziali per analisi letteraria, basato su RCC-8 (Randell et al. 1992), GeoSPARQL (W3C/OGC 2012), e narratologia spaziale (Ryan 2001, Herman 2002)"
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Narrative Spatial Relations"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Relazioni Spaziali Narrative"
+      },
+      "skos:hasTopConcept": [
+        {
+          "@id": "https://w3id.org/chora#Above"
+        },
+        {
+          "@id": "https://w3id.org/chora#AdjacentTo"
+        },
+        {
+          "@id": "https://w3id.org/chora#Below"
+        },
+        {
+          "@id": "https://w3id.org/chora#Contains"
+        },
+        {
+          "@id": "https://w3id.org/chora#Inside"
+        },
+        {
+          "@id": "https://w3id.org/chora#Near"
+        },
+        {
+          "@id": "https://w3id.org/chora#Overlaps"
+        },
+        {
+          "@id": "https://w3id.org/chora#RelatedTo"
+        }
+      ],
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Narrative Spatial Relations"
+      }
+    },
+    {
+      "@id": "prov:Agent",
+      "@type": "owl:Class",
+      "rdfs:isDefinedBy": {
+        "@id": "http://www.w3.org/ns/prov-o"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#hasInterpretation",
+      "@type": "owl:ObjectProperty",
+      "owl:inverseOf": {
+        "@id": "https://w3id.org/chora#interpretsReference"
+      },
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#PlaceReference"
+      },
+      "rdfs:range": {
+        "@id": "https://w3id.org/chora#SpatialInterpretation"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "has interpretation"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#Character",
+      "@type": "owl:Class",
+      "rdfs:subClassOf": {
+        "@id": "https://w3id.org/chora#FocalizingAgent"
+      },
+      "skos:altLabel": "Personaggio",
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Character"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#confidence",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#SpatialInterpretation"
+      },
+      "rdfs:range": {
+        "@id": "xsd:decimal"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#assignsSpatialRelationType",
+      "@type": "owl:ObjectProperty",
+      "dcterms:references": {
+        "@id": "https://w3id.org/chora#SpatialRelationTypeScheme"
+      },
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#SpatialInterpretation"
+      },
+      "rdfs:range": {
+        "@id": "skos:Concept"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "assigns spatial relation type"
+      }
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q1134686",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300007802",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#hasGender",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#FocalizingAgent"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "ha genere"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "has gender"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#ProjectedSpace",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "owl:differentFrom": {
+        "@id": "https://w3id.org/chora#Setting"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Spazio di Proiezione"
+      },
+      "skos:definition": "Characters are not present in this location, but they dream of, remember, or long for it",
+      "skos:inScheme": {
+        "@id": "https://w3id.org/chora#NarrativeRoleScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Projected Space"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/chora#NarrativeRoleScheme"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#Relative",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Relativa"
+      },
+      "skos:inScheme": {
+        "@id": "https://w3id.org/chora#SpatialDeterminationScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Relative"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/chora#SpatialDeterminationScheme"
+      }
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q184410",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "prov:wasAttributedTo",
+      "@type": "owl:ObjectProperty",
+      "rdfs:isDefinedBy": {
+        "@id": "http://www.w3.org/ns/prov-o"
+      }
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300004420",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q8502",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "http://vocab.getty.edu/aat/300008187",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#SpatialDeterminationScheme",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Spatial Determination"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Caratterizzazione spaziale"
+      },
+      "skos:hasTopConcept": [
+        {
+          "@id": "https://w3id.org/chora#Approximate"
+        },
+        {
+          "@id": "https://w3id.org/chora#Indeterminate"
+        },
+        {
+          "@id": "https://w3id.org/chora#Precise"
+        },
+        {
+          "@id": "https://w3id.org/chora#Relative"
+        }
+      ],
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Spatial determination"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#NarrativePlace",
+      "@type": "owl:Class",
+      "owl:disjointWith": {
+        "@id": "https://w3id.org/chora#PlaceReference"
+      },
+      "rdfs:comment": [
+        {
+          "@language": "en",
+          "@value": "NarrativePlace includes both imported places traceable to real toponyms and invented places that are diegetically localized (e.g., fictional buildings located on a real street). Any topographic correspondence is declared via anchoring to a GazetteerEntity and qualified by status/relations."
+        },
+        {
+          "@language": "en",
+          "@value": "NarrativePlace models the spatial unit “in the novel”, distinct from the external topographic referent (GazetteerEntity). The relation between the two planes is expressed through anchoring and typed relations at the level of SpatialInterpretation."
+        },
+        {
+          "@language": "it",
+          "@value": "NarrativePlace include sia luoghi importati o riconducibili a toponimi reali, sia luoghi inventati ma diegeticamente localizzati (es. edifici finzionali collocati in una via reale). L’eventuale corrispondenza topografica è dichiarata tramite ancoraggio a GazetteerEntity e qualificata da status/relazioni."
+        },
+        {
+          "@language": "it",
+          "@value": "NarrativePlace modella l’unità spaziale “nel romanzo”, distinta dal referente topografico esterno (GazetteerEntity). La relazione fra i due piani è espressa tramite ancoraggi e relazioni tipizzate a livello di SpatialInterpretation."
+        }
+      ],
+      "skos:definition": [
+        {
+          "@language": "en",
+          "@value": "A spatial entity belonging to the world of the text: a place constructed and recognizable within the diegesis, independently of any correspondence with an extra-textual georeferenceable place."
+        },
+        {
+          "@language": "it",
+          "@value": "Entità spaziale appartenente al mondo del testo: un luogo costruito e riconoscibile nella diegesi, indipendentemente dalla sua eventuale corrispondenza con un luogo extra-testuale georeferenziabile."
+        }
+      ]
+    },
+    {
+      "@id": "https://w3id.org/chora#LiteraryWork",
+      "@type": "owl:Class"
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q524334",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#assignsSpatialDetermination",
+      "@type": "owl:ObjectProperty",
+      "dcterms:references": {
+        "@id": "https://w3id.org/chora#SpatialDeterminationScheme"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Assigns a degree of spatial determination (precise, approximate, relative, indeterminate) as part of a critical interpretation."
+      },
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#SpatialInterpretation"
+      },
+      "rdfs:range": {
+        "@id": "skos:Concept"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "assegna determinazione spaziale"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "assigns spatial determination"
+      }
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q213441",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#evidenceSource",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Records textual or critical evidence supporting a spatial interpretation."
+      },
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#SpatialInterpretation"
+      },
+      "rdfs:range": {
+        "@id": "rdf:langString"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "fonte dell evidenza"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "evidence source"
+      }
+    },
+    {
+      "@id": "skos:closeMatch",
+      "@type": "owl:AnnotationProperty"
+    },
+    {
+      "@id": "dcterms:references",
+      "@type": "owl:AnnotationProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Links a property to the SKOS ConceptScheme from which its values are drawn. The rdfs:range of these properties is the generic skos:Concept; this annotation states which controlled vocabulary is actually admissible, and drives the cross-links in the generated documentation."
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#narratorType",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:domain": {
+        "@id": "https://w3id.org/chora#FocalizingAgent"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "tipo di narratore"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "narrator type"
+      }
+    },
+    {
+      "@id": "https://w3id.org/chora#Invented",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "owl:differentFrom": {
+        "@id": "https://w3id.org/chora#Transformed"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Inventato"
+      },
+      "skos:definition": "There is no hint at all about the position of the setting, it is located ‘somewhere’, with no real-world counterpart, only existing within the narration. Consequently, it is not possible to assign coordinates",
+      "skos:inScheme": {
+        "@id": "https://w3id.org/chora#RealityStatusScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Invented"
+      },
+      "skos:topConceptOf": {
+        "@id": "https://w3id.org/chora#RealityStatusScheme"
+      }
+    },
+    {
+      "@id": "http://www.wikidata.org/entity/Q3957",
+      "@type": "owl:NamedIndividual"
+    },
+    {
+      "@id": "https://w3id.org/chora#Chapter",
+      "@type": "owl:Class"
+    }
+  ]
+}

@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Narrative Spatial Relations</title>
+<style>
+        #pylode {
+            position: fixed;
+            top: 205px;
+            left: -150px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
+        #pylode #p {
+            color: #329545;
+        }
+        #pylode #y {
+            color: #f9cb33;
+        }
+        #pylode #version {
+            font-size: 1.0em;
+        }
+
+        #profile {
+            font-style: italic;
+            font-size: 1.25em;
+            color: darkred!important;
+        }
+
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
+
+        dl {
+            /*border: 1px solid navy;*/
+            /*padding:5px;*/
+        }
+
+        dt {
+            font-weight: bold;
+            padding: 0;
+        }
+
+        dd {
+            margin-bottom: 10px;
+            padding-top: 7px;
+        }
+
+        ul.pylodelitlist {
+            list-style-type: none;
+            margin-left: -40px;
+        }
+
+        #metadata ul li,
+        #classes ul li {
+            margin-bottom: 10px;
+        }
+
+        #metadata dd p {
+          margin: 0 0 1em 0;
+        }
+
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding:5px;
+            background-color: #F4FFFF;
+        }
+
+        div.hierarchy {
+            margin-bottom: 30px;
+            background-color: #F4FFFF;
+            padding: 10px;
+        }
+
+        ul.hierarchy {=
+            padding: 5px 25px 5px 25px;
+        }
+
+        ul.hierarchy li {
+            margin-top:5px;
+        }
+
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .entity {
+            border: 1px solid navy;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
+
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
+
+        .entity table th {
+            text-align: left;
+        }
+
+        section#overview img {
+            max-width: 1000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #005A9C; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 20px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 {
+            font: italic 100% sans-serif;
+            margin-bottom: 10px;
+        }
+        h6 { font: small-caps 100% sans-serif }
+
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: left;
+        }
+
+        section {
+            max-width: 1500px;
+        }
+
+        .figure {
+            margin-bottom: 20px;
+        }
+
+        :link { color: #00C; background: transparent }
+        :visited { color: #609; background: transparent }
+        a:active { color: #C00; background: transparent }
+
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-con,
+        .sup-col {
+            cursor:help;
+        }
+
+        .sup-c {
+            color:orange;
+        }
+
+        .sup-op {
+            color:navy;
+        }
+
+        .sup-fp {
+            color:lightskyblue;
+        }
+
+        .sup-dp {
+            color:green;
+        }
+
+        .sup-ap {
+            color:darkred;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-con {
+            color:orange;
+        }
+
+        .sup-col {
+            color:darkred;
+        }
+
+        sup {
+            margin-left: -3px;
+        }
+        code {
+            font-size: large;
+            color: darkred;
+        }
+
+        /* less prominent links for properties */
+        .proplink {
+            color: #336;
+            text-decoration: none;
+        }
+
+        #toc {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 2;
+            height: 100%;
+            overflow-y: auto;
+            padding: 10px;
+            border: solid 1px navy;
+            font-size: small;
+            width: 180px;
+        }
+        #toc h3 {
+            margin-top: 5px;
+        }
+
+        #toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        #toc .first > li {
+            margin-top: 5px;
+        }
+
+        #toc .second,
+        #toc .third {
+            padding-left: 10px;
+        }
+
+        #content {
+            width: calc(100% - 150px);
+        }
+
+        .hover_property {
+            cursor: help;
+            text-decoration: none;
+            border-bottom: dashed 1px;
+        }
+
+        .setclass {
+            list-style-type: none;
+        }
+
+        code{
+            word-wrap: break-word;
+          }
+        table {
+            table-layout: fixed;
+            width: 100%;
+        }
+        td {
+            word-wrap: break-word;
+        }
+        #legend table.entity {
+            width: 25%;
+        }
+	</style>
+<link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhklEQVQ4jbWPzStEURjG3yQLirlGKUnKFO45Z+SjmXvnnmthQcpCoVhYmD/AwmJiI3OvZuZc2U3UlKU0/gAslMw9JgvhHxAr2fko7r0jHSsl+TgbTz2Lt5731/MASEiJW9ONml2QyX6rsGalmnT74v8BDf12hxJfpV8d1uwNKUBYszabdFv84L8B9X0rESVmmUup2fme0cVhJWaZHw4NWL1SewEAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ9Hn31OgoATL+CkLDGB5H1OKj4nFd/FBxUXJ0UZNb4edw/6nLyJXaj5FeCVyPLNIVmYK8TG1IwWb16L1gEACAFV90ftoT8bdOX0EeyY99gxBXZMgRz6qGb1KantAACI0UvE6F5XJqEjpsdURouI0Vt5gGOUkUNnPu7ObGIIMfNaGqDmjDRi9FZldF1lRgYzeqUyeoiY4ag5Iy3RgOYRM8+/M2bG8efsO4hGrpmJseyMAAAAAElFTkSuQmCC" rel="icon" sizes="16x16" type="image/png"/>
+<link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC40lEQVRYhe2UT0hUQRzHp6Iss1B3VZKIDbbdfW9mnoi4f3zzjkJQeOgS0SEIb1EWBGGlLLu460zQPQM1unUIIjA6rfpm6ZAhHjoIRVQUFUlEbG+euTsdXG1d3VL3bVD4g+9h+L35fT/8fvN7ADgY9aHY5fpIvK82HO9ysu66wxWOzbkjcekKx0a2ALYA/n2AGi3a6ArFezcidziecQygNhhrcUficjP6PwBqtGijKxy/thnVBePHywYoDsFhl53GV8SEcsTx4usCMLUewTVpc23BNvEzm6Neyf1+KcG2vwqwUjgrOJq2JmHftwmkVBRGTvncFodnbI7vChO/FRznCmHsNM7aHM9Yk7Df5iqsLMw9sMNOK2g+jS4IEz0UJv4iuJZb2RltWnB4UZqH6ioGAgAAGe5vtiZhtzDx7OoRadLmeM7m6IRjhnLMW2Vx1bA5GhAmnhIcz6/xNj4Ujsky8UspwfayjDPjsF2Y6L7N8Vzx/BfP+KPg6LbgSqd8DnfJW2CnbaLhfH5ephpqygJYvQU4Z3P82TLRsDDhUTnmrSq+Y3N0Mg+Xldy/zwEAnLMWZ3pHpNExmfLs/t0dOdVcbT0JeKxUwFP2VljjqiE47Jp53LTXNxhsUZjerTByXWX6VZWRs/4bIQ2ACv+UAomgDzLCISNZxAxZKMhIDjLy1JfsaK+I+eGBUBNk5E2x8RogX/PdcDZUqieWTSh5D6nOVKqfhoycUmlHFFIyu5RXqf7AcQDISCpv/tqbMBqK883RtmpISRoxQyJKPgGn3wNk5NEigDFa6hslqV/Kj+FdBQD0bshIDlKSLlVcoWQo36UhR80BAMB73lulMn0EMpJTqD6qJiOt3mho/8GbkT2BZNgDB/V+RI0fkOrT3kRIVQbaDizJm2hdNbINBxwk5xAj3yEjuV9rZ1iIkgxixkLBA83mz8uCjLwoGwAx0vOnFSy5mtR4VTaAQvVORMnwZgSpzkrV/QmdE2tKe46+MQAAAABJRU5ErkJggg==" rel="icon" sizes="32x32" type="image/png"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<script id="schema.org" type="application/ld+json">
+[
+  {
+    "@id": "https://w3id.org/chora#SpatialRelationTypeScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/dateCreated": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2025-10-01"
+      }
+    ],
+    "https://schema.org/dateModified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2026-08-11"
+      }
+    ],
+    "https://schema.org/license": [
+      {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "https://schema.org/publisher": [
+      {
+        "@id": "https://ror.org/01111rn36"
+      }
+    ]
+  }
+]
+	</script>
+</head>
+<body>
+<div id="content"><div class="ga-injected" style="margin:0 0 1.5em 0;padding:.6em .9em;border-left:3px solid #666;background:#f4f4f4;font-size:.9em;">↑ <a href="gaddatlas_doc.html">GaddAtlas Ontology</a><br/>Other vocabularies: <a href="vocab_placecategory.html">GaddAtlas Place Category Vocabulary</a> · <a href="vocab_narrativerole.html">Narrative Role</a> · <a href="vocab_realitystatus.html">Reality Status</a> · <a href="vocab_spatialdetermination.html">Spatial determination</a></div>
+<div class="section" id="metadata">
+<h1></h1>
+<h2>Metadata</h2>
+<dl>
+<div>
+<dt>
+<strong>IRI</strong>
+</dt>
+<dd>
+<code>https://w3id.org/chora#SpatialRelationTypeScheme</code>
+</dd>
+</div>
+<div>
+<dt>
+<a href="http://purl.org/dc/terms/created">Date Created</a>
+</dt>
+<dd>
+<div>
+<p>2025-10-01</p>
+</div>
+</dd>
+</div>
+<div>
+<dt>
+<a href="http://purl.org/dc/terms/license">License</a>
+</dt>
+<dd>
+<div>
+<p>https://creativecommons.org/licenses/by/4.0/</p>
+</div>
+</dd>
+</div>
+<div>
+<dt>
+<a href="http://purl.org/dc/terms/modified">Date Modified</a>
+</dt>
+<dd>
+<div>
+<p>2026-08-11</p>
+</div>
+</dd>
+</div>
+<div>
+<dt>
+<a href="http://purl.org/dc/terms/publisher">Publisher</a>
+</dt>
+<dd>
+<div>
+<p>https://ror.org/01111rn36</p>
+</div>
+</dd>
+</div>
+<div>
+<dt>
+<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">Type</a>
+</dt>
+<dd>
+<div>
+<p>
+<a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a>
+</p>
+<p>
+<a href="http://www.w3.org/2002/07/owl#NamedIndividual">Named Individual</a>
+</p>
+</div>
+</dd>
+</div>
+<div>
+<dt>
+<a href="http://www.w3.org/2002/07/owl#versionInfo">Version Info</a>
+</dt>
+<dd>
+<div>
+<p>4.1.1</p>
+</div>
+</dd>
+</div>
+<div>
+<dt>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel">Alternative Label</a>
+</dt>
+<dd>
+<div>
+<p>Relazioni Spaziali Narrative</p>
+</div>
+</dd>
+</div>
+<div>
+<dt>
+<a href="http://www.w3.org/2004/02/skos/core#hasTopConcept">Has Top Concept</a>
+</dt>
+<dd>
+<div>
+<p>
+<a href="https://w3id.org/chora#Below">Below</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#Inside">Inside</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#Near">Near</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#Above">Above</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#RelatedTo">Related to</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#Contains">Contains</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#Overlaps">Overlaps</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#AdjacentTo">Adjacent to</a>
+</p>
+</div>
+</dd>
+</div>
+<div>
+<dt>
+<a href="https://schema.org/description">Description</a>
+</dt>
+<dd>
+<div>
+<p>Vocabolario di relazioni spaziali per analisi letteraria, basato su RCC-8 (Randell et al. 1992), GeoSPARQL (W3C/OGC 2012), e narratologia spaziale (Ryan 2001, Herman 2002)</p>
+</div>
+</dd>
+</div>
+<div>
+<dt>
+<a href="https://schema.org/name">Name</a>
+</dt>
+<dd>
+<div>
+<p>Narrative Spatial Relations</p>
+</div>
+</dd>
+</div>
+</dl>
+</div>
+<div id="concept-hierarchy">
+<h2>Concept Hierarchy</h2>
+<div class="hierarchy">
+<ul class="hierarchy">
+<li>
+<a href="#Above">Above</a>
+</li>
+<li>
+<a href="#AdjacentTo">Adjacent to</a>
+</li>
+<li>
+<a href="#Below">Below</a>
+</li>
+<li>
+<a href="#Contains">Contains</a>
+</li>
+<li>
+<a href="#Inside">Inside</a>
+</li>
+<li>
+<a href="#Near">Near</a>
+</li>
+<li>
+<a href="#Overlaps">Overlaps</a>
+</li>
+<li>
+<a href="#RelatedTo">Related to</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="concepts">
+<h2>Concept Definitions</h2>
+<div class="entity">
+<h3 id="ga_Above">Above</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#Above</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>Basato su Verticality in narratologia (Ryan 2001) e preposizioni cognitive (Talmy 2000)</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Sopra</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_AdjacentTo">Adjacent to</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#AdjacentTo</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>Basato su RCC-8 EC (Externally Connected) e GeoSPARQL sfTouches</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Adiacente a</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_Below">Below</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#Below</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>Inverso di Above, basato su Verticality e preposizioni cognitive</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Sotto</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_Contains">Contains</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#Contains</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>Inverso di Inside, basato su GeoSPARQL sfContains</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Contiene</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_Inside">Inside</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#Inside</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>Basato su RCC-8 TPP (Tangential Proper Part) e GeoSPARQL sfWithin</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Dentro</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_Near">Near</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#Near</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>Basato su Distance Relations in narratologia spaziale (Ryan 2001)</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Vicino a</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_Overlaps">Overlaps</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#Overlaps</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>Basato su RCC-8 PO (Partial Overlap) e GeoSPARQL sfOverlaps</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Sovrapposto</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_RelatedTo">Related to</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#RelatedTo</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>Relazione spaziale generica tra A e B, non ulteriormente specificata sul piano topologico.</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>In relazione con</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="namespaces">
+<h2>Namespaces</h2>
+<dl>
+<dt id="dcterms">dcterms</dt>
+<dd>
+<code>http://purl.org/dc/terms/</code>
+</dd>
+<dt id="ga">ga</dt>
+<dd>
+<code>https://w3id.org/chora#</code>
+</dd>
+<dt id="owl">owl</dt>
+<dd>
+<code>http://www.w3.org/2002/07/owl#</code>
+</dd>
+<dt id="rdf">rdf</dt>
+<dd>
+<code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code>
+</dd>
+<dt id="skos">skos</dt>
+<dd>
+<code>http://www.w3.org/2004/02/skos/core#</code>
+</dd>
+</dl>
+</div>
+</div>
+<div id="pylode">
+<p>made by 
+        <a href="https://github.com/rdflib/pyLODE">
+<span id="p">p</span>
+<span id="y">y</span>
+<span>LODE</span>
+</a>
+<a href="https://github.com/rdflib/pyLODE/release/3.5.1" id="version">3.5.1</a>
+<span> with the </span>
+<a href="https://linked.data.gov.au/def/vocpub" id="profile">VocPub</a>
+<span>profile</span>
+</p>
+</div>
+<div id="toc">
+<h3>Table of Contents</h3>
+<ul class="first">
+<li>
+<h4>
+<a href="#metadata">Metadata</a>
+</h4>
+</li>
+<li>
+<h4>
+<a href="#concept-hierarchy">Concepts Hierarchy</a>
+</h4>
+</li>
+<li>
+<h4>
+<a href="#concepts">Concept Definitions</a>
+</h4>
+</li>
+<li>
+<h4>
+<a href="#namespaces">Namespaces</a>
+</h4>
+<ul class="second">
+<li>
+<a href="#dcterms">dcterms</a>
+</li>
+<li>
+<a href="#ga">ga</a>
+</li>
+<li>
+<a href="#owl">owl</a>
+</li>
+<li>
+<a href="#rdf">rdf</a>
+</li>
+<li>
+<a href="#skos">skos</a>
+</li>
+</ul>
+</li>
+<li>
+<h4>
+<a href="#legend">Legend</a>
+</h4>
+<ul class="second"></ul>
+</li>
+</ul>
+</div>
+</body>
+</html>

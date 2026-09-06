@@ -1,0 +1,42 @@
+name: verifica dati
+
+on:
+  push:
+    paths: ['data/**', 'ontology/**', 'tools/**', 'Makefile']
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install rdflib pandas pyyaml openpyxl pyshacl
+
+      # Rigenera l'intera catena dalle sorgenti: fogli + TBox -> TTL ->
+      # geojson + brani. Deve produrre esattamente i file versionati.
+      - name: rigenera i derivati dalle sorgenti
+        run: make rdf geojson passages
+
+      - name: verifica di coerenza fra sorgenti e derivati
+        run: make audit
+
+      - name: validazione SHACL
+        run: make shacl
+
+      - name: competency e integrity query
+        run: make queries
+
+      # atlas.json non e' versionato (D-004): la build lo produce comunque,
+      # quindi va escluso dal confronto o farebbe fallire il diff.
+      - name: i derivati versionati devono coincidere con la build
+        run: |
+          if ! git diff --quiet -- data/dist ontology ':!data/dist/atlas.json'; then
+            echo "I file derivati versionati non coincidono con il risultato della build."
+            echo "Esegui 'make all' in locale e committa il risultato."
+            git diff --stat -- data/dist ontology ':!data/dist/atlas.json'
+            exit 1
+          fi

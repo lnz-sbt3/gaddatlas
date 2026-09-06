@@ -1,0 +1,775 @@
+@prefix chora: <https://w3id.org/chora#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dc:creator a owl:AnnotationProperty .
+
+dc:description a owl:AnnotationProperty .
+
+dc:title a owl:AnnotationProperty .
+
+dcterms:bibliographicCitation a owl:AnnotationProperty .
+
+dcterms:contributor a owl:AnnotationProperty .
+
+dcterms:created a owl:AnnotationProperty .
+
+dcterms:description a owl:AnnotationProperty .
+
+dcterms:license a owl:AnnotationProperty .
+
+dcterms:modified a owl:AnnotationProperty .
+
+dcterms:publisher a owl:AnnotationProperty .
+
+dcterms:references a owl:AnnotationProperty ;
+    rdfs:comment "Links a property to the SKOS ConceptScheme from which its values are drawn. The rdfs:range of these properties is the generic skos:Concept; this annotation states which controlled vocabulary is actually admissible, and drives the cross-links in the generated documentation."@en .
+
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+
+<http://vocab.getty.edu/aat/300000745> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300000810> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300004420> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300005080> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300005200> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300005390> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300005433> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300005678> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300005734> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300005767> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300006165> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300006179> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300006958> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300007166> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300007203> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300007395> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300007501> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300007549> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300007557> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300007588> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300007595> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300007802> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300008187> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300008217> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300008247> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300008375> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300008591> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300008680> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300343473> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300343479> a owl:NamedIndividual .
+
+<http://vocab.getty.edu/aat/300386699> a owl:NamedIndividual .
+
+geo:asGeoJSON a owl:DatatypeProperty ;
+    rdfs:domain geo:Geometry ;
+    rdfs:range rdfs:Literal .
+
+geo:hasGeometry a owl:ObjectProperty ;
+    rdfs:domain chora:GazetteerEntity ;
+    rdfs:range geo:Geometry ;
+    rdfs:subPropertyOf chora:hasSpatialGeometry ;
+    skos:prefLabel "has geometry"@en .
+
+xsd:date a rdfs:Datatype .
+
+<http://www.w3.org/2003/01/geo/wgs84_pos#lat> a owl:DatatypeProperty ;
+    rdfs:domain chora:GazetteerEntity ;
+    rdfs:range xsd:decimal ;
+    skos:altLabel "latitudine"@it ;
+    skos:prefLabel "latitude"@en .
+
+<http://www.w3.org/2003/01/geo/wgs84_pos#long> a owl:DatatypeProperty ;
+    rdfs:domain chora:GazetteerEntity ;
+    rdfs:range xsd:decimal ;
+    skos:altLabel "longitudine"@it ;
+    skos:prefLabel "longitude"@en .
+
+skos:altLabel a owl:AnnotationProperty .
+
+skos:broadMatch a owl:AnnotationProperty .
+
+skos:closeMatch a owl:AnnotationProperty .
+
+skos:definition a owl:AnnotationProperty .
+
+skos:exactMatch a owl:AnnotationProperty .
+
+skos:hasTopConcept a owl:AnnotationProperty .
+
+skos:inScheme a owl:AnnotationProperty .
+
+skos:narrowMatch a owl:AnnotationProperty .
+
+skos:prefLabel a owl:AnnotationProperty .
+
+skos:topConceptOf a owl:AnnotationProperty .
+
+prov:wasAttributedTo a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+<http://www.wikidata.org/entity/Q1076486> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q1134686> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q11707> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q123705> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q144313> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q1497375> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q16917> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q16970> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q174782> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q1778821> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q184410> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q213441> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q2221906> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q22667> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q22687> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q22698> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q23413> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q24354> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q27686> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q2983893> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q3947> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q3950> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q3957> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q39614> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q4022> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q40357> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q44539> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q474> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q483453> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q4989906> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q524334> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q54050> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q55488> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q728937> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q79007> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q82117> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q839954> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q8502> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q861951> a owl:NamedIndividual .
+
+<http://www.wikidata.org/entity/Q93352> a owl:NamedIndividual .
+
+schema:name a owl:AnnotationProperty .
+
+<https://w3id.org/chora> a owl:Ontology ;
+    rdfs:label "CHORA — an Ontology for Narrative Spatiality" ;
+    dc:creator <https://orcid.org/0009-0007-1496-722X> ;
+    dc:description "An ontology for modelling narrative spatiality in modern and contemporary literatures, integrating place references, critical spatial interpretations, and geographic anchoring across a three-tier data model."@en ;
+    dc:title "CHORA — an Ontology for Narrative Spatiality" ;
+    dcterms:bibliographicCitation "[Sabatino, Lorenzo]. (2026). CHORA - an Ontology for Narrative Spatiality. Università di Bologna."@en ;
+    dcterms:contributor [ a prov:Agent ;
+            schema:name "Paola Maria Carmela Italia" ],
+        [ a prov:Agent ;
+            schema:name "Francesca Tomasi" ] ;
+    dcterms:created "2025-10-01"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:modified "2026-08-11"^^xsd:date ;
+    dcterms:publisher <https://ror.org/01111rn36> ;
+    vann:preferredNamespacePrefix "chora" ;
+    vann:preferredNamespaceUri "https://w3id.org/chora#" ;
+    rdfs:comment "CHORA reuses terms from SKOS, PROV-O, GeoSPARQL, and Web Annotation without importing the complete ontologies, to maintain lightweight reasoning and avoid unintended inferences."@en ;
+    rdfs:seeAlso <http://www.w3.org/2004/02/skos/core>,
+        <http://www.w3.org/ns/prov-o>,
+        <https://w3id.org/chora/vocab/placecategory> ;
+    owl:versionIRI <https://w3id.org/chora/1.0.0> ;
+    owl:versionInfo "1.0.0" .
+
+chora:Character a owl:Class ;
+    rdfs:subClassOf chora:FocalizingAgent ;
+    skos:altLabel "Personaggio" ;
+    skos:prefLabel "Character"@en .
+
+chora:Narrator a owl:Class ;
+    rdfs:subClassOf chora:FocalizingAgent ;
+    skos:altLabel "Narratore"@it ;
+    skos:prefLabel "Narrator"@en .
+
+chora:anchorsToEntity a owl:ObjectProperty ;
+    rdfs:domain chora:SpatialInterpretation ;
+    rdfs:range chora:GazetteerEntity ;
+    skos:prefLabel "anchors to entity"@en .
+
+chora:annotationMethod a owl:DatatypeProperty ;
+    rdfs:comment "Records the method or procedure used to create a spatial interpretation."@en ;
+    rdfs:domain chora:SpatialInterpretation ;
+    rdfs:range xsd:string ;
+    skos:altLabel "metodo di annotazione"@it ;
+    skos:prefLabel "annotation method"@en .
+
+chora:appearsInWork a owl:ObjectProperty ;
+    rdfs:label "appears in work"@en ;
+    rdfs:domain chora:PlaceReference ;
+    rdfs:range chora:LiteraryWork ;
+    skos:altLabel "compare nell'opera"@it .
+
+chora:assignsNarrativeRole a owl:ObjectProperty ;
+    dcterms:references chora:NarrativeRoleScheme ;
+    rdfs:comment "Assigns a narrative role to a place reference as part of a critical spatial interpretation."@en ;
+    rdfs:domain chora:SpatialInterpretation ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "assegna ruolo narrativo"@it ;
+    skos:prefLabel "assigns narrative role"@en .
+
+chora:assignsSpatialDetermination a owl:ObjectProperty ;
+    dcterms:references chora:SpatialDeterminationScheme ;
+    rdfs:comment "Assigns a degree of spatial determination (precise, approximate, relative, indeterminate) as part of a critical interpretation."@en ;
+    rdfs:domain chora:SpatialInterpretation ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "assegna determinazione spaziale"@it ;
+    skos:prefLabel "assigns spatial determination"@en .
+
+chora:assignsSpatialRelationType a owl:ObjectProperty ;
+    dcterms:references chora:SpatialRelationTypeScheme ;
+    rdfs:domain chora:SpatialInterpretation ;
+    rdfs:range skos:Concept ;
+    skos:prefLabel "assigns spatial relation type"@en .
+
+chora:chapterNumber a owl:DatatypeProperty ;
+    rdfs:domain chora:Chapter ;
+    rdfs:range xsd:integer ;
+    skos:altLabel "numero capitolo"@it ;
+    skos:prefLabel "chapter number"@en .
+
+chora:characterName a owl:DatatypeProperty ;
+    rdfs:domain chora:FocalizingAgent ;
+    rdfs:range xsd:string ;
+    skos:altLabel "nome personaggio"@it ;
+    skos:prefLabel "character name"@en .
+
+chora:confidence a owl:DatatypeProperty ;
+    rdfs:domain chora:SpatialInterpretation ;
+    rdfs:range xsd:decimal .
+
+chora:criticalNote a owl:DatatypeProperty ;
+    rdfs:comment "Stores an interpretive or editorial note attached to a spatial interpretation."@en ;
+    rdfs:domain chora:SpatialInterpretation ;
+    rdfs:range rdf:langString ;
+    skos:altLabel "nota critica"@it ;
+    skos:prefLabel "critical note"@en .
+
+chora:evidenceSource a owl:DatatypeProperty ;
+    rdfs:comment "Records textual or critical evidence supporting a spatial interpretation."@en ;
+    rdfs:domain chora:SpatialInterpretation ;
+    rdfs:range rdf:langString ;
+    skos:altLabel "fonte dell evidenza"@it ;
+    skos:prefLabel "evidence source"@en .
+
+chora:excerpt a owl:DatatypeProperty ;
+    rdfs:domain chora:PlaceReference ;
+    rdfs:range rdf:langString ;
+    skos:altLabel "estratto"@it ;
+    skos:prefLabel "excerpt"@en .
+
+chora:hasFocalizer a owl:ObjectProperty ;
+    rdfs:comment "Collega una SpatialInterpretation all'agente attraverso cui lo spazio è percepito; la coppia luogo×focalizzatore è l'unità base del dataset."@it ;
+    rdfs:domain chora:SpatialInterpretation ;
+    rdfs:range chora:FocalizingAgent ;
+    skos:altLabel "ha focalizzatore"@it ;
+    skos:prefLabel "has focalizer"@en .
+
+chora:hasFuzzinessLevel a owl:DatatypeProperty ;
+    rdfs:comment "Encodes the degree of spatial determination (i.e., how approximate or blurred the place's location is), as an invariant property of the place itself."@en ;
+    rdfs:domain chora:NarrativePlace ;
+    rdfs:range xsd:decimal ;
+    skos:altLabel "ha livello di sfocatura"@it ;
+    skos:prefLabel "has fuzziness level"@en .
+
+chora:hasGender a owl:DatatypeProperty ;
+    rdfs:domain chora:FocalizingAgent ;
+    rdfs:range xsd:string ;
+    skos:altLabel "ha genere"@it ;
+    skos:prefLabel "has gender"@en .
+
+chora:hasInterpretation a owl:ObjectProperty ;
+    rdfs:domain chora:PlaceReference ;
+    rdfs:range chora:SpatialInterpretation ;
+    owl:inverseOf chora:interpretsReference ;
+    skos:prefLabel "has interpretation"@en .
+
+chora:hasPlaceCategory a owl:ObjectProperty ;
+    dcterms:references chora:PlaceCategoryScheme ;
+    rdfs:comment "Assigns a place category from a controlled vocabulary to any narrative place (discrete or vague)."@en ;
+    rdfs:domain chora:NarrativePlace ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "categoria di luogo"@it ;
+    skos:prefLabel "has place category"@en .
+
+chora:hasRealityStatus a owl:ObjectProperty ;
+    dcterms:references chora:RealityStatusScheme ;
+    rdfs:comment "Assigns the reality–fiction status (imported, transformed, imagined, invented) of a narrative place. This is an invariant property of the place as an authorial transposition of the real world into the text, NOT dependent on focalizer or interpretation."@en ;
+    rdfs:domain chora:NarrativePlace ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "ha stato di realtà"@it ;
+    skos:prefLabel "has reality status"@en .
+
+chora:historicalLocation a owl:DatatypeProperty ;
+    rdfs:comment "Describes the historical location or historical-toponymic context of a gazetteer entity."@en ;
+    rdfs:domain chora:GazetteerEntity ;
+    rdfs:range rdf:langString ;
+    skos:altLabel "localizzazione storica"@it ;
+    skos:prefLabel "historical location"@en .
+
+chora:interpretationType a owl:DatatypeProperty ;
+    rdfs:comment "Classifies the kind of spatial interpretation asserted by the annotation."@en ;
+    rdfs:domain chora:SpatialInterpretation ;
+    rdfs:range xsd:string ;
+    skos:altLabel "tipo di interpretazione"@it ;
+    skos:prefLabel "interpretation type"@en .
+
+chora:isNodeOfRoute a owl:ObjectProperty ;
+    rdfs:comment "Declares that a spatial interpretation is a node (stop) of a narrative route. The node's place is reached via targetsPlace; its position via routeOrder; its focalizer via hasFocalizer. The route of a node and the node share the same focalizer."@en ;
+    rdfs:domain chora:SpatialInterpretation ;
+    rdfs:range chora:NarrativeRoute ;
+    skos:altLabel "è nodo del tragitto"@it ;
+    skos:prefLabel "is node of route"@en .
+
+chora:isPartOf a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:comment "Meronymic relation between narrative places: the subject place is a structural component of the object place (e.g. a staircase of a building). Invariant with respect to focalizer. A place with isPartOf inherits its geographic anchoring from the parent and should NOT carry its own anchorsToEntity."@en ;
+    rdfs:domain chora:NarrativePlace ;
+    rdfs:range chora:NarrativePlace ;
+    skos:altLabel "è parte di"@it ;
+    skos:prefLabel "is part of"@en .
+
+chora:mentionedInChapter a owl:ObjectProperty ;
+    rdfs:domain chora:PlaceReference ;
+    rdfs:range chora:Chapter ;
+    skos:altLabel "è citato nel capitolo"@it ;
+    skos:prefLabel "mentioned in Chapter"@en .
+
+chora:narratorType a owl:DatatypeProperty ;
+    rdfs:domain chora:FocalizingAgent ;
+    rdfs:range xsd:string ;
+    skos:altLabel "tipo di narratore"@it ;
+    skos:prefLabel "narrator type"@en .
+
+chora:pageRange a owl:DatatypeProperty ;
+    rdfs:domain chora:Chapter ;
+    rdfs:range xsd:string ;
+    skos:altLabel "intervallo di pagine"@it ;
+    skos:prefLabel "page range"@en .
+
+chora:partOfWork a owl:ObjectProperty ;
+    rdfs:comment "Relates a chapter to the literary work it belongs to."@en ;
+    rdfs:domain chora:Chapter ;
+    rdfs:range chora:LiteraryWork ;
+    skos:altLabel "fa parte dell'opera"@it ;
+    skos:prefLabel "part of work"@en .
+
+chora:presentLocation a owl:DatatypeProperty ;
+    rdfs:comment "Describes the present-day location or administrative context of a gazetteer entity."@en ;
+    rdfs:domain chora:GazetteerEntity ;
+    rdfs:range rdf:langString ;
+    skos:altLabel "localizzazione attuale"@it ;
+    skos:prefLabel "present location"@en .
+
+chora:routeOrder a owl:DatatypeProperty ;
+    rdfs:comment "Ordinal position (1-based) of a node within its narrative route. Meaningful only together with isNodeOfRoute."@en ;
+    rdfs:domain chora:SpatialInterpretation ;
+    rdfs:range xsd:integer ;
+    skos:prefLabel "route order"@en .
+
+chora:sourceReference a owl:DatatypeProperty ;
+    rdfs:domain chora:PlaceReference ;
+    rdfs:range xsd:string .
+
+chora:targetsPlace a owl:ObjectProperty ;
+    rdfs:comment "Links a spatial interpretation to the diegetic narrative place it activates."@en ;
+    rdfs:domain chora:SpatialInterpretation ;
+    rdfs:range chora:NarrativePlace ;
+    skos:altLabel "ha come target il luogo"@it ;
+    skos:prefLabel "targets place"@en .
+
+chora:targetsRoute a owl:ObjectProperty ;
+    rdfs:comment "Links a spatial interpretation to the narrative route it activates (used for route-level rows, where narrative role is 'route'), as the analogue of targetsPlace for routes."@en ;
+    rdfs:domain chora:SpatialInterpretation ;
+    rdfs:range chora:NarrativeRoute ;
+    skos:altLabel "ha come target il tragitto"@it ;
+    skos:prefLabel "targets route"@en .
+
+prov:Entity a owl:Class ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+<https://ror.org/01111rn36> a owl:NamedIndividual,
+        prov:Agent ;
+    schema:name "Università di Bologna" .
+
+chora:Above a owl:NamedIndividual,
+        skos:Concept ;
+    dcterms:description "A è verticalmente sopra B lungo l'asse gravitazionale."@it ;
+    rdfs:comment "Basato su Verticality in narratologia (Ryan 2001) e preposizioni cognitive (Talmy 2000)"@it ;
+    skos:altLabel "Sopra"@it ;
+    skos:inScheme chora:SpatialRelationTypeScheme ;
+    skos:prefLabel "Above"@en ;
+    skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+chora:AdjacentTo a owl:NamedIndividual,
+        skos:Concept ;
+    dcterms:description "A è adiacente a B, i loro confini si toccano senza sovrapporsi."@it ;
+    rdfs:comment "Basato su RCC-8 EC (Externally Connected) e GeoSPARQL sfTouches" ;
+    skos:altLabel "Adiacente a"@it ;
+    skos:inScheme chora:SpatialRelationTypeScheme ;
+    skos:prefLabel "Adjacent to"@en ;
+    skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+chora:Approximate a owl:NamedIndividual,
+        skos:Concept ;
+    owl:differentFrom chora:Indeterminate,
+        chora:Precise,
+        chora:Relative ;
+    skos:altLabel "Approssimata" ;
+    skos:inScheme chora:SpatialDeterminationScheme ;
+    skos:prefLabel "Approximate"@en ;
+    skos:topConceptOf chora:SpatialDeterminationScheme .
+
+chora:Below a owl:NamedIndividual,
+        skos:Concept ;
+    dcterms:description "A è verticalmente sotto B lungo l'asse gravitazionale. Relazione inversa di Above."@it ;
+    rdfs:comment "Inverso di Above, basato su Verticality e preposizioni cognitive"@it ;
+    skos:altLabel "Sotto"@it ;
+    skos:inScheme chora:SpatialRelationTypeScheme ;
+    skos:prefLabel "Below"@en ;
+    skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+chora:Contains a owl:NamedIndividual,
+        skos:Concept ;
+    dcterms:description "A contiene spazialmente B. Relazione inversa di Inside." ;
+    rdfs:comment "Inverso di Inside, basato su GeoSPARQL sfContains"@it ;
+    skos:altLabel "Contiene"@it ;
+    skos:inScheme chora:SpatialRelationTypeScheme ;
+    skos:prefLabel "Contains"@en ;
+    skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+chora:Imagined a owl:NamedIndividual,
+        skos:Concept ;
+    owl:differentFrom chora:Imported,
+        chora:Invented,
+        chora:Transformed ;
+    skos:altLabel "Immaginato"@it ;
+    skos:definition "An invented setting within familiar geographical reality" ;
+    skos:inScheme chora:RealityStatusScheme ;
+    skos:prefLabel "Imagined"@en ;
+    skos:topConceptOf chora:RealityStatusScheme .
+
+chora:Inside a owl:NamedIndividual,
+        skos:Concept ;
+    dcterms:description "A è contenuto spazialmente in B. Relazione topologica di contenimento."@it ;
+    rdfs:comment "Basato su RCC-8 TPP (Tangential Proper Part) e GeoSPARQL sfWithin"@it ;
+    skos:altLabel "Dentro"@it ;
+    skos:inScheme chora:SpatialRelationTypeScheme ;
+    skos:prefLabel "Inside"@en ;
+    skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+chora:Marker a owl:NamedIndividual,
+        skos:Concept ;
+    owl:differentFrom chora:ProjectedSpace,
+        chora:Setting ;
+    skos:altLabel "Marcatore"@it ;
+    skos:definition "Place only mentioned in passing, without active role in the plot"@en ;
+    skos:inScheme chora:NarrativeRoleScheme ;
+    skos:prefLabel "Marker"@en ;
+    skos:topConceptOf chora:NarrativeRoleScheme .
+
+chora:Near a owl:NamedIndividual,
+        skos:Concept ;
+    dcterms:description "A è in prossimità di B, senza specificare distanza esatta. Relazione qualitativa di vicinanza."@it ;
+    rdfs:comment "Basato su Distance Relations in narratologia spaziale (Ryan 2001)"@it ;
+    skos:altLabel "Vicino a"@it ;
+    skos:inScheme chora:SpatialRelationTypeScheme ;
+    skos:prefLabel "Near"@en ;
+    skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+chora:Overlaps a owl:NamedIndividual,
+        skos:Concept ;
+    dcterms:description "A e B condividono una porzione di spazio senza che l'uno contenga l'altro. Sovrapposizione parziale."@it ;
+    rdfs:comment "Basato su RCC-8 PO (Partial Overlap) e GeoSPARQL sfOverlaps"@it ;
+    skos:altLabel "Sovrapposto"@it ;
+    skos:inScheme chora:SpatialRelationTypeScheme ;
+    skos:prefLabel "Overlaps"@en ;
+    skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+chora:RelatedTo a owl:NamedIndividual,
+        skos:Concept ;
+    dcterms:description "Relazione spaziale generica tra A e B, non ulteriormente specificata sul piano topologico."@it ;
+    skos:altLabel "In relazione con"@it ;
+    skos:inScheme chora:SpatialRelationTypeScheme ;
+    skos:prefLabel "Related to"@en ;
+    skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+chora:Route a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Percorso"@it ;
+    skos:definition "Path along which characters move, connecting multiple settings or projected spaces"@en ;
+    skos:inScheme chora:NarrativeRoleScheme ;
+    skos:prefLabel "Route"@en ;
+    skos:topConceptOf chora:NarrativeRoleScheme .
+
+chora:ZoneOfAction a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Zona dell'Azione"@it ;
+    skos:definition "Several settings or projected spaces logically connected in the narrative by the scholar"@en ;
+    skos:inScheme chora:NarrativeRoleScheme ;
+    skos:prefLabel "Zone of Action"@en ;
+    skos:topConceptOf chora:NarrativeRoleScheme .
+
+chora:hasSpatialGeometry a owl:ObjectProperty ;
+    rdfs:range geo:Geometry ;
+    skos:altLabel "ha geometria spaziale"@it ;
+    skos:prefLabel "has spatial geometry"@en .
+
+chora:interpretsReference a owl:ObjectProperty ;
+    rdfs:comment "Links a spatial interpretation to the specific textual place reference it interprets"@en ;
+    rdfs:domain chora:SpatialInterpretation ;
+    rdfs:range chora:PlaceReference ;
+    skos:altLabel "interpreta il riferimento"@it ;
+    skos:prefLabel "interprets reference"@en .
+
+chora:Imported a owl:NamedIndividual,
+        skos:Concept ;
+    owl:differentFrom chora:Invented,
+        chora:Transformed ;
+    skos:altLabel "Importato"@it ;
+    skos:definition "The setting corresponds with the geographical reality by realistically portraying the surrounding" ;
+    skos:inScheme chora:RealityStatusScheme ;
+    skos:prefLabel "Imported"@en ;
+    skos:topConceptOf chora:RealityStatusScheme .
+
+chora:Indeterminate a owl:NamedIndividual,
+        skos:Concept ;
+    owl:differentFrom chora:Precise,
+        chora:Relative ;
+    skos:altLabel "Indeterminata"@it ;
+    skos:inScheme chora:SpatialDeterminationScheme ;
+    skos:prefLabel "Indeterminate"@en ;
+    skos:topConceptOf chora:SpatialDeterminationScheme .
+
+chora:LiteraryWork a owl:Class .
+
+chora:NarrativeRoute a owl:Class ;
+    rdfs:comment "A route (tragitto): an ordered aggregate of narrative places traversed by a focalizer. Distinct from NarrativePlace — a route is not a place but a second-order sequence of places. Carries its own interpretations (per focalizer) via SpatialInterpretation, and aggregates ordered nodes via isNodeOfRoute / routeOrder."@en ;
+    skos:altLabel "Tragitto"@it ;
+    skos:definition "A second-order spatial entity representing an ordered path connecting multiple narrative places, as perceived by one or more focalizers."@en,
+        "Entità spaziale di secondo livello che rappresenta un percorso ordinato che connette più luoghi narrativi, così come percepito da uno o più focalizzatori."@it ;
+    skos:prefLabel "Narrative Route"@en .
+
+chora:ProjectedSpace a owl:NamedIndividual,
+        skos:Concept ;
+    owl:differentFrom chora:Setting ;
+    skos:altLabel "Spazio di Proiezione"@it ;
+    skos:definition "Characters are not present in this location, but they dream of, remember, or long for it" ;
+    skos:inScheme chora:NarrativeRoleScheme ;
+    skos:prefLabel "Projected Space"@en ;
+    skos:topConceptOf chora:NarrativeRoleScheme .
+
+geo:Geometry a owl:Class ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ;
+    skos:altLabel "Geometria"@it ;
+    skos:definition "A coherent set of direct positions in space"@en ;
+    skos:prefLabel "Geometry"@en .
+
+prov:Agent a owl:Class ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+chora:Invented a owl:NamedIndividual,
+        skos:Concept ;
+    owl:differentFrom chora:Transformed ;
+    skos:altLabel "Inventato"@it ;
+    skos:definition "There is no hint at all about the position of the setting, it is located ‘somewhere’, with no real-world counterpart, only existing within the narration. Consequently, it is not possible to assign coordinates" ;
+    skos:inScheme chora:RealityStatusScheme ;
+    skos:prefLabel "Invented"@en ;
+    skos:topConceptOf chora:RealityStatusScheme .
+
+chora:Precise a owl:NamedIndividual,
+        skos:Concept ;
+    owl:differentFrom chora:Relative ;
+    skos:altLabel "Precisa"@it ;
+    skos:inScheme chora:SpatialDeterminationScheme ;
+    skos:prefLabel "Precise"@en ;
+    skos:topConceptOf chora:SpatialDeterminationScheme .
+
+chora:Setting a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Ambientazione"@it ;
+    skos:definition "Place where the action occurs, with characters physically present"@en ;
+    skos:inScheme chora:NarrativeRoleScheme ;
+    skos:prefLabel "Setting"@en ;
+    skos:topConceptOf chora:NarrativeRoleScheme .
+
+skos:ConceptScheme a owl:Class .
+
+chora:Chapter a owl:Class .
+
+chora:Relative a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Relativa"@it ;
+    skos:inScheme chora:SpatialDeterminationScheme ;
+    skos:prefLabel "Relative"@en ;
+    skos:topConceptOf chora:SpatialDeterminationScheme .
+
+chora:Transformed a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Trasformato"@it ;
+    skos:definition "The setting is transformed, with techniques of remodelling, renaming, relocation or a synthesis of several places" ;
+    skos:inScheme chora:RealityStatusScheme ;
+    skos:prefLabel "Transformed"@en ;
+    skos:topConceptOf chora:RealityStatusScheme .
+
+chora:FocalizingAgent a owl:Class ;
+    rdfs:comment "Entità attraverso cui lo spazio è percepito/descritto"@it ;
+    skos:altLabel "Agente Focalizzatore"@it ;
+    skos:prefLabel "Focalizing Agent"@en .
+
+chora:GazetteerEntity a owl:Class ;
+    rdfs:comment "GazetteerEntity does not belong to the world of the text: it models the external topographic counterpart. The relation to a NarrativePlace is not assumed as identity but as a typed anchoring, asserted by SpatialInterpretation."@en,
+        "GazetteerEntity non appartiene al mondo del testo: modella la controparte topografica esterna. La relazione con NarrativePlace non è assunta come identità, ma come ancoraggio tipizzato, espresso da SpatialInterpretation."@it ;
+    skos:definition "An extra-textual georeferenceable place described as an authority/gazetteer entity, typically endowed with stable geometry (coordinates or GeoJSON) and persistent identifiers; it provides the external topographic referent to which narrative places may be anchored."@en,
+        "Luogo extra-testuale georeferenziabile, descritto come entità di authority/gazetteer e tipicamente dotato di geometria stabile (coordinate o GeoJSON) e identificatori persistenti; costituisce il referente topografico esterno a cui possono essere ancorati i luoghi narrativi."@it .
+
+chora:NarrativePlace a owl:Class ;
+    rdfs:comment "NarrativePlace includes both imported places traceable to real toponyms and invented places that are diegetically localized (e.g., fictional buildings located on a real street). Any topographic correspondence is declared via anchoring to a GazetteerEntity and qualified by status/relations."@en,
+        "NarrativePlace models the spatial unit “in the novel”, distinct from the external topographic referent (GazetteerEntity). The relation between the two planes is expressed through anchoring and typed relations at the level of SpatialInterpretation."@en,
+        "NarrativePlace include sia luoghi importati o riconducibili a toponimi reali, sia luoghi inventati ma diegeticamente localizzati (es. edifici finzionali collocati in una via reale). L’eventuale corrispondenza topografica è dichiarata tramite ancoraggio a GazetteerEntity e qualificata da status/relazioni."@it,
+        "NarrativePlace modella l’unità spaziale “nel romanzo”, distinta dal referente topografico esterno (GazetteerEntity). La relazione fra i due piani è espressa tramite ancoraggi e relazioni tipizzate a livello di SpatialInterpretation."@it ;
+    owl:disjointWith chora:PlaceReference ;
+    skos:definition "A spatial entity belonging to the world of the text: a place constructed and recognizable within the diegesis, independently of any correspondence with an extra-textual georeferenceable place."@en,
+        "Entità spaziale appartenente al mondo del testo: un luogo costruito e riconoscibile nella diegesi, indipendentemente dalla sua eventuale corrispondenza con un luogo extra-testuale georeferenziabile."@it .
+
+chora:PlaceReference a owl:Class ;
+    rdfs:comment "A PlaceReference does not “resolve” a referent nor determine the place type: disambiguation, classification, and any topographic anchoring are asserted at the level of SpatialInterpretation."@en,
+        "PlaceReference non “risolve” il referente né determina il tipo di luogo: la disambiguazione, la classificazione e l’eventuale ancoraggio topografico sono esplicitati a livello di SpatialInterpretation."@it ;
+    skos:definition "A textual occurrence in which the text mentions or evokes a spatial element; it is the basic evidential unit and includes bibliographic and contextual information (e.g., source, page, passage, quotation)."@en,
+        "Occorrenza testuale in cui il testo menziona o richiama un elemento spaziale; costituisce l’unità attestativa di base e include informazioni bibliografiche e contestuali (es. fonte, pagina, segmento, citazione)."@it .
+
+chora:RealityStatusScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Reality Status"@en ;
+    skos:altLabel "Stato di Realtà"@it ;
+    skos:hasTopConcept chora:Imagined,
+        chora:Imported,
+        chora:Invented,
+        chora:Transformed ;
+    skos:prefLabel "Reality Status"@en .
+
+chora:SpatialDeterminationScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Spatial Determination"@en ;
+    skos:altLabel "Caratterizzazione spaziale"@it ;
+    skos:hasTopConcept chora:Approximate,
+        chora:Indeterminate,
+        chora:Precise,
+        chora:Relative ;
+    skos:prefLabel "Spatial determination"@en .
+
+chora:NarrativeRoleScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Narrative Role"@en ;
+    skos:altLabel "Ruolo Narrativo"@it ;
+    skos:hasTopConcept chora:Marker,
+        chora:ProjectedSpace,
+        chora:Route,
+        chora:Setting,
+        chora:ZoneOfAction ;
+    skos:prefLabel "Narrative Role"@en .
+
+chora:SpatialInterpretation a owl:Class ;
+    rdfs:comment "SpatialInterpretation makes the declarative and traceable nature of annotation explicit: multiple interpretations may coexist for the same PlaceReference, with different assumptions and confidence levels; therefore the model privileges “targets/assigns/anchors” properties at this level."@en,
+        "SpatialInterpretation esplicita la natura dichiarativa e tracciabile dell’annotazione: diverse interpretazioni possono coesistere per lo stesso PlaceReference, con diverse assunzioni e livelli di confidenza; per questo il modello privilegia proprietà “targets/assigns/anchors” a questo livello."@it ;
+    rdfs:subClassOf prov:Entity ;
+    skos:definition "An interpretive act that operates on a PlaceReference and asserts (i) the diegetic place it activates (target), (ii) semantic qualifications via controlled vocabularies (e.g., narrative role, reality status, degree of spatial determination, spatial relation type), and (iii) any anchoring to an external topographic referent (gazetteer)."@en,
+        "Atto interpretativo che prende in carico un PlaceReference e asserisce (i) quale luogo diegetico esso attiva (target), (ii) le qualificazioni semantiche tramite vocabolari controllati (es. ruolo narrativo, status di realtà, grado di determinazione spaziale, tipo di relazione spaziale), e (iii) l’eventuale ancoraggio a un referente topografico esterno (gazetteer)."@it .
+
+chora:SpatialRelationTypeScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Narrative Spatial Relations"@en ;
+    dcterms:description "Vocabolario di relazioni spaziali per analisi letteraria, basato su RCC-8 (Randell et al. 1992), GeoSPARQL (W3C/OGC 2012), e narratologia spaziale (Ryan 2001, Herman 2002)"@it ;
+    skos:altLabel "Relazioni Spaziali Narrative"@it ;
+    skos:hasTopConcept chora:Above,
+        chora:AdjacentTo,
+        chora:Below,
+        chora:Contains,
+        chora:Inside,
+        chora:Near,
+        chora:Overlaps,
+        chora:RelatedTo ;
+    skos:prefLabel "Narrative Spatial Relations"@en .
+
+skos:Concept a owl:Class .
+

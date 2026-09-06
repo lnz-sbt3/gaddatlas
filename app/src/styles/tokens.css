@@ -1,0 +1,27 @@
+/* Palette del progetto, estratta da s4Config del notebook.
+   Fonte unica: il canvas legge questi valori via getComputedStyle,
+   cosi' grafico e interfaccia non possono divergere. */
+:root {
+  --bg:            #F1E7D0;  /* BG_COLOR — fondo pergamena */
+  --ink:           #2A1F18;  /* INK_COLOR — inchiostro neutro caldo */
+  --hue-ref:       #9B2335;  /* HUE_RGB — densita' dei referenziali */
+  --hue-fict:      #1F6F6B;  /* FICT_HUE_RGB — densita' dei narrativi */
+  --grid:          #785A46;  /* GRID_COLOR — confine di cella */
+
+  /* Ruoli narrativi: tinta categoriale. Non usarli altrove nell'interfaccia. */
+  --role-setting:         #B32B40;
+  --role-zoneofaction:    #A45228;
+  --role-route:           #7A5E1E;
+  --role-marker:          #74519A;
+  --role-projectedspace:  #1F6F6B;
+  --role-plural:          #666666;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.6 system-ui, sans-serif;
+}
+.boot { padding: 3rem; opacity: .6; }

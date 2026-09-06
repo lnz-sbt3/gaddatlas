@@ -1,0 +1,919 @@
+@prefix ga: <https://w3id.org/chora#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+
+<https://w3id.org/chora/vocab/placecategory> a owl:Ontology ;
+    rdfs:label "GaddAtlas Place Category Vocabulary" ;
+    dc:description "Controlled vocabulary of place types used in GaddAtlas." ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> .
+
+
+### https://w3id.org/chora#PlaceCategoryScheme
+
+ga:PlaceCategoryScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    dcterms:title "GaddAtlas Place Category Vocabulary"@en ;
+    dcterms:description "Controlled vocabulary of place types used to classify narrative places and gazetteer entities in GaddAtlas. Categories emerged inductively from the close reading of Gadda's \"Quer pasticciaccio brutto de via Merulana\" and are aligned, where possible, to Wikidata and the Getty AAT."@en ;
+    dcterms:creator <https://orcid.org/0009-0007-1496-722X> ;
+    dcterms:publisher <https://ror.org/01111rn36> ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:created "2025-10-01"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2026-08-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    owl:versionInfo "4.1.1" ;
+    rdfs:label "Place Category"@en ;
+    skos:altLabel "Categoria di luogo"@it ;
+    skos:hasTopConcept ga:Church,
+        ga:Railway_line,
+        ga:apartment,
+        ga:aqueduct,
+        ga:archaeological_site,
+        ga:bank,
+        ga:basilica,
+        ga:bridge,
+        ga:building,
+        ga:castle,
+        ga:catacombs,
+        ga:cemetery,
+        ga:city,
+        ga:city_gate,
+        ga:coast,
+        ga:courtyard,
+        ga:district,
+        ga:fountain,
+        ga:frazione,
+        ga:gallery,
+        ga:gulf,
+        ga:hill,
+        ga:historical_building,
+        ga:hospice,
+        ga:hospital,
+        ga:hotel,
+        ga:house,
+        ga:locality,
+        ga:monument,
+        ga:mountain,
+        ga:palace,
+        ga:park,
+        ga:police_station,
+        ga:port,
+        ga:prison,
+        ga:railway,
+        ga:region,
+        ga:restaurant,
+        ga:river,
+        ga:shop,
+        ga:small_square,
+        ga:small_town,
+        ga:sports_complex,
+        ga:square,
+        ga:station,
+        ga:street,
+        ga:temple,
+        ga:theater,
+        ga:villa,
+        ga:village,
+        ga:interior,
+        ga:municipality,
+        ga:retail_business,
+        ga:ward,
+        ga:cafe,
+        ga:dwelling,
+        ga:farmhouse,
+        ga:kitchen_garden,
+        ga:level_crossing,
+        ga:railway_gatehouse,
+        ga:road,
+        ga:road_junction,
+        ga:room,
+        ga:shrine ;
+    skos:prefLabel "Place Category"@en .
+
+
+
+###  Place category concepts (64)
+
+
+
+### https://w3id.org/chora#Church
+
+ga:Church a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Chiesa"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q16970> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300007501> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Church"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#Railway_line
+
+ga:Railway_line a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Linea ferroviaria"@it ;
+    skos:closeMatch <http://vocab.getty.edu/aat/300008591>,
+        <http://www.wikidata.org/entity/Q728937> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Railway line"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#apartment
+
+ga:apartment a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Appartamento"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q188507> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Apartment"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#aqueduct
+
+ga:aqueduct a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Acquedotto"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q474> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300006165> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Aqueduct"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#archaeological_site
+
+ga:archaeological_site a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Sito Archeologico"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q839954> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300000810> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Archaeological site"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#bank
+
+ga:bank a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Banca"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q22687> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300005767> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Bank"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#basilica
+
+ga:basilica a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Basilica"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q144313> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300007549> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Basilica"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#bridge
+
+ga:bridge a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Ponte"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q12280> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Bridge"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#building
+
+ga:building a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Edificio"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q41176> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Building"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#castle
+
+ga:castle a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Castello"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q23413> ;
+    skos:definition "A fortified residence or defensive architectural complex, typically associated with medieval or early modern control of territory and often combining military, residential, and symbolic functions."@en,
+        "Residenza fortificata o complesso architettonico difensivo, in genere associato al controllo medievale o moderno del territorio e spesso dotato di funzioni militari, residenziali e simboliche."@it ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300006891> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Castle"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#catacombs
+
+ga:catacombs a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Catacombe"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q184410> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300005678> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Catacombs"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#cemetery
+
+ga:cemetery a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Cimitero"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q39614> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300005390> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Cemetery"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#city
+
+ga:city a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Città"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q515> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "City"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#city_gate
+
+ga:city_gate a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Porta Urbana"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q82117> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300005080> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "City gate"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#coast
+
+ga:coast a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Costa"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q93352> ;
+    skos:definition "A land zone bordering a sea, lake, or other large body of water, understood as the transitional area where terrestrial and aquatic space meet."@en,
+        "Zona di terra che borda un mare, un lago o un altro grande specchio d'acqua, intesa come area di transizione in cui spazio terrestre e spazio acquatico si incontrano."@it ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Coast"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#courtyard
+
+ga:courtyard a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Cortile"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q309250> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Courtyard"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#district
+
+ga:district a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Quartiere"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q123705> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300000745> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "District"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#fountain
+
+ga:fountain a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Fontanella"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q483453> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300006179> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Fountain"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#frazione
+
+ga:frazione a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Frazione"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q1134686> ;
+    skos:definition "A sub-municipal territorial place in the Italian administrative context, usually a settlement, village, or locality forming part of a comune and used to identify places below municipal scale."@en,
+        "Luogo territoriale sub-comunale nel contesto amministrativo italiano, di norma insediamento, villaggio o localita parte di un comune e usato per identificare luoghi a scala inferiore a quella comunale."@it ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Frazione"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#gallery
+
+ga:gallery a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Galleria"@it ;
+    skos:closeMatch <http://vocab.getty.edu/aat/300004420>,
+        <http://www.wikidata.org/entity/Q1778821> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Gallery"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#gulf
+
+ga:gulf a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Golfo"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q1322134> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Gulf"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#hill
+
+ga:hill a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Colle"@it,
+        "Collina"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q54050> ;
+    skos:definition "A natural elevation of the earth's surface, lower or less prominent than a mountain and identifiable as a discrete raised landform in the surrounding terrain."@en,
+        "Rilievo naturale della superficie terrestre, piu basso o meno prominente di una montagna e riconoscibile come forma elevata distinta nel territorio circostante."@it ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300008680> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Hill"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#historical_building
+
+ga:historical_building a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Palazzo storico"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q1497375> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300005734> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Historical building"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#hospice
+
+ga:hospice a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Ospizio"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q524334> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300007395> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Hospice"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#hospital
+
+ga:hospital a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Ospedale"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q16917> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300343473> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Hospital"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#hotel
+
+ga:hotel a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Albergo"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q27686> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300007166> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Hotel"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#house
+
+ga:house a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Casa"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q3947> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300005433> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "House"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#interior
+
+ga:interior a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Interno"@it ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Interior"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#locality
+
+ga:locality a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Località"@it ;
+    skos:closeMatch <http://vocab.getty.edu/aat/300386699>,
+        <http://www.wikidata.org/entity/Q2221906> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Locality"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#monument
+
+ga:monument a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Monumento"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q4989906> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300006958> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Monument"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#mountain
+
+ga:mountain a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Monte"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q8502> ;
+    skos:definition "A prominent natural elevation of the earth's surface, rising above the surrounding terrain and identifiable as a discrete geomorphological feature."@en,
+        "Rilievo naturale prominente della superficie terrestre, elevato rispetto al territorio circostante e riconoscibile come entita geomorfologica distinta."@it ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Mountain"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#municipality
+
+ga:municipality a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Comune"@it ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Municipality"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#palace
+
+ga:palace a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Palazzo"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q16560> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Palace"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#park
+
+ga:park a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Parco"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q22698> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300008187> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Park"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#police_station
+
+ga:police_station a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Questura"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q861951> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300007588> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Police station"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#port
+
+ga:port a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Porto"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q44782> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Port"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#prison
+
+ga:prison a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Carcere"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q40357> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300343479> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Prison"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#railway
+
+ga:railway a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Ferrovia"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q22667> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300008591> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Railway"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#region
+
+ga:region a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Regione"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q82794> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Region"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#restaurant
+
+ga:restaurant a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Ristorante"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q11707> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300007203> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Restaurant"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#retail_business
+
+ga:retail_business a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Esercizio Commerciale"@it ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Retail Business"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#river
+
+ga:river a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Fiume"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q4022> ;
+    skos:definition "A natural flowing watercourse, normally moving through a channel toward another river, a lake, a sea, or another receiving body of water."@en,
+        "Corso d'acqua naturale, normalmente incanalato, che scorre verso un altro fiume, un lago, il mare o un altro corpo idrico ricevente."@it ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300008707> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "River"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#shop
+
+ga:shop a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Negozio"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q213441> ;
+    skos:definition "A commercial premises where goods or services are offered or sold to the public, usually as a discrete retail location within a street, building, or settlement."@en,
+        "Locale commerciale in cui beni o servizi sono offerti o venduti al pubblico, di norma come punto di vendita distinto entro una strada, un edificio o un insediamento."@it ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Shop"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#small_square
+
+ga:small_square a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Piazzetta"@it ;
+    skos:closeMatch <http://vocab.getty.edu/aat/300008247>,
+        <http://www.wikidata.org/entity/Q174782> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Small square"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#small_town
+
+ga:small_town a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Cittadina"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q3957> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300008375> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Small town"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#sports_complex
+
+ga:sports_complex a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Complesso sportivo"@it ;
+    skos:closeMatch <http://vocab.getty.edu/aat/300007557>,
+        <http://www.wikidata.org/entity/Q1076486> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Sports complex"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#square
+
+ga:square a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Piazza"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q174782> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300008247> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Square"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#station
+
+ga:station a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Stazione"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q55488> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300007802> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Station"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#street
+
+ga:street a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Via"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q79007> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300008217> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Street"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#temple
+
+ga:temple a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Tempio"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q44539> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300007595> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Temple"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#theater
+
+ga:theater a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Teatro"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q24354> ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300005200> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Theater"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#villa
+
+ga:villa a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Villa"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q3950> ;
+    skos:definition "A substantial detached house or residential complex, often of architectural or social distinction and commonly associated with gardens, grounds, or outbuildings."@en,
+        "Casa indipendente o complesso residenziale di rilievo, spesso caratterizzato da valore architettonico o sociale e comunemente associato a giardini, pertinenze o edifici accessori."@it ;
+    skos:exactMatch <http://vocab.getty.edu/aat/300005517> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Villa"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#village
+
+ga:village a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Paese"@it ;
+    skos:closeMatch <http://www.wikidata.org/entity/Q532> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Village"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#ward
+
+ga:ward a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Rione"@it ;
+    skos:closeMatch <http://vocab.getty.edu/aat/300000745>,
+        <http://www.wikidata.org/entity/Q2983893> ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Ward"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+###  Concetti aggiunti in v4.1-final (categorie emerse dal close reading)
+###  NOTA: privi di skos:closeMatch / skos:exactMatch. Tutti gli altri 54
+###  concetti hanno almeno un allineamento esterno (Wikidata/Getty AAT):
+###  questi vanno completati a mano prima della pubblicazione.
+
+
+
+### https://w3id.org/chora#cafe
+
+ga:cafe a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Caffè"@it ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Café"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#dwelling
+
+ga:dwelling a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Abitazione"@it ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Dwelling"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#farmhouse
+
+ga:farmhouse a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Casa rurale"@it ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Farmhouse"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#kitchen_garden
+
+ga:kitchen_garden a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Orto"@it ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Kitchen garden"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#level_crossing
+
+ga:level_crossing a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Passaggio a livello"@it ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Level crossing"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#railway_gatehouse
+
+ga:railway_gatehouse a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Casello ferroviario"@it ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Railway gatehouse"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#road
+
+ga:road a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Strada"@it ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Road"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#road_junction
+
+ga:road_junction a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Bivio stradale"@it ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Road junction"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#room
+
+ga:room a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Camera"@it ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Room"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+### https://w3id.org/chora#shrine
+
+ga:shrine a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Edicola"@it ;
+    skos:inScheme ga:PlaceCategoryScheme ;
+    skos:prefLabel "Wayside shrine"@en ;
+    skos:topConceptOf ga:PlaceCategoryScheme .
+
+
+
+###  Agente editore (IRI, non letterale: vedi nota in ontology_v4_1.owl)
+
+<https://ror.org/01111rn36> a <http://www.w3.org/ns/prov#Agent> ;
+    <https://schema.org/name> "Università di Bologna" .

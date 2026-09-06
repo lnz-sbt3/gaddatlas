@@ -1,0 +1,109 @@
+# =============================================================================
+# GaddAtlas v4.1 — Integrity queries
+# Complementari a SHACL: SHACL verifica la forma dei dati, queste verificano
+# invarianti di modello e completezza. Tutte devono restituire ZERO righe,
+# tranne IQ9 che e' informativa.
+# =============================================================================
+
+
+# ==== IQ1 — Interpretazioni senza bersaglio (atteso: 0) ====
+PREFIX ga: <https://w3id.org/chora#>
+SELECT ?interp WHERE {
+  ?interp a ga:SpatialInterpretation .
+  FILTER NOT EXISTS { ?interp ga:targetsPlace ?p }
+  FILTER NOT EXISTS { ?interp ga:targetsRoute ?r }
+}
+
+
+# ==== IQ2 — Interpretazioni con doppio bersaglio (atteso: 0) ====
+PREFIX ga: <https://w3id.org/chora#>
+SELECT ?interp WHERE {
+  ?interp ga:targetsPlace ?p ;
+          ga:targetsRoute ?r .
+}
+
+
+# ==== IQ3 — IRI referenziate ma mai tipizzate (atteso: 0) ====
+# I "nodi fantasma": bersagli di una property che non esistono come entita'.
+# E' il fallimento silenzioso classico di un ETL con ID disallineati.
+PREFIX ga: <https://w3id.org/chora#>
+SELECT DISTINCT ?nodo WHERE {
+  { ?x ga:targetsPlace ?nodo }        UNION
+  { ?x ga:anchorsToEntity ?nodo }     UNION
+  { ?x ga:mentionedInChapter ?nodo }  UNION
+  { ?x ga:hasFocalizer ?nodo }        UNION
+  { ?x ga:targetsRoute ?nodo }        UNION
+  { ?x ga:isPartOf ?nodo }            UNION
+  { ?x ga:appearsInWork ?nodo }
+  FILTER NOT EXISTS { ?nodo a ?t }
+}
+
+
+# ==== IQ4 — RealityStatus multiplo sullo stesso luogo (atteso: 0) ====
+# Invariante empirica del modello: RealityStatus appartiene al luogo, non
+# all'occorrenza.
+PREFIX ga: <https://w3id.org/chora#>
+SELECT ?place (COUNT(?s) AS ?n) WHERE {
+  ?place a ga:NarrativePlace ;
+         ga:hasRealityStatus ?s .
+}
+GROUP BY ?place
+HAVING (COUNT(?s) > 1)
+
+
+# ==== IQ5 — Nodi di percorso senza routeOrder (atteso: 0) ====
+PREFIX ga: <https://w3id.org/chora#>
+SELECT ?interp WHERE {
+  ?interp ga:isNodeOfRoute ?route .
+  FILTER NOT EXISTS { ?interp ga:routeOrder ?o }
+}
+
+
+# ==== IQ6 — PlaceReference senza excerpt o senza opera (atteso: 0) ====
+PREFIX ga: <https://w3id.org/chora#>
+SELECT ?ref WHERE {
+  ?ref a ga:PlaceReference .
+  { FILTER NOT EXISTS { ?ref ga:excerpt ?e } }
+  UNION
+  { FILTER NOT EXISTS { ?ref ga:appearsInWork ?w } }
+}
+
+
+# ==== IQ7 — Tragitti orfani (atteso: 0) ====
+# NarrativeRoute che nessuna interpretazione attiva.
+PREFIX ga: <https://w3id.org/chora#>
+SELECT ?route WHERE {
+  ?route a ga:NarrativeRoute .
+  FILTER NOT EXISTS { ?i ga:targetsRoute ?route }
+}
+
+
+# ==== IQ8 — Entita' di gazetteer senza coordinate (atteso: 0) ====
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+SELECT ?gaz WHERE {
+  ?gaz a ga:GazetteerEntity .
+  FILTER NOT EXISTS { ?gaz geo:lat ?lat }
+}
+
+
+# ==== IQ9 — Luoghi narrativi mai interpretati (INFORMATIVA) ====
+# Non e' un errore: sono luoghi censiti in NarrativePlaces ma che nessuna
+# SpatialInterpretation bersaglia. Vanno letti come residuo di censimento
+# da sanare o da giustificare, non come violazione.
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?place ?toponimo WHERE {
+  ?place a ga:NarrativePlace ;
+         rdfs:label ?toponimo .
+  FILTER NOT EXISTS { ?i ga:targetsPlace ?place }
+}
+ORDER BY ?toponimo
+
+
+# ==== IQ10 — Cicli di meronimia diretti (atteso: 0) ====
+PREFIX ga: <https://w3id.org/chora#>
+SELECT ?a ?b WHERE {
+  ?a ga:isPartOf ?b .
+  ?b ga:isPartOf ?a .
+}

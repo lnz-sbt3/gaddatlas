@@ -1,0 +1,4250 @@
+GazetteerEntity_ID	Toponym	sameAs	Alternative_Toponym	Historical_Location	Present_Location	Latitude	Longitude	Geometry	Authority_Source
+gaz_acqua_pia_antica_marcia	Acqua Pia Antica Marcia		Acquedotto Marciano			41.84673072992396	12.563362579004666	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.563362579004666,
+          41.846730729923955
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_acquedotto_claudio	Acquedotto Claudio					41.85213084027308	12.55520496824135	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.55520496824135,
+          41.85213084027308
+        ]
+      }
+    }
+  ]
+}"	
+gaz_albano_laziale	Albano Laziale					41.72979996535707	12.65920047759274	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.659200477592739,
+          41.72979996535707
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_aliciaro	Aliciaro			Piazza degli Otto Cantoni	Piazza Augusto Imperatore	41.90594993508033	12.477286809814071	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.477286809814073,
+          41.90594993508033
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_aniene	Aniene					41.94603890927569	12.50154664546876	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.501546645468759,
+          41.94603890927569
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_anzio	Anzio					41.44778427232902	12.627465687905143	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.627465687905145,
+          41.44778427232902
+        ]
+      }
+    }
+  ]
+}"	
+gaz_ardea	Ardea					41.66592876861046	12.544506836046144	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.544506836046144,
+          41.66592876861046
+        ]
+      }
+    }
+  ]
+}"	
+gaz_ariccia	Ariccia					41.72150161333168	12.672990584468002	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.672990584468002,
+          41.72150161333168
+
+        ]
+      }
+    }
+  ]
+}"	
+gaz_aventino	Aventino					41.88336622181254	12.477783109311511	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.477783109311511,
+          41.88336622181254
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_banca_commerciale_italiana	Banca Commerciale Italiana		Comit	Palazzo Doria Pamphilj in Via del Plebiscito 112 (fino al 1922)	Via del Corso 226	41.900490491252384	12.48081919655661	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.48081919655661,
+          41.900490491252384
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_banca_ditalia	Banca d’Italia			via Nazionale, 91 (Palazzo Koch)		41.89761872488606	12.488825693999916	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.488825693999917,
+          41.89761872488606
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_banco_di_santo_spirito	Banco di Santo Spirito		Istituto di Credito Fondiario del Banco di Santo Spirito	"Arcispedale di Santo Spirito in Saxia - Palazzo del Banco di Santo Spirito, già ""della Zecca Vecchia"""		41.89984502388519	12.466807906113214	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.466807906113214,
+          41.899845023885185
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_basilica_dei_frari	Basilica di Santa Maria Gloriosa dei Frari					45.43700425060388	12.326607913064835	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.326607913064837,
+          45.43700425060388
+        ]
+      }
+    }
+  ]
+}"	
+gaz_benevento	Benevento					41.13316810450852	14.783846798251036	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          14.783846798251037,
+          41.13316810450852
+        ]
+      }
+    }
+  ]
+}"	
+gaz_biferno	Biferno		Fiume Biferno			41.91879106830195	14.944914321668715	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          14.944914321668717,
+          41.91879106830195
+        ]
+      }
+    }
+  ]
+}"	
+gaz_bologna	Bologna					44.49555555061309	11.344545396805216	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          11.344545396805216,
+          44.49555555061309
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_borgo_pio	Borgo Pio			via Borgo Pio		41.90386486389618	12.460347994271636	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.460347994271636,
+          41.90386486389618
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_borgo_vecchio	Borgo Vecchio			via Borgo Vecchio	via della Conciliazione	41.90228400646402	12.460641676910392	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.460641676910392,
+          41.90228400646402
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_bottaro	Bottaro			passeggiata di Ripetta, 15		41.90898217045761	12.474387506407568	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.474387506407567,
+          41.90898217045761
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_brahmaputra	Brahmaputra		rive der brahmaputra			27.000235829388703	92.38395277199372	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          92.38395277199373,
+          27.000235829388703
+        ]
+      }
+    }
+  ]
+}"	
+gaz_buco_a_santignazio	Buco a Sant'Ignazio			Via di S. Ignazio, 8		41.89789137306835	12.479623019314188	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.479623019314188,
+          41.89789137306835
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_ca_francesi	Ca' Francesi		Casali dei Francesi	colli Albani (Ciampino) / Castelli Romani	Villa dei Valerii	41.786284967839286	12.622449725919433	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.622449725919433,
+          41.786284967839286
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_calabria	Calabria					39.42242825933711	16.29084361444828	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          16.29084361444828,
+          39.42242825933711
+        ]
+      }
+    }
+  ]
+}"	
+gaz_campo_de_fiori	Campo de' Fiori			Campo de' Fiori		41.8957346149517	12.472186692675214	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.472186692675214,
+          41.8957346149517
+        ]
+      }
+    }
+  ]
+}"	
+gaz_campo_marzio	Campo Marzio		Campo di Marte		Rione IV	41.90228013764708	12.477533646244904	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.477533646244904,
+          41.902280137647075
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_campo_verano	Campo Verano		Cimitero Monumentale del Verano		Piazzale del Verano	41.90164314083915	12.52018048622454	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.520180486224541,
+          41.90164314083915
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_campo_morto	Tenuta di Campo Morto				area di Campoverde, Aprilia	41.53884861411952	12.730244894639162	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.730244894639162,
+          41.53884861411952
+        ]
+      }
+    }
+  ]
+}"	
+gaz_campoleone	Campoleone			Aprilia (Roma)		41.64254366282973	12.648273782220512	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.648273782220512,
+          41.64254366282973
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_carsoli	Carsoli					42.14567518996888	13.094053163953856	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          13.107786073838495,
+          42.149747916775205
+        ]
+      }
+    }
+  ]
+}"	
+gaz_casal_bruciato	Casal Bruciato					41.90695676286888	12.550603021665	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.550603021665,
+          41.90695676286888
+        ]
+      }
+    }
+  ]
+}"	
+gaz_castelli_romani	Castelli Romani					41.76583589207368	12.708345346043885	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.708345346043885,
+          41.76583589207368
+        ]
+      }
+    }
+  ]
+}"	
+gaz_castel_di_leva	Castel di Leva					41.7788626363677	12.504796743330868	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.504796743330868,
+          41.7788626363677
+        ]
+      }
+    }
+  ]
+}"	
+gaz_castel_gandolfo	Castel Gandolfo	gaz_castello				41.75005641875434	12.64847290122697	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.64847290122697,
+          41.75005641875434
+
+        ]
+      }
+    }
+  ]
+}"	
+gaz_castel_porziano	Castel Porziano					41.74517216671914	12.400109186081606	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.400109186081606,
+          41.74517216671914
+        ]
+      }
+    }
+  ]
+}"	
+gaz_castel_savello	Castel Savello					41.72761786263662	12.639910072691912	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.639910072691912,
+          41.72761786263662
+
+        ]
+      }
+    }
+  ]
+}"	
+gaz_castello	Castello	gaz_castel_gandolfo				41.75143747946607	12.648544024883735	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.648544024883735,
+          41.75143747946607
+        ]
+      }
+    }
+  ]
+}"	
+gaz_cecchina	Cecchina				Cecchina	41.69302437483999	12.649648693210247	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.649648693210247,
+          41.69302437483999
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_celio	Celio				Rione XIX	41.88727982359032	12.497441089867236	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.497441089867237,
+          41.88727982359032
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_centrale_del_latte	Centrale del Latte		Società Italiana di Alimentazione	via Giolitti		41.8959248058548	12.507267048053844	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.507267048053844,
+          41.8959248058548
+        ]
+      }
+    }
+  ]
+}"	
+gaz_ciampino	Ciampino				Ciampino	41.80425628012242	12.599503897985612	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.599503897985613,
+          41.80425628012242
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_civitavecchia	Civitavecchia					42.09490840988426	11.796544699426349	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          11.796544699426349,
+          42.09490840988426
+        ]
+      }
+    }
+  ]
+}"	
+gaz_collegio_romano	Collegio Romano	gaz_santo_stefano_del_cacco_celio_santo_stefano			via Santo Stefano del Cacco	41.89737347768524	12.47948307900791	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.47948307900791,
+          41.89737347768524
+        ]
+      }
+    }
+  ]
+}"	
+gaz_colli_albani	Colli Albani					41.7320873	12.6960074	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.6960074,
+          41.7320873
+        ]
+      }
+    }
+  ]
+}"	
+gaz_colosseo	Colosseo		Colisèo, Culiseo		Piazza del Colosseo, 1, 00184	41.89035225098585	12.49219290392497	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.49219290392497,
+          41.89035225098585
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_corso_umberto	Corso Umberto			Corso Umberto I	via del Corso	41.90323194218181	12.479507636411158	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.479507636411158,
+          41.90323194218181
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_dazeglio	D'Azeglio				Via Cavour, 18, 00185	41.90013088374668	12.49926878303822	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.49926878303822,
+          41.90013088374668
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_direttissima_roma_napoli	Direttissima Roma-Napoli					41.64771889912876	12.64899568499919	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.64899568499919,
+          41.647718899128755
+        ]
+      }
+    }
+  ]
+}"	
+gaz_divino_amore	Divino Amore					41.777158165633374	12.546337915729302	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.546337915729302,
+          41.777158165633374
+        ]
+      }
+    }
+  ]
+}"	
+gaz_dosso_faiti	Dosso Faiti				Collina nel Carso	45.884990244121546	13.649815236363924	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          13.649815236363924,
+          45.884990244121546
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_due_santi	Due Santi					41.76118209967858	12.616571382457442	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.616571382457442,
+          41.76118209967858
+        ]
+      }
+    }
+  ]
+}"	
+gaz_esquilino	Esquilino				Rione XV	41.893298797354646	12.505248214532829	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.505248214532827,
+          41.893298797354646
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_falcognana	Falcognana					41.76433697008515	12.554930951232286	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.554930951232286,
+          41.76433697008515
+        ]
+      }
+    }
+  ]
+}"	
+gaz_ferrovia_roma_velletri	Ferrovia Roma-Velletri					41.75795460249268	12.601126265148835	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.601126265148837,
+          41.75795460249268
+        ]
+      }
+    }
+  ]
+}"	
+gaz_filettino	Filettino					41.89068987779071	13.324876181760342	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          13.324876181760342,
+          41.89068987779071
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_fiumicino	Fiumicino					41.77328436591152	12.233541086841594	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.233541086841594,
+          41.77328436591152
+        ]
+      }
+    }
+  ]
+}"	
+gaz_fontana_di_papa	Fontana di Papa					41.68436279264858	12.651120729247085	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.651120729247085,
+          41.68436279264858
+        ]
+      }
+    }
+  ]
+}"	
+gaz_fontanella_della_scrofa	Fontanella della Scrofa			via della Scrofa	Via dei Portoghesi, 00186	41.90164982576232	12.474936661874011	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.474936661874011,
+          41.90164982576232
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_fontanella_di_borghese	Fontanella di Borghese				Via del Leoncino &, Via della Fontanella di Borghese, 00186	41.90416313558839	12.478029650740126	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.478029650740126,
+          41.90416313558839
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_foro_italico	Foro Italico		Foro Mussolini		Viale del Foro Italico, 00135	41.93253953174582	12.457198145871402	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.457198145871402,
+          41.93253953174582
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_forte_de_marmi	Forte de' Marmi				Località	43.959501773243005	10.168916830510229	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          10.168916830510227,
+          43.959501773243005
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_frascati	Frascati					41.80868282837834	12.676151782601927	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.676151782601929,
+          41.80868282837834
+
+        ]
+      }
+    }
+  ]
+}"	
+gaz_frattocchie	Frattocchie				Frazione	41.766863233033725	12.616317604540413	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.616317604540413,
+          41.766863233033725
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_galleria_colonna	Galleria Colonna				Via della Pilotta, 17, 00187	41.89761875811568	12.4847453656823	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.484745365682299,
+          41.89761875811568
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_genova	Genova				Città	44.40813562461099	8.93119220339372	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          8.93119220339372,
+          44.40813562461099
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_gianicolo	Gianicolo		Gianicolense		Piazza di Sant'Onofrio, 00165	41.89772036230625	12.461430554962153	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.461430554962151,
+          41.89772036230625
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_golfo_di_napoli	Golfo di Napoli					40.70572169866826	14.148183487524973	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          14.148183487524971,
+          40.70572169866826
+        ]
+      }
+    }
+  ]
+}"	
+gaz_grottaferrata	Grottaferrata					41.79100156171508	12.670419992725682	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.670419992725682,
+          41.79100156171508
+        ]
+      }
+    }
+  ]
+}"	
+gaz_india	India					21.55651170244903	78.74607895173585	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          78.74607895173585,
+          21.55651170244903
+        ]
+      }
+    }
+  ]
+}"	
+gaz_istituto_dellenciclopedia_treccani	Istituto dell'Enciclopedia Treccani		Istituto Giovanni Treccani	Palazzo Mattei, via Michelangelo Caetani (1925-1927), poi Palazzo Mattei, via di Paganica, 3-4	Piazza della Enciclopedia Italiana, 4, 00186	41.89437602767189	12.477499531045336	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.477499531045337,
+          41.89437602767189
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_ladispoli	Ladispoli					41.95028305555387	12.078189603598291	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.078189603598293,
+          41.95028305555387
+        ]
+      }
+    }
+  ]
+}"	
+gaz_largo_brancaccio	Largo Brancaccio				Largo Brancaccio	41.89499585680336	12.49962004376294	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.49962004376294,
+          41.89499585680336
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_lazio	Lazio					42.0974591857028	12.5184126891668	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.5184126891668,
+          42.0974591857028
+        ]
+      }
+    }
+  ]
+}"	
+gaz_lungara	Lungara	gaz_regina_coeli			via della Lungara	41.89549536697815	12.465430919268728	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.465430919268728,
+          41.895495366978146
+        ]
+      }
+    }
+  ]
+}"	
+gaz_lungotevere_prati	Lungotevere Prati		Lungotevere di Prati			41.90488838494765	12.472885100933542	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.472885100933542,
+          41.904888384947654
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_maccheronaro	Maccheronaro				via del Gesù	41.89683405457504	12.478706693556006	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.478706693556006,
+          41.89683405457504
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_marino	Marino					41.77540942594233	12.66366867693179	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.66366867693179,
+          41.77540942594233
+        ]
+      }
+    }
+  ]
+}"	
+gaz_marsica	Marsica					41.9706811718908	13.6367770065667	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          13.6367770065667,
+          41.9706811718908
+        ]
+      }
+    }
+  ]
+}"	
+gaz_milano	Milano				Città	45.46417984291975	9.188743384040578	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          9.188743384040578,
+          45.46417984291975
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_molise	Molise					41.667749	14.573358	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          14.573358,
+          41.667749
+        ]
+      }
+    }
+  ]
+}"	
+gaz_molo_beverello	Molo Beverello				Molo del Porto di Napoli	40.83845747697102	14.25512089831604	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          14.25512089831604,
+          40.83845747697102
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_monte_algido	Monte Algido				Colli Albani	41.75024597370798	12.774504127034607	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.774504127034607,
+          41.75024597370798
+        ]
+      }
+    }
+  ]
+}"	
+gaz_monte_cengio	Monte Cengio				Monte dell'Altipiano Veneto	45.83464690564686	11.395	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          11.395000000000001,
+          45.83464690564686
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_monte_circeo	Monte Circeo					41.25277506832153	13.056903290988464	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          13.056903290988465,
+          41.25277506832153
+        ]
+      }
+    }
+  ]
+}"	
+gaz_monte_manno	Monte Manno					41.70507314535531	12.933066487462336	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.933066487462337,
+          41.70507314535531
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_monte_matese	Monte Matese				Monte del Molise	41.451044369853264	14.366554255055233	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          14.366554255055233,
+          41.451044369853264
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_monte_soratte	Monte Soratte					42.27001081429104	12.490957672092293	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.490957672092291,
+          42.270010814291034
+        ]
+      }
+    }
+  ]
+}"	
+gaz_monte_velino	Monte Velino				Monte tra Lazio e Abruzzo	42.165421795541896	13.388224454942325	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          13.388224454942323,
+          42.165421795541896
+        ]
+      }
+    }
+  ]
+}"	
+gaz_monteleone	Monteleone Sabino					42.232609158947405	12.859136459324375	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.859136459324375,
+          42.232609158947405
+        ]
+      }
+    }
+  ]
+}"	
+gaz_monti	Monti				Quartiere di Roma	41.89481897366331	12.49251620797544	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.49251620797544,
+          41.89481897366331
+        ]
+      }
+    }
+  ]
+}"	
+gaz_monti_carseolani	Monti Carseolani				Catena montuosa tra Lazio e Abruzzo	42.0749429984885	13.032114125147414	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          13.032114125147414,
+          42.0749429984885
+        ]
+      }
+    }
+  ]
+}"	
+gaz_monti_ernici	Monti Ernici				Catena montuosa tra Lazio e Abruzzo	41.81035580365862	13.48593067326618	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          13.48593067326618,
+          41.81035580365862
+        ]
+      }
+    }
+  ]
+}"	
+gaz_monti_simbruini	Monti Simbruini				Catena montuosa tra Lazio e Abruzzo	41.79718465634362	13.644952964344878	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          13.644952964344878,
+          41.797184656343624
+        ]
+      }
+    }
+  ]
+}"	
+gaz_ostia	Ostia				Località	41.73245855250897	12.278829513185713	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.278829513185713,
+          41.73245855250897
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_ovindoli	Ovindoli				Comune	42.13780481791833	13.51516522684632	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          13.51516522684632,
+          42.13780481791833
+
+        ]
+      }
+    }
+  ]
+}"	
+gaz_padova	Padova					45.40750149300311	11.873753041768424	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          11.873753041768424,
+          45.40750149300311
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_palazzo	Palazzo		Palazzo Morgana		00134 Stazione di Pavona-palazzo Morgana	41.71799629809183	12.597231861624314	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.597231861624314,
+          41.71799629809183
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_palazzo_chigi	Palazzo Chigi				P.za Colonna, 391, 00186	41.90123174971493	12.47981741059732	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.479817410597319,
+          41.901231749714924
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_palazzo_della_immacolatella	Palazzo della Immacolatella					40.84161917254697	14.258960456507776	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          14.258960456507777,
+          40.84161917254697
+        ]
+      }
+    }
+  ]
+}"	
+gaz_palazzo_pio	Palazzo Pio				Piazza del Biscione	41.89533742794816	12.473007850337243	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.473007850337245,
+          41.895337427948164
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_palazzo_ruspoli	Palazzo Ruspoli				Via della Fontanella di Borghese, 56, 00186 Roma RM	41.904291483212205	12.47872570766404	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.47872570766404,
+          41.904291483212205
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_palazzo_simonetti	Palazzo Simonetti				Via Vittoria Colonna, 13, 00193	41.90520237070184	12.472392994101876	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.472392994101876,
+          41.905202370701836
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_palazzo_venezia	Palazzo Venezia		Palazzo del Mappamondo		Piazza di Venezia, 3, 00186 Roma RM	41.89608880158758	12.482488256557962	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.482488256557962,
+          41.89608880158758
+        ]
+      }
+    }
+  ]
+}"	
+gaz_palestrina	Palestrina					41.83422291934301	12.888132917750513	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.888132917750513,
+          41.83422291934301
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_pantheon	Pantheon		Terme di Agrippa		Piazza della Rotonda, 00186	41.89867683406545	12.476863407009992	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.476863407009992,
+          41.89867683406545
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_pavona	Pavona				Pavona	41.72553775484286	12.61219280831608	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.612192808316081,
+          41.72553775484286
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_piazza_colonna	Piazza Colonna				Piazza Colonna	41.90088848088894	12.47993539405843	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.47993539405843,
+          41.90088848088894
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_piazza_di_pietra	Piazza di Pietra				Piazza di Pietra	41.89999819105845	12.479385384272035	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.479385384272035,
+          41.899998191058444
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_piazza_di_spagna	Piazza di Spagna				Piazza di Spagna	41.90571279324034	12.482325564335817	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.482325564335815,
+          41.90571279324034
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_piazza_esedra	Piazza Esedra		Piazza della Repubblica		Piazza Esedra	41.902472842408514	12.496321983673056	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.496321983673056,
+          41.902472842408514
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_piazza_garibaldi	Piazza Garibaldi				Piazzale Giuseppe Garibaldi	41.89198953301559	12.460553558380496	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.460553558380496,
+          41.89198953301559
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_piazza_montanara	Piazza Montanara			Piazza Montanara	demolita nel 1934	41.89249955749	12.480250892538322	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.480250892538322,
+          41.89249955749
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_piazza_pollarola	Piazza Pollarola				Piazza Pollarola	41.895990126304326	12.472928812263008	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.472928812263007,
+          41.895990126304326
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_piazza_rusticucci	Piazza Rusticucci			Piazza Rusticucci (demolita nel 1940)	Piazza Pio XII	41.90257061274494	12.45975825285214	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.45975825285214,
+          41.90257061274494
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_piazza_san_giovanni	Piazza San Giovanni				Piazza San Giovanni in Laterano	41.88742084063378	12.506173147859243	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.506173147859243,
+          41.88742084063378
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_piazza_san_lorenzo_in_lucina	Piazza San Lorenzo in Lucina				Piazza San Lorenzo in Lucina	41.90361766730038	12.47842775822113	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.47842775822113,
+          41.90361766730038
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_piazza_san_pietro	Piazza San Pietro				Piazza San Pietro	41.9022608794283	12.457233173334089	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.457233173334089,
+          41.9022608794283
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_piazza_verdi	Piazza Verdi				Piazza Giuseppe Verdi	41.919679006917015	12.495028075136045	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.495028075136045,
+          41.919679006917015
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_piazza_vittorio_emanuele	Piazza Vittorio Emanuele				Piazza Vittorio Emanuele II	41.895124393144	12.5048427733034	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.504842773303400,
+          41.895124393144000
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_piceno	Piceno					42.85363261520004	13.567540016779384	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          13.567540016779384,
+          42.85363261520004
+        ]
+      }
+    }
+  ]
+}"	
+gaz_pincio	Pincio				Colle del Pincio	41.9115148827888	12.479706623913264	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.479706623913263,
+          41.9115148827888
+        ]
+      }
+    }
+  ]
+}"	
+gaz_policlinico	Policlinico		Policlinico Umberto I		Via Giovanni Maria Lancisi, 2, 00161	41.90863414049968	12.50917293969651	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.50917293969651,
+          41.90863414049968
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_ponte_divino_amore	Ponte al Divino Amore					41.76071420037528	12.599632278065911	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.599632278065911,
+          41.760714200375276
+        ]
+      }
+    }
+  ]
+}"	
+gaz_porta_angelica	Porta Angelica			Porta Angelica	demolita nel 1888	41.90616185465161	12.456647366153756	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.456647366153756,
+          41.90616185465161
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_porta_latina	Porta Latina				Mura aureliane, Via di Porta Latina, 14, 00179 Roma RM	41.8782334566828	12.499128817987987	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.499128817987987,
+          41.8782334566828
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_porta_maggiore	Porta Maggiore				Piazza di Porta Maggiore, 00182 Roma RM	41.89143521467929	12.51518714724432	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.515187147244319,
+          41.89143521467929
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_porta_pinciana	Porta Pinciana				Via Vittorio Veneto, 196, 00187	41.90968492139161	12.488262466067692	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.488262466067692,
+          41.90968492139161
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_porta_san_paolo	Porta San Paolo					41.87683414708175	12.481441271164153	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.481441271164153,
+          41.876834147081745
+        ]
+      }
+    }
+  ]
+}"	
+gaz_pozzo_delle_cornacchie	Pozzo delle Cornacchie				via del Pozzo delle Cornacchie	41.900132740766	12.476009448493592	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.476009448493592,
+          41.900132740766004
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_prati	Prati				Rione XXII	41.90875142605531	12.465194747823828	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.465194747823828,
+          41.90875142605531
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_prati_di_castello	Prati di Castello					41.90963380954534	12.4651701137127	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.4651701137127,
+          41.90963380954534
+        ]
+      }
+    }
+  ]
+}"	
+gaz_pratica_di_mare	Pratica di Mare				Pratica di Mare	41.66401971901388	12.479969808767637	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.479969808767635,
+          41.66401971901388
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_predappio	Predappio					44.10833194442195	11.981884102223214	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          11.981884102223214,
+          44.10833194442195
+        ]
+      }
+    }
+  ]
+}"	
+gaz_publicii_clivio_de	Publicii clivio de'		(clivio de')		Clivio dei Publicii	41.88571995557534	12.48263328901126	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.482633289011261,
+          41.88571995557534
+        ]
+      }
+    }
+  ]
+}"	
+gaz_quarto_di_santa_fumia	Quarto di Santa Fumia					41.73247489501876	12.58446168893847	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.58446168893847,
+          41.73247489501876
+        ]
+      }
+    }
+  ]
+}"	
+gaz_quattro_cantoni	Quattro Cantoni				via dei Quattro Cantoni, 00184	41.8964282361213	12.496553006621577	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.496553006621577,
+          41.8964282361213
+        ]
+      }
+    }
+  ]
+}"	
+gaz_reggio_calabria	Reggio Calabria					38.12747821699881	15.652447605612965	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          15.652447605612963,
+          38.12747821699881
+        ]
+      }
+    }
+  ]
+}"	
+gaz_regina_coeli	Regina Coeli	gaz_lungara			Via della Lungara, 29, 00165	41.89541963959722	12.463486619911356	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.463486619911357,
+          41.89541963959722
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_ripetta	Ripetta				Passeggiata di Ripetta	41.90910697941768	12.474356718309616	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.474356718309615,
+          41.90910697941768
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_rocca_di_papa	Rocca di Papa					41.76238950891051	12.706774730883602	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.706774730883602,
+          41.76238950891051
+
+        ]
+      }
+    }
+  ]
+}"	
+gaz_rocca_orsina	Rocca Orsina					41.76991636096222	12.658476221527655	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.658476221527655,
+          41.76991636096222
+
+        ]
+      }
+    }
+  ]
+}"	
+gaz_rocca_savella	Rocca Savella				clivo di Rocca Savella	41.88624438963685	12.48057907706965	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.48057907706965,
+          41.88624438963685
+        ]
+      }
+    }
+  ]
+}"	
+gaz_roma	Roma					41.89712290196547	12.483780073676602	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.483780073676602,
+          41.89712290196547
+        ]
+      }
+    }
+  ]
+}"	
+gaz_sacro_cuore	Sacro Cuore				Via Marsala, 42, 00185	41.90255587411117	12.502382758820149	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.502382758820147,
+          41.90255587411117
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_salsomaggiore	Salsomaggiore					44.81905616432461	9.979392469787877	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          9.979392469787877,
+          44.81905616432461
+        ]
+      }
+    }
+  ]
+}"	
+gaz_san_callisto	San Callisto				Via Appia Antica, 110/126, 00179	41.85910305676804	12.510725763767082	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.510725763767082,
+          41.859103056768035
+        ]
+      }
+    }
+  ]
+}"	
+gaz_san_camillo	San Camillo		Ospedale Vannini dell'Istituto delle figlie di san Camillo		Circonvallazione Gianicolense, 87, 00149	41.86966525125673	12.456303092017317	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.456303092017315,
+          41.86966525125673
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_san_carlo_alle_quattro_fontane	San Carlo alle quattro fontane				Via del Quirinale, 23, 00187	41.901863522116905	12.490746406108268	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.490746406108268,
+          41.901863522116905
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_san_clemente	San Clemente				Piazza di S. Clemente, 00184	41.88952632925135	12.497564978356351	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.497564978356351,
+          41.889526329251346
+        ]
+      }
+    }
+  ]
+}"	
+gaz_san_giovanni	San Giovanni		Commissariato di P.S. San Giovanni		via Casalmonferrato 25 00182, Roma	41.88075040110243	12.51886092484358	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.51886092484358,
+          41.88075040110243
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_san_giovanni_in_laterano	San Giovanni in Laterano		Galilei		P.za. San Giovanni In Laterano, 00184	41.88599013299084	12.50562195401995	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.50562195401995,
+          41.88599013299084
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_san_lorenzo_al_verano	San Lorenzo al verano		San Lorenzo fuori le Mura		Piazzale del Verano, 3, 00185	41.90261005150349	12.520581205893716	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.520581205893716,
+          41.902610051503494
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_san_luigi_de_francesi	San Luigi de' Francesi				Piazza di S. Luigi de' Francesi, 00186	41.899621753079465	12.47471902436365	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.47471902436365,
+          41.899621753079465
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_san_martino_ai_monti	San Martino ai Monti				Vle del Monte Oppio, 28, 00184	41.894677226531456	12.498384893656386	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.498384893656386,
+          41.894677226531456
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_san_silvestro_in_capite	San Silvestro in Capite					41.90289491613001	12.4807727698506	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.480772769850600,
+          41.90289491613001
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_sannio	Sannio					41.260503	14.740775	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          14.740775,
+          41.260503
+        ]
+      }
+    }
+  ]
+}"	
+gaz_santa_chiara	Santa Chiara				P.za di S. Chiara, 14, 00186	41.89767270494693	12.4766157816818	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.4766157816818,
+          41.89767270494693
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_santa_croce_in_gerusalemme	Santa Croce in Gerusalemme				Piazza di S. Croce in Gerusalemme, 10, 00185	41.88898866930153	12.514682435189837	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.514682435189837,
+          41.88898866930153
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_santa_margherita_in_abitacolo	Santa Margherita in Abitacolo		Santa Rita Invitàcolo		Via Montanara, 00186	41.89267907132654	12.480113538487586	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.480113538487586,
+          41.89267907132654
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_santa_maria_della_neve	Santa Maria della Neve		Santa Maria Maggiore		Via del Colosseo, 19, 00184	41.89269599966251	12.490115463118764	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.490115463118764,
+          41.89269599966251
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_santa_maria_in_aquiro	Santa Maria in Aquiro				Piazza Capranica, 00186	41.90014365391151	12.477999492672676	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+           12.477999492672675,
+          41.900143653911506
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_santa_maria_in_domnica	Santa Maria in Dòmnica				Via della Navicella, 10, 00184	41.88479505138305	12.495713660513266	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.495713660513266,
+          41.88479505138305
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_santa_maria_in_porta_paradisi	Santa Maria in Porta Paradisi				Via di Ripetta, 61, 00186	41.90753807576588	12.475955971957005	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.475955971957005,
+          41.90753807576588
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_santa_maria_maggiore	Santa Maria Maggiore		Santa Maria della Neve		P.za di Santa Maria Maggiore, 00100	41.89783811990252	12.498397680304144	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.498397680304144,
+          41.89783811990252
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_santa_maria_novella	Santa Maria Novella					43.77709097635588	11.248280584031749	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          11.248280584031749,
+          43.77709097635588
+        ]
+      }
+    }
+  ]
+}"	
+gaz_santa_maria_sopra_minerva	Santa Maria sopra Minerva					41.89799121298735	12.477810026767758	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.477810026767758,
+          41.89799121298735
+        ]
+      }
+    }
+  ]
+}"	
+gaz_santa_palomba	Santa Palomba				Via della Stazione, 00040	41.70649880109798	12.573826656277753	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.573826656277753,
+          41.70649880109798
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_santa_rita_invitacolo	Santa Rita Invitàcolo		Santa Margherita in Abitacolo		Via Montanara, 00186	41.89267907132654	12.480113538487586	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.480113538487586,
+          41.89267907132654
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_santagnese_in_agone	Sant'Agnese in Agone				Via di Santa Maria dell'Anima, 30/A, 00186	41.89886028109439	12.472549957571031	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.472549957571031,
+          41.898860281094386
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_santagostino	Sant'Agostino				P.za di S. Agostino, 00186	41.9008508106466	12.474278565476274	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.474278565476274,
+          41.900850810646595
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_santandrea_della_valle	Sant'Andrea della Valle				Corso Vittorio Emanuele II, 00186	41.89641220677437	12.474333258746212	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.474333258746213,
+          41.89641220677437
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_santanna	Sant'Anna				Via Sant'Anna, 00120	41.90407297051054	12.457481602903693	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.457481602903693,
+          41.90407297051054
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_santantonio_da_padova	Sant'Antonio da Padova				Via Merulana, 124, 00185	41.88896555883594	12.50405706965514	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.50405706965514,
+          41.88896555883594
+        ]
+      }
+    }
+  ]
+}"	
+gaz_santi_quattro_coronati	Santi Quattro Coronati				Via dei SS. Quattro, 20, 00184	41.88828469760136	12.498505681387911	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.498505681387911,
+          41.888284697601364
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_santo_stefano_del_cacco_celio_santo_stefano	Santo Stefano del Cacco, Celio-Santo Stefano	gaz_collegio_romano			via Santo Stefano del Cacco	41.89737347768524	12.47948307900791	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.47948307900791,
+          41.89737347768524
+        ]
+      }
+    }
+  ]
+}"	
+gaz_santo_stefano_rotondo	Santo Stefano Rotondo				Via Santo Stefano Rotondo, 7, 00184	41.885983052252186	12.499315306942016	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.499315306942016,
+          41.885983052252186
+        ]
+      }
+    }
+  ]
+}"	
+gaz_sardegna	Sardegna					40.23470155220895	9.054925146792344	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          9.054925146792343,
+          40.23470155220895
+        ]
+      }
+    }
+  ]
+}"	
+gaz_sassari	Sassari					40.72924779449954	8.55541661770075	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          8.55541661770075,
+          40.72924779449954
+        ]
+      }
+    }
+  ]
+}"	
+gaz_solforata	Solforata		Solfarata, Solfatara		Solfarata	41.70161467494166	12.538157750574666	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.538157750574666,
+          41.70161467494166
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_soriano_nel_cimino	Soriano nel Cimino					42.43655912777748	12.235774006217756	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.235774006217756,
+          42.43655912777748
+        ]
+      }
+    }
+  ]
+}"	
+gaz_suburra	Suburra				Suburra, Roma	41.89676284011875	12.49666104629743	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.49666104629743,
+          41.89676284011875
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_teatro_jovinelli	Teatro Jovinelli		Ambra Jovinelli		Via Guglielmo Pepe, 45, 00185	41.89552360992579	12.508280896240649	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.508280896240649,
+          41.89552360992579
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_tempio_di_agrippa	Tempio di Agrippa		Pantheon		Piazza della Rotonda, 00186	41.89867683406545	12.476863407009992	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.476863407009992,
+          41.89867683406545
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_terme_di_caracalla	Terme di Caracalla				Viale delle Terme di Caracalla, 00153	41.87937370424267	12.492407213493443	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.492407213493445,
+          41.87937370424267
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_termini	Termini				Via Giovanni Giolitti, 40, 00185	41.90058242591175	12.502530478441573	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.502530478441571,
+          41.90058242591175
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_terracina	Terracina				Comune	41.29047601665066	13.249936342430493	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          13.249936342430493,
+          41.29047601665066
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_tevere	Tevere				Fiume	41.89465722886191	12.467929197570816	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.467929197570816,
+          41.89465722886191
+        ]
+      }
+    }
+  ]
+}"	
+gaz_tivoli	Tivoli					41.95975597738329	12.802413747816448	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.802413747816448,
+          41.95975597738329
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_tor_ser_paolo	Tor Ser Paolo		Torre Messer Paoli	Tor Ser Paolo	Ciampino (Colli Albani)	41.77489532732517	12.626476138456598	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.626476138456598,
+          41.77489532732517
+        ]
+      }
+    }
+  ]
+}"	
+gaz_torraccio	Torraccio				Frazione di Marino	41.760346741901486	12.623648121781372	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.623648121781372,
+          41.760346741901486
+        ]
+      }
+    }
+  ]
+}"	
+gaz_traforo	Traforo		Traforo Umberto I			41.90087528377779	12.48796567063664	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.48796567063664,
+          41.90087528377779
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_trastevere	Trastevere					41.88539020297163	12.47032722280828	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.470327222808281,
+          41.88539020297163
+        ]
+      }
+    }
+  ]
+}"	
+gaz_tranvie_dei_castelli	Tranvie dei Castelli		Tramvie dei Castelli			41.87842995242856	12.518773149025854	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.518773149025854,
+          41.87842995242856
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_vado_ligure	Vado Ligure				Località	44.27104046105365	8.43855565508531	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          8.43855565508531,
+          44.271040461053644
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_valle_fondo	Valle Fondo				Località	41.72754639015884	12.649994748861523	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.649994748861525,
+          41.72754639015884
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_velletri	Velletri				Comune	41.68473269013517	12.777920637406812	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.777920637406813,
+          41.684732690135164
+
+        ]
+      }
+    }
+  ]
+}"	
+gaz_verona	Verona				Città	45.44286986165943	10.998439464162914	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          10.998439464162914,
+          45.44286986165943
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_via_anziate	Via Anziate		Anziatina, Nettunense			41.91177548861766	12.442903033569449	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.442903033569449,
+          41.91177548861766
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_appia	Via Appia					41.85054042792461	12.52314794887518	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.52314794887518,
+          41.850540427924614
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_via_ardeatina	Via Ardeatina					41.748548036845285	12.560749021883575	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.560749021883575,
+          41.748548036845285
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_via_boncompagni	Via Boncompagni					41.908587241676514	12.49349032119079	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.49349032119079,
+          41.908587241676514
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_via_botteghe_oscure	Via Botteghe Oscure		via delle Botteghe Oscure			41.89509493955358	12.478981335522056	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.478981335522057,
+          41.89509493955358
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_campo_marzio	Via Campo Marzio		via di Campo Marzio			41.90233603425503	12.477565835193412	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.477565835193413,
+          41.90233603425503
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_capo_dafrica	Via Capo d'Africa					41.888955504808656	12.495370807914474	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.495370807914474,
+          41.888955504808656
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_carlo_alberto	Via Carlo Alberto					41.89631462157369	12.501608522565736	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.501608522565737,
+          41.89631462157369
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_colonna_vittoria	Via Colonna Vittoria					41.90532009591583	12.472080293657111	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.472080293657111,
+          41.90532009591583
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_dazeglio	Via D'Azeglio					41.9005646386736	12.497986264095715	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.497986264095717,
+          41.9005646386736
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_de_merli	Via de' Merli					41.8919173419505	12.50204620435122	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.50204620435122,
+          41.8919173419505
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_de_querceti	Via de' Querceti					41.88826403566792	12.497769533571477	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.497769533571477,
+          41.888264035667916
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_degli_zingari	Via degli Zingari					41.8953237669349	12.491807177069209	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.491807177069209,
+          41.8953237669349
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_dei_banchi_vecchi	Via dei Banchi Vecchi					41.89855410311026	12.466855862738894	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.466855862738894,
+          41.89855410311026
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_via_dei_capocci	Via dei Capocci					41.89635704216215	12.493746031107008	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.493746031107008,
+          41.89635704216215
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_via_dei_fienili	Via dei Fienili					41.89082656400838	12.48348109299745	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.48348109299745,
+          41.89082656400838
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_via_dei_greci	Via dei Greci					41.907686875920895	12.478760733837431	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.478760733837431,
+          41.907686875920895
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_via_dei_serpenti	Via dei Serpenti					41.89625372175469	12.490298122566564	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.490298122566564,
+          41.89625372175469
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_del_corso	Via del Corso					41.90038661195777	12.480692510904577	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.480692510904577,
+          41.90038661195777
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_via_del_gesu	Via del Gesù					41.8967983204413	12.478768993659564	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.478768993659564,
+          41.8967983204413
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_del_gobbo	Via del Gobbo				Via Aurelio del Gobbo	41.77631176902448	12.67390716539034	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.67390716539034,
+          41.776311769024474
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_del_parlamento	Via del Parlamento					41.90266671761795	12.479531435421766	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.479531435421766,
+          41.90266671761795
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_della_caffarella	Via della Caffarella					41.86491462396609	12.51298416209954	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.51298416209954,
+          41.86491462396609
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_via_della_falcognana	Via della Falcognana					41.75989937203588	12.58052436788742	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.58052436788742,
+          41.759899372035875
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_della_navicella	Via della Navicella					41.883995357992056	12.496271259883107	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.496271259883109,
+          41.883995357992056
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_via_della_palombella	Via della Palombella					41.89835257325988	12.476684905643626	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.476684905643626,
+          41.89835257325988
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_via_della_scrofa	Via della Scrofa					41.89999474967304	12.477970515691876	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.477970515691876,
+          41.89999474967304
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_via_della_vite	Via della Vite					41.90388247365601	12.481236040688875	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.481236040688877,
+          41.90388247365601
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_delle_coppelle	Via delle Coppelle					41.900528326072674	12.475815197103683	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.475815197103685,
+          41.900528326072674
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_via_di_ferro	Via di Ferro				via Capo di Ferro	41.89411186215077	12.47225542803289	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.47225542803289,
+          41.89411186215077
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_di_grotta_pinta	Via di Grotta Pinta					41.895285483518485	12.473999194642012	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.473999194642012,
+          41.895285483518485
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_di_pietra	Via di Pietra					41.90017316845467	12.480302763446346	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.480302763446346,
+          41.90017316845467
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_di_san_paolo_della_croce	Via di San Paolo della Croce					41.88609007715952	12.494225506290569	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.494225506290567,
+          41.886090077159515
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_di_santo_stefano_rotondo	Via di Santo Stefano Rotondo					41.8859031777105	12.49934749037454	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.499347490374541,
+          41.8859031777105
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_frangipane	Via Frangipane					41.89345109820309	12.490184834220564	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.490184834220564,
+          41.893451098203094
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_labbricana	Via Labbricana		via Labicana		via Labicana	41.88997394077698	12.498761606943075	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.498761606943075,
+          41.88997394077698
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_via_lanza	Via Lanza				via Giovanni Lanza	41.8952468123314	12.496558649455126	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.496558649455126,
+          41.8952468123314
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_via_ludovisi	Via Ludovisi					41.907046946215466	12.487880279008024	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.487880279008023,
+          41.907046946215466
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_via_mamiani	Via Mamiani					41.8962647321153	12.505176649501491	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.505176649501493,
+          41.8962647321153
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_via_massimo_dazeglio	Via Massimo d'Azeglio					41.7708010201672	12.656666611845928	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.656666611845928,
+          41.7708010201672
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_merulana	Via Merulana					41.8919173419505	12.50204620435122	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.50204620435122,
+          41.8919173419505
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_milano	Via Milano					41.89826988439785	12.490991532899102	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.490991532899102,
+          41.89826988439785
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_monte_caprino	Via Monte Caprino		via di Monte Caprino			41.8915647770543	12.481163670442754	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.481163670442754,
+          41.8915647770543
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_montebello	Via Montebello					41.90645672391186	12.501167377390898	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.501167377390898,
+          41.90645672391186
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_via_nicotera	Via Nicotera					41.91624918540069	12.468244588924025	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.468244588924023,
+          41.91624918540069
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_via_orazio	Via Orazio					41.9159462938855	12.468458865543028	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.468458865543028,
+          41.9159462938855
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_via_panisperna	Via Panisperna					41.89663706340232	12.491129905973104	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.491129905973104,
+          41.896637063402316
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_popolonia	Via Popolonia		Via populonia			41.8764745142944	12.50579364816932	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.505793648169321,
+          41.876474514294394
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_ricasoli	Via Ricasoli					41.89558786458463	12.50606607937935	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.50606607937935,
+          41.89558786458463
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_valadier	Via Valadier					41.90825496417197	12.469020520920948	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.469020520920948,
+          41.90825496417197
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_veneto	Via Veneto					41.906261368657	12.48958462091846	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.489584620918459,
+          41.906261368657
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_venti_settembre	Via Venti Settembre					41.90577385586054	12.496004176747949	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.496004176747947,
+          41.90577385586054
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_villari	Via Vìllari					41.88999351453406	12.502061807590628	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.502061807590628,
+          41.88999351453406
+        ]
+      }
+    }
+  ]
+}"	
+gaz_via_zanardelli	Via Zanardelli					41.9012714375299	12.472265477389731	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.472265477389731,
+          41.9012714375299
+        ]
+      }
+    }
+  ]
+}"	
+gaz_viale_della_regina	Viale della Regina		vedi anche Viale Regina Margherita		viale Regina Margherita	41.914435250731664	12.505081063122308	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.505081063122308,
+          41.914435250731664
+        ]
+      }
+    }
+  ]
+}"	
+gaz_viale_liegi	Viale Liegi					41.92139386789227	12.495723748817309	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.495723748817309,
+          41.92139386789227
+        ]
+      }
+    }
+  ]
+}"	
+gaz_viale_regina_margherita	Viale Regina Margherita		vedi anche Viale della Regina			41.914435250731664	12.505081063122308	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.505081063122308,
+          41.914435250731664
+        ]
+      }
+    }
+  ]
+}"	
+gaz_vicenza	Vicenza				Città	45.54782811997265	11.54666863709906	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          11.54666863709906,
+          45.54782811997265
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_vicolo_ciancaleoni	Vicolo Ciancaleoni				vicolo de' Ciancaleoni	41.89652544879445	12.49319562190167	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.49319562190167,
+          41.89652544879445
+        ]
+      }
+    }
+  ]
+}"	
+gaz_vicolo_della_bucimazza	Vicolo della Bucimazza				via Bucimazza	41.89085398497711	12.48282256606494	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.48282256606494,
+          41.89085398497711
+        ]
+      }
+    }
+  ]
+}"	
+gaz_vicolo_delle_grotte_del_teatro	Vicolo delle Grotte del Teatro					41.89461101972113	12.47247006996503	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.47247006996503,
+          41.89461101972113
+        ]
+      }
+    }
+  ]
+}"	
+gaz_villa_borghese	Villa Borghese					41.91403582418124	12.485398757632616	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.485398757632616,
+          41.91403582418124
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_villa_celimontana	Villa Celimontana					41.88404468598669	12.495211796641748	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.495211796641748,
+          41.884044685986694
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_villa_deste	Villa d'Este					41.96358343762597	12.795864786733311	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.795864786733313,
+          41.963583437625964
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_villa_gregoriana	Villa Gregoriana					41.96553240632673	12.801778925481416	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.801778925481415,
+          41.96553240632673
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_viminale	Viminale					41.89805973978667	12.494448968864743	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.494448968864745,
+          41.89805973978667
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	
+gaz_vinchiaturo	Vinchiaturo					41.49401046795862	14.587203598469978	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          14.587203598469978,
+          41.49401046795862
+
+        ]
+      }
+    }
+  ]
+}"	
+gaz_vomero	Vomero					40.84468964152708	14.23166148030254	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          14.23166148030254,
+          40.84468964152708
+        ]
+      }
+    }
+  ]
+}"	
+gaz_zagarolo	Zagarolo					41.839732856050645	12.829976839865571	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""coordinates"": [
+          12.829976839865573,
+          41.839732856050645
+        ],
+        ""type"": ""Point""
+      }
+    }
+  ]
+}"	

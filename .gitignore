@@ -1,0 +1,32 @@
+# dipendenze
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+
+# build dell'app
+app/dist/
+.vite/
+
+# log
+logs/
+*.log
+
+# sistema
+.DS_Store
+Thumbs.db
+*.swp
+
+# NOTA: data/dist/ e ontology/ SONO versionati apposta.
+# Sono derivati, ma versionarli garantisce che il sito sia pubblicabile
+# e il dato citabile senza dover eseguire la pipeline.
+
+# ECCEZIONE: atlas.json contiene tutti i 722 estratti gaddiani in un file
+# unico -- l'unico artefatto che permetterebbe di scaricare l'intero corpus
+# in un colpo solo, contro la decisione D-004 e NOTICE-EXCERPTS.md.
+# Resta locale, utile per query e analisi. Si pubblica atlas.slim.json,
+# che ne e' privo.
+data/dist/atlas.json
+
+# NOTA: _archivio/ NON e' ignorato. Il notebook Observable e' il prototipo
+# che la tesi documenta: fa parte del record scientifico e va versionato.

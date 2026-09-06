@@ -1,0 +1,671 @@
+# ============================================================
+# MAPPING YAML v4.1.1 - Gadda Atlas
+# Ontologia: v4.1.1
+# ============================================================
+
+
+namespaces:
+  chora: "https://w3id.org/chora#"
+  id: "https://w3id.org/gaddatlas/id/"
+  rdfs: "http://www.w3.org/2000/01/rdf-schema#"
+  dcterms: "http://purl.org/dc/terms/"
+  geo: "http://www.w3.org/2003/01/geo/wgs84_pos#"
+  geosparql: "http://www.opengis.net/ont/geosparql#"
+  skos: "http://www.w3.org/2004/02/skos/core#"
+  xsd: "http://www.w3.org/2001/XMLSchema#"
+  owl: "http://www.w3.org/2002/07/owl#"
+  prov: "http://www.w3.org/ns/prov#"
+
+# ============================================================
+# COSTANTI GLOBALI
+# ============================================================
+constants:
+  work_uri: "https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi"
+  default_focalizer: "https://w3id.org/gaddatlas/id/focalizer/narrator"
+
+# ============================================================
+# VOCABOLARI CONTROLLATI
+# ============================================================
+vocabularies:
+  # NarrativeRoleScheme
+  narrative_roles:
+    setting: "chora:Setting"
+    marker: "chora:Marker"
+    projectedspace: "chora:ProjectedSpace"
+    route: "chora:Route"
+    zoneofaction: "chora:ZoneOfAction"
+  
+  # RealityStatusScheme
+  reality_statuses:
+    imported: "chora:Imported"
+    imagined: "chora:Imagined"
+    invented: "chora:Invented"
+    transformed: "chora:Transformed"
+  
+  # SpatialDeterminationScheme
+  spatial_determinations:
+    precise: "chora:Precise"
+    approximate: "chora:Approximate"
+    relative: "chora:Relative"
+    indeterminate: "chora:Indeterminate"
+  
+  # PlaceCategoryScheme - VALORI IN ITALIANO
+  place_categories:
+    # aggiunte 2026-09-06: valori presenti nei dati ma non mappati,
+    # che facevano perdere silenziosamente 13 hasPlaceCategory
+    strada: "chora:street"
+    casa rurale: "chora:farmhouse"
+    abitazione: "chora:dwelling"
+    caffè: "chora:cafe"
+    edicola: "chora:shrine"
+    orto: "chora:kitchen_garden"
+    passaggio a livello: "chora:level_crossing"
+    casello ferroviario: "chora:railway_gatehouse"
+    camera: "chora:room"
+    bivio stradale: "chora:road_junction"
+    # Italiano → URI ontologia
+    acquedotto: "chora:aqueduct"
+    banca: "chora:bank"
+    basilica: "chora:basilica"
+    esercizio commerciale: "chora:retail_business"
+    edificio: "chora:building"
+    chiesa: "chora:Church"
+    comune: "chora:municipality"
+    rione: "chora:district"
+    quartiere: "chora:district"
+    castello: "chora:castle"
+    catacombe: "chora:catacombs"
+    colle: "chora:hill"
+    collina: "chora:hill"
+    palazzo storico: "chora:historical_building"
+    porta cittadina: "chora:city_gate"
+    negozio: "chora:shop"
+    ospedale: "chora:hospital"
+    ospizio: "chora:hospice"
+    albergo: "chora:hotel"
+    complesso sportivo: "chora:sports_complex"
+    hotel: "chora:hotel"
+    casa: "chora:house"
+    tempio: "chora:temple"
+    località: "chora:locality"
+    monte: "chora:mountain"
+    monumento: "chora:monument"
+    fontanella: "chora:fountain"
+    fiume: "chora:river"
+    fontana: "chora:fountain"
+    parco: "chora:park"
+    questura: "chora:police_station"
+    commissariato: "chora:police_station"
+    carcere: "chora:prison"
+    cimitero: "chora:cemetery"
+    ferrovia: "chora:railway"
+    interno: "chora:interior"
+    frazione: "chora:frazione"
+    galleria: "chora:gallery"
+    linea ferroviaria: "chora:Railway_line"
+    ristorante: "chora:restaurant"
+    piazzetta: "chora:small_square"
+    piazza: "chora:square"
+    stazione: "chora:station"
+    sito archeologico: "chora:archaeological_site"
+    via: "chora:street"
+    teatro: "chora:theater"
+    palazzo: "chora:palace"
+    città: "chora:city"
+    paese: "chora:village"
+    golfo: "chora:gulf"
+    porto: "chora:port"
+    ponte: "chora:bridge"
+    regione: "chora:region"
+    costa: "chora:coast"
+    cortile: "chora:courtyard"
+    appartamento: "chora:apartment"
+    villa: "chora:villa"
+    # Valori inglesi per retrocompatibilità
+    aqueduct: "chora:aqueduct"
+    bank: "chora:bank"
+    basilica: "chora:basilica"
+    retail business: "chora:retail_business"
+    building: "chora:building"
+    church: "chora:Church"
+    municipality: "chora:municipality"
+    district: "chora:district"
+    hill: "chora:hill"
+    historical_building: "chora:historical_building"
+    hospital: "chora:hospital"
+    hotel: "chora:hotel"
+    hospice: "chora:hospice"
+    sports_complex: "chora:sports_complex"
+    house: "chora:house"
+    city_gate: "chora:city_gate"
+    castle: "chora:castle"
+    catacombs: "chora:catacombs"
+    temple: "chora:temple"
+    locality: "chora:locality"
+    mountain: "chora:mountain"
+    monument: "chora:monument"
+    park: "chora:park"
+    interior: "chora:interior"
+    fountain: "chora:fountain"
+    police_station: "chora:police_station"
+    prison: "chora:prison"
+    cemetery: "chora:cemetery"
+    railway: "chora:railway"
+    railway_line: "chora:Railway_line"
+    river: "chora:river"
+    restaurant: "chora:restaurant"
+    shop: "chora:shop"
+    small_square: "chora:small_square"
+    gallery: "chora:gallery"
+    square: "chora:square"
+    station: "chora:station"
+    street: "chora:street"
+    theater: "chora:theater"
+    archaeological_site: "chora:archaeological_site"
+    ward: "chora:ward"
+    room: "chora:room"
+    toponimo fittizio: "chora:building"  # fallback generico
+    palace: "chora:palace"
+    city: "chora:city"
+    village: "chora:village"
+    gulf: "chora:gulf"
+    port: "chora:port"
+    bridge: "chora:bridge"
+    region: "chora:region"
+    coast: "chora:coast"
+    courtyard: "chora:courtyard"
+    apartment: "chora:apartment"
+
+  # SpatialRelationTypeScheme (RCC-8 based)
+  spatial_relations:
+    contains: "chora:Contains"
+    inside: "chora:Inside"
+    overlaps: "chora:Overlaps"
+    adjacent: "chora:AdjacentTo"
+    adjacentto: "chora:AdjacentTo"  # forma senza spazio usata nei dati puliti
+    near: "chora:Near"
+    above: "chora:Above"
+    below: "chora:Below"
+    relatedto: "chora:RelatedTo" 
+
+# ============================================================
+# FILE: References.tsv (PlaceReferences)
+# ============================================================
+mappings:
+  References:
+    source_file: "References.tsv"
+    
+    # ========================================================
+    # PLACEREFERENCE
+    # ========================================================
+    Reference_ID:
+      as_uri: "https://w3id.org/gaddatlas/id/reference/{value}"
+      rdf_type:
+        - "chora:PlaceReference"
+      
+      # Object properties 
+      link:
+        # Collegamento all'opera letteraria
+        - property: "chora:appearsInWork"
+          column: "LiteraryWork_ID"
+          to: "@LiteraryWork_ID"
+        
+        # Collegamento a Chapter
+        - property: "chora:mentionedInChapter"
+          column: "Chapter_ID"
+          to: "@Chapter_ID"
+          optional: true
+
+      # Datatype properties
+      literal:
+        # Excerpt (citazione testuale)
+        - column: "Excerpt"
+          property: "chora:excerpt"
+          lang: "it"
+          optional: true
+        
+        # Source Reference (pointer testuale)
+        - column: "Source_Reference"
+          property: "chora:sourceReference"
+          datatype: "xsd:string"
+          optional: true
+        
+        # Notes (note editoriali/testuali)
+        - column: "Notes"
+          property: "rdfs:comment"
+          lang: "it"
+          optional: true
+
+# ============================================================
+# FILE: NarrativePlaces.tsv (Luoghi narrativi stabilizzati)
+# ============================================================
+  NarrativePlaces:
+    source_file: "NarrativePlaces.tsv"
+    
+    NarrativePlace_ID:
+      as_uri: "https://w3id.org/gaddatlas/id/narrativeplace/{value}"
+      # v4.1.1: DiscreteNarrativePlace eliminata, unificata in chora:NarrativePlace
+      rdf_type:
+        - "chora:NarrativePlace"
+      
+      # Object properties
+      link:
+        # Place Category (vocabolario controllato)
+        - column: "Place_Category"
+          property: "chora:hasPlaceCategory"
+          vocabulary: "place_categories"
+          optional: true
+
+        # Reality status (v4.1.1: spostato qui da SpatialInterpretations.assignsRealityStatus;
+        # proprietà invariante del luogo, non dipendente da focalizzatore/interpretazione)
+        - column: "Reality_Status"
+          property: "chora:hasRealityStatus"
+          vocabulary: "reality_statuses"
+          optional: true
+
+        # Meronimia tra luoghi narrativi (v4.1.1)
+        - column: "Is_Part_Of"
+          property: "chora:isPartOf"
+          to: "@NarrativePlace_ID"
+          optional: true
+
+      # Datatype properties
+      literal:
+        # Labels
+        - column: "Narrative_Toponym"
+          property: "rdfs:label"
+          lang: "it"
+        
+        - column: "Alternative_Toponym"
+          property: "skos:altLabel"
+          lang: "it"
+          optional: true
+        
+        # Description
+        - column: "Description"
+          property: "dcterms:description"
+          lang: "it"
+          optional: true
+
+        # Notes
+        - column: "Notes"
+          property: "rdfs:comment"
+          lang: "it"
+          optional: true
+
+        - column: "Fuzziness_Level"
+          property: "chora:hasFuzzinessLevel"
+          datatype: "xsd:decimal"
+          optional: true
+
+# ============================================================
+# FILE: GazetteerEntities.tsv (Luoghi topografici esterni)
+# ============================================================
+  GazetteerEntities:
+    source_file: "GazetteerEntities.tsv"
+    
+    GazetteerEntity_ID:
+      as_uri: "https://w3id.org/gaddatlas/id/gazetteer/{value}"
+      rdf_type:
+        - "chora:GazetteerEntity"
+      
+      # Object properties
+      link:
+        # Place Category
+        - column: "Place_Category"
+          property: "chora:hasPlaceCategory"
+          vocabulary: "place_categories"
+          optional: true
+        
+        # sameAs (Wikidata, Geonames, etc.)
+        - column: "sameAs"
+          property: "owl:sameAs"
+          as_uri: true
+          optional: true
+      
+      # Datatype properties
+      literal:
+        # Labels
+        - column: "Toponym"
+          property: "rdfs:label"
+          lang: "it"
+        
+        - column: "Alternative_Toponym"
+          property: "skos:altLabel"
+          lang: "it"
+          optional: true
+        
+        - column: "Historical_Location"
+          property: "chora:historicalLocation"
+          lang: "it"
+          optional: true
+        
+        - column: "Present_Location"
+          property: "chora:presentLocation"
+          lang: "it"
+          optional: true
+        
+        - column: "Authority_Source"
+          property: "dcterms:source"
+          datatype: "xsd:string"
+          optional: true
+        
+        # Coordinate WGS84
+        - column: "Latitude"
+          property: "geo:lat"
+          datatype: "xsd:decimal"
+          optional: true
+        
+        - column: "Longitude"
+          property: "geo:long"
+          datatype: "xsd:decimal"
+          optional: true
+      
+      # Geometry (GeoSPARQL)
+      geometry:
+        - column: "Geometry"
+          property: "geosparql:hasGeometry"
+          geometry_type: "geosparql:Geometry"
+          geojson_property: "geosparql:asGeoJSON"
+          optional: true
+
+# ============================================================
+# FILE: SpatialInterpretations.tsv (Layer critico PROV)
+# ============================================================
+  SpatialInterpretations:
+    source_file: "SpatialInterpretations.tsv"
+    
+    Interpretation_ID:
+      as_uri: "https://w3id.org/gaddatlas/id/interpretation/{value}"
+      rdf_type:
+        - "chora:SpatialInterpretation"
+        - "prov:Entity"
+      
+      # Object properties
+      link:
+        - property: "chora:interpretsReference"
+          column: "Reference_ID"
+          to: "@Reference_ID"
+                
+        - property: "chora:assignsNarrativeRole"
+          column: "Narrative_Role"
+          vocabulary: "narrative_roles"
+          optional: true
+
+        # *** RIMOSSO in v4.1.1: chora:assignsRealityStatus spostata su
+        # NarrativePlaces.chora:hasRealityStatus (proprietà invariante
+        # del luogo, non della interpretazione). ***
+
+        - property: "chora:assignsSpatialDetermination"
+          column: "Spatial_Determination"
+          vocabulary: "spatial_determinations"
+          optional: true
+
+        # *** NUOVO in v4.1.1: hasFocalizer spostato qui da PlaceReference ***
+        # Focalizer_ID risolto in join da References.tsv tramite il
+        # Reference_ID di chora:interpretsReference (la coppia luogo×focalizzatore
+        # è l'unità base del dataset in v4.1.1).
+        - property: "chora:hasFocalizer"
+          column: "Focalizer_ID"
+          to: "@Focalizer_ID"
+          optional: true
+
+        - property: "chora:anchorsToEntity"
+          column: "Anchors_To_Entity_ID"
+          to: "@GazetteerEntity_ID"
+          optional: true
+
+        # *** RIMOSSO in v4.1.1: chora:anchorsToConcept eliminata senza sostituto.
+        # chora:anchorsToEntity resta l'unica property di ancoraggio. ***
+
+        - property: "chora:assignsSpatialRelationType"
+          column: "Spatial_Relation_Type"
+          vocabulary: "spatial_relations"
+          optional: true
+          # I valori "direct"/"null" sono esclusi a monte in fase di pulizia
+          # dati (cella vuota → nessuna tripla, via optional: true). Non
+          # devono comparire nel vocabolario spatial_relations sotto.
+
+        - property: "chora:targetsPlace"
+          column: "NarrativePlace_ID"
+          to: "@NarrativePlace_ID"
+          conditional:
+            when_column: "Narrative_Role"
+            not_equals: "route"
+
+        # *** NUOVO: le righe-tragitto (Narrative_Role == "route")
+        # puntano a un individuo chora:NarrativeRoute invece che a
+        # chora:NarrativePlace, leggendo lo stesso valore di NarrativePlace_ID
+        # usato da targetsPlace (colonna condivisa, discriminata da
+        # Narrative_Role/Targets_Type).
+        # "@NarrativeRoute_ID" non corrisponde a nessuna chiave di blocco
+        # dichiarata in questo yaml (non esiste un foglio NarrativeRoute):
+        # la generazione dell'IRI (convenzione suggerita:
+        # https://w3id.org/gaddatlas/id/route/{value}) e la tripla
+        # rdf:type chora:NarrativeRoute sono responsabilità dell'ETL. ***
+        - property: "chora:targetsRoute"
+          column: "NarrativePlace_ID"
+          to: "@NarrativeRoute_ID"
+          conditional:
+            when_column: "Narrative_Role"
+            equals: "route"
+
+        # *** NUOVO in v4.1.1: i nodi di percorso (righe con
+        # Spatial_Component_Role == "routenode") dichiarano l'appartenenza
+        # al tragitto. ***
+        - property: "chora:isNodeOfRoute"
+          column: "Spatial_Component_Of"
+          to: "@NarrativeRoute_ID"
+          conditional:
+            when_column: "Spatial_Component_Role"
+            equals: "routenode"
+
+      # PROV properties
+      provenance:
+        - column: "Annotator_ID"
+          property: "prov:wasAttributedTo"
+          as_agent: true
+          optional: true
+        
+        - column: "Annotation_Date"
+          property: "prov:generatedAtTime"
+          datatype: "xsd:dateTime"
+          optional: true
+      
+      # Datatype properties
+      literal:
+        - column: "Interpretation_Type"
+          property: "chora:interpretationType"
+          datatype: "xsd:string"
+          optional: true
+        
+        - column: "Confidence"
+          property: "chora:confidence"
+          datatype: "xsd:decimal"
+          optional: true
+        
+        - column: "Annotation_Method"
+          property: "chora:annotationMethod"
+          datatype: "xsd:string"
+          optional: true
+        
+        - column: "Evidence_Source"
+          property: "chora:evidenceSource"
+          lang: "it"
+          optional: true
+        
+        - column: "Critical_Note"
+          property: "chora:criticalNote"
+          lang: "it"
+          optional: true
+
+        # Route order: posizione ordinale del nodo nel tragitto,
+        # significativa solo insieme a isNodeOfRoute.
+        - column: "Spatial_Component_Order"
+          property: "chora:routeOrder"
+          datatype: "xsd:integer"
+          optional: true
+          conditional:
+            when_column: "Spatial_Component_Role"
+            equals: "routenode"
+
+# ============================================================
+# FILE: FocalizingAgents.tsv (Personaggi e narratore)
+# ============================================================
+  FocalizingAgents:
+    source_file: "FocalizingAgents.tsv"
+    
+    Focalizer_ID:
+      as_uri: "https://w3id.org/gaddatlas/id/focalizer/{value}"
+      
+      rdf_type_conditional:
+        column: "Focalizer_Type"
+        mapping:
+          character: "chora:Character"
+          narrator: "chora:Narrator"
+      
+      # Datatype properties
+      literal:
+        - column: "Character_Name"
+          property: "chora:characterName"
+          lang: "it"
+          optional: true
+
+        - column: "Narrator_Type"
+          property: "chora:narratorType"
+          datatype: "xsd:string"
+          conditional:
+            when_column: "Focalizer_Type"
+            equals: "narrator"
+        
+        - column: "Gender"
+          property: "chora:hasGender"
+          datatype: "xsd:string"
+          optional: true
+        
+        - column: "Description"
+          property: "dcterms:description"
+          lang: "it"
+          optional: true
+
+# ============================================================
+# FILE: LiteraryWorks.tsv (Opere letterarie)
+# ============================================================
+  LiteraryWorks:
+    source_file: "LiteraryWorks.tsv"
+    
+    Work_ID:
+      as_uri: "https://w3id.org/gaddatlas/id/work/{value}"
+      rdf_type:
+        - "chora:LiteraryWork"
+      
+      literal:
+        - column: "Full_Title"
+          property: "dcterms:title"
+          lang: "it"
+        
+        - column: "Author"
+          property: "dcterms:creator"
+          lang: "it"
+        
+        - column: "Publication_Year"
+          property: "dcterms:date"
+          datatype: "xsd:gYear"
+          optional: true
+        
+        - column: "Edition_Used"
+          property: "dcterms:bibliographicCitation"
+          lang: "it"
+          optional: true
+        
+        - column: "Notes"
+          property: "rdfs:comment"
+          lang: "it"
+          optional: true
+
+# ============================================================
+# FILE: Chapters.tsv (Capitoli dell'opera)
+# ============================================================
+  Chapters:
+    source_file: "Chapters.tsv"
+    
+    Chapter_ID:
+      as_uri: "https://w3id.org/gaddatlas/id/chapter/{value}"
+      rdf_type:
+        - "chora:Chapter"
+      
+      link:
+        - property: "chora:partOfWork"
+          column: "Work_ID"
+          to: "@Work_ID"
+      
+      literal:
+        - column: "Chapter_Title"
+          property: "dcterms:title"
+          lang: "it"
+        
+        - column: "Chapter_Number"
+          property: "chora:chapterNumber"
+          datatype: "xsd:integer"
+          optional: true
+        
+        - column: "Page_Range"
+          property: "chora:pageRange"
+          datatype: "xsd:string"
+          optional: true
+
+# ============================================================
+# NOTE IMPLEMENTATIVE v4.1.1
+# ============================================================
+#
+# 1. SEPARAZIONE EPISTEMICA:
+#    - PlaceReference: SOLO metadati testuali/bibliografici (appearsInWork,
+#      mentionedInChapter, excerpt, sourceReference). Non risolve alcun
+#      referente né porta più alcun default target.
+#    - SpatialInterpretation: TUTTE le attribuzioni critiche, inclusi
+#      targeting (targetsPlace), focalizzatore (hasFocalizer) e
+#      ancoraggio (anchorsToEntity).
+#    - Property deprecate (hasNarrativeRole, hasSpatialDetermination) su
+#      PlaceReference NON vengono più generate. chora:hasRealityStatus esiste
+#      di nuovo in v4.1.1, ma su NarrativePlace (non su PlaceReference): vedi
+#      punto 3.
+#
+# 2. TARGETING SENZA DEFAULT:
+#    - Il meccanismo di default target su PlaceReference è stato rimosso
+#      integralmente in v4.1.1 (nessun hasDefaultTarget/hasDefaultDiscretePlace/
+#      hasDefaultVagueArea). Ogni targeting è asserito esplicitamente da
+#      SpatialInterpretation.targetsPlace (verso chora:NarrativePlace, da
+#      NarrativePlaces.tsv) o .targetsRoute (verso chora:NarrativeRoute).
+#
+# 3. ASSIGNS vs HAS:
+#    - chora:assignsNarrativeRole (non hasNarrativeRole)
+#    - chora:assignsSpatialDetermination (non hasSpatialDetermination)
+#    - chora:assignsSpatialRelationType (non hasSpatialRelationType, rinominata
+#      in v4.1.1 per uniformità)
+#    - ECCEZIONE v4.1.1: chora:hasRealityStatus (non assignsRealityStatus) vive su
+#      NarrativePlace, non su SpatialInterpretation: è invariante rispetto al
+#      focalizzatore, non una qualificazione critica dell'interpretazione.
+#
+# 4. ANCHOR E RELAZIONI:
+#    - SOLO in SpatialInterpretation
+#    - anchorsToEntity è l'UNICA property di ancoraggio in v4.1.1
+#      (anchorsToConcept eliminata senza sostituto: non si ancora più a
+#      skos:Concept, solo a GazetteerEntity)
+#    - assignsSpatialRelationType
+#
+# 5. PROVENANCE:
+#    - Sempre in SpatialInterpretation
+#    - wasAttributedTo, generatedAtTime, confidence, criticalNote
+#
+# 6. JOIN CROSS-FILE RICHIESTI DAL FUTURO ETL v4.1.1:
+#    - hasFocalizer: da SpatialInterpretations.tsv, valore Focalizer_ID
+#      risolto seguendo interpretsReference fino a References.tsv
+#      (dove la colonna Focalizer_ID viveva fino a v4.0-rc1).
+#    - hasFuzzinessLevel: mapping spostato da SpatialInterpretations.tsv al
+#      blocco NarrativePlaces (il modello VagueArea non esiste più,
+#      Fuzziness_Level vive su NarrativePlaces.tsv). Domain OWL allineato a
+#      NarrativePlace.
+#    - Nessuno script ETL v4.x esiste ancora in questo repository: questi
+#      join vanno implementati da zero, non sono una modifica di uno script
+#      esistente.
+#

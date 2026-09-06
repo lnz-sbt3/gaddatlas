@@ -1,0 +1,965 @@
+Interpretation_ID	Reference_ID	NarrativePlace_ID	Anchors_To_Entity_ID	Associated_Agent_ID	Narrative_Role	Spatial_Determination	Spatial_Relation_Type	Spatial_Component_Role	Spatial_Component_Of	Spatial_Component_Order	Confidence	Annotator_ID	Annotation_Date	Annotation_Method	Critical_Note
+interp_00001	ref_00001	collina_molisana	gaz_molise	ingravallo	projectedspace	indeterminate	inside				1.0	lorenzo_sabatino	2026-01-17	close_reading	La “collina molisana” è impiegata come sineddoche spaziale dell’origine sociale del personaggio; lo spazio non è diegeticamente attivo ma funziona come proiezione identitaria e culturale.
+interp_00002	ref_00002	san_martino_ai_monti	gaz_san_martino_ai_monti	remo_balducci	marker	approximate					1.0	lorenzo_sabatino	2026-01-17	close_reading	
+interp_00003	ref_00003	collegio_romano	gaz_collegio_romano	ingravallo	marker	approximate					1.0	lorenzo_sabatino	2026-01-17	close_reading	
+interp_00004	ref_00004	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	ingravallo	setting	approximate					1.0	lorenzo_sabatino	2026-01-17	close_reading	
+interp_00005	ref_00005	barbiere	gaz_roma	ingravallo	marker	indeterminate	inside				0.5	lorenzo_sabatino	2026-01-17	close_reading	Generico Barbiere
+interp_00006	ref_00006	vicenza	gaz_vicenza	remo_balducci	marker	indeterminate					1.0	lorenzo_sabatino	2026-01-17	close_reading	Luogo generico
+interp_00007	ref_00007	palazzo_219	gaz_via_merulana	narrator	setting	approximate	inside				1.0	lorenzo_sabatino	2026-01-17	close_reading	"Palazzo del ""fattaccio"", in cui prende luogo l'evento principale del romanzo"
+interp_00008	ref_00008	palazzo_219	gaz_via_merulana	narrator	setting	approximate	inside				1.0	lorenzo_sabatino	2026-01-17	close_reading	"Palazzo del ""fattaccio"", in cui prende luogo l'evento principale del romanzo"
+interp_00009	ref_00009	scale		narrator	setting	precise	inside				1.0	lorenzo_sabatino	2026-01-17	close_reading	Scala A e Scala B del palazzo, a riflettere la simmetria imperfetta che alligna nel Palazzo
+interp_00010	ref_00010	scala_a		narrator	setting	precise	inside				1.0	lorenzo_sabatino	2026-01-17	close_reading	Scala A del palazzo, in cui si realizzeranno i due crimini centrali del romanzo
+interp_00011	ref_00011	frascati	gaz_frascati	assunta	marker	indeterminate					1.0	lorenzo_sabatino	2026-01-17	close_reading	Aggettivo che evoca lo spazio dei Colli Albani/Castelli Romani
+interp_00012	ref_00012	tiburtino	gaz_tivoli	assunta	marker	indeterminate					1.0	lorenzo_sabatino	2026-01-17	close_reading	Aggettivo che evoca lo spazio di Tivoli
+interp_00013	ref_00013	lazio	gaz_lazio	ingravallo	projectedspace	indeterminate					1.0	lorenzo_sabatino	2026-01-17	close_reading	
+interp_00014	ref_00014	marsica	gaz_marsica	ingravallo	projectedspace	indeterminate					1.0	lorenzo_sabatino	2026-01-17	close_reading	
+interp_00015	ref_00015	piceno	gaz_piceno	ingravallo	projectedspace	indeterminate					1.0	lorenzo_sabatino	2026-01-17	close_reading	
+interp_00016	ref_00016	sannio	gaz_sannio	ingravallo	projectedspace	indeterminate					1.0	lorenzo_sabatino	2026-01-17	close_reading	
+interp_00017	ref_00017	collina_molisana	gaz_molise	ingravallo	projectedspace	indeterminate	inside				1.0	lorenzo_sabatino	2026-01-17	close_reading	
+interp_00018	ref_00018	santagnese_in_agone	gaz_santagnese_in_agone	narrator	marker	approximate					1.0	lorenzo_sabatino	2026-01-17	close_reading	
+interp_00019	ref_00019	santa_maria_in_porta_paradisi	gaz_santa_maria_in_porta_paradisi	narrator	marker	approximate					1.0	lorenzo_sabatino	2026-01-17	close_reading	
+interp_00020	ref_00020	santi_quattro_coronati	gaz_santi_quattro_coronati	don_lorenzo_corpi	marker	approximate					1.0	lorenzo_sabatino	2026-01-17	close_reading	
+interp_00021	ref_00021	santa_maria_in_porta_paradisi	gaz_santa_maria_in_porta_paradisi	ingravallo	marker	approximate					1.0	lorenzo_sabatino	2026-02-01 00:00:00	close_reading	
+interp_00022	ref_00022	salsomaggiore	gaz_salsomaggiore	narrator	marker	indeterminate					1.0	lorenzo_sabatino	2026-02-01 00:00:00	close_reading	
+interp_00023	ref_00023	monteleone	gaz_monteleone	nipote_un1	marker	indeterminate					0.8	lorenzo_sabatino	2026-02-01 00:00:00	close_reading	"Monteleone, probabilmente Monteleone sabino, indicato come luogo d'origine d'una delle ""nipotine"" al servizio dei Balducci"
+interp_00024	ref_00024	anzio	gaz_anzio	ingravallo	marker	indeterminate					0.8	lorenzo_sabatino	2026-02-01 00:00:00	close_reading	Anzio si collona nel territorio costiero del Castelli Romani
+interp_00025	ref_00025	area_oltre_tevere	gaz_colli_albani	liliana	projectedspace	relative	overlaps				0.5	lorenzo_sabatino	2026-02-01 00:00:00	close_reading	Area paesaggistica vaga e analogica, delimitata dal Tevere e costruita per accumulo descrittivo (castelli, vigne, colli, monti, piane), contrapposta alla città di Roma; spazio percepito e mitizzato da Liliana Balducci. Il Tevere funziona come barriera idrografica e simbolica di separazione tra spazio urbano e spazio campestre, più che come luogo in sé.
+interp_00026	ref_00026	via_merulana	gaz_via_merulana	narrator	setting	precise					1.0	lorenzo_sabatino	2026-02-01 00:00:00	close_reading	
+interp_00027	ref_00027	palazzo_219	gaz_via_merulana	narrator	setting	precise	inside				1.0	lorenzo_sabatino	2026-02-01 00:00:00	close_reading	"Palazzo del ""fattaccio"", in cui prende luogo l'evento principale del romanzo"
+interp_00028	ref_00028	via_delle_oche	gaz_milano	ingravallo	projectedspace	relative	inside				0.5	lorenzo_sabatino	2026-02-01 00:00:00	close_reading	"L’espressione «via delle Oche», riferita a Milano, non risulta attestata nella toponomastica urbana storica. Il toponimo può essere interpretato come una trasposizione simbolica e ironica della via delle Oche bolognese, luogo storicamente associato alla prostituzione e alla cultura popolare femminile. Il contesto discorsivo (la figura della «ragazza» e il riferimento al «dispensario celtico» come ""luogo di marginalità femminile travestito da antropologia nordica"") suggerisce un uso allusivo e deformante dello spazio urbano, coerente con la pratica gaddiana di sovrapposizione e travestimento topografico. Il riferimento non va quindi inteso in senso referenziale, ma come costruzione narrativa a forte densità simbolica (prostituzione, oralità popolare, corpo femminile)."
+interp_00029	ref_00028	via_delle_oche	gaz_bologna	ingravallo	projectedspace	relative	inside				0.5	lorenzo_sabatino	2026-02-01 00:00:00	close_reading	"L’espressione «via delle Oche», riferita a Milano, non risulta attestata nella toponomastica urbana storica. Il toponimo può essere interpretato come una trasposizione simbolica e ironica della via delle Oche bolognese, luogo storicamente associato alla prostituzione e alla cultura popolare femminile. Il contesto discorsivo (la figura della «ragazza» e il riferimento al «dispensario celtico» come ""luogo di marginalità femminile travestito da antropologia nordica"") suggerisce un uso allusivo e deformante dello spazio urbano, coerente con la pratica gaddiana di sovrapposizione e travestimento topografico. Il riferimento non va quindi inteso in senso referenziale, ma come costruzione narrativa a forte densità simbolica (prostituzione, oralità popolare, corpo femminile)."
+interp_00030	ref_00029	via_merulana	gaz_via_merulana	ingravallo	setting	approximate					1.0	lorenzo_sabatino	2026-02-01 00:00:00	close_reading	
+interp_00031	ref_00030	palazzo_219	gaz_via_merulana	ingravallo	setting	approximate	inside				1.0	lorenzo_sabatino	2026-02-01 00:00:00	close_reading	"Palazzo del ""fattaccio"", in cui prende luogo l'evento principale del romanzo"
+interp_00032	ref_00031	via_merulana	gaz_via_merulana	ingravallo	setting	approximate					1.0	lorenzo_sabatino	2026-02-01 00:00:00	close_reading	
+interp_00033	ref_00032	via_botteghe_oscure	gaz_via_botteghe_oscure	dottor_fumi	projectedspace	approximate					1.0	lorenzo_sabatino	2026-02-01 00:00:00	close_reading	
+interp_00034	ref_00033	viale_liegi	gaz_viale_liegi	dottor_fumi	projectedspace	approximate					1.0	lorenzo_sabatino	2026-02-01 00:00:00	close_reading	
+interp_00035	ref_00034	viminale	gaz_viminale	ingravallo				routenode	tragitto_viminale_merulana	1	1.0	lorenzo_sabatino	2026-02-02 00:00:00	close_reading	
+interp_00036	ref_00034	viminale	gaz_viminale	gaudenzio				routenode	tragitto_viminale_merulana	1	1.0	lorenzo_sabatino	2026-02-02 00:00:00	close_reading	
+interp_00037	ref_00034	viminale	gaz_viminale	pompeo				routenode	tragitto_viminale_merulana	1	1.0	lorenzo_sabatino	2026-02-02 00:00:00	close_reading	
+interp_00038	ref_00035	san_giovanni_in_laterano	gaz_san_giovanni_in_laterano	ingravallo				routenode	tragitto_viminale_merulana	2	1.0	lorenzo_sabatino	2026-02-02 00:00:00	close_reading	
+interp_00039	ref_00035	san_giovanni_in_laterano	gaz_san_giovanni_in_laterano	gaudenzio				routenode	tragitto_viminale_merulana	2	1.0	lorenzo_sabatino	2026-02-02 00:00:00	close_reading	
+interp_00040	ref_00035	san_giovanni_in_laterano	gaz_san_giovanni_in_laterano	pompeo				routenode	tragitto_viminale_merulana	2	1.0	lorenzo_sabatino	2026-02-02 00:00:00	close_reading	
+interp_00041	ref_00036	palazzo_219	gaz_via_merulana	ingravallo			inside	routenode	tragitto_viminale_merulana	3	1.0	lorenzo_sabatino	2026-02-02 00:00:00	close_reading	"Palazzo del ""fattaccio"", in cui prende luogo l'evento principale del romanzo"
+interp_00042	ref_00036	palazzo_219	gaz_via_merulana	gaudenzio			inside	routenode	tragitto_viminale_merulana	3	1.0	lorenzo_sabatino	2026-02-02 00:00:00	close_reading	"Palazzo del ""fattaccio"", in cui prende luogo l'evento principale del romanzo"
+interp_00043	ref_00036	palazzo_219	gaz_via_merulana	pompeo			inside	routenode	tragitto_viminale_merulana	3	1.0	lorenzo_sabatino	2026-02-02 00:00:00	close_reading	"Palazzo del ""fattaccio"", in cui prende luogo l'evento principale del romanzo"
+interp_00044	ref_00037	tragitto_viminale_merulana		ingravallo	route	precise					1.0	lorenzo_sabatino	2026-02-02 00:00:00	close_reading	Percorso di Ingravallo, Gaudenzio e Pompeo
+interp_00045	ref_00037	tragitto_viminale_merulana		gaudenzio	route	precise					1.0	lorenzo_sabatino	2026-02-02 00:00:00	close_reading	Percorso di Ingravallo, Gaudenzio e Pompeo
+interp_00046	ref_00037	tragitto_viminale_merulana		pompeo	route	precise					1.0	lorenzo_sabatino	2026-02-02 00:00:00	close_reading	Percorso di Ingravallo, Gaudenzio e Pompeo
+interp_00047	ref_00038	palazzo_219	gaz_via_merulana	ingravallo	setting	precise	inside				1.0	lorenzo_sabatino	2026-02-02 00:00:00	close_reading	"Palazzo del ""fattaccio"", in cui prende luogo l'evento principale del romanzo"
+interp_00048	ref_00038	palazzo_219	gaz_via_merulana	gaudenzio	setting	precise	inside				1.0	lorenzo_sabatino	2026-02-02 00:00:00	close_reading	"Palazzo del ""fattaccio"", in cui prende luogo l'evento principale del romanzo"
+interp_00049	ref_00038	palazzo_219	gaz_via_merulana	pompeo	setting	precise	inside				1.0	lorenzo_sabatino	2026-02-02 00:00:00	close_reading	"Palazzo del ""fattaccio"", in cui prende luogo l'evento principale del romanzo"
+interp_00050	ref_00039	palazzo_219	gaz_via_merulana	ingravallo	setting	relative	inside				1.0	lorenzo_sabatino	2026-02-02 00:00:00	close_reading	L’espressione «la ben nota architettura» costituisce una perifrasi eufemistica e allusiva riferita al palazzo di via Merulana (civico 219), già più volte menzionato nel romanzo attraverso denominazioni varianti. L’identificazione non è letterale né nominativa, ma si fonda sulla ricorrenza contestuale, sulla focalizzazione interna (Ingravallo) e sul valore di riconoscibilità implicita attribuito al luogo, che assume qui una funzione evocativa e psicologica più che descrittiva o topografica.
+interp_00051	ref_00040	palazzo_219	gaz_via_merulana	ingravallo	setting	relative	inside				1.0	lorenzo_sabatino	2026-02-02 00:00:00	close_reading	L’espressione «casermone color pidocchio» costituisce una perifrasi eufemistica e allusiva riferita al palazzo di via Merulana (civico 219), già più volte menzionato nel romanzo attraverso denominazioni varianti.
+interp_00052	ref_00040	palazzo_219	gaz_via_merulana	gaudenzio	setting	relative	inside				1.0	lorenzo_sabatino	2026-02-02 00:00:00	close_reading	L’espressione «casermone color pidocchio» costituisce una perifrasi eufemistica e allusiva riferita al palazzo di via Merulana (civico 219), già più volte menzionato nel romanzo attraverso denominazioni varianti.
+interp_00053	ref_00040	palazzo_219	gaz_via_merulana	pompeo	setting	relative	inside				1.0	lorenzo_sabatino	2026-02-02 00:00:00	close_reading	L’espressione «casermone color pidocchio» costituisce una perifrasi eufemistica e allusiva riferita al palazzo di via Merulana (civico 219), già più volte menzionato nel romanzo attraverso denominazioni varianti.
+interp_00054	ref_00041	palazzo_219	gaz_via_merulana	monello	setting	relative	inside				1.0	lorenzo_sabatino	2026-02-02 00:00:00	close_reading	L’espressione «sto palazzo» costituisce una perifrasi eufemistica e allusiva riferita al palazzo di via Merulana (civico 219), già più volte menzionato nel romanzo attraverso denominazioni varianti.
+interp_00055	ref_00042	san_giovanni	gaz_san_giovanni	narrator	marker	approximate					1.0	lorenzo_sabatino	2026-02-02 00:00:00	close_reading	
+interp_00056	ref_00043	scala_a		ingravallo	setting	precise	inside				1.0	lorenzo_sabatino	2026-02-02 00:00:00	close_reading	Scala A del palazzo, in cui si realizzeranno i due crimini centrali del romanzo
+interp_00057	ref_00044	sacro_cuore	gaz_sacro_cuore	luigia_zanchetti	projectedspace	indeterminate					1.0	lorenzo_sabatino	2026-02-02 00:00:00	close_reading	
+interp_00058	ref_00045	piani_alti_219		narrator	setting	precise	inside				1.0	lorenzo_sabatino	2026-02-26 00:00:00	close_reading	Piani alti della Scala A, palazzo 219
+interp_00059	ref_00046	palazzo_219	gaz_via_merulana	narrator	setting	precise	inside				1.0	lorenzo_sabatino	2026-02-26 00:00:00	close_reading	"Palazzo del ""fattaccio"", in cui prende luogo l'evento principale del romanzo"
+interp_00060	ref_00047	scale		narrator	setting	precise	inside				1.0	lorenzo_sabatino	2026-02-26 00:00:00	close_reading	Scala A e Scala B del palazzo, a riflettere la simmetria imperfetta che alligna nel Palazzo
+interp_00061	ref_00048	scala_a		narrator	setting	approximate	inside				1.0	lorenzo_sabatino	2026-02-26 00:00:00	close_reading	Scala A del palazzo, in cui si realizzeranno i due crimini centrali del romanzo
+interp_00062	ref_00049	santa_maria_maggiore	gaz_santa_maria_maggiore	character_un1	marker	approximate					1.0	lorenzo_sabatino	2026-02-26 00:00:00	close_reading	
+interp_00063	ref_00050	palazzo_219	gaz_via_merulana	portinaia	setting	relative	inside				1.0	lorenzo_sabatino	2026-02-26 00:00:00	close_reading	
+interp_00064	ref_00051	via_valadier	gaz_via_valadier	narrator	projectedspace	approximate					1.0	lorenzo_sabatino	2026-02-26 00:00:00	close_reading	
+interp_00065	ref_00052	via_montebello	gaz_via_montebello	narrator	projectedspace	approximate					1.0	lorenzo_sabatino	2026-02-26 00:00:00	close_reading	
+interp_00066	ref_00053	tranvie_dei_castelli	gaz_tranvie_dei_castelli	ingravallo	marker	approximate					0.9	lorenzo_sabatino	2026-02-26 00:00:00	close_reading	
+interp_00067	ref_00054	due_santi	gaz_due_santi	ingravallo	marker	approximate					0.9	lorenzo_sabatino	2026-02-26 00:00:00	close_reading	
+interp_00068	ref_00055	torraccio	gaz_torraccio	gaudenzio	setting	approximate					0.9	lorenzo_sabatino	2026-02-26 00:00:00	close_reading	
+interp_00069	ref_00056	marino	gaz_marino	cencia	zoneofaction	approximate					0.9	lorenzo_sabatino	2026-02-26 00:00:00	close_reading	
+interp_00070	ref_00057	via_de_querceti	gaz_via_de_querceti	cencia	marker	approximate					1.0	lorenzo_sabatino	2026-02-26 00:00:00	close_reading	
+interp_00071	ref_00058	santi_quattro_coronati	gaz_santi_quattro_coronati	cencia	marker	approximate					1.0	lorenzo_sabatino	2026-02-26 00:00:00	close_reading	
+interp_00072	ref_00059	santi_quattro_coronati	gaz_santi_quattro_coronati	don_lorenzo_corpi	marker	approximate					1.0	lorenzo_sabatino	2026-02-26 00:00:00	close_reading	
+interp_00073	ref_00060	palazzo_219	gaz_via_merulana	portinaia	setting	relative	inside				1.0	lorenzo_sabatino	2026-03-02 00:00:00	close_reading	"Palazzo del ""fattaccio"""
+interp_00074	ref_00061	san_luigi_de_francesi	gaz_san_luigi_de_francesi	commendador_angeloni	marker	approximate					1.0	lorenzo_sabatino	2026-03-02 00:00:00	close_reading	
+interp_00075	ref_00062	santa_maria_sopra_minerva	gaz_santa_maria_sopra_minerva	commendador_angeloni	marker	approximate					1.0	lorenzo_sabatino	2026-03-02 00:00:00	close_reading	
+interp_00076	ref_00063	santagostino	gaz_santagostino	commendador_angeloni				routenode	tragitto_agostino_aquiro	1	1.0	lorenzo_sabatino	2026-03-02 00:00:00	close_reading	
+interp_00077	ref_00064	via_della_scrofa	gaz_via_della_scrofa	commendador_angeloni				routenode	tragitto_agostino_aquiro	2	1.0	lorenzo_sabatino	2026-03-02 00:00:00	close_reading	
+interp_00078	ref_00065	via_delle_coppelle	gaz_via_delle_coppelle	commendador_angeloni				routenode	tragitto_agostino_aquiro	3	1.0	lorenzo_sabatino	2026-03-02 00:00:00	close_reading	
+interp_00079	ref_00066	pozzo_delle_cornacchie	gaz_pozzo_delle_cornacchie	commendador_angeloni				routenode	tragitto_agostino_aquiro	4	1.0	lorenzo_sabatino	2026-03-02 00:00:00	close_reading	
+interp_00080	ref_00067	santa_maria_in_aquiro	gaz_santa_maria_in_aquiro	commendador_angeloni				routenode	tragitto_agostino_aquiro	5	1.0	lorenzo_sabatino	2026-03-02 00:00:00	close_reading	
+interp_00081	ref_00068	tragitto_agostino_aquiro		commendador_angeloni	route	precise					1.0	lorenzo_sabatino	2026-03-02 00:00:00	close_reading	
+interp_00082	ref_00069	via_colonna_vittoria	gaz_via_colonna_vittoria	commendador_angeloni				routenode	tragitto_colonna_treccani	1	1.0	lorenzo_sabatino	2026-03-02 00:00:00	close_reading	
+interp_00083	ref_00070	piazza_di_pietra	gaz_piazza_di_pietra	commendador_angeloni				routenode	tragitto_colonna_treccani	2	1.0	lorenzo_sabatino	2026-03-02 00:00:00	close_reading	
+interp_00084	ref_00071	via_di_pietra	gaz_via_di_pietra	commendador_angeloni				routenode	tragitto_colonna_treccani	3	1.0	lorenzo_sabatino	2026-03-02 00:00:00	close_reading	
+interp_00085	ref_00072	via_del_corso	gaz_via_del_corso	commendador_angeloni				routenode	tragitto_colonna_treccani	4	1.0	lorenzo_sabatino	2026-03-02 00:00:00	close_reading	
+interp_00086	ref_00073	istituto_dellenciclopedia_treccani	gaz_istituto_dellenciclopedia_treccani	commendador_angeloni				routenode	tragitto_colonna_treccani	5	1.0	lorenzo_sabatino	2026-03-02 00:00:00	close_reading	
+interp_00087	ref_00074	gioielliere_catellani	gaz_roma	commendador_angeloni	marker	indeterminate	inside				0.5	lorenzo_sabatino	2026-03-02 00:00:00	close_reading	
+interp_00088	ref_00075	tragitto_colonna_treccani		commendador_angeloni	route	precise					1.0	lorenzo_sabatino	2026-03-02 00:00:00	close_reading	
+interp_00089	ref_00076	santa_chiara	gaz_santa_chiara	commendador_angeloni				routenode	tragitto_chiara_pantheon	1	1.0	lorenzo_sabatino	2026-03-02 00:00:00	close_reading	
+interp_00090	ref_00077	via_della_palombella	gaz_via_della_palombella	commendador_angeloni				routenode	tragitto_chiara_pantheon	2	1.0	lorenzo_sabatino	2026-03-02 00:00:00	close_reading	
+interp_00091	ref_00078	pantheon	gaz_pantheon	commendador_angeloni				routenode	tragitto_chiara_pantheon	3	1.0	lorenzo_sabatino	2026-03-02 00:00:00	close_reading	
+interp_00092	ref_00079	tragitto_chiara_pantheon		commendador_angeloni	route	precise					1.0	lorenzo_sabatino	2026-03-02 00:00:00	close_reading	
+interp_00093	ref_00080	via_campo_marzio	gaz_via_campo_marzio	commendador_angeloni	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00094	ref_00081	via_del_parlamento	gaz_via_del_parlamento	commendador_angeloni	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00095	ref_00082	via_merulana	gaz_via_merulana	commendador_angeloni	setting	precise					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00096	ref_00083	palazzo_219	gaz_via_merulana	commendador_angeloni	setting	approximate	inside				1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00097	ref_00084	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	commendador_angeloni	projectedspace	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00098	ref_00084	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	ingravallo	projectedspace	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00099	ref_00085	maccheronaro	gaz_maccheronaro	pompeo	marker	relative					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00100	ref_00086	via_del_gesu	gaz_via_del_gesu	pompeo	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00101	ref_00087	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	sor_manuela	setting	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00102	ref_00088	tevere_biferno	gaz_tevere	ingravallo	projectedspace	indeterminate	overlaps				0.5	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	Tevere e Biferno sono impiegati come sineddoche spaziale dei tratti diatopici della lingua di Ingravallo
+interp_00103	ref_00088	tevere_biferno	gaz_biferno	ingravallo	projectedspace	indeterminate	overlaps				0.5	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	Tevere e Biferno sono impiegati come sineddoche spaziale dei tratti diatopici della lingua di Ingravallo
+interp_00104	ref_00089	via_venti_settembre	gaz_via_venti_settembre	commendador_angeloni	projectedspace	precise					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00105	ref_00090	via_panisperna	gaz_via_panisperna	commendador_angeloni	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00106	ref_00091	via_dei_serpenti	gaz_via_dei_serpenti	gaudenzio	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00107	ref_00092	via_dei_serpenti	gaz_via_dei_serpenti	gaudenzio	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00108	ref_00093	via_panisperna	gaz_via_panisperna	gaudenzio	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00109	ref_00094	via_merulana	gaz_via_merulana	garzone_serpenti	marker	precise					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00110	ref_00095	via_merulana	gaz_via_merulana	portinaia	projectedspace	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00111	ref_00096	via_panisperna	gaz_via_panisperna	commendador_angeloni	projectedspace	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00112	ref_00097	palazzo_219	gaz_via_merulana	narrator	setting	approximate	inside				1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00113	ref_00098	scala_a		sor_manuela	setting	approximate	inside				1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00114	ref_00098	scala_a		menegazzi	setting	approximate	inside				1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00115	ref_00098	scala_a		bottafavi	setting	approximate	inside				1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00116	ref_00098	scala_a		alda_pernetti	setting	approximate	inside				1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00117	ref_00098	scala_a		fratello_pernetti	setting	approximate	inside				1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00118	ref_00099	scala_b		sor_manuela	setting	approximate	inside				1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00119	ref_00099	scala_b		orestino_bozzi	setting	approximate	inside				1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00120	ref_00099	scala_b		sora_elodia	setting	approximate	inside				1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00121	ref_00099	scala_b		enea_cucco	setting	approximate	inside				1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00122	ref_00100	san_giovanni_in_laterano	gaz_san_giovanni_in_laterano	assunta	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00123	ref_00101	terzo_piano_219		narrator	setting	approximate	inside				1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00124	ref_00102	scala_a		narrator	setting	approximate	inside				1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00125	ref_00103	scala_b		narrator	setting	approximate	inside				1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00126	ref_00104	san_clemente	gaz_san_clemente	narrator	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00127	ref_00105	santantonio_da_padova	gaz_santantonio_da_padova	narrator	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00128	ref_00106	santi_quattro_coronati	gaz_santi_quattro_coronati	narrator	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00129	ref_00107	via_labbricana	gaz_via_labbricana	narrator	setting	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00130	ref_00108	via_merulana	gaz_via_merulana	narrator	setting	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00131	ref_00109	cobianchi	gaz_piazza_san_lorenzo_in_lucina	menegazzi	marker	indeterminate	near				0.5	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00132	ref_00110	piazza_san_lorenzo_in_lucina	gaz_piazza_san_lorenzo_in_lucina	menegazzi	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00133	ref_00111	palazzo_ruspoli	gaz_palazzo_ruspoli	menegazzi	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00134	ref_00112	san_silvestro_in_capite	gaz_san_silvestro_in_capite	menegazzi	marker	relative					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00135	ref_00113	celio	gaz_celio	ines_cionini	projectedspace	relative					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00136	ref_00114	torraccio	gaz_torraccio	ines_cionini	projectedspace	relative					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00137	ref_00115	torraccio	gaz_torraccio	dottor_fumi	projectedspace	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00138	ref_00116	torraccio	gaz_torraccio	ines_cionini	setting	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00139	ref_00117	san_giovanni	gaz_san_giovanni	ines_cionini	projectedspace	precise					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00140	ref_00118	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	ines_cionini	projectedspace	precise					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00141	ref_00119	santo_stefano_rotondo	gaz_santo_stefano_rotondo	ines_cionini	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00142	ref_00120	via_frangipane	gaz_via_frangipane	narrator	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00143	ref_00121	santa_croce_in_gerusalemme	gaz_santa_croce_in_gerusalemme	narrator	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
+interp_00144	ref_00122	marino	gaz_marino	ingravallo	zoneofaction	approximate						lorenzo_sabatino	2026-04-06 00:00:00	close reading	
+interp_00145	ref_00123	viminale	gaz_viminale	ingravallo	setting	approximate									
+interp_00146	ref_00123	viminale	gaz_viminale	gaudenzio	setting	approximate									
+interp_00147	ref_00124	marino	gaz_marino	ingravallo	zoneofaction	approximate									
+interp_00148	ref_00125	grotta_de_sor_pippo	gaz_marino	ingravallo	projectedspace	indeterminate	inside								
+interp_00149	ref_00126	via_merulana	gaz_via_merulana	ingravallo	setting	approximate									
+interp_00150	ref_00127	tranvie_dei_castelli	gaz_tranvie_dei_castelli	ingravallo	setting	approximate									
+interp_00151	ref_00128	torraccio	gaz_torraccio	narrator	setting	approximate									
+interp_00152	ref_00129	due_santi	gaz_due_santi	bigliettaio_merlani				routenode	tragitto_duesanti_frattocchie	1					
+interp_00153	ref_00130	torraccio	gaz_torraccio	bigliettaio_merlani				routenode	tragitto_duesanti_frattocchie	2					
+interp_00154	ref_00131	frattocchie	gaz_frattocchie	bigliettaio_merlani				routenode	tragitto_duesanti_frattocchie	3					
+interp_00155	ref_00132	tragitto_duesanti_frattocchie		bigliettaio_merlani	route	precise									
+interp_00156	ref_00133	via_dazeglio	gaz_via_dazeglio	ingravallo	marker	precise									
+interp_00157	ref_00134	pincio	gaz_pincio	narrator	marker	approximate									
+interp_00158	ref_00135	gianicolo	gaz_gianicolo	narrator	marker	approximate									
+interp_00159	ref_00136	collegio_romano	gaz_collegio_romano	narrator	marker	approximate									
+interp_00160	ref_00137	molo_beverello	gaz_molo_beverello	narrator	marker	approximate									
+interp_00161	ref_00138	palazzo_chigi	gaz_palazzo_chigi	mussolini	marker	precise									
+interp_00162	ref_00139	collegio_romano	gaz_collegio_romano	narrator	marker	approximate									
+interp_00163	ref_00140	via_dazeglio	gaz_via_dazeglio	ingravallo	setting	precise									
+interp_00164	ref_00141	via_merulana	gaz_via_merulana	porchettini	setting	approximate									
+interp_00165	ref_00142	via_merulana	gaz_via_merulana	giuliano_valdarena	setting	approximate									
+interp_00166	ref_00143	via_merulana	gaz_via_merulana	ingravallo	setting	precise									
+interp_00167	ref_00143	via_merulana	gaz_via_merulana	pompeo	setting	precise									
+interp_00168	ref_00144	dosso_faiti	gaz_dosso_faiti	ingravallo	projectedspace	relative									
+interp_00169	ref_00145	monte_cengio	gaz_monte_cengio	ingravallo	projectedspace	relative									La visione del sangue produce uno slittamento semantico tra il personaggio di Ingravallo e un elemento biografico centrale dell'esperienza di Gadda, l'esperienza del fronte e la morte del fratello, attraverso il referente topografico del Cengio e del Faiti
+interp_00170	ref_00146	ostia	gaz_ostia	narrator	marker	approximate									
+interp_00171	ref_00147	forte_de_marmi	gaz_forte_de_marmi	narrator	marker	approximate									
+interp_00172	ref_00148	genova	gaz_genova	giuliano_valdarena	projectedspace	approximate									
+interp_00173	ref_00149	via_nicotera	gaz_via_nicotera	giuliano_valdarena	marker	approximate									
+interp_00174	ref_00150	scala_b		sor_manuela	setting	precise	inside								
+interp_00175	ref_00151	sacro_cuore	gaz_sacro_cuore	luigia_zanchetti	marker	approximate									
+interp_00176	ref_00152	milano	gaz_milano	remo_balducci	projectedspace	relative									
+interp_00177	ref_00153	verona	gaz_verona	remo_balducci	projectedspace	relative									
+interp_00178	ref_00154	palazzo_219	gaz_via_merulana	maddalena_felicetti	setting	relative	inside								
+interp_00179	ref_00155	sacro_cuore	gaz_sacro_cuore	luigia_zanchetti	marker	approximate									
+interp_00180	ref_00156	corso_umberto	gaz_corso_umberto	narrator	marker	approximate									
+interp_00181	ref_00157	vado_ligure	gaz_vado_ligure	giuliano_valdarena	projectedspace	relative									
+interp_00182	ref_00158	genova	gaz_genova	giuliano_valdarena	projectedspace	relative									
+interp_00183	ref_00159	cantinone_albano	gaz_albano_laziale	ingravallo	projectedspace	indeterminate	inside								
+interp_00184	ref_00159	cantinone_albano	gaz_albano_laziale	remo_balducci	projectedspace	indeterminate	inside								
+interp_00185	ref_00160	cantinone_albano	gaz_albano_laziale	ingravallo	projectedspace	indeterminate	inside								
+interp_00186	ref_00160	cantinone_albano	gaz_albano_laziale	remo_balducci	projectedspace	indeterminate	inside								
+interp_00187	ref_00161	monte_matese	gaz_monte_matese	ingravallo	projectedspace	indeterminate									Il monte rappresenta per sineddoche l'origine molisana del protagonista
+interp_00188	ref_00162	via_dei_banchi_vecchi	gaz_via_dei_banchi_vecchi	giuliano_valdarena	projectedspace	relative									
+interp_00189	ref_00163	regina_coeli	gaz_regina_coeli	giuliano_valdarena	marker	approximate									
+interp_00190	ref_00164	milano	gaz_milano	remo_balducci	projectedspace	approximate									
+interp_00191	ref_00165	padova	gaz_padova	remo_balducci	projectedspace	approximate									
+interp_00192	ref_00166	bologna	gaz_bologna	remo_balducci	projectedspace	approximate									
+interp_00193	ref_00167	tranvie_dei_castelli	gaz_tranvie_dei_castelli	ingravallo	projectedspace	approximate									
+interp_00194	ref_00168	torraccio	gaz_torraccio	ingravallo	projectedspace	approximate									
+interp_00195	ref_00169	scala_a		ingravallo	projectedspace	approximate	inside								
+interp_00196	ref_00170	via_dei_serpenti	gaz_via_dei_serpenti	ingravallo	projectedspace	approximate									
+interp_00197	ref_00170	via_dei_serpenti	gaz_via_dei_serpenti	commendador_angeloni	projectedspace	approximate									
+interp_00198	ref_00171	via_panisperna	gaz_via_panisperna	ingravallo	projectedspace	approximate									
+interp_00199	ref_00171	via_panisperna	gaz_via_panisperna	commendador_angeloni	projectedspace	approximate									
+interp_00200	ref_00172	via_de_merli	gaz_via_merulana	ingravallo	setting	approximate									
+interp_00201	ref_00173	san_giovanni_in_laterano	gaz_san_giovanni_in_laterano	ingravallo	projectedspace	approximate									
+interp_00202	ref_00174	porta_maggiore	gaz_porta_maggiore	ingravallo	projectedspace	approximate									
+interp_00203	ref_00175	celio	gaz_celio	ingravallo	projectedspace	approximate									
+interp_00204	ref_00176	suburra	gaz_suburra	ingravallo	projectedspace	approximate									
+interp_00205	ref_00177	via_merulana	gaz_via_merulana	narrator	setting	approximate						lorenzo_sabatino	2026-04-07 00:00:00	close reading	
+interp_00206	ref_00178	santo_stefano_rotondo	gaz_santo_stefano_rotondo	narrator	setting	approximate									
+interp_00207	ref_00179	piazza_vittorio_emanuele	gaz_piazza_vittorio_emanuele	narrator	marker	approximate									
+interp_00208	ref_00180	palazzo_chigi	gaz_palazzo_chigi	mussolini	marker	approximate									
+interp_00209	ref_00181	lungara	gaz_lungara	narrator	marker	approximate									
+interp_00210	ref_00182	borgo_pio	gaz_borgo_pio	nerovestite	marker	approximate									Le nerovestite costituisce un nome collettivo orientato a caratterizzare genericamente lo spettro femminile di donne che, a vario titolo, gravitarono nell'orbita dalla fascinazione fascista
+interp_00211	ref_00183	borgo_vecchio	gaz_borgo_vecchio	nerovestite	marker	approximate									Le nerovestite costituisce un nome collettivo orientato a caratterizzare genericamente lo spettro femminile di donne che, a vario titolo, gravitarono nell'orbita dalla fascinazione fascista
+interp_00212	ref_00184	piazza_rusticucci	gaz_piazza_rusticucci	nerovestite	marker	approximate									Le nerovestite costituisce un nome collettivo orientato a caratterizzare genericamente lo spettro femminile di donne che, a vario titolo, gravitarono nell'orbita dalla fascinazione fascista
+interp_00213	ref_00185	porta_angelica	gaz_porta_angelica	nerovestite	marker	approximate									Le nerovestite costituisce un nome collettivo orientato a caratterizzare genericamente lo spettro femminile di donne che, a vario titolo, gravitarono nell'orbita dalla fascinazione fascista
+interp_00214	ref_00186	santanna	gaz_santanna	nerovestite	marker	approximate									Le nerovestite costituisce un nome collettivo orientato a caratterizzare genericamente lo spettro femminile di donne che, a vario titolo, gravitarono nell'orbita dalla fascinazione fascista
+interp_00215	ref_00187	colonnato_san_pietro	gaz_piazza_san_pietro	nerovestite	marker	relative	inside								Le nerovestite costituisce un nome collettivo orientato a caratterizzare genericamente lo spettro femminile di donne che, a vario titolo, gravitarono nell'orbita dalla fascinazione fascista
+interp_00216	ref_00188	cantinone_albano	gaz_albano_laziale	ingravallo	projectedspace	indeterminate	inside								
+interp_00217	ref_00188	cantinone_albano	gaz_albano_laziale	remo_balducci	projectedspace	indeterminate	inside								
+interp_00218	ref_00189	via_merulana	gaz_via_merulana	signor_valdarena	projectedspace	approximate									
+interp_00219	ref_00190	via_capo_dafrica	gaz_via_capo_dafrica	pompeo	marker	precise									
+interp_00220	ref_00191	via_frangipane	gaz_via_frangipane	pompeo	marker	precise									
+interp_00221	ref_00192	via_degli_zingari	gaz_via_degli_zingari	pompeo	marker	precise									
+interp_00222	ref_00193	via_dei_capocci	gaz_via_dei_capocci	pompeo	marker	precise									
+interp_00223	ref_00194	vicolo_ciancaleoni	gaz_vicolo_ciancaleoni	pompeo	marker	precise									
+interp_00224	ref_00195	piazza_montanara	gaz_piazza_montanara	pompeo	marker	precise									
+interp_00225	ref_00196	via_monte_caprino	gaz_via_monte_caprino	pompeo	marker	precise									
+interp_00226	ref_00197	vicolo_della_bucimazza	gaz_vicolo_della_bucimazza	pompeo	marker	precise									
+interp_00227	ref_00198	via_dei_fienili	gaz_via_dei_fienili	pompeo	marker	precise									
+interp_00228	ref_00199	palazzo_pio	gaz_palazzo_pio	pompeo	marker	precise									
+interp_00229	ref_00200	santandrea_della_valle	gaz_santandrea_della_valle	pompeo	marker	precise									
+interp_00230	ref_00201	via_di_grotta_pinta	gaz_via_di_grotta_pinta	pompeo	marker	precise									
+interp_00231	ref_00202	via_di_ferro	gaz_via_di_ferro	pompeo	marker	precise									
+interp_00232	ref_00203	vicolo_delle_grotte_del_teatro	gaz_vicolo_delle_grotte_del_teatro	pompeo	marker	precise									
+interp_00233	ref_00204	piazza_pollarola	gaz_piazza_pollarola	pompeo	marker	precise									
+interp_00234	ref_00205	regina_coeli	gaz_regina_coeli	narrator	marker	approximate									
+interp_00235	ref_00206	genova	gaz_genova	giuliano_valdarena	projectedspace	approximate									
+interp_00236	ref_00207	via_nicotera	gaz_via_nicotera	giuliano_valdarena	marker	approximate									
+interp_00237	ref_00208	palazzo_219	gaz_via_merulana	sor_manuela	setting	approximate	inside								
+interp_00238	ref_00208	palazzo_219	gaz_via_merulana	barbezzi_gallo	setting	approximate	inside								
+interp_00239	ref_00209	via_merulana	gaz_via_merulana	narrator	setting	approximate									
+interp_00240	ref_00210	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	commendador_angeloni	setting	approximate									
+interp_00241	ref_00211	lungara	gaz_lungara	commendador_angeloni	setting	approximate									
+interp_00242	ref_00212	via_dei_greci	gaz_via_dei_greci	narrator	marker	approximate									
+interp_00243	ref_00213	milano	gaz_milano	remo_balducci	projectedspace	relative									
+interp_00244	ref_00214	bologna	gaz_bologna	remo_balducci	projectedspace	relative									
+interp_00245	ref_00215	vicenza 	gaz_vicenza	remo_balducci	projectedspace	relative									
+interp_00246	ref_00216	padova	gaz_padova	remo_balducci	projectedspace	relative									
+interp_00247	ref_00217	termini	gaz_termini	remo_balducci	marker	approximate									
+interp_00248	ref_00218	policlinico	gaz_policlinico	liliana	marker	approximate									
+interp_00249	ref_00219	via_merulana	gaz_via_merulana	liliana				routenode	tragitto_merulana_policlinico	1					
+interp_00250	ref_00220	policlinico	gaz_policlinico	liliana				routenode	tragitto_merulana_policlinico	2					
+interp_00251	ref_00221	tragitto_merulana_policlinico		liliana	route	approximate									
+interp_00252	ref_00222	palazzo_chigi	gaz_palazzo_chigi	mussolini	marker	relative									
+interp_00253	ref_00223	terracina	gaz_terracina	pompeo	projectedspace	relative									
+interp_00254	ref_00223	terracina	gaz_terracina	gaudenzio	projectedspace	relative									
+interp_00255	ref_00224	banca_commerciale_italiana	gaz_banca_commerciale_italiana	liliana	marker	relative									
+interp_00256	ref_00225	banco_di_santo_spirito	gaz_banco_di_santo_spirito	liliana	marker	relative									
+interp_00257	ref_00226	termini	gaz_termini	remo_balducci	marker	approximate									
+interp_00258	ref_00227	santi_quattro_coronati	gaz_santi_quattro_coronati	liliana	projectedspace	approximate									
+interp_00259	ref_00227	santi_quattro_coronati	gaz_santi_quattro_coronati	remo_balducci	projectedspace	approximate									
+interp_00260	ref_00228	palazzo_chigi	gaz_palazzo_chigi	mussolini	marker	relative									
+interp_00261	ref_00229	collegio_romano	gaz_collegio_romano	giuliano_valdarena	setting	approximate									
+interp_00262	ref_00230	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	remo_balducci	setting	approximate									
+interp_00263	ref_00231	campo_de_fiori	gaz_campo_de_fiori	liliana	projectedspace	approximate									
+interp_00264	ref_00232	banca_commerciale_italiana	gaz_banca_commerciale_italiana	liliana	projectedspace	precise									
+interp_00265	ref_00233	piazza_vittorio_emanuele	gaz_piazza_vittorio_emanuele	liliana	marker	approximate									
+interp_00266	ref_00234	via_carlo_alberto	gaz_via_carlo_alberto	liliana	marker	approximate									
+interp_00267	ref_00235	banco_di_santo_spirito	gaz_banco_di_santo_spirito	liliana	projectedspace	approximate									
+interp_00268	ref_00236	corso_umberto	gaz_corso_umberto	liliana	marker	approximate									
+interp_00269	ref_00237	palazzo_219	gaz_via_merulana	liliana	projectedspace	relative	inside								
+interp_00270	ref_00237	palazzo_219	gaz_via_merulana	signor_valdarena	projectedspace	relative	inside								
+interp_00271	ref_00238	palazzo_219	gaz_via_merulana	remo_balducci	projectedspace	relative	inside								
+interp_00272	ref_00238	palazzo_219	gaz_via_merulana	liliana	projectedspace	relative	inside								
+interp_00273	ref_00239	via_merulana	gaz_via_merulana	remo_balducci	projectedspace	approximate									
+interp_00274	ref_00240	palazzo_219	gaz_via_merulana	liliana	projectedspace	relative	inside								
+interp_00275	ref_00240	palazzo_219	gaz_via_merulana	remo_balducci	projectedspace	relative	inside								
+interp_00276	ref_00241	santi_quattro_coronati	gaz_santi_quattro_coronati	liliana	projectedspace	approximate									
+interp_00277	ref_00241	santi_quattro_coronati	gaz_santi_quattro_coronati	remo_balducci	projectedspace	approximate									
+interp_00278	ref_00242	palazzo_219	gaz_via_merulana	remo_balducci	projectedspace	precise	inside								
+interp_00279	ref_00243	quartierino_prati	gaz_prati_di_castello	remo_balducci	projectedspace	relative	inside				1.0	lorenzo_sabatino	2026-04-08 00:00:00		
+interp_00280	ref_00244	villino_lungotevere	gaz_lungotevere_prati	remo_balducci	projectedspace	relative	inside				0.5	lorenzo_sabatino	2026-04-08 00:00:00		
+interp_00281	ref_00245	dazeglio	gaz_dazeglio	remo_balducci	marker	approximate							05.05.26		
+interp_00282	ref_00246	via_merulana	gaz_via_merulana	don_lorenzo_corpi	projectedspace	approximate									
+interp_00283	ref_00247	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	dottor_fumi	setting	approximate									
+interp_00284	ref_00247	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	don_lorenzo_corpi	setting	approximate									
+interp_00285	ref_00248	aventino	gaz_aventino	don_lorenzo_corpi	marker	indeterminate									
+interp_00286	ref_00249	celio	gaz_celio	don_lorenzo_corpi	marker	indeterminate									
+interp_00287	ref_00250	roccafringoli	gaz_monte_manno	don_lorenzo_corpi	projectedspace	relative	near								
+interp_00288	ref_00251	monte_manno	gaz_monte_manno	don_lorenzo_corpi	projectedspace	relative									
+interp_00289	ref_00252	palestrina	gaz_palestrina	don_lorenzo_corpi	projectedspace	relative									
+interp_00290	ref_00253	policlinico	gaz_policlinico	don_lorenzo_corpi	projectedspace	approximate									
+interp_00291	ref_00253	policlinico	gaz_policlinico	liliana	projectedspace	approximate									
+interp_00292	ref_00254	banco_di_santo_spirito	gaz_banco_di_santo_spirito	don_lorenzo_corpi	projectedspace	approximate									
+interp_00293	ref_00255	via_milano	gaz_via_milano	notaio_gaetano_de_marini	marker	approximate									
+interp_00294	ref_00256	zagarolo	gaz_zagarolo	luigia_zanchetti	projectedspace	approximate									
+interp_00295	ref_00257	zagarolo	gaz_zagarolo	luigia_zanchetti	marker	approximate									
+interp_00296	ref_00258	tivoli	gaz_tivoli	irene_spinaci	marker	approximate									
+interp_00297	ref_00259	zagarolo	gaz_zagarolo	irene_spinaci	marker	approximate									
+interp_00298	ref_00260	zagarolo	gaz_zagarolo	irene_spinaci	marker	approximate									
+interp_00299	ref_00261	villa_deste	gaz_villa_deste	irene_spinaci	marker	approximate									
+interp_00300	ref_00262	villa_gregoriana	gaz_villa_gregoriana	irene_spinaci	marker	approximate									
+interp_00301	ref_00263	aniene	gaz_aniene	padre_domenico	projectedspace	approximate									
+interp_00302	ref_00264	aniene	gaz_aniene	padre_domenico	projectedspace	approximate									
+interp_00303	ref_00265	filettino	gaz_filettino	padre_domenico	projectedspace	approximate									
+interp_00304	ref_00266	villa_gregoriana	gaz_villa_gregoriana	padre_domenico	projectedspace	approximate									
+interp_00305	ref_00267	viale_della_regina	gaz_viale_della_regina	zio_peppe	marker	precise									
+interp_00306	ref_00268	san_camillo	gaz_san_camillo	rosa_taddei	marker	approximate									
+interp_00307	ref_00269	palazzo_chigi	gaz_palazzo_chigi	mussolini	marker	relative									
+interp_00308	ref_00270	prati	gaz_prati	giuliano_valdarena	marker	approximate									
+interp_00309	ref_00271	via_nicotera	gaz_via_nicotera	giuliano_valdarena	marker	approximate									
+interp_00310	ref_00271	via_nicotera	gaz_via_nicotera	giuliano_valdarena	setting	approximate									
+interp_00311	ref_00272	via_nicotera	gaz_via_nicotera	maresciallo_di_pietrantonio	setting	approximate									
+interp_00312	ref_00272	via_nicotera	gaz_via_nicotera	agente_paolillo	setting	approximate									
+interp_00313	ref_00273	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	remo_balducci	setting	approximate									
+interp_00314	ref_00274	via_nicotera	gaz_via_nicotera	giuliano_valdarena	setting	approximate									
+interp_00315	ref_00274	via_nicotera	gaz_via_nicotera	maresciallo_di_pietrantonio	setting	approximate									
+interp_00316	ref_00274	via_nicotera	gaz_via_nicotera	agente_paolillo	setting	approximate									
+interp_00317	ref_00275	via_del_corso	gaz_via_del_corso	giuliano_valdarena	projectedspace	relative									
+interp_00318	ref_00276	campo_marzio	gaz_campo_marzio	liliana	marker	approximate									
+interp_00319	ref_00277	campo_marzio	gaz_campo_marzio	liliana	projectedspace	precise									
+interp_00320	ref_00277	campo_marzio	gaz_campo_marzio	giuliano_valdarena	projectedspace	precise									
+interp_00321	ref_00278	piazza_san_lorenzo_in_lucina	gaz_piazza_san_lorenzo_in_lucina	liliana	projectedspace	precise									
+interp_00322	ref_00278	piazza_san_lorenzo_in_lucina	gaz_piazza_san_lorenzo_in_lucina	giuliano_valdarena	projectedspace	precise									
+interp_00323	ref_00279	campo_marzio	gaz_campo_marzio	giuliano_valdarena	projectedspace	approximate									
+interp_00324	ref_00280	bottega_ceccherelli	gaz_roma	liliana	projectedspace	approximate	inside								
+interp_00325	ref_00281	bottega_ceccherelli	gaz_roma	ceccherelli	setting	approximate	inside								
+interp_00326	ref_00282	bottega_ceccherelli	gaz_roma	liliana	projectedspace	approximate	inside								
+interp_00327	ref_00283	bottega_ceccherelli	gaz_roma	liliana	projectedspace	approximate	inside								
+interp_00328	ref_00284	via_dei_banchi_vecchi	gaz_via_dei_banchi_vecchi	zie_valdarena	marker	approximate									
+interp_00329	ref_00285	banco_di_santo_spirito	gaz_banco_di_santo_spirito	cassiere_capo_del_bo	marker	approximate									
+interp_00330	ref_00286	banca_ditalia	gaz_banca_ditalia	cassiere_capo_del_bo	projectedspace	approximate									
+interp_00331	ref_00287	banca_ditalia	gaz_piazza_verdi	cassiere_capo_del_bo	projectedspace	approximate									
+interp_00332	ref_00288	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	ingravallo	setting	precise									
+interp_00333	ref_00289	teatro_jovinelli	gaz_teatro_jovinelli	ingravallo	projectedspace	precise									
+interp_00334	ref_00290	golfo_di_napoli	gaz_golfo_di_napoli	dottor_fumi	projectedspace	relative									
+interp_00335	ref_00291	vomero	gaz_vomero	dottor_fumi	projectedspace	relative									
+interp_00336	ref_00292	piazza_vittorio_emanuele	gaz_piazza_vittorio_emanuele	liliana	projectedspace	approximate									
+interp_00337	ref_00293	soriano_nel_cimino	gaz_soriano_nel_cimino	contadina	marker	relative									
+interp_00338	ref_00294	san_giovanni_in_laterano	gaz_san_giovanni_in_laterano	contadina	marker	relative									
+interp_00339	ref_00295	soriano_nel_cimino	gaz_soriano_nel_cimino	remo_balducci	projectedspace	relative									
+interp_00340	ref_00296	milano	gaz_milano	remo_balducci	projectedspace	approximate									
+interp_00341	ref_00297	sacro_cuore	gaz_sacro_cuore	monache	marker	approximate									
+interp_00342	ref_00298	via_dei_banchi_vecchi	gaz_via_dei_banchi_vecchi	zia_elvira	marker	approximate									
+interp_00343	ref_00298	via_dei_banchi_vecchi	gaz_via_dei_banchi_vecchi	zia_marietta	marker	approximate									
+interp_00344	ref_00299	scala_b		elodia	projectedspace	approximate	inside								
+interp_00345	ref_00299	scala_b		enea_cucco	projectedspace	approximate	inside								
+interp_00346	ref_00299	scala_b		giulietta_frisoni	projectedspace	approximate	inside								
+interp_00347	ref_00300	scala_a		cammarota	projectedspace	approximate	inside								
+interp_00348	ref_00300	scala_a		bottafavi	projectedspace	approximate	inside								
+interp_00349	ref_00300	scala_a		alda_pernetti	projectedspace	approximate	inside								
+interp_00350	ref_00301	policlinico	gaz_policlinico	corteo_funebre				routenode	tragitto_policlinico_san_lorenzo_al_verano	1					
+interp_00351	ref_00302	viale_regina_margherita	gaz_viale_regina_margherita	corteo_funebre				routenode	tragitto_policlinico_san_lorenzo_al_verano	2					
+interp_00352	ref_00303	san_lorenzo_al_verano	gaz_san_lorenzo_al_verano	corteo_funebre				routenode	tragitto_policlinico_san_lorenzo_al_verano	3					
+interp_00353	ref_00304	tragitto_policlinico_san_lorenzo_al_verano		corteo_funebre	route	approximate									
+interp_00354	ref_00305	molo_beverello	gaz_molo_beverello	maharaja_di_tripura	marker	relative					0.5				
+interp_00355	ref_00305	molo_beverello	gaz_molo_beverello	mussolini	marker	relative									
+interp_00356	ref_00306	scerpure	gaz_brahmaputra 	maharaja_di_tripura	projectedspace	relative	adjacentto								
+interp_00357	ref_00307	rive_del_brahmaputra	gaz_brahmaputra 	maharaja_di_tripura	projectedspace	relative									
+interp_00358	ref_00308	predappio	gaz_predappio	maharaja_di_tripura	marker	relative									
+interp_00359	ref_00308	predappio	gaz_predappio	mussolini	marker	relative									
+interp_00360	ref_00309	india	gaz_india	mussolini	marker	approximate									
+interp_00361	ref_00310	policlinico	gaz_policlinico	maharaja_di_tripura	marker	approximate									
+interp_00362	ref_00311	centrale_del_latte	gaz_centrale_del_latte	maharaja_di_tripura	marker	relative									
+interp_00363	ref_00312	centrale_del_latte	gaz_centrale_del_latte	narrator	marker	relative									
+interp_00364	ref_00313	policlinico	gaz_policlinico	maharaja_di_tripura	marker	approximate									
+interp_00365	ref_00314	scerpure	gaz_brahmaputra 	maharaja_di_tripura	projectedspace	relative	adjacentto								
+interp_00366	ref_00315	rive_del_brahmaputra	gaz_brahmaputra 	maharaja_di_tripura	projectedspace	relative	inside								
+interp_00367	ref_00316	scerpure	gaz_brahmaputra 	maharaja_di_tripura	projectedspace	relative	adjacentto								
+interp_00368	ref_00317	san_lorenzo_al_verano	gaz_san_lorenzo_al_verano	ingravallo	setting	approximate									
+interp_00369	ref_00317	san_lorenzo_al_verano	gaz_san_lorenzo_al_verano	pompeo	setting	approximate									
+interp_00370	ref_00317	san_lorenzo_al_verano	gaz_san_lorenzo_al_verano	gaudenzio	setting	approximate									
+interp_00371	ref_00318	campo_verano	gaz_campo_verano	ingravallo	setting	precise									
+interp_00372	ref_00318	campo_verano	gaz_campo_verano	don_lorenzo_corpi	setting	approximate									
+interp_00373	ref_00319	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	ingravallo	projectedspace	approximate									
+interp_00374	ref_00319	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	don_lorenzo_corpi	projectedspace	approximate									
+interp_00375	ref_00320	santi_quattro_coronati	gaz_santi_quattro_coronati	liliana	projectedspace	approximate									
+interp_00376	ref_00321	roccafringoli	gaz_monte_manno	don_lorenzo_corpi	projectedspace	relative	near								
+interp_00377	ref_00322	soriano_nel_cimino	gaz_soriano_nel_cimino	remo_balducci	projectedspace	relative									
+interp_00378	ref_00323	zagarolo	gaz_zagarolo	luigia_zanchetti	projectedspace	relative									
+interp_00379	ref_00324	tivoli	gaz_tivoli	irene_spinaci	marker	approximate									
+interp_00380	ref_00325	sacro_cuore	gaz_sacro_cuore	luigia_zanchetti	marker	approximate									
+interp_00381	ref_00325	sacro_cuore	gaz_sacro_cuore	irene_spinaci	projectedspace	approximate									
+interp_00382	ref_00326	banca_commerciale_italiana	gaz_banca_commerciale_italiana	liliana	projectedspace	approximate									
+interp_00383	ref_00327	san_giovanni_in_laterano	gaz_san_giovanni_in_laterano	ines_cionini	projectedspace	precise									Galilei' = Alessandro Galilei, architetto della facciata di San Giovanni in Laterano. Perifrasi per metonimia dell'autore.
+interp_00384	ref_00328	san_giovanni_in_laterano	gaz_san_giovanni_in_laterano	don_lorenzo_corpi	projectedspace	relative									
+interp_00385	ref_00329	scale		dottor_ghianda	setting	relative	inside								
+interp_00386	ref_00330	via_villari	gaz_via_villari	pizzicarolo_moglie	marker	relative									
+interp_00387	ref_00331	regina_coeli	gaz_regina_coeli	commendador_angeloni	marker	approximate									
+interp_00388	ref_00332	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	commendador_angeloni	setting	approximate									
+interp_00389	ref_00333	lungara	gaz_lungara	commendador_angeloni	marker	approximate									
+interp_00390	ref_00334	via_merulana	gaz_via_merulana	virginia_troddu	setting	approximate									
+interp_00391	ref_00335	santi_quattro_coronati	gaz_santi_quattro_coronati	liliana	marker	approximate									
+interp_00392	ref_00336	san_giovanni_in_laterano	gaz_san_giovanni_in_laterano	virginia_troddu	marker	approximate									
+interp_00393	ref_00337	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	maresciallo_di_pietrantonio	setting	approximate									
+interp_00394	ref_00338	tenenza_carabinieri_marino	gaz_marino	maresciallo_di_pietrantonio	projectedspace	approximate	inside								
+interp_00395	ref_00339	torraccio	gaz_torraccio	enea_retalli	projectedspace	relative									
+interp_00396	ref_00340	frattocchie	gaz_frattocchie	enea_retalli	projectedspace	relative									
+interp_00397	ref_00341	torraccio	gaz_torraccio	enea_retalli	projectedspace	relative									
+interp_00398	ref_00342	via_orazio	gaz_via_orazio	contessa_mondeguggoli	marker	indeterminate									
+interp_00399	ref_00343	due_santi	gaz_due_santi	enea_retalli	projectedspace	relative									
+interp_00400	ref_00343	due_santi	gaz_due_santi	zamira_pacori	setting	relative									
+interp_00401	ref_00344	via_appia	gaz_via_appia	enea_retalli	projectedspace	relative									
+interp_00402	ref_00344	via_appia	gaz_via_appia	zamira_pacori	setting	relative									
+interp_00403	ref_00345	marino	gaz_marino	zamira_pacori	setting	relative									
+interp_00404	ref_00346	albano_laziale	gaz_albano_laziale	zamira_pacori	setting	relative									
+interp_00405	ref_00347	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	pestalozzi				routenode	tragitto_marino_santo_stefano	1					
+interp_00406	ref_00348	tenenza_carabinieri_marino	gaz_marino	pestalozzi			inside	routenode	tragitto_marino_santo_stefano	2					
+interp_00407	ref_00349	tragitto_marino_santo_stefano		pestalozzi	route	approximate									
+interp_00408	ref_00350	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	narrator	setting	approximate									
+interp_00409	ref_00351	maccheronaro	gaz_maccheronaro	pompeo	projectedspace	relative									
+interp_00410	ref_00352	via_del_gesu	gaz_via_del_gesu	pompeo	projectedspace	approximate									
+interp_00411	ref_00353	tenenza_carabinieri_marino	gaz_marino	dottor_fumi	projectedspace	relative	inside								
+interp_00412	ref_00354	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	pestalozzi	setting	approximate					1.0	lorenzo_sabatino			La “collina molisana” è impiegata come sineddoche spaziale dell’origine sociale del personaggio; lo spazio non è diegeticamente attivo ma funziona come proiezione identitaria e culturale.
+interp_00413	ref_00354	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	dottor_fumi	setting	approximate					1.0	lorenzo_sabatino			Luogo generico
+interp_00414	ref_00354	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	pompeo	setting	approximate					1.0	lorenzo_sabatino			Aggettivo che evoca lo spazio dei Colli Albani/Castelli Romani
+interp_00415	ref_00354	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	maresciallo_di_pietrantonio	setting	approximate					1.0	lorenzo_sabatino			Aggettivo che evoca lo spazio di Tivoli
+interp_00416	ref_00354	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	ingravallo	setting	approximate					1.0	lorenzo_sabatino			
+interp_00417	ref_00354	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	paolillo	setting	approximate					1.0	lorenzo_sabatino			
+interp_00418	ref_00355	frascati	gaz_frascati	narrator	marker	relative					1.0	lorenzo_sabatino			
+interp_00419	ref_00356	velletri	gaz_velletri	narrator	marker	relative					1.0	lorenzo_sabatino			
+interp_00420	ref_00357	vinchiaturo	gaz_vinchiaturo	ingravallo	projectedspace	relative					1.0	lorenzo_sabatino			
+interp_00421	ref_00357	vinchiaturo	gaz_vinchiaturo	santarella	projectedspace	relative									
+interp_00422	ref_00358	ovindoli	gaz_ovindoli	ingravallo	projectedspace	relative					1.0	lorenzo_sabatino			
+interp_00423	ref_00358	ovindoli	gaz_ovindoli	santarella	projectedspace	relative					0.8	lorenzo_sabatino			"Monteleone, probabilmente Monteleone sabino, indicato come luogo d'origine d'una delle ""nipotine"" al servizio dei Balducci"
+interp_00424	ref_00359	laboratorio_zamira	gaz_due_santi	maresciallo_di_pietrantonio	projectedspace	indeterminate	inside				1.0	lorenzo_sabatino			Anzio si collona nel territorio costiero del Castelli Romani
+interp_00425	ref_00359	laboratorio_zamira	gaz_due_santi	pompeo	projectedspace	indeterminate	inside								Area paesaggistica vaga e analogica, delimitata dal Tevere e costruita per accumulo descrittivo (castelli, vigne, colli, monti, piane), contrapposta alla città di Roma; spazio percepito e mitizzato da Liliana Balducci. Il Tevere funziona come barriera idrografica e simbolica di separazione tra spazio urbano e spazio campestre, più che come luogo in sé.
+interp_00426	ref_00360	marino	gaz_marino	zamira_pacori	projectedspace	relative									Tevere e Biferno sono impiegati come sineddoche spaziale dei tratti diatopici della lingua di Ingravallo
+interp_00427	ref_00361	albano_laziale	gaz_albano_laziale	zamira_pacori	projectedspace	relative					1.0	lorenzo_sabatino	2026-04-08 00:00:00		
+interp_00428	ref_00362	castel_gandolfo	gaz_castel_gandolfo	zamira_pacori	projectedspace	relative					0.5	lorenzo_sabatino	2026-04-08 00:00:00		
+interp_00429	ref_00363	ariccia	gaz_ariccia	zamira_pacori	projectedspace	relative									
+interp_00430	ref_00364	ditta_ciurlani	gaz_marino	zamira_pacori	projectedspace	relative	inside								
+interp_00431	ref_00365	marino	gaz_marino	pestalozzi	projectedspace	relative									
+interp_00432	ref_00366	due_santi	gaz_due_santi	zamira_pacori	projectedspace	relative									
+interp_00433	ref_00367	tenenza_carabinieri_marino	gaz_marino	pestalozzi	setting	approximate	inside								
+interp_00434	ref_00367	tenenza_carabinieri_marino	gaz_marino	santarella	setting	approximate	inside								
+interp_00435	ref_00368	tenenza_carabinieri_marino	gaz_marino	narrator	setting	approximate	inside								
+interp_00436	ref_00369	torraccio	gaz_torraccio	ines_cionini	projectedspace	relative									
+interp_00437	ref_00370	via_appia	gaz_via_appia	ines_cionini	projectedspace	relative									
+interp_00438	ref_00371	frattocchie	gaz_frattocchie	ines_cionini	projectedspace	approximate									
+interp_00439	ref_00372	san_giovanni	gaz_san_giovanni	ines_cionini	projectedspace	approximate									
+interp_00440	ref_00373	santo_stefano_rotondo	gaz_santo_stefano_rotondo	ines_cionini	projectedspace	approximate									
+interp_00441	ref_00374	piazza_vittorio_emanuele	gaz_piazza_vittorio_emanuele	ines_cionini	projectedspace	approximate									
+interp_00442	ref_00375	san_giovanni	gaz_san_giovanni	brigatiere_juppariello	marker	relative									
+interp_00443	ref_00376	torraccio	gaz_torraccio	ines_cionini	projectedspace	approximate									
+interp_00444	ref_00377	san_giovanni	gaz_san_giovanni	brigatiere_juppariello	marker	relative									
+interp_00445	ref_00378	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	ines_cionini	setting	approximate									
+interp_00446	ref_00378	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	pollarola	setting	approximate									
+interp_00447	ref_00378	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	scarpara	setting	approximate									
+interp_00448	ref_00379	due_santi	gaz_due_santi	ines_cionini	projectedspace	relative									
+interp_00449	ref_00380	frattocchie	gaz_frattocchie	ines_cionini	projectedspace	relative									
+interp_00450	ref_00381	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	paolillo	setting	approximate									
+interp_00451	ref_00382	regina_coeli	gaz_regina_coeli	ines_cionini	projectedspace	approximate									
+interp_00452	ref_00383	marino	gaz_marino	zamira_pacori	projectedspace	relative									
+interp_00453	ref_00384	ariccia	gaz_ariccia	zamira_pacori	projectedspace	relative									
+interp_00454	ref_00385	due_santi	gaz_due_santi	zamira_pacori	setting	relative									
+interp_00455	ref_00386	via_appia	gaz_via_appia	zamira_pacori	setting	relative									
+interp_00456	ref_00387	due_santi	gaz_due_santi	zamira_pacori	setting	relative									
+interp_00457	ref_00388	due_santi	gaz_due_santi	zamira_pacori	setting	relative									
+interp_00458	ref_00389	marino	gaz_marino	zamira_pacori	projectedspace	relative									
+interp_00459	ref_00390	ariccia	gaz_ariccia	zamira_pacori	projectedspace	relative									
+interp_00460	ref_00391	due_santi	gaz_due_santi	zamira_pacori	setting	relative									
+interp_00461	ref_00392	laboratorio_zamira	gaz_due_santi	zamira_pacori	setting	precise	inside								
+interp_00462	ref_00393	via_appia	gaz_via_appia	zamira_pacori	setting	approximate									
+interp_00463	ref_00394	laboratorio_zamira	gaz_due_santi	zamira_pacori	setting	precise	inside								
+interp_00464	ref_00395	via_appia	gaz_via_appia	zamira_pacori	setting	approximate									
+interp_00465	ref_00396	via_appia	gaz_via_appia	nipotine_zamira	projectedspace	relative									
+interp_00466	ref_00397	via_ardeatina	gaz_via_ardeatina	nipotine_zamira	projectedspace	relative									
+interp_00467	ref_00398	via_anziate	gaz_via_anziate	nipotine_zamira	projectedspace	relative									
+interp_00468	ref_00399	laboratorio_zamira	gaz_due_santi	narrator	setting	approximate	inside								
+interp_00469	ref_00400	tenenza_carabinieri_marino	gaz_marino	santarella	setting	approximate	inside								
+interp_00470	ref_00401	torraccio	gaz_torraccio	santarella				routenode	tragitto_torraccio_ponte_divino_amore	1					
+interp_00471	ref_00402	frattocchie	gaz_frattocchie	santarella				routenode	tragitto_torraccio_ponte_divino_amore	2					
+interp_00472	ref_00403	robine_vecchie	gaz_frattocchie	santarella			near	routenode	tragitto_torraccio_ponte_divino_amore	3	0.5				
+interp_00473	ref_00403	robine_vecchie	gaz_due_santi	santarella			near	routenode	tragitto_torraccio_ponte_divino_amore	3	0.5				
+interp_00474	ref_00404	cassero	gaz_frattocchie	santarella			near	routenode	tragitto_torraccio_ponte_divino_amore	4	0.5				Possibile referente: Castello della Castelluccia, circa 41.7443, 12.6165
+interp_00475	ref_00404	cassero	gaz_pavona	santarella			near	routenode	tragitto_torraccio_ponte_divino_amore	4	0.5				Possibile referente: Castello della Castelluccia, circa 41.7443, 12.6165
+interp_00476	ref_00405	ponte_divino_amore	gaz_ponte_divino_amore	santarella				routenode	tragitto_torraccio_ponte_divino_amore	5					
+interp_00477	ref_00406	tragitto_torraccio_ponte_divino_amore		santarella	route	approximate									
+interp_00478	ref_00407	milano	gaz_milano	santarella	projectedspace	indeterminate									
+interp_00479	ref_00408	milano	gaz_milano	santarella	projectedspace	indeterminate									
+interp_00480	ref_00409	via_zanardelli	gaz_via_zanardelli	santarella	marker	approximate									
+interp_00481	ref_00410	due_santi	gaz_due_santi	zamira_pacori	setting	relative									
+interp_00482	ref_00411	tenenza_carabinieri_marino	gaz_marino	santarella	setting	approximate	inside								
+interp_00483	ref_00412	rocca_di_papa	gaz_rocca_di_papa	santarella				routenode	tragitto_rocca_di_papa_monte_nuncupale	1					
+interp_00484	ref_00413	castel_savello	gaz_castel_savello	santarella				routenode	tragitto_rocca_di_papa_monte_nuncupale	2	0.75				
+interp_00485	ref_00414	rocca_orsina	gaz_rocca_orsina	santarella				routenode	tragitto_rocca_di_papa_monte_nuncupale	3					
+interp_00486	ref_00415	monte_nuncupale	gaz_colli_albani	santarella				routenode	tragitto_rocca_di_papa_monte_nuncupale	4					
+interp_00487	ref_00416	tragitto_rocca_di_papa_monte_nuncupale		santarella	route	relative									
+interp_00488	ref_00417	tenenza_carabinieri_marino	gaz_marino	santarella	setting	relative	inside								
+interp_00489	ref_00418	via_ardeatina	gaz_via_ardeatina	santarella	marker	relative									
+interp_00490	ref_00419	via_appia	gaz_via_appia	santarella	setting	relative									
+interp_00491	ref_00420	cecchina	gaz_cecchina	santarella				routenode	tragitto_cecchina_anziate	1					
+interp_00492	ref_00421	santa_palomba	gaz_santa_palomba	santarella				routenode	tragitto_cecchina_anziate	2					
+interp_00493	ref_00422	campoleone	gaz_campoleone	santarella				routenode	tragitto_cecchina_anziate	3					
+interp_00494	ref_00423	via_ardeatina	gaz_via_ardeatina	santarella				routenode	tragitto_cecchina_anziate	4					
+interp_00495	ref_00424	via_anziate	gaz_via_anziate	santarella				routenode	tragitto_cecchina_anziate	5					
+interp_00496	ref_00425	tragitto_cecchina_anziate		santarella	route	precise									
+interp_00497	ref_00426	frattocchie	gaz_frattocchie	santarella				routenode	tragitto_frattocchie_ciampino	1					
+interp_00498	ref_00427	via_appia	gaz_via_appia	santarella				routenode	tragitto_frattocchie_ciampino	2					
+interp_00499	ref_00428	ca_francesi	gaz_ca_francesi	santarella				routenode	tragitto_frattocchie_ciampino	3					
+interp_00500	ref_00429	tor_ser_paolo	gaz_tor_ser_paolo	santarella				routenode	tragitto_frattocchie_ciampino	4					
+interp_00501	ref_00430	ciampino	gaz_ciampino	santarella				routenode	tragitto_frattocchie_ciampino	5					
+interp_00502	ref_00431	tragitto_frattocchie_ciampino		santarella	route	precise									
+interp_00503	ref_00432	ciampino	gaz_ciampino	santarella	marker	approximate									
+interp_00504	ref_00433	santa_palomba	gaz_santa_palomba	santarella	marker	approximate									
+interp_00505	ref_00434	colli_saluberrimi	gaz_colli_albani	pestalozzi	projectedspace	relative	overlaps								
+interp_00506	ref_00435	palazzo_simonetti	gaz_via_lanza	ingravallo	marker	precise	inside								
+interp_00507	ref_00436	via_lanza	gaz_via_lanza	ingravallo	marker	precise									
+interp_00508	ref_00437	palazzo_del_mappamondo	gaz_palazzo_venezia	mussolini	projectedspace	relative									
+interp_00509	ref_00438	tenenza_carabinieri_marino	gaz_marino	pestalozzi	setting	approximate	inside								
+interp_00510	ref_00439	via_del_gesu	gaz_via_del_gesu	pestalozzi	marker	approximate									
+interp_00511	ref_00439	via_del_gesu	gaz_via_del_gesu	pompeo	marker	approximate									
+interp_00512	ref_00440	maccheronaro	gaz_via_del_gesu	pestalozzi	marker	approximate	inside								
+interp_00513	ref_00440	maccheronaro	gaz_via_del_gesu	pompeo	marker	approximate	inside								
+interp_00514	ref_00441	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	pompeo	projectedspace	approximate									
+interp_00515	ref_00442	laboratorio_zamira	gaz_due_santi	ines_cionini	projectedspace	relative	inside								
+interp_00516	ref_00442	laboratorio_zamira	gaz_due_santi	camilla_mattonari	projectedspace	relative	inside								
+interp_00517	ref_00443	santo_stefano_rotondo	gaz_santo_stefano_rotondo	ines_cionini	projectedspace	indeterminate									
+interp_00518	ref_00443	santo_stefano_rotondo	gaz_santo_stefano_rotondo	virginia_troddu	projectedspace	indeterminate									
+interp_00519	ref_00444	strada_di_campagna_celio	gaz_celio	ines_cionini	projectedspace	relative	inside								
+interp_00520	ref_00444	strada_di_campagna_celio	gaz_celio	virginia_troddu	projectedspace	relative	inside								
+interp_00521	ref_00445	via_di_san_paolo_della_croce	gaz_via_di_san_paolo_della_croce	ines_cionini	projectedspace	relative									
+interp_00522	ref_00445	via_di_san_paolo_della_croce	gaz_via_di_san_paolo_della_croce	virginia_troddu	projectedspace	relative									
+interp_00523	ref_00446	via_della_navicella	gaz_via_della_navicella	ines_cionini	projectedspace	relative									
+interp_00524	ref_00446	via_della_navicella	gaz_via_della_navicella	virginia_troddu	projectedspace	relative									
+interp_00525	ref_00447	via_di_santo_stefano_rotondo	gaz_via_di_santo_stefano_rotondo	ines_cionini	projectedspace	relative									
+interp_00526	ref_00447	via_di_santo_stefano_rotondo	gaz_via_di_santo_stefano_rotondo	virginia_troddu	projectedspace	relative									
+interp_00527	ref_00448	villa_celimontana	gaz_santa_maria_in_domnica	ines_cionini	projectedspace	relative	adjacentTo								
+interp_00528	ref_00448	villa_celimontana	gaz_santa_maria_in_domnica	virginia_troddu	projectedspace	relative	adjacentTo								
+interp_00529	ref_00449	santa_maria_in_domnica	gaz_santa_maria_in_domnica	ines_cionini	projectedspace	relative									
+interp_00530	ref_00449	santa_maria_in_domnica	gaz_santa_maria_in_domnica	virginia_troddu	projectedspace	relative									
+interp_00531	ref_00450	tempio_di_agrippa	gaz_tempio_di_agrippa	ines_cionini	projectedspace	indeterminate									
+interp_00532	ref_00450	tempio_di_agrippa	gaz_tempio_di_agrippa	virginia_troddu	projectedspace	indeterminate									
+interp_00533	ref_00451	santo_stefano_rotondo	gaz_santo_stefano_rotondo	ines_cionini	projectedspace	precise									
+interp_00534	ref_00451	santo_stefano_rotondo	gaz_santo_stefano_rotondo	virginia_troddu	projectedspace	precise									
+interp_00535	ref_00452	due_santi	gaz_due_santi	ines_cionini	projectedspace	relative									
+interp_00536	ref_00453	traforo	gaz_traforo	ines_cionini	projectedspace	approximate									
+interp_00537	ref_00453	traforo	gaz_traforo	diomede	projectedspace	approximate									
+interp_00538	ref_00454	monti	gaz_monti	diomede				routenode	tragitto_monti_piazza_esedra	1					
+interp_00539	ref_00455	trastevere	gaz_trastevere	diomede				routenode	tragitto_monti_piazza_esedra	2					
+interp_00540	ref_00456	piazza_colonna	gaz_piazza_colonna	diomede				routenode	tragitto_monti_piazza_esedra	3					
+interp_00541	ref_00457	piazza_esedra	gaz_piazza_esedra	diomede				routenode	tragitto_monti_piazza_esedra	4					
+interp_00542	ref_00458	tragitto_monti_piazza_esedra		diomede	route	approximate									
+interp_00543	ref_00459	via_veneto	gaz_via_veneto	diomede	projectedspace	approximate									
+interp_00544	ref_00460	via_ludovisi	gaz_via_ludovisi	diomede	projectedspace	approximate									
+interp_00545	ref_00461	publicii_clivio_de	gaz_rocca_savella	diomede	projectedspace	approximate	inside								
+interp_00546	ref_00461	publicii_clivio_de	gaz_rocca_savella	ines_cionini	projectedspace	approximate	inside								
+interp_00547	ref_00462	rocca_savella	gaz_rocca_savella	diomede	projectedspace	approximate									
+interp_00548	ref_00462	rocca_savella	gaz_rocca_savella	ines_cionini	projectedspace	approximate									
+interp_00549	ref_00463	prati	gaz_prati	ines_cionini	projectedspace	indeterminate									
+interp_00550	ref_00464	via_boncompagni	gaz_via_boncompagni	americana_inglese	projectedspace	relative									
+interp_00551	ref_00465	via_veneto	gaz_via_veneto	americana_inglese	projectedspace	relative									
+interp_00552	ref_00466	pensione_burgess	gaz_porta_pinciana	americana_inglese	projectedspace	relative	adjacentTo								
+interp_00553	ref_00467	pensione_burgess	gaz_porta_pinciana	pompeo	projectedspace	relative	adjacentTo								
+interp_00554	ref_00468	via_veneto	gaz_via_veneto	pompeo	projectedspace	approximate									
+interp_00555	ref_00469	palazzo_della_immacolatella	gaz_molo_beverello	americana_inglese	projectedspace	relative	adjacentTo								
+interp_00556	ref_00470	molo_beverello	gaz_molo_beverello	americana_inglese	projectedspace	relative									
+interp_00557	ref_00471	basilica_dei_frari	gaz_basilica_dei_frari	dottor_fumi	projectedspace	approximate									
+interp_00558	ref_00472	calabria	gaz_calabria	ingravallo	projectedspace	relative									
+interp_00559	ref_00473	sardegna	gaz_sardegna	ingravallo	projectedspace	relative									
+interp_00560	ref_00474	monte_circeo	gaz_monte_circeo	ingravallo	projectedspace	relative									
+interp_00561	ref_00475	reggio_calabria	gaz_reggio_calabria	ingravallo	projectedspace	relative									
+interp_00562	ref_00476	sassari	gaz_sassari	ingravallo	projectedspace	relative									
+interp_00563	ref_00477	civitavecchia	gaz_civitavecchia	ingravallo	projectedspace	relative									
+interp_00564	ref_00478	tor_ser_paolo	gaz_tor_ser_paolo	ines_cionini	projectedspace	relative									
+interp_00565	ref_00478	tor_ser_paolo	gaz_tor_ser_paolo	diomede	projectedspace	relative									
+interp_00566	ref_00479	casa_del_butiro	gaz_due_santi	ines_cionini	projectedspace	relative	inside								
+interp_00567	ref_00479	casa_del_butiro	gaz_due_santi	diomede	projectedspace	relative	inside								
+interp_00568	ref_00480	due_santi	gaz_due_santi	diomede	projectedspace	approximate									
+interp_00569	ref_00480	due_santi	gaz_due_santi	pestalozzi	projectedspace	approximate									
+interp_00570	ref_00481	termini	gaz_termini	contessa_veneziana	projectedspace	indeterminate									
+interp_00571	ref_00481	termini	gaz_termini	diomede	projectedspace	indeterminate									
+interp_00572	ref_00482	piazza_vittorio_emanuele	gaz_piazza_vittorio_emanuele	contessa_veneziana	projectedspace	indeterminate									
+interp_00573	ref_00482	piazza_vittorio_emanuele	gaz_piazza_vittorio_emanuele	diomede	projectedspace	indeterminate									
+interp_00574	ref_00483	via_merulana	gaz_via_merulana	contessa_veneziana	projectedspace	indeterminate									
+interp_00575	ref_00483	via_merulana	gaz_via_merulana	diomede	projectedspace	indeterminate									
+interp_00576	ref_00484	piazza_san_giovanni	gaz_piazza_san_giovanni	contessa_veneziana	projectedspace	indeterminate									
+interp_00577	ref_00484	piazza_san_giovanni	gaz_piazza_san_giovanni	diomede	projectedspace	indeterminate									
+interp_00578	ref_00485	piccarozzi	gaz_galleria_colonna	diomede	projectedspace	relative	inside								
+interp_00579	ref_00486	acqua_pia_antica_marcia	gaz_acqua_pia_antica_marcia	diomede	projectedspace	approximate									
+interp_00580	ref_00487	fontanella_di_borghese	gaz_fontanella_di_borghese	diomede	projectedspace	approximate									
+interp_00581	ref_00488	bottaro	gaz_ripetta	diomede	projectedspace	relative	inside								
+interp_00582	ref_00489	ripetta	gaz_ripetta	diomede	projectedspace	approximate									
+interp_00583	ref_00490	quattro_cantoni	gaz_quattro_cantoni	diomede	projectedspace	approximate									
+interp_00584	ref_00491	aliciaro	gaz_quattro_cantoni	diomede	projectedspace	relative	inside								
+interp_00585	ref_00491	aliciaro	gaz_san_carlo_alle_quattro_fontane	diomede	projectedspace	relative	adjacentTo								
+interp_00586	ref_00492	san_carlo_alle_quattro_fontane	gaz_san_carlo_alle_quattro_fontane	diomede	projectedspace	approximate									
+interp_00587	ref_00493	vite	gaz_via_della_vite	diomede	projectedspace	relative	inside								
+interp_00588	ref_00494	buco_a_santignazio	gaz_buco_a_santignazio	diomede	projectedspace	relative									
+interp_00589	ref_00495	villa_borghese	gaz_villa_borghese	diomede	projectedspace	relative									
+interp_00590	ref_00496	via_veneto	gaz_via_veneto	diomede	projectedspace	approximate									
+interp_00591	ref_00497	porta_pinciana	gaz_porta_pinciana	diomede	projectedspace	approximate									
+interp_00592	ref_00498	porta_pinciana	gaz_porta_pinciana	diomede	projectedspace	approximate									
+interp_00593	ref_00499	villa_borghese	gaz_villa_borghese	diomede	projectedspace	relative									
+interp_00594	ref_00500	pincio	gaz_pincio	diomede	projectedspace	approximate									
+interp_00595	ref_00501	bottaro	gaz_bottaro	diomede	projectedspace	relative									
+interp_00596	ref_00502	via_panisperna	gaz_via_panisperna	diomede	projectedspace	approximate									
+interp_00597	ref_00503	palazzo_219	gaz_via_merulana	ascanio_lanciani	projectedspace	relative	inside								
+interp_00598	ref_00504	piazza_vittorio_emanuele	gaz_piazza_vittorio_emanuele	ascanio_lanciani	projectedspace	approximate									
+interp_00599	ref_00504	piazza_vittorio_emanuele	gaz_piazza_vittorio_emanuele	ines_cionini	projectedspace	approximate									
+interp_00600	ref_00505	santa_maria_maggiore	gaz_santa_maria_maggiore	ascanio_lanciani	projectedspace	approximate									
+interp_00601	ref_00505	santa_maria_maggiore	gaz_santa_maria_maggiore	ines_cionini	projectedspace	approximate									
+interp_00602	ref_00506	piazza_vittorio_emanuele	gaz_piazza_vittorio_emanuele	ascanio_lanciani	projectedspace	approximate									
+interp_00603	ref_00507	tenenza_carabinieri_marino	gaz_marino	pestalozzi			inside	routenode	tragitto_marino_due_santi	1					
+interp_00604	ref_00508	laboratorio_zamira	gaz_due_santi	pestalozzi			inside	routenode	tragitto_marino_due_santi	2					
+interp_00605	ref_00509	tragitto_marino_due_santi		pestalozzi	route	relative									
+interp_00606	ref_00510	laboratorio_zamira		pestalozzi	projectedspace	approximate	inside								
+interp_00607	ref_00510	laboratorio_zamira		santarella	projectedspace	approximate	inside								
+interp_00608	ref_00511	casuccia_zamira	gaz_due_santi	pestalozzi	projectedspace	approximate	inside								
+interp_00609	ref_00511	casuccia_zamira	gaz_due_santi	santarella	projectedspace	approximate	inside								
+interp_00610	ref_00512	santa_margherita_in_abitacolo	gaz_santa_margherita_in_abitacolo	santarella	projectedspace	approximate									
+interp_00611	ref_00512	santa_margherita_in_abitacolo	gaz_santa_margherita_in_abitacolo	clelia_farcioni	projectedspace	approximate									Giorgio Pinotti identifica esplicitamente la sequenza: «è stata Clelia Farcioni a fare la spia col maresciallo Santarella» nell’incontro di Santa Margherita in Abitacolo. Giorgio Pinotti, “Liliana Balducci e il suo boja?”, (Edinburgh Journal of Gadda Studies)
+interp_00612	ref_00513	ditta_ciurlani	gaz_marino	zamira_pacori	projectedspace	relative	inside								
+interp_00613	ref_00514	laboratorio_zamira	gaz_due_santi	nipotine_zamira	projectedspace	approximate	inside								
+interp_00614	ref_00514	laboratorio_zamira	gaz_due_santi	zamira_pacori	projectedspace	approximate	inside								
+interp_00615	ref_00514	laboratorio_zamira	gaz_due_santi	santarella	projectedspace	approximate	inside								
+interp_00616	ref_00514	laboratorio_zamira	gaz_due_santi	pestalozzi	projectedspace	approximate	inside								
+interp_00617	ref_00515	tenenza_carabinieri_marino	gaz_marino	pestalozzi			inside	routenode	tragitto_tenenza_due_santi	1					
+interp_00618	ref_00515	tenenza_carabinieri_marino	gaz_marino	cocullo			inside	routenode	tragitto_tenenza_due_santi	1					
+interp_00619	ref_00516	porta_borgo_marino	gaz_marino	pestalozzi			inside	routenode	tragitto_tenenza_due_santi	2					
+interp_00620	ref_00516	porta_borgo_marino	gaz_marino	cocullo	marker	approximate	inside	routenode	tragitto_tenenza_due_santi	2					
+interp_00621	ref_00517	via_appia	gaz_via_appia	pestalozzi	marker	approximate		routenode	tragitto_tenenza_due_santi	3					
+interp_00622	ref_00517	via_appia	gaz_via_appia	cocullo	marker	approximate		routenode	tragitto_tenenza_due_santi	3					
+interp_00623	ref_00518	monte_algido	gaz_monte_algido	pestalozzi	marker	precise									
+interp_00624	ref_00519	monti_carseolani	gaz_monti_carseolani	pestalozzi	marker	precise									
+interp_00625	ref_00520	monte_velino	gaz_monte_velino	pestalozzi	marker	precise									
+interp_00626	ref_00521	monte_soratte	gaz_monte_soratte	pestalozzi	marker	precise									
+interp_00627	ref_00522	carsoli	gaz_carsoli	pestalozzi	marker	approximate									
+interp_00628	ref_00523	tivoli	gaz_tivoli	pestalozzi	marker	approximate									
+interp_00629	ref_00524	montagne_degli_equi	gaz_monti_carseolani	pestalozzi	marker	relative	overlaps				0.7				
+interp_00630	ref_00525	monte_velino	gaz_monte_velino	pestalozzi	marker	approximate									
+interp_00631	ref_00526	marsica	gaz_marsica	pestalozzi	marker	approximate									
+interp_00632	ref_00527	litorale_fiumicino	gaz_fiumicino	pestalozzi	marker	approximate	inside								
+interp_00633	ref_00528	litorale_ladispoli	gaz_ladispoli	pestalozzi	marker	approximate	inside								
+interp_00634	ref_00529	fontana_di_papa	gaz_fontana_di_papa	pestalozzi				routenode	tragitto_tenenza_due_santi	4					"Emilio Manzotti, nel commento analitico all’VIII capitolo, annota esplicitamente:
+«verso la Fontana»: le poche case di Fontana di Papa, sull’Anziatina, a una decina di chilometri dalle Frattocchie verso sud.
+Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p. 561, una delle fonti topografiche impiegate da Gadda. Emilio Manzotti, «Era l’alba, e più», nota al rigo 135 (EJGS)"
+interp_00635	ref_00529	fontana_di_papa	gaz_fontana_di_papa	cocullo				routenode	tragitto_tenenza_due_santi	4					
+interp_00636	ref_00530	porta_san_paolo	gaz_porta_san_paolo	pestalozzi	marker	approximate									
+interp_00637	ref_00531	cupola_san_pietro	gaz_piazza_san_pietro	pestalozzi	marker	relative	inside								
+interp_00638	ref_00532	acquedotto_claudio	gaz_acquedotto_claudio	pestalozzi	marker	approximate									
+interp_00639	ref_00533	due_santi	gaz_due_santi	pestalozzi	projectedspace	approximate									
+interp_00640	ref_00533	due_santi	gaz_due_santi	cocullo	projectedspace	approximate									
+interp_00641	ref_00534	casal_bruciato	gaz_casal_bruciato	pestalozzi	projectedspace	indeterminate									
+interp_00642	ref_00535	direttissima_roma_napoli	gaz_direttissima_roma_napoli	pestalozzi	projectedspace	indeterminate									
+interp_00643	ref_00536	campo_morto	gaz_campo_morto	pestalozzi	projectedspace	indeterminate									
+interp_00644	ref_00537	monte_circeo	gaz_monte_circeo	pestalozzi	projectedspace	indeterminate									
+interp_00645	ref_00538	castel_porcano	gaz_castel_porziano	pestalozzi	projectedspace	indeterminate	overlaps								
+interp_00646	ref_00539	castel_porcano	gaz_castel_porziano	pestalozzi	projectedspace	indeterminate	overlaps								
+interp_00647	ref_00540	due_santi	gaz_due_santi	pestalozzi	projectedspace	approximate									
+interp_00648	ref_00540	due_santi	gaz_due_santi	cocullo	projectedspace	approximate									
+interp_00649	ref_00541	monti_ernici	gaz_monti_ernici	pestalozzi	marker	relative									
+interp_00650	ref_00542	monti_simbruini	gaz_monti_simbruini	pestalozzi	marker	relative									
+interp_00651	ref_00543	due_santi	gaz_due_santi	pestalozzi				routenode	tragitto_tenenza_due_santi	5					
+interp_00652	ref_00543	due_santi	gaz_due_santi	cocullo				routenode	tragitto_tenenza_due_santi	5					
+interp_00653	ref_00544	tragitto_tenenza_due_santi		pestalozzi	route	approximate									
+interp_00654	ref_00544	tragitto_tenenza_due_santi		cocullo	route	approximate									
+interp_00655	ref_00545	via_appia	gaz_via_appia	narrator	marker	relative									
+interp_00656	ref_00546	albano_laziale	gaz_albano_laziale	narrator	marker	relative									
+interp_00657	ref_00547	laboratorio_zamira	gaz_due_santi	narrator	setting	precise	inside								
+interp_00658	ref_00548	via_appia	gaz_via_appia	narrator	marker	relative									
+interp_00659	ref_00549	orto_vigna_due_santi		narrator	marker	indeterminate	near								
+interp_00660	ref_00550	edicola_due_santi		narrator	marker	precise	overlaps								
+interp_00661	ref_00551	via_appia	gaz_via_appia	narrator	marker	relative									
+interp_00662	ref_00552	due_santi	gaz_due_santi	narrator	marker	relative									
+interp_00663	ref_00553	edicola_due_santi		narrator	marker	precise	overlaps								
+interp_00664	ref_00554	edicola_due_santi		cocullo	marker	approximate	overlaps								
+interp_00665	ref_00555	frattocchie	gaz_frattocchie	cocullo	projectedspace	relative									
+interp_00666	ref_00556	pozzofondo	gaz_valle_fondo	clelia_farcioni	projectedspace	indeterminate	overlaps				0.5				
+interp_00667	ref_00557	pavona	gaz_pavona	camilla_mattonari	projectedspace	relative									
+interp_00668	ref_00558	laboratorio_zamira	gaz_due_santi	zamira_pacori	setting	approximate	inside								
+interp_00669	ref_00558	laboratorio_zamira	gaz_due_santi	pestalozzi	setting	approximate	inside								
+interp_00670	ref_00558	laboratorio_zamira	gaz_due_santi	cocullo	setting	approximate	inside								
+interp_00671	ref_00559	santa_maria_novella	gaz_santa_maria_novella	pestalozzi	projectedspace	relative									
+interp_00672	ref_00560	torraccio	gaz_torraccio	pestalozzi	projectedspace	relative									
+interp_00673	ref_00561	via_merulana	gaz_via_merulana	menegazzi	projectedspace	relative									
+interp_00674	ref_00562	via_del_gobbo	gaz_via_del_gobbo	pestalozzi	projectedspace	relative									
+interp_00675	ref_00563	laboratorio_zamira	gaz_due_santi	pestalozzi	setting	approximate	inside								
+interp_00676	ref_00563	laboratorio_zamira	gaz_due_santi	zamira_pacori	setting	approximate	inside								
+interp_00677	ref_00564	due_santi	gaz_due_santi	zamira_pacori	projectedspace	relative									
+interp_00678	ref_00565	tenenza_carabinieri_marino	gaz_marino	pestalozzi	projectedspace	relative	inside								
+interp_00679	ref_00566	castel_di_leva	gaz_castel_di_leva	camilla_mattonari	projectedspace	approximate									
+interp_00680	ref_00567	ponte_divino_amore	gaz_ponte_divino_amore	camilla_mattonari	projectedspace	approximate									
+interp_00681	ref_00568	casal_bruciato	gaz_casal_bruciato	camilla_mattonari	projectedspace	approximate									
+interp_00682	ref_00569	divino_amore	gaz_divino_amore	camilla_mattonari	projectedspace	approximate									
+interp_00683	ref_00570	ponte_divino_amore	gaz_ponte_divino_amore	camilla_mattonari	projectedspace	approximate									
+interp_00684	ref_00571	ponte_divino_amore	gaz_ponte_divino_amore	camilla_mattonari	projectedspace	approximate									
+interp_00685	ref_00572	ponte_divino_amore	gaz_ponte_divino_amore	lavinia_mattonari	projectedspace	approximate									
+interp_00686	ref_00572	ponte_divino_amore	gaz_ponte_divino_amore	pestalozzi	projectedspace	approximate									
+interp_00687	ref_00572	ponte_divino_amore	gaz_ponte_divino_amore	cocullo	projectedspace	approximate									
+interp_00688	ref_00573	via_appia	gaz_via_appia	lavinia_mattonari				routenode	tragitto_appia_falcognana	1					
+interp_00689	ref_00573	via_appia	gaz_via_appia	pestalozzi				routenode	tragitto_appia_falcognana	1					
+interp_00690	ref_00573	via_appia	gaz_via_appia	cocullo				routenode	tragitto_appia_falcognana	1					
+interp_00691	ref_00574	falcognana	gaz_falcognana	lavinia_mattonari				routenode	tragitto_appia_falcognana	2					
+interp_00692	ref_00574	falcognana	gaz_falcognana	pestalozzi				routenode	tragitto_appia_falcognana	2					
+interp_00693	ref_00574	falcognana	gaz_falcognana	cocullo				routenode	tragitto_appia_falcognana	2					
+interp_00694	ref_00575	tragitto_appia_falcognana		lavinia_mattonari	route	approximate									
+interp_00695	ref_00575	tragitto_appia_falcognana		pestalozzi	route	approximate									
+interp_00696	ref_00575	tragitto_appia_falcognana		cocullo	route	approximate									
+interp_00697	ref_00576	via_della_falcognana	gaz_via_della_falcognana	camilla_mattonari	projectedspace	approximate									
+interp_00698	ref_00577	bivio_falcognana_casal_bruciato	gaz_via_della_falcognana	lavinia_mattonari	marker	relative	overlaps								
+interp_00699	ref_00577	bivio_falcognana_casal_bruciato	gaz_via_della_falcognana	cocullo	marker	relative	overlaps								
+interp_00700	ref_00577	bivio_falcognana_casal_bruciato	gaz_ponte_divino_amore	cocullo	marker	relative	near								
+interp_00701	ref_00577	bivio_falcognana_casal_bruciato	gaz_ferrovia_roma_velletri	cocullo	marker	relative	above								
+interp_00702	ref_00578	divino_amore	gaz_divino_amore	narrator	marker	precise									
+interp_00703	ref_00579	castel_di_leva	gaz_castel_di_leva	narrator	marker	precise									
+interp_00704	ref_00580	ponte_divino_amore	gaz_ponte_divino_amore	narrator	setting	precise									
+interp_00705	ref_00581	bivio_falcognana_casal_bruciato	gaz_via_della_falcognana	pestalozzi	marker	relative	overlaps								
+interp_00706	ref_00582	via_della_falcognana	gaz_via_della_falcognana	narrator	marker	precise									
+interp_00707	ref_00583	ponte_divino_amore	gaz_ponte_divino_amore	narrator	marker	precise									
+interp_00708	ref_00584	ferrovia_roma_velletri	gaz_ferrovia_roma_velletri	narrator	marker	precise									
+interp_00709	ref_00585	casal_bruciato	gaz_casal_bruciato	narrator	marker	precise									
+interp_00710	ref_00586	casello_km_20_25	gaz_casal_bruciato	pestalozzi	setting	approximate	near								
+interp_00711	ref_00586	casello_km_20_25	gaz_casal_bruciato	cocullo	setting	approximate	near								
+interp_00712	ref_00587	passaggio_livello_casal_bruciato		nonna_mattonari	setting	approximate									
+interp_00713	ref_00588	frattocchie	gaz_frattocchie	narrator	marker	precise									
+interp_00714	ref_00589	casello_km_20_25	gaz_casal_bruciato	narrator	marker	precise	near								
+interp_00715	ref_00590	casello_km_20_25	gaz_casal_bruciato	narrator	marker	precise	near								
+interp_00716	ref_00591	casello_km_20_25	gaz_casal_bruciato	nonna_mattonari	setting	precise	near								
+interp_00717	ref_00592	casello_km_20_25	gaz_casal_bruciato	nonna_mattonari	setting	precise	near								
+interp_00718	ref_00592	casello_km_20_25	gaz_casal_bruciato	pestalozzi	setting	precise	near								
+interp_00719	ref_00592	casello_km_20_25	gaz_casal_bruciato	cocullo	setting	precise	near								
+interp_00720	ref_00593	ciampino	gaz_ciampino	narrator	projectedspace	relative									
+interp_00721	ref_00594	ponte_divino_amore	gaz_ponte_divino_amore	narrator	projectedspace	relative									
+interp_00722	ref_00595	casello_km_20_25	gaz_casal_bruciato	narrator	setting	approximate	near								
+interp_00723	ref_00596	laboratorio_zamira	gaz_due_santi	pestalozzi	projectedspace	relative	inside								
+interp_00724	ref_00597	due_santi	gaz_due_santi	pestalozzi	projectedspace	relative									
+interp_00725	ref_00597	due_santi	gaz_due_santi	camilla_mattonari	projectedspace	relative									
+interp_00726	ref_00598	ciampino	gaz_ciampino	zio_cantoniere	projectedspace	relative									
+interp_00727	ref_00599	casello_km_20_25	gaz_casal_bruciato	camilla_mattonari	setting	precise	near								
+interp_00728	ref_00599	casello_km_20_25	gaz_casal_bruciato	pestalozzi	setting	precise	near								
+interp_00729	ref_00599	casello_km_20_25	gaz_casal_bruciato	cocullo	setting	precise	near								
+interp_00730	ref_00600	camera_casello		camilla_mattonari	setting	precise	inside								
+interp_00731	ref_00600	camera_casello		pestalozzi	setting	precise	inside								
+interp_00732	ref_00600	camera_casello		cocullo	setting	precise	inside								
+interp_00733	ref_00601	marino	gaz_marino	pestalozzi	projectedspace	approximate									
+interp_00734	ref_00602	tenenza_carabinieri_marino	gaz_marino	pestalozzi	projectedspace	approximate	inside								
+interp_00735	ref_00603	marino	gaz_marino	pestalozzi	projectedspace	approximate									
+interp_00736	ref_00604	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	pestalozzi	projectedspace	approximate									
+interp_00737	ref_00605	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	ingravallo	projectedspace	approximate									
+interp_00738	ref_00606	tenenza_carabinieri_marino	gaz_marino	santarella	projectedspace	approximate	inside								
+interp_00739	ref_00607	tenenza_carabinieri_marino	gaz_marino	santarella	projectedspace	approximate	inside								
+interp_00740	ref_00607	tenenza_carabinieri_marino	gaz_marino	camilla_mattonari	projectedspace	approximate	inside								
+interp_00741	ref_00608	via_veneto	gaz_via_veneto	camilla_mattonari	projectedspace	relative									
+interp_00742	ref_00609	ciampino	gaz_ciampino	zio_cantoniere	projectedspace	relative									
+interp_00743	ref_00610	cecchina	gaz_cecchina	zio_cantoniere	projectedspace	relative									
+interp_00744	ref_00611	casello_km_20_25	gaz_casal_bruciato	camilla_mattonari	projectedspace	approximate	near								
+interp_00745	ref_00612	tenenza_carabinieri_marino	gaz_marino	camilla_mattonari	projectedspace	approximate	inside								
+interp_00746	ref_00612	tenenza_carabinieri_marino	gaz_marino	zio_cantoniere	projectedspace	approximate	inside								
+interp_00747	ref_00613	casello_km_20_25	gaz_casal_bruciato	camilla_mattonari	projectedspace	approximate	near								
+interp_00748	ref_00613	casello_km_20_25	gaz_casal_bruciato	zio_cantoniere	projectedspace	approximate	near								
+interp_00749	ref_00614	casal_bruciato	gaz_casal_bruciato	zio_cantoniere	projectedspace	approximate									
+interp_00750	ref_00615	velletri	gaz_velletri	nonna_mattonari	projectedspace	approximate									
+interp_00751	ref_00616	bivio_falcognana_casal_bruciato	gaz_via_della_falcognana	pestalozzi	setting	approximate	overlaps								
+interp_00752	ref_00616	bivio_falcognana_casal_bruciato	gaz_via_della_falcognana	cocullo	setting	approximate	overlaps								
+interp_00753	ref_00616	bivio_falcognana_casal_bruciato	gaz_via_della_falcognana	lavinia_mattonari	setting	approximate	overlaps								
+interp_00754	ref_00616	bivio_falcognana_casal_bruciato	gaz_via_della_falcognana	camilla_mattonari	setting	approximate	overlaps								
+interp_00755	ref_00617	regina_coeli	gaz_regina_coeli	camilla_mattonari	projectedspace	approximate									
+interp_00756	ref_00618	tenenza_carabinieri_marino	gaz_marino	camilla_mattonari	projectedspace	approximate	inside								
+interp_00757	ref_00618	tenenza_carabinieri_marino	gaz_marino	lavinia_mattonari	projectedspace	approximate	inside								
+interp_00758	ref_00619	frattocchie	gaz_frattocchie	vetturale	projectedspace	relative									
+interp_00759	ref_00620	due_santi	gaz_due_santi	vetturale	projectedspace	relative									
+interp_00760	ref_00621	casello_km_20_25	gaz_casal_bruciato	enea_retalli	projectedspace	relative	near								
+interp_00761	ref_00621	casello_km_20_25	gaz_casal_bruciato	camilla_mattonari	projectedspace	relative	near								
+interp_00762	ref_00621	casello_km_20_25	gaz_casal_bruciato	lavinia_mattonari	projectedspace	relative	near								
+interp_00763	ref_00622	santa_rita_invitacolo	gaz_santa_rita_invitacolo	clelia_farcioni	projectedspace	relative									
+interp_00764	ref_00623	torraccio	gaz_torraccio	santarella	projectedspace	relative									
+interp_00765	ref_00624	ponte_divino_amore	gaz_ponte_divino_amore	santarella	projectedspace	relative									
+interp_00766	ref_00625	santa_palomba	gaz_santa_palomba	santarella	projectedspace	relative									
+interp_00767	ref_00626	santa_rita_invitacolo	gaz_santa_rita_invitacolo	santarella	projectedspace	relative									
+interp_00768	ref_00627	torraccio	gaz_torraccio	lavinia_mattonari	projectedspace	relative									
+interp_00769	ref_00627	torraccio	gaz_torraccio	enea_retalli	projectedspace	relative									
+interp_00770	ref_00628	castelli_romani	gaz_castelli_romani	pestalozzi	projectedspace	relative									
+interp_00771	ref_00629	via_appia	gaz_via_appia	pestalozzi	projectedspace	relative									
+interp_00772	ref_00629	via_appia	gaz_via_appia	enea_retalli	projectedspace	relative									
+interp_00773	ref_00630	via_anziate	gaz_via_anziate	pestalozzi	projectedspace	relative									
+interp_00774	ref_00630	via_anziate	gaz_via_anziate	enea_retalli	projectedspace	relative									
+interp_00775	ref_00631	casello_km_20_25	gaz_casal_bruciato	enea_retalli	projectedspace	relative	near								
+interp_00776	ref_00632	casal_bruciato	gaz_casal_bruciato	enea_retalli	projectedspace	relative									
+interp_00777	ref_00633	via_ardeatina	gaz_via_ardeatina	enea_retalli	projectedspace	relative									
+interp_00778	ref_00634	ardea	gaz_ardea	enea_retalli	projectedspace	relative									
+interp_00779	ref_00635	direttissima_roma_napoli	gaz_direttissima_roma_napoli	enea_retalli	projectedspace	relative									
+interp_00780	ref_00636	santa_palomba	gaz_santa_palomba	enea_retalli	projectedspace	relative									
+interp_00781	ref_00637	solforata	gaz_solforata	enea_retalli	projectedspace	relative									
+interp_00782	ref_00638	pratica_di_mare	gaz_pratica_di_mare	enea_retalli	projectedspace	relative									
+interp_00783	ref_00639	anzio	gaz_anzio	enea_retalli	projectedspace	relative									
+interp_00784	ref_00640	ostia	gaz_ostia	enea_retalli	projectedspace	relative									
+interp_00785	ref_00641	via_anziate	gaz_via_anziate	camilla_mattonari	marker	approximate									
+interp_00786	ref_00641	via_anziate	gaz_via_anziate	lavinia_mattonari	marker	approximate									
+interp_00787	ref_00641	via_anziate	gaz_via_anziate	pestalozzi	marker	approximate									
+interp_00788	ref_00641	via_anziate	gaz_via_anziate	cocullo	marker	approximate									
+interp_00789	ref_00642	casello_km_20_25	gaz_casal_bruciato	enea_retalli	projectedspace	relative	near								
+interp_00790	ref_00643	casello_km_20_25	gaz_casal_bruciato	enea_retalli	projectedspace	relative	near								
+interp_00791	ref_00643	casello_km_20_25	gaz_casal_bruciato	camilla_mattonari	projectedspace	relative	near								
+interp_00792	ref_00644	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	ascanio_lanciani	projectedspace	approximate									
+interp_00793	ref_00645	torraccio	gaz_torraccio	enea_retalli	projectedspace	approximate									
+interp_00794	ref_00646	marino	gaz_marino	santarella				routenode	tragitto_marino_albano_laziale	1					
+interp_00795	ref_00647	albano_laziale	gaz_albano_laziale	santarella				routenode	tragitto_marino_albano_laziale	2					
+interp_00796	ref_00648	tragitto_marino_albano_laziale		santarella	route	approximate									
+interp_00797	ref_00649	pavona	gaz_pavona	enea_retalli	projectedspace	approximate									
+interp_00798	ref_00650	palazzo	gaz_palazzo	enea_retalli	projectedspace	approximate									
+interp_00799	ref_00651	stazione_carabinieri_castello	gaz_castel_gandolfo	santarella	setting	approximate	inside								
+interp_00800	ref_00651	stazione_carabinieri_castello	gaz_castel_gandolfo	militi_castello	setting	approximate	inside								
+interp_00801	ref_00652	pavona	gaz_pavona	santarella	projectedspace	approximate									
+interp_00802	ref_00652	pavona	gaz_pavona	militi_castello	projectedspace	approximate									
+interp_00803	ref_00653	santa_maria_della_neve	gaz_santa_maria_della_neve	narrator	marker	approximate									
+interp_00804	ref_00654	santa_maria_maggiore	gaz_santa_maria_maggiore	ines_cionini	projectedspace	approximate									
+interp_00805	ref_00654	santa_maria_maggiore	gaz_santa_maria_maggiore	ascanio_lanciani	projectedspace	approximate									
+interp_00806	ref_00655	esquilino	gaz_esquilino	gaudenzio	projectedspace	approximate									
+interp_00807	ref_00656	via_carlo_alberto	gaz_via_carlo_alberto	gaudenzio	projectedspace	approximate									
+interp_00808	ref_00657	piazza_vittorio_emanuele	gaz_piazza_vittorio_emanuele	gaudenzio	projectedspace	approximate									
+interp_00809	ref_00657	piazza_vittorio_emanuele	gaz_piazza_vittorio_emanuele	ascanio_lanciani	projectedspace	approximate									
+interp_00810	ref_00658	piazza_vittorio_emanuele	gaz_piazza_vittorio_emanuele	gaudenzio	setting	precise									
+interp_00811	ref_00659	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	gaudenzio	projectedspace	relative									
+interp_00812	ref_00659	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	ascanio_lanciani	projectedspace	relative									
+interp_00813	ref_00660	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	gaudenzio	projectedspace	relative									
+interp_00814	ref_00660	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	ascanio_lanciani	projectedspace	relative									
+interp_00815	ref_00660	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	nonna_lanciani	projectedspace	relative									
+interp_00816	ref_00661	grottaferrata	gaz_grottaferrata	ascanio_lanciani	projectedspace	approximate									
+interp_00817	ref_00661	grottaferrata	gaz_grottaferrata	nonna_lanciani	projectedspace	approximate									
+interp_00818	ref_00662	torraccio	gaz_torraccio	ascanio_lanciani	projectedspace	approximate									
+interp_00819	ref_00662	torraccio	gaz_torraccio	nonna_lanciani	projectedspace	approximate									
+interp_00820	ref_00663	frattocchie	gaz_frattocchie	ascanio_lanciani	projectedspace	approximate									
+interp_00821	ref_00663	frattocchie	gaz_frattocchie	nonna_lanciani	projectedspace	approximate									
+interp_00822	ref_00664	porta_latina	gaz_porta_latina	ascanio_lanciani	projectedspace	approximate									
+interp_00823	ref_00664	porta_latina	gaz_porta_latina	nonna_lanciani	projectedspace	approximate									
+interp_00824	ref_00665	via_popolonia	gaz_via_popolonia	ascanio_lanciani	projectedspace	approximate									
+interp_00825	ref_00665	via_popolonia	gaz_via_popolonia	nonna_lanciani	projectedspace	approximate									
+interp_00826	ref_00666	via_della_caffarella	gaz_via_della_caffarella	ascanio_lanciani	projectedspace	approximate									
+interp_00827	ref_00666	via_della_caffarella	gaz_via_della_caffarella	nonna_lanciani	projectedspace	approximate									
+interp_00828	ref_00667	via_mamiani	gaz_via_mamiani	ascanio_lanciani	marker	approximate									
+interp_00829	ref_00667	via_mamiani	gaz_via_mamiani	santarella	marker	approximate									
+interp_00830	ref_00667	via_mamiani	gaz_via_mamiani	due_militi	marker	approximate									
+interp_00831	ref_00668	via_ricasoli	gaz_via_ricasoli	ascanio_lanciani	marker	approximate									
+interp_00832	ref_00668	via_ricasoli	gaz_via_ricasoli	santarella	marker	approximate									
+interp_00833	ref_00668	via_ricasoli	gaz_via_ricasoli	due_militi	marker	approximate									
+interp_00834	ref_00669	santa_maria_della_neve	gaz_santa_maria_della_neve	ingravallo	marker	relative									
+interp_00835	ref_00670	benevento	gaz_benevento	ingravallo	projectedspace	relative									
+interp_00836	ref_00671	pensione_burgess	gaz_porta_pinciana	pompeo	marker	approximate	adjacentTo								
+interp_00837	ref_00672	piazza_vittorio_emanuele	gaz_piazza_vittorio_emanuele	gaudenzio	marker	approximate									
+interp_00838	ref_00673	piazza_di_spagna	gaz_piazza_di_spagna	narrator	marker	relative									
+interp_00839	ref_00674	via_lanza	gaz_via_lanza	ingravallo	marker	approximate									
+interp_00840	ref_00674	via_lanza	gaz_via_lanza	maresciallo_di_pietrantonio	marker	approximate									
+interp_00841	ref_00674	via_lanza	gaz_via_lanza	autista_questura	marker	approximate									
+interp_00842	ref_00675	largo_brancaccio	gaz_largo_brancaccio	ingravallo				routenode	tragitto_brancaccio_piazza_san_giovanni	1					
+interp_00843	ref_00675	largo_brancaccio	gaz_largo_brancaccio	maresciallo_di_pietrantonio				routenode	tragitto_brancaccio_piazza_san_giovanni	1					
+interp_00844	ref_00675	largo_brancaccio	gaz_largo_brancaccio	autista_questura				routenode	tragitto_brancaccio_piazza_san_giovanni	1					
+interp_00845	ref_00676	via_merulana	gaz_via_merulana	ingravallo				routenode	tragitto_brancaccio_piazza_san_giovanni	2					
+interp_00846	ref_00676	via_merulana	gaz_via_merulana	maresciallo_di_pietrantonio				routenode	tragitto_brancaccio_piazza_san_giovanni	2					
+interp_00847	ref_00676	via_merulana	gaz_via_merulana	autista_questura				routenode	tragitto_brancaccio_piazza_san_giovanni	2					
+interp_00848	ref_00677	piazza_san_giovanni	gaz_piazza_san_giovanni	ingravallo				routenode	tragitto_brancaccio_piazza_san_giovanni	3					
+interp_00849	ref_00677	piazza_san_giovanni	gaz_piazza_san_giovanni	maresciallo_di_pietrantonio				routenode	tragitto_brancaccio_piazza_san_giovanni	3					
+interp_00850	ref_00677	piazza_san_giovanni	gaz_piazza_san_giovanni	autista_questura				routenode	tragitto_brancaccio_piazza_san_giovanni	3					
+interp_00851	ref_00678	tragitto_brancaccio_piazza_san_giovanni		ingravallo	route	precise									
+interp_00852	ref_00678	tragitto_brancaccio_piazza_san_giovanni		maresciallo_di_pietrantonio	route	precise									
+interp_00853	ref_00678	tragitto_brancaccio_piazza_san_giovanni		autista_questura	route	precise									
+interp_00854	ref_00679	santa_maria_maggiore	gaz_santa_maria_maggiore	ingravallo	marker	precise									
+interp_00855	ref_00680	viminale	gaz_viminale	narrator	marker	relative									
+interp_00856	ref_00681	via_merulana	gaz_via_merulana	ingravallo	setting	precise									
+interp_00857	ref_00682	marino	gaz_marino	autista_questura	marker	approximate									
+interp_00858	ref_00683	marino	gaz_marino	ingravallo	marker	approximate									
+interp_00859	ref_00684	marino	gaz_marino	maresciallo_di_pietrantonio	marker	approximate									
+interp_00860	ref_00683	tenenza_carabinieri_marino	gaz_marino	autista_questura	setting	approximate	inside								
+interp_00861	ref_00683	tenenza_carabinieri_marino	gaz_marino	ingravallo	setting	approximate	inside								
+interp_00862	ref_00683	tenenza_carabinieri_marino	gaz_marino	maresciallo_di_pietrantonio	setting	approximate	inside								
+interp_00863	ref_00684	via_massimo_dazeglio	gaz_via_massimo_dazeglio	autista_questura	marker	approximate									
+interp_00864	ref_00684	via_massimo_dazeglio	gaz_via_massimo_dazeglio	ingravallo	marker	approximate									
+interp_00865	ref_00684	via_massimo_dazeglio	gaz_via_massimo_dazeglio	maresciallo_di_pietrantonio	marker	approximate									
+interp_00866	ref_00685	due_santi	gaz_due_santi	pestalozzi	setting	approximate									
+interp_00867	ref_00686	tor_di_gheppio	gaz_quarto_di_santa_fumia	assunta	projectedspace	relative	near								
+interp_00868	ref_00687	via_massimo_dazeglio	gaz_via_massimo_dazeglio	ingravallo	marker	relative									
+interp_00869	ref_00687	via_massimo_dazeglio	gaz_via_massimo_dazeglio	maresciallo_di_pietrantonio	marker	relative									
+interp_00870	ref_00687	via_massimo_dazeglio	gaz_via_massimo_dazeglio	autista_questura	marker	relative									
+interp_00871	ref_00687	via_massimo_dazeglio	gaz_via_massimo_dazeglio	agente_runzato	marker	relative									
+interp_00872	ref_00688	torraccio	gaz_torraccio	ingravallo				routenode	tragitto_torraccio_ponte_divino_amore	1					
+interp_00873	ref_00688	torraccio	gaz_torraccio	maresciallo_di_pietrantonio				routenode	tragitto_torraccio_ponte_divino_amore	1					
+interp_00874	ref_00688	torraccio	gaz_torraccio	autista_questura				routenode	tragitto_torraccio_ponte_divino_amore	1					
+interp_00875	ref_00688	torraccio	gaz_torraccio	agente_runzato				routenode	tragitto_torraccio_ponte_divino_amore	1					
+interp_00876	ref_00689	via_appia	gaz_via_appia	ingravallo				routenode	tragitto_torraccio_ponte_divino_amore	2					
+interp_00877	ref_00689	via_appia	gaz_via_appia	maresciallo_di_pietrantonio				routenode	tragitto_torraccio_ponte_divino_amore	2					
+interp_00878	ref_00689	via_appia	gaz_via_appia	autista_questura				routenode	tragitto_torraccio_ponte_divino_amore	2					
+interp_00879	ref_00689	via_appia	gaz_via_appia	agente_runzato				routenode	tragitto_torraccio_ponte_divino_amore	2					
+interp_00880	ref_00690	due_santi	gaz_due_santi	ingravallo				routenode	tragitto_torraccio_ponte_divino_amore	3					
+interp_00881	ref_00690	due_santi	gaz_due_santi	maresciallo_di_pietrantonio				routenode	tragitto_torraccio_ponte_divino_amore	3					
+interp_00882	ref_00690	due_santi	gaz_due_santi	autista_questura				routenode	tragitto_torraccio_ponte_divino_amore	3					
+interp_00883	ref_00690	due_santi	gaz_due_santi	agente_runzato				routenode	tragitto_torraccio_ponte_divino_amore	3					
+interp_00884	ref_00691	via_della_falcognana	gaz_via_della_falcognana	ingravallo				routenode	tragitto_torraccio_ponte_divino_amore	4					
+interp_00885	ref_00691	via_della_falcognana	gaz_via_della_falcognana	maresciallo_di_pietrantonio				routenode	tragitto_torraccio_ponte_divino_amore	4					
+interp_00886	ref_00691	via_della_falcognana	gaz_via_della_falcognana	autista_questura				routenode	tragitto_torraccio_ponte_divino_amore	4					
+interp_00887	ref_00691	via_della_falcognana	gaz_via_della_falcognana	agente_runzato				routenode	tragitto_torraccio_ponte_divino_amore	4					
+interp_00888	ref_00692	via_anziate	gaz_via_anziate	ingravallo				routenode	tragitto_torraccio_ponte_divino_amore	5					
+interp_00889	ref_00692	via_anziate	gaz_via_anziate	maresciallo_di_pietrantonio				routenode	tragitto_torraccio_ponte_divino_amore	5					
+interp_00890	ref_00692	via_anziate	gaz_via_anziate	autista_questura				routenode	tragitto_torraccio_ponte_divino_amore	5					
+interp_00891	ref_00692	via_anziate	gaz_via_anziate	agente_runzato				routenode	tragitto_torraccio_ponte_divino_amore	5					
+interp_00892	ref_00693	ponte_di_santa_fumia	gaz_quarto_di_santa_fumia	ingravallo			inside	routenode	tragitto_torraccio_ponte_divino_amore	6					
+interp_00893	ref_00693	ponte_di_santa_fumia	gaz_quarto_di_santa_fumia	maresciallo_di_pietrantonio			inside	routenode	tragitto_torraccio_ponte_divino_amore	6					
+interp_00894	ref_00693	ponte_di_santa_fumia	gaz_quarto_di_santa_fumia	autista_questura			inside	routenode	tragitto_torraccio_ponte_divino_amore	6					
+interp_00895	ref_00693	ponte_di_santa_fumia	gaz_quarto_di_santa_fumia	agente_runzato			inside	routenode	tragitto_torraccio_ponte_divino_amore	6					
+interp_00896	ref_00694	tor_di_gheppio	gaz_quarto_di_santa_fumia	ingravallo			near	routenode	tragitto_torraccio_ponte_divino_amore	7					
+interp_00897	ref_00694	tor_di_gheppio	gaz_quarto_di_santa_fumia	maresciallo_di_pietrantonio			near	routenode	tragitto_torraccio_ponte_divino_amore	7					
+interp_00898	ref_00694	tor_di_gheppio	gaz_quarto_di_santa_fumia	autista_questura			near	routenode	tragitto_torraccio_ponte_divino_amore	7					
+interp_00899	ref_00694	tor_di_gheppio	gaz_quarto_di_santa_fumia	agente_runzato			near	routenode	tragitto_torraccio_ponte_divino_amore	7					
+interp_00900	ref_00695	casal_bruciato	gaz_casal_bruciato	ingravallo				routenode	tragitto_torraccio_ponte_divino_amore	8					
+interp_00901	ref_00695	casal_bruciato	gaz_casal_bruciato	maresciallo_di_pietrantonio				routenode	tragitto_torraccio_ponte_divino_amore	8					
+interp_00902	ref_00695	casal_bruciato	gaz_casal_bruciato	autista_questura				routenode	tragitto_torraccio_ponte_divino_amore	8					
+interp_00903	ref_00695	casal_bruciato	gaz_casal_bruciato	agente_runzato				routenode	tragitto_torraccio_ponte_divino_amore	8					
+interp_00904	ref_00696	ferrovia_roma_velletri	gaz_ferrovia_roma_velletri	ingravallo				routenode	tragitto_torraccio_ponte_divino_amore	9					
+interp_00905	ref_00696	ferrovia_roma_velletri	gaz_ferrovia_roma_velletri	maresciallo_di_pietrantonio				routenode	tragitto_torraccio_ponte_divino_amore	9					
+interp_00906	ref_00696	ferrovia_roma_velletri	gaz_ferrovia_roma_velletri	autista_questura				routenode	tragitto_torraccio_ponte_divino_amore	9					
+interp_00907	ref_00696	ferrovia_roma_velletri	gaz_ferrovia_roma_velletri	agente_runzato				routenode	tragitto_torraccio_ponte_divino_amore	9					
+interp_00908	ref_00697	ponte_divino_amore	gaz_ponte_divino_amore	ingravallo				routenode	tragitto_torraccio_ponte_divino_amore	10					
+interp_00909	ref_00697	ponte_divino_amore	gaz_ponte_divino_amore	maresciallo_di_pietrantonio				routenode	tragitto_torraccio_ponte_divino_amore	10					
+interp_00910	ref_00697	ponte_divino_amore	gaz_ponte_divino_amore	autista_questura				routenode	tragitto_torraccio_ponte_divino_amore	10					
+interp_00911	ref_00697	ponte_divino_amore	gaz_ponte_divino_amore	agente_runzato				routenode	tragitto_torraccio_ponte_divino_amore	10					
+interp_00912	ref_00698	tragitto_torraccio_ponte_divino_amore		ingravallo	route	approximate									
+interp_00913	ref_00698	tragitto_torraccio_ponte_divino_amore		maresciallo_di_pietrantonio	route	approximate									
+interp_00914	ref_00698	tragitto_torraccio_ponte_divino_amore		autista_questura	route	approximate									
+interp_00915	ref_00698	tragitto_torraccio_ponte_divino_amore		agente_runzato	route	approximate									
+interp_00916	ref_00699	tor_di_gheppio	gaz_quarto_di_santa_fumia	assunta	projectedspace	approximate	near								
+interp_00917	ref_00700	palazzo	gaz_palazzo	assunta	projectedspace	approximate									
+interp_00918	ref_00701	pavona	gaz_pavona	agente_runzato	marker	approximate									
+interp_00919	ref_00701	pavona	gaz_pavona	ingravallo	marker	approximate									
+interp_00920	ref_00702	stazione_pavona	gaz_pavona	agente_runzato	marker	approximate	inside								
+interp_00921	ref_00702	stazione_pavona	gaz_pavona	ingravallo	marker	approximate	inside								
+interp_00922	ref_00703	direttissima_roma_napoli	gaz_direttissima_roma_napoli	ingravallo	marker	approximate									
+interp_00923	ref_00703	direttissima_roma_napoli	gaz_direttissima_roma_napoli	agente_runzato	marker	approximate									
+interp_00924	ref_00704	tor_di_gheppio	gaz_quarto_di_santa_fumia	ingravallo	projectedspace	approximate	near								
+interp_00925	ref_00704	tor_di_gheppio	gaz_quarto_di_santa_fumia	agente_runzato	projectedspace	approximate	near								
+interp_00926	ref_00705	pavona	gaz_pavona	ingravallo	projectedspace	approximate									
+interp_00927	ref_00705	pavona	gaz_pavona	agente_runzato	projectedspace	approximate									
+interp_00928	ref_00706	casal_bruciato	gaz_casal_bruciato	ingravallo	projectedspace	approximate									
+interp_00929	ref_00706	casal_bruciato	gaz_casal_bruciato	agente_runzato	projectedspace	approximate									
+interp_00930	ref_00707	via_ardeatina	gaz_via_ardeatina	ingravallo	projectedspace	approximate									
+interp_00931	ref_00707	via_ardeatina	gaz_via_ardeatina	agente_runzato	projectedspace	approximate									
+interp_00932	ref_00708	ardea	gaz_ardea	ingravallo	projectedspace	approximate									
+interp_00933	ref_00708	ardea	gaz_ardea	agente_runzato	projectedspace	approximate									
+interp_00934	ref_00709	santa_palomba	gaz_santa_palomba	ingravallo	projectedspace	approximate									
+interp_00935	ref_00709	santa_palomba	gaz_santa_palomba	agente_runzato	projectedspace	approximate									
+interp_00936	ref_00710	marino	gaz_marino	ingravallo	projectedspace	approximate									
+interp_00937	ref_00710	marino	gaz_marino	agente_runzato	projectedspace	approximate									
+interp_00938	ref_00711	solforata	gaz_solforata	ingravallo	projectedspace	approximate									
+interp_00939	ref_00711	solforata	gaz_solforata	agente_runzato	projectedspace	approximate									
+interp_00940	ref_00712	pratica_di_mare	gaz_pratica_di_mare	ingravallo	projectedspace	approximate									
+interp_00941	ref_00712	pratica_di_mare	gaz_pratica_di_mare	agente_runzato	projectedspace	approximate									
+interp_00942	ref_00713	palazzo	gaz_palazzo	ingravallo	projectedspace	approximate									
+interp_00943	ref_00713	palazzo	gaz_palazzo	agente_runzato	projectedspace	approximate									
+interp_00944	ref_00714	pavona	gaz_pavona	ingravallo	projectedspace	approximate									
+interp_00945	ref_00714	pavona	gaz_pavona	agente_runzato	projectedspace	approximate									
+interp_00946	ref_00715	casal_bruciato	gaz_casal_bruciato	ingravallo	projectedspace	approximate									
+interp_00947	ref_00715	casal_bruciato	gaz_casal_bruciato	agente_runzato	projectedspace	approximate									
+interp_00948	ref_00716	tor_di_gheppio	gaz_quarto_di_santa_fumia	ingravallo	projectedspace	approximate	near								
+interp_00949	ref_00716	tor_di_gheppio	gaz_quarto_di_santa_fumia	agente_runzato	projectedspace	approximate	near								
+interp_00950	ref_00717	casa_crocchiapani		ingravallo	setting	approximate									
+interp_00951	ref_00717	casa_crocchiapani		agente_runzato	setting	approximate									
+interp_00952	ref_00717	casa_crocchiapani		maresciallo_di_pietrantonio	setting	approximate									
+interp_00953	ref_00717	casa_crocchiapani		assunta	setting	approximate									
+interp_00954	ref_00718	casa_crocchiapani		assunta	setting	precise									
+interp_00955	ref_00719	tor_di_gheppio	gaz_quarto_di_santa_fumia	veronica_magliarini	projectedspace	approximate	near								
+interp_00956	ref_00720	casa_crocchiapani		ingravallo	setting	precise									
+interp_00957	ref_00720	casa_crocchiapani		maresciallo_di_pietrantonio	setting	precise									
+interp_00958	ref_00720	casa_crocchiapani		assunta	setting	precise									
+interp_00959	ref_00721	tor_di_gheppio	gaz_quarto_di_santa_fumia	ingravallo	projectedspace	relative	near								
+interp_00960	ref_00721	tor_di_gheppio	gaz_quarto_di_santa_fumia	assunta	projectedspace	relative	near								
+interp_00961	ref_00722	tenenza_carabinieri_marino	gaz_marino	assunta	projectedspace	relative	inside								
+interp_00962	ref_00722	tenenza_carabinieri_marino	gaz_marino	pestalozzi	projectedspace	relative	inside								

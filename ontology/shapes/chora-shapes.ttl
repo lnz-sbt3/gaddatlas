@@ -1,0 +1,276 @@
+# =============================================================================
+# gaddatlas_shapes.ttl  —  Shape SHACL per la validazione del grafo GaddAtlas
+# =============================================================================
+#
+# COME LEGGERE QUESTO FILE (guida rapida a SHACL)
+# -----------------------------------------------------------------------------
+# Una "shape" (sh:NodeShape) descrive come devono essere fatti i nodi di una
+# certa classe. La struttura è sempre:
+#
+#   <NomeShape> a sh:NodeShape ;
+#       sh:targetClass <ClasseDaControllare> ;   # A QUALI nodi si applica
+#       sh:property [ ... ] ;                     # UN vincolo su una proprietà
+#       sh:property [ ... ] .                     # un altro vincolo
+#
+# Dentro ogni sh:property:
+#   sh:path        = quale proprietà controllo (es. ga:hasFocalizer)
+#   sh:minCount N  = deve comparire almeno N volte
+#   sh:maxCount N  = al massimo N volte
+#   sh:class C     = il valore deve essere un individuo di classe C
+#   sh:in ( ... )  = il valore deve essere UNO di questa lista chiusa
+#   sh:datatype    = il valore letterale deve essere di questo tipo
+#   sh:message     = cosa leggerai nel report se il vincolo è violato
+#   sh:severity    = sh:Violation (errore) | sh:Warning | sh:Info
+#
+# Il validatore (pySHACL) confronta questo file con i dati e produce un
+# "validation report": sh:conforms true/false + elenco delle violazioni.
+# =============================================================================
+
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix ga:   <https://w3id.org/chora#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+
+# =============================================================================
+# SHAPE 1 — SpatialInterpretation
+# L'unità base del dataset: la coppia (luogo × focalizzatore).
+# Invarianti: esattamente 1 focalizzatore; esattamente 1 target (place o route);
+# al massimo 1 valore per ciascun assigns*; vocabolari controllati.
+# =============================================================================
+
+ga:SpatialInterpretationShape
+    a sh:NodeShape ;
+    sh:targetClass ga:SpatialInterpretation ;
+
+    # --- Focalizzatore: esattamente uno. È l'invariante centrale del modello. ---
+    sh:property [
+        sh:path ga:hasFocalizer ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class ga:FocalizingAgent ;
+        sh:message "Ogni SpatialInterpretation deve avere esattamente un focalizzatore (FocalizingAgent)." ;
+        sh:severity sh:Violation ;
+    ] ;
+
+    # --- Deve interpretare esattamente una PlaceReference ---
+    sh:property [
+        sh:path ga:interpretsReference ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class ga:PlaceReference ;
+        sh:message "Ogni SpatialInterpretation deve interpretare esattamente una PlaceReference." ;
+        sh:severity sh:Violation ;
+    ] ;
+
+    # --- Narrative role: al massimo uno, dai 5 valori ammessi ---
+    sh:property [
+        sh:path ga:assignsNarrativeRole ;
+        sh:maxCount 1 ;
+        sh:in ( ga:Marker ga:Setting ga:ProjectedSpace ga:Route ga:ZoneOfAction ) ;
+        sh:message "assignsNarrativeRole deve essere uno dei 5 valori del vocabolario NarrativeRole" ;
+        sh:severity sh:Violation ;
+    ] ;
+
+    # --- Spatial determination: al massimo uno, dai 4 valori ammessi ---
+    sh:property [
+        sh:path ga:assignsSpatialDetermination ;
+        sh:maxCount 1 ;
+        sh:in ( ga:Precise ga:Approximate ga:Relative ga:Indeterminate ) ;
+        sh:message "assignsSpatialDetermination deve essere uno dei 4 valori del vocabolario SpatialDetermination." ;
+        sh:severity sh:Violation ;
+    ] ;
+
+    # --- Spatial relation type: al massimo uno, dai valori topologici ammessi ---
+    # (direct/null NON sono qui: sono assenza di relazione, quindi assenza di tripla)
+    sh:property [
+        sh:path ga:assignsSpatialRelationType ;
+        sh:maxCount 1 ;
+        sh:in ( ga:Inside ga:Contains ga:Near ga:AdjacentTo ga:Above ga:Below ga:Overlaps ga:RelatedTo ) ;
+        sh:message "assignsSpatialRelationType, se presente, deve essere un valore del vocabolario SpatialRelationType." ;
+        sh:severity sh:Violation ;
+    ] ;
+
+    # --- anchorsToEntity: se presente, DEVE puntare a un GazetteerEntity ---
+    # Cattura formalmente la regola "i generatori sono ancorati a entità geografiche".
+    sh:property [
+        sh:path ga:anchorsToEntity ;
+        sh:class ga:GazetteerEntity ;
+        sh:message "anchorsToEntity deve puntare a un GazetteerEntity, mai a un NarrativePlace." ;
+        sh:severity sh:Violation ;
+    ] ;
+
+    # --- TARGETING: esattamente un bersaglio, place XOR route ---
+    # sh:xone impone che valga UNA sola delle due
+    # alternative: o targetsPlace (1 valore, verso NarrativePlace) oppure
+    # targetsRoute (1 valore, verso NarrativeRoute), mai entrambe, mai
+    # nessuna delle due.
+    sh:xone (
+        [
+            sh:property [
+                sh:path ga:targetsPlace ;
+                sh:minCount 1 ; sh:maxCount 1 ;
+                sh:class ga:NarrativePlace ;
+            ] ;
+            sh:property [ sh:path ga:targetsRoute ; sh:maxCount 0 ; ] ;
+        ]
+        [
+            sh:property [
+                sh:path ga:targetsRoute ;
+                sh:minCount 1 ; sh:maxCount 1 ;
+                sh:class ga:NarrativeRoute ;
+            ] ;
+            sh:property [ sh:path ga:targetsPlace ; sh:maxCount 0 ; ] ;
+        ]
+    ) ;
+    sh:message "Ogni SpatialInterpretation deve avere esattamente un bersaglio: o un ga:NarrativePlace via targetsPlace, o una ga:NarrativeRoute via targetsRoute, mai entrambi ne' nessuno." ;
+    sh:severity sh:Violation ;
+
+    # --- confidence: se presente, un decimal tra 0 e 1 ---
+    sh:property [
+        sh:path ga:confidence ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:minInclusive 0.0 ;
+        sh:maxInclusive 1.0 ;
+        sh:message "confidence deve essere un decimale tra 0 e 1." ;
+        sh:severity sh:Warning ;
+    ] .
+
+
+# =============================================================================
+# SHAPE 2 — Nodi di percorso (Route nodes)
+# Chi ha isNodeOfRoute DEVE avere anche routeOrder, e viceversa.
+# Si applica alle SpatialInterpretation che sono nodi di un tragitto.
+# =============================================================================
+
+ga:RouteNodeShape
+    a sh:NodeShape ;
+    # target: i nodi sono i soggetti che hanno isNodeOfRoute.
+    # Usiamo sh:targetSubjectsOf per agganciare "chi possiede questa proprietà".
+    sh:targetSubjectsOf ga:isNodeOfRoute ;
+
+    sh:property [
+        sh:path ga:isNodeOfRoute ;
+        sh:minCount 1 ;
+        sh:class ga:NarrativeRoute ;
+        sh:message "isNodeOfRoute deve puntare a una NarrativeRoute." ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path ga:routeOrder ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:message "Un nodo di percorso (isNodeOfRoute) deve avere esattamente un routeOrder intero >= 1." ;
+        sh:severity sh:Violation ;
+    ] .
+
+
+# =============================================================================
+# SHAPE 3 — NarrativePlace
+# RealityStatus è invariante del luogo: al massimo uno, dai 4 valori ammessi.
+# isPartOf, se presente, deve puntare a un altro NarrativePlace.
+# =============================================================================
+
+ga:NarrativePlaceShape
+    a sh:NodeShape ;
+    sh:targetClass ga:NarrativePlace ;
+
+    # --- RealityStatus: al massimo uno (invariante per luogo), dai 4 valori ---
+    sh:property [
+        sh:path ga:hasRealityStatus ;
+        sh:maxCount 1 ;
+        sh:in ( ga:Imported ga:Transformed ga:Imagined ga:Invented ) ;
+        sh:message "hasRealityStatus deve essere uno dei 4 valori ammessi, al massimo uno per luogo (invariante)." ;
+        sh:severity sh:Violation ;
+    ] ;
+
+    # --- isPartOf: se presente, punta a un NarrativePlace ---
+    sh:property [
+        sh:path ga:isPartOf ;
+        sh:class ga:NarrativePlace ;
+        sh:message "isPartOf deve puntare a un altro NarrativePlace." ;
+        sh:severity sh:Violation ;
+    ] ;
+
+    # --- hasPlaceCategory: al massimo uno ---
+    sh:property [
+        sh:path ga:hasPlaceCategory ;
+        sh:maxCount 1 ;
+        sh:message "Un luogo dovrebbe avere al massimo una categoria." ;
+        sh:severity sh:Warning ;
+    ] ;
+
+    # --- fuzziness: se presente, decimal ---
+    sh:property [
+        sh:path ga:hasFuzzinessLevel ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:decimal ;
+        sh:message "hasFuzzinessLevel deve essere un decimale singolo." ;
+        sh:severity sh:Warning ;
+    ] .
+
+
+# =============================================================================
+# SHAPE 4 — NarrativeRoute
+# Un tragitto deve essere il bersaglio di almeno un targetsRoute
+# (cioè almeno un'interpretazione lo attiva).
+# =============================================================================
+
+ga:NarrativeRouteShape
+    a sh:NodeShape ;
+    sh:targetClass ga:NarrativeRoute ;
+    sh:property [
+        sh:path [ sh:inversePath ga:targetsRoute ] ;
+        sh:minCount 1 ;
+        sh:message "Una NarrativeRoute deve essere bersaglio di almeno un targetsRoute (nessun tragitto orfano)." ;
+        sh:severity sh:Warning ;
+    ] .
+
+
+# =============================================================================
+# SHAPE 5 — PlaceReference
+# Ogni attestazione testuale deve avere l'excerpt, la fonte, l'opera e il capitolo.
+# =============================================================================
+
+ga:PlaceReferenceShape
+    a sh:NodeShape ;
+    sh:targetClass ga:PlaceReference ;
+    sh:property [
+        sh:path ga:appearsInWork ;
+        sh:minCount 1 ;
+        sh:class ga:LiteraryWork ;
+        sh:message "Ogni PlaceReference deve appartenere a una LiteraryWork." ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path ga:excerpt ;
+        sh:minCount 1 ;
+        sh:message "Ogni PlaceReference deve avere un excerpt testuale." ;
+        sh:severity sh:Warning ;
+    ] .
+
+
+# =============================================================================
+# SHAPE 6 — GazetteerEntity
+# Un'entità geografica dovrebbe avere coordinate (lat/long) o una geometria.
+# Warning, non Violation: alcune entità potrebbero essere non georeferenziabili.
+# =============================================================================
+
+ga:GazetteerEntityShape
+    a sh:NodeShape ;
+    sh:targetClass ga:GazetteerEntity ;
+    sh:property [
+        sh:path ga:lat ;
+        sh:maxCount 1 ;
+        sh:message "lat, se presente, deve essere singola." ;
+        sh:severity sh:Warning ;
+    ] ;
+    sh:property [
+        sh:path ga:long ;
+        sh:maxCount 1 ;
+        sh:message "long, se presente, deve essere singola." ;
+        sh:severity sh:Warning ;
+    ] .

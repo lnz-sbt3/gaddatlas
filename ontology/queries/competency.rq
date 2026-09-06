@@ -1,0 +1,201 @@
+# =============================================================================
+# GaddAtlas v4.1 — Competency queries
+# Eseguire su gaddatlas_v4_1_full.ttl (T-Box + vocabolario + A-Box).
+# Ogni query e' autonoma: i PREFIX sono ripetuti in testa a ciascuna perche'
+# la scheda SPARQL di Protege esegue una query alla volta.
+# =============================================================================
+
+
+# ==== CQ1 — Quali luoghi sono piu' attestati nel romanzo? ====
+# Peso di attestazione per luogo narrativo. E' il dato che alimenta la
+# gerarchia visiva dell'interfaccia (non l'area della cella di Voronoi).
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?toponimo (COUNT(DISTINCT ?ref) AS ?attestazioni)
+WHERE {
+  ?interp ga:targetsPlace ?place ;
+          ga:interpretsReference ?ref .
+  ?place rdfs:label ?toponimo .
+}
+GROUP BY ?toponimo
+ORDER BY DESC(?attestazioni)
+LIMIT 20
+
+
+# ==== CQ2 — Come si distribuiscono i luoghi per statuto di realta'? ====
+# RealityStatus e' invariante del luogo (non dell'interpretazione): il conteggio
+# e' quindi su ga:NarrativePlace, non su ga:SpatialInterpretation.
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?statuto (COUNT(?place) AS ?luoghi)
+WHERE {
+  ?place a ga:NarrativePlace ;
+         ga:hasRealityStatus ?s .
+  ?s skos:prefLabel ?statuto .
+}
+GROUP BY ?statuto
+ORDER BY DESC(?luoghi)
+
+
+# ==== CQ3 — Lo statuto di realta' condiziona la determinazione spaziale? ====
+# Query teoricamente centrale: verifica se un luogo Invented/Imagined possa
+# essere descritto con precisione. Se comparisse Imagined+Precise, la tesi
+# "la sfocatura appartiene a SpatialDetermination, non a RealityStatus"
+# trova conferma empirica nel dataset.
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?statuto ?determinazione (COUNT(DISTINCT ?interp) AS ?n)
+WHERE {
+  ?interp ga:targetsPlace ?place ;
+          ga:assignsSpatialDetermination ?d .
+  ?place ga:hasRealityStatus ?r .
+  ?r skos:prefLabel ?statuto .
+  ?d skos:prefLabel ?determinazione .
+}
+GROUP BY ?statuto ?determinazione
+ORDER BY ?statuto DESC(?n)
+
+
+# ==== CQ4 — Densita' spaziale capitolo per capitolo ====
+# Luoghi distinti e riferimenti per capitolo: il profilo di densita' che
+# l'interfaccia usa per lo scorrimento narrativo.
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+SELECT ?capitolo (COUNT(DISTINCT ?place) AS ?luoghi) (COUNT(DISTINCT ?ref) AS ?riferimenti)
+WHERE {
+  ?ref ga:mentionedInChapter ?ch .
+  ?ch ga:chapterNumber ?num ;
+      dcterms:title ?capitolo .
+  ?interp ga:interpretsReference ?ref ;
+          ga:targetsPlace ?place .
+}
+GROUP BY ?capitolo ?num
+ORDER BY ?num
+
+
+# ==== CQ5 — Quali personaggi attraversano piu' spazio? ====
+# Ampiezza spaziale per focalizzatore. La coppia luogo x focalizzatore e'
+# l'unita' base del dataset v4.1.
+PREFIX ga: <https://w3id.org/chora#>
+SELECT ?nome (COUNT(DISTINCT ?place) AS ?luoghi_distinti) (COUNT(?interp) AS ?interpretazioni)
+WHERE {
+  ?interp ga:hasFocalizer ?f ;
+          ga:targetsPlace ?place .
+  ?f ga:characterName ?nome .
+}
+GROUP BY ?nome
+ORDER BY DESC(?luoghi_distinti)
+LIMIT 15
+
+
+# ==== CQ6 — Quali luoghi resistono all'ancoraggio geografico? ====
+# I luoghi che nessuna interpretazione ancora al gazetteer: il residuo non
+# cartografabile, teoricamente il piu' interessante.
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?toponimo ?statuto (COUNT(?interp) AS ?attestazioni)
+WHERE {
+  ?interp ga:targetsPlace ?place .
+  ?place rdfs:label ?toponimo ;
+         ga:hasRealityStatus ?r .
+  ?r skos:prefLabel ?statuto .
+  FILTER NOT EXISTS { ?interp ga:anchorsToEntity ?gaz }
+}
+GROUP BY ?toponimo ?statuto
+ORDER BY DESC(?attestazioni)
+
+
+# ==== CQ7 — Ricostruzione ordinata dei tragitti ====
+# Sequenza delle tappe di ogni NarrativeRoute. Alimenta le polilinee
+# sequenziali dello stato assonometrico.
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?tragitto ?ordine ?tappa
+WHERE {
+  ?node ga:isNodeOfRoute ?route ;
+        ga:routeOrder ?ordine ;
+        ga:targetsPlace ?place .
+  ?place rdfs:label ?tappa .
+  BIND(REPLACE(STR(?route), "^.*/", "") AS ?tragitto)
+}
+ORDER BY ?tragitto ?ordine
+
+
+# ==== CQ8 — Il ruolo narrativo dello spazio cambia lungo il romanzo? ====
+# Distribuzione dei NarrativeRole per capitolo: mostra se lo spazio passa
+# da sfondo (Setting) a spazio proiettato (ProjectedSpace) con l'avanzare
+# dell'indagine.
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?capitolo ?ruolo (COUNT(?interp) AS ?n)
+WHERE {
+  ?interp ga:interpretsReference ?ref ;
+          ga:assignsNarrativeRole ?role .
+  ?ref ga:mentionedInChapter ?ch .
+  ?ch ga:chapterNumber ?capitolo .
+  ?role skos:prefLabel ?ruolo .
+}
+GROUP BY ?capitolo ?ruolo
+ORDER BY ?capitolo ?ruolo
+
+
+# ==== CQ9 — Quali luoghi persistono attraverso il romanzo? ====
+# Luoghi presenti in piu' di quattro capitoli: l'ossatura stabile della
+# cartografia, contro i luoghi episodici.
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?toponimo (COUNT(DISTINCT ?ch) AS ?capitoli)
+WHERE {
+  ?interp ga:targetsPlace ?place ;
+          ga:interpretsReference ?ref .
+  ?ref ga:mentionedInChapter ?ch .
+  ?place rdfs:label ?toponimo .
+}
+GROUP BY ?toponimo
+HAVING (COUNT(DISTINCT ?ch) > 4)
+ORDER BY DESC(?capitoli)
+
+
+# ==== CQ10 — Generatori di Voronoi con peso di attestazione ====
+# Feed diretto per l'interfaccia: entita' di gazetteer deduplicate, con
+# coordinate e numero di interpretazioni che vi si ancorano.
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+SELECT ?gaz ?toponimo ?lat ?long (COUNT(?interp) AS ?peso)
+WHERE {
+  ?interp ga:anchorsToEntity ?gaz .
+  ?gaz rdfs:label ?toponimo ;
+       geo:lat ?lat ;
+       geo:long ?long .
+}
+GROUP BY ?gaz ?toponimo ?lat ?long
+ORDER BY DESC(?peso)
+
+
+# ==== CQ11 — Catene di meronimia (sotto-luoghi) ====
+# Verifica che i sotto-luoghi si ancorino al DiscretePlace contenitore.
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?parte ?contenitore
+WHERE {
+  ?p ga:isPartOf ?c .
+  ?p rdfs:label ?parte .
+  ?c rdfs:label ?contenitore .
+}
+ORDER BY ?contenitore ?parte
+
+
+# ==== CQ12 — Quali relazioni topologiche sono effettivamente usate? ====
+# Copertura reale del vocabolario RCC-8: quali valori il close reading ha
+# richiesto e quali sono rimasti inutilizzati.
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+SELECT ?relazione (COUNT(?interp) AS ?n)
+WHERE {
+  ?interp ga:assignsSpatialRelationType ?rel .
+  ?rel skos:prefLabel ?relazione .
+}
+GROUP BY ?relazione
+ORDER BY DESC(?n)

@@ -1,0 +1,12 @@
+# Fine riga normalizzati a LF ovunque: nel repository e nella working copy.
+# La CI gira su Linux e rigenera i derivati con LF; senza questo file, su
+# Windows ogni file risulterebbe modificato e il confronto in CI fallirebbe
+# sempre.
+* text=auto eol=lf
+
+# Binari: git non deve toccarli
+*.xlsx binary
+*.png  binary
+*.jpg  binary
+*.pdf  binary
+*.ico  binary

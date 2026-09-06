@@ -1,0 +1,312 @@
+NarrativePlace_ID	Narrative_Toponym	Alternative_Toponym	Reality_Status	Is_Part_Of	Place_Category	Description	Notes	Fuzziness_Level
+acqua_pia_antica_marcia	Acqua Pia Antica Marcia		imported		acquedotto			
+acquedotto_claudio	Acquedotto Claudio		imported		acquedotto			
+albano_laziale	Albano Laziale		imported		località	Luogo dei Castelli Romani		
+aliciaro	Aliciaro		imported		ristorante			
+aniene	Aniene		imported		fiume	Fiume a nord di Roma		
+anzio	Anzio		imported		località	Luogo generico a sud di Roma	Comune laziale, in provincia di Roma	3
+area_oltre_tevere	Area oltre il Tevere		transformed		località	Area paesaggistica vaga e analogica, delimitata dal Tevere e costruita per accumulo descrittivo (castelli, vigne, colli, monti, piane)		4
+ardea	Ardea		imported		località			
+ariccia	Ariccia		imported		località			
+aventino	Aventino		imported		colle			
+banca_commerciale_italiana	Banca Commerciale Italiana		imported		banca			
+banca_ditalia	Banca d’Italia		imported		banca			
+banco_di_santo_spirito	Banco di Santo Spirito		imported		banca			
+barbiere	Barbiere		transformed		esercizio commerciale	Luogo generico: barbiere		
+basilica_dei_frari	Basilica dei Frari		imported		basilica	basilica a Venezia		
+benevento	Benevento		imported		città			
+bivio_falcognana_casal_bruciato	Bivio tra Falcognana e Casal Bruciato		imported		bivio stradale			
+bologna	Bologna		imported		località	Città		
+borgo_pio	Borgo Pio		imported		via			
+borgo_vecchio	Borgo Vecchio		imported		via			
+bottaro	Bottaro		imported		ristorante			
+bottega_ceccherelli	Bottega Ceccherelli		imagined		esercizio commerciale			
+rive_del_brahmaputra	Brahmaputra		imported		fiume	Fiume indiano		
+buco_a_santignazio	Buco a Sant'Ignazio		transformed		ristorante			
+ca_francesi	Ca' Francesi		transformed		località			
+calabria	Calabria		imported		regione	regione italiana		
+camera_casello	Camera al Casello 20-25		transformed	casello_km_20_25	camera	camera da letto della Camilla Mattonari		
+campo_de_fiori	Campo de' Fiori		imported		piazza			
+campo_marzio	Campo Marzio		imported		cimitero			
+campo_morto	Tenuta di Campo Morto		imported		località	tenuta storica / regione rurale, oggi corrispondente all'area di Campoverde, Aprilia		
+campo_verano	Campo Verano		imported		stazione			
+campoleone	Campoleone		imported		quartiere			
+cantinone_albano	Cantinone d'Albano		imagined		ristorante	Ristorante non identificato nel territorio di Albano Laziale		
+carsoli	Carsoli		imported		comune	Comune in Abruzzo		
+casa_crocchiapani	Casa Crocchiapani		imagined	tor_di_gheppio	casa rurale	Abitazione immaginaria di Assunta (Tina) Crocchiapani		
+casa_del_butiro	Casa del Butiro		invented		casa rurale	Casa immaginata nella zona dei Due Santi		
+casal_bruciato	Casal Bruciato		imported		quartiere	Quartiere di Roma		
+casello_km_20_25	Casello al chilometro 20-25		transformed		casello ferroviario	casello ferroviario in prossimità di Casal Bruciato		
+cassero	Cassero		imagined		castello			
+castelli_romani	Castelli Romani		imported		località			
+castel_di_leva	Castel di Leva		imported		località			
+castel_gandolfo	Castel Gandolfo		imported		località			
+castel_porcano	Castel Porcano	castel porcino	invented		castello	Castello d'immaginazione, deformazione linguistica di Castel Porziano		
+castel_savello	Castel Savello		imported		località			
+castello	Castello		imagined		castello	Luogo narrativo immaginato, un castello nella zona tra Pavona e Frattocchie		
+casuccia_zamira	Casuccia della Zamira		imagined		abitazione			
+cecchina	Cecchina		imported		stazione			
+celio	Celio		imported		quartiere			
+centrale_del_latte	Centrale del Latte		imported		edificio	 Il complesso, progettato dall'architetto Innocenzo Costantini, si estendeva su tutta l'area di Piazza Pepe, sulla quale si affaccia anche il famoso Teatro Ambra Jovinelli.[5] La struttura, sorta nel pieno periodo fascista (1929), era inoltre disposta nel cortile dove troneggiava l'Acquedotto Giulio (Aqua Iulia).	Abattuto nel 1990	
+ciampino	Ciampino		imported		comune			
+civitavecchia	Civitavecchia		imported		comune	Comune italiano nel Lazio		
+cobianchi	Cobianchi		transformed		esercizio commerciale	Luogo specificato ma non identificabile		
+collegio_romano	Collegio Romano		imported		commissariato			
+colli_albani	Colli Albani		imported		località			
+colli_saluberrimi	Colli Saluberrimi		transformed		località			3
+collina_molisana	Collina molisana		imported		collina	Espressione evocativa usata come sineddoche spaziale dell’origine sociale e culturale del personaggio; non luogo diegetico 	Uso retorico-identitario	3
+colonnato_san_pietro	Colonnato di San Pietro		imported		monumento			
+colosseo	Colosseo		imported		monumento			
+corso_umberto	Corso Umberto		imported		via			
+cupola_san_pietro	Cupola di San Pietro		imported		monumento	Sineddoche per la basilica di San Pietro, Roma - piazza San Pietro		2
+dazeglio	D'Azeglio		imported		albergo			
+direttissima_roma_napoli	Direttissima Roma-Napoli		imported		ferrovia	La linea è la Roma–Napoli via Formia, storicamente chiamata Direttissima Roma–Napoli		
+ditta_ciurlani	Ditta Ciurlani		transformed		esercizio commerciale			
+divino_amore	Divino Amore		imported		località			
+dosso_faiti	Dosso Faiti		imported		monte			
+due_santi	Due Santi		imported		località	Frazione di Marino (Castelli Romani)	Non presente in Indice dei Luoghi Isella	
+edicola_due_santi	Edicola ai Due Santi	tabernacolo appia	imagined	orto_vigna_due_santi	edicola	Edicola immaginata al di sopra del muro di cinta della vigna/orto sul lato opposto della via Appia rispetto al laboratorio della Zamira		
+esquilino	Esquilino		imported		quartiere			
+falcognana	Falcognana		imported		località			
+ferrovia_roma_velletri	Ferrovia Roma-Velletri		imported		ferrovia			
+filettino	Filettino		imported		località	Comune in provincia di Frosinone		
+fontana_di_papa	Fontana di Papa		imported		località	Località  lungo la via Nettunense, oggi nel territorio di Ariccia		
+fontanella_della_scrofa	Fontanella della Scrofa		imported		fontanella			
+fontanella_di_borghese	Fontanella di Borghese		imported		fontanella			
+foro_italico	Foro Italico		imported		complesso sportivo			
+forte_de_marmi	Forte de' Marmi		imported		località	Località di mare		
+frascati	Frascati	frascatano	imported		località	Località che indica il paesaggio aereo dei Colli Albani/Castelli Romani	Luogo della campagna romana	3
+frattocchie	Frattocchie		imported		frazione	Frazione lungo la via Appia		
+galleria_colonna	Galleria Colonna		imported		palazzo storico			
+genova	Genova		imported		località	Città		
+gianicolo	Gianicolo		imported		colle			
+gioielliere_catellani	Gioielliere Catellani		transformed		negozio	negozio non identificabile		
+golfo_di_napoli	Golfo di Napoli		imported		costa			
+grotta_de_sor_pippo	Grotta de Sor Pippo		imagined		ristorante	Trattoria non meglio identificata nel territorio di Marino		
+grottaferrata	Grottaferrata		imported		località			
+india	India		imported		paese			
+istituto_dellenciclopedia_treccani	Istituto dell'Enciclopedia Treccani		imported		palazzo storico			
+laboratorio_zamira	Laboratorio della Zamira Pacori	antro;botteguccia; bottega;	imagined	casuccia_zamira	edificio			
+largo_brancaccio	Largo Brancaccio		imported		piazzetta			
+lazio	Lazio		imported		località	Luogo generico: Lazio		3
+litorale_fiumicino	Litorale di Fiumicino		imported		costa	Costa del litorale di Fiumicino, Lazio		
+litorale_ladispoli	Litorale di Ladispoli		imported		costa	Costa del litorale di Ladispoli, Lazio		
+lungara	Lungara		imported		via			
+lungotevere_prati	Lungotevere di Prati		imported		via			
+maccheronaro	Maccheronaro		imported		ristorante			
+marino	Marino		imported		località	Località dei Castelli Romani	Non presente in Indice dei Luoghi Isella	
+marsica	Marsica		imported		località	Luogo generico nel territorio dell'Abruzzo		3
+milano	Milanno		imported		località	Città		
+molo_beverello	Molo Beverello		imported		porto	Molo del Porto di Napoli		
+montagne_degli_equi	Montagne degli Equi		transformed		monte	Montagne appartenenti allo storico popolo degli Equi	Riferimento metonimico alle catene montuose nominate nello stesso periodo del testo (più probabilmente i Carseolani)	3
+monte_algido	Monte Algido		imported		monte	Monte dei Colli Albani		
+monte_cengio	Monte Cengio		imported		monte	monte dell'Altipiano veneto		
+monte_circeo	Monte Circeo	monte della contessa Circia	transformed		monte	Monte tirrenico, nel Lazio		
+monte_manno	Monte Manno		imported		monte	monte dell'Altipiano Laziale, verso Latina	Non presente in Indice dei Luoghi Isella	
+monte_matese	Monte Matese		imported		monte	Monte del Molise		
+monte_nuncupale	Monte Nuncupale		invented		monte	Monte inventato, collocato nella zona dei Colli Albani/marino		
+monte_soratte	Monte Soratte		imported		monte	Monte nel Lazio		
+monte_velino	Monte Velino		imported		monte	Monte tra Lazio e Abruzzo		
+monteleone	Monteleone	Monteleone sabino	imported		località	Luogo generico in provincia di Rieti	Comune laziale, in provincia di Rieti	3
+monti	Monti		imported		quartiere	Quartiere di Roma		
+monti_carseolani	Monti Carseolani		imported		monte	Catena montuosa tra Lazio e Abruzzo		
+monti_ernici	Monti Ernici		imported		monte	Catena montuosa tra Lazio e Abruzzo		
+monti_simbruini	Monti Simbruini		imported		monte	Catena montuosa tra Lazio e Abruzzo		
+orto_vigna_due_santi	Orto o Vigna ai Due Santi		imagined	laboratorio_zamira	orto	Luogo non precisato simile a un orto o una vigna, di fronte al laboratorio della Zamira, al lato opposto della via Appia 		4
+ostia	Ostia		imported		località	Località di mare		
+ovindoli	Ovindoli		imported		località	Comune in Abruzzo		
+padova	Padova		imported		località	Città		
+palazzo	Palazzo 		imported		stazione			
+palazzo_219	Palazzo di via Merulana 219	palazzo dell'oro;palazzo de li pescicani; ben nota architettura; casermone color pidocchio; sto palazzo; camere al duecentodiciannove; il duecentodiciannove	transformed		palazzo storico	Luogo che identifica il palazzo in via Merulana 219		
+palazzo_chigi	Palazzo Chigi		imported		palazzo storico			
+palazzo_del_mappamondo	Palazzo der Mappamonno		transformed		palazzo storico			
+palazzo_della_immacolatella	Palazzo della Immacolatella		imported		palazzo storico	Palazzo situato al porto di Napoli		
+palazzo_pio	Palazzo Pio		imported		palazzo storico			
+palazzo_ruspoli	Palazzo Ruspoli		imported		palazzo storico			
+palazzo_simonetti	Palazzo Simonetti		imported		palazzo storico			
+palestrina	Palestrina		imported		località	Frazione di Roma lungo i Colli Albani		
+pantheon	Pantheon		imported		tempio			
+passaggio_livello_casal_bruciato	Passaggio a livello Casal Bruciato		transformed	casello_km_20_25	passaggio a livello			
+pavona	Pavona		imported		località			
+pensione_burgess	Pensione Burgess		imagined		albergo	Albergo immaginario, possibile deformazione di Pensione Villa Borghese, via Sgambati 4, vicino Porta Pinciana		4
+piani_alti_219	Piani alti del Palazzo al 219		transformed	palazzo_219	interno	Interno del palazzo in via Merulana 219		
+piazza_colonna	Piazza Colonna 		imported		piazza			
+piazza_di_pietra	Piazza di Pietra		imported		piazza			
+piazza_di_spagna	Piazza di Spagna		imported		piazza			
+piazza_esedra	Piazza Esedra		imported		piazza			
+piazza_garibaldi	Piazza Garibaldi		imported		piazza			
+piazza_montanara	Piazza Montanara		imported		piazza			
+piazza_pollarola	Piazza Pollarola		imported		piazza			
+piazza_rusticucci	Piazza Rusticucci		imported		piazza			
+piazza_san_giovanni	Piazza San Giovanni		imported		piazza			
+piazza_san_lorenzo_in_lucina	Piazza San Lorenzo in Lucina		imported		piazza			
+piazza_san_pietro	Piazza San Pietro		imported		piazza			
+piazza_verdi	Piazza Verdi		imported		piazza			
+piazza_vittorio_emanuele	Piazza Vittorio Emanuele		imported		piazza			
+piccarozzi	Piccarozzi		transformed		caffè	Bar in galleria colonna		
+piceno	Piceno		imported		località	Luogo generico nel territorio delle Marche		3
+pincio	Pincio		imported		colle			
+policlinico	Policlinico		imported		ospedale			
+ponte_di_santa_fumia	Ponte di Santa Fumia		transformed		strada			
+ponte_divino_amore	Ponte al Divino Amore		transformed		strada	Il «ponte» è il cavalcavia stradale della SP 91/b sulla ferrovia Roma–Velletri, oggi linea FL4. Non attraversa un corso d’acqua e non coincide con un ponte situato accanto al santuario.		
+porta_angelica	Porta Angelica		imported		porta cittadina			
+porta_borgo_marino	Porta del borgo di Marino		transformed		porta cittadina	Porta al confine del comune di Marino		
+porta_latina	Porta Latina		imported		porta cittadina			
+porta_maggiore	Porta Maggiore		imported		porta cittadina			
+porta_pinciana	Porta Pinciana		imported		porta cittadina			
+porta_san_paolo	Porta San Paolo		imported		porta cittadina			
+pozzo_delle_cornacchie	Pozzo delle Cornacchie		imported		via			
+pozzofondo	Pozzofondo		imagined		località	località immaginaria, luogo d'origine di Clelia Farcioni		
+prati	Prati	quartierino_prati	imported		rione			
+prati_di_castello	Prati di Castello		imported		quartiere			
+pratica_di_mare	Pratica di Mare		imported		località			
+predappio	Predappio		imported		località			
+publicii_clivio_de	Publicii clivio de'		imported		via			
+quartierino_prati	Quartierino Prati	prati	imported		quartiere			
+quarto_di_santa_fumia	Quarto di Santa Fumia		imported		località			
+quattro_cantoni	Quattro Cantoni		imported		via			
+reggio_calabria	Reggio Calabria		imported		città			
+regina_coeli	Regina Coeli		imported		carcere			
+ripetta	Ripetta		imported		via			
+robine_vecchie	Robine Vecchie		transformed		località	Robine Vecchie è un microtoponimo gaddiano non identificato, forse deformazione di un nome locale o denominazione fantastica applicata al paesaggio reale di Frattocchie–Due Santi.		
+rocca_di_papa	Rocca di Papa		imported		località			
+rocca_orsina	Rocca Orsina		imported		località		"«Rocca Orsina» non è il nome moderno di un comune, ma può essere ricondotto con buone ragioni alla fortificazione degli Orsini a Marino.
+
+Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente fortificazione medievale. L’attuale Palazzo Colonna sorge sul luogo della rocca, della quale sono ancora riconosciute strutture e tracce inglobate nell’edificio successivo. Le fonti locali la indicano come Rocca degli Orsini o fortezza orsinesca."	
+rocca_savella	Rocca Savella		imported		via			
+roccafringoli	Roccafringoli		invented		località			
+sacro_cuore	Sacro Cuore		imported		basilica			
+salsomaggiore	Salsomaggiore		imported		località	Luogo generico in provincia di Parma	Città termale in Emilia-Romagna, provincia di Parma	3
+san_callisto	San Callisto		imported		catacombe			
+san_camillo	San Camillo		imported		ospizio			
+san_carlo_alle_quattro_fontane	San Carlo alle quattro fontane		imported		chiesa			
+san_clemente	San Clemente		imported		basilica			
+san_giovanni	San Giovanni	Galilei	imported		commissariato	Galilei' = Alessandro Galilei, architetto della facciata di San Giovanni in Laterano. Perifrasi per metonimia dell'autore.		
+san_giovanni_in_laterano	San Giovanni in Laterano		imported		basilica			
+san_lorenzo_al_verano	San Lorenzo al verano		imported		basilica			
+san_luigi_de_francesi	San Luigi de' Francesi		imported		chiesa			
+san_martino_ai_monti	San Martino ai Monti		imported		basilica			
+san_silvestro_in_capite	San Silvestro in Capite		imported		basilica			
+sannio	Sannio		imported		località	Luogo generico nel territorio della Campania		3
+santa_chiara	Santa Chiara		imported		palazzo storico			
+santa_croce_in_gerusalemme	Santa Croce in Gerusalemme		imported		basilica			
+santa_margherita_in_abitacolo	Santa Margherita in Abitacolo		imported		chiesa			
+santa_maria_della_neve	Santa Maria della Neve		imported		chiesa			
+santa_maria_in_aquiro	Santa Maria in Aquiro		imported		chiesa			
+santa_maria_in_domnica	Santa Maria in Dòmnica		imported		basilica			
+santa_maria_in_porta_paradisi	Santa Maria in Porta Paradisi		imported		chiesa			
+santa_maria_maggiore	Santa Maria Maggiore		imported		basilica			
+santa_maria_novella	Santa Maria Novella		imported		quartiere	Quartiere di Firenze	Indica per metonimia la scuola Allievi Carabinieri di Pestalozzi	
+santa_maria_sopra_minerva	Santa Maria sopra Minerva		imported		basilica			
+santa_palomba	Santa Palomba		imported		stazione			
+santa_rita_invitacolo	Santa Rita Invitàcolo		imported		chiesa			
+santagnese_in_agone	Sant'Agnese in Agone		imported		chiesa			
+santagostino	Sant'Agostino		imported		basilica			
+santandrea_della_valle	Sant'Andrea della Valle		imported		basilica			
+santanna	Sant'Anna		imported		chiesa			
+santantonio_da_padova	Sant'Antonio da Padova		imported		basilica			
+santi_quattro_coronati	Santi Quattro Coronati		imported		basilica			
+santo_stefano_del_cacco_celio_santo_stefano	Santo Stefano del Cacco, Celio-Santo Stefano		imported		commissariato			
+santo_stefano_rotondo	Santo Stefano Rotondo		imported		basilica			
+sardegna	Sardegna		imported		regione	regione italiana		
+sassari	Sassari		imported		città	città sarda		
+scale	Scale		transformed	palazzo_219	interno	Interno del palazzo in via Merulana 219		
+scala_a	Scala A		transformed	palazzo_219	interno	Interno, scala A, del palazzo in via Merulana 219		
+scala_b	Scala B		transformed	palazzo_219	interno	Interno, scala B, del palazzo in via Merulana 219		
+scerpure	Scerpure		invented		località	Toponimo indiano fittizio, ancorato a un referente reale (Brahmaputra) ma non identificabile:		3
+solforata	Solforata		imported		quartiere			
+soriano_nel_cimino	Soriano nel Cimino		imported		località	Località in provincia di Viterbo		
+stazione_carabinieri_castello	Stazione dei Carabinieri a Castello		transformed		edificio			
+stazione_pavona	Stazione della Pavona		transformed		stazione	Stazione del paese di Pavona, non meglio identificata		
+strada_di_campagna_celio	Strada di campagna del Celio		transformed		strada	Strada non meglio qualificata nel quartiere del Celio		
+suburra	Suburra		imported		quartiere			
+teatro_jovinelli	Teatro Jovinelli		imported		teatro			
+tempio_di_agrippa	Tempio di Agrippa		imported		tempio			
+terme_di_caracalla	Terme di Caracalla		imported		sito archeologico			
+termini	Termini		imported		stazione			
+terracina	Terracina		imported		località	Comune italiano		
+tenenza_carabinieri_marino	Tenenza dei Carabinieri di Marino		transformed		edificio	Stazione di Polizia di Marino		
+terzo_piano_219	Terzo piano del Palazzo al 219		transformed	palazzo_219	interno	Interno del palazzo in via Merulana 219, terzo piano		
+tevere_biferno	Tra Tevere e Biferno		imported		località	Area paesaggistica vaga delimitata dal Tevere e dal Biferno, sineddoche spaziale per Roma e Molise, i topoi linguistici di Ingravallo	Uso retorico-identitario	4
+tiburtino	Tiburtino	Tivoli	imported		località	Località che indica il paesaggio aereo dei Colli Albani/Castelli Romani	Luogo della campagna romana	3
+tivoli	Tivoli		imported		località	Comune italiano		
+tor_di_gheppio	Tor di Gheppio		imagined		località	Località inventata, natali dell'Assunta Crocchiapani		4
+tor_ser_paolo	Tor Ser Paolo		imported		località			
+torraccio	Torraccio		imported		località	Frazione di Marino (Castelli Romani)		
+traforo	Traforo		imported		galleria			
+tranvie_dei_castelli	Tranvie dei Castelli		imported		linea ferroviaria			
+trastevere	Trastevere		imported		quartiere	quartiere di Roma		
+vado_ligure	Vado Ligure		imported		località			
+velletri	Velletri		imported		località	Comune laziale		
+verona	Verona		imported		località	Città		
+via_anziate	Via Anziate		imported		via			
+via_appia	Via Appia		imported		via			
+via_ardeatina	Via Ardeatina		imported		via			
+via_boncompagni	Via Boncompagni		imported		via			
+via_botteghe_oscure	Via Botteghe Oscure		imported		via			
+via_campo_marzio	Via Campo Marzio		imported		via			
+via_capo_dafrica	Via Capo d'Africa		imported		via			
+via_carlo_alberto	Via Carlo Alberto		imported		via			
+via_colonna_vittoria	Via Colonna Vittoria		imported		via			
+via_dazeglio	Via D'Azeglio		imported		via			
+via_de_merli	Via de' Merli		imported		via			
+via_de_querceti	Via de' Querceti		imported		via			
+via_degli_zingari	Via degli Zingari		imported		via			
+via_dei_banchi_vecchi	Via dei Banchi Vecchi		imported		via			
+via_dei_capocci	Via dei Capocci		imported		via			
+via_dei_fienili	Via dei Fienili		imported		via			
+via_dei_greci	Via dei Greci 		imported		via			
+via_dei_serpenti	Via dei Serpenti		imported		via			
+via_del_corso	Via del Corso		imported		via			
+via_del_gesu	Via del Gesù		imported		via			
+via_del_gobbo	Via del Gobbo		imported		via			
+via_del_parlamento	Via del Parlamento		imported		via			
+via_della_caffarella	Via della Caffarella		imported		via			
+via_della_falcognana	Via della Falcognana		imported		via			
+via_della_navicella	Via della Navicella		imported		via			
+via_della_palombella	Via della Palombella		imported		via			
+via_della_scrofa	Via della Scrofa		imported		via			
+via_delle_coppelle	Via delle Coppelle		imported		via			
+via_delle_oche	via delle Oche		imagined		via	via topograficamente non precisata	Toponimo non attestato nella toponomastica storica milanese. L’espressione «via delle Oche» è qui utilizzata in modo allusivo e deformante; la localizzazione urbana non va intesa in senso referenziale, ma come costruzione narrativa simbolica.	
+via_di_ferro	Via di Ferro		imported		via			
+via_di_grotta_pinta	Via di Grotta Pinta		imported		via			
+via_di_pietra	Via di Pietra		imported		via			
+via_di_san_paolo_della_croce	Via di San Paolo della Croce		imported		via			
+via_di_santo_stefano_rotondo	Via di Santo Stefano Rotondo		imported		via			
+via_frangipane	Via Frangipane		imported		via			
+via_labbricana	Via Labbricana		imported		via			
+via_lanza	Via Lanza 		imported		via			
+via_ludovisi	Via Ludovisi		imported		via			
+via_mamiani	Via Mamiani		imported		via			
+via_massimo_dazeglio	Via Massimo d'Azeglio		imported		via			
+via_merulana	Via Merulana		imported		via			
+via_milano	Via Milano		imported		via			
+via_monte_caprino	Via Monte Caprino		imported		via			
+via_montebello	Via Montebello		imported		via			
+via_nicotera	Via Nicotera		imported		via			
+via_orazio	Via Orazio		imported		via			
+via_panisperna	Via Panisperna		imported		via			
+via_popolonia	Via Popolonia		imported		via			
+via_ricasoli	Via Ricasoli		imported		via			
+via_valadier	Via Valadier		imported		via			
+via_veneto	Via Veneto		imported		via			
+via_venti_settembre	Via Venti Settembre		imported		via			
+via_villari	Via Vìllari		imported		via			
+via_zanardelli	Via Zanardelli		imported		via			
+viale_della_regina	Viale della Regina		imported		via			
+viale_liegi	Viale Liegi		imported		via			
+viale_regina_margherita	Viale Regina Margherita		imported		via			
+vicenza	Vicenza		imported		località	Città		
+vicolo_ciancaleoni	Vicolo Ciancaleoni		imported		via			
+vicolo_della_bucimazza	Vicolo della Bucimazza		imported		via			
+vicolo_delle_grotte_del_teatro	Vicolo delle Grotte del Teatro		imported		via			
+villa_borghese	Villa Borghese		imported		palazzo storico			
+villa_celimontana	Villa Celimontana		imported		parco			
+villa_deste	Villa d'Este		imported		palazzo storico			
+villa_gregoriana	Villa Gregoriana		imported		parco			
+villino_lungotevere	Villino Lungotevere		imagined		villa			
+viminale	Viminale		imported		quartiere			
+vinchiaturo	Vinchiaturo		imported		località	Paese del molise		
+vite	Vite		imported		ristorante			
+vomero	Vomero		imported		quartiere	Quartiere di napoli		
+zagarolo	Zagarolo		imported		località	Comune italiano in provincia di Roma		

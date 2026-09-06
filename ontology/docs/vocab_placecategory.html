@@ -1,0 +1,2234 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>GaddAtlas Place Category Vocabulary</title>
+<style>
+        #pylode {
+            position: fixed;
+            top: 205px;
+            left: -150px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 1.5em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
+        #pylode #p {
+            color: #329545;
+        }
+        #pylode #y {
+            color: #f9cb33;
+        }
+        #pylode #version {
+            font-size: 1.0em;
+        }
+
+        #profile {
+            font-style: italic;
+            font-size: 1.25em;
+            color: darkred!important;
+        }
+
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
+
+        dl {
+            /*border: 1px solid navy;*/
+            /*padding:5px;*/
+        }
+
+        dt {
+            font-weight: bold;
+            padding: 0;
+        }
+
+        dd {
+            margin-bottom: 10px;
+            padding-top: 7px;
+        }
+
+        ul.pylodelitlist {
+            list-style-type: none;
+            margin-left: -40px;
+        }
+
+        #metadata ul li,
+        #classes ul li {
+            margin-bottom: 10px;
+        }
+
+        #metadata dd p {
+          margin: 0 0 1em 0;
+        }
+
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding:5px;
+            background-color: #F4FFFF;
+        }
+
+        div.hierarchy {
+            margin-bottom: 30px;
+            background-color: #F4FFFF;
+            padding: 10px;
+        }
+
+        ul.hierarchy {=
+            padding: 5px 25px 5px 25px;
+        }
+
+        ul.hierarchy li {
+            margin-top:5px;
+        }
+
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .entity {
+            border: 1px solid navy;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
+
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
+
+        .entity table th {
+            text-align: left;
+        }
+
+        section#overview img {
+            max-width: 1000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #005A9C; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 20px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 {
+            font: italic 100% sans-serif;
+            margin-bottom: 10px;
+        }
+        h6 { font: small-caps 100% sans-serif }
+
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: left;
+        }
+
+        section {
+            max-width: 1500px;
+        }
+
+        .figure {
+            margin-bottom: 20px;
+        }
+
+        :link { color: #00C; background: transparent }
+        :visited { color: #609; background: transparent }
+        a:active { color: #C00; background: transparent }
+
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-con,
+        .sup-col {
+            cursor:help;
+        }
+
+        .sup-c {
+            color:orange;
+        }
+
+        .sup-op {
+            color:navy;
+        }
+
+        .sup-fp {
+            color:lightskyblue;
+        }
+
+        .sup-dp {
+            color:green;
+        }
+
+        .sup-ap {
+            color:darkred;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-con {
+            color:orange;
+        }
+
+        .sup-col {
+            color:darkred;
+        }
+
+        sup {
+            margin-left: -3px;
+        }
+        code {
+            font-size: large;
+            color: darkred;
+        }
+
+        /* less prominent links for properties */
+        .proplink {
+            color: #336;
+            text-decoration: none;
+        }
+
+        #toc {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 2;
+            height: 100%;
+            overflow-y: auto;
+            padding: 10px;
+            border: solid 1px navy;
+            font-size: small;
+            width: 180px;
+        }
+        #toc h3 {
+            margin-top: 5px;
+        }
+
+        #toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        #toc .first > li {
+            margin-top: 5px;
+        }
+
+        #toc .second,
+        #toc .third {
+            padding-left: 10px;
+        }
+
+        #content {
+            width: calc(100% - 150px);
+        }
+
+        .hover_property {
+            cursor: help;
+            text-decoration: none;
+            border-bottom: dashed 1px;
+        }
+
+        .setclass {
+            list-style-type: none;
+        }
+
+        code{
+            word-wrap: break-word;
+          }
+        table {
+            table-layout: fixed;
+            width: 100%;
+        }
+        td {
+            word-wrap: break-word;
+        }
+        #legend table.entity {
+            width: 25%;
+        }
+	</style>
+<link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhklEQVQ4jbWPzStEURjG3yQLirlGKUnKFO45Z+SjmXvnnmthQcpCoVhYmD/AwmJiI3OvZuZc2U3UlKU0/gAslMw9JgvhHxAr2fko7r0jHSsl+TgbTz2Lt5731/MASEiJW9ONml2QyX6rsGalmnT74v8BDf12hxJfpV8d1uwNKUBYszabdFv84L8B9X0rESVmmUup2fme0cVhJWaZHw4NWL1SewEAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ9Hn31OgoATL+CkLDGB5H1OKj4nFd/FBxUXJ0UZNb4edw/6nLyJXaj5FeCVyPLNIVmYK8TG1IwWb16L1gEACAFV90ftoT8bdOX0EeyY99gxBXZMgRz6qGb1KantAACI0UvE6F5XJqEjpsdURouI0Vt5gGOUkUNnPu7ObGIIMfNaGqDmjDRi9FZldF1lRgYzeqUyeoiY4ag5Iy3RgOYRM8+/M2bG8efsO4hGrpmJseyMAAAAAElFTkSuQmCC" rel="icon" sizes="16x16" type="image/png"/>
+<link href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC40lEQVRYhe2UT0hUQRzHp6Iss1B3VZKIDbbdfW9mnoi4f3zzjkJQeOgS0SEIb1EWBGGlLLu460zQPQM1unUIIjA6rfpm6ZAhHjoIRVQUFUlEbG+euTsdXG1d3VL3bVD4g+9h+L35fT/8fvN7ADgY9aHY5fpIvK82HO9ysu66wxWOzbkjcekKx0a2ALYA/n2AGi3a6ArFezcidziecQygNhhrcUficjP6PwBqtGijKxy/thnVBePHywYoDsFhl53GV8SEcsTx4usCMLUewTVpc23BNvEzm6Neyf1+KcG2vwqwUjgrOJq2JmHftwmkVBRGTvncFodnbI7vChO/FRznCmHsNM7aHM9Yk7Df5iqsLMw9sMNOK2g+jS4IEz0UJv4iuJZb2RltWnB4UZqH6ioGAgAAGe5vtiZhtzDx7OoRadLmeM7m6IRjhnLMW2Vx1bA5GhAmnhIcz6/xNj4Ujsky8UspwfayjDPjsF2Y6L7N8Vzx/BfP+KPg6LbgSqd8DnfJW2CnbaLhfH5ephpqygJYvQU4Z3P82TLRsDDhUTnmrSq+Y3N0Mg+Xldy/zwEAnLMWZ3pHpNExmfLs/t0dOdVcbT0JeKxUwFP2VljjqiE47Jp53LTXNxhsUZjerTByXWX6VZWRs/4bIQ2ACv+UAomgDzLCISNZxAxZKMhIDjLy1JfsaK+I+eGBUBNk5E2x8RogX/PdcDZUqieWTSh5D6nOVKqfhoycUmlHFFIyu5RXqf7AcQDISCpv/tqbMBqK883RtmpISRoxQyJKPgGn3wNk5NEigDFa6hslqV/Kj+FdBQD0bshIDlKSLlVcoWQo36UhR80BAMB73lulMn0EMpJTqD6qJiOt3mho/8GbkT2BZNgDB/V+RI0fkOrT3kRIVQbaDizJm2hdNbINBxwk5xAj3yEjuV9rZ1iIkgxixkLBA83mz8uCjLwoGwAx0vOnFSy5mtR4VTaAQvVORMnwZgSpzkrV/QmdE2tKe46+MQAAAABJRU5ErkJggg==" rel="icon" sizes="32x32" type="image/png"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<script id="schema.org" type="application/ld+json">
+[
+  {
+    "@id": "https://w3id.org/chora#PlaceCategoryScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/creator": [
+      {
+        "@id": "https://orcid.org/0009-0007-1496-722X"
+      }
+    ],
+    "https://schema.org/dateCreated": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2025-10-01"
+      }
+    ],
+    "https://schema.org/dateModified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2026-08-11"
+      }
+    ],
+    "https://schema.org/license": [
+      {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "https://schema.org/publisher": [
+      {
+        "@id": "https://ror.org/01111rn36"
+      }
+    ]
+  },
+  {
+    "@id": "https://ror.org/01111rn36",
+    "https://schema.org/name": [
+      {
+        "@value": "Università di Bologna"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/chora/vocab/placecategory",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/license": [
+      {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ]
+  }
+]
+	</script>
+</head>
+<body>
+<div id="content"><div class="ga-injected" style="margin:0 0 1.5em 0;padding:.6em .9em;border-left:3px solid #666;background:#f4f4f4;font-size:.9em;">↑ <a href="gaddatlas_doc.html">GaddAtlas Ontology</a><br/>Other vocabularies: <a href="vocab_narrativerole.html">Narrative Role</a> · <a href="vocab_spatialrelationtype.html">Narrative Spatial Relations</a> · <a href="vocab_realitystatus.html">Reality Status</a> · <a href="vocab_spatialdetermination.html">Spatial determination</a></div>
+<div class="section" id="metadata">
+<h1></h1>
+<h2>Metadata</h2>
+<dl>
+<div>
+<dt>
+<strong>IRI</strong>
+</dt>
+<dd>
+<code>https://w3id.org/chora#PlaceCategoryScheme</code>
+</dd>
+</div>
+<div>
+<dt>
+<a href="http://purl.org/dc/terms/created">Date Created</a>
+</dt>
+<dd>
+<div>
+<p>2025-10-01</p>
+</div>
+</dd>
+</div>
+<div>
+<dt>
+<a href="http://purl.org/dc/terms/creator">Creator</a>
+</dt>
+<dd>
+<div>
+<p>https://orcid.org/0009-0007-1496-722X</p>
+</div>
+</dd>
+</div>
+<div>
+<dt>
+<a href="http://purl.org/dc/terms/license">License</a>
+</dt>
+<dd>
+<div>
+<p>https://creativecommons.org/licenses/by/4.0/</p>
+</div>
+</dd>
+</div>
+<div>
+<dt>
+<a href="http://purl.org/dc/terms/modified">Date Modified</a>
+</dt>
+<dd>
+<div>
+<p>2026-08-11</p>
+</div>
+</dd>
+</div>
+<div>
+<dt>
+<a href="http://purl.org/dc/terms/publisher">Publisher</a>
+</dt>
+<dd>
+<div>
+<p>
+<a href="https://ror.org/01111rn36">Università di Bologna</a>
+</p>
+</div>
+</dd>
+</div>
+<div>
+<dt>
+<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#type">Type</a>
+</dt>
+<dd>
+<div>
+<p>
+<a href="http://www.w3.org/2002/07/owl#NamedIndividual">Named Individual</a>
+</p>
+<p>
+<a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a>
+</p>
+</div>
+</dd>
+</div>
+<div>
+<dt>
+<a href="http://www.w3.org/2002/07/owl#versionInfo">Version Info</a>
+</dt>
+<dd>
+<div>
+<p>4.1.1</p>
+</div>
+</dd>
+</div>
+<div>
+<dt>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel">Alternative Label</a>
+</dt>
+<dd>
+<div>
+<p>Categoria di luogo</p>
+</div>
+</dd>
+</div>
+<div>
+<dt>
+<a href="http://www.w3.org/2004/02/skos/core#hasTopConcept">Has Top Concept</a>
+</dt>
+<dd>
+<div>
+<p>
+<a href="https://w3id.org/chora#road">Road</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#dwelling">Dwelling</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#cafe">Café</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#city">City</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#park">Park</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#frazione">Frazione</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#gallery">Gallery</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#municipality">Municipality</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#villa">Villa</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#square">Square</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#bridge">Bridge</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#small_town">Small town</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#room">Room</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#kitchen_garden">Kitchen garden</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#sports_complex">Sports complex</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#level_crossing">Level crossing</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#Railway_line">Railway line</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#small_square">Small square</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#city_gate">City gate</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#village">Village</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#shop">Shop</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#hotel">Hotel</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#Church">Church</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#temple">Temple</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#archaeological_site">Archaeological site</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#historical_building">Historical building</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#port">Port</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#gulf">Gulf</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#river">River</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#courtyard">Courtyard</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#catacombs">Catacombs</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#apartment">Apartment</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#restaurant">Restaurant</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#house">House</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#cemetery">Cemetery</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#farmhouse">Farmhouse</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#hospital">Hospital</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#shrine">Wayside shrine</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#basilica">Basilica</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#palace">Palace</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#aqueduct">Aqueduct</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#prison">Prison</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#road_junction">Road junction</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#retail_business">Retail Business</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#interior">Interior</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#railway_gatehouse">Railway gatehouse</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#street">Street</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#theater">Theater</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#monument">Monument</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#mountain">Mountain</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#station">Station</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#castle">Castle</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#hill">Hill</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#ward">Ward</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#district">District</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#bank">Bank</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#hospice">Hospice</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#fountain">Fountain</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#locality">Locality</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#building">Building</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#region">Region</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#coast">Coast</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#railway">Railway</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#police_station">Police station</a>
+</p>
+</div>
+</dd>
+</div>
+<div>
+<dt>
+<a href="https://schema.org/description">Description</a>
+</dt>
+<dd>
+<div>
+<p>Controlled vocabulary of place types used to classify narrative places and gazetteer entities in GaddAtlas. Categories emerged inductively from the close reading of Gadda's "Quer pasticciaccio brutto de via Merulana" and are aligned, where possible, to Wikidata and the Getty AAT.</p>
+</div>
+</dd>
+</div>
+<div>
+<dt>
+<a href="https://schema.org/name">Name</a>
+</dt>
+<dd>
+<div>
+<p>GaddAtlas Place Category Vocabulary</p>
+<p>Place Category</p>
+</div>
+</dd>
+</div>
+</dl>
+</div>
+<div id="concept-hierarchy">
+<h2>Concept Hierarchy</h2>
+<div class="hierarchy">
+<ul class="hierarchy">
+<li>
+<a href="#apartment">Apartment</a>
+</li>
+<li>
+<a href="#aqueduct">Aqueduct</a>
+</li>
+<li>
+<a href="#archaeological_site">Archaeological site</a>
+</li>
+<li>
+<a href="#bank">Bank</a>
+</li>
+<li>
+<a href="#basilica">Basilica</a>
+</li>
+<li>
+<a href="#bridge">Bridge</a>
+</li>
+<li>
+<a href="#building">Building</a>
+</li>
+<li>
+<a href="#cafe">Café</a>
+</li>
+<li>
+<a href="#castle">Castle</a>
+</li>
+<li>
+<a href="#catacombs">Catacombs</a>
+</li>
+<li>
+<a href="#cemetery">Cemetery</a>
+</li>
+<li>
+<a href="#Church">Church</a>
+</li>
+<li>
+<a href="#city">City</a>
+</li>
+<li>
+<a href="#city_gate">City gate</a>
+</li>
+<li>
+<a href="#coast">Coast</a>
+</li>
+<li>
+<a href="#courtyard">Courtyard</a>
+</li>
+<li>
+<a href="#district">District</a>
+</li>
+<li>
+<a href="#dwelling">Dwelling</a>
+</li>
+<li>
+<a href="#farmhouse">Farmhouse</a>
+</li>
+<li>
+<a href="#fountain">Fountain</a>
+</li>
+<li>
+<a href="#frazione">Frazione</a>
+</li>
+<li>
+<a href="#gallery">Gallery</a>
+</li>
+<li>
+<a href="#gulf">Gulf</a>
+</li>
+<li>
+<a href="#hill">Hill</a>
+</li>
+<li>
+<a href="#historical_building">Historical building</a>
+</li>
+<li>
+<a href="#hospice">Hospice</a>
+</li>
+<li>
+<a href="#hospital">Hospital</a>
+</li>
+<li>
+<a href="#hotel">Hotel</a>
+</li>
+<li>
+<a href="#house">House</a>
+</li>
+<li>
+<a href="#interior">Interior</a>
+</li>
+<li>
+<a href="#kitchen_garden">Kitchen garden</a>
+</li>
+<li>
+<a href="#level_crossing">Level crossing</a>
+</li>
+<li>
+<a href="#locality">Locality</a>
+</li>
+<li>
+<a href="#monument">Monument</a>
+</li>
+<li>
+<a href="#mountain">Mountain</a>
+</li>
+<li>
+<a href="#municipality">Municipality</a>
+</li>
+<li>
+<a href="#palace">Palace</a>
+</li>
+<li>
+<a href="#park">Park</a>
+</li>
+<li>
+<a href="#police_station">Police station</a>
+</li>
+<li>
+<a href="#port">Port</a>
+</li>
+<li>
+<a href="#prison">Prison</a>
+</li>
+<li>
+<a href="#railway">Railway</a>
+</li>
+<li>
+<a href="#railway_gatehouse">Railway gatehouse</a>
+</li>
+<li>
+<a href="#Railway_line">Railway line</a>
+</li>
+<li>
+<a href="#region">Region</a>
+</li>
+<li>
+<a href="#restaurant">Restaurant</a>
+</li>
+<li>
+<a href="#retail_business">Retail Business</a>
+</li>
+<li>
+<a href="#river">River</a>
+</li>
+<li>
+<a href="#road">Road</a>
+</li>
+<li>
+<a href="#road_junction">Road junction</a>
+</li>
+<li>
+<a href="#room">Room</a>
+</li>
+<li>
+<a href="#shop">Shop</a>
+</li>
+<li>
+<a href="#small_square">Small square</a>
+</li>
+<li>
+<a href="#small_town">Small town</a>
+</li>
+<li>
+<a href="#sports_complex">Sports complex</a>
+</li>
+<li>
+<a href="#square">Square</a>
+</li>
+<li>
+<a href="#station">Station</a>
+</li>
+<li>
+<a href="#street">Street</a>
+</li>
+<li>
+<a href="#temple">Temple</a>
+</li>
+<li>
+<a href="#theater">Theater</a>
+</li>
+<li>
+<a href="#villa">Villa</a>
+</li>
+<li>
+<a href="#village">Village</a>
+</li>
+<li>
+<a href="#ward">Ward</a>
+</li>
+<li>
+<a href="#shrine">Wayside shrine</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="concepts">
+<h2>Concept Definitions</h2>
+<div class="entity">
+<h3 id="ga_apartment">Apartment</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#apartment</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Appartamento</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_aqueduct">Aqueduct</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#aqueduct</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Acquedotto</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_archaeological_site">Archaeological site</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#archaeological_site</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Sito Archeologico</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_bank">Bank</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#bank</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Banca</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_basilica">Basilica</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#basilica</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Basilica</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_bridge">Bridge</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#bridge</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Ponte</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_building">Building</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#building</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Edificio</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_cafe">Café</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#cafe</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Caffè</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_castle">Castle</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#castle</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>Residenza fortificata o complesso architettonico difensivo, in genere associato al controllo medievale o moderno del territorio e spesso dotato di funzioni militari, residenziali e simboliche.</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Castello</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_catacombs">Catacombs</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#catacombs</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Catacombe</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_cemetery">Cemetery</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#cemetery</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Cimitero</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_Church">Church</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#Church</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Chiesa</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_city">City</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#city</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Città</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_city_gate">City gate</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#city_gate</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Porta Urbana</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_coast">Coast</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#coast</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>Zona di terra che borda un mare, un lago o un altro grande specchio d'acqua, intesa come area di transizione in cui spazio terrestre e spazio acquatico si incontrano.</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Costa</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_courtyard">Courtyard</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#courtyard</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Cortile</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_district">District</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#district</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Quartiere</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_dwelling">Dwelling</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#dwelling</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Abitazione</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_farmhouse">Farmhouse</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#farmhouse</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Casa rurale</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_fountain">Fountain</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#fountain</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Fontanella</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_frazione">Frazione</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#frazione</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>Luogo territoriale sub-comunale nel contesto amministrativo italiano, di norma insediamento, villaggio o localita parte di un comune e usato per identificare luoghi a scala inferiore a quella comunale.</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Frazione</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_gallery">Gallery</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#gallery</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Galleria</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_gulf">Gulf</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#gulf</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Golfo</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_hill">Hill</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#hill</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>Rilievo naturale della superficie terrestre, piu basso o meno prominente di una montagna e riconoscibile come forma elevata distinta nel territorio circostante.</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Collina</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_historical_building">Historical building</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#historical_building</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Palazzo storico</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_hospice">Hospice</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#hospice</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Ospizio</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_hospital">Hospital</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#hospital</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Ospedale</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_hotel">Hotel</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#hotel</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Albergo</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_house">House</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#house</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Casa</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_interior">Interior</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#interior</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Interno</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_kitchen_garden">Kitchen garden</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#kitchen_garden</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Orto</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_level_crossing">Level crossing</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#level_crossing</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Passaggio a livello</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_locality">Locality</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#locality</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Località</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_monument">Monument</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#monument</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Monumento</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_mountain">Mountain</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#mountain</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>Rilievo naturale prominente della superficie terrestre, elevato rispetto al territorio circostante e riconoscibile come entita geomorfologica distinta.</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Monte</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_municipality">Municipality</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#municipality</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Comune</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_palace">Palace</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#palace</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Palazzo</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_park">Park</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#park</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Parco</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_police_station">Police station</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#police_station</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Questura</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_port">Port</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#port</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Porto</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_prison">Prison</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#prison</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Carcere</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_railway">Railway</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#railway</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Ferrovia</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_railway_gatehouse">Railway gatehouse</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#railway_gatehouse</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Casello ferroviario</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_Railway_line">Railway line</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#Railway_line</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Linea ferroviaria</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_region">Region</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#region</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Regione</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_restaurant">Restaurant</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#restaurant</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Ristorante</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_retail_business">Retail Business</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#retail_business</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Esercizio Commerciale</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_river">River</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#river</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>Corso d'acqua naturale, normalmente incanalato, che scorre verso un altro fiume, un lago, il mare o un altro corpo idrico ricevente.</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Fiume</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_road">Road</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#road</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Strada</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_road_junction">Road junction</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#road_junction</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Bivio stradale</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_room">Room</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#room</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Camera</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_shop">Shop</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#shop</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>Locale commerciale in cui beni o servizi sono offerti o venduti al pubblico, di norma come punto di vendita distinto entro una strada, un edificio o un insediamento.</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Negozio</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_small_square">Small square</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#small_square</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Piazzetta</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_small_town">Small town</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#small_town</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Cittadina</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_sports_complex">Sports complex</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#sports_complex</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Complesso sportivo</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_square">Square</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#square</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Piazza</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_station">Station</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#station</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Stazione</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_street">Street</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#street</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Via</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_temple">Temple</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#temple</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Tempio</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_theater">Theater</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#theater</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Teatro</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_villa">Villa</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#villa</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>Casa indipendente o complesso residenziale di rilievo, spesso caratterizzato da valore architettonico o sociale e comunemente associato a giardini, pertinenze o edifici accessori.</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Villa</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_village">Village</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#village</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Paese</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_ward">Ward</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#ward</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Rione</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="ga_shrine">Wayside shrine</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#shrine</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Edicola</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="namespaces">
+<h2>Namespaces</h2>
+<dl>
+<dt id="dcterms">dcterms</dt>
+<dd>
+<code>http://purl.org/dc/terms/</code>
+</dd>
+<dt id="ga">ga</dt>
+<dd>
+<code>https://w3id.org/chora#</code>
+</dd>
+<dt id="owl">owl</dt>
+<dd>
+<code>http://www.w3.org/2002/07/owl#</code>
+</dd>
+<dt id="rdf">rdf</dt>
+<dd>
+<code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code>
+</dd>
+<dt id="skos">skos</dt>
+<dd>
+<code>http://www.w3.org/2004/02/skos/core#</code>
+</dd>
+</dl>
+</div>
+</div>
+<div id="pylode">
+<p>made by 
+        <a href="https://github.com/rdflib/pyLODE">
+<span id="p">p</span>
+<span id="y">y</span>
+<span>LODE</span>
+</a>
+<a href="https://github.com/rdflib/pyLODE/release/3.5.1" id="version">3.5.1</a>
+<span> with the </span>
+<a href="https://linked.data.gov.au/def/vocpub" id="profile">VocPub</a>
+<span>profile</span>
+</p>
+</div>
+<div id="toc">
+<h3>Table of Contents</h3>
+<ul class="first">
+<li>
+<h4>
+<a href="#metadata">Metadata</a>
+</h4>
+</li>
+<li>
+<h4>
+<a href="#concept-hierarchy">Concepts Hierarchy</a>
+</h4>
+</li>
+<li>
+<h4>
+<a href="#concepts">Concept Definitions</a>
+</h4>
+</li>
+<li>
+<h4>
+<a href="#namespaces">Namespaces</a>
+</h4>
+<ul class="second">
+<li>
+<a href="#dcterms">dcterms</a>
+</li>
+<li>
+<a href="#ga">ga</a>
+</li>
+<li>
+<a href="#owl">owl</a>
+</li>
+<li>
+<a href="#rdf">rdf</a>
+</li>
+<li>
+<a href="#skos">skos</a>
+</li>
+</ul>
+</li>
+<li>
+<h4>
+<a href="#legend">Legend</a>
+</h4>
+<ul class="second"></ul>
+</li>
+</ul>
+</div>
+</body>
+</html>

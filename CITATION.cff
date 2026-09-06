@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "Se usi GaddAtlas nella tua ricerca, cita questo lavoro."
+title: "GaddAtlas: atlante semantico della geografia narrativa di Quer pasticciaccio brutto de via Merulana"
+abstract: >-
+  Knowledge graph e interfaccia di visualizzazione della spazialità narrativa
+  nel romanzo di Carlo Emilio Gadda. Modella i riferimenti testuali ai luoghi
+  come interpretazioni spaziali lungo quattro assi ortogonali: statuto di
+  realtà, ruolo narrativo, determinazione spaziale e tipo di relazione.
+type: software
+authors:
+  - family-names: Sabatino
+    given-names: Lorenzo
+    affiliation: "Università di Bologna, FICLIT"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"   # <-- da compilare
+version: "4.1"
+date-released: "2026-10-31"   # <-- aggiornare alla data di rilascio
+license: MIT
+license-url: "https://github.com/USER/gaddatlas/blob/main/LICENSE"
+repository-code: "https://github.com/USER/gaddatlas"   # <-- da compilare
+url: "https://w3id.org/gaddatlas"
+keywords:
+  - digital humanities
+  - literary cartography
+  - geocriticism
+  - knowledge graph
+  - linked open data
+  - Carlo Emilio Gadda
+  - narrative space
+references:
+  - type: book
+    title: "Quer pasticciaccio brutto de via Merulana"
+    authors:
+      - family-names: Gadda
+        given-names: "Carlo Emilio"
+    year: 1957

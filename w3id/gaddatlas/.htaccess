@@ -1,0 +1,21 @@
+# https://w3id.org/gaddatlas  —  dataset e interfaccia GaddAtlas
+# Da inviare come pull request a https://github.com/perma-id/w3id.org
+# nella cartella  gaddatlas/.htaccess
+#
+# Sostituire <HOST> con l'URL di pubblicazione definitivo.
+
+Options +FollowSymLinks
+RewriteEngine on
+
+# --- entita' del dataset: /id/<tipo>/<slug> ---
+RewriteCond %{HTTP_ACCEPT} text/turtle [OR]
+RewriteCond %{HTTP_ACCEPT} application/rdf\+xml [OR]
+RewriteCond %{HTTP_ACCEPT} application/ld\+json
+RewriteRule ^id/(.+)$ <HOST>/data/gaddatlas.ttl [R=303,L]
+
+# default: la scheda leggibile dell'entita' nell'interfaccia
+RewriteRule ^id/([a-z]+)/(.+)$ <HOST>/entita/$1/$2 [R=303,L]
+
+# --- il sito ---
+RewriteRule ^$ <HOST>/ [R=303,L]
+RewriteRule ^(.+)$ <HOST>/$1 [R=303,L]
