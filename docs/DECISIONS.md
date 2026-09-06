@@ -389,6 +389,44 @@ guardato a schermo prima di darlo per buono.
 
 ---
 
+## D-015 · Moduli dati-dipendenti portati come funzioni, non come IIFE
+**2026-09-07 · chiusa**
+
+Nel notebook, `s4Entities`, `s4Chapters`, `s4Projection` e `s4Voronoi`
+(oltre a `s4Satellites`) sono `const s4X = (() => { ... })()`: eseguiti una
+volta, a modulo caricato, perché Observable garantisce che la cella `gadda_real`
+sia già risolta prima che queste girino. Portati in `app/src/model/`, restano
+sì un file per modulo con `export default`, ma il default esportato è una
+**funzione factory** (`export default function s4Entities(gadda_real) {…}`),
+non il risultato già calcolato.
+
+**Motivazione.** `gadda_real` arriva da `fetch` in `boot()` — asincrono. Un
+IIFE eseguito al `import` del modulo non potrebbe mai vedere quel dato: gli
+servirebbe una variabile globale valorizzata più tardi, o un secondo modulo con
+top-level `await` che duplica il fetch già fatto in `main.js`. Entrambe le
+strade sono più invasive della funzione factory, che riceve `gadda_real` (o il
+risultato del modulo a monte: `s4Entities`, `s4Chapters`, `s4Voronoi`) come
+parametro e lo passa oltre esattamente come faceva la destrutturazione
+originale — il corpo delle funzioni non cambia di una riga.
+
+Non è la stessa scelta della cella `context2d`, che nel notebook è già una
+factory non auto-invocata: lì la forma non cambia nel porting. Qui invece la
+forma originale era l'IIFE, e la conversione a factory è la minima modifica
+strutturale necessaria per lo stesso motivo per cui `context2d` è factory nel
+notebook: un valore che non può esistere al momento della valutazione del
+modulo.
+
+**Cosa resta IIFE-like/valore diretto.** `projection.js` (valore diretto,
+nessuna dipendenza da dati) e `config.js` (oggetto letterale) non hanno questo
+problema e restano come nel notebook.
+
+**Conseguenza per `main.js`.** Le cinque factory si chiamano in ordine
+topologico (`entities → chapters/projection-fit → voronoi → satellites`),
+dentro `boot()`, dopo il `fetch`. Non è l'ordine del file `chartD.js`, che non
+è topologico (vedi `docs/PORTING.md`).
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

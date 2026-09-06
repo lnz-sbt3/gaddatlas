@@ -1,6 +1,12 @@
 // Punto di ingresso. Il boot e' asincrono perche' i dati arrivano da fetch:
 // in Observable il top-level await era implicito, qui va incapsulato.
 
+import s4Entities from "./model/entities.js";
+import s4Chapters from "./model/chapters.js";
+import s4Projection from "./model/projection-fit.js";
+import s4Voronoi from "./model/voronoi.js";
+import s4Satellites from "./model/satellites.js";
+
 const BASE = import.meta.env.BASE_URL;
 
 async function loadJSON(path) {
@@ -16,6 +22,26 @@ async function boot() {
       loadJSON("gaddatlas.geojson"),
       loadJSON("roma.geojson"),
     ]);
+
+    // Nucleo dati: entities -> projection-fit -> voronoi -> chapters -> satellites.
+    // L'ordine di chiamata segue il DAG delle dipendenze, non l'ordine del
+    // notebook (s4Satellites vi appare prima di s4Voronoi e s4Chapters).
+    const entities = s4Entities(gaddaReal);
+    const chapters = s4Chapters(gaddaReal, entities);
+    const projectionFit = s4Projection(entities);
+    const voronoi = s4Voronoi(projectionFit, entities);
+    const satellites = s4Satellites(entities, chapters, voronoi);
+    void satellites; // non ancora consumato: verifica solo che il modulo si componga
+
+    // Valori di controllo per il confronto con il notebook Observable.
+    console.log("allData.length", entities.allData.length);
+    console.log("N_INMAP", entities.N_INMAP);
+    console.log("N_GEO", entities.N_GEO);
+    console.log(
+      "celle Voronoi non degeneri",
+      voronoi.cellRings.filter(cr => cr != null).length
+    );
+    console.log("birthChapter (primi 5)", chapters.birthChapter.slice(0, 5));
 
     // Sostituisce `display(chartS4)` del notebook.
     // TODO fase 1: const atlas = createAtlas({ gaddaReal, roma });
