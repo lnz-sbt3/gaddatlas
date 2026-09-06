@@ -420,10 +420,32 @@ modulo.
 nessuna dipendenza da dati) e `config.js` (oggetto letterale) non hanno questo
 problema e restano come nel notebook.
 
-**Conseguenza per `main.js`.** Le cinque factory si chiamano in ordine
-topologico (`entities → chapters/projection-fit → voronoi → satellites`),
-dentro `boot()`, dopo il `fetch`. Non è l'ordine del file `chartD.js`, che non
-è topologico (vedi `docs/PORTING.md`).
+**Precisazione.** Diventare factory non è un default di stile applicato a
+tutti i moduli allo stesso modo: lo si fa solo se un modulo ha una ragione
+concreta per farlo. Le ragioni concrete sono due, distinte:
+
+1. **Legge dati asincroni direttamente.** Solo `s4Entities`, `s4Chapters`,
+   `s4Terrain`, `s4Sequence` e `s4AttestedRoutes` (quest'ultimo non ancora
+   portato) toccano `gadda_real` — l'unico dato che arriva da `fetch`. Sono gli
+   unici la cui firma include `gadda_real` come parametro.
+2. **Riceve a cascata il risultato di un modulo del punto 1, o di un altro
+   modulo già diventato factory.** `s4Projection`, `s4Voronoi`, `s4Satellites`,
+   `s4NarrativeGeometry`, `s4RadialLayout`, `s4NarrativeCells` non leggono mai
+   `gadda_real`: ricevono `s4Entities` (o `s4Chapters`, `s4Voronoi`, ecc.) già
+   calcolato, perché quello è ciò che la destrutturazione in testa al blocco
+   del notebook già faceva. Se un modulo dipendesse solo da `s4Config` — nessuno
+   dei 13 finora portati è in questo caso — resterebbe un valore diretto, non
+   una factory: la conversione non è automatica, segue la dipendenza.
+
+**Conseguenza per l'assemblaggio.** Le factory non si chiamano a mano nei punti
+di consumo: `app/src/model/index.js` le chiama tutte una volta sola, in ordine
+topologico (`entities → chapters/projection-fit → voronoi → satellites →
+terrain/sequence → narrative-geometry → radial-layout → narrative-cells`) — non
+l'ordine del file `chartD.js`, che non è topologico (vedi `docs/PORTING.md`) —
+ed esporta il modello assemblato con le chiavi nominate come le celle del
+notebook (`model.s4Terrain`, `model.s4RadialLayout`, ...). `main.js` chiama
+`buildModel(gaddaReal)` una sola volta in `boot()`, dopo il `fetch`, e non vede
+le singole factory.
 
 ---
 
