@@ -483,6 +483,34 @@ quando verrà portato il proprietario dello stato.
 
 ---
 
+## D-017 · Porting completato: cosa resta non verificato
+**2026-09-06 · aperta**
+
+I 34 moduli del prototipo Observable sono portati in moduli ES (D-015, D-016).
+Ogni gruppo è stato verificato con valori derivati, incrociati contro fonti
+indipendenti — l'ETL Python, il GeoJSON, il grafo RDF — e non contro sé stesso.
+
+**Restano tre verifiche aperte**, nessuna bloccante:
+
+1. **Selezione della route da terrazza.** `routeSelection.selectFromTerrace()`
+   non è mai stata esercitata. È la stessa catena su cui si innesterà il
+   pannello testuale, quindi verrà collaudata nella fase 2.
+2. **Smontaggio completo.** La `dispose()` di D-016 è collegata ma mai invocata:
+   servirà quando l'atlante verrà montato e smontato dal routing del sito.
+3. **Confronto visivo a condizioni identiche** con gli screenshot di riferimento
+   del notebook, ai quattro stati e allo stesso capitolo.
+
+**Due dettagli emersi e non corretti**, entrambi ereditati dal notebook:
+
+- `chartS4` disegna solo `roma.features[0]`, mentre `roma.geojson` contiene due
+  geometrie. Da capire se la seconda è un'isola, un confine interno o un
+  residuo: oggi non compare.
+- L'etichetta di stadio parte da `1/6` cablato nel testo del pulsante, ma
+  `STAGES` ha cinque voci e `updateSeqUi()` scrive correttamente `1/5` al primo
+  aggiornamento. Cosmetico, da correggere nel valore iniziale della shell.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`
