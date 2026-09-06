@@ -186,6 +186,13 @@ def fallback_seed(entity_id):
     return round(int(h, 16) / 0xFFFFFFFF, 6)
 
 
+# NOTA SULL'ORDINAMENTO. Ogni sorted() porta l'id come chiave secondaria.
+# Senza, a parita' del criterio primario l'ordine dipende dall'iterazione di
+# dict e set costruiti da risultati SPARQL, che varia a ogni processo per la
+# randomizzazione degli hash: due build della stessa sorgente producevano file
+# diversi, e il confronto in CI falliva sempre. L'artefatto deve essere
+# deterministico perche' e' quello che l'interfaccia carica e che viene citato.
+
 # ---------------------------------------------------------------------------
 # COMPETENCY QUERIES
 # ---------------------------------------------------------------------------
@@ -655,13 +662,13 @@ def main(ttl_path, out_dir, seeds_path=None):
     atlas = {
         "@context": context,
         "meta": meta,
-        "gazetteer": sorted(gaz.values(), key=lambda d: -d["planeCount"]),
-        "narrativePlaces": sorted(nps.values(), key=lambda d: -d["planeCount"]),
+        "gazetteer": sorted(gaz.values(), key=lambda d: (-d["planeCount"], d["id"])),
+        "narrativePlaces": sorted(nps.values(), key=lambda d: (-d["planeCount"], d["id"])),
         "interpretations": sis,
         "references": sorted(refs.values(), key=lambda d: d["id"]),
-        "routes": sorted(routes.values(), key=lambda d: -d["nodeCount"]),
+        "routes": sorted(routes.values(), key=lambda d: (-d["nodeCount"], d["id"])),
         "chapters": sorted(chapters.values(), key=lambda d: d["number"]),
-        "agents": sorted(agents.values(), key=lambda d: -d["refCount"]),
+        "agents": sorted(agents.values(), key=lambda d: (-d["refCount"], d["id"])),
         "derivedSequences": derived,
         "relief": relief,
     }
@@ -679,7 +686,7 @@ def main(ttl_path, out_dir, seeds_path=None):
     # un GazetteerEntity entra nel payload solo se il grafo lo tocca: senza
     # nemmeno un ancoraggio non e' ne' una tessera ne' un'ancora, e' rumore.
     features = []
-    for v in sorted(gaz.values(), key=lambda d: -d["planeCount"]):
+    for v in sorted(gaz.values(), key=lambda d: (-d["planeCount"], d["id"])):
         if not (v["planeCount"] or v["refCountAnchored"]):
             continue
         cr = {c: len(s) for c, s in chap_refs.get(v["id"], {}).items()}
@@ -700,7 +707,7 @@ def main(ttl_path, out_dir, seeds_path=None):
             },
         })
 
-    for k in sorted(own_tile, key=lambda k: -nps[k]["planeCount"]):
+    for k in sorted(own_tile, key=lambda k: (-nps[k]["planeCount"], nps[k]["id"])):
         v = nps[k]
         cr = {c: len(s) for c, s in chap_refs.get(v["id"], {}).items()}
         seed = frozen_seeds.get(v["id"])

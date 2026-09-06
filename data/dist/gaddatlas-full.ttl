@@ -357,7 +357,7 @@ chora:targetsRoute a owl:ObjectProperty ;
     }
   ]
 }"""^^geosparql:geoJSONLiteral ] ;
-    owl:sameAs <file:///C:/Users/lorenzo.sabatino3/Desktop/gaddatlasrepocanonico/gaddatlas/data/gaz_castel_gandolfo> ;
+    owl:sameAs <file:///Users/lnz_sbt/Documents/gaddatlas/data/gaz_castel_gandolfo> ;
     geo1:lat 41.75143747946607 ;
     geo1:long 12.648544024883735 .
 
@@ -20336,7 +20336,7 @@ chora:temple a owl:NamedIndividual,
     }
   ]
 }"""^^geosparql:geoJSONLiteral ] ;
-    owl:sameAs <file:///C:/Users/lorenzo.sabatino3/Desktop/gaddatlasrepocanonico/gaddatlas/data/gaz_castello> ;
+    owl:sameAs <file:///Users/lnz_sbt/Documents/gaddatlas/data/gaz_castello> ;
     geo1:lat 41.75005641875434 ;
     geo1:long 12.64847290122697 .
 
@@ -20449,7 +20449,7 @@ chora:temple a owl:NamedIndividual,
     }
   ]
 }"""^^geosparql:geoJSONLiteral ] ;
-    owl:sameAs <file:///C:/Users/lorenzo.sabatino3/Desktop/gaddatlasrepocanonico/gaddatlas/data/gaz_regina_coeli> ;
+    owl:sameAs <file:///Users/lnz_sbt/Documents/gaddatlas/data/gaz_regina_coeli> ;
     geo1:lat 41.89549536697815 ;
     geo1:long 12.465430919268728 ;
     chora:presentLocation "via della Lungara"@it .
@@ -21119,7 +21119,7 @@ chora:police_station a owl:NamedIndividual,
     }
   ]
 }"""^^geosparql:geoJSONLiteral ] ;
-    owl:sameAs <file:///C:/Users/lorenzo.sabatino3/Desktop/gaddatlasrepocanonico/gaddatlas/data/gaz_santo_stefano_del_cacco_celio_santo_stefano> ;
+    owl:sameAs <file:///Users/lnz_sbt/Documents/gaddatlas/data/gaz_santo_stefano_del_cacco_celio_santo_stefano> ;
     geo1:lat 41.89737347768524 ;
     geo1:long 12.47948307900791 ;
     chora:presentLocation "via Santo Stefano del Cacco"@it .
@@ -21783,7 +21783,7 @@ chora:retail_business a owl:NamedIndividual,
     }
   ]
 }"""^^geosparql:geoJSONLiteral ] ;
-    owl:sameAs <file:///C:/Users/lorenzo.sabatino3/Desktop/gaddatlasrepocanonico/gaddatlas/data/gaz_lungara> ;
+    owl:sameAs <file:///Users/lnz_sbt/Documents/gaddatlas/data/gaz_lungara> ;
     geo1:lat 41.89541963959722 ;
     geo1:long 12.463486619911356 ;
     chora:presentLocation "Via della Lungara, 29, 00165"@it .
@@ -23142,7 +23142,7 @@ chora:Transformed a owl:NamedIndividual,
     }
   ]
 }"""^^geosparql:geoJSONLiteral ] ;
-    owl:sameAs <file:///C:/Users/lorenzo.sabatino3/Desktop/gaddatlasrepocanonico/gaddatlas/data/gaz_collegio_romano> ;
+    owl:sameAs <file:///Users/lnz_sbt/Documents/gaddatlas/data/gaz_collegio_romano> ;
     geo1:lat 41.89737347768524 ;
     geo1:long 12.47948307900791 ;
     chora:presentLocation "via Santo Stefano del Cacco"@it .

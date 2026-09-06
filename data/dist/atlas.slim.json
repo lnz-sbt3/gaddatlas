@@ -199,25 +199,6 @@
    "densityLevel": 5
   },
   {
-   "id": "gaz_via_appia",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_appia",
-   "label": "Via Appia",
-   "lon": 12.52314794887518,
-   "lat": 41.85054042792461,
-   "x": 1990.793,
-   "y": 5225.957,
-   "scaleBand": "urbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 6.2,
-   "refCountAnchored": 23,
-   "planeCount": 15,
-   "interpCount": 23,
-   "narrativePlaceCount": 1,
-   "densityClass": "hub",
-   "densityLevel": 5
-  },
-  {
    "id": "gaz_marino",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_marino",
    "label": "Marino",
@@ -233,6 +214,25 @@
    "planeCount": 15,
    "interpCount": 16,
    "narrativePlaceCount": 5,
+   "densityClass": "hub",
+   "densityLevel": 5
+  },
+  {
+   "id": "gaz_via_appia",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_appia",
+   "label": "Via Appia",
+   "lon": 12.52314794887518,
+   "lat": 41.85054042792461,
+   "x": 1990.793,
+   "y": 5225.957,
+   "scaleBand": "urbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 6.2,
+   "refCountAnchored": 23,
+   "planeCount": 15,
+   "interpCount": 23,
+   "narrativePlaceCount": 1,
    "densityClass": "hub",
    "densityLevel": 5
   },
@@ -275,25 +275,6 @@
    "densityLevel": 4
   },
   {
-   "id": "gaz_santi_quattro_coronati",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_santi_quattro_coronati",
-   "label": "Santi Quattro Coronati",
-   "lon": 12.498505681387911,
-   "lat": 41.88828469760136,
-   "x": 156.721,
-   "y": 1451.53,
-   "scaleBand": "urbano",
-   "presentLocation": "Via dei SS. Quattro, 20, 00184",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 1.6,
-   "refCountAnchored": 10,
-   "planeCount": 8,
-   "interpCount": 10,
-   "narrativePlaceCount": 1,
-   "densityClass": "frequente",
-   "densityLevel": 3
-  },
-  {
    "id": "gaz_casal_bruciato",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato",
    "label": "Casal Bruciato",
@@ -309,6 +290,25 @@
    "planeCount": 8,
    "interpCount": 13,
    "narrativePlaceCount": 4,
+   "densityClass": "frequente",
+   "densityLevel": 3
+  },
+  {
+   "id": "gaz_santi_quattro_coronati",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_santi_quattro_coronati",
+   "label": "Santi Quattro Coronati",
+   "lon": 12.498505681387911,
+   "lat": 41.88828469760136,
+   "x": 156.721,
+   "y": 1451.53,
+   "scaleBand": "urbano",
+   "presentLocation": "Via dei SS. Quattro, 20, 00184",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 1.6,
+   "refCountAnchored": 10,
+   "planeCount": 8,
+   "interpCount": 10,
+   "narrativePlaceCount": 1,
    "densityClass": "frequente",
    "densityLevel": 3
   },
@@ -351,25 +351,6 @@
    "densityLevel": 3
   },
   {
-   "id": "gaz_policlinico",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_policlinico",
-   "label": "Policlinico",
-   "lon": 12.50917293969651,
-   "lat": 41.90863414049968,
-   "x": 950.663,
-   "y": -583.414,
-   "scaleBand": "urbano",
-   "presentLocation": "Via Giovanni Maria Lancisi, 2, 00161",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 1.2,
-   "refCountAnchored": 7,
-   "planeCount": 6,
-   "interpCount": 7,
-   "narrativePlaceCount": 1,
-   "densityClass": "frequente",
-   "densityLevel": 3
-  },
-  {
    "id": "gaz_pavona",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_pavona",
    "label": "Pavona",
@@ -385,6 +366,25 @@
    "planeCount": 6,
    "interpCount": 10,
    "narrativePlaceCount": 3,
+   "densityClass": "frequente",
+   "densityLevel": 3
+  },
+  {
+   "id": "gaz_policlinico",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_policlinico",
+   "label": "Policlinico",
+   "lon": 12.50917293969651,
+   "lat": 41.90863414049968,
+   "x": 950.663,
+   "y": -583.414,
+   "scaleBand": "urbano",
+   "presentLocation": "Via Giovanni Maria Lancisi, 2, 00161",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 1.2,
+   "refCountAnchored": 7,
+   "planeCount": 6,
+   "interpCount": 7,
+   "narrativePlaceCount": 1,
    "densityClass": "frequente",
    "densityLevel": 3
   },
@@ -465,6 +465,25 @@
    "densityLevel": 2
   },
   {
+   "id": "gaz_sacro_cuore",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_sacro_cuore",
+   "label": "Sacro Cuore",
+   "lon": 12.502382758820149,
+   "lat": 41.90255587411117,
+   "x": 445.284,
+   "y": 24.413,
+   "scaleBand": "urbano",
+   "presentLocation": "Via Marsala, 42, 00185",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 0.5,
+   "refCountAnchored": 6,
+   "planeCount": 5,
+   "interpCount": 6,
+   "narrativePlaceCount": 1,
+   "densityClass": "ricorrente",
+   "densityLevel": 2
+  },
+  {
    "id": "gaz_san_giovanni",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_san_giovanni",
    "label": "San Giovanni",
@@ -479,6 +498,120 @@
    "refCountAnchored": 5,
    "planeCount": 5,
    "interpCount": 5,
+   "narrativePlaceCount": 1,
+   "densityClass": "ricorrente",
+   "densityLevel": 2
+  },
+  {
+   "id": "gaz_santa_palomba",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba",
+   "label": "Santa Palomba",
+   "lon": 12.573826656277753,
+   "lat": 41.70649880109798,
+   "x": 5762.703,
+   "y": 19630.12,
+   "scaleBand": "periurbano",
+   "presentLocation": "Via della Stazione, 00040",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 22.8,
+   "refCountAnchored": 6,
+   "planeCount": 5,
+   "interpCount": 6,
+   "narrativePlaceCount": 1,
+   "densityClass": "ricorrente",
+   "densityLevel": 2
+  },
+  {
+   "id": "gaz_santo_stefano_rotondo",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_santo_stefano_rotondo",
+   "label": "Santo Stefano Rotondo",
+   "lon": 12.499315306942016,
+   "lat": 41.885983052252186,
+   "x": 216.98,
+   "y": 1681.695,
+   "scaleBand": "urbano",
+   "presentLocation": "Via Santo Stefano Rotondo, 7, 00184",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 1.9,
+   "refCountAnchored": 7,
+   "planeCount": 5,
+   "interpCount": 7,
+   "narrativePlaceCount": 1,
+   "densityClass": "ricorrente",
+   "densityLevel": 2
+  },
+  {
+   "id": "gaz_via_anziate",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_anziate",
+   "label": "Via Anziate",
+   "lon": 12.442903033569449,
+   "lat": 41.91177548861766,
+   "x": -3981.666,
+   "y": -897.549,
+   "scaleBand": "urbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 4.5,
+   "refCountAnchored": 12,
+   "planeCount": 5,
+   "interpCount": 12,
+   "narrativePlaceCount": 1,
+   "densityClass": "ricorrente",
+   "densityLevel": 2
+  },
+  {
+   "id": "gaz_via_ardeatina",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_ardeatina",
+   "label": "Via Ardeatina",
+   "lon": 12.560749021883575,
+   "lat": 41.748548036845285,
+   "x": 4789.362,
+   "y": 15425.196,
+   "scaleBand": "periurbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 18.0,
+   "refCountAnchored": 6,
+   "planeCount": 5,
+   "interpCount": 6,
+   "narrativePlaceCount": 1,
+   "densityClass": "ricorrente",
+   "densityLevel": 2
+  },
+  {
+   "id": "gaz_via_nicotera",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_nicotera",
+   "label": "Via Nicotera",
+   "lon": 12.468244588924025,
+   "lat": 41.91624918540069,
+   "x": -2095.548,
+   "y": -1344.919,
+   "scaleBand": "urbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 2.8,
+   "refCountAnchored": 9,
+   "planeCount": 5,
+   "interpCount": 9,
+   "narrativePlaceCount": 1,
+   "densityClass": "ricorrente",
+   "densityLevel": 2
+  },
+  {
+   "id": "gaz_via_panisperna",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_panisperna",
+   "label": "Via Panisperna",
+   "lon": 12.491129905973104,
+   "lat": 41.89663706340232,
+   "x": -392.242,
+   "y": 616.294,
+   "scaleBand": "urbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 0.8,
+   "refCountAnchored": 6,
+   "planeCount": 5,
+   "interpCount": 6,
    "narrativePlaceCount": 1,
    "densityClass": "ricorrente",
    "densityLevel": 2
@@ -522,135 +655,21 @@
    "densityLevel": 2
   },
   {
-   "id": "gaz_sacro_cuore",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_sacro_cuore",
-   "label": "Sacro Cuore",
-   "lon": 12.502382758820149,
-   "lat": 41.90255587411117,
-   "x": 445.284,
-   "y": 24.413,
-   "scaleBand": "urbano",
-   "presentLocation": "Via Marsala, 42, 00185",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 0.5,
-   "refCountAnchored": 6,
-   "planeCount": 5,
-   "interpCount": 6,
-   "narrativePlaceCount": 1,
-   "densityClass": "ricorrente",
-   "densityLevel": 2
-  },
-  {
-   "id": "gaz_santa_palomba",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba",
-   "label": "Santa Palomba",
-   "lon": 12.573826656277753,
-   "lat": 41.70649880109798,
-   "x": 5762.703,
-   "y": 19630.12,
-   "scaleBand": "periurbano",
-   "presentLocation": "Via della Stazione, 00040",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 22.8,
-   "refCountAnchored": 6,
-   "planeCount": 5,
-   "interpCount": 6,
-   "narrativePlaceCount": 1,
-   "densityClass": "ricorrente",
-   "densityLevel": 2
-  },
-  {
-   "id": "gaz_via_ardeatina",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_ardeatina",
-   "label": "Via Ardeatina",
-   "lon": 12.560749021883575,
-   "lat": 41.748548036845285,
-   "x": 4789.362,
-   "y": 15425.196,
+   "id": "gaz_albano_laziale",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_albano_laziale",
+   "label": "Albano Laziale",
+   "lon": 12.65920047759274,
+   "lat": 41.72979996535707,
+   "x": 12116.896,
+   "y": 17300.003,
    "scaleBand": "periurbano",
    "presentLocation": null,
    "historicalLocation": null,
-   "distanceFromRomeKm": 18.0,
-   "refCountAnchored": 6,
-   "planeCount": 5,
-   "interpCount": 6,
-   "narrativePlaceCount": 1,
-   "densityClass": "ricorrente",
-   "densityLevel": 2
-  },
-  {
-   "id": "gaz_via_panisperna",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_panisperna",
-   "label": "Via Panisperna",
-   "lon": 12.491129905973104,
-   "lat": 41.89663706340232,
-   "x": -392.242,
-   "y": 616.294,
-   "scaleBand": "urbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 0.8,
-   "refCountAnchored": 6,
-   "planeCount": 5,
-   "interpCount": 6,
-   "narrativePlaceCount": 1,
-   "densityClass": "ricorrente",
-   "densityLevel": 2
-  },
-  {
-   "id": "gaz_santo_stefano_rotondo",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_santo_stefano_rotondo",
-   "label": "Santo Stefano Rotondo",
-   "lon": 12.499315306942016,
-   "lat": 41.885983052252186,
-   "x": 216.98,
-   "y": 1681.695,
-   "scaleBand": "urbano",
-   "presentLocation": "Via Santo Stefano Rotondo, 7, 00184",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 1.9,
-   "refCountAnchored": 7,
-   "planeCount": 5,
-   "interpCount": 7,
-   "narrativePlaceCount": 1,
-   "densityClass": "ricorrente",
-   "densityLevel": 2
-  },
-  {
-   "id": "gaz_via_nicotera",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_nicotera",
-   "label": "Via Nicotera",
-   "lon": 12.468244588924025,
-   "lat": 41.91624918540069,
-   "x": -2095.548,
-   "y": -1344.919,
-   "scaleBand": "urbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 2.8,
-   "refCountAnchored": 9,
-   "planeCount": 5,
-   "interpCount": 9,
-   "narrativePlaceCount": 1,
-   "densityClass": "ricorrente",
-   "densityLevel": 2
-  },
-  {
-   "id": "gaz_via_anziate",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_anziate",
-   "label": "Via Anziate",
-   "lon": 12.442903033569449,
-   "lat": 41.91177548861766,
-   "x": -3981.666,
-   "y": -897.549,
-   "scaleBand": "urbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 4.5,
-   "refCountAnchored": 12,
-   "planeCount": 5,
-   "interpCount": 12,
-   "narrativePlaceCount": 1,
+   "distanceFromRomeKm": 23.5,
+   "refCountAnchored": 10,
+   "planeCount": 4,
+   "interpCount": 4,
+   "narrativePlaceCount": 2,
    "densityClass": "ricorrente",
    "densityLevel": 2
   },
@@ -693,25 +712,6 @@
    "densityLevel": 2
   },
   {
-   "id": "gaz_tivoli",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_tivoli",
-   "label": "Tivoli",
-   "lon": 12.802413747816448,
-   "lat": 41.95975597738329,
-   "x": 22775.958,
-   "y": -5695.598,
-   "scaleBand": "periurbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 26.1,
-   "refCountAnchored": 4,
-   "planeCount": 4,
-   "interpCount": 4,
-   "narrativePlaceCount": 2,
-   "densityClass": "ricorrente",
-   "densityLevel": 2
-  },
-  {
    "id": "gaz_molo_beverello",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_molo_beverello",
    "label": "Molo Beverello",
@@ -750,6 +750,25 @@
    "densityLevel": 2
   },
   {
+   "id": "gaz_tivoli",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_tivoli",
+   "label": "Tivoli",
+   "lon": 12.802413747816448,
+   "lat": 41.95975597738329,
+   "x": 22775.958,
+   "y": -5695.598,
+   "scaleBand": "periurbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 26.1,
+   "refCountAnchored": 4,
+   "planeCount": 4,
+   "interpCount": 4,
+   "narrativePlaceCount": 2,
+   "densityClass": "ricorrente",
+   "densityLevel": 2
+  },
+  {
    "id": "gaz_via_del_gesu",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_del_gesu",
    "label": "Via del Gesù",
@@ -764,25 +783,6 @@
    "refCountAnchored": 6,
    "planeCount": 4,
    "interpCount": 6,
-   "narrativePlaceCount": 2,
-   "densityClass": "ricorrente",
-   "densityLevel": 2
-  },
-  {
-   "id": "gaz_albano_laziale",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_albano_laziale",
-   "label": "Albano Laziale",
-   "lon": 12.65920047759274,
-   "lat": 41.72979996535707,
-   "x": 12116.896,
-   "y": 17300.003,
-   "scaleBand": "periurbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 23.5,
-   "refCountAnchored": 10,
-   "planeCount": 4,
-   "interpCount": 4,
    "narrativePlaceCount": 2,
    "densityClass": "ricorrente",
    "densityLevel": 2
@@ -826,6 +826,82 @@
    "densityLevel": 1
   },
   {
+   "id": "gaz_campo_marzio",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_campo_marzio",
+   "label": "Campo Marzio",
+   "lon": 12.477533646244904,
+   "lat": 41.90228013764708,
+   "x": -1404.183,
+   "y": 51.986,
+   "scaleBand": "urbano",
+   "presentLocation": "Rione IV",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 1.6,
+   "refCountAnchored": 4,
+   "planeCount": 3,
+   "interpCount": 4,
+   "narrativePlaceCount": 1,
+   "densityClass": "raro",
+   "densityLevel": 1
+  },
+  {
+   "id": "gaz_celio",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_celio",
+   "label": "Celio",
+   "lon": 12.497441089867236,
+   "lat": 41.88727982359032,
+   "x": 77.486,
+   "y": 1552.018,
+   "scaleBand": "urbano",
+   "presentLocation": "Rione XIX",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 1.7,
+   "refCountAnchored": 5,
+   "planeCount": 3,
+   "interpCount": 3,
+   "narrativePlaceCount": 2,
+   "densityClass": "raro",
+   "densityLevel": 1
+  },
+  {
+   "id": "gaz_direttissima_roma_napoli",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_direttissima_roma_napoli",
+   "label": "Direttissima Roma-Napoli",
+   "lon": 12.64899568499919,
+   "lat": 41.64771889912876,
+   "x": 11357.375,
+   "y": 25508.11,
+   "scaleBand": "periurbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 31.1,
+   "refCountAnchored": 4,
+   "planeCount": 3,
+   "interpCount": 4,
+   "narrativePlaceCount": 1,
+   "densityClass": "raro",
+   "densityLevel": 1
+  },
+  {
+   "id": "gaz_ferrovia_roma_velletri",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri",
+   "label": "Ferrovia Roma-Velletri",
+   "lon": 12.601126265148835,
+   "lat": 41.75795460249268,
+   "x": 7794.555,
+   "y": 14484.54,
+   "scaleBand": "periurbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 18.3,
+   "refCountAnchored": 6,
+   "planeCount": 3,
+   "interpCount": 6,
+   "narrativePlaceCount": 2,
+   "densityClass": "raro",
+   "densityLevel": 1
+  },
+  {
    "id": "gaz_genova",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_genova",
    "label": "Genova",
@@ -864,82 +940,6 @@
    "densityLevel": 1
   },
   {
-   "id": "gaz_soriano_nel_cimino",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_soriano_nel_cimino",
-   "label": "Soriano nel Cimino",
-   "lon": 12.235774006217756,
-   "lat": 42.43655912777748,
-   "x": -19397.843,
-   "y": -53375.913,
-   "scaleBand": "nazionale",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 63.1,
-   "refCountAnchored": 3,
-   "planeCount": 3,
-   "interpCount": 3,
-   "narrativePlaceCount": 1,
-   "densityClass": "raro",
-   "densityLevel": 1
-  },
-  {
-   "id": "gaz_tranvie_dei_castelli",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_tranvie_dei_castelli",
-   "label": "Tranvie dei Castelli",
-   "lon": 12.518773149025854,
-   "lat": 41.87842995242856,
-   "x": 1665.186,
-   "y": 2437.005,
-   "scaleBand": "urbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 3.3,
-   "refCountAnchored": 3,
-   "planeCount": 3,
-   "interpCount": 3,
-   "narrativePlaceCount": 1,
-   "densityClass": "raro",
-   "densityLevel": 1
-  },
-  {
-   "id": "gaz_campo_marzio",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_campo_marzio",
-   "label": "Campo Marzio",
-   "lon": 12.477533646244904,
-   "lat": 41.90228013764708,
-   "x": -1404.183,
-   "y": 51.986,
-   "scaleBand": "urbano",
-   "presentLocation": "Rione IV",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 1.6,
-   "refCountAnchored": 4,
-   "planeCount": 3,
-   "interpCount": 4,
-   "narrativePlaceCount": 1,
-   "densityClass": "raro",
-   "densityLevel": 1
-  },
-  {
-   "id": "gaz_direttissima_roma_napoli",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_direttissima_roma_napoli",
-   "label": "Direttissima Roma-Napoli",
-   "lon": 12.64899568499919,
-   "lat": 41.64771889912876,
-   "x": 11357.375,
-   "y": 25508.11,
-   "scaleBand": "periurbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 31.1,
-   "refCountAnchored": 4,
-   "planeCount": 3,
-   "interpCount": 4,
-   "narrativePlaceCount": 1,
-   "densityClass": "raro",
-   "densityLevel": 1
-  },
-  {
    "id": "gaz_palazzo",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_palazzo",
    "label": "Palazzo",
@@ -959,6 +959,25 @@
    "densityLevel": 1
   },
   {
+   "id": "gaz_soriano_nel_cimino",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_soriano_nel_cimino",
+   "label": "Soriano nel Cimino",
+   "lon": 12.235774006217756,
+   "lat": 42.43655912777748,
+   "x": -19397.843,
+   "y": -53375.913,
+   "scaleBand": "nazionale",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 63.1,
+   "refCountAnchored": 3,
+   "planeCount": 3,
+   "interpCount": 3,
+   "narrativePlaceCount": 1,
+   "densityClass": "raro",
+   "densityLevel": 1
+  },
+  {
    "id": "gaz_termini",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_termini",
    "label": "Termini",
@@ -973,6 +992,25 @@
    "refCountAnchored": 4,
    "planeCount": 3,
    "interpCount": 4,
+   "narrativePlaceCount": 1,
+   "densityClass": "raro",
+   "densityLevel": 1
+  },
+  {
+   "id": "gaz_tranvie_dei_castelli",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_tranvie_dei_castelli",
+   "label": "Tranvie dei Castelli",
+   "lon": 12.518773149025854,
+   "lat": 41.87842995242856,
+   "x": 1665.186,
+   "y": 2437.005,
+   "scaleBand": "urbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 3.3,
+   "refCountAnchored": 3,
+   "planeCount": 3,
+   "interpCount": 3,
    "narrativePlaceCount": 1,
    "densityClass": "raro",
    "densityLevel": 1
@@ -1016,25 +1054,6 @@
    "densityLevel": 1
   },
   {
-   "id": "gaz_celio",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_celio",
-   "label": "Celio",
-   "lon": 12.497441089867236,
-   "lat": 41.88727982359032,
-   "x": 77.486,
-   "y": 1552.018,
-   "scaleBand": "urbano",
-   "presentLocation": "Rione XIX",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 1.7,
-   "refCountAnchored": 5,
-   "planeCount": 3,
-   "interpCount": 3,
-   "narrativePlaceCount": 2,
-   "densityClass": "raro",
-   "densityLevel": 1
-  },
-  {
    "id": "gaz_via_lanza",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_lanza",
    "label": "Via Lanza",
@@ -1049,25 +1068,6 @@
    "refCountAnchored": 5,
    "planeCount": 3,
    "interpCount": 5,
-   "narrativePlaceCount": 2,
-   "densityClass": "raro",
-   "densityLevel": 1
-  },
-  {
-   "id": "gaz_ferrovia_roma_velletri",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri",
-   "label": "Ferrovia Roma-Velletri",
-   "lon": 12.601126265148835,
-   "lat": 41.75795460249268,
-   "x": 7794.555,
-   "y": 14484.54,
-   "scaleBand": "periurbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 18.3,
-   "refCountAnchored": 6,
-   "planeCount": 3,
-   "interpCount": 6,
    "narrativePlaceCount": 2,
    "densityClass": "raro",
    "densityLevel": 1
@@ -1126,6 +1126,63 @@
    "planeCount": 2,
    "interpCount": 2,
    "narrativePlaceCount": 1,
+   "densityClass": "raro",
+   "densityLevel": 1
+  },
+  {
+   "id": "gaz_ardea",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_ardea",
+   "label": "Ardea",
+   "lon": 12.544506836046144,
+   "lat": 41.66592876861046,
+   "x": 3580.49,
+   "y": 23687.123,
+   "scaleBand": "periurbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 26.6,
+   "refCountAnchored": 3,
+   "planeCount": 2,
+   "interpCount": 3,
+   "narrativePlaceCount": 1,
+   "densityClass": "raro",
+   "densityLevel": 1
+  },
+  {
+   "id": "gaz_bologna",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_bologna",
+   "label": "Bologna",
+   "lon": 11.344545396805216,
+   "lat": 44.49555555061309,
+   "x": -85730.109,
+   "y": -259275.555,
+   "scaleBand": "nazionale",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 303.0,
+   "refCountAnchored": 3,
+   "planeCount": 2,
+   "interpCount": 2,
+   "narrativePlaceCount": 2,
+   "densityClass": "raro",
+   "densityLevel": 1
+  },
+  {
+   "id": "gaz_brahmaputra",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_brahmaputra",
+   "label": "Brahmaputra",
+   "lon": 92.38395277199372,
+   "lat": 27.000235829388703,
+   "x": 5945862.061,
+   "y": 1490256.417,
+   "scaleBand": "extra",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 7248.5,
+   "refCountAnchored": 5,
+   "planeCount": 2,
+   "interpCount": 2,
+   "narrativePlaceCount": 2,
    "densityClass": "raro",
    "densityLevel": 1
   },
@@ -1358,6 +1415,44 @@
    "densityLevel": 1
   },
   {
+   "id": "gaz_piazza_san_giovanni",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_piazza_san_giovanni",
+   "label": "Piazza San Giovanni",
+   "lon": 12.506173147859243,
+   "lat": 41.88742084063378,
+   "x": 727.395,
+   "y": 1537.916,
+   "scaleBand": "urbano",
+   "presentLocation": "Piazza San Giovanni in Laterano",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 1.9,
+   "refCountAnchored": 5,
+   "planeCount": 2,
+   "interpCount": 5,
+   "narrativePlaceCount": 1,
+   "densityClass": "raro",
+   "densityLevel": 1
+  },
+  {
+   "id": "gaz_piazza_san_lorenzo_in_lucina",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_piazza_san_lorenzo_in_lucina",
+   "label": "Piazza San Lorenzo in Lucina",
+   "lon": 12.47842775822113,
+   "lat": 41.90361766730038,
+   "x": -1337.636,
+   "y": -81.767,
+   "scaleBand": "urbano",
+   "presentLocation": "Piazza San Lorenzo in Lucina",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 1.5,
+   "refCountAnchored": 4,
+   "planeCount": 2,
+   "interpCount": 3,
+   "narrativePlaceCount": 2,
+   "densityClass": "raro",
+   "densityLevel": 1
+  },
+  {
    "id": "gaz_piazza_san_pietro",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_piazza_san_pietro",
    "label": "Piazza San Pietro",
@@ -1396,6 +1491,25 @@
    "densityLevel": 1
   },
   {
+   "id": "gaz_porta_pinciana",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_porta_pinciana",
+   "label": "Porta Pinciana",
+   "lon": 12.488262466067692,
+   "lat": 41.90968492139161,
+   "x": -605.659,
+   "y": -688.492,
+   "scaleBand": "urbano",
+   "presentLocation": "Via Vittorio Veneto, 196, 00187",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 1.0,
+   "refCountAnchored": 5,
+   "planeCount": 2,
+   "interpCount": 2,
+   "narrativePlaceCount": 2,
+   "densityClass": "raro",
+   "densityLevel": 1
+  },
+  {
    "id": "gaz_prati",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_prati",
    "label": "Prati",
@@ -1410,6 +1524,25 @@
    "refCountAnchored": 2,
    "planeCount": 2,
    "interpCount": 2,
+   "narrativePlaceCount": 1,
+   "densityClass": "raro",
+   "densityLevel": 1
+  },
+  {
+   "id": "gaz_pratica_di_mare",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_pratica_di_mare",
+   "label": "Pratica di Mare",
+   "lon": 12.479969808767637,
+   "lat": 41.66401971901388,
+   "x": -1222.864,
+   "y": 23878.028,
+   "scaleBand": "periurbano",
+   "presentLocation": "Pratica di Mare",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 26.6,
+   "refCountAnchored": 3,
+   "planeCount": 2,
+   "interpCount": 3,
    "narrativePlaceCount": 1,
    "densityClass": "raro",
    "densityLevel": 1
@@ -1453,6 +1586,25 @@
    "densityLevel": 1
   },
   {
+   "id": "gaz_rocca_savella",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_rocca_savella",
+   "label": "Rocca Savella",
+   "lon": 12.48057907706965,
+   "lat": 41.88624438963685,
+   "x": -1177.518,
+   "y": 1655.561,
+   "scaleBand": "urbano",
+   "presentLocation": "clivo di Rocca Savella",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 2.3,
+   "refCountAnchored": 4,
+   "planeCount": 2,
+   "interpCount": 4,
+   "narrativePlaceCount": 2,
+   "densityClass": "raro",
+   "densityLevel": 1
+  },
+  {
    "id": "gaz_san_carlo_alle_quattro_fontane",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_san_carlo_alle_quattro_fontane",
    "label": "San Carlo alle quattro fontane",
@@ -1472,6 +1624,25 @@
    "densityLevel": 1
   },
   {
+   "id": "gaz_san_lorenzo_al_verano",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_san_lorenzo_al_verano",
+   "label": "San Lorenzo al verano",
+   "lon": 12.520581205893716,
+   "lat": 41.90261005150349,
+   "x": 1799.756,
+   "y": 18.995,
+   "scaleBand": "urbano",
+   "presentLocation": "Piazzale del Verano, 3, 00185",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 2.0,
+   "refCountAnchored": 4,
+   "planeCount": 2,
+   "interpCount": 4,
+   "narrativePlaceCount": 1,
+   "densityClass": "raro",
+   "densityLevel": 1
+  },
+  {
    "id": "gaz_santa_maria_della_neve",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_maria_della_neve",
    "label": "Santa Maria della Neve",
@@ -1487,6 +1658,25 @@
    "planeCount": 2,
    "interpCount": 2,
    "narrativePlaceCount": 1,
+   "densityClass": "raro",
+   "densityLevel": 1
+  },
+  {
+   "id": "gaz_santa_maria_in_domnica",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_maria_in_domnica",
+   "label": "Santa Maria in Dòmnica",
+   "lon": 12.495713660513266,
+   "lat": 41.88479505138305,
+   "x": -51.083,
+   "y": 1800.495,
+   "scaleBand": "urbano",
+   "presentLocation": "Via della Navicella, 10, 00184",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 2.0,
+   "refCountAnchored": 4,
+   "planeCount": 2,
+   "interpCount": 4,
+   "narrativePlaceCount": 2,
    "densityClass": "raro",
    "densityLevel": 1
   },
@@ -1524,6 +1714,44 @@
    "refCountAnchored": 2,
    "planeCount": 2,
    "interpCount": 2,
+   "narrativePlaceCount": 1,
+   "densityClass": "raro",
+   "densityLevel": 1
+  },
+  {
+   "id": "gaz_solforata",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_solforata",
+   "label": "Solforata",
+   "lon": 12.538157750574666,
+   "lat": 41.70161467494166,
+   "x": 3107.941,
+   "y": 20118.533,
+   "scaleBand": "periurbano",
+   "presentLocation": "Solfarata",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 22.6,
+   "refCountAnchored": 3,
+   "planeCount": 2,
+   "interpCount": 3,
+   "narrativePlaceCount": 1,
+   "densityClass": "raro",
+   "densityLevel": 1
+  },
+  {
+   "id": "gaz_tor_ser_paolo",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_tor_ser_paolo",
+   "label": "Tor Ser Paolo",
+   "lon": 12.626476138456598,
+   "lat": 41.77489532732517,
+   "x": 9681.293,
+   "y": 12790.467,
+   "scaleBand": "periurbano",
+   "presentLocation": "Ciampino (Colli Albani)",
+   "historicalLocation": "Tor Ser Paolo",
+   "distanceFromRomeKm": 17.8,
+   "refCountAnchored": 3,
+   "planeCount": 2,
+   "interpCount": 3,
    "narrativePlaceCount": 1,
    "densityClass": "raro",
    "densityLevel": 1
@@ -1624,6 +1852,25 @@
    "densityLevel": 1
   },
   {
+   "id": "gaz_via_massimo_dazeglio",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_massimo_dazeglio",
+   "label": "Via Massimo d'Azeglio",
+   "lon": 12.656666611845928,
+   "lat": 41.7708010201672,
+   "x": 11928.306,
+   "y": 13199.898,
+   "scaleBand": "periurbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 19.8,
+   "refCountAnchored": 7,
+   "planeCount": 2,
+   "interpCount": 7,
+   "narrativePlaceCount": 1,
+   "densityClass": "raro",
+   "densityLevel": 1
+  },
+  {
    "id": "gaz_vicenza",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_vicenza",
    "label": "Vicenza",
@@ -1676,253 +1923,6 @@
    "refCountAnchored": 2,
    "planeCount": 2,
    "interpCount": 2,
-   "narrativePlaceCount": 1,
-   "densityClass": "raro",
-   "densityLevel": 1
-  },
-  {
-   "id": "gaz_ardea",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_ardea",
-   "label": "Ardea",
-   "lon": 12.544506836046144,
-   "lat": 41.66592876861046,
-   "x": 3580.49,
-   "y": 23687.123,
-   "scaleBand": "periurbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 26.6,
-   "refCountAnchored": 3,
-   "planeCount": 2,
-   "interpCount": 3,
-   "narrativePlaceCount": 1,
-   "densityClass": "raro",
-   "densityLevel": 1
-  },
-  {
-   "id": "gaz_bologna",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_bologna",
-   "label": "Bologna",
-   "lon": 11.344545396805216,
-   "lat": 44.49555555061309,
-   "x": -85730.109,
-   "y": -259275.555,
-   "scaleBand": "nazionale",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 303.0,
-   "refCountAnchored": 3,
-   "planeCount": 2,
-   "interpCount": 2,
-   "narrativePlaceCount": 2,
-   "densityClass": "raro",
-   "densityLevel": 1
-  },
-  {
-   "id": "gaz_pratica_di_mare",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_pratica_di_mare",
-   "label": "Pratica di Mare",
-   "lon": 12.479969808767637,
-   "lat": 41.66401971901388,
-   "x": -1222.864,
-   "y": 23878.028,
-   "scaleBand": "periurbano",
-   "presentLocation": "Pratica di Mare",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 26.6,
-   "refCountAnchored": 3,
-   "planeCount": 2,
-   "interpCount": 3,
-   "narrativePlaceCount": 1,
-   "densityClass": "raro",
-   "densityLevel": 1
-  },
-  {
-   "id": "gaz_solforata",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_solforata",
-   "label": "Solforata",
-   "lon": 12.538157750574666,
-   "lat": 41.70161467494166,
-   "x": 3107.941,
-   "y": 20118.533,
-   "scaleBand": "periurbano",
-   "presentLocation": "Solfarata",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 22.6,
-   "refCountAnchored": 3,
-   "planeCount": 2,
-   "interpCount": 3,
-   "narrativePlaceCount": 1,
-   "densityClass": "raro",
-   "densityLevel": 1
-  },
-  {
-   "id": "gaz_tor_ser_paolo",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_tor_ser_paolo",
-   "label": "Tor Ser Paolo",
-   "lon": 12.626476138456598,
-   "lat": 41.77489532732517,
-   "x": 9681.293,
-   "y": 12790.467,
-   "scaleBand": "periurbano",
-   "presentLocation": "Ciampino (Colli Albani)",
-   "historicalLocation": "Tor Ser Paolo",
-   "distanceFromRomeKm": 17.8,
-   "refCountAnchored": 3,
-   "planeCount": 2,
-   "interpCount": 3,
-   "narrativePlaceCount": 1,
-   "densityClass": "raro",
-   "densityLevel": 1
-  },
-  {
-   "id": "gaz_piazza_san_lorenzo_in_lucina",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_piazza_san_lorenzo_in_lucina",
-   "label": "Piazza San Lorenzo in Lucina",
-   "lon": 12.47842775822113,
-   "lat": 41.90361766730038,
-   "x": -1337.636,
-   "y": -81.767,
-   "scaleBand": "urbano",
-   "presentLocation": "Piazza San Lorenzo in Lucina",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 1.5,
-   "refCountAnchored": 4,
-   "planeCount": 2,
-   "interpCount": 3,
-   "narrativePlaceCount": 2,
-   "densityClass": "raro",
-   "densityLevel": 1
-  },
-  {
-   "id": "gaz_rocca_savella",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_rocca_savella",
-   "label": "Rocca Savella",
-   "lon": 12.48057907706965,
-   "lat": 41.88624438963685,
-   "x": -1177.518,
-   "y": 1655.561,
-   "scaleBand": "urbano",
-   "presentLocation": "clivo di Rocca Savella",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 2.3,
-   "refCountAnchored": 4,
-   "planeCount": 2,
-   "interpCount": 4,
-   "narrativePlaceCount": 2,
-   "densityClass": "raro",
-   "densityLevel": 1
-  },
-  {
-   "id": "gaz_san_lorenzo_al_verano",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_san_lorenzo_al_verano",
-   "label": "San Lorenzo al verano",
-   "lon": 12.520581205893716,
-   "lat": 41.90261005150349,
-   "x": 1799.756,
-   "y": 18.995,
-   "scaleBand": "urbano",
-   "presentLocation": "Piazzale del Verano, 3, 00185",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 2.0,
-   "refCountAnchored": 4,
-   "planeCount": 2,
-   "interpCount": 4,
-   "narrativePlaceCount": 1,
-   "densityClass": "raro",
-   "densityLevel": 1
-  },
-  {
-   "id": "gaz_santa_maria_in_domnica",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_maria_in_domnica",
-   "label": "Santa Maria in Dòmnica",
-   "lon": 12.495713660513266,
-   "lat": 41.88479505138305,
-   "x": -51.083,
-   "y": 1800.495,
-   "scaleBand": "urbano",
-   "presentLocation": "Via della Navicella, 10, 00184",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 2.0,
-   "refCountAnchored": 4,
-   "planeCount": 2,
-   "interpCount": 4,
-   "narrativePlaceCount": 2,
-   "densityClass": "raro",
-   "densityLevel": 1
-  },
-  {
-   "id": "gaz_brahmaputra",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_brahmaputra",
-   "label": "Brahmaputra",
-   "lon": 92.38395277199372,
-   "lat": 27.000235829388703,
-   "x": 5945862.061,
-   "y": 1490256.417,
-   "scaleBand": "extra",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 7248.5,
-   "refCountAnchored": 5,
-   "planeCount": 2,
-   "interpCount": 2,
-   "narrativePlaceCount": 2,
-   "densityClass": "raro",
-   "densityLevel": 1
-  },
-  {
-   "id": "gaz_piazza_san_giovanni",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_piazza_san_giovanni",
-   "label": "Piazza San Giovanni",
-   "lon": 12.506173147859243,
-   "lat": 41.88742084063378,
-   "x": 727.395,
-   "y": 1537.916,
-   "scaleBand": "urbano",
-   "presentLocation": "Piazza San Giovanni in Laterano",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 1.9,
-   "refCountAnchored": 5,
-   "planeCount": 2,
-   "interpCount": 5,
-   "narrativePlaceCount": 1,
-   "densityClass": "raro",
-   "densityLevel": 1
-  },
-  {
-   "id": "gaz_porta_pinciana",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_porta_pinciana",
-   "label": "Porta Pinciana",
-   "lon": 12.488262466067692,
-   "lat": 41.90968492139161,
-   "x": -605.659,
-   "y": -688.492,
-   "scaleBand": "urbano",
-   "presentLocation": "Via Vittorio Veneto, 196, 00187",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 1.0,
-   "refCountAnchored": 5,
-   "planeCount": 2,
-   "interpCount": 2,
-   "narrativePlaceCount": 2,
-   "densityClass": "raro",
-   "densityLevel": 1
-  },
-  {
-   "id": "gaz_via_massimo_dazeglio",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_massimo_dazeglio",
-   "label": "Via Massimo d'Azeglio",
-   "lon": 12.656666611845928,
-   "lat": 41.7708010201672,
-   "x": 11928.306,
-   "y": 13199.898,
-   "scaleBand": "periurbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 19.8,
-   "refCountAnchored": 7,
-   "planeCount": 2,
-   "interpCount": 7,
    "narrativePlaceCount": 1,
    "densityClass": "raro",
    "densityLevel": 1
@@ -2175,6 +2175,25 @@
    "densityLevel": 0
   },
   {
+   "id": "gaz_campo_verano",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_campo_verano",
+   "label": "Campo Verano",
+   "lon": 12.52018048622454,
+   "lat": 41.90164314083915,
+   "x": 1769.931,
+   "y": 115.686,
+   "scaleBand": "urbano",
+   "presentLocation": "Piazzale del Verano",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 2.0,
+   "refCountAnchored": 2,
+   "planeCount": 1,
+   "interpCount": 2,
+   "narrativePlaceCount": 1,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
    "id": "gaz_campoleone",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_campoleone",
    "label": "Campoleone",
@@ -2209,6 +2228,25 @@
    "planeCount": 1,
    "interpCount": 1,
    "narrativePlaceCount": 1,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
+   "id": "gaz_castel_gandolfo",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_gandolfo",
+   "label": "Castel Gandolfo",
+   "lon": 12.64847290122697,
+   "lat": 41.75005641875434,
+   "x": 11318.465,
+   "y": 15274.358,
+   "scaleBand": "periurbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 21.1,
+   "refCountAnchored": 3,
+   "planeCount": 1,
+   "interpCount": 1,
+   "narrativePlaceCount": 2,
    "densityClass": "hapax",
    "densityLevel": 0
   },
@@ -2327,6 +2365,25 @@
    "densityLevel": 0
   },
   {
+   "id": "gaz_falcognana",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_falcognana",
+   "label": "Falcognana",
+   "lon": 12.554930951232286,
+   "lat": 41.76433697008515,
+   "x": 4356.335,
+   "y": 13846.303,
+   "scaleBand": "periurbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 16.1,
+   "refCountAnchored": 3,
+   "planeCount": 1,
+   "interpCount": 3,
+   "narrativePlaceCount": 1,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
    "id": "gaz_filettino",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_filettino",
    "label": "Filettino",
@@ -2360,6 +2417,25 @@
    "refCountAnchored": 1,
    "planeCount": 1,
    "interpCount": 1,
+   "narrativePlaceCount": 1,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
+   "id": "gaz_fontana_di_papa",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_fontana_di_papa",
+   "label": "Fontana di Papa",
+   "lon": 12.651120729247085,
+   "lat": 41.68436279264858,
+   "x": 11515.538,
+   "y": 21843.721,
+   "scaleBand": "periurbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 27.5,
+   "refCountAnchored": 2,
+   "planeCount": 1,
+   "interpCount": 2,
    "narrativePlaceCount": 1,
    "densityClass": "hapax",
    "densityLevel": 0
@@ -2441,6 +2517,25 @@
    "densityLevel": 0
   },
   {
+   "id": "gaz_grottaferrata",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_grottaferrata",
+   "label": "Grottaferrata",
+   "lon": 12.670419992725682,
+   "lat": 41.79100156171508,
+   "x": 12951.941,
+   "y": 11179.844,
+   "scaleBand": "periurbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 19.0,
+   "refCountAnchored": 2,
+   "planeCount": 1,
+   "interpCount": 2,
+   "narrativePlaceCount": 1,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
    "id": "gaz_india",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_india",
    "label": "India",
@@ -2493,6 +2588,25 @@
    "refCountAnchored": 1,
    "planeCount": 1,
    "interpCount": 1,
+   "narrativePlaceCount": 1,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
+   "id": "gaz_largo_brancaccio",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_largo_brancaccio",
+   "label": "Largo Brancaccio",
+   "lon": 12.49962004376294,
+   "lat": 41.89499585680336,
+   "x": 239.661,
+   "y": 780.414,
+   "scaleBand": "urbano",
+   "presentLocation": "Largo Brancaccio",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 0.9,
+   "refCountAnchored": 3,
+   "planeCount": 1,
+   "interpCount": 3,
    "narrativePlaceCount": 1,
    "densityClass": "hapax",
    "densityLevel": 0
@@ -2551,6 +2665,25 @@
    "planeCount": 1,
    "interpCount": 1,
    "narrativePlaceCount": 1,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
+   "id": "gaz_monte_manno",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_monte_manno",
+   "label": "Monte Manno",
+   "lon": 12.933066487462336,
+   "lat": 41.70507314535531,
+   "x": 32500.166,
+   "y": 19772.685,
+   "scaleBand": "nazionale",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 42.3,
+   "refCountAnchored": 3,
+   "planeCount": 1,
+   "interpCount": 1,
+   "narrativePlaceCount": 2,
    "densityClass": "hapax",
    "densityLevel": 0
   },
@@ -2631,6 +2764,25 @@
    "densityLevel": 0
   },
   {
+   "id": "gaz_monti_carseolani",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_monti_carseolani",
+   "label": "Monti Carseolani",
+   "lon": 13.032114125147414,
+   "lat": 42.0749429984885,
+   "x": 39872.072,
+   "y": -17214.3,
+   "scaleBand": "nazionale",
+   "presentLocation": "Catena montuosa tra Lazio e Abruzzo",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 48.2,
+   "refCountAnchored": 2,
+   "planeCount": 1,
+   "interpCount": 1,
+   "narrativePlaceCount": 2,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
    "id": "gaz_monti_ernici",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_monti_ernici",
    "label": "Monti Ernici",
@@ -2664,6 +2816,25 @@
    "refCountAnchored": 1,
    "planeCount": 1,
    "interpCount": 1,
+   "narrativePlaceCount": 1,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
+   "id": "gaz_ovindoli",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_ovindoli",
+   "label": "Ovindoli",
+   "lon": 13.51516522684632,
+   "lat": 42.13780481791833,
+   "x": 75824.547,
+   "y": -23500.482,
+   "scaleBand": "nazionale",
+   "presentLocation": "Comune",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 88.1,
+   "refCountAnchored": 2,
+   "planeCount": 1,
+   "interpCount": 2,
    "narrativePlaceCount": 1,
    "densityClass": "hapax",
    "densityLevel": 0
@@ -2916,6 +3087,25 @@
    "densityLevel": 0
   },
   {
+   "id": "gaz_ponte_divino_amore",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_ponte_divino_amore",
+   "label": "Ponte al Divino Amore",
+   "lon": 12.599632278065911,
+   "lat": 41.76071420037528,
+   "x": 7683.361,
+   "y": 14208.58,
+   "scaleBand": "periurbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 18.0,
+   "refCountAnchored": 16,
+   "planeCount": 1,
+   "interpCount": 1,
+   "narrativePlaceCount": 2,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
    "id": "gaz_porta_angelica",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_porta_angelica",
    "label": "Porta Angelica",
@@ -2930,6 +3120,25 @@
    "refCountAnchored": 1,
    "planeCount": 1,
    "interpCount": 1,
+   "narrativePlaceCount": 1,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
+   "id": "gaz_porta_latina",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_porta_latina",
+   "label": "Porta Latina",
+   "lon": 12.499128817987987,
+   "lat": 41.8782334566828,
+   "x": 203.1,
+   "y": 2456.654,
+   "scaleBand": "urbano",
+   "presentLocation": "Mura aureliane, Via di Porta Latina, 14, 00179 Roma RM",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 2.7,
+   "refCountAnchored": 2,
+   "planeCount": 1,
+   "interpCount": 2,
    "narrativePlaceCount": 1,
    "densityClass": "hapax",
    "densityLevel": 0
@@ -3006,6 +3215,25 @@
    "refCountAnchored": 1,
    "planeCount": 1,
    "interpCount": 1,
+   "narrativePlaceCount": 1,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
+   "id": "gaz_predappio",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_predappio",
+   "label": "Predappio",
+   "lon": 11.981884102223214,
+   "lat": 44.10833194442195,
+   "x": -38294.333,
+   "y": -220553.194,
+   "scaleBand": "nazionale",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 248.8,
+   "refCountAnchored": 2,
+   "planeCount": 1,
+   "interpCount": 2,
    "narrativePlaceCount": 1,
    "densityClass": "hapax",
    "densityLevel": 0
@@ -3239,6 +3467,25 @@
    "densityLevel": 0
   },
   {
+   "id": "gaz_santa_margherita_in_abitacolo",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_margherita_in_abitacolo",
+   "label": "Santa Margherita in Abitacolo",
+   "lon": 12.480113538487586,
+   "lat": 41.89267907132654,
+   "x": -1212.167,
+   "y": 1012.093,
+   "scaleBand": "urbano",
+   "presentLocation": "Via Montanara, 00186",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 1.8,
+   "refCountAnchored": 2,
+   "planeCount": 1,
+   "interpCount": 2,
+   "narrativePlaceCount": 1,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
    "id": "gaz_santa_maria_in_aquiro",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_maria_in_aquiro",
    "label": "Santa Maria in Aquiro",
@@ -3467,6 +3714,44 @@
    "densityLevel": 0
   },
   {
+   "id": "gaz_tempio_di_agrippa",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_tempio_di_agrippa",
+   "label": "Tempio di Agrippa",
+   "lon": 12.476863407009992,
+   "lat": 41.89867683406545,
+   "x": -1454.067,
+   "y": 412.317,
+   "scaleBand": "urbano",
+   "presentLocation": "Piazza della Rotonda, 00186",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 1.7,
+   "refCountAnchored": 2,
+   "planeCount": 1,
+   "interpCount": 2,
+   "narrativePlaceCount": 1,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
+   "id": "gaz_terracina",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_terracina",
+   "label": "Terracina",
+   "lon": 13.249936342430493,
+   "lat": 41.29047601665066,
+   "x": 56084.121,
+   "y": 61232.398,
+   "scaleBand": "nazionale",
+   "presentLocation": "Comune",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 92.5,
+   "refCountAnchored": 2,
+   "planeCount": 1,
+   "interpCount": 2,
+   "narrativePlaceCount": 1,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
    "id": "gaz_tevere",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_tevere",
    "label": "Tevere",
@@ -3481,6 +3766,25 @@
    "refCountAnchored": 1,
    "planeCount": 1,
    "interpCount": 1,
+   "narrativePlaceCount": 1,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
+   "id": "gaz_traforo",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_traforo",
+   "label": "Traforo",
+   "lon": 12.48796567063664,
+   "lat": 41.90087528377779,
+   "x": -627.749,
+   "y": 192.472,
+   "scaleBand": "urbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 0.7,
+   "refCountAnchored": 2,
+   "planeCount": 1,
+   "interpCount": 2,
    "narrativePlaceCount": 1,
    "densityClass": "hapax",
    "densityLevel": 0
@@ -3771,6 +4075,44 @@
    "densityLevel": 0
   },
   {
+   "id": "gaz_via_della_caffarella",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_della_caffarella",
+   "label": "Via della Caffarella",
+   "lon": 12.51298416209954,
+   "lat": 41.86491462396609,
+   "x": 1234.324,
+   "y": 3788.538,
+   "scaleBand": "urbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 4.4,
+   "refCountAnchored": 2,
+   "planeCount": 1,
+   "interpCount": 2,
+   "narrativePlaceCount": 1,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
+   "id": "gaz_via_della_navicella",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_della_navicella",
+   "label": "Via della Navicella",
+   "lon": 12.496271259883107,
+   "lat": 41.883995357992056,
+   "x": -9.582,
+   "y": 1880.464,
+   "scaleBand": "urbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 2.1,
+   "refCountAnchored": 2,
+   "planeCount": 1,
+   "interpCount": 2,
+   "narrativePlaceCount": 1,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
    "id": "gaz_via_della_palombella",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_della_palombella",
    "label": "Via della Palombella",
@@ -3904,6 +4246,44 @@
    "densityLevel": 0
   },
   {
+   "id": "gaz_via_di_san_paolo_della_croce",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_di_san_paolo_della_croce",
+   "label": "Via di San Paolo della Croce",
+   "lon": 12.494225506290569,
+   "lat": 41.88609007715952,
+   "x": -161.843,
+   "y": 1670.992,
+   "scaleBand": "urbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 1.9,
+   "refCountAnchored": 2,
+   "planeCount": 1,
+   "interpCount": 2,
+   "narrativePlaceCount": 1,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
+   "id": "gaz_via_di_santo_stefano_rotondo",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_di_santo_stefano_rotondo",
+   "label": "Via di Santo Stefano Rotondo",
+   "lon": 12.49934749037454,
+   "lat": 41.8859031777105,
+   "x": 219.375,
+   "y": 1689.682,
+   "scaleBand": "urbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 1.9,
+   "refCountAnchored": 2,
+   "planeCount": 1,
+   "interpCount": 2,
+   "narrativePlaceCount": 1,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
    "id": "gaz_via_labbricana",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_labbricana",
    "label": "Via Labbricana",
@@ -3937,6 +4317,25 @@
    "refCountAnchored": 1,
    "planeCount": 1,
    "interpCount": 1,
+   "narrativePlaceCount": 1,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
+   "id": "gaz_via_mamiani",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_mamiani",
+   "label": "Via Mamiani",
+   "lon": 12.505176649501491,
+   "lat": 41.8962647321153,
+   "x": 653.228,
+   "y": 653.527,
+   "scaleBand": "urbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 1.0,
+   "refCountAnchored": 3,
+   "planeCount": 1,
+   "interpCount": 3,
    "narrativePlaceCount": 1,
    "densityClass": "hapax",
    "densityLevel": 0
@@ -4013,6 +4412,44 @@
    "refCountAnchored": 1,
    "planeCount": 1,
    "interpCount": 1,
+   "narrativePlaceCount": 1,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
+   "id": "gaz_via_popolonia",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_popolonia",
+   "label": "Via Popolonia",
+   "lon": 12.50579364816932,
+   "lat": 41.8764745142944,
+   "x": 699.149,
+   "y": 2632.549,
+   "scaleBand": "urbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 3.0,
+   "refCountAnchored": 2,
+   "planeCount": 1,
+   "interpCount": 2,
+   "narrativePlaceCount": 1,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
+   "id": "gaz_via_ricasoli",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_ricasoli",
+   "label": "Via Ricasoli",
+   "lon": 12.50606607937935,
+   "lat": 41.89558786458463,
+   "x": 719.426,
+   "y": 721.214,
+   "scaleBand": "urbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 1.1,
+   "refCountAnchored": 3,
+   "planeCount": 1,
+   "interpCount": 3,
    "narrativePlaceCount": 1,
    "densityClass": "hapax",
    "densityLevel": 0
@@ -4227,329 +4664,6 @@
    "densityLevel": 0
   },
   {
-   "id": "gaz_vomero",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_vomero",
-   "label": "Vomero",
-   "lon": 14.23166148030254,
-   "lat": 40.84468964152708,
-   "x": 129151.852,
-   "y": 105811.036,
-   "scaleBand": "nazionale",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 186.6,
-   "refCountAnchored": 1,
-   "planeCount": 1,
-   "interpCount": 1,
-   "narrativePlaceCount": 1,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
-   "id": "gaz_campo_verano",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_campo_verano",
-   "label": "Campo Verano",
-   "lon": 12.52018048622454,
-   "lat": 41.90164314083915,
-   "x": 1769.931,
-   "y": 115.686,
-   "scaleBand": "urbano",
-   "presentLocation": "Piazzale del Verano",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 2.0,
-   "refCountAnchored": 2,
-   "planeCount": 1,
-   "interpCount": 2,
-   "narrativePlaceCount": 1,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
-   "id": "gaz_fontana_di_papa",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_fontana_di_papa",
-   "label": "Fontana di Papa",
-   "lon": 12.651120729247085,
-   "lat": 41.68436279264858,
-   "x": 11515.538,
-   "y": 21843.721,
-   "scaleBand": "periurbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 27.5,
-   "refCountAnchored": 2,
-   "planeCount": 1,
-   "interpCount": 2,
-   "narrativePlaceCount": 1,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
-   "id": "gaz_grottaferrata",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_grottaferrata",
-   "label": "Grottaferrata",
-   "lon": 12.670419992725682,
-   "lat": 41.79100156171508,
-   "x": 12951.941,
-   "y": 11179.844,
-   "scaleBand": "periurbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 19.0,
-   "refCountAnchored": 2,
-   "planeCount": 1,
-   "interpCount": 2,
-   "narrativePlaceCount": 1,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
-   "id": "gaz_monti_carseolani",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_monti_carseolani",
-   "label": "Monti Carseolani",
-   "lon": 13.032114125147414,
-   "lat": 42.0749429984885,
-   "x": 39872.072,
-   "y": -17214.3,
-   "scaleBand": "nazionale",
-   "presentLocation": "Catena montuosa tra Lazio e Abruzzo",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 48.2,
-   "refCountAnchored": 2,
-   "planeCount": 1,
-   "interpCount": 1,
-   "narrativePlaceCount": 2,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
-   "id": "gaz_ovindoli",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_ovindoli",
-   "label": "Ovindoli",
-   "lon": 13.51516522684632,
-   "lat": 42.13780481791833,
-   "x": 75824.547,
-   "y": -23500.482,
-   "scaleBand": "nazionale",
-   "presentLocation": "Comune",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 88.1,
-   "refCountAnchored": 2,
-   "planeCount": 1,
-   "interpCount": 2,
-   "narrativePlaceCount": 1,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
-   "id": "gaz_porta_latina",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_porta_latina",
-   "label": "Porta Latina",
-   "lon": 12.499128817987987,
-   "lat": 41.8782334566828,
-   "x": 203.1,
-   "y": 2456.654,
-   "scaleBand": "urbano",
-   "presentLocation": "Mura aureliane, Via di Porta Latina, 14, 00179 Roma RM",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 2.7,
-   "refCountAnchored": 2,
-   "planeCount": 1,
-   "interpCount": 2,
-   "narrativePlaceCount": 1,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
-   "id": "gaz_predappio",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_predappio",
-   "label": "Predappio",
-   "lon": 11.981884102223214,
-   "lat": 44.10833194442195,
-   "x": -38294.333,
-   "y": -220553.194,
-   "scaleBand": "nazionale",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 248.8,
-   "refCountAnchored": 2,
-   "planeCount": 1,
-   "interpCount": 2,
-   "narrativePlaceCount": 1,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
-   "id": "gaz_santa_margherita_in_abitacolo",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_margherita_in_abitacolo",
-   "label": "Santa Margherita in Abitacolo",
-   "lon": 12.480113538487586,
-   "lat": 41.89267907132654,
-   "x": -1212.167,
-   "y": 1012.093,
-   "scaleBand": "urbano",
-   "presentLocation": "Via Montanara, 00186",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 1.8,
-   "refCountAnchored": 2,
-   "planeCount": 1,
-   "interpCount": 2,
-   "narrativePlaceCount": 1,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
-   "id": "gaz_tempio_di_agrippa",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_tempio_di_agrippa",
-   "label": "Tempio di Agrippa",
-   "lon": 12.476863407009992,
-   "lat": 41.89867683406545,
-   "x": -1454.067,
-   "y": 412.317,
-   "scaleBand": "urbano",
-   "presentLocation": "Piazza della Rotonda, 00186",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 1.7,
-   "refCountAnchored": 2,
-   "planeCount": 1,
-   "interpCount": 2,
-   "narrativePlaceCount": 1,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
-   "id": "gaz_terracina",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_terracina",
-   "label": "Terracina",
-   "lon": 13.249936342430493,
-   "lat": 41.29047601665066,
-   "x": 56084.121,
-   "y": 61232.398,
-   "scaleBand": "nazionale",
-   "presentLocation": "Comune",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 92.5,
-   "refCountAnchored": 2,
-   "planeCount": 1,
-   "interpCount": 2,
-   "narrativePlaceCount": 1,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
-   "id": "gaz_traforo",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_traforo",
-   "label": "Traforo",
-   "lon": 12.48796567063664,
-   "lat": 41.90087528377779,
-   "x": -627.749,
-   "y": 192.472,
-   "scaleBand": "urbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 0.7,
-   "refCountAnchored": 2,
-   "planeCount": 1,
-   "interpCount": 2,
-   "narrativePlaceCount": 1,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
-   "id": "gaz_via_della_caffarella",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_della_caffarella",
-   "label": "Via della Caffarella",
-   "lon": 12.51298416209954,
-   "lat": 41.86491462396609,
-   "x": 1234.324,
-   "y": 3788.538,
-   "scaleBand": "urbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 4.4,
-   "refCountAnchored": 2,
-   "planeCount": 1,
-   "interpCount": 2,
-   "narrativePlaceCount": 1,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
-   "id": "gaz_via_della_navicella",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_della_navicella",
-   "label": "Via della Navicella",
-   "lon": 12.496271259883107,
-   "lat": 41.883995357992056,
-   "x": -9.582,
-   "y": 1880.464,
-   "scaleBand": "urbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 2.1,
-   "refCountAnchored": 2,
-   "planeCount": 1,
-   "interpCount": 2,
-   "narrativePlaceCount": 1,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
-   "id": "gaz_via_di_san_paolo_della_croce",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_di_san_paolo_della_croce",
-   "label": "Via di San Paolo della Croce",
-   "lon": 12.494225506290569,
-   "lat": 41.88609007715952,
-   "x": -161.843,
-   "y": 1670.992,
-   "scaleBand": "urbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 1.9,
-   "refCountAnchored": 2,
-   "planeCount": 1,
-   "interpCount": 2,
-   "narrativePlaceCount": 1,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
-   "id": "gaz_via_di_santo_stefano_rotondo",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_di_santo_stefano_rotondo",
-   "label": "Via di Santo Stefano Rotondo",
-   "lon": 12.49934749037454,
-   "lat": 41.8859031777105,
-   "x": 219.375,
-   "y": 1689.682,
-   "scaleBand": "urbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 1.9,
-   "refCountAnchored": 2,
-   "planeCount": 1,
-   "interpCount": 2,
-   "narrativePlaceCount": 1,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
-   "id": "gaz_via_popolonia",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_popolonia",
-   "label": "Via Popolonia",
-   "lon": 12.50579364816932,
-   "lat": 41.8764745142944,
-   "x": 699.149,
-   "y": 2632.549,
-   "scaleBand": "urbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 3.0,
-   "refCountAnchored": 2,
-   "planeCount": 1,
-   "interpCount": 2,
-   "narrativePlaceCount": 1,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
    "id": "gaz_vinchiaturo",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_vinchiaturo",
    "label": "Vinchiaturo",
@@ -4569,135 +4683,21 @@
    "densityLevel": 0
   },
   {
-   "id": "gaz_castel_gandolfo",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_gandolfo",
-   "label": "Castel Gandolfo",
-   "lon": 12.64847290122697,
-   "lat": 41.75005641875434,
-   "x": 11318.465,
-   "y": 15274.358,
-   "scaleBand": "periurbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 21.1,
-   "refCountAnchored": 3,
-   "planeCount": 1,
-   "interpCount": 1,
-   "narrativePlaceCount": 2,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
-   "id": "gaz_falcognana",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_falcognana",
-   "label": "Falcognana",
-   "lon": 12.554930951232286,
-   "lat": 41.76433697008515,
-   "x": 4356.335,
-   "y": 13846.303,
-   "scaleBand": "periurbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 16.1,
-   "refCountAnchored": 3,
-   "planeCount": 1,
-   "interpCount": 3,
-   "narrativePlaceCount": 1,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
-   "id": "gaz_largo_brancaccio",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_largo_brancaccio",
-   "label": "Largo Brancaccio",
-   "lon": 12.49962004376294,
-   "lat": 41.89499585680336,
-   "x": 239.661,
-   "y": 780.414,
-   "scaleBand": "urbano",
-   "presentLocation": "Largo Brancaccio",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 0.9,
-   "refCountAnchored": 3,
-   "planeCount": 1,
-   "interpCount": 3,
-   "narrativePlaceCount": 1,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
-   "id": "gaz_monte_manno",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_monte_manno",
-   "label": "Monte Manno",
-   "lon": 12.933066487462336,
-   "lat": 41.70507314535531,
-   "x": 32500.166,
-   "y": 19772.685,
+   "id": "gaz_vomero",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_vomero",
+   "label": "Vomero",
+   "lon": 14.23166148030254,
+   "lat": 40.84468964152708,
+   "x": 129151.852,
+   "y": 105811.036,
    "scaleBand": "nazionale",
    "presentLocation": null,
    "historicalLocation": null,
-   "distanceFromRomeKm": 42.3,
-   "refCountAnchored": 3,
+   "distanceFromRomeKm": 186.6,
+   "refCountAnchored": 1,
    "planeCount": 1,
    "interpCount": 1,
-   "narrativePlaceCount": 2,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
-   "id": "gaz_via_mamiani",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_mamiani",
-   "label": "Via Mamiani",
-   "lon": 12.505176649501491,
-   "lat": 41.8962647321153,
-   "x": 653.228,
-   "y": 653.527,
-   "scaleBand": "urbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 1.0,
-   "refCountAnchored": 3,
-   "planeCount": 1,
-   "interpCount": 3,
    "narrativePlaceCount": 1,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
-   "id": "gaz_via_ricasoli",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_ricasoli",
-   "label": "Via Ricasoli",
-   "lon": 12.50606607937935,
-   "lat": 41.89558786458463,
-   "x": 719.426,
-   "y": 721.214,
-   "scaleBand": "urbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 1.1,
-   "refCountAnchored": 3,
-   "planeCount": 1,
-   "interpCount": 3,
-   "narrativePlaceCount": 1,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
-   "id": "gaz_ponte_divino_amore",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_ponte_divino_amore",
-   "label": "Ponte al Divino Amore",
-   "lon": 12.599632278065911,
-   "lat": 41.76071420037528,
-   "x": 7683.361,
-   "y": 14208.58,
-   "scaleBand": "periurbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 18.0,
-   "refCountAnchored": 16,
-   "planeCount": 1,
-   "interpCount": 1,
-   "narrativePlaceCount": 2,
    "densityClass": "hapax",
    "densityLevel": 0
   },
@@ -4721,6 +4721,63 @@
    "densityLevel": -1
   },
   {
+   "id": "gaz_buco_a_santignazio",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_buco_a_santignazio",
+   "label": "Buco a Sant'Ignazio",
+   "lon": 12.479623019314188,
+   "lat": 41.89789137306835,
+   "x": -1248.675,
+   "y": 490.863,
+   "scaleBand": "urbano",
+   "presentLocation": null,
+   "historicalLocation": "Via di S. Ignazio, 8",
+   "distanceFromRomeKm": 1.5,
+   "refCountAnchored": 1,
+   "planeCount": 0,
+   "interpCount": 0,
+   "narrativePlaceCount": 1,
+   "densityClass": null,
+   "densityLevel": -1
+  },
+  {
+   "id": "gaz_ca_francesi",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_ca_francesi",
+   "label": "Ca' Francesi",
+   "lon": 12.622449725919433,
+   "lat": 41.786284967839286,
+   "x": 9381.615,
+   "y": 11651.503,
+   "scaleBand": "periurbano",
+   "presentLocation": "Villa dei Valerii",
+   "historicalLocation": "colli Albani (Ciampino) / Castelli Romani",
+   "distanceFromRomeKm": 16.6,
+   "refCountAnchored": 1,
+   "planeCount": 0,
+   "interpCount": 0,
+   "narrativePlaceCount": 1,
+   "densityClass": null,
+   "densityLevel": -1
+  },
+  {
+   "id": "gaz_castel_porziano",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_porziano",
+   "label": "Castel Porziano",
+   "lon": 12.400109186081606,
+   "lat": 41.74517216671914,
+   "x": -7166.722,
+   "y": 15762.783,
+   "scaleBand": "periurbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 19.3,
+   "refCountAnchored": 2,
+   "planeCount": 0,
+   "interpCount": 0,
+   "narrativePlaceCount": 1,
+   "densityClass": null,
+   "densityLevel": -1
+  },
+  {
    "id": "gaz_castello",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_castello",
    "label": "Castello",
@@ -4736,6 +4793,25 @@
    "planeCount": 0,
    "interpCount": 0,
    "narrativePlaceCount": 0,
+   "densityClass": null,
+   "densityLevel": -1
+  },
+  {
+   "id": "gaz_colli_albani",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_colli_albani",
+   "label": "Colli Albani",
+   "lon": 12.6960074,
+   "lat": 41.7320873,
+   "x": 14856.358,
+   "y": 17071.27,
+   "scaleBand": "periurbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 25.2,
+   "refCountAnchored": 3,
+   "planeCount": 0,
+   "interpCount": 0,
+   "narrativePlaceCount": 3,
    "densityClass": null,
    "densityLevel": -1
   },
@@ -4797,6 +4873,63 @@
    "densityLevel": -1
   },
   {
+   "id": "gaz_galleria_colonna",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_galleria_colonna",
+   "label": "Galleria Colonna",
+   "lon": 12.4847453656823,
+   "lat": 41.89761875811568,
+   "x": -867.43,
+   "y": 518.124,
+   "scaleBand": "urbano",
+   "presentLocation": "Via della Pilotta, 17, 00187",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 1.1,
+   "refCountAnchored": 1,
+   "planeCount": 0,
+   "interpCount": 0,
+   "narrativePlaceCount": 1,
+   "densityClass": null,
+   "densityLevel": -1
+  },
+  {
+   "id": "gaz_lungotevere_prati",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_lungotevere_prati",
+   "label": "Lungotevere Prati",
+   "lon": 12.472885100933542,
+   "lat": 41.90488838494765,
+   "x": -1750.164,
+   "y": -208.838,
+   "scaleBand": "urbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 2.0,
+   "refCountAnchored": 1,
+   "planeCount": 0,
+   "interpCount": 0,
+   "narrativePlaceCount": 1,
+   "densityClass": null,
+   "densityLevel": -1
+  },
+  {
+   "id": "gaz_monte_circeo",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_monte_circeo",
+   "label": "Monte Circeo",
+   "lon": 13.056903290988464,
+   "lat": 41.25277506832153,
+   "x": 41717.078,
+   "y": 65002.493,
+   "scaleBand": "nazionale",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 86.0,
+   "refCountAnchored": 2,
+   "planeCount": 0,
+   "interpCount": 0,
+   "narrativePlaceCount": 1,
+   "densityClass": null,
+   "densityLevel": -1
+  },
+  {
    "id": "gaz_palazzo_della_immacolatella",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_palazzo_della_immacolatella",
    "label": "Palazzo della Immacolatella",
@@ -4831,6 +4964,25 @@
    "planeCount": 0,
    "interpCount": 0,
    "narrativePlaceCount": 0,
+   "densityClass": null,
+   "densityLevel": -1
+  },
+  {
+   "id": "gaz_palazzo_venezia",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_palazzo_venezia",
+   "label": "Palazzo Venezia",
+   "lon": 12.482488256557962,
+   "lat": 41.89608880158758,
+   "x": -1035.422,
+   "y": 671.12,
+   "scaleBand": "urbano",
+   "presentLocation": "Piazza di Venezia, 3, 00186 Roma RM",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 1.4,
+   "refCountAnchored": 1,
+   "planeCount": 0,
+   "interpCount": 0,
+   "narrativePlaceCount": 1,
    "densityClass": null,
    "densityLevel": -1
   },
@@ -4873,6 +5025,44 @@
    "densityLevel": -1
   },
   {
+   "id": "gaz_quarto_di_santa_fumia",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_quarto_di_santa_fumia",
+   "label": "Quarto di Santa Fumia",
+   "lon": 12.58446168893847,
+   "lat": 41.73247489501876,
+   "x": 6554.246,
+   "y": 17032.51,
+   "scaleBand": "periurbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 20.3,
+   "refCountAnchored": 17,
+   "planeCount": 0,
+   "interpCount": 0,
+   "narrativePlaceCount": 3,
+   "densityClass": null,
+   "densityLevel": -1
+  },
+  {
+   "id": "gaz_roma",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_roma",
+   "label": "Roma",
+   "lon": 12.483780073676602,
+   "lat": 41.89712290196547,
+   "x": -939.274,
+   "y": 567.71,
+   "scaleBand": "urbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 1.2,
+   "refCountAnchored": 6,
+   "planeCount": 0,
+   "interpCount": 0,
+   "narrativePlaceCount": 3,
+   "densityClass": null,
+   "densityLevel": -1
+  },
+  {
    "id": "gaz_san_callisto",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_san_callisto",
    "label": "San Callisto",
@@ -4911,6 +5101,25 @@
    "densityLevel": -1
   },
   {
+   "id": "gaz_valle_fondo",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_valle_fondo",
+   "label": "Valle Fondo",
+   "lon": 12.649994748861523,
+   "lat": 41.72754639015884,
+   "x": 11431.733,
+   "y": 17525.361,
+   "scaleBand": "periurbano",
+   "presentLocation": "Località",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 23.3,
+   "refCountAnchored": 1,
+   "planeCount": 0,
+   "interpCount": 0,
+   "narrativePlaceCount": 1,
+   "densityClass": null,
+   "densityLevel": -1
+  },
+  {
    "id": "gaz_via_de_merli",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_de_merli",
    "label": "Via de' Merli",
@@ -4945,215 +5154,6 @@
    "planeCount": 0,
    "interpCount": 0,
    "narrativePlaceCount": 0,
-   "densityClass": null,
-   "densityLevel": -1
-  },
-  {
-   "id": "gaz_buco_a_santignazio",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_buco_a_santignazio",
-   "label": "Buco a Sant'Ignazio",
-   "lon": 12.479623019314188,
-   "lat": 41.89789137306835,
-   "x": -1248.675,
-   "y": 490.863,
-   "scaleBand": "urbano",
-   "presentLocation": null,
-   "historicalLocation": "Via di S. Ignazio, 8",
-   "distanceFromRomeKm": 1.5,
-   "refCountAnchored": 1,
-   "planeCount": 0,
-   "interpCount": 0,
-   "narrativePlaceCount": 1,
-   "densityClass": null,
-   "densityLevel": -1
-  },
-  {
-   "id": "gaz_ca_francesi",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_ca_francesi",
-   "label": "Ca' Francesi",
-   "lon": 12.622449725919433,
-   "lat": 41.786284967839286,
-   "x": 9381.615,
-   "y": 11651.503,
-   "scaleBand": "periurbano",
-   "presentLocation": "Villa dei Valerii",
-   "historicalLocation": "colli Albani (Ciampino) / Castelli Romani",
-   "distanceFromRomeKm": 16.6,
-   "refCountAnchored": 1,
-   "planeCount": 0,
-   "interpCount": 0,
-   "narrativePlaceCount": 1,
-   "densityClass": null,
-   "densityLevel": -1
-  },
-  {
-   "id": "gaz_galleria_colonna",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_galleria_colonna",
-   "label": "Galleria Colonna",
-   "lon": 12.4847453656823,
-   "lat": 41.89761875811568,
-   "x": -867.43,
-   "y": 518.124,
-   "scaleBand": "urbano",
-   "presentLocation": "Via della Pilotta, 17, 00187",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 1.1,
-   "refCountAnchored": 1,
-   "planeCount": 0,
-   "interpCount": 0,
-   "narrativePlaceCount": 1,
-   "densityClass": null,
-   "densityLevel": -1
-  },
-  {
-   "id": "gaz_lungotevere_prati",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_lungotevere_prati",
-   "label": "Lungotevere Prati",
-   "lon": 12.472885100933542,
-   "lat": 41.90488838494765,
-   "x": -1750.164,
-   "y": -208.838,
-   "scaleBand": "urbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 2.0,
-   "refCountAnchored": 1,
-   "planeCount": 0,
-   "interpCount": 0,
-   "narrativePlaceCount": 1,
-   "densityClass": null,
-   "densityLevel": -1
-  },
-  {
-   "id": "gaz_palazzo_venezia",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_palazzo_venezia",
-   "label": "Palazzo Venezia",
-   "lon": 12.482488256557962,
-   "lat": 41.89608880158758,
-   "x": -1035.422,
-   "y": 671.12,
-   "scaleBand": "urbano",
-   "presentLocation": "Piazza di Venezia, 3, 00186 Roma RM",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 1.4,
-   "refCountAnchored": 1,
-   "planeCount": 0,
-   "interpCount": 0,
-   "narrativePlaceCount": 1,
-   "densityClass": null,
-   "densityLevel": -1
-  },
-  {
-   "id": "gaz_valle_fondo",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_valle_fondo",
-   "label": "Valle Fondo",
-   "lon": 12.649994748861523,
-   "lat": 41.72754639015884,
-   "x": 11431.733,
-   "y": 17525.361,
-   "scaleBand": "periurbano",
-   "presentLocation": "Località",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 23.3,
-   "refCountAnchored": 1,
-   "planeCount": 0,
-   "interpCount": 0,
-   "narrativePlaceCount": 1,
-   "densityClass": null,
-   "densityLevel": -1
-  },
-  {
-   "id": "gaz_castel_porziano",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_porziano",
-   "label": "Castel Porziano",
-   "lon": 12.400109186081606,
-   "lat": 41.74517216671914,
-   "x": -7166.722,
-   "y": 15762.783,
-   "scaleBand": "periurbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 19.3,
-   "refCountAnchored": 2,
-   "planeCount": 0,
-   "interpCount": 0,
-   "narrativePlaceCount": 1,
-   "densityClass": null,
-   "densityLevel": -1
-  },
-  {
-   "id": "gaz_monte_circeo",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_monte_circeo",
-   "label": "Monte Circeo",
-   "lon": 13.056903290988464,
-   "lat": 41.25277506832153,
-   "x": 41717.078,
-   "y": 65002.493,
-   "scaleBand": "nazionale",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 86.0,
-   "refCountAnchored": 2,
-   "planeCount": 0,
-   "interpCount": 0,
-   "narrativePlaceCount": 1,
-   "densityClass": null,
-   "densityLevel": -1
-  },
-  {
-   "id": "gaz_colli_albani",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_colli_albani",
-   "label": "Colli Albani",
-   "lon": 12.6960074,
-   "lat": 41.7320873,
-   "x": 14856.358,
-   "y": 17071.27,
-   "scaleBand": "periurbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 25.2,
-   "refCountAnchored": 3,
-   "planeCount": 0,
-   "interpCount": 0,
-   "narrativePlaceCount": 3,
-   "densityClass": null,
-   "densityLevel": -1
-  },
-  {
-   "id": "gaz_roma",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_roma",
-   "label": "Roma",
-   "lon": 12.483780073676602,
-   "lat": 41.89712290196547,
-   "x": -939.274,
-   "y": 567.71,
-   "scaleBand": "urbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 1.2,
-   "refCountAnchored": 6,
-   "planeCount": 0,
-   "interpCount": 0,
-   "narrativePlaceCount": 3,
-   "densityClass": null,
-   "densityLevel": -1
-  },
-  {
-   "id": "gaz_quarto_di_santa_fumia",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_quarto_di_santa_fumia",
-   "label": "Quarto di Santa Fumia",
-   "lon": 12.58446168893847,
-   "lat": 41.73247489501876,
-   "x": 6554.246,
-   "y": 17032.51,
-   "scaleBand": "periurbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 20.3,
-   "refCountAnchored": 17,
-   "planeCount": 0,
-   "interpCount": 0,
-   "narrativePlaceCount": 3,
    "densityClass": null,
    "densityLevel": -1
   }
@@ -5765,43 +5765,6 @@
    "densityClass": "nodale"
   },
   {
-   "id": "santi_quattro_coronati",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/santi_quattro_coronati",
-   "label": "Santi Quattro Coronati",
-   "realityStatus": "Imported",
-   "placeCategory": "basilica",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 10,
-   "planeCount": 8,
-   "targets": [
-    {
-     "gazetteerId": "gaz_santi_quattro_coronati",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "Marker",
-     "n": 5
-    },
-    {
-     "role": "ProjectedSpace",
-     "n": 5
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 10
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "frequente"
-  },
-  {
    "id": "casal_bruciato",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato",
    "label": "Casal Bruciato",
@@ -5844,6 +5807,43 @@
     {
      "determination": "Relative",
      "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "frequente"
+  },
+  {
+   "id": "santi_quattro_coronati",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/santi_quattro_coronati",
+   "label": "Santi Quattro Coronati",
+   "realityStatus": "Imported",
+   "placeCategory": "basilica",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 10,
+   "planeCount": 8,
+   "targets": [
+    {
+     "gazetteerId": "gaz_santi_quattro_coronati",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Marker",
+     "n": 5
+    },
+    {
+     "role": "ProjectedSpace",
+     "n": 5
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 10
     }
    ],
    "anchorInherited": false,
@@ -6015,43 +6015,6 @@
    "densityClass": "frequente"
   },
   {
-   "id": "policlinico",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/policlinico",
-   "label": "Policlinico",
-   "realityStatus": "Imported",
-   "placeCategory": "hospital",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 7,
-   "planeCount": 6,
-   "targets": [
-    {
-     "gazetteerId": "gaz_policlinico",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "Marker",
-     "n": 3
-    },
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 5
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "frequente"
-  },
-  {
    "id": "pavona",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/pavona",
    "label": "Pavona",
@@ -6086,6 +6049,43 @@
     {
      "determination": "Relative",
      "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "frequente"
+  },
+  {
+   "id": "policlinico",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/policlinico",
+   "label": "Policlinico",
+   "realityStatus": "Imported",
+   "placeCategory": "hospital",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 7,
+   "planeCount": 6,
+   "targets": [
+    {
+     "gazetteerId": "gaz_policlinico",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Marker",
+     "n": 3
+    },
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 5
     }
    ],
    "anchorInherited": false,
@@ -6212,6 +6212,47 @@
    "densityClass": "ricorrente"
   },
   {
+   "id": "sacro_cuore",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/sacro_cuore",
+   "label": "Sacro Cuore",
+   "realityStatus": "Imported",
+   "placeCategory": "basilica",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 6,
+   "planeCount": 5,
+   "targets": [
+    {
+     "gazetteerId": "gaz_sacro_cuore",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Marker",
+     "n": 4
+    },
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 5
+    },
+    {
+     "determination": "Indeterminate",
+     "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "ricorrente"
+  },
+  {
    "id": "san_giovanni",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/san_giovanni",
    "label": "San Giovanni",
@@ -6250,6 +6291,252 @@
     {
      "determination": "Precise",
      "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "ricorrente"
+  },
+  {
+   "id": "santa_palomba",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/santa_palomba",
+   "label": "Santa Palomba",
+   "realityStatus": "Imported",
+   "placeCategory": "station",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 6,
+   "planeCount": 5,
+   "targets": [
+    {
+     "gazetteerId": "gaz_santa_palomba",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 4
+    },
+    {
+     "role": "Marker",
+     "n": 1
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 3
+    },
+    {
+     "determination": "Relative",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "ricorrente"
+  },
+  {
+   "id": "santo_stefano_rotondo",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/santo_stefano_rotondo",
+   "label": "Santo Stefano Rotondo",
+   "realityStatus": "Imported",
+   "placeCategory": "basilica",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 7,
+   "planeCount": 5,
+   "targets": [
+    {
+     "gazetteerId": "gaz_santo_stefano_rotondo",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 5
+    },
+    {
+     "role": "Marker",
+     "n": 1
+    },
+    {
+     "role": "Setting",
+     "n": 1
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 3
+    },
+    {
+     "determination": "Indeterminate",
+     "n": 2
+    },
+    {
+     "determination": "Precise",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "ricorrente"
+  },
+  {
+   "id": "via_anziate",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_anziate",
+   "label": "Via Anziate",
+   "realityStatus": "Imported",
+   "placeCategory": "street",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 12,
+   "planeCount": 5,
+   "targets": [
+    {
+     "gazetteerId": "gaz_via_anziate",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Marker",
+     "n": 4
+    },
+    {
+     "role": "ProjectedSpace",
+     "n": 3
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 4
+    },
+    {
+     "determination": "Relative",
+     "n": 3
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "ricorrente"
+  },
+  {
+   "id": "via_ardeatina",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_ardeatina",
+   "label": "Via Ardeatina",
+   "realityStatus": "Imported",
+   "placeCategory": "street",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 6,
+   "planeCount": 5,
+   "targets": [
+    {
+     "gazetteerId": "gaz_via_ardeatina",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 4
+    },
+    {
+     "role": "Marker",
+     "n": 1
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Relative",
+     "n": 3
+    },
+    {
+     "determination": "Approximate",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "ricorrente"
+  },
+  {
+   "id": "via_nicotera",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_nicotera",
+   "label": "Via Nicotera",
+   "realityStatus": "Imported",
+   "placeCategory": "street",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 9,
+   "planeCount": 5,
+   "targets": [
+    {
+     "gazetteerId": "gaz_via_nicotera",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Setting",
+     "n": 6
+    },
+    {
+     "role": "Marker",
+     "n": 3
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 9
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "ricorrente"
+  },
+  {
+   "id": "via_panisperna",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_panisperna",
+   "label": "Via Panisperna",
+   "realityStatus": "Imported",
+   "placeCategory": "street",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 6,
+   "planeCount": 5,
+   "targets": [
+    {
+     "gazetteerId": "gaz_via_panisperna",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 4
+    },
+    {
+     "role": "Marker",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 6
     }
    ],
    "anchorInherited": false,
@@ -6328,293 +6615,6 @@
     {
      "determination": "Relative",
      "n": 1
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "ricorrente"
-  },
-  {
-   "id": "sacro_cuore",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/sacro_cuore",
-   "label": "Sacro Cuore",
-   "realityStatus": "Imported",
-   "placeCategory": "basilica",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 6,
-   "planeCount": 5,
-   "targets": [
-    {
-     "gazetteerId": "gaz_sacro_cuore",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "Marker",
-     "n": 4
-    },
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 5
-    },
-    {
-     "determination": "Indeterminate",
-     "n": 1
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "ricorrente"
-  },
-  {
-   "id": "santa_palomba",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/santa_palomba",
-   "label": "Santa Palomba",
-   "realityStatus": "Imported",
-   "placeCategory": "station",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 6,
-   "planeCount": 5,
-   "targets": [
-    {
-     "gazetteerId": "gaz_santa_palomba",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 4
-    },
-    {
-     "role": "Marker",
-     "n": 1
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 3
-    },
-    {
-     "determination": "Relative",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "ricorrente"
-  },
-  {
-   "id": "via_ardeatina",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_ardeatina",
-   "label": "Via Ardeatina",
-   "realityStatus": "Imported",
-   "placeCategory": "street",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 6,
-   "planeCount": 5,
-   "targets": [
-    {
-     "gazetteerId": "gaz_via_ardeatina",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 4
-    },
-    {
-     "role": "Marker",
-     "n": 1
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Relative",
-     "n": 3
-    },
-    {
-     "determination": "Approximate",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "ricorrente"
-  },
-  {
-   "id": "via_panisperna",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_panisperna",
-   "label": "Via Panisperna",
-   "realityStatus": "Imported",
-   "placeCategory": "street",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 6,
-   "planeCount": 5,
-   "targets": [
-    {
-     "gazetteerId": "gaz_via_panisperna",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 4
-    },
-    {
-     "role": "Marker",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 6
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "ricorrente"
-  },
-  {
-   "id": "santo_stefano_rotondo",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/santo_stefano_rotondo",
-   "label": "Santo Stefano Rotondo",
-   "realityStatus": "Imported",
-   "placeCategory": "basilica",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 7,
-   "planeCount": 5,
-   "targets": [
-    {
-     "gazetteerId": "gaz_santo_stefano_rotondo",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 5
-    },
-    {
-     "role": "Marker",
-     "n": 1
-    },
-    {
-     "role": "Setting",
-     "n": 1
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 3
-    },
-    {
-     "determination": "Indeterminate",
-     "n": 2
-    },
-    {
-     "determination": "Precise",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "ricorrente"
-  },
-  {
-   "id": "via_nicotera",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_nicotera",
-   "label": "Via Nicotera",
-   "realityStatus": "Imported",
-   "placeCategory": "street",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 9,
-   "planeCount": 5,
-   "targets": [
-    {
-     "gazetteerId": "gaz_via_nicotera",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "Setting",
-     "n": 6
-    },
-    {
-     "role": "Marker",
-     "n": 3
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 9
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "ricorrente"
-  },
-  {
-   "id": "via_anziate",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_anziate",
-   "label": "Via Anziate",
-   "realityStatus": "Imported",
-   "placeCategory": "street",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 12,
-   "planeCount": 5,
-   "targets": [
-    {
-     "gazetteerId": "gaz_via_anziate",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "Marker",
-     "n": 4
-    },
-    {
-     "role": "ProjectedSpace",
-     "n": 3
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 4
-    },
-    {
-     "determination": "Relative",
-     "n": 3
     }
    ],
    "anchorInherited": false,
@@ -6938,6 +6938,166 @@
    "densityClass": "raro"
   },
   {
+   "id": "bivio_falcognana_casal_bruciato",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/bivio_falcognana_casal_bruciato",
+   "label": "Bivio tra Falcognana e Casal Bruciato",
+   "realityStatus": "Imported",
+   "placeCategory": "road_junction",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 9,
+   "planeCount": 3,
+   "targets": [
+    {
+     "gazetteerId": "gaz_via_della_falcognana",
+     "weight": 0.7778
+    },
+    {
+     "gazetteerId": "gaz_ponte_divino_amore",
+     "weight": 0.1111
+    },
+    {
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
+     "weight": 0.1111
+    }
+   ],
+   "roles": [
+    {
+     "role": "Marker",
+     "n": 5
+    },
+    {
+     "role": "Setting",
+     "n": 4
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Relative",
+     "n": 5
+    },
+    {
+     "determination": "Approximate",
+     "n": 4
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": true,
+   "densityClass": "raro"
+  },
+  {
+   "id": "campo_marzio",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/campo_marzio",
+   "label": "Campo Marzio",
+   "realityStatus": "Imported",
+   "placeCategory": "cemetery",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 4,
+   "planeCount": 3,
+   "targets": [
+    {
+     "gazetteerId": "gaz_campo_marzio",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 3
+    },
+    {
+     "role": "Marker",
+     "n": 1
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 2
+    },
+    {
+     "determination": "Precise",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "raro"
+  },
+  {
+   "id": "cantinone_albano",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/cantinone_albano",
+   "label": "Cantinone d'Albano",
+   "realityStatus": "Imagined",
+   "placeCategory": "restaurant",
+   "description": "Ristorante non identificato nel territorio di Albano Laziale",
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 6,
+   "planeCount": 3,
+   "targets": [
+    {
+     "gazetteerId": "gaz_albano_laziale",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 6
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Indeterminate",
+     "n": 6
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "raro"
+  },
+  {
+   "id": "casa_crocchiapani",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/casa_crocchiapani",
+   "label": "Casa Crocchiapani",
+   "realityStatus": "Imagined",
+   "placeCategory": "farmhouse",
+   "description": "Abitazione immaginaria di Assunta (Tina) Crocchiapani",
+   "fuzziness": null,
+   "partOf": "tor_di_gheppio",
+   "interpCount": 8,
+   "planeCount": 3,
+   "targets": [
+    {
+     "gazetteerId": "gaz_quarto_di_santa_fumia",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Setting",
+     "n": 8
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 4
+    },
+    {
+     "determination": "Precise",
+     "n": 4
+    }
+   ],
+   "anchorInherited": true,
+   "multiTarget": false,
+   "densityClass": "raro"
+  },
+  {
    "id": "celio",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/celio",
    "label": "Celio",
@@ -6975,6 +7135,51 @@
     },
     {
      "determination": "Indeterminate",
+     "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "raro"
+  },
+  {
+   "id": "direttissima_roma_napoli",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/direttissima_roma_napoli",
+   "label": "Direttissima Roma-Napoli",
+   "realityStatus": "Imported",
+   "placeCategory": "railway",
+   "description": "La linea è la Roma–Napoli via Formia, storicamente chiamata Direttissima Roma–Napoli",
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 4,
+   "planeCount": 3,
+   "targets": [
+    {
+     "gazetteerId": "gaz_direttissima_roma_napoli",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    },
+    {
+     "role": "Marker",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 2
+    },
+    {
+     "determination": "Indeterminate",
+     "n": 1
+    },
+    {
+     "determination": "Relative",
      "n": 1
     }
    ],
@@ -7087,6 +7292,125 @@
     {
      "determination": "Approximate",
      "n": 3
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "raro"
+  },
+  {
+   "id": "maccheronaro",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/maccheronaro",
+   "label": "Maccheronaro",
+   "realityStatus": "Imported",
+   "placeCategory": "restaurant",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 4,
+   "planeCount": 3,
+   "targets": [
+    {
+     "gazetteerId": "gaz_maccheronaro",
+     "weight": 0.5
+    },
+    {
+     "gazetteerId": "gaz_via_del_gesu",
+     "weight": 0.5
+    }
+   ],
+   "roles": [
+    {
+     "role": "Marker",
+     "n": 3
+    },
+    {
+     "role": "ProjectedSpace",
+     "n": 1
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Relative",
+     "n": 2
+    },
+    {
+     "determination": "Approximate",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": true,
+   "densityClass": "raro"
+  },
+  {
+   "id": "molo_beverello",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/molo_beverello",
+   "label": "Molo Beverello",
+   "realityStatus": "Imported",
+   "placeCategory": "port",
+   "description": "Molo del Porto di Napoli",
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 4,
+   "planeCount": 3,
+   "targets": [
+    {
+     "gazetteerId": "gaz_molo_beverello",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Marker",
+     "n": 3
+    },
+    {
+     "role": "ProjectedSpace",
+     "n": 1
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Relative",
+     "n": 3
+    },
+    {
+     "determination": "Approximate",
+     "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "raro"
+  },
+  {
+   "id": "palazzo",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/palazzo",
+   "label": "Palazzo ",
+   "realityStatus": "Imported",
+   "placeCategory": "station",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 4,
+   "planeCount": 3,
+   "targets": [
+    {
+     "gazetteerId": "gaz_palazzo",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 4
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 4
     }
    ],
    "anchorInherited": false,
@@ -7242,6 +7566,47 @@
    "densityClass": "raro"
   },
   {
+   "id": "termini",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/termini",
+   "label": "Termini",
+   "realityStatus": "Imported",
+   "placeCategory": "station",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 4,
+   "planeCount": 3,
+   "targets": [
+    {
+     "gazetteerId": "gaz_termini",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Marker",
+     "n": 2
+    },
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 2
+    },
+    {
+     "determination": "Indeterminate",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "raro"
+  },
+  {
    "id": "tivoli",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/tivoli",
    "label": "Tivoli",
@@ -7309,252 +7674,6 @@
     {
      "determination": "Approximate",
      "n": 3
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "raro"
-  },
-  {
-   "id": "campo_marzio",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/campo_marzio",
-   "label": "Campo Marzio",
-   "realityStatus": "Imported",
-   "placeCategory": "cemetery",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 4,
-   "planeCount": 3,
-   "targets": [
-    {
-     "gazetteerId": "gaz_campo_marzio",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 3
-    },
-    {
-     "role": "Marker",
-     "n": 1
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 2
-    },
-    {
-     "determination": "Precise",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "raro"
-  },
-  {
-   "id": "direttissima_roma_napoli",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/direttissima_roma_napoli",
-   "label": "Direttissima Roma-Napoli",
-   "realityStatus": "Imported",
-   "placeCategory": "railway",
-   "description": "La linea è la Roma–Napoli via Formia, storicamente chiamata Direttissima Roma–Napoli",
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 4,
-   "planeCount": 3,
-   "targets": [
-    {
-     "gazetteerId": "gaz_direttissima_roma_napoli",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    },
-    {
-     "role": "Marker",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 2
-    },
-    {
-     "determination": "Indeterminate",
-     "n": 1
-    },
-    {
-     "determination": "Relative",
-     "n": 1
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "raro"
-  },
-  {
-   "id": "maccheronaro",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/maccheronaro",
-   "label": "Maccheronaro",
-   "realityStatus": "Imported",
-   "placeCategory": "restaurant",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 4,
-   "planeCount": 3,
-   "targets": [
-    {
-     "gazetteerId": "gaz_maccheronaro",
-     "weight": 0.5
-    },
-    {
-     "gazetteerId": "gaz_via_del_gesu",
-     "weight": 0.5
-    }
-   ],
-   "roles": [
-    {
-     "role": "Marker",
-     "n": 3
-    },
-    {
-     "role": "ProjectedSpace",
-     "n": 1
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Relative",
-     "n": 2
-    },
-    {
-     "determination": "Approximate",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": true,
-   "densityClass": "raro"
-  },
-  {
-   "id": "molo_beverello",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/molo_beverello",
-   "label": "Molo Beverello",
-   "realityStatus": "Imported",
-   "placeCategory": "port",
-   "description": "Molo del Porto di Napoli",
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 4,
-   "planeCount": 3,
-   "targets": [
-    {
-     "gazetteerId": "gaz_molo_beverello",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "Marker",
-     "n": 3
-    },
-    {
-     "role": "ProjectedSpace",
-     "n": 1
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Relative",
-     "n": 3
-    },
-    {
-     "determination": "Approximate",
-     "n": 1
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "raro"
-  },
-  {
-   "id": "palazzo",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/palazzo",
-   "label": "Palazzo ",
-   "realityStatus": "Imported",
-   "placeCategory": "station",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 4,
-   "planeCount": 3,
-   "targets": [
-    {
-     "gazetteerId": "gaz_palazzo",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 4
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 4
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "raro"
-  },
-  {
-   "id": "termini",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/termini",
-   "label": "Termini",
-   "realityStatus": "Imported",
-   "placeCategory": "station",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 4,
-   "planeCount": 3,
-   "targets": [
-    {
-     "gazetteerId": "gaz_termini",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "Marker",
-     "n": 2
-    },
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 2
-    },
-    {
-     "determination": "Indeterminate",
-     "n": 2
     }
    ],
    "anchorInherited": false,
@@ -7677,39 +7796,6 @@
    "densityClass": "raro"
   },
   {
-   "id": "cantinone_albano",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/cantinone_albano",
-   "label": "Cantinone d'Albano",
-   "realityStatus": "Imagined",
-   "placeCategory": "restaurant",
-   "description": "Ristorante non identificato nel territorio di Albano Laziale",
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 6,
-   "planeCount": 3,
-   "targets": [
-    {
-     "gazetteerId": "gaz_albano_laziale",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 6
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Indeterminate",
-     "n": 6
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "raro"
-  },
-  {
    "id": "via_della_falcognana",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_della_falcognana",
    "label": "Via della Falcognana",
@@ -7792,92 +7878,6 @@
    "densityClass": "raro"
   },
   {
-   "id": "casa_crocchiapani",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/casa_crocchiapani",
-   "label": "Casa Crocchiapani",
-   "realityStatus": "Imagined",
-   "placeCategory": "farmhouse",
-   "description": "Abitazione immaginaria di Assunta (Tina) Crocchiapani",
-   "fuzziness": null,
-   "partOf": "tor_di_gheppio",
-   "interpCount": 8,
-   "planeCount": 3,
-   "targets": [
-    {
-     "gazetteerId": "gaz_quarto_di_santa_fumia",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "Setting",
-     "n": 8
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 4
-    },
-    {
-     "determination": "Precise",
-     "n": 4
-    }
-   ],
-   "anchorInherited": true,
-   "multiTarget": false,
-   "densityClass": "raro"
-  },
-  {
-   "id": "bivio_falcognana_casal_bruciato",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/bivio_falcognana_casal_bruciato",
-   "label": "Bivio tra Falcognana e Casal Bruciato",
-   "realityStatus": "Imported",
-   "placeCategory": "road_junction",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 9,
-   "planeCount": 3,
-   "targets": [
-    {
-     "gazetteerId": "gaz_via_della_falcognana",
-     "weight": 0.7778
-    },
-    {
-     "gazetteerId": "gaz_ponte_divino_amore",
-     "weight": 0.1111
-    },
-    {
-     "gazetteerId": "gaz_ferrovia_roma_velletri",
-     "weight": 0.1111
-    }
-   ],
-   "roles": [
-    {
-     "role": "Marker",
-     "n": 5
-    },
-    {
-     "role": "Setting",
-     "n": 4
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Relative",
-     "n": 5
-    },
-    {
-     "determination": "Approximate",
-     "n": 4
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": true,
-   "densityClass": "raro"
-  },
-  {
    "id": "aniene",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/aniene",
    "label": "Aniene",
@@ -7941,6 +7941,43 @@
     {
      "determination": "Indeterminate",
      "n": 1
+    },
+    {
+     "determination": "Relative",
+     "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "raro"
+  },
+  {
+   "id": "ardea",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/ardea",
+   "label": "Ardea",
+   "realityStatus": "Imported",
+   "placeCategory": "locality",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 3,
+   "planeCount": 2,
+   "targets": [
+    {
+     "gazetteerId": "gaz_ardea",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 3
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 2
     },
     {
      "determination": "Relative",
@@ -8343,6 +8380,39 @@
    "densityClass": "raro"
   },
   {
+   "id": "ferrovia_roma_velletri",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/ferrovia_roma_velletri",
+   "label": "Ferrovia Roma-Velletri",
+   "realityStatus": "Imported",
+   "placeCategory": "railway",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 5,
+   "planeCount": 2,
+   "targets": [
+    {
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Marker",
+     "n": 1
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Precise",
+     "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "raro"
+  },
+  {
    "id": "frascati",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/frascati",
    "label": "Frascati",
@@ -8573,6 +8643,80 @@
    "densityClass": "raro"
   },
   {
+   "id": "piazza_san_giovanni",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/piazza_san_giovanni",
+   "label": "Piazza San Giovanni",
+   "realityStatus": "Imported",
+   "placeCategory": "square",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 5,
+   "planeCount": 2,
+   "targets": [
+    {
+     "gazetteerId": "gaz_piazza_san_giovanni",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Indeterminate",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "raro"
+  },
+  {
+   "id": "piazza_san_lorenzo_in_lucina",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/piazza_san_lorenzo_in_lucina",
+   "label": "Piazza San Lorenzo in Lucina",
+   "realityStatus": "Imported",
+   "placeCategory": "square",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 3,
+   "planeCount": 2,
+   "targets": [
+    {
+     "gazetteerId": "gaz_piazza_san_lorenzo_in_lucina",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    },
+    {
+     "role": "Marker",
+     "n": 1
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Precise",
+     "n": 2
+    },
+    {
+     "determination": "Approximate",
+     "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "raro"
+  },
+  {
    "id": "pincio",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/pincio",
    "label": "Pincio",
@@ -8684,6 +8828,43 @@
    "densityClass": "raro"
   },
   {
+   "id": "pratica_di_mare",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/pratica_di_mare",
+   "label": "Pratica di Mare",
+   "realityStatus": "Imported",
+   "placeCategory": "locality",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 3,
+   "planeCount": 2,
+   "targets": [
+    {
+     "gazetteerId": "gaz_pratica_di_mare",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 3
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 2
+    },
+    {
+     "determination": "Relative",
+     "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "raro"
+  },
+  {
    "id": "rive_del_brahmaputra",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/rive_del_brahmaputra",
    "label": "Brahmaputra",
@@ -8743,6 +8924,39 @@
     {
      "determination": "Relative",
      "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "raro"
+  },
+  {
+   "id": "san_lorenzo_al_verano",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/san_lorenzo_al_verano",
+   "label": "San Lorenzo al verano",
+   "realityStatus": "Imported",
+   "placeCategory": "basilica",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 4,
+   "planeCount": 2,
+   "targets": [
+    {
+     "gazetteerId": "gaz_san_lorenzo_al_verano",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Setting",
+     "n": 3
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 3
     }
    ],
    "anchorInherited": false,
@@ -8833,6 +9047,76 @@
    "targets": [
     {
      "gazetteerId": "gaz_santa_rita_invitacolo",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Relative",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "raro"
+  },
+  {
+   "id": "solforata",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/solforata",
+   "label": "Solforata",
+   "realityStatus": "Imported",
+   "placeCategory": "district",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 3,
+   "planeCount": 2,
+   "targets": [
+    {
+     "gazetteerId": "gaz_solforata",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 3
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 2
+    },
+    {
+     "determination": "Relative",
+     "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "raro"
+  },
+  {
+   "id": "tor_ser_paolo",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/tor_ser_paolo",
+   "label": "Tor Ser Paolo",
+   "realityStatus": "Imported",
+   "placeCategory": "locality",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 3,
+   "planeCount": 2,
+   "targets": [
+    {
+     "gazetteerId": "gaz_tor_ser_paolo",
      "weight": 1.0
     }
    ],
@@ -9038,6 +9322,80 @@
    "densityClass": "raro"
   },
   {
+   "id": "via_lanza",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_lanza",
+   "label": "Via Lanza ",
+   "realityStatus": "Imported",
+   "placeCategory": "street",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 4,
+   "planeCount": 2,
+   "targets": [
+    {
+     "gazetteerId": "gaz_via_lanza",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Marker",
+     "n": 4
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 3
+    },
+    {
+     "determination": "Precise",
+     "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "raro"
+  },
+  {
+   "id": "via_massimo_dazeglio",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_massimo_dazeglio",
+   "label": "Via Massimo d'Azeglio",
+   "realityStatus": "Imported",
+   "placeCategory": "street",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 7,
+   "planeCount": 2,
+   "targets": [
+    {
+     "gazetteerId": "gaz_via_massimo_dazeglio",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Marker",
+     "n": 7
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Relative",
+     "n": 4
+    },
+    {
+     "determination": "Approximate",
+     "n": 3
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "raro"
+  },
+  {
    "id": "vicenza",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/vicenza",
    "label": "Vicenza",
@@ -9149,364 +9507,6 @@
    "densityClass": "raro"
   },
   {
-   "id": "ardea",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/ardea",
-   "label": "Ardea",
-   "realityStatus": "Imported",
-   "placeCategory": "locality",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 3,
-   "planeCount": 2,
-   "targets": [
-    {
-     "gazetteerId": "gaz_ardea",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 3
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 2
-    },
-    {
-     "determination": "Relative",
-     "n": 1
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "raro"
-  },
-  {
-   "id": "piazza_san_lorenzo_in_lucina",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/piazza_san_lorenzo_in_lucina",
-   "label": "Piazza San Lorenzo in Lucina",
-   "realityStatus": "Imported",
-   "placeCategory": "square",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 3,
-   "planeCount": 2,
-   "targets": [
-    {
-     "gazetteerId": "gaz_piazza_san_lorenzo_in_lucina",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    },
-    {
-     "role": "Marker",
-     "n": 1
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Precise",
-     "n": 2
-    },
-    {
-     "determination": "Approximate",
-     "n": 1
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "raro"
-  },
-  {
-   "id": "pratica_di_mare",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/pratica_di_mare",
-   "label": "Pratica di Mare",
-   "realityStatus": "Imported",
-   "placeCategory": "locality",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 3,
-   "planeCount": 2,
-   "targets": [
-    {
-     "gazetteerId": "gaz_pratica_di_mare",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 3
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 2
-    },
-    {
-     "determination": "Relative",
-     "n": 1
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "raro"
-  },
-  {
-   "id": "solforata",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/solforata",
-   "label": "Solforata",
-   "realityStatus": "Imported",
-   "placeCategory": "district",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 3,
-   "planeCount": 2,
-   "targets": [
-    {
-     "gazetteerId": "gaz_solforata",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 3
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 2
-    },
-    {
-     "determination": "Relative",
-     "n": 1
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "raro"
-  },
-  {
-   "id": "tor_ser_paolo",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/tor_ser_paolo",
-   "label": "Tor Ser Paolo",
-   "realityStatus": "Imported",
-   "placeCategory": "locality",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 3,
-   "planeCount": 2,
-   "targets": [
-    {
-     "gazetteerId": "gaz_tor_ser_paolo",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Relative",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "raro"
-  },
-  {
-   "id": "san_lorenzo_al_verano",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/san_lorenzo_al_verano",
-   "label": "San Lorenzo al verano",
-   "realityStatus": "Imported",
-   "placeCategory": "basilica",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 4,
-   "planeCount": 2,
-   "targets": [
-    {
-     "gazetteerId": "gaz_san_lorenzo_al_verano",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "Setting",
-     "n": 3
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 3
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "raro"
-  },
-  {
-   "id": "via_lanza",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_lanza",
-   "label": "Via Lanza ",
-   "realityStatus": "Imported",
-   "placeCategory": "street",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 4,
-   "planeCount": 2,
-   "targets": [
-    {
-     "gazetteerId": "gaz_via_lanza",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "Marker",
-     "n": 4
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 3
-    },
-    {
-     "determination": "Precise",
-     "n": 1
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "raro"
-  },
-  {
-   "id": "ferrovia_roma_velletri",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/ferrovia_roma_velletri",
-   "label": "Ferrovia Roma-Velletri",
-   "realityStatus": "Imported",
-   "placeCategory": "railway",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 5,
-   "planeCount": 2,
-   "targets": [
-    {
-     "gazetteerId": "gaz_ferrovia_roma_velletri",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "Marker",
-     "n": 1
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Precise",
-     "n": 1
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "raro"
-  },
-  {
-   "id": "piazza_san_giovanni",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/piazza_san_giovanni",
-   "label": "Piazza San Giovanni",
-   "realityStatus": "Imported",
-   "placeCategory": "square",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 5,
-   "planeCount": 2,
-   "targets": [
-    {
-     "gazetteerId": "gaz_piazza_san_giovanni",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Indeterminate",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "raro"
-  },
-  {
-   "id": "via_massimo_dazeglio",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_massimo_dazeglio",
-   "label": "Via Massimo d'Azeglio",
-   "realityStatus": "Imported",
-   "placeCategory": "street",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 7,
-   "planeCount": 2,
-   "targets": [
-    {
-     "gazetteerId": "gaz_via_massimo_dazeglio",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "Marker",
-     "n": 7
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Relative",
-     "n": 4
-    },
-    {
-     "determination": "Approximate",
-     "n": 3
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "raro"
-  },
-  {
    "id": "acqua_pia_antica_marcia",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/acqua_pia_antica_marcia",
    "label": "Acqua Pia Antica Marcia",
@@ -9570,6 +9570,43 @@
    ],
    "anchorInherited": false,
    "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "aliciaro",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/aliciaro",
+   "label": "Aliciaro",
+   "realityStatus": "Imported",
+   "placeCategory": "restaurant",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_quattro_cantoni",
+     "weight": 0.5
+    },
+    {
+     "gazetteerId": "gaz_san_carlo_alle_quattro_fontane",
+     "weight": 0.5
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Relative",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": true,
    "densityClass": "hapax"
   },
   {
@@ -9893,6 +9930,39 @@
    "densityClass": "hapax"
   },
   {
+   "id": "camera_casello",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/camera_casello",
+   "label": "Camera al Casello 20-25",
+   "realityStatus": "Transformed",
+   "placeCategory": "room",
+   "description": "camera da letto della Camilla Mattonari",
+   "fuzziness": null,
+   "partOf": "casello_km_20_25",
+   "interpCount": 3,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_casal_bruciato",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Setting",
+     "n": 3
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Precise",
+     "n": 3
+    }
+   ],
+   "anchorInherited": true,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
    "id": "campo_de_fiori",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/campo_de_fiori",
    "label": "Campo de' Fiori",
@@ -9959,6 +10029,43 @@
    "densityClass": "hapax"
   },
   {
+   "id": "campo_verano",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/campo_verano",
+   "label": "Campo Verano",
+   "realityStatus": "Imported",
+   "placeCategory": "station",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_campo_verano",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Setting",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Precise",
+     "n": 1
+    },
+    {
+     "determination": "Approximate",
+     "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
    "id": "campoleone",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/campoleone",
    "label": "Campoleone",
@@ -10012,6 +10119,66 @@
    ],
    "anchorInherited": false,
    "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "casa_del_butiro",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/casa_del_butiro",
+   "label": "Casa del Butiro",
+   "realityStatus": "Invented",
+   "placeCategory": "farmhouse",
+   "description": "Casa immaginata nella zona dei Due Santi",
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_due_santi",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Relative",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "cassero",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/cassero",
+   "label": "Cassero",
+   "realityStatus": "Imagined",
+   "placeCategory": "castle",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_frattocchie",
+     "weight": 0.5
+    },
+    {
+     "gazetteerId": "gaz_pavona",
+     "weight": 0.5
+    }
+   ],
+   "roles": [],
+   "determinations": [],
+   "anchorInherited": false,
+   "multiTarget": true,
    "densityClass": "hapax"
   },
   {
@@ -10097,6 +10264,39 @@
     {
      "determination": "Relative",
      "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "casuccia_zamira",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira",
+   "label": "Casuccia della Zamira",
+   "realityStatus": "Imagined",
+   "placeCategory": "dwelling",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_due_santi",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 2
     }
    ],
    "anchorInherited": false,
@@ -10368,6 +10568,29 @@
    "densityClass": "hapax"
   },
   {
+   "id": "falcognana",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/falcognana",
+   "label": "Falcognana",
+   "realityStatus": "Imported",
+   "placeCategory": "locality",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 3,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_falcognana",
+     "weight": 1.0
+    }
+   ],
+   "roles": [],
+   "determinations": [],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
    "id": "filettino",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/filettino",
    "label": "Filettino",
@@ -10396,6 +10619,29 @@
      "n": 1
     }
    ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "fontana_di_papa",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/fontana_di_papa",
+   "label": "Fontana di Papa",
+   "realityStatus": "Imported",
+   "placeCategory": "locality",
+   "description": "Località  lungo la via Nettunense, oggi nel territorio di Ariccia",
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_fontana_di_papa",
+     "weight": 1.0
+    }
+   ],
+   "roles": [],
+   "determinations": [],
    "anchorInherited": false,
    "multiTarget": false,
    "densityClass": "hapax"
@@ -10599,6 +10845,39 @@
    "densityClass": "hapax"
   },
   {
+   "id": "grottaferrata",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/grottaferrata",
+   "label": "Grottaferrata",
+   "realityStatus": "Imported",
+   "placeCategory": "locality",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_grottaferrata",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
    "id": "india",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/india",
    "label": "India",
@@ -10645,6 +10924,29 @@
    "targets": [
     {
      "gazetteerId": "gaz_istituto_dellenciclopedia_treccani",
+     "weight": 1.0
+    }
+   ],
+   "roles": [],
+   "determinations": [],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "largo_brancaccio",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/largo_brancaccio",
+   "label": "Largo Brancaccio",
+   "realityStatus": "Imported",
+   "placeCategory": "small_square",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 3,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_largo_brancaccio",
      "weight": 1.0
     }
    ],
@@ -11123,6 +11425,72 @@
     {
      "determination": "Relative",
      "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "orto_vigna_due_santi",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi",
+   "label": "Orto o Vigna ai Due Santi",
+   "realityStatus": "Imagined",
+   "placeCategory": "kitchen_garden",
+   "description": "Luogo non precisato simile a un orto o una vigna, di fronte al laboratorio della Zamira, al lato opposto della via Appia ",
+   "fuzziness": 4.0,
+   "partOf": "laboratorio_zamira",
+   "interpCount": 1,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_due_santi",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Marker",
+     "n": 1
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Indeterminate",
+     "n": 1
+    }
+   ],
+   "anchorInherited": true,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "ovindoli",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/ovindoli",
+   "label": "Ovindoli",
+   "realityStatus": "Imported",
+   "placeCategory": "locality",
+   "description": "Comune in Abruzzo",
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_ovindoli",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Relative",
+     "n": 2
     }
    ],
    "anchorInherited": false,
@@ -11684,6 +12052,29 @@
    "densityClass": "hapax"
   },
   {
+   "id": "ponte_di_santa_fumia",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/ponte_di_santa_fumia",
+   "label": "Ponte di Santa Fumia",
+   "realityStatus": "Transformed",
+   "placeCategory": "street",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 4,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_quarto_di_santa_fumia",
+     "weight": 1.0
+    }
+   ],
+   "roles": [],
+   "determinations": [],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
    "id": "porta_angelica",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/porta_angelica",
    "label": "Porta Angelica",
@@ -11710,6 +12101,72 @@
     {
      "determination": "Approximate",
      "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "porta_borgo_marino",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/porta_borgo_marino",
+   "label": "Porta del borgo di Marino",
+   "realityStatus": "Transformed",
+   "placeCategory": "city_gate",
+   "description": "Porta al confine del comune di Marino",
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_marino",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Marker",
+     "n": 1
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "porta_latina",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/porta_latina",
+   "label": "Porta Latina",
+   "realityStatus": "Imported",
+   "placeCategory": "city_gate",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_porta_latina",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 2
     }
    ],
    "anchorInherited": false,
@@ -11832,6 +12289,72 @@
     {
      "determination": "Indeterminate",
      "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "predappio",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/predappio",
+   "label": "Predappio",
+   "realityStatus": "Imported",
+   "placeCategory": "locality",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_predappio",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Marker",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Relative",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "publicii_clivio_de",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/publicii_clivio_de",
+   "label": "Publicii clivio de'",
+   "realityStatus": "Imported",
+   "placeCategory": "street",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_rocca_savella",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 2
     }
    ],
    "anchorInherited": false,
@@ -11971,6 +12494,33 @@
    "densityClass": "hapax"
   },
   {
+   "id": "robine_vecchie",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/robine_vecchie",
+   "label": "Robine Vecchie",
+   "realityStatus": "Transformed",
+   "placeCategory": "locality",
+   "description": "Robine Vecchie è un microtoponimo gaddiano non identificato, forse deformazione di un nome locale o denominazione fantastica applicata al paesaggio reale di Frattocchie–Due Santi.",
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_frattocchie",
+     "weight": 0.5
+    },
+    {
+     "gazetteerId": "gaz_due_santi",
+     "weight": 0.5
+    }
+   ],
+   "roles": [],
+   "determinations": [],
+   "anchorInherited": false,
+   "multiTarget": true,
+   "densityClass": "hapax"
+  },
+  {
    "id": "rocca_di_papa",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/rocca_di_papa",
    "label": "Rocca di Papa",
@@ -12012,6 +12562,39 @@
    ],
    "roles": [],
    "determinations": [],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "rocca_savella",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/rocca_savella",
+   "label": "Rocca Savella",
+   "realityStatus": "Imported",
+   "placeCategory": "street",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_rocca_savella",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 2
+    }
+   ],
    "anchorInherited": false,
    "multiTarget": false,
    "densityClass": "hapax"
@@ -12337,6 +12920,39 @@
    "densityClass": "hapax"
   },
   {
+   "id": "santa_margherita_in_abitacolo",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/santa_margherita_in_abitacolo",
+   "label": "Santa Margherita in Abitacolo",
+   "realityStatus": "Imported",
+   "placeCategory": "Church",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_santa_margherita_in_abitacolo",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
    "id": "santa_maria_in_aquiro",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/santa_maria_in_aquiro",
    "label": "Santa Maria in Aquiro",
@@ -12355,6 +12971,39 @@
    ],
    "roles": [],
    "determinations": [],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "santa_maria_in_domnica",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/santa_maria_in_domnica",
+   "label": "Santa Maria in Dòmnica",
+   "realityStatus": "Imported",
+   "placeCategory": "basilica",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_santa_maria_in_domnica",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Relative",
+     "n": 2
+    }
+   ],
    "anchorInherited": false,
    "multiTarget": false,
    "densityClass": "hapax"
@@ -12647,6 +13296,105 @@
    "densityClass": "hapax"
   },
   {
+   "id": "stazione_carabinieri_castello",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/stazione_carabinieri_castello",
+   "label": "Stazione dei Carabinieri a Castello",
+   "realityStatus": "Transformed",
+   "placeCategory": "building",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_castel_gandolfo",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Setting",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "stazione_pavona",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/stazione_pavona",
+   "label": "Stazione della Pavona",
+   "realityStatus": "Transformed",
+   "placeCategory": "station",
+   "description": "Stazione del paese di Pavona, non meglio identificata",
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_pavona",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Marker",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "strada_di_campagna_celio",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/strada_di_campagna_celio",
+   "label": "Strada di campagna del Celio",
+   "realityStatus": "Transformed",
+   "placeCategory": "street",
+   "description": "Strada non meglio qualificata nel quartiere del Celio",
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_celio",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Relative",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
    "id": "suburra",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/suburra",
    "label": "Suburra",
@@ -12713,6 +13461,72 @@
    "densityClass": "hapax"
   },
   {
+   "id": "tempio_di_agrippa",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/tempio_di_agrippa",
+   "label": "Tempio di Agrippa",
+   "realityStatus": "Imported",
+   "placeCategory": "temple",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_tempio_di_agrippa",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Indeterminate",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "terracina",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/terracina",
+   "label": "Terracina",
+   "realityStatus": "Imported",
+   "placeCategory": "locality",
+   "description": "Comune italiano",
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_terracina",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Relative",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
    "id": "terzo_piano_219",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/terzo_piano_219",
    "label": "Terzo piano del Palazzo al 219",
@@ -12746,6 +13560,43 @@
    "densityClass": "hapax"
   },
   {
+   "id": "tevere_biferno",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/tevere_biferno",
+   "label": "Tra Tevere e Biferno",
+   "realityStatus": "Imported",
+   "placeCategory": "locality",
+   "description": "Area paesaggistica vaga delimitata dal Tevere e dal Biferno, sineddoche spaziale per Roma e Molise, i topoi linguistici di Ingravallo",
+   "fuzziness": 4.0,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_tevere",
+     "weight": 0.5
+    },
+    {
+     "gazetteerId": "gaz_biferno",
+     "weight": 0.5
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Indeterminate",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": true,
+   "densityClass": "hapax"
+  },
+  {
    "id": "tiburtino",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/tiburtino",
    "label": "Tiburtino",
@@ -12772,6 +13623,39 @@
     {
      "determination": "Indeterminate",
      "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "traforo",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/traforo",
+   "label": "Traforo",
+   "realityStatus": "Imported",
+   "placeCategory": "gallery",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_traforo",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 2
     }
    ],
    "anchorInherited": false,
@@ -13287,6 +14171,72 @@
    "densityClass": "hapax"
   },
   {
+   "id": "via_della_caffarella",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_della_caffarella",
+   "label": "Via della Caffarella",
+   "realityStatus": "Imported",
+   "placeCategory": "street",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_via_della_caffarella",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "via_della_navicella",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_della_navicella",
+   "label": "Via della Navicella",
+   "realityStatus": "Imported",
+   "placeCategory": "street",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_via_della_navicella",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Relative",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
    "id": "via_della_palombella",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_della_palombella",
    "label": "Via della Palombella",
@@ -13353,6 +14303,43 @@
    "determinations": [],
    "anchorInherited": false,
    "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "via_delle_oche",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_delle_oche",
+   "label": "via delle Oche",
+   "realityStatus": "Imagined",
+   "placeCategory": "street",
+   "description": "via topograficamente non precisata",
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_milano",
+     "weight": 0.5
+    },
+    {
+     "gazetteerId": "gaz_bologna",
+     "weight": 0.5
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Relative",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": true,
    "densityClass": "hapax"
   },
   {
@@ -13445,6 +14432,72 @@
    "densityClass": "hapax"
   },
   {
+   "id": "via_di_san_paolo_della_croce",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_di_san_paolo_della_croce",
+   "label": "Via di San Paolo della Croce",
+   "realityStatus": "Imported",
+   "placeCategory": "street",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_via_di_san_paolo_della_croce",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Relative",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "via_di_santo_stefano_rotondo",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_di_santo_stefano_rotondo",
+   "label": "Via di Santo Stefano Rotondo",
+   "realityStatus": "Imported",
+   "placeCategory": "street",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_via_di_santo_stefano_rotondo",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Relative",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
    "id": "via_labbricana",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_labbricana",
    "label": "Via Labbricana",
@@ -13504,6 +14557,39 @@
     {
      "determination": "Approximate",
      "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "via_mamiani",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_mamiani",
+   "label": "Via Mamiani",
+   "realityStatus": "Imported",
+   "placeCategory": "street",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 3,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_via_mamiani",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Marker",
+     "n": 3
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 3
     }
    ],
    "anchorInherited": false,
@@ -13636,6 +14722,72 @@
     {
      "determination": "Indeterminate",
      "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "via_popolonia",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_popolonia",
+   "label": "Via Popolonia",
+   "realityStatus": "Imported",
+   "placeCategory": "street",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_via_popolonia",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "via_ricasoli",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_ricasoli",
+   "label": "Via Ricasoli",
+   "realityStatus": "Imported",
+   "placeCategory": "street",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 3,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_via_ricasoli",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Marker",
+     "n": 3
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 3
     }
    ],
    "anchorInherited": false,
@@ -13963,6 +15115,39 @@
    "densityClass": "hapax"
   },
   {
+   "id": "villa_celimontana",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/villa_celimontana",
+   "label": "Villa Celimontana",
+   "realityStatus": "Imported",
+   "placeCategory": "park",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_santa_maria_in_domnica",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Relative",
+     "n": 2
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
    "id": "villa_deste",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/villa_deste",
    "label": "Villa d'Este",
@@ -14022,6 +15207,39 @@
     {
      "determination": "Relative",
      "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "vinchiaturo",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/vinchiaturo",
+   "label": "Vinchiaturo",
+   "realityStatus": "Imported",
+   "placeCategory": "locality",
+   "description": "Paese del molise",
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 2,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_vinchiaturo",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Relative",
+     "n": 2
     }
    ],
    "anchorInherited": false,
@@ -14090,1224 +15308,6 @@
      "n": 1
     }
    ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "aliciaro",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/aliciaro",
-   "label": "Aliciaro",
-   "realityStatus": "Imported",
-   "placeCategory": "restaurant",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_quattro_cantoni",
-     "weight": 0.5
-    },
-    {
-     "gazetteerId": "gaz_san_carlo_alle_quattro_fontane",
-     "weight": 0.5
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Relative",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": true,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "campo_verano",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/campo_verano",
-   "label": "Campo Verano",
-   "realityStatus": "Imported",
-   "placeCategory": "station",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_campo_verano",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "Setting",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Precise",
-     "n": 1
-    },
-    {
-     "determination": "Approximate",
-     "n": 1
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "casa_del_butiro",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/casa_del_butiro",
-   "label": "Casa del Butiro",
-   "realityStatus": "Invented",
-   "placeCategory": "farmhouse",
-   "description": "Casa immaginata nella zona dei Due Santi",
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_due_santi",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Relative",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "cassero",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/cassero",
-   "label": "Cassero",
-   "realityStatus": "Imagined",
-   "placeCategory": "castle",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_frattocchie",
-     "weight": 0.5
-    },
-    {
-     "gazetteerId": "gaz_pavona",
-     "weight": 0.5
-    }
-   ],
-   "roles": [],
-   "determinations": [],
-   "anchorInherited": false,
-   "multiTarget": true,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "fontana_di_papa",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/fontana_di_papa",
-   "label": "Fontana di Papa",
-   "realityStatus": "Imported",
-   "placeCategory": "locality",
-   "description": "Località  lungo la via Nettunense, oggi nel territorio di Ariccia",
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_fontana_di_papa",
-     "weight": 1.0
-    }
-   ],
-   "roles": [],
-   "determinations": [],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "grottaferrata",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/grottaferrata",
-   "label": "Grottaferrata",
-   "realityStatus": "Imported",
-   "placeCategory": "locality",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_grottaferrata",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "orto_vigna_due_santi",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi",
-   "label": "Orto o Vigna ai Due Santi",
-   "realityStatus": "Imagined",
-   "placeCategory": "kitchen_garden",
-   "description": "Luogo non precisato simile a un orto o una vigna, di fronte al laboratorio della Zamira, al lato opposto della via Appia ",
-   "fuzziness": 4.0,
-   "partOf": "laboratorio_zamira",
-   "interpCount": 1,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_due_santi",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "Marker",
-     "n": 1
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Indeterminate",
-     "n": 1
-    }
-   ],
-   "anchorInherited": true,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "ovindoli",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/ovindoli",
-   "label": "Ovindoli",
-   "realityStatus": "Imported",
-   "placeCategory": "locality",
-   "description": "Comune in Abruzzo",
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_ovindoli",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Relative",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "porta_borgo_marino",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/porta_borgo_marino",
-   "label": "Porta del borgo di Marino",
-   "realityStatus": "Transformed",
-   "placeCategory": "city_gate",
-   "description": "Porta al confine del comune di Marino",
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_marino",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "Marker",
-     "n": 1
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 1
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "porta_latina",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/porta_latina",
-   "label": "Porta Latina",
-   "realityStatus": "Imported",
-   "placeCategory": "city_gate",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_porta_latina",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "predappio",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/predappio",
-   "label": "Predappio",
-   "realityStatus": "Imported",
-   "placeCategory": "locality",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_predappio",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "Marker",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Relative",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "publicii_clivio_de",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/publicii_clivio_de",
-   "label": "Publicii clivio de'",
-   "realityStatus": "Imported",
-   "placeCategory": "street",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_rocca_savella",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "robine_vecchie",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/robine_vecchie",
-   "label": "Robine Vecchie",
-   "realityStatus": "Transformed",
-   "placeCategory": "locality",
-   "description": "Robine Vecchie è un microtoponimo gaddiano non identificato, forse deformazione di un nome locale o denominazione fantastica applicata al paesaggio reale di Frattocchie–Due Santi.",
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_frattocchie",
-     "weight": 0.5
-    },
-    {
-     "gazetteerId": "gaz_due_santi",
-     "weight": 0.5
-    }
-   ],
-   "roles": [],
-   "determinations": [],
-   "anchorInherited": false,
-   "multiTarget": true,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "rocca_savella",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/rocca_savella",
-   "label": "Rocca Savella",
-   "realityStatus": "Imported",
-   "placeCategory": "street",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_rocca_savella",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "santa_margherita_in_abitacolo",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/santa_margherita_in_abitacolo",
-   "label": "Santa Margherita in Abitacolo",
-   "realityStatus": "Imported",
-   "placeCategory": "Church",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_santa_margherita_in_abitacolo",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "santa_maria_in_domnica",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/santa_maria_in_domnica",
-   "label": "Santa Maria in Dòmnica",
-   "realityStatus": "Imported",
-   "placeCategory": "basilica",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_santa_maria_in_domnica",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Relative",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "stazione_carabinieri_castello",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/stazione_carabinieri_castello",
-   "label": "Stazione dei Carabinieri a Castello",
-   "realityStatus": "Transformed",
-   "placeCategory": "building",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_castel_gandolfo",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "Setting",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "stazione_pavona",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/stazione_pavona",
-   "label": "Stazione della Pavona",
-   "realityStatus": "Transformed",
-   "placeCategory": "station",
-   "description": "Stazione del paese di Pavona, non meglio identificata",
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_pavona",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "Marker",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "strada_di_campagna_celio",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/strada_di_campagna_celio",
-   "label": "Strada di campagna del Celio",
-   "realityStatus": "Transformed",
-   "placeCategory": "street",
-   "description": "Strada non meglio qualificata nel quartiere del Celio",
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_celio",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Relative",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "tempio_di_agrippa",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/tempio_di_agrippa",
-   "label": "Tempio di Agrippa",
-   "realityStatus": "Imported",
-   "placeCategory": "temple",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_tempio_di_agrippa",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Indeterminate",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "terracina",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/terracina",
-   "label": "Terracina",
-   "realityStatus": "Imported",
-   "placeCategory": "locality",
-   "description": "Comune italiano",
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_terracina",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Relative",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "tevere_biferno",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/tevere_biferno",
-   "label": "Tra Tevere e Biferno",
-   "realityStatus": "Imported",
-   "placeCategory": "locality",
-   "description": "Area paesaggistica vaga delimitata dal Tevere e dal Biferno, sineddoche spaziale per Roma e Molise, i topoi linguistici di Ingravallo",
-   "fuzziness": 4.0,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_tevere",
-     "weight": 0.5
-    },
-    {
-     "gazetteerId": "gaz_biferno",
-     "weight": 0.5
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Indeterminate",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": true,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "traforo",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/traforo",
-   "label": "Traforo",
-   "realityStatus": "Imported",
-   "placeCategory": "gallery",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_traforo",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "via_della_caffarella",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_della_caffarella",
-   "label": "Via della Caffarella",
-   "realityStatus": "Imported",
-   "placeCategory": "street",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_via_della_caffarella",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "via_della_navicella",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_della_navicella",
-   "label": "Via della Navicella",
-   "realityStatus": "Imported",
-   "placeCategory": "street",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_via_della_navicella",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Relative",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "via_delle_oche",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_delle_oche",
-   "label": "via delle Oche",
-   "realityStatus": "Imagined",
-   "placeCategory": "street",
-   "description": "via topograficamente non precisata",
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_milano",
-     "weight": 0.5
-    },
-    {
-     "gazetteerId": "gaz_bologna",
-     "weight": 0.5
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Relative",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": true,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "via_di_san_paolo_della_croce",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_di_san_paolo_della_croce",
-   "label": "Via di San Paolo della Croce",
-   "realityStatus": "Imported",
-   "placeCategory": "street",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_via_di_san_paolo_della_croce",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Relative",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "via_di_santo_stefano_rotondo",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_di_santo_stefano_rotondo",
-   "label": "Via di Santo Stefano Rotondo",
-   "realityStatus": "Imported",
-   "placeCategory": "street",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_via_di_santo_stefano_rotondo",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Relative",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "via_popolonia",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_popolonia",
-   "label": "Via Popolonia",
-   "realityStatus": "Imported",
-   "placeCategory": "street",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_via_popolonia",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "villa_celimontana",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/villa_celimontana",
-   "label": "Villa Celimontana",
-   "realityStatus": "Imported",
-   "placeCategory": "park",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_santa_maria_in_domnica",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Relative",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "vinchiaturo",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/vinchiaturo",
-   "label": "Vinchiaturo",
-   "realityStatus": "Imported",
-   "placeCategory": "locality",
-   "description": "Paese del molise",
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_vinchiaturo",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Relative",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "camera_casello",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/camera_casello",
-   "label": "Camera al Casello 20-25",
-   "realityStatus": "Transformed",
-   "placeCategory": "room",
-   "description": "camera da letto della Camilla Mattonari",
-   "fuzziness": null,
-   "partOf": "casello_km_20_25",
-   "interpCount": 3,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_casal_bruciato",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "Setting",
-     "n": 3
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Precise",
-     "n": 3
-    }
-   ],
-   "anchorInherited": true,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "casuccia_zamira",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira",
-   "label": "Casuccia della Zamira",
-   "realityStatus": "Imagined",
-   "placeCategory": "dwelling",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_due_santi",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "falcognana",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/falcognana",
-   "label": "Falcognana",
-   "realityStatus": "Imported",
-   "placeCategory": "locality",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 3,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_falcognana",
-     "weight": 1.0
-    }
-   ],
-   "roles": [],
-   "determinations": [],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "largo_brancaccio",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/largo_brancaccio",
-   "label": "Largo Brancaccio",
-   "realityStatus": "Imported",
-   "placeCategory": "small_square",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 3,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_largo_brancaccio",
-     "weight": 1.0
-    }
-   ],
-   "roles": [],
-   "determinations": [],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "via_mamiani",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_mamiani",
-   "label": "Via Mamiani",
-   "realityStatus": "Imported",
-   "placeCategory": "street",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 3,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_via_mamiani",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "Marker",
-     "n": 3
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 3
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "via_ricasoli",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_ricasoli",
-   "label": "Via Ricasoli",
-   "realityStatus": "Imported",
-   "placeCategory": "street",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 3,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_via_ricasoli",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "Marker",
-     "n": 3
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 3
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hapax"
-  },
-  {
-   "id": "ponte_di_santa_fumia",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/ponte_di_santa_fumia",
-   "label": "Ponte di Santa Fumia",
-   "realityStatus": "Transformed",
-   "placeCategory": "street",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 4,
-   "planeCount": 1,
-   "targets": [
-    {
-     "gazetteerId": "gaz_quarto_di_santa_fumia",
-     "weight": 1.0
-    }
-   ],
-   "roles": [],
-   "determinations": [],
    "anchorInherited": false,
    "multiTarget": false,
    "densityClass": "hapax"
