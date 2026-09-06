@@ -469,7 +469,15 @@ I corpi degli handler e i template restano invariati.
 assegnazioni `onclick`, `oninput`, `onchange` e `onpointerdown` del notebook.
 Restituire `dispose()` limita la modifica alla firma e al blocco di smontaggio.
 
-**Verifica in questo gruppo.** `install()` non viene invocato: le callback di
+**Integrazione in chartS4 (2026-09-07).** La factory `chartS4(model, roma)`
+restituisce il `wrap` originale con un metodo `dispose()`: richiama lo
+smontaggio degli handler, rimuove il listener Escape e i listener D3 dello
+zoom. Un `AbortController` interno rimuove i quattro listener del canvas,
+già registrati con `addEventListener`, senza cambiare il corpo delle callback.
+`main.js` richiama lo smontaggio su HMR e `pagehide`. Stato, `draw()` e `tick()`
+restano nello stesso blocco, senza ristrutturazione.
+
+**Verifica nel quinto gruppo.** `install()` non viene invocato: le callback di
 `chartS4` non sono ancora disponibili. Lo smontaggio completo sarà verificato
 quando verrà portato il proprietario dello stato.
 
