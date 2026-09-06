@@ -13,6 +13,8 @@ import s4Sequence from "./sequence.js";
 import s4NarrativeGeometry from "./narrative-geometry.js";
 import s4RadialLayout from "./radial-layout.js";
 import s4NarrativeCells from "./narrative-cells.js";
+import s4IsoEngine from "../render/iso-engine.js";
+import s4Painters from "../render/painters.js";
 
 export default function buildModel(gaddaReal) {
   const entities = s4Entities(gaddaReal);
@@ -25,6 +27,8 @@ export default function buildModel(gaddaReal) {
   const narrativeGeometry = s4NarrativeGeometry(entities, voronoi, satellites, chapters);
   const radialLayout = s4RadialLayout(entities, projectionFit, voronoi, chapters, satellites, narrativeGeometry);
   const narrativeCells = s4NarrativeCells(entities, voronoi, projectionFit, radialLayout, satellites, narrativeGeometry);
+  const isoEngine = s4IsoEngine(voronoi, narrativeCells);
+  const painters = s4Painters(entities, chapters, voronoi);
 
   // Chiavi = nomi delle celle nel notebook: chi consuma il modello ritrova
   // gli stessi nomi con cui confrontarsi in _archivio/chartD.js.
@@ -39,5 +43,7 @@ export default function buildModel(gaddaReal) {
     s4NarrativeGeometry: narrativeGeometry,
     s4RadialLayout: radialLayout,
     s4NarrativeCells: narrativeCells,
+    s4IsoEngine: isoEngine,
+    s4Painters: painters,
   };
 }

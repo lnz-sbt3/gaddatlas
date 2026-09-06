@@ -2,6 +2,8 @@
 // in Observable il top-level await era implicito, qui va incapsulato.
 
 import buildModel from "./model/index.js";
+import { median } from "d3";
+import context2d from "./render/context2d.js";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -47,21 +49,33 @@ async function boot() {
       );
     }
 
-    // Sostituisce `display(chartS4)` del notebook.
-    // TODO fase 1: const atlas = createAtlas({ gaddaReal, roma });
-    root.innerHTML = "";
-    root.append(
-      Object.assign(document.createElement("pre"), {
-        style: "padding:2rem;font:13px ui-monospace,monospace",
-        textContent:
-          `GaddAtlas — impalcatura\n\n` +
-          `feature       ${gaddaReal.features.length}\n` +
-          `righe relief  ${gaddaReal.relief.length}\n` +
-          `route         ${gaddaReal.paths.routes.length}\n` +
-          `focalizzatori ${gaddaReal.paths.agents.length}\n` +
-          `contorno Roma ${roma.features?.length ?? "?"} geometrie\n`,
-      })
-    );
+    // BANCO DI PROVA — rimuovere quando arriva chartS4
+    {
+      const { cellRings } = model.s4Voronoi;
+      const { bbox, width, height } = model.s4Projection;
+      const { isoProfile, isoProfileMin, isoProfileMed } = model.s4IsoEngine;
+      const rings = cellRings.filter(cr => cr != null);
+      console.log("vertici totali cellRings", rings.reduce((sum, cr) => sum + cr.ring.length, 0));
+      console.log("isoProfile.filter(Boolean).length", isoProfile.filter(Boolean).length);
+      console.log("isoProfileMin[0]", isoProfileMin[0]);
+      console.log("isoProfileMed[0]", isoProfileMed[0]);
+      console.log("mediana isoProfileMed (celle non nulle)", median(isoProfileMed.filter((_, i) => isoProfile[i] != null)));
+
+      const context = context2d(width, height);
+      const palette = getComputedStyle(document.documentElement);
+      context.fillStyle = palette.getPropertyValue("--bg").trim();
+      context.fillRect(0, 0, width, height);
+      context.strokeStyle = palette.getPropertyValue("--ink").trim();
+      context.translate(-bbox[0], -bbox[1]);
+      for (const { ring } of rings) {
+        context.beginPath();
+        ring.forEach(([x, y], i) => i === 0 ? context.moveTo(x, y) : context.lineTo(x, y));
+        context.closePath();
+        context.stroke();
+      }
+      root.replaceChildren(context.canvas);
+    }
+
   } catch (err) {
     root.innerHTML = `<p style="padding:3rem;color:var(--hue-ref)">
       Impossibile caricare i dati: ${err.message}</p>`;
