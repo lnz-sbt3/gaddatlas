@@ -449,6 +449,32 @@ le singole factory.
 
 ---
 
+## D-016 · Smontaggio esplicito degli handler dei controlli
+**2026-09-07 · chiusa**
+
+`s4ChartHandlers.install({shell, constants, state, actions})` restituisce una
+funzione `dispose()` al posto di ricevere la promise Observable `invalidation`.
+Il futuro proprietario della shell deve chiamarla prima di smontare i controlli
+o installare nuovi handler sulla stessa shell.
+
+**Motivazione.** Fuori dal runtime reattivo Observable non esiste una promise
+che segnali la rigenerazione della cella. Come D-015, questa è una deviazione
+necessaria dal porting meccanico. La funzione conserva la cancellazione del
+frame e dell'intervallo di playback originali e azzera tutte le proprietà evento
+assegnate da `install()`, liberando i riferimenti alle callback del chiamante.
+I corpi degli handler e i template restano invariati.
+
+**Alternativa scartata.** `AbortController` con listener registrati tramite
+`addEventListener(..., {signal})`: richiederebbe di convertire tutte le
+assegnazioni `onclick`, `oninput`, `onchange` e `onpointerdown` del notebook.
+Restituire `dispose()` limita la modifica alla firma e al blocco di smontaggio.
+
+**Verifica in questo gruppo.** `install()` non viene invocato: le callback di
+`chartS4` non sono ancora disponibili. Lo smontaggio completo sarà verificato
+quando verrà portato il proprietario dello stato.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

@@ -4,6 +4,8 @@
 import buildModel from "./model/index.js";
 import { median, zoomIdentity } from "d3";
 import context2d from "./render/context2d.js";
+import s4Config from "./model/config.js";
+import s4ChartShell from "./ui/shell.js";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -95,7 +97,22 @@ async function boot() {
         context.closePath();
         context.stroke();
       }
-      root.replaceChildren(context.canvas);
+      const shell = s4ChartShell.create({
+        canvas: context.canvas, width, nChapters: s4Config.N_CHAPTERS,
+        inkColor: palette.getPropertyValue("--ink").trim(),
+        bgColor: palette.getPropertyValue("--bg").trim(),
+        terrainAgents: model.s4Terrain.agents,
+        sequenceLength: model.s4Sequence.sequence.length,
+        roleOrder: s4Config.ROLE_ORDER, roleColors: s4Config.ROLE_COLORS,
+        rolePluralColor: s4Config.ROLE_PLURAL_COLOR,
+      });
+      // La shell incorpora il canvas e dispone i controlli sotto di esso.
+      // Mostriamo la legenda nel banco anche senza lo stato di chartS4.
+      shell.legendRow.style.display = "flex";
+      shell.roleLegend.style.display = "inline-flex";
+      root.replaceChildren(shell.wrap);
+      console.log("opzioni focalizerSelect", shell.focalizerSelect.options.length);
+      console.log("pulsanti data-role in roleLegend", shell.roleLegend.querySelectorAll("button[data-role]").length);
     }
 
   } catch (err) {
