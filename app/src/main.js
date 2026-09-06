@@ -2,7 +2,7 @@
 // in Observable il top-level await era implicito, qui va incapsulato.
 
 import buildModel from "./model/index.js";
-import { median } from "d3";
+import { median, zoomIdentity } from "d3";
 import context2d from "./render/context2d.js";
 
 const BASE = import.meta.env.BASE_URL;
@@ -51,6 +51,28 @@ async function boot() {
 
     // BANCO DI PROVA — rimuovere quando arriva chartS4
     {
+      const { attestedRoutes } = model.s4AttestedRoutes;
+      let segments = 0, nodes = 0;
+      // Una percorrenza appartiene a un solo focalizzatore (E5).
+      // I nodi sono distinti entro ogni coppia route/focalizzatore.
+      for (const route of attestedRoutes) {
+        for (const [focalizer, steps] of route.stepsByFocalizer) {
+          segments += Math.max(0, steps.length - 1);
+          const state = model.s4RouteNodes.frameState({
+            selectedRouteId: route.id, focalizer, seqMode: true,
+            seqPos: model.s4Sequence.sequence.length,
+          });
+          nodes += state.hot.size;
+        }
+      }
+      console.log("route attestate", attestedRoutes.length);
+      console.log("segmenti totali per focalizzatore", segments);
+      console.log("nodi di percorso per route/focalizzatore", nodes);
+      const frame = { crimpEased: 0, transform: zoomIdentity };
+      const host = model.s4Interaction.findDisplayHost(frame, ...model.s4Projection.pts[100]);
+      console.log("findDisplayHost (generatore 100)", host);
+      console.assert(host === 100, "Corrispondenza generatore/cella non preservata", host);
+
       const { cellRings } = model.s4Voronoi;
       const { bbox, width, height } = model.s4Projection;
       const { isoProfile, isoProfileMin, isoProfileMed } = model.s4IsoEngine;
