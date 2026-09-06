@@ -6,6 +6,12 @@ import { median, zoomIdentity } from "d3";
 import context2d from "./render/context2d.js";
 import s4Config from "./model/config.js";
 import s4ChartShell from "./ui/shell.js";
+import s4RouteHoverDrawing from "./render/route-hover.js";
+import s4HoverOverlay from "./render/hover-overlay.js";
+import s4ChartOverlays from "./render/overlays.js";
+import s4ChartRouteSelection from "./interaction/route-selection.js";
+import s4ChartMapBackdrop from "./render/map-backdrop.js";
+import s4GhostSlotsOverlay from "./render/ghost-slots.js";
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -53,6 +59,31 @@ async function boot() {
 
     // BANCO DI PROVA — rimuovere quando arriva chartS4
     {
+      function geometriesOf(value) {
+        if (!value) return [];
+        if (value.type === "FeatureCollection") return value.features.flatMap(geometriesOf);
+        if (value.type === "Feature") return geometriesOf(value.geometry);
+        if (value.type === "GeometryCollection") return value.geometries.flatMap(geometriesOf);
+        return [value];
+      }
+      function vertexCount(coordinates) {
+        if (!coordinates?.length) return 0;
+        if (typeof coordinates[0] === "number") return 1;
+        return coordinates.reduce((sum, part) => sum + vertexCount(part), 0);
+      }
+      const romaGeometries = geometriesOf(roma);
+      console.log("geometrie roma.geojson", romaGeometries.length);
+      // Conteggio delle posizioni memorizzate, incluse le chiusure degli anelli.
+      console.log("vertici totali roma.geojson", romaGeometries.reduce((sum, geometry) => sum + vertexCount(geometry.coordinates), 0));
+      for (const [name, module] of Object.entries({
+        s4RouteHoverDrawing, s4HoverOverlay, s4ChartOverlays,
+        s4ChartRouteSelection, s4ChartMapBackdrop, s4GhostSlotsOverlay,
+      })) {
+        console.log(`${name}: chiavi`, Object.keys(module).join(", "));
+      }
+      // MapBackdrop richiede lo stato di chartS4 e non legge roma:
+      // il contorno amministrativo vive ancora in chartS4 (notebook, riga 5072).
+
       const { attestedRoutes } = model.s4AttestedRoutes;
       let segments = 0, nodes = 0;
       // Una percorrenza appartiene a un solo focalizzatore (E5).
