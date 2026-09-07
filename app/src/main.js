@@ -3,10 +3,15 @@
 
 import buildModel from "./model/index.js";
 import chartS4 from "./atlas.js";
+import createTextPanel from "./ui/text-panel.js";
+import { html } from "htl";
+import s4Config from "./model/config.js";
 
 let atlas;
-if (import.meta.hot) import.meta.hot.dispose(() => atlas?.dispose());
-window.addEventListener("pagehide", () => atlas?.dispose(), {once: true});
+let textPanel;
+function dispose() { atlas?.dispose(); textPanel?.dispose(); }
+if (import.meta.hot) import.meta.hot.dispose(dispose);
+window.addEventListener("pagehide", dispose, {once: true});
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -27,8 +32,12 @@ async function boot() {
     // Nucleo dati: un'unica chiamata, l'assemblatore risolve il DAG.
     const model = buildModel(gaddaReal);
 
-    atlas = chartS4(model, roma);
-    root.replaceChildren(atlas);
+    textPanel = createTextPanel({
+      relief: gaddaReal.relief, entities: model.s4Entities,
+      agents: gaddaReal.paths.agents, aliasGroups: s4Config.ALIAS_GROUPS, loadJSON,
+    });
+    atlas = chartS4(model, roma, { onTileSelect: textPanel.show });
+    root.replaceChildren(html`<div class="atlas-layout"><div class="atlas-view">${atlas}</div>${textPanel.element}</div>`);
   } catch (err) {
     root.innerHTML = `<p style="padding:3rem;color:var(--hue-ref)">
       Impossibile caricare i dati: ${err.message}</p>`;

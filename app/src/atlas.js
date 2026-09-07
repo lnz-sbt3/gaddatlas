@@ -15,7 +15,7 @@ import s4ChartHandlers from "./ui/handlers.js";
 
 // ===== CELLA: chartS4 =====
   // -- CELLA FINALE: chartS4 --
-export default function chartS4(model, roma) {
+export default function chartS4(model, roma, { onTileSelect = () => {} } = {}) {
   const { s4Entities, s4Projection, s4Voronoi, s4NarrativeCells, s4Chapters, s4Satellites, s4Terrain, s4RadialLayout, s4IsoEngine, s4Sequence, s4AttestedRoutes, s4Painters, s4Interaction, s4ChartSupport, s4LodPicking, s4RouteNodes } = model;
   const listeners = new AbortController();
   const {
@@ -170,7 +170,8 @@ export default function chartS4(model, roma) {
     getRoleSortTarget: () => roleSortTarget,
     roleBands,
     sequence,
-    routeIdByReferenceId: s4AttestedRoutes.routeIdByReferenceId
+    routeIdByReferenceId: s4AttestedRoutes.routeIdByReferenceId,
+    onReferenceSelect: onTileSelect
   });
   let seqOccCalls = 0;
   let seqOccWindowT0 = performance.now();
@@ -1226,7 +1227,15 @@ export default function chartS4(model, roma) {
   canvas.addEventListener("click", ev => {
     const [x, y] = interaction.toCanvas(interactionFrame(), canvas, ev.clientX, ev.clientY);
     drop.tx = x; drop.ty = y; drop.ts = STRENGTH;
-    const clickHost = interaction.findAxonHost(interactionFrame(), x, y, bandsOfTile, {focalActive: focalizer != null});
+    const clickFrame = interactionFrame();
+    let clickHost = tiltEased > 0.01
+      ? interaction.findAxonHost(clickFrame, x, y, bandsOfTile, {focalActive: focalizer != null})
+      : interaction.findDisplayHost(clickFrame, x, y);
+    if (clickHost < 0 && crimpEased > 0.01 && tiltEased <= 0.01) {
+      clickHost = interaction.findFictHost(clickFrame, x, y);
+    }
+    if (clickHost < 0) return;
+    onTileSelect(clickHost);
     if (clickHost !== hostIndex) {
       routeSelection.clear();
       return;

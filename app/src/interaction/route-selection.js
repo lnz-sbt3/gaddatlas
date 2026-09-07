@@ -3,7 +3,7 @@
 // Stato persistente della route selezionata. Isolato da chartS4 per tenere insieme
 // gate di interrogabilita', risoluzione referenceId e terrazza sorgente evidenziata.
 const s4ChartRouteSelection = (() => {
-  function create({getFocalizer, getLodEased, getHostIndex, getHoverTerrace, getRoleSortTarget, roleBands, sequence, routeIdByReferenceId}) {
+  function create({getFocalizer, getLodEased, getHostIndex, getHoverTerrace, getRoleSortTarget, roleBands, sequence, routeIdByReferenceId, onReferenceSelect = () => {}}) {
     let id = null;
     let tileIndex = -1;
     let terrace = -1;
@@ -30,6 +30,7 @@ const s4ChartRouteSelection = (() => {
       }
       const pos = roleBands.posOfBand(hostIndex, hoverTerrace, getRoleSortTarget() > 0.5);
       const row = pos >= 0 ? sequence[pos] : null;
+      if (row) onReferenceSelect(hostIndex, row.referenceId);
       const routeId = row ? routeIdByReferenceId.get(String(row.referenceId || "")) : null;
       id = routeId ?? null;
       tileIndex = routeId ? hostIndex : -1;

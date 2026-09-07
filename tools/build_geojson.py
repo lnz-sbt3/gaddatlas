@@ -555,6 +555,7 @@ def main(ttl_path, out_dir, seeds_path=None):
             "agentId": si["focalizerId"],
             "role": si["narrativeRole"],
             "determination": si["spatialDetermination"],
+            "criticalNote": si["criticalNote"],
             "isRouteNode": si["isNodeOfRoute"],
         })
     relief.sort(key=lambda d: (d["page"] or 0, d["referenceId"], d["interpretationId"]))

@@ -95,9 +95,9 @@ schema:name a owl:AnnotationProperty .
     dc:title "CHORA — an Ontology for Narrative Spatiality" ;
     dcterms:bibliographicCitation "[Sabatino, Lorenzo]. (2026). CHORA - an Ontology for Narrative Spatiality. Università di Bologna."@en ;
     dcterms:contributor [ a prov:Agent ;
-            schema:name "Paola Maria Carmela Italia" ],
+            schema:name "Francesca Tomasi" ],
         [ a prov:Agent ;
-            schema:name "Francesca Tomasi" ] ;
+            schema:name "Paola Maria Carmela Italia" ] ;
     dcterms:created "2025-10-01"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:modified "2026-08-11"^^xsd:date ;

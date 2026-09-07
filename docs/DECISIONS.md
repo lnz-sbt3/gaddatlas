@@ -511,6 +511,34 @@ indipendenti — l'ETL Python, il GeoJSON, il grafo RDF — e non contro sé ste
 
 ---
 
+## D-018 · Pannello testuale persistente per riferimento
+**2026-09-07 · chiusa**
+
+Il click apre un pannello affiancato al canvas, indipendente da capitolo,
+focalizzatore e stadio. Le righe di `relief` sono raggruppate per `referenceId`:
+un brano compare una sola volta, con tutte le interpretazioni del tassello.
+Le fusioni di alias seguono il modello esistente. I gruppi di capitolo si
+aprono su richiesta; indice e promise dei capitoli sono conservati in cache
+(per capitolo in una `Map`), con possibilità di riprovare dopo un errore.
+Un riferimento singolo si presenta direttamente, senza una lista richiudibile.
+La selezione di una terrazza apre il capitolo corrispondente ed evidenzia il
+riferimento anche quando non appartiene a una route.
+
+**Alternative scartate.** Overlay sopra il canvas, filtro dei brani legato
+al frame corrente, precaricamento di tutti i capitoli e lista per
+interpretazione: ostacolano rispettivamente confronto, persistenza della
+lettura, caricamento incrementale e distinzione attestazione/interpretazione.
+Nessuna esportazione cumulativa. I brani senza `sourceReference` non vengono
+mostrati; la sigla originale resta visibile e l'edizione Adelphi è esplicitata
+secondo `LiteraryWorks.tsv`.
+
+**Note critiche.** Il campo è derivato da `si["criticalNote"]`. Il TTL contiene
+59 note, ma solo 56 appartengono a `relief`: `interp_00044`, `interp_00045` e
+`interp_00046` hanno `targetsRoute` e sono escluse dal rilievo dei luoghi.
+Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`
