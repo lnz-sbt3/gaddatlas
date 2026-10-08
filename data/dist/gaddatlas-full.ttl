@@ -17251,7 +17251,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 
 <https://w3id.org/gaddatlas/id/reference/ref_00588> a chora:PlaceReference ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
-    chora:excerpt "il quale difatti, già in ansimo, annunciava il lùbrico gioco de' manovellismi su su su fu fu fu da 'e Fattocchie, vincendo la implorazione lontana der cuccù."@it ;
+    chora:excerpt "il quale difatti, già in ansimo, annunciava il lùbrico gioco de' manovellismi su su su fu fu fu da 'e Frattocchie, vincendo la implorazione lontana der cuccù."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
     chora:sourceReference "A 241"^^xsd:string .
 

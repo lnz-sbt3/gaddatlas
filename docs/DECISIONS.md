@@ -450,6 +450,18 @@ guardato a schermo prima di darlo per buono.
 
 ---
 
+## D-020 — «Fattocchie» → «Frattocchie» nell'estratto di QP 241 (8 ottobre 2026)
+
+- Requisito/i: R21 (evidenza testuale stabile e verificabile), R01 · Ipotesi: — · Data check: DC-01 (work order T-01)
+- Stato precedente: l'estratto di `ref_00588` (QP 241, cap. IX) leggeva «su su su fu fu fu da 'e Fattocchie», lezione della copia digitale Adelphi da cui è stato condotto il censimento. Il luogo (`frattocchie`) e l'ancoraggio (`gaz_frattocchie`) erano già corretti: l'errore stava solo nel testo dell'estratto.
+- Decisione: l'estratto segue il volume a stampa, «Frattocchie». È una correzione di trascrizione verso il testo di riferimento, non un'emendazione del progetto: l'emendazione è dell'editore. «Fattocchie» resta una lezione di RR II (p. 219, stampa Garzanti), da registrare come variante di testimone con il modello di T-41, insieme alla lettura di Terzoli (2015, p. 771: «se non è refuso, rafforza l'onomatopea precedente») e all'emendazione di Pinotti (QP 241; Italia 2020, pp. 101–102): fase 2–3.
+- Motivazione (fonte, pagina): verifica di LS sul volume a stampa (6/10/2026): Pinotti emenda «Fattocchie» (RR II 219) in «Frattocchie» (QP 241). Cap. 4, § 4.3 e n. 23.
+- Fase in cui è maturata: analisi del testo
+- File toccati (manifest): `data/source/tables/References.tsv:589`; `data/source/xlsx/References.xlsx` (rigenerato). Derivati: `data/gaddatlas.ttl`, `data/dist/gaddatlas-full.ttl`, `data/dist/passages/ch09.json`, `app/public/data/passages/ch09.json`.
+- Effetto su KG (triple prima/dopo, SHACL): cambia solo un letterale. ABox 16.045 → 16.045; full 17.203 → 17.203; SHACL conforme, 0 violazioni. Nessuna occorrenza di «Fattocchie» resta nei dati o nell'app: compare solo nei documenti che ne discutono (Cap. 4, work order, registro, AUDIT_0, `CLAUDE.md`). Il controllo a campione delle altre lezioni sul cartaceo resta T-12 / T-56.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`
