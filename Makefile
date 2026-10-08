@@ -39,6 +39,7 @@ rdf:
 	  --data-dir data/source/tables \
 	  --ontology-source ontology/chora.ttl \
 	  --ontology-output ontology/chora.rdf \
+	  --ontology-jsonld ontology/chora.jsonld \
 	  --tbox ontology/shapes/chora-placecategories.ttl \
 	  --output data/gaddatlas.ttl \
 	  --full-output data/dist/gaddatlas-full.ttl

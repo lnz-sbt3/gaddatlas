@@ -23,6 +23,7 @@ Author: Lorenzo Sabatino
 Date: 2026-07-26
 """
 
+import json
 import logging
 import sys
 from pathlib import Path
@@ -1247,6 +1248,25 @@ class _SortedGraph(Graph):
         return iter(sorted(super().triples(triple)))
 
 
+def stable_json(text: str) -> str:
+    """JSON-LD con ordine stabile (D-018, D-028).
+
+    Il serializzatore JSON-LD di rdflib ordina nodi e valori in modo che
+    dipende dall'hash: si riordinano le chiavi e gli array, che in JSON-LD
+    sono insiemi, lasciando intatte le liste ordinate (@list).
+    """
+    def norm(x, in_list=False):
+        if isinstance(x, dict):
+            return {k: norm(v, in_list=(k == '@list')) for k, v in sorted(x.items())}
+        if isinstance(x, list):
+            items = [norm(v) for v in x]
+            if in_list:
+                return items
+            return sorted(items, key=lambda v: json.dumps(v, sort_keys=True, ensure_ascii=False))
+        return x
+    return json.dumps(norm(json.loads(text)), indent=2, ensure_ascii=False) + "\n"
+
+
 def canonical(graph: Graph) -> Graph:
     """Copia del grafo con nodi anonimi rinominati in forma canonica.
 
@@ -1298,6 +1318,12 @@ def main():
         default='ontology/chora.rdf',
         help='Serializzazione RDF/XML della sola T-Box CHORA, per Protege '
              '(default: ontology/chora.rdf)'
+    )
+    parser.add_argument(
+        '--ontology-jsonld',
+        default='ontology/chora.jsonld',
+        help='Serializzazione JSON-LD della sola T-Box CHORA, servita da '
+             'w3id per negoziazione del contenuto (default: ontology/chora.jsonld)'
     )
     parser.add_argument(
         '--tbox',
@@ -1352,6 +1378,10 @@ def main():
         ontology.bind('chora', CHORA, override=True, replace=True)
         ontology_output = Path(args.ontology_output)
         canonical(ontology).serialize(destination=ontology_output, format='xml')
+        # Anche il JSON-LD e' un derivato di chora.ttl: prima era aggiornato a
+        # mano e restava indietro rispetto alla TBox (D-028).
+        jsonld = canonical(ontology).serialize(format='json-ld', auto_compact=True)
+        Path(args.ontology_jsonld).write_text(stable_json(jsonld), encoding='utf-8')
         logger.info(
             f"T-Box CHORA {CHORA_VERSION}: {ontology_output} "
             f"({len(ontology)} triple)"

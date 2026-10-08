@@ -563,6 +563,18 @@ guardato a schermo prima di darlo per buono.
 
 ---
 
+## D-029 — `chora.jsonld` generato dall'ETL (8 ottobre 2026)
+
+- Requisito/i: — (pubblicazione dell'ontologia; aggiorna D-016) · Ipotesi: — · Data check: —
+- Stato precedente: `ontology/chora.jsonld`, servito da w3id per negoziazione del contenuto (`w3id/chora/.htaccess:23`, `:29`), non era generato da nessuno strumento. Era fermo a una TBox ancora più vecchia (572 triple, non isomorfa né alla TBox di partenza né a quella attuale) e conteneva le definizioni invertite di Invented e Imagined.
+- Decisione: l'ETL genera `chora.jsonld` da `chora.ttl` accanto a `chora.rdf` (nuovo argomento `--ontology-jsonld`), con `auto_compact=True` come indicato in `w3id/README.md`. Il JSON prodotto da rdflib cambia ordine a ogni esecuzione, quindi viene riordinato (`stable_json()`: chiavi e array in ordine, liste `@list` intatte), in coerenza con D-018.
+- Motivazione (fonte, pagina): il file pubblicato su w3id deve dire le stesse cose della sorgente; verificato isomorfo a `chora.ttl` (600 triple) e identico byte per byte con tre seed diversi.
+- Fase in cui è maturata: revisione critica (chiusura della fase 1)
+- File toccati (manifest): `tools/etl.py:26` (`import json`), `:1251-1269` (`stable_json()`), `:1322-1327` (argomento), `:1381-1384` (scrittura); `Makefile:42`; `ontology/chora.jsonld` (rigenerato).
+- Effetto su KG (triple prima/dopo, SHACL): nessuno su ABox (16.055) e grafo completo (17.225). `chora.jsonld` passa da 572 triple non allineate a 600, isomorfo alla TBox. SHACL conforme.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`
