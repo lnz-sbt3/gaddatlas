@@ -641,7 +641,7 @@ interp_00637	ref_00531	cupola_san_pietro	gaz_piazza_san_pietro	pestalozzi	marker
 interp_00638	ref_00532	acquedotto_claudio	gaz_acquedotto_claudio	pestalozzi	marker	approximate									
 interp_00639	ref_00533	due_santi	gaz_due_santi	pestalozzi	projectedspace	approximate									
 interp_00640	ref_00533	due_santi	gaz_due_santi	cocullo	projectedspace	approximate									
-interp_00641	ref_00534	casal_bruciato	gaz_casal_bruciato	pestalozzi	projectedspace	indeterminate									
+interp_00641	ref_00534	casal_bruciato	gaz_marino|gaz_albano_laziale|gaz_pavona|gaz_santa_palomba	pestalozzi	projectedspace	indeterminate	near								Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241).
 interp_00642	ref_00535	direttissima_roma_napoli	gaz_direttissima_roma_napoli	pestalozzi	projectedspace	indeterminate									
 interp_00643	ref_00536	campo_morto	gaz_campo_morto	pestalozzi	projectedspace	indeterminate									
 interp_00644	ref_00537	monte_circeo	gaz_monte_circeo	pestalozzi	projectedspace	indeterminate									
@@ -681,7 +681,7 @@ interp_00677	ref_00564	due_santi	gaz_due_santi	zamira_pacori	projectedspace	rela
 interp_00678	ref_00565	tenenza_carabinieri_marino	gaz_marino	pestalozzi	projectedspace	relative	inside								
 interp_00679	ref_00566	castel_di_leva	gaz_castel_di_leva	camilla_mattonari	projectedspace	approximate									
 interp_00680	ref_00567	ponte_divino_amore	gaz_ponte_divino_amore	camilla_mattonari	projectedspace	approximate									
-interp_00681	ref_00568	casal_bruciato	gaz_casal_bruciato	camilla_mattonari	projectedspace	approximate									
+interp_00681	ref_00568	casal_bruciato	gaz_marino|gaz_albano_laziale|gaz_pavona|gaz_santa_palomba	camilla_mattonari	projectedspace	approximate	near								Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241).
 interp_00682	ref_00569	divino_amore	gaz_divino_amore	camilla_mattonari	projectedspace	approximate									
 interp_00683	ref_00570	ponte_divino_amore	gaz_ponte_divino_amore	camilla_mattonari	projectedspace	approximate									
 interp_00684	ref_00571	ponte_divino_amore	gaz_ponte_divino_amore	camilla_mattonari	projectedspace	approximate									
@@ -709,27 +709,27 @@ interp_00705	ref_00581	bivio_falcognana_casal_bruciato	gaz_via_della_falcognana	
 interp_00706	ref_00582	via_della_falcognana	gaz_via_della_falcognana	narrator	marker	precise									
 interp_00707	ref_00583	ponte_divino_amore	gaz_ponte_divino_amore	narrator	marker	precise									
 interp_00708	ref_00584	ferrovia_roma_velletri	gaz_ferrovia_roma_velletri	narrator	marker	precise									
-interp_00709	ref_00585	casal_bruciato	gaz_casal_bruciato	narrator	marker	precise									
-interp_00710	ref_00586	casello_km_20_25	gaz_casal_bruciato	pestalozzi	setting	approximate	near								
-interp_00711	ref_00586	casello_km_20_25	gaz_casal_bruciato	cocullo	setting	approximate	near								
+interp_00709	ref_00585	casal_bruciato	gaz_marino|gaz_albano_laziale|gaz_pavona|gaz_santa_palomba	narrator	marker	precise	near								Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241).
+interp_00710	ref_00586	casello_km_20_25		pestalozzi	setting	approximate									
+interp_00711	ref_00586	casello_km_20_25		cocullo	setting	approximate									
 interp_00712	ref_00587	passaggio_livello_casal_bruciato		nonna_mattonari	setting	approximate									
 interp_00713	ref_00588	frattocchie	gaz_frattocchie	narrator	marker	precise									
-interp_00714	ref_00589	casello_km_20_25	gaz_casal_bruciato	narrator	marker	precise	near								
-interp_00715	ref_00590	casello_km_20_25	gaz_casal_bruciato	narrator	marker	precise	near								
-interp_00716	ref_00591	casello_km_20_25	gaz_casal_bruciato	nonna_mattonari	setting	precise	near								
-interp_00717	ref_00592	casello_km_20_25	gaz_casal_bruciato	nonna_mattonari	setting	precise	near								
-interp_00718	ref_00592	casello_km_20_25	gaz_casal_bruciato	pestalozzi	setting	precise	near								
-interp_00719	ref_00592	casello_km_20_25	gaz_casal_bruciato	cocullo	setting	precise	near								
+interp_00714	ref_00589	casello_km_20_25		narrator	marker	precise									
+interp_00715	ref_00590	casello_km_20_25		narrator	marker	precise									
+interp_00716	ref_00591	casello_km_20_25		nonna_mattonari	setting	precise									
+interp_00717	ref_00592	casello_km_20_25		nonna_mattonari	setting	precise									
+interp_00718	ref_00592	casello_km_20_25		pestalozzi	setting	precise									
+interp_00719	ref_00592	casello_km_20_25		cocullo	setting	precise									
 interp_00720	ref_00593	ciampino	gaz_ciampino	narrator	projectedspace	relative									
 interp_00721	ref_00594	ponte_divino_amore	gaz_ponte_divino_amore	narrator	projectedspace	relative									
-interp_00722	ref_00595	casello_km_20_25	gaz_casal_bruciato	narrator	setting	approximate	near								
+interp_00722	ref_00595	casello_km_20_25		narrator	setting	approximate									
 interp_00723	ref_00596	laboratorio_zamira	gaz_due_santi	pestalozzi	projectedspace	relative	inside								
 interp_00724	ref_00597	due_santi	gaz_due_santi	pestalozzi	projectedspace	relative									
 interp_00725	ref_00597	due_santi	gaz_due_santi	camilla_mattonari	projectedspace	relative									
 interp_00726	ref_00598	ciampino	gaz_ciampino	zio_cantoniere	projectedspace	relative									
-interp_00727	ref_00599	casello_km_20_25	gaz_casal_bruciato	camilla_mattonari	setting	precise	near								
-interp_00728	ref_00599	casello_km_20_25	gaz_casal_bruciato	pestalozzi	setting	precise	near								
-interp_00729	ref_00599	casello_km_20_25	gaz_casal_bruciato	cocullo	setting	precise	near								
+interp_00727	ref_00599	casello_km_20_25		camilla_mattonari	setting	precise									
+interp_00728	ref_00599	casello_km_20_25		pestalozzi	setting	precise									
+interp_00729	ref_00599	casello_km_20_25		cocullo	setting	precise									
 interp_00730	ref_00600	camera_casello		camilla_mattonari	setting	precise	inside								
 interp_00731	ref_00600	camera_casello		pestalozzi	setting	precise	inside								
 interp_00732	ref_00600	camera_casello		cocullo	setting	precise	inside								
@@ -744,12 +744,12 @@ interp_00740	ref_00607	tenenza_carabinieri_marino	gaz_marino	camilla_mattonari	p
 interp_00741	ref_00608	via_veneto	gaz_via_veneto	camilla_mattonari	projectedspace	relative									
 interp_00742	ref_00609	ciampino	gaz_ciampino	zio_cantoniere	projectedspace	relative									
 interp_00743	ref_00610	cecchina	gaz_cecchina	zio_cantoniere	projectedspace	relative									
-interp_00744	ref_00611	casello_km_20_25	gaz_casal_bruciato	camilla_mattonari	projectedspace	approximate	near								
+interp_00744	ref_00611	casello_km_20_25		camilla_mattonari	projectedspace	approximate									
 interp_00745	ref_00612	tenenza_carabinieri_marino	gaz_marino	camilla_mattonari	projectedspace	approximate	inside								
 interp_00746	ref_00612	tenenza_carabinieri_marino	gaz_marino	zio_cantoniere	projectedspace	approximate	inside								
-interp_00747	ref_00613	casello_km_20_25	gaz_casal_bruciato	camilla_mattonari	projectedspace	approximate	near								
-interp_00748	ref_00613	casello_km_20_25	gaz_casal_bruciato	zio_cantoniere	projectedspace	approximate	near								
-interp_00749	ref_00614	casal_bruciato	gaz_casal_bruciato	zio_cantoniere	projectedspace	approximate									
+interp_00747	ref_00613	casello_km_20_25		camilla_mattonari	projectedspace	approximate									
+interp_00748	ref_00613	casello_km_20_25		zio_cantoniere	projectedspace	approximate									
+interp_00749	ref_00614	casal_bruciato	gaz_marino|gaz_albano_laziale|gaz_pavona|gaz_santa_palomba	zio_cantoniere	projectedspace	approximate	near								Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241).
 interp_00750	ref_00615	velletri	gaz_velletri	nonna_mattonari	projectedspace	approximate									
 interp_00751	ref_00616	bivio_falcognana_casal_bruciato	gaz_via_della_falcognana	pestalozzi	setting	approximate	overlaps								
 interp_00752	ref_00616	bivio_falcognana_casal_bruciato	gaz_via_della_falcognana	cocullo	setting	approximate	overlaps								
@@ -760,9 +760,9 @@ interp_00756	ref_00618	tenenza_carabinieri_marino	gaz_marino	camilla_mattonari	p
 interp_00757	ref_00618	tenenza_carabinieri_marino	gaz_marino	lavinia_mattonari	projectedspace	approximate	inside								
 interp_00758	ref_00619	frattocchie	gaz_frattocchie	vetturale	projectedspace	relative									
 interp_00759	ref_00620	due_santi	gaz_due_santi	vetturale	projectedspace	relative									
-interp_00760	ref_00621	casello_km_20_25	gaz_casal_bruciato	enea_retalli	projectedspace	relative	near								
-interp_00761	ref_00621	casello_km_20_25	gaz_casal_bruciato	camilla_mattonari	projectedspace	relative	near								
-interp_00762	ref_00621	casello_km_20_25	gaz_casal_bruciato	lavinia_mattonari	projectedspace	relative	near								
+interp_00760	ref_00621	casello_km_20_25		enea_retalli	projectedspace	relative									
+interp_00761	ref_00621	casello_km_20_25		camilla_mattonari	projectedspace	relative									
+interp_00762	ref_00621	casello_km_20_25		lavinia_mattonari	projectedspace	relative									
 interp_00763	ref_00622	santa_rita_invitacolo	gaz_santa_rita_invitacolo	clelia_farcioni	projectedspace	relative									
 interp_00764	ref_00623	torraccio	gaz_torraccio	santarella	projectedspace	relative									
 interp_00765	ref_00624	ponte_divino_amore	gaz_ponte_divino_amore	santarella	projectedspace	relative									
@@ -775,8 +775,8 @@ interp_00771	ref_00629	via_appia	gaz_via_appia	pestalozzi	projectedspace	relativ
 interp_00772	ref_00629	via_appia	gaz_via_appia	enea_retalli	projectedspace	relative									
 interp_00773	ref_00630	via_anziate	gaz_via_anziate	pestalozzi	projectedspace	relative									
 interp_00774	ref_00630	via_anziate	gaz_via_anziate	enea_retalli	projectedspace	relative									
-interp_00775	ref_00631	casello_km_20_25	gaz_casal_bruciato	enea_retalli	projectedspace	relative	near								
-interp_00776	ref_00632	casal_bruciato	gaz_casal_bruciato	enea_retalli	projectedspace	relative									
+interp_00775	ref_00631	casello_km_20_25		enea_retalli	projectedspace	relative									
+interp_00776	ref_00632	casal_bruciato	gaz_marino|gaz_albano_laziale|gaz_pavona|gaz_santa_palomba	enea_retalli	projectedspace	relative	near								Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241).
 interp_00777	ref_00633	via_ardeatina	gaz_via_ardeatina	enea_retalli	projectedspace	relative									
 interp_00778	ref_00634	ardea	gaz_ardea	enea_retalli	projectedspace	relative									
 interp_00779	ref_00635	direttissima_roma_napoli	gaz_direttissima_roma_napoli	enea_retalli	projectedspace	relative									
@@ -789,9 +789,9 @@ interp_00785	ref_00641	via_anziate	gaz_via_anziate	camilla_mattonari	marker	appr
 interp_00786	ref_00641	via_anziate	gaz_via_anziate	lavinia_mattonari	marker	approximate									
 interp_00787	ref_00641	via_anziate	gaz_via_anziate	pestalozzi	marker	approximate									
 interp_00788	ref_00641	via_anziate	gaz_via_anziate	cocullo	marker	approximate									
-interp_00789	ref_00642	casello_km_20_25	gaz_casal_bruciato	enea_retalli	projectedspace	relative	near								
-interp_00790	ref_00643	casello_km_20_25	gaz_casal_bruciato	enea_retalli	projectedspace	relative	near								
-interp_00791	ref_00643	casello_km_20_25	gaz_casal_bruciato	camilla_mattonari	projectedspace	relative	near								
+interp_00789	ref_00642	casello_km_20_25		enea_retalli	projectedspace	relative									
+interp_00790	ref_00643	casello_km_20_25		enea_retalli	projectedspace	relative									
+interp_00791	ref_00643	casello_km_20_25		camilla_mattonari	projectedspace	relative									
 interp_00792	ref_00644	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	ascanio_lanciani	projectedspace	approximate									
 interp_00793	ref_00645	torraccio	gaz_torraccio	enea_retalli	projectedspace	approximate									
 interp_00794	ref_00646	marino	gaz_marino	santarella				routenode	tragitto_marino_albano_laziale	1					
@@ -898,10 +898,10 @@ interp_00896	ref_00694	tor_di_gheppio	gaz_quarto_di_santa_fumia	ingravallo			nea
 interp_00897	ref_00694	tor_di_gheppio	gaz_quarto_di_santa_fumia	maresciallo_di_pietrantonio			near	routenode	tragitto_torraccio_ponte_divino_amore	7					
 interp_00898	ref_00694	tor_di_gheppio	gaz_quarto_di_santa_fumia	autista_questura			near	routenode	tragitto_torraccio_ponte_divino_amore	7					
 interp_00899	ref_00694	tor_di_gheppio	gaz_quarto_di_santa_fumia	agente_runzato			near	routenode	tragitto_torraccio_ponte_divino_amore	7					
-interp_00900	ref_00695	casal_bruciato	gaz_casal_bruciato	ingravallo				routenode	tragitto_torraccio_ponte_divino_amore	8					
-interp_00901	ref_00695	casal_bruciato	gaz_casal_bruciato	maresciallo_di_pietrantonio				routenode	tragitto_torraccio_ponte_divino_amore	8					
-interp_00902	ref_00695	casal_bruciato	gaz_casal_bruciato	autista_questura				routenode	tragitto_torraccio_ponte_divino_amore	8					
-interp_00903	ref_00695	casal_bruciato	gaz_casal_bruciato	agente_runzato				routenode	tragitto_torraccio_ponte_divino_amore	8					
+interp_00900	ref_00695	casal_bruciato	gaz_marino|gaz_albano_laziale|gaz_pavona|gaz_santa_palomba	ingravallo			near	routenode	tragitto_torraccio_ponte_divino_amore	8					Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241).
+interp_00901	ref_00695	casal_bruciato	gaz_marino|gaz_albano_laziale|gaz_pavona|gaz_santa_palomba	maresciallo_di_pietrantonio			near	routenode	tragitto_torraccio_ponte_divino_amore	8					Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241).
+interp_00902	ref_00695	casal_bruciato	gaz_marino|gaz_albano_laziale|gaz_pavona|gaz_santa_palomba	autista_questura			near	routenode	tragitto_torraccio_ponte_divino_amore	8					Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241).
+interp_00903	ref_00695	casal_bruciato	gaz_marino|gaz_albano_laziale|gaz_pavona|gaz_santa_palomba	agente_runzato			near	routenode	tragitto_torraccio_ponte_divino_amore	8					Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241).
 interp_00904	ref_00696	ferrovia_roma_velletri	gaz_ferrovia_roma_velletri	ingravallo				routenode	tragitto_torraccio_ponte_divino_amore	9					
 interp_00905	ref_00696	ferrovia_roma_velletri	gaz_ferrovia_roma_velletri	maresciallo_di_pietrantonio				routenode	tragitto_torraccio_ponte_divino_amore	9					
 interp_00906	ref_00696	ferrovia_roma_velletri	gaz_ferrovia_roma_velletri	autista_questura				routenode	tragitto_torraccio_ponte_divino_amore	9					
@@ -926,8 +926,8 @@ interp_00924	ref_00704	tor_di_gheppio	gaz_quarto_di_santa_fumia	ingravallo	proje
 interp_00925	ref_00704	tor_di_gheppio	gaz_quarto_di_santa_fumia	agente_runzato	projectedspace	approximate	near								
 interp_00926	ref_00705	pavona	gaz_pavona	ingravallo	projectedspace	approximate									
 interp_00927	ref_00705	pavona	gaz_pavona	agente_runzato	projectedspace	approximate									
-interp_00928	ref_00706	casal_bruciato	gaz_casal_bruciato	ingravallo	projectedspace	approximate									
-interp_00929	ref_00706	casal_bruciato	gaz_casal_bruciato	agente_runzato	projectedspace	approximate									
+interp_00928	ref_00706	casal_bruciato	gaz_marino|gaz_albano_laziale|gaz_pavona|gaz_santa_palomba	ingravallo	projectedspace	approximate	near								Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241).
+interp_00929	ref_00706	casal_bruciato	gaz_marino|gaz_albano_laziale|gaz_pavona|gaz_santa_palomba	agente_runzato	projectedspace	approximate	near								Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241).
 interp_00930	ref_00707	via_ardeatina	gaz_via_ardeatina	ingravallo	projectedspace	approximate									
 interp_00931	ref_00707	via_ardeatina	gaz_via_ardeatina	agente_runzato	projectedspace	approximate									
 interp_00932	ref_00708	ardea	gaz_ardea	ingravallo	projectedspace	approximate									
@@ -944,8 +944,8 @@ interp_00942	ref_00713	palazzo	gaz_palazzo	ingravallo	projectedspace	approximate
 interp_00943	ref_00713	palazzo	gaz_palazzo	agente_runzato	projectedspace	approximate									
 interp_00944	ref_00714	pavona	gaz_pavona	ingravallo	projectedspace	approximate									
 interp_00945	ref_00714	pavona	gaz_pavona	agente_runzato	projectedspace	approximate									
-interp_00946	ref_00715	casal_bruciato	gaz_casal_bruciato	ingravallo	projectedspace	approximate									
-interp_00947	ref_00715	casal_bruciato	gaz_casal_bruciato	agente_runzato	projectedspace	approximate									
+interp_00946	ref_00715	casal_bruciato	gaz_marino|gaz_albano_laziale|gaz_pavona|gaz_santa_palomba	ingravallo	projectedspace	approximate	near								Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241).
+interp_00947	ref_00715	casal_bruciato	gaz_marino|gaz_albano_laziale|gaz_pavona|gaz_santa_palomba	agente_runzato	projectedspace	approximate	near								Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241).
 interp_00948	ref_00716	tor_di_gheppio	gaz_quarto_di_santa_fumia	ingravallo	projectedspace	approximate	near								
 interp_00949	ref_00716	tor_di_gheppio	gaz_quarto_di_santa_fumia	agente_runzato	projectedspace	approximate	near								
 interp_00950	ref_00717	casa_crocchiapani		ingravallo	setting	approximate									

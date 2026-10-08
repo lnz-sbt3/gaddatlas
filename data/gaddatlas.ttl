@@ -6841,9 +6841,14 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00641> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_albano_laziale>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_marino>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_pavona>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Indeterminate ;
+    chora:assignsSpatialRelationType chora:Near ;
+    chora:criticalNote "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pestalozzi> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00534> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> .
@@ -7210,9 +7215,14 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00681> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_albano_laziale>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_marino>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_pavona>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Approximate ;
+    chora:assignsSpatialRelationType chora:Near ;
+    chora:criticalNote "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/camilla_mattonari> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00568> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> .
@@ -7464,29 +7474,30 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00709> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_albano_laziale>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_marino>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_pavona>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba> ;
     chora:assignsNarrativeRole chora:Marker ;
     chora:assignsSpatialDetermination chora:Precise ;
+    chora:assignsSpatialRelationType chora:Near ;
+    chora:criticalNote "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00585> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00710> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Approximate ;
-    chora:assignsSpatialRelationType chora:Near ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pestalozzi> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00586> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00711> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Approximate ;
-    chora:assignsSpatialRelationType chora:Near ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/cocullo> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00586> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
@@ -7510,60 +7521,48 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00714> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
     chora:assignsNarrativeRole chora:Marker ;
     chora:assignsSpatialDetermination chora:Precise ;
-    chora:assignsSpatialRelationType chora:Near ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00589> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00715> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
     chora:assignsNarrativeRole chora:Marker ;
     chora:assignsSpatialDetermination chora:Precise ;
-    chora:assignsSpatialRelationType chora:Near ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00590> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00716> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Precise ;
-    chora:assignsSpatialRelationType chora:Near ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/nonna_mattonari> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00591> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00717> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Precise ;
-    chora:assignsSpatialRelationType chora:Near ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/nonna_mattonari> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00592> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00718> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Precise ;
-    chora:assignsSpatialRelationType chora:Near ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pestalozzi> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00592> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00719> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Precise ;
-    chora:assignsSpatialRelationType chora:Near ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/cocullo> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00592> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
@@ -7588,10 +7587,8 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00722> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Approximate ;
-    chora:assignsSpatialRelationType chora:Near ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00595> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
@@ -7635,30 +7632,24 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00727> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Precise ;
-    chora:assignsSpatialRelationType chora:Near ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/camilla_mattonari> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00599> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00728> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Precise ;
-    chora:assignsSpatialRelationType chora:Near ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pestalozzi> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00599> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00729> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Precise ;
-    chora:assignsSpatialRelationType chora:Near ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/cocullo> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00599> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
@@ -7795,10 +7786,8 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00744> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Approximate ;
-    chora:assignsSpatialRelationType chora:Near ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/camilla_mattonari> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00611> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
@@ -7825,29 +7814,30 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00747> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Approximate ;
-    chora:assignsSpatialRelationType chora:Near ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/camilla_mattonari> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00613> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00748> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Approximate ;
-    chora:assignsSpatialRelationType chora:Near ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/zio_cantoniere> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00613> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00749> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_albano_laziale>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_marino>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_pavona>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Approximate ;
+    chora:assignsSpatialRelationType chora:Near ;
+    chora:criticalNote "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/zio_cantoniere> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00614> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> .
@@ -7950,30 +7940,24 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00760> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Relative ;
-    chora:assignsSpatialRelationType chora:Near ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/enea_retalli> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00621> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00761> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Relative ;
-    chora:assignsSpatialRelationType chora:Near ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/camilla_mattonari> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00621> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00762> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Relative ;
-    chora:assignsSpatialRelationType chora:Near ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/lavinia_mattonari> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00621> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
@@ -8088,19 +8072,22 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00775> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Relative ;
-    chora:assignsSpatialRelationType chora:Near ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/enea_retalli> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00631> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00776> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_albano_laziale>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_marino>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_pavona>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Relative ;
+    chora:assignsSpatialRelationType chora:Near ;
+    chora:criticalNote "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/enea_retalli> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00632> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> .
@@ -8215,30 +8202,24 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00789> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Relative ;
-    chora:assignsSpatialRelationType chora:Near ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/enea_retalli> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00642> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00790> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Relative ;
-    chora:assignsSpatialRelationType chora:Near ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/enea_retalli> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00643> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00791> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Relative ;
-    chora:assignsSpatialRelationType chora:Near ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/camilla_mattonari> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00643> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
@@ -9210,7 +9191,12 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00900> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_albano_laziale>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_marino>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_pavona>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba> ;
+    chora:assignsSpatialRelationType chora:Near ;
+    chora:criticalNote "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/ingravallo> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00695> ;
     chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_torraccio_ponte_divino_amore> ;
@@ -9219,7 +9205,12 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00901> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_albano_laziale>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_marino>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_pavona>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba> ;
+    chora:assignsSpatialRelationType chora:Near ;
+    chora:criticalNote "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/maresciallo_di_pietrantonio> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00695> ;
     chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_torraccio_ponte_divino_amore> ;
@@ -9228,7 +9219,12 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00902> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_albano_laziale>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_marino>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_pavona>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba> ;
+    chora:assignsSpatialRelationType chora:Near ;
+    chora:criticalNote "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/autista_questura> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00695> ;
     chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_torraccio_ponte_divino_amore> ;
@@ -9237,7 +9233,12 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00903> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_albano_laziale>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_marino>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_pavona>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba> ;
+    chora:assignsSpatialRelationType chora:Near ;
+    chora:criticalNote "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/agente_runzato> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00695> ;
     chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_torraccio_ponte_divino_amore> ;
@@ -9463,18 +9464,28 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00928> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_albano_laziale>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_marino>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_pavona>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Approximate ;
+    chora:assignsSpatialRelationType chora:Near ;
+    chora:criticalNote "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/ingravallo> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00706> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00929> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_albano_laziale>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_marino>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_pavona>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Approximate ;
+    chora:assignsSpatialRelationType chora:Near ;
+    chora:criticalNote "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/agente_runzato> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00706> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> .
@@ -9625,18 +9636,28 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00946> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_albano_laziale>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_marino>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_pavona>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Approximate ;
+    chora:assignsSpatialRelationType chora:Near ;
+    chora:criticalNote "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/ingravallo> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00715> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00947> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_albano_laziale>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_marino>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_pavona>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Approximate ;
+    chora:assignsSpatialRelationType chora:Near ;
+    chora:criticalNote "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/agente_runzato> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00715> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> .
@@ -21051,29 +21072,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     skos:altLabel "Santa Maria della Neve"@it ;
     chora:presentLocation "P.za di Santa Maria Maggiore, 00100"@it .
 
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba> a chora:GazetteerEntity ;
-    rdfs:label "Santa Palomba"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "coordinates": [
-          12.573826656277753,
-          41.70649880109798
-        ],
-        "type": "Point"
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 41.70649880109798 ;
-    geo1:long 12.573826656277753 ;
-    chora:presentLocation "Via della Stazione, 00040"@it .
-
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_ardeatina> a chora:GazetteerEntity ;
     rdfs:label "Via Ardeatina"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -21447,28 +21445,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:characterName "Maharaja Di Tripura"@it ;
     chora:hasGender "male"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_albano_laziale> a chora:GazetteerEntity ;
-    rdfs:label "Albano Laziale"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "coordinates": [
-          12.659200477592739,
-          41.72979996535707
-        ],
-        "type": "Point"
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 41.72979996535707 ;
-    geo1:long 12.65920047759274 .
-
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_santi_quattro_coronati> a chora:GazetteerEntity ;
     rdfs:label "Santi Quattro Coronati"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -21577,29 +21553,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     geo1:long 12.616317604540413 ;
     chora:presentLocation "Frazione"@it .
 
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_pavona> a chora:GazetteerEntity ;
-    rdfs:label "Pavona"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "coordinates": [
-          12.612192808316081,
-          41.72553775484286
-        ],
-        "type": "Point"
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 41.72553775484286 ;
-    geo1:long 12.61219280831608 ;
-    chora:presentLocation "Pavona"@it .
-
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_piazza_vittorio_emanuele> a chora:GazetteerEntity ;
     rdfs:label "Piazza Vittorio Emanuele"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -21645,12 +21598,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     geo1:lat 41.75989937203588 ;
     geo1:long 12.58052436788742 .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> a chora:NarrativePlace ;
-    rdfs:label "Casal Bruciato"@it ;
-    dcterms:description "Quartiere di Roma"@it ;
-    chora:hasPlaceCategory chora:district ;
-    chora:hasRealityStatus chora:Imported .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_vittorio_emanuele> a chora:NarrativePlace ;
     rdfs:label "Piazza Vittorio Emanuele"@it ;
     chora:hasPlaceCategory chora:square ;
@@ -21662,6 +21609,12 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasPlaceCategory chora:interior ;
     chora:hasRealityStatus chora:Transformed ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> a chora:NarrativePlace ;
+    rdfs:label "Casal Bruciato"@it ;
+    dcterms:description "Luogo trasformato, senza coordinate proprie: località dell'agro romano circoscritta da Marino e dall'Appia verso Albano (nord/nord-est), da Pavona (ovest) e da Santa Palomba (sud). Non è il quartiere romano omonimo."@it ;
+    chora:hasPlaceCategory chora:district ;
+    chora:hasRealityStatus chora:Transformed .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/marino> a chora:NarrativePlace ;
     rdfs:label "Marino"@it ;
@@ -21745,6 +21698,29 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:characterName "Giuliano Valdarena"@it ;
     chora:hasGender "male"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba> a chora:GazetteerEntity ;
+    rdfs:label "Santa Palomba"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          12.573826656277753,
+          41.70649880109798
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 41.70649880109798 ;
+    geo1:long 12.573826656277753 ;
+    chora:presentLocation "Via della Stazione, 00040"@it .
+
 <https://w3id.org/gaddatlas/id/focalizer/autista_questura> a chora:Character,
         chora:FocalizingAgent ;
     dcterms:description "Personaggio non nominato, che accompagna Ingravallo da Santo Stefano ai Colli Albani"@it ;
@@ -21769,6 +21745,28 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     dcterms:description "Camilla Mattonari, una delle cugine legate ad Enea Retalli, coinvolta nel furto di gioielli della Menegazzi"@it ;
     chora:characterName "Camilla Mattonari"@it ;
     chora:hasGender "female"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_albano_laziale> a chora:GazetteerEntity ;
+    rdfs:label "Albano Laziale"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          12.659200477592739,
+          41.72979996535707
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 41.72979996535707 ;
+    geo1:long 12.65920047759274 .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_torraccio> a chora:GazetteerEntity ;
     rdfs:label "Torraccio"@it ;
@@ -21842,7 +21840,31 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     rdfs:label "Casello al chilometro 20-25"@it ;
     dcterms:description "casello ferroviario in prossimità di Casal Bruciato"@it ;
     chora:hasPlaceCategory chora:railway_gatehouse ;
-    chora:hasRealityStatus chora:Transformed .
+    chora:hasRealityStatus chora:Transformed ;
+    chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> .
+
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_pavona> a chora:GazetteerEntity ;
+    rdfs:label "Pavona"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          12.612192808316081,
+          41.72553775484286
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 41.72553775484286 ;
+    geo1:long 12.61219280831608 ;
+    chora:presentLocation "Pavona"@it .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_merulana> a chora:NarrativePlace ;
     rdfs:label "Via Merulana"@it ;
@@ -21896,28 +21918,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     dcterms:description "Commendator Angeloni, vicino di casa dei Balducci, interrogato all'inizio dell'indagine."@it ;
     chora:characterName "Commendador Angeloni"@it ;
     chora:hasGender "male"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> a chora:GazetteerEntity ;
-    rdfs:label "Casal Bruciato"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.550603021665,
-          41.90695676286888
-        ]
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 41.90695676286888 ;
-    geo1:long 12.550603021665 .
 
 <https://w3id.org/gaddatlas/id/chapter/capitolo_III> a chora:Chapter ;
     dcterms:title "Capitolo III"@it ;
@@ -21977,28 +21977,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
         chora:FocalizingAgent ;
     chora:characterName "Ines Cionini"@it ;
     chora:hasGender "female"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_marino> a chora:GazetteerEntity ;
-    rdfs:label "Marino"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.66366867693179,
-          41.77540942594233
-        ]
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 41.77540942594233 ;
-    geo1:long 12.66366867693179 .
 
 <https://w3id.org/gaddatlas/id/route/tragitto_torraccio_ponte_divino_amore> a chora:NarrativeRoute .
 
@@ -22063,6 +22041,28 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 }"""^^geosparql:geoJSONLiteral ] ;
     geo1:lat 41.8919173419505 ;
     geo1:long 12.50204620435122 .
+
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_marino> a chora:GazetteerEntity ;
+    rdfs:label "Marino"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.66366867693179,
+          41.77540942594233
+        ]
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 41.77540942594233 ;
+    geo1:long 12.66366867693179 .
 
 <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> a chora:Chapter ;
     dcterms:title "Capitolo VIII"@it ;

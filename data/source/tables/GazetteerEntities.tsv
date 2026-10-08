@@ -464,22 +464,6 @@ gaz_carsoli	Carsoli					42.14567518996888	13.094053163953856	"{
     }
   ]
 }"	
-gaz_casal_bruciato	Casal Bruciato					41.90695676286888	12.550603021665	"{
-  ""type"": ""FeatureCollection"",
-  ""features"": [
-    {
-      ""type"": ""Feature"",
-      ""properties"": {},
-      ""geometry"": {
-        ""type"": ""Point"",
-        ""coordinates"": [
-          12.550603021665,
-          41.90695676286888
-        ]
-      }
-    }
-  ]
-}"	
 gaz_castelli_romani	Castelli Romani					41.76583589207368	12.708345346043885	"{
   ""type"": ""FeatureCollection"",
   ""features"": [

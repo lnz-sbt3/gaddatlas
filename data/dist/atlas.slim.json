@@ -21,7 +21,7 @@
   "ontologyVersion": "1.0.0",
   "buildVersion": "4.3",
   "source": "gaddatlas-full.ttl",
-  "tripleCount": 17187,
+  "tripleCount": 17202,
   "projection": {
    "type": "equirectangular",
    "center": [
@@ -90,7 +90,7 @@
     "periurbano",
     "urbano"
    ],
-   "generatorCount": 222,
+   "generatorCount": 221,
    "peripheralCount": 30,
    "excludedUnanchored": 0,
    "bbox": {
@@ -109,7 +109,7 @@
   "excerptsIncluded": false,
   "voidSeeds": "frozen",
   "counts": {
-   "gazetteer": 265,
+   "gazetteer": 264,
    "narrativePlaces": 309,
    "interpretations": 960,
    "references": 722,
@@ -118,7 +118,7 @@
    "agents": 83,
    "derivedSequences": 103,
    "reliefRows": 931,
-   "ownTiles": 48
+   "ownTiles": 49
   }
  },
  "gazetteer": [
@@ -229,10 +229,10 @@
    "presentLocation": null,
    "historicalLocation": null,
    "distanceFromRomeKm": 19.8,
-   "refCountAnchored": 46,
+   "refCountAnchored": 59,
    "planeCount": 13,
    "interpCount": 14,
-   "narrativePlaceCount": 5,
+   "narrativePlaceCount": 9,
    "densityClass": "nodale",
    "densityLevel": 4
   },
@@ -294,25 +294,6 @@
    "densityLevel": 3
   },
   {
-   "id": "gaz_casal_bruciato",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato",
-   "label": "Casal Bruciato",
-   "lon": 12.550603021665,
-   "lat": 41.90695676286888,
-   "x": 4034.217,
-   "y": -415.676,
-   "scaleBand": "urbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 4.5,
-   "refCountAnchored": 35,
-   "planeCount": 8,
-   "interpCount": 13,
-   "narrativePlaceCount": 4,
-   "densityClass": "frequente",
-   "densityLevel": 3
-  },
-  {
    "id": "gaz_san_giovanni_in_laterano",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_san_giovanni_in_laterano",
    "label": "San Giovanni in Laterano",
@@ -370,25 +351,6 @@
    "densityLevel": 3
   },
   {
-   "id": "gaz_pavona",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_pavona",
-   "label": "Pavona",
-   "lon": 12.61219280831608,
-   "lat": 41.72553775484286,
-   "x": 8618.215,
-   "y": 17726.225,
-   "scaleBand": "periurbano",
-   "presentLocation": "Pavona",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 21.9,
-   "refCountAnchored": 13,
-   "planeCount": 6,
-   "interpCount": 10,
-   "narrativePlaceCount": 3,
-   "densityClass": "frequente",
-   "densityLevel": 3
-  },
-  {
    "id": "gaz_via_della_falcognana",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_della_falcognana",
    "label": "Via della Falcognana",
@@ -404,6 +366,25 @@
    "planeCount": 6,
    "interpCount": 13,
    "narrativePlaceCount": 2,
+   "densityClass": "frequente",
+   "densityLevel": 3
+  },
+  {
+   "id": "gaz_pavona",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_pavona",
+   "label": "Pavona",
+   "lon": 12.61219280831608,
+   "lat": 41.72553775484286,
+   "x": 8618.215,
+   "y": 17726.225,
+   "scaleBand": "periurbano",
+   "presentLocation": "Pavona",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 21.9,
+   "refCountAnchored": 26,
+   "planeCount": 6,
+   "interpCount": 10,
+   "narrativePlaceCount": 7,
    "densityClass": "frequente",
    "densityLevel": 3
   },
@@ -541,25 +522,6 @@
    "densityLevel": 2
   },
   {
-   "id": "gaz_santa_palomba",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba",
-   "label": "Santa Palomba",
-   "lon": 12.573826656277753,
-   "lat": 41.70649880109798,
-   "x": 5762.703,
-   "y": 19630.12,
-   "scaleBand": "periurbano",
-   "presentLocation": "Via della Stazione, 00040",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 22.8,
-   "refCountAnchored": 6,
-   "planeCount": 5,
-   "interpCount": 6,
-   "narrativePlaceCount": 1,
-   "densityClass": "ricorrente",
-   "densityLevel": 2
-  },
-  {
    "id": "gaz_via_ardeatina",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_ardeatina",
    "label": "Via Ardeatina",
@@ -651,6 +613,25 @@
    "planeCount": 5,
    "interpCount": 12,
    "narrativePlaceCount": 1,
+   "densityClass": "ricorrente",
+   "densityLevel": 2
+  },
+  {
+   "id": "gaz_santa_palomba",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba",
+   "label": "Santa Palomba",
+   "lon": 12.573826656277753,
+   "lat": 41.70649880109798,
+   "x": 5762.703,
+   "y": 19630.12,
+   "scaleBand": "periurbano",
+   "presentLocation": "Via della Stazione, 00040",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 22.8,
+   "refCountAnchored": 19,
+   "planeCount": 5,
+   "interpCount": 6,
+   "narrativePlaceCount": 5,
    "densityClass": "ricorrente",
    "densityLevel": 2
   },
@@ -780,10 +761,10 @@
    "presentLocation": null,
    "historicalLocation": null,
    "distanceFromRomeKm": 23.5,
-   "refCountAnchored": 10,
+   "refCountAnchored": 23,
    "planeCount": 4,
    "interpCount": 4,
-   "narrativePlaceCount": 2,
+   "narrativePlaceCount": 6,
    "densityClass": "ricorrente",
    "densityLevel": 2
   },
@@ -5531,13 +5512,25 @@
    "placeCategory": "railway_gatehouse",
    "description": "casello ferroviario in prossimità di Casal Bruciato",
    "fuzziness": null,
-   "partOf": null,
+   "partOf": "casal_bruciato",
    "interpCount": 22,
    "planeCount": 13,
    "targets": [
     {
-     "gazetteerId": "gaz_casal_bruciato",
-     "weight": 1.0
+     "gazetteerId": "gaz_albano_laziale",
+     "weight": 0.25
+    },
+    {
+     "gazetteerId": "gaz_marino",
+     "weight": 0.25
+    },
+    {
+     "gazetteerId": "gaz_pavona",
+     "weight": 0.25
+    },
+    {
+     "gazetteerId": "gaz_santa_palomba",
+     "weight": 0.25
     }
    ],
    "roles": [
@@ -5568,8 +5561,8 @@
      "n": 6
     }
    ],
-   "anchorInherited": false,
-   "multiTarget": false,
+   "anchorInherited": true,
+   "multiTarget": true,
    "densityClass": "nodale"
   },
   {
@@ -5805,17 +5798,29 @@
    "id": "casal_bruciato",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato",
    "label": "Casal Bruciato",
-   "realityStatus": "Imported",
+   "realityStatus": "Transformed",
    "placeCategory": "district",
-   "description": "Quartiere di Roma",
+   "description": "Luogo trasformato, senza coordinate proprie: località dell'agro romano circoscritta da Marino e dall'Appia verso Albano (nord/nord-est), da Pavona (ovest) e da Santa Palomba (sud). Non è il quartiere romano omonimo.",
    "fuzziness": null,
    "partOf": null,
    "interpCount": 13,
    "planeCount": 8,
    "targets": [
     {
-     "gazetteerId": "gaz_casal_bruciato",
-     "weight": 1.0
+     "gazetteerId": "gaz_albano_laziale",
+     "weight": 0.25
+    },
+    {
+     "gazetteerId": "gaz_marino",
+     "weight": 0.25
+    },
+    {
+     "gazetteerId": "gaz_pavona",
+     "weight": 0.25
+    },
+    {
+     "gazetteerId": "gaz_santa_palomba",
+     "weight": 0.25
     }
    ],
    "roles": [
@@ -5847,7 +5852,7 @@
     }
    ],
    "anchorInherited": false,
-   "multiTarget": false,
+   "multiTarget": true,
    "densityClass": "frequente"
   },
   {
@@ -11359,8 +11364,20 @@
    "planeCount": 1,
    "targets": [
     {
-     "gazetteerId": "gaz_casal_bruciato",
-     "weight": 1.0
+     "gazetteerId": "gaz_albano_laziale",
+     "weight": 0.25
+    },
+    {
+     "gazetteerId": "gaz_marino",
+     "weight": 0.25
+    },
+    {
+     "gazetteerId": "gaz_pavona",
+     "weight": 0.25
+    },
+    {
+     "gazetteerId": "gaz_santa_palomba",
+     "weight": 0.25
     }
    ],
    "roles": [
@@ -11376,7 +11393,7 @@
     }
    ],
    "anchorInherited": true,
-   "multiTarget": false,
+   "multiTarget": true,
    "densityClass": "hapax"
   },
   {
@@ -15153,8 +15170,20 @@
    "planeCount": 1,
    "targets": [
     {
-     "gazetteerId": "gaz_casal_bruciato",
-     "weight": 1.0
+     "gazetteerId": "gaz_albano_laziale",
+     "weight": 0.25
+    },
+    {
+     "gazetteerId": "gaz_marino",
+     "weight": 0.25
+    },
+    {
+     "gazetteerId": "gaz_pavona",
+     "weight": 0.25
+    },
+    {
+     "gazetteerId": "gaz_santa_palomba",
+     "weight": 0.25
     }
    ],
    "roles": [
@@ -15170,7 +15199,7 @@
     }
    ],
    "anchorInherited": true,
-   "multiTarget": false,
+   "multiTarget": true,
    "densityClass": "hapax"
   },
   {
@@ -25823,15 +25852,15 @@
    "referenceId": "ref_00534",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_albano_laziale",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Indeterminate",
-   "spatialRelation": null,
+   "spatialRelation": "Near",
    "focalizerId": "pestalozzi",
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
-   "criticalNote": null
+   "criticalNote": "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."
   },
   {
    "id": "interp_00642",
@@ -26463,15 +26492,15 @@
    "referenceId": "ref_00568",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_albano_laziale",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Approximate",
-   "spatialRelation": null,
+   "spatialRelation": "Near",
    "focalizerId": "camilla_mattonari",
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
-   "criticalNote": null
+   "criticalNote": "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."
   },
   {
    "id": "interp_00682",
@@ -26911,15 +26940,15 @@
    "referenceId": "ref_00585",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_albano_laziale",
    "narrativeRole": "Marker",
    "spatialDetermination": "Precise",
-   "spatialRelation": null,
+   "spatialRelation": "Near",
    "focalizerId": "narrator",
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
-   "criticalNote": null
+   "criticalNote": "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."
   },
   {
    "id": "interp_00710",
@@ -26927,10 +26956,10 @@
    "referenceId": "ref_00586",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": null,
    "narrativeRole": "Setting",
    "spatialDetermination": "Approximate",
-   "spatialRelation": "Near",
+   "spatialRelation": null,
    "focalizerId": "pestalozzi",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -26943,10 +26972,10 @@
    "referenceId": "ref_00586",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": null,
    "narrativeRole": "Setting",
    "spatialDetermination": "Approximate",
-   "spatialRelation": "Near",
+   "spatialRelation": null,
    "focalizerId": "cocullo",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -26991,10 +27020,10 @@
    "referenceId": "ref_00589",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": null,
    "narrativeRole": "Marker",
    "spatialDetermination": "Precise",
-   "spatialRelation": "Near",
+   "spatialRelation": null,
    "focalizerId": "narrator",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27007,10 +27036,10 @@
    "referenceId": "ref_00590",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": null,
    "narrativeRole": "Marker",
    "spatialDetermination": "Precise",
-   "spatialRelation": "Near",
+   "spatialRelation": null,
    "focalizerId": "narrator",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27023,10 +27052,10 @@
    "referenceId": "ref_00591",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": null,
    "narrativeRole": "Setting",
    "spatialDetermination": "Precise",
-   "spatialRelation": "Near",
+   "spatialRelation": null,
    "focalizerId": "nonna_mattonari",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27039,10 +27068,10 @@
    "referenceId": "ref_00592",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": null,
    "narrativeRole": "Setting",
    "spatialDetermination": "Precise",
-   "spatialRelation": "Near",
+   "spatialRelation": null,
    "focalizerId": "nonna_mattonari",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27055,10 +27084,10 @@
    "referenceId": "ref_00592",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": null,
    "narrativeRole": "Setting",
    "spatialDetermination": "Precise",
-   "spatialRelation": "Near",
+   "spatialRelation": null,
    "focalizerId": "pestalozzi",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27071,10 +27100,10 @@
    "referenceId": "ref_00592",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": null,
    "narrativeRole": "Setting",
    "spatialDetermination": "Precise",
-   "spatialRelation": "Near",
+   "spatialRelation": null,
    "focalizerId": "cocullo",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27119,10 +27148,10 @@
    "referenceId": "ref_00595",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": null,
    "narrativeRole": "Setting",
    "spatialDetermination": "Approximate",
-   "spatialRelation": "Near",
+   "spatialRelation": null,
    "focalizerId": "narrator",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27199,10 +27228,10 @@
    "referenceId": "ref_00599",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": null,
    "narrativeRole": "Setting",
    "spatialDetermination": "Precise",
-   "spatialRelation": "Near",
+   "spatialRelation": null,
    "focalizerId": "camilla_mattonari",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27215,10 +27244,10 @@
    "referenceId": "ref_00599",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": null,
    "narrativeRole": "Setting",
    "spatialDetermination": "Precise",
-   "spatialRelation": "Near",
+   "spatialRelation": null,
    "focalizerId": "pestalozzi",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27231,10 +27260,10 @@
    "referenceId": "ref_00599",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": null,
    "narrativeRole": "Setting",
    "spatialDetermination": "Precise",
-   "spatialRelation": "Near",
+   "spatialRelation": null,
    "focalizerId": "cocullo",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27471,10 +27500,10 @@
    "referenceId": "ref_00611",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": null,
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Approximate",
-   "spatialRelation": "Near",
+   "spatialRelation": null,
    "focalizerId": "camilla_mattonari",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27519,10 +27548,10 @@
    "referenceId": "ref_00613",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": null,
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Approximate",
-   "spatialRelation": "Near",
+   "spatialRelation": null,
    "focalizerId": "camilla_mattonari",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27535,10 +27564,10 @@
    "referenceId": "ref_00613",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": null,
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Approximate",
-   "spatialRelation": "Near",
+   "spatialRelation": null,
    "focalizerId": "zio_cantoniere",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27551,15 +27580,15 @@
    "referenceId": "ref_00614",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_albano_laziale",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Approximate",
-   "spatialRelation": null,
+   "spatialRelation": "Near",
    "focalizerId": "zio_cantoniere",
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
-   "criticalNote": null
+   "criticalNote": "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."
   },
   {
    "id": "interp_00750",
@@ -27727,10 +27756,10 @@
    "referenceId": "ref_00621",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": null,
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Relative",
-   "spatialRelation": "Near",
+   "spatialRelation": null,
    "focalizerId": "enea_retalli",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27743,10 +27772,10 @@
    "referenceId": "ref_00621",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": null,
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Relative",
-   "spatialRelation": "Near",
+   "spatialRelation": null,
    "focalizerId": "camilla_mattonari",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27759,10 +27788,10 @@
    "referenceId": "ref_00621",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": null,
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Relative",
-   "spatialRelation": "Near",
+   "spatialRelation": null,
    "focalizerId": "lavinia_mattonari",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27967,10 +27996,10 @@
    "referenceId": "ref_00631",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": null,
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Relative",
-   "spatialRelation": "Near",
+   "spatialRelation": null,
    "focalizerId": "enea_retalli",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27983,15 +28012,15 @@
    "referenceId": "ref_00632",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_albano_laziale",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Relative",
-   "spatialRelation": null,
+   "spatialRelation": "Near",
    "focalizerId": "enea_retalli",
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
-   "criticalNote": null
+   "criticalNote": "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."
   },
   {
    "id": "interp_00777",
@@ -28191,10 +28220,10 @@
    "referenceId": "ref_00642",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": null,
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Relative",
-   "spatialRelation": "Near",
+   "spatialRelation": null,
    "focalizerId": "enea_retalli",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -28207,10 +28236,10 @@
    "referenceId": "ref_00643",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": null,
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Relative",
-   "spatialRelation": "Near",
+   "spatialRelation": null,
    "focalizerId": "enea_retalli",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -28223,10 +28252,10 @@
    "referenceId": "ref_00643",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": null,
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Relative",
-   "spatialRelation": "Near",
+   "spatialRelation": null,
    "focalizerId": "camilla_mattonari",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -29935,15 +29964,15 @@
    "referenceId": "ref_00695",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_albano_laziale",
    "narrativeRole": null,
    "spatialDetermination": null,
-   "spatialRelation": null,
+   "spatialRelation": "Near",
    "focalizerId": "ingravallo",
    "confidence": 1.0,
    "isNodeOfRoute": "tragitto_torraccio_ponte_divino_amore",
    "routeOrder": 8,
-   "criticalNote": null
+   "criticalNote": "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."
   },
   {
    "id": "interp_00901",
@@ -29951,15 +29980,15 @@
    "referenceId": "ref_00695",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_albano_laziale",
    "narrativeRole": null,
    "spatialDetermination": null,
-   "spatialRelation": null,
+   "spatialRelation": "Near",
    "focalizerId": "maresciallo_di_pietrantonio",
    "confidence": 1.0,
    "isNodeOfRoute": "tragitto_torraccio_ponte_divino_amore",
    "routeOrder": 8,
-   "criticalNote": null
+   "criticalNote": "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."
   },
   {
    "id": "interp_00902",
@@ -29967,15 +29996,15 @@
    "referenceId": "ref_00695",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_albano_laziale",
    "narrativeRole": null,
    "spatialDetermination": null,
-   "spatialRelation": null,
+   "spatialRelation": "Near",
    "focalizerId": "autista_questura",
    "confidence": 1.0,
    "isNodeOfRoute": "tragitto_torraccio_ponte_divino_amore",
    "routeOrder": 8,
-   "criticalNote": null
+   "criticalNote": "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."
   },
   {
    "id": "interp_00903",
@@ -29983,15 +30012,15 @@
    "referenceId": "ref_00695",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_albano_laziale",
    "narrativeRole": null,
    "spatialDetermination": null,
-   "spatialRelation": null,
+   "spatialRelation": "Near",
    "focalizerId": "agente_runzato",
    "confidence": 1.0,
    "isNodeOfRoute": "tragitto_torraccio_ponte_divino_amore",
    "routeOrder": 8,
-   "criticalNote": null
+   "criticalNote": "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."
   },
   {
    "id": "interp_00904",
@@ -30383,15 +30412,15 @@
    "referenceId": "ref_00706",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_albano_laziale",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Approximate",
-   "spatialRelation": null,
+   "spatialRelation": "Near",
    "focalizerId": "ingravallo",
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
-   "criticalNote": null
+   "criticalNote": "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."
   },
   {
    "id": "interp_00929",
@@ -30399,15 +30428,15 @@
    "referenceId": "ref_00706",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_albano_laziale",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Approximate",
-   "spatialRelation": null,
+   "spatialRelation": "Near",
    "focalizerId": "agente_runzato",
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
-   "criticalNote": null
+   "criticalNote": "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."
   },
   {
    "id": "interp_00930",
@@ -30671,15 +30700,15 @@
    "referenceId": "ref_00715",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_albano_laziale",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Approximate",
-   "spatialRelation": null,
+   "spatialRelation": "Near",
    "focalizerId": "ingravallo",
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
-   "criticalNote": null
+   "criticalNote": "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."
   },
   {
    "id": "interp_00947",
@@ -30687,15 +30716,15 @@
    "referenceId": "ref_00715",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_albano_laziale",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Approximate",
-   "spatialRelation": null,
+   "spatialRelation": "Near",
    "focalizerId": "agente_runzato",
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
-   "criticalNote": null
+   "criticalNote": "Ancoraggio relazionale, non un punto: Casal Bruciato è circoscritto a nord/nord-est dai Castelli (Marino, da cui parte Pestalozzi) e dall'Appia verso Albano, a ovest da Pavona, snodo del percorso e della ferrovia, a sud da Santa Palomba e dalle sue antenne. Manzotti (2010, pp. 268–270): il testo e la piantina del Touring collocano Casal Bruciato tra le ferrovie Roma–Velletri e Roma–Napoli, la carta IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte. Il testo stesso attribuisce il nome a una voce popolare: «detto da taluni di Casal Bruciato» (QP 241)."
   },
   {
    "id": "interp_00948",
@@ -37798,8 +37827,8 @@
      "order": 8,
      "interpretationId": "interp_00900",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
-     "targetId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_albano_laziale",
+     "targetId": "casal_bruciato",
      "focalizerId": "ingravallo",
      "referenceId": "ref_00695",
      "page": 297
@@ -37808,8 +37837,8 @@
      "order": 8,
      "interpretationId": "interp_00901",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
-     "targetId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_albano_laziale",
+     "targetId": "casal_bruciato",
      "focalizerId": "maresciallo_di_pietrantonio",
      "referenceId": "ref_00695",
      "page": 297
@@ -37818,8 +37847,8 @@
      "order": 8,
      "interpretationId": "interp_00902",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
-     "targetId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_albano_laziale",
+     "targetId": "casal_bruciato",
      "focalizerId": "autista_questura",
      "referenceId": "ref_00695",
      "page": 297
@@ -37828,8 +37857,8 @@
      "order": 8,
      "interpretationId": "interp_00903",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
-     "targetId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_albano_laziale",
+     "targetId": "casal_bruciato",
      "focalizerId": "agente_runzato",
      "referenceId": "ref_00695",
      "page": 297
@@ -38062,7 +38091,7 @@
     {
      "order": 8,
      "targetIds": [
-      "gaz_casal_bruciato"
+      "casal_bruciato"
      ],
      "focalizerIds": [
       "agente_runzato",
@@ -44331,7 +44360,7 @@
      "referenceId": "ref_00586",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": null,
      "interpretationId": "interp_00710",
      "role": "Setting",
      "simultaneous": false
@@ -44341,7 +44370,7 @@
      "referenceId": "ref_00592",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": null,
      "interpretationId": "interp_00718",
      "role": "Setting",
      "simultaneous": false
@@ -44371,7 +44400,7 @@
      "referenceId": "ref_00599",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": null,
      "interpretationId": "interp_00728",
      "role": "Setting",
      "simultaneous": true
@@ -44496,7 +44525,7 @@
      "referenceId": "ref_00621",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": null,
      "interpretationId": "interp_00760",
      "role": "ProjectedSpace",
      "simultaneous": false
@@ -44536,7 +44565,7 @@
      "referenceId": "ref_00631",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": null,
      "interpretationId": "interp_00775",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -44544,9 +44573,9 @@
     {
      "page": 274,
      "referenceId": "ref_00632",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "casal_bruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_albano_laziale",
      "interpretationId": "interp_00776",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -44636,7 +44665,7 @@
      "referenceId": "ref_00642",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": null,
      "interpretationId": "interp_00789",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -44646,7 +44675,7 @@
      "referenceId": "ref_00643",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": null,
      "interpretationId": "interp_00790",
      "role": "ProjectedSpace",
      "simultaneous": false
@@ -44691,7 +44720,7 @@
      "referenceId": "ref_00599",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": null,
      "interpretationId": "interp_00727",
      "role": "Setting",
      "simultaneous": true
@@ -44731,7 +44760,7 @@
      "referenceId": "ref_00611",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": null,
      "interpretationId": "interp_00744",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -44751,7 +44780,7 @@
      "referenceId": "ref_00613",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": null,
      "interpretationId": "interp_00747",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -44791,7 +44820,7 @@
      "referenceId": "ref_00621",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": null,
      "interpretationId": "interp_00761",
      "role": "ProjectedSpace",
      "simultaneous": false
@@ -44811,7 +44840,7 @@
      "referenceId": "ref_00643",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": null,
      "interpretationId": "interp_00791",
      "role": "ProjectedSpace",
      "simultaneous": false
@@ -44894,9 +44923,9 @@
     {
      "page": 240,
      "referenceId": "ref_00585",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "casal_bruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_albano_laziale",
      "interpretationId": "interp_00709",
      "role": "Marker",
      "simultaneous": true
@@ -44916,7 +44945,7 @@
      "referenceId": "ref_00589",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": null,
      "interpretationId": "interp_00714",
      "role": "Marker",
      "simultaneous": true
@@ -44926,7 +44955,7 @@
      "referenceId": "ref_00590",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": null,
      "interpretationId": "interp_00715",
      "role": "Marker",
      "simultaneous": true
@@ -44956,7 +44985,7 @@
      "referenceId": "ref_00595",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": null,
      "interpretationId": "interp_00722",
      "role": "Setting",
      "simultaneous": true
@@ -45041,7 +45070,7 @@
      "referenceId": "ref_00586",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": null,
      "interpretationId": "interp_00711",
      "role": "Setting",
      "simultaneous": false
@@ -45051,7 +45080,7 @@
      "referenceId": "ref_00592",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": null,
      "interpretationId": "interp_00719",
      "role": "Setting",
      "simultaneous": false
@@ -45061,7 +45090,7 @@
      "referenceId": "ref_00599",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": null,
      "interpretationId": "interp_00729",
      "role": "Setting",
      "simultaneous": true
@@ -45176,7 +45205,7 @@
      "referenceId": "ref_00621",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": null,
      "interpretationId": "interp_00762",
      "role": "ProjectedSpace",
      "simultaneous": false
@@ -45261,7 +45290,7 @@
      "referenceId": "ref_00613",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": null,
      "interpretationId": "interp_00748",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -45269,9 +45298,9 @@
     {
      "page": 262,
      "referenceId": "ref_00614",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "casal_bruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_albano_laziale",
      "interpretationId": "interp_00749",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -45381,7 +45410,7 @@
      "referenceId": "ref_00591",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": null,
      "interpretationId": "interp_00716",
      "role": "Setting",
      "simultaneous": true
@@ -45391,7 +45420,7 @@
      "referenceId": "ref_00592",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": null,
      "interpretationId": "interp_00717",
      "role": "Setting",
      "simultaneous": true
@@ -48729,9 +48758,9 @@
     {
      "page": 212,
      "referenceId": "ref_00534",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "casal_bruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_albano_laziale",
      "interpretationId": "interp_00641",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -49154,9 +49183,9 @@
     {
      "page": 237,
      "referenceId": "ref_00568",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "casal_bruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_albano_laziale",
      "interpretationId": "interp_00681",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -49544,9 +49573,9 @@
     {
      "page": 297,
      "referenceId": "ref_00695",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "casal_bruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_albano_laziale",
      "interpretationId": "interp_00900",
      "role": null,
      "simultaneous": true
@@ -49624,9 +49653,9 @@
     {
      "page": 298,
      "referenceId": "ref_00706",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "casal_bruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_albano_laziale",
      "interpretationId": "interp_00928",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -49714,9 +49743,9 @@
     {
      "page": 298,
      "referenceId": "ref_00715",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "casal_bruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_albano_laziale",
      "interpretationId": "interp_00946",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -49859,9 +49888,9 @@
     {
      "page": 297,
      "referenceId": "ref_00695",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "casal_bruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_albano_laziale",
      "interpretationId": "interp_00903",
      "role": null,
      "simultaneous": true
@@ -49939,9 +49968,9 @@
     {
      "page": 298,
      "referenceId": "ref_00706",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "casal_bruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_albano_laziale",
      "interpretationId": "interp_00929",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -50029,9 +50058,9 @@
     {
      "page": 298,
      "referenceId": "ref_00715",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "casal_bruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_albano_laziale",
      "interpretationId": "interp_00947",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -50214,9 +50243,9 @@
     {
      "page": 297,
      "referenceId": "ref_00695",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "casal_bruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_albano_laziale",
      "interpretationId": "interp_00901",
      "role": null,
      "simultaneous": true
@@ -50429,9 +50458,9 @@
     {
      "page": 297,
      "referenceId": "ref_00695",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "casal_bruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_albano_laziale",
      "interpretationId": "interp_00902",
      "role": null,
      "simultaneous": true
@@ -57995,7 +58024,7 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "casal_bruciato",
    "interpretationId": "interp_00641",
    "referenceId": "ref_00534",
    "page": 212,
@@ -58413,7 +58442,7 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "casal_bruciato",
    "interpretationId": "interp_00681",
    "referenceId": "ref_00568",
    "page": 237,
@@ -58688,7 +58717,7 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "casal_bruciato",
    "interpretationId": "interp_00709",
    "referenceId": "ref_00585",
    "page": 240,
@@ -59128,7 +59157,7 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "casal_bruciato",
    "interpretationId": "interp_00749",
    "referenceId": "ref_00614",
    "page": 262,
@@ -59425,7 +59454,7 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "casal_bruciato",
    "interpretationId": "interp_00776",
    "referenceId": "ref_00632",
    "page": 274,
@@ -60723,7 +60752,7 @@
    "isRouteNode": "tragitto_torraccio_ponte_divino_amore"
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "casal_bruciato",
    "interpretationId": "interp_00900",
    "referenceId": "ref_00695",
    "page": 297,
@@ -60734,7 +60763,7 @@
    "isRouteNode": "tragitto_torraccio_ponte_divino_amore"
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "casal_bruciato",
    "interpretationId": "interp_00901",
    "referenceId": "ref_00695",
    "page": 297,
@@ -60745,7 +60774,7 @@
    "isRouteNode": "tragitto_torraccio_ponte_divino_amore"
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "casal_bruciato",
    "interpretationId": "interp_00902",
    "referenceId": "ref_00695",
    "page": 297,
@@ -60756,7 +60785,7 @@
    "isRouteNode": "tragitto_torraccio_ponte_divino_amore"
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "casal_bruciato",
    "interpretationId": "interp_00903",
    "referenceId": "ref_00695",
    "page": 297,
@@ -60987,7 +61016,7 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "casal_bruciato",
    "interpretationId": "interp_00928",
    "referenceId": "ref_00706",
    "page": 298,
@@ -60998,7 +61027,7 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "casal_bruciato",
    "interpretationId": "interp_00929",
    "referenceId": "ref_00706",
    "page": 298,
@@ -61185,7 +61214,7 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "casal_bruciato",
    "interpretationId": "interp_00946",
    "referenceId": "ref_00715",
    "page": 298,
@@ -61196,7 +61225,7 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "casal_bruciato",
    "interpretationId": "interp_00947",
    "referenceId": "ref_00715",
    "page": 298,
