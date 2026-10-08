@@ -9876,7 +9876,7 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     dcterms:creator "Carlo Emilio Gadda"@it ;
     dcterms:date "1946"^^xsd:gYear ;
     dcterms:title "Quer pasticciaccio brutto de via Merulana"@it ;
-    rdfs:comment "Prima pubblicazione in 5 tratti sulla rivista Letteratura, dal 1946 al 1948"@it .
+    rdfs:comment "Prima pubblicazione in cinque puntate sulla rivista «Letteratura», fascicoli 26, 27, 28, 29 e 31 del 1946 (Pinotti 2016, p. 200, n. 4)"@it .
 
 <https://w3id.org/gaddatlas/id/focalizer/barbezzi_gallo> a chora:Character,
         chora:FocalizingAgent ;

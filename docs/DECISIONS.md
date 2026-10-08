@@ -462,6 +462,18 @@ guardato a schermo prima di darlo per buono.
 
 ---
 
+## D-021 — Metadati della redazione in «Letteratura» (8 ottobre 2026)
+
+- Requisito/i: R01 (testimone e redazione) · Ipotesi: H2 · Data check: DC-05 (work order T-40, parte di fase 1)
+- Stato precedente: `work/quer_pasticciaccio_letteratura`, nota: «Prima pubblicazione in 5 tratti sulla rivista Letteratura, dal 1946 al 1948». L'arco 1946–1948 è errato: le puntate escono tutte nel 1946.
+- Decisione: nota corretta in «Prima pubblicazione in cinque puntate sulla rivista «Letteratura», fascicoli 26, 27, 28, 29 e 31 del 1946 (Pinotti 2016, p. 200, n. 4)». Il resto della riga è invariato. La separazione fra opera e testimoni (QPL, dtsFG, bzFG, QP57, QP) resta T-40, `DA DECIDERE` (fase 2).
+- Motivazione (fonte, pagina): Pinotti 2016, p. 200, n. 4; Pinotti 2024, § 7.2; Cap. 4, § 4.2 (r. 41): fascicoli 26, 27, 28, 29 e 31 del 1946, con la sola omissione del n. 30.
+- Fase in cui è maturata: analisi del testo (revisione della bibliografia per il Cap. 4)
+- File toccati (manifest): `data/source/tables/LiteraryWorks.tsv:3` (colonna `Notes`); `data/source/xlsx/LiteraryWorks.xlsx` (rigenerato). Derivati: `data/gaddatlas.ttl`, `data/dist/gaddatlas-full.ttl`.
+- Effetto su KG (triple prima/dopo, SHACL): cambia solo il letterale `rdfs:comment` dell'opera. ABox 16.045 → 16.045; full 17.203 → 17.203; SHACL conforme, 0 violazioni.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`
