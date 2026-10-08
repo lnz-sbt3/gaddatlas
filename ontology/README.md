@@ -68,8 +68,8 @@ l'attestazione, e più interpretazioni possono insistere sulla stessa occorrenza
 ## File
 
 ```
-chora.rdf                        la TBox (sorgente, curata in Protégé)
-chora.ttl                        TBox in Turtle (derivata dall'RDF tramite ETL)
+chora.ttl                        la TBox (sorgente, D-016; da Protégé si salva qui)
+chora.rdf                        TBox in RDF/XML per Protégé (derivata dall'ETL)
 shapes/chora-shapes.ttl          vincoli SHACL sulla struttura
 shapes/chora-placecategories.ttl vocabolario SKOS delle categorie di luogo
 queries/competency.rq            12 competency question

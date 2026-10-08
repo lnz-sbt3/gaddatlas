@@ -13,7 +13,7 @@ Le sorgenti sono:
 | `source/mapping.yaml` | etichette italiane → URI dell'ontologia |
 | `source/void_seeds.json` | 48 semi congelati dei tasselli fittizi |
 | `source/roma.geojson` | contorno amministrativo di Roma, sfondo della mappa |
-| `../ontology/chora.rdf` | la TBox, curata in Protégé |
+| `../ontology/chora.ttl` | la TBox (D-016); `chora.rdf` ne è il derivato RDF/XML |
 
 Dopo ogni modifica a una di queste:
 

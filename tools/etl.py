@@ -1265,15 +1265,15 @@ def main():
     )
     parser.add_argument(
         '--ontology-source',
-        default='ontology/chora.rdf',
-        help='T-Box CHORA sorgente RDF/XML '
-             '(default: ontology/chora.rdf)'
+        default='ontology/chora.ttl',
+        help='T-Box CHORA sorgente, in Turtle (D-016) '
+             '(default: ontology/chora.ttl)'
     )
     parser.add_argument(
         '--ontology-output',
-        default='ontology/chora.ttl',
-        help='Serializzazione Turtle della sola T-Box CHORA '
-             '(default: ontology/chora.ttl)'
+        default='ontology/chora.rdf',
+        help='Serializzazione RDF/XML della sola T-Box CHORA, per Protege '
+             '(default: ontology/chora.rdf)'
     )
     parser.add_argument(
         '--tbox',
@@ -1307,9 +1307,10 @@ def main():
     try:
         etl.run(output_file=args.output)
 
-        # La T-Box canonica e' mantenuta in RDF/XML da Protege e viene sempre
-        # riserializzata in Turtle. Il grafo T-Box+A-Box resta un artefatto
-        # distinto, per non mescolare l'ontologia riusabile con il dataset.
+        # La T-Box canonica e' chora.ttl (D-016): si legge in Turtle e si
+        # riserializza in RDF/XML per chi la apre in Protege. Il grafo
+        # T-Box+A-Box resta un artefatto distinto, per non mescolare
+        # l'ontologia riusabile con il dataset.
         ontology_source = Path(args.ontology_source)
         if not ontology_source.is_file():
             raise FileNotFoundError(
@@ -1317,7 +1318,7 @@ def main():
             )
 
         ontology = Graph()
-        ontology.parse(str(ontology_source), format='xml')
+        ontology.parse(str(ontology_source), format='turtle')
         version = ontology.value(CHORA_ONTOLOGY, OWL.versionInfo)
         if str(version) != CHORA_VERSION:
             raise ValueError(
@@ -1326,7 +1327,7 @@ def main():
             )
         ontology.bind('chora', CHORA, override=True, replace=True)
         ontology_output = Path(args.ontology_output)
-        canonical(ontology).serialize(destination=ontology_output, format='turtle')
+        canonical(ontology).serialize(destination=ontology_output, format='xml')
         logger.info(
             f"T-Box CHORA {CHORA_VERSION}: {ontology_output} "
             f"({len(ontology)} triple)"

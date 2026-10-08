@@ -34,8 +34,8 @@ FICLIT, XXXIX ciclo.
 ```
 gaddatlas/
 ├── ontology/                    ← CHORA: lo schema, riusabile oltre Gadda
-│   ├── chora.rdf                  TBox (SORGENTE, curata in Protégé)
-│   ├── chora.ttl                  TBox in Turtle (derivata dall'RDF)
+│   ├── chora.ttl                  TBox (SORGENTE, D-016)
+│   ├── chora.rdf                  TBox in RDF/XML per Protégé (derivata)
 │   ├── shapes/                    vincoli SHACL + vocabolario SKOS
 │   ├── queries/                   12 competency + 10 integrity query
 │   ├── docs/                      documentazione pyLODE
@@ -59,13 +59,13 @@ gaddatlas/
 ### Il principio architetturale
 
 Le sorgenti modificabili a mano sono **due**: i fogli di annotazione in
-`data/source/xlsx/` e la TBox in `ontology/chora.rdf`. Tutto il resto è
+`data/source/xlsx/` e la TBox in `ontology/chora.ttl` (D-016). Tutto il resto è
 derivato e rigenerabile con `make all`.
 
 ```
 data/source/xlsx/*.xlsx  ──▶  tables/*.tsv  ─┐
                                               ├─(tools/etl.py + mapping.yaml)─▶  data/gaddatlas.ttl
-ontology/chora.rdf  ─────────────────────────┘                                        │
+ontology/chora.ttl  ─────────────────────────┘                                        │
                                                                                       ▼
                                                                     data/dist/gaddatlas-full.ttl
                                                                           │              │

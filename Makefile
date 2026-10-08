@@ -21,15 +21,16 @@ all: rdf geojson passages audit
 
 check: all shacl queries
 
-# Sorgenti: i fogli in data/source/, il mapping, e la TBox in ontology/chora.rdf
-# (curata in Protege, che salva in RDF/XML). chora.ttl e' DERIVATA da chora.rdf.
+# Sorgenti: i TSV in data/source/tables/, il mapping, e la TBox in
+# ontology/chora.ttl (D-016). chora.rdf e' DERIVATA da chora.ttl, in RDF/XML
+# per Protege: se si lavora in Protege si salva su chora.ttl.
 rdf:
 	python3 tools/etl.py \
 	  --mapping data/source/mapping.yaml \
 	  --base-dir . \
 	  --data-dir data/source/tables \
-	  --ontology-source ontology/chora.rdf \
-	  --ontology-output ontology/chora.ttl \
+	  --ontology-source ontology/chora.ttl \
+	  --ontology-output ontology/chora.rdf \
 	  --tbox ontology/shapes/chora-placecategories.ttl \
 	  --output data/gaddatlas.ttl \
 	  --full-output data/dist/gaddatlas-full.ttl
