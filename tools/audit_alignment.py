@@ -23,6 +23,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TTL = ROOT / "data" / "dist" / "gaddatlas-full.ttl"
 GEOJSON = ROOT / "data" / "dist" / "gaddatlas.geojson"
 PASSAGES = ROOT / "data" / "dist" / "passages" / "index.json"
+APP_DATA = ROOT / "app" / "public" / "data"
 
 CHORA = Namespace("https://w3id.org/chora#")
 # namespace del progetto nella forma da NON trovare (http al posto di https)
@@ -164,6 +165,21 @@ def main() -> int:
         not bad_iri,
         "ogni IRI del grafo e' assoluto (http/https), e https nei namespace del progetto",
         "\n".join(sorted(bad_iri)[:20]),
+    )
+
+    # copie pubblicate per l'interfaccia (T-83): byte per byte uguali ai
+    # derivati, altrimenti l'app mostra dati diversi da quelli del grafo
+    published = [GEOJSON, *sorted(PASSAGES.parent.glob("*.json"))]
+    stale = []
+    for src in published:
+        dst = APP_DATA / src.relative_to(ROOT / "data" / "dist")
+        if not dst.exists() or dst.read_bytes() != src.read_bytes():
+            stale.append(str(dst.relative_to(ROOT)))
+    a.check(
+        not stale,
+        f"app/public/data coincide con data/dist ({len(published) - len(stale)}/"
+        f"{len(published)} file; se no: make publish-data)",
+        "\n".join(stale),
     )
 
     # ── esclusioni attese: informative, non errori ───────────────────────

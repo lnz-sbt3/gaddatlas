@@ -46,8 +46,6 @@ Le tre non negoziabili:
    `app/public/data/` (`make publish-data`). Una modifica a mano lì sparisce al
    build successivo. Se Lorenzo lavora in Protégé, salva su `chora.ttl`.
 
-   > T-81 (D-016) e T-80 (D-015) sono chiusi. Finché T-83 non è chiuso,
-   > `make publish-data` non esiste: vedi `docs/alignment/AUDIT_0.md`, premessa 10.
 3. **Nessun URL di hosting cablato** (D-007). Il `base` di Vite viene da una
    variabile d'ambiente. Il sito potrebbe passare da GitHub Pages a
    `projects.dharc.unibo.it`: deve restare una variabile, non una migrazione.

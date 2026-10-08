@@ -19,7 +19,7 @@ jobs:
       # Rigenera l'intera catena dalle sorgenti: fogli + TBox -> TTL ->
       # geojson + brani. Deve produrre esattamente i file versionati.
       - name: rigenera i derivati dalle sorgenti
-        run: make rdf geojson passages
+        run: make rdf geojson passages publish-data
 
       - name: verifica di coerenza fra sorgenti e derivati
         run: make audit
@@ -34,9 +34,9 @@ jobs:
       # quindi va escluso dal confronto o farebbe fallire il diff.
       - name: i derivati versionati devono coincidere con la build
         run: |
-          if ! git diff --quiet -- data/dist ontology ':!data/dist/atlas.json'; then
+          if ! git diff --quiet -- data/dist ontology app/public/data ':!data/dist/atlas.json'; then
             echo "I file derivati versionati non coincidono con il risultato della build."
             echo "Esegui 'make all' in locale e committa il risultato."
-            git diff --stat -- data/dist ontology ':!data/dist/atlas.json'
+            git diff --stat -- data/dist ontology app/public/data ':!data/dist/atlas.json'
             exit 1
           fi

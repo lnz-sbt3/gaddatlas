@@ -1,13 +1,14 @@
-.PHONY: help all rdf geojson passages audit shacl queries docs clean check xlsx
+.PHONY: help all rdf geojson passages publish-data audit shacl queries docs clean check xlsx
 
 help:
 	@echo ""
-	@echo "  make all       catena completa: rdf -> geojson -> passages -> audit"
+	@echo "  make all       catena completa: rdf -> geojson -> passages -> publish-data -> audit"
 	@echo "  make check     all + shacl + queries (verifica totale)"
 	@echo ""
 	@echo "  make rdf       fogli + TBox  -> data/gaddatlas.ttl e dist/gaddatlas-full.ttl"
 	@echo "  make geojson   TTL           -> gaddatlas.geojson, atlas.slim.json, void_seeds"
 	@echo "  make passages  TTL           -> data/dist/passages/*.json"
+	@echo "  make publish-data  data/dist -> app/public/data (GeoJSON e brani)"
 	@echo "  make audit     verifica la coerenza fra sorgenti e derivati"
 	@echo "  make shacl     validazione SHACL (deve dire CONFORMS: True)"
 	@echo "  make queries   12 competency + 10 integrity query"
@@ -18,7 +19,7 @@ help:
 
 # La catena completa. L'ordine conta: geojson e passages leggono il TTL
 # prodotto da rdf, e audit confronta i tre risultati fra loro.
-all: rdf geojson passages audit
+all: rdf geojson passages publish-data audit
 
 check: all shacl queries
 
@@ -52,6 +53,14 @@ geojson:
 
 passages:
 	python3 tools/build_passages.py
+
+# L'interfaccia carica i dati da app/public/data/: sono una copia dei
+# derivati, non una sorgente (T-83). roma.geojson ha sorgente propria in
+# data/source/ e non passa di qui. audit verifica che le copie coincidano.
+publish-data:
+	mkdir -p app/public/data/passages
+	cp data/dist/gaddatlas.geojson app/public/data/gaddatlas.geojson
+	cp data/dist/passages/*.json app/public/data/passages/
 
 audit:
 	python3 tools/audit_alignment.py
