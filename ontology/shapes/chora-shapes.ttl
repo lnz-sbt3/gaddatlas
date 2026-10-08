@@ -182,7 +182,7 @@ ga:NarrativePlaceShape
     sh:property [
         sh:path ga:hasRealityStatus ;
         sh:maxCount 1 ;
-        sh:in ( ga:Imported ga:Transformed ga:Imagined ga:Invented ) ;
+        sh:in ( ga:Imported ga:Transformed ga:Invented ga:Imagined ) ;
         sh:message "hasRealityStatus deve essere uno dei 4 valori ammessi, al massimo uno per luogo (invariante)." ;
         sh:severity sh:Violation ;
     ] ;

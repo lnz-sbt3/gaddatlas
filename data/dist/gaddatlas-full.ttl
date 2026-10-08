@@ -223,7 +223,7 @@ chora:hasPlaceCategory a owl:ObjectProperty ;
 
 chora:hasRealityStatus a owl:ObjectProperty ;
     dcterms:references chora:RealityStatusScheme ;
-    rdfs:comment "Assigns the reality–fiction status (imported, transformed, imagined, invented) of a narrative place. This is an invariant property of the place as an authorial transposition of the real world into the text, NOT dependent on focalizer or interpretation."@en ;
+    rdfs:comment "Assigns the reality–fiction status of a narrative place, on a scale ordered from the concrete to the abstract: imported, transformed, invented, imagined (skos:notation 1–4; Reuschel, Piatti and Hurni 2013, pp. 138–139). This is an invariant property of the place as an authorial transposition of the real world into the text, NOT dependent on focalizer or interpretation."@en ;
     rdfs:domain chora:NarrativePlace ;
     rdfs:range skos:Concept ;
     skos:altLabel "ha stato di realtà"@it ;
@@ -10106,7 +10106,7 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     rdfs:label "Castello"@it ;
     dcterms:description "Luogo narrativo immaginato, un castello nella zona tra Pavona e Frattocchie"@it ;
     chora:hasPlaceCategory chora:castle ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/colli_albani> a chora:NarrativePlace ;
     rdfs:label "Colli Albani"@it ;
@@ -13691,7 +13691,7 @@ chora:ward a owl:NamedIndividual,
     rdfs:label "Grotta de Sor Pippo"@it ;
     dcterms:description "Trattoria non meglio identificata nel territorio di Marino"@it ;
     chora:hasPlaceCategory chora:restaurant ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/india> a chora:NarrativePlace ;
     rdfs:label "India"@it ;
@@ -13759,7 +13759,7 @@ chora:ward a owl:NamedIndividual,
     rdfs:label "Monte Nuncupale"@it ;
     dcterms:description "Monte inventato, collocato nella zona dei Colli Albani/marino"@it ;
     chora:hasPlaceCategory chora:mountain ;
-    chora:hasRealityStatus chora:Invented .
+    chora:hasRealityStatus chora:Imagined .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/monte_soratte> a chora:NarrativePlace ;
     rdfs:label "Monte Soratte"@it ;
@@ -13927,7 +13927,7 @@ chora:ward a owl:NamedIndividual,
     rdfs:label "Pozzofondo"@it ;
     dcterms:description "località immaginaria, luogo d'origine di Clelia Farcioni"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/quartierino_prati> a chora:NarrativePlace ;
     rdfs:label "Quartierino Prati"@it ;
@@ -14298,7 +14298,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/villino_lungotevere> a chora:NarrativePlace ;
     rdfs:label "Villino Lungotevere"@it ;
     chora:hasPlaceCategory chora:villa ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/vite> a chora:NarrativePlace ;
     rdfs:label "Vite"@it ;
@@ -19115,12 +19115,12 @@ chora:village a owl:NamedIndividual,
     rdfs:label "Casa del Butiro"@it ;
     dcterms:description "Casa immaginata nella zona dei Due Santi"@it ;
     chora:hasPlaceCategory chora:farmhouse ;
-    chora:hasRealityStatus chora:Invented .
+    chora:hasRealityStatus chora:Imagined .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/cassero> a chora:NarrativePlace ;
     rdfs:label "Cassero"@it ;
     chora:hasPlaceCategory chora:castle ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/castel_di_leva> a chora:NarrativePlace ;
     rdfs:label "Castel di Leva"@it ;
@@ -19132,7 +19132,7 @@ chora:village a owl:NamedIndividual,
     dcterms:description "Castello d'immaginazione, deformazione linguistica di Castel Porziano"@it ;
     skos:altLabel "castel porcino"@it ;
     chora:hasPlaceCategory chora:castle ;
-    chora:hasRealityStatus chora:Invented .
+    chora:hasRealityStatus chora:Imagined .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/cecchina> a chora:NarrativePlace ;
     rdfs:label "Cecchina"@it ;
@@ -19214,7 +19214,7 @@ chora:village a owl:NamedIndividual,
     dcterms:description "Luogo non precisato simile a un orto o una vigna, di fronte al laboratorio della Zamira, al lato opposto della via Appia"@it ;
     chora:hasFuzzinessLevel 4.0 ;
     chora:hasPlaceCategory chora:kitchen_garden ;
-    chora:hasRealityStatus chora:Imagined ;
+    chora:hasRealityStatus chora:Invented ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/ostia> a chora:NarrativePlace ;
@@ -19292,7 +19292,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/narrativeplace/roccafringoli> a chora:NarrativePlace ;
     rdfs:label "Roccafringoli"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Invented .
+    chora:hasRealityStatus chora:Imagined .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/santa_margherita_in_abitacolo> a chora:NarrativePlace ;
     rdfs:label "Santa Margherita in Abitacolo"@it ;
@@ -19396,7 +19396,7 @@ chora:village a owl:NamedIndividual,
     dcterms:description "via topograficamente non precisata"@it ;
     rdfs:comment "Toponimo non attestato nella toponomastica storica milanese. L’espressione «via delle Oche» è qui utilizzata in modo allusivo e deformante; la localizzazione urbana non va intesa in senso referenziale, ma come costruzione narrativa simbolica."@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_di_san_paolo_della_croce> a chora:NarrativePlace ;
     rdfs:label "Via di San Paolo della Croce"@it ;
@@ -20617,7 +20617,7 @@ chora:temple a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira> a chora:NarrativePlace ;
     rdfs:label "Casuccia della Zamira"@it ;
     chora:hasPlaceCategory chora:dwelling ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/celio> a chora:NarrativePlace ;
     rdfs:label "Celio"@it ;
@@ -20629,7 +20629,7 @@ chora:temple a owl:NamedIndividual,
     dcterms:description "Edicola immaginata al di sopra del muro di cinta della vigna/orto sul lato opposto della via Appia rispetto al laboratorio della Zamira"@it ;
     skos:altLabel "tabernacolo appia"@it ;
     chora:hasPlaceCategory chora:shrine ;
-    chora:hasRealityStatus chora:Imagined ;
+    chora:hasRealityStatus chora:Invented ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/falcognana> a chora:NarrativePlace ;
@@ -20658,7 +20658,7 @@ chora:temple a owl:NamedIndividual,
     dcterms:description "Albergo immaginario, possibile deformazione di Pensione Villa Borghese, via Sgambati 4, vicino Porta Pinciana"@it ;
     chora:hasFuzzinessLevel 4.0 ;
     chora:hasPlaceCategory chora:hotel ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_san_lorenzo_in_lucina> a chora:NarrativePlace ;
     rdfs:label "Piazza San Lorenzo in Lucina"@it ;
@@ -20682,7 +20682,7 @@ chora:temple a owl:NamedIndividual,
     dcterms:description "Toponimo indiano fittizio, ancorato a un referente reale (Brahmaputra) ma non identificabile:"@it ;
     chora:hasFuzzinessLevel 3.0 ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Invented .
+    chora:hasRealityStatus chora:Imagined .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/solforata> a chora:NarrativePlace ;
     rdfs:label "Solforata"@it ;
@@ -21357,7 +21357,7 @@ chora:police_station a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/narrativeplace/bottega_ceccherelli> a chora:NarrativePlace ;
     rdfs:label "Bottega Ceccherelli"@it ;
     chora:hasPlaceCategory chora:retail_business ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/campo_marzio> a chora:NarrativePlace ;
     rdfs:label "Campo Marzio"@it ;
@@ -22141,7 +22141,7 @@ chora:interior a owl:NamedIndividual,
     rdfs:label "Cantinone d'Albano"@it ;
     dcterms:description "Ristorante non identificato nel territorio di Albano Laziale"@it ;
     chora:hasPlaceCategory chora:restaurant ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/milano> a chora:NarrativePlace ;
     rdfs:label "Milanno"@it ;
@@ -22339,15 +22339,6 @@ chora:station a owl:NamedIndividual,
     chora:hasPlaceCategory chora:street ;
     chora:hasRealityStatus chora:Imported .
 
-chora:Invented a owl:NamedIndividual,
-        skos:Concept ;
-    owl:differentFrom chora:Transformed ;
-    skos:altLabel "Inventato"@it ;
-    skos:definition "There is no hint at all about the position of the setting, it is located ‘somewhere’, with no real-world counterpart, only existing within the narration. Consequently, it is not possible to assign coordinates" ;
-    skos:inScheme chora:RealityStatusScheme ;
-    skos:prefLabel "Invented"@en ;
-    skos:topConceptOf chora:RealityStatusScheme .
-
 chora:restaurant a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "Ristorante"@it ;
@@ -22361,8 +22352,21 @@ chora:restaurant a owl:NamedIndividual,
     rdfs:label "Casa Crocchiapani"@it ;
     dcterms:description "Abitazione immaginaria di Assunta (Tina) Crocchiapani"@it ;
     chora:hasPlaceCategory chora:farmhouse ;
-    chora:hasRealityStatus chora:Imagined ;
+    chora:hasRealityStatus chora:Invented ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/tor_di_gheppio> .
+
+chora:Imagined a owl:NamedIndividual,
+        skos:Concept ;
+    owl:differentFrom chora:Imported,
+        chora:Invented,
+        chora:Transformed ;
+    skos:altLabel "Immaginato"@it ;
+    skos:definition "There is no hint at all about the position of the setting, it is located ‘somewhere’, with no real-world counterpart, only existing within the narration. Consequently, it is not possible to assign coordinates" ;
+    skos:inScheme chora:RealityStatusScheme ;
+    skos:notation "4" ;
+    skos:prefLabel "Imagined"@en ;
+    skos:scopeNote "Fourth and most abstract degree of the scale: the place is set 'somewhere', without any indication of position. Not to be confused with Invented, a fictional place located within a known geography (Reuschel, Piatti and Hurni 2013, pp. 138–139)."@en ;
+    skos:topConceptOf chora:RealityStatusScheme .
 
 chora:RealityStatusScheme a owl:NamedIndividual,
         skos:ConceptScheme ;
@@ -22711,7 +22715,7 @@ chora:mountain a owl:NamedIndividual,
     dcterms:description "Località inventata, natali dell'Assunta Crocchiapani"@it ;
     chora:hasFuzzinessLevel 4.0 ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Invented .
 
 chora:district a owl:NamedIndividual,
         skos:Concept ;
@@ -22742,17 +22746,6 @@ chora:square a owl:NamedIndividual,
     dcterms:description "Il «ponte» è il cavalcavia stradale della SP 91/b sulla ferrovia Roma–Velletri, oggi linea FL4. Non attraversa un corso d’acqua e non coincide con un ponte situato accanto al santuario."@it ;
     chora:hasPlaceCategory chora:street ;
     chora:hasRealityStatus chora:Transformed .
-
-chora:Imagined a owl:NamedIndividual,
-        skos:Concept ;
-    owl:differentFrom chora:Imported,
-        chora:Invented,
-        chora:Transformed ;
-    skos:altLabel "Immaginato"@it ;
-    skos:definition "An invented setting within familiar geographical reality" ;
-    skos:inScheme chora:RealityStatusScheme ;
-    skos:prefLabel "Imagined"@en ;
-    skos:topConceptOf chora:RealityStatusScheme .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_ponte_divino_amore> a chora:GazetteerEntity ;
     rdfs:label "Ponte al Divino Amore"@it ;
@@ -22834,6 +22827,19 @@ chora:basilica a owl:NamedIndividual,
     chora:characterName "Giuliano Valdarena"@it ;
     chora:hasGender "male"^^xsd:string .
 
+chora:Invented a owl:NamedIndividual,
+        skos:Concept ;
+    owl:differentFrom chora:Imagined,
+        chora:Imported,
+        chora:Transformed ;
+    skos:altLabel "Inventato"@it ;
+    skos:definition "An invented setting within familiar geographical reality" ;
+    skos:inScheme chora:RealityStatusScheme ;
+    skos:notation "3" ;
+    skos:prefLabel "Invented"@en ;
+    skos:scopeNote "Third degree of the scale: a fictional place set within a known, identifiable geography, so that its position can be indicated or inferred. Not to be confused with Imagined, which has no indication of position at all (Reuschel, Piatti and Hurni 2013, pp. 138–139)."@en ;
+    skos:topConceptOf chora:RealityStatusScheme .
+
 chora:Overlaps a owl:NamedIndividual,
         skos:Concept ;
     dcterms:description "A e B condividono una porzione di spazio senza che l'uno contenga l'altro. Sovrapposizione parziale."@it ;
@@ -22889,7 +22895,7 @@ chora:NarrativeRoute a owl:Class ;
     rdfs:label "Laboratorio della Zamira Pacori"@it ;
     skos:altLabel "antro; botteguccia; bottega"@it ;
     chora:hasPlaceCategory chora:building ;
-    chora:hasRealityStatus chora:Imagined ;
+    chora:hasRealityStatus chora:Invented ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira> .
 
 <https://w3id.org/gaddatlas/id/focalizer/camilla_mattonari> a chora:Character,
@@ -23075,9 +23081,13 @@ chora:Route a owl:NamedIndividual,
 
 chora:Transformed a owl:NamedIndividual,
         skos:Concept ;
+    owl:differentFrom chora:Imagined,
+        chora:Imported,
+        chora:Invented ;
     skos:altLabel "Trasformato"@it ;
     skos:definition "The setting is transformed, with techniques of remodelling, renaming, relocation or a synthesis of several places" ;
     skos:inScheme chora:RealityStatusScheme ;
+    skos:notation "2" ;
     skos:prefLabel "Transformed"@en ;
     skos:topConceptOf chora:RealityStatusScheme .
 
@@ -23461,11 +23471,13 @@ chora:Relative a owl:NamedIndividual,
 
 chora:Imported a owl:NamedIndividual,
         skos:Concept ;
-    owl:differentFrom chora:Invented,
+    owl:differentFrom chora:Imagined,
+        chora:Invented,
         chora:Transformed ;
     skos:altLabel "Importato"@it ;
     skos:definition "The setting corresponds with the geographical reality by realistically portraying the surrounding" ;
     skos:inScheme chora:RealityStatusScheme ;
+    skos:notation "1" ;
     skos:prefLabel "Imported"@en ;
     skos:topConceptOf chora:RealityStatusScheme .
 

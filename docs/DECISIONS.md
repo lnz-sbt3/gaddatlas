@@ -527,6 +527,18 @@ guardato a schermo prima di darlo per buono.
 
 ---
 
+## D-026 — Permutazione Invented ↔ Imagined (8 ottobre 2026)
+
+- Requisito/i: R07 · Ipotesi: H3 · Data check: DM-01, DC-16 (work order T-04)
+- Stato precedente: nella TBox le definizioni SKOS dei due concetti erano invertite rispetto a Reuschel, Piatti e Hurni (2013, pp. 138–139): `chora:Imagined` aveva la definizione dell'*invented* («An invented setting within familiar geographical reality») e `chora:Invented` quella dell'*imagined* («no hint at all about the position… ‘somewhere’»). L'ordine della scala non era dichiarato e il commento di `hasRealityStatus` elencava «imported, transformed, imagined, invented». Gli `owl:differentFrom` erano asimmetrici (Imported senza Imagined, Invented solo con Transformed, Transformed senza alcuno). Dati: 15 Imagined, 5 Invented.
+- Decisione (di Lorenzo, 8/10/2026): le due etichette erano invertite di nome, in TBox e nei dati. Si corregge con una **permutazione completa**, non con una revisione caso per caso (unica eccezione decisa alla regola «niente sostituzioni globali sui valori semantici»). Nella TBox: definizioni scambiate; `skos:notation` 1–4 (Imported, Transformed, Invented, Imagined: dal concreto all'astratto); uno `skos:scopeNote` su Invented e su Imagined con la fonte; commento di `hasRealityStatus` riscritto con l'ordine della scala; `owl:differentFrom` completi fra i quattro concetti. Nei dati: scambio atomico dei valori in `NarrativePlaces.tsv`, passando per un valore temporaneo (script una tantum, non versionato). Ordine allineato anche in shape, mapping e README. I **glifi** del prototipo non sono toccati: restano legati al nome dello statuto, ed è DA DECIDERE con T-65 se debbano seguire il significato.
+- Motivazione (fonte, pagina): Reuschel, Piatti e Hurni 2013, pp. 138–139; Cap. 4, § 4.3 (r. 85); DATA_CHECKS DM-01.
+- Fase in cui è maturata: revisione critica (stesura del Cap. 4)
+- File toccati (manifest): `ontology/chora.ttl:377` (commento), `:527-529` (Imagined: definizione, notation, scopeNote), `:609-614` (Imported: differentFrom, notation), `:657-663` (Invented: differentFrom, definizione, notation, scopeNote), `:697-702` (Transformed: differentFrom, notation); `ontology/shapes/chora-shapes.ttl:185`; `data/source/mapping.yaml:38-43`; `README.md:111`, `:129`; `data/source/tables/NarrativePlaces.tsv` (20 righe, colonna `Reality_Status`); `NarrativePlaces.xlsx` e `chora.rdf` rigenerati.
+- Effetto su KG (triple prima/dopo, SHACL): TBox 588 → **600** (+4 `skos:notation`, +2 `skos:scopeNote`, +6 `owl:differentFrom`); ABox 16.044 → 16.044 (cambiano solo i valori); full 17.202 → **17.214**. Statuti: Imported 259, Transformed 30, **Invented 15, Imagined 5**. I conteggi attesi dal work order (260/29/15/5) precedono T-15, che ha portato Casal Bruciato da Imported a Transformed. GeoJSON: cambia solo `reality_status` su 19 tessere (`castello` non ne ha una). SHACL conforme, 0 violazioni. **Elenchi.** Ora Invented (prima Imagined): bottega_ceccherelli, cantinone_albano, casa_crocchiapani, cassero, castello, casuccia_zamira, edicola_due_santi, grotta_de_sor_pippo, laboratorio_zamira, orto_vigna_due_santi, pensione_burgess, pozzofondo, tor_di_gheppio, via_delle_oche, villino_lungotevere. Ora Imagined (prima Invented): casa_del_butiro, castel_porcano, monte_nuncupale, roccafringoli, scerpure. **Da fare:** `make docs` (rinviato a fine fase); `ontology/chora.jsonld` non è generato da nessuno strumento e contiene ancora le definizioni invertite.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

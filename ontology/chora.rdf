@@ -464,19 +464,23 @@
     <owl:differentFrom rdf:resource="https://w3id.org/chora#Invented"/>
     <owl:differentFrom rdf:resource="https://w3id.org/chora#Transformed"/>
     <skos:altLabel xml:lang="it">Immaginato</skos:altLabel>
-    <skos:definition>An invented setting within familiar geographical reality</skos:definition>
+    <skos:definition>There is no hint at all about the position of the setting, it is located ‘somewhere’, with no real-world counterpart, only existing within the narration. Consequently, it is not possible to assign coordinates</skos:definition>
     <skos:inScheme rdf:resource="https://w3id.org/chora#RealityStatusScheme"/>
+    <skos:notation>4</skos:notation>
     <skos:prefLabel xml:lang="en">Imagined</skos:prefLabel>
+    <skos:scopeNote xml:lang="en">Fourth and most abstract degree of the scale: the place is set 'somewhere', without any indication of position. Not to be confused with Invented, a fictional place located within a known geography (Reuschel, Piatti and Hurni 2013, pp. 138–139).</skos:scopeNote>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#RealityStatusScheme"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#Imported">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <owl:differentFrom rdf:resource="https://w3id.org/chora#Imagined"/>
     <owl:differentFrom rdf:resource="https://w3id.org/chora#Invented"/>
     <owl:differentFrom rdf:resource="https://w3id.org/chora#Transformed"/>
     <skos:altLabel xml:lang="it">Importato</skos:altLabel>
     <skos:definition>The setting corresponds with the geographical reality by realistically portraying the surrounding</skos:definition>
     <skos:inScheme rdf:resource="https://w3id.org/chora#RealityStatusScheme"/>
+    <skos:notation>1</skos:notation>
     <skos:prefLabel xml:lang="en">Imported</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#RealityStatusScheme"/>
   </rdf:Description>
@@ -503,11 +507,15 @@
   <rdf:Description rdf:about="https://w3id.org/chora#Invented">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <owl:differentFrom rdf:resource="https://w3id.org/chora#Imagined"/>
+    <owl:differentFrom rdf:resource="https://w3id.org/chora#Imported"/>
     <owl:differentFrom rdf:resource="https://w3id.org/chora#Transformed"/>
     <skos:altLabel xml:lang="it">Inventato</skos:altLabel>
-    <skos:definition>There is no hint at all about the position of the setting, it is located ‘somewhere’, with no real-world counterpart, only existing within the narration. Consequently, it is not possible to assign coordinates</skos:definition>
+    <skos:definition>An invented setting within familiar geographical reality</skos:definition>
     <skos:inScheme rdf:resource="https://w3id.org/chora#RealityStatusScheme"/>
+    <skos:notation>3</skos:notation>
     <skos:prefLabel xml:lang="en">Invented</skos:prefLabel>
+    <skos:scopeNote xml:lang="en">Third degree of the scale: a fictional place set within a known, identifiable geography, so that its position can be indicated or inferred. Not to be confused with Imagined, which has no indication of position at all (Reuschel, Piatti and Hurni 2013, pp. 138–139).</skos:scopeNote>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#RealityStatusScheme"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#LiteraryWork">
@@ -690,9 +698,13 @@
   <rdf:Description rdf:about="https://w3id.org/chora#Transformed">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <owl:differentFrom rdf:resource="https://w3id.org/chora#Imagined"/>
+    <owl:differentFrom rdf:resource="https://w3id.org/chora#Imported"/>
+    <owl:differentFrom rdf:resource="https://w3id.org/chora#Invented"/>
     <skos:altLabel xml:lang="it">Trasformato</skos:altLabel>
     <skos:definition>The setting is transformed, with techniques of remodelling, renaming, relocation or a synthesis of several places</skos:definition>
     <skos:inScheme rdf:resource="https://w3id.org/chora#RealityStatusScheme"/>
+    <skos:notation>2</skos:notation>
     <skos:prefLabel xml:lang="en">Transformed</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#RealityStatusScheme"/>
   </rdf:Description>
@@ -835,7 +847,7 @@
   <rdf:Description rdf:about="https://w3id.org/chora#hasRealityStatus">
     <dcterms:references rdf:resource="https://w3id.org/chora#RealityStatusScheme"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:comment xml:lang="en">Assigns the reality–fiction status (imported, transformed, imagined, invented) of a narrative place. This is an invariant property of the place as an authorial transposition of the real world into the text, NOT dependent on focalizer or interpretation.</rdfs:comment>
+    <rdfs:comment xml:lang="en">Assigns the reality–fiction status of a narrative place, on a scale ordered from the concrete to the abstract: imported, transformed, invented, imagined (skos:notation 1–4; Reuschel, Piatti and Hurni 2013, pp. 138–139). This is an invariant property of the place as an authorial transposition of the real world into the text, NOT dependent on focalizer or interpretation.</rdfs:comment>
     <rdfs:domain rdf:resource="https://w3id.org/chora#NarrativePlace"/>
     <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:altLabel xml:lang="it">ha stato di realtà</skos:altLabel>

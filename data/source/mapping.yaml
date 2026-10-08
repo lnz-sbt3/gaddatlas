@@ -35,12 +35,12 @@ vocabularies:
     route: "chora:Route"
     zoneofaction: "chora:ZoneOfAction"
   
-  # RealityStatusScheme
+  # RealityStatusScheme, nell'ordine della scala (skos:notation 1-4, DM-01)
   reality_statuses:
     imported: "chora:Imported"
-    imagined: "chora:Imagined"
-    invented: "chora:Invented"
     transformed: "chora:Transformed"
+    invented: "chora:Invented"
+    imagined: "chora:Imagined"
   
   # SpatialDeterminationScheme
   spatial_determinations:

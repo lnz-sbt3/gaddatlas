@@ -374,7 +374,7 @@ chora:hasPlaceCategory a owl:ObjectProperty ;
 
 chora:hasRealityStatus a owl:ObjectProperty ;
     dcterms:references chora:RealityStatusScheme ;
-    rdfs:comment "Assigns the reality–fiction status (imported, transformed, imagined, invented) of a narrative place. This is an invariant property of the place as an authorial transposition of the real world into the text, NOT dependent on focalizer or interpretation."@en ;
+    rdfs:comment "Assigns the reality–fiction status of a narrative place, on a scale ordered from the concrete to the abstract: imported, transformed, invented, imagined (skos:notation 1–4; Reuschel, Piatti and Hurni 2013, pp. 138–139). This is an invariant property of the place as an authorial transposition of the real world into the text, NOT dependent on focalizer or interpretation."@en ;
     rdfs:domain chora:NarrativePlace ;
     rdfs:range skos:Concept ;
     skos:altLabel "ha stato di realtà"@it ;
@@ -524,7 +524,9 @@ chora:Imagined a owl:NamedIndividual,
         chora:Invented,
         chora:Transformed ;
     skos:altLabel "Immaginato"@it ;
-    skos:definition "An invented setting within familiar geographical reality" ;
+    skos:definition "There is no hint at all about the position of the setting, it is located ‘somewhere’, with no real-world counterpart, only existing within the narration. Consequently, it is not possible to assign coordinates" ;
+    skos:notation "4" ;
+    skos:scopeNote "Fourth and most abstract degree of the scale: the place is set 'somewhere', without any indication of position. Not to be confused with Invented, a fictional place located within a known geography (Reuschel, Piatti and Hurni 2013, pp. 138–139)."@en ;
     skos:inScheme chora:RealityStatusScheme ;
     skos:prefLabel "Imagined"@en ;
     skos:topConceptOf chora:RealityStatusScheme .
@@ -604,10 +606,12 @@ chora:interpretsReference a owl:ObjectProperty ;
 
 chora:Imported a owl:NamedIndividual,
         skos:Concept ;
-    owl:differentFrom chora:Invented,
+    owl:differentFrom chora:Imagined,
+        chora:Invented,
         chora:Transformed ;
     skos:altLabel "Importato"@it ;
     skos:definition "The setting corresponds with the geographical reality by realistically portraying the surrounding" ;
+    skos:notation "1" ;
     skos:inScheme chora:RealityStatusScheme ;
     skos:prefLabel "Imported"@en ;
     skos:topConceptOf chora:RealityStatusScheme .
@@ -650,9 +654,13 @@ prov:Agent a owl:Class ;
 
 chora:Invented a owl:NamedIndividual,
         skos:Concept ;
-    owl:differentFrom chora:Transformed ;
+    owl:differentFrom chora:Imagined,
+        chora:Imported,
+        chora:Transformed ;
     skos:altLabel "Inventato"@it ;
-    skos:definition "There is no hint at all about the position of the setting, it is located ‘somewhere’, with no real-world counterpart, only existing within the narration. Consequently, it is not possible to assign coordinates" ;
+    skos:definition "An invented setting within familiar geographical reality" ;
+    skos:notation "3" ;
+    skos:scopeNote "Third degree of the scale: a fictional place set within a known, identifiable geography, so that its position can be indicated or inferred. Not to be confused with Imagined, which has no indication of position at all (Reuschel, Piatti and Hurni 2013, pp. 138–139)."@en ;
     skos:inScheme chora:RealityStatusScheme ;
     skos:prefLabel "Invented"@en ;
     skos:topConceptOf chora:RealityStatusScheme .
@@ -686,8 +694,12 @@ chora:Relative a owl:NamedIndividual,
 
 chora:Transformed a owl:NamedIndividual,
         skos:Concept ;
+    owl:differentFrom chora:Imagined,
+        chora:Imported,
+        chora:Invented ;
     skos:altLabel "Trasformato"@it ;
     skos:definition "The setting is transformed, with techniques of remodelling, renaming, relocation or a synthesis of several places" ;
+    skos:notation "2" ;
     skos:inScheme chora:RealityStatusScheme ;
     skos:prefLabel "Transformed"@en ;
     skos:topConceptOf chora:RealityStatusScheme .

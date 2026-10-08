@@ -108,7 +108,7 @@ SKOS controllato:
 
 | Asse | Valori |
 |---|---|
-| **Reality Status** | Imported · Transformed · Imagined · Invented |
+| **Reality Status** | Imported · Transformed · Invented · Imagined (dal concreto all'astratto) |
 | **Narrative Role** | Setting · ZoneOfAction · Route · Marker · ProjectedSpace |
 | **Spatial Determination** | Precise · Relative · Approximate · Indeterminate |
 | **Spatial Relation Type** | Inside · Near · Toward · Through · … |
@@ -126,7 +126,7 @@ Le entità principali:
 
 La distinzione fra `NarrativePlace` e `GazetteerEntity` è il cuore
 dell'argomento: un luogo *Imported* coincide con il suo referente e ne eredita
-la posizione, mentre *Transformed*, *Imagined* e *Invented* richiedono una
+la posizione, mentre *Transformed*, *Invented* e *Imagined* richiedono una
 collocazione propria nello spazio diagrammatico.
 
 ---
