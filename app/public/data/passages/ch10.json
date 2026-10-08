@@ -560,15 +560,6 @@
    "excerpt": "A largo Brancaccio, mentre che staveno svortando in via Merulana verso piazza San Giovanni, Ingravallo si volse, cupo, alla sua sinistra.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00678"
   },
-  "ref_00720": {
-   "id": "ref_00720",
-   "chapter": 10,
-   "page": 302,
-   "sourceReference": "A 302",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "« Fate passare, in ogni modo. Andiamo. Su. Devo far perquisire la casa. »",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00720"
-  },
   "ref_00683": {
    "id": "ref_00683",
    "chapter": 10,
@@ -586,6 +577,15 @@
    "work": "quer_pasticciaccio_adelphi",
    "excerpt": "Il selciato scivoloso. Una lastra al cantone: via Massimo Dazzélio.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00684"
+  },
+  "ref_00720": {
+   "id": "ref_00720",
+   "chapter": 10,
+   "page": 302,
+   "sourceReference": "A 302",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "« Fate passare, in ogni modo. Andiamo. Su. Devo far perquisire la casa. »",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00720"
   },
   "ref_00687": {
    "id": "ref_00687",

@@ -146,7 +146,7 @@ aggiornato.
 make all        # fogli + TBox -> TTL -> geojson + passages -> audit
 make audit      # nove invarianti fra sorgenti e derivati; esce 1 se falliscono
 make shacl      # validazione SHACL, deve dire CONFORME
-make queries    # 12 competency + 10 integrity query
+make queries    # 12 competency + 11 integrity query
 make docs       # pyLODE dalla TBox
 make xlsx       # TSV -> XLSX, per lavorare in Excel (nasce con T-80)
 make publish-data  # copia GeoJSON e passages in app/public/data (nasce con T-83)

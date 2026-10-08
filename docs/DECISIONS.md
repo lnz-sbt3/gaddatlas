@@ -474,6 +474,23 @@ guardato a schermo prima di darlo per buono.
 
 ---
 
+## D-022 — Sei interpretazioni incoerenti con il riferimento; controllo sulle sorgenti (8 ottobre 2026)
+
+- Requisito/i: R04, R22 · Ipotesi: — · Data check: DC-19 (work order T-84; AUDIT_0, § 3)
+- Stato precedente: in `SpatialInterpretations.tsv` sei interpretazioni avevano un luogo diverso da quello del loro riferimento. Nessun controllo li intercettava: nel grafo la PlaceReference non porta il proprio luogo, quindi l'incoerenza era invisibile a SHACL e alle query.
+- Decisione (caso per caso, dopo verifica sull'estratto; casi non univoci decisi da Lorenzo l'8/10/2026):
+  - `interp_00245` (QP 92, «Milano, Bologna, Vicenza, Padova»): id del luogo «vicenza » con spazio finale → «vicenza». Univoco: l'ETL già lo ripuliva, nel grafo non cambia nulla.
+  - `interp_00627` / `interp_00628` (QP 210, «da dietro a Tivoli e a Càrsoli»): riferimenti scambiati fra Càrsoli e Tivoli. Si scambiano i `Reference_ID` (00627 → `ref_00523`, 00628 → `ref_00522`); luoghi e ancore erano giusti. Univoco: stesso estratto, stessa pagina.
+  - `interp_00331` (QP 135, «L'antro jeri mattina ereno ancora a Piazza Verdi»): luogo `banca_ditalia` → `piazza_verdi`. Riferimento e ancora (`gaz_piazza_verdi`) indicavano già piazza Verdi; la Banca d'Italia ha un proprio riferimento sulla stessa pagina (`ref_00286`). Decisione di Lorenzo.
+  - `interp_00858` (QP 294, «davanti al portone della rocca», Ingravallo) e `interp_00859` (QP 294, «via Massimo Dazzélio», Di Pietrantonio): **eliminate**. Erano doppioni: per gli stessi focalizzatori e riferimenti esistono già `interp_00861` (Tenenza) e `interp_00865` (via Massimo d'Azeglio), e la collocazione a Marino è già data dalle ancore (`gaz_marino`; `gaz_via_massimo_dazeglio` è geocodificata a Marino). Decisione di Lorenzo.
+- Controllo: il confronto vero si fa sulle sorgenti, in `tools/audit_alignment.py`: fallisce se il luogo di un'interpretazione è diverso dal `NarrativePlace_ID` del suo riferimento (interpretazioni di route escluse). Lanciato sui TSV precedenti, segnala esattamente i sei casi. `IQ11` in `ontology/queries/integrity.rq` è informativa («riferimenti con più luoghi»): nel grafo non si può fare di più senza cambiare il modello della PlaceReference, e un riferimento con più luoghi può essere una referenza plurale voluta (R04, T-47). Scartata la proprietà PlaceReference → NarrativePlace nel grafo: contraddice la definizione attuale della classe e andrebbe decisa a parte. Decisione di Lorenzo.
+- Motivazione (fonte, pagina): estratti di QP 92, 135, 210, 294; AUDIT_0, § 3.
+- Fase in cui è maturata: revisione critica (audit di fase 0)
+- File toccati (manifest): `data/source/tables/SpatialInterpretations.tsv:246`, `:332`, `:628-629`, `:861-862` (righe eliminate); `data/source/xlsx/SpatialInterpretations.xlsx` (rigenerato); `tools/audit_alignment.py:16`, `:28`, `:172-192`; `ontology/queries/integrity.rq:5`, `:110-125` (IQ11); conteggio delle query («11 integrity») in `CLAUDE.md:149`, `Makefile:14`, `README.md:27,40,93`, `data/README.md:70`, `ontology/README.md:76`.
+- Effetto su KG (triple prima/dopo, SHACL): ABox 16.045 → **16.029**; full 17.203 → **17.187** (−16: 8 triple per ciascuna interpretazione eliminata); interpretazioni 962 → **960**; righe di relief 933 → 931; Marino da 15 a 13 occorrenze. Le altre correzioni non cambiano la vista: i luoghi Imported confluiscono nella tessera della loro ancora, che era già quella giusta. IQ9 da 14 a 13 (piazza Verdi ora è interpretata); IQ11 = 0. SHACL conforme, 0 violazioni. Il `tripleCount` del GeoJSON passa a 17.187: il riferimento in `CLAUDE.md` (17.203) si aggiorna a fine fase.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

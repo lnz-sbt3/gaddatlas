@@ -21,7 +21,7 @@
   "ontologyVersion": "1.0.0",
   "buildVersion": "4.3",
   "source": "gaddatlas-full.ttl",
-  "tripleCount": 17203,
+  "tripleCount": 17187,
   "projection": {
    "type": "equirectangular",
    "center": [
@@ -111,13 +111,13 @@
   "counts": {
    "gazetteer": 265,
    "narrativePlaces": 309,
-   "interpretations": 962,
+   "interpretations": 960,
    "references": 722,
    "routes": 18,
    "chapters": 10,
    "agents": 83,
    "derivedSequences": 103,
-   "reliefRows": 933,
+   "reliefRows": 931,
    "ownTiles": 48
   }
  },
@@ -229,12 +229,12 @@
    "presentLocation": null,
    "historicalLocation": null,
    "distanceFromRomeKm": 19.8,
-   "refCountAnchored": 48,
-   "planeCount": 15,
-   "interpCount": 16,
+   "refCountAnchored": 46,
+   "planeCount": 13,
+   "interpCount": 14,
    "narrativePlaceCount": 5,
-   "densityClass": "hub",
-   "densityLevel": 5
+   "densityClass": "nodale",
+   "densityLevel": 4
   },
   {
    "id": "gaz_frattocchie",
@@ -5430,55 +5430,6 @@
    "densityClass": "hub"
   },
   {
-   "id": "marino",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/marino",
-   "label": "Marino",
-   "realityStatus": "Imported",
-   "placeCategory": "locality",
-   "description": "Località dei Castelli Romani",
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 16,
-   "planeCount": 15,
-   "targets": [
-    {
-     "gazetteerId": "gaz_marino",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 8
-    },
-    {
-     "role": "ZoneOfAction",
-     "n": 3
-    },
-    {
-     "role": "Marker",
-     "n": 3
-    },
-    {
-     "role": "Setting",
-     "n": 1
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 10
-    },
-    {
-     "determination": "Relative",
-     "n": 5
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hub"
-  },
-  {
    "id": "via_appia",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_appia",
    "label": "Via Appia",
@@ -5522,6 +5473,55 @@
    "anchorInherited": false,
    "multiTarget": false,
    "densityClass": "hub"
+  },
+  {
+   "id": "marino",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/marino",
+   "label": "Marino",
+   "realityStatus": "Imported",
+   "placeCategory": "locality",
+   "description": "Località dei Castelli Romani",
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 14,
+   "planeCount": 13,
+   "targets": [
+    {
+     "gazetteerId": "gaz_marino",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 8
+    },
+    {
+     "role": "ZoneOfAction",
+     "n": 3
+    },
+    {
+     "role": "Setting",
+     "n": 1
+    },
+    {
+     "role": "Marker",
+     "n": 1
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 8
+    },
+    {
+     "determination": "Relative",
+     "n": 5
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "nodale"
   },
   {
    "id": "casello_km_20_25",
@@ -7952,43 +7952,6 @@
    "densityClass": "raro"
   },
   {
-   "id": "banca_ditalia",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/banca_ditalia",
-   "label": "Banca d’Italia",
-   "realityStatus": "Imported",
-   "placeCategory": "bank",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 2,
-   "targets": [
-    {
-     "gazetteerId": "gaz_banca_ditalia",
-     "weight": 0.5
-    },
-    {
-     "gazetteerId": "gaz_piazza_verdi",
-     "weight": 0.5
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": true,
-   "densityClass": "raro"
-  },
-  {
    "id": "bologna",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/bologna",
    "label": "Bologna",
@@ -9631,6 +9594,39 @@
    "determinations": [
     {
      "determination": "Indeterminate",
+     "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "banca_ditalia",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/banca_ditalia",
+   "label": "Banca d’Italia",
+   "realityStatus": "Imported",
+   "placeCategory": "bank",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 1,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_banca_ditalia",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 1
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
      "n": 1
     }
    ],
@@ -11604,6 +11600,39 @@
    "roles": [
     {
      "role": "Marker",
+     "n": 1
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "piazza_verdi",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/piazza_verdi",
+   "label": "Piazza Verdi",
+   "realityStatus": "Imported",
+   "placeCategory": "square",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 1,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_piazza_verdi",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
      "n": 1
     }
    ],
@@ -15460,24 +15489,6 @@
    "id": "piazza_san_pietro",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/piazza_san_pietro",
    "label": "Piazza San Pietro",
-   "realityStatus": "Imported",
-   "placeCategory": "square",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 0,
-   "planeCount": 0,
-   "targets": [],
-   "roles": [],
-   "determinations": [],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": null
-  },
-  {
-   "id": "piazza_verdi",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/piazza_verdi",
-   "label": "Piazza Verdi",
    "realityStatus": "Imported",
    "placeCategory": "square",
    "description": null,
@@ -20850,7 +20861,7 @@
    "id": "interp_00331",
    "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00331",
    "referenceId": "ref_00287",
-   "narrativePlaceId": "banca_ditalia",
+   "narrativePlaceId": "piazza_verdi",
    "routeId": null,
    "gazetteerId": "gaz_piazza_verdi",
    "narrativeRole": "ProjectedSpace",
@@ -25585,7 +25596,7 @@
   {
    "id": "interp_00627",
    "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00627",
-   "referenceId": "ref_00522",
+   "referenceId": "ref_00523",
    "narrativePlaceId": "carsoli",
    "routeId": null,
    "gazetteerId": "gaz_carsoli",
@@ -25601,7 +25612,7 @@
   {
    "id": "interp_00628",
    "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00628",
-   "referenceId": "ref_00523",
+   "referenceId": "ref_00522",
    "narrativePlaceId": "tivoli",
    "routeId": null,
    "gazetteerId": "gaz_tivoli",
@@ -29273,38 +29284,6 @@
    "spatialDetermination": "Approximate",
    "spatialRelation": null,
    "focalizerId": "autista_questura",
-   "confidence": 1.0,
-   "isNodeOfRoute": null,
-   "routeOrder": null,
-   "criticalNote": null
-  },
-  {
-   "id": "interp_00858",
-   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00858",
-   "referenceId": "ref_00683",
-   "narrativePlaceId": "marino",
-   "routeId": null,
-   "gazetteerId": "gaz_marino",
-   "narrativeRole": "Marker",
-   "spatialDetermination": "Approximate",
-   "spatialRelation": null,
-   "focalizerId": "ingravallo",
-   "confidence": 1.0,
-   "isNodeOfRoute": null,
-   "routeOrder": null,
-   "criticalNote": null
-  },
-  {
-   "id": "interp_00859",
-   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00859",
-   "referenceId": "ref_00684",
-   "narrativePlaceId": "marino",
-   "routeId": null,
-   "gazetteerId": "gaz_marino",
-   "narrativeRole": "Marker",
-   "spatialDetermination": "Approximate",
-   "spatialRelation": null,
-   "focalizerId": "maresciallo_di_pietrantonio",
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
@@ -40254,7 +40233,7 @@
    "name": "Ingravallo",
    "gender": "male",
    "description": "Commissario molisano, detto don Ciccio; protagonista-investigatore e principale centro di focalizzazione del romanzo.",
-   "refCount": 114
+   "refCount": 113
   },
   {
    "id": "pestalozzi",
@@ -40350,7 +40329,7 @@
    "name": "Maresciallo Di Pietrantonio",
    "gender": "male",
    "description": null,
-   "refCount": 28
+   "refCount": 27
   },
   {
    "id": "cocullo",
@@ -45821,7 +45800,7 @@
      "page": 135,
      "referenceId": "ref_00287",
      "targetId": "gaz_piazza_verdi",
-     "narrativePlaceId": "banca_ditalia",
+     "narrativePlaceId": "piazza_verdi",
      "gazetteerId": "gaz_piazza_verdi",
      "interpretationId": "interp_00331",
      "role": "ProjectedSpace",
@@ -48630,20 +48609,20 @@
     {
      "page": 210,
      "referenceId": "ref_00522",
-     "targetId": "gaz_carsoli",
-     "narrativePlaceId": "carsoli",
-     "gazetteerId": "gaz_carsoli",
-     "interpretationId": "interp_00627",
+     "targetId": "gaz_tivoli",
+     "narrativePlaceId": "tivoli",
+     "gazetteerId": "gaz_tivoli",
+     "interpretationId": "interp_00628",
      "role": "Marker",
      "simultaneous": true
     },
     {
      "page": 210,
      "referenceId": "ref_00523",
-     "targetId": "gaz_tivoli",
-     "narrativePlaceId": "tivoli",
-     "gazetteerId": "gaz_tivoli",
-     "interpretationId": "interp_00628",
+     "targetId": "gaz_carsoli",
+     "narrativePlaceId": "carsoli",
+     "gazetteerId": "gaz_carsoli",
+     "interpretationId": "interp_00627",
      "role": "Marker",
      "simultaneous": true
     },
@@ -49374,9 +49353,9 @@
    "agentName": "Ingravallo",
    "chapterId": "capitolo_X",
    "chapter": 10,
-   "length": 41,
+   "length": 40,
    "distinctTargets": 30,
-   "dispersion": 0.732,
+   "dispersion": 0.75,
    "pageRange": [
     286,
     302
@@ -49460,16 +49439,6 @@
      "gazetteerId": "gaz_via_merulana",
      "interpretationId": "interp_00856",
      "role": "Setting",
-     "simultaneous": true
-    },
-    {
-     "page": 294,
-     "referenceId": "ref_00683",
-     "targetId": "gaz_marino",
-     "narrativePlaceId": "marino",
-     "gazetteerId": "gaz_marino",
-     "interpretationId": "interp_00858",
-     "role": "Marker",
      "simultaneous": true
     },
     {
@@ -50094,9 +50063,9 @@
    "agentName": "Maresciallo Di Pietrantonio",
    "chapterId": "capitolo_X",
    "chapter": 10,
-   "length": 20,
-   "distinctTargets": 18,
-   "dispersion": 0.9,
+   "length": 19,
+   "distinctTargets": 17,
+   "dispersion": 0.895,
    "pageRange": [
     292,
     302
@@ -50150,16 +50119,6 @@
      "gazetteerId": "gaz_marino",
      "interpretationId": "interp_00862",
      "role": "Setting",
-     "simultaneous": true
-    },
-    {
-     "page": 294,
-     "referenceId": "ref_00684",
-     "targetId": "gaz_marino",
-     "narrativePlaceId": "marino",
-     "gazetteerId": "gaz_marino",
-     "interpretationId": "interp_00859",
-     "role": "Marker",
      "simultaneous": true
     },
     {
@@ -57882,8 +57841,8 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_carsoli",
-   "interpretationId": "interp_00627",
+   "targetId": "gaz_tivoli",
+   "interpretationId": "interp_00628",
    "referenceId": "ref_00522",
    "page": 210,
    "chapter": 8,
@@ -57893,8 +57852,8 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_tivoli",
-   "interpretationId": "interp_00628",
+   "targetId": "gaz_carsoli",
+   "interpretationId": "interp_00627",
    "referenceId": "ref_00523",
    "page": 210,
    "chapter": 8,
@@ -60324,17 +60283,6 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_marino",
-   "interpretationId": "interp_00858",
-   "referenceId": "ref_00683",
-   "page": 294,
-   "chapter": 10,
-   "agentId": "ingravallo",
-   "role": "Marker",
-   "determination": "Approximate",
-   "isRouteNode": null
-  },
-  {
    "targetId": "tenenza_carabinieri_marino",
    "interpretationId": "interp_00860",
    "referenceId": "ref_00683",
@@ -60364,17 +60312,6 @@
    "chapter": 10,
    "agentId": "maresciallo_di_pietrantonio",
    "role": "Setting",
-   "determination": "Approximate",
-   "isRouteNode": null
-  },
-  {
-   "targetId": "gaz_marino",
-   "interpretationId": "interp_00859",
-   "referenceId": "ref_00684",
-   "page": 294,
-   "chapter": 10,
-   "agentId": "maresciallo_di_pietrantonio",
-   "role": "Marker",
    "determination": "Approximate",
    "isRouteNode": null
   },

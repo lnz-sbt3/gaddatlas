@@ -24,7 +24,7 @@ FICLIT, XXXIX ciclo.
 | Dataset | 17.203 triple · 265 entità di gazetteer · 309 luoghi narrativi |
 | Annotazione | 722 riferimenti testuali · 962 interpretazioni · 83 focalizzatori · 18 route |
 | Copertura testuale | 722/722 riferimenti con estratto (100%) |
-| Qualità | SHACL conforme · 12/12 competency · 10/10 integrity · ETL 0 warning |
+| Qualità | SHACL conforme · 12/12 competency · 11/11 integrity · ETL 0 warning |
 | Interfaccia | in migrazione da prototipo Observable a applicazione statica |
 
 ---
@@ -37,7 +37,7 @@ gaddatlas/
 │   ├── chora.ttl                  TBox (SORGENTE, D-016)
 │   ├── chora.rdf                  TBox in RDF/XML per Protégé (derivata)
 │   ├── shapes/                    vincoli SHACL + vocabolario SKOS
-│   ├── queries/                   12 competency + 10 integrity query
+│   ├── queries/                   12 competency + 11 integrity query
 │   ├── docs/                      documentazione pyLODE
 │   ├── CHANGELOG.md  README.md
 ├── data/                        ← GaddAtlas: il caso di studio
@@ -90,7 +90,7 @@ Requisiti: Python 3.11+, `rdflib`, `pandas`, `pyyaml`, `openpyxl`, `pyshacl`.
 pip install rdflib pandas pyyaml openpyxl pyshacl
 make all          # rdf → passages → audit
 make shacl        # validazione SHACL — deve dire CONFORME
-make queries      # 12/12 competency, 10/10 integrity
+make queries      # 12/12 competency, 11/11 integrity
 ```
 
 L'audit va eseguito **dopo ogni modifica al TTL**. Verifica nove invarianti,

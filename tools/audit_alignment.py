@@ -13,6 +13,7 @@ Uso:  python3 tools/audit_alignment.py [--verbose]
 from __future__ import annotations
 
 import collections
+import csv
 import json
 import sys
 from pathlib import Path
@@ -24,6 +25,7 @@ TTL = ROOT / "data" / "dist" / "gaddatlas-full.ttl"
 GEOJSON = ROOT / "data" / "dist" / "gaddatlas.geojson"
 PASSAGES = ROOT / "data" / "dist" / "passages" / "index.json"
 APP_DATA = ROOT / "app" / "public" / "data"
+TABLES = ROOT / "data" / "source" / "tables"
 
 CHORA = Namespace("https://w3id.org/chora#")
 # namespace del progetto nella forma da NON trovare (http al posto di https)
@@ -165,6 +167,27 @@ def main() -> int:
         not bad_iri,
         "ogni IRI del grafo e' assoluto (http/https), e https nei namespace del progetto",
         "\n".join(sorted(bad_iri)[:20]),
+    )
+
+    # coerenza fra interpretazione e riferimento, sulle sorgenti (T-84).
+    # Il controllo non si puo' fare sul grafo: per scelta di modello la
+    # PlaceReference non porta il proprio luogo (lo dice solo il foglio
+    # References). Le interpretazioni senza luogo (vettori di route) sono escluse.
+    def read_tsv(name):
+        with open(TABLES / name, encoding="utf-8", newline="") as f:
+            return list(csv.DictReader(f, delimiter="\t"))
+    ref_place = {r["Reference_ID"]: r["NarrativePlace_ID"]
+                 for r in read_tsv("References.tsv")}
+    mismatch = [
+        f'{s["Interpretation_ID"]}: luogo {s["NarrativePlace_ID"]!r}, '
+        f'riferimento {s["Reference_ID"]} -> {ref_place.get(s["Reference_ID"])!r}'
+        for s in read_tsv("SpatialInterpretations.tsv")
+        if s["NarrativePlace_ID"] and ref_place.get(s["Reference_ID"]) != s["NarrativePlace_ID"]
+    ]
+    a.check(
+        not mismatch,
+        "ogni interpretazione ha lo stesso luogo del suo riferimento (sorgenti TSV)",
+        "\n".join(mismatch[:20]),
     )
 
     # copie pubblicate per l'interfaccia (T-83): byte per byte uguali ai

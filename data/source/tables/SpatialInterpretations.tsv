@@ -243,7 +243,7 @@ interp_00241	ref_00211	lungara	gaz_lungara	commendador_angeloni	setting	approxim
 interp_00242	ref_00212	via_dei_greci	gaz_via_dei_greci	narrator	marker	approximate									
 interp_00243	ref_00213	milano	gaz_milano	remo_balducci	projectedspace	relative									
 interp_00244	ref_00214	bologna	gaz_bologna	remo_balducci	projectedspace	relative									
-interp_00245	ref_00215	vicenza 	gaz_vicenza	remo_balducci	projectedspace	relative									
+interp_00245	ref_00215	vicenza	gaz_vicenza	remo_balducci	projectedspace	relative									
 interp_00246	ref_00216	padova	gaz_padova	remo_balducci	projectedspace	relative									
 interp_00247	ref_00217	termini	gaz_termini	remo_balducci	marker	approximate									
 interp_00248	ref_00218	policlinico	gaz_policlinico	liliana	marker	approximate									
@@ -329,7 +329,7 @@ interp_00327	ref_00283	bottega_ceccherelli	gaz_roma	liliana	projectedspace	appro
 interp_00328	ref_00284	via_dei_banchi_vecchi	gaz_via_dei_banchi_vecchi	zie_valdarena	marker	approximate									
 interp_00329	ref_00285	banco_di_santo_spirito	gaz_banco_di_santo_spirito	cassiere_capo_del_bo	marker	approximate									
 interp_00330	ref_00286	banca_ditalia	gaz_banca_ditalia	cassiere_capo_del_bo	projectedspace	approximate									
-interp_00331	ref_00287	banca_ditalia	gaz_piazza_verdi	cassiere_capo_del_bo	projectedspace	approximate									
+interp_00331	ref_00287	piazza_verdi	gaz_piazza_verdi	cassiere_capo_del_bo	projectedspace	approximate									
 interp_00332	ref_00288	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	ingravallo	setting	precise									
 interp_00333	ref_00289	teatro_jovinelli	gaz_teatro_jovinelli	ingravallo	projectedspace	precise									
 interp_00334	ref_00290	golfo_di_napoli	gaz_golfo_di_napoli	dottor_fumi	projectedspace	relative									
@@ -625,8 +625,8 @@ interp_00623	ref_00518	monte_algido	gaz_monte_algido	pestalozzi	marker	precise
 interp_00624	ref_00519	monti_carseolani	gaz_monti_carseolani	pestalozzi	marker	precise									
 interp_00625	ref_00520	monte_velino	gaz_monte_velino	pestalozzi	marker	precise									
 interp_00626	ref_00521	monte_soratte	gaz_monte_soratte	pestalozzi	marker	precise									
-interp_00627	ref_00522	carsoli	gaz_carsoli	pestalozzi	marker	approximate									
-interp_00628	ref_00523	tivoli	gaz_tivoli	pestalozzi	marker	approximate									
+interp_00627	ref_00523	carsoli	gaz_carsoli	pestalozzi	marker	approximate									
+interp_00628	ref_00522	tivoli	gaz_tivoli	pestalozzi	marker	approximate									
 interp_00629	ref_00524	montagne_degli_equi	gaz_monti_carseolani	pestalozzi	marker	relative	overlaps				0.7				
 interp_00630	ref_00525	monte_velino	gaz_monte_velino	pestalozzi	marker	approximate									
 interp_00631	ref_00526	marsica	gaz_marsica	pestalozzi	marker	approximate									
@@ -858,8 +858,6 @@ interp_00854	ref_00679	santa_maria_maggiore	gaz_santa_maria_maggiore	ingravallo	
 interp_00855	ref_00680	viminale	gaz_viminale	narrator	marker	relative									
 interp_00856	ref_00681	via_merulana	gaz_via_merulana	ingravallo	setting	precise									
 interp_00857	ref_00682	marino	gaz_marino	autista_questura	marker	approximate									
-interp_00858	ref_00683	marino	gaz_marino	ingravallo	marker	approximate									
-interp_00859	ref_00684	marino	gaz_marino	maresciallo_di_pietrantonio	marker	approximate									
 interp_00860	ref_00683	tenenza_carabinieri_marino	gaz_marino	autista_questura	setting	approximate	inside								
 interp_00861	ref_00683	tenenza_carabinieri_marino	gaz_marino	ingravallo	setting	approximate	inside								
 interp_00862	ref_00683	tenenza_carabinieri_marino	gaz_marino	maresciallo_di_pietrantonio	setting	approximate	inside								

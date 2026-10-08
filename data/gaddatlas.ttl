@@ -3941,7 +3941,7 @@
     chora:assignsSpatialDetermination chora:Approximate ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/cassiere_capo_del_bo> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00287> ;
-    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/banca_ditalia> .
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/piazza_verdi> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00332> a prov:Entity,
         chora:SpatialInterpretation ;
@@ -6711,7 +6711,7 @@
     chora:assignsNarrativeRole chora:Marker ;
     chora:assignsSpatialDetermination chora:Approximate ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pestalozzi> ;
-    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00522> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00523> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/carsoli> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00628> a prov:Entity,
@@ -6720,7 +6720,7 @@
     chora:assignsNarrativeRole chora:Marker ;
     chora:assignsSpatialDetermination chora:Approximate ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pestalozzi> ;
-    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00523> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00522> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/tivoli> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00629> a prov:Entity,
@@ -8836,24 +8836,6 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00682> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/marino> .
 
-<https://w3id.org/gaddatlas/id/interpretation/interp_00858> a prov:Entity,
-        chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_marino> ;
-    chora:assignsNarrativeRole chora:Marker ;
-    chora:assignsSpatialDetermination chora:Approximate ;
-    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/ingravallo> ;
-    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00683> ;
-    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/marino> .
-
-<https://w3id.org/gaddatlas/id/interpretation/interp_00859> a prov:Entity,
-        chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_marino> ;
-    chora:assignsNarrativeRole chora:Marker ;
-    chora:assignsSpatialDetermination chora:Approximate ;
-    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/maresciallo_di_pietrantonio> ;
-    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00684> ;
-    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/marino> .
-
 <https://w3id.org/gaddatlas/id/interpretation/interp_00860> a prov:Entity,
         chora:SpatialInterpretation ;
     chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_marino> ;
@@ -9836,11 +9818,6 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_san_pietro> a chora:NarrativePlace ;
     rdfs:label "Piazza San Pietro"@it ;
-    chora:hasPlaceCategory chora:square ;
-    chora:hasRealityStatus chora:Imported .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/piazza_verdi> a chora:NarrativePlace ;
-    rdfs:label "Piazza Verdi"@it ;
     chora:hasPlaceCategory chora:square ;
     chora:hasRealityStatus chora:Imported .
 
@@ -12964,6 +12941,11 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:hasPlaceCategory chora:hill ;
     chora:hasRealityStatus chora:Imported .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/banca_ditalia> a chora:NarrativePlace ;
+    rdfs:label "Banca d’Italia"@it ;
+    chora:hasPlaceCategory chora:bank ;
+    chora:hasRealityStatus chora:Imported .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/barbiere> a chora:NarrativePlace ;
     rdfs:label "Barbiere"@it ;
     dcterms:description "Luogo generico: barbiere"@it ;
@@ -13317,6 +13299,11 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_rusticucci> a chora:NarrativePlace ;
     rdfs:label "Piazza Rusticucci"@it ;
+    chora:hasPlaceCategory chora:square ;
+    chora:hasRealityStatus chora:Imported .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/piazza_verdi> a chora:NarrativePlace ;
+    rdfs:label "Piazza Verdi"@it ;
     chora:hasPlaceCategory chora:square ;
     chora:hasRealityStatus chora:Imported .
 
@@ -18302,11 +18289,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasPlaceCategory chora:locality ;
     chora:hasRealityStatus chora:Imported .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/banca_ditalia> a chora:NarrativePlace ;
-    rdfs:label "Banca d’Italia"@it ;
-    chora:hasPlaceCategory chora:bank ;
-    chora:hasRealityStatus chora:Imported .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/bologna> a chora:NarrativePlace ;
     rdfs:label "Bologna"@it ;
     dcterms:description "Città"@it ;
@@ -20018,6 +20000,18 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 292"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/reference/ref_00683> a chora:PlaceReference ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
+    chora:excerpt "quando la strombazzò due volte poh! poh! davanti al portone della rocca."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
+    chora:sourceReference "A 294"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00684> a chora:PlaceReference ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
+    chora:excerpt "Il selciato scivoloso. Una lastra al cantone: via Massimo Dazzélio."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
+    chora:sourceReference "A 294"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/reference/ref_00720> a chora:PlaceReference ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
     chora:excerpt "« Fate passare, in ogni modo. Andiamo. Su. Devo far perquisire la casa. »"@it ;
@@ -20501,18 +20495,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:excerpt "Così almanaccando s'avvide alfine della strada: erano quasi all'anziate."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
     chora:sourceReference "A 274"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/reference/ref_00683> a chora:PlaceReference ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
-    chora:excerpt "quando la strombazzò due volte poh! poh! davanti al portone della rocca."@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
-    chora:sourceReference "A 294"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/reference/ref_00684> a chora:PlaceReference ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
-    chora:excerpt "Il selciato scivoloso. Una lastra al cantone: via Massimo Dazzélio."@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
-    chora:sourceReference "A 294"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00687> a chora:PlaceReference ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
@@ -21681,6 +21663,13 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasRealityStatus chora:Transformed ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/marino> a chora:NarrativePlace ;
+    rdfs:label "Marino"@it ;
+    dcterms:description "Località dei Castelli Romani"@it ;
+    rdfs:comment "Non presente in Indice dei Luoghi Isella"@it ;
+    chora:hasPlaceCategory chora:locality ;
+    chora:hasRealityStatus chora:Imported .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/tor_di_gheppio> a chora:NarrativePlace ;
     rdfs:label "Tor di Gheppio"@it ;
     dcterms:description "Località inventata, natali dell'Assunta Crocchiapani"@it ;
@@ -21721,13 +21710,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 }"""^^geosparql:geoJSONLiteral ] ;
     geo1:lat 41.76071420037528 ;
     geo1:long 12.599632278065911 .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/marino> a chora:NarrativePlace ;
-    rdfs:label "Marino"@it ;
-    dcterms:description "Località dei Castelli Romani"@it ;
-    rdfs:comment "Non presente in Indice dei Luoghi Isella"@it ;
-    chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
 
 <https://w3id.org/gaddatlas/id/focalizer/ascanio_lanciani> a chora:Character,
         chora:FocalizingAgent ;
@@ -21867,16 +21849,16 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasPlaceCategory chora:street ;
     chora:hasRealityStatus chora:Imported .
 
+<https://w3id.org/gaddatlas/id/focalizer/maresciallo_di_pietrantonio> a chora:Character,
+        chora:FocalizingAgent ;
+    chora:characterName "Maresciallo Di Pietrantonio"@it ;
+    chora:hasGender "male"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/tenenza_carabinieri_marino> a chora:NarrativePlace ;
     rdfs:label "Tenenza dei Carabinieri di Marino"@it ;
     dcterms:description "Stazione di Polizia di Marino"@it ;
     chora:hasPlaceCategory chora:building ;
     chora:hasRealityStatus chora:Transformed .
-
-<https://w3id.org/gaddatlas/id/focalizer/maresciallo_di_pietrantonio> a chora:Character,
-        chora:FocalizingAgent ;
-    chora:characterName "Maresciallo Di Pietrantonio"@it ;
-    chora:hasGender "male"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/focalizer/agente_runzato> a chora:Character,
         chora:FocalizingAgent ;

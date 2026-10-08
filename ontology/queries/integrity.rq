@@ -2,7 +2,7 @@
 # GaddAtlas v4.1 — Integrity queries
 # Complementari a SHACL: SHACL verifica la forma dei dati, queste verificano
 # invarianti di modello e completezza. Tutte devono restituire ZERO righe,
-# tranne IQ9 che e' informativa.
+# tranne IQ9 e IQ11 che sono informative.
 # =============================================================================
 
 
@@ -107,3 +107,19 @@ SELECT ?a ?b WHERE {
   ?a ga:isPartOf ?b .
   ?b ga:isPartOf ?a .
 }
+
+
+# ==== IQ11 — Riferimenti con piu' luoghi narrativi (INFORMATIVA) ====
+# Un riferimento le cui interpretazioni bersagliano luoghi diversi. Puo' essere
+# un errore (interpretazione agganciata al riferimento sbagliato) o una
+# referenza plurale voluta («da Faiti o da Cengio», R04, T-47): va letta caso
+# per caso. Il controllo bloccante sta in tools/audit_alignment.py, sulle
+# sorgenti: nel grafo la PlaceReference non porta il proprio luogo (D-022).
+PREFIX ga: <https://w3id.org/chora#>
+SELECT ?ref (COUNT(DISTINCT ?place) AS ?luoghi) WHERE {
+  ?interp ga:interpretsReference ?ref ;
+          ga:targetsPlace ?place .
+}
+GROUP BY ?ref
+HAVING (COUNT(DISTINCT ?place) > 1)
+ORDER BY ?ref
