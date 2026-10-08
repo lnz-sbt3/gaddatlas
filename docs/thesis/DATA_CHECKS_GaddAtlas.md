@@ -76,7 +76,7 @@ Ogni voce rinvia ai task del work order (`docs/thesis/GaddAtlas_Cap4_Allineament
 **Aperte (work order, § 10):**
 
 - [ ] Modello delle asserzioni (DM-02): n-ario + HiCO / RDF-star / named graph
-- [ ] Glifi degli statuti nel nuovo ordine (T-04, T-65)
+- [x] Glifi degli statuti: seguono il nome dello statuto (D-030)
 - [ ] DC-16: i 5 luoghi divenuti Imagined, dati o capitolo
 - [ ] DC-20: conflitto cromatico ruolo / densità
 - [ ] DC-08: Invented o Transformed
@@ -89,4 +89,4 @@ Ogni voce rinvia ai task del work order (`docs/thesis/GaddAtlas_Cap4_Allineament
 - [ ] Casi esempio del *Palazzo degli ori*
 - [ ] Canale visivo della SpatialDetermination (Precise / Relative / Approximate / Indeterminate)
 - [ ] Resa dei percorsi non compiuti
-- [ ] Soglia di lunghezza degli estratti (R21)
+- [x] Soglia di lunghezza degli estratti: resta quella attuale, tetto 700 caratteri (D-030)

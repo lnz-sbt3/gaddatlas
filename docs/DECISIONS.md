@@ -575,6 +575,18 @@ guardato a schermo prima di darlo per buono.
 
 ---
 
+## D-030 — Glifi degli statuti e soglia degli estratti (8 ottobre 2026)
+
+- Requisito/i: R07, R21 · Ipotesi: — · Data check: DM-01 (work order T-65, T-55)
+- Stato precedente: dopo la permutazione (D-026) restava aperto se i glifi del prototipo (`_archivio/chartD.js:219-237`, `FICT_GLYPH_PATHS`, uno per statuto) dovessero seguire il nome dello statuto o il suo significato; la soglia di lunghezza degli estratti (R21) era da decidere (oggi: tetto di 700 caratteri in `tools/build_passages.py`; mediana 141, massimo 573).
+- Decisione (di Lorenzo, 8/10/2026): (1) **i glifi restano legati al nome dello statuto**: il glifo «invented» va ai luoghi Invented e quello «imagined» ai luoghi Imagined. Poiché i valori sono stati permutati, i 15 luoghi ora Invented ricevono il glifo che prima avevano i 5 e viceversa: nessuna modifica al codice né all'archivio. (2) **La soglia degli estratti resta quella attuale**: nessun estratto supera il tetto di 700 caratteri, e la policy non richiede tagli.
+- Motivazione (fonte, pagina): la forma del glifo codifica lo statuto (grammatica visiva, `CLAUDE.md`); la correzione di D-026 era di nome, non di contenuto grafico.
+- Fase in cui è maturata: prototipazione (vista diagramma)
+- File toccati (manifest): nessuno nel codice o nei dati; `docs/thesis/DATA_CHECKS_GaddAtlas.md` (lista delle decisioni).
+- Effetto su KG (triple prima/dopo, SHACL): nessuno.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`
