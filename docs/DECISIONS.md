@@ -539,6 +539,18 @@ guardato a schermo prima di darlo per buono.
 
 ---
 
+## D-027 — Edicola ai Due Santi: luogo importato (8 ottobre 2026)
+
+- Requisito/i: R03, R07, R22 · Ipotesi: H3 · Data check: DC-03 (work order T-03)
+- Stato precedente: `edicola_due_santi` era Invented (Imagined prima della permutazione di D-026), parte di `orto_vigna_due_santi`, senza ancoraggio nelle sue 3 interpretazioni; descrizione «Edicola immaginata…». Nessuna GazetteerEntity adatta.
+- Decisione (di Lorenzo, 8/10/2026): statuto **Imported**, nuova descrizione, `Is_Part_Of` tolto (un luogo importato parte di un luogo fittizio era incoerente, e `isPartOf` gli avrebbe fatto ereditare l'ancoraggio sbagliato). Nuova `gaz_edicola_due_santi`. Non esistendo una coordinata TCI, la posizione **eredita quella di `gaz_due_santi`** con uno scarto convenzionale di +0,0003° in latitudine e longitudine (circa 40 m), al solo scopo di non far coincidere due generatori della tassellazione. Lo scarto è dichiarato in `Authority_Source`, che l'ETL serializza come `dcterms:source` (in AUDIT_0, T-46, avevo scritto per errore che la colonna non era mappata: è mappata, ma era vuota in tutte le 265 righe). Le 3 interpretazioni sono ancorate alla nuova entità. La relazione qualitativa con l'orto (`AdjacentTo`: il tabernacolo «interrompeva» il muriccio, QP 216) è rinviata a T-53, perché oggi il modello non ha relazioni fra luoghi narrativi oltre a `isPartOf`. L'asserzione attribuita a Manzotti e la revisione superata della lettura di LS entrano in fase 3. Il seme `edicola_due_santi` resta in `data/source/void_seeds.json`, inutilizzato, perché un eventuale ritorno della tessera propria non ne cambi la forma.
+- Motivazione (fonte, pagina): Manzotti 2010, p. 246 (traccia del tabernacolo nella piantina dei Castelli, TCI, *Italia centrale* IV); QP 216, 219; Cap. 4, n. 24 (r. 601).
+- Fase in cui è maturata: analisi del testo
+- File toccati (manifest): `data/source/tables/GazetteerEntities.tsv:789-804` (nuova riga, con la geometria multiriga); `data/source/tables/NarrativePlaces.tsv:68`; `data/source/tables/SpatialInterpretations.tsv:663`, `:666-667`; tre XLSX rigenerati.
+- Effetto su KG (triple prima/dopo, SHACL): ABox 16.044 → **16.055**; full 17.214 → **17.225** (+11: 9 per la nuova entità, comprese `dcterms:source` e la geometria; +3 ancore; −1 `isPartOf`). Gazetteer 264 → 265; Imported 259 → **260**, Invented 15 → **14**. Vista: tessere proprie 49 → 48 (l'edicola confluisce nella tessera di `gaz_edicola_due_santi`: 3 occorrenze, classe «raro», 18,6 km dal centro); generatori 221 → 222; semi delle 48 tessere restanti invariati; nessun'altra feature cambia. `excludedUnanchored` resta 0. SHACL conforme, 0 violazioni.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

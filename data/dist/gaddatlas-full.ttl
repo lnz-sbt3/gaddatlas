@@ -7324,6 +7324,7 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00660> a prov:Entity,
         chora:SpatialInterpretation ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_edicola_due_santi> ;
     chora:assignsNarrativeRole chora:Marker ;
     chora:assignsSpatialDetermination chora:Precise ;
     chora:assignsSpatialRelationType chora:Overlaps ;
@@ -7351,6 +7352,7 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00663> a prov:Entity,
         chora:SpatialInterpretation ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_edicola_due_santi> ;
     chora:assignsNarrativeRole chora:Marker ;
     chora:assignsSpatialDetermination chora:Precise ;
     chora:assignsSpatialRelationType chora:Overlaps ;
@@ -7360,6 +7362,7 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00664> a prov:Entity,
         chora:SpatialInterpretation ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_edicola_due_santi> ;
     chora:assignsNarrativeRole chora:Marker ;
     chora:assignsSpatialDetermination chora:Approximate ;
     chora:assignsSpatialRelationType chora:Overlaps ;
@@ -13800,6 +13803,14 @@ chora:ward a owl:NamedIndividual,
     chora:hasPlaceCategory chora:mountain ;
     chora:hasRealityStatus chora:Imported .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi> a chora:NarrativePlace ;
+    rdfs:label "Orto o Vigna ai Due Santi"@it ;
+    dcterms:description "Luogo non precisato simile a un orto o una vigna, di fronte al laboratorio della Zamira, al lato opposto della via Appia"@it ;
+    chora:hasFuzzinessLevel 4.0 ;
+    chora:hasPlaceCategory chora:kitchen_garden ;
+    chora:hasRealityStatus chora:Invented ;
+    chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira> .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_del_mappamondo> a chora:NarrativePlace ;
     rdfs:label "Palazzo der Mappamonno"@it ;
     chora:hasPlaceCategory chora:historical_building ;
@@ -19209,14 +19220,6 @@ chora:village a owl:NamedIndividual,
     chora:hasPlaceCategory chora:mountain ;
     chora:hasRealityStatus chora:Imported .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi> a chora:NarrativePlace ;
-    rdfs:label "Orto o Vigna ai Due Santi"@it ;
-    dcterms:description "Luogo non precisato simile a un orto o una vigna, di fronte al laboratorio della Zamira, al lato opposto della via Appia"@it ;
-    chora:hasFuzzinessLevel 4.0 ;
-    chora:hasPlaceCategory chora:kitchen_garden ;
-    chora:hasRealityStatus chora:Invented ;
-    chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira> .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/ostia> a chora:NarrativePlace ;
     rdfs:label "Ostia"@it ;
     dcterms:description "Località di mare"@it ;
@@ -20341,6 +20344,30 @@ chora:temple a owl:NamedIndividual,
     geo1:lat 41.7320873 ;
     geo1:long 12.6960074 .
 
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_edicola_due_santi> a chora:GazetteerEntity ;
+    rdfs:label "Edicola ai Due Santi"@it ;
+    dcterms:source "Posizione derivata da gaz_due_santi con uno scarto convenzionale di circa 40 m (+0,0003° lat/long), solo per distinguere i generatori della tassellazione: nessuna coordinata TCI disponibile. Esistenza del tabernacolo: piantina dei Castelli, TCI, Italia centrale IV (Manzotti 2010, p. 246)."^^xsd:string ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.616871382457,
+          41.761482099679
+        ]
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 41.761482099679 ;
+    geo1:long 12.616871382457 ;
+    skos:altLabel "tabernacolo"@it .
+
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_falcognana> a chora:GazetteerEntity ;
     rdfs:label "Falcognana"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -20626,11 +20653,10 @@ chora:temple a owl:NamedIndividual,
 
 <https://w3id.org/gaddatlas/id/narrativeplace/edicola_due_santi> a chora:NarrativePlace ;
     rdfs:label "Edicola ai Due Santi"@it ;
-    dcterms:description "Edicola immaginata al di sopra del muro di cinta della vigna/orto sul lato opposto della via Appia rispetto al laboratorio della Zamira"@it ;
+    dcterms:description "Tabernacolo a due pioventi che interrompe il muriccio dell'orto o vigna di fronte al laboratorio della Zamira, sul lato opposto della via Appia (QP 216, 219). Luogo importato: Manzotti (2010, p. 246) ne trova traccia nella piantina dei Castelli del Touring."@it ;
     skos:altLabel "tabernacolo appia"@it ;
     chora:hasPlaceCategory chora:shrine ;
-    chora:hasRealityStatus chora:Invented ;
-    chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi> .
+    chora:hasRealityStatus chora:Imported .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/falcognana> a chora:NarrativePlace ;
     rdfs:label "Falcognana"@it ;
@@ -22821,12 +22847,6 @@ chora:basilica a owl:NamedIndividual,
     geo1:lat 41.73247489501876 ;
     geo1:long 12.58446168893847 .
 
-<https://w3id.org/gaddatlas/id/focalizer/giuliano_valdarena> a chora:Character,
-        chora:FocalizingAgent ;
-    dcterms:description "Giuliano Valdarena, cugino di Liliana, tra i sospettati."@it ;
-    chora:characterName "Giuliano Valdarena"@it ;
-    chora:hasGender "male"^^xsd:string .
-
 chora:Invented a owl:NamedIndividual,
         skos:Concept ;
     owl:differentFrom chora:Imagined,
@@ -22839,6 +22859,12 @@ chora:Invented a owl:NamedIndividual,
     skos:prefLabel "Invented"@en ;
     skos:scopeNote "Third degree of the scale: a fictional place set within a known, identifiable geography, so that its position can be indicated or inferred. Not to be confused with Imagined, which has no indication of position at all (Reuschel, Piatti and Hurni 2013, pp. 138–139)."@en ;
     skos:topConceptOf chora:RealityStatusScheme .
+
+<https://w3id.org/gaddatlas/id/focalizer/giuliano_valdarena> a chora:Character,
+        chora:FocalizingAgent ;
+    dcterms:description "Giuliano Valdarena, cugino di Liliana, tra i sospettati."@it ;
+    chora:characterName "Giuliano Valdarena"@it ;
+    chora:hasGender "male"^^xsd:string .
 
 chora:Overlaps a owl:NamedIndividual,
         skos:Concept ;

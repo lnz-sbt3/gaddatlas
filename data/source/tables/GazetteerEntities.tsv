@@ -786,6 +786,22 @@ gaz_due_santi	Due Santi					41.76118209967858	12.616571382457442	"{
     }
   ]
 }"	
+gaz_edicola_due_santi	Edicola ai Due Santi		tabernacolo			41.761482099679	12.616871382457	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.616871382457,
+          41.761482099679
+        ]
+      }
+    }
+  ]
+}"	Posizione derivata da gaz_due_santi con uno scarto convenzionale di circa 40 m (+0,0003° lat/long), solo per distinguere i generatori della tassellazione: nessuna coordinata TCI disponibile. Esistenza del tabernacolo: piantina dei Castelli, TCI, Italia centrale IV (Manzotti 2010, p. 246).
 gaz_esquilino	Esquilino				Rione XV	41.893298797354646	12.505248214532829	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
