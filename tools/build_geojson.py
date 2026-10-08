@@ -319,6 +319,12 @@ def main(ttl_path, out_dir, seeds_path=None):
     role_acc = defaultdict(Counter)
     det_acc = defaultdict(Counter)
     np_refs = defaultdict(set)      # np -> {referenceId}  (misura del piano)
+    # Un'interpretazione con piu' ancore (ancoraggio relazionale, es. Casal
+    # Bruciato fra Marino, Albano, Pavona e Santa Palomba: D-024) torna dalla
+    # query una volta per ancora. Si tiene UN record per interpretazione: le
+    # ancore in piu' alimentano solo i referenti del luogo (tgt_acc), non il
+    # conteggio delle interpretazioni, dei ruoli e del rilievo.
+    rec_by_si = {}
     for row in g.query(Q_INTERPRETATIONS):
         gaz_iri = str(row.gaz) if row.gaz else None
         if gaz_iri:
@@ -328,6 +334,16 @@ def main(ttl_path, out_dir, seeds_path=None):
                     if gv["id"] == canon:
                         gaz_iri = gk
                         break
+        prev = rec_by_si.get(str(row.si))
+        if prev is not None:
+            if gaz_iri and row.place:
+                p = str(row.place)
+                tgt_acc[p][gaz_iri] += float(row.conf) if row.conf else 1.0
+                gaz[gaz_iri]["refCountAnchored"] += 1
+                # gazetteerId deterministico: il primo id in ordine alfabetico
+                if prev["gazetteerId"] is None or sid(gaz_iri) < prev["gazetteerId"]:
+                    prev["gazetteerId"] = sid(gaz_iri)
+            continue
         rec = {
             "id": sid(row.si), "iri": str(row.si),
             "referenceId": sid(row.ref),
@@ -344,6 +360,7 @@ def main(ttl_path, out_dir, seeds_path=None):
             "criticalNote": str(row.note) if row.note else None,
         }
         sis.append(rec)
+        rec_by_si[str(row.si)] = rec
         if row.place:
             p = str(row.place)
             if p in nps:
