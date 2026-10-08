@@ -1223,15 +1223,28 @@ class GaddaETL:
 # MAIN
 # ============================================================
 
+class _SortedGraph(Graph):
+    """Grafo che restituisce le triple sempre in ordine.
+
+    Lo store in memoria di rdflib le itera in un ordine che dipende dall'hash
+    randomizzato di Python, e il serializzatore RDF/XML (a differenza di
+    quello Turtle) non riordina nulla: senza questo ordine chora.rdf cambiava
+    a ogni build (D-018).
+    """
+
+    def triples(self, triple):
+        return iter(sorted(super().triples(triple)))
+
+
 def canonical(graph: Graph) -> Graph:
     """Copia del grafo con nodi anonimi rinominati in forma canonica.
 
     rdflib assegna ai BNode id casuali e il serializzatore Turtle li ordina
     per id: senza questo passo lo stesso grafo esce in serializzazioni
-    diverse a ogni build (D-018). Il grafo restituito e' isomorfo e conserva
-    i prefissi.
+    diverse a ogni build (D-018). Il grafo restituito e' isomorfo, conserva
+    i prefissi e itera le triple in ordine (_SortedGraph).
     """
-    out = Graph()
+    out = _SortedGraph()
     for prefix, ns in graph.namespaces():
         out.bind(prefix, ns, override=True, replace=True)
     for triple in to_canonical_graph(graph):
