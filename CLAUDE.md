@@ -20,17 +20,19 @@ Due artefatti distinti nello stesso repository:
 
 ## Le decisioni sono già prese
 
-`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-014; quelle dell'allineamento al
-Capitolo 4 partono da D-015. **Leggile
+`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-029; quelle dell'allineamento al
+Capitolo 4 partono da D-015. Nel file sono in ordine cronologico, non numerico. **Leggile
 prima di proporre alternative architetturali.** Se una scelta ti sembra
 sbagliata, dillo citando la decisione — non aggirarla in silenzio.
 
-**Stato dei dati: allineato.** `data/dist/gaddatlas.geojson` dichiara
-`tripleCount 17203`, `buildVersion 4.3`, `ontology CHORA`. D-014 è chiusa. Se
-un giorno leggi `4.2` o `17168`, il GeoJSON è tornato indietro: `make all`.
-Questi valori sono la base di partenza della fase 1 dell'allineamento: ogni task
-che li cambia riporta il nuovo conteggio nella sua voce di `DECISIONS.md`, e alla
-fine della fase questo paragrafo si aggiorna.
+**Stato dei dati: allineato (fine della fase 1, 8 ottobre 2026).**
+`data/dist/gaddatlas.geojson` dichiara `tripleCount 17225`, `buildVersion 4.3`,
+`ontology CHORA`. ABox 16.055 triple, TBox 600; 309 luoghi (Imported 260 ·
+Transformed 30 · Invented 14 · Imagined 5), 265 entità del gazetteer, 960
+interpretazioni. Ogni task che cambia questi valori ne dà conto nella sua voce di
+`DECISIONS.md`; un conteggio diverso senza una voce che lo spieghi vuol dire che i
+derivati non sono allineati: `make all`. Il build è deterministico (D-018): due
+`make all` consecutivi non devono produrre alcun diff.
 
 Le tre non negoziabili:
 
@@ -42,7 +44,8 @@ Le tre non negoziabili:
    `data/source/mapping.yaml`, `data/source/void_seeds.json` e
    `ontology/chora.ttl` (D-016). Sono **derivati**: gli XLSX in
    `data/source/xlsx/` (`make xlsx`, per chi lavora in Excel), `ontology/chora.rdf`
-   (RDF/XML per Protégé), tutto ciò che sta in `data/dist/` (`make all`) e
+   (RDF/XML per Protégé) e `ontology/chora.jsonld` (D-029), la documentazione in
+   `ontology/docs/` (`make docs`), tutto ciò che sta in `data/dist/` (`make all`) e
    `app/public/data/` (`make publish-data`). Una modifica a mano lì sparisce al
    build successivo. Se Lorenzo lavora in Protégé, salva su `chora.ttl`.
 
@@ -261,7 +264,7 @@ un file unico, contro D-004. È in `.gitignore`.
 ## Cosa registrare
 
 Quando prendi una decisione architetturale o ne scarti una alternativa,
-aggiungi una voce a `docs/DECISIONS.md` (prossimo numero libero, da D-015) con
+aggiungi una voce a `docs/DECISIONS.md` (prossimo numero libero dopo l'ultima voce) con
 data, alternative scartate e motivazione. Per le decisioni sui dati e sul modello
 nate dal Capitolo 4 aggiorna anche `docs/thesis/DATA_CHECKS_GaddAtlas.md`. Serve al capitolo di tesi sul design dell'interfaccia: è la
 ragione per cui quel file esiste.
