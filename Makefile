@@ -1,4 +1,4 @@
-.PHONY: help all rdf geojson passages audit shacl queries docs clean check
+.PHONY: help all rdf geojson passages audit shacl queries docs clean check xlsx
 
 help:
 	@echo ""
@@ -12,6 +12,7 @@ help:
 	@echo "  make shacl     validazione SHACL (deve dire CONFORMS: True)"
 	@echo "  make queries   12 competency + 10 integrity query"
 	@echo "  make docs      rigenera la documentazione pyLODE"
+	@echo "  make xlsx      TSV canonici -> data/source/xlsx/ (per chi lavora in Excel)"
 	@echo "  make clean     rimuove i derivati"
 	@echo ""
 
@@ -20,6 +21,12 @@ help:
 all: rdf geojson passages audit
 
 check: all shacl queries
+
+# I TSV sono la sorgente (D-015); gli XLSX sono un derivato per chi lavora in
+# Excel. Una modifica fatta in un XLSX torna nel TSV con
+# tools/xlsx_to_tsv.py, che sovrascrive il TSV: controllarne il diff.
+xlsx:
+	python3 tools/tsv_to_xlsx.py --tables data/source/tables --out data/source/xlsx
 
 # Sorgenti: i TSV in data/source/tables/, il mapping, e la TBox in
 # ontology/chora.ttl (D-016). chora.rdf e' DERIVATA da chora.ttl, in RDF/XML

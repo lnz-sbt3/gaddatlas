@@ -42,8 +42,8 @@ gaddatlas/
 │   ├── CHANGELOG.md  README.md
 ├── data/                        ← GaddAtlas: il caso di studio
 │   ├── source/                    ← SORGENTE
-│   │   ├── xlsx/                    annotazione, superficie di editing
-│   │   ├── tables/                  gli stessi dati in TSV, diffabili in git
+│   │   ├── tables/                  annotazione in TSV (SORGENTE, D-015)
+│   │   ├── xlsx/                    gli stessi dati per Excel (derivati, make xlsx)
 │   │   └── mapping.yaml             etichette italiane → URI dell'ontologia
 │   ├── gaddatlas.ttl              ABox (derivata)
 │   └── dist/                      ← derivati, rigenerabili
@@ -58,12 +58,12 @@ gaddatlas/
 
 ### Il principio architetturale
 
-Le sorgenti modificabili a mano sono **due**: i fogli di annotazione in
-`data/source/xlsx/` e la TBox in `ontology/chora.ttl` (D-016). Tutto il resto è
-derivato e rigenerabile con `make all`.
+Le sorgenti modificabili a mano sono **due**: le tabelle di annotazione in
+`data/source/tables/*.tsv` (D-015) e la TBox in `ontology/chora.ttl` (D-016).
+Tutto il resto è derivato: gli XLSX con `make xlsx`, il resto con `make all`.
 
 ```
-data/source/xlsx/*.xlsx  ──▶  tables/*.tsv  ─┐
+data/source/tables/*.tsv  ───────────────────┐
                                               ├─(tools/etl.py + mapping.yaml)─▶  data/gaddatlas.ttl
 ontology/chora.ttl  ─────────────────────────┘                                        │
                                                                                       ▼

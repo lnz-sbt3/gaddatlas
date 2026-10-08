@@ -414,6 +414,18 @@ guardato a schermo prima di darlo per buono.
 
 ---
 
+## D-015 — I TSV sono la sorgente canonica dei dati (8 ottobre 2026)
+
+- Requisito/i: — (infrastruttura; aggiorna D-002) · Ipotesi: — · Data check: — (work order T-80; AUDIT_0, premessa 2)
+- Stato precedente: la documentazione indicava come sorgente gli XLSX di `data/source/xlsx/`, ma l'ETL legge i TSV di `data/source/tables/` (`Makefile`, target `rdf`). La conversione `tools/xlsx_to_tsv.py` era manuale e fuori dal Makefile: una modifica fatta in Excel e non riconvertita veniva ignorata in silenzio. All'audit XLSX e TSV coincidevano (0 differenze di valore).
+- Decisione: i TSV sono la sorgente canonica, diffabile e revisionabile in git. Gli XLSX diventano un derivato per chi lavora in Excel e si rigenerano con `make xlsx` (`tools/tsv_to_xlsx.py`, nuovo). `tools/xlsx_to_tsv.py` resta solo per riportare nei TSV una modifica fatta in Excel, con un avviso: sovrascrive il TSV. Scartata l'alternativa di tenere gli XLSX come sorgente e mettere la conversione nel Makefile: gli XLSX sono binari, non diffabili, e la conversione altera i decimali (v. sotto). Decisione di Lorenzo dell'8/10/2026.
+- Motivazione (fonte, pagina): giro TSV → XLSX → TSV verificato byte per byte su tutti e sette i fogli. In `tsv_to_xlsx.py` diventano numeri solo gli interi; i decimali restano testo, perché openpyxl li scrive con 16 cifre significative e le coordinate perderebbero l'ultima cifra al ritorno (es. 12.563362579004666 → 12.56336257900467), mentre «1.0» di `Confidence` tornerebbe «1».
+- Fase in cui è maturata: revisione critica (audit di fase 0)
+- File toccati (manifest): `tools/tsv_to_xlsx.py` (nuovo, 1-69); `tools/xlsx_to_tsv.py:5-9` (avviso); `Makefile:1`, `:15` (help), `:25-30` (target `xlsx`); `README.md:45-46`, `:61-63`, `:66`; `data/README.md:11`, `:17-21`; `CLAUDE.md:49-50`. Rigenerati con `make xlsx`: i sette `data/source/xlsx/*.xlsx`. Cambiano nome del foglio (ora quello del file, prima talvolta «Sheet1»); `GazetteerEntities.xlsx` perde quattro colonne finali senza intestazione e vuote, che la conversione già scartava.
+- Effetto su KG (triple prima/dopo, SHACL): nessuno, i TSV non cambiano. ABox 16.045, full 17.203; SHACL conforme, 0 violazioni. Nota: openpyxl scrive data e ora nei metadati degli XLSX, quindi ogni `make xlsx` produce binari diversi anche a dati invariati. `make xlsx` non fa parte di `make all` e la CI non confronta gli XLSX.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`
