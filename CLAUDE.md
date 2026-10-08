@@ -20,15 +20,15 @@ Due artefatti distinti nello stesso repository:
 
 ## Le decisioni sono già prese
 
-`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-029; quelle dell'allineamento al
+`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-032; quelle dell'allineamento al
 Capitolo 4 partono da D-015. Nel file sono in ordine cronologico, non numerico. **Leggile
 prima di proporre alternative architetturali.** Se una scelta ti sembra
 sbagliata, dillo citando la decisione — non aggirarla in silenzio.
 
 **Stato dei dati: allineato (fine della fase 1, 8 ottobre 2026).**
-`data/dist/gaddatlas.geojson` dichiara `tripleCount 17225`, `buildVersion 4.3`,
-`ontology CHORA`. ABox 16.055 triple, TBox 600; 309 luoghi (Imported 260 ·
-Transformed 30 · Invented 14 · Imagined 5), 265 entità del gazetteer, 960
+`data/dist/gaddatlas.geojson` dichiara `tripleCount 17227`, `buildVersion 4.3`,
+`ontology CHORA`. ABox 16.057 triple, TBox 600; 309 luoghi (Imported 259 ·
+Transformed 31 · Invented 14 · Imagined 5), 265 entità del gazetteer, 960
 interpretazioni. Ogni task che cambia questi valori ne dà conto nella sua voce di
 `DECISIONS.md`; un conteggio diverso senza una voce che lo spieghi vuol dire che i
 derivati non sono allineati: `make all`. Il build è deterministico (D-018): due

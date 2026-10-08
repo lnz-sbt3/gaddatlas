@@ -575,7 +575,7 @@ Pagine «metodo», legende e tooltip devono usare la terminologia del Cap. 4: st
 - [x] I 5 luoghi divenuti Imagined: nessuna riassegnazione (D-031)
 - [ ] Conflitto cromatico ruolo / densità (T-86)
 - [x] Palazzo 219: Transformed (D-031)
-- [x] Palazzo Simonetti: Transformed (D-031); ancoraggio da applicare
+- [x] Palazzo Simonetti: Transformed, ancorato a via Lanza (D-031, D-032)
 - [ ] Castello: lettura adottata (T-13)
 - [x] Robine Vecchie: una sola occorrenza, QP 169 (D-031)
 - [ ] `confidence` / `hasFuzzinessLevel`: rimuovere o declassare (T-34)

@@ -126,8 +126,9 @@
     geo1:lat 40.84161917254697 ;
     geo1:long 14.258960456507776 .
 
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_palazzo_simonetti> a chora:GazetteerEntity ;
-    rdfs:label "Palazzo Simonetti"@it ;
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_palazzo_odescalchi_simonetti> a chora:GazetteerEntity ;
+    rdfs:label "Palazzo Odescalchi Simonetti"@it ;
+    dcterms:source "Candidato della lettura di Terzoli (cit. in Pinotti 2025, p. 78): palazzo Odescalchi Simonetti, già pensione White, dove Gadda aveva abitato. Civico 11 secondo Pinotti; il dato precedente indicava 13. Non è il referente di palazzo_simonetti: entità predisposta per l'identificazione attribuita."^^xsd:string ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
             geosparql:asGeoJSON """{
   "type": "FeatureCollection",
@@ -13272,8 +13273,9 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_simonetti> a chora:NarrativePlace ;
     rdfs:label "Palazzo Simonetti"@it ;
+    dcterms:description "Luogo trasformato per rilocazione: il palazzo Simonetti (o De Carolis) è reale e sorge in via Lata, presso piazza del Collegio Romano, dove lo colloca il dattiloscritto dei capitoli nuovi; in QP 177 Gadda lo sposta in via Lanza, dove non esiste (Pinotti 2025, p. 78). Ancorato a via Lanza, la sua collocazione nel testo; nessuna coordinata propria."@it ;
     chora:hasPlaceCategory chora:historical_building ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Transformed .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/palestrina> a chora:NarrativePlace ;
     rdfs:label "Palestrina"@it ;

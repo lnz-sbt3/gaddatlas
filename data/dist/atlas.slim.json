@@ -21,7 +21,7 @@
   "ontologyVersion": "1.0.0",
   "buildVersion": "4.3",
   "source": "gaddatlas-full.ttl",
-  "tripleCount": 17225,
+  "tripleCount": 17227,
   "projection": {
    "type": "equirectangular",
    "center": [
@@ -118,7 +118,7 @@
    "agents": 83,
    "derivedSequences": 103,
    "reliefRows": 931,
-   "ownTiles": 48
+   "ownTiles": 49
   }
  },
  "gazetteer": [
@@ -1035,25 +1035,6 @@
    "densityLevel": 1
   },
   {
-   "id": "gaz_via_lanza",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_lanza",
-   "label": "Via Lanza",
-   "lon": 12.496558649455126,
-   "lat": 41.8952468123314,
-   "x": 11.808,
-   "y": 755.319,
-   "scaleBand": "urbano",
-   "presentLocation": "via Giovanni Lanza",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 0.8,
-   "refCountAnchored": 5,
-   "planeCount": 3,
-   "interpCount": 5,
-   "narrativePlaceCount": 2,
-   "densityClass": "raro",
-   "densityLevel": 1
-  },
-  {
    "id": "gaz_ferrovia_roma_velletri",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri",
    "label": "Ferrovia Roma-Velletri",
@@ -1904,6 +1885,25 @@
    "refCountAnchored": 5,
    "planeCount": 2,
    "interpCount": 2,
+   "narrativePlaceCount": 2,
+   "densityClass": "raro",
+   "densityLevel": 1
+  },
+  {
+   "id": "gaz_via_lanza",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_lanza",
+   "label": "Via Lanza",
+   "lon": 12.496558649455126,
+   "lat": 41.8952468123314,
+   "x": 11.808,
+   "y": 755.319,
+   "scaleBand": "urbano",
+   "presentLocation": "via Giovanni Lanza",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 0.8,
+   "refCountAnchored": 5,
+   "planeCount": 2,
+   "interpCount": 4,
    "narrativePlaceCount": 2,
    "densityClass": "raro",
    "densityLevel": 1
@@ -4797,9 +4797,9 @@
    "densityLevel": -1
   },
   {
-   "id": "gaz_palazzo_simonetti",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_palazzo_simonetti",
-   "label": "Palazzo Simonetti",
+   "id": "gaz_palazzo_odescalchi_simonetti",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_palazzo_odescalchi_simonetti",
+   "label": "Palazzo Odescalchi Simonetti",
    "lon": 12.472392994101876,
    "lat": 41.90520237070184,
    "x": -1786.791,
@@ -11318,9 +11318,9 @@
    "id": "palazzo_simonetti",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/palazzo_simonetti",
    "label": "Palazzo Simonetti",
-   "realityStatus": "Imported",
+   "realityStatus": "Transformed",
    "placeCategory": "historical_building",
-   "description": null,
+   "description": "Luogo trasformato per rilocazione: il palazzo Simonetti (o De Carolis) è reale e sorge in via Lata, presso piazza del Collegio Romano, dove lo colloca il dattiloscritto dei capitoli nuovi; in QP 177 Gadda lo sposta in via Lanza, dove non esiste (Pinotti 2025, p. 78). Ancorato a via Lanza, la sua collocazione nel testo; nessuna coordinata propria.",
    "fuzziness": null,
    "partOf": null,
    "interpCount": 1,
@@ -48127,8 +48127,8 @@
    "chapterId": "capitolo_VII",
    "chapter": 7,
    "length": 8,
-   "distinctTargets": 7,
-   "dispersion": 0.875,
+   "distinctTargets": 8,
+   "dispersion": 1.0,
    "pageRange": [
     177,
     192
@@ -48137,7 +48137,7 @@
     {
      "page": 177,
      "referenceId": "ref_00435",
-     "targetId": "gaz_via_lanza",
+     "targetId": "palazzo_simonetti",
      "narrativePlaceId": "palazzo_simonetti",
      "gazetteerId": "gaz_via_lanza",
      "interpretationId": "interp_00506",
@@ -56580,7 +56580,7 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_via_lanza",
+   "targetId": "palazzo_simonetti",
    "interpretationId": "interp_00506",
    "referenceId": "ref_00435",
    "page": 177,

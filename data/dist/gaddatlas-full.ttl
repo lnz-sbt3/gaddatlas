@@ -432,8 +432,9 @@ chora:targetsRoute a owl:ObjectProperty ;
     geo1:lat 40.84161917254697 ;
     geo1:long 14.258960456507776 .
 
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_palazzo_simonetti> a chora:GazetteerEntity ;
-    rdfs:label "Palazzo Simonetti"@it ;
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_palazzo_odescalchi_simonetti> a chora:GazetteerEntity ;
+    rdfs:label "Palazzo Odescalchi Simonetti"@it ;
+    dcterms:source "Candidato della lettura di Terzoli (cit. in Pinotti 2025, p. 78): palazzo Odescalchi Simonetti, già pensione White, dove Gadda aveva abitato. Civico 11 secondo Pinotti; il dato precedente indicava 13. Non è il referente di palazzo_simonetti: entità predisposta per l'identificazione attribuita."^^xsd:string ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
             geosparql:asGeoJSON """{
   "type": "FeatureCollection",
@@ -13834,8 +13835,9 @@ chora:ward a owl:NamedIndividual,
 
 <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_simonetti> a chora:NarrativePlace ;
     rdfs:label "Palazzo Simonetti"@it ;
+    dcterms:description "Luogo trasformato per rilocazione: il palazzo Simonetti (o De Carolis) è reale e sorge in via Lata, presso piazza del Collegio Romano, dove lo colloca il dattiloscritto dei capitoli nuovi; in QP 177 Gadda lo sposta in via Lanza, dove non esiste (Pinotti 2025, p. 78). Ancorato a via Lanza, la sua collocazione nel testo; nessuna coordinata propria."@it ;
     chora:hasPlaceCategory chora:historical_building ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Transformed .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/palestrina> a chora:NarrativePlace ;
     rdfs:label "Palestrina"@it ;
@@ -23105,6 +23107,12 @@ chora:Route a owl:NamedIndividual,
     chora:hasPlaceCategory chora:locality ;
     chora:hasRealityStatus chora:Imported .
 
+<https://w3id.org/gaddatlas/id/focalizer/commendador_angeloni> a chora:Character,
+        chora:FocalizingAgent ;
+    dcterms:description "Commendator Angeloni, vicino di casa dei Balducci, interrogato all'inizio dell'indagine."@it ;
+    chora:characterName "Commendador Angeloni"@it ;
+    chora:hasGender "male"^^xsd:string .
+
 chora:Transformed a owl:NamedIndividual,
         skos:Concept ;
     owl:differentFrom chora:Imagined,
@@ -23116,12 +23124,6 @@ chora:Transformed a owl:NamedIndividual,
     skos:notation "2" ;
     skos:prefLabel "Transformed"@en ;
     skos:topConceptOf chora:RealityStatusScheme .
-
-<https://w3id.org/gaddatlas/id/focalizer/commendador_angeloni> a chora:Character,
-        chora:FocalizingAgent ;
-    dcterms:description "Commendator Angeloni, vicino di casa dei Balducci, interrogato all'inizio dell'indagine."@it ;
-    chora:characterName "Commendador Angeloni"@it ;
-    chora:hasGender "male"^^xsd:string .
 
 chora:Near a owl:NamedIndividual,
         skos:Concept ;

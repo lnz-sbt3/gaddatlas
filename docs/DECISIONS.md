@@ -607,6 +607,18 @@ guardato a schermo prima di darlo per buono.
 
 ---
 
+## D-032 — Palazzo Simonetti: luogo trasformato, ancorato a via Lanza (8 ottobre 2026)
+
+- Requisito/i: R07, R10 · Ipotesi: H1 · Data check: DC-02 (work order T-11)
+- Stato precedente: `palazzo_simonetti` Imported, senza descrizione, ancorato a `gaz_via_lanza`. L'entità `gaz_palazzo_simonetti` non era il palazzo di via Lata ma il palazzo Odescalchi Simonetti di via Vittoria Colonna (coordinate in Prati, «Via Vittoria Colonna, 13»), cioè il candidato della lettura di Terzoli, e nessuna interpretazione la usava.
+- Decisione (di Lorenzo, 8/10/2026): **Transformed**. È un palazzo reale, in via Lata; in QP Gadda lo colloca in via Lanza, trasformando la collocazione reale di un luogo reale in un'altra via reale. Non ha coordinate proprie e resta **ancorato a `gaz_via_lanza`**, dove lo pone il testo. L'entità di Terzoli diventa `gaz_palazzo_odescalchi_simonetti` (stessi dati, nome corretto, fonte e nota sul civico, 11 secondo Pinotti contro il 13 del dato precedente), senza ancoraggi: sarà il bersaglio dell'identificazione attribuita quando si farà la provenance. Scartati l'ancoraggio doppio (via Lata + via Lanza) e l'ancoraggio al solo referente reale.
+- Motivazione (fonte, pagina): Pinotti 2025 («Il Gaddus» 3), p. 78: in via Lanza non esiste alcun palazzo Simonetti; il dattiloscritto dei capitoli nuovi (Fondo Gelli) legge via Lata; Terzoli (cit. ivi) vi legge un riferimento autobiografico al palazzo Odescalchi Simonetti. Cap. 4, § 4.2 (r. 45, 47).
+- Fase in cui è maturata: analisi del testo
+- File toccati (manifest): `data/source/tables/NarrativePlaces.tsv:126` (statuto, descrizione); `data/source/tables/GazetteerEntities.tsv:1607` (id, toponimo, `Authority_Source`); `data/source/void_seeds.json` (nuovo seme `palazzo_simonetti` = 0,173276, quello che il build calcolerebbe dall'hash dell'id); due XLSX rigenerati.
+- Effetto su KG (triple prima/dopo, SHACL): ABox 16.055 → **16.057**; full 17.225 → **17.227** (+2: descrizione del palazzo, `dcterms:source` dell'entità di Terzoli; il cambio di statuto e di id non cambia il numero). Statuti: Imported **259**, Transformed **31**, Invented 14, Imagined 5. Vista: tessere proprie 48 → 49 (nuova per `palazzo_simonetti`, ancorata a via Lanza); via Lanza da 3 a 2 occorrenze proprie. SHACL conforme, 0 violazioni.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

@@ -1604,7 +1604,7 @@ gaz_palazzo_ruspoli	Palazzo Ruspoli				Via della Fontanella di Borghese, 56, 001
     }
   ]
 }"	
-gaz_palazzo_simonetti	Palazzo Simonetti				Via Vittoria Colonna, 13, 00193	41.90520237070184	12.472392994101876	"{
+gaz_palazzo_odescalchi_simonetti	Palazzo Odescalchi Simonetti				Via Vittoria Colonna, 13, 00193	41.90520237070184	12.472392994101876	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
     {
@@ -1619,7 +1619,7 @@ gaz_palazzo_simonetti	Palazzo Simonetti				Via Vittoria Colonna, 13, 00193	41.90
       }
     }
   ]
-}"	
+}"	Candidato della lettura di Terzoli (cit. in Pinotti 2025, p. 78): palazzo Odescalchi Simonetti, già pensione White, dove Gadda aveva abitato. Civico 11 secondo Pinotti; il dato precedente indicava 13. Non è il referente di palazzo_simonetti: entità predisposta per l'identificazione attribuita.
 gaz_palazzo_venezia	Palazzo Venezia		Palazzo del Mappamondo		Piazza di Venezia, 3, 00186 Roma RM	41.89608880158758	12.482488256557962	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
