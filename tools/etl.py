@@ -33,6 +33,7 @@ import pandas as pd
 import yaml
 from rdflib import Graph, Namespace, URIRef, Literal, BNode, RDF, RDFS, XSD, OWL
 from rdflib.namespace import SKOS, DCTERMS
+from rdflib.compare import to_canonical_graph
 
 # ============================================================
 # CONFIGURAZIONE LOGGING
@@ -1222,6 +1223,22 @@ class GaddaETL:
 # MAIN
 # ============================================================
 
+def canonical(graph: Graph) -> Graph:
+    """Copia del grafo con nodi anonimi rinominati in forma canonica.
+
+    rdflib assegna ai BNode id casuali e il serializzatore Turtle li ordina
+    per id: senza questo passo lo stesso grafo esce in serializzazioni
+    diverse a ogni build (D-018). Il grafo restituito e' isomorfo e conserva
+    i prefissi.
+    """
+    out = Graph()
+    for prefix, ns in graph.namespaces():
+        out.bind(prefix, ns, override=True, replace=True)
+    for triple in to_canonical_graph(graph):
+        out.add(triple)
+    return out
+
+
 def main():
     """Entry point script ETL."""
     import argparse
@@ -1309,7 +1326,7 @@ def main():
             )
         ontology.bind('chora', CHORA, override=True, replace=True)
         ontology_output = Path(args.ontology_output)
-        ontology.serialize(destination=ontology_output, format='turtle')
+        canonical(ontology).serialize(destination=ontology_output, format='turtle')
         logger.info(
             f"T-Box CHORA {CHORA_VERSION}: {ontology_output} "
             f"({len(ontology)} triple)"
@@ -1331,7 +1348,7 @@ def main():
         merged.bind('chora', CHORA, override=True, replace=True)
         merged.bind('id', 'https://w3id.org/gaddatlas/id/')
         full_path = Path(args.full_output)
-        merged.serialize(destination=full_path, format='turtle')
+        canonical(merged).serialize(destination=full_path, format='turtle')
         logger.info(f"Grafo completo T-Box+A-Box: {full_path} ({len(merged)} triple)")
 
         sys.exit(0)

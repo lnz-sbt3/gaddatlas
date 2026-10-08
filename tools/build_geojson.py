@@ -700,7 +700,10 @@ def main(ttl_path, out_dir, seeds_path=None):
             },
         })
 
-    for k in sorted(own_tile, key=lambda k: -nps[k]["planeCount"]):
+    # A parita' di planeCount l'ordine segue l'id: senza questa chiave i
+    # pareggi dipendevano dall'iterazione di un set, cioe' dall'hash
+    # randomizzato di Python, e l'ordine delle feature cambiava a ogni build.
+    for k in sorted(own_tile, key=lambda k: (-nps[k]["planeCount"], nps[k]["id"])):
         v = nps[k]
         cr = {c: len(s) for c, s in chap_refs.get(v["id"], {}).items()}
         seed = frozen_seeds.get(v["id"])
