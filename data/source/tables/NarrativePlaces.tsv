@@ -47,14 +47,14 @@ castello	Castello		imagined		castello	Luogo narrativo immaginato, un castello ne
 casuccia_zamira	Casuccia della Zamira		imagined		abitazione			
 cecchina	Cecchina		imported		stazione			
 celio	Celio		imported		quartiere			
-centrale_del_latte	Centrale del Latte		imported		edificio	 Il complesso, progettato dall'architetto Innocenzo Costantini, si estendeva su tutta l'area di Piazza Pepe, sulla quale si affaccia anche il famoso Teatro Ambra Jovinelli.[5] La struttura, sorta nel pieno periodo fascista (1929), era inoltre disposta nel cortile dove troneggiava l'Acquedotto Giulio (Aqua Iulia).	Abattuto nel 1990	
+centrale_del_latte	Centrale del Latte		imported		edificio	Il complesso, progettato dall'architetto Innocenzo Costantini, si estendeva su tutta l'area di Piazza Pepe, sulla quale si affaccia anche il famoso Teatro Ambra Jovinelli.[5] La struttura, sorta nel pieno periodo fascista (1929), era inoltre disposta nel cortile dove troneggiava l'Acquedotto Giulio (Aqua Iulia).	Abattuto nel 1990	
 ciampino	Ciampino		imported		comune			
 civitavecchia	Civitavecchia		imported		comune	Comune italiano nel Lazio		
 cobianchi	Cobianchi		transformed		esercizio commerciale	Luogo specificato ma non identificabile		
 collegio_romano	Collegio Romano		imported		commissariato			
 colli_albani	Colli Albani		imported		località			
 colli_saluberrimi	Colli Saluberrimi		transformed		località			3
-collina_molisana	Collina molisana		imported		collina	Espressione evocativa usata come sineddoche spaziale dell’origine sociale e culturale del personaggio; non luogo diegetico 	Uso retorico-identitario	3
+collina_molisana	Collina molisana		imported		collina	Espressione evocativa usata come sineddoche spaziale dell’origine sociale e culturale del personaggio; non luogo diegetico	Uso retorico-identitario	3
 colonnato_san_pietro	Colonnato di San Pietro		imported		monumento			
 colosseo	Colosseo		imported		monumento			
 corso_umberto	Corso Umberto		imported		via			
@@ -86,7 +86,7 @@ grotta_de_sor_pippo	Grotta de Sor Pippo		imagined		ristorante	Trattoria non megl
 grottaferrata	Grottaferrata		imported		località			
 india	India		imported		paese			
 istituto_dellenciclopedia_treccani	Istituto dell'Enciclopedia Treccani		imported		palazzo storico			
-laboratorio_zamira	Laboratorio della Zamira Pacori	antro;botteguccia; bottega;	imagined	casuccia_zamira	edificio			
+laboratorio_zamira	Laboratorio della Zamira Pacori	antro; botteguccia; bottega	imagined	casuccia_zamira	edificio			
 largo_brancaccio	Largo Brancaccio		imported		piazzetta			
 lazio	Lazio		imported		località	Luogo generico: Lazio		3
 litorale_fiumicino	Litorale di Fiumicino		imported		costa	Costa del litorale di Fiumicino, Lazio		
@@ -112,12 +112,12 @@ monti	Monti		imported		quartiere	Quartiere di Roma
 monti_carseolani	Monti Carseolani		imported		monte	Catena montuosa tra Lazio e Abruzzo		
 monti_ernici	Monti Ernici		imported		monte	Catena montuosa tra Lazio e Abruzzo		
 monti_simbruini	Monti Simbruini		imported		monte	Catena montuosa tra Lazio e Abruzzo		
-orto_vigna_due_santi	Orto o Vigna ai Due Santi		imagined	laboratorio_zamira	orto	Luogo non precisato simile a un orto o una vigna, di fronte al laboratorio della Zamira, al lato opposto della via Appia 		4
+orto_vigna_due_santi	Orto o Vigna ai Due Santi		imagined	laboratorio_zamira	orto	Luogo non precisato simile a un orto o una vigna, di fronte al laboratorio della Zamira, al lato opposto della via Appia		4
 ostia	Ostia		imported		località	Località di mare		
 ovindoli	Ovindoli		imported		località	Comune in Abruzzo		
 padova	Padova		imported		località	Città		
-palazzo	Palazzo 		imported		stazione			
-palazzo_219	Palazzo di via Merulana 219	palazzo dell'oro;palazzo de li pescicani; ben nota architettura; casermone color pidocchio; sto palazzo; camere al duecentodiciannove; il duecentodiciannove	transformed		palazzo storico	Luogo che identifica il palazzo in via Merulana 219		
+palazzo	Palazzo		imported		stazione			
+palazzo_219	Palazzo di via Merulana 219	palazzo dell'oro; palazzo de li pescicani; ben nota architettura; casermone color pidocchio; sto palazzo; camere al duecentodiciannove; il duecentodiciannove	transformed		palazzo storico	Luogo che identifica il palazzo in via Merulana 219		
 palazzo_chigi	Palazzo Chigi		imported		palazzo storico			
 palazzo_del_mappamondo	Palazzo der Mappamonno		transformed		palazzo storico			
 palazzo_della_immacolatella	Palazzo della Immacolatella		imported		palazzo storico	Palazzo situato al porto di Napoli		
@@ -130,7 +130,7 @@ passaggio_livello_casal_bruciato	Passaggio a livello Casal Bruciato		transformed
 pavona	Pavona		imported		località			
 pensione_burgess	Pensione Burgess		imagined		albergo	Albergo immaginario, possibile deformazione di Pensione Villa Borghese, via Sgambati 4, vicino Porta Pinciana		4
 piani_alti_219	Piani alti del Palazzo al 219		transformed	palazzo_219	interno	Interno del palazzo in via Merulana 219		
-piazza_colonna	Piazza Colonna 		imported		piazza			
+piazza_colonna	Piazza Colonna		imported		piazza			
 piazza_di_pietra	Piazza di Pietra		imported		piazza			
 piazza_di_spagna	Piazza di Spagna		imported		piazza			
 piazza_esedra	Piazza Esedra		imported		piazza			
@@ -255,7 +255,7 @@ via_degli_zingari	Via degli Zingari		imported		via
 via_dei_banchi_vecchi	Via dei Banchi Vecchi		imported		via			
 via_dei_capocci	Via dei Capocci		imported		via			
 via_dei_fienili	Via dei Fienili		imported		via			
-via_dei_greci	Via dei Greci 		imported		via			
+via_dei_greci	Via dei Greci		imported		via			
 via_dei_serpenti	Via dei Serpenti		imported		via			
 via_del_corso	Via del Corso		imported		via			
 via_del_gesu	Via del Gesù		imported		via			
@@ -275,7 +275,7 @@ via_di_san_paolo_della_croce	Via di San Paolo della Croce		imported		via
 via_di_santo_stefano_rotondo	Via di Santo Stefano Rotondo		imported		via			
 via_frangipane	Via Frangipane		imported		via			
 via_labbricana	Via Labbricana		imported		via			
-via_lanza	Via Lanza 		imported		via			
+via_lanza	Via Lanza		imported		via			
 via_ludovisi	Via Ludovisi		imported		via			
 via_mamiani	Via Mamiani		imported		via			
 via_massimo_dazeglio	Via Massimo d'Azeglio		imported		via			

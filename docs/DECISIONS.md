@@ -491,6 +491,18 @@ guardato a schermo prima di darlo per buono.
 
 ---
 
+## D-023 — Pulizia di label, spazi, maiuscole e separatori (8 ottobre 2026)
+
+- Requisito/i: R05 (forme normalizzate leggibili) · Ipotesi: — · Data check: DC-13 (work order T-85, comprende la parte di pulizia di T-74)
+- Stato precedente: spazi finali in quattro label (`palazzo` «Palazzo », `piazza_colonna`, `via_dei_greci`, `via_lanza` «Via Lanza ») e in tre descrizioni (`centrale_del_latte`, `collina_molisana`, `orto_vigna_due_santi`); uno spazio non separabile (U+00A0) in coda all'ancoraggio `gaz_brahmaputra` di cinque interpretazioni (`interp_00356`, `00357`, `00365`, `00366`, `00367`); relazione spaziale scritta «adjacentTo» in 7 righe e «adjacentto» in 3; `Annotation_Method` «close reading» in 2 righe (`interp_00144`, `interp_00205`) contro «close_reading» in 143; separatori incoerenti in `Alternative_Toponym` (`palazzo_219`, `laboratorio_zamira`, con un «;» finale).
+- Decisione: rimossi gli spazi ai bordi e gli U+00A0; relazione uniformata a «adjacentto», la forma minuscola usata da tutti gli altri valori di vocabolario nei fogli (`inside`, `projectedspace`, `zoneofaction`) e già chiave di `mapping.yaml:185` (il piano indicava «adjacentTo»: cambiato per coerenza); metodo uniformato a «close_reading»; `Alternative_Toponym` con separatore «; » e senza elementi vuoti. Nessun valore semantico cambia.
+- Motivazione (fonte, pagina): AUDIT_0, T-74 e § 3; DATA_CHECKS DC-13. L'ETL già ripuliva U+00A0 e maiuscole delle relazioni (`resolve_lookup` e `map_vocabulary` fanno `strip()` e `lower()`), quindi quelle due correzioni non toccano il grafo: rendono pulite le sorgenti.
+- Fase in cui è maturata: revisione critica (audit di fase 0)
+- File toccati (manifest): `data/source/tables/NarrativePlaces.tsv` (9 righe: `centrale_del_latte`, `collina_molisana`, `laboratorio_zamira`, `orto_vigna_due_santi`, `palazzo`, `palazzo_219`, `piazza_colonna`, `via_dei_greci`, `via_lanza`); `data/source/tables/SpatialInterpretations.tsv` (14 righe: `interp_00144`, `00205`, `00356`, `00357`, `00365`–`00367`, `00527`, `00528`, `00552`, `00553`, `00555`, `00585`, `00836`); i due XLSX corrispondenti, rigenerati.
+- Effetto su KG (triple prima/dopo, SHACL): ABox 16.029 → 16.029; full 17.187 → 17.187. Cambiano 11 letterali (4 `rdfs:label`, 3 `dcterms:description`, 2 `chora:annotationMethod`, 2 `skos:altLabel`). SHACL conforme, 0 violazioni. **Da segnalare per T-48:** l'ETL non divide `Alternative_Toponym`, quindi ogni cella diventa un unico `skos:altLabel` con i punti e virgola dentro («palazzo dell'oro; palazzo de li pescicani; …»); inoltre alcune celle contengono id invece di forme (`prati` ↔ `quartierino_prati`) o valori dubbi (`tiburtino` → «Tivoli», `san_giovanni` → «Galilei»). Non toccati: sono decisioni di contenuto (R05).
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

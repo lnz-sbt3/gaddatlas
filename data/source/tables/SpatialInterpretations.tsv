@@ -142,7 +142,7 @@ interp_00140	ref_00118	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_ste
 interp_00141	ref_00119	santo_stefano_rotondo	gaz_santo_stefano_rotondo	ines_cionini	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
 interp_00142	ref_00120	via_frangipane	gaz_via_frangipane	narrator	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
 interp_00143	ref_00121	santa_croce_in_gerusalemme	gaz_santa_croce_in_gerusalemme	narrator	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
-interp_00144	ref_00122	marino	gaz_marino	ingravallo	zoneofaction	approximate						lorenzo_sabatino	2026-04-06 00:00:00	close reading	
+interp_00144	ref_00122	marino	gaz_marino	ingravallo	zoneofaction	approximate						lorenzo_sabatino	2026-04-06 00:00:00	close_reading	
 interp_00145	ref_00123	viminale	gaz_viminale	ingravallo	setting	approximate									
 interp_00146	ref_00123	viminale	gaz_viminale	gaudenzio	setting	approximate									
 interp_00147	ref_00124	marino	gaz_marino	ingravallo	zoneofaction	approximate									
@@ -203,7 +203,7 @@ interp_00201	ref_00173	san_giovanni_in_laterano	gaz_san_giovanni_in_laterano	ing
 interp_00202	ref_00174	porta_maggiore	gaz_porta_maggiore	ingravallo	projectedspace	approximate									
 interp_00203	ref_00175	celio	gaz_celio	ingravallo	projectedspace	approximate									
 interp_00204	ref_00176	suburra	gaz_suburra	ingravallo	projectedspace	approximate									
-interp_00205	ref_00177	via_merulana	gaz_via_merulana	narrator	setting	approximate						lorenzo_sabatino	2026-04-07 00:00:00	close reading	
+interp_00205	ref_00177	via_merulana	gaz_via_merulana	narrator	setting	approximate						lorenzo_sabatino	2026-04-07 00:00:00	close_reading	
 interp_00206	ref_00178	santo_stefano_rotondo	gaz_santo_stefano_rotondo	narrator	setting	approximate									
 interp_00207	ref_00179	piazza_vittorio_emanuele	gaz_piazza_vittorio_emanuele	narrator	marker	approximate									
 interp_00208	ref_00180	palazzo_chigi	gaz_palazzo_chigi	mussolini	marker	approximate									
@@ -354,8 +354,8 @@ interp_00352	ref_00303	san_lorenzo_al_verano	gaz_san_lorenzo_al_verano	corteo_fu
 interp_00353	ref_00304	tragitto_policlinico_san_lorenzo_al_verano		corteo_funebre	route	approximate									
 interp_00354	ref_00305	molo_beverello	gaz_molo_beverello	maharaja_di_tripura	marker	relative					0.5				
 interp_00355	ref_00305	molo_beverello	gaz_molo_beverello	mussolini	marker	relative									
-interp_00356	ref_00306	scerpure	gaz_brahmaputra 	maharaja_di_tripura	projectedspace	relative	adjacentto								
-interp_00357	ref_00307	rive_del_brahmaputra	gaz_brahmaputra 	maharaja_di_tripura	projectedspace	relative									
+interp_00356	ref_00306	scerpure	gaz_brahmaputra	maharaja_di_tripura	projectedspace	relative	adjacentto								
+interp_00357	ref_00307	rive_del_brahmaputra	gaz_brahmaputra	maharaja_di_tripura	projectedspace	relative									
 interp_00358	ref_00308	predappio	gaz_predappio	maharaja_di_tripura	marker	relative									
 interp_00359	ref_00308	predappio	gaz_predappio	mussolini	marker	relative									
 interp_00360	ref_00309	india	gaz_india	mussolini	marker	approximate									
@@ -363,9 +363,9 @@ interp_00361	ref_00310	policlinico	gaz_policlinico	maharaja_di_tripura	marker	ap
 interp_00362	ref_00311	centrale_del_latte	gaz_centrale_del_latte	maharaja_di_tripura	marker	relative									
 interp_00363	ref_00312	centrale_del_latte	gaz_centrale_del_latte	narrator	marker	relative									
 interp_00364	ref_00313	policlinico	gaz_policlinico	maharaja_di_tripura	marker	approximate									
-interp_00365	ref_00314	scerpure	gaz_brahmaputra 	maharaja_di_tripura	projectedspace	relative	adjacentto								
-interp_00366	ref_00315	rive_del_brahmaputra	gaz_brahmaputra 	maharaja_di_tripura	projectedspace	relative	inside								
-interp_00367	ref_00316	scerpure	gaz_brahmaputra 	maharaja_di_tripura	projectedspace	relative	adjacentto								
+interp_00365	ref_00314	scerpure	gaz_brahmaputra	maharaja_di_tripura	projectedspace	relative	adjacentto								
+interp_00366	ref_00315	rive_del_brahmaputra	gaz_brahmaputra	maharaja_di_tripura	projectedspace	relative	inside								
+interp_00367	ref_00316	scerpure	gaz_brahmaputra	maharaja_di_tripura	projectedspace	relative	adjacentto								
 interp_00368	ref_00317	san_lorenzo_al_verano	gaz_san_lorenzo_al_verano	ingravallo	setting	approximate									
 interp_00369	ref_00317	san_lorenzo_al_verano	gaz_san_lorenzo_al_verano	pompeo	setting	approximate									
 interp_00370	ref_00317	san_lorenzo_al_verano	gaz_san_lorenzo_al_verano	gaudenzio	setting	approximate									
@@ -525,8 +525,8 @@ interp_00523	ref_00446	via_della_navicella	gaz_via_della_navicella	ines_cionini	
 interp_00524	ref_00446	via_della_navicella	gaz_via_della_navicella	virginia_troddu	projectedspace	relative									
 interp_00525	ref_00447	via_di_santo_stefano_rotondo	gaz_via_di_santo_stefano_rotondo	ines_cionini	projectedspace	relative									
 interp_00526	ref_00447	via_di_santo_stefano_rotondo	gaz_via_di_santo_stefano_rotondo	virginia_troddu	projectedspace	relative									
-interp_00527	ref_00448	villa_celimontana	gaz_santa_maria_in_domnica	ines_cionini	projectedspace	relative	adjacentTo								
-interp_00528	ref_00448	villa_celimontana	gaz_santa_maria_in_domnica	virginia_troddu	projectedspace	relative	adjacentTo								
+interp_00527	ref_00448	villa_celimontana	gaz_santa_maria_in_domnica	ines_cionini	projectedspace	relative	adjacentto								
+interp_00528	ref_00448	villa_celimontana	gaz_santa_maria_in_domnica	virginia_troddu	projectedspace	relative	adjacentto								
 interp_00529	ref_00449	santa_maria_in_domnica	gaz_santa_maria_in_domnica	ines_cionini	projectedspace	relative									
 interp_00530	ref_00449	santa_maria_in_domnica	gaz_santa_maria_in_domnica	virginia_troddu	projectedspace	relative									
 interp_00531	ref_00450	tempio_di_agrippa	gaz_tempio_di_agrippa	ines_cionini	projectedspace	indeterminate									
@@ -550,10 +550,10 @@ interp_00548	ref_00462	rocca_savella	gaz_rocca_savella	ines_cionini	projectedspa
 interp_00549	ref_00463	prati	gaz_prati	ines_cionini	projectedspace	indeterminate									
 interp_00550	ref_00464	via_boncompagni	gaz_via_boncompagni	americana_inglese	projectedspace	relative									
 interp_00551	ref_00465	via_veneto	gaz_via_veneto	americana_inglese	projectedspace	relative									
-interp_00552	ref_00466	pensione_burgess	gaz_porta_pinciana	americana_inglese	projectedspace	relative	adjacentTo								
-interp_00553	ref_00467	pensione_burgess	gaz_porta_pinciana	pompeo	projectedspace	relative	adjacentTo								
+interp_00552	ref_00466	pensione_burgess	gaz_porta_pinciana	americana_inglese	projectedspace	relative	adjacentto								
+interp_00553	ref_00467	pensione_burgess	gaz_porta_pinciana	pompeo	projectedspace	relative	adjacentto								
 interp_00554	ref_00468	via_veneto	gaz_via_veneto	pompeo	projectedspace	approximate									
-interp_00555	ref_00469	palazzo_della_immacolatella	gaz_molo_beverello	americana_inglese	projectedspace	relative	adjacentTo								
+interp_00555	ref_00469	palazzo_della_immacolatella	gaz_molo_beverello	americana_inglese	projectedspace	relative	adjacentto								
 interp_00556	ref_00470	molo_beverello	gaz_molo_beverello	americana_inglese	projectedspace	relative									
 interp_00557	ref_00471	basilica_dei_frari	gaz_basilica_dei_frari	dottor_fumi	projectedspace	approximate									
 interp_00558	ref_00472	calabria	gaz_calabria	ingravallo	projectedspace	relative									
@@ -583,7 +583,7 @@ interp_00581	ref_00488	bottaro	gaz_ripetta	diomede	projectedspace	relative	insid
 interp_00582	ref_00489	ripetta	gaz_ripetta	diomede	projectedspace	approximate									
 interp_00583	ref_00490	quattro_cantoni	gaz_quattro_cantoni	diomede	projectedspace	approximate									
 interp_00584	ref_00491	aliciaro	gaz_quattro_cantoni	diomede	projectedspace	relative	inside								
-interp_00585	ref_00491	aliciaro	gaz_san_carlo_alle_quattro_fontane	diomede	projectedspace	relative	adjacentTo								
+interp_00585	ref_00491	aliciaro	gaz_san_carlo_alle_quattro_fontane	diomede	projectedspace	relative	adjacentto								
 interp_00586	ref_00492	san_carlo_alle_quattro_fontane	gaz_san_carlo_alle_quattro_fontane	diomede	projectedspace	approximate									
 interp_00587	ref_00493	vite	gaz_via_della_vite	diomede	projectedspace	relative	inside								
 interp_00588	ref_00494	buco_a_santignazio	gaz_buco_a_santignazio	diomede	projectedspace	relative									
@@ -836,7 +836,7 @@ interp_00832	ref_00668	via_ricasoli	gaz_via_ricasoli	santarella	marker	approxima
 interp_00833	ref_00668	via_ricasoli	gaz_via_ricasoli	due_militi	marker	approximate									
 interp_00834	ref_00669	santa_maria_della_neve	gaz_santa_maria_della_neve	ingravallo	marker	relative									
 interp_00835	ref_00670	benevento	gaz_benevento	ingravallo	projectedspace	relative									
-interp_00836	ref_00671	pensione_burgess	gaz_porta_pinciana	pompeo	marker	approximate	adjacentTo								
+interp_00836	ref_00671	pensione_burgess	gaz_porta_pinciana	pompeo	marker	approximate	adjacentto								
 interp_00837	ref_00672	piazza_vittorio_emanuele	gaz_piazza_vittorio_emanuele	gaudenzio	marker	approximate									
 interp_00838	ref_00673	piazza_di_spagna	gaz_piazza_di_spagna	narrator	marker	relative									
 interp_00839	ref_00674	via_lanza	gaz_via_lanza	ingravallo	marker	approximate									

@@ -2212,7 +2212,7 @@
     prov:generatedAtTime "2026-04-06T00:00:00"^^xsd:dateTime ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_marino> ;
-    chora:annotationMethod "close reading"^^xsd:string ;
+    chora:annotationMethod "close_reading"^^xsd:string ;
     chora:assignsNarrativeRole chora:ZoneOfAction ;
     chora:assignsSpatialDetermination chora:Approximate ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/ingravallo> ;
@@ -2771,7 +2771,7 @@
     prov:generatedAtTime "2026-04-07T00:00:00"^^xsd:dateTime ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_merulana> ;
-    chora:annotationMethod "close reading"^^xsd:string ;
+    chora:annotationMethod "close_reading"^^xsd:string ;
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Approximate ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
@@ -13268,7 +13268,7 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_colonna> a chora:NarrativePlace ;
-    rdfs:label "Piazza Colonna "@it ;
+    rdfs:label "Piazza Colonna"@it ;
     chora:hasPlaceCategory chora:square ;
     chora:hasRealityStatus chora:Imported .
 
@@ -13583,7 +13583,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasRealityStatus chora:Imported .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_dei_greci> a chora:NarrativePlace ;
-    rdfs:label "Via dei Greci "@it ;
+    rdfs:label "Via dei Greci"@it ;
     chora:hasPlaceCategory chora:street ;
     chora:hasRealityStatus chora:Imported .
 
@@ -18335,14 +18335,14 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 
 <https://w3id.org/gaddatlas/id/narrativeplace/centrale_del_latte> a chora:NarrativePlace ;
     rdfs:label "Centrale del Latte"@it ;
-    dcterms:description " Il complesso, progettato dall'architetto Innocenzo Costantini, si estendeva su tutta l'area di Piazza Pepe, sulla quale si affaccia anche il famoso Teatro Ambra Jovinelli.[5] La struttura, sorta nel pieno periodo fascista (1929), era inoltre disposta nel cortile dove troneggiava l'Acquedotto Giulio (Aqua Iulia)."@it ;
+    dcterms:description "Il complesso, progettato dall'architetto Innocenzo Costantini, si estendeva su tutta l'area di Piazza Pepe, sulla quale si affaccia anche il famoso Teatro Ambra Jovinelli.[5] La struttura, sorta nel pieno periodo fascista (1929), era inoltre disposta nel cortile dove troneggiava l'Acquedotto Giulio (Aqua Iulia)."@it ;
     rdfs:comment "Abattuto nel 1990"@it ;
     chora:hasPlaceCategory chora:building ;
     chora:hasRealityStatus chora:Imported .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/collina_molisana> a chora:NarrativePlace ;
     rdfs:label "Collina molisana"@it ;
-    dcterms:description "Espressione evocativa usata come sineddoche spaziale dell’origine sociale e culturale del personaggio; non luogo diegetico "@it ;
+    dcterms:description "Espressione evocativa usata come sineddoche spaziale dell’origine sociale e culturale del personaggio; non luogo diegetico"@it ;
     rdfs:comment "Uso retorico-identitario"@it ;
     chora:hasFuzzinessLevel 3.0 ;
     chora:hasPlaceCategory chora:hill ;
@@ -18405,7 +18405,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 
 <https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi> a chora:NarrativePlace ;
     rdfs:label "Orto o Vigna ai Due Santi"@it ;
-    dcterms:description "Luogo non precisato simile a un orto o una vigna, di fronte al laboratorio della Zamira, al lato opposto della via Appia "@it ;
+    dcterms:description "Luogo non precisato simile a un orto o una vigna, di fronte al laboratorio della Zamira, al lato opposto della via Appia"@it ;
     chora:hasFuzzinessLevel 4.0 ;
     chora:hasPlaceCategory chora:kitchen_garden ;
     chora:hasRealityStatus chora:Imagined ;
@@ -20427,7 +20427,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasRealityStatus chora:Imported .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/palazzo> a chora:NarrativePlace ;
-    rdfs:label "Palazzo "@it ;
+    rdfs:label "Palazzo"@it ;
     chora:hasPlaceCategory chora:station ;
     chora:hasRealityStatus chora:Imported .
 
@@ -20462,7 +20462,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasRealityStatus chora:Imported .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_lanza> a chora:NarrativePlace ;
-    rdfs:label "Via Lanza "@it ;
+    rdfs:label "Via Lanza"@it ;
     chora:hasPlaceCategory chora:street ;
     chora:hasRealityStatus chora:Imported .
 
@@ -21759,7 +21759,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 
 <https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira> a chora:NarrativePlace ;
     rdfs:label "Laboratorio della Zamira Pacori"@it ;
-    skos:altLabel "antro;botteguccia; bottega;"@it ;
+    skos:altLabel "antro; botteguccia; bottega"@it ;
     chora:hasPlaceCategory chora:building ;
     chora:hasRealityStatus chora:Imagined ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira> .
@@ -21940,7 +21940,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> a chora:NarrativePlace ;
     rdfs:label "Palazzo di via Merulana 219"@it ;
     dcterms:description "Luogo che identifica il palazzo in via Merulana 219"@it ;
-    skos:altLabel "palazzo dell'oro;palazzo de li pescicani; ben nota architettura; casermone color pidocchio; sto palazzo; camere al duecentodiciannove; il duecentodiciannove"@it ;
+    skos:altLabel "palazzo dell'oro; palazzo de li pescicani; ben nota architettura; casermone color pidocchio; sto palazzo; camere al duecentodiciannove; il duecentodiciannove"@it ;
     chora:hasPlaceCategory chora:historical_building ;
     chora:hasRealityStatus chora:Transformed .
 
