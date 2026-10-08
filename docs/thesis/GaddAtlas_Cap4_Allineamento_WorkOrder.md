@@ -160,7 +160,7 @@ Legenda dei componenti:
 
 - **Stato (AUDIT_0):** `NarrativePlaces.tsv:171`, Transformed, descrizione prudente. Unico riferimento: `ref_00403` («A 169», cap. VI), il cui estratto contiene davvero «dalle Robine Vecchie». Due interpretazioni (Santarella) ancorate a `gaz_frattocchie` e `gaz_due_santi` con relazione `near` e `confidence 0.5`: un doppio ancoraggio che il modello legge come referenza multipla.
 - **Azione:**
-  - **Verifica sul volume (Lorenzo):** Robine compare sia a QP 161 sia a QP 169? Se sì, aggiungere un riferimento per QP 161 e lasciare 169; se no, correggere la pagina.
+  - **Verificato da Lorenzo (8/10/2026, D-031):** Robine compare una sola volta, a QP 169; i rinvii a «QP 161» erano errati e sono stati corretti.
   - Statuto adottato invariato (Transformed); letture di Terzoli (2015, p. 491) in fase 3: (a) refuso per «Robinie/Rovine vecchie»; (b) «ironico abbassamento» delle Rovine della zona. Pinotti conserva la lezione.
   - Ancoraggio da rimodellare come relazione «tra» Frattocchie e Due Santi (T-47, T-53), non come referenza multipla.
 
@@ -571,20 +571,20 @@ Pagine «metodo», legende e tooltip devono usare la terminologia del Cap. 4: st
 **Aperte:**
 
 - [ ] Modello delle asserzioni: n-ario + HiCO / RDF-star / named graph (T-30)
-- [ ] Glifi degli statuti nel nuovo ordine (T-04, T-65)
-- [ ] I 5 luoghi divenuti Imagined dopo la permutazione: dati o capitolo? (T-04)
+- [x] Glifi degli statuti: seguono il nome (D-030)
+- [x] I 5 luoghi divenuti Imagined: nessuna riassegnazione (D-031)
 - [ ] Conflitto cromatico ruolo / densità (T-86)
-- [ ] Palazzo 219: Invented o Transformed (T-10)
-- [ ] Palazzo Simonetti in via Lanza: Invented, con le due identificazioni; civico 11 o 13 (T-11)
+- [x] Palazzo 219: Transformed (D-031)
+- [x] Palazzo Simonetti: Transformed (D-031); ancoraggio da applicare
 - [ ] Castello: lettura adottata (T-13)
-- [ ] Robine Vecchie a QP 161 e/o 169 (verifica sul volume, T-02)
+- [x] Robine Vecchie: una sola occorrenza, QP 169 (D-031)
 - [ ] `confidence` / `hasFuzzinessLevel`: rimuovere o declassare (T-34)
 - [ ] Le 801 interpretazioni senza annotatore sono tutte di LS? (T-32)
-- [ ] Temporalità: modellare o escludere (T-45)
+- [x] Temporalità: esclusa (D-031)
 - [ ] Casi esempio del Palazzo degli ori (T-41)
 - [ ] Canale visivo della SpatialDetermination (T-61)
-- [ ] Resa dei percorsi non compiuti (T-64)
-- [ ] Soglia di lunghezza degli estratti (T-55: mediana 141 caratteri, massimo 573)
+- [x] Resa dei percorsi non compiuti: esclusa (D-031)
+- [x] Soglia di lunghezza degli estratti: invariata (D-030)
 
 ---
 

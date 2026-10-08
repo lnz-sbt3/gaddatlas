@@ -587,6 +587,26 @@ guardato a schermo prima di darlo per buono.
 
 ---
 
+## D-031 — Decisioni sui casi aperti della fase 1 (8 ottobre 2026)
+
+- Requisito/i: R02, R07, R18, R22 · Ipotesi: H3 · Data check: DC-01, DC-02, DC-07, DC-08, DC-15, DC-16
+- Stato precedente: casi lasciati aperti alla chiusura della fase 1 (v. D-026, D-027).
+- Decisione (di Lorenzo, 8/10/2026):
+  - **DC-16, permutazione:** resta com'è. Invented e Imagined erano stati usati con le definizioni incrociate: la tipologia dei luoghi è identica, è cambiato solo il nome. Nessuna riassegnazione caso per caso. Resta da segnalare per la tesi: il Cap. 4, § 4.3 (r. 85) chiama «inventati» Roccafringoli, Monte Nuncupale e Scerpure, che nei dati sono ora Imagined.
+  - **DC-08, palazzo di via Merulana 219:** Transformed. I dati lo sono già; nessuna modifica. Le varianti 119 → 219 e «palazzo degli ori» → «palazzo dell'Oro» restano per il modello dei testimoni (T-41).
+  - **DC-02, palazzo Simonetti:** Transformed, non Invented. È un palazzo reale, collocato correttamente in via Lata; in QP Gadda lo sposta in via Lanza, cioè trasforma la collocazione reale di un luogo reale in un'altra via reale. Ancoraggio da applicare con un passo successivo.
+  - **DC-01, Robine Vecchie:** una sola occorrenza, a QP 169. I dati erano già corretti (`ref_00403`); erano errati i rinvii a «QP 161», corretti nel Cap. 4 (`docs/thesis/Capitolo 4.md`, § 4.3 e n. 23), nel registro e nel work order. AUDIT_0 resta com'era, come documento dello stato al momento dell'audit. Il docx della tesi va corretto allo stesso modo.
+  - **DC-07, Casal Bruciato:** le due collocazioni (TCI tra le ferrovie, IGM a ovest della Roma–Napoli) diventano due asserzioni attribuite a Manzotti e interrogabili. Si fanno con la provenance.
+  - **Provenance e modello delle asserzioni (DC-15, T-30, T-32):** rinviati a un secondo momento. Il modello si sceglierà in funzione delle attribuzioni da assegnare, con i dati alla mano.
+  - **Temporalità (R02, T-45): esclusa.** Va dichiarata fra le esclusioni (R12, T-70).
+  - **Resa dei percorsi non compiuti (T-64): esclusa.**
+- Motivazione (fonte, pagina): verifica di LS sul volume (Robine, QP 169); Pinotti 2025, p. 78 (palazzo Simonetti in via Lata nel dattiloscritto); Reuschel, Piatti e Hurni 2013, pp. 138–139 (definizioni).
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `docs/thesis/Capitolo 4.md:83`, `:599`; `docs/thesis/DATA_CHECKS_GaddAtlas.md` (DC-01, DC-02, DC-07, DC-08, DC-16 e lista delle decisioni); `docs/thesis/GaddAtlas_Cap4_Allineamento_WorkOrder.md:163` e § 10.
+- Effetto su KG (triple prima/dopo, SHACL): nessuno. ABox 16.055, full 17.225.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`
