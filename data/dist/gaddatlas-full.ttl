@@ -338,29 +338,6 @@ chora:targetsRoute a owl:ObjectProperty ;
     chora:historicalLocation "Piazza degli Otto Cantoni"@it ;
     chora:presentLocation "Piazza Augusto Imperatore"@it .
 
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_castello> a chora:GazetteerEntity ;
-    rdfs:label "Castello"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.648544024883735,
-          41.75143747946607
-        ]
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    owl:sameAs <file:///Users/lnz_sbt/Desktop/GaddAtlas/data/gaz_castel_gandolfo> ;
-    geo1:lat 41.75143747946607 ;
-    geo1:long 12.648544024883735 .
-
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_colosseo> a chora:GazetteerEntity ;
     rdfs:label "Colosseo"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -11033,6 +11010,29 @@ chora:ward a owl:NamedIndividual,
     geo1:lat 41.76583589207368 ;
     geo1:long 12.708345346043885 .
 
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_castello> a chora:GazetteerEntity ;
+    rdfs:label "Castello"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.648544024883735,
+          41.75143747946607
+        ]
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    owl:sameAs <https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_gandolfo> ;
+    geo1:lat 41.75143747946607 ;
+    geo1:long 12.648544024883735 .
+
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_civitavecchia> a chora:GazetteerEntity ;
     rdfs:label "Civitavecchia"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -20316,30 +20316,6 @@ chora:temple a owl:NamedIndividual,
     geo1:lat 44.49555555061309 ;
     geo1:long 11.344545396805216 .
 
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_gandolfo> a chora:GazetteerEntity ;
-    rdfs:label "Castel Gandolfo"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.64847290122697,
-          41.75005641875434
-
-        ]
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    owl:sameAs <file:///Users/lnz_sbt/Desktop/GaddAtlas/data/gaz_castello> ;
-    geo1:lat 41.75005641875434 ;
-    geo1:long 12.64847290122697 .
-
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_colli_albani> a chora:GazetteerEntity ;
     rdfs:label "Colli Albani"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -20429,30 +20405,6 @@ chora:temple a owl:NamedIndividual,
     geo1:lat 41.89499585680336 ;
     geo1:long 12.49962004376294 ;
     chora:presentLocation "Largo Brancaccio"@it .
-
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_lungara> a chora:GazetteerEntity ;
-    rdfs:label "Lungara"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.465430919268728,
-          41.895495366978146
-        ]
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    owl:sameAs <file:///Users/lnz_sbt/Desktop/GaddAtlas/data/gaz_regina_coeli> ;
-    geo1:lat 41.89549536697815 ;
-    geo1:long 12.465430919268728 ;
-    chora:presentLocation "via della Lungara"@it .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_monte_manno> a chora:GazetteerEntity ;
     rdfs:label "Monte Manno"@it ;
@@ -21100,8 +21052,8 @@ chora:police_station a owl:NamedIndividual,
     skos:altLabel "Campo di Marte"@it ;
     chora:presentLocation "Rione IV"@it .
 
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_collegio_romano> a chora:GazetteerEntity ;
-    rdfs:label "Collegio Romano"@it ;
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_gandolfo> a chora:GazetteerEntity ;
+    rdfs:label "Castel Gandolfo"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
             geosparql:asGeoJSON """{
   "type": "FeatureCollection",
@@ -21112,17 +21064,17 @@ chora:police_station a owl:NamedIndividual,
       "geometry": {
         "type": "Point",
         "coordinates": [
-          12.47948307900791,
-          41.89737347768524
+          12.64847290122697,
+          41.75005641875434
+
         ]
       }
     }
   ]
 }"""^^geosparql:geoJSONLiteral ] ;
-    owl:sameAs <file:///Users/lnz_sbt/Desktop/GaddAtlas/data/gaz_santo_stefano_del_cacco_celio_santo_stefano> ;
-    geo1:lat 41.89737347768524 ;
-    geo1:long 12.47948307900791 ;
-    chora:presentLocation "via Santo Stefano del Cacco"@it .
+    owl:sameAs <https://w3id.org/gaddatlas/id/gazetteer/gaz_castello> ;
+    geo1:lat 41.75005641875434 ;
+    geo1:long 12.64847290122697 .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_direttissima_roma_napoli> a chora:GazetteerEntity ;
     rdfs:label "Direttissima Roma-Napoli"@it ;
@@ -21145,6 +21097,30 @@ chora:police_station a owl:NamedIndividual,
 }"""^^geosparql:geoJSONLiteral ] ;
     geo1:lat 41.64771889912876 ;
     geo1:long 12.64899568499919 .
+
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_lungara> a chora:GazetteerEntity ;
+    rdfs:label "Lungara"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.465430919268728,
+          41.895495366978146
+        ]
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    owl:sameAs <https://w3id.org/gaddatlas/id/gazetteer/gaz_regina_coeli> ;
+    geo1:lat 41.89549536697815 ;
+    geo1:long 12.465430919268728 ;
+    chora:presentLocation "via della Lungara"@it .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_palazzo> a chora:GazetteerEntity ;
     rdfs:label "Palazzo"@it ;
@@ -21672,6 +21648,30 @@ chora:retail_business a owl:NamedIndividual,
     geo1:long 12.599503897985612 ;
     chora:presentLocation "Ciampino"@it .
 
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_collegio_romano> a chora:GazetteerEntity ;
+    rdfs:label "Collegio Romano"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.47948307900791,
+          41.89737347768524
+        ]
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    owl:sameAs <https://w3id.org/gaddatlas/id/gazetteer/gaz_santo_stefano_del_cacco_celio_santo_stefano> ;
+    geo1:lat 41.89737347768524 ;
+    geo1:long 12.47948307900791 ;
+    chora:presentLocation "via Santo Stefano del Cacco"@it .
+
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_molo_beverello> a chora:GazetteerEntity ;
     rdfs:label "Molo Beverello"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -21763,30 +21763,6 @@ chora:retail_business a owl:NamedIndividual,
     geo1:lat 41.90968492139161 ;
     geo1:long 12.488262466067692 ;
     chora:presentLocation "Via Vittorio Veneto, 196, 00187"@it .
-
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_regina_coeli> a chora:GazetteerEntity ;
-    rdfs:label "Regina Coeli"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "coordinates": [
-          12.463486619911357,
-          41.89541963959722
-        ],
-        "type": "Point"
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    owl:sameAs <file:///Users/lnz_sbt/Desktop/GaddAtlas/data/gaz_lungara> ;
-    geo1:lat 41.89541963959722 ;
-    geo1:long 12.463486619911356 ;
-    chora:presentLocation "Via della Lungara, 29, 00165"@it .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_san_giovanni> a chora:GazetteerEntity ;
     rdfs:label "San Giovanni"@it ;
@@ -21976,6 +21952,30 @@ chora:interior a owl:NamedIndividual,
 }"""^^geosparql:geoJSONLiteral ] ;
     geo1:lat 41.75795460249268 ;
     geo1:long 12.601126265148835 .
+
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_regina_coeli> a chora:GazetteerEntity ;
+    rdfs:label "Regina Coeli"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          12.463486619911357,
+          41.89541963959722
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    owl:sameAs <https://w3id.org/gaddatlas/id/gazetteer/gaz_lungara> ;
+    geo1:lat 41.89541963959722 ;
+    geo1:long 12.463486619911356 ;
+    chora:presentLocation "Via della Lungara, 29, 00165"@it .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_roma> a chora:GazetteerEntity ;
     rdfs:label "Roma"@it ;
@@ -23123,6 +23123,18 @@ chora:Transformed a owl:NamedIndividual,
     chora:characterName "Pompeo"@it ;
     chora:hasGender "male"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> a chora:NarrativePlace ;
+    rdfs:label "Palazzo di via Merulana 219"@it ;
+    dcterms:description "Luogo che identifica il palazzo in via Merulana 219"@it ;
+    skos:altLabel "palazzo dell'oro;palazzo de li pescicani; ben nota architettura; casermone color pidocchio; sto palazzo; camere al duecentodiciannove; il duecentodiciannove"@it ;
+    chora:hasPlaceCategory chora:historical_building ;
+    chora:hasRealityStatus chora:Transformed .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/santo_stefano_del_cacco_celio_santo_stefano> a chora:NarrativePlace ;
+    rdfs:label "Santo Stefano del Cacco, Celio-Santo Stefano"@it ;
+    chora:hasPlaceCategory chora:police_station ;
+    chora:hasRealityStatus chora:Imported .
+
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_santo_stefano_del_cacco_celio_santo_stefano> a chora:GazetteerEntity ;
     rdfs:label "Santo Stefano del Cacco, Celio-Santo Stefano"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -23142,22 +23154,10 @@ chora:Transformed a owl:NamedIndividual,
     }
   ]
 }"""^^geosparql:geoJSONLiteral ] ;
-    owl:sameAs <file:///Users/lnz_sbt/Desktop/GaddAtlas/data/gaz_collegio_romano> ;
+    owl:sameAs <https://w3id.org/gaddatlas/id/gazetteer/gaz_collegio_romano> ;
     geo1:lat 41.89737347768524 ;
     geo1:long 12.47948307900791 ;
     chora:presentLocation "via Santo Stefano del Cacco"@it .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> a chora:NarrativePlace ;
-    rdfs:label "Palazzo di via Merulana 219"@it ;
-    dcterms:description "Luogo che identifica il palazzo in via Merulana 219"@it ;
-    skos:altLabel "palazzo dell'oro;palazzo de li pescicani; ben nota architettura; casermone color pidocchio; sto palazzo; camere al duecentodiciannove; il duecentodiciannove"@it ;
-    chora:hasPlaceCategory chora:historical_building ;
-    chora:hasRealityStatus chora:Transformed .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/santo_stefano_del_cacco_celio_santo_stefano> a chora:NarrativePlace ;
-    rdfs:label "Santo Stefano del Cacco, Celio-Santo Stefano"@it ;
-    chora:hasPlaceCategory chora:police_station ;
-    chora:hasRealityStatus chora:Imported .
 
 <https://w3id.org/gaddatlas/id/focalizer/ines_cionini> a chora:Character,
         chora:FocalizingAgent ;

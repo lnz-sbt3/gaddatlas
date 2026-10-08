@@ -17,7 +17,7 @@ import json
 import sys
 from pathlib import Path
 
-from rdflib import Graph, Namespace, RDF
+from rdflib import Graph, Namespace, RDF, URIRef
 
 ROOT = Path(__file__).resolve().parents[1]
 TTL = ROOT / "data" / "dist" / "gaddatlas-full.ttl"
@@ -25,6 +25,8 @@ GEOJSON = ROOT / "data" / "dist" / "gaddatlas.geojson"
 PASSAGES = ROOT / "data" / "dist" / "passages" / "index.json"
 
 CHORA = Namespace("https://w3id.org/chora#")
+# namespace del progetto nella forma da NON trovare (http al posto di https)
+PROJECT_NS_HTTP = ("http://w3id.org/chora", "http://w3id.org/gaddatlas")
 
 VERBOSE = "--verbose" in sys.argv
 
@@ -137,6 +139,31 @@ def main() -> int:
         f"ogni PlaceReference del TTL ha un excerpt "
         f"({len(refs_with_excerpt)}/{len(ttl_refs)})",
         "\n".join(sorted(ttl_refs - refs_with_excerpt)[:20]),
+    )
+
+    # IRI assoluti e pubblicabili (D-017). Un IRI relativo nel TTL viene
+    # risolto al parsing contro il percorso del file e diventa file:///...:
+    # e' cosi' che un percorso di desktop era finito nel grafo pubblicato.
+    # Tutti gli IRI devono avere schema http(s); quelli dei namespace del
+    # progetto devono essere https. I vocabolari W3C (http://www.w3.org/...)
+    # restano http per definizione.
+    abox = Graph()
+    abox.parse(ROOT / "data" / "gaddatlas.ttl", format="turtle")
+    bad_iri = set()
+    for graph in (g, abox):
+        for triple in graph:
+            for term in triple:
+                if not isinstance(term, URIRef):
+                    continue
+                iri = str(term)
+                if not iri.startswith(("http://", "https://")):
+                    bad_iri.add(iri)
+                elif any(iri.startswith(ns) for ns in PROJECT_NS_HTTP):
+                    bad_iri.add(iri)
+    a.check(
+        not bad_iri,
+        "ogni IRI del grafo e' assoluto (http/https), e https nei namespace del progetto",
+        "\n".join(sorted(bad_iri)[:20]),
     )
 
     # ── esclusioni attese: informative, non errori ───────────────────────

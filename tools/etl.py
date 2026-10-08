@@ -669,10 +669,21 @@ class GaddaETL:
                     if category_uri:
                         self.graph.add((entity_uri, CHORA.hasPlaceCategory, category_uri))
 
-                # sameAs (link esterno)
+                # sameAs: nei dati la colonna contiene id di altre
+                # GazetteerEntity (es. gaz_castello), non URI esterni. Un id
+                # nudo passato a URIRef diventava un IRI relativo, risolto poi
+                # contro il percorso del file (file:///...): D-017. Gli id si
+                # risolvono nel namespace del gazetteer; un URI con schema
+                # http(s) resta com'e'.
                 same_as = row.get('sameAs')
                 if has_value(same_as):
-                    self.graph.add((entity_uri, OWL.sameAs, URIRef(same_as)))
+                    same_as = str(same_as).strip()
+                    if same_as.startswith(('http://', 'https://')):
+                        same_as_uri = URIRef(same_as)
+                    else:
+                        same_as_uri = self.resolve_lookup(same_as, '@GazetteerEntity_ID')
+                    if same_as_uri:
+                        self.graph.add((entity_uri, OWL.sameAs, same_as_uri))
 
                 # Geometry (GeoSPARQL)
                 geom = row.get('Geometry')
