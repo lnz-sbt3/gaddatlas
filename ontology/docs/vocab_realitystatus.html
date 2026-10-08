@@ -329,7 +329,7 @@
 	</script>
 </head>
 <body>
-<div id="content"><div class="ga-injected" style="margin:0 0 1.5em 0;padding:.6em .9em;border-left:3px solid #666;background:#f4f4f4;font-size:.9em;">↑ <a href="gaddatlas_doc.html">GaddAtlas Ontology</a><br/>Other vocabularies: <a href="vocab_placecategory.html">GaddAtlas Place Category Vocabulary</a> · <a href="vocab_narrativerole.html">Narrative Role</a> · <a href="vocab_spatialrelationtype.html">Narrative Spatial Relations</a> · <a href="vocab_spatialdetermination.html">Spatial determination</a></div>
+<div id="content"><div class="ga-injected" style="margin:0 0 1.5em 0;padding:.6em .9em;border-left:3px solid #666;background:#f4f4f4;font-size:.9em;">↑ <a href="index.html">CHORA Ontology</a><br/>Other vocabularies: <a href="vocab_placecategory.html">GaddAtlas Place Category Vocabulary</a> · <a href="vocab_narrativerole.html">Narrative Role</a> · <a href="vocab_spatialrelationtype.html">Narrative Spatial Relations</a> · <a href="vocab_spatialdetermination.html">Spatial determination</a></div>
 <div class="section" id="metadata">
 <h1></h1>
 <h2>Metadata</h2>
@@ -389,10 +389,10 @@
 <dd>
 <div>
 <p>
-<a href="http://www.w3.org/2002/07/owl#NamedIndividual">Named Individual</a>
+<a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a>
 </p>
 <p>
-<a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a>
+<a href="http://www.w3.org/2002/07/owl#NamedIndividual">Named Individual</a>
 </p>
 </div>
 </dd>
@@ -403,7 +403,7 @@
 </dt>
 <dd>
 <div>
-<p>4.1.1</p>
+<p>1.0.0</p>
 </div>
 </dd>
 </div>
@@ -472,7 +472,7 @@
 <div id="concepts">
 <h2>Concept Definitions</h2>
 <div class="entity">
-<h3 id="ga_Imagined">Imagined</h3>
+<h3 id="chora_Imagined">Imagined</h3>
 <table>
 <tr>
 <td style="width:250px;">
@@ -486,7 +486,7 @@
 <td>
 <a href="https://schema.org/description" title="A description of the item.">Description</a>
 </td>
-<td>An invented setting within familiar geographical reality</td>
+<td>There is no hint at all about the position of the setting, it is located ‘somewhere’, with no real-world counterpart, only existing within the narration. Consequently, it is not possible to assign coordinates</td>
 </tr>
 <tr>
 <td>
@@ -497,7 +497,7 @@
 </table>
 </div>
 <div class="entity">
-<h3 id="ga_Imported">Imported</h3>
+<h3 id="chora_Imported">Imported</h3>
 <table>
 <tr>
 <td style="width:250px;">
@@ -522,7 +522,7 @@
 </table>
 </div>
 <div class="entity">
-<h3 id="ga_Invented">Invented</h3>
+<h3 id="chora_Invented">Invented</h3>
 <table>
 <tr>
 <td style="width:250px;">
@@ -536,7 +536,7 @@
 <td>
 <a href="https://schema.org/description" title="A description of the item.">Description</a>
 </td>
-<td>There is no hint at all about the position of the setting, it is located ‘somewhere’, with no real-world counterpart, only existing within the narration. Consequently, it is not possible to assign coordinates</td>
+<td>An invented setting within familiar geographical reality</td>
 </tr>
 <tr>
 <td>
@@ -547,7 +547,7 @@
 </table>
 </div>
 <div class="entity">
-<h3 id="ga_Transformed">Transformed</h3>
+<h3 id="chora_Transformed">Transformed</h3>
 <table>
 <tr>
 <td style="width:250px;">
@@ -575,13 +575,13 @@
 <div id="namespaces">
 <h2>Namespaces</h2>
 <dl>
+<dt id="chora">chora</dt>
+<dd>
+<code>https://w3id.org/chora#</code>
+</dd>
 <dt id="dcterms">dcterms</dt>
 <dd>
 <code>http://purl.org/dc/terms/</code>
-</dd>
-<dt id="ga">ga</dt>
-<dd>
-<code>https://w3id.org/chora#</code>
 </dd>
 <dt id="owl">owl</dt>
 <dd>
@@ -635,10 +635,10 @@
 </h4>
 <ul class="second">
 <li>
-<a href="#dcterms">dcterms</a>
+<a href="#chora">chora</a>
 </li>
 <li>
-<a href="#ga">ga</a>
+<a href="#dcterms">dcterms</a>
 </li>
 <li>
 <a href="#owl">owl</a>

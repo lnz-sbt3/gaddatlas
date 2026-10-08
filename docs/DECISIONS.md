@@ -551,6 +551,18 @@ guardato a schermo prima di darlo per buono.
 
 ---
 
+## D-028 — Documentazione pyLODE rigenerata (8 ottobre 2026)
+
+- Requisito/i: — (documentazione; work order T-73) · Ipotesi: — · Data check: DM-01
+- Stato precedente: `ontology/docs/` era ferma a una versione anteriore all'audit: versione «4.1.1», ancore `ga_*` (prefisso abbandonato con D-013), definizioni di Invented e Imagined invertite. `make docs` era rinviato (D-016) perché pyLODE 3.6.0 non si avvia con l'ultima `kurra`.
+- Decisione: `make docs` eseguito con pyLODE 3.5.1 (la versione che aveva generato le pagine esistenti) e `kurra` 3.0.0 in `dh_env`. Il downgrade di `kurra` tocca solo quel pacchetto, installato durante D-016 come dipendenza di pyLODE, e nessun altro (verificato con un dry-run).
+- Motivazione (fonte, pagina): allineare la documentazione pubblicata alla TBox canonica (D-016) e alla permutazione (D-026).
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `ontology/docs/index.html` e i cinque `ontology/docs/vocab_*.html` (rigenerati).
+- Effetto su KG (triple prima/dopo, SHACL): nessuno. Le pagine riportano ora versione 1.0.0, ancore `chora_*` e le definizioni corrette (Invented: «An invented setting within familiar geographical reality»; Imagined: «There is no hint at all about the position…»). Nessun link del repository puntava alle vecchie ancore `#ga_`. **Limiti:** VocPub elenca i concetti in ordine alfabetico e non mostra `skos:notation` né `skos:scopeNote`, quindi l'ordine della scala Imported → Transformed → Invented → Imagined non compare nelle pagine. Durante la generazione pyLODE (tramite `kurra`) interroga un servizio esterno (`fuseki.dev.kurrawong.ai`) per le etichette dei termini non definiti nel file.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`
