@@ -21,7 +21,7 @@
   "ontologyVersion": "1.0.0",
   "buildVersion": "4.3",
   "source": "gaddatlas-full.ttl",
-  "tripleCount": 42488,
+  "tripleCount": 42503,
   "projection": {
    "type": "equirectangular",
    "center": [

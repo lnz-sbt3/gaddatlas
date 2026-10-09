@@ -1768,3 +1768,10 @@ chora:groundedIn a owl:ObjectProperty ;
     rdfs:subPropertyOf cito:citesAsEvidence ;
     skos:altLabel "si fonda su"@it ;
     skos:prefLabel "grounded in"@en .
+
+chora:originalSource a owl:ObjectProperty ;
+    rdfs:comment "For a reading known second-hand: the work in which its author originally stated it, not read directly by the project. The interpretation act takes its date; hico:isExtractedFrom stays the work it was read in (D-071)."@en ;
+    rdfs:domain hico:InterpretationAct ;
+    rdfs:range chora:Source ;
+    skos:altLabel "fonte originale"@it ;
+    skos:prefLabel "original source"@en .

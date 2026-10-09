@@ -1316,7 +1316,8 @@ class GaddaETL:
 
     def add_reading_provenance(self, reading: URIRef, local_id: str, itype: URIRef,
                                authors, encoders, where: str, source=None, page=None,
-                               rationale=None, criterion=None, encoding_date=None):
+                               rationale=None, criterion=None, encoding_date=None,
+                               original=None):
         """Atto interpretativo e codifica di una lettura (D-067, pattern HiCO).
 
         - L'hico:InterpretationAct (act/{id}) e' l'atto dell'autore: genera la
@@ -1351,6 +1352,13 @@ class GaddaETL:
                 self.graph.add((act, PROV.startedAtTime,
                                 Literal(f"{enc_date[:10]}T00:00:00", datatype=XSD.dateTime)))
             return
+        # Lettura citata di seconda mano (D-071): l'atto e' dell'autore originale,
+        # con la data dell'opera originale; la fonte da cui e' estratta resta
+        # hico:isExtractedFrom.
+        if original is not None:
+            orig_uri, orig_year = original
+            self.graph.add((act, CHORA.originalSource, orig_uri))
+            src_year = orig_year or src_year
         if not src_year:
             raise ValueError(f"{where}: la lettura di uno studioso richiede una fonte datata")
         self.graph.add((act, DCTERMS.date, Literal(src_year, datatype=XSD.gYear)))
@@ -1421,7 +1429,9 @@ class GaddaETL:
                 source=self.resolve_source(row.get('Source_Work'), where),
                 page=row.get('Source_Page'), rationale=row.get('Rationale'),
                 criterion=CHORA[self.RATIONALE_TYPES[rtype]] if rtype else None,
-                encoding_date=row.get('Date'))
+                encoding_date=row.get('Date'),
+                original=self.resolve_source(row.get('Original_Source'), where)
+                if str(row.get('Original_Source') or '').strip() else None)
             axis = str(row.get('Uncertainty_Axis', '')).strip().lower()
             origin = str(row.get('Uncertainty_Origin', '')).strip().lower()
             if atype == "uncertainty":
@@ -1520,10 +1530,10 @@ class GaddaETL:
                 rationale = (f"{standard} Ancora primaria: {label} "
                              f"({str(anchor).rsplit('/', 1)[-1]}). "
                              + (f"Repertorio: {self.graph.value(source[0], RDFS.label)}, {page}."
-                                if where_from else "Fonte del repertorio non registrata."))
+                                if where_from else "Referente identificato nel gazetteer del progetto "
+                                "(GazetteerEntities), coordinate registrate."))
             else:
-                rationale = (f"{standard} Nessuna ancora: analisi non condotta (D-048). "
-                             "Fonte del repertorio non registrata.")
+                rationale = f"{standard} Nessuna ancora: analisi non condotta (D-048)."
             self.graph.add((a, RDF.type, CHORA.Assertion))
             self.graph.add((a, CHORA.aboutSubject, place))
             self.graph.add((a, CHORA.assertsValue, CHORA.Imported))

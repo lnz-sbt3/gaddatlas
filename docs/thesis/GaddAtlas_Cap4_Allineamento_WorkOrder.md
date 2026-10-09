@@ -448,6 +448,7 @@ Se non si modella, dichiararlo in R12.
 ## 6. Altri requisiti da verificare
 
 - **T-46 · Repertorio datato (R03).** Ogni geometria ha la fonte (TCI 1925, IGM 1949, OSM/Wikidata attuale) e il periodo di validità. `historicalLocation` e `presentLocation` sono oggi stringhe: strutturarle.
+  - *Nota del 10/10/2026 (D-071):* gli identificatori esterni delle entità del gazetteer (Wikidata, GeoNames, come `owl:sameAs`) sono rinviati. Oggi nessuna delle 265 entità ne ha uno; le letture di statuto generate per gli Imported (D-068) citano il gazetteer del progetto e useranno il repertorio esterno quando ci sarà.
 - **T-47 · Molti-a-molti (R04).** Distinguere la *referenza plurale* (Faiti *e* Cengio) dall'*identificazione contesa* (Castello) e dall'*ancoraggio relazionale* (Robine tra Frattocchie e Due Santi). Il §4.3 distingue cinque tipi di relazione.
 - **T-48 · Forma attestata / normalizzata (R05).**
   - `chora:attestedForm` sulla PlaceReference, `rdfs:label` normalizzato sul luogo.

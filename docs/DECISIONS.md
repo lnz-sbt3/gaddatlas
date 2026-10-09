@@ -1430,6 +1430,22 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-071 — Correzioni: Lugnani, due statuti validati, motivazione degli statuti generati (10 ottobre 2026)
+
+- Requisito/i: R07, R22 · Ipotesi: — · Data check: — (decisioni di Lorenzo del 10/10, punto 1)
+- Stato precedente: M-0002 e M-0005 (Lugnani) avevano per atto la data di Perosa 2023a (2023). S-casal_bruciato e S-edicola_due_santi erano «bozza» e davano 2 avvertenze. Le 258 letture di statuto generate dicevano «Fonte del repertorio non registrata».
+- Decisione (di Lorenzo, 10/10/2026):
+  - **a, Lugnani:** l'atto interpretativo è di Lugnani, con data **2001** (Lugnani, L., «Racconto ed esperienza umana del tempo», *The Edinburgh Journal of Gadda Studies*, 1, 2001). La lettura è estratta da Perosa 2023a (`hico:isExtractedFrom`), `sourcePage` «104, n. 97», nota «Lugnani 2001, cit. in Perosa 2023a, p. 104, n. 97». Lugnani 2001 entra in `Sources.tsv` come fonte citata di seconda mano, non letta direttamente. Nuova proprietà `chora:originalSource` (atto → Source) e colonna `Original_Source` in `Assertions.tsv`: l'atto prende la data dell'opera originale, mentre la fonte da cui la lettura è estratta resta `isExtractedFrom`;
+  - **b:** S-casal_bruciato e S-edicola_due_santi sono **validate** (statuti decisi e motivati da Lorenzo in D-029, D-037 e D-031). Avvertenze 50 → **48**;
+  - **c:** le letture generate con ancora dicono ora «Referente identificato nel gazetteer del progetto (GazetteerEntities), coordinate registrate» (246). Per le 12 senza ancora la motivazione resta «Nessuna ancora: analisi non condotta (D-048)», senza la frase sulle coordinate, che lì non sarebbe vera. Gli identificatori esterni sono rinviati: nota in T-46 del work order, nessuna modifica ora.
+- Collaterale: l'ETL non legava i prefissi `hico:` e `cito:`, che nel TTL comparivano come `ns1:`. Aggiunti ai `namespaces` di `mapping.yaml`. Nessuna tripla cambia.
+- Motivazione (fonte, pagina): Lugnani 2001, cit. in Perosa 2023a, p. 104, n. 97; D-029, D-031, D-037.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `data/source/tables/Sources.tsv` (lugnani_2001), `Assertions.tsv` (colonna `Original_Source`; M-0002, M-0005, S-casal_bruciato, S-edicola_due_santi); XLSX corrispondenti; `tools/etl.py` r. 1355–1363 (fonte originale), r. 1533–1537 (motivazione); `ontology/chora.ttl` (`chora:originalSource`, in coda); `data/source/mapping.yaml` (namespaces, documentazione Assertions); `docs/thesis/GaddAtlas_Cap4_Allineamento_WorkOrder.md` (T-46).
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.459 → **1.465**; ABox 40.459 → **40.468**; full 42.488 → **42.503**. SHACL conforme, avvertenze 50 → **48**; IQ1–IQ19 a 0, IQ20 = 6 (avvertenza).
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`
