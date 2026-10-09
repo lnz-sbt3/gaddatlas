@@ -742,6 +742,7 @@ chora:RealityStatusScheme a owl:NamedIndividual,
         chora:Imported,
         chora:Invented,
         chora:Transformed ;
+    skos:historyNote "Fino all'8/10/2026 le etichette Invented e Imagined erano invertite rispetto alle definizioni (D-030). Lo scambio e' una correzione dello schema, non una revisione delle letture: non genera prov:wasRevisionOf (D-051)."@it ;
     skos:prefLabel "Reality Status"@en .
 
 chora:SpatialDeterminationScheme a owl:NamedIndividual,

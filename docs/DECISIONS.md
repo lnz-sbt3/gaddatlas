@@ -1013,6 +1013,25 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-051 — Storia delle revisioni: tre letture superate (9 ottobre 2026)
+
+- Requisito/i: R22 · Ipotesi: H8 · Data check: — (work order T-38)
+- Stato precedente: le letture superate erano raccontate solo nelle voci di questo file (D-029, D-031, D-036, D-037); nel grafo nessuna asserzione portava `prov:wasRevisionOf`.
+- Decisione (di Lorenzo, 9/10/2026: `prov:wasRevisionOf` solo per tre casi; la permutazione Invented ↔ Imagined è una correzione di schema, non una revisione):
+  - **edicola ai Due Santi:** `C-edicola_due_santi` (censimento, Lorenzo, non adottata) → rivista da `S-edicola_due_santi` (Imported, Manzotti 2010, p. 246). Il valore della lettura del censimento è `chora:Invented`: nel censimento l'etichetta era «Imagined», ma prima della correzione di D-030 «Imagined» designava proprio il luogo fittizio in una geografia nota. Scelta segnalata in REVIEW_2;
+  - **Casal Bruciato:** `C-casal_bruciato` (identificazione del censimento con il quartiere del Tiburtino, `gazetteer/gaz_casal_bruciato`, non adottata) → rivista da `I-casal_bruciato` (nuova identificazione adottata con `gaz_casale_abbruciato`, Manzotti 2010, pp. 268–269 e Tavv. VI–VII; D-037). L'entità del Tiburtino è stata eliminata in D-029: il suo IRI resta solo come valore della lettura superata, senza tipo né coordinate, e la nota lo dichiara. Il passaggio intermedio di D-029 (luogo trasformato senza referente) è nella nota, non è una terza asserzione. L'identificazione adottata non cambia la vista: il luogo ha ancore proprie, e la regola di D-045 vale solo per i luoghi che non ne hanno;
+  - **palazzo Simonetti:** `C-palazzo_simonetti` (Imported, censimento, non adottata) → rivista da `S-palazzo_simonetti` (Transformed, Pinotti 2025, p. 78; D-036);
+  - **permutazione:** dichiarata come `skos:historyNote` di `chora:RealityStatusScheme`; nessuna asserzione per i 20 luoghi permutati.
+  Le tre letture del censimento sono «validata», senza data, perché la data del censimento non è registrata (REVIEW_2).
+- Alternative scartate: rimettere nel grafo `gaz_casal_bruciato` come entità deprecata, scartata perché tornerebbe fra le entità del gazetteer e nei conteggi; una revisione per ciascun luogo permutato, contraria alla decisione di Lorenzo.
+- Controlli: shape 13 (`RevisionShape`: la revisione punta a un'asserzione); **IQ16**: una revisione deve riguardare lo stesso soggetto e lo stesso tipo della lettura rivista, e la lettura rivista non deve essere adottata. Atteso 0; provata spostando una revisione su un altro soggetto (1 riga).
+- Motivazione (fonte, pagina): Cap. 4, R22 e H8 («storia delle revisioni»); D-029, D-031, D-036, D-037.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `data/source/tables/Assertions.tsv` (C-edicola_due_santi, C-palazzo_simonetti, C-casal_bruciato, I-casal_bruciato; `Revision_Of` su S-edicola_due_santi e S-palazzo_simonetti); `data/source/xlsx/Assertions.xlsx`; `ontology/chora.ttl` r. 745 (`historyNote`); `ontology/shapes/chora-shapes.ttl` r. 495–509 (shape 13); `ontology/queries/integrity.rq` (IQ16); conteggio delle integrity query in `CLAUDE.md`, `Makefile`, `README.md`, `data/README.md`.
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.069 → **1.070**; ABox 26.169 → **26.249**; full 27.808 → **27.889**. SHACL conforme, 49 avvertenze (T-33); IQ1–IQ16 a 0.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

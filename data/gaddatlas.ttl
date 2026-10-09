@@ -38,6 +38,22 @@
     chora:sourcePage "293"^^xsd:string ;
     chora:sourceWork "Manzotti 2010"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/assertion/I-casal_bruciato> a chora:Assertion ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/I-casal_bruciato-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/I-casal_bruciato-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasRevisionOf <https://w3id.org/gaddatlas/id/assertion/C-casal_bruciato> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> ;
+    chora:adoptedByProject true ;
+    chora:assertionType chora:IdentificationAssertion ;
+    chora:assertsValue <https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato> ;
+    chora:rationale "Casal Bruciato è il casale dell'Agro romano a sud di Roma, «Casal(e) Bruciato / Abbruciato / Abbrusciato» (Nibby, Dintorni di Roma, p. 569), fra le ferrovie Roma–Napoli e Roma–Velletri; posizione adottata TCI (D-037)."@it ;
+    chora:rationaleType chora:ReferentialEvidence ;
+    chora:reviewStatus chora:Validated ;
+    chora:sourcePage "268–269; Tavv. VI–VII, pp. 300–301"^^xsd:string ;
+    chora:sourceWork "Manzotti 2010"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/assertion/M-0001> a chora:Assertion ;
     rdfs:comment "Cap. 4, § 4.3: le tre letture convivono, nessuna è adottata dal progetto."@it ;
     prov:generatedAtTime "2026-10-09"^^xsd:date ;
@@ -410,6 +426,7 @@
     prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/S-edicola_due_santi-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/attribution/S-edicola_due_santi-readingauthor-lorenzo_sabatino> ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasRevisionOf <https://w3id.org/gaddatlas/id/assertion/C-edicola_due_santi> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/edicola_due_santi> ;
     chora:adoptedByProject true ;
     chora:assertionType chora:StatusAssertion ;
@@ -551,6 +568,7 @@
     prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/S-palazzo_simonetti-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/attribution/S-palazzo_simonetti-readingauthor-lorenzo_sabatino> ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasRevisionOf <https://w3id.org/gaddatlas/id/assertion/C-palazzo_simonetti> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_simonetti> ;
     chora:adoptedByProject true ;
     chora:assertionType chora:StatusAssertion ;
@@ -13610,6 +13628,48 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     dcterms:title "Quer pasticciaccio brutto de via Merulana"@it ;
     rdfs:comment "Prima pubblicazione in cinque puntate sulla rivista «Letteratura», fascicoli 26, 27, 28, 29 e 31 del 1946 (Pinotti 2016, p. 200, n. 4)"@it .
 
+<https://w3id.org/gaddatlas/id/assertion/C-casal_bruciato> a chora:Assertion ;
+    rdfs:comment "L'entità gaz_casal_bruciato è stata eliminata (D-029): l'IRI resta come valore di questa lettura superata. Passaggio intermedio D-029 (luogo trasformato senza referente, ancorato a Marino, Albano, Pavona e Santa Palomba), superato da D-037."@it ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/C-casal_bruciato-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/C-casal_bruciato-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> ;
+    chora:adoptedByProject false ;
+    chora:assertionType chora:IdentificationAssertion ;
+    chora:assertsValue <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:rationale "Lettura del censimento: Casal Bruciato identificato con il quartiere omonimo del Tiburtino (41,9070 N 12,5506 E)."@it ;
+    chora:rationaleType chora:ReferentialEvidence ;
+    chora:reviewStatus chora:Validated ;
+    chora:sourceWork "Censimento GaddAtlas"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/C-edicola_due_santi> a chora:Assertion ;
+    rdfs:comment "Superata da S-edicola_due_santi (Manzotti 2010, p. 246; D-031)."@it ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/C-edicola_due_santi-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/C-edicola_due_santi-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/edicola_due_santi> ;
+    chora:adoptedByProject false ;
+    chora:assertionType chora:StatusAssertion ;
+    chora:assertsValue chora:Invented ;
+    chora:rationale "Lettura del censimento: «Edicola immaginata», parte dell'orto/vigna dei Due Santi, senza ancoraggio. Nel censimento l'etichetta era «Imagined», che prima della correzione dello schema (D-030) designava il luogo fittizio in una geografia nota, oggi Invented."@it ;
+    chora:rationaleType chora:CriticalReading ;
+    chora:reviewStatus chora:Validated ;
+    chora:sourceWork "Censimento GaddAtlas"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/C-palazzo_simonetti> a chora:Assertion ;
+    rdfs:comment "Superata da S-palazzo_simonetti (Pinotti 2025, p. 78; D-036): in via Lanza non esiste un palazzo Simonetti."@it ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/C-palazzo_simonetti-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/C-palazzo_simonetti-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_simonetti> ;
+    chora:adoptedByProject false ;
+    chora:assertionType chora:StatusAssertion ;
+    chora:assertsValue chora:Imported ;
+    chora:rationale "Lettura del censimento: palazzo reale, ancorato a via Lanza dove lo pone QP 177."@it ;
+    chora:rationaleType chora:ReferentialEvidence ;
+    chora:reviewStatus chora:Validated ;
+    chora:sourceWork "Censimento GaddAtlas"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/attribution/A-0001-encoder-lorenzo_sabatino> a prov:Attribution ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:Encoder .
@@ -13624,6 +13684,38 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/attribution/A-0002-readingauthor-manzotti> a prov:Attribution ;
     prov:agent <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/C-casal_bruciato-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/C-casal_bruciato-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/C-edicola_due_santi-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/C-edicola_due_santi-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/C-palazzo_simonetti-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/C-palazzo_simonetti-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/I-casal_bruciato-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/I-casal_bruciato-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
 <https://w3id.org/gaddatlas/id/attribution/M-0001-encoder-lorenzo_sabatino> a prov:Attribution ;
@@ -31885,13 +31977,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasPlaceCategory chora:mountain ;
     chora:hasRealityStatus chora:Transformed .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/palazzo_simonetti> a chora:NarrativePlace ;
-    rdfs:label "Palazzo Simonetti"@it ;
-    dcterms:description "Luogo trasformato per rilocazione: il palazzo Simonetti (o De Carolis) è reale e sorge in via Lata, presso piazza del Collegio Romano, dove lo colloca il dattiloscritto dei capitoli nuovi; in QP 177 Gadda lo sposta in via Lanza, dove non esiste (Pinotti 2025, p. 78). Ancorato a via Lanza, la sua collocazione nel testo; nessuna coordinata propria."@it ;
-    chora:hasPlaceCategory chora:historical_building ;
-    chora:hasRealityStatus chora:Transformed ;
-    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_san_lorenzo_in_lucina> a chora:NarrativePlace ;
     rdfs:label "Piazza San Lorenzo in Lucina"@it ;
     chora:hasPlaceCategory chora:square ;
@@ -32581,6 +32666,13 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/palazzo_simonetti> a chora:NarrativePlace ;
+    rdfs:label "Palazzo Simonetti"@it ;
+    dcterms:description "Luogo trasformato per rilocazione: il palazzo Simonetti (o De Carolis) è reale e sorge in via Lata, presso piazza del Collegio Romano, dove lo colloca il dattiloscritto dei capitoli nuovi; in QP 177 Gadda lo sposta in via Lanza, dove non esiste (Pinotti 2025, p. 78). Ancorato a via Lanza, la sua collocazione nel testo; nessuna coordinata propria."@it ;
+    chora:hasPlaceCategory chora:historical_building ;
+    chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/pensione_burgess> a chora:NarrativePlace ;
     rdfs:label "Pensione Burgess"@it ;
     dcterms:description "Albergo immaginario, possibile deformazione di Pensione Villa Borghese, via Sgambati 4, vicino Porta Pinciana"@it ;
@@ -33097,14 +33189,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasPlaceCategory chora:railway ;
     chora:hasRealityStatus chora:Imported .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/edicola_due_santi> a chora:NarrativePlace ;
-    rdfs:label "Edicola ai Due Santi"@it ;
-    dcterms:description "Tabernacolo a due pioventi che interrompe il muriccio dell'orto o vigna di fronte al laboratorio della Zamira, sul lato opposto della via Appia (QP 216, 219). Luogo importato: Manzotti (2010, p. 246) ne trova traccia nella piantina dei Castelli del Touring."@it ;
-    skos:altLabel "tabernacolo appia"@it ;
-    chora:hasPlaceCategory chora:shrine ;
-    chora:hasRealityStatus chora:Imported ;
-    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/ferrovia_roma_velletri> a chora:NarrativePlace ;
     rdfs:label "Ferrovia Roma-Velletri"@it ;
     chora:hasPlaceCategory chora:railway ;
@@ -33315,6 +33399,14 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 }"""^^geosparql:geoJSONLiteral ] ;
     geo1:lat 41.89805973978667 ;
     geo1:long 12.494448968864743 .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/edicola_due_santi> a chora:NarrativePlace ;
+    rdfs:label "Edicola ai Due Santi"@it ;
+    dcterms:description "Tabernacolo a due pioventi che interrompe il muriccio dell'orto o vigna di fronte al laboratorio della Zamira, sul lato opposto della via Appia (QP 216, 219). Luogo importato: Manzotti (2010, p. 246) ne trova traccia nella piantina dei Castelli del Touring."@it ;
+    skos:altLabel "tabernacolo appia"@it ;
+    chora:hasPlaceCategory chora:shrine ;
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/milano> a chora:NarrativePlace ;
     rdfs:label "Milanno"@it ;
@@ -33775,31 +33867,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 
 <https://w3id.org/gaddatlas/id/route/tragitto_viminale_merulana> a chora:NarrativeRoute .
 
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato> a chora:GazetteerEntity ;
-    rdfs:label "Casale Abbruciato"@it ;
-    dcterms:source "Posizione ADOTTATA: TCI, Italia centrale I, carta «Colli Laziali, Monti Lepini ed Ernici» 1:250.000, inserita tra le pp. 480 e 481 (Manzotti 2010, Tav. VI, p. 300): casale fra le ferrovie Roma–Velletri e Roma–Napoli, all'altezza di Santa Fumia, lungo il fosso di Casale Abbrusciato. Coordinate stimate (precisione ~1 km): punto mediano fra le due ferrovie alla latitudine di Borgo Santa Fumia (OpenStreetMap). Posizione ALTERNATIVA: IGM, F. 150 III SO, 1:25.000, rilievo 1872, aggiornamenti 1931 e 1940 (Manzotti 2010, Tav. VII, p. 301): «Casale Abbruciato» a ovest della Roma–Napoli, stimato a 41.7168 N 12.5683 E (reticolo UTM 33 della tavola, E 297,7 N 4621,3 km; precisione ~250 m; il reticolo della tavola è in datum ED50, e lo scarto verso WGS84, ~100–200 m, rientra in questa precisione). Manzotti 2010, pp. 268–269. Nella nota Manzotti rinvia alle tavole come «V» e «VI»: qui si citano secondo le didascalie."^^xsd:string ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.583,
-          41.7335
-        ]
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 41.7335 ;
-    geo1:long 12.583 ;
-    skos:altLabel "Casal Bruciato; Casale Abbrusciato; Casale Bruciato"@it ;
-    chora:historicalLocation "Casale dell'Agro romano a sud di Roma (Nibby, Dintorni di Roma, p. 569)"@it .
-
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_frattocchie> a chora:GazetteerEntity ;
     rdfs:label "Frattocchie"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -33875,6 +33942,31 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato> a chora:GazetteerEntity ;
+    rdfs:label "Casale Abbruciato"@it ;
+    dcterms:source "Posizione ADOTTATA: TCI, Italia centrale I, carta «Colli Laziali, Monti Lepini ed Ernici» 1:250.000, inserita tra le pp. 480 e 481 (Manzotti 2010, Tav. VI, p. 300): casale fra le ferrovie Roma–Velletri e Roma–Napoli, all'altezza di Santa Fumia, lungo il fosso di Casale Abbrusciato. Coordinate stimate (precisione ~1 km): punto mediano fra le due ferrovie alla latitudine di Borgo Santa Fumia (OpenStreetMap). Posizione ALTERNATIVA: IGM, F. 150 III SO, 1:25.000, rilievo 1872, aggiornamenti 1931 e 1940 (Manzotti 2010, Tav. VII, p. 301): «Casale Abbruciato» a ovest della Roma–Napoli, stimato a 41.7168 N 12.5683 E (reticolo UTM 33 della tavola, E 297,7 N 4621,3 km; precisione ~250 m; il reticolo della tavola è in datum ED50, e lo scarto verso WGS84, ~100–200 m, rientra in questa precisione). Manzotti 2010, pp. 268–269. Nella nota Manzotti rinvia alle tavole come «V» e «VI»: qui si citano secondo le didascalie."^^xsd:string ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.583,
+          41.7335
+        ]
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 41.7335 ;
+    geo1:long 12.583 ;
+    skos:altLabel "Casal Bruciato; Casale Abbrusciato; Casale Bruciato"@it ;
+    chora:historicalLocation "Casale dell'Agro romano a sud di Roma (Nibby, Dintorni di Roma, p. 569)"@it .
+
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_della_falcognana> a chora:GazetteerEntity ;
     rdfs:label "Via della Falcognana"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -33919,14 +34011,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:characterName "Don Lorenzo Corpi"@it ;
     chora:hasGender "male"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> a chora:NarrativePlace ;
-    rdfs:label "Casal Bruciato"@it ;
-    dcterms:description "Casale reale dell'Agro romano a sud di Roma (Casal(e) Bruciato / Abbruciato / Abbrusciato: Nibby, Dintorni di Roma, p. 569), fra le ferrovie Roma–Velletri e Roma–Napoli. Non è il quartiere omonimo del Tiburtino. Forme attestate: «Casal Bruciato» (QP 212, 237, 240, 241, 262, 274, 298), «Casale Abbrusciato» (QP 297)."@it ;
-    skos:altLabel "Casale Abbrusciato"@it ;
-    chora:hasPlaceCategory chora:district ;
-    chora:hasRealityStatus chora:Imported ;
-    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/tor_di_gheppio> a chora:NarrativePlace ;
     rdfs:label "Tor di Gheppio"@it ;
     dcterms:description "Località inventata, natali dell'Assunta Crocchiapani"@it ;
@@ -33969,6 +34053,14 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 }"""^^geosparql:geoJSONLiteral ] ;
     geo1:lat 41.73247489501876 ;
     geo1:long 12.58446168893847 .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> a chora:NarrativePlace ;
+    rdfs:label "Casal Bruciato"@it ;
+    dcterms:description "Casale reale dell'Agro romano a sud di Roma (Casal(e) Bruciato / Abbruciato / Abbrusciato: Nibby, Dintorni di Roma, p. 569), fra le ferrovie Roma–Velletri e Roma–Napoli. Non è il quartiere omonimo del Tiburtino. Forme attestate: «Casal Bruciato» (QP 212, 237, 240, 241, 262, 274, 298), «Casale Abbrusciato» (QP 297)."@it ;
+    skos:altLabel "Casale Abbrusciato"@it ;
+    chora:hasPlaceCategory chora:district ;
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/focalizer/giuliano_valdarena> a chora:Character,
         chora:FocalizingAgent ;

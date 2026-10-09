@@ -20,9 +20,9 @@ Due artefatti distinti nello stesso repository:
 
 ## Le decisioni sono già prese
 
-`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-050; quelle dell'allineamento al
+`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-051; quelle dell'allineamento al
 Capitolo 4 partono da D-019 (D-015…D-018 sono del porting, su `main`). Nel file sono in
-ordine cronologico, non numerico. Prossimo numero libero: **D-051**. **Leggile
+ordine cronologico, non numerico. Prossimo numero libero: **D-052**. **Leggile
 prima di proporre alternative architetturali.** Se una scelta ti sembra
 sbagliata, dillo citando la decisione — non aggirarla in silenzio.
 
@@ -151,7 +151,7 @@ aggiornato.
 make all        # fogli + TBox -> TTL -> geojson + passages -> audit
 make audit      # nove invarianti fra sorgenti e derivati; esce 1 se falliscono
 make shacl      # validazione SHACL, deve dire CONFORME
-make queries    # 12 competency + 15 integrity query
+make queries    # 12 competency + 16 integrity query
 make docs       # pyLODE dalla TBox
 make xlsx       # TSV -> XLSX, per lavorare in Excel (nasce con T-80)
 make publish-data  # copia GeoJSON e passages in app/public/data (nasce con T-83)

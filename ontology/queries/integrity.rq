@@ -179,3 +179,17 @@ SELECT ?luogo ?partizione WHERE {
   FILTER (STR(?z1) < STR(?z2))
 }
 ORDER BY ?luogo
+
+# ==== IQ16 — Revisione su un altro soggetto o di un altro tipo, o adottata due volte (atteso: 0) ====
+# Una revisione (prov:wasRevisionOf) riguarda lo stesso soggetto e lo stesso
+# tipo della lettura che rivede, e la lettura rivista non e' piu' adottata (D-051).
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?nuova ?vecchia WHERE {
+  ?nuova prov:wasRevisionOf ?vecchia .
+  ?nuova ga:aboutSubject ?s1 ; ga:assertionType ?t1 .
+  OPTIONAL { ?vecchia ga:aboutSubject ?s2 ; ga:assertionType ?t2 }
+  OPTIONAL { ?vecchia ga:adoptedByProject ?adottata }
+  FILTER (!BOUND(?s2) || ?s1 != ?s2 || ?t1 != ?t2 || COALESCE(?adottata, false))
+}
+ORDER BY ?nuova

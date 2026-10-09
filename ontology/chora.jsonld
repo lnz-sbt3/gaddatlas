@@ -1594,6 +1594,10 @@
           "@id": "chora:Transformed"
         }
       ],
+      "skos:historyNote": {
+        "@language": "it",
+        "@value": "Fino all'8/10/2026 le etichette Invented e Imagined erano invertite rispetto alle definizioni (D-030). Lo scambio e' una correzione dello schema, non una revisione delle letture: non genera prov:wasRevisionOf (D-051)."
+      },
       "skos:prefLabel": {
         "@language": "en",
         "@value": "Reality Status"

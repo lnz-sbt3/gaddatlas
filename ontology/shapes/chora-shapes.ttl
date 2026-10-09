@@ -492,3 +492,18 @@ ga:InPartitionZoneShape
         sh:class ga:PartitionZone ;
         sh:message "inPartitionZone punta a una zona di una partizione." ;
     ] .
+
+
+# =============================================================================
+# SHAPE 13 — Storia delle revisioni (D-051, work order T-38)
+# Una revisione punta a un'asserzione. Stesso soggetto e stesso tipo: IQ16.
+# =============================================================================
+
+ga:RevisionShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion ;
+    sh:property [
+        sh:path prov:wasRevisionOf ;
+        sh:class ga:Assertion ;
+        sh:message "prov:wasRevisionOf punta a un'altra asserzione attribuita." ;
+    ] .
