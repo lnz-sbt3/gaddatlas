@@ -126,6 +126,14 @@ schema:name a owl:AnnotationProperty .
     owl:versionIRI <https://w3id.org/chora/1.0.0> ;
     owl:versionInfo "1.0.0" .
 
+chora:InternalDiscrepancy a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "discrepanza interna"@it ;
+    skos:broader chora:Discrepancy ;
+    skos:definition "Two passages of the text are mutually incompatible."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Internal Discrepancy"@en .
+
 chora:aboutSubject a owl:ObjectProperty ;
     rdfs:comment "The resource the assertion is about (a narrative place, a place reference, a gazetteer entity, an interpretation)."@en ;
     rdfs:domain chora:Assertion ;
@@ -400,6 +408,20 @@ chora:targetsRoute a owl:ObjectProperty ;
     rdfs:range chora:NarrativeRoute ;
     skos:altLabel "ha come target il tragitto"@it ;
     skos:prefLabel "targets route"@en .
+
+chora:uncertaintyAxis a owl:ObjectProperty ;
+    dcterms:references chora:UncertaintyAxisScheme ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "asse dell'incertezza"@it ;
+    skos:prefLabel "uncertainty axis"@en .
+
+chora:uncertaintyOrigin a owl:ObjectProperty ;
+    dcterms:references chora:UncertaintyOriginScheme ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "origine dell'incertezza"@it ;
+    skos:prefLabel "uncertainty origin"@en .
 
 <https://w3id.org/gaddatlas/id/assertion/A-0001> a chora:Assertion ;
     rdfs:comment "Sostituisce owl:sameAs gaz_castello <-> gaz_castel_gandolfo (D-044)"@it ;
@@ -1150,6 +1172,142 @@ chora:targetsRoute a owl:ObjectProperty ;
     chora:assertsValue chora:Invented ;
     chora:rationale "Nessuna motivazione nei documenti del progetto (descrizione vuota, nessun passo del Cap. 4): da compilare."@it ;
     chora:reviewStatus chora:Draft .
+
+<https://w3id.org/gaddatlas/id/assertion/U-0001> a chora:Assertion ;
+    rdfs:comment "Bozza T-34 (D-047): classificazione da validare in REVIEW_2"@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/U-0001-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/U-0001-readingauthor-manzotti> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> ;
+    chora:assertionType chora:UncertaintyAssertion ;
+    chora:assertsValue chora:Confusion ;
+    chora:rationale "La topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»; TCI e testo tra le due ferrovie, IGM a ovest della Roma–Napoli. Discrepanza fra testo e repertorio, non corretta (D-037)."@it ;
+    chora:rationaleType chora:CriticalReading ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "268–269"^^xsd:string ;
+    chora:sourceWork "Manzotti 2010"^^xsd:string ;
+    chora:uncertaintyAxis chora:GeometryAxis ;
+    chora:uncertaintyOrigin chora:DocumentaryOrigin .
+
+<https://w3id.org/gaddatlas/id/assertion/U-0002> a chora:Assertion ;
+    rdfs:comment "Bozza T-34 (D-047): classificazione da validare in REVIEW_2"@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/U-0002-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/U-0002-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/castello> ;
+    chora:assertionType chora:UncertaintyAssertion ;
+    chora:assertsValue chora:ContestedIdentification ;
+    chora:rationale "Due identificazioni concorrenti della «stazione di Castello» (QP 279): Castel Gandolfo (lettura immediata, A-0001) e Castel Savello (Manzotti, A-0002, adottata). Cap. 4, § 4.4 (r. 107)."@it ;
+    chora:rationaleType chora:CriticalReading ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "293"^^xsd:string ;
+    chora:sourceWork "Manzotti 2010"^^xsd:string ;
+    chora:uncertaintyAxis chora:IdentificationAxis ;
+    chora:uncertaintyOrigin chora:ConstructiveOrigin .
+
+<https://w3id.org/gaddatlas/id/assertion/U-0003> a chora:Assertion ;
+    rdfs:comment "Bozza T-34 (D-047): classificazione da validare in REVIEW_2"@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/U-0003-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/U-0003-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_simonetti> ;
+    chora:assertionType chora:UncertaintyAssertion ;
+    chora:assertsValue chora:ContestedIdentification ;
+    chora:rationale "Quale palazzo reale sta dietro il «palazzo Simonetti» in via Lanza (QP 177): il palazzo Simonetti / De Carolis in via Lata del dattiloscritto (Pinotti) o il palazzo Odescalchi Simonetti di via Vittoria Colonna (Terzoli, cit. ivi). Cap. 4, § 4.2 (r. 45)."@it ;
+    chora:rationaleType chora:CriticalReading ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "78"^^xsd:string ;
+    chora:sourceWork "Pinotti 2025"^^xsd:string ;
+    chora:uncertaintyAxis chora:IdentificationAxis ;
+    chora:uncertaintyOrigin chora:DocumentaryOrigin .
+
+<https://w3id.org/gaddatlas/id/assertion/U-0004> a chora:Assertion ;
+    rdfs:comment "Bozza T-34 (D-047): classificazione da validare in REVIEW_2"@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/U-0004-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/U-0004-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/robine_vecchie> ;
+    chora:assertionType chora:UncertaintyAssertion ;
+    chora:assertsValue chora:Discrepancy ;
+    chora:rationale "«Robine Vecchie» (QP 169) non è registrato nelle carte topografiche: refuso per «Robinie vecchie» o «Rovine vecchie», oppure «ironico abbassamento» delle Rovine della zona; Pinotti conserva la lezione. Cap. 4, § 4.3 (r. 83)."@it ;
+    chora:rationaleType chora:CriticalReading ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "491"^^xsd:string ;
+    chora:sourceWork "Terzoli 2015"^^xsd:string ;
+    chora:uncertaintyAxis chora:NameAxis ;
+    chora:uncertaintyOrigin chora:DocumentaryOrigin .
+
+<https://w3id.org/gaddatlas/id/assertion/U-0005> a chora:Assertion ;
+    rdfs:comment "Bozza T-34 (D-047): classificazione da validare in REVIEW_2"@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/U-0005-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/U-0005-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/edicola_due_santi> ;
+    chora:assertionType chora:UncertaintyAssertion ;
+    chora:assertsValue chora:Incompleteness ;
+    chora:rationale "Il tabernacolo ha traccia nella piantina dei Castelli del Touring (Manzotti), ma il progetto non dispone di una coordinata: la posizione deriva da Due Santi con uno scarto dichiarato di circa 40 m (D-031); il volume TCI citato è da verificare (DC-03)."@it ;
+    chora:rationaleType chora:ReferentialEvidence ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "246"^^xsd:string ;
+    chora:sourceWork "Manzotti 2010"^^xsd:string ;
+    chora:uncertaintyAxis chora:GeometryAxis ;
+    chora:uncertaintyOrigin chora:ConstructiveOrigin .
+
+<https://w3id.org/gaddatlas/id/assertion/U-0006> a chora:Assertion ;
+    rdfs:comment "Bozza T-34 (D-047): classificazione da validare in REVIEW_2"@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/U-0006-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/U-0006-readingauthor-manzotti> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/monti_ernici> ;
+    chora:assertionType chora:UncertaintyAssertion ;
+    chora:assertsValue chora:NonSpecificity ;
+    chora:rationale "«d'in vetta al crinale degli Ernici o dei Simbruini» (QP 215): identificazione per disgiunzione, non risolta dal testo (WO T-16; Cap. 4, § 4.4)."@it ;
+    chora:rationaleType chora:CriticalReading ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "290"^^xsd:string ;
+    chora:sourceWork "Manzotti 2010"^^xsd:string ;
+    chora:uncertaintyAxis chora:IdentificationAxis ;
+    chora:uncertaintyOrigin chora:DocumentaryOrigin .
+
+<https://w3id.org/gaddatlas/id/assertion/U-0007> a chora:Assertion ;
+    rdfs:comment "Bozza T-34 (D-047): classificazione da validare in REVIEW_2"@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/U-0007-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/U-0007-readingauthor-manzotti> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/carsoli> ;
+    chora:assertionType chora:UncertaintyAssertion ;
+    chora:assertsValue chora:Oversight ;
+    chora:rationale "«Càrsoli» (QP 210) in luogo della grafia corretta Carsòli, «frutto verosimilmente di un'attrazione analogica con la vicina Àrsoli» (Cap. 4, § 4.4, r. 111). Discrepanza di forma registrata, non corretta."@it ;
+    chora:rationaleType chora:CriticalReading ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "254"^^xsd:string ;
+    chora:sourceWork "Manzotti 2010"^^xsd:string ;
+    chora:uncertaintyAxis chora:NameAxis ;
+    chora:uncertaintyOrigin chora:DocumentaryOrigin .
+
+<https://w3id.org/gaddatlas/id/assertion/U-0008> a chora:Assertion ;
+    rdfs:comment "Bozza T-34 (D-047): classificazione da validare in REVIEW_2"@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/U-0008-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/U-0008-readingauthor-manzotti> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/direttissima_roma_napoli> ;
+    chora:assertionType chora:UncertaintyAssertion ;
+    chora:assertsValue chora:Anachronism ;
+    chora:rationale "La direttissima Roma–Napoli fu ultimata e inaugurata dopo gli eventi narrati (marzo 1927) (Cap. 4, § 4.4, r. 111). Anacronismo registrato, non corretto."@it ;
+    chora:rationaleType chora:CriticalReading ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "270"^^xsd:string ;
+    chora:sourceWork "Manzotti 2010"^^xsd:string ;
+    chora:uncertaintyAxis chora:IdentificationAxis ;
+    chora:uncertaintyOrigin chora:DocumentaryOrigin .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_aliciaro> a chora:GazetteerEntity ;
     rdfs:label "Aliciaro"@it ;
@@ -13896,6 +14054,14 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <http://www.wikidata.org/entity/Q93352> a owl:NamedIndividual .
 
+chora:Anachronism a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "anacronismo"@it ;
+    skos:broader chora:Discrepancy ;
+    skos:definition "The referent did not exist, or was different, at the time of the story."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Anachronism"@en .
+
 chora:Below a owl:NamedIndividual,
         skos:Concept ;
     dcterms:description "A è verticalmente sotto B lungo l'asse gravitazionale. Relazione inversa di Above."@it ;
@@ -13904,6 +14070,14 @@ chora:Below a owl:NamedIndividual,
     skos:inScheme chora:SpatialRelationTypeScheme ;
     skos:prefLabel "Below"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+chora:Confusion a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "confusione"@it ;
+    skos:broader chora:Discrepancy ;
+    skos:definition "The text combines or confuses distinct referents."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Confusion"@en .
 
 chora:Contains a owl:NamedIndividual,
         skos:Concept ;
@@ -13937,6 +14111,22 @@ chora:Narrator a owl:Class ;
     skos:altLabel "Narratore"@it ;
     skos:prefLabel "Narrator"@en .
 
+chora:NonApplicability a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "non-applicabilità"@it ;
+    skos:definition "A coordinate or referent does not apply to this occurrence."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Non Applicability"@en ;
+    skos:topConceptOf chora:UncertaintyTypeScheme .
+
+chora:Oversight a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "svista"@it ;
+    skos:broader chora:Discrepancy ;
+    skos:definition "A probable slip of the author (e.g. a misplaced accent)."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Oversight"@en .
+
 chora:PartitionAssertion a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "partizione"@it ;
@@ -13954,14 +14144,13 @@ chora:RelatedTo a owl:NamedIndividual,
     skos:prefLabel "Related to"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
 
-chora:UncertaintyAssertion a owl:NamedIndividual,
+chora:Vagueness a owl:NamedIndividual,
         skos:Concept ;
-    skos:altLabel "incertezza"@it ;
-    skos:definition "Qualifies the uncertainty of a reading by type, axis and origin."@en ;
-    skos:inScheme chora:AssertionTypeScheme ;
-    skos:notation "uncertainty" ;
-    skos:prefLabel "Uncertainty assertion"@en ;
-    skos:topConceptOf chora:AssertionTypeScheme .
+    skos:altLabel "vaghezza"@it ;
+    skos:definition "The extent or boundary of the place is indeterminate."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Vagueness"@en ;
+    skos:topConceptOf chora:UncertaintyTypeScheme .
 
 chora:VariantAssertion a owl:NamedIndividual,
         skos:Concept ;
@@ -14485,6 +14674,70 @@ chora:ward a owl:NamedIndividual,
 
 <https://w3id.org/gaddatlas/id/attribution/S-villino_lungotevere-readingauthor-lorenzo_sabatino> a prov:Attribution ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0001-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0001-readingauthor-manzotti> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0002-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0002-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0003-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0003-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0004-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0004-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0005-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0005-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0006-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0006-readingauthor-manzotti> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0007-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0007-readingauthor-manzotti> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0008-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0008-readingauthor-manzotti> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/manzotti> ;
     prov:hadRole chora:ReadingAuthor .
 
 <https://w3id.org/gaddatlas/id/attribution/interp_00001-encoder-lorenzo_sabatino> a prov:Attribution ;
@@ -25248,12 +25501,6 @@ chora:ward a owl:NamedIndividual,
     chora:hasPlaceCategory chora:district ;
     chora:hasRealityStatus chora:Imported .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/carsoli> a chora:NarrativePlace ;
-    rdfs:label "Carsoli"@it ;
-    dcterms:description "Comune in Abruzzo"@it ;
-    chora:hasPlaceCategory chora:municipality ;
-    chora:hasRealityStatus chora:Imported .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/castel_gandolfo> a chora:NarrativePlace ;
     rdfs:label "Castel Gandolfo"@it ;
     chora:hasPlaceCategory chora:locality ;
@@ -25406,12 +25653,6 @@ chora:ward a owl:NamedIndividual,
 
 <https://w3id.org/gaddatlas/id/narrativeplace/monti_carseolani> a chora:NarrativePlace ;
     rdfs:label "Monti Carseolani"@it ;
-    dcterms:description "Catena montuosa tra Lazio e Abruzzo"@it ;
-    chora:hasPlaceCategory chora:mountain ;
-    chora:hasRealityStatus chora:Imported .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/monti_ernici> a chora:NarrativePlace ;
-    rdfs:label "Monti Ernici"@it ;
     dcterms:description "Catena montuosa tra Lazio e Abruzzo"@it ;
     chora:hasPlaceCategory chora:mountain ;
     chora:hasRealityStatus chora:Imported .
@@ -29258,6 +29499,22 @@ chora:Above a owl:NamedIndividual,
     skos:prefLabel "Above"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
 
+chora:Incompleteness a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "incompletezza"@it ;
+    skos:definition "Information needed to locate or identify the place is missing in the sources."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Incompleteness"@en ;
+    skos:topConceptOf chora:UncertaintyTypeScheme .
+
+chora:NonSpecificity a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "non-specificità"@it ;
+    skos:definition "The text designates one among several candidates without resolving which (e.g. a disjunction)."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Non Specificity"@en ;
+    skos:topConceptOf chora:UncertaintyTypeScheme .
+
 chora:Railway_line a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "Linea ferroviaria"@it ;
@@ -29459,10 +29716,6 @@ chora:village a owl:NamedIndividual,
     skos:inScheme chora:PlaceCategoryScheme ;
     skos:prefLabel "Village"@en ;
     skos:topConceptOf chora:PlaceCategoryScheme .
-
-<https://w3id.org/gaddatlas/id/agent/manzotti> a prov:Agent ;
-    rdfs:comment "Commento al cap. VIII del Pasticciaccio (Manzotti 2010, «Per leggere» 19)"@it ;
-    schema:name "Emilio Manzotti" .
 
 <https://w3id.org/gaddatlas/id/focalizer/agente_paolillo> a chora:Character,
         chora:FocalizingAgent ;
@@ -30740,6 +30993,12 @@ chora:village a owl:NamedIndividual,
     chora:hasPlaceCategory chora:station ;
     chora:hasRealityStatus chora:Imported .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/carsoli> a chora:NarrativePlace ;
+    rdfs:label "Carsoli"@it ;
+    dcterms:description "Comune in Abruzzo"@it ;
+    chora:hasPlaceCategory chora:municipality ;
+    chora:hasRealityStatus chora:Imported .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/castel_di_leva> a chora:NarrativePlace ;
     rdfs:label "Castel di Leva"@it ;
     chora:hasPlaceCategory chora:locality ;
@@ -30846,6 +31105,12 @@ chora:village a owl:NamedIndividual,
     chora:hasPlaceCategory chora:mountain ;
     chora:hasRealityStatus chora:Imported .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/monti_ernici> a chora:NarrativePlace ;
+    rdfs:label "Monti Ernici"@it ;
+    dcterms:description "Catena montuosa tra Lazio e Abruzzo"@it ;
+    chora:hasPlaceCategory chora:mountain ;
+    chora:hasRealityStatus chora:Imported .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi> a chora:NarrativePlace ;
     rdfs:label "Orto o Vigna ai Due Santi"@it ;
     dcterms:description "Luogo non precisato simile a un orto o una vigna, di fronte al laboratorio della Zamira, al lato opposto della via Appia"@it ;
@@ -30874,12 +31139,6 @@ chora:village a owl:NamedIndividual,
 
 <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_del_mappamondo> a chora:NarrativePlace ;
     rdfs:label "Palazzo der Mappamonno"@it ;
-    chora:hasPlaceCategory chora:historical_building ;
-    chora:hasRealityStatus chora:Transformed .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/palazzo_simonetti> a chora:NarrativePlace ;
-    rdfs:label "Palazzo Simonetti"@it ;
-    dcterms:description "Luogo trasformato per rilocazione: il palazzo Simonetti (o De Carolis) è reale e sorge in via Lata, presso piazza del Collegio Romano, dove lo colloca il dattiloscritto dei capitoli nuovi; in QP 177 Gadda lo sposta in via Lanza, dove non esiste (Pinotti 2025, p. 78). Ancorato a via Lanza, la sua collocazione nel testo; nessuna coordinata propria."@it ;
     chora:hasPlaceCategory chora:historical_building ;
     chora:hasRealityStatus chora:Transformed .
 
@@ -31767,6 +32026,30 @@ chora:village a owl:NamedIndividual,
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 306"^^xsd:string .
 
+chora:ConstructiveOrigin a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "costruttiva"@it ;
+    skos:definition "Arises from the modelling choices of the project."@en ;
+    skos:inScheme chora:UncertaintyOriginScheme ;
+    skos:prefLabel "Constructive Origin"@en ;
+    skos:topConceptOf chora:UncertaintyOriginScheme .
+
+chora:ContestedIdentification a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "identificazione contesa"@it ;
+    skos:definition "Competing identifications of the referent, each supported by a reading."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Contested Identification"@en ;
+    skos:topConceptOf chora:UncertaintyTypeScheme .
+
+chora:GeometryAxis a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "geometria"@it ;
+    skos:definition "Uncertainty about the position or extent."@en ;
+    skos:inScheme chora:UncertaintyAxisScheme ;
+    skos:prefLabel "Geometry Axis"@en ;
+    skos:topConceptOf chora:UncertaintyAxisScheme .
+
 chora:IdentificationAssertion a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "identificazione"@it ;
@@ -31776,13 +32059,13 @@ chora:IdentificationAssertion a owl:NamedIndividual,
     skos:prefLabel "Identification assertion"@en ;
     skos:topConceptOf chora:AssertionTypeScheme .
 
-chora:ReferentialEvidence a owl:NamedIndividual,
+chora:NameAxis a owl:NamedIndividual,
         skos:Concept ;
-    skos:altLabel "prova referenziale"@it ;
-    skos:definition "The reading rests on a repertory (map, guide, gazetteer) that documents or excludes the referent."@en ;
-    skos:inScheme chora:RationaleTypeScheme ;
-    skos:prefLabel "Referential evidence"@en ;
-    skos:topConceptOf chora:RationaleTypeScheme .
+    skos:altLabel "nome"@it ;
+    skos:definition "Uncertainty about the name or its form."@en ;
+    skos:inScheme chora:UncertaintyAxisScheme ;
+    skos:prefLabel "Name Axis"@en ;
+    skos:topConceptOf chora:UncertaintyAxisScheme .
 
 chora:Validated a owl:NamedIndividual,
         skos:Concept ;
@@ -32375,6 +32658,12 @@ chora:temple a owl:NamedIndividual,
     chora:hasPlaceCategory chora:mountain ;
     chora:hasRealityStatus chora:Transformed .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/palazzo_simonetti> a chora:NarrativePlace ;
+    rdfs:label "Palazzo Simonetti"@it ;
+    dcterms:description "Luogo trasformato per rilocazione: il palazzo Simonetti (o De Carolis) è reale e sorge in via Lata, presso piazza del Collegio Romano, dove lo colloca il dattiloscritto dei capitoli nuovi; in QP 177 Gadda lo sposta in via Lanza, dove non esiste (Pinotti 2025, p. 78). Ancorato a via Lanza, la sua collocazione nel testo; nessuna coordinata propria."@it ;
+    chora:hasPlaceCategory chora:historical_building ;
+    chora:hasRealityStatus chora:Transformed .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_san_lorenzo_in_lucina> a chora:NarrativePlace ;
     rdfs:label "Piazza San Lorenzo in Lucina"@it ;
     chora:hasPlaceCategory chora:square ;
@@ -32390,12 +32679,6 @@ chora:temple a owl:NamedIndividual,
     rdfs:label "Pratica di Mare"@it ;
     chora:hasPlaceCategory chora:locality ;
     chora:hasRealityStatus chora:Imported .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/robine_vecchie> a chora:NarrativePlace ;
-    rdfs:label "Robine Vecchie"@it ;
-    dcterms:description "Robine Vecchie è un microtoponimo gaddiano non identificato, forse deformazione di un nome locale o denominazione fantastica applicata al paesaggio reale di Frattocchie–Due Santi."@it ;
-    chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Transformed .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/roccafringoli> a chora:NarrativePlace ;
     rdfs:label "Roccafringoli"@it ;
@@ -32665,6 +32948,14 @@ chora:AttributionRoleScheme a owl:NamedIndividual,
     skos:hasTopConcept chora:Encoder,
         chora:ReadingAuthor ;
     skos:prefLabel "Attribution role"@en .
+
+chora:ReferentialEvidence a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "prova referenziale"@it ;
+    skos:definition "The reading rests on a repertory (map, guide, gazetteer) that documents or excludes the referent."@en ;
+    skos:inScheme chora:RationaleTypeScheme ;
+    skos:prefLabel "Referential evidence"@en ;
+    skos:topConceptOf chora:RationaleTypeScheme .
 
 chora:ZoneOfAction a owl:NamedIndividual,
         skos:Concept ;
@@ -33092,12 +33383,6 @@ chora:police_station a owl:NamedIndividual,
     chora:hasPlaceCategory chora:cemetery ;
     chora:hasRealityStatus chora:Imported .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/castello> a chora:NarrativePlace ;
-    rdfs:label "Castello"@it ;
-    dcterms:description "Luogo narrativo immaginato, un castello nella zona tra Pavona e Frattocchie"@it ;
-    chora:hasPlaceCategory chora:castle ;
-    chora:hasRealityStatus chora:Invented .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira> a chora:NarrativePlace ;
     rdfs:label "Casuccia della Zamira"@it ;
     chora:hasPlaceCategory chora:dwelling ;
@@ -33106,19 +33391,6 @@ chora:police_station a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/narrativeplace/collegio_romano> a chora:NarrativePlace ;
     rdfs:label "Collegio Romano"@it ;
     chora:hasPlaceCategory chora:police_station ;
-    chora:hasRealityStatus chora:Imported .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/direttissima_roma_napoli> a chora:NarrativePlace ;
-    rdfs:label "Direttissima Roma-Napoli"@it ;
-    dcterms:description "La linea è la Roma–Napoli via Formia, storicamente chiamata Direttissima Roma–Napoli"@it ;
-    chora:hasPlaceCategory chora:railway ;
-    chora:hasRealityStatus chora:Imported .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/edicola_due_santi> a chora:NarrativePlace ;
-    rdfs:label "Edicola ai Due Santi"@it ;
-    dcterms:description "Tabernacolo a due pioventi che interrompe il muriccio dell'orto o vigna di fronte al laboratorio della Zamira, sul lato opposto della via Appia (QP 216, 219). Luogo importato: Manzotti (2010, p. 246) ne trova traccia nella piantina dei Castelli del Touring."@it ;
-    skos:altLabel "tabernacolo appia"@it ;
-    chora:hasPlaceCategory chora:shrine ;
     chora:hasRealityStatus chora:Imported .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/maccheronaro> a chora:NarrativePlace ;
@@ -33143,6 +33415,12 @@ chora:police_station a owl:NamedIndividual,
     chora:hasFuzzinessLevel 4.0 ;
     chora:hasPlaceCategory chora:hotel ;
     chora:hasRealityStatus chora:Invented .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/robine_vecchie> a chora:NarrativePlace ;
+    rdfs:label "Robine Vecchie"@it ;
+    dcterms:description "Robine Vecchie è un microtoponimo gaddiano non identificato, forse deformazione di un nome locale o denominazione fantastica applicata al paesaggio reale di Frattocchie–Due Santi."@it ;
+    chora:hasPlaceCategory chora:locality ;
+    chora:hasRealityStatus chora:Transformed .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/san_lorenzo_al_verano> a chora:NarrativePlace ;
     rdfs:label "San Lorenzo al verano"@it ;
@@ -33305,6 +33583,14 @@ chora:police_station a owl:NamedIndividual,
 prov:Agent a owl:Class ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
 
+chora:IdentificationAxis a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "identificazione"@it ;
+    skos:definition "Uncertainty about which referent is meant."@en ;
+    skos:inScheme chora:UncertaintyAxisScheme ;
+    skos:prefLabel "Identification Axis"@en ;
+    skos:topConceptOf chora:UncertaintyAxisScheme .
+
 chora:LiteraryWork a owl:Class .
 
 chora:ReviewStatusScheme a owl:NamedIndividual,
@@ -33314,6 +33600,14 @@ chora:ReviewStatusScheme a owl:NamedIndividual,
     skos:hasTopConcept chora:Draft,
         chora:Validated ;
     skos:prefLabel "Review status"@en .
+
+chora:UncertaintyOriginScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Uncertainty origin"@en ;
+    skos:altLabel "Origine dell'incertezza"@it ;
+    skos:hasTopConcept chora:ConstructiveOrigin,
+        chora:DocumentaryOrigin ;
+    skos:prefLabel "Uncertainty origin"@en .
 
 chora:building a owl:NamedIndividual,
         skos:Concept ;
@@ -33657,9 +33951,28 @@ chora:retail_business a owl:NamedIndividual,
     chora:hasPlaceCategory chora:retail_business ;
     chora:hasRealityStatus chora:Invented .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/castello> a chora:NarrativePlace ;
+    rdfs:label "Castello"@it ;
+    dcterms:description "Luogo narrativo immaginato, un castello nella zona tra Pavona e Frattocchie"@it ;
+    chora:hasPlaceCategory chora:castle ;
+    chora:hasRealityStatus chora:Invented .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/ciampino> a chora:NarrativePlace ;
     rdfs:label "Ciampino"@it ;
     chora:hasPlaceCategory chora:municipality ;
+    chora:hasRealityStatus chora:Imported .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/direttissima_roma_napoli> a chora:NarrativePlace ;
+    rdfs:label "Direttissima Roma-Napoli"@it ;
+    dcterms:description "La linea è la Roma–Napoli via Formia, storicamente chiamata Direttissima Roma–Napoli"@it ;
+    chora:hasPlaceCategory chora:railway ;
+    chora:hasRealityStatus chora:Imported .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/edicola_due_santi> a chora:NarrativePlace ;
+    rdfs:label "Edicola ai Due Santi"@it ;
+    dcterms:description "Tabernacolo a due pioventi che interrompe il muriccio dell'orto o vigna di fronte al laboratorio della Zamira, sul lato opposto della via Appia (QP 216, 219). Luogo importato: Manzotti (2010, p. 246) ne trova traccia nella piantina dei Castelli del Touring."@it ;
+    skos:altLabel "tabernacolo appia"@it ;
+    chora:hasPlaceCategory chora:shrine ;
     chora:hasRealityStatus chora:Imported .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/ferrovia_roma_velletri> a chora:NarrativePlace ;
@@ -33714,6 +34027,14 @@ chora:retail_business a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/route/tragitto_monti_piazza_esedra> a chora:NarrativeRoute .
 
 <https://w3id.org/gaddatlas/id/route/tragitto_rocca_di_papa_monte_nuncupale> a chora:NarrativeRoute .
+
+chora:Discrepancy a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "discrepanza"@it ;
+    skos:definition "The text diverges from a repertory or from itself; recorded, never corrected."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Discrepancy"@en ;
+    skos:topConceptOf chora:UncertaintyTypeScheme .
 
 chora:interior a owl:NamedIndividual,
         skos:Concept ;
@@ -33928,13 +34249,13 @@ chora:interior a owl:NamedIndividual,
 
 <https://w3id.org/gaddatlas/id/route/tragitto_frattocchie_ciampino> a chora:NarrativeRoute .
 
-chora:CriticalReading a owl:NamedIndividual,
+chora:DocumentaryOrigin a owl:NamedIndividual,
         skos:Concept ;
-    skos:altLabel "lettura critica"@it ;
-    skos:definition "The reading rests on a scholar's interpretation, cited with work and page."@en ;
-    skos:inScheme chora:RationaleTypeScheme ;
-    skos:prefLabel "Critical reading"@en ;
-    skos:topConceptOf chora:RationaleTypeScheme .
+    skos:altLabel "documentaria"@it ;
+    skos:definition "Arises from the sources: text, witnesses, repertories."@en ;
+    skos:inScheme chora:UncertaintyOriginScheme ;
+    skos:prefLabel "Documentary Origin"@en ;
+    skos:topConceptOf chora:UncertaintyOriginScheme .
 
 chora:RationaleTypeScheme a owl:NamedIndividual,
         skos:ConceptScheme ;
@@ -33944,6 +34265,15 @@ chora:RationaleTypeScheme a owl:NamedIndividual,
         chora:ReferentialEvidence,
         chora:TextualEvidence ;
     skos:prefLabel "Rationale type"@en .
+
+chora:UncertaintyAxisScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Uncertainty axis"@en ;
+    skos:altLabel "Asse dell'incertezza"@it ;
+    skos:hasTopConcept chora:GeometryAxis,
+        chora:IdentificationAxis,
+        chora:NameAxis ;
+    skos:prefLabel "Uncertainty axis"@en .
 
 chora:city_gate a owl:NamedIndividual,
         skos:Concept ;
@@ -34101,8 +34431,6 @@ chora:restaurant a owl:NamedIndividual,
     skos:prefLabel "Restaurant"@en ;
     skos:topConceptOf chora:PlaceCategoryScheme .
 
-skos:ConceptScheme a owl:Class .
-
 chora:RealityStatusScheme a owl:NamedIndividual,
         skos:ConceptScheme ;
     rdfs:label "Reality Status"@en ;
@@ -34122,6 +34450,15 @@ chora:SpatialDeterminationScheme a owl:NamedIndividual,
         chora:Precise,
         chora:Relative ;
     skos:prefLabel "Spatial determination"@en .
+
+chora:UncertaintyAssertion a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "incertezza"@it ;
+    skos:definition "Qualifies the uncertainty of a reading by type, axis and origin."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "uncertainty" ;
+    skos:prefLabel "Uncertainty assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
 
 <https://w3id.org/gaddatlas/id/focalizer/dottor_fumi> a chora:Character,
         chora:FocalizingAgent ;
@@ -34213,6 +34550,10 @@ chora:Church a owl:NamedIndividual,
     skos:inScheme chora:PlaceCategoryScheme ;
     skos:prefLabel "Church"@en ;
     skos:topConceptOf chora:PlaceCategoryScheme .
+
+<https://w3id.org/gaddatlas/id/agent/manzotti> a prov:Agent ;
+    rdfs:comment "Commento al cap. VIII del Pasticciaccio (Manzotti 2010, «Per leggere» 19)"@it ;
+    schema:name "Emilio Manzotti" .
 
 <https://w3id.org/gaddatlas/id/focalizer/lavinia_mattonari> a chora:Character,
         chora:FocalizingAgent ;
@@ -34362,6 +34703,8 @@ chora:NarrativeRoleScheme a owl:NamedIndividual,
     chora:hasPlaceCategory chora:frazione ;
     chora:hasRealityStatus chora:Imported .
 
+skos:ConceptScheme a owl:Class .
+
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_anziate> a chora:GazetteerEntity ;
     rdfs:label "Via Anziate"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -34506,6 +34849,14 @@ chora:historical_building a owl:NamedIndividual,
 
 chora:Chapter a owl:Class .
 
+chora:CriticalReading a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "lettura critica"@it ;
+    skos:definition "The reading rests on a scholar's interpretation, cited with work and page."@en ;
+    skos:inScheme chora:RationaleTypeScheme ;
+    skos:prefLabel "Critical reading"@en ;
+    skos:topConceptOf chora:RationaleTypeScheme .
+
 chora:Imagined a owl:NamedIndividual,
         skos:Concept ;
     owl:differentFrom chora:Imported,
@@ -34550,13 +34901,6 @@ chora:mountain a owl:NamedIndividual,
 }"""^^geosparql:geoJSONLiteral ] ;
     geo1:lat 41.75989937203588 ;
     geo1:long 12.58052436788742 .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> a chora:NarrativePlace ;
-    rdfs:label "Casal Bruciato"@it ;
-    dcterms:description "Casale reale dell'Agro romano a sud di Roma (Casal(e) Bruciato / Abbruciato / Abbrusciato: Nibby, Dintorni di Roma, p. 569), fra le ferrovie Roma–Velletri e Roma–Napoli. Non è il quartiere omonimo del Tiburtino. Forme attestate: «Casal Bruciato» (QP 212, 237, 240, 241, 262, 274, 298), «Casale Abbrusciato» (QP 297)."@it ;
-    skos:altLabel "Casale Abbrusciato"@it ;
-    chora:hasPlaceCategory chora:district ;
-    chora:hasRealityStatus chora:Imported .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/marino> a chora:NarrativePlace ;
     rdfs:label "Marino"@it ;
@@ -34609,12 +34953,32 @@ chora:square a owl:NamedIndividual,
     chora:characterName "Don Lorenzo Corpi"@it ;
     chora:hasGender "male"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> a chora:NarrativePlace ;
+    rdfs:label "Casal Bruciato"@it ;
+    dcterms:description "Casale reale dell'Agro romano a sud di Roma (Casal(e) Bruciato / Abbruciato / Abbrusciato: Nibby, Dintorni di Roma, p. 569), fra le ferrovie Roma–Velletri e Roma–Napoli. Non è il quartiere omonimo del Tiburtino. Forme attestate: «Casal Bruciato» (QP 212, 237, 240, 241, 262, 274, 298), «Casale Abbrusciato» (QP 297)."@it ;
+    skos:altLabel "Casale Abbrusciato"@it ;
+    chora:hasPlaceCategory chora:district ;
+    chora:hasRealityStatus chora:Imported .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/tor_di_gheppio> a chora:NarrativePlace ;
     rdfs:label "Tor di Gheppio"@it ;
     dcterms:description "Località inventata, natali dell'Assunta Crocchiapani"@it ;
     chora:hasFuzzinessLevel 4.0 ;
     chora:hasPlaceCategory chora:locality ;
     chora:hasRealityStatus chora:Invented .
+
+chora:UncertaintyTypeScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Uncertainty type"@en ;
+    rdfs:comment "Value of a chora:Assertion of type chora:UncertaintyAssertion. The absence of such an assertion means «not analysed», not «certain»."@en ;
+    skos:altLabel "Tipo di incertezza"@it ;
+    skos:hasTopConcept chora:ContestedIdentification,
+        chora:Discrepancy,
+        chora:Incompleteness,
+        chora:NonApplicability,
+        chora:NonSpecificity,
+        chora:Vagueness ;
+    skos:prefLabel "Uncertainty type"@en .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/ponte_divino_amore> a chora:NarrativePlace ;
     rdfs:label "Ponte al Divino Amore"@it ;
@@ -35020,14 +35384,6 @@ chora:TextualEvidence a owl:NamedIndividual,
     geo1:lat 41.77540942594233 ;
     geo1:long 12.66366867693179 .
 
-chora:Draft a owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "bozza"@it ;
-    skos:definition "Prepared from the existing documents (sheet descriptions, Chapter 4), not yet validated."@en ;
-    skos:inScheme chora:ReviewStatusScheme ;
-    skos:prefLabel "Draft"@en ;
-    skos:topConceptOf chora:ReviewStatusScheme .
-
 chora:StatusAssertion a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "statuto"@it ;
@@ -35110,6 +35466,14 @@ chora:Indeterminate a owl:NamedIndividual,
     geo1:lat 41.8919173419505 ;
     geo1:long 12.50204620435122 .
 
+chora:Draft a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "bozza"@it ;
+    skos:definition "Prepared from the existing documents (sheet descriptions, Chapter 4), not yet validated."@en ;
+    skos:inScheme chora:ReviewStatusScheme ;
+    skos:prefLabel "Draft"@en ;
+    skos:topConceptOf chora:ReviewStatusScheme .
+
 chora:locality a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "Località"@it ;
@@ -35118,14 +35482,6 @@ chora:locality a owl:NamedIndividual,
     skos:inScheme chora:PlaceCategoryScheme ;
     skos:prefLabel "Locality"@en ;
     skos:topConceptOf chora:PlaceCategoryScheme .
-
-chora:Assertion a owl:Class ;
-    rdfs:comment "An attributed reading about a resource of the dataset: who formulated it (prov:qualifiedAttribution with role chora:ReadingAuthor), who encoded it (role chora:Encoder), on which source, when, which earlier assertion it revises, and whether the project adopts it. Competing readings coexist as distinct assertions; the adopted one is attributed like the others."@en,
-        "Lettura attribuita su una risorsa del dataset: chi l'ha formulata (prov:qualifiedAttribution con ruolo chora:ReadingAuthor), chi l'ha codificata (ruolo chora:Encoder), su quale fonte, quando, quale asserzione precedente rivede, e se il progetto la adotta. Le letture concorrenti convivono come asserzioni distinte; quella adottata e' attribuita come le altre."@it ;
-    rdfs:subClassOf <http://purl.org/emmedi/hico/InterpretationAct>,
-        prov:Entity ;
-    skos:altLabel "Asserzione"@it ;
-    skos:prefLabel "Assertion"@en .
 
 chora:Transformed a owl:NamedIndividual,
         skos:Concept ;
@@ -35150,6 +35506,14 @@ chora:Transformed a owl:NamedIndividual,
     chora:chapterNumber 4 ;
     chora:pageRange "92-131"^^xsd:string ;
     chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> .
+
+chora:Assertion a owl:Class ;
+    rdfs:comment "An attributed reading about a resource of the dataset: who formulated it (prov:qualifiedAttribution with role chora:ReadingAuthor), who encoded it (role chora:Encoder), on which source, when, which earlier assertion it revises, and whether the project adopts it. Competing readings coexist as distinct assertions; the adopted one is attributed like the others."@en,
+        "Lettura attribuita su una risorsa del dataset: chi l'ha formulata (prov:qualifiedAttribution con ruolo chora:ReadingAuthor), chi l'ha codificata (ruolo chora:Encoder), su quale fonte, quando, quale asserzione precedente rivede, e se il progetto la adotta. Le letture concorrenti convivono come asserzioni distinte; quella adottata e' attribuita come le altre."@it ;
+    rdfs:subClassOf <http://purl.org/emmedi/hico/InterpretationAct>,
+        prov:Entity ;
+    skos:altLabel "Asserzione"@it ;
+    skos:prefLabel "Assertion"@en .
 
 <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> a chora:Chapter ;
     dcterms:title "Capitolo VII"@it ;
@@ -35213,8 +35577,6 @@ chora:Precise a owl:NamedIndividual,
     skos:prefLabel "Precise"@en ;
     skos:topConceptOf chora:SpatialDeterminationScheme .
 
-skos:Concept a owl:Class .
-
 <https://w3id.org/gaddatlas/id/focalizer/ingravallo> a chora:Character,
         chora:FocalizingAgent ;
     dcterms:description "Commissario molisano, detto don Ciccio; protagonista-investigatore e principale centro di focalizzazione del romanzo."@it ;
@@ -35226,6 +35588,8 @@ skos:Concept a owl:Class .
     chora:chapterNumber 1 ;
     chora:pageRange "11-54"^^xsd:string ;
     chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> .
+
+skos:Concept a owl:Class .
 
 chora:PlaceCategoryScheme a owl:NamedIndividual,
         skos:ConceptScheme ;

@@ -1069,6 +1069,9 @@ class GaddaETL:
                        "prova testuale": "TextualEvidence",
                        "lettura critica": "CriticalReading"}
     REVIEW_STATUSES = {"bozza": "Draft", "validata": "Validated"}
+    UNCERTAINTY_AXES = {"nome": "NameAxis", "identificazione": "IdentificationAxis",
+                        "geometria": "GeometryAxis"}
+    UNCERTAINTY_ORIGINS = {"documentaria": "DocumentaryOrigin", "costruttiva": "ConstructiveOrigin"}
 
     def resolve_compact(self, value: str, where: str) -> URIRef:
         """Risolve un riferimento del foglio Assertions: 'chora:Termine' oppure
@@ -1150,6 +1153,17 @@ class GaddaETL:
                 if rtype not in self.RATIONALE_TYPES:
                     raise ValueError(f"{where}: Rationale_Type {rtype!r} non ammesso")
                 self.graph.add((a, CHORA.rationaleType, CHORA[self.RATIONALE_TYPES[rtype]]))
+            axis = str(row.get('Uncertainty_Axis', '')).strip().lower()
+            origin = str(row.get('Uncertainty_Origin', '')).strip().lower()
+            if atype == "uncertainty":
+                if axis not in self.UNCERTAINTY_AXES or origin not in self.UNCERTAINTY_ORIGINS:
+                    raise ValueError(f"{where}: un'incertezza richiede Uncertainty_Axis "
+                                     "(nome / identificazione / geometria) e Uncertainty_Origin "
+                                     "(documentaria / costruttiva)")
+                self.graph.add((a, CHORA.uncertaintyAxis, CHORA[self.UNCERTAINTY_AXES[axis]]))
+                self.graph.add((a, CHORA.uncertaintyOrigin, CHORA[self.UNCERTAINTY_ORIGINS[origin]]))
+            elif axis or origin:
+                raise ValueError(f"{where}: asse e origine valgono solo per le incertezze")
             review = str(row.get('Review_Status', '')).strip().lower()
             if review:
                 if review not in self.REVIEW_STATUSES:

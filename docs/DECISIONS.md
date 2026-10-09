@@ -951,6 +951,19 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-047 — Incertezza tipizzata: tipo, asse, origine, autore (9 ottobre 2026)
+
+- Requisito/i: R09 · Ipotesi: — · Data check: DM-05, DC-06 (work order T-34)
+- Stato precedente: l'incertezza era espressa solo da `chora:confidence` (decimale, 167 interpretazioni) e `chora:hasFuzzinessLevel` (decimale, 19 luoghi), cioè da indici numerici senza tipo né autore, contro il Cap. 4, § 4.4 («mai un indice unico di affidabilità»).
+- Decisione (di Lorenzo, 9/10/2026): l'incertezza è un'asserzione di tipo uncertainty (D-042) con tre vocabolari SKOS nuovi: `chora:UncertaintyTypeScheme` (Vagueness, NonSpecificity, ContestedIdentification, Discrepancy con i sottotipi Oversight, Anachronism, Confusion, InternalDiscrepancy, Incompleteness, NonApplicability), `chora:UncertaintyAxisScheme` (nome, identificazione, geometria), `chora:UncertaintyOriginScheme` (documentaria, costruttiva); proprietà `chora:uncertaintyAxis`, `chora:uncertaintyOrigin`. Autore come ogni asserzione. **L'assenza di un'asserzione d'incertezza significa «non analizzato», non «certo»** (dichiarato nello schema). Popolati **solo** i casi documentati, otto asserzioni `U-0001…U-0008` in stato **bozza** (la classificazione è una proposta, in REVIEW_2): Casal Bruciato (confusione, geometria, documentaria; Manzotti 2010, pp. 268–269), Castello (identificazione contesa, identificazione, costruttiva; Manzotti 2010, p. 293), palazzo Simonetti (identificazione contesa; Pinotti 2025, p. 78), Robine Vecchie (discrepanza, nome; Terzoli 2015, p. 491), edicola (incompletezza, geometria, costruttiva; Manzotti 2010, p. 246), monti Ernici (non-specificità, «Ernici o Simbruini»; Manzotti 2010, p. 290), Càrsoli (svista, nome; Manzotti 2010, p. 254), Direttissima (anacronismo; Manzotti 2010, p. 270). Non attaccati perché senza un luogo come soggetto: la sciarpa narrata due volte (discrepanza interna) e il «vortice» di QP 12–13 (non-applicabilità). Nessuna mappatura automatica da Approximate / Indeterminate. `confidence` e `hasFuzzinessLevel` invariati (rinviati).
+- Controlli: l'ETL si ferma se un'incertezza non ha asse e origine, o se asse e origine compaiono su un altro tipo; shape 9 (`UncertaintyAssertionShape`), provata su un caso incompleto.
+- Motivazione (fonte, pagina): Cap. 4, § 4.4 (le cinque forme dell'incerto, rr. 99–123); DATA_CHECKS DM-05.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `ontology/chora.ttl` (sezione «Incertezza tipizzata»); `ontology/shapes/chora-shapes.ttl` (shape 9); `tools/etl.py` (`UNCERTAINTY_AXES`, `UNCERTAINTY_ORIGINS`, controllo e scrittura); `data/source/tables/Assertions.tsv` (colonne `Uncertainty_Axis`, `Uncertainty_Origin`; righe `U-…`); `data/source/xlsx/Assertions.xlsx`.
+- Effetto su KG (triple prima/dopo, SHACL): TBox 827 → **971**; ABox 25.579 → **25.755**; full 26.976 → **27.296**. SHACL conforme, 0 violazioni, 49 avvertenze (T-33).
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

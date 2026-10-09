@@ -98,6 +98,31 @@
       }
     },
     {
+      "@id": "chora:Anachronism",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "anacronismo"
+      },
+      "skos:broader": {
+        "@id": "chora:Discrepancy"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "The referent did not exist, or was different, at the time of the story."
+      },
+      "skos:inScheme": {
+        "@id": "chora:UncertaintyTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Anachronism"
+      }
+    },
+    {
       "@id": "chora:Approximate",
       "@type": [
         "owl:NamedIndividual",
@@ -271,6 +296,56 @@
       }
     },
     {
+      "@id": "chora:Confusion",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "confusione"
+      },
+      "skos:broader": {
+        "@id": "chora:Discrepancy"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "The text combines or confuses distinct referents."
+      },
+      "skos:inScheme": {
+        "@id": "chora:UncertaintyTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Confusion"
+      }
+    },
+    {
+      "@id": "chora:ConstructiveOrigin",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "costruttiva"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "Arises from the modelling choices of the project."
+      },
+      "skos:inScheme": {
+        "@id": "chora:UncertaintyOriginScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Constructive Origin"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:UncertaintyOriginScheme"
+      }
+    },
+    {
       "@id": "chora:Contains",
       "@type": [
         "owl:NamedIndividual",
@@ -297,6 +372,31 @@
       }
     },
     {
+      "@id": "chora:ContestedIdentification",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "identificazione contesa"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "Competing identifications of the referent, each supported by a reading."
+      },
+      "skos:inScheme": {
+        "@id": "chora:UncertaintyTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Contested Identification"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:UncertaintyTypeScheme"
+      }
+    },
+    {
       "@id": "chora:CriticalReading",
       "@type": [
         "owl:NamedIndividual",
@@ -319,6 +419,56 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:RationaleTypeScheme"
+      }
+    },
+    {
+      "@id": "chora:Discrepancy",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "discrepanza"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "The text diverges from a repertory or from itself; recorded, never corrected."
+      },
+      "skos:inScheme": {
+        "@id": "chora:UncertaintyTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Discrepancy"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:UncertaintyTypeScheme"
+      }
+    },
+    {
+      "@id": "chora:DocumentaryOrigin",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "documentaria"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "Arises from the sources: text, witnesses, repertories."
+      },
+      "skos:inScheme": {
+        "@id": "chora:UncertaintyOriginScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Documentary Origin"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:UncertaintyOriginScheme"
       }
     },
     {
@@ -413,6 +563,31 @@
       ]
     },
     {
+      "@id": "chora:GeometryAxis",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "geometria"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "Uncertainty about the position or extent."
+      },
+      "skos:inScheme": {
+        "@id": "chora:UncertaintyAxisScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Geometry Axis"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:UncertaintyAxisScheme"
+      }
+    },
+    {
       "@id": "chora:IdentificationAssertion",
       "@type": [
         "owl:NamedIndividual",
@@ -436,6 +611,31 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:AssertionTypeScheme"
+      }
+    },
+    {
+      "@id": "chora:IdentificationAxis",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "identificazione"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "Uncertainty about which referent is meant."
+      },
+      "skos:inScheme": {
+        "@id": "chora:UncertaintyAxisScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Identification Axis"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:UncertaintyAxisScheme"
       }
     },
     {
@@ -515,6 +715,31 @@
       }
     },
     {
+      "@id": "chora:Incompleteness",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "incompletezza"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "Information needed to locate or identify the place is missing in the sources."
+      },
+      "skos:inScheme": {
+        "@id": "chora:UncertaintyTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Incompleteness"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:UncertaintyTypeScheme"
+      }
+    },
+    {
       "@id": "chora:Indeterminate",
       "@type": [
         "owl:NamedIndividual",
@@ -570,6 +795,31 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:SpatialRelationTypeScheme"
+      }
+    },
+    {
+      "@id": "chora:InternalDiscrepancy",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "discrepanza interna"
+      },
+      "skos:broader": {
+        "@id": "chora:Discrepancy"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "Two passages of the text are mutually incompatible."
+      },
+      "skos:inScheme": {
+        "@id": "chora:UncertaintyTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Internal Discrepancy"
       }
     },
     {
@@ -697,6 +947,31 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:AssertionTypeScheme"
+      }
+    },
+    {
+      "@id": "chora:NameAxis",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "nome"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "Uncertainty about the name or its form."
+      },
+      "skos:inScheme": {
+        "@id": "chora:UncertaintyAxisScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Name Axis"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:UncertaintyAxisScheme"
       }
     },
     {
@@ -841,6 +1116,56 @@
       }
     },
     {
+      "@id": "chora:NonApplicability",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "non-applicabilità"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "A coordinate or referent does not apply to this occurrence."
+      },
+      "skos:inScheme": {
+        "@id": "chora:UncertaintyTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Non Applicability"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:UncertaintyTypeScheme"
+      }
+    },
+    {
+      "@id": "chora:NonSpecificity",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "non-specificità"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "The text designates one among several candidates without resolving which (e.g. a disjunction)."
+      },
+      "skos:inScheme": {
+        "@id": "chora:UncertaintyTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Non Specificity"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:UncertaintyTypeScheme"
+      }
+    },
+    {
       "@id": "chora:Overlaps",
       "@type": [
         "owl:NamedIndividual",
@@ -867,6 +1192,31 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:SpatialRelationTypeScheme"
+      }
+    },
+    {
+      "@id": "chora:Oversight",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "svista"
+      },
+      "skos:broader": {
+        "@id": "chora:Discrepancy"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "A probable slip of the author (e.g. a misplaced accent)."
+      },
+      "skos:inScheme": {
+        "@id": "chora:UncertaintyTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Oversight"
       }
     },
     {
@@ -1423,6 +1773,131 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:AssertionTypeScheme"
+      }
+    },
+    {
+      "@id": "chora:UncertaintyAxisScheme",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Uncertainty axis"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Asse dell'incertezza"
+      },
+      "skos:hasTopConcept": [
+        {
+          "@id": "chora:GeometryAxis"
+        },
+        {
+          "@id": "chora:IdentificationAxis"
+        },
+        {
+          "@id": "chora:NameAxis"
+        }
+      ],
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Uncertainty axis"
+      }
+    },
+    {
+      "@id": "chora:UncertaintyOriginScheme",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Uncertainty origin"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Origine dell'incertezza"
+      },
+      "skos:hasTopConcept": [
+        {
+          "@id": "chora:ConstructiveOrigin"
+        },
+        {
+          "@id": "chora:DocumentaryOrigin"
+        }
+      ],
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Uncertainty origin"
+      }
+    },
+    {
+      "@id": "chora:UncertaintyTypeScheme",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Value of a chora:Assertion of type chora:UncertaintyAssertion. The absence of such an assertion means «not analysed», not «certain»."
+      },
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Uncertainty type"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Tipo di incertezza"
+      },
+      "skos:hasTopConcept": [
+        {
+          "@id": "chora:ContestedIdentification"
+        },
+        {
+          "@id": "chora:Discrepancy"
+        },
+        {
+          "@id": "chora:Incompleteness"
+        },
+        {
+          "@id": "chora:NonApplicability"
+        },
+        {
+          "@id": "chora:NonSpecificity"
+        },
+        {
+          "@id": "chora:Vagueness"
+        }
+      ],
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Uncertainty type"
+      }
+    },
+    {
+      "@id": "chora:Vagueness",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "vaghezza"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "The extent or boundary of the place is indeterminate."
+      },
+      "skos:inScheme": {
+        "@id": "chora:UncertaintyTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Vagueness"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:UncertaintyTypeScheme"
       }
     },
     {
@@ -2381,6 +2856,48 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "targets route"
+      }
+    },
+    {
+      "@id": "chora:uncertaintyAxis",
+      "@type": "owl:ObjectProperty",
+      "dcterms:references": {
+        "@id": "chora:UncertaintyAxisScheme"
+      },
+      "rdfs:domain": {
+        "@id": "chora:Assertion"
+      },
+      "rdfs:range": {
+        "@id": "skos:Concept"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "asse dell'incertezza"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "uncertainty axis"
+      }
+    },
+    {
+      "@id": "chora:uncertaintyOrigin",
+      "@type": "owl:ObjectProperty",
+      "dcterms:references": {
+        "@id": "chora:UncertaintyOriginScheme"
+      },
+      "rdfs:domain": {
+        "@id": "chora:Assertion"
+      },
+      "rdfs:range": {
+        "@id": "skos:Concept"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "origine dell'incertezza"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "uncertainty origin"
       }
     },
     {

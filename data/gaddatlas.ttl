@@ -758,6 +758,142 @@
     chora:rationale "Nessuna motivazione nei documenti del progetto (descrizione vuota, nessun passo del Cap. 4): da compilare."@it ;
     chora:reviewStatus chora:Draft .
 
+<https://w3id.org/gaddatlas/id/assertion/U-0001> a chora:Assertion ;
+    rdfs:comment "Bozza T-34 (D-047): classificazione da validare in REVIEW_2"@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/U-0001-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/U-0001-readingauthor-manzotti> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> ;
+    chora:assertionType chora:UncertaintyAssertion ;
+    chora:assertsValue chora:Confusion ;
+    chora:rationale "La topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»; TCI e testo tra le due ferrovie, IGM a ovest della Roma–Napoli. Discrepanza fra testo e repertorio, non corretta (D-037)."@it ;
+    chora:rationaleType chora:CriticalReading ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "268–269"^^xsd:string ;
+    chora:sourceWork "Manzotti 2010"^^xsd:string ;
+    chora:uncertaintyAxis chora:GeometryAxis ;
+    chora:uncertaintyOrigin chora:DocumentaryOrigin .
+
+<https://w3id.org/gaddatlas/id/assertion/U-0002> a chora:Assertion ;
+    rdfs:comment "Bozza T-34 (D-047): classificazione da validare in REVIEW_2"@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/U-0002-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/U-0002-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/castello> ;
+    chora:assertionType chora:UncertaintyAssertion ;
+    chora:assertsValue chora:ContestedIdentification ;
+    chora:rationale "Due identificazioni concorrenti della «stazione di Castello» (QP 279): Castel Gandolfo (lettura immediata, A-0001) e Castel Savello (Manzotti, A-0002, adottata). Cap. 4, § 4.4 (r. 107)."@it ;
+    chora:rationaleType chora:CriticalReading ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "293"^^xsd:string ;
+    chora:sourceWork "Manzotti 2010"^^xsd:string ;
+    chora:uncertaintyAxis chora:IdentificationAxis ;
+    chora:uncertaintyOrigin chora:ConstructiveOrigin .
+
+<https://w3id.org/gaddatlas/id/assertion/U-0003> a chora:Assertion ;
+    rdfs:comment "Bozza T-34 (D-047): classificazione da validare in REVIEW_2"@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/U-0003-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/U-0003-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_simonetti> ;
+    chora:assertionType chora:UncertaintyAssertion ;
+    chora:assertsValue chora:ContestedIdentification ;
+    chora:rationale "Quale palazzo reale sta dietro il «palazzo Simonetti» in via Lanza (QP 177): il palazzo Simonetti / De Carolis in via Lata del dattiloscritto (Pinotti) o il palazzo Odescalchi Simonetti di via Vittoria Colonna (Terzoli, cit. ivi). Cap. 4, § 4.2 (r. 45)."@it ;
+    chora:rationaleType chora:CriticalReading ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "78"^^xsd:string ;
+    chora:sourceWork "Pinotti 2025"^^xsd:string ;
+    chora:uncertaintyAxis chora:IdentificationAxis ;
+    chora:uncertaintyOrigin chora:DocumentaryOrigin .
+
+<https://w3id.org/gaddatlas/id/assertion/U-0004> a chora:Assertion ;
+    rdfs:comment "Bozza T-34 (D-047): classificazione da validare in REVIEW_2"@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/U-0004-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/U-0004-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/robine_vecchie> ;
+    chora:assertionType chora:UncertaintyAssertion ;
+    chora:assertsValue chora:Discrepancy ;
+    chora:rationale "«Robine Vecchie» (QP 169) non è registrato nelle carte topografiche: refuso per «Robinie vecchie» o «Rovine vecchie», oppure «ironico abbassamento» delle Rovine della zona; Pinotti conserva la lezione. Cap. 4, § 4.3 (r. 83)."@it ;
+    chora:rationaleType chora:CriticalReading ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "491"^^xsd:string ;
+    chora:sourceWork "Terzoli 2015"^^xsd:string ;
+    chora:uncertaintyAxis chora:NameAxis ;
+    chora:uncertaintyOrigin chora:DocumentaryOrigin .
+
+<https://w3id.org/gaddatlas/id/assertion/U-0005> a chora:Assertion ;
+    rdfs:comment "Bozza T-34 (D-047): classificazione da validare in REVIEW_2"@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/U-0005-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/U-0005-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/edicola_due_santi> ;
+    chora:assertionType chora:UncertaintyAssertion ;
+    chora:assertsValue chora:Incompleteness ;
+    chora:rationale "Il tabernacolo ha traccia nella piantina dei Castelli del Touring (Manzotti), ma il progetto non dispone di una coordinata: la posizione deriva da Due Santi con uno scarto dichiarato di circa 40 m (D-031); il volume TCI citato è da verificare (DC-03)."@it ;
+    chora:rationaleType chora:ReferentialEvidence ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "246"^^xsd:string ;
+    chora:sourceWork "Manzotti 2010"^^xsd:string ;
+    chora:uncertaintyAxis chora:GeometryAxis ;
+    chora:uncertaintyOrigin chora:ConstructiveOrigin .
+
+<https://w3id.org/gaddatlas/id/assertion/U-0006> a chora:Assertion ;
+    rdfs:comment "Bozza T-34 (D-047): classificazione da validare in REVIEW_2"@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/U-0006-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/U-0006-readingauthor-manzotti> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/monti_ernici> ;
+    chora:assertionType chora:UncertaintyAssertion ;
+    chora:assertsValue chora:NonSpecificity ;
+    chora:rationale "«d'in vetta al crinale degli Ernici o dei Simbruini» (QP 215): identificazione per disgiunzione, non risolta dal testo (WO T-16; Cap. 4, § 4.4)."@it ;
+    chora:rationaleType chora:CriticalReading ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "290"^^xsd:string ;
+    chora:sourceWork "Manzotti 2010"^^xsd:string ;
+    chora:uncertaintyAxis chora:IdentificationAxis ;
+    chora:uncertaintyOrigin chora:DocumentaryOrigin .
+
+<https://w3id.org/gaddatlas/id/assertion/U-0007> a chora:Assertion ;
+    rdfs:comment "Bozza T-34 (D-047): classificazione da validare in REVIEW_2"@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/U-0007-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/U-0007-readingauthor-manzotti> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/carsoli> ;
+    chora:assertionType chora:UncertaintyAssertion ;
+    chora:assertsValue chora:Oversight ;
+    chora:rationale "«Càrsoli» (QP 210) in luogo della grafia corretta Carsòli, «frutto verosimilmente di un'attrazione analogica con la vicina Àrsoli» (Cap. 4, § 4.4, r. 111). Discrepanza di forma registrata, non corretta."@it ;
+    chora:rationaleType chora:CriticalReading ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "254"^^xsd:string ;
+    chora:sourceWork "Manzotti 2010"^^xsd:string ;
+    chora:uncertaintyAxis chora:NameAxis ;
+    chora:uncertaintyOrigin chora:DocumentaryOrigin .
+
+<https://w3id.org/gaddatlas/id/assertion/U-0008> a chora:Assertion ;
+    rdfs:comment "Bozza T-34 (D-047): classificazione da validare in REVIEW_2"@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/U-0008-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/U-0008-readingauthor-manzotti> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/direttissima_roma_napoli> ;
+    chora:assertionType chora:UncertaintyAssertion ;
+    chora:assertsValue chora:Anachronism ;
+    chora:rationale "La direttissima Roma–Napoli fu ultimata e inaugurata dopo gli eventi narrati (marzo 1927) (Cap. 4, § 4.4, r. 111). Anacronismo registrato, non corretto."@it ;
+    chora:rationaleType chora:CriticalReading ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "270"^^xsd:string ;
+    chora:sourceWork "Manzotti 2010"^^xsd:string ;
+    chora:uncertaintyAxis chora:IdentificationAxis ;
+    chora:uncertaintyOrigin chora:DocumentaryOrigin .
+
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_aliciaro> a chora:GazetteerEntity ;
     rdfs:label "Aliciaro"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -13790,6 +13926,70 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
+<https://w3id.org/gaddatlas/id/attribution/U-0001-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0001-readingauthor-manzotti> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0002-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0002-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0003-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0003-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0004-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0004-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0005-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0005-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0006-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0006-readingauthor-manzotti> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0007-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0007-readingauthor-manzotti> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0008-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/U-0008-readingauthor-manzotti> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    prov:hadRole chora:ReadingAuthor .
+
 <https://w3id.org/gaddatlas/id/attribution/interp_00001-encoder-lorenzo_sabatino> a prov:Attribution ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:Encoder .
@@ -24551,12 +24751,6 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:hasPlaceCategory chora:district ;
     chora:hasRealityStatus chora:Imported .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/carsoli> a chora:NarrativePlace ;
-    rdfs:label "Carsoli"@it ;
-    dcterms:description "Comune in Abruzzo"@it ;
-    chora:hasPlaceCategory chora:municipality ;
-    chora:hasRealityStatus chora:Imported .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/castel_gandolfo> a chora:NarrativePlace ;
     rdfs:label "Castel Gandolfo"@it ;
     chora:hasPlaceCategory chora:locality ;
@@ -24709,12 +24903,6 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/narrativeplace/monti_carseolani> a chora:NarrativePlace ;
     rdfs:label "Monti Carseolani"@it ;
-    dcterms:description "Catena montuosa tra Lazio e Abruzzo"@it ;
-    chora:hasPlaceCategory chora:mountain ;
-    chora:hasRealityStatus chora:Imported .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/monti_ernici> a chora:NarrativePlace ;
-    rdfs:label "Monti Ernici"@it ;
     dcterms:description "Catena montuosa tra Lazio e Abruzzo"@it ;
     chora:hasPlaceCategory chora:mountain ;
     chora:hasRealityStatus chora:Imported .
@@ -28537,10 +28725,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 302"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/agent/manzotti> a prov:Agent ;
-    rdfs:comment "Commento al cap. VIII del Pasticciaccio (Manzotti 2010, «Per leggere» 19)"@it ;
-    schema:name "Emilio Manzotti" .
-
 <https://w3id.org/gaddatlas/id/focalizer/agente_paolillo> a chora:Character,
         chora:FocalizingAgent ;
     chora:characterName "Agente Paolillo"@it ;
@@ -29817,6 +30001,12 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasPlaceCategory chora:station ;
     chora:hasRealityStatus chora:Imported .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/carsoli> a chora:NarrativePlace ;
+    rdfs:label "Carsoli"@it ;
+    dcterms:description "Comune in Abruzzo"@it ;
+    chora:hasPlaceCategory chora:municipality ;
+    chora:hasRealityStatus chora:Imported .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/castel_di_leva> a chora:NarrativePlace ;
     rdfs:label "Castel di Leva"@it ;
     chora:hasPlaceCategory chora:locality ;
@@ -29923,6 +30113,12 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasPlaceCategory chora:mountain ;
     chora:hasRealityStatus chora:Imported .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/monti_ernici> a chora:NarrativePlace ;
+    rdfs:label "Monti Ernici"@it ;
+    dcterms:description "Catena montuosa tra Lazio e Abruzzo"@it ;
+    chora:hasPlaceCategory chora:mountain ;
+    chora:hasRealityStatus chora:Imported .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi> a chora:NarrativePlace ;
     rdfs:label "Orto o Vigna ai Due Santi"@it ;
     dcterms:description "Luogo non precisato simile a un orto o una vigna, di fronte al laboratorio della Zamira, al lato opposto della via Appia"@it ;
@@ -29951,12 +30147,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 
 <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_del_mappamondo> a chora:NarrativePlace ;
     rdfs:label "Palazzo der Mappamonno"@it ;
-    chora:hasPlaceCategory chora:historical_building ;
-    chora:hasRealityStatus chora:Transformed .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/palazzo_simonetti> a chora:NarrativePlace ;
-    rdfs:label "Palazzo Simonetti"@it ;
-    dcterms:description "Luogo trasformato per rilocazione: il palazzo Simonetti (o De Carolis) è reale e sorge in via Lata, presso piazza del Collegio Romano, dove lo colloca il dattiloscritto dei capitoli nuovi; in QP 177 Gadda lo sposta in via Lanza, dove non esiste (Pinotti 2025, p. 78). Ancorato a via Lanza, la sua collocazione nel testo; nessuna coordinata propria."@it ;
     chora:hasPlaceCategory chora:historical_building ;
     chora:hasRealityStatus chora:Transformed .
 
@@ -31347,6 +31537,12 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasPlaceCategory chora:mountain ;
     chora:hasRealityStatus chora:Transformed .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/palazzo_simonetti> a chora:NarrativePlace ;
+    rdfs:label "Palazzo Simonetti"@it ;
+    dcterms:description "Luogo trasformato per rilocazione: il palazzo Simonetti (o De Carolis) è reale e sorge in via Lata, presso piazza del Collegio Romano, dove lo colloca il dattiloscritto dei capitoli nuovi; in QP 177 Gadda lo sposta in via Lanza, dove non esiste (Pinotti 2025, p. 78). Ancorato a via Lanza, la sua collocazione nel testo; nessuna coordinata propria."@it ;
+    chora:hasPlaceCategory chora:historical_building ;
+    chora:hasRealityStatus chora:Transformed .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_san_lorenzo_in_lucina> a chora:NarrativePlace ;
     rdfs:label "Piazza San Lorenzo in Lucina"@it ;
     chora:hasPlaceCategory chora:square ;
@@ -31362,12 +31558,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     rdfs:label "Pratica di Mare"@it ;
     chora:hasPlaceCategory chora:locality ;
     chora:hasRealityStatus chora:Imported .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/robine_vecchie> a chora:NarrativePlace ;
-    rdfs:label "Robine Vecchie"@it ;
-    dcterms:description "Robine Vecchie è un microtoponimo gaddiano non identificato, forse deformazione di un nome locale o denominazione fantastica applicata al paesaggio reale di Frattocchie–Due Santi."@it ;
-    chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Transformed .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/roccafringoli> a chora:NarrativePlace ;
     rdfs:label "Roccafringoli"@it ;
@@ -31985,12 +32175,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasPlaceCategory chora:cemetery ;
     chora:hasRealityStatus chora:Imported .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/castello> a chora:NarrativePlace ;
-    rdfs:label "Castello"@it ;
-    dcterms:description "Luogo narrativo immaginato, un castello nella zona tra Pavona e Frattocchie"@it ;
-    chora:hasPlaceCategory chora:castle ;
-    chora:hasRealityStatus chora:Invented .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira> a chora:NarrativePlace ;
     rdfs:label "Casuccia della Zamira"@it ;
     chora:hasPlaceCategory chora:dwelling ;
@@ -31999,19 +32183,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/collegio_romano> a chora:NarrativePlace ;
     rdfs:label "Collegio Romano"@it ;
     chora:hasPlaceCategory chora:police_station ;
-    chora:hasRealityStatus chora:Imported .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/direttissima_roma_napoli> a chora:NarrativePlace ;
-    rdfs:label "Direttissima Roma-Napoli"@it ;
-    dcterms:description "La linea è la Roma–Napoli via Formia, storicamente chiamata Direttissima Roma–Napoli"@it ;
-    chora:hasPlaceCategory chora:railway ;
-    chora:hasRealityStatus chora:Imported .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/edicola_due_santi> a chora:NarrativePlace ;
-    rdfs:label "Edicola ai Due Santi"@it ;
-    dcterms:description "Tabernacolo a due pioventi che interrompe il muriccio dell'orto o vigna di fronte al laboratorio della Zamira, sul lato opposto della via Appia (QP 216, 219). Luogo importato: Manzotti (2010, p. 246) ne trova traccia nella piantina dei Castelli del Touring."@it ;
-    skos:altLabel "tabernacolo appia"@it ;
-    chora:hasPlaceCategory chora:shrine ;
     chora:hasRealityStatus chora:Imported .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/maccheronaro> a chora:NarrativePlace ;
@@ -32036,6 +32207,12 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasFuzzinessLevel 4.0 ;
     chora:hasPlaceCategory chora:hotel ;
     chora:hasRealityStatus chora:Invented .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/robine_vecchie> a chora:NarrativePlace ;
+    rdfs:label "Robine Vecchie"@it ;
+    dcterms:description "Robine Vecchie è un microtoponimo gaddiano non identificato, forse deformazione di un nome locale o denominazione fantastica applicata al paesaggio reale di Frattocchie–Due Santi."@it ;
+    chora:hasPlaceCategory chora:locality ;
+    chora:hasRealityStatus chora:Transformed .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/san_lorenzo_al_verano> a chora:NarrativePlace ;
     rdfs:label "San Lorenzo al verano"@it ;
@@ -32510,9 +32687,28 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasPlaceCategory chora:retail_business ;
     chora:hasRealityStatus chora:Invented .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/castello> a chora:NarrativePlace ;
+    rdfs:label "Castello"@it ;
+    dcterms:description "Luogo narrativo immaginato, un castello nella zona tra Pavona e Frattocchie"@it ;
+    chora:hasPlaceCategory chora:castle ;
+    chora:hasRealityStatus chora:Invented .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/ciampino> a chora:NarrativePlace ;
     rdfs:label "Ciampino"@it ;
     chora:hasPlaceCategory chora:municipality ;
+    chora:hasRealityStatus chora:Imported .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/direttissima_roma_napoli> a chora:NarrativePlace ;
+    rdfs:label "Direttissima Roma-Napoli"@it ;
+    dcterms:description "La linea è la Roma–Napoli via Formia, storicamente chiamata Direttissima Roma–Napoli"@it ;
+    chora:hasPlaceCategory chora:railway ;
+    chora:hasRealityStatus chora:Imported .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/edicola_due_santi> a chora:NarrativePlace ;
+    rdfs:label "Edicola ai Due Santi"@it ;
+    dcterms:description "Tabernacolo a due pioventi che interrompe il muriccio dell'orto o vigna di fronte al laboratorio della Zamira, sul lato opposto della via Appia (QP 216, 219). Luogo importato: Manzotti (2010, p. 246) ne trova traccia nella piantina dei Castelli del Touring."@it ;
+    skos:altLabel "tabernacolo appia"@it ;
+    chora:hasPlaceCategory chora:shrine ;
     chora:hasRealityStatus chora:Imported .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/ferrovia_roma_velletri> a chora:NarrativePlace ;
@@ -32985,6 +33181,10 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 
 <https://w3id.org/gaddatlas/id/route/tragitto_appia_falcognana> a chora:NarrativeRoute .
 
+<https://w3id.org/gaddatlas/id/agent/manzotti> a prov:Agent ;
+    rdfs:comment "Commento al cap. VIII del Pasticciaccio (Manzotti 2010, «Per leggere» 19)"@it ;
+    schema:name "Emilio Manzotti" .
+
 <https://w3id.org/gaddatlas/id/focalizer/lavinia_mattonari> a chora:Character,
         chora:FocalizingAgent ;
     dcterms:description "Lavinia Mattonari, cugina di Camilla Mattonari e compagna di Enea Retalli, lavora al laboratorio della Zamira Pacori"@it ;
@@ -33277,13 +33477,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     geo1:lat 41.75989937203588 ;
     geo1:long 12.58052436788742 .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> a chora:NarrativePlace ;
-    rdfs:label "Casal Bruciato"@it ;
-    dcterms:description "Casale reale dell'Agro romano a sud di Roma (Casal(e) Bruciato / Abbruciato / Abbrusciato: Nibby, Dintorni di Roma, p. 569), fra le ferrovie Roma–Velletri e Roma–Napoli. Non è il quartiere omonimo del Tiburtino. Forme attestate: «Casal Bruciato» (QP 212, 237, 240, 241, 262, 274, 298), «Casale Abbrusciato» (QP 297)."@it ;
-    skos:altLabel "Casale Abbrusciato"@it ;
-    chora:hasPlaceCategory chora:district ;
-    chora:hasRealityStatus chora:Imported .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/marino> a chora:NarrativePlace ;
     rdfs:label "Marino"@it ;
     dcterms:description "Località dei Castelli Romani"@it ;
@@ -33303,6 +33496,13 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     dcterms:description "Don Lorenzo Corpi, sacerdote legato alla cerchia di Liliana."@it ;
     chora:characterName "Don Lorenzo Corpi"@it ;
     chora:hasGender "male"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> a chora:NarrativePlace ;
+    rdfs:label "Casal Bruciato"@it ;
+    dcterms:description "Casale reale dell'Agro romano a sud di Roma (Casal(e) Bruciato / Abbruciato / Abbrusciato: Nibby, Dintorni di Roma, p. 569), fra le ferrovie Roma–Velletri e Roma–Napoli. Non è il quartiere omonimo del Tiburtino. Forme attestate: «Casal Bruciato» (QP 212, 237, 240, 241, 262, 274, 298), «Casale Abbrusciato» (QP 297)."@it ;
+    skos:altLabel "Casale Abbrusciato"@it ;
+    chora:hasPlaceCategory chora:district ;
+    chora:hasRealityStatus chora:Imported .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/tor_di_gheppio> a chora:NarrativePlace ;
     rdfs:label "Tor di Gheppio"@it ;

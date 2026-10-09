@@ -381,3 +381,28 @@ ga:StatusRationaleShape
           ] ;
           sh:qualifiedMinCount 1 ]
     ) .
+
+
+# =============================================================================
+# SHAPE 9 — Incertezza (D-047, work order T-34)
+# Un'asserzione d'incertezza ha un tipo dello schema UncertaintyType, un asse e
+# un'origine.
+# =============================================================================
+
+ga:UncertaintyAssertionShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion ;
+    sh:or (
+        [ sh:not [ sh:path ga:assertionType ; sh:hasValue ga:UncertaintyAssertion ] ]
+        [ sh:and (
+            [ sh:path ga:uncertaintyAxis ; sh:minCount 1 ; sh:maxCount 1 ;
+              sh:in ( ga:NameAxis ga:IdentificationAxis ga:GeometryAxis ) ]
+            [ sh:path ga:uncertaintyOrigin ; sh:minCount 1 ; sh:maxCount 1 ;
+              sh:in ( ga:DocumentaryOrigin ga:ConstructiveOrigin ) ]
+            [ sh:path ga:assertsValue ; sh:minCount 1 ;
+              sh:in ( ga:Vagueness ga:NonSpecificity ga:ContestedIdentification ga:Discrepancy
+                      ga:Oversight ga:Anachronism ga:Confusion ga:InternalDiscrepancy
+                      ga:Incompleteness ga:NonApplicability ) ]
+          ) ]
+    ) ;
+    sh:message "Un'asserzione d'incertezza ha un tipo dello schema UncertaintyType, un asse e un'origine." .

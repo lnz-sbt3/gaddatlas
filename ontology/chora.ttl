@@ -1041,3 +1041,149 @@ chora:Validated a owl:NamedIndividual, skos:Concept ;
     skos:inScheme chora:ReviewStatusScheme ;
     skos:prefLabel "Validated"@en ;
     skos:topConceptOf chora:ReviewStatusScheme .
+
+# =============================================================================
+# INCERTEZZA TIPIZZATA (D-047, work order T-34)
+# L'incertezza e' un'asserzione di tipo uncertainty: tipo, asse, origine,
+# autore. Nessun indice unico di affidabilita' (Cap. 4, § 4.4). L'assenza di
+# un'asserzione d'incertezza significa «non analizzato», non «certo».
+# confidence e hasFuzzinessLevel restano invariati (rinviati).
+# =============================================================================
+
+chora:uncertaintyAxis a owl:ObjectProperty ;
+    dcterms:references chora:UncertaintyAxisScheme ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "asse dell'incertezza"@it ;
+    skos:prefLabel "uncertainty axis"@en .
+
+chora:uncertaintyOrigin a owl:ObjectProperty ;
+    dcterms:references chora:UncertaintyOriginScheme ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "origine dell'incertezza"@it ;
+    skos:prefLabel "uncertainty origin"@en .
+
+chora:UncertaintyTypeScheme a owl:NamedIndividual, skos:ConceptScheme ;
+    rdfs:label "Uncertainty type"@en ;
+    rdfs:comment "Value of a chora:Assertion of type chora:UncertaintyAssertion. The absence of such an assertion means «not analysed», not «certain»."@en ;
+    skos:altLabel "Tipo di incertezza"@it ;
+    skos:hasTopConcept chora:Vagueness, chora:NonSpecificity, chora:ContestedIdentification, chora:Discrepancy, chora:Incompleteness, chora:NonApplicability ;
+    skos:prefLabel "Uncertainty type"@en .
+
+chora:Vagueness a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "vaghezza"@it ;
+    skos:definition "The extent or boundary of the place is indeterminate."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Vagueness"@en ;
+    skos:topConceptOf chora:UncertaintyTypeScheme .
+
+chora:NonSpecificity a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "non-specificità"@it ;
+    skos:definition "The text designates one among several candidates without resolving which (e.g. a disjunction)."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Non Specificity"@en ;
+    skos:topConceptOf chora:UncertaintyTypeScheme .
+
+chora:ContestedIdentification a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "identificazione contesa"@it ;
+    skos:definition "Competing identifications of the referent, each supported by a reading."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Contested Identification"@en ;
+    skos:topConceptOf chora:UncertaintyTypeScheme .
+
+chora:Discrepancy a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "discrepanza"@it ;
+    skos:definition "The text diverges from a repertory or from itself; recorded, never corrected."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Discrepancy"@en ;
+    skos:topConceptOf chora:UncertaintyTypeScheme .
+
+chora:Incompleteness a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "incompletezza"@it ;
+    skos:definition "Information needed to locate or identify the place is missing in the sources."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Incompleteness"@en ;
+    skos:topConceptOf chora:UncertaintyTypeScheme .
+
+chora:NonApplicability a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "non-applicabilità"@it ;
+    skos:definition "A coordinate or referent does not apply to this occurrence."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Non Applicability"@en ;
+    skos:topConceptOf chora:UncertaintyTypeScheme .
+
+chora:Oversight a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "svista"@it ;
+    skos:definition "A probable slip of the author (e.g. a misplaced accent)."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Oversight"@en ;
+    skos:broader chora:Discrepancy .
+
+chora:Anachronism a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "anacronismo"@it ;
+    skos:definition "The referent did not exist, or was different, at the time of the story."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Anachronism"@en ;
+    skos:broader chora:Discrepancy .
+
+chora:Confusion a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "confusione"@it ;
+    skos:definition "The text combines or confuses distinct referents."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Confusion"@en ;
+    skos:broader chora:Discrepancy .
+
+chora:InternalDiscrepancy a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "discrepanza interna"@it ;
+    skos:definition "Two passages of the text are mutually incompatible."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Internal Discrepancy"@en ;
+    skos:broader chora:Discrepancy .
+
+chora:UncertaintyAxisScheme a owl:NamedIndividual, skos:ConceptScheme ;
+    rdfs:label "Uncertainty axis"@en ;
+    skos:altLabel "Asse dell'incertezza"@it ;
+    skos:hasTopConcept chora:NameAxis, chora:IdentificationAxis, chora:GeometryAxis ;
+    skos:prefLabel "Uncertainty axis"@en .
+
+chora:NameAxis a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "nome"@it ;
+    skos:definition "Uncertainty about the name or its form."@en ;
+    skos:inScheme chora:UncertaintyAxisScheme ;
+    skos:prefLabel "Name Axis"@en ;
+    skos:topConceptOf chora:UncertaintyAxisScheme .
+
+chora:IdentificationAxis a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "identificazione"@it ;
+    skos:definition "Uncertainty about which referent is meant."@en ;
+    skos:inScheme chora:UncertaintyAxisScheme ;
+    skos:prefLabel "Identification Axis"@en ;
+    skos:topConceptOf chora:UncertaintyAxisScheme .
+
+chora:GeometryAxis a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "geometria"@it ;
+    skos:definition "Uncertainty about the position or extent."@en ;
+    skos:inScheme chora:UncertaintyAxisScheme ;
+    skos:prefLabel "Geometry Axis"@en ;
+    skos:topConceptOf chora:UncertaintyAxisScheme .
+
+chora:UncertaintyOriginScheme a owl:NamedIndividual, skos:ConceptScheme ;
+    rdfs:label "Uncertainty origin"@en ;
+    skos:altLabel "Origine dell'incertezza"@it ;
+    skos:hasTopConcept chora:DocumentaryOrigin, chora:ConstructiveOrigin ;
+    skos:prefLabel "Uncertainty origin"@en .
+
+chora:DocumentaryOrigin a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "documentaria"@it ;
+    skos:definition "Arises from the sources: text, witnesses, repertories."@en ;
+    skos:inScheme chora:UncertaintyOriginScheme ;
+    skos:prefLabel "Documentary Origin"@en ;
+    skos:topConceptOf chora:UncertaintyOriginScheme .
+
+chora:ConstructiveOrigin a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "costruttiva"@it ;
+    skos:definition "Arises from the modelling choices of the project."@en ;
+    skos:inScheme chora:UncertaintyOriginScheme ;
+    skos:prefLabel "Constructive Origin"@en ;
+    skos:topConceptOf chora:UncertaintyOriginScheme .
