@@ -187,6 +187,7 @@ vocabularies:
     above: "chora:Above"
     below: "chora:Below"
     relatedto: "chora:RelatedTo" 
+    between: "chora:Between"  # «tra», solo negli ancoraggi relazionali (D-057)
 
 # ============================================================
 # FILE: References.tsv (PlaceReferences)
@@ -414,6 +415,12 @@ mappings:
           column: "Focalizer_ID"
           to: "@Focalizer_ID"
           optional: true
+
+        # *** D-057 (T-47): ancoraggio relazionale. Relational_Anchor_IDs (piu'
+        # entita' separate da '|') e Relational_Anchor_Type (near | between...)
+        # diventano un nodo chora:RelationalAnchoring
+        # (relanchor/{Interpretation_ID}). Non producono geometria: la posizione
+        # sta solo in Anchors_To_Entity_ID. Li legge tools/etl.py. ***
 
         # *** D-049 (T-36): voce narrante, distinta dal focalizzatore. Si
         # annota solo dove una fonte critica ne discute; cella vuota = «non

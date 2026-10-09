@@ -305,6 +305,31 @@
       }
     },
     {
+      "@id": "chora:Between",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "dcterms:description": {
+        "@language": "it",
+        "@value": "A sta fra B e C, senza una posizione propria."
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Tra"
+      },
+      "skos:inScheme": {
+        "@id": "chora:SpatialRelationTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Between"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:SpatialRelationTypeScheme"
+      }
+    },
+    {
       "@id": "chora:Chapter",
       "@type": "owl:Class"
     },
@@ -1742,6 +1767,22 @@
       }
     },
     {
+      "@id": "chora:RelationalAnchoring",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The placement of a narrative place relative to one or more geographic entities («between», «near»), as stated by a passage. It produces no geometry: a place without an adopted position stays off the map, with its relational anchoring."
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Ancoraggio relazionale"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Relational anchoring"
+      }
+    },
+    {
       "@id": "chora:Relative",
       "@type": [
         "owl:NamedIndividual",
@@ -1926,6 +1967,9 @@
         },
         {
           "@id": "chora:Below"
+        },
+        {
+          "@id": "chora:Between"
         },
         {
           "@id": "chora:Contains"
@@ -2910,6 +2954,24 @@
       }
     },
     {
+      "@id": "chora:hasRelationalAnchoring",
+      "@type": "owl:ObjectProperty",
+      "rdfs:domain": {
+        "@id": "chora:SpatialInterpretation"
+      },
+      "rdfs:range": {
+        "@id": "chora:RelationalAnchoring"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "ha ancoraggio relazionale"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "has relational anchoring"
+      }
+    },
+    {
       "@id": "chora:hasSpatialGeometry",
       "@type": "owl:ObjectProperty",
       "rdfs:range": {
@@ -3344,6 +3406,49 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "reference witness"
+      }
+    },
+    {
+      "@id": "chora:relationalType",
+      "@type": "owl:ObjectProperty",
+      "dcterms:references": {
+        "@id": "chora:SpatialRelationTypeScheme"
+      },
+      "rdfs:domain": {
+        "@id": "chora:RelationalAnchoring"
+      },
+      "rdfs:range": {
+        "@id": "skos:Concept"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "tipo di relazione"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "relational type"
+      }
+    },
+    {
+      "@id": "chora:relatum",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "A geographic entity with respect to which the place is located."
+      },
+      "rdfs:domain": {
+        "@id": "chora:RelationalAnchoring"
+      },
+      "rdfs:range": {
+        "@id": "chora:GazetteerEntity"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "termine di relazione"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "relatum"
       }
     },
     {

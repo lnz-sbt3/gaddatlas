@@ -946,6 +946,28 @@ class GaddaETL:
                             self.add_literal(focalizer_uri, CHORA.characterName, focalizer_id, lang='it')
                         self.graph.add((interp_uri, CHORA.hasFocalizer, focalizer_uri))
 
+                # *** ANCORAGGIO RELAZIONALE (D-057, T-47): il passo colloca il
+                # luogo rispetto ad altri, senza dargli una posizione. Nessuna
+                # geometria: la posizione sta solo in anchorsToEntity. ***
+                rel_ids = [x.strip() for x in str(row.get('Relational_Anchor_IDs') or '').split('|') if x.strip()]
+                rel_type = str(row.get('Relational_Anchor_Type') or '').strip()
+                if bool(rel_ids) != bool(rel_type):
+                    raise ValueError(f"Interpretation {interp_id}: Relational_Anchor_IDs e "
+                                     "Relational_Anchor_Type vanno insieme")
+                if rel_ids:
+                    node = ID_NS[f"relanchor/{interp_id}"]
+                    rel_uri = self.map_vocabulary(rel_type, 'spatial_relations')
+                    if not rel_uri:
+                        raise ValueError(f"Interpretation {interp_id}: relazione {rel_type!r} non ammessa")
+                    self.graph.add((interp_uri, CHORA.hasRelationalAnchoring, node))
+                    self.graph.add((node, RDF.type, CHORA.RelationalAnchoring))
+                    self.graph.add((node, CHORA.relationalType, rel_uri))
+                    for gid in rel_ids:
+                        if gid not in self.id_cache['GazetteerEntity_ID']:
+                            raise ValueError(f"Interpretation {interp_id}: termine {gid!r} "
+                                             "assente da GazetteerEntities.tsv")
+                        self.graph.add((node, CHORA.relatum, self.resolve_lookup(gid, '@GazetteerEntity_ID')))
+
                 # *** VOCE NARRANTE (D-049, T-36): chi parla, distinto da chi
                 # percepisce. Facoltativa: l'assenza vale «non annotato». ***
                 voice_id = str(row.get('Narrating_Voice_ID') or '').strip()

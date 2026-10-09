@@ -87,7 +87,7 @@ ga:SpatialInterpretationShape
     sh:property [
         sh:path ga:assignsSpatialRelationType ;
         sh:maxCount 1 ;
-        sh:in ( ga:Inside ga:Contains ga:Near ga:AdjacentTo ga:Above ga:Below ga:Overlaps ga:RelatedTo ) ;
+        sh:in ( ga:Inside ga:Contains ga:Near ga:AdjacentTo ga:Above ga:Below ga:Overlaps ga:RelatedTo ga:Between ) ;
         sh:message "assignsSpatialRelationType, se presente, deve essere un valore del vocabolario SpatialRelationType." ;
         sh:severity sh:Violation ;
     ] ;
@@ -585,3 +585,29 @@ ga:StatusSubjectShape
         [ sh:path ga:aboutSubject ; sh:class ga:NarrativePlace ]
     ) ;
     sh:message "Lo statuto di realta' si asserisce di un luogo narrativo, non di un'occorrenza o di un testimone." .
+
+
+# =============================================================================
+# SHAPE 17 — Ancoraggio relazionale (D-057, work order T-47)
+# =============================================================================
+
+ga:RelationalAnchoringShape
+    a sh:NodeShape ;
+    sh:targetClass ga:RelationalAnchoring ;
+    sh:property [
+        sh:path ga:relatum ;
+        sh:minCount 1 ;
+        sh:class ga:GazetteerEntity ;
+        sh:message "Un ancoraggio relazionale ha almeno un termine, entita' del gazetteer." ;
+    ] ;
+    sh:property [
+        sh:path ga:relationalType ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:in ( ga:Near ga:Between ga:AdjacentTo ga:Above ga:Below ) ;
+        sh:message "Un ancoraggio relazionale ha un tipo di relazione." ;
+    ] ;
+    sh:or (
+        [ sh:not [ sh:path ga:relationalType ; sh:hasValue ga:Between ] ]
+        [ sh:path ga:relatum ; sh:minCount 2 ]
+    ) ;
+    sh:message "«Tra» richiede almeno due termini." .

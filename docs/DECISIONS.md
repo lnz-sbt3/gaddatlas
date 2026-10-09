@@ -1144,6 +1144,26 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-057 — Ancoraggio relazionale, distinto dalla referenza plurale e dall'identificazione contesa (9 ottobre 2026)
+
+- Requisito/i: R04 · Ipotesi: H3 · Data check: DC-07, DC-18 (work order T-47; prepara T-62)
+- Stato precedente: le relazioni del Cap. 4 (r. 93) erano indistinguibili nei dati. Gli ancoraggi testuali di Casal Bruciato (D-037) erano ancore `anchorsToEntity` aggiunte a quella del casale, con relazione `near`. Robine Vecchie aveva due interpretazioni dello stesso passo e dello stesso focalizzatore (`interp_00472`, `interp_00473`), ciascuna ancorata con `near` a un luogo diverso: un doppio ancoraggio che il modello leggeva come referenza multipla.
+- Decisione (di Lorenzo, 9/10/2026):
+  - **modello:** nuova classe `chora:RelationalAnchoring` (`relanchor/{interpretazione}`), legata all'interpretazione da `chora:hasRelationalAnchoring`, con uno o più termini (`chora:relatum`, entità del gazetteer) e un tipo (`chora:relationalType`). Nuovo concetto `chora:Between` («tra») nello schema delle relazioni spaziali. Colonne `Relational_Anchor_IDs` e `Relational_Anchor_Type` in `SpatialInterpretations.tsv`. La TBox dichiara la distinzione: la referenza plurale è un riferimento per luogo (Faiti/Cengio); l'identificazione contesa è un'asserzione d'identificazione (Castello);
+  - **regola di geometria:** un luogo prende geometria solo dalla posizione adottata (`anchorsToEntity`, o l'identificazione adottata di D-045); gli ancoraggi relazionali non producono un punto;
+  - **Casal Bruciato:** in 11 delle 13 interpretazioni l'ancora resta solo `gaz_casale_abbruciato` (posizione TCI adottata). I luoghi che il passo dispone intorno diventano termini di un ancoraggio relazionale `near`: Castel di Leva, ponte del Divino Amore, via della Falcognana, ferrovia Roma–Velletri, Ardeatina, Santa Palomba. La relazione `near` dell'interpretazione, che descriveva quelle ancore, è tolta;
+  - **Robine Vecchie:** una sola interpretazione (`interp_00472`), senza ancora, con ancoraggio relazionale `between` Frattocchie e Due Santi. `interp_00473`, il doppione, è eliminata: interpretazioni 960 → **959**. Stato di localizzazione: **sospensione motivata**, motivo: solo ancoraggio relazionale; toponimo «non registrato nelle carte topografiche» (Terzoli 2015, p. 491);
+  - **fuori carta:** l'adapter toglie da feature e rilievo un luogo interpretato senza posizione adottata, e lo scrive nel nuovo elenco `offMap` del GeoJSON con stato e motivo di localizzazione, ancoraggi relazionali, interpretazioni e riferimenti. È il dato del pannello «Fuori carta» (T-62). `meta.tessellation.excludedUnanchored` vale ora 1 (Robine Vecchie).
+- Effetto sulla vista: feature 301 → **300** (la tessera di Robine Vecchie sparisce: il luogo è fuori carta); righe di rilievo 931 → **929**; generatori della tassellazione invariati (223), semi delle altre tessere invariati. Casal Bruciato non cambia sulla carta: il suo rilievo stava già sul casale (D-038). Il seme di `robine_vecchie` resta in `void_seeds.json`, inutilizzato. Confronto visivo in chiusura di fase.
+- Alternative scartate: tenere i termini relazionali come ancore con una relazione (lo stato precedente), perché ogni ancora genera un bersaglio e quindi un punto; dare a Robine una posizione mediana fra i due termini, perché sarebbe una coordinata costruita che il testo non dà.
+- Controlli: l'ETL rifiuta termini inesistenti, tipi fuori vocabolario e colonne compilate a metà; shape 17 (`RelationalAnchoringShape`: almeno un termine, un tipo, «tra» con almeno due termini); IQ14 resta a 0 (Robine dichiara lo stato).
+- Motivazione (fonte, pagina): Cap. 4, § 4.3 (r. 93: referenza plurale, ancoraggio relazionale, identificazione contesa, disgiunzione); D-037; Terzoli 2015, p. 491 (cit. in Cap. 4, r. 83).
+- Fase in cui è maturata: prototipazione
+- File toccati (manifest): `ontology/chora.ttl` r. 1414–1454 (sezione «Ancoraggio relazionale»; `chora:Between` nello schema); `ontology/shapes/chora-shapes.ttl` r. 90 (`Between` ammesso), r. 588–613 (shape 17); `data/source/mapping.yaml` r. 190, r. 419–423; `tools/etl.py` r. 949–970; `tools/build_geojson.py` r. 213–223 (`Q_OFF_MAP_INFO`), r. 485–495 (regola fuori carta), r. 690–715 (`offMap`), r. 868; `data/source/tables/SpatialInterpretations.tsv` (due colonne, 12 righe, una eliminata), `NarrativePlaces.tsv` (Robine Vecchie: stato e motivo); XLSX corrispondenti.
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.158 → **1.187**; ABox 27.136 → **27.144**; full 28.864 → **28.901**. SHACL conforme, 52 avvertenze; IQ1–IQ17 a 0 (IQ9 informativa: 13). Test dell'app 5/5.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

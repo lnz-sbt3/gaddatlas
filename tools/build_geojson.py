@@ -209,6 +209,18 @@ SELECT ?place ?gaz WHERE {
 ORDER BY ?place ?gaz
 """
 
+# Luoghi fuori carta (D-057): stato di localizzazione e ancoraggi relazionali
+Q_OFF_MAP_INFO = """
+PREFIX ga: <https://w3id.org/chora#>
+SELECT ?np ?status ?reason ?type ?relatum WHERE {
+  ?np a ga:NarrativePlace .
+  { ?np ga:localizationStatus ?status . OPTIONAL { ?np ga:localizationReason ?reason } }
+  UNION
+  { ?si ga:targetsPlace ?np ; ga:hasRelationalAnchoring ?ra .
+    ?ra ga:relationalType ?type ; ga:relatum ?relatum }
+}
+"""
+
 # ---------------------------------------------------------------------------
 # COMPETENCY QUERIES
 # ---------------------------------------------------------------------------
@@ -470,8 +482,14 @@ def main(ttl_path, out_dir, seeds_path=None):
     # propria: e' un'entita' narratologica a se'. Un NarrativePlace Imported
     # coincide col proprio referente geografico e viene riassorbito nella
     # tessera del GazetteerEntity.
+    # Fuori carta (D-057): un luogo interpretato senza posizione adottata
+    # (nessuna ancora propria, ereditata o da un'identificazione adottata) non
+    # ha tessera ne' rilievo. Gli ancoraggi relazionali non producono un punto:
+    # il luogo va nell'elenco offMap, per il pannello «Fuori carta» (T-62).
+    off_map = {k for k, v in nps.items() if v["interpCount"] > 0 and not v["targets"]}
     own_tile = {k for k, v in nps.items()
-                if v["realityStatus"] != "Imported" and v["interpCount"] > 0}
+                if v["realityStatus"] != "Imported" and v["interpCount"] > 0
+                and k not in off_map}
 
     def visual_target(si):
         """id della tessera su cui questa interpretazione deposita rilievo.
@@ -480,6 +498,8 @@ def main(ttl_path, out_dir, seeds_path=None):
         if not si["narrativePlaceId"]:
             return None
         np_iri = np_by_id.get(si["narrativePlaceId"])
+        if np_iri in off_map:
+            return None
         if np_iri in own_tile:
             return si["narrativePlaceId"]
         return si["gazetteerId"]
@@ -667,7 +687,29 @@ def main(ttl_path, out_dir, seeds_path=None):
     anchored_gaz = [v for v in gaz.values() if v["planeCount"] or v["refCountAnchored"]]
     generators = [v for v in anchored_gaz if v["distanceFromRomeKm"] <= GEO_RADIUS_KM]
     peripheral = [v for v in anchored_gaz if v["distanceFromRomeKm"] > GEO_RADIUS_KM]
-    unanchored_np = [v for v in nps.values() if not v["targets"] and v["interpCount"] > 0]
+    unanchored_np = [nps[k] for k in off_map]
+
+    info = defaultdict(lambda: {"status": None, "reason": None, "rel": defaultdict(set)})
+    for row in g.query(Q_OFF_MAP_INFO):
+        d = info[str(row.np)]
+        if row.status is not None:
+            d["status"], d["reason"] = local(row.status), (str(row.reason) if row.reason else None)
+        if row.type is not None:
+            d["rel"][local(row.type)].add(sid(row.relatum))
+    np_ref_ids = defaultdict(set)
+    for si in sis:
+        if si["narrativePlaceId"]:
+            np_ref_ids[si["narrativePlaceId"]].add(si["referenceId"])
+    off_map_list = [{
+        "id": nps[k]["id"], "iri": k, "label": nps[k]["label"],
+        "realityStatus": (nps[k]["realityStatus"] or "").lower(),
+        "localizationStatus": info[k]["status"],
+        "localizationReason": info[k]["reason"],
+        "relationalAnchors": [{"type": t, "relata": sorted(r)}
+                              for t, r in sorted(info[k]["rel"].items())],
+        "interpretations": nps[k]["interpCount"],
+        "referenceIds": sorted(np_ref_ids[nps[k]["id"]]),
+    } for k in sorted(off_map, key=lambda k: nps[k]["id"])]
     xs = [v["x"] for v in generators] or [0.0]
     ys = [v["y"] for v in generators] or [0.0]
     tessellation = {
@@ -822,6 +864,8 @@ def main(ttl_path, out_dir, seeds_path=None):
             "chapters": atlas["chapters"],
         },
         "relief": relief,
+        # luoghi interpretati senza posizione adottata (D-057, pannello T-62)
+        "offMap": off_map_list,
         "features": features,
     }
 

@@ -786,6 +786,7 @@ chora:SpatialRelationTypeScheme a owl:NamedIndividual,
         chora:Contains,
         chora:Inside,
         chora:Near,
+        chora:Between,
         chora:Overlaps,
         chora:RelatedTo ;
     skos:prefLabel "Narrative Spatial Relations"@en .
@@ -1409,3 +1410,45 @@ chora:appearsInWitness a owl:ObjectProperty ;
     rdfs:range chora:Witness ;
     skos:altLabel "compare nel testimone"@it ;
     skos:prefLabel "appears in witness"@en .
+
+# =============================================================================
+# ANCORAGGIO RELAZIONALE (D-057, work order T-47, R04)
+# Il testo colloca un luogo rispetto ad altri («tra», «vicino a») senza dargli
+# una posizione. E' distinto dalla referenza plurale (un passo che nomina piu'
+# luoghi: un riferimento per luogo) e dall'identificazione contesa (letture
+# alternative dello stesso referente: chora:IdentificationAssertion).
+# Regola di geometria: un luogo prende geometria solo dalla posizione adottata
+# (chora:anchorsToEntity); gli ancoraggi relazionali non producono un punto.
+# =============================================================================
+
+chora:RelationalAnchoring a owl:Class ;
+    rdfs:comment "The placement of a narrative place relative to one or more geographic entities («between», «near»), as stated by a passage. It produces no geometry: a place without an adopted position stays off the map, with its relational anchoring."@en ;
+    skos:altLabel "Ancoraggio relazionale"@it ;
+    skos:prefLabel "Relational anchoring"@en .
+
+chora:hasRelationalAnchoring a owl:ObjectProperty ;
+    rdfs:domain chora:SpatialInterpretation ;
+    rdfs:range chora:RelationalAnchoring ;
+    skos:altLabel "ha ancoraggio relazionale"@it ;
+    skos:prefLabel "has relational anchoring"@en .
+
+chora:relatum a owl:ObjectProperty ;
+    rdfs:comment "A geographic entity with respect to which the place is located."@en ;
+    rdfs:domain chora:RelationalAnchoring ;
+    rdfs:range chora:GazetteerEntity ;
+    skos:altLabel "termine di relazione"@it ;
+    skos:prefLabel "relatum"@en .
+
+chora:relationalType a owl:ObjectProperty ;
+    dcterms:references chora:SpatialRelationTypeScheme ;
+    rdfs:domain chora:RelationalAnchoring ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "tipo di relazione"@it ;
+    skos:prefLabel "relational type"@en .
+
+chora:Between a owl:NamedIndividual, skos:Concept ;
+    dcterms:description "A sta fra B e C, senza una posizione propria."@it ;
+    skos:altLabel "Tra"@it ;
+    skos:inScheme chora:SpatialRelationTypeScheme ;
+    skos:prefLabel "Between"@en ;
+    skos:topConceptOf chora:SpatialRelationTypeScheme .
