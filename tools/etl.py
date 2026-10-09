@@ -790,6 +790,14 @@ class GaddaETL:
                     self.add_literal(ref_uri, CHORA.occurrenceCount,
                                    int(occurrences), datatype=XSD.integer)
                 self.add_literal(ref_uri, RDFS.comment, row.get('Notes'), lang='it')
+                witness_id = str(row.get('Witness_ID') or '').strip()
+                if witness_id:
+                    # testimone dell'occorrenza (D-053)
+                    if witness_id not in self.id_cache.get('Witness_ID', set()):
+                        raise ValueError(f"Reference {ref_id}: testimone {witness_id!r} "
+                                         "assente da Witnesses.tsv")
+                    self.graph.add((ref_uri, CHORA.appearsInWitness,
+                                    self.resolve_lookup(witness_id, '@Witness_ID')))
 
             logger.info(f"PlaceReferences: processate {len(self.id_cache['Reference_ID'])} referenze")
 
@@ -1263,10 +1271,12 @@ class GaddaETL:
             for v in str(row.get('Value', '')).split('|'):
                 if v.strip():
                     self.graph.add((a, CHORA.assertsValue, self.resolve_compact(v, where)))
-            author = str(row.get('Author_ID', '')).strip()
-            if not author:
+            # piu' autori separati da '|' (es. Matt e Pinotti 2022, D-053)
+            authors = [x.strip() for x in str(row.get('Author_ID', '')).split('|') if x.strip()]
+            if not authors:
                 raise ValueError(f"{where}: Author_ID mancante")
-            self.add_attribution(a, aid, self.agent_uri(author, where), "ReadingAuthor")
+            for author in authors:
+                self.add_attribution(a, aid, self.agent_uri(author, where), "ReadingAuthor")
             encoders = [e.strip() for e in str(row.get('Encoder_ID', '')).split('|') if e.strip()]
             if not encoders:
                 raise ValueError(f"{where}: Encoder_ID mancante")

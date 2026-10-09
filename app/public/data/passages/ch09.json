@@ -2,14 +2,41 @@
  "chapter": 9,
  "count": 74,
  "passages": {
-  "ref_00723": {
-   "id": "ref_00723",
+  "ref_00572": {
+   "id": "ref_00572",
    "chapter": 9,
-   "page": 241,
-   "sourceReference": "A 241",
+   "page": 238,
+   "sourceReference": "A 238",
    "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "Al casello, detto da taluni di Casal Bruciato, lo si attendeva ogni giorno, una volta al giorno.",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00723"
+   "excerpt": "Ar ponte del Divino Amore! è na parola! due chilometri emmezzo e pure più: quaranta minuti di cammino: e con la ragazza, e co quele scarpe che ciaveva.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00572"
+  },
+  "ref_00573": {
+   "id": "ref_00573",
+   "chapter": 9,
+   "page": 238,
+   "sourceReference": "A 238",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "La strada era una sola, pe fortuna, salvo il primo pezzo però: la statale, l'Appia, poi ad angolo retto la deviazione della provinciale, pe Falcognana.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00573"
+  },
+  "ref_00574": {
+   "id": "ref_00574",
+   "chapter": 9,
+   "page": 238,
+   "sourceReference": "A 238",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "La strada era una sola, pe fortuna, salvo il primo pezzo però: la statale, l'Appia, poi ad angolo retto la deviazione della provinciale, pe Falcognana.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00574"
+  },
+  "ref_00575": {
+   "id": "ref_00575",
+   "chapter": 9,
+   "page": 238,
+   "sourceReference": "A 238",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "La strada era una sola, pe fortuna, salvo il primo pezzo però: la statale, l'Appia, poi ad angolo retto la deviazione della provinciale, pe Falcognana.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00575"
   },
   "ref_00576": {
    "id": "ref_00576",
@@ -19,6 +46,15 @@
    "work": "quer_pasticciaccio_adelphi",
    "excerpt": "Se veniva in su, la Camilla Mattonari, così disse Lavinia, l'avrebbero certamente incontrata, a scarpettare su l'asfalto, o almeno su l'asciutto, cioè precisamente su la strada di Falcognana.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00576"
+  },
+  "ref_00577": {
+   "id": "ref_00577",
+   "chapter": 9,
+   "page": 239,
+   "sourceReference": "A 239",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Pervennero a un bivio, col cavallo, già in vista del ponte detto del Divino Amore, con cui la provinciale sullodata soprappassa la ferrovia di Velletri.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00577"
   },
   "ref_00578": {
    "id": "ref_00578",
@@ -92,6 +128,15 @@
    "excerpt": "Dalla strada di Falcognana, che sorpassa col ponte del Divino Amore la mezza trincera della ferrovia qualche centinaio di metri più giù, si disgiungeva in quel punto la vicinale per Casal Bruciato.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00585"
   },
+  "ref_00586": {
+   "id": "ref_00586",
+   "chapter": 9,
+   "page": 241,
+   "sourceReference": "A 241",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Arrivato, col fido Farafilio ro farà-figli-d'oro, al casello chilometro 20,25, furono accolti dai furibondi latrati d'un bastardaccio.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00586"
+  },
   "ref_00587": {
    "id": "ref_00587",
    "chapter": 9,
@@ -137,6 +182,15 @@
    "excerpt": "non riuscì per altro se non allo sblocco d'un qualche gocciolone piuttosto fòbico, gnaffe, sulla banchina di Casal Bruciato.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00591"
   },
+  "ref_00592": {
+   "id": "ref_00592",
+   "chapter": 9,
+   "page": 242,
+   "sourceReference": "A 242",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "i carabinieri si avanzarono tacendo sulla banchina con passi gravi e chiodati fino alla porta del casello.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00592"
+  },
   "ref_00593": {
    "id": "ref_00593",
    "chapter": 9,
@@ -173,6 +227,15 @@
    "excerpt": "Non c'era jettatura come alla bottega della maga, ma forse jactura: preterintenzionale.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00596"
   },
+  "ref_00597": {
+   "id": "ref_00597",
+   "chapter": 9,
+   "page": 247,
+   "sourceReference": "A 247",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "La ravvisò come una cucitrice dei Due Santi, non ne conosceva il nome: la meno eletta, la meno « simpatica ».",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00597"
+  },
   "ref_00598": {
    "id": "ref_00598",
    "chapter": 9,
@@ -181,6 +244,24 @@
    "work": "quer_pasticciaccio_adelphi",
    "excerpt": "« No. Mi' zio ha dovuto scegne a Ciampino dar sor capo. Er titolare è lui. »",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00598"
+  },
+  "ref_00599": {
+   "id": "ref_00599",
+   "chapter": 9,
+   "page": 249,
+   "sourceReference": "A 249",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "La tracagnotta, quasi che il brigadiere le avesse puntato una pistola sulla faccia, si scosse, giravoltò, camminò via da parere la sonnambula, entrò in casa, o casello invece che fosse.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00599"
+  },
+  "ref_00600": {
+   "id": "ref_00600",
+   "chapter": 9,
+   "page": 249,
+   "sourceReference": "A 249",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "salirono, per gradini di peperino grigio, al piano sopra, in una stanza più piccola, irregolare, quanto comportava la testata della scala.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00600"
   },
   "ref_00601": {
    "id": "ref_00601",
@@ -236,6 +317,15 @@
    "excerpt": "Se non ti decidi a parlare qui, parlerai col maresciallo, a Marino",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00606"
   },
+  "ref_00607": {
+   "id": "ref_00607",
+   "chapter": 9,
+   "page": 259,
+   "sourceReference": "A 259",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "« Vieni in caserma, allora. E là vedrai che fai l'uovo. Ci scommettiamo che lo fai? Te lo fa fare il maresciallo. »",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00607"
+  },
   "ref_00608": {
    "id": "ref_00608",
    "chapter": 9,
@@ -272,6 +362,24 @@
    "excerpt": "logora cintura, ora: che non separa l'indigenza domestica, al chilometro 20,25, dall'aperta accessione della campagna.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00611"
   },
+  "ref_00612": {
+   "id": "ref_00612",
+   "chapter": 9,
+   "page": 262,
+   "sourceReference": "A 262",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "la Camilla era « convocata » dal signor maresciallo Santarella, così dissero: doveva « recarsi » a Marino per testimoniare: il casello rimaneva incustodito.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00612"
+  },
+  "ref_00613": {
+   "id": "ref_00613",
+   "chapter": 9,
+   "page": 262,
+   "sourceReference": "A 262",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "la Camilla era « convocata » dal signor maresciallo Santarella, così dissero: doveva « recarsi » a Marino per testimoniare: il casello rimaneva incustodito.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00613"
+  },
   "ref_00614": {
    "id": "ref_00614",
    "chapter": 9,
@@ -290,6 +398,15 @@
    "excerpt": "Avrebbe atteso del pari, nella pienezza delle attribuzioni ufficiali e nell'esclusivo manucupio del manganello verde, valevole a significare tira innanzi, quel trenuccio da Velletri delle dodici.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00615"
   },
+  "ref_00616": {
+   "id": "ref_00616",
+   "chapter": 9,
+   "page": 263,
+   "sourceReference": "A 263",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "La ragazza, si sarebbe detto una mùtola, ora, non meno della nonna, fu condotta al bivio: dove sostava, ad attendere i carabinieri di ritorno, il calesse.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00616"
+  },
   "ref_00617": {
    "id": "ref_00617",
    "chapter": 9,
@@ -298,6 +415,15 @@
    "work": "quer_pasticciaccio_adelphi",
    "excerpt": "Le due cugine s'erano avvistate di lontano. I tre, la nuova speranzella di Regina Coeli, e i due angeloni un po' dietro e quasi ai fianchi, procedevano in gruppo.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00617"
+  },
+  "ref_00618": {
+   "id": "ref_00618",
+   "chapter": 9,
+   "page": 266,
+   "sourceReference": "A 266",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "« Io? » e alzò le spalle, « m'hanno pijata pure a me. Ce fanno fa na passeggiatina a Marino, pe testimonio. »",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00618"
   },
   "ref_00619": {
    "id": "ref_00619",
@@ -316,6 +442,15 @@
    "work": "quer_pasticciaccio_adelphi",
    "excerpt": "Le donne bisogna studialle bene prima de comincià, sentenziava a li Du Santi, a metà il bicchiere, davanti al beveratoio di marmo bianco striato.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00620"
+  },
+  "ref_00621": {
+   "id": "ref_00621",
+   "chapter": 9,
+   "page": 269,
+   "sourceReference": "A 269",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "dopo averla così tradita e spregiata, a lei, povera (e il pianto, quasi, era dolce), p'annà fino ar casello de Casal Bruciato a mette l'ori da la stronza.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00621"
   },
   "ref_00622": {
    "id": "ref_00622",
@@ -362,6 +497,15 @@
    "excerpt": "fino al Torraccio, fino al Ponte, fino a Santa Palomba dove sono i pali della radio, e quarche volta, sì, fino a Santa Rita in Vitàcolo.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00626"
   },
+  "ref_00627": {
+   "id": "ref_00627",
+   "chapter": 9,
+   "page": 271,
+   "sourceReference": "A 271",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "l'ho veduti da quela casa rosa che se viene dar Torraccio, indove che vado a fa quarche servizzio 'gni tanto.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00627"
+  },
   "ref_00628": {
    "id": "ref_00628",
    "chapter": 9,
@@ -370,6 +514,24 @@
    "work": "quer_pasticciaccio_adelphi",
    "excerpt": "L'immagine di quella campagna così desolata nel marzo, che con il ristare di scirocco e delle raminghe sue piove, dal lido, ora, approdava in una chiarìa tersa ai Castelli, a le case degli umani, lo fascinò ad un tratto come apparita di magia.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00628"
+  },
+  "ref_00629": {
+   "id": "ref_00629",
+   "chapter": 9,
+   "page": 273,
+   "sourceReference": "A 273",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Lungo le vie maggiori, come l'Appia o come la strada anziate, c'era sorveglianza: agenti motociclisti: pattuglie, forse, d'altre stazioni di carabinieri.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00629"
+  },
+  "ref_00630": {
+   "id": "ref_00630",
+   "chapter": 9,
+   "page": 273,
+   "sourceReference": "A 273",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Lungo le vie maggiori, come l'Appia o come la strada anziate, c'era sorveglianza: agenti motociclisti: pattuglie, forse, d'altre stazioni di carabinieri.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00630"
   },
   "ref_00631": {
    "id": "ref_00631",
@@ -461,6 +623,15 @@
    "excerpt": "e per tappe, mendicando pane a le capanne, ridursi ad Ostia... o filarsela ad Anzio.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00640"
   },
+  "ref_00641": {
+   "id": "ref_00641",
+   "chapter": 9,
+   "page": 274,
+   "sourceReference": "A 274",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Così almanaccando s'avvide alfine della strada: erano quasi all'anziate.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00641"
+  },
   "ref_00642": {
    "id": "ref_00642",
    "chapter": 9,
@@ -469,96 +640,6 @@
    "work": "quer_pasticciaccio_adelphi",
    "excerpt": "Il Retalli... ecco perché aveva lasciato la refurtiva al Casello. Era un posto... a cui nessuno, e forse neppure il maresciallo Santarella, sarebbe stato capace di pensare.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00642"
-  },
-  "ref_00644": {
-   "id": "ref_00644",
-   "chapter": 9,
-   "page": 275,
-   "sourceReference": "A 275",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "Il Retalli, in un genere più losco, doveva funzionare come quel biondo là della Ines, come il Ganimede Lanciani, ch'era stato il dio biondo e invisibile dell'interrogatorio a Santo Stefano.",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00644"
-  },
-  "ref_00586": {
-   "id": "ref_00586",
-   "chapter": 9,
-   "page": 241,
-   "sourceReference": "A 241",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "Arrivato, col fido Farafilio ro farà-figli-d'oro, al casello chilometro 20,25, furono accolti dai furibondi latrati d'un bastardaccio.",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00586"
-  },
-  "ref_00597": {
-   "id": "ref_00597",
-   "chapter": 9,
-   "page": 247,
-   "sourceReference": "A 247",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "La ravvisò come una cucitrice dei Due Santi, non ne conosceva il nome: la meno eletta, la meno « simpatica ».",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00597"
-  },
-  "ref_00607": {
-   "id": "ref_00607",
-   "chapter": 9,
-   "page": 259,
-   "sourceReference": "A 259",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "« Vieni in caserma, allora. E là vedrai che fai l'uovo. Ci scommettiamo che lo fai? Te lo fa fare il maresciallo. »",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00607"
-  },
-  "ref_00612": {
-   "id": "ref_00612",
-   "chapter": 9,
-   "page": 262,
-   "sourceReference": "A 262",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "la Camilla era « convocata » dal signor maresciallo Santarella, così dissero: doveva « recarsi » a Marino per testimoniare: il casello rimaneva incustodito.",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00612"
-  },
-  "ref_00613": {
-   "id": "ref_00613",
-   "chapter": 9,
-   "page": 262,
-   "sourceReference": "A 262",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "la Camilla era « convocata » dal signor maresciallo Santarella, così dissero: doveva « recarsi » a Marino per testimoniare: il casello rimaneva incustodito.",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00613"
-  },
-  "ref_00618": {
-   "id": "ref_00618",
-   "chapter": 9,
-   "page": 266,
-   "sourceReference": "A 266",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "« Io? » e alzò le spalle, « m'hanno pijata pure a me. Ce fanno fa na passeggiatina a Marino, pe testimonio. »",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00618"
-  },
-  "ref_00627": {
-   "id": "ref_00627",
-   "chapter": 9,
-   "page": 271,
-   "sourceReference": "A 271",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "l'ho veduti da quela casa rosa che se viene dar Torraccio, indove che vado a fa quarche servizzio 'gni tanto.",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00627"
-  },
-  "ref_00629": {
-   "id": "ref_00629",
-   "chapter": 9,
-   "page": 273,
-   "sourceReference": "A 273",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "Lungo le vie maggiori, come l'Appia o come la strada anziate, c'era sorveglianza: agenti motociclisti: pattuglie, forse, d'altre stazioni di carabinieri.",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00629"
-  },
-  "ref_00630": {
-   "id": "ref_00630",
-   "chapter": 9,
-   "page": 273,
-   "sourceReference": "A 273",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "Lungo le vie maggiori, come l'Appia o come la strada anziate, c'era sorveglianza: agenti motociclisti: pattuglie, forse, d'altre stazioni di carabinieri.",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00630"
   },
   "ref_00643": {
    "id": "ref_00643",
@@ -569,104 +650,23 @@
    "excerpt": "c’era la fidanzata brutta, al casello: brutta e sicura.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00643"
   },
-  "ref_00572": {
-   "id": "ref_00572",
+  "ref_00644": {
+   "id": "ref_00644",
    "chapter": 9,
-   "page": 238,
-   "sourceReference": "A 238",
+   "page": 275,
+   "sourceReference": "A 275",
    "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "Ar ponte del Divino Amore! è na parola! due chilometri emmezzo e pure più: quaranta minuti di cammino: e con la ragazza, e co quele scarpe che ciaveva.",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00572"
+   "excerpt": "Il Retalli, in un genere più losco, doveva funzionare come quel biondo là della Ines, come il Ganimede Lanciani, ch'era stato il dio biondo e invisibile dell'interrogatorio a Santo Stefano.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00644"
   },
-  "ref_00573": {
-   "id": "ref_00573",
+  "ref_00723": {
+   "id": "ref_00723",
    "chapter": 9,
-   "page": 238,
-   "sourceReference": "A 238",
+   "page": 241,
+   "sourceReference": "A 241",
    "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "La strada era una sola, pe fortuna, salvo il primo pezzo però: la statale, l'Appia, poi ad angolo retto la deviazione della provinciale, pe Falcognana.",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00573"
-  },
-  "ref_00574": {
-   "id": "ref_00574",
-   "chapter": 9,
-   "page": 238,
-   "sourceReference": "A 238",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "La strada era una sola, pe fortuna, salvo il primo pezzo però: la statale, l'Appia, poi ad angolo retto la deviazione della provinciale, pe Falcognana.",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00574"
-  },
-  "ref_00575": {
-   "id": "ref_00575",
-   "chapter": 9,
-   "page": 238,
-   "sourceReference": "A 238",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "La strada era una sola, pe fortuna, salvo il primo pezzo però: la statale, l'Appia, poi ad angolo retto la deviazione della provinciale, pe Falcognana.",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00575"
-  },
-  "ref_00592": {
-   "id": "ref_00592",
-   "chapter": 9,
-   "page": 242,
-   "sourceReference": "A 242",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "i carabinieri si avanzarono tacendo sulla banchina con passi gravi e chiodati fino alla porta del casello.",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00592"
-  },
-  "ref_00599": {
-   "id": "ref_00599",
-   "chapter": 9,
-   "page": 249,
-   "sourceReference": "A 249",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "La tracagnotta, quasi che il brigadiere le avesse puntato una pistola sulla faccia, si scosse, giravoltò, camminò via da parere la sonnambula, entrò in casa, o casello invece che fosse.",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00599"
-  },
-  "ref_00600": {
-   "id": "ref_00600",
-   "chapter": 9,
-   "page": 249,
-   "sourceReference": "A 249",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "salirono, per gradini di peperino grigio, al piano sopra, in una stanza più piccola, irregolare, quanto comportava la testata della scala.",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00600"
-  },
-  "ref_00621": {
-   "id": "ref_00621",
-   "chapter": 9,
-   "page": 269,
-   "sourceReference": "A 269",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "dopo averla così tradita e spregiata, a lei, povera (e il pianto, quasi, era dolce), p'annà fino ar casello de Casal Bruciato a mette l'ori da la stronza.",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00621"
-  },
-  "ref_00577": {
-   "id": "ref_00577",
-   "chapter": 9,
-   "page": 239,
-   "sourceReference": "A 239",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "Pervennero a un bivio, col cavallo, già in vista del ponte detto del Divino Amore, con cui la provinciale sullodata soprappassa la ferrovia di Velletri.",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00577"
-  },
-  "ref_00616": {
-   "id": "ref_00616",
-   "chapter": 9,
-   "page": 263,
-   "sourceReference": "A 263",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "La ragazza, si sarebbe detto una mùtola, ora, non meno della nonna, fu condotta al bivio: dove sostava, ad attendere i carabinieri di ritorno, il calesse.",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00616"
-  },
-  "ref_00641": {
-   "id": "ref_00641",
-   "chapter": 9,
-   "page": 274,
-   "sourceReference": "A 274",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "Così almanaccando s'avvide alfine della strada: erano quasi all'anziate.",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00641"
+   "excerpt": "Al casello, detto da taluni di Casal Bruciato, lo si attendeva ogni giorno, una volta al giorno.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00723"
   }
  }
 }

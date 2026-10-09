@@ -85,6 +85,13 @@ def main() -> int:
     ttl_agents = {local(s) for s in g.subjects(RDF.type, CHORA.FocalizingAgent)}
     ttl_routes = {local(s) for s in g.subjects(RDF.type, CHORA.NarrativeRoute)}
     refs_with_excerpt = {local(s) for s, _, _ in g.triples((None, CHORA.excerpt, None))}
+    # occorrenze di testimoni diversi da quello di riferimento (D-053): corpora
+    # di confronto, fuori dalle viste e dagli invarianti sugli estratti
+    reference_witnesses = set(g.objects(None, CHORA.referenceWitness))
+    comparison_refs = {local(s) for s, _, w in g.triples((None, CHORA.appearsInWitness, None))
+                       if w not in reference_witnesses}
+    ttl_refs -= comparison_refs
+    refs_with_excerpt -= comparison_refs
 
     feats = {f["properties"]["GazetteerEntity_ID"] for f in gj["features"]}
     relief_target = collections.Counter(r["targetId"] for r in gj["relief"])
@@ -212,6 +219,11 @@ def main() -> int:
     a.note(
         f"{len(route_only)} PlaceReference non in relief: riferimenti di sola route "
         f"(targetsRoute, non targetsPlace)"
+    )
+
+    a.note(
+        f"{len(comparison_refs)} PlaceReference di altri testimoni (corpora di confronto, D-053)",
+        ", ".join(sorted(comparison_refs)[:6]),
     )
 
     gaz_absent = ttl_gaz - feats

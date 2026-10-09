@@ -543,3 +543,22 @@ ga:ReferenceWitnessShape
         sh:class ga:Witness ;
         sh:message "Un'opera ha al piu' un testimone di riferimento." ;
     ] .
+
+
+# =============================================================================
+# SHAPE 15 — Varianti di testimone (D-053, work order T-41)
+# Un'asserzione di variante ha per soggetto il luogo e per valori almeno due
+# occorrenze (PlaceReference), del testo di riferimento e di altri testimoni.
+# =============================================================================
+
+ga:VariantAssertionShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion ;
+    sh:or (
+        [ sh:not [ sh:path ga:assertionType ; sh:hasValue ga:VariantAssertion ] ]
+        [ sh:and (
+            [ sh:path ga:aboutSubject ; sh:class ga:NarrativePlace ]
+            [ sh:path ga:assertsValue ; sh:minCount 2 ; sh:class ga:PlaceReference ]
+          ) ]
+    ) ;
+    sh:message "Una variante riguarda un luogo e collega almeno due occorrenze (PlaceReference)." .

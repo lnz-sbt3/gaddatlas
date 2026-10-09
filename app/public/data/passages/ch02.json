@@ -11,6 +11,15 @@
    "excerpt": "Quella mattina, giovedì finarmente! Ingravallo si poté concedere una scappata a Marino.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00122"
   },
+  "ref_00123": {
+   "id": "ref_00123",
+   "chapter": 2,
+   "page": 55,
+   "sourceReference": "A 55",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "S’era portato appresso Gaudenzio: poi però mutò idea e al Viminale lo licenziò, raccomandandogli alcuni altri affarucci.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00123"
+  },
   "ref_00124": {
    "id": "ref_00124",
    "chapter": 2,
@@ -182,6 +191,15 @@
    "excerpt": "«Sor dottó, l’ha trovata suo cugino, il dottor Vallarena... Valdassena. Hanno telefonato subbito in questura. Mo è là puro lui, a via Merulana. Ho dato disposizzioni. Mi ha detto che lo conosce. Dice,»",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00142"
   },
+  "ref_00143": {
+   "id": "ref_00143",
+   "chapter": 2,
+   "page": 59,
+   "sourceReference": "A 59",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Giunti a via Merulana, la folla. Davanti il portone il nero della folla, con la sua corona de rote de bicicletta. «Fate passare, polizia.» Ognuno si scostò. Er portone era chiuso.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00143"
+  },
   "ref_00144": {
    "id": "ref_00144",
    "chapter": 2,
@@ -317,6 +335,24 @@
    "excerpt": "Adesso era in procinto de trasferisse a Genova, oltreché di sposarsi.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00158"
   },
+  "ref_00159": {
+   "id": "ref_00159",
+   "chapter": 2,
+   "page": 67,
+   "sourceReference": "A 67",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Balducci ne aveva parlato a Ingravallo, incontrandolo ar Cantinone, con qualche allusiva bonaria all’età fervida, oltreché alla carenza, che lo affliggeva",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00159"
+  },
+  "ref_00160": {
+   "id": "ref_00160",
+   "chapter": 2,
+   "page": 68,
+   "sourceReference": "A 68",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Ingravallo era de faccia scura, quela sera, ar Cantinone d’Albano: la rubiconda indulgenza e quasi anzi sodalità maschile del Balducci e signor marito con uno stecco fra i denti gli sapeva un po’ troppo de bona digestione...",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00160"
+  },
   "ref_00161": {
    "id": "ref_00161",
    "chapter": 2,
@@ -398,6 +434,24 @@
    "excerpt": "Il primo, mbè, un’« audacissima » rapina, a opera d’un malvivente molto bene informato, se non molto pratico, degli usi e costumi del ducentodiciannove scala A.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00169"
   },
+  "ref_00170": {
+   "id": "ref_00170",
+   "chapter": 2,
+   "page": 74,
+   "sourceReference": "A 74",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "«’O cummendatore Angelone!» sospirò con certa enfasi. «A chillu lle piaceno ’e carcioffole. Jammo a vedè. ’O presutto ’e montagna ’e via Panesperna lle piace. Laggiù al cantone, all’angolo di via dei Serpenti.»",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00170"
+  },
+  "ref_00171": {
+   "id": "ref_00171",
+   "chapter": 2,
+   "page": 74,
+   "sourceReference": "A 74",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "«’O cummendatore Angelone!» sospirò con certa enfasi. «A chillu lle piaceno ’e carcioffole. Jammo a vedè. ’O presutto ’e montagna ’e via Panesperna lle piace. Laggiù al cantone, all’angolo di via dei Serpenti.»",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00171"
+  },
   "ref_00172": {
    "id": "ref_00172",
    "chapter": 2,
@@ -442,60 +496,6 @@
    "work": "quer_pasticciaccio_adelphi",
    "excerpt": "L’ambo non auspicato del delitto. Tac, tac. Senz’altra connessione che la topica, cioè la causale esterna ’e chella gran fama dei pescicani pesci: e del loro oro del diavolo. Fama ubiqua, oramai, pe tutto San Giovanni: da Porta Maggiore insino al Celio, insino all’antica marana, la suburra: in dove però il vino è gelato, l’estate.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00176"
-  },
-  "ref_00123": {
-   "id": "ref_00123",
-   "chapter": 2,
-   "page": 55,
-   "sourceReference": "A 55",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "S’era portato appresso Gaudenzio: poi però mutò idea e al Viminale lo licenziò, raccomandandogli alcuni altri affarucci.",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00123"
-  },
-  "ref_00143": {
-   "id": "ref_00143",
-   "chapter": 2,
-   "page": 59,
-   "sourceReference": "A 59",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "Giunti a via Merulana, la folla. Davanti il portone il nero della folla, con la sua corona de rote de bicicletta. «Fate passare, polizia.» Ognuno si scostò. Er portone era chiuso.",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00143"
-  },
-  "ref_00159": {
-   "id": "ref_00159",
-   "chapter": 2,
-   "page": 67,
-   "sourceReference": "A 67",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "Balducci ne aveva parlato a Ingravallo, incontrandolo ar Cantinone, con qualche allusiva bonaria all’età fervida, oltreché alla carenza, che lo affliggeva",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00159"
-  },
-  "ref_00160": {
-   "id": "ref_00160",
-   "chapter": 2,
-   "page": 68,
-   "sourceReference": "A 68",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "Ingravallo era de faccia scura, quela sera, ar Cantinone d’Albano: la rubiconda indulgenza e quasi anzi sodalità maschile del Balducci e signor marito con uno stecco fra i denti gli sapeva un po’ troppo de bona digestione...",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00160"
-  },
-  "ref_00170": {
-   "id": "ref_00170",
-   "chapter": 2,
-   "page": 74,
-   "sourceReference": "A 74",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "«’O cummendatore Angelone!» sospirò con certa enfasi. «A chillu lle piaceno ’e carcioffole. Jammo a vedè. ’O presutto ’e montagna ’e via Panesperna lle piace. Laggiù al cantone, all’angolo di via dei Serpenti.»",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00170"
-  },
-  "ref_00171": {
-   "id": "ref_00171",
-   "chapter": 2,
-   "page": 74,
-   "sourceReference": "A 74",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "«’O cummendatore Angelone!» sospirò con certa enfasi. «A chillu lle piaceno ’e carcioffole. Jammo a vedè. ’O presutto ’e montagna ’e via Panesperna lle piace. Laggiù al cantone, all’angolo di via dei Serpenti.»",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00171"
   }
  }
 }

@@ -101,6 +101,15 @@
    "excerpt": "Lunghe teorie di nerovestite, affittato er velo nero da cerimonia a Borgo Pio, a Piazza Rusticucci, a Borgo Vecchio, si attruppavano sotto ar colonnato, basivano a Porta Angelica, e poi traverso li cancelli de Sant’Anna, p’annà a riceve la benedizzione apostolica da Papa Ratti, un milanese de semenza bona de Saronno de quelli tosti, che fabbricava li palazzi.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00187"
   },
+  "ref_00188": {
+   "id": "ref_00188",
+   "chapter": 3,
+   "page": 78,
+   "sourceReference": "A 78",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Gli pareva di ricordare una frase del Balducci, una sera alla « cantina di Albano », uscita come a un benigno opinante da quel suo faccione rubizzo",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00188"
+  },
   "ref_00189": {
    "id": "ref_00189",
    "chapter": 3,
@@ -272,6 +281,15 @@
    "excerpt": "La bella camera di via Nicotera 21, da conferma della sora Amalia Bazz... Buzzichelli, era stata realmente disdetta per fine mese.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00207"
   },
+  "ref_00208": {
+   "id": "ref_00208",
+   "chapter": 3,
+   "page": 85,
+   "sourceReference": "A 85",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Secondo i più attendibili tra i molti e melodiosi susurri del ducentodiciannove così prontamente captati dallo Sgranfia, pareva...",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00208"
+  },
   "ref_00209": {
    "id": "ref_00209",
    "chapter": 3,
@@ -307,24 +325,6 @@
    "work": "quer_pasticciaccio_adelphi",
    "excerpt": "No. Il prezzo... Si sa. Anche gli orologi ne trova di quelli da quattordici e cinquanta in un botteghino a via dei Greci: e se ne trova però da duemila lire da Catellani.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00212"
-  },
-  "ref_00188": {
-   "id": "ref_00188",
-   "chapter": 3,
-   "page": 78,
-   "sourceReference": "A 78",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "Gli pareva di ricordare una frase del Balducci, una sera alla « cantina di Albano », uscita come a un benigno opinante da quel suo faccione rubizzo",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00188"
-  },
-  "ref_00208": {
-   "id": "ref_00208",
-   "chapter": 3,
-   "page": 85,
-   "sourceReference": "A 85",
-   "work": "quer_pasticciaccio_adelphi",
-   "excerpt": "Secondo i più attendibili tra i molti e melodiosi susurri del ducentodiciannove così prontamente captati dallo Sgranfia, pareva...",
-   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00208"
   }
  }
 }

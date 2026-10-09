@@ -1281,6 +1281,14 @@
     <skos:altLabel xml:lang="it">metodo di annotazione</skos:altLabel>
     <skos:prefLabel xml:lang="en">annotation method</skos:prefLabel>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#appearsInWitness">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">The witness in which a place reference occurs (D-053). Occurrences in witnesses other than the reference witness enter only as comparison corpora: they point to the same narrative place, never count in the views of the published novel, and carry no status of their own.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#PlaceReference"/>
+    <rdfs:range rdf:resource="https://w3id.org/chora#Witness"/>
+    <skos:altLabel xml:lang="it">compare nel testimone</skos:altLabel>
+    <skos:prefLabel xml:lang="en">appears in witness</skos:prefLabel>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#appearsInWork">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:domain rdf:resource="https://w3id.org/chora#PlaceReference"/>

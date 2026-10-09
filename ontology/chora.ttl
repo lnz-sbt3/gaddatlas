@@ -1400,3 +1400,10 @@ chora:Edition a owl:NamedIndividual, skos:Concept ;
     skos:inScheme chora:WitnessTypeScheme ;
     skos:prefLabel "Edition"@en ;
     skos:topConceptOf chora:WitnessTypeScheme .
+
+chora:appearsInWitness a owl:ObjectProperty ;
+    rdfs:comment "The witness in which a place reference occurs (D-053). Occurrences in witnesses other than the reference witness enter only as comparison corpora: they point to the same narrative place, never count in the views of the published novel, and carry no status of their own."@en ;
+    rdfs:domain chora:PlaceReference ;
+    rdfs:range chora:Witness ;
+    skos:altLabel "compare nel testimone"@it ;
+    skos:prefLabel "appears in witness"@en .

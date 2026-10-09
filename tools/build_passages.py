@@ -75,7 +75,14 @@ def main() -> int:
     orphans: list[str] = []
     truncated: list[str] = []
 
-    refs = list(g.subjects(RDF.type, CHORA.PlaceReference))
+    # Solo le occorrenze del testimone di riferimento (D-053): quelle degli
+    # altri testimoni sono corpora di confronto e non entrano nei brani.
+    reference_witnesses = set(g.objects(None, CHORA.referenceWitness))
+    # Ordine per IRI: l'ordine di iterazione del grafo cambia quando un
+    # riferimento compare come oggetto altrove (es. nei valori di una variante),
+    # e i file pubblicati non devono dipenderne (come le feature, D-041).
+    refs = sorted((r for r in g.subjects(RDF.type, CHORA.PlaceReference)
+                   if g.value(r, CHORA.appearsInWitness) in (None, *reference_witnesses)), key=str)
     for ref in refs:
         rid = local(ref)
         excerpt = g.value(ref, CHORA.excerpt)

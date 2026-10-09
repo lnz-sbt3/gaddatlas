@@ -261,6 +261,12 @@ SELECT ?r ?src ?chapter ?work ?excerpt WHERE {
   ?r a ga:PlaceReference ; ga:sourceReference ?src ;
      ga:mentionedInChapter ?chapter ; ga:appearsInWork ?work .
   OPTIONAL { ?r ga:excerpt ?excerpt }
+  # solo le occorrenze del testimone di riferimento (D-053): le altre sono
+  # corpora di confronto, fuori dalle viste del romanzo pubblicato
+  FILTER NOT EXISTS {
+    ?r ga:appearsInWitness ?w .
+    FILTER NOT EXISTS { ?opera ga:referenceWitness ?w }
+  }
 }
 """
 

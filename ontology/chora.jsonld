@@ -2468,6 +2468,28 @@
       }
     },
     {
+      "@id": "chora:appearsInWitness",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The witness in which a place reference occurs (D-053). Occurrences in witnesses other than the reference witness enter only as comparison corpora: they point to the same narrative place, never count in the views of the published novel, and carry no status of their own."
+      },
+      "rdfs:domain": {
+        "@id": "chora:PlaceReference"
+      },
+      "rdfs:range": {
+        "@id": "chora:Witness"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "compare nel testimone"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "appears in witness"
+      }
+    },
+    {
       "@id": "chora:appearsInWork",
       "@type": "owl:ObjectProperty",
       "rdfs:domain": {

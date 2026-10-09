@@ -1027,6 +1027,78 @@
     chora:uncertaintyAxis chora:IdentificationAxis ;
     chora:uncertaintyOrigin chora:DocumentaryOrigin .
 
+<https://w3id.org/gaddatlas/id/assertion/V-0001> a chora:Assertion ;
+    rdfs:comment "Cap. 4, § 4.3 (r. 83) e n. 26. La lettura di Terzoli 2015, p. 771 («se non è refuso, rafforza l'onomatopea») e quella di Italia 2020, pp. 101–102 entrano in fase 3."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/V-0001-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/V-0001-readingauthor-pinotti> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/pinotti> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/frattocchie> ;
+    chora:assertionType chora:VariantAssertion ;
+    chora:assertsValue <https://w3id.org/gaddatlas/id/reference/ref_00588>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00724> ;
+    chora:rationale "Fattocchie (RR II 219, stampa Garzanti) / Frattocchie (QP 241): emendamento dell'editore. Le occorrenze si annotano sulla lezione del testo di riferimento."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Validated ;
+    chora:sourcePage "241"^^xsd:string ;
+    chora:sourceWork "QP (Adelphi 2018)"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/V-0002> a chora:Assertion ;
+    rdfs:comment "Cap. 4, § 4.2 (r. 45). La lettura di Terzoli (palazzo Odescalchi Simonetti) entra in fase 3."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/V-0002-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/V-0002-readingauthor-pinotti> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/pinotti> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/via_lanza> ;
+    chora:assertionType chora:VariantAssertion ;
+    chora:assertsValue <https://w3id.org/gaddatlas/id/reference/ref_00436>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00725> ;
+    chora:rationale "via Lata (dtsFG) / via Lanza (QP 177): il dattiloscritto dei capitoli nuovi colloca il palazzo Simonetti nella via reale in cui si trova; la stampa lo sposta in via Lanza, dove non esiste (D-036)."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Validated ;
+    chora:sourcePage "78"^^xsd:string ;
+    chora:sourceWork "Pinotti 2025"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/V-0003> a chora:Assertion ;
+    rdfs:comment "Cap. 4, § 4.2 (r. 45)."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/V-0003-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/V-0003-readingauthor-matt>,
+        <https://w3id.org/gaddatlas/id/attribution/V-0003-readingauthor-pinotti> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/matt>,
+        <https://w3id.org/gaddatlas/id/agent/pinotti> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> ;
+    chora:assertionType chora:VariantAssertion ;
+    chora:assertsValue <https://w3id.org/gaddatlas/id/reference/ref_00007>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00036>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00726>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00727> ;
+    chora:rationale "Civico 119 (QPL 285, 293: «quer gran palazzo del centodicinnove») / 219 (QP 16, 25: «ducentodicinnove»): il palazzo si ricolloca solo nell'edizione in volume."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Validated ;
+    chora:sourcePage "schede 8, 11, 30, 31"^^xsd:string ;
+    chora:sourceWork "Matt e Pinotti 2022"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/V-0004> a chora:Assertion ;
+    rdfs:comment "Cap. 4, § 4.2 (r. 45)."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/V-0004-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/V-0004-readingauthor-matt>,
+        <https://w3id.org/gaddatlas/id/attribution/V-0004-readingauthor-pinotti> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/matt>,
+        <https://w3id.org/gaddatlas/id/agent/pinotti> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> ;
+    chora:assertionType chora:VariantAssertion ;
+    chora:assertsValue <https://w3id.org/gaddatlas/id/reference/ref_00008>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00038>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00726>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00727> ;
+    chora:rationale "«palazzo degli ori» (QPL 285, 293) / «palazzo dell'Oro» (QP 16, 25)."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Validated ;
+    chora:sourcePage "schede 8, 11, 30, 31"^^xsd:string ;
+    chora:sourceWork "Matt e Pinotti 2022"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_aliciaro> a chora:GazetteerEntity ;
     rdfs:label "Aliciaro"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -13614,13 +13686,6 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
     chora:sourceReference "A 241"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/witness/dtsfg> a chora:Witness ;
-    rdfs:label "dtsFG" ;
-    dcterms:description "Dattiloscritto parziale dei capitoli nuovi (Pinotti 2025, pp. 73–74)."@it ;
-    chora:heldAt "Pavia, Fondazione Maria Corti, Fondo Gelli"@it ;
-    chora:witnessOf <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:witnessType chora:Typescript .
-
 <https://w3id.org/gaddatlas/id/witness/qp57> a chora:Witness ;
     rdfs:label "QP57" ;
     dcterms:date "1957-06-22"^^xsd:date ;
@@ -13631,15 +13696,6 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
         <https://w3id.org/gaddatlas/id/witness/qpl> ;
     chora:witnessOf <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
     chora:witnessType chora:FirstEdition .
-
-<https://w3id.org/gaddatlas/id/witness/rr2> a chora:Witness ;
-    rdfs:label "RR II" ;
-    dcterms:date "1989"^^xsd:gYear ;
-    dcterms:description "C. E. Gadda, Romanzi e racconti II, in Opere di Carlo Emilio Gadda. Edizione da cui citano Manzotti 2010, Pinotti 2016 e Perosa 2023a."@it ;
-    dcterms:publisher "Garzanti, Milano"@it ;
-    chora:editor "Giorgio Pinotti, Dante Isella, Raffaella Rodondi"@it ;
-    chora:witnessOf <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:witnessType chora:Edition .
 
 <https://w3id.org/gaddatlas/id/work/il_palazzo_degli_ori> a chora:LiteraryWork ;
     dcterms:creator "Carlo Emilio Gadda"@it ;
@@ -14271,6 +14327,46 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/attribution/U-0008-readingauthor-manzotti> a prov:Attribution ;
     prov:agent <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/V-0001-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/V-0001-readingauthor-pinotti> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/pinotti> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/V-0002-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/V-0002-readingauthor-pinotti> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/pinotti> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/V-0003-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/V-0003-readingauthor-matt> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/matt> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/V-0003-readingauthor-pinotti> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/pinotti> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/V-0004-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/V-0004-readingauthor-matt> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/matt> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/V-0004-readingauthor-pinotti> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/pinotti> ;
     prov:hadRole chora:ReadingAuthor .
 
 <https://w3id.org/gaddatlas/id/attribution/interp_00001-encoder-lorenzo_sabatino> a prov:Attribution ;
@@ -25792,18 +25888,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 16"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/reference/ref_00007> a chora:PlaceReference ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
-    chora:excerpt "Già in quer gran palazzo der ducentodicinnove nun ce staveno che signori grossi: quarche famija der generone: ma soprattutto signori novi de commercio, de quelli che un po’ d’anni avanti li chiamaveno ancora pescicani."@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
-    chora:sourceReference "A 16"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/reference/ref_00008> a chora:PlaceReference ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
-    chora:excerpt "E il palazzo, poi, la gente der popolo lo chiamaveno er palazzo dell’oro."@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
-    chora:sourceReference "A 16"^^xsd:string .
-
 <https://w3id.org/gaddatlas/id/reference/ref_00009> a chora:PlaceReference ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
     chora:excerpt "Drento poi, c’ereno du scale, A e B, co sei piani e co dodici inquilini cadauna, due per piano."@it ;
@@ -28060,12 +28144,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 177"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/reference/ref_00436> a chora:PlaceReference ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
-    chora:excerpt "Nel frattempo, salito a palazzo Simonetti a via Lanza, Ingravallo maturò de premura quelle che il Truce in cattedra avrebbe chiamato le direttive da impartire."@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
-    chora:sourceReference "A 177"^^xsd:string .
-
 <https://w3id.org/gaddatlas/id/reference/ref_00437> a chora:PlaceReference ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
     chora:excerpt "Ingravallo maturò de premura quelle che il Truce in cattedra, a palazzo der Mappamonno, avrebbe chiamato le direttive da impartire... alle sottostanti gerarchie."@it ;
@@ -28702,12 +28780,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
     chora:sourceReference "A 241"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/reference/ref_00588> a chora:PlaceReference ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
-    chora:excerpt "il quale difatti, già in ansimo, annunciava il lùbrico gioco de' manovellismi su su su fu fu fu da 'e Frattocchie, vincendo la implorazione lontana der cuccù."@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
-    chora:sourceReference "A 241"^^xsd:string .
-
 <https://w3id.org/gaddatlas/id/reference/ref_00589> a chora:PlaceReference ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
     chora:excerpt "e al casello Km 20,25 sarebbe altresì vittorioso della livelletta: un prodigio dell'arte, una interminata livelletta 4% ma tutta curve e controcurve, del secondo ottocento."@it ;
@@ -29104,12 +29176,32 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 302"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/reference/ref_00724> a chora:PlaceReference ;
+    rdfs:comment "Lezione della stampa Garzanti, emendata dall'editore in QP 241 (variante V-0001)."@it ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/rr2> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:excerpt "su su su fu fu fu da 'e Fattocchie"@it ;
+    chora:sourceReference "RR II 219"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00725> a chora:PlaceReference ;
+    rdfs:comment "Il dattiloscritto dei capitoli nuovi legge «via Lata» dove QP 177 legge «via Lanza» (Pinotti 2025, p. 78; variante V-0002). Pagina del dattiloscritto non registrata."@it ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/dtsfg> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:sourceReference "dtsFG"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/witness/bzfg> a chora:Witness ;
     rdfs:label "bzFG" ;
     dcterms:description "Un giro di bozze del volume (Pinotti 2025, pp. 73–74)."@it ;
     chora:heldAt "Pavia, Fondazione Maria Corti, Fondo Gelli"@it ;
     chora:witnessOf <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
     chora:witnessType chora:Proofs .
+
+<https://w3id.org/gaddatlas/id/witness/dtsfg> a chora:Witness ;
+    rdfs:label "dtsFG" ;
+    dcterms:description "Dattiloscritto parziale dei capitoli nuovi (Pinotti 2025, pp. 73–74)."@it ;
+    chora:heldAt "Pavia, Fondazione Maria Corti, Fondo Gelli"@it ;
+    chora:witnessOf <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:witnessType chora:Typescript .
 
 <https://w3id.org/gaddatlas/id/witness/qp> a chora:Witness ;
     rdfs:label "QP" ;
@@ -29120,13 +29212,14 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:witnessOf <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
     chora:witnessType chora:Edition .
 
-<https://w3id.org/gaddatlas/id/witness/qpl> a chora:Witness ;
-    rdfs:label "QPL" ;
-    dcterms:date "1946"^^xsd:gYear ;
-    dcterms:description "Redazione in rivista, in cinque puntate: fascicoli 26, 27, 28, 29 e 31 del 1946, senza il n. 30 (Pinotti 2016, p. 200, n. 4; Pinotti 2024, § 7.2). Citata da RR II, pp. 277–460."@it ;
-    dcterms:publisher "«Letteratura»"@it ;
+<https://w3id.org/gaddatlas/id/witness/rr2> a chora:Witness ;
+    rdfs:label "RR II" ;
+    dcterms:date "1989"^^xsd:gYear ;
+    dcterms:description "C. E. Gadda, Romanzi e racconti II, in Opere di Carlo Emilio Gadda. Edizione da cui citano Manzotti 2010, Pinotti 2016 e Perosa 2023a."@it ;
+    dcterms:publisher "Garzanti, Milano"@it ;
+    chora:editor "Giorgio Pinotti, Dante Isella, Raffaella Rodondi"@it ;
     chora:witnessOf <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:witnessType chora:PeriodicalRedaction .
+    chora:witnessType chora:Edition .
 
 <https://w3id.org/gaddatlas/id/focalizer/agente_paolillo> a chora:Character,
         chora:FocalizingAgent ;
@@ -30809,6 +30902,18 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasPlaceCategory chora:locality ;
     chora:hasRealityStatus chora:Imported .
 
+<https://w3id.org/gaddatlas/id/reference/ref_00007> a chora:PlaceReference ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
+    chora:excerpt "Già in quer gran palazzo der ducentodicinnove nun ce staveno che signori grossi: quarche famija der generone: ma soprattutto signori novi de commercio, de quelli che un po’ d’anni avanti li chiamaveno ancora pescicani."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
+    chora:sourceReference "A 16"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00008> a chora:PlaceReference ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
+    chora:excerpt "E il palazzo, poi, la gente der popolo lo chiamaveno er palazzo dell’oro."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
+    chora:sourceReference "A 16"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/reference/ref_00028> a chora:PlaceReference ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
     chora:excerpt "lui, no, no, non era « bello »: e nemmeno gli riusciva di consolarsi con quel proverbio che aveva udito a Milano da una ragazza, al dispensario celtico di via delle Oche: « I òmen hin semper bèi. »"@it ;
@@ -31030,6 +31135,12 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:excerpt "Si preannunciava di lontano, dal Torraccio, dalle ultime case de le Frattocchie, dalle Robine Vecchie altre volte o dal Cassero a Sant'Ignazio, o dal Divino Amore"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 169"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00436> a chora:PlaceReference ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
+    chora:excerpt "Nel frattempo, salito a palazzo Simonetti a via Lanza, Ingravallo maturò de premura quelle che il Truce in cattedra avrebbe chiamato le direttive da impartire."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
+    chora:sourceReference "A 177"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00439> a chora:PlaceReference ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
@@ -31256,6 +31367,12 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00586> a chora:PlaceReference ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
     chora:excerpt "Arrivato, col fido Farafilio ro farà-figli-d'oro, al casello chilometro 20,25, furono accolti dai furibondi latrati d'un bastardaccio."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
+    chora:sourceReference "A 241"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00588> a chora:PlaceReference ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
+    chora:excerpt "il quale difatti, già in ansimo, annunciava il lùbrico gioco de' manovellismi su su su fu fu fu da 'e Frattocchie, vincendo la implorazione lontana der cuccù."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
     chora:sourceReference "A 241"^^xsd:string .
 
@@ -31486,6 +31603,18 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:excerpt "o t’ ’o farà sputare ’o brigadiere, in caserma, a Marino: ’o brigadiere Pestalozzi"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 306"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00726> a chora:PlaceReference ;
+    rdfs:comment "Redazione di «Letteratura»: civico 119 e «palazzo degli ori» (varianti V-0003, V-0004). Citata da RR II."@it ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpl> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:sourceReference "QPL 285"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00727> a chora:PlaceReference ;
+    rdfs:comment "Redazione di «Letteratura»: civico 119 e «palazzo degli ori» (varianti V-0003, V-0004). Citata da RR II."@it ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpl> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:sourceReference "QPL 293"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/focalizer/cassiere_capo_del_bo> a chora:Character,
         chora:FocalizingAgent ;
@@ -32134,21 +32263,9 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 25"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/reference/ref_00036> a chora:PlaceReference ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
-    chora:excerpt "Saliti sul PV e discesi appunto al Viminale, presero il tram di San Giovanni. Sicché in una ventina di minuti raggiunsero il civico ducentodicinnove."@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
-    chora:sourceReference "A 25"^^xsd:string .
-
 <https://w3id.org/gaddatlas/id/reference/ref_00037> a chora:PlaceReference ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
     chora:excerpt "Saliti sul PV e discesi appunto al Viminale, presero il tram di San Giovanni. Sicché in una ventina di minuti raggiunsero il civico ducentodicinnove."@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
-    chora:sourceReference "A 25"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/reference/ref_00038> a chora:PlaceReference ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
-    chora:excerpt "Il palazzo dell’Oro, o dei pescicani che fusse, era là: cinque piani, più il mezzanino. Intignazzato e grigio."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 25"^^xsd:string .
 
@@ -32316,6 +32433,14 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 
 <https://w3id.org/gaddatlas/id/route/tragitto_merulana_policlinico> a chora:NarrativeRoute .
 
+<https://w3id.org/gaddatlas/id/witness/qpl> a chora:Witness ;
+    rdfs:label "QPL" ;
+    dcterms:date "1946"^^xsd:gYear ;
+    dcterms:description "Redazione in rivista, in cinque puntate: fascicoli 26, 27, 28, 29 e 31 del 1946, senza il n. 30 (Pinotti 2016, p. 200, n. 4; Pinotti 2024, § 7.2). Citata da RR II, pp. 277–460."@it ;
+    dcterms:publisher "«Letteratura»"@it ;
+    chora:witnessOf <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:witnessType chora:PeriodicalRedaction .
+
 <https://w3id.org/gaddatlas/id/agent/cortellessa> a prov:Agent ;
     rdfs:comment "Archeologia con pescecane (Cortellessa 2023)"@it ;
     schema:name "Andrea Cortellessa" .
@@ -32323,6 +32448,10 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/agent/lugnani> a prov:Agent ;
     rdfs:comment "Citato in Perosa 2023a, p. 104, n. 97"@it ;
     schema:name "Lucio Lugnani" .
+
+<https://w3id.org/gaddatlas/id/agent/matt> a prov:Agent ;
+    rdfs:comment "Matt e Pinotti 2022 (appunti autografi per la revisione del romanesco)"@it ;
+    schema:name "L. Matt" .
 
 <https://w3id.org/gaddatlas/id/agent/perosa> a prov:Agent ;
     rdfs:comment "Gadda e il paesaggio (Perosa 2023a)"@it ;
@@ -32785,11 +32914,17 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/via_lanza> a chora:NarrativePlace ;
-    rdfs:label "Via Lanza"@it ;
-    chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported ;
-    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
+<https://w3id.org/gaddatlas/id/reference/ref_00036> a chora:PlaceReference ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
+    chora:excerpt "Saliti sul PV e discesi appunto al Viminale, presero il tram di San Giovanni. Sicché in una ventina di minuti raggiunsero il civico ducentodicinnove."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
+    chora:sourceReference "A 25"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00038> a chora:PlaceReference ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
+    chora:excerpt "Il palazzo dell’Oro, o dei pescicani che fusse, era là: cinque piani, più il mezzanino. Intignazzato e grigio."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
+    chora:sourceReference "A 25"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00099> a chora:PlaceReference ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
@@ -33277,6 +33412,12 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/via_lanza> a chora:NarrativePlace ;
+    rdfs:label "Via Lanza"@it ;
+    chora:hasPlaceCategory chora:street ;
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/via_veneto> a chora:NarrativePlace ;
     rdfs:label "Via Veneto"@it ;
     chora:hasPlaceCategory chora:street ;
@@ -33653,12 +33794,9 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
-<https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> a chora:LiteraryWork ;
-    dcterms:creator "Carlo Emilio Gadda"@it ;
-    dcterms:date "1957"^^xsd:gYear ;
-    dcterms:title "Quer pasticciaccio brutto de via Merulana"@it ;
-    rdfs:comment "Romanzo. Testimoni in Witnesses.tsv (D-052): QPL, dtsFG, bzFG, QP57, RR II, QP (testo di riferimento)."@it ;
-    chora:referenceWitness <https://w3id.org/gaddatlas/id/witness/qp> .
+<https://w3id.org/gaddatlas/id/agent/pinotti> a prov:Agent ;
+    rdfs:comment "Curatore di QP (Adelphi 2018) e di RR II; Pinotti 2016, 2024, 2025"@it ;
+    schema:name "Giorgio Pinotti" .
 
 <https://w3id.org/gaddatlas/id/focalizer/dottor_fumi> a chora:Character,
         chora:FocalizingAgent ;
@@ -33884,12 +34022,12 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     geo1:lat 41.748548036845285 ;
     geo1:long 12.560749021883575 .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/frattocchie> a chora:NarrativePlace ;
-    rdfs:label "Frattocchie"@it ;
-    dcterms:description "Frazione lungo la via Appia"@it ;
-    chora:hasPlaceCategory chora:frazione ;
-    chora:hasRealityStatus chora:Imported ;
-    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
+<https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> a chora:LiteraryWork ;
+    dcterms:creator "Carlo Emilio Gadda"@it ;
+    dcterms:date "1957"^^xsd:gYear ;
+    dcterms:title "Quer pasticciaccio brutto de via Merulana"@it ;
+    rdfs:comment "Romanzo. Testimoni in Witnesses.tsv (D-052): QPL, dtsFG, bzFG, QP57, RR II, QP (testo di riferimento)."@it ;
+    chora:referenceWitness <https://w3id.org/gaddatlas/id/witness/qp> .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_anziate> a chora:GazetteerEntity ;
     rdfs:label "Via Anziate"@it ;
@@ -33913,6 +34051,13 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     geo1:lat 41.91177548861766 ;
     geo1:long 12.442903033569449 ;
     skos:altLabel "Anziatina, Nettunense"@it .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/frattocchie> a chora:NarrativePlace ;
+    rdfs:label "Frattocchie"@it ;
+    dcterms:description "Frazione lungo la via Appia"@it ;
+    chora:hasPlaceCategory chora:frazione ;
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_anziate> a chora:NarrativePlace ;
     rdfs:label "Via Anziate"@it ;
@@ -34376,6 +34521,11 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
+<https://w3id.org/gaddatlas/id/focalizer/ines_cionini> a chora:Character,
+        chora:FocalizingAgent ;
+    chora:characterName "Ines Cionini"@it ;
+    chora:hasGender "female"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> a chora:NarrativePlace ;
     rdfs:label "Palazzo di via Merulana 219"@it ;
     dcterms:description "Luogo che identifica il palazzo in via Merulana 219"@it ;
@@ -34383,11 +34533,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasPlaceCategory chora:historical_building ;
     chora:hasRealityStatus chora:Transformed ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
-
-<https://w3id.org/gaddatlas/id/focalizer/ines_cionini> a chora:Character,
-        chora:FocalizingAgent ;
-    chora:characterName "Ines Cionini"@it ;
-    chora:hasGender "female"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_marino> a chora:GazetteerEntity ;
     rdfs:label "Marino"@it ;

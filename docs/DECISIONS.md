@@ -1059,6 +1059,34 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-053 — Varianti di testimone: le quattro documentate (9 ottobre 2026)
+
+- Requisito/i: R01, R05 · Ipotesi: — · Data check: DC-01, DC-02 (work order T-41)
+- Stato precedente: tutte le occorrenze erano di QP; nessuna proprietà per il testimone di un'occorrenza; le varianti stavano solo nel Cap. 4 e nelle voci D-036 e D-037.
+- Decisione (di Lorenzo, 9/10/2026: solo le quattro varianti documentate, come asserzioni `variant`; le letture di Terzoli in fase 3):
+  - **testimone dell'occorrenza:** nuova `chora:appearsInWitness` (PlaceReference → Witness) e colonna `Witness_ID` in `References.tsv`. Si compila qui solo per le occorrenze nuove; T-44 la estende alle 723 occorrenze di QP;
+  - **quattro occorrenze di confronto**, che puntano allo stesso luogo dell'occorrenza di QP (regola di T-42):
+    - `ref_00724`: RR II 219, frattocchie, estratto «su su su fu fu fu da 'e Fattocchie» (Cap. 4, r. 83);
+    - `ref_00725`: dtsFG, via_lanza, senza pagina né estratto;
+    - `ref_00726` e `ref_00727`: QPL 285 e QPL 293, palazzo_219, senza estratto;
+  - **quattro asserzioni `variant`**: soggetto il luogo, valori almeno due occorrenze, una di QP e una dell'altro testimone:
+    - `V-0001`: Fattocchie (RR II 219) / Frattocchie (QP 241), emendamento dell'editore; autore Pinotti; QP, p. 241;
+    - `V-0002`: via Lata (dtsFG) / via Lanza (QP 177); Pinotti 2025, p. 78;
+    - `V-0003`: civico 119 (QPL 285, 293) / 219 (QP 16, 25); Matt e Pinotti 2022, schede 8, 11, 30, 31;
+    - `V-0004`: «palazzo degli ori» (QPL 285, 293) / «palazzo dell'Oro» (QP 16, 25); stessa fonte.
+    Nuovi agenti `pinotti` e `matt` (nome per esteso da confermare). `Author_ID` accetta ora più autori separati da «|»;
+  - **fuori dalle viste:** GeoJSON, brani e invarianti dell'audit considerano solo le occorrenze del testimone di riferimento (`chora:referenceWitness`, D-052). Le altre sono un'esclusione attesa dell'audit («4 PlaceReference di altri testimoni»).
+- Effetto collaterale corretto nello stesso task: i brani seguivano l'ordine di iterazione del grafo, che cambia quando un riferimento compare come oggetto di un'asserzione. Ora `build_passages.py` li ordina per IRI, come le feature (D-041). Il contenuto dei 10 file e dell'indice è identico; cambia solo l'ordine.
+- Da completare (REVIEW_2): gli estratti di QPL 285 e 293 e di dtsFG, che il repository non ha, e la pagina del dattiloscritto. Lo shape degli estratti (Warning) li segnala: le avvertenze passano da 49 a **52**. L'attribuzione di V-0003 a Matt e Pinotti segue la citazione unica del Cap. 4, r. 45, che vale per entrambe le varianti del palazzo.
+- Alternative scartate: una classe `chora:VariantReading` (il work order la proponeva), scartata perché l'asserzione attribuita esiste già (D-042) e una variante è una lettura; un'asserzione per coppia di luoghi testuali, scartata perché la corrispondenza fra QPL 285/293 e QP 16/25 non è documentata riga per riga.
+- Controlli: l'ETL rifiuta un testimone inesistente; shape 15 (`VariantAssertionShape`: soggetto NarrativePlace, almeno due valori PlaceReference).
+- Motivazione (fonte, pagina): Cap. 4, § 4.2 (r. 45) e § 4.3 (r. 83), n. 26; Pinotti 2025, p. 78; Matt e Pinotti 2022.
+- Fase in cui è maturata: analisi del testo
+- File toccati (manifest): `ontology/chora.ttl` r. 1404–1409 (`appearsInWitness`); `ontology/shapes/chora-shapes.ttl` r. 546–564 (shape 15); `tools/etl.py` r. 793–801 (`Witness_ID`), r. 1274–1279 (più autori); `tools/build_geojson.py` r. 258–270 (filtro in `Q_REFERENCES`); `tools/build_passages.py` r. 78–85 (filtro e ordine); `tools/audit_alignment.py` r. 88–94, r. 224–227; `data/source/tables/References.tsv` (colonna `Witness_ID`, 4 righe), `Agents.tsv` (2 righe), `Assertions.tsv` (V-0001…V-0004); XLSX corrispondenti; derivati in `data/dist/passages/` e `app/public/data/passages/` (solo ordine).
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.146 → **1.152**; ABox 26.300 → **26.425**; full 28.016 → **28.147**. Riferimenti 723 → 727, di cui 723 nel testimone di riferimento. SHACL conforme, 52 avvertenze (49 T-33, 3 estratti mancanti); IQ1–IQ16 a 0. Vista invariata (GeoJSON: cambia solo `tripleCount`). Test dell'app: 5/5.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`
