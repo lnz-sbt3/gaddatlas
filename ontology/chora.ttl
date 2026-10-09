@@ -276,7 +276,9 @@ chora:annotationMethod a owl:DatatypeProperty ;
     skos:prefLabel "annotation method"@en .
 
 chora:appearsInWork a owl:ObjectProperty ;
+    rdfs:comment "Derived (D-055): the work of the witness in which the reference occurs."@en ;
     rdfs:label "appears in work"@en ;
+    owl:propertyChainAxiom ( chora:appearsInWitness chora:witnessOf ) ;
     rdfs:domain chora:PlaceReference ;
     rdfs:range chora:LiteraryWork ;
     skos:altLabel "compare nell'opera"@it .

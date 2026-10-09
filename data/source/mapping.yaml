@@ -205,10 +205,12 @@ mappings:
       
       # Object properties 
       link:
-        # Collegamento all'opera letteraria
-        - property: "chora:appearsInWork"
-          column: "LiteraryWork_ID"
-          to: "@LiteraryWork_ID"
+        # Testimone dell'occorrenza (D-053, D-055), obbligatorio. L'opera
+        # (chora:appearsInWork) non ha colonna: l'ETL la deriva dal testimone
+        # (appearsInWitness / witnessOf).
+        - property: "chora:appearsInWitness"
+          column: "Witness_ID"
+          to: "@Witness_ID"
         
         # Collegamento a Chapter
         - property: "chora:mentionedInChapter"

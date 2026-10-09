@@ -110,6 +110,7 @@ def main() -> int:
             "page": page_number(src),
             "sourceReference": src,
             "work": local(work) if work else None,
+            "witness": local(g.value(ref, CHORA.appearsInWitness)),
             "excerpt": text,
             "iri": str(ref),
         }

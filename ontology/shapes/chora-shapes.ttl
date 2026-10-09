@@ -247,6 +247,13 @@ ga:PlaceReferenceShape
         sh:severity sh:Violation ;
     ] ;
     sh:property [
+        sh:path ga:appearsInWitness ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:class ga:Witness ;
+        sh:message "Ogni PlaceReference compare in uno e un solo testimone (D-055)." ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
         sh:path ga:excerpt ;
         sh:minCount 1 ;
         sh:message "Ogni PlaceReference deve avere un excerpt testuale." ;

@@ -1083,7 +1083,7 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 - Motivazione (fonte, pagina): Cap. 4, § 4.2 (r. 45) e § 4.3 (r. 83), n. 26; Pinotti 2025, p. 78; Matt e Pinotti 2022.
 - Fase in cui è maturata: analisi del testo
 - File toccati (manifest): `ontology/chora.ttl` r. 1404–1409 (`appearsInWitness`); `ontology/shapes/chora-shapes.ttl` r. 546–564 (shape 15); `tools/etl.py` r. 793–801 (`Witness_ID`), r. 1274–1279 (più autori); `tools/build_geojson.py` r. 258–270 (filtro in `Q_REFERENCES`); `tools/build_passages.py` r. 78–85 (filtro e ordine); `tools/audit_alignment.py` r. 88–94, r. 224–227; `data/source/tables/References.tsv` (colonna `Witness_ID`, 4 righe), `Agents.tsv` (2 righe), `Assertions.tsv` (V-0001…V-0004); XLSX corrispondenti; derivati in `data/dist/passages/` e `app/public/data/passages/` (solo ordine).
-- Effetto su KG (triple prima/dopo, SHACL): TBox 1.146 → **1.152**; ABox 26.300 → **26.425**; full 28.016 → **28.147**. Riferimenti 723 → 727, di cui 723 nel testimone di riferimento. SHACL conforme, 52 avvertenze (49 T-33, 3 estratti mancanti); IQ1–IQ16 a 0. Vista invariata (GeoJSON: cambia solo `tripleCount`). Test dell'app: 5/5.
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.146 → **1.152**; ABox 26.300 → **26.425**; full 28.016 → **28.147**. Riferimenti 723 → 727, di cui 723 nel testimone di riferimento. SHACL conforme, 52 avvertenze (49 T-33, 3 estratti mancanti); IQ1–IQ16 a 0 tranne **IQ6 = 3** (gli stessi estratti mancanti: dato non visto al momento del commit, perché la prima esecuzione si era fermata all'audit e la seconda non aveva rieseguito le query; corretto in D-055). Vista invariata (GeoJSON: cambia solo `tripleCount`). Test dell'app: 5/5.
 
 ---
 
@@ -1104,7 +1104,25 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 - Motivazione (fonte, pagina): Cap. 4, § 4.2 (r. 43: le occorrenze dei corpora di confronto «vanno registrate con questo statuto, non come occorrenze del romanzo pubblicato»).
 - Fase in cui è maturata: prototipazione
 - File toccati (manifest): `ontology/queries/integrity.rq` (IQ17); `ontology/shapes/chora-shapes.ttl` r. 565–580 (shape 16); `tools/audit_alignment.py` r. 200–224; conteggio delle integrity query in `CLAUDE.md`, `Makefile`, `README.md`, `data/README.md`.
-- Effetto su KG (triple prima/dopo, SHACL): invariato (TBox 1.152, ABox 26.425, full 28.147). SHACL conforme, 52 avvertenze; IQ1–IQ17 a 0.
+- Effetto su KG (triple prima/dopo, SHACL): invariato (TBox 1.152, ABox 26.425, full 28.147). SHACL conforme, 52 avvertenze; IQ1–IQ17 a 0 tranne IQ6 = 3 (v. D-053, corretto in D-055).
+
+---
+
+## D-055 — Ogni occorrenza ha il suo testimone; l'opera è derivata (9 ottobre 2026)
+
+- Requisito/i: R01 · Ipotesi: — · Data check: — (work order T-44)
+- Stato precedente: le 723 occorrenze di QP puntavano con `appearsInWork` alla pseudo-opera `quer_pasticciaccio_adelphi`, che era un'edizione. I 10 capitoli erano «parte» della stessa pseudo-opera. Solo le 4 occorrenze di confronto di D-053 avevano un testimone.
+- Decisione (di Lorenzo, 9/10/2026: `appearsInWitness` (QP, Adelphi 2018, a stampa) su ogni PlaceReference; `appearsInWork` resta come proprietà derivata):
+  - **testimone obbligatorio:** `Witness_ID` = `qp` sulle 723 occorrenze di QP. L'ETL rifiuta un'occorrenza senza testimone o con un testimone inesistente;
+  - **opera derivata:** la colonna `LiteraryWork_ID` di `References.tsv` è tolta. L'ETL scrive `appearsInWork` come l'opera del testimone, e la TBox lo dichiara con `owl:propertyChainAxiom ( chora:appearsInWitness chora:witnessOf )`;
+  - **capitoli:** i 10 capitoli sono parte dell'opera `quer_pasticciaccio`. Le pseudo-opere `quer_pasticciaccio_letteratura` e `quer_pasticciaccio_adelphi` sono tolte: i loro dati stanno nei testimoni QPL e QP (D-052). Resta `il_palazzo_degli_ori`, opera correlata;
+  - **app:** il pannello del testo riconosce l'edizione dal testimone (`passage.witness === "qp"`) e non più dall'id della pseudo-opera. I brani portano il campo `witness`. Il testo mostrato non cambia («Adelphi, 2018 · A 241»).
+- Correzione di D-053 e D-054: dopo D-053, IQ6 restituiva 3 righe, perché l'estratto mancante delle occorrenze di confronto contava come errore. Ora IQ6 richiede l'estratto solo per le occorrenze del testimone di riferimento, come l'audit, e controlla per tutte la presenza di opera e testimone. La mancanza dell'estratto nelle occorrenze di confronto resta un'avvertenza SHACL (3 delle 52). IQ3 controlla anche `appearsInWitness`.
+- Controlli: shape `PlaceReferenceShape` (un solo testimone, Violation); IQ3, IQ6.
+- Motivazione (fonte, pagina): Cap. 4, § 4.2 e R01 («testimone e redazione per ogni occorrenza»); CLAUDE.md, testo di riferimento QP nel volume a stampa.
+- Fase in cui è maturata: prototipazione
+- File toccati (manifest): `data/source/tables/References.tsv` (colonna `Witness_ID` compilata, colonna `LiteraryWork_ID` tolta), `Chapters.tsv` (10 righe), `LiteraryWorks.tsv` (2 righe tolte); XLSX corrispondenti; `data/source/mapping.yaml` r. 207–213; `tools/etl.py` r. 755–764 (testimone e opera derivata), `witness_work` in `process_witnesses`, tolta `resolve_work_uri_for_reference`; `ontology/chora.ttl` r. 278–283 (`appearsInWork`); `ontology/shapes/chora-shapes.ttl` r. 249–255; `ontology/queries/integrity.rq` (IQ3, IQ6); `tools/build_passages.py` (campo `witness`); `app/src/ui/text-panel.js` r. 100.
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.152 → **1.158**; ABox 26.425 → **27.136** (+723 `appearsInWitness`, −12 per le due pseudo-opere); full 28.147 → **28.864**. SHACL conforme, 52 avvertenze; IQ1–IQ17 a 0 (IQ9 informativa: 13). Test dell'app 5/5; build dell'app riuscito.
 
 ---
 

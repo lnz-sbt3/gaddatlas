@@ -10,12 +10,20 @@
    xmlns:vann="http://purl.org/vocab/vann/"
 >
   <rdf:Description rdf:nodeID="cb0">
-    <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
-    <schema:name>Paola Maria Carmela Italia</schema:name>
+    <rdf:first rdf:resource="https://w3id.org/chora#appearsInWitness"/>
+    <rdf:rest rdf:nodeID="cbd7c96744b860be374134b6eeace4a6009e3d5947219e59b3c009836ad1012775"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="cb3e50fe09e2ec1e9344cc78de8b58905485ecc149d928857a50b681b56a94d9fc">
     <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
     <schema:name>Francesca Tomasi</schema:name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cb6faa306c76abb0420c860c890f8bc3e66ad4e23691607db7aa2859724cf7e416">
+    <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+    <schema:name>Paola Maria Carmela Italia</schema:name>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cbd7c96744b860be374134b6eeace4a6009e3d5947219e59b3c009836ad1012775">
+    <rdf:first rdf:resource="https://w3id.org/chora#witnessOf"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/creator">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
@@ -399,8 +407,8 @@
     <dc:description xml:lang="en">An ontology for modelling narrative spatiality in modern and contemporary literatures, integrating place references, critical spatial interpretations, and geographic anchoring across a three-tier data model.</dc:description>
     <dc:title>CHORA — an Ontology for Narrative Spatiality</dc:title>
     <dcterms:bibliographicCitation xml:lang="en">[Sabatino, Lorenzo]. (2026). CHORA - an Ontology for Narrative Spatiality. Università di Bologna.</dcterms:bibliographicCitation>
-    <dcterms:contributor rdf:nodeID="cb0"/>
     <dcterms:contributor rdf:nodeID="cb3e50fe09e2ec1e9344cc78de8b58905485ecc149d928857a50b681b56a94d9fc"/>
+    <dcterms:contributor rdf:nodeID="cb6faa306c76abb0420c860c890f8bc3e66ad4e23691607db7aa2859724cf7e416"/>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-10-01</dcterms:created>
     <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
     <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-08-11</dcterms:modified>
@@ -1291,9 +1299,11 @@
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#appearsInWork">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">Derived (D-055): the work of the witness in which the reference occurs.</rdfs:comment>
     <rdfs:domain rdf:resource="https://w3id.org/chora#PlaceReference"/>
     <rdfs:label xml:lang="en">appears in work</rdfs:label>
     <rdfs:range rdf:resource="https://w3id.org/chora#LiteraryWork"/>
+    <owl:propertyChainAxiom rdf:nodeID="cb0"/>
     <skos:altLabel xml:lang="it">compare nell'opera</skos:altLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#assertionType">

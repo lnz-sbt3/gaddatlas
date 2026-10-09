@@ -228,22 +228,6 @@ class GaddaETL:
 
         return URIRef(uri)
 
-    def resolve_work_uri_for_reference(self, value: Any) -> Optional[URIRef]:
-        """Risolve Work_ID, con fallback al work unico del corpus."""
-        work_id = str(value).strip() if has_value(value) else None
-        if work_id in self.id_cache['Work_ID']:
-            return self.resolve_lookup(work_id, '@Work_ID')
-
-        if len(self.id_cache['Work_ID']) == 1:
-            fallback_id = next(iter(self.id_cache['Work_ID']))
-            if work_id:
-                logger.debug(f"Work_ID '{work_id}' normalizzato a '{fallback_id}'")
-            return self.resolve_lookup(fallback_id, '@Work_ID')
-
-        if work_id:
-            return self.resolve_lookup(work_id, '@Work_ID')
-        return None
-
     def resolve_chapter_uri_for_reference(self, value: Any) -> Optional[URIRef]:
         """Risolve Chapter_ID, normalizzando etichette legacy tipo '[Capitolo I]'."""
         if not has_value(value):
@@ -740,7 +724,7 @@ class GaddaETL:
         - Reference_ID (chiave primaria)
         - Surface_Toponym
         - Chapter_ID
-        - LiteraryWork_ID
+        - Witness_ID (testimone; l'opera e' derivata, D-055)
         - Occurrences
         - Source_Reference
         - Notes
@@ -768,12 +752,16 @@ class GaddaETL:
                 # RDF Type
                 self.graph.add((ref_uri, RDF.type, CHORA.PlaceReference))
 
-                # Collegamento all'opera letteraria. I dati legacy usano
-                # ADELPHI o celle vuote; con un solo LiteraryWork caricato,
-                # normalizziamo al Work_ID canonico del file LiteraryWorks.tsv.
-                work_uri = self.resolve_work_uri_for_reference(row.get('LiteraryWork_ID'))
-                if work_uri:
-                    self.graph.add((ref_uri, CHORA.appearsInWork, work_uri))
+                # Testimone dell'occorrenza (D-053, D-055): obbligatorio.
+                # L'opera e' derivata: e' l'opera di cui il testimone e'
+                # testimone (appearsInWork = appearsInWitness / witnessOf).
+                witness_id = str(row.get('Witness_ID') or '').strip()
+                if witness_id not in self.witness_work:
+                    raise ValueError(f"Reference {ref_id}: Witness_ID {witness_id!r} mancante "
+                                     "o assente da Witnesses.tsv")
+                self.graph.add((ref_uri, CHORA.appearsInWitness,
+                                self.resolve_lookup(witness_id, '@Witness_ID')))
+                self.graph.add((ref_uri, CHORA.appearsInWork, self.witness_work[witness_id]))
 
                 # Collegamento a Chapter. I dati legacy usano etichette tipo
                 # "[Capitolo I]"; le normalizziamo agli ID canonici cap_01 ecc.
@@ -790,14 +778,6 @@ class GaddaETL:
                     self.add_literal(ref_uri, CHORA.occurrenceCount,
                                    int(occurrences), datatype=XSD.integer)
                 self.add_literal(ref_uri, RDFS.comment, row.get('Notes'), lang='it')
-                witness_id = str(row.get('Witness_ID') or '').strip()
-                if witness_id:
-                    # testimone dell'occorrenza (D-053)
-                    if witness_id not in self.id_cache.get('Witness_ID', set()):
-                        raise ValueError(f"Reference {ref_id}: testimone {witness_id!r} "
-                                         "assente da Witnesses.tsv")
-                    self.graph.add((ref_uri, CHORA.appearsInWitness,
-                                    self.resolve_lookup(witness_id, '@Witness_ID')))
 
             logger.info(f"PlaceReferences: processate {len(self.id_cache['Reference_ID'])} referenze")
 
@@ -1061,6 +1041,7 @@ class GaddaETL:
     def process_witnesses(self, file_path):
         """Processa Witnesses.tsv: i testimoni dell'opera (colonne in mapping.yaml)."""
         self.id_cache.setdefault('Witness_ID', set())
+        self.witness_work = {}
         df = pd.read_csv(file_path, sep='\t', encoding='utf-8', dtype=str,
                          keep_default_na=False, na_values=[])
         derived = []
@@ -1078,6 +1059,7 @@ class GaddaETL:
             uri = self.resolve_lookup(wid, '@Witness_ID')
             work = self.resolve_lookup(work_id, '@Work_ID')
             self.id_cache['Witness_ID'].add(wid)
+            self.witness_work[wid] = work
             self.graph.add((uri, RDF.type, CHORA.Witness))
             self.graph.add((uri, CHORA.witnessOf, work))
             self.graph.add((uri, CHORA.witnessType, CHORA[self.WITNESS_TYPES[wtype]]))

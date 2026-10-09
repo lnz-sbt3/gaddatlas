@@ -34,7 +34,8 @@ SELECT DISTINCT ?nodo WHERE {
   { ?x ga:hasFocalizer ?nodo }        UNION
   { ?x ga:targetsRoute ?nodo }        UNION
   { ?x ga:isPartOf ?nodo }            UNION
-  { ?x ga:appearsInWork ?nodo }
+  { ?x ga:appearsInWork ?nodo }       UNION
+  { ?x ga:appearsInWitness ?nodo }
   FILTER NOT EXISTS { ?nodo a ?t }
 }
 
@@ -59,13 +60,19 @@ SELECT ?interp WHERE {
 }
 
 
-# ==== IQ6 — PlaceReference senza excerpt o senza opera (atteso: 0) ====
+# ==== IQ6 — PlaceReference senza excerpt o senza opera e testimone (atteso: 0) ====
+# L'estratto e' obbligatorio per le occorrenze del testimone di riferimento;
+# per quelle degli altri testimoni (corpora di confronto, D-053) la mancanza
+# e' un'avvertenza SHACL, non un errore (D-055).
 PREFIX ga: <https://w3id.org/chora#>
 SELECT ?ref WHERE {
   ?ref a ga:PlaceReference .
-  { FILTER NOT EXISTS { ?ref ga:excerpt ?e } }
+  { FILTER NOT EXISTS { ?ref ga:excerpt ?e }
+    ?ref ga:appearsInWitness ?w . ?opera ga:referenceWitness ?w }
   UNION
-  { FILTER NOT EXISTS { ?ref ga:appearsInWork ?w } }
+  { FILTER NOT EXISTS { ?ref ga:appearsInWork ?o } }
+  UNION
+  { FILTER NOT EXISTS { ?ref ga:appearsInWitness ?t } }
 }
 
 

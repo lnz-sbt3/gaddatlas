@@ -33,14 +33,14 @@
   },
   "@graph": [
     {
-      "@id": "_:cb0",
-      "@type": "prov:Agent",
-      "schema:name": "Paola Maria Carmela Italia"
-    },
-    {
       "@id": "_:cb3e50fe09e2ec1e9344cc78de8b58905485ecc149d928857a50b681b56a94d9fc",
       "@type": "prov:Agent",
       "schema:name": "Francesca Tomasi"
+    },
+    {
+      "@id": "_:cb6faa306c76abb0420c860c890f8bc3e66ad4e23691607db7aa2859724cf7e416",
+      "@type": "prov:Agent",
+      "schema:name": "Paola Maria Carmela Italia"
     },
     {
       "@id": "chora:Above",
@@ -2492,6 +2492,20 @@
     {
       "@id": "chora:appearsInWork",
       "@type": "owl:ObjectProperty",
+      "owl:propertyChainAxiom": {
+        "@list": [
+          {
+            "@id": "chora:appearsInWitness"
+          },
+          {
+            "@id": "chora:witnessOf"
+          }
+        ]
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Derived (D-055): the work of the witness in which the reference occurs."
+      },
       "rdfs:domain": {
         "@id": "chora:PlaceReference"
       },
@@ -4004,10 +4018,10 @@
       },
       "dcterms:contributor": [
         {
-          "@id": "_:cb0"
+          "@id": "_:cb3e50fe09e2ec1e9344cc78de8b58905485ecc149d928857a50b681b56a94d9fc"
         },
         {
-          "@id": "_:cb3e50fe09e2ec1e9344cc78de8b58905485ecc149d928857a50b681b56a94d9fc"
+          "@id": "_:cb6faa306c76abb0420c860c890f8bc3e66ad4e23691607db7aa2859724cf7e416"
         }
       ],
       "dcterms:created": {
