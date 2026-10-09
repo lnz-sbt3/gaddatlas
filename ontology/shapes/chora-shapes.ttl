@@ -30,6 +30,10 @@
 @prefix ga:   <https://w3id.org/chora#> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix hico: <http://purl.org/emmedi/hico/> .
+@prefix geo:  <http://www.opengis.net/ont/geosparql#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 
 # =============================================================================
@@ -86,7 +90,8 @@ ga:SpatialInterpretationShape
     sh:property [
         sh:path ga:assignsSpatialRelationType ;
         sh:maxCount 1 ;
-        sh:in ( ga:Inside ga:Contains ga:Near ga:AdjacentTo ga:Above ga:Below ga:Overlaps ga:RelatedTo ) ;
+        sh:in ( ga:Inside ga:Contains ga:Near ga:AdjacentTo ga:Above ga:Below ga:Overlaps ga:RelatedTo ga:Between
+                ga:Threshold ga:Facing ga:Boundary ) ;
         sh:message "assignsSpatialRelationType, se presente, deve essere un valore del vocabolario SpatialRelationType." ;
         sh:severity sh:Violation ;
     ] ;
@@ -246,11 +251,30 @@ ga:PlaceReferenceShape
         sh:severity sh:Violation ;
     ] ;
     sh:property [
+        sh:path ga:appearsInWitness ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:class ga:Witness ;
+        sh:message "Ogni PlaceReference compare in uno e un solo testimone (D-055)." ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
         sh:path ga:excerpt ;
-        sh:minCount 1 ;
-        sh:message "Ogni PlaceReference deve avere un excerpt testuale." ;
-        sh:severity sh:Warning ;
+        sh:maxCount 1 ;
+        sh:message "Una PlaceReference ha al piu' un excerpt." ;
     ] .
+
+# L'estratto e' obbligatorio solo per le occorrenze del testimone di
+# riferimento (QP). Per gli altri testimoni e' facoltativo: serve alla
+# provenienza delle letture e non arriva mai all'interfaccia (D-066).
+ga:ReferenceExcerptShape
+    a sh:NodeShape ;
+    sh:targetClass ga:PlaceReference ;
+    sh:or (
+        [ sh:path ga:excerpt ; sh:minCount 1 ]
+        [ sh:not [ sh:path ( ga:appearsInWitness [ sh:inversePath ga:referenceWitness ] ) ; sh:minCount 1 ] ]
+    ) ;
+    sh:message "Ogni occorrenza del testimone di riferimento deve avere un excerpt testuale (D-066)." ;
+    sh:severity sh:Violation .
 
 
 # =============================================================================
@@ -273,4 +297,540 @@ ga:GazetteerEntityShape
         sh:maxCount 1 ;
         sh:message "long, se presente, deve essere singola." ;
         sh:severity sh:Warning ;
+    ] .
+
+
+# =============================================================================
+# SHAPE 7 — Assertion (D-042, work order T-30)
+# Una lettura attribuita: tipo, soggetto, valore; almeno un autore della
+# lettura e almeno un codificatore (prov:qualifiedAttribution con prov:hadRole);
+# la forma breve prov:wasAttributedTo verso l'autore, generata dall'ETL;
+# al piu' un flag di adozione. La regola «una sola lettura adottata per
+# soggetto e tipo» sta in integrity.rq (IQ12).
+# =============================================================================
+
+ga:AssertionShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion ;
+    sh:property [
+        sh:path ( prov:wasGeneratedBy hico:hasInterpretationType ) ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:in ( ga:StatusAssertion ga:IdentificationAssertion ga:LocationAssertion
+                ga:PartitionAssertion ga:MemoryAssertion ga:UncertaintyAssertion
+                ga:VariantAssertion ga:RouteTypeAssertion ) ;
+        sh:message "Ogni Assertion ha esattamente un tipo dello schema AssertionType." ;
+    ] ;
+    sh:property [
+        sh:path ga:aboutSubject ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Ogni Assertion riguarda esattamente un soggetto." ;
+    ] ;
+    sh:property [
+        sh:path ga:assertsValue ;
+        sh:minCount 1 ;
+        sh:message "Ogni Assertion assegna almeno un valore." ;
+    ] ;
+    sh:property [
+        sh:path ga:adoptedByProject ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:boolean ;
+        sh:message "adoptedByProject, se presente, e' un booleano singolo." ;
+    ] ;
+    sh:property [
+        sh:path prov:wasAttributedTo ;
+        sh:minCount 1 ;
+        sh:message "Ogni Assertion porta la forma breve prov:wasAttributedTo verso l'autore della lettura." ;
+    ] .
+
+# Provenienza (D-067): ogni lettura (asserzione o interpretazione) e' generata
+# da un solo atto interpretativo, che ha almeno un'associazione ReadingAuthor;
+# il codificatore e' un'associazione Encoder dello stesso atto, oppure di una
+# codifica informata dall'atto (prov:wasInformedBy).
+ga:ReadingProvenanceShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion, ga:SpatialInterpretation ;
+    sh:property [
+        sh:path prov:wasGeneratedBy ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:class hico:InterpretationAct ;
+        sh:message "Ogni lettura e' generata da esattamente un hico:InterpretationAct." ;
+    ] ;
+    sh:property [
+        sh:path ( prov:wasGeneratedBy prov:qualifiedAssociation ) ;
+        sh:qualifiedValueShape [ sh:path prov:hadRole ; sh:hasValue ga:ReadingAuthor ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:message "Manca un'associazione con ruolo chora:ReadingAuthor sull'atto interpretativo." ;
+    ] ;
+    sh:or (
+        [ sh:path ( prov:wasGeneratedBy prov:qualifiedAssociation ) ;
+          sh:qualifiedValueShape [ sh:path prov:hadRole ; sh:hasValue ga:Encoder ] ;
+          sh:qualifiedMinCount 1 ]
+        [ sh:path ( prov:wasGeneratedBy [ sh:inversePath prov:wasInformedBy ] prov:qualifiedAssociation ) ;
+          sh:qualifiedValueShape [ sh:path prov:hadRole ; sh:hasValue ga:Encoder ] ;
+          sh:qualifiedMinCount 1 ]
+    ) ;
+    sh:message "Manca il codificatore: un'associazione Encoder sull'atto o su una codifica informata dall'atto." .
+
+ga:InterpretationActShape
+    a sh:NodeShape ;
+    sh:targetClass hico:InterpretationAct ;
+    sh:property [
+        sh:path hico:hasInterpretationType ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Un atto interpretativo ha esattamente un tipo." ;
+    ] ;
+    sh:property [
+        sh:path hico:hasInterpretationCriterion ;
+        sh:maxCount 1 ;
+        sh:in ( ga:ReferentialEvidence ga:TextualEvidence ga:CriticalReading ) ;
+        sh:message "Al piu' un criterio, dello schema RationaleType." ;
+    ] ;
+    sh:property [
+        sh:path hico:isExtractedFrom ;
+        sh:maxCount 1 ;
+        sh:or ( [ sh:class ga:Source ] [ sh:class ga:Witness ] ) ;
+        sh:message "La fonte di un atto e' una chora:Source o un chora:Witness." ;
+    ] .
+
+ga:AttributionShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf prov:qualifiedAssociation ;
+    sh:property [
+        sh:path prov:agent ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:class prov:Agent ;
+        sh:message "Ogni associazione ha esattamente un agente, tipizzato prov:Agent." ;
+    ] ;
+    sh:property [
+        sh:path prov:hadRole ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:in ( ga:ReadingAuthor ga:Encoder ) ;
+        sh:message "Ogni associazione ha esattamente un ruolo: ReadingAuthor o Encoder." ;
+    ] .
+
+
+# =============================================================================
+# SHAPE 8 — Motivazione dello statuto (D-046, work order T-33)
+# Ogni luogo non Imported e' soggetto di un'asserzione di statuto adottata, con
+# motivazione, tipo di motivazione e stato «validata». Gli Imported hanno la
+# motivazione standard (scopeNote di chora:Imported). sh:Warning finche' le
+# bozze non sono validate; diventa sh:Violation prima della consegna.
+# =============================================================================
+
+ga:StatusRationaleShape
+    a sh:NodeShape ;
+    sh:targetClass ga:NarrativePlace ;
+    sh:severity sh:Warning ;
+    sh:message "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+    sh:or (
+        [ sh:path [ sh:inversePath ga:aboutSubject ] ;
+          sh:qualifiedValueShape [
+              sh:and (
+                  [ sh:path ( prov:wasGeneratedBy hico:hasInterpretationType ) ; sh:hasValue ga:StatusAssertion ]
+                  [ sh:path ga:adoptedByProject ; sh:hasValue true ]
+                  [ sh:path ( prov:wasGeneratedBy ga:rationale ) ; sh:minCount 1 ]
+                  [ sh:path ( prov:wasGeneratedBy hico:hasInterpretationCriterion ) ; sh:minCount 1 ]
+                  [ sh:path ga:reviewStatus ; sh:hasValue ga:Validated ]
+              )
+          ] ;
+          sh:qualifiedMinCount 1 ]
+    ) .
+
+
+# =============================================================================
+# SHAPE 9 — Incertezza (D-047, work order T-34)
+# Un'asserzione d'incertezza ha un tipo dello schema UncertaintyType, un asse e
+# un'origine.
+# =============================================================================
+
+ga:UncertaintyAssertionShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion ;
+    sh:or (
+        [ sh:not [ sh:path ( prov:wasGeneratedBy hico:hasInterpretationType ) ; sh:hasValue ga:UncertaintyAssertion ] ]
+        [ sh:and (
+            [ sh:path ga:uncertaintyAxis ; sh:minCount 1 ; sh:maxCount 1 ;
+              sh:in ( ga:NameAxis ga:IdentificationAxis ga:GeometryAxis ) ]
+            [ sh:path ga:uncertaintyOrigin ; sh:minCount 1 ; sh:maxCount 1 ;
+              sh:in ( ga:DocumentaryOrigin ga:ConstructiveOrigin ) ]
+            [ sh:path ga:assertsValue ; sh:minCount 1 ;
+              sh:in ( ga:Vagueness ga:NonSpecificity ga:ContestedIdentification ga:Discrepancy
+                      ga:Oversight ga:Anachronism ga:Confusion ga:InternalDiscrepancy
+                      ga:Incompleteness ga:NonApplicability ) ]
+          ) ]
+    ) ;
+    sh:message "Un'asserzione d'incertezza ha un tipo dello schema UncertaintyType, un asse e un'origine." .
+
+
+# =============================================================================
+# SHAPE 10 — Astensione dall'ancoraggio (D-048, work order T-35)
+# Valori ammessi; la sospensione motivata richiede il motivo. La regola «un
+# luogo senza ancoraggio dichiara uno stato» sta in integrity.rq (IQ14), perche'
+# l'ancoraggio puo' essere ereditato (isPartOf) o venire da una lettura adottata.
+# =============================================================================
+
+ga:LocalizationStatusShape
+    a sh:NodeShape ;
+    sh:targetClass ga:NarrativePlace ;
+    sh:property [
+        sh:path ga:localizationStatus ;
+        sh:maxCount 1 ;
+        sh:in ( ga:NotYetAnalysed ga:SuspendedWithReason ga:NotApplicable ) ;
+        sh:message "localizationStatus: al piu' un valore dello schema LocalizationStatus." ;
+    ] ;
+    sh:or (
+        [ sh:not [ sh:path ga:localizationStatus ; sh:hasValue ga:SuspendedWithReason ] ]
+        [ sh:path ga:localizationReason ; sh:minCount 1 ]
+    ) ;
+    sh:message "Una sospensione motivata dell'ancoraggio richiede chora:localizationReason." .
+
+
+# =============================================================================
+# SHAPE 11 — Livelli enunciativi (D-049, work order T-36)
+# La voce narrante e' facoltativa: la sua assenza vale «non annotato».
+# Un'asserzione di memoria usa i valori dello schema MemoryAttribution.
+# =============================================================================
+
+ga:NarratingVoiceShape
+    a sh:NodeShape ;
+    sh:targetClass ga:SpatialInterpretation ;
+    sh:property [
+        sh:path ga:hasNarratingVoice ;
+        sh:maxCount 1 ;
+        sh:class ga:FocalizingAgent ;
+        sh:message "hasNarratingVoice: al piu' una voce, che sia un FocalizingAgent." ;
+    ] .
+
+ga:MemoryAssertionShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion ;
+    sh:or (
+        [ sh:not [ sh:path ( prov:wasGeneratedBy hico:hasInterpretationType ) ; sh:hasValue ga:MemoryAssertion ] ]
+        [ sh:and (
+            [ sh:path ga:aboutSubject ; sh:class ga:PlaceReference ]
+            [ sh:path ga:assertsValue ; sh:minCount 1 ;
+              sh:in ( ga:AuthorMemory ga:CharacterMemory ga:UndecidableMemory ) ]
+          ) ]
+    ) ;
+    sh:message "Un'asserzione di memoria riguarda un'occorrenza e ha valori dello schema MemoryAttribution (D-070)." .
+
+
+# =============================================================================
+# SHAPE 12 — Partizioni interpretative (D-050, work order T-37)
+# Ogni zona appartiene a una sola partizione; la partizione e' il soggetto di
+# un'asserzione attribuita. La regola «un luogo in una sola zona per
+# partizione» sta in integrity.rq (IQ15).
+# =============================================================================
+
+ga:PartitionZoneShape
+    a sh:NodeShape ;
+    sh:targetClass ga:PartitionZone ;
+    sh:property [
+        sh:path [ sh:inversePath ga:hasZone ] ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Una zona appartiene a una e una sola partizione." ;
+    ] .
+
+ga:PartitionShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Partition ;
+    sh:property [
+        sh:path [ sh:inversePath ga:aboutSubject ] ;
+        sh:minCount 1 ;
+        sh:message "Una partizione e' un'ipotesi: serve un'asserzione attribuita che la abbia per soggetto." ;
+    ] .
+
+ga:InPartitionZoneShape
+    a sh:NodeShape ;
+    sh:targetClass ga:NarrativePlace ;
+    sh:property [
+        sh:path ga:inPartitionZone ;
+        sh:class ga:PartitionZone ;
+        sh:message "inPartitionZone punta a una zona di una partizione." ;
+    ] .
+
+
+# =============================================================================
+# SHAPE 13 — Storia delle revisioni (D-051, work order T-38)
+# Una revisione punta a un'asserzione. Stesso soggetto e stesso tipo: IQ16.
+# =============================================================================
+
+ga:RevisionShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion ;
+    sh:property [
+        sh:path prov:wasRevisionOf ;
+        sh:class ga:Assertion ;
+        sh:message "prov:wasRevisionOf punta a un'altra asserzione attribuita." ;
+    ] .
+
+
+# =============================================================================
+# SHAPE 14 — Opera e testimoni (D-052, work order T-40)
+# =============================================================================
+
+ga:WitnessShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Witness ;
+    sh:property [
+        sh:path ga:witnessOf ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:class ga:LiteraryWork ;
+        sh:message "Un testimone e' testimone di una e una sola opera." ;
+    ] ;
+    sh:property [
+        sh:path ga:witnessType ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:in ( ga:PeriodicalRedaction ga:Typescript ga:Proofs ga:FirstEdition ga:Edition ) ;
+        sh:message "Un testimone ha un tipo dello schema WitnessType." ;
+    ] ;
+    sh:property [
+        sh:path prov:wasDerivedFrom ;
+        sh:class ga:Witness ;
+        sh:message "Un testimone deriva solo da un altro testimone." ;
+    ] .
+
+ga:ReferenceWitnessShape
+    a sh:NodeShape ;
+    sh:targetClass ga:LiteraryWork ;
+    sh:property [
+        sh:path ga:referenceWitness ;
+        sh:maxCount 1 ;
+        sh:class ga:Witness ;
+        sh:message "Un'opera ha al piu' un testimone di riferimento." ;
+    ] .
+
+
+# =============================================================================
+# SHAPE 15 — Varianti di testimone (D-053, work order T-41)
+# Un'asserzione di variante ha per soggetto il luogo e per valori almeno due
+# occorrenze (PlaceReference), del testo di riferimento e di altri testimoni.
+# =============================================================================
+
+ga:VariantAssertionShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion ;
+    sh:or (
+        [ sh:not [ sh:path ( prov:wasGeneratedBy hico:hasInterpretationType ) ; sh:hasValue ga:VariantAssertion ] ]
+        [ sh:and (
+            [ sh:path ga:aboutSubject ; sh:class ga:PlaceReference ]
+            [ sh:path ga:assertsValue ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ga:PlaceReference ]
+          ) ]
+    ) ;
+    sh:message "Una variante ha per soggetto l'occorrenza del testimone di riferimento e per valore un'occorrenza di un altro testimone (D-070)." .
+
+
+# =============================================================================
+# SHAPE 16 — Lo statuto e' del luogo (D-054, work order T-42)
+# Un'asserzione di statuto ha per soggetto un luogo narrativo, mai
+# un'occorrenza o un testimone.
+# =============================================================================
+
+ga:StatusSubjectShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion ;
+    sh:or (
+        [ sh:not [ sh:path ( prov:wasGeneratedBy hico:hasInterpretationType ) ; sh:hasValue ga:StatusAssertion ] ]
+        [ sh:path ga:aboutSubject ; sh:class ga:NarrativePlace ]
+    ) ;
+    sh:message "Lo statuto di realta' si asserisce di un luogo narrativo, non di un'occorrenza o di un testimone." .
+
+
+# =============================================================================
+# SHAPE 17 — Ancoraggio relazionale (D-057, work order T-47)
+# =============================================================================
+
+ga:RelationalAnchoringShape
+    a sh:NodeShape ;
+    sh:targetClass ga:RelationalAnchoring ;
+    sh:property [
+        sh:path ga:relatum ;
+        sh:minCount 1 ;
+        sh:or ( [ sh:class ga:GazetteerEntity ] [ sh:class ga:NarrativePlace ] ) ;
+        sh:message "Un ancoraggio relazionale ha almeno un termine: un'entita' del gazetteer o un luogo narrativo." ;
+    ] ;
+    sh:property [
+        sh:path ga:relationalType ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:in ( ga:Near ga:Between ga:AdjacentTo ga:Above ga:Below ga:Threshold ga:Facing ga:Boundary ) ;
+        sh:message "Un ancoraggio relazionale ha un tipo di relazione." ;
+    ] ;
+    sh:or (
+        [ sh:not [ sh:path ga:relationalType ; sh:hasValue ga:Between ] ]
+        [ sh:path ga:relatum ; sh:minCount 2 ]
+    ) ;
+    sh:message "«Tra» richiede almeno due termini." .
+
+
+# =============================================================================
+# SHAPE 18 — Forma attestata (D-059, work order T-48)
+# =============================================================================
+
+ga:AttestedFormShape
+    a sh:NodeShape ;
+    sh:targetClass ga:PlaceReference ;
+    sh:property [
+        sh:path ga:attestedForm ;
+        sh:maxCount 1 ;
+        sh:datatype rdf:langString ;
+        sh:message "Un'occorrenza ha al piu' una forma attestata." ;
+    ] .
+
+
+# =============================================================================
+# SHAPE 19 — Percorsi tipizzati (D-060, work order T-54)
+# =============================================================================
+
+ga:RouteTypeAssertionShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion ;
+    sh:or (
+        [ sh:not [ sh:path ( prov:wasGeneratedBy hico:hasInterpretationType ) ; sh:hasValue ga:RouteTypeAssertion ] ]
+        [ sh:and (
+            [ sh:path ga:aboutSubject ; sh:class ga:NarrativeRoute ]
+            [ sh:path ga:assertsValue ; sh:minCount 1 ; sh:maxCount 1 ;
+              sh:in ( ga:CompletedRoute ga:IndicatedRoute ga:DreamedRoute
+                      ga:InferredRoute ga:DirectionalRoute ga:ProposedRoute ) ]
+          ) ]
+    ) ;
+    sh:message "Un'asserzione di tipo di percorso riguarda un NarrativeRoute e ha un valore dello schema RouteType." .
+
+ga:RouteTypeShape
+    a sh:NodeShape ;
+    sh:targetClass ga:NarrativeRoute ;
+    sh:property [
+        sh:path ga:hasRouteType ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Ogni percorso ha un tipo, dalla lettura adottata (D-060)." ;
+    ] .
+
+
+# =============================================================================
+# SHAPE 20 — Agenti (D-062)
+# Ogni agente del dataset e' una persona, studioso o annotatore.
+# =============================================================================
+
+ga:AgentKindShape
+    a sh:NodeShape ;
+    sh:targetClass prov:Person ;
+    sh:or (
+        [ sh:class ga:Scholar ]
+        [ sh:class ga:Annotator ]
+    ) ;
+    sh:message "Un agente del dataset e' chora:Scholar o chora:Annotator." .
+
+
+# =============================================================================
+# SHAPE 21 — Posizioni attribuite (D-069)
+# Una LocationAssertion riguarda un'entita' del gazetteer e ha per valore una
+# geometria WKT con un repertorio.
+# =============================================================================
+
+ga:LocationAssertionShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion ;
+    sh:or (
+        [ sh:not [ sh:path ( prov:wasGeneratedBy hico:hasInterpretationType ) ; sh:hasValue ga:LocationAssertion ] ]
+        [ sh:and (
+            [ sh:path ga:aboutSubject ; sh:class ga:GazetteerEntity ]
+            [ sh:path ga:assertsValue ; sh:minCount 1 ; sh:maxCount 1 ; sh:class geo:Geometry ]
+            [ sh:path ( ga:assertsValue geo:asWKT ) ; sh:minCount 1 ; sh:maxCount 1 ]
+            [ sh:path ( ga:assertsValue ga:repertory ) ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ga:Source ]
+          ) ]
+    ) ;
+    sh:message "Una posizione attribuita riguarda un'entita' del gazetteer e ha una geometria WKT con un repertorio." .
+
+
+# =============================================================================
+# SHAPE 22 — L'occorrenza come primitiva (D-070, AUDIT_2b B4)
+# =============================================================================
+
+# Incertezza: soggetto per asse (nome -> occorrenza; identificazione -> luogo;
+# geometria -> entita' del gazetteer).
+ga:UncertaintySubjectShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion ;
+    sh:or (
+        [ sh:not [ sh:path ( prov:wasGeneratedBy hico:hasInterpretationType ) ; sh:hasValue ga:UncertaintyAssertion ] ]
+        [ sh:and ( [ sh:path ga:uncertaintyAxis ; sh:hasValue ga:NameAxis ]
+                   [ sh:path ga:aboutSubject ; sh:class ga:PlaceReference ] ) ]
+        [ sh:and ( [ sh:path ga:uncertaintyAxis ; sh:hasValue ga:IdentificationAxis ]
+                   [ sh:path ga:aboutSubject ; sh:class ga:NarrativePlace ] ) ]
+        [ sh:and ( [ sh:path ga:uncertaintyAxis ; sh:hasValue ga:GeometryAxis ]
+                   [ sh:path ga:aboutSubject ; sh:class ga:GazetteerEntity ] ) ]
+    ) ;
+    sh:message "Incertezza: asse nome -> occorrenza, identificazione -> luogo, geometria -> entita' del gazetteer (D-070)." .
+
+ga:GroundingShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion ;
+    sh:property [
+        sh:path ga:groundedIn ;
+        sh:class ga:PlaceReference ;
+        sh:message "chora:groundedIn punta a un'occorrenza." ;
+    ] .
+
+# Interpretazioni: l'adozione e' sempre dichiarata (M2).
+ga:InterpretationAdoptionShape
+    a sh:NodeShape ;
+    sh:targetClass ga:SpatialInterpretation ;
+    sh:property [
+        sh:path ga:adoptedByProject ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:datatype xsd:boolean ;
+        sh:message "Ogni interpretazione dichiara se e' adottata (true/false)." ;
+    ] ;
+    sh:property [
+        sh:path prov:wasRevisionOf ;
+        sh:class ga:SpatialInterpretation ;
+        sh:message "Un'interpretazione rivede un'altra interpretazione." ;
+    ] .
+
+# Un'interpretazione non adottata e' una lettura altrui o una lettura rivista.
+ga:NonAdoptedInterpretationShape
+    a sh:NodeShape ;
+    sh:targetClass ga:SpatialInterpretation ;
+    sh:severity sh:Warning ;
+    sh:or (
+        [ sh:path ga:adoptedByProject ; sh:hasValue true ]
+        [ sh:path [ sh:inversePath prov:wasRevisionOf ] ; sh:minCount 1 ]
+        [ sh:path ( prov:wasGeneratedBy [ sh:inversePath prov:wasInformedBy ] ) ; sh:minCount 1 ]
+    ) ;
+    sh:message "Interpretazione non adottata che non e' ne' di uno studioso ne' rivista (D-070)." .
+
+# Coerenza tipo -> soggetto/valore, dalla proprieta' reificata del tipo (D-070).
+# Le letture superate (oggetto di prov:wasRevisionOf) sono escluse: possono
+# riferirsi a risorse ritirate (C-casal_bruciato, D-051).
+ga: sh:declare [ sh:prefix "ga" ; sh:namespace "https://w3id.org/chora#"^^xsd:anyURI ] .
+
+ga:ReifiedTypeShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Soggetto o valore incompatibili con la proprieta' reificata dal tipo della lettura ({?p})." ;
+        sh:prefixes ga: ;
+        sh:select """
+            PREFIX ga: <https://w3id.org/chora#>
+            PREFIX prov: <http://www.w3.org/ns/prov#>
+            PREFIX hico: <http://purl.org/emmedi/hico/>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+            PREFIX dcterms: <http://purl.org/dc/terms/>
+            SELECT $this ?p ?value WHERE {
+              $this prov:wasGeneratedBy/hico:hasInterpretationType ?t ;
+                    ga:aboutSubject ?s ; ga:assertsValue ?value .
+              ?t ga:reifiesProperty ?p .
+              FILTER NOT EXISTS { ?nuova prov:wasRevisionOf $this }
+              OPTIONAL { ?p rdfs:domain ?d . FILTER(isIRI(?d)) }
+              OPTIONAL { ?p rdfs:range ?r . FILTER(isIRI(?r)) }
+              OPTIONAL { ?p dcterms:references ?schema }
+              FILTER (
+                   (BOUND(?d) && NOT EXISTS { ?s a/rdfs:subClassOf* ?d })
+                || (BOUND(?schema) && NOT EXISTS { ?value skos:inScheme ?schema })
+                || (!BOUND(?schema) && BOUND(?r) && NOT EXISTS { ?value a/rdfs:subClassOf* ?r })
+              )
+            }
+        """ ;
     ] .

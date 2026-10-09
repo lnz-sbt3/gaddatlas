@@ -1,4 +1,4 @@
-GazetteerEntity_ID	Toponym	sameAs	Alternative_Toponym	Historical_Location	Present_Location	Latitude	Longitude	Geometry	Authority_Source
+GazetteerEntity_ID	Toponym	sameAs	Alternative_Toponym	Historical_Location	Present_Location	Latitude	Longitude	Geometry	Authority_Source	Housed_In
 gaz_acqua_pia_antica_marcia	Acqua Pia Antica Marcia		Acquedotto Marciano			41.84673072992396	12.563362579004666	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -14,7 +14,7 @@ gaz_acqua_pia_antica_marcia	Acqua Pia Antica Marcia		Acquedotto Marciano			41.84
       }
     }
   ]
-}"	
+}"		
 gaz_acquedotto_claudio	Acquedotto Claudio					41.85213084027308	12.55520496824135	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -30,7 +30,7 @@ gaz_acquedotto_claudio	Acquedotto Claudio					41.85213084027308	12.5552049682413
       }
     }
   ]
-}"	
+}"		
 gaz_albano_laziale	Albano Laziale					41.72979996535707	12.65920047759274	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -46,7 +46,7 @@ gaz_albano_laziale	Albano Laziale					41.72979996535707	12.65920047759274	"{
       }
     }
   ]
-}"	
+}"		
 gaz_aliciaro	Aliciaro			Piazza degli Otto Cantoni	Piazza Augusto Imperatore	41.90594993508033	12.477286809814071	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -62,7 +62,7 @@ gaz_aliciaro	Aliciaro			Piazza degli Otto Cantoni	Piazza Augusto Imperatore	41.9
       }
     }
   ]
-}"	
+}"		
 gaz_aniene	Aniene					41.94603890927569	12.50154664546876	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -78,7 +78,7 @@ gaz_aniene	Aniene					41.94603890927569	12.50154664546876	"{
       }
     }
   ]
-}"	
+}"		
 gaz_anzio	Anzio					41.44778427232902	12.627465687905143	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -94,7 +94,7 @@ gaz_anzio	Anzio					41.44778427232902	12.627465687905143	"{
       }
     }
   ]
-}"	
+}"		
 gaz_ardea	Ardea					41.66592876861046	12.544506836046144	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -110,7 +110,7 @@ gaz_ardea	Ardea					41.66592876861046	12.544506836046144	"{
       }
     }
   ]
-}"	
+}"		
 gaz_ariccia	Ariccia					41.72150161333168	12.672990584468002	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -127,7 +127,7 @@ gaz_ariccia	Ariccia					41.72150161333168	12.672990584468002	"{
       }
     }
   ]
-}"	
+}"		
 gaz_aventino	Aventino					41.88336622181254	12.477783109311511	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -143,7 +143,7 @@ gaz_aventino	Aventino					41.88336622181254	12.477783109311511	"{
       }
     }
   ]
-}"	
+}"		
 gaz_banca_commerciale_italiana	Banca Commerciale Italiana		Comit	Palazzo Doria Pamphilj in Via del Plebiscito 112 (fino al 1922)	Via del Corso 226	41.900490491252384	12.48081919655661	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -159,7 +159,7 @@ gaz_banca_commerciale_italiana	Banca Commerciale Italiana		Comit	Palazzo Doria P
       }
     }
   ]
-}"	
+}"		
 gaz_banca_ditalia	Banca d’Italia			via Nazionale, 91 (Palazzo Koch)		41.89761872488606	12.488825693999916	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -175,7 +175,7 @@ gaz_banca_ditalia	Banca d’Italia			via Nazionale, 91 (Palazzo Koch)		41.897618
       }
     }
   ]
-}"	
+}"		
 gaz_banco_di_santo_spirito	Banco di Santo Spirito		Istituto di Credito Fondiario del Banco di Santo Spirito	"Arcispedale di Santo Spirito in Saxia - Palazzo del Banco di Santo Spirito, già ""della Zecca Vecchia"""		41.89984502388519	12.466807906113214	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -191,7 +191,7 @@ gaz_banco_di_santo_spirito	Banco di Santo Spirito		Istituto di Credito Fondiario
       }
     }
   ]
-}"	
+}"		
 gaz_basilica_dei_frari	Basilica di Santa Maria Gloriosa dei Frari					45.43700425060388	12.326607913064835	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -207,7 +207,7 @@ gaz_basilica_dei_frari	Basilica di Santa Maria Gloriosa dei Frari					45.4370042
       }
     }
   ]
-}"	
+}"		
 gaz_benevento	Benevento					41.13316810450852	14.783846798251036	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -223,7 +223,7 @@ gaz_benevento	Benevento					41.13316810450852	14.783846798251036	"{
       }
     }
   ]
-}"	
+}"		
 gaz_biferno	Biferno		Fiume Biferno			41.91879106830195	14.944914321668715	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -239,7 +239,7 @@ gaz_biferno	Biferno		Fiume Biferno			41.91879106830195	14.944914321668715	"{
       }
     }
   ]
-}"	
+}"		
 gaz_bologna	Bologna					44.49555555061309	11.344545396805216	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -255,7 +255,7 @@ gaz_bologna	Bologna					44.49555555061309	11.344545396805216	"{
       }
     }
   ]
-}"	
+}"		
 gaz_borgo_pio	Borgo Pio			via Borgo Pio		41.90386486389618	12.460347994271636	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -271,7 +271,7 @@ gaz_borgo_pio	Borgo Pio			via Borgo Pio		41.90386486389618	12.460347994271636	"{
       }
     }
   ]
-}"	
+}"		
 gaz_borgo_vecchio	Borgo Vecchio			via Borgo Vecchio	via della Conciliazione	41.90228400646402	12.460641676910392	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -287,7 +287,7 @@ gaz_borgo_vecchio	Borgo Vecchio			via Borgo Vecchio	via della Conciliazione	41.9
       }
     }
   ]
-}"	
+}"		
 gaz_bottaro	Bottaro			passeggiata di Ripetta, 15		41.90898217045761	12.474387506407568	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -303,7 +303,7 @@ gaz_bottaro	Bottaro			passeggiata di Ripetta, 15		41.90898217045761	12.474387506
       }
     }
   ]
-}"	
+}"		
 gaz_brahmaputra	Brahmaputra		rive der brahmaputra			27.000235829388703	92.38395277199372	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -319,7 +319,7 @@ gaz_brahmaputra	Brahmaputra		rive der brahmaputra			27.000235829388703	92.383952
       }
     }
   ]
-}"	
+}"		
 gaz_buco_a_santignazio	Buco a Sant'Ignazio			Via di S. Ignazio, 8		41.89789137306835	12.479623019314188	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -335,7 +335,7 @@ gaz_buco_a_santignazio	Buco a Sant'Ignazio			Via di S. Ignazio, 8		41.8978913730
       }
     }
   ]
-}"	
+}"		
 gaz_ca_francesi	Ca' Francesi		Casali dei Francesi	colli Albani (Ciampino) / Castelli Romani	Villa dei Valerii	41.786284967839286	12.622449725919433	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -351,7 +351,7 @@ gaz_ca_francesi	Ca' Francesi		Casali dei Francesi	colli Albani (Ciampino) / Cast
       }
     }
   ]
-}"	
+}"		
 gaz_calabria	Calabria					39.42242825933711	16.29084361444828	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -367,7 +367,7 @@ gaz_calabria	Calabria					39.42242825933711	16.29084361444828	"{
       }
     }
   ]
-}"	
+}"		
 gaz_campo_de_fiori	Campo de' Fiori			Campo de' Fiori		41.8957346149517	12.472186692675214	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -383,7 +383,7 @@ gaz_campo_de_fiori	Campo de' Fiori			Campo de' Fiori		41.8957346149517	12.472186
       }
     }
   ]
-}"	
+}"		
 gaz_campo_marzio	Campo Marzio		Campo di Marte		Rione IV	41.90228013764708	12.477533646244904	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -399,7 +399,7 @@ gaz_campo_marzio	Campo Marzio		Campo di Marte		Rione IV	41.90228013764708	12.477
       }
     }
   ]
-}"	
+}"		
 gaz_campo_verano	Campo Verano		Cimitero Monumentale del Verano		Piazzale del Verano	41.90164314083915	12.52018048622454	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -415,7 +415,7 @@ gaz_campo_verano	Campo Verano		Cimitero Monumentale del Verano		Piazzale del Ver
       }
     }
   ]
-}"	
+}"		
 gaz_campo_morto	Tenuta di Campo Morto				area di Campoverde, Aprilia	41.53884861411952	12.730244894639162	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -431,7 +431,7 @@ gaz_campo_morto	Tenuta di Campo Morto				area di Campoverde, Aprilia	41.53884861
       }
     }
   ]
-}"	
+}"		
 gaz_campoleone	Campoleone			Aprilia (Roma)		41.64254366282973	12.648273782220512	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -447,7 +447,7 @@ gaz_campoleone	Campoleone			Aprilia (Roma)		41.64254366282973	12.648273782220512
       }
     }
   ]
-}"	
+}"		
 gaz_carsoli	Carsoli					42.14567518996888	13.094053163953856	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -463,7 +463,7 @@ gaz_carsoli	Carsoli					42.14567518996888	13.094053163953856	"{
       }
     }
   ]
-}"	
+}"		
 gaz_casale_abbruciato	Casale Abbruciato		Casal Bruciato; Casale Abbrusciato; Casale Bruciato	Casale dell'Agro romano a sud di Roma (Nibby, Dintorni di Roma, p. 569)		41.7335	12.583	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -479,7 +479,7 @@ gaz_casale_abbruciato	Casale Abbruciato		Casal Bruciato; Casale Abbrusciato; Cas
       }
     }
   ]
-}"	Posizione ADOTTATA: TCI, Italia centrale I, carta «Colli Laziali, Monti Lepini ed Ernici» 1:250.000, inserita tra le pp. 480 e 481 (Manzotti 2010, Tav. VI, p. 300): casale fra le ferrovie Roma–Velletri e Roma–Napoli, all'altezza di Santa Fumia, lungo il fosso di Casale Abbrusciato. Coordinate stimate (precisione ~1 km): punto mediano fra le due ferrovie alla latitudine di Borgo Santa Fumia (OpenStreetMap). Posizione ALTERNATIVA: IGM, F. 150 III SO, 1:25.000, rilievo 1872, aggiornamenti 1931 e 1940 (Manzotti 2010, Tav. VII, p. 301): «Casale Abbruciato» a ovest della Roma–Napoli, stimato a 41.7168 N 12.5683 E (reticolo UTM 33 della tavola, E 297,7 N 4621,3 km; precisione ~250 m; il reticolo della tavola è in datum ED50, e lo scarto verso WGS84, ~100–200 m, rientra in questa precisione). Manzotti 2010, pp. 268–269. Nella nota Manzotti rinvia alle tavole come «V» e «VI»: qui si citano secondo le didascalie.
+}"	Posizioni attribuite: L-0001 (TCI, Italia centrale I, adottata) e L-0002 (IGM, F. 150 III SO, alternativa), lette da Manzotti 2010, pp. 268–269, Tavv. VI–VII (D-069).	
 gaz_castelli_romani	Castelli Romani					41.76583589207368	12.708345346043885	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -495,7 +495,7 @@ gaz_castelli_romani	Castelli Romani					41.76583589207368	12.708345346043885	"{
       }
     }
   ]
-}"	
+}"		
 gaz_castel_di_leva	Castel di Leva					41.7788626363677	12.504796743330868	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -511,8 +511,8 @@ gaz_castel_di_leva	Castel di Leva					41.7788626363677	12.504796743330868	"{
       }
     }
   ]
-}"	
-gaz_castel_gandolfo	Castel Gandolfo	gaz_castello				41.75005641875434	12.64847290122697	"{
+}"		
+gaz_castel_gandolfo	Castel Gandolfo					41.75005641875434	12.64847290122697	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
     {
@@ -528,7 +528,7 @@ gaz_castel_gandolfo	Castel Gandolfo	gaz_castello				41.75005641875434	12.6484729
       }
     }
   ]
-}"	
+}"		
 gaz_castel_porziano	Castel Porziano					41.74517216671914	12.400109186081606	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -544,7 +544,7 @@ gaz_castel_porziano	Castel Porziano					41.74517216671914	12.400109186081606	"{
       }
     }
   ]
-}"	
+}"		
 gaz_castel_savello	Castel Savello					41.72761786263662	12.639910072691912	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -561,23 +561,7 @@ gaz_castel_savello	Castel Savello					41.72761786263662	12.639910072691912	"{
       }
     }
   ]
-}"	
-gaz_castello	Castello	gaz_castel_gandolfo				41.75143747946607	12.648544024883735	"{
-  ""type"": ""FeatureCollection"",
-  ""features"": [
-    {
-      ""type"": ""Feature"",
-      ""properties"": {},
-      ""geometry"": {
-        ""type"": ""Point"",
-        ""coordinates"": [
-          12.648544024883735,
-          41.75143747946607
-        ]
-      }
-    }
-  ]
-}"	
+}"		
 gaz_cecchina	Cecchina				Cecchina	41.69302437483999	12.649648693210247	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -593,7 +577,7 @@ gaz_cecchina	Cecchina				Cecchina	41.69302437483999	12.649648693210247	"{
       }
     }
   ]
-}"	
+}"		
 gaz_celio	Celio				Rione XIX	41.88727982359032	12.497441089867236	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -609,7 +593,7 @@ gaz_celio	Celio				Rione XIX	41.88727982359032	12.497441089867236	"{
       }
     }
   ]
-}"	
+}"		
 gaz_centrale_del_latte	Centrale del Latte		Società Italiana di Alimentazione	via Giolitti		41.8959248058548	12.507267048053844	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -625,7 +609,7 @@ gaz_centrale_del_latte	Centrale del Latte		Società Italiana di Alimentazione	vi
       }
     }
   ]
-}"	
+}"		
 gaz_ciampino	Ciampino				Ciampino	41.80425628012242	12.599503897985612	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -641,7 +625,7 @@ gaz_ciampino	Ciampino				Ciampino	41.80425628012242	12.599503897985612	"{
       }
     }
   ]
-}"	
+}"		
 gaz_civitavecchia	Civitavecchia					42.09490840988426	11.796544699426349	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -657,8 +641,8 @@ gaz_civitavecchia	Civitavecchia					42.09490840988426	11.796544699426349	"{
       }
     }
   ]
-}"	
-gaz_collegio_romano	Collegio Romano	gaz_santo_stefano_del_cacco_celio_santo_stefano			via Santo Stefano del Cacco	41.89737347768524	12.47948307900791	"{
+}"		
+gaz_collegio_romano	Collegio Romano				via Santo Stefano del Cacco	41.89737347768524	12.47948307900791	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
     {
@@ -673,7 +657,7 @@ gaz_collegio_romano	Collegio Romano	gaz_santo_stefano_del_cacco_celio_santo_stef
       }
     }
   ]
-}"	
+}"		
 gaz_colli_albani	Colli Albani					41.7320873	12.6960074	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -689,7 +673,7 @@ gaz_colli_albani	Colli Albani					41.7320873	12.6960074	"{
       }
     }
   ]
-}"	
+}"		
 gaz_colosseo	Colosseo		Colisèo, Culiseo		Piazza del Colosseo, 1, 00184	41.89035225098585	12.49219290392497	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -705,7 +689,7 @@ gaz_colosseo	Colosseo		Colisèo, Culiseo		Piazza del Colosseo, 1, 00184	41.89035
       }
     }
   ]
-}"	
+}"		
 gaz_corso_umberto	Corso Umberto			Corso Umberto I	via del Corso	41.90323194218181	12.479507636411158	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -721,7 +705,7 @@ gaz_corso_umberto	Corso Umberto			Corso Umberto I	via del Corso	41.9032319421818
       }
     }
   ]
-}"	
+}"		
 gaz_dazeglio	D'Azeglio				Via Cavour, 18, 00185	41.90013088374668	12.49926878303822	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -737,7 +721,7 @@ gaz_dazeglio	D'Azeglio				Via Cavour, 18, 00185	41.90013088374668	12.49926878303
       }
     }
   ]
-}"	
+}"		
 gaz_direttissima_roma_napoli	Direttissima Roma-Napoli					41.64771889912876	12.64899568499919	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -753,7 +737,7 @@ gaz_direttissima_roma_napoli	Direttissima Roma-Napoli					41.64771889912876	12.6
       }
     }
   ]
-}"	
+}"		
 gaz_divino_amore	Divino Amore					41.777158165633374	12.546337915729302	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -769,7 +753,7 @@ gaz_divino_amore	Divino Amore					41.777158165633374	12.546337915729302	"{
       }
     }
   ]
-}"	
+}"		
 gaz_dosso_faiti	Dosso Faiti				Collina nel Carso	45.884990244121546	13.649815236363924	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -785,7 +769,7 @@ gaz_dosso_faiti	Dosso Faiti				Collina nel Carso	45.884990244121546	13.649815236
       }
     }
   ]
-}"	
+}"		
 gaz_due_santi	Due Santi					41.76118209967858	12.616571382457442	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -801,7 +785,7 @@ gaz_due_santi	Due Santi					41.76118209967858	12.616571382457442	"{
       }
     }
   ]
-}"	
+}"		
 gaz_edicola_due_santi	Edicola ai Due Santi		tabernacolo			41.761482099679	12.616871382457	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -817,7 +801,7 @@ gaz_edicola_due_santi	Edicola ai Due Santi		tabernacolo			41.761482099679	12.616
       }
     }
   ]
-}"	Posizione derivata da gaz_due_santi con uno scarto convenzionale di circa 40 m (+0,0003° lat/long), solo per distinguere i generatori della tassellazione: nessuna coordinata TCI disponibile. Esistenza del tabernacolo: piantina dei Castelli, TCI, Italia centrale IV (Manzotti 2010, p. 246).
+}"	Posizione derivata da gaz_due_santi con uno scarto convenzionale di circa 40 m (+0,0003° lat/long), solo per distinguere i generatori della tassellazione: nessuna coordinata TCI disponibile. Esistenza del tabernacolo: piantina dei Castelli, TCI, Italia centrale IV (Manzotti 2010, p. 246).	
 gaz_esquilino	Esquilino				Rione XV	41.893298797354646	12.505248214532829	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -833,7 +817,7 @@ gaz_esquilino	Esquilino				Rione XV	41.893298797354646	12.505248214532829	"{
       }
     }
   ]
-}"	
+}"		
 gaz_falcognana	Falcognana					41.76433697008515	12.554930951232286	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -849,7 +833,7 @@ gaz_falcognana	Falcognana					41.76433697008515	12.554930951232286	"{
       }
     }
   ]
-}"	
+}"		
 gaz_ferrovia_roma_velletri	Ferrovia Roma-Velletri					41.75795460249268	12.601126265148835	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -865,7 +849,7 @@ gaz_ferrovia_roma_velletri	Ferrovia Roma-Velletri					41.75795460249268	12.60112
       }
     }
   ]
-}"	
+}"		
 gaz_filettino	Filettino					41.89068987779071	13.324876181760342	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -881,7 +865,7 @@ gaz_filettino	Filettino					41.89068987779071	13.324876181760342	"{
       }
     }
   ]
-}"	
+}"		
 gaz_fiumicino	Fiumicino					41.77328436591152	12.233541086841594	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -897,7 +881,7 @@ gaz_fiumicino	Fiumicino					41.77328436591152	12.233541086841594	"{
       }
     }
   ]
-}"	
+}"		
 gaz_fontana_di_papa	Fontana di Papa					41.68436279264858	12.651120729247085	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -913,7 +897,7 @@ gaz_fontana_di_papa	Fontana di Papa					41.68436279264858	12.651120729247085	"{
       }
     }
   ]
-}"	
+}"		
 gaz_fontanella_della_scrofa	Fontanella della Scrofa			via della Scrofa	Via dei Portoghesi, 00186	41.90164982576232	12.474936661874011	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -929,7 +913,7 @@ gaz_fontanella_della_scrofa	Fontanella della Scrofa			via della Scrofa	Via dei P
       }
     }
   ]
-}"	
+}"		
 gaz_fontanella_di_borghese	Fontanella di Borghese				Via del Leoncino &, Via della Fontanella di Borghese, 00186	41.90416313558839	12.478029650740126	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -945,7 +929,7 @@ gaz_fontanella_di_borghese	Fontanella di Borghese				Via del Leoncino &, Via del
       }
     }
   ]
-}"	
+}"		
 gaz_foro_italico	Foro Italico		Foro Mussolini		Viale del Foro Italico, 00135	41.93253953174582	12.457198145871402	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -961,7 +945,7 @@ gaz_foro_italico	Foro Italico		Foro Mussolini		Viale del Foro Italico, 00135	41.
       }
     }
   ]
-}"	
+}"		
 gaz_forte_de_marmi	Forte de' Marmi				Località	43.959501773243005	10.168916830510229	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -977,7 +961,7 @@ gaz_forte_de_marmi	Forte de' Marmi				Località	43.959501773243005	10.1689168305
       }
     }
   ]
-}"	
+}"		
 gaz_frascati	Frascati					41.80868282837834	12.676151782601927	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -994,7 +978,7 @@ gaz_frascati	Frascati					41.80868282837834	12.676151782601927	"{
       }
     }
   ]
-}"	
+}"		
 gaz_frattocchie	Frattocchie				Frazione	41.766863233033725	12.616317604540413	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1010,7 +994,7 @@ gaz_frattocchie	Frattocchie				Frazione	41.766863233033725	12.616317604540413	"{
       }
     }
   ]
-}"	
+}"		
 gaz_galleria_colonna	Galleria Colonna				Via della Pilotta, 17, 00187	41.89761875811568	12.4847453656823	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1026,7 +1010,7 @@ gaz_galleria_colonna	Galleria Colonna				Via della Pilotta, 17, 00187	41.8976187
       }
     }
   ]
-}"	
+}"		
 gaz_genova	Genova				Città	44.40813562461099	8.93119220339372	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1042,7 +1026,7 @@ gaz_genova	Genova				Città	44.40813562461099	8.93119220339372	"{
       }
     }
   ]
-}"	
+}"		
 gaz_gianicolo	Gianicolo		Gianicolense		Piazza di Sant'Onofrio, 00165	41.89772036230625	12.461430554962153	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1058,7 +1042,7 @@ gaz_gianicolo	Gianicolo		Gianicolense		Piazza di Sant'Onofrio, 00165	41.89772036
       }
     }
   ]
-}"	
+}"		
 gaz_golfo_di_napoli	Golfo di Napoli					40.70572169866826	14.148183487524973	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1074,7 +1058,7 @@ gaz_golfo_di_napoli	Golfo di Napoli					40.70572169866826	14.148183487524973	"{
       }
     }
   ]
-}"	
+}"		
 gaz_grottaferrata	Grottaferrata					41.79100156171508	12.670419992725682	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1090,7 +1074,7 @@ gaz_grottaferrata	Grottaferrata					41.79100156171508	12.670419992725682	"{
       }
     }
   ]
-}"	
+}"		
 gaz_india	India					21.55651170244903	78.74607895173585	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1106,7 +1090,7 @@ gaz_india	India					21.55651170244903	78.74607895173585	"{
       }
     }
   ]
-}"	
+}"		
 gaz_istituto_dellenciclopedia_treccani	Istituto dell'Enciclopedia Treccani		Istituto Giovanni Treccani	Palazzo Mattei, via Michelangelo Caetani (1925-1927), poi Palazzo Mattei, via di Paganica, 3-4	Piazza della Enciclopedia Italiana, 4, 00186	41.89437602767189	12.477499531045336	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1122,7 +1106,7 @@ gaz_istituto_dellenciclopedia_treccani	Istituto dell'Enciclopedia Treccani		Isti
       }
     }
   ]
-}"	
+}"		
 gaz_ladispoli	Ladispoli					41.95028305555387	12.078189603598291	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1138,7 +1122,7 @@ gaz_ladispoli	Ladispoli					41.95028305555387	12.078189603598291	"{
       }
     }
   ]
-}"	
+}"		
 gaz_largo_brancaccio	Largo Brancaccio				Largo Brancaccio	41.89499585680336	12.49962004376294	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1154,7 +1138,7 @@ gaz_largo_brancaccio	Largo Brancaccio				Largo Brancaccio	41.89499585680336	12.4
       }
     }
   ]
-}"	
+}"		
 gaz_lazio	Lazio					42.0974591857028	12.5184126891668	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1170,8 +1154,8 @@ gaz_lazio	Lazio					42.0974591857028	12.5184126891668	"{
       }
     }
   ]
-}"	
-gaz_lungara	Lungara	gaz_regina_coeli			via della Lungara	41.89549536697815	12.465430919268728	"{
+}"		
+gaz_lungara	Lungara				via della Lungara	41.89549536697815	12.465430919268728	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
     {
@@ -1186,7 +1170,7 @@ gaz_lungara	Lungara	gaz_regina_coeli			via della Lungara	41.89549536697815	12.46
       }
     }
   ]
-}"	
+}"		
 gaz_lungotevere_prati	Lungotevere Prati		Lungotevere di Prati			41.90488838494765	12.472885100933542	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1202,7 +1186,7 @@ gaz_lungotevere_prati	Lungotevere Prati		Lungotevere di Prati			41.9048883849476
       }
     }
   ]
-}"	
+}"		
 gaz_maccheronaro	Maccheronaro				via del Gesù	41.89683405457504	12.478706693556006	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1218,7 +1202,7 @@ gaz_maccheronaro	Maccheronaro				via del Gesù	41.89683405457504	12.478706693556
       }
     }
   ]
-}"	
+}"		
 gaz_marino	Marino					41.77540942594233	12.66366867693179	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1234,7 +1218,7 @@ gaz_marino	Marino					41.77540942594233	12.66366867693179	"{
       }
     }
   ]
-}"	
+}"		
 gaz_marsica	Marsica					41.9706811718908	13.6367770065667	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1250,7 +1234,7 @@ gaz_marsica	Marsica					41.9706811718908	13.6367770065667	"{
       }
     }
   ]
-}"	
+}"		
 gaz_milano	Milano				Città	45.46417984291975	9.188743384040578	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1266,7 +1250,7 @@ gaz_milano	Milano				Città	45.46417984291975	9.188743384040578	"{
       }
     }
   ]
-}"	
+}"		
 gaz_molise	Molise					41.667749	14.573358	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1282,7 +1266,7 @@ gaz_molise	Molise					41.667749	14.573358	"{
       }
     }
   ]
-}"	
+}"		
 gaz_molo_beverello	Molo Beverello				Molo del Porto di Napoli	40.83845747697102	14.25512089831604	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1298,7 +1282,7 @@ gaz_molo_beverello	Molo Beverello				Molo del Porto di Napoli	40.83845747697102	
       }
     }
   ]
-}"	
+}"		
 gaz_monte_algido	Monte Algido				Colli Albani	41.75024597370798	12.774504127034607	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1314,7 +1298,7 @@ gaz_monte_algido	Monte Algido				Colli Albani	41.75024597370798	12.7745041270346
       }
     }
   ]
-}"	
+}"		
 gaz_monte_cengio	Monte Cengio				Monte dell'Altipiano Veneto	45.83464690564686	11.395	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1330,7 +1314,7 @@ gaz_monte_cengio	Monte Cengio				Monte dell'Altipiano Veneto	45.83464690564686	1
       }
     }
   ]
-}"	
+}"		
 gaz_monte_circeo	Monte Circeo					41.25277506832153	13.056903290988464	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1346,7 +1330,7 @@ gaz_monte_circeo	Monte Circeo					41.25277506832153	13.056903290988464	"{
       }
     }
   ]
-}"	
+}"		
 gaz_monte_manno	Monte Manno					41.70507314535531	12.933066487462336	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1362,7 +1346,7 @@ gaz_monte_manno	Monte Manno					41.70507314535531	12.933066487462336	"{
       }
     }
   ]
-}"	
+}"		
 gaz_monte_matese	Monte Matese				Monte del Molise	41.451044369853264	14.366554255055233	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1378,7 +1362,7 @@ gaz_monte_matese	Monte Matese				Monte del Molise	41.451044369853264	14.36655425
       }
     }
   ]
-}"	
+}"		
 gaz_monte_soratte	Monte Soratte					42.27001081429104	12.490957672092293	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1394,7 +1378,7 @@ gaz_monte_soratte	Monte Soratte					42.27001081429104	12.490957672092293	"{
       }
     }
   ]
-}"	
+}"		
 gaz_monte_velino	Monte Velino				Monte tra Lazio e Abruzzo	42.165421795541896	13.388224454942325	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1410,7 +1394,7 @@ gaz_monte_velino	Monte Velino				Monte tra Lazio e Abruzzo	42.165421795541896	13
       }
     }
   ]
-}"	
+}"		
 gaz_monteleone	Monteleone Sabino					42.232609158947405	12.859136459324375	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1426,7 +1410,7 @@ gaz_monteleone	Monteleone Sabino					42.232609158947405	12.859136459324375	"{
       }
     }
   ]
-}"	
+}"		
 gaz_monti	Monti				Quartiere di Roma	41.89481897366331	12.49251620797544	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1442,7 +1426,7 @@ gaz_monti	Monti				Quartiere di Roma	41.89481897366331	12.49251620797544	"{
       }
     }
   ]
-}"	
+}"		
 gaz_monti_carseolani	Monti Carseolani				Catena montuosa tra Lazio e Abruzzo	42.0749429984885	13.032114125147414	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1458,7 +1442,7 @@ gaz_monti_carseolani	Monti Carseolani				Catena montuosa tra Lazio e Abruzzo	42.
       }
     }
   ]
-}"	
+}"		
 gaz_monti_ernici	Monti Ernici				Catena montuosa tra Lazio e Abruzzo	41.81035580365862	13.48593067326618	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1474,7 +1458,7 @@ gaz_monti_ernici	Monti Ernici				Catena montuosa tra Lazio e Abruzzo	41.81035580
       }
     }
   ]
-}"	
+}"		
 gaz_monti_simbruini	Monti Simbruini				Catena montuosa tra Lazio e Abruzzo	41.79718465634362	13.644952964344878	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1490,7 +1474,7 @@ gaz_monti_simbruini	Monti Simbruini				Catena montuosa tra Lazio e Abruzzo	41.79
       }
     }
   ]
-}"	
+}"		
 gaz_ostia	Ostia				Località	41.73245855250897	12.278829513185713	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1506,7 +1490,7 @@ gaz_ostia	Ostia				Località	41.73245855250897	12.278829513185713	"{
       }
     }
   ]
-}"	
+}"		
 gaz_ovindoli	Ovindoli				Comune	42.13780481791833	13.51516522684632	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1523,7 +1507,7 @@ gaz_ovindoli	Ovindoli				Comune	42.13780481791833	13.51516522684632	"{
       }
     }
   ]
-}"	
+}"		
 gaz_padova	Padova					45.40750149300311	11.873753041768424	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1539,7 +1523,7 @@ gaz_padova	Padova					45.40750149300311	11.873753041768424	"{
       }
     }
   ]
-}"	
+}"		
 gaz_palazzo	Palazzo		Palazzo Morgana		00134 Stazione di Pavona-palazzo Morgana	41.71799629809183	12.597231861624314	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1555,7 +1539,7 @@ gaz_palazzo	Palazzo		Palazzo Morgana		00134 Stazione di Pavona-palazzo Morgana	4
       }
     }
   ]
-}"	
+}"		
 gaz_palazzo_chigi	Palazzo Chigi				P.za Colonna, 391, 00186	41.90123174971493	12.47981741059732	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1571,7 +1555,7 @@ gaz_palazzo_chigi	Palazzo Chigi				P.za Colonna, 391, 00186	41.90123174971493	12
       }
     }
   ]
-}"	
+}"		
 gaz_palazzo_della_immacolatella	Palazzo della Immacolatella					40.84161917254697	14.258960456507776	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1587,7 +1571,7 @@ gaz_palazzo_della_immacolatella	Palazzo della Immacolatella					40.8416191725469
       }
     }
   ]
-}"	
+}"		
 gaz_palazzo_pio	Palazzo Pio				Piazza del Biscione	41.89533742794816	12.473007850337243	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1603,7 +1587,7 @@ gaz_palazzo_pio	Palazzo Pio				Piazza del Biscione	41.89533742794816	12.47300785
       }
     }
   ]
-}"	
+}"		
 gaz_palazzo_ruspoli	Palazzo Ruspoli				Via della Fontanella di Borghese, 56, 00186 Roma RM	41.904291483212205	12.47872570766404	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1619,7 +1603,7 @@ gaz_palazzo_ruspoli	Palazzo Ruspoli				Via della Fontanella di Borghese, 56, 001
       }
     }
   ]
-}"	
+}"		
 gaz_palazzo_odescalchi_simonetti	Palazzo Odescalchi Simonetti				Via Vittoria Colonna, 13, 00193	41.90520237070184	12.472392994101876	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1635,7 +1619,7 @@ gaz_palazzo_odescalchi_simonetti	Palazzo Odescalchi Simonetti				Via Vittoria Co
       }
     }
   ]
-}"	Candidato della lettura di Terzoli (cit. in Pinotti 2025, p. 78): palazzo Odescalchi Simonetti, già pensione White, dove Gadda aveva abitato. Civico 11 secondo Pinotti; il dato precedente indicava 13. Non è il referente di palazzo_simonetti: entità predisposta per l'identificazione attribuita.
+}"	Candidato della lettura di Terzoli (cit. in Pinotti 2025, p. 78): palazzo Odescalchi Simonetti, già pensione White, dove Gadda aveva abitato. Civico 11 secondo Pinotti; il dato precedente indicava 13. Non è il referente di palazzo_simonetti: entità predisposta per l'identificazione attribuita.	
 gaz_palazzo_venezia	Palazzo Venezia		Palazzo del Mappamondo		Piazza di Venezia, 3, 00186 Roma RM	41.89608880158758	12.482488256557962	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1651,7 +1635,7 @@ gaz_palazzo_venezia	Palazzo Venezia		Palazzo del Mappamondo		Piazza di Venezia, 
       }
     }
   ]
-}"	
+}"		
 gaz_palestrina	Palestrina					41.83422291934301	12.888132917750513	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1667,7 +1651,7 @@ gaz_palestrina	Palestrina					41.83422291934301	12.888132917750513	"{
       }
     }
   ]
-}"	
+}"		
 gaz_pantheon	Pantheon		Terme di Agrippa		Piazza della Rotonda, 00186	41.89867683406545	12.476863407009992	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1683,7 +1667,7 @@ gaz_pantheon	Pantheon		Terme di Agrippa		Piazza della Rotonda, 00186	41.89867683
       }
     }
   ]
-}"	
+}"		
 gaz_pavona	Pavona				Pavona	41.72553775484286	12.61219280831608	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1699,7 +1683,7 @@ gaz_pavona	Pavona				Pavona	41.72553775484286	12.61219280831608	"{
       }
     }
   ]
-}"	
+}"		
 gaz_piazza_colonna	Piazza Colonna				Piazza Colonna	41.90088848088894	12.47993539405843	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1715,7 +1699,7 @@ gaz_piazza_colonna	Piazza Colonna				Piazza Colonna	41.90088848088894	12.4799353
       }
     }
   ]
-}"	
+}"		
 gaz_piazza_di_pietra	Piazza di Pietra				Piazza di Pietra	41.89999819105845	12.479385384272035	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1731,7 +1715,7 @@ gaz_piazza_di_pietra	Piazza di Pietra				Piazza di Pietra	41.89999819105845	12.4
       }
     }
   ]
-}"	
+}"		
 gaz_piazza_di_spagna	Piazza di Spagna				Piazza di Spagna	41.90571279324034	12.482325564335817	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1747,7 +1731,7 @@ gaz_piazza_di_spagna	Piazza di Spagna				Piazza di Spagna	41.90571279324034	12.4
       }
     }
   ]
-}"	
+}"		
 gaz_piazza_esedra	Piazza Esedra		Piazza della Repubblica		Piazza Esedra	41.902472842408514	12.496321983673056	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1763,7 +1747,7 @@ gaz_piazza_esedra	Piazza Esedra		Piazza della Repubblica		Piazza Esedra	41.90247
       }
     }
   ]
-}"	
+}"		
 gaz_piazza_garibaldi	Piazza Garibaldi				Piazzale Giuseppe Garibaldi	41.89198953301559	12.460553558380496	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1779,7 +1763,7 @@ gaz_piazza_garibaldi	Piazza Garibaldi				Piazzale Giuseppe Garibaldi	41.89198953
       }
     }
   ]
-}"	
+}"		
 gaz_piazza_montanara	Piazza Montanara			Piazza Montanara	demolita nel 1934	41.89249955749	12.480250892538322	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1795,7 +1779,7 @@ gaz_piazza_montanara	Piazza Montanara			Piazza Montanara	demolita nel 1934	41.89
       }
     }
   ]
-}"	
+}"		
 gaz_piazza_pollarola	Piazza Pollarola				Piazza Pollarola	41.895990126304326	12.472928812263008	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1811,7 +1795,7 @@ gaz_piazza_pollarola	Piazza Pollarola				Piazza Pollarola	41.895990126304326	12.
       }
     }
   ]
-}"	
+}"		
 gaz_piazza_rusticucci	Piazza Rusticucci			Piazza Rusticucci (demolita nel 1940)	Piazza Pio XII	41.90257061274494	12.45975825285214	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1827,7 +1811,7 @@ gaz_piazza_rusticucci	Piazza Rusticucci			Piazza Rusticucci (demolita nel 1940)	
       }
     }
   ]
-}"	
+}"		
 gaz_piazza_san_giovanni	Piazza San Giovanni				Piazza San Giovanni in Laterano	41.88742084063378	12.506173147859243	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1843,7 +1827,7 @@ gaz_piazza_san_giovanni	Piazza San Giovanni				Piazza San Giovanni in Laterano	4
       }
     }
   ]
-}"	
+}"		
 gaz_piazza_san_lorenzo_in_lucina	Piazza San Lorenzo in Lucina				Piazza San Lorenzo in Lucina	41.90361766730038	12.47842775822113	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1859,7 +1843,7 @@ gaz_piazza_san_lorenzo_in_lucina	Piazza San Lorenzo in Lucina				Piazza San Lore
       }
     }
   ]
-}"	
+}"		
 gaz_piazza_san_pietro	Piazza San Pietro				Piazza San Pietro	41.9022608794283	12.457233173334089	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1875,7 +1859,7 @@ gaz_piazza_san_pietro	Piazza San Pietro				Piazza San Pietro	41.9022608794283	12
       }
     }
   ]
-}"	
+}"		
 gaz_piazza_verdi	Piazza Verdi				Piazza Giuseppe Verdi	41.919679006917015	12.495028075136045	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1891,7 +1875,7 @@ gaz_piazza_verdi	Piazza Verdi				Piazza Giuseppe Verdi	41.919679006917015	12.495
       }
     }
   ]
-}"	
+}"		
 gaz_piazza_vittorio_emanuele	Piazza Vittorio Emanuele				Piazza Vittorio Emanuele II	41.895124393144	12.5048427733034	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1907,7 +1891,7 @@ gaz_piazza_vittorio_emanuele	Piazza Vittorio Emanuele				Piazza Vittorio Emanuel
       }
     }
   ]
-}"	
+}"		
 gaz_piceno	Piceno					42.85363261520004	13.567540016779384	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1923,7 +1907,7 @@ gaz_piceno	Piceno					42.85363261520004	13.567540016779384	"{
       }
     }
   ]
-}"	
+}"		
 gaz_pincio	Pincio				Colle del Pincio	41.9115148827888	12.479706623913264	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1939,7 +1923,7 @@ gaz_pincio	Pincio				Colle del Pincio	41.9115148827888	12.479706623913264	"{
       }
     }
   ]
-}"	
+}"		
 gaz_policlinico	Policlinico		Policlinico Umberto I		Via Giovanni Maria Lancisi, 2, 00161	41.90863414049968	12.50917293969651	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1955,7 +1939,7 @@ gaz_policlinico	Policlinico		Policlinico Umberto I		Via Giovanni Maria Lancisi, 
       }
     }
   ]
-}"	
+}"		
 gaz_ponte_divino_amore	Ponte al Divino Amore					41.76071420037528	12.599632278065911	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1971,7 +1955,7 @@ gaz_ponte_divino_amore	Ponte al Divino Amore					41.76071420037528	12.5996322780
       }
     }
   ]
-}"	
+}"		
 gaz_porta_angelica	Porta Angelica			Porta Angelica	demolita nel 1888	41.90616185465161	12.456647366153756	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1987,7 +1971,7 @@ gaz_porta_angelica	Porta Angelica			Porta Angelica	demolita nel 1888	41.90616185
       }
     }
   ]
-}"	
+}"		
 gaz_porta_latina	Porta Latina				Mura aureliane, Via di Porta Latina, 14, 00179 Roma RM	41.8782334566828	12.499128817987987	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2003,7 +1987,7 @@ gaz_porta_latina	Porta Latina				Mura aureliane, Via di Porta Latina, 14, 00179 
       }
     }
   ]
-}"	
+}"		
 gaz_porta_maggiore	Porta Maggiore				Piazza di Porta Maggiore, 00182 Roma RM	41.89143521467929	12.51518714724432	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2019,7 +2003,7 @@ gaz_porta_maggiore	Porta Maggiore				Piazza di Porta Maggiore, 00182 Roma RM	41.
       }
     }
   ]
-}"	
+}"		
 gaz_porta_pinciana	Porta Pinciana				Via Vittorio Veneto, 196, 00187	41.90968492139161	12.488262466067692	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2035,7 +2019,7 @@ gaz_porta_pinciana	Porta Pinciana				Via Vittorio Veneto, 196, 00187	41.90968492
       }
     }
   ]
-}"	
+}"		
 gaz_porta_san_paolo	Porta San Paolo					41.87683414708175	12.481441271164153	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2051,7 +2035,7 @@ gaz_porta_san_paolo	Porta San Paolo					41.87683414708175	12.481441271164153	"{
       }
     }
   ]
-}"	
+}"		
 gaz_pozzo_delle_cornacchie	Pozzo delle Cornacchie				via del Pozzo delle Cornacchie	41.900132740766	12.476009448493592	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2067,7 +2051,7 @@ gaz_pozzo_delle_cornacchie	Pozzo delle Cornacchie				via del Pozzo delle Cornacc
       }
     }
   ]
-}"	
+}"		
 gaz_prati	Prati				Rione XXII	41.90875142605531	12.465194747823828	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2083,7 +2067,7 @@ gaz_prati	Prati				Rione XXII	41.90875142605531	12.465194747823828	"{
       }
     }
   ]
-}"	
+}"		
 gaz_prati_di_castello	Prati di Castello					41.90963380954534	12.4651701137127	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2099,7 +2083,7 @@ gaz_prati_di_castello	Prati di Castello					41.90963380954534	12.4651701137127	"
       }
     }
   ]
-}"	
+}"		
 gaz_pratica_di_mare	Pratica di Mare				Pratica di Mare	41.66401971901388	12.479969808767637	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2115,7 +2099,7 @@ gaz_pratica_di_mare	Pratica di Mare				Pratica di Mare	41.66401971901388	12.4799
       }
     }
   ]
-}"	
+}"		
 gaz_predappio	Predappio					44.10833194442195	11.981884102223214	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2131,7 +2115,7 @@ gaz_predappio	Predappio					44.10833194442195	11.981884102223214	"{
       }
     }
   ]
-}"	
+}"		
 gaz_publicii_clivio_de	Publicii clivio de'		(clivio de')		Clivio dei Publicii	41.88571995557534	12.48263328901126	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2147,7 +2131,7 @@ gaz_publicii_clivio_de	Publicii clivio de'		(clivio de')		Clivio dei Publicii	41
       }
     }
   ]
-}"	
+}"		
 gaz_quarto_di_santa_fumia	Quarto di Santa Fumia					41.73247489501876	12.58446168893847	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2163,7 +2147,7 @@ gaz_quarto_di_santa_fumia	Quarto di Santa Fumia					41.73247489501876	12.5844616
       }
     }
   ]
-}"	
+}"		
 gaz_quattro_cantoni	Quattro Cantoni				via dei Quattro Cantoni, 00184	41.8964282361213	12.496553006621577	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2179,7 +2163,7 @@ gaz_quattro_cantoni	Quattro Cantoni				via dei Quattro Cantoni, 00184	41.8964282
       }
     }
   ]
-}"	
+}"		
 gaz_reggio_calabria	Reggio Calabria					38.12747821699881	15.652447605612965	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2195,8 +2179,8 @@ gaz_reggio_calabria	Reggio Calabria					38.12747821699881	15.652447605612965	"{
       }
     }
   ]
-}"	
-gaz_regina_coeli	Regina Coeli	gaz_lungara			Via della Lungara, 29, 00165	41.89541963959722	12.463486619911356	"{
+}"		
+gaz_regina_coeli	Regina Coeli				Via della Lungara, 29, 00165	41.89541963959722	12.463486619911356	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
     {
@@ -2211,7 +2195,7 @@ gaz_regina_coeli	Regina Coeli	gaz_lungara			Via della Lungara, 29, 00165	41.8954
       }
     }
   ]
-}"	
+}"		gaz_lungara
 gaz_ripetta	Ripetta				Passeggiata di Ripetta	41.90910697941768	12.474356718309616	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2227,7 +2211,7 @@ gaz_ripetta	Ripetta				Passeggiata di Ripetta	41.90910697941768	12.4743567183096
       }
     }
   ]
-}"	
+}"		
 gaz_rocca_di_papa	Rocca di Papa					41.76238950891051	12.706774730883602	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2244,7 +2228,7 @@ gaz_rocca_di_papa	Rocca di Papa					41.76238950891051	12.706774730883602	"{
       }
     }
   ]
-}"	
+}"		
 gaz_rocca_orsina	Rocca Orsina					41.76991636096222	12.658476221527655	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2261,7 +2245,7 @@ gaz_rocca_orsina	Rocca Orsina					41.76991636096222	12.658476221527655	"{
       }
     }
   ]
-}"	
+}"		
 gaz_rocca_savella	Rocca Savella				clivo di Rocca Savella	41.88624438963685	12.48057907706965	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2277,7 +2261,7 @@ gaz_rocca_savella	Rocca Savella				clivo di Rocca Savella	41.88624438963685	12.4
       }
     }
   ]
-}"	
+}"		
 gaz_roma	Roma					41.89712290196547	12.483780073676602	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2293,7 +2277,7 @@ gaz_roma	Roma					41.89712290196547	12.483780073676602	"{
       }
     }
   ]
-}"	
+}"		
 gaz_sacro_cuore	Sacro Cuore				Via Marsala, 42, 00185	41.90255587411117	12.502382758820149	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2309,7 +2293,7 @@ gaz_sacro_cuore	Sacro Cuore				Via Marsala, 42, 00185	41.90255587411117	12.50238
       }
     }
   ]
-}"	
+}"		
 gaz_salsomaggiore	Salsomaggiore					44.81905616432461	9.979392469787877	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2325,7 +2309,7 @@ gaz_salsomaggiore	Salsomaggiore					44.81905616432461	9.979392469787877	"{
       }
     }
   ]
-}"	
+}"		
 gaz_san_callisto	San Callisto				Via Appia Antica, 110/126, 00179	41.85910305676804	12.510725763767082	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2341,7 +2325,7 @@ gaz_san_callisto	San Callisto				Via Appia Antica, 110/126, 00179	41.85910305676
       }
     }
   ]
-}"	
+}"		
 gaz_san_camillo	San Camillo		Ospedale Vannini dell'Istituto delle figlie di san Camillo		Circonvallazione Gianicolense, 87, 00149	41.86966525125673	12.456303092017317	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2357,7 +2341,7 @@ gaz_san_camillo	San Camillo		Ospedale Vannini dell'Istituto delle figlie di san 
       }
     }
   ]
-}"	
+}"		
 gaz_san_carlo_alle_quattro_fontane	San Carlo alle quattro fontane				Via del Quirinale, 23, 00187	41.901863522116905	12.490746406108268	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2373,7 +2357,7 @@ gaz_san_carlo_alle_quattro_fontane	San Carlo alle quattro fontane				Via del Qui
       }
     }
   ]
-}"	
+}"		
 gaz_san_clemente	San Clemente				Piazza di S. Clemente, 00184	41.88952632925135	12.497564978356351	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2389,7 +2373,7 @@ gaz_san_clemente	San Clemente				Piazza di S. Clemente, 00184	41.88952632925135	
       }
     }
   ]
-}"	
+}"		
 gaz_san_giovanni	San Giovanni		Commissariato di P.S. San Giovanni		via Casalmonferrato 25 00182, Roma	41.88075040110243	12.51886092484358	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2405,7 +2389,7 @@ gaz_san_giovanni	San Giovanni		Commissariato di P.S. San Giovanni		via Casalmonf
       }
     }
   ]
-}"	
+}"		
 gaz_san_giovanni_in_laterano	San Giovanni in Laterano		Galilei		P.za. San Giovanni In Laterano, 00184	41.88599013299084	12.50562195401995	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2421,7 +2405,7 @@ gaz_san_giovanni_in_laterano	San Giovanni in Laterano		Galilei		P.za. San Giovan
       }
     }
   ]
-}"	
+}"		
 gaz_san_lorenzo_al_verano	San Lorenzo al verano		San Lorenzo fuori le Mura		Piazzale del Verano, 3, 00185	41.90261005150349	12.520581205893716	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2437,7 +2421,7 @@ gaz_san_lorenzo_al_verano	San Lorenzo al verano		San Lorenzo fuori le Mura		Piaz
       }
     }
   ]
-}"	
+}"		
 gaz_san_luigi_de_francesi	San Luigi de' Francesi				Piazza di S. Luigi de' Francesi, 00186	41.899621753079465	12.47471902436365	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2453,7 +2437,7 @@ gaz_san_luigi_de_francesi	San Luigi de' Francesi				Piazza di S. Luigi de' Franc
       }
     }
   ]
-}"	
+}"		
 gaz_san_martino_ai_monti	San Martino ai Monti				Vle del Monte Oppio, 28, 00184	41.894677226531456	12.498384893656386	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2469,7 +2453,7 @@ gaz_san_martino_ai_monti	San Martino ai Monti				Vle del Monte Oppio, 28, 00184	
       }
     }
   ]
-}"	
+}"		
 gaz_san_silvestro_in_capite	San Silvestro in Capite					41.90289491613001	12.4807727698506	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2485,7 +2469,7 @@ gaz_san_silvestro_in_capite	San Silvestro in Capite					41.90289491613001	12.480
       }
     }
   ]
-}"	
+}"		
 gaz_sannio	Sannio					41.260503	14.740775	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2501,7 +2485,7 @@ gaz_sannio	Sannio					41.260503	14.740775	"{
       }
     }
   ]
-}"	
+}"		
 gaz_santa_chiara	Santa Chiara				P.za di S. Chiara, 14, 00186	41.89767270494693	12.4766157816818	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2517,7 +2501,7 @@ gaz_santa_chiara	Santa Chiara				P.za di S. Chiara, 14, 00186	41.89767270494693	
       }
     }
   ]
-}"	
+}"		
 gaz_santa_croce_in_gerusalemme	Santa Croce in Gerusalemme				Piazza di S. Croce in Gerusalemme, 10, 00185	41.88898866930153	12.514682435189837	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2533,7 +2517,7 @@ gaz_santa_croce_in_gerusalemme	Santa Croce in Gerusalemme				Piazza di S. Croce 
       }
     }
   ]
-}"	
+}"		
 gaz_santa_margherita_in_abitacolo	Santa Margherita in Abitacolo		Santa Rita Invitàcolo		Via Montanara, 00186	41.89267907132654	12.480113538487586	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2549,7 +2533,7 @@ gaz_santa_margherita_in_abitacolo	Santa Margherita in Abitacolo		Santa Rita Invi
       }
     }
   ]
-}"	
+}"		
 gaz_santa_maria_della_neve	Santa Maria della Neve		Santa Maria Maggiore		Via del Colosseo, 19, 00184	41.89269599966251	12.490115463118764	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2565,7 +2549,7 @@ gaz_santa_maria_della_neve	Santa Maria della Neve		Santa Maria Maggiore		Via del
       }
     }
   ]
-}"	
+}"		
 gaz_santa_maria_in_aquiro	Santa Maria in Aquiro				Piazza Capranica, 00186	41.90014365391151	12.477999492672676	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2581,7 +2565,7 @@ gaz_santa_maria_in_aquiro	Santa Maria in Aquiro				Piazza Capranica, 00186	41.90
       }
     }
   ]
-}"	
+}"		
 gaz_santa_maria_in_domnica	Santa Maria in Dòmnica				Via della Navicella, 10, 00184	41.88479505138305	12.495713660513266	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2597,7 +2581,7 @@ gaz_santa_maria_in_domnica	Santa Maria in Dòmnica				Via della Navicella, 10, 0
       }
     }
   ]
-}"	
+}"		
 gaz_santa_maria_in_porta_paradisi	Santa Maria in Porta Paradisi				Via di Ripetta, 61, 00186	41.90753807576588	12.475955971957005	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2613,7 +2597,7 @@ gaz_santa_maria_in_porta_paradisi	Santa Maria in Porta Paradisi				Via di Ripett
       }
     }
   ]
-}"	
+}"		
 gaz_santa_maria_maggiore	Santa Maria Maggiore		Santa Maria della Neve		P.za di Santa Maria Maggiore, 00100	41.89783811990252	12.498397680304144	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2629,7 +2613,7 @@ gaz_santa_maria_maggiore	Santa Maria Maggiore		Santa Maria della Neve		P.za di S
       }
     }
   ]
-}"	
+}"		
 gaz_santa_maria_novella	Santa Maria Novella					43.77709097635588	11.248280584031749	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2645,7 +2629,7 @@ gaz_santa_maria_novella	Santa Maria Novella					43.77709097635588	11.24828058403
       }
     }
   ]
-}"	
+}"		
 gaz_santa_maria_sopra_minerva	Santa Maria sopra Minerva					41.89799121298735	12.477810026767758	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2661,7 +2645,7 @@ gaz_santa_maria_sopra_minerva	Santa Maria sopra Minerva					41.89799121298735	12
       }
     }
   ]
-}"	
+}"		
 gaz_santa_palomba	Santa Palomba				Via della Stazione, 00040	41.70649880109798	12.573826656277753	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2677,7 +2661,7 @@ gaz_santa_palomba	Santa Palomba				Via della Stazione, 00040	41.70649880109798	1
       }
     }
   ]
-}"	
+}"		
 gaz_santa_rita_invitacolo	Santa Rita Invitàcolo		Santa Margherita in Abitacolo		Via Montanara, 00186	41.89267907132654	12.480113538487586	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2693,7 +2677,7 @@ gaz_santa_rita_invitacolo	Santa Rita Invitàcolo		Santa Margherita in Abitacolo	
       }
     }
   ]
-}"	
+}"		
 gaz_santagnese_in_agone	Sant'Agnese in Agone				Via di Santa Maria dell'Anima, 30/A, 00186	41.89886028109439	12.472549957571031	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2709,7 +2693,7 @@ gaz_santagnese_in_agone	Sant'Agnese in Agone				Via di Santa Maria dell'Anima, 3
       }
     }
   ]
-}"	
+}"		
 gaz_santagostino	Sant'Agostino				P.za di S. Agostino, 00186	41.9008508106466	12.474278565476274	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2725,7 +2709,7 @@ gaz_santagostino	Sant'Agostino				P.za di S. Agostino, 00186	41.9008508106466	12
       }
     }
   ]
-}"	
+}"		
 gaz_santandrea_della_valle	Sant'Andrea della Valle				Corso Vittorio Emanuele II, 00186	41.89641220677437	12.474333258746212	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2741,7 +2725,7 @@ gaz_santandrea_della_valle	Sant'Andrea della Valle				Corso Vittorio Emanuele II
       }
     }
   ]
-}"	
+}"		
 gaz_santanna	Sant'Anna				Via Sant'Anna, 00120	41.90407297051054	12.457481602903693	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2757,7 +2741,7 @@ gaz_santanna	Sant'Anna				Via Sant'Anna, 00120	41.90407297051054	12.457481602903
       }
     }
   ]
-}"	
+}"		
 gaz_santantonio_da_padova	Sant'Antonio da Padova				Via Merulana, 124, 00185	41.88896555883594	12.50405706965514	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2773,7 +2757,7 @@ gaz_santantonio_da_padova	Sant'Antonio da Padova				Via Merulana, 124, 00185	41.
       }
     }
   ]
-}"	
+}"		
 gaz_santi_quattro_coronati	Santi Quattro Coronati				Via dei SS. Quattro, 20, 00184	41.88828469760136	12.498505681387911	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2789,8 +2773,8 @@ gaz_santi_quattro_coronati	Santi Quattro Coronati				Via dei SS. Quattro, 20, 00
       }
     }
   ]
-}"	
-gaz_santo_stefano_del_cacco_celio_santo_stefano	Santo Stefano del Cacco, Celio-Santo Stefano	gaz_collegio_romano			via Santo Stefano del Cacco	41.89737347768524	12.47948307900791	"{
+}"		
+gaz_santo_stefano_del_cacco_celio_santo_stefano	Santo Stefano del Cacco, Celio-Santo Stefano				via Santo Stefano del Cacco	41.89737347768524	12.47948307900791	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
     {
@@ -2805,7 +2789,7 @@ gaz_santo_stefano_del_cacco_celio_santo_stefano	Santo Stefano del Cacco, Celio-S
       }
     }
   ]
-}"	
+}"		gaz_collegio_romano
 gaz_santo_stefano_rotondo	Santo Stefano Rotondo				Via Santo Stefano Rotondo, 7, 00184	41.885983052252186	12.499315306942016	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2821,7 +2805,7 @@ gaz_santo_stefano_rotondo	Santo Stefano Rotondo				Via Santo Stefano Rotondo, 7,
       }
     }
   ]
-}"	
+}"		
 gaz_sardegna	Sardegna					40.23470155220895	9.054925146792344	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2837,7 +2821,7 @@ gaz_sardegna	Sardegna					40.23470155220895	9.054925146792344	"{
       }
     }
   ]
-}"	
+}"		
 gaz_sassari	Sassari					40.72924779449954	8.55541661770075	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2853,7 +2837,7 @@ gaz_sassari	Sassari					40.72924779449954	8.55541661770075	"{
       }
     }
   ]
-}"	
+}"		
 gaz_solforata	Solforata		Solfarata, Solfatara		Solfarata	41.70161467494166	12.538157750574666	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2869,7 +2853,7 @@ gaz_solforata	Solforata		Solfarata, Solfatara		Solfarata	41.70161467494166	12.53
       }
     }
   ]
-}"	
+}"		
 gaz_soriano_nel_cimino	Soriano nel Cimino					42.43655912777748	12.235774006217756	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2885,7 +2869,7 @@ gaz_soriano_nel_cimino	Soriano nel Cimino					42.43655912777748	12.2357740062177
       }
     }
   ]
-}"	
+}"		
 gaz_suburra	Suburra				Suburra, Roma	41.89676284011875	12.49666104629743	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2901,7 +2885,7 @@ gaz_suburra	Suburra				Suburra, Roma	41.89676284011875	12.49666104629743	"{
       }
     }
   ]
-}"	
+}"		
 gaz_teatro_jovinelli	Teatro Jovinelli		Ambra Jovinelli		Via Guglielmo Pepe, 45, 00185	41.89552360992579	12.508280896240649	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2917,7 +2901,7 @@ gaz_teatro_jovinelli	Teatro Jovinelli		Ambra Jovinelli		Via Guglielmo Pepe, 45, 
       }
     }
   ]
-}"	
+}"		
 gaz_tempio_di_agrippa	Tempio di Agrippa		Pantheon		Piazza della Rotonda, 00186	41.89867683406545	12.476863407009992	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2933,7 +2917,7 @@ gaz_tempio_di_agrippa	Tempio di Agrippa		Pantheon		Piazza della Rotonda, 00186	4
       }
     }
   ]
-}"	
+}"		
 gaz_terme_di_caracalla	Terme di Caracalla				Viale delle Terme di Caracalla, 00153	41.87937370424267	12.492407213493443	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2949,7 +2933,7 @@ gaz_terme_di_caracalla	Terme di Caracalla				Viale delle Terme di Caracalla, 001
       }
     }
   ]
-}"	
+}"		
 gaz_termini	Termini				Via Giovanni Giolitti, 40, 00185	41.90058242591175	12.502530478441573	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2965,7 +2949,7 @@ gaz_termini	Termini				Via Giovanni Giolitti, 40, 00185	41.90058242591175	12.502
       }
     }
   ]
-}"	
+}"		
 gaz_terracina	Terracina				Comune	41.29047601665066	13.249936342430493	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2981,7 +2965,7 @@ gaz_terracina	Terracina				Comune	41.29047601665066	13.249936342430493	"{
       }
     }
   ]
-}"	
+}"		
 gaz_tevere	Tevere				Fiume	41.89465722886191	12.467929197570816	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -2997,7 +2981,7 @@ gaz_tevere	Tevere				Fiume	41.89465722886191	12.467929197570816	"{
       }
     }
   ]
-}"	
+}"		
 gaz_tivoli	Tivoli					41.95975597738329	12.802413747816448	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3013,7 +2997,7 @@ gaz_tivoli	Tivoli					41.95975597738329	12.802413747816448	"{
       }
     }
   ]
-}"	
+}"		
 gaz_tor_ser_paolo	Tor Ser Paolo		Torre Messer Paoli	Tor Ser Paolo	Ciampino (Colli Albani)	41.77489532732517	12.626476138456598	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3029,7 +3013,7 @@ gaz_tor_ser_paolo	Tor Ser Paolo		Torre Messer Paoli	Tor Ser Paolo	Ciampino (Coll
       }
     }
   ]
-}"	
+}"		
 gaz_torraccio	Torraccio				Frazione di Marino	41.760346741901486	12.623648121781372	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3045,7 +3029,7 @@ gaz_torraccio	Torraccio				Frazione di Marino	41.760346741901486	12.623648121781
       }
     }
   ]
-}"	
+}"		
 gaz_traforo	Traforo		Traforo Umberto I			41.90087528377779	12.48796567063664	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3061,7 +3045,7 @@ gaz_traforo	Traforo		Traforo Umberto I			41.90087528377779	12.48796567063664	"{
       }
     }
   ]
-}"	
+}"		
 gaz_trastevere	Trastevere					41.88539020297163	12.47032722280828	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3077,7 +3061,7 @@ gaz_trastevere	Trastevere					41.88539020297163	12.47032722280828	"{
       }
     }
   ]
-}"	
+}"		
 gaz_tranvie_dei_castelli	Tranvie dei Castelli		Tramvie dei Castelli			41.87842995242856	12.518773149025854	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3093,7 +3077,7 @@ gaz_tranvie_dei_castelli	Tranvie dei Castelli		Tramvie dei Castelli			41.8784299
       }
     }
   ]
-}"	
+}"		
 gaz_vado_ligure	Vado Ligure				Località	44.27104046105365	8.43855565508531	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3109,7 +3093,7 @@ gaz_vado_ligure	Vado Ligure				Località	44.27104046105365	8.43855565508531	"{
       }
     }
   ]
-}"	
+}"		
 gaz_valle_fondo	Valle Fondo				Località	41.72754639015884	12.649994748861523	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3125,7 +3109,7 @@ gaz_valle_fondo	Valle Fondo				Località	41.72754639015884	12.649994748861523	"{
       }
     }
   ]
-}"	
+}"		
 gaz_velletri	Velletri				Comune	41.68473269013517	12.777920637406812	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3142,7 +3126,7 @@ gaz_velletri	Velletri				Comune	41.68473269013517	12.777920637406812	"{
       }
     }
   ]
-}"	
+}"		
 gaz_verona	Verona				Città	45.44286986165943	10.998439464162914	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3158,7 +3142,7 @@ gaz_verona	Verona				Città	45.44286986165943	10.998439464162914	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_anziate	Via Anziate		Anziatina, Nettunense			41.91177548861766	12.442903033569449	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3174,7 +3158,7 @@ gaz_via_anziate	Via Anziate		Anziatina, Nettunense			41.91177548861766	12.442903
       }
     }
   ]
-}"	
+}"		
 gaz_via_appia	Via Appia					41.85054042792461	12.52314794887518	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3190,7 +3174,7 @@ gaz_via_appia	Via Appia					41.85054042792461	12.52314794887518	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_ardeatina	Via Ardeatina					41.748548036845285	12.560749021883575	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3206,7 +3190,7 @@ gaz_via_ardeatina	Via Ardeatina					41.748548036845285	12.560749021883575	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_boncompagni	Via Boncompagni					41.908587241676514	12.49349032119079	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3222,7 +3206,7 @@ gaz_via_boncompagni	Via Boncompagni					41.908587241676514	12.49349032119079	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_botteghe_oscure	Via Botteghe Oscure		via delle Botteghe Oscure			41.89509493955358	12.478981335522056	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3238,7 +3222,7 @@ gaz_via_botteghe_oscure	Via Botteghe Oscure		via delle Botteghe Oscure			41.8950
       }
     }
   ]
-}"	
+}"		
 gaz_via_campo_marzio	Via Campo Marzio		via di Campo Marzio			41.90233603425503	12.477565835193412	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3254,7 +3238,7 @@ gaz_via_campo_marzio	Via Campo Marzio		via di Campo Marzio			41.90233603425503	1
       }
     }
   ]
-}"	
+}"		
 gaz_via_capo_dafrica	Via Capo d'Africa					41.888955504808656	12.495370807914474	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3270,7 +3254,7 @@ gaz_via_capo_dafrica	Via Capo d'Africa					41.888955504808656	12.495370807914474
       }
     }
   ]
-}"	
+}"		
 gaz_via_carlo_alberto	Via Carlo Alberto					41.89631462157369	12.501608522565736	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3286,7 +3270,7 @@ gaz_via_carlo_alberto	Via Carlo Alberto					41.89631462157369	12.501608522565736
       }
     }
   ]
-}"	
+}"		
 gaz_via_colonna_vittoria	Via Colonna Vittoria					41.90532009591583	12.472080293657111	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3302,7 +3286,7 @@ gaz_via_colonna_vittoria	Via Colonna Vittoria					41.90532009591583	12.472080293
       }
     }
   ]
-}"	
+}"		
 gaz_via_dazeglio	Via D'Azeglio					41.9005646386736	12.497986264095715	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3318,7 +3302,7 @@ gaz_via_dazeglio	Via D'Azeglio					41.9005646386736	12.497986264095715	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_de_merli	Via de' Merli					41.8919173419505	12.50204620435122	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3334,7 +3318,7 @@ gaz_via_de_merli	Via de' Merli					41.8919173419505	12.50204620435122	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_de_querceti	Via de' Querceti					41.88826403566792	12.497769533571477	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3350,7 +3334,7 @@ gaz_via_de_querceti	Via de' Querceti					41.88826403566792	12.497769533571477	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_degli_zingari	Via degli Zingari					41.8953237669349	12.491807177069209	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3366,7 +3350,7 @@ gaz_via_degli_zingari	Via degli Zingari					41.8953237669349	12.491807177069209	
       }
     }
   ]
-}"	
+}"		
 gaz_via_dei_banchi_vecchi	Via dei Banchi Vecchi					41.89855410311026	12.466855862738894	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3382,7 +3366,7 @@ gaz_via_dei_banchi_vecchi	Via dei Banchi Vecchi					41.89855410311026	12.4668558
       }
     }
   ]
-}"	
+}"		
 gaz_via_dei_capocci	Via dei Capocci					41.89635704216215	12.493746031107008	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3398,7 +3382,7 @@ gaz_via_dei_capocci	Via dei Capocci					41.89635704216215	12.493746031107008	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_dei_fienili	Via dei Fienili					41.89082656400838	12.48348109299745	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3414,7 +3398,7 @@ gaz_via_dei_fienili	Via dei Fienili					41.89082656400838	12.48348109299745	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_dei_greci	Via dei Greci					41.907686875920895	12.478760733837431	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3430,7 +3414,7 @@ gaz_via_dei_greci	Via dei Greci					41.907686875920895	12.478760733837431	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_dei_serpenti	Via dei Serpenti					41.89625372175469	12.490298122566564	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3446,7 +3430,7 @@ gaz_via_dei_serpenti	Via dei Serpenti					41.89625372175469	12.490298122566564	"
       }
     }
   ]
-}"	
+}"		
 gaz_via_del_corso	Via del Corso					41.90038661195777	12.480692510904577	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3462,7 +3446,7 @@ gaz_via_del_corso	Via del Corso					41.90038661195777	12.480692510904577	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_del_gesu	Via del Gesù					41.8967983204413	12.478768993659564	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3478,7 +3462,7 @@ gaz_via_del_gesu	Via del Gesù					41.8967983204413	12.478768993659564	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_del_gobbo	Via del Gobbo				Via Aurelio del Gobbo	41.77631176902448	12.67390716539034	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3494,7 +3478,7 @@ gaz_via_del_gobbo	Via del Gobbo				Via Aurelio del Gobbo	41.77631176902448	12.67
       }
     }
   ]
-}"	
+}"		
 gaz_via_del_parlamento	Via del Parlamento					41.90266671761795	12.479531435421766	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3510,7 +3494,7 @@ gaz_via_del_parlamento	Via del Parlamento					41.90266671761795	12.4795314354217
       }
     }
   ]
-}"	
+}"		
 gaz_via_della_caffarella	Via della Caffarella					41.86491462396609	12.51298416209954	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3526,7 +3510,7 @@ gaz_via_della_caffarella	Via della Caffarella					41.86491462396609	12.512984162
       }
     }
   ]
-}"	
+}"		
 gaz_via_della_falcognana	Via della Falcognana					41.75989937203588	12.58052436788742	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3542,7 +3526,7 @@ gaz_via_della_falcognana	Via della Falcognana					41.75989937203588	12.580524367
       }
     }
   ]
-}"	
+}"		
 gaz_via_della_navicella	Via della Navicella					41.883995357992056	12.496271259883107	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3558,7 +3542,7 @@ gaz_via_della_navicella	Via della Navicella					41.883995357992056	12.4962712598
       }
     }
   ]
-}"	
+}"		
 gaz_via_della_palombella	Via della Palombella					41.89835257325988	12.476684905643626	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3574,7 +3558,7 @@ gaz_via_della_palombella	Via della Palombella					41.89835257325988	12.476684905
       }
     }
   ]
-}"	
+}"		
 gaz_via_della_scrofa	Via della Scrofa					41.89999474967304	12.477970515691876	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3590,7 +3574,7 @@ gaz_via_della_scrofa	Via della Scrofa					41.89999474967304	12.477970515691876	"
       }
     }
   ]
-}"	
+}"		
 gaz_via_della_vite	Via della Vite					41.90388247365601	12.481236040688875	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3606,7 +3590,7 @@ gaz_via_della_vite	Via della Vite					41.90388247365601	12.481236040688875	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_delle_coppelle	Via delle Coppelle					41.900528326072674	12.475815197103683	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3622,7 +3606,7 @@ gaz_via_delle_coppelle	Via delle Coppelle					41.900528326072674	12.475815197103
       }
     }
   ]
-}"	
+}"		
 gaz_via_di_ferro	Via di Ferro				via Capo di Ferro	41.89411186215077	12.47225542803289	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3638,7 +3622,7 @@ gaz_via_di_ferro	Via di Ferro				via Capo di Ferro	41.89411186215077	12.47225542
       }
     }
   ]
-}"	
+}"		
 gaz_via_di_grotta_pinta	Via di Grotta Pinta					41.895285483518485	12.473999194642012	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3654,7 +3638,7 @@ gaz_via_di_grotta_pinta	Via di Grotta Pinta					41.895285483518485	12.4739991946
       }
     }
   ]
-}"	
+}"		
 gaz_via_di_pietra	Via di Pietra					41.90017316845467	12.480302763446346	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3670,7 +3654,7 @@ gaz_via_di_pietra	Via di Pietra					41.90017316845467	12.480302763446346	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_di_san_paolo_della_croce	Via di San Paolo della Croce					41.88609007715952	12.494225506290569	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3686,7 +3670,7 @@ gaz_via_di_san_paolo_della_croce	Via di San Paolo della Croce					41.88609007715
       }
     }
   ]
-}"	
+}"		
 gaz_via_di_santo_stefano_rotondo	Via di Santo Stefano Rotondo					41.8859031777105	12.49934749037454	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3702,7 +3686,7 @@ gaz_via_di_santo_stefano_rotondo	Via di Santo Stefano Rotondo					41.88590317771
       }
     }
   ]
-}"	
+}"		
 gaz_via_frangipane	Via Frangipane					41.89345109820309	12.490184834220564	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3718,7 +3702,7 @@ gaz_via_frangipane	Via Frangipane					41.89345109820309	12.490184834220564	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_labbricana	Via Labbricana		via Labicana		via Labicana	41.88997394077698	12.498761606943075	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3734,7 +3718,7 @@ gaz_via_labbricana	Via Labbricana		via Labicana		via Labicana	41.88997394077698	
       }
     }
   ]
-}"	
+}"		
 gaz_via_lanza	Via Lanza				via Giovanni Lanza	41.8952468123314	12.496558649455126	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3750,7 +3734,7 @@ gaz_via_lanza	Via Lanza				via Giovanni Lanza	41.8952468123314	12.49655864945512
       }
     }
   ]
-}"	
+}"		
 gaz_via_ludovisi	Via Ludovisi					41.907046946215466	12.487880279008024	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3766,7 +3750,7 @@ gaz_via_ludovisi	Via Ludovisi					41.907046946215466	12.487880279008024	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_mamiani	Via Mamiani					41.8962647321153	12.505176649501491	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3782,7 +3766,7 @@ gaz_via_mamiani	Via Mamiani					41.8962647321153	12.505176649501491	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_massimo_dazeglio	Via Massimo d'Azeglio					41.7708010201672	12.656666611845928	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3798,7 +3782,7 @@ gaz_via_massimo_dazeglio	Via Massimo d'Azeglio					41.7708010201672	12.656666611
       }
     }
   ]
-}"	
+}"		
 gaz_via_merulana	Via Merulana					41.8919173419505	12.50204620435122	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3814,7 +3798,7 @@ gaz_via_merulana	Via Merulana					41.8919173419505	12.50204620435122	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_milano	Via Milano					41.89826988439785	12.490991532899102	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3830,7 +3814,7 @@ gaz_via_milano	Via Milano					41.89826988439785	12.490991532899102	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_monte_caprino	Via Monte Caprino		via di Monte Caprino			41.8915647770543	12.481163670442754	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3846,7 +3830,7 @@ gaz_via_monte_caprino	Via Monte Caprino		via di Monte Caprino			41.8915647770543
       }
     }
   ]
-}"	
+}"		
 gaz_via_montebello	Via Montebello					41.90645672391186	12.501167377390898	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3862,7 +3846,7 @@ gaz_via_montebello	Via Montebello					41.90645672391186	12.501167377390898	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_nicotera	Via Nicotera					41.91624918540069	12.468244588924025	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3878,7 +3862,7 @@ gaz_via_nicotera	Via Nicotera					41.91624918540069	12.468244588924025	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_orazio	Via Orazio					41.9159462938855	12.468458865543028	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3894,7 +3878,7 @@ gaz_via_orazio	Via Orazio					41.9159462938855	12.468458865543028	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_panisperna	Via Panisperna					41.89663706340232	12.491129905973104	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3910,7 +3894,7 @@ gaz_via_panisperna	Via Panisperna					41.89663706340232	12.491129905973104	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_popolonia	Via Popolonia		Via populonia			41.8764745142944	12.50579364816932	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3926,7 +3910,7 @@ gaz_via_popolonia	Via Popolonia		Via populonia			41.8764745142944	12.50579364816
       }
     }
   ]
-}"	
+}"		
 gaz_via_ricasoli	Via Ricasoli					41.89558786458463	12.50606607937935	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3942,7 +3926,7 @@ gaz_via_ricasoli	Via Ricasoli					41.89558786458463	12.50606607937935	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_valadier	Via Valadier					41.90825496417197	12.469020520920948	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3958,7 +3942,7 @@ gaz_via_valadier	Via Valadier					41.90825496417197	12.469020520920948	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_veneto	Via Veneto					41.906261368657	12.48958462091846	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3974,7 +3958,7 @@ gaz_via_veneto	Via Veneto					41.906261368657	12.48958462091846	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_venti_settembre	Via Venti Settembre					41.90577385586054	12.496004176747949	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -3990,7 +3974,7 @@ gaz_via_venti_settembre	Via Venti Settembre					41.90577385586054	12.49600417674
       }
     }
   ]
-}"	
+}"		
 gaz_via_villari	Via Vìllari					41.88999351453406	12.502061807590628	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -4006,7 +3990,7 @@ gaz_via_villari	Via Vìllari					41.88999351453406	12.502061807590628	"{
       }
     }
   ]
-}"	
+}"		
 gaz_via_zanardelli	Via Zanardelli					41.9012714375299	12.472265477389731	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -4022,7 +4006,7 @@ gaz_via_zanardelli	Via Zanardelli					41.9012714375299	12.472265477389731	"{
       }
     }
   ]
-}"	
+}"		
 gaz_viale_della_regina	Viale della Regina		vedi anche Viale Regina Margherita		viale Regina Margherita	41.914435250731664	12.505081063122308	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -4038,7 +4022,7 @@ gaz_viale_della_regina	Viale della Regina		vedi anche Viale Regina Margherita		v
       }
     }
   ]
-}"	
+}"		
 gaz_viale_liegi	Viale Liegi					41.92139386789227	12.495723748817309	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -4054,7 +4038,7 @@ gaz_viale_liegi	Viale Liegi					41.92139386789227	12.495723748817309	"{
       }
     }
   ]
-}"	
+}"		
 gaz_viale_regina_margherita	Viale Regina Margherita		vedi anche Viale della Regina			41.914435250731664	12.505081063122308	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -4070,7 +4054,7 @@ gaz_viale_regina_margherita	Viale Regina Margherita		vedi anche Viale della Regi
       }
     }
   ]
-}"	
+}"		
 gaz_vicenza	Vicenza				Città	45.54782811997265	11.54666863709906	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -4086,7 +4070,7 @@ gaz_vicenza	Vicenza				Città	45.54782811997265	11.54666863709906	"{
       }
     }
   ]
-}"	
+}"		
 gaz_vicolo_ciancaleoni	Vicolo Ciancaleoni				vicolo de' Ciancaleoni	41.89652544879445	12.49319562190167	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -4102,7 +4086,7 @@ gaz_vicolo_ciancaleoni	Vicolo Ciancaleoni				vicolo de' Ciancaleoni	41.896525448
       }
     }
   ]
-}"	
+}"		
 gaz_vicolo_della_bucimazza	Vicolo della Bucimazza				via Bucimazza	41.89085398497711	12.48282256606494	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -4118,7 +4102,7 @@ gaz_vicolo_della_bucimazza	Vicolo della Bucimazza				via Bucimazza	41.8908539849
       }
     }
   ]
-}"	
+}"		
 gaz_vicolo_delle_grotte_del_teatro	Vicolo delle Grotte del Teatro					41.89461101972113	12.47247006996503	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -4134,7 +4118,7 @@ gaz_vicolo_delle_grotte_del_teatro	Vicolo delle Grotte del Teatro					41.8946110
       }
     }
   ]
-}"	
+}"		
 gaz_villa_borghese	Villa Borghese					41.91403582418124	12.485398757632616	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -4150,7 +4134,7 @@ gaz_villa_borghese	Villa Borghese					41.91403582418124	12.485398757632616	"{
       }
     }
   ]
-}"	
+}"		
 gaz_villa_celimontana	Villa Celimontana					41.88404468598669	12.495211796641748	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -4166,7 +4150,7 @@ gaz_villa_celimontana	Villa Celimontana					41.88404468598669	12.495211796641748
       }
     }
   ]
-}"	
+}"		
 gaz_villa_deste	Villa d'Este					41.96358343762597	12.795864786733311	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -4182,7 +4166,7 @@ gaz_villa_deste	Villa d'Este					41.96358343762597	12.795864786733311	"{
       }
     }
   ]
-}"	
+}"		
 gaz_villa_gregoriana	Villa Gregoriana					41.96553240632673	12.801778925481416	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -4198,7 +4182,7 @@ gaz_villa_gregoriana	Villa Gregoriana					41.96553240632673	12.801778925481416	"
       }
     }
   ]
-}"	
+}"		
 gaz_viminale	Viminale					41.89805973978667	12.494448968864743	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -4214,7 +4198,7 @@ gaz_viminale	Viminale					41.89805973978667	12.494448968864743	"{
       }
     }
   ]
-}"	
+}"		
 gaz_vinchiaturo	Vinchiaturo					41.49401046795862	14.587203598469978	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -4231,7 +4215,7 @@ gaz_vinchiaturo	Vinchiaturo					41.49401046795862	14.587203598469978	"{
       }
     }
   ]
-}"	
+}"		
 gaz_vomero	Vomero					40.84468964152708	14.23166148030254	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -4247,7 +4231,7 @@ gaz_vomero	Vomero					40.84468964152708	14.23166148030254	"{
       }
     }
   ]
-}"	
+}"		
 gaz_zagarolo	Zagarolo					41.839732856050645	12.829976839865571	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -4263,4 +4247,4 @@ gaz_zagarolo	Zagarolo					41.839732856050645	12.829976839865571	"{
       }
     }
   ]
-}"	
+}"		

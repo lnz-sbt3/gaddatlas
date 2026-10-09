@@ -34,7 +34,8 @@ SELECT DISTINCT ?nodo WHERE {
   { ?x ga:hasFocalizer ?nodo }        UNION
   { ?x ga:targetsRoute ?nodo }        UNION
   { ?x ga:isPartOf ?nodo }            UNION
-  { ?x ga:appearsInWork ?nodo }
+  { ?x ga:appearsInWork ?nodo }       UNION
+  { ?x ga:appearsInWitness ?nodo }
   FILTER NOT EXISTS { ?nodo a ?t }
 }
 
@@ -59,13 +60,19 @@ SELECT ?interp WHERE {
 }
 
 
-# ==== IQ6 — PlaceReference senza excerpt o senza opera (atteso: 0) ====
+# ==== IQ6 — PlaceReference senza excerpt o senza opera e testimone (atteso: 0) ====
+# L'estratto e' obbligatorio per le occorrenze del testimone di riferimento;
+# per quelle degli altri testimoni (corpora di confronto, D-053) e'
+# facoltativo, e non arriva mai all'interfaccia (D-055, D-066).
 PREFIX ga: <https://w3id.org/chora#>
 SELECT ?ref WHERE {
   ?ref a ga:PlaceReference .
-  { FILTER NOT EXISTS { ?ref ga:excerpt ?e } }
+  { FILTER NOT EXISTS { ?ref ga:excerpt ?e }
+    ?ref ga:appearsInWitness ?w . ?opera ga:referenceWitness ?w }
   UNION
-  { FILTER NOT EXISTS { ?ref ga:appearsInWork ?w } }
+  { FILTER NOT EXISTS { ?ref ga:appearsInWork ?o } }
+  UNION
+  { FILTER NOT EXISTS { ?ref ga:appearsInWitness ?t } }
 }
 
 
@@ -123,3 +130,161 @@ SELECT ?ref (COUNT(DISTINCT ?place) AS ?luoghi) WHERE {
 GROUP BY ?ref
 HAVING (COUNT(DISTINCT ?place) > 1)
 ORDER BY ?ref
+
+
+# ==== IQ12 — Piu' letture adottate per lo stesso soggetto e tipo (atteso: 0) ====
+# Nessuna lettura e' il default del modello, ma il progetto ne adotta al piu'
+# una per soggetto e tipo di asserzione (D-042): e' quella che l'interfaccia
+# mostra. Due letture adottate sullo stesso punto sono un errore.
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX hico: <http://purl.org/emmedi/hico/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?soggetto ?tipo (COUNT(?a) AS ?adottate) WHERE {
+  ?a a ga:Assertion ;
+     ga:aboutSubject ?soggetto ;
+     prov:wasGeneratedBy/hico:hasInterpretationType ?tipo ;
+     ga:adoptedByProject true .
+}
+GROUP BY ?soggetto ?tipo
+HAVING (COUNT(?a) > 1)
+
+
+# ==== IQ13 — Statuto del luogo senza esattamente una lettura adottata, o diverso da essa (atteso: 0) ====
+# Su tutti i luoghi (D-068): ogni hasRealityStatus deriva da esattamente una
+# lettura di statuto adottata (esplicita o generata dall'ETL), e il valore coincide.
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX hico: <http://purl.org/emmedi/hico/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?luogo ?statuto ?n ?adottato WHERE {
+  {
+    SELECT ?luogo ?statuto (COUNT(DISTINCT ?a) AS ?n) (SAMPLE(?v) AS ?adottato) WHERE {
+      ?luogo a ga:NarrativePlace ; ga:hasRealityStatus ?statuto .
+      OPTIONAL {
+        ?a ga:aboutSubject ?luogo ; ga:adoptedByProject true ; ga:assertsValue ?v ;
+           prov:wasGeneratedBy/hico:hasInterpretationType ga:StatusAssertion .
+      }
+    } GROUP BY ?luogo ?statuto
+  }
+  FILTER (?n != 1 || ?adottato != ?statuto)
+}
+
+
+# ==== IQ14 — Luoghi senza ancoraggio e senza stato di localizzazione (atteso: 0) ====
+# Un luogo narrativo senza ancoraggio (proprio, ereditato via isPartOf o da
+# un'identificazione adottata) deve dichiarare perche': analisi non condotta,
+# sospensione motivata, coordinata non applicabile (D-048). Il dato mancante
+# non e' un'astensione.
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX hico: <http://purl.org/emmedi/hico/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?luogo WHERE {
+  ?luogo a ga:NarrativePlace .
+  FILTER NOT EXISTS { ?luogo ga:isPartOf* ?q . ?si ga:targetsPlace ?q ; ga:anchorsToEntity ?e }
+  FILTER NOT EXISTS { ?luogo ga:isPartOf* ?q2 . ?a ga:aboutSubject ?q2 ;
+                      prov:wasGeneratedBy/hico:hasInterpretationType ga:IdentificationAssertion ; ga:adoptedByProject true }
+  FILTER NOT EXISTS { ?luogo ga:localizationStatus ?s }
+}
+ORDER BY ?luogo
+
+# ==== IQ15 — Luogo in piu' zone della stessa partizione (atteso: 0) ====
+# Dentro un'ipotesi di partizione un luogo sta al piu' in una zona (D-050).
+PREFIX ga: <https://w3id.org/chora#>
+SELECT ?luogo ?partizione WHERE {
+  ?partizione ga:hasZone ?z1, ?z2 .
+  ?luogo ga:inPartitionZone ?z1, ?z2 .
+  FILTER (STR(?z1) < STR(?z2))
+}
+ORDER BY ?luogo
+
+# ==== IQ16 — Revisione su un altro soggetto o di un altro tipo, o adottata due volte (atteso: 0) ====
+# Una revisione (prov:wasRevisionOf) riguarda lo stesso soggetto e lo stesso
+# tipo della lettura che rivede, e la lettura rivista non e' piu' adottata (D-051).
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX hico: <http://purl.org/emmedi/hico/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?nuova ?vecchia WHERE {
+  ?nuova prov:wasRevisionOf ?vecchia .
+  {
+    ?nuova ga:aboutSubject ?s1 ; prov:wasGeneratedBy/hico:hasInterpretationType ?t1 .
+    OPTIONAL { ?vecchia ga:aboutSubject ?s2 ; prov:wasGeneratedBy/hico:hasInterpretationType ?t2 }
+  } UNION {
+    # interpretazioni (D-070): stessa occorrenza e stesso luogo
+    ?nuova a ga:SpatialInterpretation ; ga:interpretsReference ?r1 ; ga:targetsPlace ?l1 .
+    BIND (CONCAT(STR(?r1), STR(?l1)) AS ?s1) BIND ("si" AS ?t1)
+    OPTIONAL { ?vecchia ga:interpretsReference ?r2 ; ga:targetsPlace ?l2 .
+               BIND (CONCAT(STR(?r2), STR(?l2)) AS ?s2) BIND ("si" AS ?t2) }
+  }
+  OPTIONAL { ?vecchia ga:adoptedByProject ?adottata }
+  FILTER (!BOUND(?s2) || ?s1 != ?s2 || ?t1 != ?t2 || COALESCE(?adottata, false))
+}
+ORDER BY ?nuova
+
+# ==== IQ17 — Occorrenza di un altro testimone senza variante, o interpretata (atteso: 0) ====
+# Un'occorrenza fuori dal testimone di riferimento entra solo come confronto
+# (D-054): sta in un'asserzione di variante che ha per soggetto il luogo, e non
+# ha interpretazioni proprie, perche' statuto e ruolo sono del luogo, non del
+# testimone.
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX hico: <http://purl.org/emmedi/hico/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?occorrenza ?problema WHERE {
+  ?occorrenza ga:appearsInWitness ?w .
+  FILTER NOT EXISTS { ?opera ga:referenceWitness ?w }
+  {
+    FILTER NOT EXISTS { ?a prov:wasGeneratedBy/hico:hasInterpretationType ga:VariantAssertion ; ga:assertsValue ?occorrenza }
+    BIND("senza variante" AS ?problema)
+  } UNION {
+    ?si ga:interpretsReference ?occorrenza .
+    BIND("interpretata" AS ?problema)
+  }
+}
+ORDER BY ?occorrenza
+
+
+# ==== IQ19 — Coordinata dell'entita' diversa dalla posizione adottata (atteso: 0) ====
+# La coordinata della GazetteerEntity (geo1:lat, geo1:long, dal foglio) deve
+# coincidere con la geometria della LocationAssertion adottata (D-069).
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX hico: <http://purl.org/emmedi/hico/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geo1: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?entita ?lat ?long ?wkt WHERE {
+  ?a ga:aboutSubject ?entita ; ga:adoptedByProject true ; ga:assertsValue ?g ;
+     prov:wasGeneratedBy/hico:hasInterpretationType ga:LocationAssertion .
+  ?g geo:asWKT ?wkt .
+  ?entita geo1:lat ?lat ; geo1:long ?long .
+  BIND (STRBEFORE(STRAFTER(STR(?wkt), "POINT("), ")") AS ?xy)
+  BIND (xsd:decimal(STRBEFORE(?xy, " ")) AS ?x)
+  BIND (xsd:decimal(STRAFTER(?xy, " ")) AS ?y)
+  FILTER (ABS(?x - xsd:decimal(?long)) > 0.000001 || ABS(?y - xsd:decimal(?lat)) > 0.000001)
+}
+
+
+# ==== IQ18 — Variante il cui soggetto non e' nel testimone di riferimento, o il cui valore lo e' (atteso: 0) ====
+# Una variante va dall'occorrenza del testimone di riferimento (QP) a
+# un'occorrenza di un altro testimone (D-070).
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX hico: <http://purl.org/emmedi/hico/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?variante ?soggetto ?valore WHERE {
+  ?variante prov:wasGeneratedBy/hico:hasInterpretationType ga:VariantAssertion ;
+            ga:aboutSubject ?soggetto ; ga:assertsValue ?valore .
+  FILTER ( NOT EXISTS { ?soggetto ga:appearsInWitness ?w1 . ?o1 ga:referenceWitness ?w1 }
+        || EXISTS { ?valore ga:appearsInWitness ?w2 . ?o2 ga:referenceWitness ?w2 } )
+}
+ORDER BY ?variante
+
+# ==== IQ20 — Piu' interpretazioni adottate per occorrenza, luogo e focalizzatore (AVVERTENZA: 6 terne note, docs/alignment/TERNE_IQ20.md) ====
+# Al piu' una interpretazione adottata per (occorrenza, luogo, focalizzatore)
+# (D-070). Le 6 terne di doppio ancoraggio o doppio ruolo attendono la decisione
+# di Lorenzo; finche' non sono risolte, la query e' un'avvertenza.
+PREFIX ga: <https://w3id.org/chora#>
+SELECT ?occorrenza ?luogo ?focalizzatore (COUNT(?si) AS ?n) WHERE {
+  ?si ga:interpretsReference ?occorrenza ; ga:targetsPlace ?luogo ;
+      ga:hasFocalizer ?focalizzatore ; ga:adoptedByProject true .
+}
+GROUP BY ?occorrenza ?luogo ?focalizzatore
+HAVING (COUNT(?si) > 1)
+ORDER BY ?occorrenza

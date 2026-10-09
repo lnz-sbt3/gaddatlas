@@ -15,6 +15,8 @@ namespaces:
   xsd: "http://www.w3.org/2001/XMLSchema#"
   owl: "http://www.w3.org/2002/07/owl#"
   prov: "http://www.w3.org/ns/prov#"
+  hico: "http://purl.org/emmedi/hico/"
+  cito: "http://purl.org/spar/cito/"
 
 # ============================================================
 # COSTANTI GLOBALI
@@ -22,6 +24,11 @@ namespaces:
 constants:
   work_uri: "https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi"
   default_focalizer: "https://w3id.org/gaddatlas/id/focalizer/narrator"
+  # Letture di statuto generate per i luoghi Imported senza asserzione
+  # esplicita (D-068): data costante, perche' il build sia deterministico (D-022),
+  # e motivazione standard (ripetuta nello scopeNote di chora:Imported).
+  generated_readings_date: "2026-10-09"
+  imported_standard_rationale: "Motivazione standard dello statuto: referente identificato nel repertorio."
 
 # ============================================================
 # VOCABOLARI CONTROLLATI
@@ -187,6 +194,10 @@ vocabularies:
     above: "chora:Above"
     below: "chora:Below"
     relatedto: "chora:RelatedTo" 
+    between: "chora:Between"  # «tra», solo negli ancoraggi relazionali (D-057)
+    threshold: "chora:Threshold"  # soglia (D-058)
+    facing: "chora:Facing"        # di fronte, «in faccia» (D-058)
+    boundary: "chora:Boundary"    # confine (D-058)
 
 # ============================================================
 # FILE: References.tsv (PlaceReferences)
@@ -205,10 +216,12 @@ mappings:
       
       # Object properties 
       link:
-        # Collegamento all'opera letteraria
-        - property: "chora:appearsInWork"
-          column: "LiteraryWork_ID"
-          to: "@LiteraryWork_ID"
+        # Testimone dell'occorrenza (D-053, D-055), obbligatorio. L'opera
+        # (chora:appearsInWork) non ha colonna: l'ETL la deriva dal testimone
+        # (appearsInWitness / witnessOf).
+        - property: "chora:appearsInWitness"
+          column: "Witness_ID"
+          to: "@Witness_ID"
         
         # Collegamento a Chapter
         - property: "chora:mentionedInChapter"
@@ -230,6 +243,12 @@ mappings:
           datatype: "xsd:string"
           optional: true
         
+        # Forma stampata nel testimone, se diversa dall'etichetta del luogo (D-059)
+        - column: "Attested_Form"
+          property: "chora:attestedForm"
+          lang: "it"
+          optional: true
+
         # Notes (note editoriali/testuali)
         - column: "Notes"
           property: "rdfs:comment"
@@ -276,8 +295,15 @@ mappings:
           property: "rdfs:label"
           lang: "it"
         
+        # piu' forme separate da ';', un letterale per forma (D-059)
         - column: "Alternative_Toponym"
           property: "skos:altLabel"
+          lang: "it"
+          optional: true
+
+        # soprannomi (D-059), sottoproprieta' di skos:altLabel
+        - column: "Nickname"
+          property: "chora:nickname"
           lang: "it"
           optional: true
         
@@ -317,7 +343,10 @@ mappings:
           vocabulary: "place_categories"
           optional: true
         
-        # sameAs (Wikidata, Geonames, etc.)
+        # sameAs: SOLO URI esterni (Wikidata, Geonames...), coreferenza tecnica.
+        # Un id interno fa fallire l'ETL: le identita' fra entita' del dataset
+        # sono asserzioni d'identificazione (Assertions.tsv) e le coppie
+        # istituzione / sede sono la colonna Housed_In -> chora:housedIn (D-044).
         - column: "sameAs"
           property: "owl:sameAs"
           as_uri: true
@@ -410,6 +439,21 @@ mappings:
           to: "@Focalizer_ID"
           optional: true
 
+        # *** D-057 (T-47): ancoraggio relazionale. Relational_Anchor_IDs (piu'
+        # entita' separate da '|') e Relational_Anchor_Type (near | between...)
+        # diventano un nodo chora:RelationalAnchoring. Un termine puo' essere
+        # anche un luogo narrativo (D-058): relazione senza referente (R17)
+        # (relanchor/{Interpretation_ID}). Non producono geometria: la posizione
+        # sta solo in Anchors_To_Entity_ID. Li legge tools/etl.py. ***
+
+        # *** D-049 (T-36): voce narrante, distinta dal focalizzatore. Si
+        # annota solo dove una fonte critica ne discute; cella vuota = «non
+        # annotato», non «voce = focalizzatore». ***
+        - property: "chora:hasNarratingVoice"
+          column: "Narrating_Voice_ID"
+          to: "@Focalizer_ID"
+          optional: true
+
         - property: "chora:anchorsToEntity"
           column: "Anchors_To_Entity_ID"
           to: "@GazetteerEntity_ID"
@@ -460,7 +504,9 @@ mappings:
             when_column: "Spatial_Component_Role"
             equals: "routenode"
 
-      # PROV properties
+      # PROV properties. Annotator_ID e' obbligatorio e deve essere un agente
+      # di Agents.tsv: l'ETL ne fa due attribuzioni qualificate (codificatore e
+      # autore della lettura, D-043) piu' la forma breve prov:wasAttributedTo.
       provenance:
         - column: "Annotator_ID"
           property: "prov:wasAttributedTo"
@@ -583,7 +629,56 @@ mappings:
           lang: "it"
           optional: true
 
+        # Opera correlata (D-052): dcterms:relation verso l'opera di cui e'
+        # un avantesto o una derivazione (es. Il palazzo degli ori).
+        - column: "Related_Work"
+          property: "dcterms:relation"
+          to: "@Work_ID"
+          optional: true
+
 # ============================================================
+# FILE: Witnesses.tsv (testimoni dell'opera, D-052)
+# ============================================================
+# Lo legge tools/etl.py (process_witnesses). Colonne: Witness_ID, Siglum,
+# Work_ID, Witness_Type (redazione in rivista | dattiloscritto | bozze |
+# princeps | edizione), Date (AAAA o AAAA-MM-GG), Editor, Publisher, Held_At,
+# Description, Derived_From (Witness_ID, anche piu' d'uno separati da '|'),
+# Derivation_Source, Reference (si = testimone di riferimento dell'opera), Note.
+# prov:wasDerivedFrom si scrive solo dove la derivazione e' documentata, con
+# la fonte in Derivation_Source.
+#
+# Allineamento a LRMoo (dichiarato qui, non adottato in blocco):
+#   chora:LiteraryWork  ~ lrmoo:F1_Work
+#   chora:Witness       ~ lrmoo:F2_Expression (lo stato redazionale) che si
+#                         incarna in lrmoo:F3_Manifestation (QPL, QP, QPa) o
+#                         in lrmoo:F5_Item (dtsFG, bzFG, esemplari unici).
+#                         RR II e' un'edizione (Sources.tsv) in cui QPL e QP
+#                         sono letti (chora:readIn), non un testimone (D-073)
+#   chora:witnessOf     ~ lrmoo:R3i_realises (Expression -> Work)
+#   prov:wasDerivedFrom ~ lrmoo:R76_is_derivative_of
+# CHORA non distingue Expression e Manifestation: per i luoghi conta lo stato
+# del testo, non l'oggetto fisico.
+  Witnesses:
+    source_file: "Witnesses.tsv"
+
+    Witness_ID:
+      as_uri: "https://w3id.org/gaddatlas/id/witness/{value}"
+      rdf_type:
+        - "chora:Witness"
+
+# ============================================================
+# FILE: Assertions.tsv (letture attribuite, D-042)
+# Non ha un blocco di mapping: lo legge tools/etl.py (process_assertions);
+# colonne e triple in fondo, sezione `documentation` (D-062).
+# perche' Subject e Value puntano a risorse di tipo diverso. Formato:
+#   Subject, Value, Author_ID, Encoder_ID = 'tipo/id' relativo a
+#   https://w3id.org/gaddatlas/id/ (es. narrativeplace/castello,
+#   gazetteer/gaz_castel_gandolfo, annotator/lorenzo_sabatino) oppure
+#   'chora:Termine' (es. chora:Invented). Value ed Encoder_ID ammettono piu'
+#   valori separati da '|'. Assertion_Type: status | identification | location |
+#   partition | memory | uncertainty | variant | route. Adopted: si | no.
+# ============================================================
+
 # FILE: Chapters.tsv (Capitoli dell'opera)
 # ============================================================
   Chapters:
@@ -669,3 +764,136 @@ mappings:
 #      join vanno implementati da zero, non sono una modifica di uno script
 #      esistente.
 #
+
+# ============================================================
+# DOCUMENTAZIONE DEI FOGLI LETTI DAL CODICE (D-062)
+# ============================================================
+# Questi fogli non hanno un blocco operativo in `mappings`: li traduce
+# tools/etl.py con funzioni dedicate, perche' soggetti e valori sono di tipo
+# variabile o le righe producono nodi intermedi. La sezione `documentation`
+# non e' letta dall'ETL (che usa solo namespaces, constants, vocabularies,
+# mappings): serve a chi legge il mapping. Le righe rinviano a tools/etl.py
+# alla data della voce D-062; se cambiano, aggiornarle qui.
+documentation:
+
+  Assertions:
+    source_file: "Assertions.tsv"
+    etl: "process_assertions, tools/etl.py r. 1353-1435; atto e codifica: add_reading_provenance r. 1302-1351; materializzazione r. 1437-1452 (D-067)"
+    note: >-
+      Una riga = una lettura (chora:Assertion), generata da un atto interpretativo
+      (hico:InterpretationAct, act/{id}). Se l'autore non e' il codificatore, la
+      codifica e' una chora:EncodingActivity (encoding/{id}) con la data della
+      codifica, prov:used la fonte, prov:wasInformedBy l'atto; l'atto ha la data
+      della fonte. Subject e Value: 'tipo/id' relativo a
+      https://w3id.org/gaddatlas/id/ oppure 'chora:Termine'. Value, Author_ID ed
+      Encoder_ID ammettono piu' valori separati da '|'.
+    columns:
+      Assertion_ID:   "IRI assertion/{id}; rdf:type chora:Assertion; atto act/{id}"
+      Assertion_Type: "atto: hico:hasInterpretationType: status | identification | location | partition | memory | uncertainty | variant | route"
+      Subject:        "lettura: chora:aboutSubject"
+      Value:          "lettura: chora:assertsValue (uno per valore)"
+      Author_ID:      "atto: prov:qualifiedAssociation (prov:hadRole chora:ReadingAuthor) + prov:wasAssociatedWith; lettura: prov:wasAttributedTo"
+      Encoder_ID:     "associazione Encoder sull'atto (se coincide con l'autore) o sulla codifica encoding/{id}"
+      Source_Work:    "atto: hico:isExtractedFrom source/{id} (Sources.tsv) o witness/{id} (Witnesses.tsv)"
+      Source_Page:    "atto: chora:sourcePage (xsd:string)"
+      Adopted:        "lettura: chora:adoptedByProject (xsd:boolean): si | no"
+      Rationale:      "atto: chora:rationale (@it)"
+      Revision_Of:    "lettura: prov:wasRevisionOf assertion/{id}"
+      Date:           "data della codifica: dcterms:date e prov:startedAtTime dell'atto (autore = codificatore) o prov:startedAtTime della codifica"
+      Note:           "lettura: rdfs:comment (@it)"
+      Rationale_Type: "atto: hico:hasInterpretationCriterion: prova referenziale | prova testuale | lettura critica"
+      Review_Status:  "lettura: chora:reviewStatus: bozza | validata"
+      Uncertainty_Axis:   "lettura: chora:uncertaintyAxis: nome | identificazione | geometria (solo uncertainty)"
+      Uncertainty_Origin: "lettura: chora:uncertaintyOrigin: documentaria | costruttiva (solo uncertainty)"
+      Grounded_In:    "lettura: chora:groundedIn reference/{id} (piu' id con '|'); se vuota, default di apply_default_grounding (D-070)"
+      Original_Source: "atto: chora:originalSource source/{id}, per una lettura citata di seconda mano; l'atto prende la data dell'opera originale (D-071)"
+    derived: "per le letture adottate: chora:hasRouteType (route), chora:identifiedWith (identification), chora:memoryAttribution (memory); per tutte le varianti: chora:hasVariant (D-070)"
+
+  Sources:
+    source_file: "Sources.tsv"
+    etl: "process_sources, tools/etl.py r. 1254-1276 (D-067)"
+    columns:
+      Source_ID: "IRI source/{id}; rdf:type chora:Source (sottoclasse di frbr:Expression)"
+      Label:     "rdfs:label (chiave autore-data)"
+      Reference: "dcterms:bibliographicCitation (@it), dalla bibliografia del Cap. 4"
+      Author:    "dcterms:creator (@it)"
+      Date:      "dcterms:date (xsd:gYear): e' la data dell'atto di uno studioso"
+      Type:      "dcterms:type (@it)"
+      Note:      "rdfs:comment (@it)"
+
+  Agents:
+    source_file: "Agents.tsv"
+    etl: "process_agents, tools/etl.py r. 1133-1159"
+    columns:
+      Agent_ID:   "IRI annotator/{id} (annotator) o agent/{id} (scholar); rdf:type prov:Agent, prov:Person"
+      Name:       "schema:name"
+      Agent_Type: "annotator -> rdf:type chora:Annotator; scholar -> rdf:type chora:Scholar (e namespace dell'IRI)"
+      Note:       "rdfs:comment (@it)"
+
+  Witnesses:
+    source_file: "Witnesses.tsv"
+    etl: "process_witnesses, tools/etl.py r. 1078-1125 (IRI dal blocco mappings.Witnesses)"
+    columns:
+      Witness_ID:   "IRI witness/{id}; rdf:type chora:Witness"
+      Siglum:       "rdfs:label"
+      Work_ID:      "chora:witnessOf work/{id}"
+      Witness_Type: "chora:witnessType: redazione in rivista | dattiloscritto | bozze | princeps | edizione"
+      Date:         "dcterms:date (xsd:gYear o xsd:date)"
+      Editor:       "chora:editor (@it)"
+      Publisher:    "dcterms:publisher (@it)"
+      Held_At:      "chora:heldAt (@it)"
+      Description:  "dcterms:description (@it)"
+      Derived_From: "prov:wasDerivedFrom witness/{id} (richiede Derivation_Source)"
+      Derivation_Source: "dcterms:source (@it)"
+      Reference:    "si -> work chora:referenceWitness witness"
+      Note:         "rdfs:comment (@it)"
+      Display_Label: "skos:prefLabel (@it): etichetta per l'interfaccia, es. «QP (Adelphi 2018)» per QPa (D-073)"
+      Read_In:      "chora:readIn source/{id}: l'edizione in cui il testimone e' letto (RR II per QPL e QP)"
+      Page_Range:   "chora:pageRange (xsd:string): pagine dell'edizione che contengono il testimone"
+
+  PartitionZones:
+    source_file: "PartitionZones.tsv"
+    etl: "process_partitions, tools/etl.py r. 1176-1220"
+    columns:
+      Zone_ID:      "IRI zone/{id}; rdf:type chora:PartitionZone"
+      Partition_ID: "IRI partition/{id}; rdf:type chora:Partition; chora:hasZone zone"
+      Label:        "rdfs:label (@it) della zona"
+      Definition:   "skos:definition (@it) della zona"
+
+  PartitionMembers:
+    source_file: "PartitionMembers.tsv"
+    etl: "process_partitions, tools/etl.py r. 1176-1220"
+    columns:
+      NarrativePlace_ID: "soggetto: narrativeplace/{id}"
+      Zone_ID:           "chora:inPartitionZone zone/{id}"
+
+  NarrativePlaces_localization:
+    source_file: "NarrativePlaces.tsv"
+    etl: "process_discrete_narrative_places, tools/etl.py r. 595-604"
+    columns:
+      Localization_Status: "chora:localizationStatus: analisi non condotta | sospensione motivata | non applicabile; assegnato caso per caso, mai derivato dallo statuto (D-062)"
+      Localization_Reason: "chora:localizationReason (@it); obbligatorio con sospensione motivata"
+
+  Locations:
+    source_file: "Locations.tsv"
+    etl: "process_locations, tools/etl.py r. 1521-1547 (D-069)"
+    note: >-
+      La geometria del valore di una LocationAssertion. Il resto della lettura
+      (soggetto, autore, fonte, adozione) sta in Assertions.tsv, con Value =
+      geometry/{Assertion_ID}.
+    columns:
+      Assertion_ID: "IRI geometry/{id}; rdf:type geo:Geometry"
+      Geometry_WKT: "geo:asWKT (geo:wktLiteral), POINT(lon lat)"
+      Precision:    "chora:precision (xsd:string)"
+      Datum:        "chora:datum (xsd:string)"
+      Repertory_ID: "chora:repertory source/{id} (Sources.tsv)"
+
+  SpatialInterpretations_readings:
+    source_file: "SpatialInterpretations.tsv"
+    etl: "process_spatial_interpretations, provenienza e adozione (D-067, D-070)"
+    columns:
+      Adopted:           "chora:adoptedByProject (xsd:boolean), sempre scritto: si | no (M2)"
+      Reading_Author_ID: "autore della lettura (associazione ReadingAuthor sull'atto); vuoto = Annotator_ID. Se diverso dal codificatore, atto e codifica distinti"
+      Revision_Of:       "prov:wasRevisionOf interpretation/{id}"
+      Source_ID:         "atto: hico:isExtractedFrom source/{id} o witness/{id}"
+      Source_Page:       "atto: chora:sourcePage"

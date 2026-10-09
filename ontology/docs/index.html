@@ -298,10 +298,14 @@
 <script id="schema.org" type="application/ld+json">
 [
   {
-    "@id": "https://ror.org/01111rn36",
+    "@id": "https://w3id.org/chora#RationaleTypeScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
     "https://schema.org/name": [
       {
-        "@value": "Università di Bologna"
+        "@language": "en",
+        "@value": "Rationale type"
       }
     ]
   },
@@ -312,10 +316,10 @@
     ],
     "https://schema.org/contributor": [
       {
-        "@id": "_:n2fb1ec2ba4b14db7917e52347e8534b3b1"
+        "@id": "_:n5e60b9ae51a746b2982dc11360052da6b1"
       },
       {
-        "@id": "_:n2fb1ec2ba4b14db7917e52347e8534b3b2"
+        "@id": "_:n5e60b9ae51a746b2982dc11360052da6b2"
       }
     ],
     "https://schema.org/creator": [
@@ -362,15 +366,7 @@
     ]
   },
   {
-    "@id": "_:n2fb1ec2ba4b14db7917e52347e8534b3b1",
-    "https://schema.org/name": [
-      {
-        "@value": "Paola Maria Carmela Italia"
-      }
-    ]
-  },
-  {
-    "@id": "_:n2fb1ec2ba4b14db7917e52347e8534b3b2",
+    "@id": "_:n5e60b9ae51a746b2982dc11360052da6b1",
     "https://schema.org/name": [
       {
         "@value": "Francesca Tomasi"
@@ -378,26 +374,22 @@
     ]
   },
   {
-    "@id": "https://w3id.org/chora#RealityStatusScheme",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
+    "@id": "_:n5e60b9ae51a746b2982dc11360052da6b2",
     "https://schema.org/name": [
       {
-        "@language": "en",
-        "@value": "Reality Status"
+        "@value": "Paola Maria Carmela Italia"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/chora#NarrativeRoleScheme",
+    "@id": "https://w3id.org/chora#AssertionTypeScheme",
     "@type": [
       "https://schema.org/DefinedTermSet"
     ],
     "https://schema.org/name": [
       {
         "@language": "en",
-        "@value": "Narrative Role"
+        "@value": "Assertion type"
       }
     ]
   },
@@ -418,6 +410,62 @@
     ]
   },
   {
+    "@id": "https://w3id.org/chora#NarrativeRoleScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Narrative Role"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/chora#RealityStatusScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Reality Status"
+      }
+    ]
+  },
+  {
+    "@id": "https://ror.org/01111rn36",
+    "https://schema.org/name": [
+      {
+        "@value": "Università di Bologna"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/chora#RouteTypeScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Route type"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/chora#LocalizationStatusScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Localization status"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/chora#SpatialRelationTypeScheme",
     "@type": [
       "https://schema.org/DefinedTermSet"
@@ -432,6 +480,96 @@
       {
         "@language": "en",
         "@value": "Narrative Spatial Relations"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/chora#UncertaintyOriginScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Uncertainty origin"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/chora#WitnessTypeScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Witness type"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/chora#AttributionRoleScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Attribution role"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/chora#UncertaintyTypeScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/description": [
+      {
+        "@language": "en",
+        "@value": "Value of a chora:Assertion of type chora:UncertaintyAssertion. The absence of such an assertion means «not analysed», not «certain»."
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Uncertainty type"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/chora#MemoryAttributionScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Memory attribution"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/chora#ReviewStatusScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Review status"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/chora#UncertaintyAxisScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Uncertainty axis"
       }
     ]
   }
@@ -502,12 +640,12 @@
 <ul class="pylodelitlist">
 <li>
 <span>
-<span>Paola Maria Carmela Italia</span>
+<span>Francesca Tomasi</span>
 </span>
 </li>
 <li>
 <span>
-<span>Francesca Tomasi</span>
+<span>Paola Maria Carmela Italia</span>
 </span>
 </li>
 </ul>
@@ -563,6 +701,12 @@
 </div>
 <div>
 <dt>
+<a class="hover_property" href="http://www.w3.org/2004/02/skos/core#historyNote" title="A note about the past state/use/meaning of a concept. Defined in SKOS Vocabulary">History Note</a>
+</dt>
+<dd><p>Fino all'8/10/2026 le etichette Invented e Imagined erano invertite rispetto alle definizioni (D-030). Lo scambio e' una correzione dello schema, non una revisione delle letture: non genera prov:wasRevisionOf (D-051).</p></dd>
+</div>
+<div>
+<dt>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </dt>
 <dd>
@@ -577,13 +721,51 @@
 <div class="hierarchy">
 <ul class="hierarchy">
 <li>
+<a href="#Activity">Activity</a>
+<ul class="hierarchy">
+<li>
+<a href="#EncodingActivity">Encoding activity</a>
+</li>
+<li>
+<a href="#InterpretationAct">Interpretation Act</a>
+</li>
+</ul>
+</li>
+<li>
 <a href="#Agent">Agent</a>
+<ul class="hierarchy">
+<li>
+<a href="#Person">Person</a>
+<ul class="hierarchy">
+<li>
+<a href="#Annotator">Annotator</a>
+</li>
+<li>
+<a href="#Scholar">Scholar</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<a href="#Association">Association</a>
+</li>
+<li>
+<a href="#Attribution">Attribution</a>
 </li>
 <li>
 <a href="#Chapter">Chapter</a>
 </li>
 <li>
 <a href="#Concept">Concept</a>
+<ul class="hierarchy">
+<li>
+<a href="#InterpretationCriterion">Interpretation Criterion</a>
+</li>
+<li>
+<a href="#InterpretationType">Interpretation Type</a>
+</li>
+</ul>
 </li>
 <li>
 <a href="#ConceptScheme">Concept Scheme</a>
@@ -592,7 +774,21 @@
 <a href="#Entity">Entity</a>
 <ul class="hierarchy">
 <li>
+<a href="#Assertion">Assertion</a>
+</li>
+<li>
 <a href="#SpatialInterpretation">Spatial Interpretation</a>
+</li>
+<li>
+<a href="#Witness">Witness</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#Expression">Expression</a>
+<ul class="hierarchy">
+<li>
+<a href="#Source">Source</a>
 </li>
 </ul>
 </li>
@@ -623,7 +819,19 @@
 <a href="#NarrativeRoute">Narrative Route</a>
 </li>
 <li>
+<a href="#Partition">Partition</a>
+</li>
+<li>
+<a href="#PartitionZone">Partition zone</a>
+</li>
+<li>
 <a href="#PlaceReference">Place Reference</a>
+</li>
+<li>
+<a href="#RelationalAnchoring">Relational anchoring</a>
+</li>
+<li>
+<a href="#Role">Role</a>
 </li>
 </ul>
 </div>
@@ -700,10 +908,26 @@
 <a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
 </th>
 <td>
+<ul class="pylodelitlist">
+<li>
 <span>
 <a href="#SpatialInterpretation">chora:SpatialInterpretation</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
+</li>
+<li>
+<span>
+<a href="#Assertion">Assertion</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#Witness">Witness</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+</ul>
 </td>
 </tr>
 </table>
@@ -721,6 +945,17 @@
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
+</th>
+<td>
+<span>
+<a href="#referenceWitness">reference witness</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
 </th>
 <td>
@@ -734,6 +969,12 @@
 <li>
 <span>
 <a href="#partOfWork">part of work</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#witnessOf">witness of</a>
 <sup class="sup-op" title="OWL Object Property">op</sup>
 </span>
 </li>
@@ -763,6 +1004,17 @@
 <li><p>A second-order spatial entity representing an ordered path connecting multiple narrative places, as perceived by one or more focalizers.</p></li>
 <li><p>Entità spaziale di secondo livello che rappresenta un percorso ordinato che connette più luoghi narrativi, così come percepito da uno o più focalizzatori.</p></li>
 </ul>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
+</th>
+<td>
+<span>
+<a href="#hasRouteType">has route type</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
 </td>
 </tr>
 <tr>
@@ -818,10 +1070,38 @@
 <a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
 </th>
 <td>
+<ul class="pylodelitlist">
+<li>
 <span>
 <a href="http://www.opengis.net/ont/geosparql#asGeoJSON">geo:asGeoJSON</a>
 <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
 </span>
+</li>
+<li>
+<span>
+<a href="http://www.opengis.net/ont/geosparql#asWKT">geo:asWKT</a>
+<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#repertory">repertory</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#precision">precision</a>
+<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#datum">datum</a>
+<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</span>
+</li>
+</ul>
 </td>
 </tr>
 <tr>
@@ -864,6 +1144,130 @@
 </th>
 <td>
 <a href="http://www.w3.org/ns/prov-o">http://www.w3.org/ns/prov-o</a>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
+</th>
+<td>
+<span>
+<a href="http://www.w3.org/ns/prov#Person">Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="Person">
+<h3>Person
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://www.w3.org/ns/prov#Person</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+</th>
+<td>
+<a href="http://www.w3.org/ns/prov-o">http://www.w3.org/ns/prov-o</a>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+</th>
+<td>
+<span>
+<a href="http://www.w3.org/ns/prov#Agent">Agent</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
+</th>
+<td>
+<ul class="pylodelitlist">
+<li>
+<span>
+<a href="#Scholar">Scholar</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#Annotator">Annotator</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="Scholar">
+<h3>Scholar
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#Scholar</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A scholar whose readings are encoded in the dataset as attributed assertions (D-062).</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+</th>
+<td>
+<span>
+<a href="http://www.w3.org/ns/prov#Person">Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="Annotator">
+<h3>Annotator
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#Annotator</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A person who encodes readings in the knowledge graph (D-062). Being an annotator is a kind of agent; encoder and reading author are roles in an attribution (chora:Encoder, chora:ReadingAuthor).</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+</th>
+<td>
+<span>
+<a href="http://www.w3.org/ns/prov#Person">Person</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
 </td>
 </tr>
 </table>
@@ -981,10 +1385,20 @@
 <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
 </th>
 <td>
+<ul class="pylodelitlist">
+<li>
 <span>
 <a href="#hasFocalizer">has focalizer</a>
 <sup class="sup-op" title="OWL Object Property">op</sup>
 </span>
+</li>
+<li>
+<span>
+<a href="#hasNarratingVoice">has narrating voice</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+</ul>
 </td>
 </tr>
 <tr>
@@ -1070,6 +1484,12 @@
 <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
 </span>
 </li>
+<li>
+<span>
+<a href="#housedIn">housed in</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
 </ul>
 </td>
 </tr>
@@ -1078,10 +1498,26 @@
 <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
 </th>
 <td>
+<ul class="pylodelitlist">
+<li>
 <span>
 <a href="#anchorsToEntity">anchors to entity</a>
 <sup class="sup-op" title="OWL Object Property">op</sup>
 </span>
+</li>
+<li>
+<span>
+<a href="#housedIn">housed in</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#identifiedWith">identified with</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+</ul>
 </td>
 </tr>
 </table>
@@ -1139,6 +1575,36 @@
 <li>
 <span>
 <a href="#isPartOf">is part of</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#localizationStatus">localization status</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#localizationReason">localization reason</a>
+<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#inPartitionZone">in partition zone</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#nickname">nickname</a>
+<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#identifiedWith">identified with</a>
 <sup class="sup-op" title="OWL Object Property">op</sup>
 </span>
 </li>
@@ -1228,6 +1694,30 @@
 <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
 </span>
 </li>
+<li>
+<span>
+<a href="#appearsInWitness">appears in witness</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#attestedForm">attested form</a>
+<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#hasVariant">has variant</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#memoryAttribution">memory attribution</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
 </ul>
 </td>
 </tr>
@@ -1236,10 +1726,26 @@
 <a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
 </th>
 <td>
+<ul class="pylodelitlist">
+<li>
 <span>
 <a href="#interpretsReference">interprets reference</a>
 <sup class="sup-op" title="OWL Object Property">op</sup>
 </span>
+</li>
+<li>
+<span>
+<a href="#hasVariant">has variant</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#groundedIn">grounded in</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+</ul>
 </td>
 </tr>
 </table>
@@ -1263,8 +1769,8 @@
 <ul class="pylodelitlist">
 <li><p>SpatialInterpretation makes the declarative and traceable nature of annotation explicit: multiple interpretations may coexist for the same PlaceReference, with different assumptions and confidence levels; therefore the model privileges “targets/assigns/anchors” properties at this level.</p></li>
 <li><p>SpatialInterpretation esplicita la natura dichiarativa e tracciabile dell’annotazione: diverse interpretazioni possono coesistere per lo stesso PlaceReference, con diverse assunzioni e livelli di confidenza; per questo il modello privilegia proprietà “targets/assigns/anchors” a questo livello.</p></li>
-<li><p>An interpretive act that operates on a PlaceReference and asserts (i) the diegetic place it activates (target), (ii) semantic qualifications via controlled vocabularies (e.g., narrative role, reality status, degree of spatial determination, spatial relation type), and (iii) any anchoring to an external topographic referent (gazetteer).</p></li>
-<li><p>Atto interpretativo che prende in carico un PlaceReference e asserisce (i) quale luogo diegetico esso attiva (target), (ii) le qualificazioni semantiche tramite vocabolari controllati (es. ruolo narrativo, status di realtà, grado di determinazione spaziale, tipo di relazione spaziale), e (iii) l’eventuale ancoraggio a un referente topografico esterno (gazetteer).</p></li>
+<li><p>An interpretive act that operates on a PlaceReference and asserts (i) the diegetic place it activates (target), (ii) semantic qualifications via controlled vocabularies (narrative role, degree of spatial determination, spatial relation type), and (iii) any anchoring to an external topographic referent (gazetteer). The reality status is not assigned here: since v4.1.1 it belongs to the narrative place (chora:hasRealityStatus), stated by an attributed status assertion.</p></li>
+<li><p>Atto interpretativo che prende in carico un PlaceReference e asserisce (i) quale luogo diegetico esso attiva (target), (ii) le qualificazioni semantiche tramite vocabolari controllati (ruolo narrativo, grado di determinazione spaziale, tipo di relazione spaziale), e (iii) l’eventuale ancoraggio a un referente topografico esterno (gazetteer). Lo statuto di realtà non è assegnato qui: dalla v4.1.1 sta sul luogo narrativo (chora:hasRealityStatus), dichiarato da un'asserzione di statuto attribuita.</p></li>
 </ul>
 </td>
 </tr>
@@ -1375,6 +1881,18 @@
 <sup class="sup-op" title="OWL Object Property">op</sup>
 </span>
 </li>
+<li>
+<span>
+<a href="#hasNarratingVoice">has narrating voice</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#hasRelationalAnchoring">has relational anchoring</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
 </ul>
 </td>
 </tr>
@@ -1438,6 +1956,832 @@
 <sup class="sup-op" title="OWL Object Property">op</sup>
 </span>
 </li>
+<li>
+<span>
+<a href="#assertionType">assertion type</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#rationaleType">rationale type</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#reviewStatus">review status</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#uncertaintyAxis">uncertainty axis</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#uncertaintyOrigin">uncertainty origin</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#localizationStatus">localization status</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#witnessType">witness type</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#relationalType">relational type</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#hasRouteType">has route type</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#memoryAttribution">memory attribution</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#hasUncertaintyType">has uncertainty type</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
+</th>
+<td>
+<ul class="pylodelitlist">
+<li>
+<span>
+<a href="http://purl.org/emmedi/hico/InterpretationType">hico:InterpretationType</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="http://purl.org/emmedi/hico/InterpretationCriterion">hico:InterpretationCriterion</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="Assertion">
+<h3>Assertion
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#Assertion</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td>
+<ul class="pylodelitlist">
+<li><p>An attributed reading about a resource of the dataset (subject, value), generated by an interpretation act (prov:wasGeneratedBy hico:InterpretationAct) that carries its type, criterion, source, rationale and author. The reading itself carries whether the project adopts it, its review status and which earlier reading it revises. Competing readings coexist as distinct assertions; the adopted one is attributed like the others (D-067).</p></li>
+<li><p>Lettura attribuita su una risorsa del dataset (soggetto, valore), generata da un atto interpretativo (prov:wasGeneratedBy hico:InterpretationAct) che ne porta tipo, criterio, fonte, argomentazione e autore. La lettura porta l'adozione da parte del progetto, lo stato di revisione e la lettura che rivede. Le letture concorrenti convivono come asserzioni distinte; quella adottata e' attribuita come le altre (D-067).</p></li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+</th>
+<td>
+<span>
+<a href="http://www.w3.org/ns/prov#Entity">Entity</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
+</th>
+<td>
+<ul class="pylodelitlist">
+<li>
+<span>
+<a href="#assertionType">assertion type</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#aboutSubject">about subject</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#assertsValue">asserts value</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#sourceWork">source work</a>
+<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#rationaleType">rationale type</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#reviewStatus">review status</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#uncertaintyAxis">uncertainty axis</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#uncertaintyOrigin">uncertainty origin</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#groundedIn">grounded in</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="InterpretationAct">
+<h3>Interpretation Act
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://purl.org/emmedi/hico/InterpretationAct</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+</th>
+<td>
+<a href="http://purl.org/emmedi/hico">http://purl.org/emmedi/hico</a>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>The act of interpreting by the author of a reading (HiCO). In CHORA it generates a chora:Assertion or a chora:SpatialInterpretation, and carries type, criterion, source (hico:isExtractedFrom), page, rationale and the association with the author; its date is the date of the source when the author is a scholar (D-067).</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+</th>
+<td>
+<span>
+<a href="http://www.w3.org/ns/prov#Activity">Activity</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
+</th>
+<td>
+<ul class="pylodelitlist">
+<li>
+<span>
+<a href="#rationale">rationale</a>
+<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#sourcePage">source page</a>
+<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="http://purl.org/emmedi/hico/hasInterpretationType">hico:hasInterpretationType</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="http://purl.org/emmedi/hico/hasInterpretationCriterion">hico:hasInterpretationCriterion</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="http://purl.org/emmedi/hico/isExtractedFrom">hico:isExtractedFrom</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#originalSource">original source</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="Role">
+<h3>Role
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://www.w3.org/ns/prov#Role</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+</th>
+<td>
+<a href="http://www.w3.org/ns/prov-o">http://www.w3.org/ns/prov-o</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="Attribution">
+<h3>Attribution
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://www.w3.org/ns/prov#Attribution</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+</th>
+<td>
+<a href="http://www.w3.org/ns/prov-o">http://www.w3.org/ns/prov-o</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="Partition">
+<h3>Partition
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#Partition</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>An interpretive partition of the territory (e.g. city / countryside), proposed by a reader. It is a hypothesis: its author, source and adoption are stated by a chora:PartitionAssertion whose subject is the partition.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
+</th>
+<td>
+<span>
+<a href="#hasZone">has zone</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="PartitionZone">
+<h3>Partition zone
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#PartitionZone</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>One zone of a chora:Partition. A zone belongs to exactly one partition.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+</th>
+<td>
+<ul class="pylodelitlist">
+<li>
+<span>
+<a href="#hasZone">has zone</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#inPartitionZone">in partition zone</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="Witness">
+<h3>Witness
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#Witness</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A witness of a literary work: a periodical redaction, a typescript, a set of proofs, a first edition or a later edition, each carrying a state of the text. Derivations between witnesses (prov:wasDerivedFrom) are stated only where documented.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+</th>
+<td>
+<ul class="pylodelitlist">
+<li>
+<span>
+<a href="http://purl.org/vocab/frbr/core#Expression">frbr:Expression</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="http://www.w3.org/ns/prov#Entity">Entity</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
+</th>
+<td>
+<ul class="pylodelitlist">
+<li>
+<span>
+<a href="#witnessOf">witness of</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#witnessType">witness type</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#editor">editor</a>
+<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#heldAt">held at</a>
+<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#readIn">read in</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#pageRange">page range</a>
+<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</span>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+</th>
+<td>
+<ul class="pylodelitlist">
+<li>
+<span>
+<a href="#referenceWitness">reference witness</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#appearsInWitness">appears in witness</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="RelationalAnchoring">
+<h3>Relational anchoring
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#RelationalAnchoring</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>The placement of a narrative place relative to one or more geographic entities («between», «near»), as stated by a passage. It produces no geometry: a place without an adopted position stays off the map, with its relational anchoring.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/inDomainOf" title="Inverse of rdfs:domain. Defined in Ontology Documentation Profile">In Domain Of</a>
+</th>
+<td>
+<ul class="pylodelitlist">
+<li>
+<span>
+<a href="#relatum">relatum</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#relationalType">relational type</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+</th>
+<td>
+<span>
+<a href="#hasRelationalAnchoring">has relational anchoring</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="Activity">
+<h3>Activity
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://www.w3.org/ns/prov#Activity</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+</th>
+<td>
+<a href="http://www.w3.org/ns/prov-o">http://www.w3.org/ns/prov-o</a>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
+</th>
+<td>
+<ul class="pylodelitlist">
+<li>
+<span>
+<a href="http://purl.org/emmedi/hico/InterpretationAct">hico:InterpretationAct</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#EncodingActivity">Encoding activity</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="Association">
+<h3>Association
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://www.w3.org/ns/prov#Association</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+</th>
+<td>
+<a href="http://www.w3.org/ns/prov-o">http://www.w3.org/ns/prov-o</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="Expression">
+<h3>Expression
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://purl.org/vocab/frbr/core#Expression</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+</th>
+<td>
+<a href="http://purl.org/vocab/frbr/core">http://purl.org/vocab/frbr/core</a>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+</th>
+<td>
+<span>
+<a href="http://purl.org/emmedi/hico/isExtractedFrom">hico:isExtractedFrom</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
+</th>
+<td>
+<ul class="pylodelitlist">
+<li>
+<span>
+<a href="#Witness">Witness</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#Source">Source</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="InterpretationType">
+<h3>Interpretation Type
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://purl.org/emmedi/hico/InterpretationType</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+</th>
+<td>
+<a href="http://purl.org/emmedi/hico">http://purl.org/emmedi/hico</a>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+</th>
+<td>
+<span>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+</th>
+<td>
+<span>
+<a href="http://purl.org/emmedi/hico/hasInterpretationType">hico:hasInterpretationType</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="InterpretationCriterion">
+<h3>Interpretation Criterion
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://purl.org/emmedi/hico/InterpretationCriterion</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+</th>
+<td>
+<a href="http://purl.org/emmedi/hico">http://purl.org/emmedi/hico</a>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+</th>
+<td>
+<span>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+</th>
+<td>
+<span>
+<a href="http://purl.org/emmedi/hico/hasInterpretationCriterion">hico:hasInterpretationCriterion</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="EncodingActivity">
+<h3>Encoding activity
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#EncodingActivity</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>The encoding of a reading in the knowledge graph by an annotator, distinct from the interpretation act when the author of the reading is someone else. It uses the source (prov:used) and is informed by the interpretation act (prov:wasInformedBy); its date is the date of the encoding.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+</th>
+<td>
+<span>
+<a href="http://www.w3.org/ns/prov#Activity">Activity</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="Source">
+<h3>Source
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#Source</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A bibliographic source of readings: a scholarly work, the thesis, the project census, a dated map or repertory (Sources.tsv).</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+</th>
+<td>
+<span>
+<a href="http://purl.org/vocab/frbr/core#Expression">frbr:Expression</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+</th>
+<td>
+<ul class="pylodelitlist">
+<li>
+<span>
+<a href="#repertory">repertory</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#originalSource">original source</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#readIn">read in</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
 </ul>
 </td>
 </tr>
@@ -1450,10 +2794,25 @@
 <div class="hierarchy">
 <ul class="hierarchy">
 <li>
+<a href="#aboutSubject">about subject</a>
+</li>
+<li>
+<a href="#agent">agent</a>
+</li>
+<li>
 <a href="#anchorsToEntity">anchors to entity</a>
 </li>
 <li>
+<a href="#appearsInWitness">appears in witness</a>
+</li>
+<li>
 <a href="#appearsInWork">appears in work</a>
+</li>
+<li>
+<a href="#assertionType">assertion type</a>
+</li>
+<li>
+<a href="#assertsValue">asserts value</a>
 </li>
 <li>
 <a href="#assignsNarrativeRole">assigns narrative role</a>
@@ -1465,16 +2824,42 @@
 <a href="#assignsSpatialRelationType">assigns spatial relation type</a>
 </li>
 <li>
+<a href="#citesAsEvidence">cites as evidence</a>
+<ul class="hierarchy">
+<li>
+<a href="#groundedIn">grounded in</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#hadRole">had role</a>
+</li>
+<li>
 <a href="#hasFocalizer">has focalizer</a>
 </li>
 <li>
 <a href="#hasInterpretation">has interpretation</a>
 </li>
 <li>
+<a href="#hasInterpretationCriterion">has interpretation criterion</a>
+</li>
+<li>
+<a href="#hasInterpretationType">has interpretation type</a>
+</li>
+<li>
+<a href="#hasNarratingVoice">has narrating voice</a>
+</li>
+<li>
 <a href="#hasPlaceCategory">has place category</a>
 </li>
 <li>
 <a href="#hasRealityStatus">has reality status</a>
+</li>
+<li>
+<a href="#hasRelationalAnchoring">has relational anchoring</a>
+</li>
+<li>
+<a href="#hasRouteType">has route type</a>
 </li>
 <li>
 <a href="#hasSpatialGeometry">has spatial geometry</a>
@@ -1485,7 +2870,28 @@
 </ul>
 </li>
 <li>
+<a href="#hasUncertaintyType">has uncertainty type</a>
+</li>
+<li>
+<a href="#hasVariant">has variant</a>
+</li>
+<li>
+<a href="#hasZone">has zone</a>
+</li>
+<li>
+<a href="#housedIn">housed in</a>
+</li>
+<li>
+<a href="#identifiedWith">identified with</a>
+</li>
+<li>
+<a href="#inPartitionZone">in partition zone</a>
+</li>
+<li>
 <a href="#interpretsReference">interprets reference</a>
+</li>
+<li>
+<a href="#isExtractedFrom">is extracted from</a>
 </li>
 <li>
 <a href="#isNodeOfRoute">is node of route</a>
@@ -1494,10 +2900,43 @@
 <a href="#isPartOf">is part of</a>
 </li>
 <li>
+<a href="#localizationStatus">localization status</a>
+</li>
+<li>
+<a href="#memoryAttribution">memory attribution</a>
+</li>
+<li>
 <a href="#mentionedInChapter">mentioned in Chapter</a>
 </li>
 <li>
+<a href="#originalSource">original source</a>
+</li>
+<li>
 <a href="#partOfWork">part of work</a>
+</li>
+<li>
+<a href="#qualifiedAttribution">qualified attribution</a>
+</li>
+<li>
+<a href="#rationaleType">rationale type</a>
+</li>
+<li>
+<a href="#readIn">read in</a>
+</li>
+<li>
+<a href="#referenceWitness">reference witness</a>
+</li>
+<li>
+<a href="#relationalType">relational type</a>
+</li>
+<li>
+<a href="#relatum">relatum</a>
+</li>
+<li>
+<a href="#repertory">repertory</a>
+</li>
+<li>
+<a href="#reviewStatus">review status</a>
 </li>
 <li>
 <a href="#targetsPlace">targets place</a>
@@ -1506,7 +2945,22 @@
 <a href="#targetsRoute">targets route</a>
 </li>
 <li>
+<a href="#uncertaintyAxis">uncertainty axis</a>
+</li>
+<li>
+<a href="#uncertaintyOrigin">uncertainty origin</a>
+</li>
+<li>
 <a href="#wasAttributedTo">was attributed to</a>
+</li>
+<li>
+<a href="#wasRevisionOf">was revision of</a>
+</li>
+<li>
+<a href="#witnessOf">witness of</a>
+</li>
+<li>
+<a href="#witnessType">witness type</a>
 </li>
 </ul>
 </div>
@@ -1623,6 +3077,12 @@
 <td>
 <code>https://w3id.org/chora#appearsInWork</code>
 </td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Derived (D-055): the work of the witness in which the reference occurs.</p></td>
 </tr>
 <tr>
 <th>
@@ -1763,7 +3223,7 @@
 </span>
 </td>
 </tr>
-<tr class="ga-injected"><th>Vocabulary</th><td><a href="vocab_spatialrelationtype.html">Narrative Spatial Relations</a> — 8 concepts</td></tr></table>
+<tr class="ga-injected"><th>Vocabulary</th><td><a href="vocab_spatialrelationtype.html">Narrative Spatial Relations</a> — 12 concepts</td></tr></table>
 </div>
 <div class="property entity" id="hasFocalizer">
 <h3>has focalizer
@@ -2233,6 +3693,1345 @@
 <td>
 <span>
 <a href="#PlaceReference">chora:PlaceReference</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="assertionType">
+<h3>assertion type
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#assertionType</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#Assertion">Assertion</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr class="ga-injected"><th>Vocabulary</th><td><a href="vocab_assertiontype.html">Assertion type</a> — 9 concepts</td></tr></table>
+</div>
+<div class="property entity" id="aboutSubject">
+<h3>about subject
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#aboutSubject</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>The resource the assertion is about (a narrative place, a place reference, a gazetteer entity, an interpretation).</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#Assertion">Assertion</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="assertsValue">
+<h3>asserts value
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#assertsValue</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>The value the assertion assigns to its subject: a concept (e.g. a reality status) or a resource (e.g. the gazetteer entity of an identification).</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#Assertion">Assertion</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="qualifiedAttribution">
+<h3>qualified attribution
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://www.w3.org/ns/prov#qualifiedAttribution</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+</th>
+<td>
+<a href="http://www.w3.org/ns/prov-o">http://www.w3.org/ns/prov-o</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="agent">
+<h3>agent
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://www.w3.org/ns/prov#agent</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+</th>
+<td>
+<a href="http://www.w3.org/ns/prov-o">http://www.w3.org/ns/prov-o</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="hadRole">
+<h3>had role
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://www.w3.org/ns/prov#hadRole</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+</th>
+<td>
+<a href="http://www.w3.org/ns/prov-o">http://www.w3.org/ns/prov-o</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="wasRevisionOf">
+<h3>was revision of
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://www.w3.org/ns/prov#wasRevisionOf</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+</th>
+<td>
+<a href="http://www.w3.org/ns/prov-o">http://www.w3.org/ns/prov-o</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="housedIn">
+<h3>housed in
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#housedIn</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td>
+<ul class="pylodelitlist">
+<li><p>An institution (e.g. a police station, a prison) is housed in a site (a building, a street). The two gazetteer entities are distinct referents: this is neither an identity (owl:sameAs) nor an identification assertion, and it never merges them.</p></li>
+<li><p>Un'istituzione (un commissariato, un carcere) ha sede in un luogo (un edificio, una via). Le due entita' del gazetteer sono referenti distinti: non e' un'identita' (owl:sameAs) ne' un'asserzione d'identificazione, e non le fonde.</p></li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#GazetteerEntity">chora:GazetteerEntity</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="#GazetteerEntity">chora:GazetteerEntity</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="rationaleType">
+<h3>rationale type
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#rationaleType</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#Assertion">Assertion</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr class="ga-injected"><th>Vocabulary</th><td><a href="vocab_rationaletype.html">Rationale type</a> — 3 concepts</td></tr></table>
+</div>
+<div class="property entity" id="reviewStatus">
+<h3>review status
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#reviewStatus</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Whether the content of the assertion has been validated by the project, or is a draft prepared from existing documents.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#Assertion">Assertion</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr class="ga-injected"><th>Vocabulary</th><td><a href="vocab_reviewstatus.html">Review status</a> — 2 concepts</td></tr></table>
+</div>
+<div class="property entity" id="uncertaintyAxis">
+<h3>uncertainty axis
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#uncertaintyAxis</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#Assertion">Assertion</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr class="ga-injected"><th>Vocabulary</th><td><a href="vocab_uncertaintyaxis.html">Uncertainty axis</a> — 3 concepts</td></tr></table>
+</div>
+<div class="property entity" id="uncertaintyOrigin">
+<h3>uncertainty origin
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#uncertaintyOrigin</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#Assertion">Assertion</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr class="ga-injected"><th>Vocabulary</th><td><a href="vocab_uncertaintyorigin.html">Uncertainty origin</a> — 2 concepts</td></tr></table>
+</div>
+<div class="property entity" id="localizationStatus">
+<h3>localization status
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#localizationStatus</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Why a narrative place has no geographic anchoring. It is distinct from missing data: a place without anchoring and without this status is an error (integrity query IQ14).</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#NarrativePlace">chora:NarrativePlace</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr class="ga-injected"><th>Vocabulary</th><td><a href="vocab_localizationstatus.html">Localization status</a> — 3 concepts</td></tr></table>
+</div>
+<div class="property entity" id="hasNarratingVoice">
+<h3>has narrating voice
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#hasNarratingVoice</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>The voice that utters the passage of a spatial interpretation (who speaks), distinct from the focalizer (who perceives). Annotated only where a critical source discusses it; an interpretation without this property is «not annotated», which does not mean that voice and focalizer coincide.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#SpatialInterpretation">chora:SpatialInterpretation</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="#FocalizingAgent">Focalizing Agent</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="hasZone">
+<h3>has zone
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#hasZone</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Links a partition to one of its zones.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#Partition">Partition</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="#PartitionZone">Partition zone</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="inPartitionZone">
+<h3>in partition zone
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#inPartitionZone</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Assigns a narrative place to a zone of a partition. The assignment holds within the partition hypothesis that owns the zone; a place not assigned to any zone is not classified by that hypothesis.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#NarrativePlace">chora:NarrativePlace</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="#PartitionZone">Partition zone</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="witnessOf">
+<h3>witness of
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#witnessOf</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Links a witness to the work whose text it carries.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#Witness">Witness</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="#LiteraryWork">chora:LiteraryWork</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="referenceWitness">
+<h3>reference witness
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#referenceWitness</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>The witness chosen by the project as reference text of the work: occurrences are annotated on its readings.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#LiteraryWork">chora:LiteraryWork</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="#Witness">Witness</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="witnessType">
+<h3>witness type
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#witnessType</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#Witness">Witness</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr class="ga-injected"><th>Vocabulary</th><td><a href="vocab_witnesstype.html">Witness type</a> — 5 concepts</td></tr></table>
+</div>
+<div class="property entity" id="appearsInWitness">
+<h3>appears in witness
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#appearsInWitness</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>The witness in which a place reference occurs (D-053). Occurrences in witnesses other than the reference witness enter only as comparison corpora: they point to the same narrative place, never count in the views of the published novel, and carry no status of their own.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#PlaceReference">chora:PlaceReference</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="#Witness">Witness</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="hasRelationalAnchoring">
+<h3>has relational anchoring
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#hasRelationalAnchoring</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#SpatialInterpretation">chora:SpatialInterpretation</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="#RelationalAnchoring">Relational anchoring</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="relatum">
+<h3>relatum
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#relatum</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A geographic entity, or another narrative place, with respect to which the place is located. A narrative place as relatum makes the relation hold without a geographic referent (R17, D-058).</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#RelationalAnchoring">Relational anchoring</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="#GazetteerEntity">chora:GazetteerEntity</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
+<a href="#NarrativePlace">chora:NarrativePlace</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="relationalType">
+<h3>relational type
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#relationalType</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#RelationalAnchoring">Relational anchoring</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr class="ga-injected"><th>Vocabulary</th><td><a href="vocab_spatialrelationtype.html">Narrative Spatial Relations</a> — 12 concepts</td></tr></table>
+</div>
+<div class="property entity" id="hasRouteType">
+<h3>has route type
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#hasRouteType</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Type of a route, derived from the adopted route type assertion.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#NarrativeRoute">Narrative Route</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr class="ga-injected"><th>Vocabulary</th><td><a href="vocab_routetype.html">Route type</a> — 6 concepts</td></tr></table>
+</div>
+<div class="property entity" id="hasInterpretationType">
+<h3>has interpretation type
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://purl.org/emmedi/hico/hasInterpretationType</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+</th>
+<td>
+<a href="http://purl.org/emmedi/hico">http://purl.org/emmedi/hico</a>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="http://purl.org/emmedi/hico/InterpretationAct">hico:InterpretationAct</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="http://purl.org/emmedi/hico/InterpretationType">hico:InterpretationType</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="hasInterpretationCriterion">
+<h3>has interpretation criterion
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://purl.org/emmedi/hico/hasInterpretationCriterion</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+</th>
+<td>
+<a href="http://purl.org/emmedi/hico">http://purl.org/emmedi/hico</a>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="http://purl.org/emmedi/hico/InterpretationAct">hico:InterpretationAct</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="http://purl.org/emmedi/hico/InterpretationCriterion">hico:InterpretationCriterion</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="isExtractedFrom">
+<h3>is extracted from
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://purl.org/emmedi/hico/isExtractedFrom</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+</th>
+<td>
+<a href="http://purl.org/emmedi/hico">http://purl.org/emmedi/hico</a>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="http://purl.org/emmedi/hico/InterpretationAct">hico:InterpretationAct</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="http://purl.org/vocab/frbr/core#Expression">frbr:Expression</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="identifiedWith">
+<h3>identified with
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#identifiedWith</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>The geographic entity of the adopted identification of a narrative place; materialized by the ETL from the adopted IdentificationAssertion.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#NarrativePlace">chora:NarrativePlace</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="#GazetteerEntity">chora:GazetteerEntity</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="hasVariant">
+<h3>has variant
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#hasVariant</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Links an occurrence of the reference witness to the corresponding occurrence of another witness (variant reading).</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#PlaceReference">chora:PlaceReference</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="#PlaceReference">chora:PlaceReference</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="memoryAttribution">
+<h3>memory attribution
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#memoryAttribution</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Whose memory a remembered space belongs to, for an occurrence.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#PlaceReference">chora:PlaceReference</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr class="ga-injected"><th>Vocabulary</th><td><a href="vocab_memoryattribution.html">Memory attribution</a> — 3 concepts</td></tr></table>
+</div>
+<div class="property entity" id="hasUncertaintyType">
+<h3>has uncertainty type
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#hasUncertaintyType</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Type of uncertainty of an occurrence (name axis), a narrative place (identification axis) or a gazetteer entity (geometry axis).</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr class="ga-injected"><th>Vocabulary</th><td><a href="vocab_uncertaintytype.html">Uncertainty type</a> — 10 concepts</td></tr></table>
+</div>
+<div class="property entity" id="repertory">
+<h3>repertory
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#repertory</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>The dated repertory (map, gazetteer) from which a position is read.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="http://www.opengis.net/ont/geosparql#Geometry">Geometry</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="#Source">Source</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="citesAsEvidence">
+<h3>cites as evidence
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://purl.org/spar/cito/citesAsEvidence</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+</th>
+<td>
+<a href="http://purl.org/spar/cito">http://purl.org/spar/cito</a>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/superPropertyOf" title="Inverse of RDFS' subPropertyOf. Defined in Ontology Documentation Profile">Super Property Of</a>
+</th>
+<td>
+<span>
+<a href="#groundedIn">grounded in</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="groundedIn">
+<h3>grounded in
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#groundedIn</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>The occurrences of the text on which a reading rests. Stated explicitly (Grounded_In) or, by default, all the reference-witness occurrences interpreted on the subject place, anchored to the subject entity, or carrying the subject route (D-070).</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+</th>
+<td>
+<span>
+<a href="http://purl.org/spar/cito/citesAsEvidence">cito:citesAsEvidence</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#Assertion">Assertion</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="#PlaceReference">chora:PlaceReference</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="originalSource">
+<h3>original source
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#originalSource</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>For a reading known second-hand: the work in which its author originally stated it, not read directly by the project. The interpretation act takes its date; hico:isExtractedFrom stays the work it was read in (D-071).</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="http://purl.org/emmedi/hico/InterpretationAct">hico:InterpretationAct</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="#Source">Source</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="readIn">
+<h3>read in
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#readIn</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>The edition in which the project reads a witness: the pages of its occurrences are pages of that edition (e.g. QPL and QP read in RR II). The edition is a source, not a witness (D-073).</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#Witness">Witness</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="#Source">Source</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -2771,13 +5570,29 @@
 </tr>
 <tr>
 <th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Pages of the edition (chora:readIn) that contain the witness.</p></td>
+</tr>
+<tr>
+<th>
 <a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
 </th>
 <td>
+<ul class="pylodelitlist">
+<li>
 <span>
 <a href="#Chapter">chora:Chapter</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
+</li>
+<li>
+<span>
+<a href="#Witness">Witness</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</li>
+</ul>
 </td>
 </tr>
 <tr>
@@ -2898,6 +5713,504 @@
 </tr>
 </table>
 </div>
+<div class="property entity" id="adoptedbyproject">
+<h3>adopted by project
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#adoptedByProject</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>True when the project adopts this reading (the one shown by the interface). It marks a choice, not a truth: the adopted reading is attributed like the others. Stated on every assertion that offers alternatives and on every spatial interpretation, true or false (D-070).</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#Assertion">Assertion</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
+<a href="#SpatialInterpretation">chora:SpatialInterpretation</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<a href="http://www.w3.org/2001/XMLSchema#boolean">xsd:boolean</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="rationale">
+<h3>rationale
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#rationale</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Textual, philological or critical motivation of the reading (R07), stated on the interpretation act (D-067).</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="http://purl.org/emmedi/hico/InterpretationAct">hico:InterpretationAct</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">langString</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="sourceWork">
+<h3>source work
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#sourceWork</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Bibliographic key (author-date, as in the thesis bibliography) of the source on which the reading rests.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#Assertion">Assertion</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="sourcePage">
+<h3>source page
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#sourcePage</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Page or pages in the source of the interpretation act (hico:isExtractedFrom).</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="http://purl.org/emmedi/hico/InterpretationAct">hico:InterpretationAct</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="generatedAtTime">
+<h3>generated at time
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://www.w3.org/ns/prov#generatedAtTime</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+</th>
+<td>
+<a href="http://www.w3.org/ns/prov-o">http://www.w3.org/ns/prov-o</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="localizationReason">
+<h3>localization reason
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#localizationReason</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Motivation of a suspended localization.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#NarrativePlace">chora:NarrativePlace</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">langString</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="editor">
+<h3>editor
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#editor</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Editor(s) of an edition («a cura di»).</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+</th>
+<td>
+<span>
+<a href="http://purl.org/dc/terms/contributor">Contributor</a>
+<sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#Witness">Witness</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="heldAt">
+<h3>held at
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#heldAt</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Institution and fonds holding an unpublished witness.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#Witness">Witness</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">langString</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="attestedForm">
+<h3>attested form
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#attestedForm</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>The form of the toponym as printed in the witness of the reference, recorded where it differs from the normalized label of the place. It is transcribed, not corrected.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#PlaceReference">chora:PlaceReference</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">langString</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="nickname">
+<h3>nickname
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#nickname</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A nickname of the place used in the text (antonomasia, popular name), distinct from a variant spelling of its toponym.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subPropertyOf" title="The subject is a subproperty of a property. Defined in The RDF Schema vocabulary (RDFS)">Sub Property Of</a>
+</th>
+<td>
+<span>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel">alternative label</a>
+<sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#NarrativePlace">chora:NarrativePlace</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">langString</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="asWKT">
+<h3>as wkt
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://www.opengis.net/ont/geosparql#asWKT</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+</th>
+<td>
+<a href="http://www.opengis.net/ont/geosparql">http://www.opengis.net/ont/geosparql</a>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="http://www.opengis.net/ont/geosparql#Geometry">Geometry</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<a href="http://www.opengis.net/ont/geosparql#wktLiteral">geo:wktLiteral</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="precision">
+<h3>precision
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#precision</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Stated precision of a position (e.g. «~1 km»).</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="http://www.opengis.net/ont/geosparql#Geometry">Geometry</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="datum">
+<h3>datum
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#datum</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Datum of the repertory, when different from WGS84, with the stated shift.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="http://www.opengis.net/ont/geosparql#Geometry">Geometry</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="section" id="annotationproperties">
 <h2>Annotation Properties</h2>
@@ -2962,6 +6275,17 @@
 <th>IRI</th>
 <td>
 <code>http://purl.org/dc/terms/contributor</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/superPropertyOf" title="Inverse of RDFS' subPropertyOf. Defined in Ontology Documentation Profile">Super Property Of</a>
+</th>
+<td>
+<span>
+<a href="#editor">editor</a>
+<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</span>
 </td>
 </tr>
 </table>
@@ -3085,6 +6409,17 @@
 <th>IRI</th>
 <td>
 <code>http://www.w3.org/2004/02/skos/core#altLabel</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/superPropertyOf" title="Inverse of RDFS' subPropertyOf. Defined in Ontology Documentation Profile">Super Property Of</a>
+</th>
+<td>
+<span>
+<a href="#nickname">nickname</a>
+<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</span>
 </td>
 </tr>
 </table>
@@ -3219,6 +6554,25 @@
 </tr>
 </table>
 </div>
+<div class="property entity" id="reifiesproperty">
+<h3>reifies property
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#reifiesProperty</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>On an interpretation type: the model property that a reading of this type states about its subject (subject property value). The ETL materializes it for the adopted readings of some types.</p></td>
+</tr>
+</table>
+</div>
 </div>
 <div class="section" id="datatypes">
 <h2>Custom Datatypes</h2>
@@ -3236,12 +6590,16 @@
 </table>
 </div>
 </div>
-<div class="section ga-injected" id="vocabularies"><h2>Vocabularies</h2><p>The values of the properties above are drawn from the following SKOS concept schemes, each documented in its own page.</p><ul><li><a href="vocab_placecategory.html">GaddAtlas Place Category Vocabulary</a> — 64 concepts · used by <a href="#hasPlaceCategory">hasPlaceCategory</a></li><li><a href="vocab_narrativerole.html">Narrative Role</a> — 5 concepts · used by <a href="#assignsNarrativeRole">assignsNarrativeRole</a></li><li><a href="vocab_spatialrelationtype.html">Narrative Spatial Relations</a> — 8 concepts · used by <a href="#assignsSpatialRelationType">assignsSpatialRelationType</a></li><li><a href="vocab_realitystatus.html">Reality Status</a> — 4 concepts · used by <a href="#hasRealityStatus">hasRealityStatus</a></li><li><a href="vocab_spatialdetermination.html">Spatial determination</a> — 4 concepts · used by <a href="#assignsSpatialDetermination">assignsSpatialDetermination</a></li></ul></div><div id="namespaces">
+<div class="section ga-injected" id="vocabularies"><h2>Vocabularies</h2><p>The values of the properties above are drawn from the following SKOS concept schemes, each documented in its own page.</p><ul><li><a href="vocab_assertiontype.html">Assertion type</a> — 9 concepts · used by <a href="#assertionType">assertionType</a></li><li><a href="vocab_attributionrole.html">Attribution role</a> — 2 concepts</li><li><a href="vocab_placecategory.html">GaddAtlas Place Category Vocabulary</a> — 64 concepts · used by <a href="#hasPlaceCategory">hasPlaceCategory</a></li><li><a href="vocab_localizationstatus.html">Localization status</a> — 3 concepts · used by <a href="#localizationStatus">localizationStatus</a></li><li><a href="vocab_memoryattribution.html">Memory attribution</a> — 3 concepts · used by <a href="#memoryAttribution">memoryAttribution</a></li><li><a href="vocab_narrativerole.html">Narrative Role</a> — 5 concepts · used by <a href="#assignsNarrativeRole">assignsNarrativeRole</a></li><li><a href="vocab_spatialrelationtype.html">Narrative Spatial Relations</a> — 12 concepts · used by <a href="#assignsSpatialRelationType">assignsSpatialRelationType</a>, <a href="#relationalType">relationalType</a></li><li><a href="vocab_rationaletype.html">Rationale type</a> — 3 concepts · used by <a href="#rationaleType">rationaleType</a></li><li><a href="vocab_realitystatus.html">Reality Status</a> — 4 concepts · used by <a href="#hasRealityStatus">hasRealityStatus</a></li><li><a href="vocab_reviewstatus.html">Review status</a> — 2 concepts · used by <a href="#reviewStatus">reviewStatus</a></li><li><a href="vocab_routetype.html">Route type</a> — 6 concepts · used by <a href="#hasRouteType">hasRouteType</a></li><li><a href="vocab_spatialdetermination.html">Spatial determination</a> — 4 concepts · used by <a href="#assignsSpatialDetermination">assignsSpatialDetermination</a></li><li><a href="vocab_uncertaintyaxis.html">Uncertainty axis</a> — 3 concepts · used by <a href="#uncertaintyAxis">uncertaintyAxis</a></li><li><a href="vocab_uncertaintyorigin.html">Uncertainty origin</a> — 2 concepts · used by <a href="#uncertaintyOrigin">uncertaintyOrigin</a></li><li><a href="vocab_uncertaintytype.html">Uncertainty type</a> — 10 concepts · used by <a href="#hasUncertaintyType">hasUncertaintyType</a></li><li><a href="vocab_witnesstype.html">Witness type</a> — 5 concepts · used by <a href="#witnessType">witnessType</a></li></ul></div><div id="namespaces">
 <h2>Namespaces</h2>
 <dl>
 <dt id="chora">chora</dt>
 <dd>
 <code>https://w3id.org/chora#</code>
+</dd>
+<dt id="cito">cito</dt>
+<dd>
+<code>http://purl.org/spar/cito/</code>
 </dd>
 <dt id="dc">dc</dt>
 <dd>
@@ -3251,9 +6609,17 @@
 <dd>
 <code>http://purl.org/dc/terms/</code>
 </dd>
+<dt id="frbr">frbr</dt>
+<dd>
+<code>http://purl.org/vocab/frbr/core#</code>
+</dd>
 <dt id="geo">geo</dt>
 <dd>
 <code>http://www.opengis.net/ont/geosparql#</code>
+</dd>
+<dt id="hico">hico</dt>
+<dd>
+<code>http://purl.org/emmedi/hico/</code>
 </dd>
 <dt id="owl">owl</dt>
 <dd>
@@ -3373,6 +6739,15 @@
 <a href="#Agent">Agent</a>
 </li>
 <li style="margin-left:10px;">
+<a href="#Person">Person</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#Scholar">Scholar</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#Annotator">Annotator</a>
+</li>
+<li style="margin-left:10px;">
 <a href="#ConceptScheme">Concept Scheme</a>
 </li>
 <li style="margin-left:10px;">
@@ -3395,6 +6770,51 @@
 </li>
 <li style="margin-left:10px;">
 <a href="#Concept">Concept</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#Assertion">Assertion</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#InterpretationAct">Interpretation Act</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#Role">Role</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#Attribution">Attribution</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#Partition">Partition</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#PartitionZone">Partition zone</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#Witness">Witness</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#RelationalAnchoring">Relational anchoring</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#Activity">Activity</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#Association">Association</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#Expression">Expression</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#InterpretationType">Interpretation Type</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#InterpretationCriterion">Interpretation Criterion</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#EncodingActivity">Encoding activity</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#Source">Source</a>
 </li>
 </ul>
 </li>
@@ -3466,6 +6886,114 @@
 <li style="margin-left:10px;">
 <a href="#interpretsReference">interprets reference</a>
 </li>
+<li style="margin-left:10px;">
+<a href="#assertionType">assertion type</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#aboutSubject">about subject</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#assertsValue">asserts value</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#qualifiedAttribution">qualified attribution</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#agent">agent</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#hadRole">had role</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#wasRevisionOf">was revision of</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#housedIn">housed in</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#rationaleType">rationale type</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#reviewStatus">review status</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#uncertaintyAxis">uncertainty axis</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#uncertaintyOrigin">uncertainty origin</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#localizationStatus">localization status</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#hasNarratingVoice">has narrating voice</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#hasZone">has zone</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#inPartitionZone">in partition zone</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#witnessOf">witness of</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#referenceWitness">reference witness</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#witnessType">witness type</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#appearsInWitness">appears in witness</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#hasRelationalAnchoring">has relational anchoring</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#relatum">relatum</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#relationalType">relational type</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#hasRouteType">has route type</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#hasInterpretationType">has interpretation type</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#hasInterpretationCriterion">has interpretation criterion</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#isExtractedFrom">is extracted from</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#identifiedWith">identified with</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#hasVariant">has variant</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#memoryAttribution">memory attribution</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#hasUncertaintyType">has uncertainty type</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#repertory">repertory</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#citesAsEvidence">cites as evidence</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#groundedIn">grounded in</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#originalSource">original source</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#readIn">read in</a>
+</li>
 </ul>
 </li>
 <li>
@@ -3529,6 +7057,45 @@
 </li>
 <li>
 <a href="#sourceReference">source reference</a>
+</li>
+<li>
+<a href="#adoptedbyproject">adopted by project</a>
+</li>
+<li>
+<a href="#rationale">rationale</a>
+</li>
+<li>
+<a href="#sourceWork">source work</a>
+</li>
+<li>
+<a href="#sourcePage">source page</a>
+</li>
+<li>
+<a href="#generatedAtTime">generated at time</a>
+</li>
+<li>
+<a href="#localizationReason">localization reason</a>
+</li>
+<li>
+<a href="#editor">editor</a>
+</li>
+<li>
+<a href="#heldAt">held at</a>
+</li>
+<li>
+<a href="#attestedForm">attested form</a>
+</li>
+<li>
+<a href="#nickname">nickname</a>
+</li>
+<li>
+<a href="#asWKT">as wkt</a>
+</li>
+<li>
+<a href="#precision">precision</a>
+</li>
+<li>
+<a href="#datum">datum</a>
 </li>
 </ul>
 </li>
@@ -3609,6 +7176,9 @@
 <li>
 <a href="#name">name</a>
 </li>
+<li>
+<a href="#reifiesproperty">reifies property</a>
+</li>
 </ul>
 </li>
 <li>
@@ -3621,7 +7191,7 @@
 </li>
 </ul>
 </li>
-<li class="ga-injected"><h4><a href="#vocabularies">Vocabularies</a></h4><ul class="second"><li style="margin-left:10px;"><a href="vocab_placecategory.html">GaddAtlas Place Category Vocabulary</a></li><li style="margin-left:10px;"><a href="vocab_narrativerole.html">Narrative Role</a></li><li style="margin-left:10px;"><a href="vocab_spatialrelationtype.html">Narrative Spatial Relations</a></li><li style="margin-left:10px;"><a href="vocab_realitystatus.html">Reality Status</a></li><li style="margin-left:10px;"><a href="vocab_spatialdetermination.html">Spatial determination</a></li></ul></li><li>
+<li class="ga-injected"><h4><a href="#vocabularies">Vocabularies</a></h4><ul class="second"><li style="margin-left:10px;"><a href="vocab_assertiontype.html">Assertion type</a></li><li style="margin-left:10px;"><a href="vocab_attributionrole.html">Attribution role</a></li><li style="margin-left:10px;"><a href="vocab_placecategory.html">GaddAtlas Place Category Vocabulary</a></li><li style="margin-left:10px;"><a href="vocab_localizationstatus.html">Localization status</a></li><li style="margin-left:10px;"><a href="vocab_memoryattribution.html">Memory attribution</a></li><li style="margin-left:10px;"><a href="vocab_narrativerole.html">Narrative Role</a></li><li style="margin-left:10px;"><a href="vocab_spatialrelationtype.html">Narrative Spatial Relations</a></li><li style="margin-left:10px;"><a href="vocab_rationaletype.html">Rationale type</a></li><li style="margin-left:10px;"><a href="vocab_realitystatus.html">Reality Status</a></li><li style="margin-left:10px;"><a href="vocab_reviewstatus.html">Review status</a></li><li style="margin-left:10px;"><a href="vocab_routetype.html">Route type</a></li><li style="margin-left:10px;"><a href="vocab_spatialdetermination.html">Spatial determination</a></li><li style="margin-left:10px;"><a href="vocab_uncertaintyaxis.html">Uncertainty axis</a></li><li style="margin-left:10px;"><a href="vocab_uncertaintyorigin.html">Uncertainty origin</a></li><li style="margin-left:10px;"><a href="vocab_uncertaintytype.html">Uncertainty type</a></li><li style="margin-left:10px;"><a href="vocab_witnesstype.html">Witness type</a></li></ul></li><li>
 <h4>
 <a href="#namespaces">Namespaces</a>
 </h4>
@@ -3630,13 +7200,22 @@
 <a href="#chora">chora</a>
 </li>
 <li>
+<a href="#cito">cito</a>
+</li>
+<li>
 <a href="#dc">dc</a>
 </li>
 <li>
 <a href="#dcterms">dcterms</a>
 </li>
 <li>
+<a href="#frbr">frbr</a>
+</li>
+<li>
 <a href="#geo">geo</a>
+</li>
+<li>
+<a href="#hico">hico</a>
 </li>
 <li>
 <a href="#owl">owl</a>

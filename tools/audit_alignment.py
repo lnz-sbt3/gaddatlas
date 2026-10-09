@@ -85,6 +85,13 @@ def main() -> int:
     ttl_agents = {local(s) for s in g.subjects(RDF.type, CHORA.FocalizingAgent)}
     ttl_routes = {local(s) for s in g.subjects(RDF.type, CHORA.NarrativeRoute)}
     refs_with_excerpt = {local(s) for s, _, _ in g.triples((None, CHORA.excerpt, None))}
+    # occorrenze di testimoni diversi da quello di riferimento (D-053): corpora
+    # di confronto, fuori dalle viste e dagli invarianti sugli estratti
+    reference_witnesses = set(g.objects(None, CHORA.referenceWitness))
+    comparison_refs = {local(s) for s, _, w in g.triples((None, CHORA.appearsInWitness, None))
+                       if w not in reference_witnesses}
+    ttl_refs -= comparison_refs
+    refs_with_excerpt -= comparison_refs
 
     feats = {f["properties"]["GazetteerEntity_ID"] for f in gj["features"]}
     relief_target = collections.Counter(r["targetId"] for r in gj["relief"])
@@ -190,6 +197,34 @@ def main() -> int:
         "\n".join(mismatch[:20]),
     )
 
+    # occorrenze di altri testimoni (D-054): il luogo dichiarato nel foglio
+    # References e' quello della variante che le collega a QP. Nel grafo la
+    # PlaceReference non porta il luogo, quindi il controllo sta sulle sorgenti.
+    witness_ref = {r["Reference_ID"]: r.get("Witness_ID", "") for r in read_tsv("References.tsv")}
+    reference_ids = {w["Witness_ID"] for w in read_tsv("Witnesses.tsv")
+                     if w.get("Reference", "").strip().lower() in ("si", "sì")}
+    # D-070: soggetto = occorrenza di QP, valore = occorrenza dell'altro testimone
+    bad_variant = []
+    for row in read_tsv("Assertions.tsv"):
+        if row["Assertion_Type"].strip().lower() != "variant":
+            continue
+        subj = row["Subject"].split("/", 1)[-1]
+        place = ref_place.get(subj)
+        for v in row["Value"].split("|"):
+            rid = v.strip().split("/", 1)[-1]
+            if ref_place.get(rid) != place:
+                bad_variant.append(f'{row["Assertion_ID"]}: {rid} -> {ref_place.get(rid)!r}, soggetto {subj} -> {place!r}')
+    a.check(
+        not bad_variant,
+        "ogni variante collega due occorrenze dello stesso luogo (sorgenti TSV)",
+        "\n".join(bad_variant[:20]),
+    )
+    stray = sorted(rid for rid, w in witness_ref.items() if w and w not in reference_ids
+                   and not any(rid in row["Value"] for row in read_tsv("Assertions.tsv")
+                               if row["Assertion_Type"].strip().lower() == "variant"))
+    a.check(not stray, "ogni occorrenza di un altro testimone sta in una variante (sorgenti TSV)",
+            "\n".join(stray[:20]))
+
     # copie pubblicate per l'interfaccia (T-83): byte per byte uguali ai
     # derivati, altrimenti l'app mostra dati diversi da quelli del grafo
     published = [GEOJSON, *sorted(PASSAGES.parent.glob("*.json"))]
@@ -212,6 +247,11 @@ def main() -> int:
     a.note(
         f"{len(route_only)} PlaceReference non in relief: riferimenti di sola route "
         f"(targetsRoute, non targetsPlace)"
+    )
+
+    a.note(
+        f"{len(comparison_refs)} PlaceReference di altri testimoni (corpora di confronto, D-053)",
+        ", ".join(sorted(comparison_refs)[:6]),
     )
 
     gaz_absent = ttl_gaz - feats

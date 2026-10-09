@@ -102,13 +102,14 @@ MIN_SEQUENCE_LEN = 2               # sequenze derivate: sotto 2 tappe non c'e' p
 # Fusione di varianti toponomastiche che nel grafo sono GazetteerEntity distinte
 # ma designano lo stesso referente. Formato: { "gaz_variante": "gaz_canonico" }
 #
-# DECISIONE APERTA (vedi docs/DECISIONS.md § D-011). Oggi esistono TRE fonti che
-# si contraddicono, e questa mappa vuota e' la terza:
-#
-#   nel GRAFO (owl:sameAs, 3 coppie)
-#     gaz_castel_gandolfo   <-> gaz_castello
-#     gaz_collegio_romano   <-> gaz_santo_stefano_del_cacco_celio_santo_stefano
-#     gaz_lungara           <-> gaz_regina_coeli
+# DECISIONE APERTA (vedi docs/DECISIONS.md § D-011). Dal D-044 il GRAFO non
+# contiene piu' owl:sameAs fra entita' del dataset, quindi non e' una fonte di
+# fusioni: le tre coppie che dichiarava sono diventate
+#     gaz_castello -> narrativeplace/castello, asserzione d'identificazione
+#       con gaz_castel_gandolfo (Lorenzo, NON adottata: DC-04)
+#     gaz_santo_stefano_del_cacco_celio_santo_stefano chora:housedIn gaz_collegio_romano
+#     gaz_regina_coeli chora:housedIn gaz_lungara
+# e nessuna delle due relazioni e' una fusione. Restano due fonti:
 #
 #   nel NOTEBOOK (s4Config.ALIAS_GROUPS, 5 gruppi)
 #     gaz_collegio_romano   <-> gaz_santo_stefano_del_cacco_celio_santo_stefano
@@ -119,11 +120,11 @@ MIN_SEQUENCE_LEN = 2               # sequenze derivate: sotto 2 tappe non c'e' p
 #
 #   qui: vuota.
 #
-# Una sola coppia su sette e' condivisa. Finche' la decisione non e' presa la
-# mappa resta vuota, perche' e' cio' che riproduce esattamente il GeoJSON su cui
-# il notebook e' stato calibrato. Una volta decisa, la fonte deve diventare UNA:
-# gli owl:sameAs del grafo, da cui questa mappa si deriva e da cui il notebook
-# ricava ALIAS_GROUPS, invece di mantenere due liste parallele.
+# Finche' la decisione non e' presa la mappa resta vuota, perche' e' cio' che
+# riproduce esattamente il GeoJSON su cui il notebook e' stato calibrato. Una
+# volta decisa, la fonte deve diventare UNA. Non sono piu' gli owl:sameAs (D-044):
+# una fusione andra' dichiarata come scelta esplicita (un'asserzione adottata o
+# una tabella delle fusioni), da cui derivare questa mappa e ALIAS_GROUPS.
 MERGE_MAP = {}
 
 
@@ -193,6 +194,29 @@ def fallback_seed(entity_id):
 # diversi, e il confronto in CI falliva sempre. L'artefatto deve essere
 # deterministico perche' e' quello che l'interfaccia carica e che viene citato.
 
+# Identificazioni adottate (D-045): luogo narrativo -> entita' del gazetteer,
+# materializzate dall'ETL come chora:identifiedWith (D-067)
+Q_ADOPTED_IDENTIFICATIONS = """
+PREFIX ga: <https://w3id.org/chora#>
+SELECT ?place ?gaz WHERE {
+  ?place a ga:NarrativePlace ; ga:identifiedWith ?gaz .
+  ?gaz a ga:GazetteerEntity .
+}
+ORDER BY ?place ?gaz
+"""
+
+# Luoghi fuori carta (D-057): stato di localizzazione e ancoraggi relazionali
+Q_OFF_MAP_INFO = """
+PREFIX ga: <https://w3id.org/chora#>
+SELECT ?np ?status ?reason ?type ?relatum WHERE {
+  ?np a ga:NarrativePlace .
+  { ?np ga:localizationStatus ?status . OPTIONAL { ?np ga:localizationReason ?reason } }
+  UNION
+  { ?si ga:targetsPlace ?np ; ga:hasRelationalAnchoring ?ra .
+    ?ra ga:relationalType ?type ; ga:relatum ?relatum }
+}
+"""
+
 # ---------------------------------------------------------------------------
 # COMPETENCY QUERIES
 # ---------------------------------------------------------------------------
@@ -225,7 +249,8 @@ Q_INTERPRETATIONS = """
 PREFIX ga: <https://w3id.org/chora#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 SELECT ?si ?ref ?place ?route ?gaz ?role ?det ?rel ?foc ?conf ?nodeOf ?order ?note WHERE {
-  ?si a ga:SpatialInterpretation ; ga:interpretsReference ?ref ; ga:hasFocalizer ?foc .
+  ?si a ga:SpatialInterpretation ; ga:interpretsReference ?ref ; ga:hasFocalizer ?foc ;
+      ga:adoptedByProject true .   # solo le letture adottate (D-070)
   OPTIONAL { ?si ga:targetsPlace ?place }
   OPTIONAL { ?si ga:targetsRoute ?route }
   OPTIONAL { ?si ga:anchorsToEntity ?gaz }
@@ -245,6 +270,12 @@ SELECT ?r ?src ?chapter ?work ?excerpt WHERE {
   ?r a ga:PlaceReference ; ga:sourceReference ?src ;
      ga:mentionedInChapter ?chapter ; ga:appearsInWork ?work .
   OPTIONAL { ?r ga:excerpt ?excerpt }
+  # solo le occorrenze del testimone di riferimento (D-053): le altre sono
+  # corpora di confronto, fuori dalle viste del romanzo pubblicato
+  FILTER NOT EXISTS {
+    ?r ga:appearsInWitness ?w .
+    FILTER NOT EXISTS { ?opera ga:referenceWitness ?w }
+  }
 }
 """
 
@@ -397,6 +428,15 @@ def main(ttl_path, out_dir, seeds_path=None):
     for p, refset in np_refs.items():
         nps[p]["planeCount"] = len(refset)
 
+    # Ancora da un'identificazione ADOTTATA (D-045): un luogo senza ancore
+    # proprie nelle interpretazioni prende come referente l'entita' della sua
+    # asserzione d'identificazione adottata (es. castello -> Castel Savello,
+    # Manzotti 2010, p. 293). Le sue parti la ereditano via isPartOf.
+    for row in g.query(Q_ADOPTED_IDENTIFICATIONS):
+        p, gk = str(row.place), str(row.gaz)
+        if p in nps and gk in gaz and not tgt_acc.get(p):
+            tgt_acc[p][gk] += 1.0
+
     # risoluzione ancoraggio ereditato per i sub-places (isPartOf transitivo)
     np_by_id = {v["id"]: k for k, v in nps.items()}
 
@@ -439,8 +479,14 @@ def main(ttl_path, out_dir, seeds_path=None):
     # propria: e' un'entita' narratologica a se'. Un NarrativePlace Imported
     # coincide col proprio referente geografico e viene riassorbito nella
     # tessera del GazetteerEntity.
+    # Fuori carta (D-057): un luogo interpretato senza posizione adottata
+    # (nessuna ancora propria, ereditata o da un'identificazione adottata) non
+    # ha tessera ne' rilievo. Gli ancoraggi relazionali non producono un punto:
+    # il luogo va nell'elenco offMap, per il pannello «Fuori carta» (T-62).
+    off_map = {k for k, v in nps.items() if v["interpCount"] > 0 and not v["targets"]}
     own_tile = {k for k, v in nps.items()
-                if v["realityStatus"] != "Imported" and v["interpCount"] > 0}
+                if v["realityStatus"] != "Imported" and v["interpCount"] > 0
+                and k not in off_map}
 
     def visual_target(si):
         """id della tessera su cui questa interpretazione deposita rilievo.
@@ -449,6 +495,8 @@ def main(ttl_path, out_dir, seeds_path=None):
         if not si["narrativePlaceId"]:
             return None
         np_iri = np_by_id.get(si["narrativePlaceId"])
+        if np_iri in off_map:
+            return None
         if np_iri in own_tile:
             return si["narrativePlaceId"]
         return si["gazetteerId"]
@@ -555,6 +603,9 @@ def main(ttl_path, out_dir, seeds_path=None):
         routes[str(r)] = {
             "id": rid, "iri": str(r),
             "label": rid.replace("tragitto_", "").replace("_", " "),
+            # tipo dalla lettura adottata (D-060); la carta disegna come
+            # linee solo i compiuti (docs/EXCLUSIONS.md, T-64)
+            "routeType": local(g.value(r, GA.hasRouteType)) if g.value(r, GA.hasRouteType) else None,
             "nodes": nodes, "nodeCount": len(nodes),
             "steps": steps, "stepCount": len(steps),
             "isPartialOrder": any(len(s["targetIds"]) > 1 for s in steps),
@@ -636,7 +687,29 @@ def main(ttl_path, out_dir, seeds_path=None):
     anchored_gaz = [v for v in gaz.values() if v["planeCount"] or v["refCountAnchored"]]
     generators = [v for v in anchored_gaz if v["distanceFromRomeKm"] <= GEO_RADIUS_KM]
     peripheral = [v for v in anchored_gaz if v["distanceFromRomeKm"] > GEO_RADIUS_KM]
-    unanchored_np = [v for v in nps.values() if not v["targets"] and v["interpCount"] > 0]
+    unanchored_np = [nps[k] for k in off_map]
+
+    info = defaultdict(lambda: {"status": None, "reason": None, "rel": defaultdict(set)})
+    for row in g.query(Q_OFF_MAP_INFO):
+        d = info[str(row.np)]
+        if row.status is not None:
+            d["status"], d["reason"] = local(row.status), (str(row.reason) if row.reason else None)
+        if row.type is not None:
+            d["rel"][local(row.type)].add(sid(row.relatum))
+    np_ref_ids = defaultdict(set)
+    for si in sis:
+        if si["narrativePlaceId"]:
+            np_ref_ids[si["narrativePlaceId"]].add(si["referenceId"])
+    off_map_list = [{
+        "id": nps[k]["id"], "iri": k, "label": nps[k]["label"],
+        "realityStatus": (nps[k]["realityStatus"] or "").lower(),
+        "localizationStatus": info[k]["status"],
+        "localizationReason": info[k]["reason"],
+        "relationalAnchors": [{"type": t, "relata": sorted(r)}
+                              for t, r in sorted(info[k]["rel"].items())],
+        "interpretations": nps[k]["interpCount"],
+        "referenceIds": sorted(np_ref_ids[nps[k]["id"]]),
+    } for k in sorted(off_map, key=lambda k: nps[k]["id"])]
     xs = [v["x"] for v in generators] or [0.0]
     ys = [v["y"] for v in generators] or [0.0]
     tessellation = {
@@ -718,8 +791,12 @@ def main(ttl_path, out_dir, seeds_path=None):
 
     # un GazetteerEntity entra nel payload solo se il grafo lo tocca: senza
     # nemmeno un ancoraggio non e' ne' una tessera ne' un'ancora, e' rumore.
+    # Ordine delle feature (D-041): per id dentro ciascun gruppo (referenziali,
+    # poi tessere proprie). Una correzione ai dati non sposta nessuna feature:
+    # l'ordine di disegno e dell'hit test lo decide l'app con un criterio
+    # esplicito (app/src/model/entities.js), non la posizione nel file.
     features = []
-    for v in sorted(gaz.values(), key=lambda d: (-d["planeCount"], d["id"])):
+    for v in sorted(gaz.values(), key=lambda d: d["id"]):
         if not (v["planeCount"] or v["refCountAnchored"]):
             continue
         cr = {c: len(s) for c, s in chap_refs.get(v["id"], {}).items()}
@@ -740,7 +817,7 @@ def main(ttl_path, out_dir, seeds_path=None):
             },
         })
 
-    for k in sorted(own_tile, key=lambda k: (-nps[k]["planeCount"], nps[k]["id"])):
+    for k in sorted(own_tile, key=lambda k: nps[k]["id"]):
         v = nps[k]
         cr = {c: len(s) for c, s in chap_refs.get(v["id"], {}).items()}
         seed = frozen_seeds.get(v["id"])
@@ -778,7 +855,7 @@ def main(ttl_path, out_dir, seeds_path=None):
         "meta": dict(meta, excerptsIncluded=False),
         "paths": {
             "routes": [{k: r[k] for k in
-                        ("id", "iri", "label", "nodeCount", "stepCount",
+                        ("id", "iri", "label", "routeType", "nodeCount", "stepCount",
                          "isPartialOrder", "nodes", "steps", "carrierRoles",
                          "focalizerIds", "nodeFocalizerIds")}
                        for r in atlas["routes"]],
@@ -787,6 +864,8 @@ def main(ttl_path, out_dir, seeds_path=None):
             "chapters": atlas["chapters"],
         },
         "relief": relief,
+        # luoghi interpretati senza posizione adottata (D-057, pannello T-62)
+        "offMap": off_map_list,
         "features": features,
     }
 

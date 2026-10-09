@@ -33,8 +33,11 @@ sg = rdflib.Graph(); sg.parse(a.shapes, format='turtle')
 print(f"Dati: {len(dg)} triple ({a.data})")
 print(f"Shape: {len(sg)} triple ({a.shapes})")
 
+# allow_warnings: le shape con sh:severity sh:Warning segnalano senza rendere
+# il grafo non conforme (D-046). Servono per i vincoli che entrano in vigore
+# per gradi, come la motivazione dello statuto finche' le bozze non sono validate.
 conforms, report_graph, report_text = validate(
-    dg, shacl_graph=sg, inference='none', advanced=True
+    dg, shacl_graph=sg, inference='none', advanced=True, allow_warnings=True
 )
 report_graph.bind(
     'chora',
@@ -45,13 +48,17 @@ report_graph.bind(
 report_graph.serialize(destination=a.report, format='turtle')
 
 print(f"\nCONFORMS: {conforms}")
+SH = rdflib.Namespace('http://www.w3.org/ns/shacl#')
+sev = Counter(str(report_graph.value(r, SH.resultSeverity)).split('#')[-1]
+              for r in report_graph.subjects(rdflib.RDF.type, SH.ValidationResult))
+if sev:
+    print("Risultati per gravita': " + ", ".join(f"{k} {v}" for k, v in sorted(sev.items())))
 msgs = re.findall(r'Message: (.+)', report_text)
 if msgs:
-    print(f"Violazioni: {len(msgs)}\n")
+    print(f"Risultati: {len(msgs)}\n")
     for m, n in Counter(msgs).most_common():
         print(f"  {n:5}  {m[:110]}")
     print("\nDettaglio per nodo:")
-    SH = rdflib.Namespace('http://www.w3.org/ns/shacl#')
     for r in report_graph.subjects(rdflib.RDF.type, SH.ValidationResult):
         fn = report_graph.value(r, SH.focusNode)
         pa = report_graph.value(r, SH.resultPath)

@@ -4,12 +4,20 @@ import s4Config from "./config.js";
 // ===== CELLA: s4AttestedRoutes =====
 // -- CELLA: s4AttestedRoutes --
 // Precalcolo delle route attestate, segmentate per focalizzatore.
+// Un percorso senza tipo (dati precedenti a D-060) resta disegnato.
+export function isDrawnRoute(route) {
+  return !route.routeType || route.routeType === "CompletedRoute";
+}
+
 export default function s4AttestedRoutes(gadda_real, s4Entities, s4Sequence) {
   const { allDataById } = s4Entities;
   const { sequence, chapterOfCursor } = s4Sequence;
   const sequenceByRefId = new Map(sequence.map(row => [String(row.referenceId || ""), row]));
   const routeRgb = s4Config.ROLE_COLORS.Route;
-  const routeSource = gadda_real.paths?.routes || gadda_real.routes || [];
+  // D-060, docs/EXCLUSIONS.md: le linee sono riservate ai percorsi compiuti;
+  // indicati, sognati, inferiti, direzionali e proposti restano nel grafo.
+  const routeSource = (gadda_real.paths?.routes || gadda_real.routes || [])
+    .filter(isDrawnRoute);
   const aliasTargetById = new Map((s4Config.ALIAS_GROUPS || []).flatMap(g => g.ids.map(id => [id, g.canonical])));
 
   function tileIndexOf(targetId) {

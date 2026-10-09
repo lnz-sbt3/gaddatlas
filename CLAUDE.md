@@ -20,17 +20,22 @@ Due artefatti distinti nello stesso repository:
 
 ## Le decisioni sono già prese
 
-`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-040; quelle dell'allineamento al
+`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-077; quelle dell'allineamento al
 Capitolo 4 partono da D-019 (D-015…D-018 sono del porting, su `main`). Nel file sono in
-ordine cronologico, non numerico. Prossimo numero libero: **D-041**. **Leggile
+ordine cronologico, non numerico. Prossimo numero libero: **D-078**. **Leggile
 prima di proporre alternative architetturali.** Se una scelta ti sembra
 sbagliata, dillo citando la decisione — non aggirarla in silenzio.
 
-**Stato dei dati: allineato (chiusura della fase 1, 9 ottobre 2026).**
-`data/dist/gaddatlas.geojson` dichiara `tripleCount 17263`, `buildVersion 4.3`,
-`ontology CHORA`. ABox 16.093 triple, TBox 600; 309 luoghi (Imported 260 ·
-Transformed 30 · Invented 14 · Imagined 5), 266 entità del gazetteer, 960
-interpretazioni. Ogni task che cambia questi valori ne dà conto nella sua voce di
+**Stato dei dati: allineato (chiusura della fase 2, 10 ottobre 2026).**
+`data/dist/gaddatlas.geojson` dichiara `tripleCount 42515`, `buildVersion 4.3`,
+`ontology CHORA`. ABox 40.472 triple, TBox 1.473; 309 luoghi (Imported 261 ·
+Transformed 30 · Invented 13 · Imagined 5), 265 entità del gazetteer, 958
+interpretazioni (tutte adottate), 733 occorrenze (729 nel testimone di riferimento
+QPa), 21 percorsi tipizzati, 360 letture attribuite (102 esplicite in
+`Assertions.tsv`, 258 statuti generati dall'ETL), 5 testimoni (QPL, dtsFG, bzFG,
+QP, QPa; sigle in «Invarianti»), 14 fonti. In carta 300 feature; fuori carta 1
+(Robine Vecchie). SHACL conforme con 48 avvertenze (motivazioni di statuto in
+bozza, fase 3); IQ20 = 1 (Cassero, fase 3). Ogni task che cambia questi valori ne dà conto nella sua voce di
 `DECISIONS.md`; un conteggio diverso senza una voce che lo spieghi vuol dire che i
 derivati non sono allineati: `make all`. Il build è deterministico (D-022): due
 `make all` consecutivi non devono produrre alcun diff.
@@ -54,7 +59,7 @@ Le tre non negoziabili:
    variabile d'ambiente. Il sito potrebbe passare da GitHub Pages a
    `projects.dharc.unibo.it`: deve restare una variabile, non una migrazione.
 
-## Allineamento al Capitolo 4 della tesi (ottobre 2026) — lavoro in corso
+## Allineamento al Capitolo 4 della tesi (ottobre 2026) — fasi 1 e 2 chiuse, fase 3 aperta
 
 Prima della Parte II il progetto va allineato a ciò che il Capitolo 4 afferma:
 ipotesi H1–H8, requisiti R01–R22, proposizioni P1–P8. Le fonti di verità stanno in
@@ -103,7 +108,11 @@ aggiornato.
 
 - Statuto di realtà, dal concreto all'astratto: **Imported → Transformed →
   Invented → Imagined**. *Invented* = luogo fittizio in una geografia nota;
-  *Imagined* = nessuna indicazione di posizione (Reuschel, Piatti e Hurni 2013).
+  *Imagined* = luogo senza alcuna corrispondenza identificabile con un luogo
+  attestato nella realtà, frutto dell'immaginazione d'autore; può essere collocato
+  nel mondo reale se l'autore lo immagina in una certa posizione, ma nella realtà in
+  quel punto non esiste (definizione di Lorenzo, 9/10/2026, D-061; Reuschel, Piatti
+  e Hurni 2013 per la scala).
   Legende, filtri e ordinamenti seguono quest'ordine.
 - Precisione della localizzazione (SpatialDetermination: Precise / Relative /
   Approximate / Indeterminate) e statuto di realtà sono assi **indipendenti**:
@@ -123,6 +132,14 @@ aggiornato.
   dell'editore (es. Fattocchie → Frattocchie in QP 241).
 - **Testo di riferimento:** QP (Adelphi 2018) nel volume **a stampa**. La copia
   digitale ha almeno una lezione non emendata: nel dubbio segnala, non correggere.
+- **Sigle dei testimoni (D-073).** Nel dataset: **QPL** = redazione di «Letteratura»
+  (1946), letta in RR II (pagine di RR II); **QP** = versione in volume (princeps
+  Garzanti 1957), letta in RR II (pagine di RR II); **QPa** = Adelphi 2018 a cura di
+  Pinotti, testo di riferimento, su cui sono annotate le occorrenze (`witness/qpa`,
+  `skos:prefLabel` «QP (Adelphi 2018)»). RR II è un'edizione (`source/rr2`), non un
+  testimone. Nella tesi, nel README, nei documenti e nell'interfaccia vale la
+  convenzione della tesi: QPL, QP di RR II, «QP (Adelphi 2018)» per l'Adelphi.
+  `witness/qp` fino al 9/10/2026 era l'Adelphi.
 - I percorsi tipizzati (compiuto, indicato, sognato, inferito, direzionale,
   proposto) riguardano **solo i personaggi**: gli oggetti sono esclusi (DM-03).
   QP 237 («Pe la strada de Castel de Leva…») è un percorso *indicato*; il
@@ -151,7 +168,7 @@ aggiornato.
 make all        # fogli + TBox -> TTL -> geojson + passages -> audit
 make audit      # nove invarianti fra sorgenti e derivati; esce 1 se falliscono
 make shacl      # validazione SHACL, deve dire CONFORME
-make queries    # 12 competency + 11 integrity query
+make queries    # 12 competency + 20 integrity query
 make docs       # pyLODE dalla TBox
 make xlsx       # TSV -> XLSX, per lavorare in Excel (nasce con T-80)
 make publish-data  # copia GeoJSON e passages in app/public/data (nasce con T-83)

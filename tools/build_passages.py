@@ -24,6 +24,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from rdflib import Graph, Namespace, RDF
+from rdflib.namespace import SKOS
 
 ROOT = Path(__file__).resolve().parents[1]
 TTL = ROOT / "data" / "dist" / "gaddatlas-full.ttl"
@@ -75,7 +76,14 @@ def main() -> int:
     orphans: list[str] = []
     truncated: list[str] = []
 
-    refs = list(g.subjects(RDF.type, CHORA.PlaceReference))
+    # Solo le occorrenze del testimone di riferimento (D-053): quelle degli
+    # altri testimoni sono corpora di confronto e non entrano nei brani.
+    reference_witnesses = set(g.objects(None, CHORA.referenceWitness))
+    # Ordine per IRI: l'ordine di iterazione del grafo cambia quando un
+    # riferimento compare come oggetto altrove (es. nei valori di una variante),
+    # e i file pubblicati non devono dipenderne (come le feature, D-041).
+    refs = sorted((r for r in g.subjects(RDF.type, CHORA.PlaceReference)
+                   if g.value(r, CHORA.appearsInWitness) in (None, *reference_witnesses)), key=str)
     for ref in refs:
         rid = local(ref)
         excerpt = g.value(ref, CHORA.excerpt)
@@ -103,6 +111,9 @@ def main() -> int:
             "page": page_number(src),
             "sourceReference": src,
             "work": local(work) if work else None,
+            "witness": local(g.value(ref, CHORA.appearsInWitness)),
+            # etichetta del testimone per l'interfaccia (skos:prefLabel, D-073)
+            "witnessLabel": str(g.value(g.value(ref, CHORA.appearsInWitness), SKOS.prefLabel) or ""),
             "excerpt": text,
             "iri": str(ref),
         }

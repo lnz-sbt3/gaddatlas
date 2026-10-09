@@ -329,7 +329,7 @@
 	</script>
 </head>
 <body>
-<div id="content"><div class="ga-injected" style="margin:0 0 1.5em 0;padding:.6em .9em;border-left:3px solid #666;background:#f4f4f4;font-size:.9em;">↑ <a href="index.html">CHORA Ontology</a><br/>Other vocabularies: <a href="vocab_placecategory.html">GaddAtlas Place Category Vocabulary</a> · <a href="vocab_narrativerole.html">Narrative Role</a> · <a href="vocab_realitystatus.html">Reality Status</a> · <a href="vocab_spatialdetermination.html">Spatial determination</a></div>
+<div id="content"><div class="ga-injected" style="margin:0 0 1.5em 0;padding:.6em .9em;border-left:3px solid #666;background:#f4f4f4;font-size:.9em;">↑ <a href="index.html">CHORA Ontology</a><br/>Other vocabularies: <a href="vocab_assertiontype.html">Assertion type</a> · <a href="vocab_attributionrole.html">Attribution role</a> · <a href="vocab_placecategory.html">GaddAtlas Place Category Vocabulary</a> · <a href="vocab_localizationstatus.html">Localization status</a> · <a href="vocab_memoryattribution.html">Memory attribution</a> · <a href="vocab_narrativerole.html">Narrative Role</a> · <a href="vocab_rationaletype.html">Rationale type</a> · <a href="vocab_realitystatus.html">Reality Status</a> · <a href="vocab_reviewstatus.html">Review status</a> · <a href="vocab_routetype.html">Route type</a> · <a href="vocab_spatialdetermination.html">Spatial determination</a> · <a href="vocab_uncertaintyaxis.html">Uncertainty axis</a> · <a href="vocab_uncertaintyorigin.html">Uncertainty origin</a> · <a href="vocab_uncertaintytype.html">Uncertainty type</a> · <a href="vocab_witnesstype.html">Witness type</a></div>
 <div class="section" id="metadata">
 <h1></h1>
 <h2>Metadata</h2>
@@ -389,10 +389,10 @@
 <dd>
 <div>
 <p>
-<a href="http://www.w3.org/2002/07/owl#NamedIndividual">Named Individual</a>
+<a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a>
 </p>
 <p>
-<a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a>
+<a href="http://www.w3.org/2002/07/owl#NamedIndividual">Named Individual</a>
 </p>
 </div>
 </dd>
@@ -424,28 +424,40 @@
 <dd>
 <div>
 <p>
-<a href="https://w3id.org/chora#Near">Near</a>
+<a href="https://w3id.org/chora#RelatedTo">Related to</a>
 </p>
 <p>
-<a href="https://w3id.org/chora#Below">Below</a>
+<a href="https://w3id.org/chora#Boundary">Boundary</a>
 </p>
 <p>
 <a href="https://w3id.org/chora#AdjacentTo">Adjacent to</a>
 </p>
 <p>
-<a href="https://w3id.org/chora#Overlaps">Overlaps</a>
+<a href="https://w3id.org/chora#Contains">Contains</a>
 </p>
 <p>
-<a href="https://w3id.org/chora#RelatedTo">Related to</a>
+<a href="https://w3id.org/chora#Near">Near</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#Between">Between</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#Facing">Facing</a>
 </p>
 <p>
 <a href="https://w3id.org/chora#Inside">Inside</a>
 </p>
 <p>
-<a href="https://w3id.org/chora#Contains">Contains</a>
+<a href="https://w3id.org/chora#Above">Above</a>
 </p>
 <p>
-<a href="https://w3id.org/chora#Above">Above</a>
+<a href="https://w3id.org/chora#Below">Below</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#Threshold">Threshold</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#Overlaps">Overlaps</a>
 </p>
 </div>
 </dd>
@@ -486,7 +498,16 @@
 <a href="#Below">Below</a>
 </li>
 <li>
+<a href="#Between">Between</a>
+</li>
+<li>
+<a href="#Boundary">Boundary</a>
+</li>
+<li>
 <a href="#Contains">Contains</a>
+</li>
+<li>
+<a href="#Facing">Facing</a>
 </li>
 <li>
 <a href="#Inside">Inside</a>
@@ -499,6 +520,9 @@
 </li>
 <li>
 <a href="#RelatedTo">Related to</a>
+</li>
+<li>
+<a href="#Threshold">Threshold</a>
 </li>
 </ul>
 </div>
@@ -581,6 +605,56 @@
 </table>
 </div>
 <div class="entity">
+<h3 id="chora_Between">Between</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#Between</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>A sta fra B e C, senza una posizione propria.</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Tra</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="chora_Boundary">Boundary</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#Boundary</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>A e' il confine di B, o lo separa da un altro luogo.</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Confine</td>
+</tr>
+</table>
+</div>
+<div class="entity">
 <h3 id="chora_Contains">Contains</h3>
 <table>
 <tr>
@@ -602,6 +676,31 @@
 <a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
 </td>
 <td>Contiene</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="chora_Facing">Facing</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#Facing</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>A sta di fronte a B («in faccia», «rimpetto»): relazione frontale, orientata.</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Di fronte a</td>
 </tr>
 </table>
 </div>
@@ -702,6 +801,31 @@
 <a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
 </td>
 <td>In relazione con</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="chora_Threshold">Threshold</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#Threshold</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>A e' la soglia di B: il punto di passaggio fra un dentro e un fuori (porta, uscio, ingresso).</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>Soglia</td>
 </tr>
 </table>
 </div>

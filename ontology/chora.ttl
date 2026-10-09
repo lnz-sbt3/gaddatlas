@@ -1,7 +1,10 @@
 @prefix chora: <https://w3id.org/chora#> .
+@prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix hico: <http://purl.org/emmedi/hico/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -275,7 +278,9 @@ chora:annotationMethod a owl:DatatypeProperty ;
     skos:prefLabel "annotation method"@en .
 
 chora:appearsInWork a owl:ObjectProperty ;
+    rdfs:comment "Derived (D-055): the work of the witness in which the reference occurs."@en ;
     rdfs:label "appears in work"@en ;
+    owl:propertyChainAxiom ( chora:appearsInWitness chora:witnessOf ) ;
     rdfs:domain chora:PlaceReference ;
     rdfs:range chora:LiteraryWork ;
     skos:altLabel "compare nell'opera"@it .
@@ -388,6 +393,8 @@ chora:historicalLocation a owl:DatatypeProperty ;
     skos:prefLabel "historical location"@en .
 
 chora:interpretationType a owl:DatatypeProperty ;
+    owl:deprecated true ;
+    skos:historyNote "Deprecata il 9/10/2026 (D-042): il tipo di una lettura e' chora:assertionType su chora:Assertion."@it ;
     rdfs:comment "Classifies the kind of spatial interpretation asserted by the annotation."@en ;
     rdfs:domain chora:SpatialInterpretation ;
     rdfs:range xsd:string ;
@@ -524,9 +531,10 @@ chora:Imagined a owl:NamedIndividual,
         chora:Invented,
         chora:Transformed ;
     skos:altLabel "Immaginato"@it ;
-    skos:definition "There is no hint at all about the position of the setting, it is located ‘somewhere’, with no real-world counterpart, only existing within the narration. Consequently, it is not possible to assign coordinates" ;
+    skos:definition "A place without any identifiable correspondence to a place attested in reality: the product of the author's imagination. It may be set in the real world, if the author imagines it in a certain position, but in reality nothing exists at that point."@en,
+        "Luogo senza alcuna corrispondenza identificabile con un luogo attestato nella realtà, frutto dell'immaginazione d'autore. Può essere collocato nel mondo reale, se l'autore lo immagina in una certa posizione, ma nella realtà in quel punto non esiste."@it ;
     skos:notation "4" ;
-    skos:scopeNote "Fourth and most abstract degree of the scale: the place is set 'somewhere', without any indication of position. Not to be confused with Invented, a fictional place located within a known geography (Reuschel, Piatti and Hurni 2013, pp. 138–139)."@en ;
+    skos:scopeNote "Fourth and most abstract degree of the scale: the place has no identifiable counterpart in reality, even when the author gives it a position. Not to be confused with Invented, a fictional place located within a known geography (Reuschel, Piatti and Hurni 2013, pp. 138–139; definition of Imagined by L. Sabatino, 9/10/2026, D-061)."@en ;
     skos:inScheme chora:RealityStatusScheme ;
     skos:prefLabel "Imagined"@en ;
     skos:topConceptOf chora:RealityStatusScheme .
@@ -612,6 +620,7 @@ chora:Imported a owl:NamedIndividual,
     skos:altLabel "Importato"@it ;
     skos:definition "The setting corresponds with the geographical reality by realistically portraying the surrounding" ;
     skos:notation "1" ;
+    skos:scopeNote "Motivazione standard dello statuto (D-046): referente identificato nel repertorio. Per un luogo Imported senza un'asserzione di statuto esplicita, l'ETL genera la lettura (assertion/S-auto-{luogo}) con questa motivazione, la fonte del repertorio dell'ancora primaria se registrata, autore e codificatore L. Sabatino, adottata e validata (D-068)."@it ;
     skos:inScheme chora:RealityStatusScheme ;
     skos:prefLabel "Imported"@en ;
     skos:topConceptOf chora:RealityStatusScheme .
@@ -652,6 +661,22 @@ geo:Geometry a owl:Class ;
 prov:Agent a owl:Class ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
 
+prov:Person a owl:Class ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> ;
+    rdfs:subClassOf prov:Agent .
+
+chora:Scholar a owl:Class ;
+    rdfs:comment "A scholar whose readings are encoded in the dataset as attributed assertions (D-062)."@en ;
+    rdfs:subClassOf prov:Person ;
+    skos:altLabel "Studioso"@it ;
+    skos:prefLabel "Scholar"@en .
+
+chora:Annotator a owl:Class ;
+    rdfs:comment "A person who encodes readings in the knowledge graph (D-062). Being an annotator is a kind of agent; encoder and reading author are roles in an attribution (chora:Encoder, chora:ReadingAuthor)."@en ;
+    rdfs:subClassOf prov:Person ;
+    skos:altLabel "Annotatore"@it ;
+    skos:prefLabel "Annotator"@en .
+
 chora:Invented a owl:NamedIndividual,
         skos:Concept ;
     owl:differentFrom chora:Imagined,
@@ -660,7 +685,7 @@ chora:Invented a owl:NamedIndividual,
     skos:altLabel "Inventato"@it ;
     skos:definition "An invented setting within familiar geographical reality" ;
     skos:notation "3" ;
-    skos:scopeNote "Third degree of the scale: a fictional place set within a known, identifiable geography, so that its position can be indicated or inferred. Not to be confused with Imagined, which has no indication of position at all (Reuschel, Piatti and Hurni 2013, pp. 138–139)."@en ;
+    skos:scopeNote "Third degree of the scale: a fictional place set within a known, identifiable geography, so that its position can be indicated or inferred. Not to be confused with Imagined, which has no identifiable counterpart in reality (Reuschel, Piatti and Hurni 2013, pp. 138–139; D-061)."@en ;
     skos:inScheme chora:RealityStatusScheme ;
     skos:prefLabel "Invented"@en ;
     skos:topConceptOf chora:RealityStatusScheme .
@@ -738,6 +763,7 @@ chora:RealityStatusScheme a owl:NamedIndividual,
         chora:Imported,
         chora:Invented,
         chora:Transformed ;
+    skos:historyNote "Fino all'8/10/2026 le etichette Invented e Imagined erano invertite rispetto alle definizioni (D-030). Lo scambio e' una correzione dello schema, non una revisione delle letture: non genera prov:wasRevisionOf (D-051)."@it ;
     skos:prefLabel "Reality Status"@en .
 
 chora:SpatialDeterminationScheme a owl:NamedIndividual,
@@ -765,8 +791,8 @@ chora:SpatialInterpretation a owl:Class ;
     rdfs:comment "SpatialInterpretation makes the declarative and traceable nature of annotation explicit: multiple interpretations may coexist for the same PlaceReference, with different assumptions and confidence levels; therefore the model privileges “targets/assigns/anchors” properties at this level."@en,
         "SpatialInterpretation esplicita la natura dichiarativa e tracciabile dell’annotazione: diverse interpretazioni possono coesistere per lo stesso PlaceReference, con diverse assunzioni e livelli di confidenza; per questo il modello privilegia proprietà “targets/assigns/anchors” a questo livello."@it ;
     rdfs:subClassOf prov:Entity ;
-    skos:definition "An interpretive act that operates on a PlaceReference and asserts (i) the diegetic place it activates (target), (ii) semantic qualifications via controlled vocabularies (e.g., narrative role, reality status, degree of spatial determination, spatial relation type), and (iii) any anchoring to an external topographic referent (gazetteer)."@en,
-        "Atto interpretativo che prende in carico un PlaceReference e asserisce (i) quale luogo diegetico esso attiva (target), (ii) le qualificazioni semantiche tramite vocabolari controllati (es. ruolo narrativo, status di realtà, grado di determinazione spaziale, tipo di relazione spaziale), e (iii) l’eventuale ancoraggio a un referente topografico esterno (gazetteer)."@it .
+    skos:definition "An interpretive act that operates on a PlaceReference and asserts (i) the diegetic place it activates (target), (ii) semantic qualifications via controlled vocabularies (narrative role, degree of spatial determination, spatial relation type), and (iii) any anchoring to an external topographic referent (gazetteer). The reality status is not assigned here: since v4.1.1 it belongs to the narrative place (chora:hasRealityStatus), stated by an attributed status assertion."@en,
+        "Atto interpretativo che prende in carico un PlaceReference e asserisce (i) quale luogo diegetico esso attiva (target), (ii) le qualificazioni semantiche tramite vocabolari controllati (ruolo narrativo, grado di determinazione spaziale, tipo di relazione spaziale), e (iii) l’eventuale ancoraggio a un referente topografico esterno (gazetteer). Lo statuto di realtà non è assegnato qui: dalla v4.1.1 sta sul luogo narrativo (chora:hasRealityStatus), dichiarato da un'asserzione di statuto attribuita."@it .
 
 chora:SpatialRelationTypeScheme a owl:NamedIndividual,
         skos:ConceptScheme ;
@@ -779,9 +805,987 @@ chora:SpatialRelationTypeScheme a owl:NamedIndividual,
         chora:Contains,
         chora:Inside,
         chora:Near,
+        chora:Between,
+        chora:Boundary,
+        chora:Facing,
         chora:Overlaps,
-        chora:RelatedTo ;
+        chora:RelatedTo,
+        chora:Threshold ;
     skos:prefLabel "Narrative Spatial Relations"@en .
 
 skos:Concept a owl:Class .
 
+# =============================================================================
+# ASSERZIONI ATTRIBUITE (D-042, work order T-30)
+# Ogni lettura che il progetto registra (statuto, identificazione, posizione,
+# partizione, memoria, incertezza, variante) e' un nodo chora:Assertion: chi
+# l'ha formulata, chi l'ha codificata, su quale fonte, quando, quale versione
+# rivede, e se e' la lettura adottata dal progetto. Nessuna lettura e' il
+# default del modello: quella adottata e' attribuita come le altre.
+# =============================================================================
+
+chora:Assertion a owl:Class ;
+    rdfs:subClassOf prov:Entity ;
+    rdfs:comment "An attributed reading about a resource of the dataset (subject, value), generated by an interpretation act (prov:wasGeneratedBy hico:InterpretationAct) that carries its type, criterion, source, rationale and author. The reading itself carries whether the project adopts it, its review status and which earlier reading it revises. Competing readings coexist as distinct assertions; the adopted one is attributed like the others (D-067)."@en,
+        "Lettura attribuita su una risorsa del dataset (soggetto, valore), generata da un atto interpretativo (prov:wasGeneratedBy hico:InterpretationAct) che ne porta tipo, criterio, fonte, argomentazione e autore. La lettura porta l'adozione da parte del progetto, lo stato di revisione e la lettura che rivede. Le letture concorrenti convivono come asserzioni distinte; quella adottata e' attribuita come le altre (D-067)."@it ;
+    skos:altLabel "Asserzione"@it ;
+    skos:prefLabel "Assertion"@en .
+
+hico:InterpretationAct a owl:Class ;
+    rdfs:comment "The act of interpreting by the author of a reading (HiCO). In CHORA it generates a chora:Assertion or a chora:SpatialInterpretation, and carries type, criterion, source (hico:isExtractedFrom), page, rationale and the association with the author; its date is the date of the source when the author is a scholar (D-067)."@en ;
+    rdfs:isDefinedBy <http://purl.org/emmedi/hico> ;
+    rdfs:subClassOf prov:Activity .
+
+chora:assertionType owl:deprecated true ;
+    skos:historyNote "Deprecata il 9/10/2026 (D-067): sostituita da hico:hasInterpretationType sull'atto interpretativo."@it .
+
+chora:assertionType a owl:ObjectProperty ;
+    dcterms:references chora:AssertionTypeScheme ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "tipo di asserzione"@it ;
+    skos:prefLabel "assertion type"@en .
+
+chora:aboutSubject a owl:ObjectProperty ;
+    rdfs:comment "The resource the assertion is about (a narrative place, a place reference, a gazetteer entity, an interpretation)."@en ;
+    rdfs:domain chora:Assertion ;
+    skos:altLabel "riguarda"@it ;
+    skos:prefLabel "about subject"@en .
+
+chora:assertsValue a owl:ObjectProperty ;
+    rdfs:comment "The value the assertion assigns to its subject: a concept (e.g. a reality status) or a resource (e.g. the gazetteer entity of an identification)."@en ;
+    rdfs:domain chora:Assertion ;
+    skos:altLabel "asserisce il valore"@it ;
+    skos:prefLabel "asserts value"@en .
+
+chora:adoptedByProject a owl:DatatypeProperty ;
+    rdfs:comment "True when the project adopts this reading (the one shown by the interface). It marks a choice, not a truth: the adopted reading is attributed like the others. Stated on every assertion that offers alternatives and on every spatial interpretation, true or false (D-070)."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( chora:Assertion chora:SpatialInterpretation ) ] ;
+    rdfs:range xsd:boolean ;
+    skos:altLabel "adottata dal progetto"@it ;
+    skos:prefLabel "adopted by project"@en .
+
+chora:rationale a owl:DatatypeProperty ;
+    rdfs:comment "Textual, philological or critical motivation of the reading (R07), stated on the interpretation act (D-067)."@en ;
+    rdfs:domain hico:InterpretationAct ;
+    rdfs:range rdf:langString ;
+    skos:altLabel "motivazione"@it ;
+    skos:prefLabel "rationale"@en .
+
+chora:sourceWork owl:deprecated true ;
+    skos:historyNote "Deprecata il 9/10/2026 (D-067): sostituita da hico:isExtractedFrom sull'atto interpretativo."@it .
+
+chora:sourceWork a owl:DatatypeProperty ;
+    rdfs:comment "Bibliographic key (author-date, as in the thesis bibliography) of the source on which the reading rests."@en ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range xsd:string ;
+    skos:altLabel "opera fonte"@it ;
+    skos:prefLabel "source work"@en .
+
+chora:sourcePage a owl:DatatypeProperty ;
+    rdfs:comment "Page or pages in the source of the interpretation act (hico:isExtractedFrom)."@en ;
+    rdfs:domain hico:InterpretationAct ;
+    rdfs:range xsd:string ;
+    skos:altLabel "pagina della fonte"@it ;
+    skos:prefLabel "source page"@en .
+
+chora:AssertionTypeScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Assertion type"@en ;
+    skos:altLabel "Tipo di asserzione"@it ;
+    skos:hasTopConcept chora:StatusAssertion,
+        chora:IdentificationAssertion,
+        chora:LocationAssertion,
+        chora:PartitionAssertion,
+        chora:MemoryAssertion,
+        chora:UncertaintyAssertion,
+        chora:VariantAssertion,
+        chora:RouteTypeAssertion,
+        chora:SpatialReading ;
+    skos:prefLabel "Assertion type"@en .
+
+chora:StatusAssertion a owl:NamedIndividual, skos:Concept, hico:InterpretationType ;
+    chora:reifiesProperty chora:hasRealityStatus ;
+    skos:altLabel "statuto"@it ;
+    skos:definition "Assigns a reality status to a narrative place."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "status" ;
+    skos:prefLabel "Status assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:IdentificationAssertion a owl:NamedIndividual, skos:Concept, hico:InterpretationType ;
+    chora:reifiesProperty chora:identifiedWith ;
+    skos:altLabel "identificazione"@it ;
+    skos:definition "Identifies a narrative place or a place reference with a gazetteer entity. Replaces owl:sameAs as a judgement of identity."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "identification" ;
+    skos:prefLabel "Identification assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:LocationAssertion a owl:NamedIndividual, skos:Concept, hico:InterpretationType ;
+    chora:reifiesProperty geo:hasGeometry ;
+    skos:altLabel "posizione"@it ;
+    skos:definition "Locates a gazetteer entity according to a dated repertory."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "location" ;
+    skos:prefLabel "Location assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:PartitionAssertion a owl:NamedIndividual, skos:Concept, hico:InterpretationType ;
+    chora:reifiesProperty chora:hasZone ;
+    skos:altLabel "partizione"@it ;
+    skos:definition "Assigns a place to an interpretive partition (e.g. city / countryside)."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "partition" ;
+    skos:prefLabel "Partition assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:MemoryAssertion a owl:NamedIndividual, skos:Concept, hico:InterpretationType ;
+    chora:reifiesProperty chora:memoryAttribution ;
+    skos:altLabel "memoria"@it ;
+    skos:definition "Attributes a remembered or projected space to the author, to a character, or declares it undecidable."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "memory" ;
+    skos:prefLabel "Memory assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:UncertaintyAssertion a owl:NamedIndividual, skos:Concept, hico:InterpretationType ;
+    chora:reifiesProperty chora:hasUncertaintyType ;
+    skos:altLabel "incertezza"@it ;
+    skos:definition "Qualifies the uncertainty of a reading by type, axis and origin."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "uncertainty" ;
+    skos:prefLabel "Uncertainty assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:VariantAssertion a owl:NamedIndividual, skos:Concept, hico:InterpretationType ;
+    chora:reifiesProperty chora:hasVariant ;
+    skos:altLabel "variante"@it ;
+    skos:definition "Records a reading of another witness corresponding to an occurrence of the reference text."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "variant" ;
+    skos:prefLabel "Variant assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:AttributionRoleScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Attribution role"@en ;
+    skos:altLabel "Ruolo dell'attribuzione"@it ;
+    skos:hasTopConcept chora:Encoder,
+        chora:ReadingAuthor ;
+    skos:prefLabel "Attribution role"@en .
+
+chora:ReadingAuthor a owl:NamedIndividual, prov:Role, skos:Concept ;
+    skos:altLabel "autore della lettura"@it ;
+    skos:definition "The agent who formulated the reading: a scholar, or the project when the reading is its own."@en ;
+    skos:inScheme chora:AttributionRoleScheme ;
+    skos:prefLabel "Reading author"@en ;
+    skos:topConceptOf chora:AttributionRoleScheme .
+
+chora:Encoder a owl:NamedIndividual, prov:Role, skos:Concept ;
+    skos:altLabel "codificatore"@it ;
+    skos:definition "The agent who encoded the reading in the knowledge graph."@en ;
+    skos:inScheme chora:AttributionRoleScheme ;
+    skos:prefLabel "Encoder"@en ;
+    skos:topConceptOf chora:AttributionRoleScheme .
+
+prov:Role a owl:Class ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+prov:Attribution a owl:Class ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+prov:qualifiedAttribution a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+prov:agent a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+prov:hadRole a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+prov:wasRevisionOf a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+prov:generatedAtTime a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+# Istituzione e sede (D-044, work order T-31): relazione fra due entita' del
+# gazetteer che NON sono lo stesso referente. Sostituisce gli owl:sameAs usati
+# per le coppie istituzione / sede; non e' un'identita' ne' una fusione.
+chora:housedIn a owl:ObjectProperty ;
+    rdfs:comment "An institution (e.g. a police station, a prison) is housed in a site (a building, a street). The two gazetteer entities are distinct referents: this is neither an identity (owl:sameAs) nor an identification assertion, and it never merges them."@en,
+        "Un'istituzione (un commissariato, un carcere) ha sede in un luogo (un edificio, una via). Le due entita' del gazetteer sono referenti distinti: non e' un'identita' (owl:sameAs) ne' un'asserzione d'identificazione, e non le fonde."@it ;
+    rdfs:domain chora:GazetteerEntity ;
+    rdfs:range chora:GazetteerEntity ;
+    skos:altLabel "ha sede in"@it ;
+    skos:prefLabel "housed in"@en .
+
+# Motivazione e revisione delle asserzioni (D-046, work order T-33)
+chora:rationaleType owl:deprecated true ;
+    skos:historyNote "Deprecata il 9/10/2026 (D-067): sostituita da hico:hasInterpretationCriterion sull'atto interpretativo."@it .
+
+chora:rationaleType a owl:ObjectProperty ;
+    dcterms:references chora:RationaleTypeScheme ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "tipo di motivazione"@it ;
+    skos:prefLabel "rationale type"@en .
+
+chora:reviewStatus a owl:ObjectProperty ;
+    dcterms:references chora:ReviewStatusScheme ;
+    rdfs:comment "Whether the content of the assertion has been validated by the project, or is a draft prepared from existing documents."@en ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "stato di revisione"@it ;
+    skos:prefLabel "review status"@en .
+
+chora:RationaleTypeScheme a owl:NamedIndividual, skos:ConceptScheme ;
+    rdfs:label "Rationale type"@en ;
+    skos:altLabel "Tipo di motivazione"@it ;
+    skos:hasTopConcept chora:ReferentialEvidence, chora:TextualEvidence, chora:CriticalReading ;
+    skos:prefLabel "Rationale type"@en .
+
+chora:ReferentialEvidence a owl:NamedIndividual, skos:Concept, hico:InterpretationCriterion ;
+    skos:altLabel "prova referenziale"@it ;
+    skos:definition "The reading rests on a repertory (map, guide, gazetteer) that documents or excludes the referent."@en ;
+    skos:inScheme chora:RationaleTypeScheme ;
+    skos:prefLabel "Referential evidence"@en ;
+    skos:topConceptOf chora:RationaleTypeScheme .
+
+chora:TextualEvidence a owl:NamedIndividual, skos:Concept, hico:InterpretationCriterion ;
+    skos:altLabel "prova testuale"@it ;
+    skos:definition "The reading rests on the text itself (wording, position, context of the occurrences)."@en ;
+    skos:inScheme chora:RationaleTypeScheme ;
+    skos:prefLabel "Textual evidence"@en ;
+    skos:topConceptOf chora:RationaleTypeScheme .
+
+chora:CriticalReading a owl:NamedIndividual, skos:Concept, hico:InterpretationCriterion ;
+    skos:altLabel "lettura critica"@it ;
+    skos:definition "The reading rests on a scholar's interpretation, cited with work and page."@en ;
+    skos:inScheme chora:RationaleTypeScheme ;
+    skos:prefLabel "Critical reading"@en ;
+    skos:topConceptOf chora:RationaleTypeScheme .
+
+chora:ReviewStatusScheme a owl:NamedIndividual, skos:ConceptScheme ;
+    rdfs:label "Review status"@en ;
+    skos:altLabel "Stato di revisione"@it ;
+    skos:hasTopConcept chora:Draft, chora:Validated ;
+    skos:prefLabel "Review status"@en .
+
+chora:Draft a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "bozza"@it ;
+    skos:definition "Prepared from the existing documents (sheet descriptions, Chapter 4), not yet validated."@en ;
+    skos:inScheme chora:ReviewStatusScheme ;
+    skos:prefLabel "Draft"@en ;
+    skos:topConceptOf chora:ReviewStatusScheme .
+
+chora:Validated a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "validata"@it ;
+    skos:definition "Validated by the project."@en ;
+    skos:inScheme chora:ReviewStatusScheme ;
+    skos:prefLabel "Validated"@en ;
+    skos:topConceptOf chora:ReviewStatusScheme .
+
+# =============================================================================
+# INCERTEZZA TIPIZZATA (D-047, work order T-34)
+# L'incertezza e' un'asserzione di tipo uncertainty: tipo, asse, origine,
+# autore. Nessun indice unico di affidabilita' (Cap. 4, § 4.4). L'assenza di
+# un'asserzione d'incertezza significa «non analizzato», non «certo».
+# confidence e hasFuzzinessLevel restano invariati (rinviati).
+# =============================================================================
+
+chora:uncertaintyAxis a owl:ObjectProperty ;
+    dcterms:references chora:UncertaintyAxisScheme ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "asse dell'incertezza"@it ;
+    skos:prefLabel "uncertainty axis"@en .
+
+chora:uncertaintyOrigin a owl:ObjectProperty ;
+    dcterms:references chora:UncertaintyOriginScheme ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "origine dell'incertezza"@it ;
+    skos:prefLabel "uncertainty origin"@en .
+
+chora:UncertaintyTypeScheme a owl:NamedIndividual, skos:ConceptScheme ;
+    rdfs:label "Uncertainty type"@en ;
+    rdfs:comment "Value of a chora:Assertion of type chora:UncertaintyAssertion. The absence of such an assertion means «not analysed», not «certain»."@en ;
+    skos:altLabel "Tipo di incertezza"@it ;
+    skos:hasTopConcept chora:Vagueness, chora:NonSpecificity, chora:ContestedIdentification, chora:Discrepancy, chora:Incompleteness, chora:NonApplicability ;
+    skos:prefLabel "Uncertainty type"@en .
+
+chora:Vagueness a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "vaghezza"@it ;
+    skos:definition "The extent or boundary of the place is indeterminate."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Vagueness"@en ;
+    skos:topConceptOf chora:UncertaintyTypeScheme .
+
+chora:NonSpecificity a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "non-specificità"@it ;
+    skos:definition "The text designates one among several candidates without resolving which (e.g. a disjunction)."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Non Specificity"@en ;
+    skos:topConceptOf chora:UncertaintyTypeScheme .
+
+chora:ContestedIdentification a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "identificazione contesa"@it ;
+    skos:definition "Competing identifications of the referent, each supported by a reading."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Contested Identification"@en ;
+    skos:topConceptOf chora:UncertaintyTypeScheme .
+
+chora:Discrepancy a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "discrepanza"@it ;
+    skos:definition "The text diverges from a repertory or from itself; recorded, never corrected."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Discrepancy"@en ;
+    skos:topConceptOf chora:UncertaintyTypeScheme .
+
+chora:Incompleteness a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "incompletezza"@it ;
+    skos:definition "Information needed to locate or identify the place is missing in the sources."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Incompleteness"@en ;
+    skos:topConceptOf chora:UncertaintyTypeScheme .
+
+chora:NonApplicability a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "non-applicabilità"@it ;
+    skos:definition "A coordinate or referent does not apply to this occurrence."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Non Applicability"@en ;
+    skos:topConceptOf chora:UncertaintyTypeScheme .
+
+chora:Oversight a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "svista"@it ;
+    skos:definition "A probable slip of the author (e.g. a misplaced accent)."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Oversight"@en ;
+    skos:broader chora:Discrepancy .
+
+chora:Anachronism a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "anacronismo"@it ;
+    skos:definition "The referent did not exist, or was different, at the time of the story."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Anachronism"@en ;
+    skos:broader chora:Discrepancy .
+
+chora:Confusion a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "confusione"@it ;
+    skos:definition "The text combines or confuses distinct referents."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Confusion"@en ;
+    skos:broader chora:Discrepancy .
+
+chora:InternalDiscrepancy a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "discrepanza interna"@it ;
+    skos:definition "Two passages of the text are mutually incompatible."@en ;
+    skos:inScheme chora:UncertaintyTypeScheme ;
+    skos:prefLabel "Internal Discrepancy"@en ;
+    skos:broader chora:Discrepancy .
+
+chora:UncertaintyAxisScheme a owl:NamedIndividual, skos:ConceptScheme ;
+    rdfs:label "Uncertainty axis"@en ;
+    skos:altLabel "Asse dell'incertezza"@it ;
+    skos:hasTopConcept chora:NameAxis, chora:IdentificationAxis, chora:GeometryAxis ;
+    skos:prefLabel "Uncertainty axis"@en .
+
+chora:NameAxis a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "nome"@it ;
+    skos:definition "Uncertainty about the name or its form."@en ;
+    skos:inScheme chora:UncertaintyAxisScheme ;
+    skos:prefLabel "Name Axis"@en ;
+    skos:topConceptOf chora:UncertaintyAxisScheme .
+
+chora:IdentificationAxis a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "identificazione"@it ;
+    skos:definition "Uncertainty about which referent is meant."@en ;
+    skos:inScheme chora:UncertaintyAxisScheme ;
+    skos:prefLabel "Identification Axis"@en ;
+    skos:topConceptOf chora:UncertaintyAxisScheme .
+
+chora:GeometryAxis a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "geometria"@it ;
+    skos:definition "Uncertainty about the position or extent."@en ;
+    skos:inScheme chora:UncertaintyAxisScheme ;
+    skos:prefLabel "Geometry Axis"@en ;
+    skos:topConceptOf chora:UncertaintyAxisScheme .
+
+chora:UncertaintyOriginScheme a owl:NamedIndividual, skos:ConceptScheme ;
+    rdfs:label "Uncertainty origin"@en ;
+    skos:altLabel "Origine dell'incertezza"@it ;
+    skos:hasTopConcept chora:DocumentaryOrigin, chora:ConstructiveOrigin ;
+    skos:prefLabel "Uncertainty origin"@en .
+
+chora:DocumentaryOrigin a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "documentaria"@it ;
+    skos:definition "Arises from the sources: text, witnesses, repertories."@en ;
+    skos:inScheme chora:UncertaintyOriginScheme ;
+    skos:prefLabel "Documentary Origin"@en ;
+    skos:topConceptOf chora:UncertaintyOriginScheme .
+
+chora:ConstructiveOrigin a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "costruttiva"@it ;
+    skos:definition "Arises from the modelling choices of the project."@en ;
+    skos:inScheme chora:UncertaintyOriginScheme ;
+    skos:prefLabel "Constructive Origin"@en ;
+    skos:topConceptOf chora:UncertaintyOriginScheme .
+
+# =============================================================================
+# ASTENSIONE DALL'ANCORAGGIO (D-048, work order T-35)
+# Tre valori, distinti dal dato mancante: un luogo senza ancoraggio dichiara
+# perche'. Un luogo ancorato non porta lo stato.
+# =============================================================================
+
+chora:localizationStatus a owl:ObjectProperty ;
+    dcterms:references chora:LocalizationStatusScheme ;
+    rdfs:comment "Why a narrative place has no geographic anchoring. It is distinct from missing data: a place without anchoring and without this status is an error (integrity query IQ14)."@en ;
+    rdfs:domain chora:NarrativePlace ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "stato di localizzazione"@it ;
+    skos:prefLabel "localization status"@en .
+
+chora:localizationReason a owl:DatatypeProperty ;
+    rdfs:comment "Motivation of a suspended localization."@en ;
+    rdfs:domain chora:NarrativePlace ;
+    rdfs:range rdf:langString ;
+    skos:altLabel "motivo della sospensione"@it ;
+    skos:prefLabel "localization reason"@en .
+
+chora:LocalizationStatusScheme a owl:NamedIndividual, skos:ConceptScheme ;
+    rdfs:label "Localization status"@en ;
+    skos:altLabel "Stato di localizzazione"@it ;
+    skos:hasTopConcept chora:NotYetAnalysed, chora:SuspendedWithReason, chora:NotApplicable ;
+    skos:prefLabel "Localization status"@en .
+
+chora:NotYetAnalysed a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "analisi non condotta"@it ;
+    skos:definition "The anchoring has not been analysed yet."@en ;
+    skos:inScheme chora:LocalizationStatusScheme ;
+    skos:prefLabel "Not yet analysed"@en ;
+    skos:topConceptOf chora:LocalizationStatusScheme .
+
+chora:SuspendedWithReason a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "sospensione motivata"@it ;
+    skos:definition "The anchoring is deliberately suspended, for a stated reason (chora:localizationReason)."@en ;
+    skos:inScheme chora:LocalizationStatusScheme ;
+    skos:prefLabel "Suspended with reason"@en ;
+    skos:topConceptOf chora:LocalizationStatusScheme .
+
+chora:NotApplicable a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "coordinata non applicabile"@it ;
+    skos:definition "A coordinate does not apply to the place. It is assigned case by case, never derived from the reality status (D-062)."@en ;
+    skos:inScheme chora:LocalizationStatusScheme ;
+    skos:prefLabel "Not applicable"@en ;
+    skos:topConceptOf chora:LocalizationStatusScheme .
+
+# =============================================================================
+# LIVELLI ENUNCIATIVI (D-049, work order T-36, R08, R19)
+# Percezione (chora:hasFocalizer), enunciazione (chora:hasNarratingVoice) e
+# persistenza memoriale (asserzione chora:MemoryAssertion) sono piani distinti.
+# Il momento del racconto e' la posizione dell'occorrenza nel testo (capitolo,
+# pagina del riferimento): la temporalita' della storia non e' modellata
+# (docs/EXCLUSIONS.md).
+# =============================================================================
+
+chora:hasNarratingVoice a owl:ObjectProperty ;
+    rdfs:comment "The voice that utters the passage of a spatial interpretation (who speaks), distinct from the focalizer (who perceives). Annotated only where a critical source discusses it; an interpretation without this property is «not annotated», which does not mean that voice and focalizer coincide."@en ;
+    rdfs:domain chora:SpatialInterpretation ;
+    rdfs:range chora:FocalizingAgent ;
+    skos:altLabel "ha voce narrante"@it ;
+    skos:prefLabel "has narrating voice"@en .
+
+chora:MemoryAttributionScheme a owl:NamedIndividual, skos:ConceptScheme ;
+    rdfs:label "Memory attribution"@en ;
+    skos:altLabel "Attribuzione della memoria"@it ;
+    skos:hasTopConcept chora:AuthorMemory, chora:CharacterMemory, chora:UndecidableMemory ;
+    skos:prefLabel "Memory attribution"@en .
+
+chora:AuthorMemory a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "memoria dell'autore"@it ;
+    skos:definition "The remembered space belongs to the author's memory."@en ;
+    skos:inScheme chora:MemoryAttributionScheme ;
+    skos:prefLabel "Author's memory"@en ;
+    skos:topConceptOf chora:MemoryAttributionScheme .
+
+chora:CharacterMemory a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "memoria del personaggio"@it ;
+    skos:definition "The remembered space belongs to the character's memory."@en ;
+    skos:inScheme chora:MemoryAttributionScheme ;
+    skos:prefLabel "Character's memory"@en ;
+    skos:topConceptOf chora:MemoryAttributionScheme .
+
+chora:UndecidableMemory a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "attribuzione indecidibile"@it ;
+    skos:definition "The text does not allow the memory to be attributed to author or character."@en ;
+    skos:inScheme chora:MemoryAttributionScheme ;
+    skos:prefLabel "Undecidable"@en ;
+    skos:scopeNote "A reading that superimposes the two memories asserts both AuthorMemory and CharacterMemory."@en ;
+    skos:topConceptOf chora:MemoryAttributionScheme .
+
+# =============================================================================
+# PARTIZIONI INTERPRETATIVE (D-050, work order T-37, R20)
+# Una partizione del territorio (citta'/campagna, centro/periferia) e' un'ipotesi
+# critica, attribuita con un'asserzione chora:PartitionAssertion che ha per
+# soggetto la partizione. Le zone appartengono a una sola partizione, quindi
+# l'appartenenza di un luogo a una zona vale dentro quell'ipotesi e non in
+# assoluto. Le bande di distanza del GeoJSON (urbano, periurbano, nazionale) sono
+# una misura, non una partizione.
+# =============================================================================
+
+chora:Partition a owl:Class ;
+    rdfs:comment "An interpretive partition of the territory (e.g. city / countryside), proposed by a reader. It is a hypothesis: its author, source and adoption are stated by a chora:PartitionAssertion whose subject is the partition."@en ;
+    skos:altLabel "Partizione"@it ;
+    skos:prefLabel "Partition"@en .
+
+chora:PartitionZone a owl:Class ;
+    rdfs:comment "One zone of a chora:Partition. A zone belongs to exactly one partition."@en ;
+    skos:altLabel "Zona di una partizione"@it ;
+    skos:prefLabel "Partition zone"@en .
+
+chora:hasZone a owl:ObjectProperty ;
+    rdfs:comment "Links a partition to one of its zones."@en ;
+    rdfs:domain chora:Partition ;
+    rdfs:range chora:PartitionZone ;
+    skos:altLabel "ha zona"@it ;
+    skos:prefLabel "has zone"@en .
+
+chora:inPartitionZone a owl:ObjectProperty ;
+    rdfs:comment "Assigns a narrative place to a zone of a partition. The assignment holds within the partition hypothesis that owns the zone; a place not assigned to any zone is not classified by that hypothesis."@en ;
+    rdfs:domain chora:NarrativePlace ;
+    rdfs:range chora:PartitionZone ;
+    skos:altLabel "in zona"@it ;
+    skos:prefLabel "in partition zone"@en .
+
+# =============================================================================
+# OPERA E TESTIMONI (D-052, work order T-40, R01)
+# Modello minimo: un'opera (chora:LiteraryWork) e i suoi testimoni, ciascuno
+# portatore di uno stato redazionale del testo. L'allineamento a LRMoo e'
+# dichiarato in data/source/mapping.yaml, non adottato in blocco.
+# =============================================================================
+
+chora:Witness a owl:Class ;
+    rdfs:comment "A witness of a literary work: a periodical redaction, a typescript, a set of proofs, a first edition or a later edition, each carrying a state of the text. Derivations between witnesses (prov:wasDerivedFrom) are stated only where documented."@en ;
+    rdfs:subClassOf frbr:Expression,
+        prov:Entity ;
+    skos:editorialNote "Sottoclasse di frbr:Expression perche' il codominio di hico:isExtractedFrom lo impone: un testimone e' fonte di letture. Per i testimoni unici (dattiloscritto, bozze) e' un'approssimazione: sono piuttosto esemplari (FRBR Item, LRMoo F5) (D-067)."@it ;
+    skos:altLabel "Testimone"@it ;
+    skos:prefLabel "Witness"@en .
+
+chora:witnessOf a owl:ObjectProperty ;
+    rdfs:comment "Links a witness to the work whose text it carries."@en ;
+    rdfs:domain chora:Witness ;
+    rdfs:range chora:LiteraryWork ;
+    skos:altLabel "testimone di"@it ;
+    skos:prefLabel "witness of"@en .
+
+chora:referenceWitness a owl:ObjectProperty ;
+    rdfs:comment "The witness chosen by the project as reference text of the work: occurrences are annotated on its readings."@en ;
+    rdfs:domain chora:LiteraryWork ;
+    rdfs:range chora:Witness ;
+    skos:altLabel "testimone di riferimento"@it ;
+    skos:prefLabel "reference witness"@en .
+
+chora:witnessType a owl:ObjectProperty ;
+    dcterms:references chora:WitnessTypeScheme ;
+    rdfs:domain chora:Witness ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "tipo di testimone"@it ;
+    skos:prefLabel "witness type"@en .
+
+chora:editor a owl:DatatypeProperty ;
+    rdfs:comment "Editor(s) of an edition («a cura di»)."@en ;
+    rdfs:domain chora:Witness ;
+    rdfs:subPropertyOf dcterms:contributor ;
+    skos:altLabel "curatore"@it ;
+    skos:prefLabel "editor"@en .
+
+chora:heldAt a owl:DatatypeProperty ;
+    rdfs:comment "Institution and fonds holding an unpublished witness."@en ;
+    rdfs:domain chora:Witness ;
+    rdfs:range rdf:langString ;
+    skos:altLabel "conservato presso"@it ;
+    skos:prefLabel "held at"@en .
+
+chora:WitnessTypeScheme a owl:NamedIndividual, skos:ConceptScheme ;
+    rdfs:label "Witness type"@en ;
+    skos:altLabel "Tipo di testimone"@it ;
+    skos:hasTopConcept chora:PeriodicalRedaction, chora:Typescript, chora:Proofs,
+        chora:FirstEdition, chora:Edition ;
+    skos:prefLabel "Witness type"@en .
+
+chora:PeriodicalRedaction a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "redazione in rivista"@it ;
+    skos:inScheme chora:WitnessTypeScheme ;
+    skos:prefLabel "Periodical redaction"@en ;
+    skos:topConceptOf chora:WitnessTypeScheme .
+
+chora:Typescript a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "dattiloscritto"@it ;
+    skos:inScheme chora:WitnessTypeScheme ;
+    skos:prefLabel "Typescript"@en ;
+    skos:topConceptOf chora:WitnessTypeScheme .
+
+chora:Proofs a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "bozze"@it ;
+    skos:inScheme chora:WitnessTypeScheme ;
+    skos:prefLabel "Proofs"@en ;
+    skos:topConceptOf chora:WitnessTypeScheme .
+
+chora:FirstEdition a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "princeps"@it ;
+    skos:inScheme chora:WitnessTypeScheme ;
+    skos:prefLabel "First edition"@en ;
+    skos:topConceptOf chora:WitnessTypeScheme .
+
+chora:Edition a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "edizione"@it ;
+    skos:definition "A later edition of the work, edited (e.g. collected works, the reference edition)."@en ;
+    skos:inScheme chora:WitnessTypeScheme ;
+    skos:prefLabel "Edition"@en ;
+    skos:topConceptOf chora:WitnessTypeScheme .
+
+chora:appearsInWitness a owl:ObjectProperty ;
+    rdfs:comment "The witness in which a place reference occurs (D-053). Occurrences in witnesses other than the reference witness enter only as comparison corpora: they point to the same narrative place, never count in the views of the published novel, and carry no status of their own."@en ;
+    rdfs:domain chora:PlaceReference ;
+    rdfs:range chora:Witness ;
+    skos:altLabel "compare nel testimone"@it ;
+    skos:prefLabel "appears in witness"@en .
+
+# =============================================================================
+# ANCORAGGIO RELAZIONALE (D-057, work order T-47, R04)
+# Il testo colloca un luogo rispetto ad altri («tra», «vicino a») senza dargli
+# una posizione. E' distinto dalla referenza plurale (un passo che nomina piu'
+# luoghi: un riferimento per luogo) e dall'identificazione contesa (letture
+# alternative dello stesso referente: chora:IdentificationAssertion).
+# Regola di geometria: un luogo prende geometria solo dalla posizione adottata
+# (chora:anchorsToEntity); gli ancoraggi relazionali non producono un punto.
+# =============================================================================
+
+chora:RelationalAnchoring a owl:Class ;
+    rdfs:comment "The placement of a narrative place relative to one or more geographic entities («between», «near»), as stated by a passage. It produces no geometry: a place without an adopted position stays off the map, with its relational anchoring."@en ;
+    skos:altLabel "Ancoraggio relazionale"@it ;
+    skos:prefLabel "Relational anchoring"@en .
+
+chora:hasRelationalAnchoring a owl:ObjectProperty ;
+    rdfs:domain chora:SpatialInterpretation ;
+    rdfs:range chora:RelationalAnchoring ;
+    skos:altLabel "ha ancoraggio relazionale"@it ;
+    skos:prefLabel "has relational anchoring"@en .
+
+chora:relatum a owl:ObjectProperty ;
+    rdfs:comment "A geographic entity, or another narrative place, with respect to which the place is located. A narrative place as relatum makes the relation hold without a geographic referent (R17, D-058)."@en ;
+    rdfs:domain chora:RelationalAnchoring ;
+    rdfs:range [ a owl:Class ; owl:unionOf ( chora:GazetteerEntity chora:NarrativePlace ) ] ;
+    skos:altLabel "termine di relazione"@it ;
+    skos:prefLabel "relatum"@en .
+
+chora:relationalType a owl:ObjectProperty ;
+    dcterms:references chora:SpatialRelationTypeScheme ;
+    rdfs:domain chora:RelationalAnchoring ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "tipo di relazione"@it ;
+    skos:prefLabel "relational type"@en .
+
+chora:Between a owl:NamedIndividual, skos:Concept ;
+    dcterms:description "A sta fra B e C, senza una posizione propria."@it ;
+    skos:altLabel "Tra"@it ;
+    skos:inScheme chora:SpatialRelationTypeScheme ;
+    skos:prefLabel "Between"@en ;
+    skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+# Relazioni qualitative del Cap. 4, R17 (D-058, work order T-53)
+
+chora:Threshold a owl:NamedIndividual, skos:Concept ;
+    dcterms:description "A e' la soglia di B: il punto di passaggio fra un dentro e un fuori (porta, uscio, ingresso)."@it ;
+    skos:altLabel "Soglia"@it ;
+    skos:inScheme chora:SpatialRelationTypeScheme ;
+    skos:prefLabel "Threshold"@en ;
+    skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+chora:Facing a owl:NamedIndividual, skos:Concept ;
+    dcterms:description "A sta di fronte a B («in faccia», «rimpetto»): relazione frontale, orientata."@it ;
+    skos:altLabel "Di fronte a"@it ;
+    skos:inScheme chora:SpatialRelationTypeScheme ;
+    skos:prefLabel "Facing"@en ;
+    skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+chora:Boundary a owl:NamedIndividual, skos:Concept ;
+    dcterms:description "A e' il confine di B, o lo separa da un altro luogo."@it ;
+    skos:altLabel "Confine"@it ;
+    skos:inScheme chora:SpatialRelationTypeScheme ;
+    skos:prefLabel "Boundary"@en ;
+    skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+# =============================================================================
+# FORMA ATTESTATA E FORMA NORMALIZZATA (D-059, work order T-48, R05)
+# L'etichetta del luogo (rdfs:label) e' la forma normalizzata; la forma
+# stampata nel testimone sta sull'occorrenza. Le forme varianti del luogo sono
+# skos:altLabel; i soprannomi, chora:nickname.
+# =============================================================================
+
+chora:attestedForm a owl:DatatypeProperty ;
+    rdfs:comment "The form of the toponym as printed in the witness of the reference, recorded where it differs from the normalized label of the place. It is transcribed, not corrected."@en ;
+    rdfs:domain chora:PlaceReference ;
+    rdfs:range rdf:langString ;
+    skos:altLabel "forma attestata"@it ;
+    skos:prefLabel "attested form"@en .
+
+chora:nickname a owl:DatatypeProperty ;
+    rdfs:comment "A nickname of the place used in the text (antonomasia, popular name), distinct from a variant spelling of its toponym."@en ;
+    rdfs:domain chora:NarrativePlace ;
+    rdfs:range rdf:langString ;
+    rdfs:subPropertyOf skos:altLabel ;
+    skos:altLabel "soprannome"@it ;
+    skos:prefLabel "nickname"@en .
+
+# =============================================================================
+# PERCORSI TIPIZZATI (D-060, work order T-54, R18)
+# Solo i percorsi dei personaggi (gli oggetti sono esclusi, DM-03). Il tipo e'
+# una lettura: lo assegna un'asserzione chora:RouteTypeAssertion, e l'ETL ne
+# deriva chora:hasRouteType dalla lettura adottata.
+# =============================================================================
+
+chora:RouteTypeAssertion a owl:NamedIndividual, skos:Concept, hico:InterpretationType ;
+    chora:reifiesProperty chora:hasRouteType ;
+    skos:altLabel "tipo di percorso"@it ;
+    skos:definition "Assigns a route type to a narrative route."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "route" ;
+    skos:prefLabel "Route type assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:hasRouteType a owl:ObjectProperty ;
+    dcterms:references chora:RouteTypeScheme ;
+    rdfs:comment "Type of a route, derived from the adopted route type assertion."@en ;
+    rdfs:domain chora:NarrativeRoute ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "ha tipo di percorso"@it ;
+    skos:prefLabel "has route type"@en .
+
+chora:RouteTypeScheme a owl:NamedIndividual, skos:ConceptScheme ;
+    rdfs:label "Route type"@en ;
+    skos:altLabel "Tipo di percorso"@it ;
+    skos:hasTopConcept chora:CompletedRoute, chora:IndicatedRoute, chora:DreamedRoute,
+        chora:InferredRoute, chora:DirectionalRoute, chora:ProposedRoute ;
+    skos:prefLabel "Route type"@en .
+
+chora:CompletedRoute a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "compiuto"@it ;
+    skos:definition "A route the character actually travels in the story, once or habitually."@en ;
+    skos:inScheme chora:RouteTypeScheme ;
+    skos:notation "1" ;
+    skos:prefLabel "Completed"@en ;
+    skos:topConceptOf chora:RouteTypeScheme .
+
+chora:IndicatedRoute a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "indicato"@it ;
+    skos:definition "A route described to a character by another, as directions."@en ;
+    skos:inScheme chora:RouteTypeScheme ;
+    skos:notation "2" ;
+    skos:prefLabel "Indicated"@en ;
+    skos:topConceptOf chora:RouteTypeScheme .
+
+chora:DreamedRoute a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "sognato"@it ;
+    skos:definition "A route travelled in a dream or a vision."@en ;
+    skos:inScheme chora:RouteTypeScheme ;
+    skos:notation "3" ;
+    skos:prefLabel "Dreamed"@en ;
+    skos:topConceptOf chora:RouteTypeScheme .
+
+chora:InferredRoute a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "inferito"@it ;
+    skos:definition "A route reconstructed by a character or the narrator from traces or hypotheses, not narrated as travelled."@en ;
+    skos:inScheme chora:RouteTypeScheme ;
+    skos:notation "4" ;
+    skos:prefLabel "Inferred"@en ;
+    skos:topConceptOf chora:RouteTypeScheme .
+
+chora:DirectionalRoute a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "direzionale"@it ;
+    skos:definition "A route known only as a direction or a road, without the stretch actually covered."@en ;
+    skos:inScheme chora:RouteTypeScheme ;
+    skos:notation "5" ;
+    skos:prefLabel "Directional"@en ;
+    skos:scopeNote "Il Cap. 4 (r. 194) chiama questo tipo «presunto»."@it ;
+    skos:topConceptOf chora:RouteTypeScheme .
+
+chora:ProposedRoute a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "proposto"@it ;
+    skos:definition "A route a character proposes to take, not (yet) travelled."@en ;
+    skos:inScheme chora:RouteTypeScheme ;
+    skos:notation "6" ;
+    skos:prefLabel "Proposed"@en ;
+    skos:topConceptOf chora:RouteTypeScheme .
+
+# =============================================================================
+# ATTO INTERPRETATIVO E CODIFICA (D-067, pattern HiCO)
+# La lettura (chora:Assertion, chora:SpatialInterpretation) e' generata da un
+# hico:InterpretationAct, l'atto dell'autore della lettura. Quando l'autore non
+# e' il codificatore, la codifica e' una chora:EncodingActivity distinta, che
+# usa la fonte ed e' informata dall'atto (prov:wasInformedBy): una lettura ha
+# una sola generazione. HiCO, FRBR e PROV-O non sono importati: i termini usati
+# sono dichiarati qui con rdfs:isDefinedBy.
+# =============================================================================
+
+prov:Activity a owl:Class ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+prov:Association a owl:Class ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+frbr:Expression a owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/vocab/frbr/core> .
+
+hico:InterpretationType a owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/emmedi/hico> ;
+    rdfs:subClassOf skos:Concept .
+
+hico:InterpretationCriterion a owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/emmedi/hico> ;
+    rdfs:subClassOf skos:Concept .
+
+hico:hasInterpretationType a owl:ObjectProperty ;
+    rdfs:domain hico:InterpretationAct ;
+    rdfs:isDefinedBy <http://purl.org/emmedi/hico> ;
+    rdfs:range hico:InterpretationType .
+
+hico:hasInterpretationCriterion a owl:ObjectProperty ;
+    rdfs:domain hico:InterpretationAct ;
+    rdfs:isDefinedBy <http://purl.org/emmedi/hico> ;
+    rdfs:range hico:InterpretationCriterion .
+
+hico:isExtractedFrom a owl:ObjectProperty ;
+    rdfs:domain hico:InterpretationAct ;
+    rdfs:isDefinedBy <http://purl.org/emmedi/hico> ;
+    rdfs:range frbr:Expression .
+
+chora:EncodingActivity a owl:Class ;
+    rdfs:comment "The encoding of a reading in the knowledge graph by an annotator, distinct from the interpretation act when the author of the reading is someone else. It uses the source (prov:used) and is informed by the interpretation act (prov:wasInformedBy); its date is the date of the encoding."@en ;
+    rdfs:subClassOf prov:Activity ;
+    skos:altLabel "Codifica"@it ;
+    skos:prefLabel "Encoding activity"@en .
+
+chora:Source a owl:Class ;
+    rdfs:comment "A bibliographic source of readings: a scholarly work, the thesis, the project census, a dated map or repertory (Sources.tsv)."@en ;
+    rdfs:subClassOf frbr:Expression ;
+    skos:altLabel "Fonte"@it ;
+    skos:prefLabel "Source"@en .
+
+chora:reifiesProperty a owl:AnnotationProperty ;
+    rdfs:comment "On an interpretation type: the model property that a reading of this type states about its subject (subject property value). The ETL materializes it for the adopted readings of some types."@en ;
+    skos:altLabel "reifica la proprieta'"@it ;
+    skos:prefLabel "reifies property"@en .
+
+chora:SpatialReading a owl:NamedIndividual, skos:Concept, hico:InterpretationType ;
+    chora:reifiesProperty chora:targetsPlace ;
+    skos:altLabel "lettura spaziale"@it ;
+    skos:definition "The interpretation type of a chora:SpatialInterpretation: which place an occurrence activates, with role, determination and anchoring."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "spatial" ;
+    skos:prefLabel "Spatial reading"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:identifiedWith a owl:ObjectProperty ;
+    rdfs:comment "The geographic entity of the adopted identification of a narrative place; materialized by the ETL from the adopted IdentificationAssertion."@en ;
+    rdfs:domain chora:NarrativePlace ;
+    rdfs:range chora:GazetteerEntity ;
+    skos:altLabel "identificato con"@it ;
+    skos:prefLabel "identified with"@en .
+
+chora:hasVariant a owl:ObjectProperty ;
+    rdfs:comment "Links an occurrence of the reference witness to the corresponding occurrence of another witness (variant reading)."@en ;
+    rdfs:domain chora:PlaceReference ;
+    rdfs:range chora:PlaceReference ;
+    skos:altLabel "ha variante"@it ;
+    skos:prefLabel "has variant"@en .
+
+chora:memoryAttribution a owl:ObjectProperty ;
+    dcterms:references chora:MemoryAttributionScheme ;
+    rdfs:comment "Whose memory a remembered space belongs to, for an occurrence."@en ;
+    rdfs:domain chora:PlaceReference ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "attribuzione della memoria"@it ;
+    skos:prefLabel "memory attribution"@en .
+
+chora:hasUncertaintyType a owl:ObjectProperty ;
+    dcterms:references chora:UncertaintyTypeScheme ;
+    rdfs:comment "Type of uncertainty of an occurrence (name axis), a narrative place (identification axis) or a gazetteer entity (geometry axis)."@en ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "ha tipo d'incertezza"@it ;
+    skos:prefLabel "has uncertainty type"@en .
+
+# =============================================================================
+# POSIZIONI ATTRIBUITE (D-069, AUDIT_2b B3)
+# Una LocationAssertion colloca un'entita' del gazetteer secondo un repertorio
+# datato: il valore e' una geo:Geometry (WKT) con repertorio, precisione e datum.
+# La coordinata dell'entita' resta quella del foglio; IQ19 verifica che coincida
+# con la posizione adottata.
+# =============================================================================
+
+geo:asWKT a owl:DatatypeProperty ;
+    rdfs:domain geo:Geometry ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ;
+    rdfs:range geo:wktLiteral .
+
+chora:repertory a owl:ObjectProperty ;
+    rdfs:comment "The dated repertory (map, gazetteer) from which a position is read."@en ;
+    rdfs:domain geo:Geometry ;
+    rdfs:range chora:Source ;
+    skos:altLabel "repertorio"@it ;
+    skos:prefLabel "repertory"@en .
+
+chora:precision a owl:DatatypeProperty ;
+    rdfs:comment "Stated precision of a position (e.g. «~1 km»)."@en ;
+    rdfs:domain geo:Geometry ;
+    rdfs:range xsd:string ;
+    skos:altLabel "precisione"@it ;
+    skos:prefLabel "precision"@en .
+
+chora:datum a owl:DatatypeProperty ;
+    rdfs:comment "Datum of the repertory, when different from WGS84, with the stated shift."@en ;
+    rdfs:domain geo:Geometry ;
+    rdfs:range xsd:string ;
+    skos:altLabel "datum"@it ;
+    skos:prefLabel "datum"@en .
+
+# =============================================================================
+# L'OCCORRENZA COME PRIMITIVA (D-070, AUDIT_2b B4)
+# Le letture nate da un passo riguardano l'occorrenza; quelle su luogo,
+# percorso o entita' dichiarano le occorrenze su cui si fondano.
+# =============================================================================
+
+cito:citesAsEvidence a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/spar/cito> .
+
+chora:groundedIn a owl:ObjectProperty ;
+    rdfs:comment "The occurrences of the text on which a reading rests. Stated explicitly (Grounded_In) or, by default, all the reference-witness occurrences interpreted on the subject place, anchored to the subject entity, or carrying the subject route (D-070)."@en ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range chora:PlaceReference ;
+    rdfs:subPropertyOf cito:citesAsEvidence ;
+    skos:altLabel "si fonda su"@it ;
+    skos:prefLabel "grounded in"@en .
+
+chora:originalSource a owl:ObjectProperty ;
+    rdfs:comment "For a reading known second-hand: the work in which its author originally stated it, not read directly by the project. The interpretation act takes its date; hico:isExtractedFrom stays the work it was read in (D-071)."@en ;
+    rdfs:domain hico:InterpretationAct ;
+    rdfs:range chora:Source ;
+    skos:altLabel "fonte originale"@it ;
+    skos:prefLabel "original source"@en .
+
+chora:readIn a owl:ObjectProperty ;
+    rdfs:comment "The edition in which the project reads a witness: the pages of its occurrences are pages of that edition (e.g. QPL and QP read in RR II). The edition is a source, not a witness (D-073)."@en ;
+    rdfs:domain chora:Witness ;
+    rdfs:range chora:Source ;
+    skos:altLabel "letto in"@it ;
+    skos:prefLabel "read in"@en .
+
+chora:pageRange a owl:DatatypeProperty ;
+    rdfs:comment "Pages of the edition (chora:readIn) that contain the witness."@en ;
+    rdfs:domain chora:Witness ;
+    rdfs:range xsd:string ;
+    skos:altLabel "intervallo di pagine"@it ;
+    skos:prefLabel "page range"@en .

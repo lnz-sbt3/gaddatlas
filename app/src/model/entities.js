@@ -1,9 +1,13 @@
+import * as d3 from "d3";
 import s4Config from "./config.js";
 
 // fusione alias + separazione referenziali/fittizi + indice unificato
 export default function s4Entities(gadda_real) {
   const { ALIAS_GROUPS, GEO_RADIUS_KM, ROME_CENTER, N_CHAPTERS } = s4Config;
   const dataAll = gadda_real.features;
+  // occorrenze come pubblicate nel GeoJSON, prima della fusione degli alias:
+  // servono al criterio d'ordine esplicito piu' sotto (D-041)
+  const publishedOcc = new Map(dataAll.map(d => [d.properties.GazetteerEntity_ID, d.properties.occurrences || 0]));
 
   function haversineKm([lon1, lat1], [lon2, lat2]) {
     const R = 6371, toRad = Math.PI / 180;
@@ -68,15 +72,36 @@ export default function s4Entities(gadda_real) {
 
   // referenziali: hanno geometria. Il filtro GEO_RADIUS_KM resta solo sulla
   // tassellazione Voronoi; il second space accoglie anche i referenziali fuori raggio.
+  //
+  // Ordine dentro ciascun gruppo (D-041): criterio esplicito, non l'ordine del file.
+  // Prima le tessere con piu' occorrenze pubblicate (prima della fusione degli alias),
+  // poi l'id. E' l'ordine che il GeoJSON aveva per costruzione e su cui il notebook
+  // e' stato calibrato: decide chi si disegna prima (sotto) a parita' di profondita'
+  // e chi vince l'hit test in vista piana. Cosi' il file puo' essere ordinato per id
+  // senza che l'ordine di disegno dipenda dalla sua posizione.
+  // Una tessera fusa da ALIAS_GROUPS prende la chiave del membro del suo gruppo
+  // che viene primo con lo stesso criterio (piu' occorrenze, poi id minore).
+  const keyOf = d => {
+    const id = d.properties.GazetteerEntity_ID;
+    const group = aliasGroupById.get(id);
+    const ids = group ? group.ids.filter(m => publishedOcc.has(m)) : [id];
+    return ids
+      .map(m => [publishedOcc.get(m) || 0, m])
+      .sort((x, y) => d3.descending(x[0], y[0]) || d3.ascending(x[1], y[1]))[0];
+  };
+  const byOccThenId = (a, b) => {
+    const [oa, ia] = keyOf(a), [ob, ib] = keyOf(b);
+    return d3.descending(oa, ob) || d3.ascending(ia, ib);
+  };
   const entitiesGeo = entities.filter(d => d.geometry && d.geometry.coordinates);
-  const geoData = entitiesGeo.filter(d => haversineKm(ROME_CENTER, d.geometry.coordinates) <= GEO_RADIUS_KM);
-  const geoOffmapData = entitiesGeo.filter(d => haversineKm(ROME_CENTER, d.geometry.coordinates) > GEO_RADIUS_KM);
+  const geoData = entitiesGeo.filter(d => haversineKm(ROME_CENTER, d.geometry.coordinates) <= GEO_RADIUS_KM).sort(byOccThenId);
+  const geoOffmapData = entitiesGeo.filter(d => haversineKm(ROME_CENTER, d.geometry.coordinates) > GEO_RADIUS_KM).sort(byOccThenId);
   const geoDataAll = [...geoData, ...geoOffmapData];
 
   // -- FITTIZI: nessuna geometria (reality_status in transformed/imagined/invented; gli
   // imported hanno sempre geometria) -> nessun generatore Voronoi, ma partecipano al
   // rilievo per densita'.
-  const fictData = entities.filter(d => !(d.geometry && d.geometry.coordinates));
+  const fictData = entities.filter(d => !(d.geometry && d.geometry.coordinates)).sort(byOccThenId);
 
   // Ogni tessera fittizia deve avere uno statuto che ha un glifo (T-87, D-040).
   // Nel notebook uno statuto sconosciuto finiva in silenzio sul glifo «invented»:

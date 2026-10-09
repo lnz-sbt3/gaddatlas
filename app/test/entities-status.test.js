@@ -19,3 +19,13 @@ test("uno statuto sconosciuto produce un errore esplicito", () => {
   fict.properties.reality_status = "sconosciuto";
   assert.throws(() => s4Entities(data), /statuto di realtà senza glifo/);
 });
+
+// D-041: l'ordine delle tessere nell'app (disegno a pari profondita', hit test)
+// e' deciso da un criterio esplicito, non dalla posizione nel file.
+test("l'ordine di allData non dipende dall'ordine delle feature nel file", () => {
+  const ids = data => s4Entities(data).allData.map(d => d.properties.GazetteerEntity_ID);
+  const reference = ids(gaddaReal);
+  const shuffled = structuredClone(gaddaReal);
+  shuffled.features.reverse();
+  assert.deepEqual(ids(shuffled), reference);
+});
