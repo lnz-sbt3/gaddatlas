@@ -137,10 +137,12 @@ ORDER BY ?ref
 # una per soggetto e tipo di asserzione (D-042): e' quella che l'interfaccia
 # mostra. Due letture adottate sullo stesso punto sono un errore.
 PREFIX ga: <https://w3id.org/chora#>
+PREFIX hico: <http://purl.org/emmedi/hico/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
 SELECT ?soggetto ?tipo (COUNT(?a) AS ?adottate) WHERE {
   ?a a ga:Assertion ;
      ga:aboutSubject ?soggetto ;
-     ga:assertionType ?tipo ;
+     prov:wasGeneratedBy/hico:hasInterpretationType ?tipo ;
      ga:adoptedByProject true .
 }
 GROUP BY ?soggetto ?tipo
@@ -151,9 +153,11 @@ HAVING (COUNT(?a) > 1)
 # hasRealityStatus sul luogo e' il valore adottato: deve coincidere con il valore
 # dell'asserzione di statuto adottata, se c'e' (D-046).
 PREFIX ga: <https://w3id.org/chora#>
+PREFIX hico: <http://purl.org/emmedi/hico/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
 SELECT ?luogo ?statuto ?adottato WHERE {
   ?a a ga:Assertion ;
-     ga:assertionType ga:StatusAssertion ;
+     prov:wasGeneratedBy/hico:hasInterpretationType ga:StatusAssertion ;
      ga:adoptedByProject true ;
      ga:aboutSubject ?luogo ;
      ga:assertsValue ?adottato .
@@ -168,11 +172,13 @@ SELECT ?luogo ?statuto ?adottato WHERE {
 # sospensione motivata, coordinata non applicabile (D-048). Il dato mancante
 # non e' un'astensione.
 PREFIX ga: <https://w3id.org/chora#>
+PREFIX hico: <http://purl.org/emmedi/hico/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
 SELECT ?luogo WHERE {
   ?luogo a ga:NarrativePlace .
   FILTER NOT EXISTS { ?luogo ga:isPartOf* ?q . ?si ga:targetsPlace ?q ; ga:anchorsToEntity ?e }
   FILTER NOT EXISTS { ?luogo ga:isPartOf* ?q2 . ?a ga:aboutSubject ?q2 ;
-                      ga:assertionType ga:IdentificationAssertion ; ga:adoptedByProject true }
+                      prov:wasGeneratedBy/hico:hasInterpretationType ga:IdentificationAssertion ; ga:adoptedByProject true }
   FILTER NOT EXISTS { ?luogo ga:localizationStatus ?s }
 }
 ORDER BY ?luogo
@@ -191,11 +197,12 @@ ORDER BY ?luogo
 # Una revisione (prov:wasRevisionOf) riguarda lo stesso soggetto e lo stesso
 # tipo della lettura che rivede, e la lettura rivista non e' piu' adottata (D-051).
 PREFIX ga: <https://w3id.org/chora#>
+PREFIX hico: <http://purl.org/emmedi/hico/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 SELECT ?nuova ?vecchia WHERE {
   ?nuova prov:wasRevisionOf ?vecchia .
-  ?nuova ga:aboutSubject ?s1 ; ga:assertionType ?t1 .
-  OPTIONAL { ?vecchia ga:aboutSubject ?s2 ; ga:assertionType ?t2 }
+  ?nuova ga:aboutSubject ?s1 ; prov:wasGeneratedBy/hico:hasInterpretationType ?t1 .
+  OPTIONAL { ?vecchia ga:aboutSubject ?s2 ; prov:wasGeneratedBy/hico:hasInterpretationType ?t2 }
   OPTIONAL { ?vecchia ga:adoptedByProject ?adottata }
   FILTER (!BOUND(?s2) || ?s1 != ?s2 || ?t1 != ?t2 || COALESCE(?adottata, false))
 }
@@ -207,11 +214,13 @@ ORDER BY ?nuova
 # ha interpretazioni proprie, perche' statuto e ruolo sono del luogo, non del
 # testimone.
 PREFIX ga: <https://w3id.org/chora#>
+PREFIX hico: <http://purl.org/emmedi/hico/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
 SELECT ?occorrenza ?problema WHERE {
   ?occorrenza ga:appearsInWitness ?w .
   FILTER NOT EXISTS { ?opera ga:referenceWitness ?w }
   {
-    FILTER NOT EXISTS { ?a ga:assertionType ga:VariantAssertion ; ga:assertsValue ?occorrenza }
+    FILTER NOT EXISTS { ?a prov:wasGeneratedBy/hico:hasInterpretationType ga:VariantAssertion ; ga:assertsValue ?occorrenza }
     BIND("senza variante" AS ?problema)
   } UNION {
     ?si ga:interpretsReference ?occorrenza .

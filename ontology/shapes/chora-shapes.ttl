@@ -31,6 +31,7 @@
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix hico: <http://purl.org/emmedi/hico/> .
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 
@@ -311,7 +312,7 @@ ga:AssertionShape
     a sh:NodeShape ;
     sh:targetClass ga:Assertion ;
     sh:property [
-        sh:path ga:assertionType ;
+        sh:path ( prov:wasGeneratedBy hico:hasInterpretationType ) ;
         sh:minCount 1 ; sh:maxCount 1 ;
         sh:in ( ga:StatusAssertion ga:IdentificationAssertion ga:LocationAssertion
                 ga:PartitionAssertion ga:MemoryAssertion ga:UncertaintyAssertion
@@ -340,38 +341,70 @@ ga:AssertionShape
         sh:message "Ogni Assertion porta la forma breve prov:wasAttributedTo verso l'autore della lettura." ;
     ] .
 
-# Attribuzioni qualificate: almeno un autore della lettura e almeno un
-# codificatore, per le asserzioni e per le interpretazioni (D-043).
-ga:QualifiedAttributionShape
+# Provenienza (D-067): ogni lettura (asserzione o interpretazione) e' generata
+# da un solo atto interpretativo, che ha almeno un'associazione ReadingAuthor;
+# il codificatore e' un'associazione Encoder dello stesso atto, oppure di una
+# codifica informata dall'atto (prov:wasInformedBy).
+ga:ReadingProvenanceShape
     a sh:NodeShape ;
     sh:targetClass ga:Assertion, ga:SpatialInterpretation ;
     sh:property [
-        sh:path prov:qualifiedAttribution ;
-        sh:qualifiedValueShape [ sh:path prov:hadRole ; sh:hasValue ga:ReadingAuthor ] ;
-        sh:qualifiedMinCount 1 ;
-        sh:message "Manca un'attribuzione con ruolo chora:ReadingAuthor (autore della lettura)." ;
+        sh:path prov:wasGeneratedBy ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:class hico:InterpretationAct ;
+        sh:message "Ogni lettura e' generata da esattamente un hico:InterpretationAct." ;
     ] ;
     sh:property [
-        sh:path prov:qualifiedAttribution ;
-        sh:qualifiedValueShape [ sh:path prov:hadRole ; sh:hasValue ga:Encoder ] ;
+        sh:path ( prov:wasGeneratedBy prov:qualifiedAssociation ) ;
+        sh:qualifiedValueShape [ sh:path prov:hadRole ; sh:hasValue ga:ReadingAuthor ] ;
         sh:qualifiedMinCount 1 ;
-        sh:message "Manca un'attribuzione con ruolo chora:Encoder (codificatore)." ;
+        sh:message "Manca un'associazione con ruolo chora:ReadingAuthor sull'atto interpretativo." ;
+    ] ;
+    sh:or (
+        [ sh:path ( prov:wasGeneratedBy prov:qualifiedAssociation ) ;
+          sh:qualifiedValueShape [ sh:path prov:hadRole ; sh:hasValue ga:Encoder ] ;
+          sh:qualifiedMinCount 1 ]
+        [ sh:path ( prov:wasGeneratedBy [ sh:inversePath prov:wasInformedBy ] prov:qualifiedAssociation ) ;
+          sh:qualifiedValueShape [ sh:path prov:hadRole ; sh:hasValue ga:Encoder ] ;
+          sh:qualifiedMinCount 1 ]
+    ) ;
+    sh:message "Manca il codificatore: un'associazione Encoder sull'atto o su una codifica informata dall'atto." .
+
+ga:InterpretationActShape
+    a sh:NodeShape ;
+    sh:targetClass hico:InterpretationAct ;
+    sh:property [
+        sh:path hico:hasInterpretationType ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Un atto interpretativo ha esattamente un tipo." ;
+    ] ;
+    sh:property [
+        sh:path hico:hasInterpretationCriterion ;
+        sh:maxCount 1 ;
+        sh:in ( ga:ReferentialEvidence ga:TextualEvidence ga:CriticalReading ) ;
+        sh:message "Al piu' un criterio, dello schema RationaleType." ;
+    ] ;
+    sh:property [
+        sh:path hico:isExtractedFrom ;
+        sh:maxCount 1 ;
+        sh:or ( [ sh:class ga:Source ] [ sh:class ga:Witness ] ) ;
+        sh:message "La fonte di un atto e' una chora:Source o un chora:Witness." ;
     ] .
 
 ga:AttributionShape
     a sh:NodeShape ;
-    sh:targetObjectsOf prov:qualifiedAttribution ;
+    sh:targetObjectsOf prov:qualifiedAssociation ;
     sh:property [
         sh:path prov:agent ;
         sh:minCount 1 ; sh:maxCount 1 ;
         sh:class prov:Agent ;
-        sh:message "Ogni attribuzione ha esattamente un agente, tipizzato prov:Agent." ;
+        sh:message "Ogni associazione ha esattamente un agente, tipizzato prov:Agent." ;
     ] ;
     sh:property [
         sh:path prov:hadRole ;
         sh:minCount 1 ; sh:maxCount 1 ;
         sh:in ( ga:ReadingAuthor ga:Encoder ) ;
-        sh:message "Ogni attribuzione ha esattamente un ruolo: ReadingAuthor o Encoder." ;
+        sh:message "Ogni associazione ha esattamente un ruolo: ReadingAuthor o Encoder." ;
     ] .
 
 
@@ -393,10 +426,10 @@ ga:StatusRationaleShape
         [ sh:path [ sh:inversePath ga:aboutSubject ] ;
           sh:qualifiedValueShape [
               sh:and (
-                  [ sh:path ga:assertionType ; sh:hasValue ga:StatusAssertion ]
+                  [ sh:path ( prov:wasGeneratedBy hico:hasInterpretationType ) ; sh:hasValue ga:StatusAssertion ]
                   [ sh:path ga:adoptedByProject ; sh:hasValue true ]
-                  [ sh:path ga:rationale ; sh:minCount 1 ]
-                  [ sh:path ga:rationaleType ; sh:minCount 1 ]
+                  [ sh:path ( prov:wasGeneratedBy ga:rationale ) ; sh:minCount 1 ]
+                  [ sh:path ( prov:wasGeneratedBy hico:hasInterpretationCriterion ) ; sh:minCount 1 ]
                   [ sh:path ga:reviewStatus ; sh:hasValue ga:Validated ]
               )
           ] ;
@@ -414,7 +447,7 @@ ga:UncertaintyAssertionShape
     a sh:NodeShape ;
     sh:targetClass ga:Assertion ;
     sh:or (
-        [ sh:not [ sh:path ga:assertionType ; sh:hasValue ga:UncertaintyAssertion ] ]
+        [ sh:not [ sh:path ( prov:wasGeneratedBy hico:hasInterpretationType ) ; sh:hasValue ga:UncertaintyAssertion ] ]
         [ sh:and (
             [ sh:path ga:uncertaintyAxis ; sh:minCount 1 ; sh:maxCount 1 ;
               sh:in ( ga:NameAxis ga:IdentificationAxis ga:GeometryAxis ) ]
@@ -472,7 +505,7 @@ ga:MemoryAssertionShape
     a sh:NodeShape ;
     sh:targetClass ga:Assertion ;
     sh:or (
-        [ sh:not [ sh:path ga:assertionType ; sh:hasValue ga:MemoryAssertion ] ]
+        [ sh:not [ sh:path ( prov:wasGeneratedBy hico:hasInterpretationType ) ; sh:hasValue ga:MemoryAssertion ] ]
         [ sh:path ga:assertsValue ; sh:minCount 1 ;
           sh:in ( ga:AuthorMemory ga:CharacterMemory ga:UndecidableMemory ) ]
     ) ;
@@ -576,7 +609,7 @@ ga:VariantAssertionShape
     a sh:NodeShape ;
     sh:targetClass ga:Assertion ;
     sh:or (
-        [ sh:not [ sh:path ga:assertionType ; sh:hasValue ga:VariantAssertion ] ]
+        [ sh:not [ sh:path ( prov:wasGeneratedBy hico:hasInterpretationType ) ; sh:hasValue ga:VariantAssertion ] ]
         [ sh:and (
             [ sh:path ga:aboutSubject ; sh:class ga:NarrativePlace ]
             [ sh:path ga:assertsValue ; sh:minCount 2 ; sh:class ga:PlaceReference ]
@@ -595,7 +628,7 @@ ga:StatusSubjectShape
     a sh:NodeShape ;
     sh:targetClass ga:Assertion ;
     sh:or (
-        [ sh:not [ sh:path ga:assertionType ; sh:hasValue ga:StatusAssertion ] ]
+        [ sh:not [ sh:path ( prov:wasGeneratedBy hico:hasInterpretationType ) ; sh:hasValue ga:StatusAssertion ] ]
         [ sh:path ga:aboutSubject ; sh:class ga:NarrativePlace ]
     ) ;
     sh:message "Lo statuto di realta' si asserisce di un luogo narrativo, non di un'occorrenza o di un testimone." .
@@ -650,7 +683,7 @@ ga:RouteTypeAssertionShape
     a sh:NodeShape ;
     sh:targetClass ga:Assertion ;
     sh:or (
-        [ sh:not [ sh:path ga:assertionType ; sh:hasValue ga:RouteTypeAssertion ] ]
+        [ sh:not [ sh:path ( prov:wasGeneratedBy hico:hasInterpretationType ) ; sh:hasValue ga:RouteTypeAssertion ] ]
         [ sh:and (
             [ sh:path ga:aboutSubject ; sh:class ga:NarrativeRoute ]
             [ sh:path ga:assertsValue ; sh:minCount 1 ; sh:maxCount 1 ;

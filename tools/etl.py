@@ -71,6 +71,7 @@ GEO = Namespace("http://www.w3.org/2003/01/geo/wgs84_pos#")
 GEOSPARQL = Namespace("http://www.opengis.net/ont/geosparql#")
 PROV = Namespace("http://www.w3.org/ns/prov#")
 SCHEMA = Namespace("https://schema.org/")
+HICO = Namespace("http://purl.org/emmedi/hico/")
 
 
 def has_value(x: Any) -> bool:
@@ -1024,18 +1025,16 @@ class GaddaETL:
                 if not annotator:
                     raise ValueError(f"Interpretation {interp_id}: Annotator_ID mancante (D-043)")
                 annotator_uri = self.agent_uri(annotator, f"Interpretation {interp_id}")
-                self.add_attribution(interp_uri, interp_id, annotator_uri, "Encoder")
-                self.add_attribution(interp_uri, interp_id, annotator_uri, "ReadingAuthor")
-
+                # Atto interpretativo (D-067): anche l'interpretazione e' generata da
+                # un hico:InterpretationAct di tipo chora:SpatialReading; autore e
+                # codificatore coincidono, quindi un atto solo.
                 annotation_date = row.get('Annotation_Date')
+                enc_date = None
                 if has_value(annotation_date):
-                    try:
-                        # Converti in ISO datetime
-                        date_value = pd.to_datetime(annotation_date).isoformat()
-                        self.graph.add((interp_uri, PROV.generatedAtTime,
-                                      Literal(date_value, datatype=XSD.dateTime)))
-                    except Exception as e:
-                        logger.warning(f"Riga {idx}: Data '{annotation_date}' non valida: {e}")
+                    enc_date = pd.to_datetime(annotation_date).date().isoformat()
+                self.add_reading_provenance(
+                    interp_uri, interp_id, CHORA.SpatialReading, [annotator_uri],
+                    [annotator_uri], f"Interpretation {interp_id}", encoding_date=enc_date)
 
                 # Datatype properties
                 self.add_literal(interp_uri, CHORA.interpretationType,
@@ -1249,17 +1248,107 @@ class GaddaETL:
         raise ValueError(f"{where}: riferimento non valido {v!r} "
                          "(atteso 'chora:Termine' o 'tipo/id')")
 
-    def add_attribution(self, subject: URIRef, local_id: str, agent: URIRef, role: str):
-        """prov:qualifiedAttribution con prov:hadRole (D-042). Il nodo di
-        attribuzione ha un IRI stabile, derivato da soggetto, ruolo e agente."""
-        att = ID_NS[f"attribution/{local_id}-{role.lower()}-{str(agent).rsplit('/', 1)[-1]}"]
-        self.graph.add((subject, PROV.qualifiedAttribution, att))
-        self.graph.add((att, RDF.type, PROV.Attribution))
-        self.graph.add((att, PROV.agent, agent))
-        self.graph.add((att, PROV.hadRole, CHORA[role]))
-        if role == "ReadingAuthor":
-            # forma breve per le query semplici
-            self.graph.add((subject, PROV.wasAttributedTo, agent))
+    # ------------------------------------------------------------------
+    # FONTI (D-067)
+    # ------------------------------------------------------------------
+    def process_sources(self, file_path):
+        """Processa Sources.tsv: le fonti delle letture (bibliografia del Cap. 4,
+        censimento, repertori). Colonne: Source_ID, Label, Reference, Author,
+        Date (AAAA), Type, Note."""
+        self.sources = {}
+        df = pd.read_csv(file_path, sep='\t', encoding='utf-8', dtype=str,
+                         keep_default_na=False, na_values=[])
+        for idx, row in df.iterrows():
+            sid = str(row.get('Source_ID', '')).strip()
+            if not sid:
+                raise ValueError(f"Sources riga {idx + 2}: Source_ID mancante")
+            uri = ID_NS[f"source/{sid}"]
+            date = str(row.get('Date', '')).strip()
+            self.sources[sid] = (uri, date)
+            self.graph.add((uri, RDF.type, CHORA.Source))
+            self.add_literal(uri, RDFS.label, row.get('Label'))
+            self.add_literal(uri, DCTERMS.bibliographicCitation, row.get('Reference'), lang='it')
+            self.add_literal(uri, DCTERMS.creator, row.get('Author'), lang='it')
+            if date:
+                self.graph.add((uri, DCTERMS.date, Literal(date, datatype=XSD.gYear)))
+            self.add_literal(uri, DCTERMS.type, row.get('Type'), lang='it')
+            self.add_literal(uri, RDFS.comment, row.get('Note'), lang='it')
+        logger.info(f"Sources: {len(self.sources)} fonti")
+
+    def resolve_source(self, value: str, where: str):
+        """Fonte di un atto: un Source_ID di Sources.tsv o un Witness_ID.
+        Restituisce (IRI, anno) oppure (None, None) se la cella e' vuota."""
+        v = str(value or '').strip()
+        if not v:
+            return None, None
+        if v in self.sources:
+            return self.sources[v]
+        if v in self.id_cache.get('Witness_ID', set()):
+            uri = self.resolve_lookup(v, '@Witness_ID')
+            d = self.graph.value(uri, DCTERMS.date)
+            return uri, (str(d)[:4] if d is not None else '')
+        raise ValueError(f"{where}: fonte {v!r} assente da Sources.tsv e da Witnesses.tsv")
+
+    def add_association(self, activity: URIRef, local_id: str, agent: URIRef, role: str):
+        """prov:qualifiedAssociation con prov:hadRole sull'attivita' (D-067);
+        IRI stabile da attivita', ruolo e agente. Forma breve prov:wasAssociatedWith."""
+        node = ID_NS[f"association/{local_id}-{role.lower()}-{str(agent).rsplit('/', 1)[-1]}"]
+        self.graph.add((activity, PROV.qualifiedAssociation, node))
+        self.graph.add((node, RDF.type, PROV.Association))
+        self.graph.add((node, PROV.agent, agent))
+        self.graph.add((node, PROV.hadRole, CHORA[role]))
+        self.graph.add((activity, PROV.wasAssociatedWith, agent))
+
+    def add_reading_provenance(self, reading: URIRef, local_id: str, itype: URIRef,
+                               authors, encoders, where: str, source=None, page=None,
+                               rationale=None, criterion=None, encoding_date=None):
+        """Atto interpretativo e codifica di una lettura (D-067, pattern HiCO).
+
+        - L'hico:InterpretationAct (act/{id}) e' l'atto dell'autore: genera la
+          lettura e porta tipo, criterio, fonte, pagina, argomentazione.
+        - Se gli autori coincidono con i codificatori, un atto solo con entrambe
+          le associazioni; data = data della codifica.
+        - Altrimenti l'atto ha per data l'anno della fonte (mai il 2026 della
+          codifica), e la codifica e' una chora:EncodingActivity (encoding/{id})
+          con i codificatori, la data della codifica, prov:used la fonte e
+          prov:wasInformedBy l'atto. La lettura ha una sola generazione.
+        """
+        act = ID_NS[f"act/{local_id}"]
+        self.graph.add((act, RDF.type, HICO.InterpretationAct))
+        self.graph.add((reading, PROV.wasGeneratedBy, act))
+        self.graph.add((act, HICO.hasInterpretationType, itype))
+        if criterion is not None:
+            self.graph.add((act, HICO.hasInterpretationCriterion, criterion))
+        src_uri, src_year = source if source else (None, None)
+        if src_uri is not None:
+            self.graph.add((act, HICO.isExtractedFrom, src_uri))
+        self.add_literal(act, CHORA.sourcePage, page, datatype=XSD.string)
+        self.add_literal(act, CHORA.rationale, rationale, lang='it')
+        for au in authors:
+            self.add_association(act, local_id, au, "ReadingAuthor")
+            self.graph.add((reading, PROV.wasAttributedTo, au))
+        enc_date = str(encoding_date or '').strip()
+        if set(encoders) <= set(authors):
+            for e in encoders:
+                self.add_association(act, local_id, e, "Encoder")
+            if enc_date:
+                self.graph.add((act, DCTERMS.date, Literal(enc_date[:10], datatype=XSD.date)))
+                self.graph.add((act, PROV.startedAtTime,
+                                Literal(f"{enc_date[:10]}T00:00:00", datatype=XSD.dateTime)))
+            return
+        if not src_year:
+            raise ValueError(f"{where}: la lettura di uno studioso richiede una fonte datata")
+        self.graph.add((act, DCTERMS.date, Literal(src_year, datatype=XSD.gYear)))
+        enc = ID_NS[f"encoding/{local_id}"]
+        self.graph.add((enc, RDF.type, CHORA.EncodingActivity))
+        self.graph.add((enc, PROV.wasInformedBy, act))
+        if src_uri is not None:
+            self.graph.add((enc, PROV.used, src_uri))
+        for e in encoders:
+            self.add_association(enc, local_id, e, "Encoder")
+        if enc_date:
+            self.graph.add((enc, PROV.startedAtTime,
+                            Literal(f"{enc_date[:10]}T00:00:00", datatype=XSD.dateTime)))
 
     def process_assertions(self, file_path):
         """
@@ -1289,36 +1378,35 @@ class GaddaETL:
                 raise ValueError(f"{where}: tipo {atype!r} non ammesso")
             a = ID_NS[f"assertion/{aid}"]
             self.graph.add((a, RDF.type, CHORA.Assertion))
-            self.graph.add((a, CHORA.assertionType, CHORA[self.ASSERTION_TYPES[atype]]))
             self.graph.add((a, CHORA.aboutSubject, self.resolve_compact(row.get('Subject'), where)))
             for v in str(row.get('Value', '')).split('|'):
                 if v.strip():
                     self.graph.add((a, CHORA.assertsValue, self.resolve_compact(v, where)))
             # piu' autori separati da '|' (es. Matt e Pinotti 2022, D-053)
-            authors = [x.strip() for x in str(row.get('Author_ID', '')).split('|') if x.strip()]
+            authors = [self.agent_uri(x.strip(), where)
+                       for x in str(row.get('Author_ID', '')).split('|') if x.strip()]
             if not authors:
                 raise ValueError(f"{where}: Author_ID mancante")
-            for author in authors:
-                self.add_attribution(a, aid, self.agent_uri(author, where), "ReadingAuthor")
-            encoders = [e.strip() for e in str(row.get('Encoder_ID', '')).split('|') if e.strip()]
+            encoders = [self.agent_uri(e.strip(), where)
+                        for e in str(row.get('Encoder_ID', '')).split('|') if e.strip()]
             if not encoders:
                 raise ValueError(f"{where}: Encoder_ID mancante")
-            for e in encoders:
-                self.add_attribution(a, aid, self.agent_uri(e, where), "Encoder")
             adopted = str(row.get('Adopted', '')).strip().lower()
             if adopted:
                 if adopted not in ("si", "sì", "no"):
                     raise ValueError(f"{where}: Adopted {adopted!r} (atteso si / no)")
                 self.graph.add((a, CHORA.adoptedByProject,
                                 Literal(adopted != "no", datatype=XSD.boolean)))
-            self.add_literal(a, CHORA.sourceWork, row.get('Source_Work'), datatype=XSD.string)
-            self.add_literal(a, CHORA.sourcePage, row.get('Source_Page'), datatype=XSD.string)
-            self.add_literal(a, CHORA.rationale, row.get('Rationale'), lang='it')
             rtype = str(row.get('Rationale_Type', '')).strip().lower()
-            if rtype:
-                if rtype not in self.RATIONALE_TYPES:
-                    raise ValueError(f"{where}: Rationale_Type {rtype!r} non ammesso")
-                self.graph.add((a, CHORA.rationaleType, CHORA[self.RATIONALE_TYPES[rtype]]))
+            if rtype and rtype not in self.RATIONALE_TYPES:
+                raise ValueError(f"{where}: Rationale_Type {rtype!r} non ammesso")
+            # atto interpretativo e codifica (D-067)
+            self.add_reading_provenance(
+                a, aid, CHORA[self.ASSERTION_TYPES[atype]], authors, encoders, where,
+                source=self.resolve_source(row.get('Source_Work'), where),
+                page=row.get('Source_Page'), rationale=row.get('Rationale'),
+                criterion=CHORA[self.RATIONALE_TYPES[rtype]] if rtype else None,
+                encoding_date=row.get('Date'))
             axis = str(row.get('Uncertainty_Axis', '')).strip().lower()
             origin = str(row.get('Uncertainty_Origin', '')).strip().lower()
             if atype == "uncertainty":
@@ -1336,20 +1424,30 @@ class GaddaETL:
                     raise ValueError(f"{where}: Review_Status {review!r} (atteso bozza / validata)")
                 self.graph.add((a, CHORA.reviewStatus, CHORA[self.REVIEW_STATUSES[review]]))
             self.add_literal(a, RDFS.comment, row.get('Note'), lang='it')
-            self.add_literal(a, PROV.generatedAtTime, row.get('Date'), datatype=XSD.date)
             rev = str(row.get('Revision_Of', '')).strip()
             if rev:
                 self.graph.add((a, PROV.wasRevisionOf, ID_NS[f"assertion/{rev}"]))
-        # Tipo di percorso (D-060): chora:hasRouteType deriva dalla lettura
-        # adottata, come la posizione deriva dall'identificazione adottata.
-        for a in self.graph.subjects(CHORA.assertionType, CHORA.RouteTypeAssertion):
-            if (a, CHORA.adoptedByProject, Literal(True)) in self.graph:
-                route = self.graph.value(a, CHORA.aboutSubject)
-                if (route, RDF.type, CHORA.NarrativeRoute) not in self.graph:
-                    raise ValueError(f"{a}: il soggetto non e' un percorso")
-                for v in self.graph.objects(a, CHORA.assertsValue):
-                    self.graph.add((route, CHORA.hasRouteType, v))
+        # Proprieta' reificate (D-067): per le letture adottate di questi tipi
+        # l'ETL scrive soggetto -> proprieta' -> valore. Corrisponde a
+        # chora:reifiesProperty della TBox; gli altri tipi non si materializzano
+        # (lo statuto viene dal foglio dei luoghi e IQ13 ne verifica la coerenza).
+        self.materialize_adopted()
         logger.info(f"Assertions: {len(df)} asserzioni attribuite")
+
+    MATERIALIZED = {"RouteTypeAssertion": (CHORA.hasRouteType, CHORA.NarrativeRoute),
+                    "IdentificationAssertion": (CHORA.identifiedWith, CHORA.NarrativePlace)}
+
+    def materialize_adopted(self):
+        for tname, (prop, subject_class) in self.MATERIALIZED.items():
+            for act in self.graph.subjects(HICO.hasInterpretationType, CHORA[tname]):
+                for a in self.graph.subjects(PROV.wasGeneratedBy, act):
+                    if (a, CHORA.adoptedByProject, Literal(True)) not in self.graph:
+                        continue
+                    subj = self.graph.value(a, CHORA.aboutSubject)
+                    if (subj, RDF.type, subject_class) not in self.graph:
+                        raise ValueError(f"{a}: il soggetto non e' {subject_class}")
+                    for v in self.graph.objects(a, CHORA.assertsValue):
+                        self.graph.add((subj, prop, v))
 
     def validate_interpretation_targets(self):
         """
@@ -1503,7 +1601,7 @@ class GaddaETL:
         # 0. Verifica che tutti i TSV attesi esistano, PRIMA di iniziare:
         # un file mancante produceva in precedenza solo un log di errore e un
         # grafo parziale silenziosamente incompleto.
-        attesi = ["LiteraryWorks", "Witnesses", "Chapters", "FocalizingAgents", "Agents", "NarrativePlaces",
+        attesi = ["LiteraryWorks", "Witnesses", "Sources", "Chapters", "FocalizingAgents", "Agents", "NarrativePlaces",
                   "GazetteerEntities", "References", "SpatialInterpretations"]
         mancanti = [n for n in attesi if not (self.data_dir / f"{n}.tsv").is_file()]
         if mancanti:
@@ -1527,6 +1625,7 @@ class GaddaETL:
             self.data_dir / "Chapters.tsv"
         )
         self.process_witnesses(self.data_dir / "Witnesses.tsv")
+        self.process_sources(self.data_dir / "Sources.tsv")
         self.process_focalizing_agents(
             self.data_dir / "FocalizingAgents.tsv"
         )

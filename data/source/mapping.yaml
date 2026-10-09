@@ -769,30 +769,46 @@ documentation:
 
   Assertions:
     source_file: "Assertions.tsv"
-    etl: "process_assertions, tools/etl.py r. 1264-1352 (resolve_compact r. 1240, add_attribution r. 1252)"
+    etl: "process_assertions, tools/etl.py r. 1353-1435; atto e codifica: add_reading_provenance r. 1302-1351; materializzazione r. 1437-1452 (D-067)"
     note: >-
-      Una riga = una lettura attribuita. Subject e Value: 'tipo/id' relativo a
+      Una riga = una lettura (chora:Assertion), generata da un atto interpretativo
+      (hico:InterpretationAct, act/{id}). Se l'autore non e' il codificatore, la
+      codifica e' una chora:EncodingActivity (encoding/{id}) con la data della
+      codifica, prov:used la fonte, prov:wasInformedBy l'atto; l'atto ha la data
+      della fonte. Subject e Value: 'tipo/id' relativo a
       https://w3id.org/gaddatlas/id/ oppure 'chora:Termine'. Value, Author_ID ed
       Encoder_ID ammettono piu' valori separati da '|'.
     columns:
-      Assertion_ID:   "IRI assertion/{id}; rdf:type chora:Assertion"
-      Assertion_Type: "chora:assertionType: status | identification | location | partition | memory | uncertainty | variant | route"
-      Subject:        "chora:aboutSubject"
-      Value:          "chora:assertsValue (uno per valore)"
-      Author_ID:      "prov:qualifiedAttribution -> prov:Attribution (prov:agent, prov:hadRole chora:ReadingAuthor) + prov:wasAttributedTo"
-      Encoder_ID:     "prov:qualifiedAttribution -> prov:Attribution (prov:hadRole chora:Encoder)"
-      Source_Work:    "chora:sourceWork (xsd:string)"
-      Source_Page:    "chora:sourcePage (xsd:string)"
-      Adopted:        "chora:adoptedByProject (xsd:boolean): si | no"
-      Rationale:      "chora:rationale (@it)"
-      Revision_Of:    "prov:wasRevisionOf assertion/{id}"
-      Date:           "prov:generatedAtTime (xsd:date)"
-      Note:           "rdfs:comment (@it)"
-      Rationale_Type: "chora:rationaleType: prova referenziale | prova testuale | lettura critica"
-      Review_Status:  "chora:reviewStatus: bozza | validata"
-      Uncertainty_Axis:   "chora:uncertaintyAxis: nome | identificazione | geometria (solo uncertainty)"
-      Uncertainty_Origin: "chora:uncertaintyOrigin: documentaria | costruttiva (solo uncertainty)"
-    derived: "chora:hasRouteType sul percorso, dalle asserzioni route adottate (r. 1343)"
+      Assertion_ID:   "IRI assertion/{id}; rdf:type chora:Assertion; atto act/{id}"
+      Assertion_Type: "atto: hico:hasInterpretationType: status | identification | location | partition | memory | uncertainty | variant | route"
+      Subject:        "lettura: chora:aboutSubject"
+      Value:          "lettura: chora:assertsValue (uno per valore)"
+      Author_ID:      "atto: prov:qualifiedAssociation (prov:hadRole chora:ReadingAuthor) + prov:wasAssociatedWith; lettura: prov:wasAttributedTo"
+      Encoder_ID:     "associazione Encoder sull'atto (se coincide con l'autore) o sulla codifica encoding/{id}"
+      Source_Work:    "atto: hico:isExtractedFrom source/{id} (Sources.tsv) o witness/{id} (Witnesses.tsv)"
+      Source_Page:    "atto: chora:sourcePage (xsd:string)"
+      Adopted:        "lettura: chora:adoptedByProject (xsd:boolean): si | no"
+      Rationale:      "atto: chora:rationale (@it)"
+      Revision_Of:    "lettura: prov:wasRevisionOf assertion/{id}"
+      Date:           "data della codifica: dcterms:date e prov:startedAtTime dell'atto (autore = codificatore) o prov:startedAtTime della codifica"
+      Note:           "lettura: rdfs:comment (@it)"
+      Rationale_Type: "atto: hico:hasInterpretationCriterion: prova referenziale | prova testuale | lettura critica"
+      Review_Status:  "lettura: chora:reviewStatus: bozza | validata"
+      Uncertainty_Axis:   "lettura: chora:uncertaintyAxis: nome | identificazione | geometria (solo uncertainty)"
+      Uncertainty_Origin: "lettura: chora:uncertaintyOrigin: documentaria | costruttiva (solo uncertainty)"
+    derived: "per le letture adottate: chora:hasRouteType (route), chora:identifiedWith (identification)"
+
+  Sources:
+    source_file: "Sources.tsv"
+    etl: "process_sources, tools/etl.py r. 1254-1276 (D-067)"
+    columns:
+      Source_ID: "IRI source/{id}; rdf:type chora:Source (sottoclasse di frbr:Expression)"
+      Label:     "rdfs:label (chiave autore-data)"
+      Reference: "dcterms:bibliographicCitation (@it), dalla bibliografia del Cap. 4"
+      Author:    "dcterms:creator (@it)"
+      Date:      "dcterms:date (xsd:gYear): e' la data dell'atto di uno studioso"
+      Type:      "dcterms:type (@it)"
+      Note:      "rdfs:comment (@it)"
 
   Agents:
     source_file: "Agents.tsv"

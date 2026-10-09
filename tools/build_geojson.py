@@ -194,16 +194,12 @@ def fallback_seed(entity_id):
 # diversi, e il confronto in CI falliva sempre. L'artefatto deve essere
 # deterministico perche' e' quello che l'interfaccia carica e che viene citato.
 
-# Identificazioni adottate (D-045): luogo narrativo -> entita' del gazetteer
+# Identificazioni adottate (D-045): luogo narrativo -> entita' del gazetteer,
+# materializzate dall'ETL come chora:identifiedWith (D-067)
 Q_ADOPTED_IDENTIFICATIONS = """
 PREFIX ga: <https://w3id.org/chora#>
 SELECT ?place ?gaz WHERE {
-  ?a a ga:Assertion ;
-     ga:assertionType ga:IdentificationAssertion ;
-     ga:adoptedByProject true ;
-     ga:aboutSubject ?place ;
-     ga:assertsValue ?gaz .
-  ?place a ga:NarrativePlace .
+  ?place a ga:NarrativePlace ; ga:identifiedWith ?gaz .
   ?gaz a ga:GazetteerEntity .
 }
 ORDER BY ?place ?gaz
