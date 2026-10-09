@@ -13,6 +13,7 @@ Le sorgenti sono:
 | `source/tables/PartitionZones.tsv`, `PartitionMembers.tsv` | le zone delle partizioni interpretative (città / campagna, D-050) e i luoghi assegnati a ciascuna; la partizione è attribuita in `Assertions.tsv`; facoltativi |
 | `source/tables/Witnesses.tsv` | i testimoni dell'opera (QPL, dtsFG, bzFG, QP57, RR II, QP; D-052): tipo, data, curatore, derivazioni documentate; allineamento LRMoo in `mapping.yaml` |
 | `source/tables/Sources.tsv` | le fonti delle letture (bibliografia del Cap. 4, censimento; D-067): l'atto interpretativo ne cita una con `hico:isExtractedFrom`, e la sua data è la data dell'atto di uno studioso |
+| `source/tables/Locations.tsv` | la geometria (WKT, precisione, datum, repertorio) delle posizioni attribuite (`location` in Assertions.tsv; D-069) |
 | `source/mapping.yaml` | etichette italiane → URI dell'ontologia |
 | `source/void_seeds.json` | 48 semi congelati dei tasselli fittizi |
 | `source/roma.geojson` | contorno amministrativo di Roma, sfondo della mappa |
@@ -71,7 +72,7 @@ Al 2026-09-06, con `make all && make audit && make shacl`:
 | Righe di `relief` | 933 — tutte risolvono a una feature |
 | Audit | 9 invarianti su 9 |
 | SHACL | conforme, nessuna violazione |
-| Query | 12/12 competency, 17/17 integrity |
+| Query | 12/12 competency, 18/18 integrity |
 
 Esclusioni verificate come volute, non come perdite:
 

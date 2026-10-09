@@ -1365,6 +1365,25 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-069 — Posizioni attribuite: LocationAssertion per Casal Bruciato (9 ottobre 2026)
+
+- Requisito/i: R03, R10 · Ipotesi: H3 · Data check: DC-07 (AUDIT_2b, B3, con la risposta 13)
+- Stato precedente: il concetto `chora:LocationAssertion` esisteva senza istanze. Le due posizioni di Casal Bruciato (TCI adottata, IGM alternativa, D-037) stavano solo nella prosa di `Authority_Source` di `gaz_casale_abbruciato`.
+- Decisione (di Lorenzo, 9/10/2026: la LocationAssertion si tiene, per il riuso dell'ontologia):
+  - **modello:** soggetto un'entità del gazetteer; valore una `geo:Geometry` (`geometry/{Assertion_ID}`) con `geo:asWKT` (`POINT(lon lat)`, `geo:wktLiteral`), `chora:repertory` (il repertorio datato, una `chora:Source`), `chora:precision` e `chora:datum`. Nuovo foglio `Locations.tsv` per la geometria; il resto della lettura sta in `Assertions.tsv` (pattern di D-067);
+  - **primo e unico caso:** L-0001, TCI, *Italia centrale* I, carta 1:250.000: `POINT(12.583 41.7335)`, precisione ~1 km, **adottata**. L-0002, IGM, F. 150 III SO, 1:25.000: `POINT(12.5683 41.7168)`, precisione ~250 m, datum ED50, non adottata. Entrambe con autore Manzotti, codificatore Lorenzo, fonte Manzotti 2010, pp. 268–269, Tavv. VI–VII, validate. Gli atti hanno per data il 2010, le codifiche il 2026;
+  - **repertori** in `Sources.tsv`: `tci_italia_centrale_1` (**data dell'edizione da compilare**: non è nei documenti del progetto) e `igm_150_iii_so` (1940, ultimo aggiornamento; rilievo 1872);
+  - **coerenza:** la coordinata dell'entità resta quella del foglio; **IQ19** verifica che coincida con la posizione adottata (tolleranza 1e-6). Provata spostando la latitudine dell'entità: 1 riga. IQ12 garantisce già al più una posizione adottata per entità;
+  - **Authority_Source** di `gaz_casale_abbruciato` ridotto a un rinvio a L-0001 e L-0002 (risposta 13).
+- Controlli: shape 21 (`LocationAssertionShape`: soggetto GazetteerEntity, un valore `geo:Geometry` con un WKT e un repertorio); l'ETL rifiuta un WKT non `POINT(lon lat)`, un repertorio inesistente, una geometria senza la lettura corrispondente.
+- Alternative scartate: derivare dall'adottata la coordinata dell'entità (due sorgenti per lo stesso dato); due colonne di geometria in `Assertions.tsv` (la geometria non entra in `Value`).
+- Motivazione (fonte, pagina): Manzotti 2010, pp. 268–269, Tavv. VI–VII (pp. 300–301); D-037; Cap. 4, R03.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `ontology/chora.ttl` r. 1720–1754 (sezione «Posizioni attribuite»); `ontology/shapes/chora-shapes.ttl` (prefisso `geo:`, shape 21 in coda); `ontology/queries/integrity.rq` (IQ19); `tools/etl.py` r. 1521–1547 (`process_locations`) e chiamata; `data/source/tables/Locations.tsv` (nuovo), `Assertions.tsv` (L-0001, L-0002), `Sources.tsv` (due repertori), `GazetteerEntities.tsv` (`Authority_Source` di gaz_casale_abbruciato); XLSX corrispondenti; `data/source/mapping.yaml` (documentazione Locations); `data/README.md`; conteggio delle integrity query in `CLAUDE.md`, `Makefile`, `README.md`; `docs/thesis/DATA_CHECKS_GaddAtlas.md` (DC-07).
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.422 → **1.444**; ABox 38.588 → **38.668**; full 40.580 → **40.682**. SHACL conforme, 50 avvertenze; IQ1–IQ17 e IQ19 a 0. GeoJSON: cambia solo `tripleCount`.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

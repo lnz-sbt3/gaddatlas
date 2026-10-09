@@ -36,6 +36,24 @@
     chora:assertsValue <https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato> ;
     chora:reviewStatus chora:Validated .
 
+<https://w3id.org/gaddatlas/id/assertion/L-0001> a chora:Assertion ;
+    rdfs:comment "Posizione adottata (D-037)."@it ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/L-0001> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato> ;
+    chora:adoptedByProject true ;
+    chora:assertsValue <https://w3id.org/gaddatlas/id/geometry/L-0001> ;
+    chora:reviewStatus chora:Validated .
+
+<https://w3id.org/gaddatlas/id/assertion/L-0002> a chora:Assertion ;
+    rdfs:comment "Posizione alternativa (D-037)."@it ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/L-0002> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato> ;
+    chora:adoptedByProject false ;
+    chora:assertsValue <https://w3id.org/gaddatlas/id/geometry/L-0002> ;
+    chora:reviewStatus chora:Validated .
+
 <https://w3id.org/gaddatlas/id/assertion/M-0001> a chora:Assertion ;
     rdfs:comment "Cap. 4, § 4.3: le tre letture convivono, nessuna è adottata dal progetto."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/perosa> ;
@@ -3197,6 +3215,20 @@
     prov:used <https://w3id.org/gaddatlas/id/source/manzotti_2010> ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasInformedBy <https://w3id.org/gaddatlas/id/act/A-0002> .
+
+<https://w3id.org/gaddatlas/id/encoding/L-0001> a chora:EncodingActivity ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/L-0001-encoder-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/gaddatlas/id/source/manzotti_2010> ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasInformedBy <https://w3id.org/gaddatlas/id/act/L-0001> .
+
+<https://w3id.org/gaddatlas/id/encoding/L-0002> a chora:EncodingActivity ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/L-0002-encoder-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/gaddatlas/id/source/manzotti_2010> ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasInformedBy <https://w3id.org/gaddatlas/id/act/L-0002> .
 
 <https://w3id.org/gaddatlas/id/encoding/M-0001> a chora:EncodingActivity ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/M-0001-encoder-lorenzo_sabatino> ;
@@ -24630,6 +24662,22 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
+<https://w3id.org/gaddatlas/id/association/L-0001-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/L-0001-readingauthor-manzotti> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/L-0002-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/L-0002-readingauthor-manzotti> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    prov:hadRole chora:ReadingAuthor .
+
 <https://w3id.org/gaddatlas/id/association/M-0001-encoder-lorenzo_sabatino> a prov:Association ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:Encoder .
@@ -38136,6 +38184,17 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     geo1:lat 40.84468964152708 ;
     geo1:long 14.23166148030254 .
 
+<https://w3id.org/gaddatlas/id/geometry/L-0001> a geosparql:Geometry ;
+    geosparql:asWKT "POINT(12.583 41.7335)"^^geosparql:wktLiteral ;
+    chora:precision "~1 km"^^xsd:string ;
+    chora:repertory <https://w3id.org/gaddatlas/id/source/tci_italia_centrale_1> .
+
+<https://w3id.org/gaddatlas/id/geometry/L-0002> a geosparql:Geometry ;
+    geosparql:asWKT "POINT(12.5683 41.7168)"^^geosparql:wktLiteral ;
+    chora:datum "ED50 (scarto verso WGS84 ~100–200 m, entro la precisione)"^^xsd:string ;
+    chora:precision "~250 m"^^xsd:string ;
+    chora:repertory <https://w3id.org/gaddatlas/id/source/igm_150_iii_so> .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/colli_albani> a chora:NarrativePlace ;
     rdfs:label "Colli Albani"@it ;
     chora:hasPlaceCategory chora:locality ;
@@ -42317,6 +42376,21 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:relatum <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba>,
         <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_ardeatina> .
 
+<https://w3id.org/gaddatlas/id/source/igm_150_iii_so> a chora:Source ;
+    rdfs:label "IGM, F. 150 III SO" ;
+    dcterms:bibliographicCitation "Istituto Geografico Militare, F. 150 III SO, 1:25.000, rilievo 1872, aggiornamenti 1931 e 1940 (riprodotta in Manzotti 2010, Tav. VII, p. 301)."@it ;
+    dcterms:creator "Istituto Geografico Militare"@it ;
+    dcterms:date "1940"^^xsd:gYear ;
+    dcterms:type "carta"@it ;
+    rdfs:comment "Data: ultimo aggiornamento della tavoletta (rilievo 1872)."@it .
+
+<https://w3id.org/gaddatlas/id/source/tci_italia_centrale_1> a chora:Source ;
+    rdfs:label "TCI, Italia centrale I" ;
+    dcterms:bibliographicCitation "Touring Club Italiano, Guida d'Italia, Italia centrale I: carta «Colli Laziali, Monti Lepini ed Ernici», 1:250.000, inserita tra le pp. 480 e 481 (riprodotta in Manzotti 2010, Tav. VI, p. 300)."@it ;
+    dcterms:creator "Touring Club Italiano"@it ;
+    dcterms:type "carta"@it ;
+    rdfs:comment "Data dell'edizione da compilare (non registrata nei documenti del progetto)."@it .
+
 <https://w3id.org/gaddatlas/id/witness/bzfg> a chora:Witness ;
     rdfs:label "bzFG" ;
     dcterms:description "Un giro di bozze del volume (Pinotti 2025, pp. 73–74)."@it ;
@@ -42349,6 +42423,26 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/agent/manzotti> ;
     chora:rationale "La «stazione di Castello» (QP 279) è la stazione dei carabinieri di Castel Savello: Manzotti scioglie così la dizione, contro la lettura immediata Castel Gandolfo (Cap. 4, § 4.4). Lettura adottata dal progetto (LS, 9/10/2026, DC-04)."@it ;
     chora:sourcePage "293"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/act/L-0001> a ns1:InterpretationAct ;
+    dcterms:date "2010"^^xsd:gYear ;
+    ns1:hasInterpretationCriterion chora:ReferentialEvidence ;
+    ns1:hasInterpretationType chora:LocationAssertion ;
+    ns1:isExtractedFrom <https://w3id.org/gaddatlas/id/source/manzotti_2010> ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/L-0001-readingauthor-manzotti> ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    chora:rationale "La carta TCI colloca il casale fra le ferrovie Roma–Velletri e Roma–Napoli, all'altezza di Santa Fumia, lungo il fosso di Casale Abbrusciato, come il testo. Coordinate stimate: punto mediano fra le due ferrovie alla latitudine di Borgo Santa Fumia."@it ;
+    chora:sourcePage "268–269; Tavv. VI–VII, pp. 300–301"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/act/L-0002> a ns1:InterpretationAct ;
+    dcterms:date "2010"^^xsd:gYear ;
+    ns1:hasInterpretationCriterion chora:ReferentialEvidence ;
+    ns1:hasInterpretationType chora:LocationAssertion ;
+    ns1:isExtractedFrom <https://w3id.org/gaddatlas/id/source/manzotti_2010> ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/L-0002-readingauthor-manzotti> ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    chora:rationale "La tavoletta IGM colloca «Casale Abbruciato» a ovest della Roma–Napoli: reticolo UTM 33 della tavola, E 297,7 N 4621,3 km."@it ;
+    chora:sourcePage "268–269; Tavv. VI–VII, pp. 300–301"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/act/M-0001> a ns1:InterpretationAct ;
     dcterms:date "2023"^^xsd:gYear ;
@@ -48494,42 +48588,11 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> .
 
-<https://w3id.org/gaddatlas/id/agent/manzotti> a prov:Agent,
-        prov:Person,
-        chora:Scholar ;
-    rdfs:comment "Commento al cap. VIII del Pasticciaccio (Manzotti 2010, «Per leggere» 19)"@it ;
-    schema:name "Emilio Manzotti" .
-
 <https://w3id.org/gaddatlas/id/focalizer/don_lorenzo_corpi> a chora:Character,
         chora:FocalizingAgent ;
     dcterms:description "Don Lorenzo Corpi, sacerdote legato alla cerchia di Liliana."@it ;
     chora:characterName "Don Lorenzo Corpi"@it ;
     chora:hasGender "male"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato> a chora:GazetteerEntity ;
-    rdfs:label "Casale Abbruciato"@it ;
-    dcterms:source "Posizione ADOTTATA: TCI, Italia centrale I, carta «Colli Laziali, Monti Lepini ed Ernici» 1:250.000, inserita tra le pp. 480 e 481 (Manzotti 2010, Tav. VI, p. 300): casale fra le ferrovie Roma–Velletri e Roma–Napoli, all'altezza di Santa Fumia, lungo il fosso di Casale Abbrusciato. Coordinate stimate (precisione ~1 km): punto mediano fra le due ferrovie alla latitudine di Borgo Santa Fumia (OpenStreetMap). Posizione ALTERNATIVA: IGM, F. 150 III SO, 1:25.000, rilievo 1872, aggiornamenti 1931 e 1940 (Manzotti 2010, Tav. VII, p. 301): «Casale Abbruciato» a ovest della Roma–Napoli, stimato a 41.7168 N 12.5683 E (reticolo UTM 33 della tavola, E 297,7 N 4621,3 km; precisione ~250 m; il reticolo della tavola è in datum ED50, e lo scarto verso WGS84, ~100–200 m, rientra in questa precisione). Manzotti 2010, pp. 268–269. Nella nota Manzotti rinvia alle tavole come «V» e «VI»: qui si citano secondo le didascalie."^^xsd:string ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.583,
-          41.7335
-        ]
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 41.7335 ;
-    geo1:long 12.583 ;
-    skos:altLabel "Casal Bruciato; Casale Abbrusciato; Casale Bruciato"@it ;
-    chora:historicalLocation "Casale dell'Agro romano a sud di Roma (Nibby, Dintorni di Roma, p. 569)"@it .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/marino> a chora:NarrativePlace ;
     rdfs:label "Marino"@it ;
@@ -48559,6 +48622,31 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     dcterms:description "Ascanio Lanciani, fratello minore di Diomede Lanciani, coinvolto nel furto della contessa Menegazzi"@it ;
     chora:characterName "Ascanio Lanciani"@it ;
     chora:hasGender "male"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato> a chora:GazetteerEntity ;
+    rdfs:label "Casale Abbruciato"@it ;
+    dcterms:source "Posizioni attribuite: L-0001 (TCI, Italia centrale I, adottata) e L-0002 (IGM, F. 150 III SO, alternativa), lette da Manzotti 2010, pp. 268–269, Tavv. VI–VII (D-069)."^^xsd:string ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.583,
+          41.7335
+        ]
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 41.7335 ;
+    geo1:long 12.583 ;
+    skos:altLabel "Casal Bruciato; Casale Abbrusciato; Casale Bruciato"@it ;
+    chora:historicalLocation "Casale dell'Agro romano a sud di Roma (Nibby, Dintorni di Roma, p. 569)"@it .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_quarto_di_santa_fumia> a chora:GazetteerEntity ;
     rdfs:label "Quarto di Santa Fumia"@it ;
@@ -48619,13 +48707,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     geo1:lat 41.76071420037528 ;
     geo1:long 12.599632278065911 .
 
-<https://w3id.org/gaddatlas/id/source/manzotti_2010> a chora:Source ;
-    rdfs:label "Manzotti 2010" ;
-    dcterms:bibliographicCitation "Manzotti, E. (2010). «Era l'alba, e più» (C. E. Gadda, Pasticciaccio, VIII). Per leggere, 10(19), 217–312."@it ;
-    dcterms:creator "Emilio Manzotti"@it ;
-    dcterms:date "2010"^^xsd:gYear ;
-    dcterms:type "articolo"@it .
-
 <https://w3id.org/gaddatlas/id/focalizer/autista_questura> a chora:Character,
         chora:FocalizingAgent ;
     dcterms:description "Personaggio non nominato, che accompagna Ingravallo da Santo Stefano ai Colli Albani"@it ;
@@ -48637,6 +48718,19 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     dcterms:description "Gaudenzio, detto Biondone, collega di Ingravallo coinvolto nelle indagini dell'omicidio di Liliana Balducci"@it ;
     chora:characterName "Gaudenzio"@it ;
     chora:hasGender "male"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/agent/manzotti> a prov:Agent,
+        prov:Person,
+        chora:Scholar ;
+    rdfs:comment "Commento al cap. VIII del Pasticciaccio (Manzotti 2010, «Per leggere» 19)"@it ;
+    schema:name "Emilio Manzotti" .
+
+<https://w3id.org/gaddatlas/id/source/manzotti_2010> a chora:Source ;
+    rdfs:label "Manzotti 2010" ;
+    dcterms:bibliographicCitation "Manzotti, E. (2010). «Era l'alba, e più» (C. E. Gadda, Pasticciaccio, VIII). Per leggere, 10(19), 217–312."@it ;
+    dcterms:creator "Emilio Manzotti"@it ;
+    dcterms:date "2010"^^xsd:gYear ;
+    dcterms:type "articolo"@it .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_torraccio> a chora:GazetteerEntity ;
     rdfs:label "Torraccio"@it ;

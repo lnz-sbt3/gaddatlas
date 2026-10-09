@@ -1515,6 +1515,37 @@ class GaddaETL:
             n_ext += bool(where_from)
         logger.info(f"Statuti generati: {n} letture (con repertorio esterno: {n_ext})")
 
+    # ------------------------------------------------------------------
+    # POSIZIONI ATTRIBUITE (D-069, AUDIT_2b B3)
+    # ------------------------------------------------------------------
+    def process_locations(self, file_path):
+        """Processa Locations.tsv (facoltativo): la geometria del valore di una
+        LocationAssertion. Colonne: Assertion_ID, Geometry_WKT, Precision, Datum,
+        Repertory_ID (Source_ID). Il valore della lettura in Assertions.tsv deve
+        essere geometry/{Assertion_ID}."""
+        if not Path(file_path).is_file():
+            return
+        df = pd.read_csv(file_path, sep='\t', encoding='utf-8', dtype=str,
+                         keep_default_na=False, na_values=[])
+        for idx, row in df.iterrows():
+            aid = str(row.get('Assertion_ID', '')).strip()
+            where = f"Locations riga {idx + 2} ({aid or 'senza id'})"
+            a, geom = ID_NS[f"assertion/{aid}"], ID_NS[f"geometry/{aid}"]
+            if (a, CHORA.assertsValue, geom) not in self.graph:
+                raise ValueError(f"{where}: l'asserzione {aid} non ha valore geometry/{aid}")
+            wkt = str(row.get('Geometry_WKT', '')).strip()
+            if not re.fullmatch(r"POINT\(-?[0-9.]+ -?[0-9.]+\)", wkt):
+                raise ValueError(f"{where}: Geometry_WKT {wkt!r} (atteso POINT(lon lat))")
+            rep_id = str(row.get('Repertory_ID', '')).strip()
+            if rep_id not in self.sources:
+                raise ValueError(f"{where}: repertorio {rep_id!r} assente da Sources.tsv")
+            self.graph.add((geom, RDF.type, GEOSPARQL.Geometry))
+            self.graph.add((geom, GEOSPARQL.asWKT, Literal(wkt, datatype=GEOSPARQL.wktLiteral)))
+            self.graph.add((geom, CHORA.repertory, self.sources[rep_id][0]))
+            self.add_literal(geom, CHORA.precision, row.get('Precision'), datatype=XSD.string)
+            self.add_literal(geom, CHORA.datum, row.get('Datum'), datatype=XSD.string)
+        logger.info(f"Locations: {len(df)} posizioni attribuite")
+
     MATERIALIZED = {"RouteTypeAssertion": (CHORA.hasRouteType, CHORA.NarrativeRoute),
                     "IdentificationAssertion": (CHORA.identifiedWith, CHORA.NarrativePlace)}
 
@@ -1739,6 +1770,7 @@ class GaddaETL:
         logger.info("\n--- FASE 4b: Asserzioni attribuite ---")
         self.process_assertions(self.data_dir / "Assertions.tsv")
         self.generate_imported_statuses()
+        self.process_locations(self.data_dir / "Locations.tsv")
 
         # 3. Validazione
         logger.info("\n--- FASE 5: Validazione ---")

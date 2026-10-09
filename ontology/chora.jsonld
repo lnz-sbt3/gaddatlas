@@ -3252,6 +3252,28 @@
       }
     },
     {
+      "@id": "chora:datum",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Datum of the repertory, when different from WGS84, with the stated shift."
+      },
+      "rdfs:domain": {
+        "@id": "geo:Geometry"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "datum"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "datum"
+      }
+    },
+    {
       "@id": "chora:editor",
       "@type": "owl:DatatypeProperty",
       "rdfs:comment": {
@@ -3974,6 +3996,28 @@
       }
     },
     {
+      "@id": "chora:precision",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Stated precision of a position (e.g. «~1 km»)."
+      },
+      "rdfs:domain": {
+        "@id": "geo:Geometry"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "precisione"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "precision"
+      }
+    },
+    {
       "@id": "chora:presentLocation",
       "@type": "owl:DatatypeProperty",
       "rdfs:comment": {
@@ -4122,6 +4166,28 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "relatum"
+      }
+    },
+    {
+      "@id": "chora:repertory",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The dated repertory (map, gazetteer) from which a position is read."
+      },
+      "rdfs:domain": {
+        "@id": "geo:Geometry"
+      },
+      "rdfs:range": {
+        "@id": "chora:Source"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "repertorio"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "repertory"
       }
     },
     {
@@ -4437,6 +4503,19 @@
       },
       "rdfs:range": {
         "@id": "rdfs:Literal"
+      }
+    },
+    {
+      "@id": "geo:asWKT",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:domain": {
+        "@id": "geo:Geometry"
+      },
+      "rdfs:isDefinedBy": {
+        "@id": "http://www.opengis.net/ont/geosparql"
+      },
+      "rdfs:range": {
+        "@id": "geo:wktLiteral"
       }
     },
     {

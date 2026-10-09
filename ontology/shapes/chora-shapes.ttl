@@ -32,6 +32,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix hico: <http://purl.org/emmedi/hico/> .
+@prefix geo:  <http://www.opengis.net/ont/geosparql#> .
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 
@@ -715,3 +716,24 @@ ga:AgentKindShape
         [ sh:class ga:Annotator ]
     ) ;
     sh:message "Un agente del dataset e' chora:Scholar o chora:Annotator." .
+
+
+# =============================================================================
+# SHAPE 21 — Posizioni attribuite (D-069)
+# Una LocationAssertion riguarda un'entita' del gazetteer e ha per valore una
+# geometria WKT con un repertorio.
+# =============================================================================
+
+ga:LocationAssertionShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion ;
+    sh:or (
+        [ sh:not [ sh:path ( prov:wasGeneratedBy hico:hasInterpretationType ) ; sh:hasValue ga:LocationAssertion ] ]
+        [ sh:and (
+            [ sh:path ga:aboutSubject ; sh:class ga:GazetteerEntity ]
+            [ sh:path ga:assertsValue ; sh:minCount 1 ; sh:maxCount 1 ; sh:class geo:Geometry ]
+            [ sh:path ( ga:assertsValue geo:asWKT ) ; sh:minCount 1 ; sh:maxCount 1 ]
+            [ sh:path ( ga:assertsValue ga:repertory ) ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ga:Source ]
+          ) ]
+    ) ;
+    sh:message "Una posizione attribuita riguarda un'entita' del gazetteer e ha una geometria WKT con un repertorio." .

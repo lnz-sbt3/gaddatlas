@@ -864,3 +864,17 @@ documentation:
     columns:
       Localization_Status: "chora:localizationStatus: analisi non condotta | sospensione motivata | non applicabile; assegnato caso per caso, mai derivato dallo statuto (D-062)"
       Localization_Reason: "chora:localizationReason (@it); obbligatorio con sospensione motivata"
+
+  Locations:
+    source_file: "Locations.tsv"
+    etl: "process_locations, tools/etl.py r. 1521-1547 (D-069)"
+    note: >-
+      La geometria del valore di una LocationAssertion. Il resto della lettura
+      (soggetto, autore, fonte, adozione) sta in Assertions.tsv, con Value =
+      geometry/{Assertion_ID}.
+    columns:
+      Assertion_ID: "IRI geometry/{id}; rdf:type geo:Geometry"
+      Geometry_WKT: "geo:asWKT (geo:wktLiteral), POINT(lon lat)"
+      Precision:    "chora:precision (xsd:string)"
+      Datum:        "chora:datum (xsd:string)"
+      Repertory_ID: "chora:repertory source/{id} (Sources.tsv)"

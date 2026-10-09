@@ -231,3 +231,24 @@ SELECT ?occorrenza ?problema WHERE {
   }
 }
 ORDER BY ?occorrenza
+
+
+# ==== IQ19 — Coordinata dell'entita' diversa dalla posizione adottata (atteso: 0) ====
+# La coordinata della GazetteerEntity (geo1:lat, geo1:long, dal foglio) deve
+# coincidere con la geometria della LocationAssertion adottata (D-069).
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX hico: <http://purl.org/emmedi/hico/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geo1: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?entita ?lat ?long ?wkt WHERE {
+  ?a ga:aboutSubject ?entita ; ga:adoptedByProject true ; ga:assertsValue ?g ;
+     prov:wasGeneratedBy/hico:hasInterpretationType ga:LocationAssertion .
+  ?g geo:asWKT ?wkt .
+  ?entita geo1:lat ?lat ; geo1:long ?long .
+  BIND (STRBEFORE(STRAFTER(STR(?wkt), "POINT("), ")") AS ?xy)
+  BIND (xsd:decimal(STRBEFORE(?xy, " ")) AS ?x)
+  BIND (xsd:decimal(STRAFTER(?xy, " ")) AS ?y)
+  FILTER (ABS(?x - xsd:decimal(?long)) > 0.000001 || ABS(?y - xsd:decimal(?lat)) > 0.000001)
+}

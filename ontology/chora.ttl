@@ -1716,3 +1716,37 @@ chora:hasUncertaintyType a owl:ObjectProperty ;
     rdfs:range skos:Concept ;
     skos:altLabel "ha tipo d'incertezza"@it ;
     skos:prefLabel "has uncertainty type"@en .
+
+# =============================================================================
+# POSIZIONI ATTRIBUITE (D-069, AUDIT_2b B3)
+# Una LocationAssertion colloca un'entita' del gazetteer secondo un repertorio
+# datato: il valore e' una geo:Geometry (WKT) con repertorio, precisione e datum.
+# La coordinata dell'entita' resta quella del foglio; IQ19 verifica che coincida
+# con la posizione adottata.
+# =============================================================================
+
+geo:asWKT a owl:DatatypeProperty ;
+    rdfs:domain geo:Geometry ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ;
+    rdfs:range geo:wktLiteral .
+
+chora:repertory a owl:ObjectProperty ;
+    rdfs:comment "The dated repertory (map, gazetteer) from which a position is read."@en ;
+    rdfs:domain geo:Geometry ;
+    rdfs:range chora:Source ;
+    skos:altLabel "repertorio"@it ;
+    skos:prefLabel "repertory"@en .
+
+chora:precision a owl:DatatypeProperty ;
+    rdfs:comment "Stated precision of a position (e.g. «~1 km»)."@en ;
+    rdfs:domain geo:Geometry ;
+    rdfs:range xsd:string ;
+    skos:altLabel "precisione"@it ;
+    skos:prefLabel "precision"@en .
+
+chora:datum a owl:DatatypeProperty ;
+    rdfs:comment "Datum of the repertory, when different from WGS84, with the stated shift."@en ;
+    rdfs:domain geo:Geometry ;
+    rdfs:range xsd:string ;
+    skos:altLabel "datum"@it ;
+    skos:prefLabel "datum"@en .

@@ -57,6 +57,11 @@ geosparql:asGeoJSON a owl:DatatypeProperty ;
     rdfs:domain geosparql:Geometry ;
     rdfs:range rdfs:Literal .
 
+geosparql:asWKT a owl:DatatypeProperty ;
+    rdfs:domain geosparql:Geometry ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ;
+    rdfs:range geosparql:wktLiteral .
+
 xsd:date a rdfs:Datatype .
 
 geo1:lat a owl:DatatypeProperty ;
@@ -243,6 +248,13 @@ chora:criticalNote a owl:DatatypeProperty ;
     skos:altLabel "nota critica"@it ;
     skos:prefLabel "critical note"@en .
 
+chora:datum a owl:DatatypeProperty ;
+    rdfs:comment "Datum of the repertory, when different from WGS84, with the stated shift."@en ;
+    rdfs:domain geosparql:Geometry ;
+    rdfs:range xsd:string ;
+    skos:altLabel "datum"@it ;
+    skos:prefLabel "datum"@en .
+
 chora:editor a owl:DatatypeProperty ;
     rdfs:comment "Editor(s) of an edition («a cura di»)."@en ;
     rdfs:domain chora:Witness ;
@@ -411,6 +423,13 @@ chora:partOfWork a owl:ObjectProperty ;
     skos:altLabel "fa parte dell'opera"@it ;
     skos:prefLabel "part of work"@en .
 
+chora:precision a owl:DatatypeProperty ;
+    rdfs:comment "Stated precision of a position (e.g. «~1 km»)."@en ;
+    rdfs:domain geosparql:Geometry ;
+    rdfs:range xsd:string ;
+    skos:altLabel "precisione"@it ;
+    skos:prefLabel "precision"@en .
+
 chora:presentLocation a owl:DatatypeProperty ;
     rdfs:comment "Describes the present-day location or administrative context of a gazetteer entity."@en ;
     rdfs:domain chora:GazetteerEntity ;
@@ -460,6 +479,13 @@ chora:relatum a owl:ObjectProperty ;
             owl:unionOf ( chora:GazetteerEntity chora:NarrativePlace ) ] ;
     skos:altLabel "termine di relazione"@it ;
     skos:prefLabel "relatum"@en .
+
+chora:repertory a owl:ObjectProperty ;
+    rdfs:comment "The dated repertory (map, gazetteer) from which a position is read."@en ;
+    rdfs:domain geosparql:Geometry ;
+    rdfs:range chora:Source ;
+    skos:altLabel "repertorio"@it ;
+    skos:prefLabel "repertory"@en .
 
 chora:reviewStatus a owl:ObjectProperty ;
     dcterms:references chora:ReviewStatusScheme ;
@@ -548,6 +574,24 @@ chora:witnessType a owl:ObjectProperty ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> ;
     chora:adoptedByProject true ;
     chora:assertsValue <https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato> ;
+    chora:reviewStatus chora:Validated .
+
+<https://w3id.org/gaddatlas/id/assertion/L-0001> a chora:Assertion ;
+    rdfs:comment "Posizione adottata (D-037)."@it ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/L-0001> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato> ;
+    chora:adoptedByProject true ;
+    chora:assertsValue <https://w3id.org/gaddatlas/id/geometry/L-0001> ;
+    chora:reviewStatus chora:Validated .
+
+<https://w3id.org/gaddatlas/id/assertion/L-0002> a chora:Assertion ;
+    rdfs:comment "Posizione alternativa (D-037)."@it ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/L-0002> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato> ;
+    chora:adoptedByProject false ;
+    chora:assertsValue <https://w3id.org/gaddatlas/id/geometry/L-0002> ;
     chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/M-0001> a chora:Assertion ;
@@ -3711,6 +3755,20 @@ chora:witnessType a owl:ObjectProperty ;
     prov:used <https://w3id.org/gaddatlas/id/source/manzotti_2010> ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasInformedBy <https://w3id.org/gaddatlas/id/act/A-0002> .
+
+<https://w3id.org/gaddatlas/id/encoding/L-0001> a chora:EncodingActivity ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/L-0001-encoder-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/gaddatlas/id/source/manzotti_2010> ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasInformedBy <https://w3id.org/gaddatlas/id/act/L-0001> .
+
+<https://w3id.org/gaddatlas/id/encoding/L-0002> a chora:EncodingActivity ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/L-0002-encoder-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/gaddatlas/id/source/manzotti_2010> ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasInformedBy <https://w3id.org/gaddatlas/id/act/L-0002> .
 
 <https://w3id.org/gaddatlas/id/encoding/M-0001> a chora:EncodingActivity ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/M-0001-encoder-lorenzo_sabatino> ;
@@ -15450,17 +15508,6 @@ chora:Facing a owl:NamedIndividual,
     skos:prefLabel "Facing"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
 
-chora:LocationAssertion a ns1:InterpretationType,
-        owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "posizione"@it ;
-    skos:definition "Locates a gazetteer entity according to a dated repertory."@en ;
-    skos:inScheme chora:AssertionTypeScheme ;
-    skos:notation "location" ;
-    skos:prefLabel "Location assertion"@en ;
-    skos:topConceptOf chora:AssertionTypeScheme ;
-    chora:reifiesProperty geosparql:hasGeometry .
-
 chora:Narrator a owl:Class ;
     rdfs:subClassOf chora:FocalizingAgent ;
     skos:altLabel "Narratore"@it ;
@@ -25588,6 +25635,22 @@ chora:witnessOf a owl:ObjectProperty ;
 
 <https://w3id.org/gaddatlas/id/association/I-casal_bruciato-readingauthor-lorenzo_sabatino> a prov:Association ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/L-0001-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/L-0001-readingauthor-manzotti> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/L-0002-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/L-0002-readingauthor-manzotti> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/manzotti> ;
     prov:hadRole chora:ReadingAuthor .
 
 <https://w3id.org/gaddatlas/id/association/M-0001-encoder-lorenzo_sabatino> a prov:Association ;
@@ -39096,6 +39159,17 @@ chora:witnessOf a owl:ObjectProperty ;
     geo1:lat 40.84468964152708 ;
     geo1:long 14.23166148030254 .
 
+<https://w3id.org/gaddatlas/id/geometry/L-0001> a geosparql:Geometry ;
+    geosparql:asWKT "POINT(12.583 41.7335)"^^geosparql:wktLiteral ;
+    chora:precision "~1 km"^^xsd:string ;
+    chora:repertory <https://w3id.org/gaddatlas/id/source/tci_italia_centrale_1> .
+
+<https://w3id.org/gaddatlas/id/geometry/L-0002> a geosparql:Geometry ;
+    geosparql:asWKT "POINT(12.5683 41.7168)"^^geosparql:wktLiteral ;
+    chora:datum "ED50 (scarto verso WGS84 ~100–200 m, entro la precisione)"^^xsd:string ;
+    chora:precision "~250 m"^^xsd:string ;
+    chora:repertory <https://w3id.org/gaddatlas/id/source/igm_150_iii_so> .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/colli_albani> a chora:NarrativePlace ;
     rdfs:label "Colli Albani"@it ;
     chora:hasPlaceCategory chora:locality ;
@@ -43277,6 +43351,21 @@ chora:witnessOf a owl:ObjectProperty ;
     chora:relatum <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba>,
         <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_ardeatina> .
 
+<https://w3id.org/gaddatlas/id/source/igm_150_iii_so> a chora:Source ;
+    rdfs:label "IGM, F. 150 III SO" ;
+    dcterms:bibliographicCitation "Istituto Geografico Militare, F. 150 III SO, 1:25.000, rilievo 1872, aggiornamenti 1931 e 1940 (riprodotta in Manzotti 2010, Tav. VII, p. 301)."@it ;
+    dcterms:creator "Istituto Geografico Militare"@it ;
+    dcterms:date "1940"^^xsd:gYear ;
+    dcterms:type "carta"@it ;
+    rdfs:comment "Data: ultimo aggiornamento della tavoletta (rilievo 1872)."@it .
+
+<https://w3id.org/gaddatlas/id/source/tci_italia_centrale_1> a chora:Source ;
+    rdfs:label "TCI, Italia centrale I" ;
+    dcterms:bibliographicCitation "Touring Club Italiano, Guida d'Italia, Italia centrale I: carta «Colli Laziali, Monti Lepini ed Ernici», 1:250.000, inserita tra le pp. 480 e 481 (riprodotta in Manzotti 2010, Tav. VI, p. 300)."@it ;
+    dcterms:creator "Touring Club Italiano"@it ;
+    dcterms:type "carta"@it ;
+    rdfs:comment "Data dell'edizione da compilare (non registrata nei documenti del progetto)."@it .
+
 <https://w3id.org/gaddatlas/id/witness/bzfg> a chora:Witness ;
     rdfs:label "bzFG" ;
     dcterms:description "Un giro di bozze del volume (Pinotti 2025, pp. 73–74)."@it ;
@@ -43614,6 +43703,26 @@ chora:village a owl:NamedIndividual,
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/agent/manzotti> ;
     chora:rationale "La «stazione di Castello» (QP 279) è la stazione dei carabinieri di Castel Savello: Manzotti scioglie così la dizione, contro la lettura immediata Castel Gandolfo (Cap. 4, § 4.4). Lettura adottata dal progetto (LS, 9/10/2026, DC-04)."@it ;
     chora:sourcePage "293"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/act/L-0001> a ns1:InterpretationAct ;
+    dcterms:date "2010"^^xsd:gYear ;
+    ns1:hasInterpretationCriterion chora:ReferentialEvidence ;
+    ns1:hasInterpretationType chora:LocationAssertion ;
+    ns1:isExtractedFrom <https://w3id.org/gaddatlas/id/source/manzotti_2010> ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/L-0001-readingauthor-manzotti> ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    chora:rationale "La carta TCI colloca il casale fra le ferrovie Roma–Velletri e Roma–Napoli, all'altezza di Santa Fumia, lungo il fosso di Casale Abbrusciato, come il testo. Coordinate stimate: punto mediano fra le due ferrovie alla latitudine di Borgo Santa Fumia."@it ;
+    chora:sourcePage "268–269; Tavv. VI–VII, pp. 300–301"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/act/L-0002> a ns1:InterpretationAct ;
+    dcterms:date "2010"^^xsd:gYear ;
+    ns1:hasInterpretationCriterion chora:ReferentialEvidence ;
+    ns1:hasInterpretationType chora:LocationAssertion ;
+    ns1:isExtractedFrom <https://w3id.org/gaddatlas/id/source/manzotti_2010> ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/L-0002-readingauthor-manzotti> ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    chora:rationale "La tavoletta IGM colloca «Casale Abbruciato» a ovest della Roma–Napoli: reticolo UTM 33 della tavola, E 297,7 N 4621,3 km."@it ;
+    chora:sourcePage "268–269; Tavv. VI–VII, pp. 300–301"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/act/M-0001> a ns1:InterpretationAct ;
     dcterms:date "2023"^^xsd:gYear ;
@@ -46765,6 +46874,17 @@ chora:GeometryAxis a owl:NamedIndividual,
     skos:inScheme chora:UncertaintyAxisScheme ;
     skos:prefLabel "Geometry Axis"@en ;
     skos:topConceptOf chora:UncertaintyAxisScheme .
+
+chora:LocationAssertion a ns1:InterpretationType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "posizione"@it ;
+    skos:definition "Locates a gazetteer entity according to a dated repertory."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "location" ;
+    skos:prefLabel "Location assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme ;
+    chora:reifiesProperty geosparql:hasGeometry .
 
 chora:NameAxis a owl:NamedIndividual,
         skos:Concept ;
@@ -49940,12 +50060,6 @@ chora:Church a owl:NamedIndividual,
     skos:prefLabel "Church"@en ;
     skos:topConceptOf chora:PlaceCategoryScheme .
 
-chora:Source a owl:Class ;
-    rdfs:comment "A bibliographic source of readings: a scholarly work, the thesis, the project census, a dated map or repertory (Sources.tsv)."@en ;
-    rdfs:subClassOf <http://purl.org/vocab/frbr/core#Expression> ;
-    skos:altLabel "Fonte"@it ;
-    skos:prefLabel "Source"@en .
-
 <https://w3id.org/gaddatlas/id/focalizer/lavinia_mattonari> a chora:Character,
         chora:FocalizingAgent ;
     dcterms:description "Lavinia Mattonari, cugina di Camilla Mattonari e compagna di Enea Retalli, lavora al laboratorio della Zamira Pacori"@it ;
@@ -50183,6 +50297,12 @@ chora:RouteTypeScheme a owl:NamedIndividual,
         chora:ProposedRoute ;
     skos:prefLabel "Route type"@en .
 
+chora:Source a owl:Class ;
+    rdfs:comment "A bibliographic source of readings: a scholarly work, the thesis, the project census, a dated map or repertory (Sources.tsv)."@en ;
+    rdfs:subClassOf <http://purl.org/vocab/frbr/core#Expression> ;
+    skos:altLabel "Fonte"@it ;
+    skos:prefLabel "Source"@en .
+
 chora:historical_building a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "Palazzo storico"@it ;
@@ -50344,12 +50464,6 @@ chora:mountain a owl:NamedIndividual,
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> .
 
-chora:EncodingActivity a owl:Class ;
-    rdfs:comment "The encoding of a reading in the knowledge graph by an annotator, distinct from the interpretation act when the author of the reading is someone else. It uses the source (prov:used) and is informed by the interpretation act (prov:wasInformedBy); its date is the date of the encoding."@en ;
-    rdfs:subClassOf prov:Activity ;
-    skos:altLabel "Codifica"@it ;
-    skos:prefLabel "Encoding activity"@en .
-
 chora:district a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "Quartiere"@it ;
@@ -50368,42 +50482,11 @@ chora:square a owl:NamedIndividual,
     skos:prefLabel "Square"@en ;
     skos:topConceptOf chora:PlaceCategoryScheme .
 
-<https://w3id.org/gaddatlas/id/agent/manzotti> a prov:Agent,
-        prov:Person,
-        chora:Scholar ;
-    rdfs:comment "Commento al cap. VIII del Pasticciaccio (Manzotti 2010, «Per leggere» 19)"@it ;
-    schema:name "Emilio Manzotti" .
-
 <https://w3id.org/gaddatlas/id/focalizer/don_lorenzo_corpi> a chora:Character,
         chora:FocalizingAgent ;
     dcterms:description "Don Lorenzo Corpi, sacerdote legato alla cerchia di Liliana."@it ;
     chora:characterName "Don Lorenzo Corpi"@it ;
     chora:hasGender "male"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato> a chora:GazetteerEntity ;
-    rdfs:label "Casale Abbruciato"@it ;
-    dcterms:source "Posizione ADOTTATA: TCI, Italia centrale I, carta «Colli Laziali, Monti Lepini ed Ernici» 1:250.000, inserita tra le pp. 480 e 481 (Manzotti 2010, Tav. VI, p. 300): casale fra le ferrovie Roma–Velletri e Roma–Napoli, all'altezza di Santa Fumia, lungo il fosso di Casale Abbrusciato. Coordinate stimate (precisione ~1 km): punto mediano fra le due ferrovie alla latitudine di Borgo Santa Fumia (OpenStreetMap). Posizione ALTERNATIVA: IGM, F. 150 III SO, 1:25.000, rilievo 1872, aggiornamenti 1931 e 1940 (Manzotti 2010, Tav. VII, p. 301): «Casale Abbruciato» a ovest della Roma–Napoli, stimato a 41.7168 N 12.5683 E (reticolo UTM 33 della tavola, E 297,7 N 4621,3 km; precisione ~250 m; il reticolo della tavola è in datum ED50, e lo scarto verso WGS84, ~100–200 m, rientra in questa precisione). Manzotti 2010, pp. 268–269. Nella nota Manzotti rinvia alle tavole come «V» e «VI»: qui si citano secondo le didascalie."^^xsd:string ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.583,
-          41.7335
-        ]
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 41.7335 ;
-    geo1:long 12.583 ;
-    skos:altLabel "Casal Bruciato; Casale Abbrusciato; Casale Bruciato"@it ;
-    chora:historicalLocation "Casale dell'Agro romano a sud di Roma (Nibby, Dintorni di Roma, p. 569)"@it .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/marino> a chora:NarrativePlace ;
     rdfs:label "Marino"@it ;
@@ -50435,6 +50518,12 @@ chora:RelationalAnchoring a owl:Class ;
     chora:hasRealityStatus chora:Transformed ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
+chora:EncodingActivity a owl:Class ;
+    rdfs:comment "The encoding of a reading in the knowledge graph by an annotator, distinct from the interpretation act when the author of the reading is someone else. It uses the source (prov:used) and is informed by the interpretation act (prov:wasInformedBy); its date is the date of the encoding."@en ;
+    rdfs:subClassOf prov:Activity ;
+    skos:altLabel "Codifica"@it ;
+    skos:prefLabel "Encoding activity"@en .
+
 chora:UncertaintyTypeScheme a owl:NamedIndividual,
         skos:ConceptScheme ;
     rdfs:label "Uncertainty type"@en ;
@@ -50462,6 +50551,31 @@ chora:basilica a owl:NamedIndividual,
     dcterms:description "Ascanio Lanciani, fratello minore di Diomede Lanciani, coinvolto nel furto della contessa Menegazzi"@it ;
     chora:characterName "Ascanio Lanciani"@it ;
     chora:hasGender "male"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato> a chora:GazetteerEntity ;
+    rdfs:label "Casale Abbruciato"@it ;
+    dcterms:source "Posizioni attribuite: L-0001 (TCI, Italia centrale I, adottata) e L-0002 (IGM, F. 150 III SO, alternativa), lette da Manzotti 2010, pp. 268–269, Tavv. VI–VII (D-069)."^^xsd:string ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.583,
+          41.7335
+        ]
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 41.7335 ;
+    geo1:long 12.583 ;
+    skos:altLabel "Casal Bruciato; Casale Abbrusciato; Casale Bruciato"@it ;
+    chora:historicalLocation "Casale dell'Agro romano a sud di Roma (Nibby, Dintorni di Roma, p. 569)"@it .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_quarto_di_santa_fumia> a chora:GazetteerEntity ;
     rdfs:label "Quarto di Santa Fumia"@it ;
@@ -50522,13 +50636,6 @@ chora:basilica a owl:NamedIndividual,
     geo1:lat 41.76071420037528 ;
     geo1:long 12.599632278065911 .
 
-<https://w3id.org/gaddatlas/id/source/manzotti_2010> a chora:Source ;
-    rdfs:label "Manzotti 2010" ;
-    dcterms:bibliographicCitation "Manzotti, E. (2010). «Era l'alba, e più» (C. E. Gadda, Pasticciaccio, VIII). Per leggere, 10(19), 217–312."@it ;
-    dcterms:creator "Emilio Manzotti"@it ;
-    dcterms:date "2010"^^xsd:gYear ;
-    dcterms:type "articolo"@it .
-
 chora:AssertionTypeScheme a owl:NamedIndividual,
         skos:ConceptScheme ;
     rdfs:label "Assertion type"@en ;
@@ -50574,6 +50681,12 @@ chora:CriticalReading a ns1:InterpretationCriterion,
     skos:prefLabel "Critical reading"@en ;
     skos:topConceptOf chora:RationaleTypeScheme .
 
+<https://w3id.org/gaddatlas/id/agent/manzotti> a prov:Agent,
+        prov:Person,
+        chora:Scholar ;
+    rdfs:comment "Commento al cap. VIII del Pasticciaccio (Manzotti 2010, «Per leggere» 19)"@it ;
+    schema:name "Emilio Manzotti" .
+
 chora:RouteTypeAssertion a ns1:InterpretationType,
         owl:NamedIndividual,
         skos:Concept ;
@@ -50584,6 +50697,13 @@ chora:RouteTypeAssertion a ns1:InterpretationType,
     skos:prefLabel "Route type assertion"@en ;
     skos:topConceptOf chora:AssertionTypeScheme ;
     chora:reifiesProperty chora:hasRouteType .
+
+<https://w3id.org/gaddatlas/id/source/manzotti_2010> a chora:Source ;
+    rdfs:label "Manzotti 2010" ;
+    dcterms:bibliographicCitation "Manzotti, E. (2010). «Era l'alba, e più» (C. E. Gadda, Pasticciaccio, VIII). Per leggere, 10(19), 217–312."@it ;
+    dcterms:creator "Emilio Manzotti"@it ;
+    dcterms:date "2010"^^xsd:gYear ;
+    dcterms:type "articolo"@it .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_torraccio> a chora:GazetteerEntity ;
     rdfs:label "Torraccio"@it ;
@@ -51248,12 +51368,6 @@ chora:ReferentialEvidence a ns1:InterpretationCriterion,
     skos:prefLabel "Referential evidence"@en ;
     skos:topConceptOf chora:RationaleTypeScheme .
 
-geosparql:Geometry a owl:Class ;
-    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ;
-    skos:altLabel "Geometria"@it ;
-    skos:definition "A coherent set of direct positions in space"@en ;
-    skos:prefLabel "Geometry"@en .
-
 chora:Validated a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "validata"@it ;
@@ -51261,6 +51375,12 @@ chora:Validated a owl:NamedIndividual,
     skos:inScheme chora:ReviewStatusScheme ;
     skos:prefLabel "Validated"@en ;
     skos:topConceptOf chora:ReviewStatusScheme .
+
+geosparql:Geometry a owl:Class ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ;
+    skos:altLabel "Geometria"@it ;
+    skos:definition "A coherent set of direct positions in space"@en ;
+    skos:prefLabel "Geometry"@en .
 
 chora:GazetteerEntity a owl:Class ;
     rdfs:comment "GazetteerEntity does not belong to the world of the text: it models the external topographic counterpart. The relation to a NarrativePlace is not assumed as identity but as a typed anchoring, asserted by SpatialInterpretation."@en,

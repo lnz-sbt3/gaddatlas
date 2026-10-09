@@ -479,7 +479,7 @@ gaz_casale_abbruciato	Casale Abbruciato		Casal Bruciato; Casale Abbrusciato; Cas
       }
     }
   ]
-}"	Posizione ADOTTATA: TCI, Italia centrale I, carta «Colli Laziali, Monti Lepini ed Ernici» 1:250.000, inserita tra le pp. 480 e 481 (Manzotti 2010, Tav. VI, p. 300): casale fra le ferrovie Roma–Velletri e Roma–Napoli, all'altezza di Santa Fumia, lungo il fosso di Casale Abbrusciato. Coordinate stimate (precisione ~1 km): punto mediano fra le due ferrovie alla latitudine di Borgo Santa Fumia (OpenStreetMap). Posizione ALTERNATIVA: IGM, F. 150 III SO, 1:25.000, rilievo 1872, aggiornamenti 1931 e 1940 (Manzotti 2010, Tav. VII, p. 301): «Casale Abbruciato» a ovest della Roma–Napoli, stimato a 41.7168 N 12.5683 E (reticolo UTM 33 della tavola, E 297,7 N 4621,3 km; precisione ~250 m; il reticolo della tavola è in datum ED50, e lo scarto verso WGS84, ~100–200 m, rientra in questa precisione). Manzotti 2010, pp. 268–269. Nella nota Manzotti rinvia alle tavole come «V» e «VI»: qui si citano secondo le didascalie.	
+}"	Posizioni attribuite: L-0001 (TCI, Italia centrale I, adottata) e L-0002 (IGM, F. 150 III SO, alternativa), lette da Manzotti 2010, pp. 268–269, Tavv. VI–VII (D-069).	
 gaz_castelli_romani	Castelli Romani					41.76583589207368	12.708345346043885	"{
   ""type"": ""FeatureCollection"",
   ""features"": [

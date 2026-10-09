@@ -221,6 +221,12 @@
     <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
   </rdf:Description>
+  <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#asWKT">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.opengis.net/ont/geosparql"/>
+    <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#wktLiteral"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://www.opengis.net/ont/geosparql#hasGeometry">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:domain rdf:resource="https://w3id.org/chora#GazetteerEntity"/>
@@ -1636,6 +1642,14 @@
     <skos:altLabel xml:lang="it">nota critica</skos:altLabel>
     <skos:prefLabel xml:lang="en">critical note</skos:prefLabel>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#datum">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Datum of the repertory, when different from WGS84, with the stated shift.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:altLabel xml:lang="it">datum</skos:altLabel>
+    <skos:prefLabel xml:lang="en">datum</skos:prefLabel>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#editor">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:comment xml:lang="en">Editor(s) of an edition («a cura di»).</rdfs:comment>
@@ -1901,6 +1915,14 @@
     <skos:altLabel xml:lang="it">fa parte dell'opera</skos:altLabel>
     <skos:prefLabel xml:lang="en">part of work</skos:prefLabel>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#precision">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Stated precision of a position (e.g. «~1 km»).</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:altLabel xml:lang="it">precisione</skos:altLabel>
+    <skos:prefLabel xml:lang="en">precision</skos:prefLabel>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#presentLocation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:comment xml:lang="en">Describes the present-day location or administrative context of a gazetteer entity.</rdfs:comment>
@@ -1956,6 +1978,14 @@
     <rdfs:range rdf:nodeID="cb68067f2b743e19efb21ee5d853c3161b0666d622a2f0455c63f429b69f182231"/>
     <skos:altLabel xml:lang="it">termine di relazione</skos:altLabel>
     <skos:prefLabel xml:lang="en">relatum</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#repertory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">The dated repertory (map, gazetteer) from which a position is read.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <rdfs:range rdf:resource="https://w3id.org/chora#Source"/>
+    <skos:altLabel xml:lang="it">repertorio</skos:altLabel>
+    <skos:prefLabel xml:lang="en">repertory</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#reviewStatus">
     <dcterms:references rdf:resource="https://w3id.org/chora#ReviewStatusScheme"/>
