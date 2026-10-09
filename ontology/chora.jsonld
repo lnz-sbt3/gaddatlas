@@ -137,6 +137,25 @@
       }
     },
     {
+      "@id": "chora:Annotator",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "A person who encodes readings in the knowledge graph (D-062). Being an annotator is a kind of agent; encoder and reading author are roles in an attribution (chora:Encoder, chora:ReadingAuthor)."
+      },
+      "rdfs:subClassOf": {
+        "@id": "prov:Person"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Annotatore"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Annotator"
+      }
+    },
+    {
       "@id": "chora:Approximate",
       "@type": [
         "owl:NamedIndividual",
@@ -1568,7 +1587,7 @@
       },
       "skos:definition": {
         "@language": "en",
-        "@value": "A coordinate does not apply to the place (e.g. an imagined place, located «somewhere»)."
+        "@value": "A coordinate does not apply to the place. It is assigned case by case, never derived from the reality status (D-062)."
       },
       "skos:inScheme": {
         "@id": "chora:LocalizationStatusScheme"
@@ -2157,6 +2176,25 @@
       }
     },
     {
+      "@id": "chora:Scholar",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "A scholar whose readings are encoded in the dataset as attributed assertions (D-062)."
+      },
+      "rdfs:subClassOf": {
+        "@id": "prov:Person"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Studioso"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Scholar"
+      }
+    },
+    {
       "@id": "chora:Setting",
       "@type": [
         "owl:NamedIndividual",
@@ -2233,11 +2271,11 @@
       "skos:definition": [
         {
           "@language": "en",
-          "@value": "An interpretive act that operates on a PlaceReference and asserts (i) the diegetic place it activates (target), (ii) semantic qualifications via controlled vocabularies (e.g., narrative role, reality status, degree of spatial determination, spatial relation type), and (iii) any anchoring to an external topographic referent (gazetteer)."
+          "@value": "An interpretive act that operates on a PlaceReference and asserts (i) the diegetic place it activates (target), (ii) semantic qualifications via controlled vocabularies (narrative role, degree of spatial determination, spatial relation type), and (iii) any anchoring to an external topographic referent (gazetteer). The reality status is not assigned here: since v4.1.1 it belongs to the narrative place (chora:hasRealityStatus), stated by an attributed status assertion."
         },
         {
           "@language": "it",
-          "@value": "Atto interpretativo che prende in carico un PlaceReference e asserisce (i) quale luogo diegetico esso attiva (target), (ii) le qualificazioni semantiche tramite vocabolari controllati (es. ruolo narrativo, status di realtà, grado di determinazione spaziale, tipo di relazione spaziale), e (iii) l’eventuale ancoraggio a un referente topografico esterno (gazetteer)."
+          "@value": "Atto interpretativo che prende in carico un PlaceReference e asserisce (i) quale luogo diegetico esso attiva (target), (ii) le qualificazioni semantiche tramite vocabolari controllati (ruolo narrativo, grado di determinazione spaziale, tipo di relazione spaziale), e (iii) l’eventuale ancoraggio a un referente topografico esterno (gazetteer). Lo statuto di realtà non è assegnato qui: dalla v4.1.1 sta sul luogo narrativo (chora:hasRealityStatus), dichiarato da un'asserzione di statuto attribuita."
         }
       ]
     },
@@ -4592,6 +4630,16 @@
       "@type": "owl:Class",
       "rdfs:isDefinedBy": {
         "@id": "http://www.w3.org/ns/prov-o"
+      }
+    },
+    {
+      "@id": "prov:Person",
+      "@type": "owl:Class",
+      "rdfs:isDefinedBy": {
+        "@id": "http://www.w3.org/ns/prov-o"
+      },
+      "rdfs:subClassOf": {
+        "@id": "prov:Agent"
       }
     },
     {

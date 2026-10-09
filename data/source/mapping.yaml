@@ -659,14 +659,15 @@ mappings:
 
 # ============================================================
 # FILE: Assertions.tsv (letture attribuite, D-042)
-# Non ha un blocco di mapping: lo legge tools/etl.py (process_assertions),
+# Non ha un blocco di mapping: lo legge tools/etl.py (process_assertions);
+# colonne e triple in fondo, sezione `documentation` (D-062).
 # perche' Subject e Value puntano a risorse di tipo diverso. Formato:
 #   Subject, Value, Author_ID, Encoder_ID = 'tipo/id' relativo a
 #   https://w3id.org/gaddatlas/id/ (es. narrativeplace/castello,
 #   gazetteer/gaz_castel_gandolfo, annotator/lorenzo_sabatino) oppure
 #   'chora:Termine' (es. chora:Invented). Value ed Encoder_ID ammettono piu'
 #   valori separati da '|'. Assertion_Type: status | identification | location |
-#   partition | memory | uncertainty | variant. Adopted: si | no.
+#   partition | memory | uncertainty | variant | route. Adopted: si | no.
 # ============================================================
 
 # FILE: Chapters.tsv (Capitoli dell'opera)
@@ -754,3 +755,91 @@ mappings:
 #      join vanno implementati da zero, non sono una modifica di uno script
 #      esistente.
 #
+
+# ============================================================
+# DOCUMENTAZIONE DEI FOGLI LETTI DAL CODICE (D-062)
+# ============================================================
+# Questi fogli non hanno un blocco operativo in `mappings`: li traduce
+# tools/etl.py con funzioni dedicate, perche' soggetti e valori sono di tipo
+# variabile o le righe producono nodi intermedi. La sezione `documentation`
+# non e' letta dall'ETL (che usa solo namespaces, constants, vocabularies,
+# mappings): serve a chi legge il mapping. Le righe rinviano a tools/etl.py
+# alla data della voce D-062; se cambiano, aggiornarle qui.
+documentation:
+
+  Assertions:
+    source_file: "Assertions.tsv"
+    etl: "process_assertions, tools/etl.py r. 1264-1352 (resolve_compact r. 1240, add_attribution r. 1252)"
+    note: >-
+      Una riga = una lettura attribuita. Subject e Value: 'tipo/id' relativo a
+      https://w3id.org/gaddatlas/id/ oppure 'chora:Termine'. Value, Author_ID ed
+      Encoder_ID ammettono piu' valori separati da '|'.
+    columns:
+      Assertion_ID:   "IRI assertion/{id}; rdf:type chora:Assertion"
+      Assertion_Type: "chora:assertionType: status | identification | location | partition | memory | uncertainty | variant | route"
+      Subject:        "chora:aboutSubject"
+      Value:          "chora:assertsValue (uno per valore)"
+      Author_ID:      "prov:qualifiedAttribution -> prov:Attribution (prov:agent, prov:hadRole chora:ReadingAuthor) + prov:wasAttributedTo"
+      Encoder_ID:     "prov:qualifiedAttribution -> prov:Attribution (prov:hadRole chora:Encoder)"
+      Source_Work:    "chora:sourceWork (xsd:string)"
+      Source_Page:    "chora:sourcePage (xsd:string)"
+      Adopted:        "chora:adoptedByProject (xsd:boolean): si | no"
+      Rationale:      "chora:rationale (@it)"
+      Revision_Of:    "prov:wasRevisionOf assertion/{id}"
+      Date:           "prov:generatedAtTime (xsd:date)"
+      Note:           "rdfs:comment (@it)"
+      Rationale_Type: "chora:rationaleType: prova referenziale | prova testuale | lettura critica"
+      Review_Status:  "chora:reviewStatus: bozza | validata"
+      Uncertainty_Axis:   "chora:uncertaintyAxis: nome | identificazione | geometria (solo uncertainty)"
+      Uncertainty_Origin: "chora:uncertaintyOrigin: documentaria | costruttiva (solo uncertainty)"
+    derived: "chora:hasRouteType sul percorso, dalle asserzioni route adottate (r. 1343)"
+
+  Agents:
+    source_file: "Agents.tsv"
+    etl: "process_agents, tools/etl.py r. 1133-1159"
+    columns:
+      Agent_ID:   "IRI annotator/{id} (annotator) o agent/{id} (scholar); rdf:type prov:Agent, prov:Person"
+      Name:       "schema:name"
+      Agent_Type: "annotator -> rdf:type chora:Annotator; scholar -> rdf:type chora:Scholar (e namespace dell'IRI)"
+      Note:       "rdfs:comment (@it)"
+
+  Witnesses:
+    source_file: "Witnesses.tsv"
+    etl: "process_witnesses, tools/etl.py r. 1078-1125 (IRI dal blocco mappings.Witnesses)"
+    columns:
+      Witness_ID:   "IRI witness/{id}; rdf:type chora:Witness"
+      Siglum:       "rdfs:label"
+      Work_ID:      "chora:witnessOf work/{id}"
+      Witness_Type: "chora:witnessType: redazione in rivista | dattiloscritto | bozze | princeps | edizione"
+      Date:         "dcterms:date (xsd:gYear o xsd:date)"
+      Editor:       "chora:editor (@it)"
+      Publisher:    "dcterms:publisher (@it)"
+      Held_At:      "chora:heldAt (@it)"
+      Description:  "dcterms:description (@it)"
+      Derived_From: "prov:wasDerivedFrom witness/{id} (richiede Derivation_Source)"
+      Derivation_Source: "dcterms:source (@it)"
+      Reference:    "si -> work chora:referenceWitness witness"
+      Note:         "rdfs:comment (@it)"
+
+  PartitionZones:
+    source_file: "PartitionZones.tsv"
+    etl: "process_partitions, tools/etl.py r. 1176-1220"
+    columns:
+      Zone_ID:      "IRI zone/{id}; rdf:type chora:PartitionZone"
+      Partition_ID: "IRI partition/{id}; rdf:type chora:Partition; chora:hasZone zone"
+      Label:        "rdfs:label (@it) della zona"
+      Definition:   "skos:definition (@it) della zona"
+
+  PartitionMembers:
+    source_file: "PartitionMembers.tsv"
+    etl: "process_partitions, tools/etl.py r. 1176-1220"
+    columns:
+      NarrativePlace_ID: "soggetto: narrativeplace/{id}"
+      Zone_ID:           "chora:inPartitionZone zone/{id}"
+
+  NarrativePlaces_localization:
+    source_file: "NarrativePlaces.tsv"
+    etl: "process_discrete_narrative_places, tools/etl.py r. 595-604"
+    columns:
+      Localization_Status: "chora:localizationStatus: analisi non condotta | sospensione motivata | non applicabile; assegnato caso per caso, mai derivato dallo statuto (D-062)"
+      Localization_Reason: "chora:localizationReason (@it); obbligatorio con sospensione motivata"

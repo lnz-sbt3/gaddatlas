@@ -1128,6 +1128,7 @@ class GaddaETL:
     # AGENTI (D-043, work order T-32)
     # ------------------------------------------------------------------
     AGENT_NAMESPACES = {"annotator": "annotator", "scholar": "agent"}
+    AGENT_CLASSES = {"annotator": "Annotator", "scholar": "Scholar"}
 
     def process_agents(self, file_path):
         """
@@ -1149,7 +1150,10 @@ class GaddaETL:
                 raise ValueError(f"{where}: Agent_Type {kind!r} (atteso annotator / scholar)")
             uri = ID_NS[f"{self.AGENT_NAMESPACES[kind]}/{aid}"]
             self.agents[aid] = uri
+            # D-062: persona, e tipo di agente come tripla (non solo namespace)
             self.graph.add((uri, RDF.type, PROV.Agent))
+            self.graph.add((uri, RDF.type, PROV.Person))
+            self.graph.add((uri, RDF.type, CHORA[self.AGENT_CLASSES[kind]]))
             self.add_literal(uri, SCHEMA.name, row.get('Name'))
             self.add_literal(uri, RDFS.comment, row.get('Note'), lang='it')
         logger.info(f"Agents: {len(self.agents)} agenti")

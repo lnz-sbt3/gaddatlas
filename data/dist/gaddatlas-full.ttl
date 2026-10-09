@@ -14710,6 +14710,12 @@ chora:Anachronism a owl:NamedIndividual,
     skos:inScheme chora:UncertaintyTypeScheme ;
     skos:prefLabel "Anachronism"@en .
 
+chora:Annotator a owl:Class ;
+    rdfs:comment "A person who encodes readings in the knowledge graph (D-062). Being an annotator is a kind of agent; encoder and reading author are roles in an attribution (chora:Encoder, chora:ReadingAuthor)."@en ;
+    rdfs:subClassOf prov:Person ;
+    skos:altLabel "Annotatore"@it ;
+    skos:prefLabel "Annotator"@en .
+
 chora:Below a owl:NamedIndividual,
         skos:Concept ;
     dcterms:description "A è verticalmente sotto B lungo l'asse gravitazionale. Relazione inversa di Above."@it ;
@@ -14773,6 +14779,14 @@ chora:NonApplicability a owl:NamedIndividual,
     skos:inScheme chora:UncertaintyTypeScheme ;
     skos:prefLabel "Non Applicability"@en ;
     skos:topConceptOf chora:UncertaintyTypeScheme .
+
+chora:NotApplicable a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "coordinata non applicabile"@it ;
+    skos:definition "A coordinate does not apply to the place. It is assigned case by case, never derived from the reality status (D-062)."@en ;
+    skos:inScheme chora:LocalizationStatusScheme ;
+    skos:prefLabel "Not applicable"@en ;
+    skos:topConceptOf chora:LocalizationStatusScheme .
 
 chora:Oversight a owl:NamedIndividual,
         skos:Concept ;
@@ -33078,8 +33092,7 @@ chora:village a owl:NamedIndividual,
     rdfs:label "Monte Nuncupale"@it ;
     dcterms:description "Monte inventato, collocato nella zona dei Colli Albani/marino"@it ;
     chora:hasPlaceCategory chora:mountain ;
-    chora:hasRealityStatus chora:Imagined ;
-    chora:localizationStatus chora:NotApplicable .
+    chora:hasRealityStatus chora:Imagined .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/monte_velino> a chora:NarrativePlace ;
     rdfs:label "Monte Velino"@it ;
@@ -34826,8 +34839,7 @@ chora:temple a owl:NamedIndividual,
     rdfs:label "Casa del Butiro"@it ;
     dcterms:description "Casa immaginata nella zona dei Due Santi"@it ;
     chora:hasPlaceCategory chora:farmhouse ;
-    chora:hasRealityStatus chora:Imagined ;
-    chora:localizationStatus chora:NotApplicable .
+    chora:hasRealityStatus chora:Imagined .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/cassero> a chora:NarrativePlace ;
     rdfs:label "Cassero"@it ;
@@ -34840,8 +34852,7 @@ chora:temple a owl:NamedIndividual,
     dcterms:description "Castello d'immaginazione, deformazione linguistica di Castel Porziano"@it ;
     skos:altLabel "Castel Porcino"@it ;
     chora:hasPlaceCategory chora:castle ;
-    chora:hasRealityStatus chora:Imagined ;
-    chora:localizationStatus chora:NotApplicable .
+    chora:hasRealityStatus chora:Imagined .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/celio> a chora:NarrativePlace ;
     rdfs:label "Celio"@it ;
@@ -34926,8 +34937,7 @@ chora:temple a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/narrativeplace/roccafringoli> a chora:NarrativePlace ;
     rdfs:label "Roccafringoli"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imagined ;
-    chora:localizationStatus chora:NotApplicable .
+    chora:hasRealityStatus chora:Imagined .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/solforata> a chora:NarrativePlace ;
     rdfs:label "Solforata"@it ;
@@ -35297,19 +35307,27 @@ chora:police_station a owl:NamedIndividual,
     skos:prefLabel "Police station"@en ;
     skos:topConceptOf chora:PlaceCategoryScheme .
 
-<https://w3id.org/gaddatlas/id/agent/cortellessa> a prov:Agent ;
+<https://w3id.org/gaddatlas/id/agent/cortellessa> a prov:Agent,
+        prov:Person,
+        chora:Scholar ;
     rdfs:comment "Archeologia con pescecane (Cortellessa 2023)"@it ;
     schema:name "Andrea Cortellessa" .
 
-<https://w3id.org/gaddatlas/id/agent/lugnani> a prov:Agent ;
+<https://w3id.org/gaddatlas/id/agent/lugnani> a prov:Agent,
+        prov:Person,
+        chora:Scholar ;
     rdfs:comment "Citato in Perosa 2023a, p. 104, n. 97"@it ;
     schema:name "Lucio Lugnani" .
 
-<https://w3id.org/gaddatlas/id/agent/matt> a prov:Agent ;
+<https://w3id.org/gaddatlas/id/agent/matt> a prov:Agent,
+        prov:Person,
+        chora:Scholar ;
     rdfs:comment "Matt e Pinotti 2022 (appunti autografi per la revisione del romanesco)"@it ;
     schema:name "L. Matt" .
 
-<https://w3id.org/gaddatlas/id/agent/perosa> a prov:Agent ;
+<https://w3id.org/gaddatlas/id/agent/perosa> a prov:Agent,
+        prov:Person,
+        chora:Scholar ;
     rdfs:comment "Gadda e il paesaggio (Perosa 2023a)"@it ;
     schema:name "Giulia Perosa" .
 
@@ -35736,8 +35754,7 @@ chora:police_station a owl:NamedIndividual,
     dcterms:description "Toponimo indiano fittizio, ancorato a un referente reale (Brahmaputra) ma non identificabile:"@it ;
     chora:hasFuzzinessLevel 3.0 ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imagined ;
-    chora:localizationStatus chora:NotApplicable .
+    chora:hasRealityStatus chora:Imagined .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/termini> a chora:NarrativePlace ;
     rdfs:label "Termini"@it ;
@@ -36456,13 +36473,11 @@ chora:MemoryAttributionScheme a owl:NamedIndividual,
         chora:UndecidableMemory ;
     skos:prefLabel "Memory attribution"@en .
 
-chora:NotApplicable a owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "coordinata non applicabile"@it ;
-    skos:definition "A coordinate does not apply to the place (e.g. an imagined place, located «somewhere»)."@en ;
-    skos:inScheme chora:LocalizationStatusScheme ;
-    skos:prefLabel "Not applicable"@en ;
-    skos:topConceptOf chora:LocalizationStatusScheme .
+chora:Scholar a owl:Class ;
+    rdfs:comment "A scholar whose readings are encoded in the dataset as attributed assertions (D-062)."@en ;
+    rdfs:subClassOf prov:Person ;
+    skos:altLabel "Studioso"@it ;
+    skos:prefLabel "Scholar"@en .
 
 chora:interior a owl:NamedIndividual,
         skos:Concept ;
@@ -36914,12 +36929,18 @@ chora:restaurant a owl:NamedIndividual,
     skos:prefLabel "Restaurant"@en ;
     skos:topConceptOf chora:PlaceCategoryScheme .
 
-<https://w3id.org/gaddatlas/id/agent/pinotti> a prov:Agent ;
+<https://w3id.org/gaddatlas/id/agent/pinotti> a prov:Agent,
+        prov:Person,
+        chora:Scholar ;
     rdfs:comment "Curatore di QP (Adelphi 2018) e di RR II; Pinotti 2016, 2024, 2025"@it ;
     schema:name "Giorgio Pinotti" .
 
 <https://w3id.org/gaddatlas/id/route/tragitto_santarella_torraccio_divino_amore> a chora:NarrativeRoute ;
     chora:hasRouteType chora:InferredRoute .
+
+prov:Person a owl:Class ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> ;
+    rdfs:subClassOf prov:Agent .
 
 chora:RealityStatusScheme a owl:NamedIndividual,
         skos:ConceptScheme ;
@@ -37035,9 +37056,6 @@ chora:UncertaintyAssertion a owl:NamedIndividual,
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
-prov:Agent a owl:Class ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
-
 chora:Church a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "Chiesa"@it ;
@@ -37047,7 +37065,9 @@ chora:Church a owl:NamedIndividual,
     skos:prefLabel "Church"@en ;
     skos:topConceptOf chora:PlaceCategoryScheme .
 
-<https://w3id.org/gaddatlas/id/agent/manzotti> a prov:Agent ;
+<https://w3id.org/gaddatlas/id/agent/manzotti> a prov:Agent,
+        prov:Person,
+        chora:Scholar ;
     rdfs:comment "Commento al cap. VIII del Pasticciaccio (Manzotti 2010, «Per leggere» 19)"@it ;
     schema:name "Emilio Manzotti" .
 
@@ -37153,6 +37173,9 @@ chora:Church a owl:NamedIndividual,
 
 <https://w3id.org/gaddatlas/id/route/tragitto_appia_falcognana> a chora:NarrativeRoute ;
     chora:hasRouteType chora:IndicatedRoute .
+
+prov:Agent a owl:Class ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
 
 chora:NarrativeRoleScheme a owl:NamedIndividual,
         skos:ConceptScheme ;
@@ -38397,8 +38420,8 @@ chora:SpatialInterpretation a owl:Class ;
     rdfs:comment "SpatialInterpretation makes the declarative and traceable nature of annotation explicit: multiple interpretations may coexist for the same PlaceReference, with different assumptions and confidence levels; therefore the model privileges “targets/assigns/anchors” properties at this level."@en,
         "SpatialInterpretation esplicita la natura dichiarativa e tracciabile dell’annotazione: diverse interpretazioni possono coesistere per lo stesso PlaceReference, con diverse assunzioni e livelli di confidenza; per questo il modello privilegia proprietà “targets/assigns/anchors” a questo livello."@it ;
     rdfs:subClassOf prov:Entity ;
-    skos:definition "An interpretive act that operates on a PlaceReference and asserts (i) the diegetic place it activates (target), (ii) semantic qualifications via controlled vocabularies (e.g., narrative role, reality status, degree of spatial determination, spatial relation type), and (iii) any anchoring to an external topographic referent (gazetteer)."@en,
-        "Atto interpretativo che prende in carico un PlaceReference e asserisce (i) quale luogo diegetico esso attiva (target), (ii) le qualificazioni semantiche tramite vocabolari controllati (es. ruolo narrativo, status di realtà, grado di determinazione spaziale, tipo di relazione spaziale), e (iii) l’eventuale ancoraggio a un referente topografico esterno (gazetteer)."@it .
+    skos:definition "An interpretive act that operates on a PlaceReference and asserts (i) the diegetic place it activates (target), (ii) semantic qualifications via controlled vocabularies (narrative role, degree of spatial determination, spatial relation type), and (iii) any anchoring to an external topographic referent (gazetteer). The reality status is not assigned here: since v4.1.1 it belongs to the narrative place (chora:hasRealityStatus), stated by an attributed status assertion."@en,
+        "Atto interpretativo che prende in carico un PlaceReference e asserisce (i) quale luogo diegetico esso attiva (target), (ii) le qualificazioni semantiche tramite vocabolari controllati (ruolo narrativo, grado di determinazione spaziale, tipo di relazione spaziale), e (iii) l’eventuale ancoraggio a un referente topografico esterno (gazetteer). Lo statuto di realtà non è assegnato qui: dalla v4.1.1 sta sul luogo narrativo (chora:hasRealityStatus), dichiarato da un'asserzione di statuto attribuita."@it .
 
 chora:Encoder a owl:NamedIndividual,
         skos:Concept,
@@ -38421,7 +38444,9 @@ chora:ReadingAuthor a owl:NamedIndividual,
 prov:Attribution a owl:Class ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
 
-<https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> a prov:Agent ;
+<https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> a prov:Agent,
+        prov:Person,
+        chora:Annotator ;
     rdfs:comment "Codificatore del dataset GaddAtlas (dottorato in Digital Humanities, Università di Bologna, FICLIT)"@it ;
     schema:name "Lorenzo Sabatino" .
 

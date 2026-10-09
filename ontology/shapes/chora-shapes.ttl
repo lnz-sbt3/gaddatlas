@@ -656,3 +656,18 @@ ga:RouteTypeShape
         sh:minCount 1 ; sh:maxCount 1 ;
         sh:message "Ogni percorso ha un tipo, dalla lettura adottata (D-060)." ;
     ] .
+
+
+# =============================================================================
+# SHAPE 20 — Agenti (D-062)
+# Ogni agente del dataset e' una persona, studioso o annotatore.
+# =============================================================================
+
+ga:AgentKindShape
+    a sh:NodeShape ;
+    sh:targetClass prov:Person ;
+    sh:or (
+        [ sh:class ga:Scholar ]
+        [ sh:class ga:Annotator ]
+    ) ;
+    sh:message "Un agente del dataset e' chora:Scholar o chora:Annotator." .

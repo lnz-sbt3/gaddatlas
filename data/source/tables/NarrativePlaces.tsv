@@ -34,14 +34,14 @@ campoleone	Campoleone		imported		quartiere
 cantinone_albano	Cantinone d'Albano		invented		ristorante	Ristorante non identificato nel territorio di Albano Laziale					
 carsoli	Carsoli		imported		comune	Comune in Abruzzo					
 casa_crocchiapani	Casa Crocchiapani		invented	tor_di_gheppio	casa rurale	Abitazione immaginaria di Assunta (Tina) Crocchiapani					
-casa_del_butiro	Casa del Butiro		imagined		casa rurale	Casa immaginata nella zona dei Due Santi			non applicabile		
+casa_del_butiro	Casa del Butiro		imagined		casa rurale	Casa immaginata nella zona dei Due Santi					
 casal_bruciato	Casal Bruciato	Casale Abbrusciato	imported		quartiere	Casale reale dell'Agro romano a sud di Roma (Casal(e) Bruciato / Abbruciato / Abbrusciato: Nibby, Dintorni di Roma, p. 569), fra le ferrovie Roma–Velletri e Roma–Napoli. Non è il quartiere omonimo del Tiburtino. Forme attestate: «Casal Bruciato» (QP 212, 237, 240, 241, 262, 274, 298), «Casale Abbrusciato» (QP 297).					
 casello_km_20_25	Casello al chilometro 20-25		transformed		casello ferroviario	casello ferroviario in prossimità di Casal Bruciato					
 cassero	Cassero		invented		castello						
 castelli_romani	Castelli Romani		imported		località						
 castel_di_leva	Castel di Leva		imported		località						
 castel_gandolfo	Castel Gandolfo		imported		località						
-castel_porcano	Castel Porcano	Castel Porcino	imagined		castello	Castello d'immaginazione, deformazione linguistica di Castel Porziano			non applicabile		
+castel_porcano	Castel Porcano	Castel Porcino	imagined		castello	Castello d'immaginazione, deformazione linguistica di Castel Porziano					
 castel_savello	Castel Savello	Castel Savelli	imported		località						
 castello	Castello		imported		castello	Luogo narrativo immaginato, un castello nella zona tra Pavona e Frattocchie					
 casuccia_zamira	Casuccia della Zamira		invented		abitazione						
@@ -104,7 +104,7 @@ monte_cengio	Monte Cengio		imported		monte	monte dell'Altipiano veneto
 monte_circeo	Monte Circeo	monte della contessa Circia	transformed		monte	Monte tirrenico, nel Lazio					
 monte_manno	Monte Manno		imported		monte	monte dell'Altipiano Laziale, verso Latina	Non presente in Indice dei Luoghi Isella				
 monte_matese	Monte Matese		imported		monte	Monte del Molise					
-monte_nuncupale	Monte Nuncupale		imagined		monte	Monte inventato, collocato nella zona dei Colli Albani/marino			non applicabile		
+monte_nuncupale	Monte Nuncupale		imagined		monte	Monte inventato, collocato nella zona dei Colli Albani/marino					
 monte_soratte	Monte Soratte		imported		monte	Monte nel Lazio					
 monte_velino	Monte Velino		imported		monte	Monte tra Lazio e Abruzzo					
 monteleone	Monteleone	Monteleone sabino	imported		località	Luogo generico in provincia di Rieti	Comune laziale, in provincia di Rieti	3			
@@ -174,7 +174,7 @@ rocca_orsina	Rocca Orsina		imported		località		"«Rocca Orsina» non è il nome
 
 Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente fortificazione medievale. L’attuale Palazzo Colonna sorge sul luogo della rocca, della quale sono ancora riconosciute strutture e tracce inglobate nell’edificio successivo. Le fonti locali la indicano come Rocca degli Orsini o fortezza orsinesca."				
 rocca_savella	Rocca Savella		imported		via						
-roccafringoli	Roccafringoli		imagined		località				non applicabile		
+roccafringoli	Roccafringoli		imagined		località						
 sacro_cuore	Sacro Cuore		imported		basilica						
 salsomaggiore	Salsomaggiore		imported		località	Luogo generico in provincia di Parma	Città termale in Emilia-Romagna, provincia di Parma	3			
 san_callisto	San Callisto		imported		catacombe				analisi non condotta		
@@ -213,7 +213,7 @@ sassari	Sassari		imported		città	città sarda
 scale	Scale		transformed	palazzo_219	interno	Interno del palazzo in via Merulana 219					
 scala_a	Scala A		transformed	palazzo_219	interno	Interno, scala A, del palazzo in via Merulana 219					
 scala_b	Scala B		transformed	palazzo_219	interno	Interno, scala B, del palazzo in via Merulana 219					
-scerpure	Scerpure		imagined		località	Toponimo indiano fittizio, ancorato a un referente reale (Brahmaputra) ma non identificabile:		3	non applicabile		
+scerpure	Scerpure		imagined		località	Toponimo indiano fittizio, ancorato a un referente reale (Brahmaputra) ma non identificabile:		3			
 solforata	Solforata		imported		quartiere						
 soriano_nel_cimino	Soriano nel Cimino		imported		località	Località in provincia di Viterbo					
 stazione_carabinieri_castello	Stazione dei Carabinieri a Castello		transformed	castello	edificio						

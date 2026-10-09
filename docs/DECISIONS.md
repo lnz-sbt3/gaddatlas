@@ -1238,6 +1238,27 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-062 — Difetti della TBox (TBOX_2): non applicabile, interpretazione, agenti, mapping (9 ottobre 2026)
+
+- Requisito/i: R11, R22 · Ipotesi: — · Data check: DM-05 (TBOX_2 §§ 1, 2, 4)
+- Stato precedente:
+  - `chora:NotApplicable` aveva per esempio «an imagined place, located «somewhere»», e D-048 aveva assegnato «coordinata non applicabile» ai 5 luoghi Imagined in base allo statuto;
+  - la definizione di `chora:SpatialInterpretation` diceva che l'interpretazione assegna lo statuto di realtà;
+  - gli agenti erano solo `prov:Agent`, e studioso o annotatore si distinguevano solo dal namespace dell'IRI;
+  - Assertions, Agents, Witnesses, i fogli delle partizioni e le colonne di localizzazione non erano documentati in `mapping.yaml`.
+- Decisione (di Lorenzo, 9/10/2026):
+  - **non applicabile:** tolto l'esempio dalla definizione. Il valore si assegna caso per caso e non deriva mai dallo statuto. Tolti i 5 valori derivati da D-048: **casa_del_butiro, castel_porcano, monte_nuncupale, roccafringoli, scerpure**. Restano senza stato, e lo stato **lo assegna Lorenzo**. Tutti e cinque hanno un ancoraggio relativo, quindi IQ14 resta a 0. I 12 «analisi non condotta» non derivano dallo statuto ma dall'assenza di ancore: invariati;
+  - **SpatialInterpretation:** definizione corretta (en, it). L'interpretazione assegna ruolo, determinazione, relazione e ancoraggio; lo statuto sta sul luogo dalla v4.1.1 ed è dichiarato da un'asserzione di statuto;
+  - **agenti:** dichiarata `prov:Person` (⊑ `prov:Agent`, `rdfs:isDefinedBy` PROV-O), nuove classi `chora:Scholar` e `chora:Annotator` (⊑ `prov:Person`). L'ETL scrive per ogni agente `a prov:Agent, prov:Person` e la classe del tipo (`Agent_Type`). I ruoli dell'attribuzione (Encoder, ReadingAuthor) restano distinti dal tipo di agente. Shape 20 (`AgentKindShape`): ogni persona è studioso o annotatore;
+  - **mapping.yaml:** nuova sezione di primo livello `documentation`, non letta dall'ETL. Per Assertions, Agents, Witnesses, PartitionZones, PartitionMembers e per le colonne di localizzazione di NarrativePlaces dà colonna → proprietà, con rinvio alle righe di `tools/etl.py`. Il commento del blocco Assertions vi rimanda e include il tipo `route`.
+- Alternative scartate: per gli agenti, un concetto SKOS `agentType` invece di due classi, scartato perché il tipo è una categoria dell'agente e PROV lo modella con classi (`prov:Person`); per il mapping, blocchi documentali dentro `mappings`, scartati perché `resolve_lookup` cerca le chiavi primarie in tutti i blocchi e un `NarrativePlace_ID` duplicato vi interferirebbe.
+- Motivazione (fonte, pagina): TBOX_2 §§ 1, 2, 4; Cap. 4, R11.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `ontology/chora.ttl` r. 662–685 (`prov:Person`, `chora:Scholar`, `chora:Annotator`), r. 788–795 (definizione di SpatialInterpretation), r. 1257–1263 (NotApplicable); `ontology/shapes/chora-shapes.ttl` r. 659–673 (shape 20); `tools/etl.py` r. 1131, 1153–1156; `data/source/mapping.yaml` r. 664–665 e r. 763–845 (sezione `documentation`); `data/source/tables/NarrativePlaces.tsv` (5 stati tolti), `NarrativePlaces.xlsx`; `docs/thesis/DATA_CHECKS_GaddAtlas.md` (DM-05).
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.307 → **1.320**; ABox 27.854 → **27.863** (+14 tipi degli agenti, −5 stati); full 29.731 → **29.753**. SHACL conforme, 51 avvertenze; IQ1–IQ17 a 0.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

@@ -31889,8 +31889,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     rdfs:label "Monte Nuncupale"@it ;
     dcterms:description "Monte inventato, collocato nella zona dei Colli Albani/marino"@it ;
     chora:hasPlaceCategory chora:mountain ;
-    chora:hasRealityStatus chora:Imagined ;
-    chora:localizationStatus chora:NotApplicable .
+    chora:hasRealityStatus chora:Imagined .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/monte_velino> a chora:NarrativePlace ;
     rdfs:label "Monte Velino"@it ;
@@ -33498,8 +33497,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     rdfs:label "Casa del Butiro"@it ;
     dcterms:description "Casa immaginata nella zona dei Due Santi"@it ;
     chora:hasPlaceCategory chora:farmhouse ;
-    chora:hasRealityStatus chora:Imagined ;
-    chora:localizationStatus chora:NotApplicable .
+    chora:hasRealityStatus chora:Imagined .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/cassero> a chora:NarrativePlace ;
     rdfs:label "Cassero"@it ;
@@ -33512,8 +33510,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     dcterms:description "Castello d'immaginazione, deformazione linguistica di Castel Porziano"@it ;
     skos:altLabel "Castel Porcino"@it ;
     chora:hasPlaceCategory chora:castle ;
-    chora:hasRealityStatus chora:Imagined ;
-    chora:localizationStatus chora:NotApplicable .
+    chora:hasRealityStatus chora:Imagined .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/celio> a chora:NarrativePlace ;
     rdfs:label "Celio"@it ;
@@ -33598,8 +33595,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/roccafringoli> a chora:NarrativePlace ;
     rdfs:label "Roccafringoli"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imagined ;
-    chora:localizationStatus chora:NotApplicable .
+    chora:hasRealityStatus chora:Imagined .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/solforata> a chora:NarrativePlace ;
     rdfs:label "Solforata"@it ;
@@ -33885,19 +33881,27 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:witnessOf <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
     chora:witnessType chora:PeriodicalRedaction .
 
-<https://w3id.org/gaddatlas/id/agent/cortellessa> a prov:Agent ;
+<https://w3id.org/gaddatlas/id/agent/cortellessa> a prov:Agent,
+        prov:Person,
+        chora:Scholar ;
     rdfs:comment "Archeologia con pescecane (Cortellessa 2023)"@it ;
     schema:name "Andrea Cortellessa" .
 
-<https://w3id.org/gaddatlas/id/agent/lugnani> a prov:Agent ;
+<https://w3id.org/gaddatlas/id/agent/lugnani> a prov:Agent,
+        prov:Person,
+        chora:Scholar ;
     rdfs:comment "Citato in Perosa 2023a, p. 104, n. 97"@it ;
     schema:name "Lucio Lugnani" .
 
-<https://w3id.org/gaddatlas/id/agent/matt> a prov:Agent ;
+<https://w3id.org/gaddatlas/id/agent/matt> a prov:Agent,
+        prov:Person,
+        chora:Scholar ;
     rdfs:comment "Matt e Pinotti 2022 (appunti autografi per la revisione del romanesco)"@it ;
     schema:name "L. Matt" .
 
-<https://w3id.org/gaddatlas/id/agent/perosa> a prov:Agent ;
+<https://w3id.org/gaddatlas/id/agent/perosa> a prov:Agent,
+        prov:Person,
+        chora:Scholar ;
     rdfs:comment "Gadda e il paesaggio (Perosa 2023a)"@it ;
     schema:name "Giulia Perosa" .
 
@@ -34324,8 +34328,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     dcterms:description "Toponimo indiano fittizio, ancorato a un referente reale (Brahmaputra) ma non identificabile:"@it ;
     chora:hasFuzzinessLevel 3.0 ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imagined ;
-    chora:localizationStatus chora:NotApplicable .
+    chora:hasRealityStatus chora:Imagined .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/termini> a chora:NarrativePlace ;
     rdfs:label "Termini"@it ;
@@ -35286,7 +35289,9 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/route/tragitto_frattocchie_ciampino> a chora:NarrativeRoute ;
     chora:hasRouteType chora:InferredRoute .
 
-<https://w3id.org/gaddatlas/id/agent/pinotti> a prov:Agent ;
+<https://w3id.org/gaddatlas/id/agent/pinotti> a prov:Agent,
+        prov:Person,
+        chora:Scholar ;
     rdfs:comment "Curatore di QP (Adelphi 2018) e di RR II; Pinotti 2016, 2024, 2025"@it ;
     schema:name "Giorgio Pinotti" .
 
@@ -35377,7 +35382,9 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
-<https://w3id.org/gaddatlas/id/agent/manzotti> a prov:Agent ;
+<https://w3id.org/gaddatlas/id/agent/manzotti> a prov:Agent,
+        prov:Person,
+        chora:Scholar ;
     rdfs:comment "Commento al cap. VIII del Pasticciaccio (Manzotti 2010, «Per leggere» 19)"@it ;
     schema:name "Emilio Manzotti" .
 
@@ -36205,7 +36212,9 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     rdfs:comment "Romanzo. Testimoni in Witnesses.tsv (D-052): QPL, dtsFG, bzFG, QP57, RR II, QP (testo di riferimento)."@it ;
     chora:referenceWitness <https://w3id.org/gaddatlas/id/witness/qp> .
 
-<https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> a prov:Agent ;
+<https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> a prov:Agent,
+        prov:Person,
+        chora:Annotator ;
     rdfs:comment "Codificatore del dataset GaddAtlas (dottorato in Digital Humanities, Università di Bologna, FICLIT)"@it ;
     schema:name "Lorenzo Sabatino" .
 
