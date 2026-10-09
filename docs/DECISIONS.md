@@ -1287,6 +1287,20 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-065 — Conferme senza modifiche: esclusioni, partizione, edicola (9 ottobre 2026)
+
+- Requisito/i: R12, R20, R22 · Ipotesi: — · Data check: — (REVIEW_2 §§ 5, 6, 9)
+- Decisione (di Lorenzo, 9/10/2026): tre conferme, nessun dato cambia.
+  - **Esclusioni:** la figuralità delle occorrenze **non** entra in `docs/EXCLUSIONS.md` né nel database, nonostante il Cap. 4, r. 190, e così la logica simmetrica e l'annotazione assiologica. Sono trattate solo in tesi. Verificato: nessuno dei tre compare in EXCLUSIONS, nelle sorgenti dati, nella TBox o nelle shape. Chiude il punto lasciato aperto in D-056.
+  - **Partizione città / campagna** (D-050): resta com'è, con criterio, 221 assegnazioni e 33 casi di confine non assegnati. P-0001 resta «bozza».
+  - **Edicola, lettura del censimento** (C-edicola_due_santi): valore `chora:Invented` confermato (D-051).
+- Motivazione (fonte, pagina): REVIEW_2 §§ 5, 6, 9.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `docs/DECISIONS.md` (questa voce); `CLAUDE.md` (prossimo numero).
+- Effetto su KG (triple prima/dopo, SHACL): invariato (TBox 1.320, ABox 27.857, full 29.747). SHACL conforme, 51 avvertenze.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`
