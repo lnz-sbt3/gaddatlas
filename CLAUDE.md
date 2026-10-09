@@ -21,7 +21,8 @@ Due artefatti distinti nello stesso repository:
 ## Le decisioni sono già prese
 
 `docs/DECISIONS.md` contiene le decisioni motivate D-001…D-038; quelle dell'allineamento al
-Capitolo 4 partono da D-019. Nel file sono in ordine cronologico, non numerico. **Leggile
+Capitolo 4 partono da D-019 (D-015…D-018 sono del porting, su `main`). Nel file sono in
+ordine cronologico, non numerico. Prossimo numero libero: **D-039**. **Leggile
 prima di proporre alternative architetturali.** Se una scelta ti sembra
 sbagliata, dillo citando la decisione — non aggirarla in silenzio.
 
@@ -166,7 +167,16 @@ Dopo ogni modifica alle sorgenti dati: `make all && make audit`.
 
 Il prototipo è `_archivio/chartD.js`: il notebook Observable appiattito, 5.306
 righe. **Va versionato**, non ignorato: è l'artefatto che la tesi documenta.
-Va spacchettato in moduli ES sotto `app/src/`.
+
+**Stato (da `main`, settembre 2026): il porting è fatto.** I 34 moduli stanno in
+`app/src/` (`model/`, `render/`, `interaction/`, `ui/`; `chartS4` portato senza
+ristrutturarlo in `app/src/atlas.js`). I moduli che dipendono dai dati sono
+funzioni factory, non IIFE (D-015); lo smontaggio degli handler è esplicito
+(D-016); il pannello testuale è persistente per riferimento (D-018). **Restano
+aperte tre verifiche** (D-017): selezione della route da terrazza, `dispose()` mai
+invocata, confronto visivo a condizioni identiche. Gli screenshot di riferimento
+del notebook sono in `_archivio/riferimento/`. Le regole qui sotto valgono per ogni
+modifica al codice portato.
 
 **Inventario verificato:** 34 moduli, nessun riferimento non dichiarato,
 nessun ciclo — il grafo è un DAG.

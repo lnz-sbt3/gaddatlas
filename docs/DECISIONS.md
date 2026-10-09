@@ -389,6 +389,156 @@ guardato a schermo prima di darlo per buono.
 
 ---
 
+## D-015 · Moduli dati-dipendenti portati come funzioni, non come IIFE
+**2026-09-07 · chiusa**
+
+Nel notebook, `s4Entities`, `s4Chapters`, `s4Projection` e `s4Voronoi`
+(oltre a `s4Satellites`) sono `const s4X = (() => { ... })()`: eseguiti una
+volta, a modulo caricato, perché Observable garantisce che la cella `gadda_real`
+sia già risolta prima che queste girino. Portati in `app/src/model/`, restano
+sì un file per modulo con `export default`, ma il default esportato è una
+**funzione factory** (`export default function s4Entities(gadda_real) {…}`),
+non il risultato già calcolato.
+
+**Motivazione.** `gadda_real` arriva da `fetch` in `boot()` — asincrono. Un
+IIFE eseguito al `import` del modulo non potrebbe mai vedere quel dato: gli
+servirebbe una variabile globale valorizzata più tardi, o un secondo modulo con
+top-level `await` che duplica il fetch già fatto in `main.js`. Entrambe le
+strade sono più invasive della funzione factory, che riceve `gadda_real` (o il
+risultato del modulo a monte: `s4Entities`, `s4Chapters`, `s4Voronoi`) come
+parametro e lo passa oltre esattamente come faceva la destrutturazione
+originale — il corpo delle funzioni non cambia di una riga.
+
+Non è la stessa scelta della cella `context2d`, che nel notebook è già una
+factory non auto-invocata: lì la forma non cambia nel porting. Qui invece la
+forma originale era l'IIFE, e la conversione a factory è la minima modifica
+strutturale necessaria per lo stesso motivo per cui `context2d` è factory nel
+notebook: un valore che non può esistere al momento della valutazione del
+modulo.
+
+**Cosa resta IIFE-like/valore diretto.** `projection.js` (valore diretto,
+nessuna dipendenza da dati) e `config.js` (oggetto letterale) non hanno questo
+problema e restano come nel notebook.
+
+**Precisazione.** Diventare factory non è un default di stile applicato a
+tutti i moduli allo stesso modo: lo si fa solo se un modulo ha una ragione
+concreta per farlo. Le ragioni concrete sono due, distinte:
+
+1. **Legge dati asincroni direttamente.** Solo `s4Entities`, `s4Chapters`,
+   `s4Terrain`, `s4Sequence` e `s4AttestedRoutes` (quest'ultimo non ancora
+   portato) toccano `gadda_real` — l'unico dato che arriva da `fetch`. Sono gli
+   unici la cui firma include `gadda_real` come parametro.
+2. **Riceve a cascata il risultato di un modulo del punto 1, o di un altro
+   modulo già diventato factory.** `s4Projection`, `s4Voronoi`, `s4Satellites`,
+   `s4NarrativeGeometry`, `s4RadialLayout`, `s4NarrativeCells` non leggono mai
+   `gadda_real`: ricevono `s4Entities` (o `s4Chapters`, `s4Voronoi`, ecc.) già
+   calcolato, perché quello è ciò che la destrutturazione in testa al blocco
+   del notebook già faceva. Se un modulo dipendesse solo da `s4Config` — nessuno
+   dei 13 finora portati è in questo caso — resterebbe un valore diretto, non
+   una factory: la conversione non è automatica, segue la dipendenza.
+
+**Conseguenza per l'assemblaggio.** Le factory non si chiamano a mano nei punti
+di consumo: `app/src/model/index.js` le chiama tutte una volta sola, in ordine
+topologico (`entities → chapters/projection-fit → voronoi → satellites →
+terrain/sequence → narrative-geometry → radial-layout → narrative-cells`) — non
+l'ordine del file `chartD.js`, che non è topologico (vedi `docs/PORTING.md`) —
+ed esporta il modello assemblato con le chiavi nominate come le celle del
+notebook (`model.s4Terrain`, `model.s4RadialLayout`, ...). `main.js` chiama
+`buildModel(gaddaReal)` una sola volta in `boot()`, dopo il `fetch`, e non vede
+le singole factory.
+
+---
+
+## D-016 · Smontaggio esplicito degli handler dei controlli
+**2026-09-07 · chiusa**
+
+`s4ChartHandlers.install({shell, constants, state, actions})` restituisce una
+funzione `dispose()` al posto di ricevere la promise Observable `invalidation`.
+Il futuro proprietario della shell deve chiamarla prima di smontare i controlli
+o installare nuovi handler sulla stessa shell.
+
+**Motivazione.** Fuori dal runtime reattivo Observable non esiste una promise
+che segnali la rigenerazione della cella. Come D-015, questa è una deviazione
+necessaria dal porting meccanico. La funzione conserva la cancellazione del
+frame e dell'intervallo di playback originali e azzera tutte le proprietà evento
+assegnate da `install()`, liberando i riferimenti alle callback del chiamante.
+I corpi degli handler e i template restano invariati.
+
+**Alternativa scartata.** `AbortController` con listener registrati tramite
+`addEventListener(..., {signal})`: richiederebbe di convertire tutte le
+assegnazioni `onclick`, `oninput`, `onchange` e `onpointerdown` del notebook.
+Restituire `dispose()` limita la modifica alla firma e al blocco di smontaggio.
+
+**Integrazione in chartS4 (2026-09-07).** La factory `chartS4(model, roma)`
+restituisce il `wrap` originale con un metodo `dispose()`: richiama lo
+smontaggio degli handler, rimuove il listener Escape e i listener D3 dello
+zoom. Un `AbortController` interno rimuove i quattro listener del canvas,
+già registrati con `addEventListener`, senza cambiare il corpo delle callback.
+`main.js` richiama lo smontaggio su HMR e `pagehide`. Stato, `draw()` e `tick()`
+restano nello stesso blocco, senza ristrutturazione.
+
+**Verifica nel quinto gruppo.** `install()` non viene invocato: le callback di
+`chartS4` non sono ancora disponibili. Lo smontaggio completo sarà verificato
+quando verrà portato il proprietario dello stato.
+
+---
+
+## D-017 · Porting completato: cosa resta non verificato
+**2026-09-06 · aperta**
+
+I 34 moduli del prototipo Observable sono portati in moduli ES (D-015, D-016).
+Ogni gruppo è stato verificato con valori derivati, incrociati contro fonti
+indipendenti — l'ETL Python, il GeoJSON, il grafo RDF — e non contro sé stesso.
+
+**Restano tre verifiche aperte**, nessuna bloccante:
+
+1. **Selezione della route da terrazza.** `routeSelection.selectFromTerrace()`
+   non è mai stata esercitata. È la stessa catena su cui si innesterà il
+   pannello testuale, quindi verrà collaudata nella fase 2.
+2. **Smontaggio completo.** La `dispose()` di D-016 è collegata ma mai invocata:
+   servirà quando l'atlante verrà montato e smontato dal routing del sito.
+3. **Confronto visivo a condizioni identiche** con gli screenshot di riferimento
+   del notebook, ai quattro stati e allo stesso capitolo.
+
+**Due dettagli emersi e non corretti**, entrambi ereditati dal notebook:
+
+- `chartS4` disegna solo `roma.features[0]`, mentre `roma.geojson` contiene due
+  geometrie. Da capire se la seconda è un'isola, un confine interno o un
+  residuo: oggi non compare.
+- L'etichetta di stadio parte da `1/6` cablato nel testo del pulsante, ma
+  `STAGES` ha cinque voci e `updateSeqUi()` scrive correttamente `1/5` al primo
+  aggiornamento. Cosmetico, da correggere nel valore iniziale della shell.
+
+---
+
+## D-018 · Pannello testuale persistente per riferimento
+**2026-09-07 · chiusa**
+
+Il click apre un pannello affiancato al canvas, indipendente da capitolo,
+focalizzatore e stadio. Le righe di `relief` sono raggruppate per `referenceId`:
+un brano compare una sola volta, con tutte le interpretazioni del tassello.
+Le fusioni di alias seguono il modello esistente. I gruppi di capitolo si
+aprono su richiesta; indice e promise dei capitoli sono conservati in cache
+(per capitolo in una `Map`), con possibilità di riprovare dopo un errore.
+Un riferimento singolo si presenta direttamente, senza una lista richiudibile.
+La selezione di una terrazza apre il capitolo corrispondente ed evidenzia il
+riferimento anche quando non appartiene a una route.
+
+**Alternative scartate.** Overlay sopra il canvas, filtro dei brani legato
+al frame corrente, precaricamento di tutti i capitoli e lista per
+interpretazione: ostacolano rispettivamente confronto, persistenza della
+lettura, caricamento incrementale e distinzione attestazione/interpretazione.
+Nessuna esportazione cumulativa. I brani senza `sourceReference` non vengono
+mostrati; la sigla originale resta visibile e l'edizione Adelphi è esplicitata
+secondo `LiteraryWorks.tsv`.
+
+**Note critiche.** Il campo è derivato da `si["criticalNote"]`. Il TTL contiene
+59 note, ma solo 56 appartengono a `relief`: `interp_00044`, `interp_00045` e
+`interp_00046` hanno `targetsRoute` e sono escluse dal rilievo dei luoghi.
+Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
+
+---
+
 ## D-022 — Build deterministico (8 ottobre 2026)
 
 - Requisito/i: — (invariante «algoritmi deterministici», work order § 1) · Ipotesi: — · Data check: —
@@ -399,6 +549,7 @@ guardato a schermo prima di darlo per buono.
 - Fase in cui è maturata: revisione critica (audit di fase 1, passo 0)
 - File toccati (manifest): `tools/build_geojson.py:703-706`; `tools/etl.py:36`, `:1226-1239` (nuova `canonical()`), `:1329`, `:1351`; derivati rigenerati (`data/dist/gaddatlas.geojson`, `data/dist/gaddatlas-full.ttl`).
 - Effetto su KG (triple prima/dopo, SHACL): nessuno. ABox 16.045 → 16.045; full 17.203 → 17.203, isomorfo; `chora.ttl` invariata (588); SHACL conforme, 0 violazioni. L'ordine delle feature fittizie del GeoJSON cambia rispetto alla versione precedente, che era a sua volta casuale: il confronto visivo con il notebook va rifatto al porting. Il grafo completo contiene ancora i `file:///` dei `sameAs` (ora con il percorso di questa macchina): li elimina D-021 (T-82).
+- Fusione: il controllo in CI è quello di `main` (`tools/check_reproducible.py`), esteso con il confronto dei byte e con i derivati della TBox: v. D-039.
 
 ---
 
@@ -678,6 +829,18 @@ guardato a schermo prima di darlo per buono.
 - Fase in cui è maturata: prototipazione (adapter dati)
 - File toccati (manifest): `tools/build_geojson.py:328` (`anchors_by_si`), `:338-339` (raccolta delle ancore), `:375-389` (scelta dell'ancora principale); tolta la scelta alfabetica nel ramo delle ancore in più (ex `:343-345`).
 - Effetto su KG (triple prima/dopo, SHACL): nessuno sul grafo. Con i dati precedenti a D-037 i derivati sono identici; con D-037 le 13 righe di rilievo di Casal Bruciato vanno tutte a `gaz_casale_abbruciato`.
+
+---
+
+## D-039 — Un solo controllo di riproducibilità: `check_reproducible.py` (9 ottobre 2026)
+
+- Requisito/i: — (infrastruttura; fonde D-022 con il lavoro di `main`) · Ipotesi: — · Data check: —
+- Stato precedente: due controlli paralleli per la stessa cosa. Sul branch di allineamento la CI rigenerava i derivati e chiedeva `git diff` vuoto su `data/dist`, `ontology` e `app/public/data`, possibile perché la build era stata resa deterministica byte per byte (D-022). Su `main` (commit `40ce9b2`, `12c9976`) la CI usava `tools/check_reproducible.py`: confronto per isomorfismo dei TTL e per contenuto dei JSON, con il grafo completo escluso perché i due contributori anonimi non si canonicalizzavano in modo stabile. Anche l'ordinamento deterministico del GeoJSON era stato fatto due volte: chiavi secondarie per id in tutti i `sorted()` su `main`, una sola sul branch.
+- Decisione (di Lorenzo, 9/10/2026): si tiene il controllo di `main`, esteso allo stato del branch. In `check_reproducible.py`: (1) confronto dei **byte** come primo passo, poi isomorfismo per RDF e contenuto per JSON; (2) `ontology/chora.ttl` esce dai target, perché è la sorgente della TBox (D-020), ed entrano i suoi derivati `ontology/chora.rdf` (RDF/XML) e `ontology/chora.jsonld` (D-033); (3) `data/dist/gaddatlas-full.ttl` rientra: dal D-022 è identico byte per byte fra build; (4) entrano le copie in `app/public/data` (anche `make audit` le confronta byte per byte, D-023). In `build_geojson.py` restano l'ordinamento di `main` (id come chiave secondaria ovunque, «NOTA SULL'ORDINAMENTO») e la regola dell'ancora principale (D-038); il commento locale del branch è assorbito dalla nota generale. Nel workflow `data.yml` resta lo step di `main`, con `publish-data` fra i passi di rigenerazione.
+- Motivazione (fonte, pagina): un solo strumento, che dice perché un derivato è cambiato (byte, triple, chiavi), invece di due controlli che possono divergere.
+- Fase in cui è maturata: revisione critica (merge di `main` nel branch di allineamento)
+- File toccati (manifest): `tools/check_reproducible.py` (blocco `TARGETS`, `compare_rdf` con formato, confronto dei byte in `main()`); `.github/workflows/data.yml` (risoluzione del conflitto, commento); `tools/build_geojson.py` (risoluzione del conflitto: tolto il commento duplicato).
+- Effetto su KG (triple prima/dopo, SHACL): nessuno.
 
 ---
 

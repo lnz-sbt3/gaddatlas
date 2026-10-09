@@ -1,6 +1,18 @@
 // Punto di ingresso. Il boot e' asincrono perche' i dati arrivano da fetch:
 // in Observable il top-level await era implicito, qui va incapsulato.
 
+import buildModel from "./model/index.js";
+import chartS4 from "./atlas.js";
+import createTextPanel from "./ui/text-panel.js";
+import { html } from "htl";
+import s4Config from "./model/config.js";
+
+let atlas;
+let textPanel;
+function dispose() { atlas?.dispose(); textPanel?.dispose(); }
+if (import.meta.hot) import.meta.hot.dispose(dispose);
+window.addEventListener("pagehide", dispose, {once: true});
+
 const BASE = import.meta.env.BASE_URL;
 
 async function loadJSON(path) {
@@ -17,21 +29,15 @@ async function boot() {
       loadJSON("roma.geojson"),
     ]);
 
-    // Sostituisce `display(chartS4)` del notebook.
-    // TODO fase 1: const atlas = createAtlas({ gaddaReal, roma });
-    root.innerHTML = "";
-    root.append(
-      Object.assign(document.createElement("pre"), {
-        style: "padding:2rem;font:13px ui-monospace,monospace",
-        textContent:
-          `GaddAtlas — impalcatura\n\n` +
-          `feature       ${gaddaReal.features.length}\n` +
-          `righe relief  ${gaddaReal.relief.length}\n` +
-          `route         ${gaddaReal.paths.routes.length}\n` +
-          `focalizzatori ${gaddaReal.paths.agents.length}\n` +
-          `contorno Roma ${roma.features?.length ?? "?"} geometrie\n`,
-      })
-    );
+    // Nucleo dati: un'unica chiamata, l'assemblatore risolve il DAG.
+    const model = buildModel(gaddaReal);
+
+    textPanel = createTextPanel({
+      relief: gaddaReal.relief, entities: model.s4Entities,
+      agents: gaddaReal.paths.agents, aliasGroups: s4Config.ALIAS_GROUPS, loadJSON,
+    });
+    atlas = chartS4(model, roma, { onTileSelect: textPanel.show });
+    root.replaceChildren(html`<div class="atlas-layout"><div class="atlas-view">${atlas}</div>${textPanel.element}</div>`);
   } catch (err) {
     root.innerHTML = `<p style="padding:3rem;color:var(--hue-ref)">
       Impossibile caricare i dati: ${err.message}</p>`;
