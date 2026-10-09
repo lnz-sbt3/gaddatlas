@@ -70,6 +70,7 @@ ID_NS = Namespace("https://w3id.org/gaddatlas/id/")
 GEO = Namespace("http://www.w3.org/2003/01/geo/wgs84_pos#")
 GEOSPARQL = Namespace("http://www.opengis.net/ont/geosparql#")
 PROV = Namespace("http://www.w3.org/ns/prov#")
+SCHEMA = Namespace("https://schema.org/")
 
 
 def has_value(x: Any) -> bool:
@@ -946,12 +947,18 @@ class GaddaETL:
                     if rel_uri:
                         self.graph.add((interp_uri, CHORA.assignsSpatialRelationType, rel_uri))
 
-                # *** PROVENANCE (PROV-O) ***
-                annotator = row.get('Annotator_ID')
-                if has_value(annotator):
-                    # Crea URI annotatore
-                    annotator_uri = URIRef(f"{ID_NS}annotator/{annotator}")
-                    self.graph.add((interp_uri, PROV.wasAttributedTo, annotator_uri))
+                # *** PROVENANCE (PROV-O, D-043) ***
+                # Codificatore e autore della lettura come attribuzioni
+                # qualificate (prov:qualifiedAttribution + prov:hadRole). Per
+                # un'interpretazione l'autore e' chi la codifica: e' una lettura
+                # del progetto. Le letture d'autore degli studiosi entrano come
+                # chora:Assertion (fase 3).
+                annotator = str(row.get('Annotator_ID') or '').strip()
+                if not annotator:
+                    raise ValueError(f"Interpretation {interp_id}: Annotator_ID mancante (D-043)")
+                annotator_uri = self.agent_uri(annotator, f"Interpretation {interp_id}")
+                self.add_attribution(interp_uri, interp_id, annotator_uri, "Encoder")
+                self.add_attribution(interp_uri, interp_id, annotator_uri, "ReadingAuthor")
 
                 annotation_date = row.get('Annotation_Date')
                 if has_value(annotation_date):
@@ -994,6 +1001,48 @@ class GaddaETL:
     # ============================================================
     # VALIDATORI
     # ============================================================
+
+    # ------------------------------------------------------------------
+    # AGENTI (D-043, work order T-32)
+    # ------------------------------------------------------------------
+    AGENT_NAMESPACES = {"annotator": "annotator", "scholar": "agent"}
+
+    def process_agents(self, file_path):
+        """
+        Processa Agents.tsv: chi formula e chi codifica le letture.
+
+        Colonne: Agent_ID, Name, Agent_Type (annotator | scholar), Note.
+        Gli annotatori hanno IRI annotator/{id}, gli studiosi agent/{id}.
+        """
+        self.agents = {}
+        df = pd.read_csv(file_path, sep='\t', encoding='utf-8', dtype=str,
+                         keep_default_na=False, na_values=[])
+        for idx, row in df.iterrows():
+            aid = str(row.get('Agent_ID', '')).strip()
+            kind = str(row.get('Agent_Type', '')).strip().lower()
+            where = f"Agents riga {idx + 2} ({aid or 'senza id'})"
+            if not aid:
+                raise ValueError(f"{where}: Agent_ID mancante")
+            if kind not in self.AGENT_NAMESPACES:
+                raise ValueError(f"{where}: Agent_Type {kind!r} (atteso annotator / scholar)")
+            uri = ID_NS[f"{self.AGENT_NAMESPACES[kind]}/{aid}"]
+            self.agents[aid] = uri
+            self.graph.add((uri, RDF.type, PROV.Agent))
+            self.add_literal(uri, SCHEMA.name, row.get('Name'))
+            self.add_literal(uri, RDFS.comment, row.get('Note'), lang='it')
+        logger.info(f"Agents: {len(self.agents)} agenti")
+
+    def agent_uri(self, value: str, where: str) -> URIRef:
+        """IRI di un agente dichiarato in Agents.tsv. Accetta l'id nudo
+        ('lorenzo_sabatino') o il percorso ('annotator/lorenzo_sabatino')."""
+        v = str(value).strip()
+        key = v.split("/", 1)[1] if "/" in v else v
+        if key not in self.agents:
+            raise ValueError(f"{where}: agente {v!r} non dichiarato in Agents.tsv")
+        uri = self.agents[key]
+        if "/" in v and ID_NS[v] != uri:
+            raise ValueError(f"{where}: agente {v!r} non corrisponde a {uri}")
+        return uri
 
     # ------------------------------------------------------------------
     # ASSERZIONI ATTRIBUITE (D-042, work order T-30)
@@ -1063,12 +1112,12 @@ class GaddaETL:
             author = str(row.get('Author_ID', '')).strip()
             if not author:
                 raise ValueError(f"{where}: Author_ID mancante")
-            self.add_attribution(a, aid, self.resolve_compact(author, where), "ReadingAuthor")
+            self.add_attribution(a, aid, self.agent_uri(author, where), "ReadingAuthor")
             encoders = [e.strip() for e in str(row.get('Encoder_ID', '')).split('|') if e.strip()]
             if not encoders:
                 raise ValueError(f"{where}: Encoder_ID mancante")
             for e in encoders:
-                self.add_attribution(a, aid, self.resolve_compact(e, where), "Encoder")
+                self.add_attribution(a, aid, self.agent_uri(e, where), "Encoder")
             adopted = str(row.get('Adopted', '')).strip().lower()
             if adopted:
                 if adopted not in ("si", "sì", "no"):
@@ -1237,7 +1286,7 @@ class GaddaETL:
         # 0. Verifica che tutti i TSV attesi esistano, PRIMA di iniziare:
         # un file mancante produceva in precedenza solo un log di errore e un
         # grafo parziale silenziosamente incompleto.
-        attesi = ["LiteraryWorks", "Chapters", "FocalizingAgents", "NarrativePlaces",
+        attesi = ["LiteraryWorks", "Chapters", "FocalizingAgents", "Agents", "NarrativePlaces",
                   "GazetteerEntities", "References", "SpatialInterpretations"]
         mancanti = [n for n in attesi if not (self.data_dir / f"{n}.tsv").is_file()]
         if mancanti:
@@ -1276,6 +1325,9 @@ class GaddaETL:
         self.process_references(
             self.data_dir / "References.tsv"
         )
+
+        logger.info("\n--- FASE 3b: Agenti ---")
+        self.process_agents(self.data_dir / "Agents.tsv")
 
         logger.info("\n--- FASE 4: Interpretations (livello interpretativo) ---")
         self.process_spatial_interpretations(

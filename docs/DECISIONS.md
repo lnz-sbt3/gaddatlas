@@ -881,6 +881,18 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-043 — Agenti e annotatori: attribuzioni qualificate su tutte le interpretazioni (9 ottobre 2026)
+
+- Requisito/i: R22 · Ipotesi: H8 · Data check: DC-15 (work order T-32; AUDIT_2, § 3)
+- Stato precedente: un solo agente implicito, `annotator/lorenzo_sabatino`, mai tipizzato `prov:Agent`, indicato con `prov:wasAttributedTo` su 161 interpretazioni su 960; le altre 799 senza attribuzione. Nessuna distinzione fra chi formula una lettura e chi la codifica.
+- Decisione (di Lorenzo, 9/10/2026): `prov:qualifiedAttribution` con `prov:hadRole`, nei due ruoli SKOS di D-042 (autore della lettura, codificatore), con un vincolo SHACL per ruolo; l'ETL genera anche la forma breve `prov:wasAttributedTo` verso l'autore. Le 960 interpretazioni hanno come **codificatore** `annotator/lorenzo_sabatino` (le 799 vuote compilate nel foglio). Come **autore della lettura** di un'interpretazione l'ETL registra il codificatore stesso: le interpretazioni sono letture del progetto, e una lettura d'autore di uno studioso entra come `chora:Assertion` (fase 3). Nuovo foglio obbligatorio `Agents.tsv` (`Agent_ID`, `Name`, `Agent_Type` annotator | scholar, `Note`): gli annotatori hanno IRI `annotator/{id}`, gli studiosi `agent/{id}`. Oggi contiene solo Lorenzo; gli studiosi entrano in fase 3. L'ETL si ferma se un'interpretazione non ha annotatore o se un autore o un codificatore (anche nelle asserzioni) non è dichiarato in `Agents.tsv`. Il modello ammette più codificatori per la stessa interpretazione o asserzione.
+- Motivazione (fonte, pagina): Cap. 4, R22 (provenienza di ogni interpretazione, «Lorenzo è chi le codifica, gli studiosi sono gli autori delle letture»); PROV-O, attribuzioni qualificate.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `tools/etl.py:73` (namespace `schema:`), `:950-961` (attribuzioni delle interpretazioni), `:1005-1046` (`process_agents`, `agent_uri`), `:1115`, `:1120` (autori e codificatori delle asserzioni via `agent_uri`), `:1289` (foglio atteso), `:1329-1331` (chiamata); `ontology/shapes/chora-shapes.ttl:323`, `:326` (shape estesa alle interpretazioni); `data/source/mapping.yaml` (nota sul blocco provenance); `data/source/tables/Agents.tsv` (nuovo); `data/source/tables/SpatialInterpretations.tsv` (799 righe, colonna `Annotator_ID`); `data/source/xlsx/Agents.xlsx` (nuovo), `SpatialInterpretations.xlsx` (rigenerato).
+- Effetto su KG (triple prima/dopo, SHACL): ABox 16.093 → **24.575**; full 17.419 → **25.901** (+8.482: 960 × 8 triple di attribuzione qualificata, 799 forme brevi nuove, 3 triple per l'agente). 1.920 attribuzioni, 1 agente. SHACL conforme, 0 violazioni. GeoJSON invariato salvo `tripleCount`.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

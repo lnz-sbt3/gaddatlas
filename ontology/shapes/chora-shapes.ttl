@@ -320,10 +320,10 @@ ga:AssertionShape
     ] .
 
 # Attribuzioni qualificate: almeno un autore della lettura e almeno un
-# codificatore. Si estende alle interpretazioni con T-32 (annotatori).
+# codificatore, per le asserzioni e per le interpretazioni (D-043).
 ga:QualifiedAttributionShape
     a sh:NodeShape ;
-    sh:targetClass ga:Assertion ;
+    sh:targetClass ga:Assertion, ga:SpatialInterpretation ;
     sh:property [
         sh:path prov:qualifiedAttribution ;
         sh:qualifiedValueShape [ sh:path prov:hadRole ; sh:hasValue ga:ReadingAuthor ] ;

@@ -460,7 +460,9 @@ mappings:
             when_column: "Spatial_Component_Role"
             equals: "routenode"
 
-      # PROV properties
+      # PROV properties. Annotator_ID e' obbligatorio e deve essere un agente
+      # di Agents.tsv: l'ETL ne fa due attribuzioni qualificate (codificatore e
+      # autore della lettura, D-043) piu' la forma breve prov:wasAttributedTo.
       provenance:
         - column: "Annotator_ID"
           property: "prov:wasAttributedTo"
