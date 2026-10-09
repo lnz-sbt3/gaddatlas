@@ -995,6 +995,24 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-050 — Partizione Roma città / campagna romana come ipotesi attribuita (9 ottobre 2026)
+
+- Requisito/i: R20 · Ipotesi: — · Data check: — (work order T-37)
+- Stato precedente: nessuna partizione. Le bande del GeoJSON (`urbano`, `periurbano`, `nazionale`, `build_geojson.py`, `scale_band`) sono una misura di distanza, non una partizione interpretativa.
+- Decisione (di Lorenzo, 9/10/2026: «Roma città / campagna romana, lettura di Lorenzo, adottata; proponi il criterio»):
+  - **modello:** nuove classi `chora:Partition` e `chora:PartitionZone`, proprietà `chora:hasZone` e `chora:inPartitionZone`. Una zona appartiene a una sola partizione: l'appartenenza di un luogo vale dentro quell'ipotesi, non in assoluto. Chi propone la partizione lo dice un'asserzione di tipo partition che ha la partizione per soggetto: `P-0001`, autore e codificatore Lorenzo, adottata, «bozza» finché il criterio non è validato;
+  - **criterio proposto:** distanza dal Campidoglio dell'ancora primaria del luogo (la stessa regola dell'adapter, D-038: ancore proprie, poi identificazione adottata, poi `isPartOf`). Roma città fino a 10 km; campagna romana, Castelli compresi, fra 10 e 30 km. La soglia di 10 km cade in un vuoto dei dati: l'ultimo luogo urbano, l'Acqua Marcia, è a 8,4 km; il primo di campagna, Castel di Leva, a 12,9;
+  - **non assegnati, casi di confine (REVIEW_2):** 33 luoghi. Sono entità lineari o areali che attraversano la soglia (via Appia, Aniene, acquedotti, tranvie dei Castelli, ferrovie…), luoghi Imagined, il litorale, la «campagna» dentro la città (Celio, Caffarella), l'ancora sospetta di `tiburtino` e la fascia fra 30 e 60 km. Restano non assegnati anche i 12 luoghi senza ancora. Oltre 60 km un luogo non appartiene a nessuna delle due zone;
+  - **esito:** 221 luoghi assegnati: 162 a Roma città, 59 alla campagna romana. Fogli nuovi `PartitionZones.tsv` (2 zone) e `PartitionMembers.tsv` (221 righe). Le assegnazioni sono state prodotte una volta dal criterio; d'ora in poi il foglio è la sorgente e i casi di confine si aggiungono a mano dopo la revisione.
+- Alternative scartate: il poligono comunale di `roma.geojson`, suggerito come esempio. Include l'Agro romano (Divino Amore, Castel di Leva, Santa Palomba, Tor di Gheppio) ed esclude il Vaticano (colonnato e cupola di San Pietro, Sant'Anna): darebbe una partizione amministrativa, non narrativa. Scartate anche una proprietà diretta luogo → «città» (renderebbe la partizione un fatto) e un'asserzione per luogo (221 nodi di attribuzione per una sola ipotesi).
+- Controlli: l'ETL rifiuta luoghi e zone inesistenti; shape 12 (una zona in una sola partizione; partizione soggetto di un'asserzione; `inPartitionZone` verso una zona); **IQ15**: un luogo in più zone della stessa partizione (atteso 0).
+- Motivazione (fonte, pagina): Cap. 4, § 4.1 (Calvino 1995 [1958], p. 51: i «due poli dell'azione») e R20 (§ 4.6). Le altre letture della partizione (Roggia 2016, 2023, p. 41; Perosa 2023a, pp. 249, 252–253; Savettieri 2020, p. 43; Alfano 2010, pp. 76, 80) entrano in fase 3 come partizioni alternative, con zone proprie.
+- Fase in cui è maturata: prototipazione
+- File toccati (manifest): `ontology/chora.ttl` r. 1283–1315 (sezione «Partizioni interpretative»); `ontology/shapes/chora-shapes.ttl` r. 461–494 (shape 12); `ontology/queries/integrity.rq` (IQ15); `tools/etl.py` r. 1084–1132 (`process_partitions`), r. 1454–1456; `data/source/tables/PartitionZones.tsv`, `PartitionMembers.tsv` (nuovi), `Assertions.tsv` (P-0001); XLSX corrispondenti; `data/README.md`; conteggio delle integrity query in `CLAUDE.md`, `Makefile`, `README.md`.
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.049 → **1.069**; ABox 25.917 → **26.169**; full 27.536 → **27.808**. SHACL conforme, 49 avvertenze (T-33); IQ1–IQ15 a 0.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

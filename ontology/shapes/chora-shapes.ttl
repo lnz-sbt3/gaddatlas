@@ -456,3 +456,39 @@ ga:MemoryAssertionShape
           sh:in ( ga:AuthorMemory ga:CharacterMemory ga:UndecidableMemory ) ]
     ) ;
     sh:message "Un'asserzione di memoria ha valori dello schema MemoryAttribution." .
+
+
+# =============================================================================
+# SHAPE 12 — Partizioni interpretative (D-050, work order T-37)
+# Ogni zona appartiene a una sola partizione; la partizione e' il soggetto di
+# un'asserzione attribuita. La regola «un luogo in una sola zona per
+# partizione» sta in integrity.rq (IQ15).
+# =============================================================================
+
+ga:PartitionZoneShape
+    a sh:NodeShape ;
+    sh:targetClass ga:PartitionZone ;
+    sh:property [
+        sh:path [ sh:inversePath ga:hasZone ] ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Una zona appartiene a una e una sola partizione." ;
+    ] .
+
+ga:PartitionShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Partition ;
+    sh:property [
+        sh:path [ sh:inversePath ga:aboutSubject ] ;
+        sh:minCount 1 ;
+        sh:message "Una partizione e' un'ipotesi: serve un'asserzione attribuita che la abbia per soggetto." ;
+    ] .
+
+ga:InPartitionZoneShape
+    a sh:NodeShape ;
+    sh:targetClass ga:NarrativePlace ;
+    sh:property [
+        sh:path ga:inPartitionZone ;
+        sh:class ga:PartitionZone ;
+        sh:message "inPartitionZone punta a una zona di una partizione." ;
+    ] .

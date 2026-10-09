@@ -1380,6 +1380,22 @@
       }
     },
     {
+      "@id": "chora:Partition",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "An interpretive partition of the territory (e.g. city / countryside), proposed by a reader. It is a hypothesis: its author, source and adoption are stated by a chora:PartitionAssertion whose subject is the partition."
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Partizione"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Partition"
+      }
+    },
+    {
       "@id": "chora:PartitionAssertion",
       "@type": [
         "owl:NamedIndividual",
@@ -1403,6 +1419,22 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:AssertionTypeScheme"
+      }
+    },
+    {
+      "@id": "chora:PartitionZone",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "One zone of a chora:Partition. A zone belongs to exactly one partition."
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Zona di una partizione"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Partition zone"
       }
     },
     {
@@ -2667,6 +2699,28 @@
       }
     },
     {
+      "@id": "chora:hasZone",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Links a partition to one of its zones."
+      },
+      "rdfs:domain": {
+        "@id": "chora:Partition"
+      },
+      "rdfs:range": {
+        "@id": "chora:PartitionZone"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "ha zona"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "has zone"
+      }
+    },
+    {
       "@id": "chora:historicalLocation",
       "@type": "owl:DatatypeProperty",
       "rdfs:comment": {
@@ -2714,6 +2768,28 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "housed in"
+      }
+    },
+    {
+      "@id": "chora:inPartitionZone",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Assigns a narrative place to a zone of a partition. The assignment holds within the partition hypothesis that owns the zone; a place not assigned to any zone is not classified by that hypothesis."
+      },
+      "rdfs:domain": {
+        "@id": "chora:NarrativePlace"
+      },
+      "rdfs:range": {
+        "@id": "chora:PartitionZone"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "in zona"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "in partition zone"
       }
     },
     {

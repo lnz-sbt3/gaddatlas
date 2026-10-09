@@ -1082,6 +1082,55 @@ class GaddaETL:
         return uri
 
     # ------------------------------------------------------------------
+    # PARTIZIONI INTERPRETATIVE (D-050, work order T-37)
+    # ------------------------------------------------------------------
+    def process_partitions(self, zones_path, members_path):
+        """
+        Processa PartitionZones.tsv e PartitionMembers.tsv (facoltativi).
+
+        PartitionZones: Zone_ID, Partition_ID, Label, Definition. Una zona
+        appartiene a una sola partizione; chi propone la partizione lo dice
+        un'asserzione di tipo partition in Assertions.tsv.
+        PartitionMembers: NarrativePlace_ID, Zone_ID. Un luogo assente dal
+        foglio non e' classificato dalla partizione.
+        """
+        if not Path(zones_path).is_file():
+            logger.info("PartitionZones.tsv assente: nessuna partizione")
+            return
+        read = lambda f: pd.read_csv(f, sep='\t', encoding='utf-8', dtype=str,
+                                     keep_default_na=False, na_values=[])
+        zones = {}
+        for idx, row in read(zones_path).iterrows():
+            zid = str(row.get('Zone_ID', '')).strip()
+            pid = str(row.get('Partition_ID', '')).strip()
+            where = f"PartitionZones riga {idx + 2} ({zid or 'senza id'})"
+            if not zid or not pid:
+                raise ValueError(f"{where}: Zone_ID e Partition_ID sono obbligatori")
+            if zid in zones:
+                raise ValueError(f"{where}: zona ripetuta")
+            part, zone = ID_NS[f"partition/{pid}"], ID_NS[f"zone/{zid}"]
+            zones[zid] = zone
+            self.graph.add((part, RDF.type, CHORA.Partition))
+            self.graph.add((part, CHORA.hasZone, zone))
+            self.graph.add((zone, RDF.type, CHORA.PartitionZone))
+            self.add_literal(zone, RDFS.label, row.get('Label'), lang='it')
+            self.add_literal(zone, SKOS.definition, row.get('Definition'), lang='it')
+        n = 0
+        if Path(members_path).is_file():
+            for idx, row in read(members_path).iterrows():
+                pid = str(row.get('NarrativePlace_ID', '')).strip()
+                zid = str(row.get('Zone_ID', '')).strip()
+                where = f"PartitionMembers riga {idx + 2} ({pid or 'senza id'})"
+                if pid not in self.id_cache['NarrativePlace_ID']:
+                    raise ValueError(f"{where}: luogo assente da NarrativePlaces.tsv")
+                if zid not in zones:
+                    raise ValueError(f"{where}: zona {zid!r} assente da PartitionZones.tsv")
+                self.graph.add((self.resolve_lookup(pid, '@NarrativePlace_ID'),
+                                CHORA.inPartitionZone, zones[zid]))
+                n += 1
+        logger.info(f"Partizioni: {len(zones)} zone, {n} luoghi assegnati")
+
+    # ------------------------------------------------------------------
     # ASSERZIONI ATTRIBUITE (D-042, work order T-30)
     # ------------------------------------------------------------------
     ASSERTION_TYPES = {
@@ -1401,6 +1450,10 @@ class GaddaETL:
         self.process_spatial_interpretations(
             self.data_dir / "SpatialInterpretations.tsv"
         )
+
+        logger.info("\n--- FASE 4a: Partizioni interpretative ---")
+        self.process_partitions(self.data_dir / "PartitionZones.tsv",
+                                self.data_dir / "PartitionMembers.tsv")
 
         logger.info("\n--- FASE 4b: Asserzioni attribuite ---")
         self.process_assertions(self.data_dir / "Assertions.tsv")

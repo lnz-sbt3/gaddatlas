@@ -169,3 +169,13 @@ SELECT ?luogo WHERE {
   FILTER NOT EXISTS { ?luogo ga:localizationStatus ?s }
 }
 ORDER BY ?luogo
+
+# ==== IQ15 — Luogo in piu' zone della stessa partizione (atteso: 0) ====
+# Dentro un'ipotesi di partizione un luogo sta al piu' in una zona (D-050).
+PREFIX ga: <https://w3id.org/chora#>
+SELECT ?luogo ?partizione WHERE {
+  ?partizione ga:hasZone ?z1, ?z2 .
+  ?luogo ga:inPartitionZone ?z1, ?z2 .
+  FILTER (STR(?z1) < STR(?z2))
+}
+ORDER BY ?luogo

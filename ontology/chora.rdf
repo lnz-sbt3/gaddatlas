@@ -893,6 +893,12 @@
     <skos:inScheme rdf:resource="https://w3id.org/chora#UncertaintyTypeScheme"/>
     <skos:prefLabel xml:lang="en">Oversight</skos:prefLabel>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#Partition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">An interpretive partition of the territory (e.g. city / countryside), proposed by a reader. It is a hypothesis: its author, source and adoption are stated by a chora:PartitionAssertion whose subject is the partition.</rdfs:comment>
+    <skos:altLabel xml:lang="it">Partizione</skos:altLabel>
+    <skos:prefLabel xml:lang="en">Partition</skos:prefLabel>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#PartitionAssertion">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -902,6 +908,12 @@
     <skos:notation>partition</skos:notation>
     <skos:prefLabel xml:lang="en">Partition assertion</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#AssertionTypeScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#PartitionZone">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">One zone of a chora:Partition. A zone belongs to exactly one partition.</rdfs:comment>
+    <skos:altLabel xml:lang="it">Zona di una partizione</skos:altLabel>
+    <skos:prefLabel xml:lang="en">Partition zone</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#PlaceReference">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -1359,6 +1371,14 @@
     <skos:altLabel xml:lang="it">ha geometria spaziale</skos:altLabel>
     <skos:prefLabel xml:lang="en">has spatial geometry</skos:prefLabel>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#hasZone">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">Links a partition to one of its zones.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#Partition"/>
+    <rdfs:range rdf:resource="https://w3id.org/chora#PartitionZone"/>
+    <skos:altLabel xml:lang="it">ha zona</skos:altLabel>
+    <skos:prefLabel xml:lang="en">has zone</skos:prefLabel>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#historicalLocation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:comment xml:lang="en">Describes the historical location or historical-toponymic context of a gazetteer entity.</rdfs:comment>
@@ -1375,6 +1395,14 @@
     <rdfs:range rdf:resource="https://w3id.org/chora#GazetteerEntity"/>
     <skos:altLabel xml:lang="it">ha sede in</skos:altLabel>
     <skos:prefLabel xml:lang="en">housed in</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#inPartitionZone">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">Assigns a narrative place to a zone of a partition. The assignment holds within the partition hypothesis that owns the zone; a place not assigned to any zone is not classified by that hypothesis.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#NarrativePlace"/>
+    <rdfs:range rdf:resource="https://w3id.org/chora#PartitionZone"/>
+    <skos:altLabel xml:lang="it">in zona</skos:altLabel>
+    <skos:prefLabel xml:lang="en">in partition zone</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#interpretationType">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>

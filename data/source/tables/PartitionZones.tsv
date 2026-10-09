@@ -1,0 +1,3 @@
+Zone_ID	Partition_ID	Label	Definition
+roma_citta	citta_campagna	Roma città	La città di Roma: i luoghi la cui ancora primaria dista al più 10 km dal Campidoglio.
+campagna_romana	citta_campagna	Campagna romana	La campagna intorno a Roma, Castelli compresi: i luoghi la cui ancora primaria dista fra 10 e 30 km dal Campidoglio.

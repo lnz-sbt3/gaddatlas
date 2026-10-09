@@ -136,6 +136,23 @@
     chora:sourcePage "669"^^xsd:string ;
     chora:sourceWork "Cortellessa 2023"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/assertion/P-0001> a chora:Assertion ;
+    rdfs:comment "Il poligono comunale di roma.geojson è scartato come criterio: include l'Agro romano (Divino Amore, Castel di Leva, Tor di Gheppio) ed esclude il Vaticano. Altre letture della partizione (Roggia, Perosa, Savettieri, Alfano, Calvino): fase 3."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/P-0001-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/P-0001-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/partition/citta_campagna> ;
+    chora:adoptedByProject true ;
+    chora:assertionType chora:PartitionAssertion ;
+    chora:assertsValue <https://w3id.org/gaddatlas/id/zone/campagna_romana>,
+        <https://w3id.org/gaddatlas/id/zone/roma_citta> ;
+    chora:rationale "Partizione Roma città / campagna romana, lettura adottata dal progetto. Criterio: distanza dell'ancora primaria del luogo dal Campidoglio; città fino a 10 km (nei dati il primo luogo di campagna, Castel di Leva, è a 12,9 km; l'ultimo urbano, l'Acqua Marcia, a 8,4), campagna fra 10 e 30 km. Non si assegnano d'ufficio entità lineari o areali che attraversano la soglia, luoghi Imagined, luoghi senza ancora, il litorale e la fascia fra 30 e 60 km: sono i casi di confine (REVIEW_2)."@it ;
+    chora:rationaleType chora:CriticalReading ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "§ 4.1, § 4.6 (R20)"^^xsd:string ;
+    chora:sourceWork "Capitolo 4"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/assertion/S-area_oltre_tevere> a chora:Assertion ;
     rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
     prov:generatedAtTime "2026-10-09"^^xsd:date ;
@@ -13657,6 +13674,14 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     prov:agent <https://w3id.org/gaddatlas/id/agent/cortellessa> ;
     prov:hadRole chora:ReadingAuthor .
 
+<https://w3id.org/gaddatlas/id/attribution/P-0001-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/P-0001-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
 <https://w3id.org/gaddatlas/id/attribution/S-area_oltre_tevere-encoder-lorenzo_sabatino> a prov:Attribution ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:Encoder .
@@ -24840,12 +24865,14 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 <https://w3id.org/gaddatlas/id/narrativeplace/aventino> a chora:NarrativePlace ;
     rdfs:label "Aventino"@it ;
     chora:hasPlaceCategory chora:hill ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/banca_ditalia> a chora:NarrativePlace ;
     rdfs:label "Banca d’Italia"@it ;
     chora:hasPlaceCategory chora:bank ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/basilica_dei_frari> a chora:NarrativePlace ;
     rdfs:label "Basilica dei Frari"@it ;
@@ -24861,12 +24888,14 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 <https://w3id.org/gaddatlas/id/narrativeplace/borgo_pio> a chora:NarrativePlace ;
     rdfs:label "Borgo Pio"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/borgo_vecchio> a chora:NarrativePlace ;
     rdfs:label "Borgo Vecchio"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/calabria> a chora:NarrativePlace ;
     rdfs:label "Calabria"@it ;
@@ -24877,7 +24906,8 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 <https://w3id.org/gaddatlas/id/narrativeplace/campo_de_fiori> a chora:NarrativePlace ;
     rdfs:label "Campo de' Fiori"@it ;
     chora:hasPlaceCategory chora:square ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/campo_morto> a chora:NarrativePlace ;
     rdfs:label "Tenuta di Campo Morto"@it ;
@@ -24893,17 +24923,20 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 <https://w3id.org/gaddatlas/id/narrativeplace/castel_gandolfo> a chora:NarrativePlace ;
     rdfs:label "Castel Gandolfo"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/castel_savello> a chora:NarrativePlace ;
     rdfs:label "Castel Savello"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/castelli_romani> a chora:NarrativePlace ;
     rdfs:label "Castelli Romani"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/civitavecchia> a chora:NarrativePlace ;
     rdfs:label "Civitavecchia"@it ;
@@ -24914,19 +24947,22 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 <https://w3id.org/gaddatlas/id/narrativeplace/colonnato_san_pietro> a chora:NarrativePlace ;
     rdfs:label "Colonnato di San Pietro"@it ;
     chora:hasPlaceCategory chora:monument ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/cupola_san_pietro> a chora:NarrativePlace ;
     rdfs:label "Cupola di San Pietro"@it ;
     dcterms:description "Sineddoche per la basilica di San Pietro, Roma - piazza San Pietro"@it ;
     chora:hasFuzzinessLevel 2.0 ;
     chora:hasPlaceCategory chora:monument ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/dazeglio> a chora:NarrativePlace ;
     rdfs:label "D'Azeglio"@it ;
     chora:hasPlaceCategory chora:hotel ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/dosso_faiti> a chora:NarrativePlace ;
     rdfs:label "Dosso Faiti"@it ;
@@ -24936,7 +24972,8 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 <https://w3id.org/gaddatlas/id/narrativeplace/esquilino> a chora:NarrativePlace ;
     rdfs:label "Esquilino"@it ;
     chora:hasPlaceCategory chora:district ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/filettino> a chora:NarrativePlace ;
     rdfs:label "Filettino"@it ;
@@ -24947,7 +24984,8 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 <https://w3id.org/gaddatlas/id/narrativeplace/fontanella_di_borghese> a chora:NarrativePlace ;
     rdfs:label "Fontanella di Borghese"@it ;
     chora:hasPlaceCategory chora:fountain ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/forte_de_marmi> a chora:NarrativePlace ;
     rdfs:label "Forte de' Marmi"@it ;
@@ -24958,7 +24996,8 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 <https://w3id.org/gaddatlas/id/narrativeplace/gianicolo> a chora:NarrativePlace ;
     rdfs:label "Gianicolo"@it ;
     chora:hasPlaceCategory chora:hill ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/golfo_di_napoli> a chora:NarrativePlace ;
     rdfs:label "Golfo di Napoli"@it ;
@@ -24973,7 +25012,8 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 <https://w3id.org/gaddatlas/id/narrativeplace/istituto_dellenciclopedia_treccani> a chora:NarrativePlace ;
     rdfs:label "Istituto dell'Enciclopedia Treccani"@it ;
     chora:hasPlaceCategory chora:historical_building ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/lazio> a chora:NarrativePlace ;
     rdfs:label "Lazio"@it ;
@@ -24998,7 +25038,8 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     rdfs:label "Monte Algido"@it ;
     dcterms:description "Monte dei Colli Albani"@it ;
     chora:hasPlaceCategory chora:mountain ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/monte_cengio> a chora:NarrativePlace ;
     rdfs:label "Monte Cengio"@it ;
@@ -25038,7 +25079,8 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     rdfs:label "Monti"@it ;
     dcterms:description "Quartiere di Roma"@it ;
     chora:hasPlaceCategory chora:district ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/monti_carseolani> a chora:NarrativePlace ;
     rdfs:label "Monti Carseolani"@it ;
@@ -25061,12 +25103,14 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_pio> a chora:NarrativePlace ;
     rdfs:label "Palazzo Pio"@it ;
     chora:hasPlaceCategory chora:historical_building ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_ruspoli> a chora:NarrativePlace ;
     rdfs:label "Palazzo Ruspoli"@it ;
     chora:hasPlaceCategory chora:historical_building ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/palestrina> a chora:NarrativePlace ;
     rdfs:label "Palestrina"@it ;
@@ -25077,47 +25121,56 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 <https://w3id.org/gaddatlas/id/narrativeplace/pantheon> a chora:NarrativePlace ;
     rdfs:label "Pantheon"@it ;
     chora:hasPlaceCategory chora:temple ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_colonna> a chora:NarrativePlace ;
     rdfs:label "Piazza Colonna"@it ;
     chora:hasPlaceCategory chora:square ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_di_pietra> a chora:NarrativePlace ;
     rdfs:label "Piazza di Pietra"@it ;
     chora:hasPlaceCategory chora:square ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_di_spagna> a chora:NarrativePlace ;
     rdfs:label "Piazza di Spagna"@it ;
     chora:hasPlaceCategory chora:square ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_esedra> a chora:NarrativePlace ;
     rdfs:label "Piazza Esedra"@it ;
     chora:hasPlaceCategory chora:square ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_montanara> a chora:NarrativePlace ;
     rdfs:label "Piazza Montanara"@it ;
     chora:hasPlaceCategory chora:square ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_pollarola> a chora:NarrativePlace ;
     rdfs:label "Piazza Pollarola"@it ;
     chora:hasPlaceCategory chora:square ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_rusticucci> a chora:NarrativePlace ;
     rdfs:label "Piazza Rusticucci"@it ;
     chora:hasPlaceCategory chora:square ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_verdi> a chora:NarrativePlace ;
     rdfs:label "Piazza Verdi"@it ;
     chora:hasPlaceCategory chora:square ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piceno> a chora:NarrativePlace ;
     rdfs:label "Piceno"@it ;
@@ -25129,33 +25182,39 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 <https://w3id.org/gaddatlas/id/narrativeplace/porta_angelica> a chora:NarrativePlace ;
     rdfs:label "Porta Angelica"@it ;
     chora:hasPlaceCategory chora:city_gate ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/porta_maggiore> a chora:NarrativePlace ;
     rdfs:label "Porta Maggiore"@it ;
     chora:hasPlaceCategory chora:city_gate ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/porta_san_paolo> a chora:NarrativePlace ;
     rdfs:label "Porta San Paolo"@it ;
     chora:hasPlaceCategory chora:city_gate ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/pozzo_delle_cornacchie> a chora:NarrativePlace ;
     rdfs:label "Pozzo delle Cornacchie"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/quartierino_prati> a chora:NarrativePlace ;
     rdfs:label "Quartierino Prati"@it ;
     skos:altLabel "prati"@it ;
     chora:hasPlaceCategory chora:district ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/quattro_cantoni> a chora:NarrativePlace ;
     rdfs:label "Quattro Cantoni"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/reggio_calabria> a chora:NarrativePlace ;
     rdfs:label "Reggio Calabria"@it ;
@@ -25165,12 +25224,14 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 <https://w3id.org/gaddatlas/id/narrativeplace/ripetta> a chora:NarrativePlace ;
     rdfs:label "Ripetta"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/rocca_di_papa> a chora:NarrativePlace ;
     rdfs:label "Rocca di Papa"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/rocca_orsina> a chora:NarrativePlace ;
     rdfs:label "Rocca Orsina"@it ;
@@ -25178,7 +25239,8 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente fortificazione medievale. L’attuale Palazzo Colonna sorge sul luogo della rocca, della quale sono ancora riconosciute strutture e tracce inglobate nell’edificio successivo. Le fonti locali la indicano come Rocca degli Orsini o fortezza orsinesca."""@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/salsomaggiore> a chora:NarrativePlace ;
     rdfs:label "Salsomaggiore"@it ;
@@ -25191,32 +25253,38 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/san_camillo> a chora:NarrativePlace ;
     rdfs:label "San Camillo"@it ;
     chora:hasPlaceCategory chora:hospice ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/san_carlo_alle_quattro_fontane> a chora:NarrativePlace ;
     rdfs:label "San Carlo alle quattro fontane"@it ;
     chora:hasPlaceCategory chora:Church ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/san_clemente> a chora:NarrativePlace ;
     rdfs:label "San Clemente"@it ;
     chora:hasPlaceCategory chora:basilica ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/san_luigi_de_francesi> a chora:NarrativePlace ;
     rdfs:label "San Luigi de' Francesi"@it ;
     chora:hasPlaceCategory chora:Church ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/san_martino_ai_monti> a chora:NarrativePlace ;
     rdfs:label "San Martino ai Monti"@it ;
     chora:hasPlaceCategory chora:basilica ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/san_silvestro_in_capite> a chora:NarrativePlace ;
     rdfs:label "San Silvestro in Capite"@it ;
     chora:hasPlaceCategory chora:basilica ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/sannio> a chora:NarrativePlace ;
     rdfs:label "Sannio"@it ;
@@ -25228,17 +25296,20 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/santa_chiara> a chora:NarrativePlace ;
     rdfs:label "Santa Chiara"@it ;
     chora:hasPlaceCategory chora:historical_building ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/santa_croce_in_gerusalemme> a chora:NarrativePlace ;
     rdfs:label "Santa Croce in Gerusalemme"@it ;
     chora:hasPlaceCategory chora:basilica ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/santa_maria_in_aquiro> a chora:NarrativePlace ;
     rdfs:label "Santa Maria in Aquiro"@it ;
     chora:hasPlaceCategory chora:Church ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/santa_maria_novella> a chora:NarrativePlace ;
     rdfs:label "Santa Maria Novella"@it ;
@@ -25250,32 +25321,38 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/santa_maria_sopra_minerva> a chora:NarrativePlace ;
     rdfs:label "Santa Maria sopra Minerva"@it ;
     chora:hasPlaceCategory chora:basilica ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/santagnese_in_agone> a chora:NarrativePlace ;
     rdfs:label "Sant'Agnese in Agone"@it ;
     chora:hasPlaceCategory chora:Church ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/santagostino> a chora:NarrativePlace ;
     rdfs:label "Sant'Agostino"@it ;
     chora:hasPlaceCategory chora:basilica ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/santandrea_della_valle> a chora:NarrativePlace ;
     rdfs:label "Sant'Andrea della Valle"@it ;
     chora:hasPlaceCategory chora:basilica ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/santanna> a chora:NarrativePlace ;
     rdfs:label "Sant'Anna"@it ;
     chora:hasPlaceCategory chora:Church ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/santantonio_da_padova> a chora:NarrativePlace ;
     rdfs:label "Sant'Antonio da Padova"@it ;
     chora:hasPlaceCategory chora:basilica ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/sardegna> a chora:NarrativePlace ;
     rdfs:label "Sardegna"@it ;
@@ -25292,12 +25369,14 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/suburra> a chora:NarrativePlace ;
     rdfs:label "Suburra"@it ;
     chora:hasPlaceCategory chora:district ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/teatro_jovinelli> a chora:NarrativePlace ;
     rdfs:label "Teatro Jovinelli"@it ;
     chora:hasPlaceCategory chora:theater ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/tiburtino> a chora:NarrativePlace ;
     rdfs:label "Tiburtino"@it ;
@@ -25312,7 +25391,8 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     rdfs:label "Trastevere"@it ;
     dcterms:description "quartiere di Roma"@it ;
     chora:hasPlaceCategory chora:district ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/vado_ligure> a chora:NarrativePlace ;
     rdfs:label "Vado Ligure"@it ;
@@ -25328,193 +25408,234 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/via_boncompagni> a chora:NarrativePlace ;
     rdfs:label "Via Boncompagni"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_botteghe_oscure> a chora:NarrativePlace ;
     rdfs:label "Via Botteghe Oscure"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_campo_marzio> a chora:NarrativePlace ;
     rdfs:label "Via Campo Marzio"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_capo_dafrica> a chora:NarrativePlace ;
     rdfs:label "Via Capo d'Africa"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_colonna_vittoria> a chora:NarrativePlace ;
     rdfs:label "Via Colonna Vittoria"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_de_merli> a chora:NarrativePlace ;
     rdfs:label "Via de' Merli"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_de_querceti> a chora:NarrativePlace ;
     rdfs:label "Via de' Querceti"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_degli_zingari> a chora:NarrativePlace ;
     rdfs:label "Via degli Zingari"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_dei_capocci> a chora:NarrativePlace ;
     rdfs:label "Via dei Capocci"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_dei_fienili> a chora:NarrativePlace ;
     rdfs:label "Via dei Fienili"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_dei_greci> a chora:NarrativePlace ;
     rdfs:label "Via dei Greci"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_del_gobbo> a chora:NarrativePlace ;
     rdfs:label "Via del Gobbo"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_del_parlamento> a chora:NarrativePlace ;
     rdfs:label "Via del Parlamento"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_della_palombella> a chora:NarrativePlace ;
     rdfs:label "Via della Palombella"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_della_scrofa> a chora:NarrativePlace ;
     rdfs:label "Via della Scrofa"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_delle_coppelle> a chora:NarrativePlace ;
     rdfs:label "Via delle Coppelle"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_di_ferro> a chora:NarrativePlace ;
     rdfs:label "Via di Ferro"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_di_grotta_pinta> a chora:NarrativePlace ;
     rdfs:label "Via di Grotta Pinta"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_di_pietra> a chora:NarrativePlace ;
     rdfs:label "Via di Pietra"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_labbricana> a chora:NarrativePlace ;
     rdfs:label "Via Labbricana"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_ludovisi> a chora:NarrativePlace ;
     rdfs:label "Via Ludovisi"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_milano> a chora:NarrativePlace ;
     rdfs:label "Via Milano"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_monte_caprino> a chora:NarrativePlace ;
     rdfs:label "Via Monte Caprino"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_montebello> a chora:NarrativePlace ;
     rdfs:label "Via Montebello"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_orazio> a chora:NarrativePlace ;
     rdfs:label "Via Orazio"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_valadier> a chora:NarrativePlace ;
     rdfs:label "Via Valadier"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_venti_settembre> a chora:NarrativePlace ;
     rdfs:label "Via Venti Settembre"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_villari> a chora:NarrativePlace ;
     rdfs:label "Via Vìllari"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_zanardelli> a chora:NarrativePlace ;
     rdfs:label "Via Zanardelli"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/viale_della_regina> a chora:NarrativePlace ;
     rdfs:label "Viale della Regina"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/viale_liegi> a chora:NarrativePlace ;
     rdfs:label "Viale Liegi"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/viale_regina_margherita> a chora:NarrativePlace ;
     rdfs:label "Viale Regina Margherita"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/vicolo_ciancaleoni> a chora:NarrativePlace ;
     rdfs:label "Vicolo Ciancaleoni"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/vicolo_della_bucimazza> a chora:NarrativePlace ;
     rdfs:label "Vicolo della Bucimazza"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/vicolo_delle_grotte_del_teatro> a chora:NarrativePlace ;
     rdfs:label "Vicolo delle Grotte del Teatro"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/villa_deste> a chora:NarrativePlace ;
     rdfs:label "Villa d'Este"@it ;
     chora:hasPlaceCategory chora:historical_building ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/vite> a chora:NarrativePlace ;
     rdfs:label "Vite"@it ;
     chora:hasPlaceCategory chora:restaurant ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/vomero> a chora:NarrativePlace ;
     rdfs:label "Vomero"@it ;
     dcterms:description "Quartiere di napoli"@it ;
     chora:hasPlaceCategory chora:district ;
     chora:hasRealityStatus chora:Imported .
+
+<https://w3id.org/gaddatlas/id/partition/citta_campagna> a chora:Partition ;
+    chora:hasZone <https://w3id.org/gaddatlas/id/zone/campagna_romana>,
+        <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00001> a chora:PlaceReference ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
@@ -30085,7 +30206,8 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/aliciaro> a chora:NarrativePlace ;
     rdfs:label "Aliciaro"@it ;
     chora:hasPlaceCategory chora:restaurant ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/aniene> a chora:NarrativePlace ;
     rdfs:label "Aniene"@it ;
@@ -30112,7 +30234,8 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     rdfs:label "Barbiere"@it ;
     dcterms:description "Luogo generico: barbiere"@it ;
     chora:hasPlaceCategory chora:retail_business ;
-    chora:hasRealityStatus chora:Transformed .
+    chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/bologna> a chora:NarrativePlace ;
     rdfs:label "Bologna"@it ;
@@ -30123,22 +30246,26 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/bottaro> a chora:NarrativePlace ;
     rdfs:label "Bottaro"@it ;
     chora:hasPlaceCategory chora:restaurant ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/buco_a_santignazio> a chora:NarrativePlace ;
     rdfs:label "Buco a Sant'Ignazio"@it ;
     chora:hasPlaceCategory chora:restaurant ;
-    chora:hasRealityStatus chora:Transformed .
+    chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/ca_francesi> a chora:NarrativePlace ;
     rdfs:label "Ca' Francesi"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Transformed .
+    chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/campo_verano> a chora:NarrativePlace ;
     rdfs:label "Campo Verano"@it ;
     chora:hasPlaceCategory chora:station ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/carsoli> a chora:NarrativePlace ;
     rdfs:label "Carsoli"@it ;
@@ -30149,25 +30276,29 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/castel_di_leva> a chora:NarrativePlace ;
     rdfs:label "Castel di Leva"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/cecchina> a chora:NarrativePlace ;
     rdfs:label "Cecchina"@it ;
     chora:hasPlaceCategory chora:station ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/centrale_del_latte> a chora:NarrativePlace ;
     rdfs:label "Centrale del Latte"@it ;
     dcterms:description "Il complesso, progettato dall'architetto Innocenzo Costantini, si estendeva su tutta l'area di Piazza Pepe, sulla quale si affaccia anche il famoso Teatro Ambra Jovinelli.[5] La struttura, sorta nel pieno periodo fascista (1929), era inoltre disposta nel cortile dove troneggiava l'Acquedotto Giulio (Aqua Iulia)."@it ;
     rdfs:comment "Abattuto nel 1990"@it ;
     chora:hasPlaceCategory chora:building ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/cobianchi> a chora:NarrativePlace ;
     rdfs:label "Cobianchi"@it ;
     dcterms:description "Luogo specificato ma non identificabile"@it ;
     chora:hasPlaceCategory chora:retail_business ;
-    chora:hasRealityStatus chora:Transformed .
+    chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/colli_saluberrimi> a chora:NarrativePlace ;
     rdfs:label "Colli Saluberrimi"@it ;
@@ -30186,18 +30317,21 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/corso_umberto> a chora:NarrativePlace ;
     rdfs:label "Corso Umberto"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/divino_amore> a chora:NarrativePlace ;
     rdfs:label "Divino Amore"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/fontana_di_papa> a chora:NarrativePlace ;
     rdfs:label "Fontana di Papa"@it ;
     dcterms:description "Località  lungo la via Nettunense, oggi nel territorio di Ariccia"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/frascati> a chora:NarrativePlace ;
     rdfs:label "Frascati"@it ;
@@ -30206,24 +30340,28 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     skos:altLabel "frascatano"@it ;
     chora:hasFuzzinessLevel 3.0 ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/gioielliere_catellani> a chora:NarrativePlace ;
     rdfs:label "Gioielliere Catellani"@it ;
     dcterms:description "negozio non identificabile"@it ;
     chora:hasPlaceCategory chora:shop ;
-    chora:hasRealityStatus chora:Transformed .
+    chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/grotta_de_sor_pippo> a chora:NarrativePlace ;
     rdfs:label "Grotta de Sor Pippo"@it ;
     dcterms:description "Trattoria non meglio identificata nel territorio di Marino"@it ;
     chora:hasPlaceCategory chora:restaurant ;
-    chora:hasRealityStatus chora:Invented .
+    chora:hasRealityStatus chora:Invented ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/grottaferrata> a chora:NarrativePlace ;
     rdfs:label "Grottaferrata"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/marsica> a chora:NarrativePlace ;
     rdfs:label "Marsica"@it ;
@@ -30265,6 +30403,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasFuzzinessLevel 4.0 ;
     chora:hasPlaceCategory chora:kitchen_garden ;
     chora:hasRealityStatus chora:Invented ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/ostia> a chora:NarrativePlace ;
@@ -30288,12 +30427,14 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_del_mappamondo> a chora:NarrativePlace ;
     rdfs:label "Palazzo der Mappamonno"@it ;
     chora:hasPlaceCategory chora:historical_building ;
-    chora:hasRealityStatus chora:Transformed .
+    chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/passaggio_livello_casal_bruciato> a chora:NarrativePlace ;
     rdfs:label "Passaggio a livello Casal Bruciato"@it ;
     chora:hasPlaceCategory chora:level_crossing ;
     chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piani_alti_219> a chora:NarrativePlace ;
@@ -30301,40 +30442,47 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     dcterms:description "Interno del palazzo in via Merulana 219"@it ;
     chora:hasPlaceCategory chora:interior ;
     chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piccarozzi> a chora:NarrativePlace ;
     rdfs:label "Piccarozzi"@it ;
     dcterms:description "Bar in galleria colonna"@it ;
     chora:hasPlaceCategory chora:cafe ;
-    chora:hasRealityStatus chora:Transformed .
+    chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/pincio> a chora:NarrativePlace ;
     rdfs:label "Pincio"@it ;
     chora:hasPlaceCategory chora:hill ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/porta_latina> a chora:NarrativePlace ;
     rdfs:label "Porta Latina"@it ;
     chora:hasPlaceCategory chora:city_gate ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/porta_pinciana> a chora:NarrativePlace ;
     rdfs:label "Porta Pinciana"@it ;
     chora:hasPlaceCategory chora:city_gate ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/pozzofondo> a chora:NarrativePlace ;
     rdfs:label "Pozzofondo"@it ;
     dcterms:description "località immaginaria, luogo d'origine di Clelia Farcioni"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Invented .
+    chora:hasRealityStatus chora:Invented ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/prati> a chora:NarrativePlace ;
     rdfs:label "Prati"@it ;
     skos:altLabel "quartierino_prati"@it ;
     chora:hasPlaceCategory chora:district ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/predappio> a chora:NarrativePlace ;
     rdfs:label "Predappio"@it ;
@@ -30344,7 +30492,8 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/publicii_clivio_de> a chora:NarrativePlace ;
     rdfs:label "Publicii clivio de'"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/rive_del_brahmaputra> a chora:NarrativePlace ;
     rdfs:label "Brahmaputra"@it ;
@@ -30355,37 +30504,44 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/rocca_savella> a chora:NarrativePlace ;
     rdfs:label "Rocca Savella"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/santa_margherita_in_abitacolo> a chora:NarrativePlace ;
     rdfs:label "Santa Margherita in Abitacolo"@it ;
     chora:hasPlaceCategory chora:Church ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/santa_maria_della_neve> a chora:NarrativePlace ;
     rdfs:label "Santa Maria della Neve"@it ;
     chora:hasPlaceCategory chora:Church ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/santa_maria_in_domnica> a chora:NarrativePlace ;
     rdfs:label "Santa Maria in Dòmnica"@it ;
     chora:hasPlaceCategory chora:basilica ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/santa_maria_in_porta_paradisi> a chora:NarrativePlace ;
     rdfs:label "Santa Maria in Porta Paradisi"@it ;
     chora:hasPlaceCategory chora:Church ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/santa_rita_invitacolo> a chora:NarrativePlace ;
     rdfs:label "Santa Rita Invitàcolo"@it ;
     chora:hasPlaceCategory chora:Church ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/tempio_di_agrippa> a chora:NarrativePlace ;
     rdfs:label "Tempio di Agrippa"@it ;
     chora:hasPlaceCategory chora:temple ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/terracina> a chora:NarrativePlace ;
     rdfs:label "Terracina"@it ;
@@ -30398,6 +30554,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     dcterms:description "Interno del palazzo in via Merulana 219, terzo piano"@it ;
     chora:hasPlaceCategory chora:interior ;
     chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/tevere_biferno> a chora:NarrativePlace ;
@@ -30411,7 +30568,8 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/traforo> a chora:NarrativePlace ;
     rdfs:label "Traforo"@it ;
     chora:hasPlaceCategory chora:gallery ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/velletri> a chora:NarrativePlace ;
     rdfs:label "Velletri"@it ;
@@ -30422,17 +30580,20 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/via_carlo_alberto> a chora:NarrativePlace ;
     rdfs:label "Via Carlo Alberto"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_dazeglio> a chora:NarrativePlace ;
     rdfs:label "Via D'Azeglio"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_del_corso> a chora:NarrativePlace ;
     rdfs:label "Via del Corso"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_della_caffarella> a chora:NarrativePlace ;
     rdfs:label "Via della Caffarella"@it ;
@@ -30442,27 +30603,32 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/via_della_navicella> a chora:NarrativePlace ;
     rdfs:label "Via della Navicella"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_di_san_paolo_della_croce> a chora:NarrativePlace ;
     rdfs:label "Via di San Paolo della Croce"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_di_santo_stefano_rotondo> a chora:NarrativePlace ;
     rdfs:label "Via di Santo Stefano Rotondo"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_frangipane> a chora:NarrativePlace ;
     rdfs:label "Via Frangipane"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_popolonia> a chora:NarrativePlace ;
     rdfs:label "Via Popolonia"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/vicenza> a chora:NarrativePlace ;
     rdfs:label "Vicenza"@it ;
@@ -30473,22 +30639,26 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/villa_borghese> a chora:NarrativePlace ;
     rdfs:label "Villa Borghese"@it ;
     chora:hasPlaceCategory chora:historical_building ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/villa_celimontana> a chora:NarrativePlace ;
     rdfs:label "Villa Celimontana"@it ;
     chora:hasPlaceCategory chora:park ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/villa_gregoriana> a chora:NarrativePlace ;
     rdfs:label "Villa Gregoriana"@it ;
     chora:hasPlaceCategory chora:park ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/villino_lungotevere> a chora:NarrativePlace ;
     rdfs:label "Villino Lungotevere"@it ;
     chora:hasPlaceCategory chora:villa ;
-    chora:hasRealityStatus chora:Invented .
+    chora:hasRealityStatus chora:Invented ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/vinchiaturo> a chora:NarrativePlace ;
     rdfs:label "Vinchiaturo"@it ;
@@ -31636,17 +31806,20 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/ardea> a chora:NarrativePlace ;
     rdfs:label "Ardea"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/ariccia> a chora:NarrativePlace ;
     rdfs:label "Ariccia"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/banca_commerciale_italiana> a chora:NarrativePlace ;
     rdfs:label "Banca Commerciale Italiana"@it ;
     chora:hasPlaceCategory chora:bank ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/casa_del_butiro> a chora:NarrativePlace ;
     rdfs:label "Casa del Butiro"@it ;
@@ -31658,7 +31831,8 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/cassero> a chora:NarrativePlace ;
     rdfs:label "Cassero"@it ;
     chora:hasPlaceCategory chora:castle ;
-    chora:hasRealityStatus chora:Invented .
+    chora:hasRealityStatus chora:Invented ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/castel_porcano> a chora:NarrativePlace ;
     rdfs:label "Castel Porcano"@it ;
@@ -31671,17 +31845,20 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/celio> a chora:NarrativePlace ;
     rdfs:label "Celio"@it ;
     chora:hasPlaceCategory chora:district ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/ditta_ciurlani> a chora:NarrativePlace ;
     rdfs:label "Ditta Ciurlani"@it ;
     chora:hasPlaceCategory chora:retail_business ;
-    chora:hasRealityStatus chora:Transformed .
+    chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/falcognana> a chora:NarrativePlace ;
     rdfs:label "Falcognana"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/genova> a chora:NarrativePlace ;
     rdfs:label "Genova"@it ;
@@ -31692,12 +31869,14 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/largo_brancaccio> a chora:NarrativePlace ;
     rdfs:label "Largo Brancaccio"@it ;
     chora:hasPlaceCategory chora:small_square ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/lungara> a chora:NarrativePlace ;
     rdfs:label "Lungara"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/monte_circeo> a chora:NarrativePlace ;
     rdfs:label "Monte Circeo"@it ;
@@ -31710,23 +31889,27 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     rdfs:label "Palazzo Simonetti"@it ;
     dcterms:description "Luogo trasformato per rilocazione: il palazzo Simonetti (o De Carolis) è reale e sorge in via Lata, presso piazza del Collegio Romano, dove lo colloca il dattiloscritto dei capitoli nuovi; in QP 177 Gadda lo sposta in via Lanza, dove non esiste (Pinotti 2025, p. 78). Ancorato a via Lanza, la sua collocazione nel testo; nessuna coordinata propria."@it ;
     chora:hasPlaceCategory chora:historical_building ;
-    chora:hasRealityStatus chora:Transformed .
+    chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_san_lorenzo_in_lucina> a chora:NarrativePlace ;
     rdfs:label "Piazza San Lorenzo in Lucina"@it ;
     chora:hasPlaceCategory chora:square ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/porta_borgo_marino> a chora:NarrativePlace ;
     rdfs:label "Porta del borgo di Marino"@it ;
     dcterms:description "Porta al confine del comune di Marino"@it ;
     chora:hasPlaceCategory chora:city_gate ;
-    chora:hasRealityStatus chora:Transformed .
+    chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/pratica_di_mare> a chora:NarrativePlace ;
     rdfs:label "Pratica di Mare"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/roccafringoli> a chora:NarrativePlace ;
     rdfs:label "Roccafringoli"@it ;
@@ -31737,7 +31920,8 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/solforata> a chora:NarrativePlace ;
     rdfs:label "Solforata"@it ;
     chora:hasPlaceCategory chora:district ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/soriano_nel_cimino> a chora:NarrativePlace ;
     rdfs:label "Soriano nel Cimino"@it ;
@@ -31749,13 +31933,15 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     rdfs:label "Stazione dei Carabinieri a Castello"@it ;
     chora:hasPlaceCategory chora:building ;
     chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/castello> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/stazione_pavona> a chora:NarrativePlace ;
     rdfs:label "Stazione della Pavona"@it ;
     dcterms:description "Stazione del paese di Pavona, non meglio identificata"@it ;
     chora:hasPlaceCategory chora:station ;
-    chora:hasRealityStatus chora:Transformed .
+    chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/strada_di_campagna_celio> a chora:NarrativePlace ;
     rdfs:label "Strada di campagna del Celio"@it ;
@@ -31767,12 +31953,14 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     rdfs:label "Tivoli"@it ;
     dcterms:description "Comune italiano"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/tor_ser_paolo> a chora:NarrativePlace ;
     rdfs:label "Tor Ser Paolo"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/tranvie_dei_castelli> a chora:NarrativePlace ;
     rdfs:label "Tranvie dei Castelli"@it ;
@@ -31789,12 +31977,14 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/via_mamiani> a chora:NarrativePlace ;
     rdfs:label "Via Mamiani"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_ricasoli> a chora:NarrativePlace ;
     rdfs:label "Via Ricasoli"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00034> a chora:PlaceReference ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
@@ -32338,39 +32528,46 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     rdfs:label "Albano Laziale"@it ;
     dcterms:description "Luogo dei Castelli Romani"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/banco_di_santo_spirito> a chora:NarrativePlace ;
     rdfs:label "Banco di Santo Spirito"@it ;
     chora:hasPlaceCategory chora:bank ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/camera_casello> a chora:NarrativePlace ;
     rdfs:label "Camera al Casello 20-25"@it ;
     dcterms:description "camera da letto della Camilla Mattonari"@it ;
     chora:hasPlaceCategory chora:room ;
     chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/campo_marzio> a chora:NarrativePlace ;
     rdfs:label "Campo Marzio"@it ;
     chora:hasPlaceCategory chora:cemetery ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira> a chora:NarrativePlace ;
     rdfs:label "Casuccia della Zamira"@it ;
     chora:hasPlaceCategory chora:dwelling ;
-    chora:hasRealityStatus chora:Invented .
+    chora:hasRealityStatus chora:Invented ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/collegio_romano> a chora:NarrativePlace ;
     rdfs:label "Collegio Romano"@it ;
     chora:hasPlaceCategory chora:police_station ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/maccheronaro> a chora:NarrativePlace ;
     rdfs:label "Maccheronaro"@it ;
     chora:hasPlaceCategory chora:restaurant ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/molo_beverello> a chora:NarrativePlace ;
     rdfs:label "Molo Beverello"@it ;
@@ -32381,31 +32578,36 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/palazzo> a chora:NarrativePlace ;
     rdfs:label "Palazzo"@it ;
     chora:hasPlaceCategory chora:station ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/pensione_burgess> a chora:NarrativePlace ;
     rdfs:label "Pensione Burgess"@it ;
     dcterms:description "Albergo immaginario, possibile deformazione di Pensione Villa Borghese, via Sgambati 4, vicino Porta Pinciana"@it ;
     chora:hasFuzzinessLevel 4.0 ;
     chora:hasPlaceCategory chora:hotel ;
-    chora:hasRealityStatus chora:Invented .
+    chora:hasRealityStatus chora:Invented ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/robine_vecchie> a chora:NarrativePlace ;
     rdfs:label "Robine Vecchie"@it ;
     dcterms:description "Robine Vecchie è un microtoponimo gaddiano non identificato, forse deformazione di un nome locale o denominazione fantastica applicata al paesaggio reale di Frattocchie–Due Santi."@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Transformed .
+    chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/san_lorenzo_al_verano> a chora:NarrativePlace ;
     rdfs:label "San Lorenzo al verano"@it ;
     chora:hasPlaceCategory chora:basilica ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/scale> a chora:NarrativePlace ;
     rdfs:label "Scale"@it ;
     dcterms:description "Interno del palazzo in via Merulana 219"@it ;
     chora:hasPlaceCategory chora:interior ;
     chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/scerpure> a chora:NarrativePlace ;
@@ -32419,27 +32621,32 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/termini> a chora:NarrativePlace ;
     rdfs:label "Termini"@it ;
     chora:hasPlaceCategory chora:station ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_dei_banchi_vecchi> a chora:NarrativePlace ;
     rdfs:label "Via dei Banchi Vecchi"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_dei_serpenti> a chora:NarrativePlace ;
     rdfs:label "Via dei Serpenti"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_del_gesu> a chora:NarrativePlace ;
     rdfs:label "Via del Gesù"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_lanza> a chora:NarrativePlace ;
     rdfs:label "Via Lanza"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00099> a chora:PlaceReference ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
@@ -32868,18 +33075,21 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/bottega_ceccherelli> a chora:NarrativePlace ;
     rdfs:label "Bottega Ceccherelli"@it ;
     chora:hasPlaceCategory chora:retail_business ;
-    chora:hasRealityStatus chora:Invented .
+    chora:hasRealityStatus chora:Invented ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/castello> a chora:NarrativePlace ;
     rdfs:label "Castello"@it ;
     dcterms:description "Luogo narrativo immaginato, un castello nella zona tra Pavona e Frattocchie"@it ;
     chora:hasPlaceCategory chora:castle ;
-    chora:hasRealityStatus chora:Invented .
+    chora:hasRealityStatus chora:Invented ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/ciampino> a chora:NarrativePlace ;
     rdfs:label "Ciampino"@it ;
     chora:hasPlaceCategory chora:municipality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/direttissima_roma_napoli> a chora:NarrativePlace ;
     rdfs:label "Direttissima Roma-Napoli"@it ;
@@ -32892,7 +33102,8 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     dcterms:description "Tabernacolo a due pioventi che interrompe il muriccio dell'orto o vigna di fronte al laboratorio della Zamira, sul lato opposto della via Appia (QP 216, 219). Luogo importato: Manzotti (2010, p. 246) ne trova traccia nella piantina dei Castelli del Touring."@it ;
     skos:altLabel "tabernacolo appia"@it ;
     chora:hasPlaceCategory chora:shrine ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/ferrovia_roma_velletri> a chora:NarrativePlace ;
     rdfs:label "Ferrovia Roma-Velletri"@it ;
@@ -32902,40 +33113,47 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_chigi> a chora:NarrativePlace ;
     rdfs:label "Palazzo Chigi"@it ;
     chora:hasPlaceCategory chora:historical_building ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_san_giovanni> a chora:NarrativePlace ;
     rdfs:label "Piazza San Giovanni"@it ;
     chora:hasPlaceCategory chora:square ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/ponte_di_santa_fumia> a chora:NarrativePlace ;
     rdfs:label "Ponte di Santa Fumia"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Transformed .
+    chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/regina_coeli> a chora:NarrativePlace ;
     rdfs:label "Regina Coeli"@it ;
     chora:hasPlaceCategory chora:prison ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/san_giovanni> a chora:NarrativePlace ;
     rdfs:label "San Giovanni"@it ;
     dcterms:description "Galilei' = Alessandro Galilei, architetto della facciata di San Giovanni in Laterano. Perifrasi per metonimia dell'autore."@it ;
     skos:altLabel "Galilei"@it ;
     chora:hasPlaceCategory chora:police_station ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_veneto> a chora:NarrativePlace ;
     rdfs:label "Via Veneto"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/zagarolo> a chora:NarrativePlace ;
     rdfs:label "Zagarolo"@it ;
     dcterms:description "Comune italiano in provincia di Roma"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00098> a chora:PlaceReference ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
@@ -33107,17 +33325,20 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/sacro_cuore> a chora:NarrativePlace ;
     rdfs:label "Sacro Cuore"@it ;
     chora:hasPlaceCategory chora:basilica ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/santa_maria_maggiore> a chora:NarrativePlace ;
     rdfs:label "Santa Maria Maggiore"@it ;
     chora:hasPlaceCategory chora:basilica ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/santa_palomba> a chora:NarrativePlace ;
     rdfs:label "Santa Palomba"@it ;
     chora:hasPlaceCategory chora:station ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_ardeatina> a chora:NarrativePlace ;
     rdfs:label "Via Ardeatina"@it ;
@@ -33127,17 +33348,20 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/via_della_falcognana> a chora:NarrativePlace ;
     rdfs:label "Via della Falcognana"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_panisperna> a chora:NarrativePlace ;
     rdfs:label "Via Panisperna"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/viminale> a chora:NarrativePlace ;
     rdfs:label "Viminale"@it ;
     chora:hasPlaceCategory chora:district ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00354> a chora:PlaceReference ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
@@ -33265,22 +33489,26 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     rdfs:label "Cantinone d'Albano"@it ;
     dcterms:description "Ristorante non identificato nel territorio di Albano Laziale"@it ;
     chora:hasPlaceCategory chora:restaurant ;
-    chora:hasRealityStatus chora:Invented .
+    chora:hasRealityStatus chora:Invented ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/policlinico> a chora:NarrativePlace ;
     rdfs:label "Policlinico"@it ;
     chora:hasPlaceCategory chora:hospital ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/santo_stefano_rotondo> a chora:NarrativePlace ;
     rdfs:label "Santo Stefano Rotondo"@it ;
     chora:hasPlaceCategory chora:basilica ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_massimo_dazeglio> a chora:NarrativePlace ;
     rdfs:label "Via Massimo d'Azeglio"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/focalizer/dottor_fumi> a chora:Character,
         chora:FocalizingAgent ;
@@ -33343,24 +33571,28 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/bivio_falcognana_casal_bruciato> a chora:NarrativePlace ;
     rdfs:label "Bivio tra Falcognana e Casal Bruciato"@it ;
     chora:hasPlaceCategory chora:road_junction ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/casa_crocchiapani> a chora:NarrativePlace ;
     rdfs:label "Casa Crocchiapani"@it ;
     dcterms:description "Abitazione immaginaria di Assunta (Tina) Crocchiapani"@it ;
     chora:hasPlaceCategory chora:farmhouse ;
     chora:hasRealityStatus chora:Invented ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/tor_di_gheppio> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/san_giovanni_in_laterano> a chora:NarrativePlace ;
     rdfs:label "San Giovanni in Laterano"@it ;
     chora:hasPlaceCategory chora:basilica ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_nicotera> a chora:NarrativePlace ;
     rdfs:label "Via Nicotera"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/route/tragitto_appia_falcognana> a chora:NarrativeRoute .
 
@@ -33451,18 +33683,21 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/pavona> a chora:NarrativePlace ;
     rdfs:label "Pavona"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/santi_quattro_coronati> a chora:NarrativePlace ;
     rdfs:label "Santi Quattro Coronati"@it ;
     chora:hasPlaceCategory chora:basilica ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/scala_b> a chora:NarrativePlace ;
     rdfs:label "Scala B"@it ;
     dcterms:description "Interno, scala B, del palazzo in via Merulana 219"@it ;
     chora:hasPlaceCategory chora:interior ;
     chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> .
 
 <https://w3id.org/gaddatlas/id/focalizer/assunta> a chora:Character,
@@ -33503,7 +33738,8 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     rdfs:label "Frattocchie"@it ;
     dcterms:description "Frazione lungo la via Appia"@it ;
     chora:hasPlaceCategory chora:frazione ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_anziate> a chora:GazetteerEntity ;
     rdfs:label "Via Anziate"@it ;
@@ -33636,7 +33872,8 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_vittorio_emanuele> a chora:NarrativePlace ;
     rdfs:label "Piazza Vittorio Emanuele"@it ;
     chora:hasPlaceCategory chora:square ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_della_falcognana> a chora:GazetteerEntity ;
     rdfs:label "Via della Falcognana"@it ;
@@ -33665,13 +33902,15 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     dcterms:description "Località dei Castelli Romani"@it ;
     rdfs:comment "Non presente in Indice dei Luoghi Isella"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/scala_a> a chora:NarrativePlace ;
     rdfs:label "Scala A"@it ;
     dcterms:description "Interno, scala A, del palazzo in via Merulana 219"@it ;
     chora:hasPlaceCategory chora:interior ;
     chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> .
 
 <https://w3id.org/gaddatlas/id/focalizer/don_lorenzo_corpi> a chora:Character,
@@ -33685,20 +33924,23 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     dcterms:description "Casale reale dell'Agro romano a sud di Roma (Casal(e) Bruciato / Abbruciato / Abbrusciato: Nibby, Dintorni di Roma, p. 569), fra le ferrovie Roma–Velletri e Roma–Napoli. Non è il quartiere omonimo del Tiburtino. Forme attestate: «Casal Bruciato» (QP 212, 237, 240, 241, 262, 274, 298), «Casale Abbrusciato» (QP 297)."@it ;
     skos:altLabel "Casale Abbrusciato"@it ;
     chora:hasPlaceCategory chora:district ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/tor_di_gheppio> a chora:NarrativePlace ;
     rdfs:label "Tor di Gheppio"@it ;
     dcterms:description "Località inventata, natali dell'Assunta Crocchiapani"@it ;
     chora:hasFuzzinessLevel 4.0 ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Invented .
+    chora:hasRealityStatus chora:Invented ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/ponte_divino_amore> a chora:NarrativePlace ;
     rdfs:label "Ponte al Divino Amore"@it ;
     dcterms:description "Il «ponte» è il cavalcavia stradale della SP 91/b sulla ferrovia Roma–Velletri, oggi linea FL4. Non attraversa un corso d’acqua e non coincide con un ponte situato accanto al santuario."@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Transformed .
+    chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/focalizer/ascanio_lanciani> a chora:Character,
         chora:FocalizingAgent ;
@@ -33824,13 +34066,15 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     skos:altLabel "antro; botteguccia; bottega"@it ;
     chora:hasPlaceCategory chora:building ;
     chora:hasRealityStatus chora:Invented ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/torraccio> a chora:NarrativePlace ;
     rdfs:label "Torraccio"@it ;
     dcterms:description "Frazione di Marino (Castelli Romani)"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_appia> a chora:NarrativePlace ;
     rdfs:label "Via Appia"@it ;
@@ -33853,12 +34097,14 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     rdfs:label "Casello al chilometro 20-25"@it ;
     dcterms:description "casello ferroviario in prossimità di Casal Bruciato"@it ;
     chora:hasPlaceCategory chora:railway_gatehouse ;
-    chora:hasRealityStatus chora:Transformed .
+    chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_merulana> a chora:NarrativePlace ;
     rdfs:label "Via Merulana"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/focalizer/maresciallo_di_pietrantonio> a chora:Character,
         chora:FocalizingAgent ;
@@ -33869,7 +34115,8 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     rdfs:label "Tenenza dei Carabinieri di Marino"@it ;
     dcterms:description "Stazione di Polizia di Marino"@it ;
     chora:hasPlaceCategory chora:building ;
-    chora:hasRealityStatus chora:Transformed .
+    chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/focalizer/agente_runzato> a chora:Character,
         chora:FocalizingAgent ;
@@ -33900,7 +34147,8 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     dcterms:description "Frazione di Marino (Castelli Romani)"@it ;
     rdfs:comment "Non presente in Indice dei Luoghi Isella"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> a chora:GazetteerEntity ;
     rdfs:label "Ferrovia Roma-Velletri"@it ;
@@ -33975,14 +34223,16 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/santo_stefano_del_cacco_celio_santo_stefano> a chora:NarrativePlace ;
     rdfs:label "Santo Stefano del Cacco, Celio-Santo Stefano"@it ;
     chora:hasPlaceCategory chora:police_station ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> a chora:NarrativePlace ;
     rdfs:label "Palazzo di via Merulana 219"@it ;
     dcterms:description "Luogo che identifica il palazzo in via Merulana 219"@it ;
     skos:altLabel "palazzo dell'oro; palazzo de li pescicani; ben nota architettura; casermone color pidocchio; sto palazzo; camere al duecentodiciannove; il duecentodiciannove"@it ;
     chora:hasPlaceCategory chora:historical_building ;
-    chora:hasRealityStatus chora:Transformed .
+    chora:hasRealityStatus chora:Transformed ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/focalizer/ines_cionini> a chora:Character,
         chora:FocalizingAgent ;
@@ -34075,6 +34325,10 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     geo1:lat 41.8919173419505 ;
     geo1:long 12.50204620435122 .
 
+<https://w3id.org/gaddatlas/id/zone/campagna_romana> a chora:PartitionZone ;
+    rdfs:label "Campagna romana"@it ;
+    skos:definition "La campagna intorno a Roma, Castelli compresi: i luoghi la cui ancora primaria dista fra 10 e 30 km dal Campidoglio."@it .
+
 <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> a chora:Chapter ;
     dcterms:title "Capitolo VIII"@it ;
     chora:chapterNumber 8 ;
@@ -34133,6 +34387,10 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:chapterNumber 1 ;
     chora:pageRange "11-54"^^xsd:string ;
     chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> .
+
+<https://w3id.org/gaddatlas/id/zone/roma_citta> a chora:PartitionZone ;
+    rdfs:label "Roma città"@it ;
+    skos:definition "La città di Roma: i luoghi la cui ancora primaria dista al più 10 km dal Campidoglio."@it .
 
 <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> a chora:LiteraryWork ;
     dcterms:bibliographicCitation "Adelphi"@it ;

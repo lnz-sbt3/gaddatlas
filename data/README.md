@@ -10,6 +10,7 @@ Le sorgenti sono:
 |---|---|
 | `source/tables/*.tsv` | l'annotazione: **sorgente canonica** (D-019), diffabile in git |
 | `source/tables/Assertions.tsv` | le letture attribuite (D-042): una riga per lettura, con autore, codificatore, fonte, adozione; facoltativo |
+| `source/tables/PartitionZones.tsv`, `PartitionMembers.tsv` | le zone delle partizioni interpretative (città / campagna, D-050) e i luoghi assegnati a ciascuna; la partizione è attribuita in `Assertions.tsv`; facoltativi |
 | `source/mapping.yaml` | etichette italiane → URI dell'ontologia |
 | `source/void_seeds.json` | 48 semi congelati dei tasselli fittizi |
 | `source/roma.geojson` | contorno amministrativo di Roma, sfondo della mappa |
@@ -68,7 +69,7 @@ Al 2026-09-06, con `make all && make audit && make shacl`:
 | Righe di `relief` | 933 — tutte risolvono a una feature |
 | Audit | 9 invarianti su 9 |
 | SHACL | conforme, nessuna violazione |
-| Query | 12/12 competency, 14/14 integrity |
+| Query | 12/12 competency, 15/15 integrity |
 
 Esclusioni verificate come volute, non come perdite:
 

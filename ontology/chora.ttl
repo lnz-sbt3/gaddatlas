@@ -1279,3 +1279,37 @@ chora:UndecidableMemory a owl:NamedIndividual, skos:Concept ;
     skos:prefLabel "Undecidable"@en ;
     skos:scopeNote "A reading that superimposes the two memories asserts both AuthorMemory and CharacterMemory."@en ;
     skos:topConceptOf chora:MemoryAttributionScheme .
+
+# =============================================================================
+# PARTIZIONI INTERPRETATIVE (D-050, work order T-37, R20)
+# Una partizione del territorio (citta'/campagna, centro/periferia) e' un'ipotesi
+# critica, attribuita con un'asserzione chora:PartitionAssertion che ha per
+# soggetto la partizione. Le zone appartengono a una sola partizione, quindi
+# l'appartenenza di un luogo a una zona vale dentro quell'ipotesi e non in
+# assoluto. Le bande di distanza del GeoJSON (urbano, periurbano, nazionale) sono
+# una misura, non una partizione.
+# =============================================================================
+
+chora:Partition a owl:Class ;
+    rdfs:comment "An interpretive partition of the territory (e.g. city / countryside), proposed by a reader. It is a hypothesis: its author, source and adoption are stated by a chora:PartitionAssertion whose subject is the partition."@en ;
+    skos:altLabel "Partizione"@it ;
+    skos:prefLabel "Partition"@en .
+
+chora:PartitionZone a owl:Class ;
+    rdfs:comment "One zone of a chora:Partition. A zone belongs to exactly one partition."@en ;
+    skos:altLabel "Zona di una partizione"@it ;
+    skos:prefLabel "Partition zone"@en .
+
+chora:hasZone a owl:ObjectProperty ;
+    rdfs:comment "Links a partition to one of its zones."@en ;
+    rdfs:domain chora:Partition ;
+    rdfs:range chora:PartitionZone ;
+    skos:altLabel "ha zona"@it ;
+    skos:prefLabel "has zone"@en .
+
+chora:inPartitionZone a owl:ObjectProperty ;
+    rdfs:comment "Assigns a narrative place to a zone of a partition. The assignment holds within the partition hypothesis that owns the zone; a place not assigned to any zone is not classified by that hypothesis."@en ;
+    rdfs:domain chora:NarrativePlace ;
+    rdfs:range chora:PartitionZone ;
+    skos:altLabel "in zona"@it ;
+    skos:prefLabel "in partition zone"@en .
