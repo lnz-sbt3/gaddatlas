@@ -691,7 +691,7 @@ chora:witnessType a owl:ObjectProperty ;
     chora:sourceWork "Capitolo 4"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/assertion/R-0001> a chora:Assertion ;
-    rdfs:comment "L'ultimo nodo (ponte del Divino Amore) è un termine di paragone («simile a quello ch'era due chilometri più a nord, presso il ponte»), non un punto attraversato: da rivedere."@it ;
+    rdfs:comment "L'ultimo nodo (ponte del Divino Amore) è un termine di paragone («simile a quello ch'era due chilometri più a nord, presso il ponte»): lasciato invariato per decisione di LS (9/10/2026, D-064)."@it ;
     prov:generatedAtTime "2026-10-09"^^xsd:date ;
     prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/R-0001-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/attribution/R-0001-readingauthor-lorenzo_sabatino> ;
@@ -958,7 +958,7 @@ chora:witnessType a owl:ObjectProperty ;
     chora:sourceWork "QP"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/assertion/R-0018> a chora:Assertion ;
-    rdfs:comment "La partenza dalla Tenenza è inferita dal rapporto. L'ordine dei nodi è invertito (1 Santo Stefano, 2 Tenenza): da correggere."@it ;
+    rdfs:comment "Nodi nell'ordine di occorrenza nel testo (decisione di LS, 9/10/2026, D-064): Santo Stefano 1, Tenenza 2. La partenza dalla Tenenza è inferita dal rapporto."@it ;
     prov:generatedAtTime "2026-10-09"^^xsd:date ;
     prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/R-0018-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/attribution/R-0018-readingauthor-lorenzo_sabatino> ;
@@ -974,7 +974,7 @@ chora:witnessType a owl:ObjectProperty ;
     chora:sourceWork "QP"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/assertion/R-0019> a chora:Assertion ;
-    rdfs:comment "Il focalizzatore registrato è Liliana, ma chi si sposta è il giudice istruttore; se il percorso è quello del corpo, è un oggetto (DM-03, escluso)."@it ;
+    rdfs:comment "Focalizzatrice del tragitto: Liliana, come nel database (decisione di LS, 9/10/2026, D-064)."@it ;
     prov:generatedAtTime "2026-10-09"^^xsd:date ;
     prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/R-0019-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/attribution/R-0019-readingauthor-lorenzo_sabatino> ;

@@ -1271,6 +1271,22 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-064 — Percorsi dopo REVIEW_2: QP 297, 153, 93 (9 ottobre 2026)
+
+- Requisito/i: R18 · Ipotesi: — · Data check: — (REVIEW_2 § 12)
+- Stato precedente: le note delle asserzioni R-0001, R-0018 e R-0019 segnalavano tre anomalie. QP 297: l'ultimo nodo è un termine di paragone. QP 153: i nodi sarebbero invertiti rispetto alla direzione del viaggio. QP 93: il focalizzatore Liliana sarebbe sbagliato.
+- Decisione (di Lorenzo, 9/10/2026):
+  - **R-0001 (QP 297):** invariato;
+  - **R-0018 (QP 153):** nodi nell'ordine di occorrenza nel testo. Nei dati lo sono già: Santo Stefano (1) e Tenenza (2), come nel passo («arrivò a Santo Stefano […] latore di un rapporto […] della Tenenza»). L'«inversione» di REVIEW_2 confrontava l'ordine con la direzione del viaggio, non con il testo;
+  - **R-0019 (QP 93):** focalizzatrice del tragitto Liliana, come nel database. L'occorrenza del Mappamonno (QP 177, `interp_00508`) ha già il focalizzatore `mussolini`.
+  Nessun dato cambia; si aggiornano solo le note delle tre asserzioni. I tipi proposti restano «bozza».
+- Motivazione (fonte, pagina): REVIEW_2 § 12; QP 93, 153, 177, 297.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `data/source/tables/Assertions.tsv` (note di R-0001, R-0018, R-0019); `Assertions.xlsx`.
+- Effetto su KG (triple prima/dopo, SHACL): invariato (TBox 1.320, ABox 27.857, full 29.747; cambiano tre letterali). SHACL conforme, 51 avvertenze.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`
