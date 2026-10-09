@@ -1087,6 +1087,27 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-054 — Occorrenze di altri testimoni: stesso luogo, nessuno statuto proprio (9 ottobre 2026)
+
+- Requisito/i: R01 · Ipotesi: — · Data check: DM-04 (work order T-42)
+- Stato precedente: con D-053 esistono quattro occorrenze fuori da QP, escluse dalle viste, ma nessun controllo ne fissava lo statuto.
+- Decisione (di Lorenzo, 9/10/2026: le occorrenze in testimoni diversi da QP puntano allo stesso luogo, con il proprio testimone; lo statuto è del luogo, non del testimone):
+  - **stesso luogo:** nel grafo una PlaceReference non porta il proprio luogo, perché il legame occorrenza → luogo passa per l'interpretazione (scelta di modello v4.1.1). Un'occorrenza di confronto è legata al luogo dall'asserzione di variante che la contiene, il cui soggetto è il luogo (D-053). Sulle sorgenti, l'audit verifica che il luogo dichiarato in `References.tsv` coincida con il soggetto della variante, per tutte le occorrenze della variante, comprese quelle di QP;
+  - **nessuna interpretazione propria:** un'occorrenza di confronto non ha SpatialInterpretation. Statuto, ruolo e determinazione restano del luogo e delle occorrenze di QP;
+  - **lo statuto è del luogo:** un'asserzione di statuto ha per soggetto un `NarrativePlace`, mai un'occorrenza o un testimone (shape 16);
+  - **fuori dalle viste:** già applicato in D-053 (GeoJSON, brani, invarianti dell'audit).
+- Alternative scartate: una proprietà diretta occorrenza → luogo solo per le occorrenze di confronto, che avrebbe introdotto due regimi per lo stesso legame; un'interpretazione per ogni occorrenza di confronto, che le avrebbe portate nel rilievo e nei conteggi.
+- Controlli:
+  - **IQ17**: un'occorrenza di un altro testimone che non sta in alcuna variante, o che è interpretata. Atteso 0; provata togliendo una variante e aggiungendo un'interpretazione (2 righe);
+  - shape 16 (`StatusSubjectShape`);
+  - due invarianti nuovi in `audit_alignment.py`: luogo dell'occorrenza = soggetto della variante; ogni occorrenza di un altro testimone sta in una variante.
+- Motivazione (fonte, pagina): Cap. 4, § 4.2 (r. 43: le occorrenze dei corpora di confronto «vanno registrate con questo statuto, non come occorrenze del romanzo pubblicato»).
+- Fase in cui è maturata: prototipazione
+- File toccati (manifest): `ontology/queries/integrity.rq` (IQ17); `ontology/shapes/chora-shapes.ttl` r. 565–580 (shape 16); `tools/audit_alignment.py` r. 200–224; conteggio delle integrity query in `CLAUDE.md`, `Makefile`, `README.md`, `data/README.md`.
+- Effetto su KG (triple prima/dopo, SHACL): invariato (TBox 1.152, ABox 26.425, full 28.147). SHACL conforme, 52 avvertenze; IQ1–IQ17 a 0.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

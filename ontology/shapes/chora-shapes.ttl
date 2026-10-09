@@ -562,3 +562,19 @@ ga:VariantAssertionShape
           ) ]
     ) ;
     sh:message "Una variante riguarda un luogo e collega almeno due occorrenze (PlaceReference)." .
+
+
+# =============================================================================
+# SHAPE 16 — Lo statuto e' del luogo (D-054, work order T-42)
+# Un'asserzione di statuto ha per soggetto un luogo narrativo, mai
+# un'occorrenza o un testimone.
+# =============================================================================
+
+ga:StatusSubjectShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion ;
+    sh:or (
+        [ sh:not [ sh:path ga:assertionType ; sh:hasValue ga:StatusAssertion ] ]
+        [ sh:path ga:aboutSubject ; sh:class ga:NarrativePlace ]
+    ) ;
+    sh:message "Lo statuto di realta' si asserisce di un luogo narrativo, non di un'occorrenza o di un testimone." .

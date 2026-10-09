@@ -197,6 +197,32 @@ def main() -> int:
         "\n".join(mismatch[:20]),
     )
 
+    # occorrenze di altri testimoni (D-054): il luogo dichiarato nel foglio
+    # References e' quello della variante che le collega a QP. Nel grafo la
+    # PlaceReference non porta il luogo, quindi il controllo sta sulle sorgenti.
+    witness_ref = {r["Reference_ID"]: r.get("Witness_ID", "") for r in read_tsv("References.tsv")}
+    reference_ids = {w["Witness_ID"] for w in read_tsv("Witnesses.tsv")
+                     if w.get("Reference", "").strip().lower() in ("si", "sì")}
+    bad_variant = []
+    for row in read_tsv("Assertions.tsv"):
+        if row["Assertion_Type"].strip().lower() != "variant":
+            continue
+        place = row["Subject"].split("/", 1)[-1]
+        for v in row["Value"].split("|"):
+            rid = v.strip().split("/", 1)[-1]
+            if ref_place.get(rid) != place:
+                bad_variant.append(f'{row["Assertion_ID"]}: {rid} -> {ref_place.get(rid)!r}, soggetto {place!r}')
+    a.check(
+        not bad_variant,
+        "ogni occorrenza di una variante ha il luogo del soggetto della variante (sorgenti TSV)",
+        "\n".join(bad_variant[:20]),
+    )
+    stray = sorted(rid for rid, w in witness_ref.items() if w and w not in reference_ids
+                   and not any(rid in row["Value"] for row in read_tsv("Assertions.tsv")
+                               if row["Assertion_Type"].strip().lower() == "variant"))
+    a.check(not stray, "ogni occorrenza di un altro testimone sta in una variante (sorgenti TSV)",
+            "\n".join(stray[:20]))
+
     # copie pubblicate per l'interfaccia (T-83): byte per byte uguali ai
     # derivati, altrimenti l'app mostra dati diversi da quelli del grafo
     published = [GEOJSON, *sorted(PASSAGES.parent.glob("*.json"))]

@@ -193,3 +193,22 @@ SELECT ?nuova ?vecchia WHERE {
   FILTER (!BOUND(?s2) || ?s1 != ?s2 || ?t1 != ?t2 || COALESCE(?adottata, false))
 }
 ORDER BY ?nuova
+
+# ==== IQ17 — Occorrenza di un altro testimone senza variante, o interpretata (atteso: 0) ====
+# Un'occorrenza fuori dal testimone di riferimento entra solo come confronto
+# (D-054): sta in un'asserzione di variante che ha per soggetto il luogo, e non
+# ha interpretazioni proprie, perche' statuto e ruolo sono del luogo, non del
+# testimone.
+PREFIX ga: <https://w3id.org/chora#>
+SELECT ?occorrenza ?problema WHERE {
+  ?occorrenza ga:appearsInWitness ?w .
+  FILTER NOT EXISTS { ?opera ga:referenceWitness ?w }
+  {
+    FILTER NOT EXISTS { ?a ga:assertionType ga:VariantAssertion ; ga:assertsValue ?occorrenza }
+    BIND("senza variante" AS ?problema)
+  } UNION {
+    ?si ga:interpretsReference ?occorrenza .
+    BIND("interpretata" AS ?problema)
+  }
+}
+ORDER BY ?occorrenza
