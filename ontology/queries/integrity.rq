@@ -114,7 +114,7 @@ SELECT ?a ?b WHERE {
 # un errore (interpretazione agganciata al riferimento sbagliato) o una
 # referenza plurale voluta («da Faiti o da Cengio», R04, T-47): va letta caso
 # per caso. Il controllo bloccante sta in tools/audit_alignment.py, sulle
-# sorgenti: nel grafo la PlaceReference non porta il proprio luogo (D-022).
+# sorgenti: nel grafo la PlaceReference non porta il proprio luogo (D-026).
 PREFIX ga: <https://w3id.org/chora#>
 SELECT ?ref (COUNT(DISTINCT ?place) AS ?luoghi) WHERE {
   ?interp ga:interpretsReference ?ref ;

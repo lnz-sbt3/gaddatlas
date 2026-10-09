@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-tsv_to_xlsx.py — Rigenera gli XLSX di data/source/xlsx/ dai TSV canonici (D-015).
+tsv_to_xlsx.py — Rigenera gli XLSX di data/source/xlsx/ dai TSV canonici (D-019).
 
 I TSV in data/source/tables/ sono la sorgente: gli XLSX sono un derivato, una
 superficie di editing per chi lavora in Excel. Chi modifica un XLSX deve

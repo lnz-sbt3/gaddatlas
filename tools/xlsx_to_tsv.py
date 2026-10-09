@@ -2,7 +2,7 @@
 """
 xlsx_to_tsv.py — Conversione sicura Excel -> TSV per la pipeline GaddAtlas.
 
-ATTENZIONE (D-015): i TSV in data/source/tables/ sono la sorgente canonica e
+ATTENZIONE (D-019): i TSV in data/source/tables/ sono la sorgente canonica e
 gli XLSX ne sono un derivato (make xlsx). Questo script serve solo a
 riportare nei TSV una modifica fatta in Excel, una tantum: SOVRASCRIVE il TSV
 omonimo. Controlla il diff del TSV prima di committare.

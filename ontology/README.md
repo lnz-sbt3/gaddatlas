@@ -68,7 +68,7 @@ l'attestazione, e più interpretazioni possono insistere sulla stessa occorrenza
 ## File
 
 ```
-chora.ttl                        la TBox (sorgente, D-016; da Protégé si salva qui)
+chora.ttl                        la TBox (sorgente, D-020; da Protégé si salva qui)
 chora.rdf                        TBox in RDF/XML per Protégé (derivata dall'ETL)
 shapes/chora-shapes.ttl          vincoli SHACL sulla struttura
 shapes/chora-placecategories.ttl vocabolario SKOS delle categorie di luogo

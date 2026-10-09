@@ -34,7 +34,7 @@ FICLIT, XXXIX ciclo.
 ```
 gaddatlas/
 ├── ontology/                    ← CHORA: lo schema, riusabile oltre Gadda
-│   ├── chora.ttl                  TBox (SORGENTE, D-016)
+│   ├── chora.ttl                  TBox (SORGENTE, D-020)
 │   ├── chora.rdf                  TBox in RDF/XML per Protégé (derivata)
 │   ├── shapes/                    vincoli SHACL + vocabolario SKOS
 │   ├── queries/                   12 competency + 11 integrity query
@@ -42,7 +42,7 @@ gaddatlas/
 │   ├── CHANGELOG.md  README.md
 ├── data/                        ← GaddAtlas: il caso di studio
 │   ├── source/                    ← SORGENTE
-│   │   ├── tables/                  annotazione in TSV (SORGENTE, D-015)
+│   │   ├── tables/                  annotazione in TSV (SORGENTE, D-019)
 │   │   ├── xlsx/                    gli stessi dati per Excel (derivati, make xlsx)
 │   │   └── mapping.yaml             etichette italiane → URI dell'ontologia
 │   ├── gaddatlas.ttl              ABox (derivata)
@@ -59,7 +59,7 @@ gaddatlas/
 ### Il principio architetturale
 
 Le sorgenti modificabili a mano sono **due**: le tabelle di annotazione in
-`data/source/tables/*.tsv` (D-015) e la TBox in `ontology/chora.ttl` (D-016).
+`data/source/tables/*.tsv` (D-019) e la TBox in `ontology/chora.ttl` (D-020).
 Tutto il resto è derivato: gli XLSX con `make xlsx`, il resto con `make all`.
 
 ```

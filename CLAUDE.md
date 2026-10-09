@@ -20,8 +20,8 @@ Due artefatti distinti nello stesso repository:
 
 ## Le decisioni sono già prese
 
-`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-034; quelle dell'allineamento al
-Capitolo 4 partono da D-015. Nel file sono in ordine cronologico, non numerico. **Leggile
+`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-038; quelle dell'allineamento al
+Capitolo 4 partono da D-019. Nel file sono in ordine cronologico, non numerico. **Leggile
 prima di proporre alternative architetturali.** Se una scelta ti sembra
 sbagliata, dillo citando la decisione — non aggirarla in silenzio.
 
@@ -31,7 +31,7 @@ sbagliata, dillo citando la decisione — non aggirarla in silenzio.
 Transformed 30 · Invented 14 · Imagined 5), 266 entità del gazetteer, 960
 interpretazioni. Ogni task che cambia questi valori ne dà conto nella sua voce di
 `DECISIONS.md`; un conteggio diverso senza una voce che lo spieghi vuol dire che i
-derivati non sono allineati: `make all`. Il build è deterministico (D-018): due
+derivati non sono allineati: `make all`. Il build è deterministico (D-022): due
 `make all` consecutivi non devono produrre alcun diff.
 
 Le tre non negoziabili:
@@ -39,12 +39,12 @@ Le tre non negoziabili:
 1. **Niente framework reattivi** (D-001). Vite + moduli ES vanilla + `htl`. Il
    nucleo è un `<canvas>` con un loop `requestAnimationFrame` che muta array in
    place a 60fps: React combatte quel modello senza dare nulla in cambio.
-2. **Non modificare i file derivati** (D-002, aggiornata da D-015 e D-016). Si
-   toccano solo le sorgenti canoniche: `data/source/tables/*.tsv` (D-015),
+2. **Non modificare i file derivati** (D-002, aggiornata da D-019 e D-020). Si
+   toccano solo le sorgenti canoniche: `data/source/tables/*.tsv` (D-019),
    `data/source/mapping.yaml`, `data/source/void_seeds.json` e
-   `ontology/chora.ttl` (D-016). Sono **derivati**: gli XLSX in
+   `ontology/chora.ttl` (D-020). Sono **derivati**: gli XLSX in
    `data/source/xlsx/` (`make xlsx`, per chi lavora in Excel), `ontology/chora.rdf`
-   (RDF/XML per Protégé) e `ontology/chora.jsonld` (D-029), la documentazione in
+   (RDF/XML per Protégé) e `ontology/chora.jsonld` (D-033), la documentazione in
    `ontology/docs/` (`make docs`), tutto ciò che sta in `data/dist/` (`make all`) e
    `app/public/data/` (`make publish-data`). Una modifica a mano lì sparisce al
    build successivo. Se Lorenzo lavora in Protégé, salva su `chora.ttl`.
@@ -92,7 +92,7 @@ aggiornato.
    dopo: Imported 260, Transformed 29, Invented 15, Imagined 5. Le riassegnazioni
    critiche successive (palazzo 219, palazzo Simonetti, edicola ecc.) seguono
    invece la regola generale.
-5. Ogni decisione applicata va in `docs/DECISIONS.md` (da **D-015** in avanti), con
+5. Ogni decisione applicata va in `docs/DECISIONS.md` (da **D-019** in avanti), con
    requisito/ipotesi/data check di riferimento, stato precedente, motivazione con
    fonte e pagina, e la fase in cui è maturata (analisi del testo, prototipazione,
    revisione critica). Aggiorna lo stato della voce in `DATA_CHECKS_GaddAtlas.md`.
@@ -142,7 +142,7 @@ aggiornato.
   (`Above` o `AdjacentTo`, da scegliere sul testo di QP 216). Si fa dopo T-04 (T-03);
 - Casal Bruciato è il casale reale dell'Agro romano (non il quartiere del
   Tiburtino, eliminato): Imported, ancorato a `gaz_casale_abbruciato` nella
-  posizione TCI adottata; la posizione IGM è l'alternativa (D-033, T-15).
+  posizione TCI adottata; la posizione IGM è l'alternativa (D-037, T-15).
 
 ## Comandi
 
@@ -260,6 +260,7 @@ un file unico, contro D-004. È in `.gitignore`.
   canvas le legge da lì via `getComputedStyle`: un colore, un posto solo.
   I valori sono in `s4Config` del notebook — vanno estratti, non riscritti.
 - Niente dipendenze oltre `d3` e `htl` senza una voce in `DECISIONS.md`.
+- Prima di creare una voce D-0nn, aggiorna da `origin/main` e prendi il primo numero libero.
 - Un artefatto pubblicato non carica nulla da CDN esterni.
 
 ## Cosa registrare

@@ -6,7 +6,7 @@
 
 ## 0. Come usare questo file
 
-Questo documento censisce tutto ciò che va verificato, corretto o aggiunto nel progetto (sorgenti canoniche: `data/source/tables/*.tsv` (D-015), `data/source/mapping.yaml`, `data/source/void_seeds.json`, TBox `ontology/chora.ttl` (D-016); gli XLSX e `chora.rdf` diventano derivati; tutto ciò che sta in `data/dist/` si rigenera con `make all` e non si modifica a mano (D-002); SHACL, query, codice dell'interfaccia in `app/src/`, documentazione) perché il progetto dica le stesse cose del Capitolo 4 della tesi. Il riferimento sono le ipotesi H1–H8, i requisiti R01–R22 e le proposizioni P1–P8.
+Questo documento censisce tutto ciò che va verificato, corretto o aggiunto nel progetto (sorgenti canoniche: `data/source/tables/*.tsv` (D-019), `data/source/mapping.yaml`, `data/source/void_seeds.json`, TBox `ontology/chora.ttl` (D-020); gli XLSX e `chora.rdf` diventano derivati; tutto ciò che sta in `data/dist/` si rigenera con `make all` e non si modifica a mano (D-002); SHACL, query, codice dell'interfaccia in `app/src/`, documentazione) perché il progetto dica le stesse cose del Capitolo 4 della tesi. Il riferimento sono le ipotesi H1–H8, i requisiti R01–R22 e le proposizioni P1–P8.
 
 **Regole per Claude Code (vincolanti)**
 
@@ -14,7 +14,7 @@ Questo documento censisce tutto ciò che va verificato, corretto o aggiunto nel 
 2. **Disciplina delle patch.** Ogni modifica riporta un manifest: file modificati con intervalli di righe. Niente refactoring non richiesti e niente codice incollato nelle risposte.
 3. **Niente sostituzioni globali cieche sui valori semantici** (statuti, identificazioni, letture). Ogni riassegnazione si fa caso per caso e con una motivazione (R07). **Unica eccezione decisa da Lorenzo:** la permutazione Invented ↔ Imagined (T-04, DM-01), che è una correzione di nome, non una riassegnazione.
 4. **Dopo ogni task sui dati:** `make all && make audit && make shacl` (e `make queries` quando cambiano le query). Si riportano conteggio delle triple e violazioni prima e dopo.
-5. **Ogni decisione di modello o di dati si registra in `docs/DECISIONS.md`** (da D-015, dopo le D-001…D-014 esistenti), la base dell'Appendice J della tesi. Il formato è nella §9. Lo stato della voce corrispondente si aggiorna in `docs/thesis/DATA_CHECKS_GaddAtlas.md`.
+5. **Ogni decisione di modello o di dati si registra in `docs/DECISIONS.md`** (da D-019, dopo le D-001…D-014 esistenti), la base dell'Appendice J della tesi. Il formato è nella §9. Lo stato della voce corrispondente si aggiorna in `docs/thesis/DATA_CHECKS_GaddAtlas.md`.
 6. **Gli stati dei task sono tre.**
    - `DECISO`: si applica.
    - `DA VERIFICARE`: va controllato su una fonte o sui dati, poi riportato a Lorenzo.
@@ -104,21 +104,21 @@ Legenda dei componenti:
 
 ## 2bis. Task infrastrutturali emersi dall'audit di fase 0 (da eseguire per primi)
 
-### T-80 · Sorgente dati: TSV canonici (D-015) — `DECISO`
+### T-80 · Sorgente dati: TSV canonici (D-019) — `DECISO`
 
 - **Stato (AUDIT_0, premessa 2):** l'ETL legge `data/source/tables/*.tsv` (Makefile:25); `tools/xlsx_to_tsv.py` è manuale e fuori dal Makefile; XLSX e TSV oggi coincidono.
-- **Azione:** i TSV sono la sorgente canonica. Gli XLSX si rigenerano dai TSV con un nuovo target (es. `make xlsx`, script `tools/tsv_to_xlsx.py`), per chi vuole lavorare in Excel. Togliere `xlsx_to_tsv.py` dal flusso documentato (o tenerlo solo come importazione una tantum, con avviso). Aggiornare `CLAUDE.md`, `README.md` e la voce D-015, che aggiorna D-002.
+- **Azione:** i TSV sono la sorgente canonica. Gli XLSX si rigenerano dai TSV con un nuovo target (es. `make xlsx`, script `tools/tsv_to_xlsx.py`), per chi vuole lavorare in Excel. Togliere `xlsx_to_tsv.py` dal flusso documentato (o tenerlo solo come importazione una tantum, con avviso). Aggiornare `CLAUDE.md`, `README.md` e la voce D-019, che aggiorna D-002.
 
-### T-81 · Sorgente della TBox: `chora.ttl` canonica (D-016) — `DECISO`
+### T-81 · Sorgente della TBox: `chora.ttl` canonica (D-020) — `DECISO`
 
 - **Stato (premessa 1):** oggi la sorgente è `ontology/chora.rdf` (Protégé) e `chora.ttl` è derivata dall'ETL (Makefile:21-22, 27-29).
-- **Azione:** invertire la catena. `chora.ttl` diventa la sorgente; `chora.rdf` (RDF/XML, per Protégé) si genera da `chora.ttl` con rdflib. Prima di invertire: verificare che i due file siano isomorfi (`rdflib.compare.isomorphic`) e riportarlo. Dopo: `make all`, SHACL, `make docs`. Voce D-016, che aggiorna D-002.
+- **Azione:** invertire la catena. `chora.ttl` diventa la sorgente; `chora.rdf` (RDF/XML, per Protégé) si genera da `chora.ttl` con rdflib. Prima di invertire: verificare che i due file siano isomorfi (`rdflib.compare.isomorphic`) e riportarlo. Dopo: `make all`, SHACL, `make docs`. Voce D-020, che aggiorna D-002.
 - **Nota:** da qui in poi ogni patch alla TBox va su `chora.ttl`. Protégé può aprire e salvare Turtle; se Lorenzo modifica in Protégé, salva su `chora.ttl`.
 
 ### T-82 · Bug `owl:sameAs` nell'ETL (regressione di D-009) — `DECISO`
 
 - **Stato (premessa 7):** `tools/etl.py:671-674` costruisce `URIRef(same_as)` su un id nudo. In `data/gaddatlas.ttl` gli IRI sono relativi; in `data/dist/gaddatlas-full.ttl` contengono il percorso `file:///C:/Users/lorenzo.sabatino3/…`. La correzione di D-009 era stata applicata a un derivato (`tools/migrate_namespace.py`), non alla causa.
-- **Azione:** risolvere l'id nel namespace `gazetteer/` (IRI assoluti), senza cambiare per ora il numero delle coppie (3). La sostituzione con identificazioni attribuite resta T-31. Aggiungere un controllo (IQ o `audit_alignment.py`) che fallisca se un IRI del grafo non comincia con `https://`. Voce D-017, che aggiorna D-009 e D-011. **Chiude:** DC-17 (e DC-10).
+- **Azione:** risolvere l'id nel namespace `gazetteer/` (IRI assoluti), senza cambiare per ora il numero delle coppie (3). La sostituzione con identificazioni attribuite resta T-31. Aggiungere un controllo (IQ o `audit_alignment.py`) che fallisca se un IRI del grafo non comincia con `https://`. Voce D-021, che aggiorna D-009 e D-011. **Chiude:** DC-17 (e DC-10).
 
 ### T-83 · Sincronizzazione di `app/public/data/` — `DECISO`
 
@@ -160,7 +160,7 @@ Legenda dei componenti:
 
 - **Stato (AUDIT_0):** `NarrativePlaces.tsv:171`, Transformed, descrizione prudente. Unico riferimento: `ref_00403` («A 169», cap. VI), il cui estratto contiene davvero «dalle Robine Vecchie». Due interpretazioni (Santarella) ancorate a `gaz_frattocchie` e `gaz_due_santi` con relazione `near` e `confidence 0.5`: un doppio ancoraggio che il modello legge come referenza multipla.
 - **Azione:**
-  - **Verificato da Lorenzo (8/10/2026, D-031):** Robine compare una sola volta, a QP 169; i rinvii a «QP 161» erano errati e sono stati corretti.
+  - **Verificato da Lorenzo (8/10/2026, D-035):** Robine compare una sola volta, a QP 169; i rinvii a «QP 161» erano errati e sono stati corretti.
   - Statuto adottato invariato (Transformed); letture di Terzoli (2015, p. 491) in fase 3: (a) refuso per «Robinie/Rovine vecchie»; (b) «ironico abbassamento» delle Rovine della zona. Pinotti conserva la lezione.
   - Ancoraggio da rimodellare come relazione «tra» Frattocchie e Due Santi (T-47, T-53), non come referenza multipla.
 
@@ -571,20 +571,20 @@ Pagine «metodo», legende e tooltip devono usare la terminologia del Cap. 4: st
 **Aperte:**
 
 - [ ] Modello delle asserzioni: n-ario + HiCO / RDF-star / named graph (T-30)
-- [x] Glifi degli statuti: seguono il nome (D-030)
-- [x] I 5 luoghi divenuti Imagined: nessuna riassegnazione (D-031)
+- [x] Glifi degli statuti: seguono il nome (D-034)
+- [x] I 5 luoghi divenuti Imagined: nessuna riassegnazione (D-035)
 - [ ] Conflitto cromatico ruolo / densità (T-86)
-- [x] Palazzo 219: Transformed (D-031)
-- [x] Palazzo Simonetti: Transformed, ancorato a via Lanza (D-031, D-032)
+- [x] Palazzo 219: Transformed (D-035)
+- [x] Palazzo Simonetti: Transformed, ancorato a via Lanza (D-035, D-036)
 - [ ] Castello: lettura adottata (T-13)
-- [x] Robine Vecchie: una sola occorrenza, QP 169 (D-031)
+- [x] Robine Vecchie: una sola occorrenza, QP 169 (D-035)
 - [ ] `confidence` / `hasFuzzinessLevel`: rimuovere o declassare (T-34)
 - [ ] Le 801 interpretazioni senza annotatore sono tutte di LS? (T-32)
-- [x] Temporalità: esclusa (D-031)
+- [x] Temporalità: esclusa (D-035)
 - [ ] Casi esempio del Palazzo degli ori (T-41)
 - [ ] Canale visivo della SpatialDetermination (T-61)
-- [x] Resa dei percorsi non compiuti: esclusa (D-031)
-- [x] Soglia di lunghezza degli estratti: invariata (D-030)
+- [x] Resa dei percorsi non compiuti: esclusa (D-035)
+- [x] Soglia di lunghezza degli estratti: invariata (D-034)
 
 ---
 
@@ -593,7 +593,7 @@ Pagine «metodo», legende e tooltip devono usare la terminologia del Cap. 4: st
 | Fase | Contenuto | Uscita |
 |---|---|---|
 | 0 | Audit in sola lettura (fatto: `AUDIT_0.md`) | — |
-| 1 | **Infrastruttura e correzioni decise**, in quest'ordine: T-81 (TBox canonica), T-80 (TSV canonici), T-82 (bug `sameAs`), T-83 (sincronizzazione `app/public/data/`), T-01 (Frattocchie), DC-05 (metadati di «Letteratura», T-40), T-84 e T-85 (incoerenze e pulizia), T-15 (coordinate di Casal Bruciato), T-04 (permutazione), T-03 (edicola). T-02 dopo la verifica sul volume | KG rigenerato, SHACL ok, voci D-015 e seguenti |
+| 1 | **Infrastruttura e correzioni decise**, in quest'ordine: T-81 (TBox canonica), T-80 (TSV canonici), T-82 (bug `sameAs`), T-83 (sincronizzazione `app/public/data/`), T-01 (Frattocchie), DC-05 (metadati di «Letteratura», T-40), T-84 e T-85 (incoerenze e pulizia), T-15 (coordinate di Casal Bruciato), T-04 (permutazione), T-03 (edicola). T-02 dopo la verifica sul volume | KG rigenerato, SHACL ok, voci D-019 e seguenti |
 | 2 | Estensioni del modello: T-30…T-38, T-40…T-45, T-47, T-48, T-53, T-54 | TBox v1.1, shapes, ETL/YAML aggiornati |
 | 3 | Popolamento delle asserzioni attribuite (§3 e T-16) dal foglio delle asserzioni validato da Lorenzo | KG con letture concorrenti |
 | 4 | Query R01–R22 e P1–P8 (T-71, T-72), documentazione (T-70, T-73) | Report di conformità |

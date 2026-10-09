@@ -673,7 +673,7 @@ class GaddaETL:
                 # sameAs: nei dati la colonna contiene id di altre
                 # GazetteerEntity (es. gaz_castello), non URI esterni. Un id
                 # nudo passato a URIRef diventava un IRI relativo, risolto poi
-                # contro il percorso del file (file:///...): D-017. Gli id si
+                # contro il percorso del file (file:///...): D-021. Gli id si
                 # risolvono nel namespace del gazetteer; un URI con schema
                 # http(s) resta com'e'.
                 same_as = row.get('sameAs')
@@ -1241,7 +1241,7 @@ class _SortedGraph(Graph):
     Lo store in memoria di rdflib le itera in un ordine che dipende dall'hash
     randomizzato di Python, e il serializzatore RDF/XML (a differenza di
     quello Turtle) non riordina nulla: senza questo ordine chora.rdf cambiava
-    a ogni build (D-018).
+    a ogni build (D-022).
     """
 
     def triples(self, triple):
@@ -1249,7 +1249,7 @@ class _SortedGraph(Graph):
 
 
 def stable_json(text: str) -> str:
-    """JSON-LD con ordine stabile (D-018, D-028).
+    """JSON-LD con ordine stabile (D-022, D-032).
 
     Il serializzatore JSON-LD di rdflib ordina nodi e valori in modo che
     dipende dall'hash: si riordinano le chiavi e gli array, che in JSON-LD
@@ -1272,7 +1272,7 @@ def canonical(graph: Graph) -> Graph:
 
     rdflib assegna ai BNode id casuali e il serializzatore Turtle li ordina
     per id: senza questo passo lo stesso grafo esce in serializzazioni
-    diverse a ogni build (D-018). Il grafo restituito e' isomorfo, conserva
+    diverse a ogni build (D-022). Il grafo restituito e' isomorfo, conserva
     i prefissi e itera le triple in ordine (_SortedGraph).
     """
     out = _SortedGraph()
@@ -1310,7 +1310,7 @@ def main():
     parser.add_argument(
         '--ontology-source',
         default='ontology/chora.ttl',
-        help='T-Box CHORA sorgente, in Turtle (D-016) '
+        help='T-Box CHORA sorgente, in Turtle (D-020) '
              '(default: ontology/chora.ttl)'
     )
     parser.add_argument(
@@ -1357,7 +1357,7 @@ def main():
     try:
         etl.run(output_file=args.output)
 
-        # La T-Box canonica e' chora.ttl (D-016): si legge in Turtle e si
+        # La T-Box canonica e' chora.ttl (D-020): si legge in Turtle e si
         # riserializza in RDF/XML per chi la apre in Protege. Il grafo
         # T-Box+A-Box resta un artefatto distinto, per non mescolare
         # l'ontologia riusabile con il dataset.
@@ -1379,7 +1379,7 @@ def main():
         ontology_output = Path(args.ontology_output)
         canonical(ontology).serialize(destination=ontology_output, format='xml')
         # Anche il JSON-LD e' un derivato di chora.ttl: prima era aggiornato a
-        # mano e restava indietro rispetto alla TBox (D-028).
+        # mano e restava indietro rispetto alla TBox (D-032).
         jsonld = canonical(ontology).serialize(format='json-ld', auto_compact=True)
         Path(args.ontology_jsonld).write_text(stable_json(jsonld), encoding='utf-8')
         logger.info(

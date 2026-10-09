@@ -144,7 +144,7 @@ def main() -> int:
         "\n".join(sorted(ttl_refs - refs_with_excerpt)[:20]),
     )
 
-    # IRI assoluti e pubblicabili (D-017). Un IRI relativo nel TTL viene
+    # IRI assoluti e pubblicabili (D-021). Un IRI relativo nel TTL viene
     # risolto al parsing contro il percorso del file e diventa file:///...:
     # e' cosi' che un percorso di desktop era finito nel grafo pubblicato.
     # Tutti gli IRI devono avere schema http(s); quelli dei namespace del

@@ -93,7 +93,7 @@ Formato: **File/righe** · **Stato verificato** · **Proposta** · **Note**.
   `gaz_frattocchie`. L'errore sta solo nel testo dell'estratto.
 - **Proposta:** correggere l'estratto in XLSX e TSV; `make all`; copiare i passages in
   `app/public/data/`. La variante «Fattocchie» (RR II 219, QP57) entra con il modello di
-  T-41 (fase 2): fino ad allora resta solo nel registro (D-015).
+  T-41 (fase 2): fino ad allora resta solo nel registro (D-019).
 - **Note:** cambia solo un letterale; triple invariate.
 
 ### T-02 · Robine Vecchie — DA VERIFICARE

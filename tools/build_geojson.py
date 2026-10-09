@@ -320,7 +320,7 @@ def main(ttl_path, out_dir, seeds_path=None):
     det_acc = defaultdict(Counter)
     np_refs = defaultdict(set)      # np -> {referenceId}  (misura del piano)
     # Un'interpretazione con piu' ancore (ancoraggio relazionale, es. Casal
-    # Bruciato fra Marino, Albano, Pavona e Santa Palomba: D-024) torna dalla
+    # Bruciato fra Marino, Albano, Pavona e Santa Palomba: D-028) torna dalla
     # query una volta per ancora. Si tiene UN record per interpretazione: le
     # ancore in piu' alimentano solo i referenti del luogo (tgt_acc), non il
     # conteggio delle interpretazioni, dei ruoli e del rilievo.
@@ -372,7 +372,7 @@ def main(ttl_path, out_dir, seeds_path=None):
                 tgt_acc[p][gaz_iri] += float(row.conf) if row.conf else 1.0
                 gaz[gaz_iri]["refCountAnchored"] += 1
 
-    # Ancora principale di un'interpretazione con piu' ancore (D-034): quella
+    # Ancora principale di un'interpretazione con piu' ancore (D-038): quella
     # che compare nel maggior numero di interpretazioni dello stesso luogo, cioe'
     # il suo referente (per Casal Bruciato, gaz_casale_abbruciato); le altre
     # sono i luoghi che il testo dispone intorno. A parita', l'ordine alfabetico.
