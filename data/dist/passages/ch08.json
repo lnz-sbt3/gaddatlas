@@ -1,6 +1,6 @@
 {
  "chapter": 8,
- "count": 65,
+ "count": 67,
  "passages": {
   "ref_00507": {
    "id": "ref_00507",
@@ -651,6 +651,26 @@
    "witness": "qp",
    "excerpt": "mentre la di lei guardata la si acuminava nella cattiveria: « ar ponte del Divino Amore! » gridò.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00571"
+  },
+  "ref_00728": {
+   "id": "ref_00728",
+   "chapter": 8,
+   "page": 212,
+   "sourceReference": "A 212",
+   "work": "quer_pasticciaccio",
+   "witness": "qp",
+   "excerpt": "Tantoché al passaggio a livello di Casal Bruciato il vetrone girasole... per fil a dest! […] E il Roma-Napoli filava filava a tutta corsa dietro al crepuscolo e pressoché già nella notte e nella tenebra circèa. […] S’era buttato alla campagna nella notte verso le gore senza foce del Campo Morto e la macchia e l’intrico del litorale pometino.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00728"
+  },
+  "ref_00729": {
+   "id": "ref_00729",
+   "chapter": 8,
+   "page": 237,
+   "sourceReference": "A 237",
+   "work": "quer_pasticciaccio",
+   "witness": "qp",
+   "excerpt": "« Quale passaggio? » « Pe la strada de Castel de Leva, fino ar ponte: poi, a sinistra, fino ar passaggio a livello de Casal Bruciato. »",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00729"
   }
  }
 }

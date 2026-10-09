@@ -873,7 +873,8 @@ chora:AssertionTypeScheme a owl:NamedIndividual,
         chora:PartitionAssertion,
         chora:MemoryAssertion,
         chora:UncertaintyAssertion,
-        chora:VariantAssertion ;
+        chora:VariantAssertion,
+        chora:RouteTypeAssertion ;
     skos:prefLabel "Assertion type"@en .
 
 chora:StatusAssertion a owl:NamedIndividual, skos:Concept ;
@@ -1500,3 +1501,82 @@ chora:nickname a owl:DatatypeProperty ;
     rdfs:subPropertyOf skos:altLabel ;
     skos:altLabel "soprannome"@it ;
     skos:prefLabel "nickname"@en .
+
+# =============================================================================
+# PERCORSI TIPIZZATI (D-060, work order T-54, R18)
+# Solo i percorsi dei personaggi (gli oggetti sono esclusi, DM-03). Il tipo e'
+# una lettura: lo assegna un'asserzione chora:RouteTypeAssertion, e l'ETL ne
+# deriva chora:hasRouteType dalla lettura adottata.
+# =============================================================================
+
+chora:RouteTypeAssertion a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "tipo di percorso"@it ;
+    skos:definition "Assigns a route type to a narrative route."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "route" ;
+    skos:prefLabel "Route type assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:hasRouteType a owl:ObjectProperty ;
+    dcterms:references chora:RouteTypeScheme ;
+    rdfs:comment "Type of a route, derived from the adopted route type assertion."@en ;
+    rdfs:domain chora:NarrativeRoute ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "ha tipo di percorso"@it ;
+    skos:prefLabel "has route type"@en .
+
+chora:RouteTypeScheme a owl:NamedIndividual, skos:ConceptScheme ;
+    rdfs:label "Route type"@en ;
+    skos:altLabel "Tipo di percorso"@it ;
+    skos:hasTopConcept chora:CompletedRoute, chora:IndicatedRoute, chora:DreamedRoute,
+        chora:InferredRoute, chora:DirectionalRoute, chora:ProposedRoute ;
+    skos:prefLabel "Route type"@en .
+
+chora:CompletedRoute a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "compiuto"@it ;
+    skos:definition "A route the character actually travels in the story, once or habitually."@en ;
+    skos:inScheme chora:RouteTypeScheme ;
+    skos:notation "1" ;
+    skos:prefLabel "Completed"@en ;
+    skos:topConceptOf chora:RouteTypeScheme .
+
+chora:IndicatedRoute a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "indicato"@it ;
+    skos:definition "A route described to a character by another, as directions."@en ;
+    skos:inScheme chora:RouteTypeScheme ;
+    skos:notation "2" ;
+    skos:prefLabel "Indicated"@en ;
+    skos:topConceptOf chora:RouteTypeScheme .
+
+chora:DreamedRoute a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "sognato"@it ;
+    skos:definition "A route travelled in a dream or a vision."@en ;
+    skos:inScheme chora:RouteTypeScheme ;
+    skos:notation "3" ;
+    skos:prefLabel "Dreamed"@en ;
+    skos:topConceptOf chora:RouteTypeScheme .
+
+chora:InferredRoute a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "inferito"@it ;
+    skos:definition "A route reconstructed by a character or the narrator from traces or hypotheses, not narrated as travelled."@en ;
+    skos:inScheme chora:RouteTypeScheme ;
+    skos:notation "4" ;
+    skos:prefLabel "Inferred"@en ;
+    skos:topConceptOf chora:RouteTypeScheme .
+
+chora:DirectionalRoute a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "direzionale"@it ;
+    skos:definition "A route known only as a direction or a road, without the stretch actually covered."@en ;
+    skos:inScheme chora:RouteTypeScheme ;
+    skos:notation "5" ;
+    skos:prefLabel "Directional"@en ;
+    skos:scopeNote "Il Cap. 4 (r. 194) chiama questo tipo «presunto»."@it ;
+    skos:topConceptOf chora:RouteTypeScheme .
+
+chora:ProposedRoute a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "proposto"@it ;
+    skos:definition "A route a character proposes to take, not (yet) travelled."@en ;
+    skos:inScheme chora:RouteTypeScheme ;
+    skos:notation "6" ;
+    skos:prefLabel "Proposed"@en ;
+    skos:topConceptOf chora:RouteTypeScheme .

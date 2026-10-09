@@ -303,7 +303,7 @@ ga:AssertionShape
         sh:minCount 1 ; sh:maxCount 1 ;
         sh:in ( ga:StatusAssertion ga:IdentificationAssertion ga:LocationAssertion
                 ga:PartitionAssertion ga:MemoryAssertion ga:UncertaintyAssertion
-                ga:VariantAssertion ) ;
+                ga:VariantAssertion ga:RouteTypeAssertion ) ;
         sh:message "Ogni Assertion ha esattamente un tipo dello schema AssertionType." ;
     ] ;
     sh:property [
@@ -627,4 +627,32 @@ ga:AttestedFormShape
         sh:maxCount 1 ;
         sh:datatype rdf:langString ;
         sh:message "Un'occorrenza ha al piu' una forma attestata." ;
+    ] .
+
+
+# =============================================================================
+# SHAPE 19 — Percorsi tipizzati (D-060, work order T-54)
+# =============================================================================
+
+ga:RouteTypeAssertionShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion ;
+    sh:or (
+        [ sh:not [ sh:path ga:assertionType ; sh:hasValue ga:RouteTypeAssertion ] ]
+        [ sh:and (
+            [ sh:path ga:aboutSubject ; sh:class ga:NarrativeRoute ]
+            [ sh:path ga:assertsValue ; sh:minCount 1 ; sh:maxCount 1 ;
+              sh:in ( ga:CompletedRoute ga:IndicatedRoute ga:DreamedRoute
+                      ga:InferredRoute ga:DirectionalRoute ga:ProposedRoute ) ]
+          ) ]
+    ) ;
+    sh:message "Un'asserzione di tipo di percorso riguarda un NarrativeRoute e ha un valore dello schema RouteType." .
+
+ga:RouteTypeShape
+    a sh:NodeShape ;
+    sh:targetClass ga:NarrativeRoute ;
+    sh:property [
+        sh:path ga:hasRouteType ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Ogni percorso ha un tipo, dalla lettura adottata (D-060)." ;
     ] .

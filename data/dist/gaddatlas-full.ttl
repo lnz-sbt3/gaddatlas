@@ -303,6 +303,14 @@ chora:hasRelationalAnchoring a owl:ObjectProperty ;
     skos:altLabel "ha ancoraggio relazionale"@it ;
     skos:prefLabel "has relational anchoring"@en .
 
+chora:hasRouteType a owl:ObjectProperty ;
+    dcterms:references chora:RouteTypeScheme ;
+    rdfs:comment "Type of a route, derived from the adopted route type assertion."@en ;
+    rdfs:domain chora:NarrativeRoute ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "ha tipo di percorso"@it ;
+    skos:prefLabel "has route type"@en .
+
 chora:hasZone a owl:ObjectProperty ;
     rdfs:comment "Links a partition to one of its zones."@en ;
     rdfs:domain chora:Partition ;
@@ -681,6 +689,337 @@ chora:witnessType a owl:ObjectProperty ;
     chora:reviewStatus chora:Draft ;
     chora:sourcePage "§ 4.1, § 4.6 (R20)"^^xsd:string ;
     chora:sourceWork "Capitolo 4"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/R-0001> a chora:Assertion ;
+    rdfs:comment "L'ultimo nodo (ponte del Divino Amore) è un termine di paragone («simile a quello ch'era due chilometri più a nord, presso il ponte»), non un punto attraversato: da rivedere."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/R-0001-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/R-0001-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/route/tragitto_torraccio_ponte_divino_amore> ;
+    chora:adoptedByProject true ;
+    chora:assertionType chora:RouteTypeAssertion ;
+    chora:assertsValue chora:CompletedRoute ;
+    chora:rationale "«Discesero ai Torraccio […] Svoltarono sull'Appia a li Due Santi […] Valicò invece il binario»: Ingravallo, Di Pietrantonio, l'autista e Runzato percorrono il tragitto in auto."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "297"^^xsd:string ;
+    chora:sourceWork "QP"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/R-0002> a chora:Assertion ;
+    rdfs:comment "Separato dal tragitto di QP 297 (D-060). È un elenco disgiuntivo e abituale di provenienze, non una sequenza: potrebbe non essere un percorso."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/R-0002-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/R-0002-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/route/tragitto_santarella_torraccio_divino_amore> ;
+    chora:adoptedByProject true ;
+    chora:assertionType chora:RouteTypeAssertion ;
+    chora:assertsValue chora:InferredRoute ;
+    chora:rationale "La motocicletta di Santarella «si preannunciava di lontano, dal Torraccio, […] o dal Divino Amore»: le provenienze si ricavano dal rumore, «altre volte» da un luogo o dall'altro."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "169"^^xsd:string ;
+    chora:sourceWork "QP"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/R-0003> a chora:Assertion ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/R-0003-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/R-0003-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/route/tragitto_tenenza_due_santi> ;
+    chora:adoptedByProject true ;
+    chora:assertionType chora:RouteTypeAssertion ;
+    chora:assertsValue chora:CompletedRoute ;
+    chora:rationale "Pestalozzi e Cocullo scendono dalla caserma di Marino alla porta del borgo, prendono l'Appia, passano la Fontana e si fermano ai Due Santi."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "208–215"^^xsd:string ;
+    chora:sourceWork "QP"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/R-0004> a chora:Assertion ;
+    rdfs:comment "L'ultimo nodo è una direzione («verso piazza San Giovanni»): l'arrivo non è narrato."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/R-0004-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/R-0004-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/route/tragitto_brancaccio_piazza_san_giovanni> ;
+    chora:adoptedByProject true ;
+    chora:assertionType chora:RouteTypeAssertion ;
+    chora:assertsValue chora:CompletedRoute ;
+    chora:rationale "«A largo Brancaccio, mentre che staveno svortando in via Merulana verso piazza San Giovanni»: il tragitto è in corso."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "292"^^xsd:string ;
+    chora:sourceWork "QP"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/R-0005> a chora:Assertion ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/R-0005-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/R-0005-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/route/tragitto_viminale_merulana> ;
+    chora:adoptedByProject true ;
+    chora:assertionType chora:RouteTypeAssertion ;
+    chora:assertsValue chora:CompletedRoute ;
+    chora:rationale "«Saliti sul PV e discesi appunto al Viminale, presero il tram di San Giovanni […] raggiunsero il civico ducentodicinnove»."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "25"^^xsd:string ;
+    chora:sourceWork "QP"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/R-0006> a chora:Assertion ;
+    rdfs:comment "Incerto fra indicato e compiuto: il passo descrive la strada, il viaggio segue."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/R-0006-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/R-0006-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/route/tragitto_appia_falcognana> ;
+    chora:adoptedByProject true ;
+    chora:assertionType chora:RouteTypeAssertion ;
+    chora:assertsValue chora:IndicatedRoute ;
+    chora:rationale "«La strada era una sola, pe fortuna, salvo il primo pezzo però: la statale, l'Appia, poi ad angolo retto la deviazione della provinciale, pe Falcognana»: la strada spiegata dopo le indicazioni di Camilla (QP 237)."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "238"^^xsd:string ;
+    chora:sourceWork "QP"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/R-0007> a chora:Assertion ;
+    rdfs:comment "Percorso abituale (iterativo)."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/R-0007-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/R-0007-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/route/tragitto_agostino_aquiro> ;
+    chora:adoptedByProject true ;
+    chora:assertionType chora:RouteTypeAssertion ;
+    chora:assertsValue chora:CompletedRoute ;
+    chora:rationale "Il commendator Angeloni e i suoi pari «sogliono deambulare» da Sant'Agostino a Santa Maria in Aquiro."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "40"^^xsd:string ;
+    chora:sourceWork "QP"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/R-0008> a chora:Assertion ;
+    rdfs:comment "Percorso abituale (iterativo), con fermate eventuali."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/R-0008-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/R-0008-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/route/tragitto_cecchina_anziate> ;
+    chora:adoptedByProject true ;
+    chora:assertionType chora:RouteTypeAssertion ;
+    chora:assertsValue chora:CompletedRoute ;
+    chora:rationale "La motocicletta di Santarella «infilava […] la mala curva d'aa stazione d'aa Cecchina», poi si fermava a Santa Palomba e a Campoleone, «il caso richiedendo»."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "173"^^xsd:string ;
+    chora:sourceWork "QP"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/R-0009> a chora:Assertion ;
+    rdfs:comment "Percorso abituale (iterativo)."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/R-0009-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/R-0009-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/route/tragitto_colonna_treccani> ;
+    chora:adoptedByProject true ;
+    chora:assertionType chora:RouteTypeAssertion ;
+    chora:assertsValue chora:CompletedRoute ;
+    chora:rationale "Angeloni e i suoi pari «si avventurano» per via Colonna, piazza de Pietra, via de Pietra fino al Corso."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "40"^^xsd:string ;
+    chora:sourceWork "QP"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/R-0010> a chora:Assertion ;
+    rdfs:comment "Come QP 169: elenco disgiuntivo e abituale, non una sequenza."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/R-0010-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/R-0010-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/route/tragitto_frattocchie_ciampino> ;
+    chora:adoptedByProject true ;
+    chora:assertionType chora:RouteTypeAssertion ;
+    chora:assertsValue chora:InferredRoute ;
+    chora:rationale "«Oppure a metà le Frattocchie, doveva spengere: al passaggio dell'Appia, o a Ca' Francesi, a Tor Ser Paolo, alla stazione di Ciampino»: luoghi alternativi della fermata."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "174"^^xsd:string ;
+    chora:sourceWork "QP"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/R-0011> a chora:Assertion ;
+    rdfs:comment "Percorso abituale (iterativo); l'ultimo nodo è disgiuntivo («o»)."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/R-0011-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/R-0011-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/route/tragitto_monti_piazza_esedra> ;
+    chora:adoptedByProject true ;
+    chora:assertionType chora:RouteTypeAssertion ;
+    chora:assertsValue chora:CompletedRoute ;
+    chora:rationale "Diomede «si differiva passo passo da un quartiere all'altro: monticiano a le dieci, trasteverino a le quattro, a Piazza Colonna o a l'Esedra»."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "182"^^xsd:string ;
+    chora:sourceWork "QP"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/R-0012> a chora:Assertion ;
+    rdfs:comment "Percorso abituale (iterativo)."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/R-0012-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/R-0012-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/route/tragitto_rocca_di_papa_monte_nuncupale> ;
+    chora:adoptedByProject true ;
+    chora:assertionType chora:RouteTypeAssertion ;
+    chora:assertsValue chora:CompletedRoute ;
+    chora:rationale "Santarella «da Rocca di Papa a Castel Savelli, giù: da Rocca Orsina al Monte Nuncupale, su»."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "173"^^xsd:string ;
+    chora:sourceWork "QP"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/R-0013> a chora:Assertion ;
+    rdfs:comment "Percorso abituale (iterativo)."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/R-0013-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/R-0013-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/route/tragitto_chiara_pantheon> ;
+    chora:adoptedByProject true ;
+    chora:assertionType chora:RouteTypeAssertion ;
+    chora:assertsValue chora:CompletedRoute ;
+    chora:rationale "Di quaresima Angeloni e i suoi pari «si contentano lungheggiar Santa Chiara […] imboccheno la Palommella e sfioreno er dedietro ar Panteone»."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "41"^^xsd:string ;
+    chora:sourceWork "QP"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/R-0014> a chora:Assertion ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/R-0014-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/R-0014-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/route/tragitto_duesanti_frattocchie> ;
+    chora:adoptedByProject true ;
+    chora:assertionType chora:RouteTypeAssertion ;
+    chora:assertsValue chora:CompletedRoute ;
+    chora:rationale "La corsa del tram dei Castelli: «Ai Due Santi, al Torraccio, a le Frattocchie […] era salita una quantità di persone»."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "56"^^xsd:string ;
+    chora:sourceWork "QP"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/R-0015> a chora:Assertion ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/R-0015-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/R-0015-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/route/tragitto_policlinico_san_lorenzo_al_verano> ;
+    chora:adoptedByProject true ;
+    chora:assertionType chora:RouteTypeAssertion ;
+    chora:assertsValue chora:CompletedRoute ;
+    chora:rationale "Il corteo funebre «spostò dar Policlinico a le otto […] tajarono pe la direttissima der viale Regina Margherita […] arrivarono a San Lorenzo ar Verano»."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "139–140"^^xsd:string ;
+    chora:sourceWork "QP"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/R-0016> a chora:Assertion ;
+    rdfs:comment "Alternativa: compiuto. Il Cap. 4 (r. 194) chiama questo tipo «presunto»."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/R-0016-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/R-0016-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/route/tragitto_marino_albano_laziale> ;
+    chora:adoptedByProject true ;
+    chora:assertionType chora:RouteTypeAssertion ;
+    chora:assertsValue chora:DirectionalRoute ;
+    chora:rationale "Santarella «era a percorrere sulla sua motocicletta la via provinciale da Marino ad Albano»: il passo dà la strada e la sua direzione, non il tratto percorso."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "278"^^xsd:string ;
+    chora:sourceWork "QP"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/R-0017> a chora:Assertion ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/R-0017-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/R-0017-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/route/tragitto_marino_due_santi> ;
+    chora:adoptedByProject true ;
+    chora:assertionType chora:RouteTypeAssertion ;
+    chora:assertsValue chora:CompletedRoute ;
+    chora:rationale "Pestalozzi «usciva (in motocicletta) dalla caserma […] di Marino per catapultarsi alla bottega-laboratorio»."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "206"^^xsd:string ;
+    chora:sourceWork "QP"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/R-0018> a chora:Assertion ;
+    rdfs:comment "La partenza dalla Tenenza è inferita dal rapporto. L'ordine dei nodi è invertito (1 Santo Stefano, 2 Tenenza): da correggere."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/R-0018-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/R-0018-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/route/tragitto_marino_santo_stefano> ;
+    chora:adoptedByProject true ;
+    chora:assertionType chora:RouteTypeAssertion ;
+    chora:assertsValue chora:CompletedRoute ;
+    chora:rationale "«arrivò a Santo Stefano in motocicletta il brigadiere Pestalozzi […] latore di un rapporto […] della Tenenza»."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "153"^^xsd:string ;
+    chora:sourceWork "QP"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/R-0019> a chora:Assertion ;
+    rdfs:comment "Il focalizzatore registrato è Liliana, ma chi si sposta è il giudice istruttore; se il percorso è quello del corpo, è un oggetto (DM-03, escluso)."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/R-0019-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/R-0019-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/route/tragitto_merulana_policlinico> ;
+    chora:adoptedByProject true ;
+    chora:assertionType chora:RouteTypeAssertion ;
+    chora:assertsValue chora:CompletedRoute ;
+    chora:rationale "L'autorità giudiziaria «era intervenuta […] a via Merulana, indi al Policlinico»."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "93"^^xsd:string ;
+    chora:sourceWork "QP"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/R-0020> a chora:Assertion ;
+    rdfs:comment "Nuovo percorso (D-060). La lettura di Manzotti di «per fil a dest» (2010, p. 269) è una nota attribuita di fase 3."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/R-0020-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/R-0020-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/route/tragitto_sogno_casal_bruciato_campo_morto> ;
+    chora:adoptedByProject true ;
+    chora:assertionType chora:RouteTypeAssertion ;
+    chora:assertsValue chora:DreamedRoute ;
+    chora:rationale "Il sogno di Pestalozzi: «al passaggio a livello di Casal Bruciato il vetrone girasole... per fil a dest!», il Roma-Napoli che «filava filava», la fuga «verso le gore senza foce del Campo Morto»."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "212"^^xsd:string ;
+    chora:sourceWork "QP"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/R-0021> a chora:Assertion ;
+    rdfs:comment "Nuovo percorso (D-060). Il nodo finale è il passaggio a livello: nei dati l'occorrenza è di casal_bruciato."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/R-0021-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/R-0021-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/route/tragitto_castel_di_leva_casal_bruciato> ;
+    chora:adoptedByProject true ;
+    chora:assertionType chora:RouteTypeAssertion ;
+    chora:assertsValue chora:IndicatedRoute ;
+    chora:rationale "Camilla indica la strada: «Pe la strada de Castel de Leva, fino ar ponte: poi, a sinistra, fino ar passaggio a livello de Casal Bruciato»."@it ;
+    chora:rationaleType chora:TextualEvidence ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "237"^^xsd:string ;
+    chora:sourceWork "QP"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/assertion/S-area_oltre_tevere> a chora:Assertion ;
     rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
@@ -8075,7 +8414,7 @@ chora:witnessType a owl:ObjectProperty ;
     chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_torraccio> ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/santarella> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00401> ;
-    chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_torraccio_ponte_divino_amore> ;
+    chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_santarella_torraccio_divino_amore> ;
     chora:routeOrder 1 ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/torraccio> .
 
@@ -8087,7 +8426,7 @@ chora:witnessType a owl:ObjectProperty ;
     chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_frattocchie> ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/santarella> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00402> ;
-    chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_torraccio_ponte_divino_amore> ;
+    chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_santarella_torraccio_divino_amore> ;
     chora:routeOrder 2 ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/frattocchie> .
 
@@ -8100,7 +8439,7 @@ chora:witnessType a owl:ObjectProperty ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/santarella> ;
     chora:hasRelationalAnchoring <https://w3id.org/gaddatlas/id/relanchor/interp_00472> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00403> ;
-    chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_torraccio_ponte_divino_amore> ;
+    chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_santarella_torraccio_divino_amore> ;
     chora:routeOrder 3 ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/robine_vecchie> .
 
@@ -8115,7 +8454,7 @@ chora:witnessType a owl:ObjectProperty ;
     chora:criticalNote "Possibile referente: Castello della Castelluccia, circa 41.7443, 12.6165"@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/santarella> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00404> ;
-    chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_torraccio_ponte_divino_amore> ;
+    chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_santarella_torraccio_divino_amore> ;
     chora:routeOrder 4 ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/cassero> .
 
@@ -8130,7 +8469,7 @@ chora:witnessType a owl:ObjectProperty ;
     chora:criticalNote "Possibile referente: Castello della Castelluccia, circa 41.7443, 12.6165"@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/santarella> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00404> ;
-    chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_torraccio_ponte_divino_amore> ;
+    chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_santarella_torraccio_divino_amore> ;
     chora:routeOrder 4 ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/cassero> .
 
@@ -8142,7 +8481,7 @@ chora:witnessType a owl:ObjectProperty ;
     chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ponte_divino_amore> ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/santarella> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00405> ;
-    chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_torraccio_ponte_divino_amore> ;
+    chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_santarella_torraccio_divino_amore> ;
     chora:routeOrder 5 ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/ponte_divino_amore> .
 
@@ -8155,7 +8494,7 @@ chora:witnessType a owl:ObjectProperty ;
     chora:assignsSpatialDetermination chora:Approximate ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/santarella> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00406> ;
-    chora:targetsRoute <https://w3id.org/gaddatlas/id/route/tragitto_torraccio_ponte_divino_amore> .
+    chora:targetsRoute <https://w3id.org/gaddatlas/id/route/tragitto_santarella_torraccio_divino_amore> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00478> a prov:Entity,
         chora:SpatialInterpretation ;
@@ -10180,6 +10519,8 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:criticalNote "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 212, percorso sognato (Pestalozzi): Manzotti (p. 269) legge «per fil a dest» come un cambio di direzione perpendicolare, in realtà verso sinistra (a sud, verso il Circeo); lettura attribuita, fase 3."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pestalozzi> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00534> ;
+    chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_sogno_casal_bruciato_campo_morto> ;
+    chora:routeOrder 1 ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00642> a prov:Entity,
@@ -10192,6 +10533,8 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:assignsSpatialDetermination chora:Indeterminate ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pestalozzi> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00535> ;
+    chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_sogno_casal_bruciato_campo_morto> ;
+    chora:routeOrder 2 ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/direttissima_roma_napoli> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00643> a prov:Entity,
@@ -10204,6 +10547,8 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:assignsSpatialDetermination chora:Indeterminate ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pestalozzi> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00536> ;
+    chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_sogno_casal_bruciato_campo_morto> ;
+    chora:routeOrder 3 ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/campo_morto> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00644> a prov:Entity,
@@ -10649,6 +10994,8 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:assignsSpatialDetermination chora:Approximate ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/camilla_mattonari> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00566> ;
+    chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_castel_di_leva_casal_bruciato> ;
+    chora:routeOrder 1 ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/castel_di_leva> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00680> a prov:Entity,
@@ -10661,6 +11008,8 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:assignsSpatialDetermination chora:Approximate ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/camilla_mattonari> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00567> ;
+    chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_castel_di_leva_casal_bruciato> ;
+    chora:routeOrder 2 ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/ponte_divino_amore> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00681> a prov:Entity,
@@ -10675,6 +11024,8 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/camilla_mattonari> ;
     chora:hasRelationalAnchoring <https://w3id.org/gaddatlas/id/relanchor/interp_00681> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00568> ;
+    chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_castel_di_leva_casal_bruciato> ;
+    chora:routeOrder 3 ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00682> a prov:Entity,
@@ -14089,6 +14440,30 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00722> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/tenenza_carabinieri_marino> .
 
+<https://w3id.org/gaddatlas/id/interpretation/interp_00963> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:generatedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/interp_00963-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/interp_00963-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:annotationMethod "close_reading"^^xsd:string ;
+    chora:assignsNarrativeRole chora:Route ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pestalozzi> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00728> ;
+    chora:targetsRoute <https://w3id.org/gaddatlas/id/route/tragitto_sogno_casal_bruciato_campo_morto> .
+
+<https://w3id.org/gaddatlas/id/interpretation/interp_00964> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:generatedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/interp_00964-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/interp_00964-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:annotationMethod "close_reading"^^xsd:string ;
+    chora:assignsNarrativeRole chora:Route ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/camilla_mattonari> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00729> ;
+    chora:targetsRoute <https://w3id.org/gaddatlas/id/route/tragitto_castel_di_leva_casal_bruciato> .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/colli_albani> a chora:NarrativePlace ;
     rdfs:label "Colli Albani"@it ;
     chora:hasPlaceCategory chora:locality ;
@@ -14407,6 +14782,15 @@ chora:Oversight a owl:NamedIndividual,
     skos:inScheme chora:UncertaintyTypeScheme ;
     skos:prefLabel "Oversight"@en .
 
+chora:ProposedRoute a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "proposto"@it ;
+    skos:definition "A route a character proposes to take, not (yet) travelled."@en ;
+    skos:inScheme chora:RouteTypeScheme ;
+    skos:notation "6" ;
+    skos:prefLabel "Proposed"@en ;
+    skos:topConceptOf chora:RouteTypeScheme .
+
 chora:RelatedTo a owl:NamedIndividual,
         skos:Concept ;
     dcterms:description "Relazione spaziale generica tra A e B, non ulteriormente specificata sul piano topologico."@it ;
@@ -14688,6 +15072,174 @@ chora:witnessOf a owl:ObjectProperty ;
     prov:hadRole chora:Encoder .
 
 <https://w3id.org/gaddatlas/id/attribution/P-0001-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0001-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0001-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0002-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0002-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0003-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0003-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0004-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0004-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0005-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0005-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0006-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0006-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0007-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0007-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0008-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0008-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0009-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0009-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0010-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0010-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0011-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0011-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0012-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0012-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0013-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0013-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0014-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0014-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0015-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0015-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0016-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0016-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0017-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0017-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0018-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0018-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0019-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0019-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0020-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0020-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0021-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/R-0021-readingauthor-lorenzo_sabatino> a prov:Attribution ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
@@ -22875,6 +23427,22 @@ chora:witnessOf a owl:ObjectProperty ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
+<https://w3id.org/gaddatlas/id/attribution/interp_00963-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/interp_00963-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/interp_00964-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/interp_00964-readingauthor-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
 <https://w3id.org/gaddatlas/id/focalizer/barbezzi_gallo> a chora:Character,
         chora:FocalizingAgent ;
     chora:characterName "Barbezzi Gallo"@it ;
@@ -30716,6 +31284,20 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:attestedForm "via Lata"@it ;
     chora:sourceReference "dtsFG"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/reference/ref_00728> a chora:PlaceReference ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:excerpt "Tantoché al passaggio a livello di Casal Bruciato il vetrone girasole... per fil a dest! […] E il Roma-Napoli filava filava a tutta corsa dietro al crepuscolo e pressoché già nella notte e nella tenebra circèa. […] S’era buttato alla campagna nella notte verso le gore senza foce del Campo Morto e la macchia e l’intrico del litorale pometino."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
+    chora:sourceReference "A 212"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00729> a chora:PlaceReference ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:excerpt "« Quale passaggio? » « Pe la strada de Castel de Leva, fino ar ponte: poi, a sinistra, fino ar passaggio a livello de Casal Bruciato. »"@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
+    chora:sourceReference "A 237"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/relanchor/interp_00472> a chora:RelationalAnchoring ;
     chora:relationalType chora:Between ;
     chora:relatum <https://w3id.org/gaddatlas/id/gazetteer/gaz_due_santi>,
@@ -33640,6 +34222,25 @@ chora:ContestedIdentification a owl:NamedIndividual,
     skos:prefLabel "Contested Identification"@en ;
     skos:topConceptOf chora:UncertaintyTypeScheme .
 
+chora:DirectionalRoute a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "direzionale"@it ;
+    skos:definition "A route known only as a direction or a road, without the stretch actually covered."@en ;
+    skos:inScheme chora:RouteTypeScheme ;
+    skos:notation "5" ;
+    skos:prefLabel "Directional"@en ;
+    skos:scopeNote "Il Cap. 4 (r. 194) chiama questo tipo «presunto»."@it ;
+    skos:topConceptOf chora:RouteTypeScheme .
+
+chora:DreamedRoute a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "sognato"@it ;
+    skos:definition "A route travelled in a dream or a vision."@en ;
+    skos:inScheme chora:RouteTypeScheme ;
+    skos:notation "3" ;
+    skos:prefLabel "Dreamed"@en ;
+    skos:topConceptOf chora:RouteTypeScheme .
+
 chora:Edition a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "edizione"@it ;
@@ -34604,14 +35205,6 @@ chora:temple a owl:NamedIndividual,
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 302"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/route/tragitto_marino_albano_laziale> a chora:NarrativeRoute .
-
-<https://w3id.org/gaddatlas/id/route/tragitto_marino_due_santi> a chora:NarrativeRoute .
-
-<https://w3id.org/gaddatlas/id/route/tragitto_marino_santo_stefano> a chora:NarrativeRoute .
-
-<https://w3id.org/gaddatlas/id/route/tragitto_merulana_policlinico> a chora:NarrativeRoute .
-
 <https://w3id.org/gaddatlas/id/witness/qpl> a chora:Witness ;
     rdfs:label "QPL" ;
     dcterms:date "1946"^^xsd:gYear ;
@@ -35316,11 +35909,17 @@ chora:police_station a owl:NamedIndividual,
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 299"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/route/tragitto_chiara_pantheon> a chora:NarrativeRoute .
+<https://w3id.org/gaddatlas/id/route/tragitto_marino_albano_laziale> a chora:NarrativeRoute ;
+    chora:hasRouteType chora:DirectionalRoute .
 
-<https://w3id.org/gaddatlas/id/route/tragitto_duesanti_frattocchie> a chora:NarrativeRoute .
+<https://w3id.org/gaddatlas/id/route/tragitto_marino_due_santi> a chora:NarrativeRoute ;
+    chora:hasRouteType chora:CompletedRoute .
 
-<https://w3id.org/gaddatlas/id/route/tragitto_policlinico_san_lorenzo_al_verano> a chora:NarrativeRoute .
+<https://w3id.org/gaddatlas/id/route/tragitto_marino_santo_stefano> a chora:NarrativeRoute ;
+    chora:hasRouteType chora:CompletedRoute .
+
+<https://w3id.org/gaddatlas/id/route/tragitto_merulana_policlinico> a chora:NarrativeRoute ;
+    chora:hasRouteType chora:CompletedRoute .
 
 chora:AuthorMemory a owl:NamedIndividual,
         skos:Concept ;
@@ -35354,6 +35953,24 @@ chora:IdentificationAxis a owl:NamedIndividual,
     skos:inScheme chora:UncertaintyAxisScheme ;
     skos:prefLabel "Identification Axis"@en ;
     skos:topConceptOf chora:UncertaintyAxisScheme .
+
+chora:IndicatedRoute a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "indicato"@it ;
+    skos:definition "A route described to a character by another, as directions."@en ;
+    skos:inScheme chora:RouteTypeScheme ;
+    skos:notation "2" ;
+    skos:prefLabel "Indicated"@en ;
+    skos:topConceptOf chora:RouteTypeScheme .
+
+chora:InferredRoute a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "inferito"@it ;
+    skos:definition "A route reconstructed by a character or the narrator from traces or hypotheses, not narrated as travelled."@en ;
+    skos:inScheme chora:RouteTypeScheme ;
+    skos:notation "4" ;
+    skos:prefLabel "Inferred"@en ;
+    skos:topConceptOf chora:RouteTypeScheme .
 
 chora:ReviewStatusScheme a owl:NamedIndividual,
         skos:ConceptScheme ;
@@ -35805,9 +36422,20 @@ chora:retail_business a owl:NamedIndividual,
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 49"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/route/tragitto_monti_piazza_esedra> a chora:NarrativeRoute .
+<https://w3id.org/gaddatlas/id/route/tragitto_castel_di_leva_casal_bruciato> a chora:NarrativeRoute ;
+    chora:hasRouteType chora:IndicatedRoute .
 
-<https://w3id.org/gaddatlas/id/route/tragitto_rocca_di_papa_monte_nuncupale> a chora:NarrativeRoute .
+<https://w3id.org/gaddatlas/id/route/tragitto_chiara_pantheon> a chora:NarrativeRoute ;
+    chora:hasRouteType chora:CompletedRoute .
+
+<https://w3id.org/gaddatlas/id/route/tragitto_duesanti_frattocchie> a chora:NarrativeRoute ;
+    chora:hasRouteType chora:CompletedRoute .
+
+<https://w3id.org/gaddatlas/id/route/tragitto_policlinico_san_lorenzo_al_verano> a chora:NarrativeRoute ;
+    chora:hasRouteType chora:CompletedRoute .
+
+<https://w3id.org/gaddatlas/id/route/tragitto_sogno_casal_bruciato_campo_morto> a chora:NarrativeRoute ;
+    chora:hasRouteType chora:DreamedRoute .
 
 chora:Discrepancy a owl:NamedIndividual,
         skos:Concept ;
@@ -36056,13 +36684,11 @@ chora:interior a owl:NamedIndividual,
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 155"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/route/tragitto_agostino_aquiro> a chora:NarrativeRoute .
+<https://w3id.org/gaddatlas/id/route/tragitto_monti_piazza_esedra> a chora:NarrativeRoute ;
+    chora:hasRouteType chora:CompletedRoute .
 
-<https://w3id.org/gaddatlas/id/route/tragitto_cecchina_anziate> a chora:NarrativeRoute .
-
-<https://w3id.org/gaddatlas/id/route/tragitto_colonna_treccani> a chora:NarrativeRoute .
-
-<https://w3id.org/gaddatlas/id/route/tragitto_frattocchie_ciampino> a chora:NarrativeRoute .
+<https://w3id.org/gaddatlas/id/route/tragitto_rocca_di_papa_monte_nuncupale> a chora:NarrativeRoute ;
+    chora:hasRouteType chora:CompletedRoute .
 
 chora:DocumentaryOrigin a owl:NamedIndividual,
         skos:Concept ;
@@ -36267,6 +36893,18 @@ chora:station a owl:NamedIndividual,
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
+<https://w3id.org/gaddatlas/id/route/tragitto_agostino_aquiro> a chora:NarrativeRoute ;
+    chora:hasRouteType chora:CompletedRoute .
+
+<https://w3id.org/gaddatlas/id/route/tragitto_cecchina_anziate> a chora:NarrativeRoute ;
+    chora:hasRouteType chora:CompletedRoute .
+
+<https://w3id.org/gaddatlas/id/route/tragitto_colonna_treccani> a chora:NarrativeRoute ;
+    chora:hasRouteType chora:CompletedRoute .
+
+<https://w3id.org/gaddatlas/id/route/tragitto_frattocchie_ciampino> a chora:NarrativeRoute ;
+    chora:hasRouteType chora:InferredRoute .
+
 chora:restaurant a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "Ristorante"@it ;
@@ -36279,6 +36917,9 @@ chora:restaurant a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/agent/pinotti> a prov:Agent ;
     rdfs:comment "Curatore di QP (Adelphi 2018) e di RR II; Pinotti 2016, 2024, 2025"@it ;
     schema:name "Giorgio Pinotti" .
+
+<https://w3id.org/gaddatlas/id/route/tragitto_santarella_torraccio_divino_amore> a chora:NarrativeRoute ;
+    chora:hasRouteType chora:InferredRoute .
 
 chora:RealityStatusScheme a owl:NamedIndividual,
         skos:ConceptScheme ;
@@ -36393,8 +37034,6 @@ chora:UncertaintyAssertion a owl:NamedIndividual,
     chora:hasPlaceCategory chora:street ;
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
-
-<https://w3id.org/gaddatlas/id/route/tragitto_appia_falcognana> a chora:NarrativeRoute .
 
 prov:Agent a owl:Class ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
@@ -36512,6 +37151,9 @@ chora:Church a owl:NamedIndividual,
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> .
 
+<https://w3id.org/gaddatlas/id/route/tragitto_appia_falcognana> a chora:NarrativeRoute ;
+    chora:hasRouteType chora:IndicatedRoute .
+
 chora:NarrativeRoleScheme a owl:NamedIndividual,
         skos:ConceptScheme ;
     rdfs:label "Narrative Role"@en ;
@@ -36617,12 +37259,6 @@ chora:Witness a owl:Class ;
     chora:hasPlaceCategory chora:street ;
     chora:hasRealityStatus chora:Imported .
 
-<https://w3id.org/gaddatlas/id/route/tragitto_brancaccio_piazza_san_giovanni> a chora:NarrativeRoute .
-
-<https://w3id.org/gaddatlas/id/route/tragitto_tenenza_due_santi> a chora:NarrativeRoute .
-
-<https://w3id.org/gaddatlas/id/route/tragitto_viminale_merulana> a chora:NarrativeRoute .
-
 chora:NotYetAnalysed a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "analisi non condotta"@it ;
@@ -36630,6 +37266,18 @@ chora:NotYetAnalysed a owl:NamedIndividual,
     skos:inScheme chora:LocalizationStatusScheme ;
     skos:prefLabel "Not yet analysed"@en ;
     skos:topConceptOf chora:LocalizationStatusScheme .
+
+chora:RouteTypeScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Route type"@en ;
+    skos:altLabel "Tipo di percorso"@it ;
+    skos:hasTopConcept chora:CompletedRoute,
+        chora:DirectionalRoute,
+        chora:DreamedRoute,
+        chora:IndicatedRoute,
+        chora:InferredRoute,
+        chora:ProposedRoute ;
+    skos:prefLabel "Route type"@en .
 
 chora:historical_building a owl:NamedIndividual,
         skos:Concept ;
@@ -36714,6 +37362,15 @@ chora:historical_building a owl:NamedIndividual,
     chora:hasPlaceCategory chora:square ;
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
+
+<https://w3id.org/gaddatlas/id/route/tragitto_brancaccio_piazza_san_giovanni> a chora:NarrativeRoute ;
+    chora:hasRouteType chora:CompletedRoute .
+
+<https://w3id.org/gaddatlas/id/route/tragitto_tenenza_due_santi> a chora:NarrativeRoute ;
+    chora:hasRouteType chora:CompletedRoute .
+
+<https://w3id.org/gaddatlas/id/route/tragitto_viminale_merulana> a chora:NarrativeRoute ;
+    chora:hasRouteType chora:CompletedRoute .
 
 chora:Chapter a owl:Class .
 
@@ -36803,21 +37460,6 @@ chora:mountain a owl:NamedIndividual,
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> .
 
-skos:ConceptScheme a owl:Class .
-
-chora:AssertionTypeScheme a owl:NamedIndividual,
-        skos:ConceptScheme ;
-    rdfs:label "Assertion type"@en ;
-    skos:altLabel "Tipo di asserzione"@it ;
-    skos:hasTopConcept chora:IdentificationAssertion,
-        chora:LocationAssertion,
-        chora:MemoryAssertion,
-        chora:PartitionAssertion,
-        chora:StatusAssertion,
-        chora:UncertaintyAssertion,
-        chora:VariantAssertion ;
-    skos:prefLabel "Assertion type"@en .
-
 chora:district a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "Quartiere"@it ;
@@ -36850,6 +37492,8 @@ chora:square a owl:NamedIndividual,
     chora:hasRealityStatus chora:Invented ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
+skos:ConceptScheme a owl:Class .
+
 chora:RelationalAnchoring a owl:Class ;
     rdfs:comment "The placement of a narrative place relative to one or more geographic entities («between», «near»), as stated by a passage. It produces no geometry: a place without an adopted position stays off the map, with its relational anchoring."@en ;
     skos:altLabel "Ancoraggio relazionale"@it ;
@@ -36874,6 +37518,20 @@ chora:UncertaintyTypeScheme a owl:NamedIndividual,
     chora:hasPlaceCategory chora:street ;
     chora:hasRealityStatus chora:Transformed ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
+
+chora:AssertionTypeScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Assertion type"@en ;
+    skos:altLabel "Tipo di asserzione"@it ;
+    skos:hasTopConcept chora:IdentificationAssertion,
+        chora:LocationAssertion,
+        chora:MemoryAssertion,
+        chora:PartitionAssertion,
+        chora:RouteTypeAssertion,
+        chora:StatusAssertion,
+        chora:UncertaintyAssertion,
+        chora:VariantAssertion ;
+    skos:prefLabel "Assertion type"@en .
 
 chora:basilica a owl:NamedIndividual,
         skos:Concept ;
@@ -36957,13 +37615,6 @@ chora:Overlaps a owl:NamedIndividual,
     skos:prefLabel "Overlaps"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
 
-chora:NarrativeRoute a owl:Class ;
-    rdfs:comment "A route (tragitto): an ordered aggregate of narrative places traversed by a focalizer. Distinct from NarrativePlace — a route is not a place but a second-order sequence of places. Carries its own interpretations (per focalizer) via SpatialInterpretation, and aggregates ordered nodes via isNodeOfRoute / routeOrder."@en ;
-    skos:altLabel "Tragitto"@it ;
-    skos:definition "A second-order spatial entity representing an ordered path connecting multiple narrative places, as perceived by one or more focalizers."@en,
-        "Entità spaziale di secondo livello che rappresenta un percorso ordinato che connette più luoghi narrativi, così come percepito da uno o più focalizzatori."@it ;
-    skos:prefLabel "Narrative Route"@en .
-
 <https://w3id.org/gaddatlas/id/focalizer/autista_questura> a chora:Character,
         chora:FocalizingAgent ;
     dcterms:description "Personaggio non nominato, che accompagna Ingravallo da Santo Stefano ai Colli Albani"@it ;
@@ -36984,11 +37635,14 @@ chora:CriticalReading a owl:NamedIndividual,
     skos:prefLabel "Critical reading"@en ;
     skos:topConceptOf chora:RationaleTypeScheme .
 
-<https://w3id.org/gaddatlas/id/focalizer/camilla_mattonari> a chora:Character,
-        chora:FocalizingAgent ;
-    dcterms:description "Camilla Mattonari, una delle cugine legate ad Enea Retalli, coinvolta nel furto di gioielli della Menegazzi"@it ;
-    chora:characterName "Camilla Mattonari"@it ;
-    chora:hasGender "female"^^xsd:string .
+chora:RouteTypeAssertion a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "tipo di percorso"@it ;
+    skos:definition "Assigns a route type to a narrative route."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "route" ;
+    skos:prefLabel "Route type assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_torraccio> a chora:GazetteerEntity ;
     rdfs:label "Torraccio"@it ;
@@ -37056,6 +37710,19 @@ chora:CriticalReading a owl:NamedIndividual,
     rdfs:label "Via Appia"@it ;
     chora:hasPlaceCategory chora:street ;
     chora:hasRealityStatus chora:Imported .
+
+chora:NarrativeRoute a owl:Class ;
+    rdfs:comment "A route (tragitto): an ordered aggregate of narrative places traversed by a focalizer. Distinct from NarrativePlace — a route is not a place but a second-order sequence of places. Carries its own interpretations (per focalizer) via SpatialInterpretation, and aggregates ordered nodes via isNodeOfRoute / routeOrder."@en ;
+    skos:altLabel "Tragitto"@it ;
+    skos:definition "A second-order spatial entity representing an ordered path connecting multiple narrative places, as perceived by one or more focalizers."@en,
+        "Entità spaziale di secondo livello che rappresenta un percorso ordinato che connette più luoghi narrativi, così come percepito da uno o più focalizzatori."@it ;
+    skos:prefLabel "Narrative Route"@en .
+
+<https://w3id.org/gaddatlas/id/focalizer/camilla_mattonari> a chora:Character,
+        chora:FocalizingAgent ;
+    dcterms:description "Camilla Mattonari, una delle cugine legate ad Enea Retalli, coinvolta nel furto di gioielli della Menegazzi"@it ;
+    chora:characterName "Camilla Mattonari"@it ;
+    chora:hasGender "female"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/focalizer/cocullo> a chora:Character,
         chora:FocalizingAgent ;
@@ -37131,14 +37798,6 @@ chora:SpatialRelationTypeScheme a owl:NamedIndividual,
     chora:characterName "Zamira Pacori"@it ;
     chora:hasGender "female"^^xsd:string .
 
-chora:Route a owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "Percorso"@it ;
-    skos:definition "Path along which characters move, connecting multiple settings or projected spaces"@en ;
-    skos:inScheme chora:NarrativeRoleScheme ;
-    skos:prefLabel "Route"@en ;
-    skos:topConceptOf chora:NarrativeRoleScheme .
-
 <https://w3id.org/gaddatlas/id/focalizer/remo_balducci> a chora:Character,
         chora:FocalizingAgent ;
     dcterms:description "Marito di Liliana, commerciante spesso in viaggio."@it ;
@@ -37154,6 +37813,15 @@ chora:Route a owl:NamedIndividual,
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
+chora:CompletedRoute a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "compiuto"@it ;
+    skos:definition "A route the character actually travels in the story, once or habitually."@en ;
+    skos:inScheme chora:RouteTypeScheme ;
+    skos:notation "1" ;
+    skos:prefLabel "Completed"@en ;
+    skos:topConceptOf chora:RouteTypeScheme .
+
 chora:Near a owl:NamedIndividual,
         skos:Concept ;
     dcterms:description "A è in prossimità di B, senza specificare distanza esatta. Relazione qualitativa di vicinanza."@it ;
@@ -37162,6 +37830,14 @@ chora:Near a owl:NamedIndividual,
     skos:inScheme chora:SpatialRelationTypeScheme ;
     skos:prefLabel "Near"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+chora:Route a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Percorso"@it ;
+    skos:definition "Path along which characters move, connecting multiple settings or projected spaces"@en ;
+    skos:inScheme chora:NarrativeRoleScheme ;
+    skos:prefLabel "Route"@en ;
+    skos:topConceptOf chora:NarrativeRoleScheme .
 
 chora:Invented a owl:NamedIndividual,
         skos:Concept ;
@@ -37280,13 +37956,8 @@ chora:AdjacentTo a owl:NamedIndividual,
     chora:nickname "er palazzo dell'oro"@it,
         "palazzo de li pescicani"@it .
 
-chora:TextualEvidence a owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "prova testuale"@it ;
-    skos:definition "The reading rests on the text itself (wording, position, context of the occurrences)."@en ;
-    skos:inScheme chora:RationaleTypeScheme ;
-    skos:prefLabel "Textual evidence"@en ;
-    skos:topConceptOf chora:RationaleTypeScheme .
+<https://w3id.org/gaddatlas/id/route/tragitto_torraccio_ponte_divino_amore> a chora:NarrativeRoute ;
+    chora:hasRouteType chora:CompletedRoute .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_marino> a chora:GazetteerEntity ;
     rdfs:label "Marino"@it ;
@@ -37309,8 +37980,6 @@ chora:TextualEvidence a owl:NamedIndividual,
 }"""^^geosparql:geoJSONLiteral ] ;
     geo1:lat 41.77540942594233 ;
     geo1:long 12.66366867693179 .
-
-<https://w3id.org/gaddatlas/id/route/tragitto_torraccio_ponte_divino_amore> a chora:NarrativeRoute .
 
 chora:StatusAssertion a owl:NamedIndividual,
         skos:Concept ;
@@ -37401,6 +38070,14 @@ chora:locality a owl:NamedIndividual,
     skos:prefLabel "Locality"@en ;
     skos:topConceptOf chora:PlaceCategoryScheme .
 
+chora:TextualEvidence a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "prova testuale"@it ;
+    skos:definition "The reading rests on the text itself (wording, position, context of the occurrences)."@en ;
+    skos:inScheme chora:RationaleTypeScheme ;
+    skos:prefLabel "Textual evidence"@en ;
+    skos:topConceptOf chora:RationaleTypeScheme .
+
 <https://w3id.org/gaddatlas/id/zone/campagna_romana> a chora:PartitionZone ;
     rdfs:label "Campagna romana"@it ;
     skos:definition "La campagna intorno a Roma, Castelli compresi: i luoghi la cui ancora primaria dista fra 10 e 30 km dal Campidoglio."@it .
@@ -37417,24 +38094,16 @@ chora:Transformed a owl:NamedIndividual,
     skos:prefLabel "Transformed"@en ;
     skos:topConceptOf chora:RealityStatusScheme .
 
-<https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> a chora:Chapter ;
-    dcterms:title "Capitolo VIII"@it ;
-    chora:chapterNumber 8 ;
-    chora:pageRange "206-237"^^xsd:string ;
-    chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
-
-chora:Draft a owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "bozza"@it ;
-    skos:definition "Prepared from the existing documents (sheet descriptions, Chapter 4), not yet validated."@en ;
-    skos:inScheme chora:ReviewStatusScheme ;
-    skos:prefLabel "Draft"@en ;
-    skos:topConceptOf chora:ReviewStatusScheme .
-
 <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> a chora:Chapter ;
     dcterms:title "Capitolo IV"@it ;
     chora:chapterNumber 4 ;
     chora:pageRange "92-131"^^xsd:string ;
+    chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
+
+<https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> a chora:Chapter ;
+    dcterms:title "Capitolo VIII"@it ;
+    chora:chapterNumber 8 ;
+    chora:pageRange "206-237"^^xsd:string ;
     chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
 
 <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> a chora:Chapter ;
@@ -37480,13 +38149,13 @@ chora:Character a owl:Class ;
     skos:altLabel "Personaggio" ;
     skos:prefLabel "Character"@en .
 
-chora:Assertion a owl:Class ;
-    rdfs:comment "An attributed reading about a resource of the dataset: who formulated it (prov:qualifiedAttribution with role chora:ReadingAuthor), who encoded it (role chora:Encoder), on which source, when, which earlier assertion it revises, and whether the project adopts it. Competing readings coexist as distinct assertions; the adopted one is attributed like the others."@en,
-        "Lettura attribuita su una risorsa del dataset: chi l'ha formulata (prov:qualifiedAttribution con ruolo chora:ReadingAuthor), chi l'ha codificata (ruolo chora:Encoder), su quale fonte, quando, quale asserzione precedente rivede, e se il progetto la adotta. Le letture concorrenti convivono come asserzioni distinte; quella adottata e' attribuita come le altre."@it ;
-    rdfs:subClassOf <http://purl.org/emmedi/hico/InterpretationAct>,
-        prov:Entity ;
-    skos:altLabel "Asserzione"@it ;
-    skos:prefLabel "Assertion"@en .
+chora:Draft a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "bozza"@it ;
+    skos:definition "Prepared from the existing documents (sheet descriptions, Chapter 4), not yet validated."@en ;
+    skos:inScheme chora:ReviewStatusScheme ;
+    skos:prefLabel "Draft"@en ;
+    skos:topConceptOf chora:ReviewStatusScheme .
 
 chora:FocalizingAgent a owl:Class ;
     rdfs:comment "Entità attraverso cui lo spazio è percepito/descritto"@it ;
@@ -37506,6 +38175,14 @@ chora:Precise a owl:NamedIndividual,
     skos:inScheme chora:SpatialDeterminationScheme ;
     skos:prefLabel "Precise"@en ;
     skos:topConceptOf chora:SpatialDeterminationScheme .
+
+chora:Assertion a owl:Class ;
+    rdfs:comment "An attributed reading about a resource of the dataset: who formulated it (prov:qualifiedAttribution with role chora:ReadingAuthor), who encoded it (role chora:Encoder), on which source, when, which earlier assertion it revises, and whether the project adopts it. Competing readings coexist as distinct assertions; the adopted one is attributed like the others."@en,
+        "Lettura attribuita su una risorsa del dataset: chi l'ha formulata (prov:qualifiedAttribution con ruolo chora:ReadingAuthor), chi l'ha codificata (ruolo chora:Encoder), su quale fonte, quando, quale asserzione precedente rivede, e se il progetto la adotta. Le letture concorrenti convivono come asserzioni distinte; quella adottata e' attribuita come le altre."@it ;
+    rdfs:subClassOf <http://purl.org/emmedi/hico/InterpretationAct>,
+        prov:Entity ;
+    skos:altLabel "Asserzione"@it ;
+    skos:prefLabel "Assertion"@en .
 
 <https://w3id.org/gaddatlas/id/focalizer/ingravallo> a chora:Character,
         chora:FocalizingAgent ;

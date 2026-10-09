@@ -223,6 +223,9 @@
           "@id": "chora:PartitionAssertion"
         },
         {
+          "@id": "chora:RouteTypeAssertion"
+        },
+        {
           "@id": "chora:StatusAssertion"
         },
         {
@@ -410,6 +413,32 @@
       }
     },
     {
+      "@id": "chora:CompletedRoute",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "compiuto"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "A route the character actually travels in the story, once or habitually."
+      },
+      "skos:inScheme": {
+        "@id": "chora:RouteTypeScheme"
+      },
+      "skos:notation": "1",
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Completed"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:RouteTypeScheme"
+      }
+    },
+    {
       "@id": "chora:Confusion",
       "@type": [
         "owl:NamedIndividual",
@@ -536,6 +565,36 @@
       }
     },
     {
+      "@id": "chora:DirectionalRoute",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "direzionale"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "A route known only as a direction or a road, without the stretch actually covered."
+      },
+      "skos:inScheme": {
+        "@id": "chora:RouteTypeScheme"
+      },
+      "skos:notation": "5",
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Directional"
+      },
+      "skos:scopeNote": {
+        "@language": "it",
+        "@value": "Il Cap. 4 (r. 194) chiama questo tipo «presunto»."
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:RouteTypeScheme"
+      }
+    },
+    {
       "@id": "chora:Discrepancy",
       "@type": [
         "owl:NamedIndividual",
@@ -608,6 +667,32 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:ReviewStatusScheme"
+      }
+    },
+    {
+      "@id": "chora:DreamedRoute",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "sognato"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "A route travelled in a dream or a vision."
+      },
+      "skos:inScheme": {
+        "@id": "chora:RouteTypeScheme"
+      },
+      "skos:notation": "3",
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Dreamed"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:RouteTypeScheme"
       }
     },
     {
@@ -951,6 +1036,58 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:SpatialDeterminationScheme"
+      }
+    },
+    {
+      "@id": "chora:IndicatedRoute",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "indicato"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "A route described to a character by another, as directions."
+      },
+      "skos:inScheme": {
+        "@id": "chora:RouteTypeScheme"
+      },
+      "skos:notation": "2",
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Indicated"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:RouteTypeScheme"
+      }
+    },
+    {
+      "@id": "chora:InferredRoute",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "inferito"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "A route reconstructed by a character or the narrator from traces or hypotheses, not narrated as travelled."
+      },
+      "skos:inScheme": {
+        "@id": "chora:RouteTypeScheme"
+      },
+      "skos:notation": "4",
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Inferred"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:RouteTypeScheme"
       }
     },
     {
@@ -1688,6 +1825,32 @@
       }
     },
     {
+      "@id": "chora:ProposedRoute",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "proposto"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "A route a character proposes to take, not (yet) travelled."
+      },
+      "skos:inScheme": {
+        "@id": "chora:RouteTypeScheme"
+      },
+      "skos:notation": "6",
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Proposed"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:RouteTypeScheme"
+      }
+    },
+    {
       "@id": "chora:RationaleTypeScheme",
       "@type": [
         "owl:NamedIndividual",
@@ -1917,6 +2080,71 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:NarrativeRoleScheme"
+      }
+    },
+    {
+      "@id": "chora:RouteTypeAssertion",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "tipo di percorso"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "Assigns a route type to a narrative route."
+      },
+      "skos:inScheme": {
+        "@id": "chora:AssertionTypeScheme"
+      },
+      "skos:notation": "route",
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Route type assertion"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:AssertionTypeScheme"
+      }
+    },
+    {
+      "@id": "chora:RouteTypeScheme",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Route type"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Tipo di percorso"
+      },
+      "skos:hasTopConcept": [
+        {
+          "@id": "chora:CompletedRoute"
+        },
+        {
+          "@id": "chora:DirectionalRoute"
+        },
+        {
+          "@id": "chora:DreamedRoute"
+        },
+        {
+          "@id": "chora:IndicatedRoute"
+        },
+        {
+          "@id": "chora:InferredRoute"
+        },
+        {
+          "@id": "chora:ProposedRoute"
+        }
+      ],
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Route type"
       }
     },
     {
@@ -3089,6 +3317,31 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "has relational anchoring"
+      }
+    },
+    {
+      "@id": "chora:hasRouteType",
+      "@type": "owl:ObjectProperty",
+      "dcterms:references": {
+        "@id": "chora:RouteTypeScheme"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Type of a route, derived from the adopted route type assertion."
+      },
+      "rdfs:domain": {
+        "@id": "chora:NarrativeRoute"
+      },
+      "rdfs:range": {
+        "@id": "skos:Concept"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "ha tipo di percorso"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "has route type"
       }
     },
     {

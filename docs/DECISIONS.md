@@ -1199,6 +1199,28 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-060 — Percorsi tipizzati: sei tipi, ventuno percorsi (9 ottobre 2026)
+
+- Requisito/i: R18 · Ipotesi: — · Data check: DM-03 (work order T-54; T-64)
+- Stato precedente: 18 `NarrativeRoute` senza tipo. `tragitto_torraccio_ponte_divino_amore` mescolava i nodi di QP 169 (Santarella) e QP 297 (Ingravallo e gli altri). Nessun percorso per QP 212 e 237.
+- Decisione (di Lorenzo, 9/10/2026):
+  - **schema:** `chora:RouteTypeScheme` con sei tipi, solo per i personaggi (DM-03): compiuto, indicato, sognato, inferito, direzionale, proposto (`CompletedRoute` … `ProposedRoute`, con `skos:notation` 1–6). Il tipo è una lettura: lo assegna un'asserzione `route` (`chora:RouteTypeAssertion`, nuovo tipo dello schema delle asserzioni); l'ETL ne deriva `chora:hasRouteType` dalla lettura adottata. Il GeoJSON porta `routeType` per ogni percorso. Il Cap. 4 (r. 194) chiama «presunto» il tipo che Lorenzo chiama «direzionale»: lo registra lo `scopeNote`, e va allineato nel capitolo;
+  - **separazione:** il percorso di QP 169 diventa `tragitto_santarella_torraccio_divino_amore` (sei nodi, il riferimento portatore `ref_00406`); `tragitto_torraccio_ponte_divino_amore` resta il percorso di QP 297;
+  - **percorsi nuovi:** `tragitto_sogno_casal_bruciato_campo_morto` (QP 212, sognato, Pestalozzi): passaggio a livello di Casal Bruciato → Roma-Napoli → Campo Morto. `tragitto_castel_di_leva_casal_bruciato` (QP 237, indicato, Camilla): Castel di Leva → ponte → passaggio a livello di Casal Bruciato. I nodi sono le interpretazioni già esistenti di quei passi; i portatori sono due riferimenti nuovi (`ref_00728`, `ref_00729`, estratti composti dai passi dei nodi) e due interpretazioni nuove (`interp_00963`, `interp_00964`);
+  - **proposte di tipo**, tutte «bozza» (R-0001…R-0021, REVIEW_2): 15 compiuti (di cui 7 abituali), 2 indicati (QP 237; QP 238, incerto con compiuto), 2 inferiti (QP 169 e 174, elenchi disgiuntivi di provenienze o fermate, forse non percorsi), 1 sognato (QP 212), 1 direzionale (QP 278). Per QP 274 (fughe ipotetiche di Retalli: inferito) e QP 298 (ritorno proposto dall'ometto: proposto) la proposta è in REVIEW_2, senza percorsi nei dati;
+  - **anomalie trovate, non corrette (REVIEW_2):**
+    - QP 297: l'ultimo nodo (ponte del Divino Amore) è un termine di paragone, non un punto attraversato;
+    - QP 153: i nodi sono in ordine inverso (Santo Stefano 1, Tenenza 2);
+    - QP 93: il focalizzatore registrato è Liliana, ma si sposta il giudice; se il percorso fosse quello del corpo, sarebbe un oggetto (DM-03).
+  La lettura di Manzotti di «per fil a dest» (2010, p. 269) resta una nota attribuita di fase 3.
+- Controlli: shape 19 (`RouteTypeAssertionShape`: soggetto un percorso, un valore dello schema; `RouteTypeShape`: ogni percorso ha uno e un solo tipo); l'ETL rifiuta un'asserzione adottata il cui soggetto non è un percorso.
+- Motivazione (fonte, pagina): Cap. 4, § 4.6 (r. 176, 194) e R18; QP 25, 40, 41, 56, 93, 139–140, 153, 169, 173, 174, 182, 206, 208–215, 212, 237, 238, 278, 292, 297.
+- Fase in cui è maturata: analisi del testo
+- File toccati (manifest): `ontology/chora.ttl` r. 870–877 (tipo di asserzione), r. 1505–1582 (sezione «Percorsi tipizzati»); `ontology/shapes/chora-shapes.ttl` r. 304–306, r. 631–658 (shape 19); `tools/etl.py` r. 1225, r. 1339–1347; `tools/build_geojson.py` r. 609–611, `routeType` nel payload; `data/source/tables/References.tsv` (`ref_00406`; `ref_00728`, `ref_00729`), `SpatialInterpretations.tsv` (7 righe del percorso di QP 169, 6 nodi nuovi, 2 portatori), `Assertions.tsv` (R-0001…R-0021); XLSX corrispondenti.
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.230 → **1.306**; ABox 27.336 → **27.854**; full 29.136 → **29.730**. Percorsi 18 → **21**; interpretazioni 959 → **961**; riferimenti 727 → **729** (725 di QP). SHACL conforme, 52 avvertenze; IQ1–IQ17 a 0. Feature (300) e righe di rilievo (929) invariate. Il filtro della carta sui percorsi compiuti è nel commit successivo.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

@@ -494,6 +494,7 @@
     <skos:hasTopConcept rdf:resource="https://w3id.org/chora#LocationAssertion"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/chora#MemoryAssertion"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/chora#PartitionAssertion"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#RouteTypeAssertion"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/chora#StatusAssertion"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/chora#UncertaintyAssertion"/>
     <skos:hasTopConcept rdf:resource="https://w3id.org/chora#VariantAssertion"/>
@@ -563,6 +564,16 @@
     <skos:prefLabel xml:lang="en">Character's memory</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#MemoryAttributionScheme"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#CompletedRoute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">compiuto</skos:altLabel>
+    <skos:definition xml:lang="en">A route the character actually travels in the story, once or habitually.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#RouteTypeScheme"/>
+    <skos:notation>1</skos:notation>
+    <skos:prefLabel xml:lang="en">Completed</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#RouteTypeScheme"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#Confusion">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -609,6 +620,17 @@
     <skos:prefLabel xml:lang="en">Critical reading</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#RationaleTypeScheme"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#DirectionalRoute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">direzionale</skos:altLabel>
+    <skos:definition xml:lang="en">A route known only as a direction or a road, without the stretch actually covered.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#RouteTypeScheme"/>
+    <skos:notation>5</skos:notation>
+    <skos:prefLabel xml:lang="en">Directional</skos:prefLabel>
+    <skos:scopeNote xml:lang="it">Il Cap. 4 (r. 194) chiama questo tipo «presunto».</skos:scopeNote>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#RouteTypeScheme"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#Discrepancy">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -635,6 +657,16 @@
     <skos:inScheme rdf:resource="https://w3id.org/chora#ReviewStatusScheme"/>
     <skos:prefLabel xml:lang="en">Draft</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#ReviewStatusScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#DreamedRoute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">sognato</skos:altLabel>
+    <skos:definition xml:lang="en">A route travelled in a dream or a vision.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#RouteTypeScheme"/>
+    <skos:notation>3</skos:notation>
+    <skos:prefLabel xml:lang="en">Dreamed</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#RouteTypeScheme"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#Edition">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -759,6 +791,26 @@
     <skos:inScheme rdf:resource="https://w3id.org/chora#SpatialDeterminationScheme"/>
     <skos:prefLabel xml:lang="en">Indeterminate</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#SpatialDeterminationScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#IndicatedRoute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">indicato</skos:altLabel>
+    <skos:definition xml:lang="en">A route described to a character by another, as directions.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#RouteTypeScheme"/>
+    <skos:notation>2</skos:notation>
+    <skos:prefLabel xml:lang="en">Indicated</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#RouteTypeScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#InferredRoute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">inferito</skos:altLabel>
+    <skos:definition xml:lang="en">A route reconstructed by a character or the narrator from traces or hypotheses, not narrated as travelled.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#RouteTypeScheme"/>
+    <skos:notation>4</skos:notation>
+    <skos:prefLabel xml:lang="en">Inferred</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#RouteTypeScheme"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#Inside">
     <dcterms:description xml:lang="it">A è contenuto spazialmente in B. Relazione topologica di contenimento.</dcterms:description>
@@ -1021,6 +1073,16 @@
     <skos:prefLabel xml:lang="en">Proofs</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#WitnessTypeScheme"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#ProposedRoute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">proposto</skos:altLabel>
+    <skos:definition xml:lang="en">A route a character proposes to take, not (yet) travelled.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#RouteTypeScheme"/>
+    <skos:notation>6</skos:notation>
+    <skos:prefLabel xml:lang="en">Proposed</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#RouteTypeScheme"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#RationaleTypeScheme">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
@@ -1102,6 +1164,29 @@
     <skos:inScheme rdf:resource="https://w3id.org/chora#NarrativeRoleScheme"/>
     <skos:prefLabel xml:lang="en">Route</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#NarrativeRoleScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#RouteTypeAssertion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">tipo di percorso</skos:altLabel>
+    <skos:definition xml:lang="en">Assigns a route type to a narrative route.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#AssertionTypeScheme"/>
+    <skos:notation>route</skos:notation>
+    <skos:prefLabel xml:lang="en">Route type assertion</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#AssertionTypeScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#RouteTypeScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:label xml:lang="en">Route type</rdfs:label>
+    <skos:altLabel xml:lang="it">Tipo di percorso</skos:altLabel>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#CompletedRoute"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#DirectionalRoute"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#DreamedRoute"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#IndicatedRoute"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#InferredRoute"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#ProposedRoute"/>
+    <skos:prefLabel xml:lang="en">Route type</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#Setting">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -1524,6 +1609,15 @@
     <rdfs:range rdf:resource="https://w3id.org/chora#RelationalAnchoring"/>
     <skos:altLabel xml:lang="it">ha ancoraggio relazionale</skos:altLabel>
     <skos:prefLabel xml:lang="en">has relational anchoring</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#hasRouteType">
+    <dcterms:references rdf:resource="https://w3id.org/chora#RouteTypeScheme"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">Type of a route, derived from the adopted route type assertion.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#NarrativeRoute"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">ha tipo di percorso</skos:altLabel>
+    <skos:prefLabel xml:lang="en">has route type</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#hasSpatialGeometry">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>

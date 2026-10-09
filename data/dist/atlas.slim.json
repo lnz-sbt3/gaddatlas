@@ -21,7 +21,7 @@
   "ontologyVersion": "1.0.0",
   "buildVersion": "4.3",
   "source": "gaddatlas-full.ttl",
-  "tripleCount": 29136,
+  "tripleCount": 29730,
   "projection": {
    "type": "equirectangular",
    "center": [
@@ -111,9 +111,9 @@
   "counts": {
    "gazetteer": 265,
    "narrativePlaces": 309,
-   "interpretations": 959,
-   "references": 723,
-   "routes": 18,
+   "interpretations": 961,
+   "references": 725,
+   "routes": 21,
    "chapters": 10,
    "agents": 83,
    "derivedSequences": 103,
@@ -23057,7 +23057,7 @@
    "spatialRelation": null,
    "focalizerId": "santarella",
    "confidence": 1.0,
-   "isNodeOfRoute": "tragitto_torraccio_ponte_divino_amore",
+   "isNodeOfRoute": "tragitto_santarella_torraccio_divino_amore",
    "routeOrder": 1,
    "criticalNote": null
   },
@@ -23073,7 +23073,7 @@
    "spatialRelation": null,
    "focalizerId": "santarella",
    "confidence": 1.0,
-   "isNodeOfRoute": "tragitto_torraccio_ponte_divino_amore",
+   "isNodeOfRoute": "tragitto_santarella_torraccio_divino_amore",
    "routeOrder": 2,
    "criticalNote": null
   },
@@ -23089,7 +23089,7 @@
    "spatialRelation": null,
    "focalizerId": "santarella",
    "confidence": 0.5,
-   "isNodeOfRoute": "tragitto_torraccio_ponte_divino_amore",
+   "isNodeOfRoute": "tragitto_santarella_torraccio_divino_amore",
    "routeOrder": 3,
    "criticalNote": null
   },
@@ -23105,7 +23105,7 @@
    "spatialRelation": "Near",
    "focalizerId": "santarella",
    "confidence": 0.5,
-   "isNodeOfRoute": "tragitto_torraccio_ponte_divino_amore",
+   "isNodeOfRoute": "tragitto_santarella_torraccio_divino_amore",
    "routeOrder": 4,
    "criticalNote": "Possibile referente: Castello della Castelluccia, circa 41.7443, 12.6165"
   },
@@ -23121,7 +23121,7 @@
    "spatialRelation": "Near",
    "focalizerId": "santarella",
    "confidence": 0.5,
-   "isNodeOfRoute": "tragitto_torraccio_ponte_divino_amore",
+   "isNodeOfRoute": "tragitto_santarella_torraccio_divino_amore",
    "routeOrder": 4,
    "criticalNote": "Possibile referente: Castello della Castelluccia, circa 41.7443, 12.6165"
   },
@@ -23137,7 +23137,7 @@
    "spatialRelation": null,
    "focalizerId": "santarella",
    "confidence": 1.0,
-   "isNodeOfRoute": "tragitto_torraccio_ponte_divino_amore",
+   "isNodeOfRoute": "tragitto_santarella_torraccio_divino_amore",
    "routeOrder": 5,
    "criticalNote": null
   },
@@ -23146,7 +23146,7 @@
    "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00477",
    "referenceId": "ref_00406",
    "narrativePlaceId": null,
-   "routeId": "tragitto_torraccio_ponte_divino_amore",
+   "routeId": "tragitto_santarella_torraccio_divino_amore",
    "gazetteerId": null,
    "narrativeRole": "Route",
    "spatialDetermination": "Approximate",
@@ -25777,8 +25777,8 @@
    "spatialRelation": null,
    "focalizerId": "pestalozzi",
    "confidence": 1.0,
-   "isNodeOfRoute": null,
-   "routeOrder": null,
+   "isNodeOfRoute": "tragitto_sogno_casal_bruciato_campo_morto",
+   "routeOrder": 1,
    "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 212, percorso sognato (Pestalozzi): Manzotti (p. 269) legge «per fil a dest» come un cambio di direzione perpendicolare, in realtà verso sinistra (a sud, verso il Circeo); lettura attribuita, fase 3."
   },
   {
@@ -25793,8 +25793,8 @@
    "spatialRelation": null,
    "focalizerId": "pestalozzi",
    "confidence": 1.0,
-   "isNodeOfRoute": null,
-   "routeOrder": null,
+   "isNodeOfRoute": "tragitto_sogno_casal_bruciato_campo_morto",
+   "routeOrder": 2,
    "criticalNote": null
   },
   {
@@ -25809,8 +25809,8 @@
    "spatialRelation": null,
    "focalizerId": "pestalozzi",
    "confidence": 1.0,
-   "isNodeOfRoute": null,
-   "routeOrder": null,
+   "isNodeOfRoute": "tragitto_sogno_casal_bruciato_campo_morto",
+   "routeOrder": 3,
    "criticalNote": null
   },
   {
@@ -26385,8 +26385,8 @@
    "spatialRelation": null,
    "focalizerId": "camilla_mattonari",
    "confidence": 1.0,
-   "isNodeOfRoute": null,
-   "routeOrder": null,
+   "isNodeOfRoute": "tragitto_castel_di_leva_casal_bruciato",
+   "routeOrder": 1,
    "criticalNote": null
   },
   {
@@ -26401,8 +26401,8 @@
    "spatialRelation": null,
    "focalizerId": "camilla_mattonari",
    "confidence": 1.0,
-   "isNodeOfRoute": null,
-   "routeOrder": null,
+   "isNodeOfRoute": "tragitto_castel_di_leva_casal_bruciato",
+   "routeOrder": 2,
    "criticalNote": null
   },
   {
@@ -26417,8 +26417,8 @@
    "spatialRelation": null,
    "focalizerId": "camilla_mattonari",
    "confidence": 1.0,
-   "isNodeOfRoute": null,
-   "routeOrder": null,
+   "isNodeOfRoute": "tragitto_castel_di_leva_casal_bruciato",
+   "routeOrder": 3,
    "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita)."
   },
   {
@@ -30880,6 +30880,38 @@
    "spatialDetermination": "Relative",
    "spatialRelation": "Inside",
    "focalizerId": "pestalozzi",
+   "confidence": 1.0,
+   "isNodeOfRoute": null,
+   "routeOrder": null,
+   "criticalNote": null
+  },
+  {
+   "id": "interp_00963",
+   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00963",
+   "referenceId": "ref_00728",
+   "narrativePlaceId": null,
+   "routeId": "tragitto_sogno_casal_bruciato_campo_morto",
+   "gazetteerId": null,
+   "narrativeRole": "Route",
+   "spatialDetermination": null,
+   "spatialRelation": null,
+   "focalizerId": "pestalozzi",
+   "confidence": 1.0,
+   "isNodeOfRoute": null,
+   "routeOrder": null,
+   "criticalNote": null
+  },
+  {
+   "id": "interp_00964",
+   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00964",
+   "referenceId": "ref_00729",
+   "narrativePlaceId": null,
+   "routeId": "tragitto_castel_di_leva_casal_bruciato",
+   "gazetteerId": null,
+   "narrativeRole": "Route",
+   "spatialDetermination": null,
+   "spatialRelation": null,
+   "focalizerId": "camilla_mattonari",
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
@@ -37425,6 +37457,24 @@
    "sourceReference": "A 241",
    "chapterId": "capitolo_IX",
    "workId": "quer_pasticciaccio"
+  },
+  {
+   "id": "ref_00728",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00728",
+   "edition": "A",
+   "page": 212,
+   "sourceReference": "A 212",
+   "chapterId": "capitolo_VIII",
+   "workId": "quer_pasticciaccio"
+  },
+  {
+   "id": "ref_00729",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00729",
+   "edition": "A",
+   "page": 237,
+   "sourceReference": "A 237",
+   "chapterId": "capitolo_VIII",
+   "workId": "quer_pasticciaccio"
   }
  ],
  "routes": [
@@ -37432,17 +37482,8 @@
    "id": "tragitto_torraccio_ponte_divino_amore",
    "iri": "https://w3id.org/gaddatlas/id/route/tragitto_torraccio_ponte_divino_amore",
    "label": "torraccio ponte divino amore",
+   "routeType": "CompletedRoute",
    "nodes": [
-    {
-     "order": 1,
-     "interpretationId": "interp_00470",
-     "narrativePlaceId": "torraccio",
-     "gazetteerId": "gaz_torraccio",
-     "targetId": "gaz_torraccio",
-     "focalizerId": "santarella",
-     "referenceId": "ref_00401",
-     "page": 169
-    },
     {
      "order": 1,
      "interpretationId": "interp_00872",
@@ -37482,16 +37523,6 @@
      "focalizerId": "agente_runzato",
      "referenceId": "ref_00688",
      "page": 297
-    },
-    {
-     "order": 2,
-     "interpretationId": "interp_00471",
-     "narrativePlaceId": "frattocchie",
-     "gazetteerId": "gaz_frattocchie",
-     "targetId": "gaz_frattocchie",
-     "focalizerId": "santarella",
-     "referenceId": "ref_00402",
-     "page": 169
     },
     {
      "order": 2,
@@ -37535,16 +37566,6 @@
     },
     {
      "order": 3,
-     "interpretationId": "interp_00472",
-     "narrativePlaceId": "robine_vecchie",
-     "gazetteerId": null,
-     "targetId": null,
-     "focalizerId": "santarella",
-     "referenceId": "ref_00403",
-     "page": 169
-    },
-    {
-     "order": 3,
      "interpretationId": "interp_00880",
      "narrativePlaceId": "due_santi",
      "gazetteerId": "gaz_due_santi",
@@ -37585,26 +37606,6 @@
     },
     {
      "order": 4,
-     "interpretationId": "interp_00474",
-     "narrativePlaceId": "cassero",
-     "gazetteerId": "gaz_frattocchie",
-     "targetId": "cassero",
-     "focalizerId": "santarella",
-     "referenceId": "ref_00404",
-     "page": 169
-    },
-    {
-     "order": 4,
-     "interpretationId": "interp_00475",
-     "narrativePlaceId": "cassero",
-     "gazetteerId": "gaz_pavona",
-     "targetId": "cassero",
-     "focalizerId": "santarella",
-     "referenceId": "ref_00404",
-     "page": 169
-    },
-    {
-     "order": 4,
      "interpretationId": "interp_00884",
      "narrativePlaceId": "via_della_falcognana",
      "gazetteerId": "gaz_via_della_falcognana",
@@ -37642,16 +37643,6 @@
      "focalizerId": "agente_runzato",
      "referenceId": "ref_00691",
      "page": 297
-    },
-    {
-     "order": 5,
-     "interpretationId": "interp_00476",
-     "narrativePlaceId": "ponte_divino_amore",
-     "gazetteerId": "gaz_ponte_divino_amore",
-     "targetId": "ponte_divino_amore",
-     "focalizerId": "santarella",
-     "referenceId": "ref_00405",
-     "page": 169
     },
     {
      "order": 5,
@@ -37894,7 +37885,7 @@
      "page": 297
     }
    ],
-   "nodeCount": 46,
+   "nodeCount": 40,
    "steps": [
     {
      "order": 1,
@@ -37905,11 +37896,9 @@
       "agente_runzato",
       "autista_questura",
       "ingravallo",
-      "maresciallo_di_pietrantonio",
-      "santarella"
+      "maresciallo_di_pietrantonio"
      ],
      "interpretationIds": [
-      "interp_00470",
       "interp_00872",
       "interp_00873",
       "interp_00874",
@@ -37919,18 +37908,15 @@
     {
      "order": 2,
      "targetIds": [
-      "gaz_frattocchie",
       "gaz_via_appia"
      ],
      "focalizerIds": [
       "agente_runzato",
       "autista_questura",
       "ingravallo",
-      "maresciallo_di_pietrantonio",
-      "santarella"
+      "maresciallo_di_pietrantonio"
      ],
      "interpretationIds": [
-      "interp_00471",
       "interp_00876",
       "interp_00877",
       "interp_00878",
@@ -37946,11 +37932,9 @@
       "agente_runzato",
       "autista_questura",
       "ingravallo",
-      "maresciallo_di_pietrantonio",
-      "santarella"
+      "maresciallo_di_pietrantonio"
      ],
      "interpretationIds": [
-      "interp_00472",
       "interp_00880",
       "interp_00881",
       "interp_00882",
@@ -37960,19 +37944,15 @@
     {
      "order": 4,
      "targetIds": [
-      "cassero",
       "gaz_via_della_falcognana"
      ],
      "focalizerIds": [
       "agente_runzato",
       "autista_questura",
       "ingravallo",
-      "maresciallo_di_pietrantonio",
-      "santarella"
+      "maresciallo_di_pietrantonio"
      ],
      "interpretationIds": [
-      "interp_00474",
-      "interp_00475",
       "interp_00884",
       "interp_00885",
       "interp_00886",
@@ -37982,18 +37962,15 @@
     {
      "order": 5,
      "targetIds": [
-      "gaz_via_anziate",
-      "ponte_divino_amore"
+      "gaz_via_anziate"
      ],
      "focalizerIds": [
       "agente_runzato",
       "autista_questura",
       "ingravallo",
-      "maresciallo_di_pietrantonio",
-      "santarella"
+      "maresciallo_di_pietrantonio"
      ],
      "interpretationIds": [
-      "interp_00476",
       "interp_00888",
       "interp_00889",
       "interp_00890",
@@ -38092,9 +38069,8 @@
     }
    ],
    "stepCount": 10,
-   "isPartialOrder": true,
+   "isPartialOrder": false,
    "carrierIds": [
-    "interp_00477",
     "interp_00912",
     "interp_00913",
     "interp_00914",
@@ -38104,28 +38080,26 @@
     "Route"
    ],
    "referenceIds": [
-    "ref_00406",
     "ref_00698"
    ],
    "focalizerIds": [
     "agente_runzato",
     "autista_questura",
     "ingravallo",
-    "maresciallo_di_pietrantonio",
-    "santarella"
+    "maresciallo_di_pietrantonio"
    ],
    "nodeFocalizerIds": [
     "agente_runzato",
     "autista_questura",
     "ingravallo",
-    "maresciallo_di_pietrantonio",
-    "santarella"
+    "maresciallo_di_pietrantonio"
    ]
   },
   {
    "id": "tragitto_tenenza_due_santi",
    "iri": "https://w3id.org/gaddatlas/id/route/tragitto_tenenza_due_santi",
    "label": "tenenza due santi",
+   "routeType": "CompletedRoute",
    "nodes": [
     {
      "order": 1,
@@ -38326,6 +38300,7 @@
    "id": "tragitto_brancaccio_piazza_san_giovanni",
    "iri": "https://w3id.org/gaddatlas/id/route/tragitto_brancaccio_piazza_san_giovanni",
    "label": "brancaccio piazza san giovanni",
+   "routeType": "CompletedRoute",
    "nodes": [
     {
      "order": 1,
@@ -38497,6 +38472,7 @@
    "id": "tragitto_viminale_merulana",
    "iri": "https://w3id.org/gaddatlas/id/route/tragitto_viminale_merulana",
    "label": "viminale merulana",
+   "routeType": "CompletedRoute",
    "nodes": [
     {
      "order": 1,
@@ -38668,6 +38644,7 @@
    "id": "tragitto_appia_falcognana",
    "iri": "https://w3id.org/gaddatlas/id/route/tragitto_appia_falcognana",
    "label": "appia falcognana",
+   "routeType": "IndicatedRoute",
    "nodes": [
     {
      "order": 1,
@@ -38790,9 +38767,157 @@
    ]
   },
   {
+   "id": "tragitto_santarella_torraccio_divino_amore",
+   "iri": "https://w3id.org/gaddatlas/id/route/tragitto_santarella_torraccio_divino_amore",
+   "label": "santarella torraccio divino amore",
+   "routeType": "InferredRoute",
+   "nodes": [
+    {
+     "order": 1,
+     "interpretationId": "interp_00470",
+     "narrativePlaceId": "torraccio",
+     "gazetteerId": "gaz_torraccio",
+     "targetId": "gaz_torraccio",
+     "focalizerId": "santarella",
+     "referenceId": "ref_00401",
+     "page": 169
+    },
+    {
+     "order": 2,
+     "interpretationId": "interp_00471",
+     "narrativePlaceId": "frattocchie",
+     "gazetteerId": "gaz_frattocchie",
+     "targetId": "gaz_frattocchie",
+     "focalizerId": "santarella",
+     "referenceId": "ref_00402",
+     "page": 169
+    },
+    {
+     "order": 3,
+     "interpretationId": "interp_00472",
+     "narrativePlaceId": "robine_vecchie",
+     "gazetteerId": null,
+     "targetId": null,
+     "focalizerId": "santarella",
+     "referenceId": "ref_00403",
+     "page": 169
+    },
+    {
+     "order": 4,
+     "interpretationId": "interp_00474",
+     "narrativePlaceId": "cassero",
+     "gazetteerId": "gaz_frattocchie",
+     "targetId": "cassero",
+     "focalizerId": "santarella",
+     "referenceId": "ref_00404",
+     "page": 169
+    },
+    {
+     "order": 4,
+     "interpretationId": "interp_00475",
+     "narrativePlaceId": "cassero",
+     "gazetteerId": "gaz_pavona",
+     "targetId": "cassero",
+     "focalizerId": "santarella",
+     "referenceId": "ref_00404",
+     "page": 169
+    },
+    {
+     "order": 5,
+     "interpretationId": "interp_00476",
+     "narrativePlaceId": "ponte_divino_amore",
+     "gazetteerId": "gaz_ponte_divino_amore",
+     "targetId": "ponte_divino_amore",
+     "focalizerId": "santarella",
+     "referenceId": "ref_00405",
+     "page": 169
+    }
+   ],
+   "nodeCount": 6,
+   "steps": [
+    {
+     "order": 1,
+     "targetIds": [
+      "gaz_torraccio"
+     ],
+     "focalizerIds": [
+      "santarella"
+     ],
+     "interpretationIds": [
+      "interp_00470"
+     ]
+    },
+    {
+     "order": 2,
+     "targetIds": [
+      "gaz_frattocchie"
+     ],
+     "focalizerIds": [
+      "santarella"
+     ],
+     "interpretationIds": [
+      "interp_00471"
+     ]
+    },
+    {
+     "order": 3,
+     "targetIds": [],
+     "focalizerIds": [
+      "santarella"
+     ],
+     "interpretationIds": [
+      "interp_00472"
+     ]
+    },
+    {
+     "order": 4,
+     "targetIds": [
+      "cassero"
+     ],
+     "focalizerIds": [
+      "santarella"
+     ],
+     "interpretationIds": [
+      "interp_00474",
+      "interp_00475"
+     ]
+    },
+    {
+     "order": 5,
+     "targetIds": [
+      "ponte_divino_amore"
+     ],
+     "focalizerIds": [
+      "santarella"
+     ],
+     "interpretationIds": [
+      "interp_00476"
+     ]
+    }
+   ],
+   "stepCount": 5,
+   "isPartialOrder": false,
+   "carrierIds": [
+    "interp_00477"
+   ],
+   "carrierRoles": [
+    "Route"
+   ],
+   "referenceIds": [
+    "ref_00406"
+   ],
+   "focalizerIds": [
+    "santarella"
+   ],
+   "nodeFocalizerIds": [
+    "santarella"
+   ]
+  },
+  {
    "id": "tragitto_agostino_aquiro",
    "iri": "https://w3id.org/gaddatlas/id/route/tragitto_agostino_aquiro",
    "label": "agostino aquiro",
+   "routeType": "CompletedRoute",
    "nodes": [
     {
      "order": 1,
@@ -38930,6 +39055,7 @@
    "id": "tragitto_cecchina_anziate",
    "iri": "https://w3id.org/gaddatlas/id/route/tragitto_cecchina_anziate",
    "label": "cecchina anziate",
+   "routeType": "CompletedRoute",
    "nodes": [
     {
      "order": 1,
@@ -39067,6 +39193,7 @@
    "id": "tragitto_colonna_treccani",
    "iri": "https://w3id.org/gaddatlas/id/route/tragitto_colonna_treccani",
    "label": "colonna treccani",
+   "routeType": "CompletedRoute",
    "nodes": [
     {
      "order": 1,
@@ -39204,6 +39331,7 @@
    "id": "tragitto_frattocchie_ciampino",
    "iri": "https://w3id.org/gaddatlas/id/route/tragitto_frattocchie_ciampino",
    "label": "frattocchie ciampino",
+   "routeType": "InferredRoute",
    "nodes": [
     {
      "order": 1,
@@ -39341,6 +39469,7 @@
    "id": "tragitto_monti_piazza_esedra",
    "iri": "https://w3id.org/gaddatlas/id/route/tragitto_monti_piazza_esedra",
    "label": "monti piazza esedra",
+   "routeType": "CompletedRoute",
    "nodes": [
     {
      "order": 1,
@@ -39456,6 +39585,7 @@
    "id": "tragitto_rocca_di_papa_monte_nuncupale",
    "iri": "https://w3id.org/gaddatlas/id/route/tragitto_rocca_di_papa_monte_nuncupale",
    "label": "rocca di papa monte nuncupale",
+   "routeType": "CompletedRoute",
    "nodes": [
     {
      "order": 1,
@@ -39568,9 +39698,104 @@
    ]
   },
   {
+   "id": "tragitto_castel_di_leva_casal_bruciato",
+   "iri": "https://w3id.org/gaddatlas/id/route/tragitto_castel_di_leva_casal_bruciato",
+   "label": "castel di leva casal bruciato",
+   "routeType": "IndicatedRoute",
+   "nodes": [
+    {
+     "order": 1,
+     "interpretationId": "interp_00679",
+     "narrativePlaceId": "castel_di_leva",
+     "gazetteerId": "gaz_castel_di_leva",
+     "targetId": "gaz_castel_di_leva",
+     "focalizerId": "camilla_mattonari",
+     "referenceId": "ref_00566",
+     "page": 237
+    },
+    {
+     "order": 2,
+     "interpretationId": "interp_00680",
+     "narrativePlaceId": "ponte_divino_amore",
+     "gazetteerId": "gaz_ponte_divino_amore",
+     "targetId": "ponte_divino_amore",
+     "focalizerId": "camilla_mattonari",
+     "referenceId": "ref_00567",
+     "page": 237
+    },
+    {
+     "order": 3,
+     "interpretationId": "interp_00681",
+     "narrativePlaceId": "casal_bruciato",
+     "gazetteerId": "gaz_casale_abbruciato",
+     "targetId": "gaz_casale_abbruciato",
+     "focalizerId": "camilla_mattonari",
+     "referenceId": "ref_00568",
+     "page": 237
+    }
+   ],
+   "nodeCount": 3,
+   "steps": [
+    {
+     "order": 1,
+     "targetIds": [
+      "gaz_castel_di_leva"
+     ],
+     "focalizerIds": [
+      "camilla_mattonari"
+     ],
+     "interpretationIds": [
+      "interp_00679"
+     ]
+    },
+    {
+     "order": 2,
+     "targetIds": [
+      "ponte_divino_amore"
+     ],
+     "focalizerIds": [
+      "camilla_mattonari"
+     ],
+     "interpretationIds": [
+      "interp_00680"
+     ]
+    },
+    {
+     "order": 3,
+     "targetIds": [
+      "gaz_casale_abbruciato"
+     ],
+     "focalizerIds": [
+      "camilla_mattonari"
+     ],
+     "interpretationIds": [
+      "interp_00681"
+     ]
+    }
+   ],
+   "stepCount": 3,
+   "isPartialOrder": false,
+   "carrierIds": [
+    "interp_00964"
+   ],
+   "carrierRoles": [
+    "Route"
+   ],
+   "referenceIds": [
+    "ref_00729"
+   ],
+   "focalizerIds": [
+    "camilla_mattonari"
+   ],
+   "nodeFocalizerIds": [
+    "camilla_mattonari"
+   ]
+  },
+  {
    "id": "tragitto_chiara_pantheon",
    "iri": "https://w3id.org/gaddatlas/id/route/tragitto_chiara_pantheon",
    "label": "chiara pantheon",
+   "routeType": "CompletedRoute",
    "nodes": [
     {
      "order": 1,
@@ -39664,6 +39889,7 @@
    "id": "tragitto_duesanti_frattocchie",
    "iri": "https://w3id.org/gaddatlas/id/route/tragitto_duesanti_frattocchie",
    "label": "duesanti frattocchie",
+   "routeType": "CompletedRoute",
    "nodes": [
     {
      "order": 1,
@@ -39757,6 +39983,7 @@
    "id": "tragitto_policlinico_san_lorenzo_al_verano",
    "iri": "https://w3id.org/gaddatlas/id/route/tragitto_policlinico_san_lorenzo_al_verano",
    "label": "policlinico san lorenzo al verano",
+   "routeType": "CompletedRoute",
    "nodes": [
     {
      "order": 1,
@@ -39847,9 +40074,104 @@
    ]
   },
   {
+   "id": "tragitto_sogno_casal_bruciato_campo_morto",
+   "iri": "https://w3id.org/gaddatlas/id/route/tragitto_sogno_casal_bruciato_campo_morto",
+   "label": "sogno casal bruciato campo morto",
+   "routeType": "DreamedRoute",
+   "nodes": [
+    {
+     "order": 1,
+     "interpretationId": "interp_00641",
+     "narrativePlaceId": "casal_bruciato",
+     "gazetteerId": "gaz_casale_abbruciato",
+     "targetId": "gaz_casale_abbruciato",
+     "focalizerId": "pestalozzi",
+     "referenceId": "ref_00534",
+     "page": 212
+    },
+    {
+     "order": 2,
+     "interpretationId": "interp_00642",
+     "narrativePlaceId": "direttissima_roma_napoli",
+     "gazetteerId": "gaz_direttissima_roma_napoli",
+     "targetId": "gaz_direttissima_roma_napoli",
+     "focalizerId": "pestalozzi",
+     "referenceId": "ref_00535",
+     "page": 212
+    },
+    {
+     "order": 3,
+     "interpretationId": "interp_00643",
+     "narrativePlaceId": "campo_morto",
+     "gazetteerId": "gaz_campo_morto",
+     "targetId": "gaz_campo_morto",
+     "focalizerId": "pestalozzi",
+     "referenceId": "ref_00536",
+     "page": 212
+    }
+   ],
+   "nodeCount": 3,
+   "steps": [
+    {
+     "order": 1,
+     "targetIds": [
+      "gaz_casale_abbruciato"
+     ],
+     "focalizerIds": [
+      "pestalozzi"
+     ],
+     "interpretationIds": [
+      "interp_00641"
+     ]
+    },
+    {
+     "order": 2,
+     "targetIds": [
+      "gaz_direttissima_roma_napoli"
+     ],
+     "focalizerIds": [
+      "pestalozzi"
+     ],
+     "interpretationIds": [
+      "interp_00642"
+     ]
+    },
+    {
+     "order": 3,
+     "targetIds": [
+      "gaz_campo_morto"
+     ],
+     "focalizerIds": [
+      "pestalozzi"
+     ],
+     "interpretationIds": [
+      "interp_00643"
+     ]
+    }
+   ],
+   "stepCount": 3,
+   "isPartialOrder": false,
+   "carrierIds": [
+    "interp_00963"
+   ],
+   "carrierRoles": [
+    "Route"
+   ],
+   "referenceIds": [
+    "ref_00728"
+   ],
+   "focalizerIds": [
+    "pestalozzi"
+   ],
+   "nodeFocalizerIds": [
+    "pestalozzi"
+   ]
+  },
+  {
    "id": "tragitto_marino_albano_laziale",
    "iri": "https://w3id.org/gaddatlas/id/route/tragitto_marino_albano_laziale",
    "label": "marino albano laziale",
+   "routeType": "DirectionalRoute",
    "nodes": [
     {
      "order": 1,
@@ -39921,6 +40243,7 @@
    "id": "tragitto_marino_due_santi",
    "iri": "https://w3id.org/gaddatlas/id/route/tragitto_marino_due_santi",
    "label": "marino due santi",
+   "routeType": "CompletedRoute",
    "nodes": [
     {
      "order": 1,
@@ -39992,6 +40315,7 @@
    "id": "tragitto_marino_santo_stefano",
    "iri": "https://w3id.org/gaddatlas/id/route/tragitto_marino_santo_stefano",
    "label": "marino santo stefano",
+   "routeType": "CompletedRoute",
    "nodes": [
     {
      "order": 1,
@@ -40063,6 +40387,7 @@
    "id": "tragitto_merulana_policlinico",
    "iri": "https://w3id.org/gaddatlas/id/route/tragitto_merulana_policlinico",
    "label": "merulana policlinico",
+   "routeType": "CompletedRoute",
    "nodes": [
     {
      "order": 1,
@@ -40218,7 +40543,7 @@
    "name": "Pestalozzi",
    "gender": "male",
    "description": "Brigadiere Pestalozzi, conduce le indagini nell'area dei Castelli, dalla tenenza dei carabinieri di Marino",
-   "refCount": 75
+   "refCount": 76
   },
   {
    "id": "narrator",
@@ -40309,6 +40634,14 @@
    "refCount": 27
   },
   {
+   "id": "camilla_mattonari",
+   "iri": "https://w3id.org/gaddatlas/id/focalizer/camilla_mattonari",
+   "name": "Camilla Mattonari",
+   "gender": "female",
+   "description": "Camilla Mattonari, una delle cugine legate ad Enea Retalli, coinvolta nel furto di gioielli della Menegazzi",
+   "refCount": 24
+  },
+  {
    "id": "cocullo",
    "iri": "https://w3id.org/gaddatlas/id/focalizer/cocullo",
    "name": "Cocullo",
@@ -40323,14 +40656,6 @@
    "gender": "male",
    "description": "Giovane sospettato, legato all'ambiente dei Castelli Romani.",
    "refCount": 24
-  },
-  {
-   "id": "camilla_mattonari",
-   "iri": "https://w3id.org/gaddatlas/id/focalizer/camilla_mattonari",
-   "name": "Camilla Mattonari",
-   "gender": "female",
-   "description": "Camilla Mattonari, una delle cugine legate ad Enea Retalli, coinvolta nel furto di gioielli della Menegazzi",
-   "refCount": 23
   },
   {
    "id": "autista_questura",
@@ -56605,7 +56930,7 @@
    "role": null,
    "determination": null,
    "criticalNote": null,
-   "isRouteNode": "tragitto_torraccio_ponte_divino_amore"
+   "isRouteNode": "tragitto_santarella_torraccio_divino_amore"
   },
   {
    "targetId": "gaz_frattocchie",
@@ -56617,7 +56942,7 @@
    "role": null,
    "determination": null,
    "criticalNote": null,
-   "isRouteNode": "tragitto_torraccio_ponte_divino_amore"
+   "isRouteNode": "tragitto_santarella_torraccio_divino_amore"
   },
   {
    "targetId": "cassero",
@@ -56629,7 +56954,7 @@
    "role": null,
    "determination": null,
    "criticalNote": "Possibile referente: Castello della Castelluccia, circa 41.7443, 12.6165",
-   "isRouteNode": "tragitto_torraccio_ponte_divino_amore"
+   "isRouteNode": "tragitto_santarella_torraccio_divino_amore"
   },
   {
    "targetId": "cassero",
@@ -56641,7 +56966,7 @@
    "role": null,
    "determination": null,
    "criticalNote": "Possibile referente: Castello della Castelluccia, circa 41.7443, 12.6165",
-   "isRouteNode": "tragitto_torraccio_ponte_divino_amore"
+   "isRouteNode": "tragitto_santarella_torraccio_divino_amore"
   },
   {
    "targetId": "ponte_divino_amore",
@@ -56653,7 +56978,7 @@
    "role": null,
    "determination": null,
    "criticalNote": null,
-   "isRouteNode": "tragitto_torraccio_ponte_divino_amore"
+   "isRouteNode": "tragitto_santarella_torraccio_divino_amore"
   },
   {
    "targetId": "gaz_milano",
@@ -58561,7 +58886,7 @@
    "role": "ProjectedSpace",
    "determination": "Indeterminate",
    "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 212, percorso sognato (Pestalozzi): Manzotti (p. 269) legge «per fil a dest» come un cambio di direzione perpendicolare, in realtà verso sinistra (a sud, verso il Circeo); lettura attribuita, fase 3.",
-   "isRouteNode": null
+   "isRouteNode": "tragitto_sogno_casal_bruciato_campo_morto"
   },
   {
    "targetId": "gaz_direttissima_roma_napoli",
@@ -58573,7 +58898,7 @@
    "role": "ProjectedSpace",
    "determination": "Indeterminate",
    "criticalNote": null,
-   "isRouteNode": null
+   "isRouteNode": "tragitto_sogno_casal_bruciato_campo_morto"
   },
   {
    "targetId": "gaz_campo_morto",
@@ -58585,7 +58910,7 @@
    "role": "ProjectedSpace",
    "determination": "Indeterminate",
    "criticalNote": null,
-   "isRouteNode": null
+   "isRouteNode": "tragitto_sogno_casal_bruciato_campo_morto"
   },
   {
    "targetId": "monte_circeo",
@@ -58993,7 +59318,7 @@
    "role": "ProjectedSpace",
    "determination": "Approximate",
    "criticalNote": null,
-   "isRouteNode": null
+   "isRouteNode": "tragitto_castel_di_leva_casal_bruciato"
   },
   {
    "targetId": "ponte_divino_amore",
@@ -59005,7 +59330,7 @@
    "role": "ProjectedSpace",
    "determination": "Approximate",
    "criticalNote": null,
-   "isRouteNode": null
+   "isRouteNode": "tragitto_castel_di_leva_casal_bruciato"
   },
   {
    "targetId": "gaz_casale_abbruciato",
@@ -59017,7 +59342,7 @@
    "role": "ProjectedSpace",
    "determination": "Approximate",
    "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita).",
-   "isRouteNode": null
+   "isRouteNode": "tragitto_castel_di_leva_casal_bruciato"
   },
   {
    "targetId": "gaz_divino_amore",

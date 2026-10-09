@@ -1222,7 +1222,7 @@ class GaddaETL:
         "status": "StatusAssertion", "identification": "IdentificationAssertion",
         "location": "LocationAssertion", "partition": "PartitionAssertion",
         "memory": "MemoryAssertion", "uncertainty": "UncertaintyAssertion",
-        "variant": "VariantAssertion",
+        "variant": "VariantAssertion", "route": "RouteTypeAssertion",
     }
 
     RATIONALE_TYPES = {"prova referenziale": "ReferentialEvidence",
@@ -1336,6 +1336,15 @@ class GaddaETL:
             rev = str(row.get('Revision_Of', '')).strip()
             if rev:
                 self.graph.add((a, PROV.wasRevisionOf, ID_NS[f"assertion/{rev}"]))
+        # Tipo di percorso (D-060): chora:hasRouteType deriva dalla lettura
+        # adottata, come la posizione deriva dall'identificazione adottata.
+        for a in self.graph.subjects(CHORA.assertionType, CHORA.RouteTypeAssertion):
+            if (a, CHORA.adoptedByProject, Literal(True)) in self.graph:
+                route = self.graph.value(a, CHORA.aboutSubject)
+                if (route, RDF.type, CHORA.NarrativeRoute) not in self.graph:
+                    raise ValueError(f"{a}: il soggetto non e' un percorso")
+                for v in self.graph.objects(a, CHORA.assertsValue):
+                    self.graph.add((route, CHORA.hasRouteType, v))
         logger.info(f"Assertions: {len(df)} asserzioni attribuite")
 
     def validate_interpretation_targets(self):

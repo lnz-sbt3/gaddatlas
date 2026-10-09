@@ -606,6 +606,9 @@ def main(ttl_path, out_dir, seeds_path=None):
         routes[str(r)] = {
             "id": rid, "iri": str(r),
             "label": rid.replace("tragitto_", "").replace("_", " "),
+            # tipo dalla lettura adottata (D-060); la carta disegna come
+            # linee solo i compiuti (docs/EXCLUSIONS.md, T-64)
+            "routeType": local(g.value(r, GA.hasRouteType)) if g.value(r, GA.hasRouteType) else None,
             "nodes": nodes, "nodeCount": len(nodes),
             "steps": steps, "stepCount": len(steps),
             "isPartialOrder": any(len(s["targetIds"]) > 1 for s in steps),
@@ -855,7 +858,7 @@ def main(ttl_path, out_dir, seeds_path=None):
         "meta": dict(meta, excerptsIncluded=False),
         "paths": {
             "routes": [{k: r[k] for k in
-                        ("id", "iri", "label", "nodeCount", "stepCount",
+                        ("id", "iri", "label", "routeType", "nodeCount", "stepCount",
                          "isPartialOrder", "nodes", "steps", "carrierRoles",
                          "focalizerIds", "nodeFocalizerIds")}
                        for r in atlas["routes"]],
