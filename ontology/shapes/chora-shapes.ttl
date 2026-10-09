@@ -87,7 +87,8 @@ ga:SpatialInterpretationShape
     sh:property [
         sh:path ga:assignsSpatialRelationType ;
         sh:maxCount 1 ;
-        sh:in ( ga:Inside ga:Contains ga:Near ga:AdjacentTo ga:Above ga:Below ga:Overlaps ga:RelatedTo ga:Between ) ;
+        sh:in ( ga:Inside ga:Contains ga:Near ga:AdjacentTo ga:Above ga:Below ga:Overlaps ga:RelatedTo ga:Between
+                ga:Threshold ga:Facing ga:Boundary ) ;
         sh:message "assignsSpatialRelationType, se presente, deve essere un valore del vocabolario SpatialRelationType." ;
         sh:severity sh:Violation ;
     ] ;
@@ -597,13 +598,13 @@ ga:RelationalAnchoringShape
     sh:property [
         sh:path ga:relatum ;
         sh:minCount 1 ;
-        sh:class ga:GazetteerEntity ;
-        sh:message "Un ancoraggio relazionale ha almeno un termine, entita' del gazetteer." ;
+        sh:or ( [ sh:class ga:GazetteerEntity ] [ sh:class ga:NarrativePlace ] ) ;
+        sh:message "Un ancoraggio relazionale ha almeno un termine: un'entita' del gazetteer o un luogo narrativo." ;
     ] ;
     sh:property [
         sh:path ga:relationalType ;
         sh:minCount 1 ; sh:maxCount 1 ;
-        sh:in ( ga:Near ga:Between ga:AdjacentTo ga:Above ga:Below ) ;
+        sh:in ( ga:Near ga:Between ga:AdjacentTo ga:Above ga:Below ga:Threshold ga:Facing ga:Boundary ) ;
         sh:message "Un ancoraggio relazionale ha un tipo di relazione." ;
     ] ;
     sh:or (

@@ -188,6 +188,9 @@ vocabularies:
     below: "chora:Below"
     relatedto: "chora:RelatedTo" 
     between: "chora:Between"  # «tra», solo negli ancoraggi relazionali (D-057)
+    threshold: "chora:Threshold"  # soglia (D-058)
+    facing: "chora:Facing"        # di fronte, «in faccia» (D-058)
+    boundary: "chora:Boundary"    # confine (D-058)
 
 # ============================================================
 # FILE: References.tsv (PlaceReferences)
@@ -418,7 +421,8 @@ mappings:
 
         # *** D-057 (T-47): ancoraggio relazionale. Relational_Anchor_IDs (piu'
         # entita' separate da '|') e Relational_Anchor_Type (near | between...)
-        # diventano un nodo chora:RelationalAnchoring
+        # diventano un nodo chora:RelationalAnchoring. Un termine puo' essere
+        # anche un luogo narrativo (D-058): relazione senza referente (R17)
         # (relanchor/{Interpretation_ID}). Non producono geometria: la posizione
         # sta solo in Anchors_To_Entity_ID. Li legge tools/etl.py. ***
 

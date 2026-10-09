@@ -659,7 +659,7 @@ interp_00656	ref_00546	albano_laziale	gaz_albano_laziale	narrator	marker	relativ
 interp_00657	ref_00547	laboratorio_zamira	gaz_due_santi	narrator	setting	precise	inside					lorenzo_sabatino						
 interp_00658	ref_00548	via_appia	gaz_via_appia	narrator	marker	relative						lorenzo_sabatino						
 interp_00659	ref_00549	orto_vigna_due_santi		narrator	marker	indeterminate	near					lorenzo_sabatino						
-interp_00660	ref_00550	edicola_due_santi	gaz_edicola_due_santi	narrator	marker	precise	overlaps					lorenzo_sabatino						
+interp_00660	ref_00550	edicola_due_santi	gaz_edicola_due_santi	narrator	marker	precise	overlaps					lorenzo_sabatino					orto_vigna_due_santi	adjacentto
 interp_00661	ref_00551	via_appia	gaz_via_appia	narrator	marker	relative						lorenzo_sabatino						
 interp_00662	ref_00552	due_santi	gaz_due_santi	narrator	marker	relative						lorenzo_sabatino						
 interp_00663	ref_00553	edicola_due_santi	gaz_edicola_due_santi	narrator	marker	precise	overlaps					lorenzo_sabatino						

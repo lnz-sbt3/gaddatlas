@@ -434,9 +434,10 @@ chora:relationalType a owl:ObjectProperty ;
     skos:prefLabel "relational type"@en .
 
 chora:relatum a owl:ObjectProperty ;
-    rdfs:comment "A geographic entity with respect to which the place is located."@en ;
+    rdfs:comment "A geographic entity, or another narrative place, with respect to which the place is located. A narrative place as relatum makes the relation hold without a geographic referent (R17, D-058)."@en ;
     rdfs:domain chora:RelationalAnchoring ;
-    rdfs:range chora:GazetteerEntity ;
+    rdfs:range [ a owl:Class ;
+            owl:unionOf ( chora:GazetteerEntity chora:NarrativePlace ) ] ;
     skos:altLabel "termine di relazione"@it ;
     skos:prefLabel "relatum"@en .
 
@@ -10395,6 +10396,7 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:assignsSpatialDetermination chora:Precise ;
     chora:assignsSpatialRelationType chora:Overlaps ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
+    chora:hasRelationalAnchoring <https://w3id.org/gaddatlas/id/relanchor/interp_00660> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00550> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/edicola_due_santi> .
 
@@ -14327,6 +14329,14 @@ chora:Below a owl:NamedIndividual,
     skos:prefLabel "Below"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
 
+chora:Boundary a owl:NamedIndividual,
+        skos:Concept ;
+    dcterms:description "A e' il confine di B, o lo separa da un altro luogo."@it ;
+    skos:altLabel "Confine"@it ;
+    skos:inScheme chora:SpatialRelationTypeScheme ;
+    skos:prefLabel "Boundary"@en ;
+    skos:topConceptOf chora:SpatialRelationTypeScheme .
+
 chora:Confusion a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "confusione"@it ;
@@ -14342,6 +14352,14 @@ chora:Contains a owl:NamedIndividual,
     skos:altLabel "Contiene"@it ;
     skos:inScheme chora:SpatialRelationTypeScheme ;
     skos:prefLabel "Contains"@en ;
+    skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+chora:Facing a owl:NamedIndividual,
+        skos:Concept ;
+    dcterms:description "A sta di fronte a B («in faccia», «rimpetto»): relazione frontale, orientata."@it ;
+    skos:altLabel "Di fronte a"@it ;
+    skos:inScheme chora:SpatialRelationTypeScheme ;
+    skos:prefLabel "Facing"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
 
 chora:LocationAssertion a owl:NamedIndividual,
@@ -14380,6 +14398,14 @@ chora:RelatedTo a owl:NamedIndividual,
     skos:altLabel "In relazione con"@it ;
     skos:inScheme chora:SpatialRelationTypeScheme ;
     skos:prefLabel "Related to"@en ;
+    skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+chora:Threshold a owl:NamedIndividual,
+        skos:Concept ;
+    dcterms:description "A e' la soglia di B: il punto di passaggio fra un dentro e un fuori (porta, uscio, ingresso)."@it ;
+    skos:altLabel "Soglia"@it ;
+    skos:inScheme chora:SpatialRelationTypeScheme ;
+    skos:prefLabel "Threshold"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
 
 chora:UndecidableMemory a owl:NamedIndividual,
@@ -30540,6 +30566,10 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:relatum <https://w3id.org/gaddatlas/id/gazetteer/gaz_due_santi>,
         <https://w3id.org/gaddatlas/id/gazetteer/gaz_frattocchie> .
 
+<https://w3id.org/gaddatlas/id/relanchor/interp_00660> a chora:RelationalAnchoring ;
+    chora:relationalType chora:AdjacentTo ;
+    chora:relatum <https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi> .
+
 <https://w3id.org/gaddatlas/id/relanchor/interp_00681> a chora:RelationalAnchoring ;
     chora:relationalType chora:Near ;
     chora:relatum <https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_di_leva>,
@@ -32326,15 +32356,6 @@ chora:village a owl:NamedIndividual,
     chora:hasPlaceCategory chora:mountain ;
     chora:hasRealityStatus chora:Imported .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi> a chora:NarrativePlace ;
-    rdfs:label "Orto o Vigna ai Due Santi"@it ;
-    dcterms:description "Luogo non precisato simile a un orto o una vigna, di fronte al laboratorio della Zamira, al lato opposto della via Appia"@it ;
-    chora:hasFuzzinessLevel 4.0 ;
-    chora:hasPlaceCategory chora:kitchen_garden ;
-    chora:hasRealityStatus chora:Invented ;
-    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> ;
-    chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira> .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/ostia> a chora:NarrativePlace ;
     rdfs:label "Ostia"@it ;
     dcterms:description "Località di mare"@it ;
@@ -34079,6 +34100,15 @@ chora:temple a owl:NamedIndividual,
     skos:altLabel "monte della contessa Circia"@it ;
     chora:hasPlaceCategory chora:mountain ;
     chora:hasRealityStatus chora:Transformed .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi> a chora:NarrativePlace ;
+    rdfs:label "Orto o Vigna ai Due Santi"@it ;
+    dcterms:description "Luogo non precisato simile a un orto o una vigna, di fronte al laboratorio della Zamira, al lato opposto della via Appia"@it ;
+    chora:hasFuzzinessLevel 4.0 ;
+    chora:hasPlaceCategory chora:kitchen_garden ;
+    chora:hasRealityStatus chora:Invented ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> ;
+    chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_san_lorenzo_in_lucina> a chora:NarrativePlace ;
     rdfs:label "Piazza San Lorenzo in Lucina"@it ;
@@ -36594,11 +36624,6 @@ chora:AssertionTypeScheme a owl:NamedIndividual,
         chora:VariantAssertion ;
     skos:prefLabel "Assertion type"@en .
 
-chora:RelationalAnchoring a owl:Class ;
-    rdfs:comment "The placement of a narrative place relative to one or more geographic entities («between», «near»), as stated by a passage. It produces no geometry: a place without an adopted position stays off the map, with its relational anchoring."@en ;
-    skos:altLabel "Ancoraggio relazionale"@it ;
-    skos:prefLabel "Relational anchoring"@en .
-
 chora:district a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "Quartiere"@it ;
@@ -36630,6 +36655,11 @@ chora:square a owl:NamedIndividual,
     chora:hasPlaceCategory chora:locality ;
     chora:hasRealityStatus chora:Invented ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
+
+chora:RelationalAnchoring a owl:Class ;
+    rdfs:comment "The placement of a narrative place relative to one or more geographic entities («between», «near»), as stated by a passage. It produces no geometry: a place without an adopted position stays off the map, with its relational anchoring."@en ;
+    skos:altLabel "Ancoraggio relazionale"@it ;
+    skos:prefLabel "Relational anchoring"@en .
 
 chora:UncertaintyTypeScheme a owl:NamedIndividual,
         skos:ConceptScheme ;
@@ -36739,22 +36769,6 @@ chora:NarrativeRoute a owl:Class ;
     skos:definition "A second-order spatial entity representing an ordered path connecting multiple narrative places, as perceived by one or more focalizers."@en,
         "Entità spaziale di secondo livello che rappresenta un percorso ordinato che connette più luoghi narrativi, così come percepito da uno o più focalizzatori."@it ;
     skos:prefLabel "Narrative Route"@en .
-
-chora:SpatialRelationTypeScheme a owl:NamedIndividual,
-        skos:ConceptScheme ;
-    rdfs:label "Narrative Spatial Relations"@en ;
-    dcterms:description "Vocabolario di relazioni spaziali per analisi letteraria, basato su RCC-8 (Randell et al. 1992), GeoSPARQL (W3C/OGC 2012), e narratologia spaziale (Ryan 2001, Herman 2002)"@it ;
-    skos:altLabel "Relazioni Spaziali Narrative"@it ;
-    skos:hasTopConcept chora:Above,
-        chora:AdjacentTo,
-        chora:Below,
-        chora:Between,
-        chora:Contains,
-        chora:Inside,
-        chora:Near,
-        chora:Overlaps,
-        chora:RelatedTo ;
-    skos:prefLabel "Narrative Spatial Relations"@en .
 
 <https://w3id.org/gaddatlas/id/focalizer/autista_questura> a chora:Character,
         chora:FocalizingAgent ;
@@ -36866,6 +36880,25 @@ chora:CriticalReading a owl:NamedIndividual,
     chora:hasRealityStatus chora:Transformed ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
+chora:SpatialRelationTypeScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Narrative Spatial Relations"@en ;
+    dcterms:description "Vocabolario di relazioni spaziali per analisi letteraria, basato su RCC-8 (Randell et al. 1992), GeoSPARQL (W3C/OGC 2012), e narratologia spaziale (Ryan 2001, Herman 2002)"@it ;
+    skos:altLabel "Relazioni Spaziali Narrative"@it ;
+    skos:hasTopConcept chora:Above,
+        chora:AdjacentTo,
+        chora:Below,
+        chora:Between,
+        chora:Boundary,
+        chora:Contains,
+        chora:Facing,
+        chora:Inside,
+        chora:Near,
+        chora:Overlaps,
+        chora:RelatedTo,
+        chora:Threshold ;
+    skos:prefLabel "Narrative Spatial Relations"@en .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/via_merulana> a chora:NarrativePlace ;
     rdfs:label "Via Merulana"@it ;
     chora:hasPlaceCategory chora:street ;
@@ -36933,15 +36966,6 @@ chora:Near a owl:NamedIndividual,
     skos:prefLabel "Near"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
 
-chora:AdjacentTo a owl:NamedIndividual,
-        skos:Concept ;
-    dcterms:description "A è adiacente a B, i loro confini si toccano senza sovrapporsi."@it ;
-    rdfs:comment "Basato su RCC-8 EC (Externally Connected) e GeoSPARQL sfTouches" ;
-    skos:altLabel "Adiacente a"@it ;
-    skos:inScheme chora:SpatialRelationTypeScheme ;
-    skos:prefLabel "Adjacent to"@en ;
-    skos:topConceptOf chora:SpatialRelationTypeScheme .
-
 chora:Invented a owl:NamedIndividual,
         skos:Concept ;
     owl:differentFrom chora:Imagined,
@@ -36976,6 +37000,15 @@ chora:Invented a owl:NamedIndividual,
 }"""^^geosparql:geoJSONLiteral ] ;
     geo1:lat 41.75795460249268 ;
     geo1:long 12.601126265148835 .
+
+chora:AdjacentTo a owl:NamedIndividual,
+        skos:Concept ;
+    dcterms:description "A è adiacente a B, i loro confini si toccano senza sovrapporsi."@it ;
+    rdfs:comment "Basato su RCC-8 EC (Externally Connected) e GeoSPARQL sfTouches" ;
+    skos:altLabel "Adiacente a"@it ;
+    skos:inScheme chora:SpatialRelationTypeScheme ;
+    skos:prefLabel "Adjacent to"@en ;
+    skos:topConceptOf chora:SpatialRelationTypeScheme .
 
 <https://w3id.org/gaddatlas/id/focalizer/commendador_angeloni> a chora:Character,
         chora:FocalizingAgent ;

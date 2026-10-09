@@ -963,10 +963,16 @@ class GaddaETL:
                     self.graph.add((node, RDF.type, CHORA.RelationalAnchoring))
                     self.graph.add((node, CHORA.relationalType, rel_uri))
                     for gid in rel_ids:
-                        if gid not in self.id_cache['GazetteerEntity_ID']:
+                        # termine: un'entita' del gazetteer o, per una relazione
+                        # senza referente, un luogo narrativo (D-058)
+                        if gid in self.id_cache['GazetteerEntity_ID']:
+                            rel = self.resolve_lookup(gid, '@GazetteerEntity_ID')
+                        elif gid in self.id_cache['NarrativePlace_ID']:
+                            rel = self.resolve_lookup(gid, '@NarrativePlace_ID')
+                        else:
                             raise ValueError(f"Interpretation {interp_id}: termine {gid!r} "
-                                             "assente da GazetteerEntities.tsv")
-                        self.graph.add((node, CHORA.relatum, self.resolve_lookup(gid, '@GazetteerEntity_ID')))
+                                             "assente dal gazetteer e dai luoghi narrativi")
+                        self.graph.add((node, CHORA.relatum, rel))
 
                 # *** VOCE NARRANTE (D-049, T-36): chi parla, distinto da chi
                 # percepisce. Facoltativa: l'assenza vale «non annotato». ***

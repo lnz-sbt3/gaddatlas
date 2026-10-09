@@ -9896,6 +9896,7 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:assignsSpatialDetermination chora:Precise ;
     chora:assignsSpatialRelationType chora:Overlaps ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
+    chora:hasRelationalAnchoring <https://w3id.org/gaddatlas/id/relanchor/interp_00660> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00550> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/edicola_due_santi> .
 
@@ -29708,6 +29709,10 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:relatum <https://w3id.org/gaddatlas/id/gazetteer/gaz_due_santi>,
         <https://w3id.org/gaddatlas/id/gazetteer/gaz_frattocchie> .
 
+<https://w3id.org/gaddatlas/id/relanchor/interp_00660> a chora:RelationalAnchoring ;
+    chora:relationalType chora:AdjacentTo ;
+    chora:relatum <https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi> .
+
 <https://w3id.org/gaddatlas/id/relanchor/interp_00681> a chora:RelationalAnchoring ;
     chora:relationalType chora:Near ;
     chora:relatum <https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_di_leva>,
@@ -31193,15 +31198,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     dcterms:description "Catena montuosa tra Lazio e Abruzzo"@it ;
     chora:hasPlaceCategory chora:mountain ;
     chora:hasRealityStatus chora:Imported .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi> a chora:NarrativePlace ;
-    rdfs:label "Orto o Vigna ai Due Santi"@it ;
-    dcterms:description "Luogo non precisato simile a un orto o una vigna, di fronte al laboratorio della Zamira, al lato opposto della via Appia"@it ;
-    chora:hasFuzzinessLevel 4.0 ;
-    chora:hasPlaceCategory chora:kitchen_garden ;
-    chora:hasRealityStatus chora:Invented ;
-    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> ;
-    chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/ostia> a chora:NarrativePlace ;
     rdfs:label "Ostia"@it ;
@@ -32827,6 +32823,15 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     skos:altLabel "monte della contessa Circia"@it ;
     chora:hasPlaceCategory chora:mountain ;
     chora:hasRealityStatus chora:Transformed .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi> a chora:NarrativePlace ;
+    rdfs:label "Orto o Vigna ai Due Santi"@it ;
+    dcterms:description "Luogo non precisato simile a un orto o una vigna, di fronte al laboratorio della Zamira, al lato opposto della via Appia"@it ;
+    chora:hasFuzzinessLevel 4.0 ;
+    chora:hasPlaceCategory chora:kitchen_garden ;
+    chora:hasRealityStatus chora:Invented ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> ;
+    chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_san_lorenzo_in_lucina> a chora:NarrativePlace ;
     rdfs:label "Piazza San Lorenzo in Lucina"@it ;

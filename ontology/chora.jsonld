@@ -33,14 +33,28 @@
   },
   "@graph": [
     {
-      "@id": "_:cb3e50fe09e2ec1e9344cc78de8b58905485ecc149d928857a50b681b56a94d9fc",
-      "@type": "prov:Agent",
-      "schema:name": "Francesca Tomasi"
-    },
-    {
-      "@id": "_:cb6faa306c76abb0420c860c890f8bc3e66ad4e23691607db7aa2859724cf7e416",
+      "@id": "_:cb108560042ebfadee765c269031a1dc3c7c3c4563864b02b5632113040a9addfa1",
       "@type": "prov:Agent",
       "schema:name": "Paola Maria Carmela Italia"
+    },
+    {
+      "@id": "_:cb68067f2b743e19efb21ee5d853c3161b0666d622a2f0455c63f429b69f182231",
+      "@type": "owl:Class",
+      "owl:unionOf": {
+        "@list": [
+          {
+            "@id": "chora:GazetteerEntity"
+          },
+          {
+            "@id": "chora:NarrativePlace"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "_:cbd6fccde0583b4d389e08d55895ea9035dedc354bac783318d89f5883c74ad587",
+      "@type": "prov:Agent",
+      "schema:name": "Francesca Tomasi"
     },
     {
       "@id": "chora:Above",
@@ -324,6 +338,31 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "Between"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:SpatialRelationTypeScheme"
+      }
+    },
+    {
+      "@id": "chora:Boundary",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "dcterms:description": {
+        "@language": "it",
+        "@value": "A e' il confine di B, o lo separa da un altro luogo."
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Confine"
+      },
+      "skos:inScheme": {
+        "@id": "chora:SpatialRelationTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Boundary"
       },
       "skos:topConceptOf": {
         "@id": "chora:SpatialRelationTypeScheme"
@@ -620,6 +659,31 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:AttributionRoleScheme"
+      }
+    },
+    {
+      "@id": "chora:Facing",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "dcterms:description": {
+        "@language": "it",
+        "@value": "A sta di fronte a B («in faccia», «rimpetto»): relazione frontale, orientata."
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Di fronte a"
+      },
+      "skos:inScheme": {
+        "@id": "chora:SpatialRelationTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Facing"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:SpatialRelationTypeScheme"
       }
     },
     {
@@ -1972,7 +2036,13 @@
           "@id": "chora:Between"
         },
         {
+          "@id": "chora:Boundary"
+        },
+        {
           "@id": "chora:Contains"
+        },
+        {
+          "@id": "chora:Facing"
         },
         {
           "@id": "chora:Inside"
@@ -1985,6 +2055,9 @@
         },
         {
           "@id": "chora:RelatedTo"
+        },
+        {
+          "@id": "chora:Threshold"
         }
       ],
       "skos:prefLabel": {
@@ -2066,6 +2139,31 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:RationaleTypeScheme"
+      }
+    },
+    {
+      "@id": "chora:Threshold",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "dcterms:description": {
+        "@language": "it",
+        "@value": "A e' la soglia di B: il punto di passaggio fra un dentro e un fuori (porta, uscio, ingresso)."
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Soglia"
+      },
+      "skos:inScheme": {
+        "@id": "chora:SpatialRelationTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Threshold"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:SpatialRelationTypeScheme"
       }
     },
     {
@@ -3434,13 +3532,13 @@
       "@type": "owl:ObjectProperty",
       "rdfs:comment": {
         "@language": "en",
-        "@value": "A geographic entity with respect to which the place is located."
+        "@value": "A geographic entity, or another narrative place, with respect to which the place is located. A narrative place as relatum makes the relation hold without a geographic referent (R17, D-058)."
       },
       "rdfs:domain": {
         "@id": "chora:RelationalAnchoring"
       },
       "rdfs:range": {
-        "@id": "chora:GazetteerEntity"
+        "@id": "_:cb68067f2b743e19efb21ee5d853c3161b0666d622a2f0455c63f429b69f182231"
       },
       "skos:altLabel": {
         "@language": "it",
@@ -4123,10 +4221,10 @@
       },
       "dcterms:contributor": [
         {
-          "@id": "_:cb3e50fe09e2ec1e9344cc78de8b58905485ecc149d928857a50b681b56a94d9fc"
+          "@id": "_:cb108560042ebfadee765c269031a1dc3c7c3c4563864b02b5632113040a9addfa1"
         },
         {
-          "@id": "_:cb6faa306c76abb0420c860c890f8bc3e66ad4e23691607db7aa2859724cf7e416"
+          "@id": "_:cbd6fccde0583b4d389e08d55895ea9035dedc354bac783318d89f5883c74ad587"
         }
       ],
       "dcterms:created": {

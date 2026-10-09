@@ -1164,6 +1164,23 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-058 — Soglia, frontalità, confine; edicola adiacente all'orto (9 ottobre 2026)
+
+- Requisito/i: R17 · Ipotesi: — · Data check: DC-03 (work order T-53)
+- Stato precedente: lo schema delle relazioni spaziali non aveva soglia, frontalità e confine. Tolto `Is_Part_Of` (D-031), l'edicola ai Due Santi non aveva più alcun legame con l'orto/vigna nel cui muro il testo la colloca. Il modello non aveva relazioni qualitative fra luoghi oltre a `isPartOf`.
+- Decisione (di Lorenzo, 9/10/2026):
+  - **tre concetti nuovi** in `chora:SpatialRelationTypeScheme`: `chora:Threshold` (soglia), `chora:Facing` (di fronte, «in faccia», «rimpetto»), `chora:Boundary` (confine). Sono ammessi nella relazione dell'interpretazione e nell'ancoraggio relazionale; il vocabolario del mapping li accetta come `threshold`, `facing`, `boundary`. Per ora non sono usati: il popolamento è fuori da questo task;
+  - **relazione senza referente:** il termine di un ancoraggio relazionale (`chora:relatum`, D-057) può essere anche un luogo narrativo, non solo un'entità del gazetteer. È il caso di R17: la relazione vale anche quando l'altro luogo non ha un referente geografico;
+  - **edicola ai Due Santi:** l'interpretazione di QP 216 (`interp_00660`, «Lo interrompeva un tabernacolo», dove il soggetto è il muriccio dell'orto) ha un ancoraggio relazionale `AdjacentTo` verso `orto_vigna_due_santi`. Sostituisce l'`Is_Part_Of` tolto in D-031 e non dà geometria: la posizione dell'edicola resta `gaz_edicola_due_santi` (DC-03, volume TCI ancora da verificare).
+- Alternative scartate: una proprietà diretta luogo → luogo per ogni relazione (sette proprietà nuove, senza il passo che le attesta); rimettere `Is_Part_Of`, che farebbe ereditare all'edicola, luogo importato, l'ancora di un luogo inventato.
+- Controlli: l'ETL accetta come termine un id del gazetteer o di un luogo narrativo, e rifiuta il resto; shape 7 (`assignsSpatialRelationType`) e shape 17 aggiornati.
+- Motivazione (fonte, pagina): Cap. 4, § 4.6 e R17 («soglia, adiacenza, verticalità, confine […] anche quando tali contesti risultino sprovvisti di un referente geografico reale»); QP 216.
+- Fase in cui è maturata: analisi del testo
+- File toccati (manifest): `ontology/chora.ttl` (schema delle relazioni; `chora:relatum` con range unione; tre concetti in coda); `ontology/shapes/chora-shapes.ttl` r. 90–91, shape 17; `data/source/mapping.yaml` (vocabolario `spatial_relations`, commento del blocco relazionale); `tools/etl.py` (termini luogo); `data/source/tables/SpatialInterpretations.tsv` (`interp_00660`); `SpatialInterpretations.xlsx`.
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.187 → **1.217**; ABox 27.144 → **27.148**; full 28.901 → **28.935**. SHACL conforme, 52 avvertenze; IQ1–IQ17 a 0. Vista invariata (GeoJSON: cambia solo `tripleCount`). Due build consecutivi identici.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

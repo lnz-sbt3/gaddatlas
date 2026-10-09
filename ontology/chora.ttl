@@ -787,8 +787,11 @@ chora:SpatialRelationTypeScheme a owl:NamedIndividual,
         chora:Inside,
         chora:Near,
         chora:Between,
+        chora:Boundary,
+        chora:Facing,
         chora:Overlaps,
-        chora:RelatedTo ;
+        chora:RelatedTo,
+        chora:Threshold ;
     skos:prefLabel "Narrative Spatial Relations"@en .
 
 skos:Concept a owl:Class .
@@ -1433,9 +1436,9 @@ chora:hasRelationalAnchoring a owl:ObjectProperty ;
     skos:prefLabel "has relational anchoring"@en .
 
 chora:relatum a owl:ObjectProperty ;
-    rdfs:comment "A geographic entity with respect to which the place is located."@en ;
+    rdfs:comment "A geographic entity, or another narrative place, with respect to which the place is located. A narrative place as relatum makes the relation hold without a geographic referent (R17, D-058)."@en ;
     rdfs:domain chora:RelationalAnchoring ;
-    rdfs:range chora:GazetteerEntity ;
+    rdfs:range [ a owl:Class ; owl:unionOf ( chora:GazetteerEntity chora:NarrativePlace ) ] ;
     skos:altLabel "termine di relazione"@it ;
     skos:prefLabel "relatum"@en .
 
@@ -1451,4 +1454,27 @@ chora:Between a owl:NamedIndividual, skos:Concept ;
     skos:altLabel "Tra"@it ;
     skos:inScheme chora:SpatialRelationTypeScheme ;
     skos:prefLabel "Between"@en ;
+    skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+# Relazioni qualitative del Cap. 4, R17 (D-058, work order T-53)
+
+chora:Threshold a owl:NamedIndividual, skos:Concept ;
+    dcterms:description "A e' la soglia di B: il punto di passaggio fra un dentro e un fuori (porta, uscio, ingresso)."@it ;
+    skos:altLabel "Soglia"@it ;
+    skos:inScheme chora:SpatialRelationTypeScheme ;
+    skos:prefLabel "Threshold"@en ;
+    skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+chora:Facing a owl:NamedIndividual, skos:Concept ;
+    dcterms:description "A sta di fronte a B («in faccia», «rimpetto»): relazione frontale, orientata."@it ;
+    skos:altLabel "Di fronte a"@it ;
+    skos:inScheme chora:SpatialRelationTypeScheme ;
+    skos:prefLabel "Facing"@en ;
+    skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+chora:Boundary a owl:NamedIndividual, skos:Concept ;
+    dcterms:description "A e' il confine di B, o lo separa da un altro luogo."@it ;
+    skos:altLabel "Confine"@it ;
+    skos:inScheme chora:SpatialRelationTypeScheme ;
+    skos:prefLabel "Boundary"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
