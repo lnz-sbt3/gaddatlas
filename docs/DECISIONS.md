@@ -851,7 +851,7 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 - Decisione: il glifo segue il nome dello statuto, senza ripiego (D-034). Al caricamento, `model/entities.js` verifica che ogni tessera fittizia abbia uno statuto presente in `FICT_GLYPH_PATHS` e altrimenti ferma l'app con un errore che dice quale tessera e quale valore. `painters.drawFictGlyph` lancia un errore per uno statuto sconosciuto invece di ripiegare. L'archivio non è toccato. Modifica di comportamento in un commit separato dal porting e dal merge, come chiedono le regole del porting.
 - Motivazione (fonte, pagina): work order T-87; grammatica visiva semantica (`CLAUDE.md`): la forma del glifo dice lo statuto, quindi un glifo sbagliato è un dato falso.
 - Fase in cui è maturata: prototipazione (vista diagramma)
-- File toccati (manifest): `app/src/model/entities.js:80-91` (validazione); `app/src/render/painters.js:166-169`; `app/src/atlas.js:919-920`; `app/test/entities-status.test.js` (nuovo: i dati pubblicati passano, uno statuto finto dà l'errore).
+- File toccati (manifest): `app/src/model/entities.js:81-93` (validazione); `app/src/render/painters.js:166-169`; `app/src/atlas.js:919-920`; `app/test/entities-status.test.js` (nuovo: i dati pubblicati passano, uno statuto finto dà l'errore).
 - Effetto su KG (triple prima/dopo, SHACL): nessuno. Test dell'app 4/4; build di produzione riuscita.
 
 ---
