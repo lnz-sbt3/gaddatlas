@@ -60,8 +60,8 @@ Ogni voce rinvia ai task del work order (`docs/thesis/GaddAtlas_Cap4_Allineament
 | DC-19 | Interpretazioni con luogo incoerente rispetto al riferimento | 6 casi: `interp_00245` (id «vicenza » con spazio), `interp_00331` (piazza Verdi → `banca_ditalia`), `interp_00627`/`interp_00628` (Tivoli e Càrsoli scambiati), `interp_00858` (tenenza → `marino`), `interp_00859` (via Massimo d'Azeglio → `marino`) | AUDIT_0, § 3 | Correggere caso per caso dopo verifica sull'estratto; nuova `IQ11` che intercetti le incoerenze | T-84 | **Chiuso** (D-026, 8/10/2026): 4 correzioni, 2 eliminazioni; controllo bloccante in `audit_alignment.py`, IQ11 informativa |
 | DC-20 | Conflitto cromatico ruolo / densità nel prototipo | `ROLE_COLORS.Setting` #B32B40 (`chartD.js:37`, `tokens.css:13`) è quasi identico a `HUE_RGB` #9B2335 (densità); `ROLE_COLORS.ProjectedSpace` #1F6F6B coincide con `FICT_HUE_RGB` (`chartD.js:32`). Inoltre `chartD.js:4930-4935` manda qualunque statuto non riconosciuto sul glifo «invented» | AUDIT_0, T-60. Gli invarianti «rosso = densità» e «tinta = ruolo» sono già in conflitto | Opzioni (skill `dataviz`) prima di T-60/T-61; il fallback silenzioso del glifo diventa un errore esplicito nel modulo portato (l'archivio non si tocca) | T-86, T-87 | Conflitto cromatico: aperto (fase 5). Fallback del glifo: **chiuso** (D-040, 9/10/2026) |
 | DC-21 | Cassero (ref_00404, QP 169): ancora unica | Due interpretazioni dello stesso passo e focalizzatore (Santarella), ancorate a `gaz_frattocchie` e `gaz_pavona`: unico caso residuo di IQ20 | Lorenzo (10/10/2026): un'ancora sola, il luogo che il testo nomina, «Cassero a Sant'Ignazio». Nel gazetteer c'è solo `gaz_buco_a_santignazio` (Roma), un altro luogo | Serve un'entità per Sant'Ignazio presso le Frattocchie, da una fonte cartografica; poi un'interpretazione sola. Fino ad allora IQ20 resta un'avvertenza, con questo caso dichiarato | T-47 | **Aperto, fase 3** (D-074) |
-| DC-22 | Motivazioni di statuto in bozza | 48 luoghi non Imported con un'asserzione di statuto adottata ma «bozza» (T-33, D-046), di cui 10 senza motivazione nei documenti | REVIEW_2 § 1 | Validazione o compilazione delle motivazioni da parte di Lorenzo; poi `StatusRationaleShape` da Warning a Violation | T-33 | **Aperto, fase 3** (D-076): la shape resta Warning |
-| DC-23 | Estratti nuovi da verificare sul volume a stampa | Estratti brevi delle occorrenze divise in fase 2: ref_00730 (via Nicotera, fornito da LS), ref_00151 e ref_00731 (Sacro Cuore), ref_00177 e ref_00732 (via Merulana), ref_00241 e ref_00733 (Santi Quattro), presi dalla copia digitale | CLAUDE.md: testo di riferimento QP (Adelphi 2018) nel volume a stampa | Confronto con il volume a stampa (LS) | T-12, T-56 | **Aperto, fase 3** (D-072, D-075) |
+| DC-22 | Motivazioni di statuto in bozza | 48 luoghi non Imported con un'asserzione di statuto adottata ma «bozza» (T-33, D-046), di cui 10 senza motivazione nei documenti | REVIEW_2 § 1 | Validazione o compilazione delle motivazioni da parte di Lorenzo; poi `StatusRationaleShape` da Warning a Violation | T-33 | **Chiuso** (D-078…D-081, 10/10/2026): 48 motivazioni validate (33 così come sono, 5 riscritte, 10 nuove); `StatusRationaleShape` a Violation, 0 risultati |
+| DC-23 | Estratti nuovi da verificare sul volume a stampa | Estratti brevi delle occorrenze divise in fase 2: ref_00730 (via Nicotera, fornito da LS), ref_00151 e ref_00731 (Sacro Cuore), ref_00177 e ref_00732 (via Merulana), ref_00241 e ref_00733 (Santi Quattro), presi dalla copia digitale | CLAUDE.md: testo di riferimento QP (Adelphi 2018) nel volume a stampa | Confronto con il volume a stampa (LS) | T-12, T-56 | **Chiuso** (D-082, 10/10/2026): estratti di QPa 65, 76, 105, 116 verificati da LS sul volume a stampa |
 
 ---
 
@@ -97,15 +97,15 @@ Ogni voce rinvia ai task del work order (`docs/thesis/GaddAtlas_Cap4_Allineament
 
 ---
 
-## D. Chiusura della fase 2 (10 ottobre 2026)
+## D. Chiusura della fase 2 (10 ottobre 2026; voci aggiornate dopo D-078…D-083)
 
 La fase 2 (estensioni del modello, D-041…D-077) è chiusa: TBox 1.473 triple, ABox 40.472, `tripleCount` 42.515; SHACL conforme con 48 avvertenze; IQ1–IQ19 a 0, IQ20 = 1 (avvertenza). Voci aperte per la fase 3:
 
-- [ ] **Motivazioni di statuto** in bozza (48, di cui 10 senza motivazione): validazione di LS, poi `StatusRationaleShape` a Violation (DC-22, D-076)
+- [x] **Motivazioni di statuto**: validate, `StatusRationaleShape` a Violation (DC-22, D-078…D-081)
 - [ ] **Cassero** (ref_00404): entità di Sant'Ignazio presso le Frattocchie da una fonte cartografica, poi un'ancora sola; IQ20 a 0 e a Violation (DC-21, D-074)
-- [ ] **Estratti da verificare** sul volume a stampa: ref_00730, ref_00151, ref_00731, ref_00177, ref_00732, ref_00241, ref_00733 (DC-23)
-- [ ] **Data della carta TCI** (*Italia centrale* I, `source/tci_italia_centrale_1`): da compilare (D-069)
+- [x] **Estratti** delle occorrenze divise: verificati sul volume a stampa (DC-23, D-082)
+- [ ] **Data della carta TCI** di Manzotti (*Italia centrale* I, `source/tci_italia_centrale_1`): da compilare (D-069)
 - [ ] **Nota al testo di Pinotti 2018**: pagina per la derivazione QPa ← QP (D-073)
 - [ ] **Identificatori esterni** delle entità del gazetteer (Wikidata, GeoNames; T-46, D-071)
-- [ ] Data del «Censimento GaddAtlas» in `Sources.tsv` (D-067)
+- [ ] Data del «Censimento GaddAtlas» in `Sources.tsv`: il valore non è stato fornito (D-083)
 - [ ] Letture d'autore degli studiosi del work order, appendice A (DC-15)

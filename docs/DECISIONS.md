@@ -1543,6 +1543,85 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-078 — Motivazioni di statuto validate così come sono (10 ottobre 2026)
+
+- Requisito/i: R07 · Ipotesi: — · Data check: DC-22
+- Decisione (di Lorenzo, 10/10/2026): 33 motivazioni in bozza sono validate senza modifiche (`Review_Status` = validata, nota «Validata da LS»): area_oltre_tevere, barbiere, camera_casello, cantinone_albano, casa_crocchiapani, casa_del_butiro, casello_km_20_25, cobianchi, gioielliere_catellani, grotta_de_sor_pippo, laboratorio_zamira, montagne_degli_equi, monte_circeo, orto_vigna_due_santi, palazzo_219, palazzo_simonetti, passaggio_livello_casal_bruciato, pensione_burgess, piani_alti_219, piccarozzi, ponte_divino_amore, porta_borgo_marino, pozzofondo, robine_vecchie, scala_a, scala_b, scale, stazione_carabinieri_castello, stazione_pavona, strada_di_campagna_celio, tenenza_carabinieri_marino, terzo_piano_219, tor_di_gheppio.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `data/source/tables/Assertions.tsv` (33 righe S-), `Assertions.xlsx`.
+- Effetto su KG: cambia solo `reviewStatus` (vedi D-081 per i totali).
+
+---
+
+## D-079 — Motivazioni riscritte: quattro Imagined e via delle Oche (10 ottobre 2026)
+
+- Requisito/i: R07 · Ipotesi: H1 · Data check: DC-22, DC-16
+- Decisione (di Lorenzo, 10/10/2026): cinque motivazioni riscritte e validate. Le note «NB … permutazione» scompaiono con le riscritture:
+  - **castel_porcano** (Imagined): «Luogo senza corrispondenza con un luogo attestato: il nome deforma Castelporziano, ma la festa notturna appartiene a uno spazio d'immaginazione d'autore.» Fonte Manzotti 2010, pp. 273, 276; lettura critica;
+  - **monte_nuncupale** (Imagined): «Monte senza corrispondenza con un rilievo attestato; l'autore lo immagina a chiusura dell'orizzonte dei Colli Albani ("da Rocca Orsina al Monte Nuncupale, su", QPa 173).» Fonte QPa, p. 173; prova testuale;
+  - **roccafringoli** (Imagined): «Paese senza corrispondenza con un luogo attestato; l'autore lo immagina sui monti presso Palestrina ("a monte Manno, quasi", QPa 107).» Fonte QPa, p. 107; prova testuale;
+  - **scerpure** (Imagined): «Città senza corrispondenza con un luogo attestato; l'autore la immagina "sulle rive, più o meno, del nativo Brahmaputra" (QPa 141).» Fonte QPa, p. 141; prova testuale;
+  - **via_delle_oche** (resta Invented): «Via reale di Bologna, nota via di prostituzione, che il testo traslata a Milano (QPa 22; U-0009).» Fonte QPa, p. 22; prova testuale.
+  Autore e codificatore Lorenzo.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `data/source/tables/Assertions.tsv` (5 righe S-), `Assertions.xlsx`.
+- Effetto su KG: vedi D-081.
+
+---
+
+## D-080 — Motivazioni nuove (10 ottobre 2026)
+
+- Requisito/i: R07 · Ipotesi: — · Data check: DC-22
+- Decisione (di Lorenzo, 10/10/2026): dieci motivazioni nuove, validate, autore e codificatore Lorenzo:
+  - **palazzo_del_mappamondo** (Transformed): Palazzo Venezia, indicato per antonomasia dalla Sala del Mappamondo e deformato in «Mappamonno»; lettura critica;
+  - **villino_lungotevere** (Invented): villino senza riscontro, collocato sul Lungotevere;
+  - **bottega_ceccherelli** (Invented): bottega senza riscontro nei repertori;
+  - **cassero** (Invented): toponimo senza riscontro, collocato «a Sant'Ignazio», fra le provenienze di QPa 169. L'entità di Sant'Ignazio resta aperta (DC-21; IQ20 = 1 invariato);
+  - **casuccia_zamira** (Invented): segue lo statuto del laboratorio. **Luoghi del mondo della Zamira** (Is_Part_Of, descrizione, nome): laboratorio_zamira (Invented, parte di casuccia_zamira), casuccia_zamira (Invented), orto_vigna_due_santi (Invented, parte del laboratorio). Hanno tutti lo statuto del laboratorio: **nessun allineamento necessario**. edicola_due_santi nomina il laboratorio nella descrizione ma è Imported per decisione di Lorenzo (D-031, confermata in D-065): non allineata;
+  - **colli_saluberrimi** (Transformed): perifrasi d'autore per i Colli Albani (ancora `gaz_colli_albani`);
+  - **buco_a_santignazio** (Transformed): denominazione popolare del Buco a Sant'Ignazio, presso Sant'Ignazio a Roma (ancora `gaz_buco_a_santignazio`, 41,898 N 12,480 E);
+  - **ca_francesi** (Transformed): località reale presso la stazione delle Frattocchie; Terzoli 2015, p. 512; lettura critica;
+  - **ditta_ciurlani** (Transformed): origine onomastica di Ciurlani e gioco con «truffaldino», nessun elemento di collocazione; Terzoli 2015, lettura critica. **La pagina non è nei dati: da compilare (Lorenzo).** Il luogo ha già un'ancora (gaz_marino), quindi nessuno stato di localizzazione nuovo;
+  - **ponte_di_santa_fumia** (Transformed): la strada dall'Anziate verso Casal Bruciato scavalca la ferrovia Roma–Velletri in località Ponte di Santa Fumia, con planimetria e toponimi delle cartine della Guida Touring 1925; Terzoli 2015, p. 911 (cfr. Terzoli 2008, pp. 109–113); prova referenziale.
+  Nuove fonti: `terzoli_2008` (riferimento bibliografico completo da compilare: non è nella bibliografia del Cap. 4) e `tci_guida_1925`, la Guida d'Italia del 1925 con le due cartine (pp. 736–737, cart. 4; 758–759, cart. 1), volume da precisare. La Guida 1925 **non** è collegata alla carta TCI di Manzotti, la cui data resta aperta.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `data/source/tables/Assertions.tsv` (10 righe S-), `Sources.tsv` (2 righe); XLSX corrispondenti.
+- Effetto su KG: vedi D-081.
+
+---
+
+## D-081 — StatusRationaleShape a Violation (10 ottobre 2026)
+
+- Requisito/i: R07 · Ipotesi: — · Data check: DC-22
+- Stato precedente: `StatusRationaleShape` era Warning, con 48 avvertenze (D-076).
+- Decisione (di Lorenzo, 10/10/2026): con le 48 motivazioni validate (D-078, D-079, D-080), la shape diventa **Violation**. Esito: SHACL conforme **senza alcun risultato** (0 violazioni, 0 avvertenze). Provata riportando in memoria S-scala_b a «bozza»: non conforme. IQ20 resta un'avvertenza per il solo Cassero (IQ20 = 1).
+- DATA_CHECKS DC-22 chiusa; work order aggiornato.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `ontology/shapes/chora-shapes.ttl` (shape 8: severità e commento); `docs/thesis/DATA_CHECKS_GaddAtlas.md`; `docs/thesis/GaddAtlas_Cap4_Allineamento_WorkOrder.md`; `CLAUDE.md` («Stato dei dati»).
+- Effetto su KG (triple prima/dopo, D-078…D-081): TBox 1.473 invariata; ABox 40.472 → **40.507**; full 42.515 → **42.550**. Fonti 14 → 16. SHACL conforme, 0 risultati; IQ1–IQ19 a 0, IQ20 = 1.
+
+---
+
+## D-082 — Estratti delle occorrenze divise verificati (10 ottobre 2026)
+
+- Requisito/i: R21 · Ipotesi: — · Data check: DC-23
+- Decisione (di Lorenzo, 10/10/2026): gli estratti delle occorrenze divise (QPa 65, 76, 105, 116: ref_00151, ref_00731, ref_00177, ref_00732, ref_00241, ref_00733, ref_00271, ref_00730) sono verificati sul volume a stampa. Voce chiusa; nessun dato cambia.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `docs/thesis/DATA_CHECKS_GaddAtlas.md` (DC-23).
+- Effetto su KG: nessuno.
+
+---
+
+## D-083 — Data del Censimento GaddAtlas: non ancora compilata (10 ottobre 2026)
+
+- Requisito/i: R22 · Ipotesi: — · Data check: —
+- Decisione (di Lorenzo, 10/10/2026): compilare la data della fonte `censimento_gaddatlas` in `Sources.tsv`. Il messaggio riportava «[ANNO]», un segnaposto e non un valore: la data **non è stata inventata** e resta vuota. La voce resta aperta in DATA_CHECKS (§ D) e nel work order, finché Lorenzo non indica l'anno.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): nessuno nei dati; `docs/thesis/DATA_CHECKS_GaddAtlas.md`, work order.
+- Effetto su KG: nessuno.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

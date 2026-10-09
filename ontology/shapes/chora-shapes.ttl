@@ -414,13 +414,13 @@ ga:AttributionShape
 # Ogni luogo non Imported e' soggetto di un'asserzione di statuto adottata, con
 # motivazione, tipo di motivazione e stato «validata». Gli Imported hanno la
 # motivazione standard (scopeNote di chora:Imported). sh:Warning finche' le
-# bozze non sono validate; diventa sh:Violation prima della consegna.
+# bozze non sono validate; sh:Violation dal 10/10/2026 (D-081), con tutte le motivazioni validate.
 # =============================================================================
 
 ga:StatusRationaleShape
     a sh:NodeShape ;
     sh:targetClass ga:NarrativePlace ;
-    sh:severity sh:Warning ;
+    sh:severity sh:Violation ;
     sh:message "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
     sh:or (
         [ sh:path [ sh:inversePath ga:aboutSubject ] ;
