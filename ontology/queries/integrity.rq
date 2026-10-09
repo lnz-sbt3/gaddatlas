@@ -62,8 +62,8 @@ SELECT ?interp WHERE {
 
 # ==== IQ6 — PlaceReference senza excerpt o senza opera e testimone (atteso: 0) ====
 # L'estratto e' obbligatorio per le occorrenze del testimone di riferimento;
-# per quelle degli altri testimoni (corpora di confronto, D-053) la mancanza
-# e' un'avvertenza SHACL, non un errore (D-055).
+# per quelle degli altri testimoni (corpora di confronto, D-053) e'
+# facoltativo, e non arriva mai all'interfaccia (D-055, D-066).
 PREFIX ga: <https://w3id.org/chora#>
 SELECT ?ref WHERE {
   ?ref a ga:PlaceReference .

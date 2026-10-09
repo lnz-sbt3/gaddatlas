@@ -257,10 +257,22 @@ ga:PlaceReferenceShape
     ] ;
     sh:property [
         sh:path ga:excerpt ;
-        sh:minCount 1 ;
-        sh:message "Ogni PlaceReference deve avere un excerpt testuale." ;
-        sh:severity sh:Warning ;
+        sh:maxCount 1 ;
+        sh:message "Una PlaceReference ha al piu' un excerpt." ;
     ] .
+
+# L'estratto e' obbligatorio solo per le occorrenze del testimone di
+# riferimento (QP). Per gli altri testimoni e' facoltativo: serve alla
+# provenienza delle letture e non arriva mai all'interfaccia (D-066).
+ga:ReferenceExcerptShape
+    a sh:NodeShape ;
+    sh:targetClass ga:PlaceReference ;
+    sh:or (
+        [ sh:path ga:excerpt ; sh:minCount 1 ]
+        [ sh:not [ sh:path ( ga:appearsInWitness [ sh:inversePath ga:referenceWitness ] ) ; sh:minCount 1 ] ]
+    ) ;
+    sh:message "Ogni occorrenza del testimone di riferimento deve avere un excerpt testuale (D-066)." ;
+    sh:severity sh:Violation .
 
 
 # =============================================================================

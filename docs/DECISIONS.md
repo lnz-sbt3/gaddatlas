@@ -1301,6 +1301,22 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-066 — Estratti dei testimoni non di riferimento: facoltativi (9 ottobre 2026)
+
+- Requisito/i: R01, R21 · Ipotesi: — · Data check: — (REVIEW_2 § 8)
+- Stato precedente: lo shape dell'estratto (Warning) valeva per tutte le occorrenze. Le tre occorrenze di QPL e dtsFG senza estratto (ref_00725, ref_00726, ref_00727) davano 3 avvertenze. IQ6 era già ristretta al testimone di riferimento (D-055).
+- Decisione (di Lorenzo, 9/10/2026): gli estratti di QPL e dtsFG non verranno forniti. Sono facoltativi, solo nel modello (provenienza delle letture), mai nell'interfaccia. L'estratto è obbligatorio solo per le occorrenze del testimone di riferimento:
+  - nuovo shape `ReferenceExcerptShape`, **Violation**: un'occorrenza il cui testimone è testimone di riferimento di un'opera (`appearsInWitness / ^referenceWitness`) deve avere l'estratto. Provato togliendo l'estratto a `ref_00007`: non conforme;
+  - in `PlaceReferenceShape` resta solo «al più un estratto»;
+  - IQ6 invariata nella logica; commento aggiornato.
+- Verifica: nessuna delle quattro occorrenze fuori da QP (ref_00724…ref_00727) compare nel GeoJSON o nei brani, in `data/dist/` né in `app/public/data/`. Le escludono i filtri di D-053 (adapter, `build_passages.py`, audit).
+- Motivazione (fonte, pagina): REVIEW_2 § 8; NOTICE-EXCERPTS.md (estratti solo per capitolo, dal testo di riferimento).
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `ontology/shapes/chora-shapes.ttl` (`PlaceReferenceShape`, nuovo `ReferenceExcerptShape`); `ontology/queries/integrity.rq` (commento di IQ6).
+- Effetto su KG (triple prima/dopo, SHACL): dati invariati (TBox 1.320, ABox 27.857, full 29.747). SHACL conforme, avvertenze 51 → **48** (restano le motivazioni di statuto in bozza dei 48 luoghi non Imported); IQ1–IQ17 a 0.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`
