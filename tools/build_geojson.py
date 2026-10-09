@@ -194,6 +194,21 @@ def fallback_seed(entity_id):
 # diversi, e il confronto in CI falliva sempre. L'artefatto deve essere
 # deterministico perche' e' quello che l'interfaccia carica e che viene citato.
 
+# Identificazioni adottate (D-045): luogo narrativo -> entita' del gazetteer
+Q_ADOPTED_IDENTIFICATIONS = """
+PREFIX ga: <https://w3id.org/chora#>
+SELECT ?place ?gaz WHERE {
+  ?a a ga:Assertion ;
+     ga:assertionType ga:IdentificationAssertion ;
+     ga:adoptedByProject true ;
+     ga:aboutSubject ?place ;
+     ga:assertsValue ?gaz .
+  ?place a ga:NarrativePlace .
+  ?gaz a ga:GazetteerEntity .
+}
+ORDER BY ?place ?gaz
+"""
+
 # ---------------------------------------------------------------------------
 # COMPETENCY QUERIES
 # ---------------------------------------------------------------------------
@@ -397,6 +412,15 @@ def main(ttl_path, out_dir, seeds_path=None):
 
     for p, refset in np_refs.items():
         nps[p]["planeCount"] = len(refset)
+
+    # Ancora da un'identificazione ADOTTATA (D-045): un luogo senza ancore
+    # proprie nelle interpretazioni prende come referente l'entita' della sua
+    # asserzione d'identificazione adottata (es. castello -> Castel Savello,
+    # Manzotti 2010, p. 293). Le sue parti la ereditano via isPartOf.
+    for row in g.query(Q_ADOPTED_IDENTIFICATIONS):
+        p, gk = str(row.place), str(row.gaz)
+        if p in nps and gk in gaz and not tgt_acc.get(p):
+            tgt_acc[p][gk] += 1.0
 
     # risoluzione ancoraggio ereditato per i sub-places (isPartOf transitivo)
     np_by_id = {v["id"]: k for k, v in nps.items()}

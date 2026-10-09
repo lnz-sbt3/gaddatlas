@@ -562,22 +562,6 @@ gaz_castel_savello	Castel Savello					41.72761786263662	12.639910072691912	"{
     }
   ]
 }"		
-gaz_castello	Castello					41.75143747946607	12.648544024883735	"{
-  ""type"": ""FeatureCollection"",
-  ""features"": [
-    {
-      ""type"": ""Feature"",
-      ""properties"": {},
-      ""geometry"": {
-        ""type"": ""Point"",
-        ""coordinates"": [
-          12.648544024883735,
-          41.75143747946607
-        ]
-      }
-    }
-  ]
-}"		
 gaz_cecchina	Cecchina				Cecchina	41.69302437483999	12.649648693210247	"{
   ""type"": ""FeatureCollection"",
   ""features"": [

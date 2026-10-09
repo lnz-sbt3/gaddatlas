@@ -21,7 +21,7 @@
   "ontologyVersion": "1.0.0",
   "buildVersion": "4.3",
   "source": "gaddatlas-full.ttl",
-  "tripleCount": 25921,
+  "tripleCount": 25933,
   "projection": {
    "type": "equirectangular",
    "center": [
@@ -109,7 +109,7 @@
   "excerptsIncluded": false,
   "voidSeeds": "frozen",
   "counts": {
-   "gazetteer": 266,
+   "gazetteer": 265,
    "narrativePlaces": 309,
    "interpretations": 960,
    "references": 723,
@@ -2262,10 +2262,10 @@
    "presentLocation": null,
    "historicalLocation": null,
    "distanceFromRomeKm": 21.1,
-   "refCountAnchored": 3,
+   "refCountAnchored": 1,
    "planeCount": 1,
    "interpCount": 1,
-   "narrativePlaceCount": 2,
+   "narrativePlaceCount": 1,
    "densityClass": "hapax",
    "densityLevel": 0
   },
@@ -2284,7 +2284,7 @@
    "refCountAnchored": 1,
    "planeCount": 1,
    "interpCount": 1,
-   "narrativePlaceCount": 1,
+   "narrativePlaceCount": 3,
    "densityClass": "hapax",
    "densityLevel": 0
   },
@@ -4793,25 +4793,6 @@
    "planeCount": 0,
    "interpCount": 0,
    "narrativePlaceCount": 1,
-   "densityClass": null,
-   "densityLevel": -1
-  },
-  {
-   "id": "gaz_castello",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_castello",
-   "label": "Castello",
-   "lon": 12.648544024883735,
-   "lat": 41.75143747946607,
-   "x": 11323.759,
-   "y": 15136.252,
-   "scaleBand": "periurbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 21.0,
-   "refCountAnchored": 0,
-   "planeCount": 0,
-   "interpCount": 0,
-   "narrativePlaceCount": 0,
    "densityClass": null,
    "densityLevel": -1
   },
@@ -13375,12 +13356,12 @@
    "placeCategory": "building",
    "description": null,
    "fuzziness": null,
-   "partOf": null,
+   "partOf": "castello",
    "interpCount": 2,
    "planeCount": 1,
    "targets": [
     {
-     "gazetteerId": "gaz_castel_gandolfo",
+     "gazetteerId": "gaz_castel_savello",
      "weight": 1.0
     }
    ],
@@ -13396,7 +13377,7 @@
      "n": 2
     }
    ],
-   "anchorInherited": false,
+   "anchorInherited": true,
    "multiTarget": false,
    "densityClass": "hapax"
   },
@@ -15395,7 +15376,12 @@
    "partOf": null,
    "interpCount": 0,
    "planeCount": 0,
-   "targets": [],
+   "targets": [
+    {
+     "gazetteerId": "gaz_castel_savello",
+     "weight": 1.0
+    }
+   ],
    "roles": [],
    "determinations": [],
    "anchorInherited": false,
@@ -28394,10 +28380,10 @@
    "referenceId": "ref_00651",
    "narrativePlaceId": "stazione_carabinieri_castello",
    "routeId": null,
-   "gazetteerId": "gaz_castel_gandolfo",
+   "gazetteerId": null,
    "narrativeRole": "Setting",
    "spatialDetermination": "Approximate",
-   "spatialRelation": "Inside",
+   "spatialRelation": null,
    "focalizerId": "santarella",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -28410,10 +28396,10 @@
    "referenceId": "ref_00651",
    "narrativePlaceId": "stazione_carabinieri_castello",
    "routeId": null,
-   "gazetteerId": "gaz_castel_gandolfo",
+   "gazetteerId": null,
    "narrativeRole": "Setting",
    "spatialDetermination": "Approximate",
-   "spatialRelation": "Inside",
+   "spatialRelation": null,
    "focalizerId": "militi_castello",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -50948,7 +50934,7 @@
      "referenceId": "ref_00651",
      "targetId": "stazione_carabinieri_castello",
      "narrativePlaceId": "stazione_carabinieri_castello",
-     "gazetteerId": "gaz_castel_gandolfo",
+     "gazetteerId": null,
      "interpretationId": "interp_00799",
      "role": "Setting",
      "simultaneous": true
@@ -51093,7 +51079,7 @@
      "referenceId": "ref_00651",
      "targetId": "stazione_carabinieri_castello",
      "narrativePlaceId": "stazione_carabinieri_castello",
-     "gazetteerId": "gaz_castel_gandolfo",
+     "gazetteerId": null,
      "interpretationId": "interp_00800",
      "role": "Setting",
      "simultaneous": true

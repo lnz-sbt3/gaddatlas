@@ -304,6 +304,9 @@ comunque dichiarare quale id è il canonico.
 
 **Aggiornamento (9/10/2026, D-044).** Il grafo non è più una delle tre fonti: non contiene `owl:sameAs` fra entità del dataset e non dichiara fusioni (le coppie diventano un'asserzione d'identificazione e due `chora:housedIn`). Restano `ALIAS_GROUPS` del notebook, portato così com'è, e `MERGE_MAP`, vuota. Nessuna fusione nuova introdotta. Da notare: `ALIAS_GROUPS` fonde ancora Collegio Romano e Santo Stefano del Cacco, che il grafo ora tratta come istituzione e sede distinte.
 
+
+**Aggiornamento (9/10/2026, LS).** La fusione Collegio Romano / Santo Stefano del Cacco in `ALIAS_GROUPS` è un'**aggregazione di visualizzazione**: una regola dichiarata di conteggio della vista (R15), non un giudizio d'identità. È coerente con `chora:housedIn` (D-044): istituzione e sede restano referenti distinti nel grafo, e la vista le somma in una tessera. `ALIAS_GROUPS` non si tocca.
+
 ---
 
 ## D-012 · Recuperato lo script di build del GeoJSON
@@ -897,6 +900,8 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 - File toccati (manifest): `tools/etl.py:73` (namespace `schema:`), `:950-961` (attribuzioni delle interpretazioni), `:1005-1046` (`process_agents`, `agent_uri`), `:1115`, `:1120` (autori e codificatori delle asserzioni via `agent_uri`), `:1289` (foglio atteso), `:1329-1331` (chiamata); `ontology/shapes/chora-shapes.ttl:323`, `:326` (shape estesa alle interpretazioni); `data/source/mapping.yaml` (nota sul blocco provenance); `data/source/tables/Agents.tsv` (nuovo); `data/source/tables/SpatialInterpretations.tsv` (799 righe, colonna `Annotator_ID`); `data/source/xlsx/Agents.xlsx` (nuovo), `SpatialInterpretations.xlsx` (rigenerato).
 - Effetto su KG (triple prima/dopo, SHACL): ABox 16.093 → **24.575**; full 17.419 → **25.901** (+8.482: 960 × 8 triple di attribuzione qualificata, 799 forme brevi nuove, 3 triple per l'agente). 1.920 attribuzioni, 1 agente. SHACL conforme, 0 violazioni. GeoJSON invariato salvo `tripleCount`.
 
+- Conferma (LS, 9/10/2026): autore delle interpretazioni = codificatore, vincolo SHACL obbligatorio. In fase 3 un'interpretazione che riprende la lettura di uno studioso si collega all'asserzione con `prov:wasDerivedFrom`; l'autore dell'interpretazione resta Lorenzo.
+
 ---
 
 ## D-044 — Niente `owl:sameAs` per i giudizi d'identità; `chora:housedIn` per istituzione e sede (9 ottobre 2026)
@@ -912,6 +917,24 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 - File toccati (manifest): `ontology/chora.ttl:971-980` (`chora:housedIn`); `tools/etl.py` (gazetteer: `sameAs` solo esterno, `Housed_In` risolto a fine ciclo); `tools/build_geojson.py:104-127` (commento sulle fonti di fusione); `data/source/mapping.yaml` (nota su `sameAs`); `data/source/tables/GazetteerEntities.tsv` (6 valori di `sameAs` tolti, colonna `Housed_In`); `data/source/tables/Assertions.tsv` (riga `A-0001`); due XLSX rigenerati; aggiornamenti in D-009 e D-011.
 - Effetto su KG (triple prima/dopo, SHACL): TBox 756 → **763**; ABox 24.575 → **24.588**; full 25.901 → **25.921** (−6 `owl:sameAs`, +2 `chora:housedIn`, +17 per l'asserzione e le sue attribuzioni). SHACL conforme, 0 violazioni; IQ3 = 0, IQ12 = 0. GeoJSON invariato salvo `tripleCount` (`MERGE_MAP` è vuota).
 - Da segnalare, non toccato: (1) `gaz_castello` («Castello», alle coordinate di Castel Gandolfo) resta un'entità senza interpretazioni, che esisteva solo per il `sameAs`; (2) la stazione dei carabinieri di Castello è ancora ancorata direttamente a `gaz_castel_gandolfo`, cioè porta dentro l'interpretazione la lettura non adottata (DC-04: collegare la stazione a `castello`); (3) `ALIAS_GROUPS` nel codice portato fonde ancora Collegio Romano e Santo Stefano del Cacco (D-011, non si tocca).
+
+---
+
+## D-045 — Castello: lettura adottata di Manzotti; stazione collegata al luogo (9 ottobre 2026)
+
+- Requisito/i: R10, R22 · Ipotesi: — · Data check: DC-04, DM-06 (chiusura dei punti aperti di T-30…T-31)
+- Stato precedente: l'identificazione di Castello esisteva solo come lettura di Lorenzo non adottata (A-0001, Castel Gandolfo, D-044); la stazione dei carabinieri di Castello era ancorata direttamente a `gaz_castel_gandolfo`, cioè portava dentro l'interpretazione la lettura non adottata; `gaz_castello` sopravviveva senza interpretazioni.
+- Decisione (di Lorenzo, 9/10/2026):
+  - **Lettura adottata = Manzotti.** Nuova asserzione `A-0002`: identificazione `castello` → `gaz_castel_savello`; autore Manzotti (nuovo agente `agent/manzotti` in `Agents.tsv`, tipo scholar), Manzotti 2010, p. 293; codificatore Lorenzo; **adottata**. `A-0001` (Castel Gandolfo, Lorenzo) resta come lettura alternativa non adottata.
+  - **La stazione è parte di `castello`** (`Is_Part_Of`) e perde l'ancoraggio diretto (e la relazione `inside`) a Castel Gandolfo sulle sue due interpretazioni. La sua posizione deriva dalla lettura adottata: l'adapter dà a un luogo senza ancore proprie l'entità della sua identificazione adottata (nuova query `Q_ADOPTED_IDENTIFICATIONS` in `tools/build_geojson.py`), e le parti la ereditano via `isPartOf`.
+  - **`gaz_castello` eliminata**: l'identità resta solo nelle asserzioni.
+  - Lo statuto di `castello` (Invented) non è cambiato: la proposta va in REVIEW_2. «Castel Savelli» (QP 173) come forma attestata di `castel_savello`: T-48.
+  - L'autore delle interpretazioni resta il codificatore (Lorenzo), con vincolo SHACL obbligatorio (D-043): in fase 3, quando un'interpretazione riprende la lettura di uno studioso, si collega all'asserzione con `prov:wasDerivedFrom`.
+  - `ALIAS_GROUPS` non si tocca: v. l'aggiornamento di D-011.
+- Motivazione (fonte, pagina): Manzotti 2010, p. 293; Cap. 4, § 4.4 (r. 107); QP 279.
+- Fase in cui è maturata: analisi del testo
+- File toccati (manifest): `data/source/tables/Assertions.tsv` (riga `A-0002`), `Agents.tsv` (riga `manzotti`), `NarrativePlaces.tsv` (`stazione_carabinieri_castello`: `Is_Part_Of`), `SpatialInterpretations.tsv` (2 righe: ancora e relazione tolte), `GazetteerEntities.tsv` (riga `gaz_castello` eliminata); `tools/build_geojson.py:197-211` (query), `:416-424` (ancora dalla lettura adottata); cinque XLSX rigenerati.
+- Effetto su KG (triple prima/dopo, SHACL): ABox 24.588 → **24.600**; full 25.921 → **25.933** (−7 per `gaz_castello`, −4 ancore e relazioni della stazione, +1 `isPartOf`, +3 per l'agente, +19 per `A-0002` e le sue attribuzioni). Gazetteer 266 → 265. SHACL conforme; IQ12 = 0. GeoJSON: la stazione eredita `gaz_castel_savello` invece di `gaz_castel_gandolfo`; nient'altro cambia salvo `anchoredTotal` di Castel Gandolfo. **Peso** di `app/public/data/gaddatlas.geojson`: 684.137 byte, contro 684.167 su `main`: le attribuzioni non entrano nel view model (i +40 KB rispetto all'inizio della fase 1 vengono dal campo `criticalNote` del pannello dei brani, D-018). **Confronto visivo** sui 10 stati: la tessera della stazione passa nel gruppo di Castel Savello, nell'arco dei Castelli (stadi 2–4). Lo stadio 5 con «tutti» differiva anche nei confini di cella dell'intera mappa, ma due esperimenti (stazione riportata a Castel Gandolfo; GeoJSON precedente rimesso per intero) danno l'immagine del «dopo»: era un artefatto della prima serie di catture. Lo stato di quel livello dipende dai tempi di caricamento, da tenere presente nei confronti futuri.
 
 ---
 

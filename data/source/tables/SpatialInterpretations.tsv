@@ -799,8 +799,8 @@ interp_00795	ref_00647	albano_laziale	gaz_albano_laziale	santarella				routenode
 interp_00796	ref_00648	tragitto_marino_albano_laziale		santarella	route	approximate						lorenzo_sabatino			
 interp_00797	ref_00649	pavona	gaz_pavona	enea_retalli	projectedspace	approximate						lorenzo_sabatino			
 interp_00798	ref_00650	palazzo	gaz_palazzo	enea_retalli	projectedspace	approximate						lorenzo_sabatino			
-interp_00799	ref_00651	stazione_carabinieri_castello	gaz_castel_gandolfo	santarella	setting	approximate	inside					lorenzo_sabatino			
-interp_00800	ref_00651	stazione_carabinieri_castello	gaz_castel_gandolfo	militi_castello	setting	approximate	inside					lorenzo_sabatino			
+interp_00799	ref_00651	stazione_carabinieri_castello		santarella	setting	approximate						lorenzo_sabatino			
+interp_00800	ref_00651	stazione_carabinieri_castello		militi_castello	setting	approximate						lorenzo_sabatino			
 interp_00801	ref_00652	pavona	gaz_pavona	santarella	projectedspace	approximate						lorenzo_sabatino			
 interp_00802	ref_00652	pavona	gaz_pavona	militi_castello	projectedspace	approximate						lorenzo_sabatino			
 interp_00803	ref_00653	santa_maria_della_neve	gaz_santa_maria_della_neve	narrator	marker	approximate						lorenzo_sabatino			

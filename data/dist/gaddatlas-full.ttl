@@ -398,6 +398,20 @@ chora:targetsRoute a owl:ObjectProperty ;
     chora:assertsValue <https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_gandolfo> ;
     chora:rationale "Lettura del censimento: la «stazione di Castello» (QP 279) come Castel Gandolfo, lettura immediata del toponimo. Identificazione contesa (DC-04): Manzotti 2010, p. 293 legge Castel Savello; la sua lettura entra in fase 3. Non adottata finché DC-04 non è deciso."@it .
 
+<https://w3id.org/gaddatlas/id/assertion/A-0002> a chora:Assertion ;
+    rdfs:comment "Lettura alternativa non adottata: A-0001 (Castel Gandolfo, LS)"@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/A-0002-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/A-0002-readingauthor-manzotti> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/castello> ;
+    chora:adoptedByProject true ;
+    chora:assertionType chora:IdentificationAssertion ;
+    chora:assertsValue <https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_savello> ;
+    chora:rationale "La «stazione di Castello» (QP 279) è la stazione dei carabinieri di Castel Savello: Manzotti scioglie così la dizione, contro la lettura immediata Castel Gandolfo (Cap. 4, § 4.4). Lettura adottata dal progetto (LS, 9/10/2026, DC-04)."@it ;
+    chora:sourcePage "293"^^xsd:string ;
+    chora:sourceWork "Manzotti 2010"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_aliciaro> a chora:GazetteerEntity ;
     rdfs:label "Aliciaro"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -421,28 +435,6 @@ chora:targetsRoute a owl:ObjectProperty ;
     geo1:long 12.477286809814071 ;
     chora:historicalLocation "Piazza degli Otto Cantoni"@it ;
     chora:presentLocation "Piazza Augusto Imperatore"@it .
-
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_castello> a chora:GazetteerEntity ;
-    rdfs:label "Castello"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.648544024883735,
-          41.75143747946607
-        ]
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 41.75143747946607 ;
-    geo1:long 12.648544024883735 .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_colosseo> a chora:GazetteerEntity ;
     rdfs:label "Colosseo"@it ;
@@ -10973,10 +10965,8 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/interp_00799-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/attribution/interp_00799-readingauthor-lorenzo_sabatino> ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_gandolfo> ;
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Approximate ;
-    chora:assignsSpatialRelationType chora:Inside ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/santarella> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00651> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/stazione_carabinieri_castello> .
@@ -10986,10 +10976,8 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/interp_00800-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/attribution/interp_00800-readingauthor-lorenzo_sabatino> ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_gandolfo> ;
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Approximate ;
-    chora:assignsSpatialRelationType chora:Inside ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/militi_castello> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00651> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/stazione_carabinieri_castello> .
@@ -13351,6 +13339,14 @@ chora:ward a owl:NamedIndividual,
 
 <https://w3id.org/gaddatlas/id/attribution/A-0001-readingauthor-lorenzo_sabatino> a prov:Attribution ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/A-0002-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/A-0002-readingauthor-manzotti> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/manzotti> ;
     prov:hadRole chora:ReadingAuthor .
 
 <https://w3id.org/gaddatlas/id/attribution/interp_00001-encoder-lorenzo_sabatino> a prov:Attribution ;
@@ -21558,29 +21554,6 @@ chora:ward a owl:NamedIndividual,
     geo1:lat 42.14567518996888 ;
     geo1:long 13.094053163953856 .
 
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_savello> a chora:GazetteerEntity ;
-    rdfs:label "Castel Savello"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.639910072691912,
-          41.72761786263662
-
-        ]
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 41.72761786263662 ;
-    geo1:long 12.639910072691912 .
-
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_castelli_romani> a chora:GazetteerEntity ;
     rdfs:label "Castelli Romani"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -24180,12 +24153,6 @@ chora:ward a owl:NamedIndividual,
     rdfs:label "Castelli Romani"@it ;
     chora:hasPlaceCategory chora:locality ;
     chora:hasRealityStatus chora:Imported .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/castello> a chora:NarrativePlace ;
-    rdfs:label "Castello"@it ;
-    dcterms:description "Luogo narrativo immaginato, un castello nella zona tra Pavona e Frattocchie"@it ;
-    chora:hasPlaceCategory chora:castle ;
-    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/civitavecchia> a chora:NarrativePlace ;
     rdfs:label "Civitavecchia"@it ;
@@ -28270,15 +28237,6 @@ chora:Above a owl:NamedIndividual,
     skos:prefLabel "Above"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
 
-chora:IdentificationAssertion a owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "identificazione"@it ;
-    skos:definition "Identifies a narrative place or a place reference with a gazetteer entity. Replaces owl:sameAs as a judgement of identity."@en ;
-    skos:inScheme chora:AssertionTypeScheme ;
-    skos:notation "identification" ;
-    skos:prefLabel "Identification assertion"@en ;
-    skos:topConceptOf chora:AssertionTypeScheme .
-
 chora:Railway_line a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "Linea ferroviaria"@it ;
@@ -28481,6 +28439,10 @@ chora:village a owl:NamedIndividual,
     skos:prefLabel "Village"@en ;
     skos:topConceptOf chora:PlaceCategoryScheme .
 
+<https://w3id.org/gaddatlas/id/agent/manzotti> a prov:Agent ;
+    rdfs:comment "Commento al cap. VIII del Pasticciaccio (Manzotti 2010, «Per leggere» 19)"@it ;
+    schema:name "Emilio Manzotti" .
+
 <https://w3id.org/gaddatlas/id/focalizer/agente_paolillo> a chora:Character,
         chora:FocalizingAgent ;
     chora:characterName "Agente Paolillo"@it ;
@@ -28606,6 +28568,29 @@ chora:village a owl:NamedIndividual,
     skos:altLabel "Cimitero Monumentale del Verano"@it ;
     chora:presentLocation "Piazzale del Verano"@it .
 
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_gandolfo> a chora:GazetteerEntity ;
+    rdfs:label "Castel Gandolfo"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.64847290122697,
+          41.75005641875434
+
+        ]
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 41.75005641875434 ;
+    geo1:long 12.64847290122697 .
+
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_porziano> a chora:GazetteerEntity ;
     rdfs:label "Castel Porziano"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -28627,6 +28612,29 @@ chora:village a owl:NamedIndividual,
 }"""^^geosparql:geoJSONLiteral ] ;
     geo1:lat 41.74517216671914 ;
     geo1:long 12.400109186081606 .
+
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_savello> a chora:GazetteerEntity ;
+    rdfs:label "Castel Savello"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.639910072691912,
+          41.72761786263662
+
+        ]
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 41.72761786263662 ;
+    geo1:long 12.639910072691912 .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_cecchina> a chora:GazetteerEntity ;
     rdfs:label "Cecchina"@it ;
@@ -29891,7 +29899,8 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/narrativeplace/stazione_carabinieri_castello> a chora:NarrativePlace ;
     rdfs:label "Stazione dei Carabinieri a Castello"@it ;
     chora:hasPlaceCategory chora:building ;
-    chora:hasRealityStatus chora:Transformed .
+    chora:hasRealityStatus chora:Transformed ;
+    chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/castello> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/stazione_pavona> a chora:NarrativePlace ;
     rdfs:label "Stazione della Pavona"@it ;
@@ -30692,6 +30701,15 @@ chora:village a owl:NamedIndividual,
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 306"^^xsd:string .
 
+chora:IdentificationAssertion a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "identificazione"@it ;
+    skos:definition "Identifies a narrative place or a place reference with a gazetteer entity. Replaces owl:sameAs as a judgement of identity."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "identification" ;
+    skos:prefLabel "Identification assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
 chora:aqueduct a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "Acquedotto"@it ;
@@ -31226,6 +31244,12 @@ chora:temple a owl:NamedIndividual,
     chora:hasRealityStatus chora:Transformed ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/castello> a chora:NarrativePlace ;
+    rdfs:label "Castello"@it ;
+    dcterms:description "Luogo narrativo immaginato, un castello nella zona tra Pavona e Frattocchie"@it ;
+    chora:hasPlaceCategory chora:castle ;
+    chora:hasRealityStatus chora:Invented .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira> a chora:NarrativePlace ;
     rdfs:label "Casuccia della Zamira"@it ;
     chora:hasPlaceCategory chora:dwelling ;
@@ -31526,9 +31550,6 @@ chora:temple a owl:NamedIndividual,
 
 <https://w3id.org/gaddatlas/id/route/tragitto_merulana_policlinico> a chora:NarrativeRoute .
 
-prov:Agent a owl:Class ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
-
 chora:AttributionRoleScheme a owl:NamedIndividual,
         skos:ConceptScheme ;
     rdfs:label "Attribution role"@en ;
@@ -31688,29 +31709,6 @@ chora:police_station a owl:NamedIndividual,
     geo1:long 12.477533646244904 ;
     skos:altLabel "Campo di Marte"@it ;
     chora:presentLocation "Rione IV"@it .
-
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_gandolfo> a chora:GazetteerEntity ;
-    rdfs:label "Castel Gandolfo"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.64847290122697,
-          41.75005641875434
-
-        ]
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 41.75005641875434 ;
-    geo1:long 12.64847290122697 .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_direttissima_roma_napoli> a chora:GazetteerEntity ;
     rdfs:label "Direttissima Roma-Napoli"@it ;
@@ -32159,6 +32157,9 @@ chora:police_station a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/route/tragitto_duesanti_frattocchie> a chora:NarrativeRoute .
 
 <https://w3id.org/gaddatlas/id/route/tragitto_policlinico_san_lorenzo_al_verano> a chora:NarrativeRoute .
+
+prov:Agent a owl:Class ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
 
 chora:LiteraryWork a owl:Class .
 
@@ -32914,14 +32915,6 @@ chora:station a owl:NamedIndividual,
     chora:hasPlaceCategory chora:street ;
     chora:hasRealityStatus chora:Imported .
 
-chora:Assertion a owl:Class ;
-    rdfs:comment "An attributed reading about a resource of the dataset: who formulated it (prov:qualifiedAttribution with role chora:ReadingAuthor), who encoded it (role chora:Encoder), on which source, when, which earlier assertion it revises, and whether the project adopts it. Competing readings coexist as distinct assertions; the adopted one is attributed like the others."@en,
-        "Lettura attribuita su una risorsa del dataset: chi l'ha formulata (prov:qualifiedAttribution con ruolo chora:ReadingAuthor), chi l'ha codificata (ruolo chora:Encoder), su quale fonte, quando, quale asserzione precedente rivede, e se il progetto la adotta. Le letture concorrenti convivono come asserzioni distinte; quella adottata e' attribuita come le altre."@it ;
-    rdfs:subClassOf <http://purl.org/emmedi/hico/InterpretationAct>,
-        prov:Entity ;
-    skos:altLabel "Asserzione"@it ;
-    skos:prefLabel "Assertion"@en .
-
 chora:restaurant a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "Ristorante"@it ;
@@ -32937,6 +32930,14 @@ chora:restaurant a owl:NamedIndividual,
     chora:hasPlaceCategory chora:farmhouse ;
     chora:hasRealityStatus chora:Invented ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/tor_di_gheppio> .
+
+chora:Assertion a owl:Class ;
+    rdfs:comment "An attributed reading about a resource of the dataset: who formulated it (prov:qualifiedAttribution with role chora:ReadingAuthor), who encoded it (role chora:Encoder), on which source, when, which earlier assertion it revises, and whether the project adopts it. Competing readings coexist as distinct assertions; the adopted one is attributed like the others."@en,
+        "Lettura attribuita su una risorsa del dataset: chi l'ha formulata (prov:qualifiedAttribution con ruolo chora:ReadingAuthor), chi l'ha codificata (ruolo chora:Encoder), su quale fonte, quando, quale asserzione precedente rivede, e se il progetto la adotta. Le letture concorrenti convivono come asserzioni distinte; quella adottata e' attribuita come le altre."@it ;
+    rdfs:subClassOf <http://purl.org/emmedi/hico/InterpretationAct>,
+        prov:Entity ;
+    skos:altLabel "Asserzione"@it ;
+    skos:prefLabel "Assertion"@en .
 
 chora:Imagined a owl:NamedIndividual,
         skos:Concept ;
