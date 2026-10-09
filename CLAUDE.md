@@ -20,9 +20,9 @@ Due artefatti distinti nello stesso repository:
 
 ## Le decisioni sono già prese
 
-`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-060; quelle dell'allineamento al
+`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-061; quelle dell'allineamento al
 Capitolo 4 partono da D-019 (D-015…D-018 sono del porting, su `main`). Nel file sono in
-ordine cronologico, non numerico. Prossimo numero libero: **D-061**. **Leggile
+ordine cronologico, non numerico. Prossimo numero libero: **D-062**. **Leggile
 prima di proporre alternative architetturali.** Se una scelta ti sembra
 sbagliata, dillo citando la decisione — non aggirarla in silenzio.
 
@@ -103,7 +103,11 @@ aggiornato.
 
 - Statuto di realtà, dal concreto all'astratto: **Imported → Transformed →
   Invented → Imagined**. *Invented* = luogo fittizio in una geografia nota;
-  *Imagined* = nessuna indicazione di posizione (Reuschel, Piatti e Hurni 2013).
+  *Imagined* = luogo senza alcuna corrispondenza identificabile con un luogo
+  attestato nella realtà, frutto dell'immaginazione d'autore; può essere collocato
+  nel mondo reale se l'autore lo immagina in una certa posizione, ma nella realtà in
+  quel punto non esiste (definizione di Lorenzo, 9/10/2026, D-061; Reuschel, Piatti
+  e Hurni 2013 per la scala).
   Legende, filtri e ordinamenti seguono quest'ordine.
 - Precisione della localizzazione (SpatialDetermination: Precise / Relative /
   Approximate / Indeterminate) e statuto di realtà sono assi **indipendenti**:

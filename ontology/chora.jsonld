@@ -929,7 +929,16 @@
         "@language": "it",
         "@value": "Immaginato"
       },
-      "skos:definition": "There is no hint at all about the position of the setting, it is located ‘somewhere’, with no real-world counterpart, only existing within the narration. Consequently, it is not possible to assign coordinates",
+      "skos:definition": [
+        {
+          "@language": "en",
+          "@value": "A place without any identifiable correspondence to a place attested in reality: the product of the author's imagination. It may be set in the real world, if the author imagines it in a certain position, but in reality nothing exists at that point."
+        },
+        {
+          "@language": "it",
+          "@value": "Luogo senza alcuna corrispondenza identificabile con un luogo attestato nella realtà, frutto dell'immaginazione d'autore. Può essere collocato nel mondo reale, se l'autore lo immagina in una certa posizione, ma nella realtà in quel punto non esiste."
+        }
+      ],
       "skos:inScheme": {
         "@id": "chora:RealityStatusScheme"
       },
@@ -940,7 +949,7 @@
       },
       "skos:scopeNote": {
         "@language": "en",
-        "@value": "Fourth and most abstract degree of the scale: the place is set 'somewhere', without any indication of position. Not to be confused with Invented, a fictional place located within a known geography (Reuschel, Piatti and Hurni 2013, pp. 138–139)."
+        "@value": "Fourth and most abstract degree of the scale: the place has no identifiable counterpart in reality, even when the author gives it a position. Not to be confused with Invented, a fictional place located within a known geography (Reuschel, Piatti and Hurni 2013, pp. 138–139; definition of Imagined by L. Sabatino, 9/10/2026, D-061)."
       },
       "skos:topConceptOf": {
         "@id": "chora:RealityStatusScheme"
@@ -1176,7 +1185,7 @@
       },
       "skos:scopeNote": {
         "@language": "en",
-        "@value": "Third degree of the scale: a fictional place set within a known, identifiable geography, so that its position can be indicated or inferred. Not to be confused with Imagined, which has no indication of position at all (Reuschel, Piatti and Hurni 2013, pp. 138–139)."
+        "@value": "Third degree of the scale: a fictional place set within a known, identifiable geography, so that its position can be indicated or inferred. Not to be confused with Imagined, which has no identifiable counterpart in reality (Reuschel, Piatti and Hurni 2013, pp. 138–139; D-061)."
       },
       "skos:topConceptOf": {
         "@id": "chora:RealityStatusScheme"

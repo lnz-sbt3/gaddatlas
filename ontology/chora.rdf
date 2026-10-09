@@ -752,11 +752,12 @@
     <owl:differentFrom rdf:resource="https://w3id.org/chora#Invented"/>
     <owl:differentFrom rdf:resource="https://w3id.org/chora#Transformed"/>
     <skos:altLabel xml:lang="it">Immaginato</skos:altLabel>
-    <skos:definition>There is no hint at all about the position of the setting, it is located ‘somewhere’, with no real-world counterpart, only existing within the narration. Consequently, it is not possible to assign coordinates</skos:definition>
+    <skos:definition xml:lang="en">A place without any identifiable correspondence to a place attested in reality: the product of the author's imagination. It may be set in the real world, if the author imagines it in a certain position, but in reality nothing exists at that point.</skos:definition>
+    <skos:definition xml:lang="it">Luogo senza alcuna corrispondenza identificabile con un luogo attestato nella realtà, frutto dell'immaginazione d'autore. Può essere collocato nel mondo reale, se l'autore lo immagina in una certa posizione, ma nella realtà in quel punto non esiste.</skos:definition>
     <skos:inScheme rdf:resource="https://w3id.org/chora#RealityStatusScheme"/>
     <skos:notation>4</skos:notation>
     <skos:prefLabel xml:lang="en">Imagined</skos:prefLabel>
-    <skos:scopeNote xml:lang="en">Fourth and most abstract degree of the scale: the place is set 'somewhere', without any indication of position. Not to be confused with Invented, a fictional place located within a known geography (Reuschel, Piatti and Hurni 2013, pp. 138–139).</skos:scopeNote>
+    <skos:scopeNote xml:lang="en">Fourth and most abstract degree of the scale: the place has no identifiable counterpart in reality, even when the author gives it a position. Not to be confused with Invented, a fictional place located within a known geography (Reuschel, Piatti and Hurni 2013, pp. 138–139; definition of Imagined by L. Sabatino, 9/10/2026, D-061).</skos:scopeNote>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#RealityStatusScheme"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#Imported">
@@ -842,7 +843,7 @@
     <skos:inScheme rdf:resource="https://w3id.org/chora#RealityStatusScheme"/>
     <skos:notation>3</skos:notation>
     <skos:prefLabel xml:lang="en">Invented</skos:prefLabel>
-    <skos:scopeNote xml:lang="en">Third degree of the scale: a fictional place set within a known, identifiable geography, so that its position can be indicated or inferred. Not to be confused with Imagined, which has no indication of position at all (Reuschel, Piatti and Hurni 2013, pp. 138–139).</skos:scopeNote>
+    <skos:scopeNote xml:lang="en">Third degree of the scale: a fictional place set within a known, identifiable geography, so that its position can be indicated or inferred. Not to be confused with Imagined, which has no identifiable counterpart in reality (Reuschel, Piatti and Hurni 2013, pp. 138–139; D-061).</skos:scopeNote>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#RealityStatusScheme"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#LiteraryWork">

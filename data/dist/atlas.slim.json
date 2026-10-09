@@ -21,7 +21,7 @@
   "ontologyVersion": "1.0.0",
   "buildVersion": "4.3",
   "source": "gaddatlas-full.ttl",
-  "tripleCount": 29730,
+  "tripleCount": 29731,
   "projection": {
    "type": "equirectangular",
    "center": [
@@ -15336,7 +15336,7 @@
    "id": "castello",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/castello",
    "label": "Castello",
-   "realityStatus": "Invented",
+   "realityStatus": "Imported",
    "placeCategory": "castle",
    "description": "Luogo narrativo immaginato, un castello nella zona tra Pavona e Frattocchie",
    "fuzziness": null,

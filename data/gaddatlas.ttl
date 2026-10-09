@@ -683,7 +683,7 @@
     chora:sourceWork "Manzotti 2010"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/assertion/S-castello> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Decisione di LS (9/10/2026, REVIEW_2 § 2); prima Invented (bozza T-33)."@it ;
     prov:generatedAtTime "2026-10-09"^^xsd:date ;
     prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/S-castello-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/attribution/S-castello-readingauthor-lorenzo_sabatino> ;
@@ -691,10 +691,10 @@
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/castello> ;
     chora:adoptedByProject true ;
     chora:assertionType chora:StatusAssertion ;
-    chora:assertsValue chora:Invented ;
-    chora:rationale "Luogo testuale della «stazione di Castello» (QP 279), bersaglio di due identificazioni concorrenti (Cap. 4, § 4.3, r. 93; § 4.4, r. 107): Castel Gandolfo (LS, A-0001) e Castel Savello (Manzotti 2010, p. 293, A-0002, adottata). Statuto da rivedere alla luce della lettura adottata (REVIEW_2)."@it ;
-    chora:rationaleType chora:CriticalReading ;
-    chora:reviewStatus chora:Draft ;
+    chora:assertsValue chora:Imported ;
+    chora:rationale "La «stazione di Castello» (QP 279) è la stazione dei carabinieri di Castel Savello: identificazione adottata A-0002 (Manzotti 2010, p. 293). Il luogo testuale nomina in forma ellittica un luogo reale: statuto Imported. La lettura alternativa (Castel Gandolfo, A-0001) è anch'essa un luogo reale."@it ;
+    chora:rationaleType chora:ReferentialEvidence ;
+    chora:reviewStatus chora:Validated ;
     chora:sourcePage "293"^^xsd:string ;
     chora:sourceWork "Manzotti 2010"^^xsd:string .
 
@@ -34829,7 +34829,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     rdfs:label "Castello"@it ;
     dcterms:description "Luogo narrativo immaginato, un castello nella zona tra Pavona e Frattocchie"@it ;
     chora:hasPlaceCategory chora:castle ;
-    chora:hasRealityStatus chora:Invented ;
+    chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/ciampino> a chora:NarrativePlace ;

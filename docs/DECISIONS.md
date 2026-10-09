@@ -1221,6 +1221,23 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-061 — Statuti dopo REVIEW_2: castello Imported, nuova definizione di Imagined (9 ottobre 2026)
+
+- Requisito/i: R07 · Ipotesi: H1 · Data check: DM-01, DC-04, DC-16 (REVIEW_2 § 2)
+- Stato precedente: `castello` Invented (S-castello, bozza). REVIEW_2 proponeva di riassegnare a Invented Roccafringoli, Monte Nuncupale e Scerpure, perché il Cap. 4 (r. 85) li chiama «inventati». La definizione di `chora:Imagined` era «no hint at all about the position… located ‘somewhere’», ripresa in CLAUDE.md e in DM-01.
+- Decisione (di Lorenzo, 9/10/2026):
+  - **riassegnazioni respinte:** roccafringoli, monte_nuncupale, scerpure, casa_del_butiro e castel_porcano restano Imagined;
+  - **castello → Imported:** S-castello ha valore `chora:Imported`, adottata, validata, motivazione referenziale sull'identificazione adottata A-0002 (Manzotti 2010, p. 293): il luogo testuale nomina in forma ellittica un luogo reale. `NarrativePlaces.tsv`: Reality_Status `imported`;
+  - **definizione di Imagined** (di Lorenzo): «Luogo senza alcuna corrispondenza identificabile con un luogo attestato nella realtà, frutto dell'immaginazione d'autore. Può essere collocato nel mondo reale, se l'autore lo immagina in una certa posizione, ma nella realtà in quel punto non esiste.» Sostituisce la formula «no hint at all about the position / somewhere» nella `skos:definition` di `chora:Imagined` (en e it), in CLAUDE.md (invarianti) e in DM-01. Con la stessa definizione i cinque luoghi Imagined sono coerenti anche quando il testo li colloca (QP 107, 173).
+  - Nello schema degli statuti la stessa formula compariva anche nello `skos:scopeNote` di Imagined e nel termine di confronto dello `scopeNote` di Invented: sostituita solo lì, perché la TBox non contraddicesse la definizione. Notazioni, ordine e definizioni degli altri statuti invariati.
+- Da segnalare, non modificato: la descrizione del censimento di `castello` («Luogo narrativo immaginato, un castello nella zona tra Pavona e Frattocchie») non corrisponde più allo statuto né all'identificazione adottata.
+- Motivazione (fonte, pagina): REVIEW_2 § 2; Manzotti 2010, p. 293; QP 279.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `data/source/tables/NarrativePlaces.tsv` (castello), `Assertions.tsv` (S-castello); XLSX corrispondenti; `ontology/chora.ttl` r. 526–540 (Imagined: definizione en/it, scopeNote), `chora:Invented` scopeNote; `CLAUDE.md` (invarianti); `docs/thesis/DATA_CHECKS_GaddAtlas.md` (DM-01, DC-04, DC-16).
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.306 → **1.307** (definizione in due lingue); ABox 27.854 invariata; full 29.730 → **29.731**. Statuti: Imported **261**, Transformed 30, Invented **13**, Imagined 5. SHACL conforme, avvertenze 52 → **51**; IQ1–IQ17 a 0. Vista invariata (castello non ha tessera).
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

@@ -1204,7 +1204,7 @@ chora:witnessType a owl:ObjectProperty ;
     chora:sourceWork "Manzotti 2010"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/assertion/S-castello> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Decisione di LS (9/10/2026, REVIEW_2 § 2); prima Invented (bozza T-33)."@it ;
     prov:generatedAtTime "2026-10-09"^^xsd:date ;
     prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/S-castello-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/attribution/S-castello-readingauthor-lorenzo_sabatino> ;
@@ -1212,10 +1212,10 @@ chora:witnessType a owl:ObjectProperty ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/castello> ;
     chora:adoptedByProject true ;
     chora:assertionType chora:StatusAssertion ;
-    chora:assertsValue chora:Invented ;
-    chora:rationale "Luogo testuale della «stazione di Castello» (QP 279), bersaglio di due identificazioni concorrenti (Cap. 4, § 4.3, r. 93; § 4.4, r. 107): Castel Gandolfo (LS, A-0001) e Castel Savello (Manzotti 2010, p. 293, A-0002, adottata). Statuto da rivedere alla luce della lettura adottata (REVIEW_2)."@it ;
-    chora:rationaleType chora:CriticalReading ;
-    chora:reviewStatus chora:Draft ;
+    chora:assertsValue chora:Imported ;
+    chora:rationale "La «stazione di Castello» (QP 279) è la stazione dei carabinieri di Castel Savello: identificazione adottata A-0002 (Manzotti 2010, p. 293). Il luogo testuale nomina in forma ellittica un luogo reale: statuto Imported. La lettura alternativa (Castel Gandolfo, A-0001) è anch'essa un luogo reale."@it ;
+    chora:rationaleType chora:ReferentialEvidence ;
+    chora:reviewStatus chora:Validated ;
     chora:sourcePage "293"^^xsd:string ;
     chora:sourceWork "Manzotti 2010"^^xsd:string .
 
@@ -36344,7 +36344,7 @@ chora:retail_business a owl:NamedIndividual,
     rdfs:label "Castello"@it ;
     dcterms:description "Luogo narrativo immaginato, un castello nella zona tra Pavona e Frattocchie"@it ;
     chora:hasPlaceCategory chora:castle ;
-    chora:hasRealityStatus chora:Invented ;
+    chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/ciampino> a chora:NarrativePlace ;
@@ -36725,14 +36725,6 @@ chora:RationaleTypeScheme a owl:NamedIndividual,
         chora:TextualEvidence ;
     skos:prefLabel "Rationale type"@en .
 
-chora:ReferentialEvidence a owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "prova referenziale"@it ;
-    skos:definition "The reading rests on a repertory (map, guide, gazetteer) that documents or excludes the referent."@en ;
-    skos:inScheme chora:RationaleTypeScheme ;
-    skos:prefLabel "Referential evidence"@en ;
-    skos:topConceptOf chora:RationaleTypeScheme .
-
 chora:UncertaintyAxisScheme a owl:NamedIndividual,
         skos:ConceptScheme ;
     rdfs:label "Uncertainty axis"@en ;
@@ -36904,6 +36896,14 @@ chora:station a owl:NamedIndividual,
 
 <https://w3id.org/gaddatlas/id/route/tragitto_frattocchie_ciampino> a chora:NarrativeRoute ;
     chora:hasRouteType chora:InferredRoute .
+
+chora:ReferentialEvidence a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "prova referenziale"@it ;
+    skos:definition "The reading rests on a repertory (map, guide, gazetteer) that documents or excludes the referent."@en ;
+    skos:inScheme chora:RationaleTypeScheme ;
+    skos:prefLabel "Referential evidence"@en ;
+    skos:topConceptOf chora:RationaleTypeScheme .
 
 chora:restaurant a owl:NamedIndividual,
         skos:Concept ;
@@ -37165,14 +37165,6 @@ chora:NarrativeRoleScheme a owl:NamedIndividual,
         chora:ZoneOfAction ;
     skos:prefLabel "Narrative Role"@en .
 
-chora:Validated a owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "validata"@it ;
-    skos:definition "Validated by the project."@en ;
-    skos:inScheme chora:ReviewStatusScheme ;
-    skos:prefLabel "Validated"@en ;
-    skos:topConceptOf chora:ReviewStatusScheme .
-
 chora:WitnessTypeScheme a owl:NamedIndividual,
         skos:ConceptScheme ;
     rdfs:label "Witness type"@en ;
@@ -37217,6 +37209,14 @@ chora:WitnessTypeScheme a owl:NamedIndividual,
 }"""^^geosparql:geoJSONLiteral ] ;
     geo1:lat 41.748548036845285 ;
     geo1:long 12.560749021883575 .
+
+chora:Validated a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "validata"@it ;
+    skos:definition "Validated by the project."@en ;
+    skos:inScheme chora:ReviewStatusScheme ;
+    skos:prefLabel "Validated"@en ;
+    skos:topConceptOf chora:ReviewStatusScheme .
 
 chora:Witness a owl:Class ;
     rdfs:comment "A witness of a literary work: a periodical redaction, a typescript, a set of proofs, a first edition or a later edition, each carrying a state of the text. Derivations between witnesses (prov:wasDerivedFrom) are stated only where documented."@en ;
@@ -37380,11 +37380,12 @@ chora:Imagined a owl:NamedIndividual,
         chora:Invented,
         chora:Transformed ;
     skos:altLabel "Immaginato"@it ;
-    skos:definition "There is no hint at all about the position of the setting, it is located ‘somewhere’, with no real-world counterpart, only existing within the narration. Consequently, it is not possible to assign coordinates" ;
+    skos:definition "A place without any identifiable correspondence to a place attested in reality: the product of the author's imagination. It may be set in the real world, if the author imagines it in a certain position, but in reality nothing exists at that point."@en,
+        "Luogo senza alcuna corrispondenza identificabile con un luogo attestato nella realtà, frutto dell'immaginazione d'autore. Può essere collocato nel mondo reale, se l'autore lo immagina in una certa posizione, ma nella realtà in quel punto non esiste."@it ;
     skos:inScheme chora:RealityStatusScheme ;
     skos:notation "4" ;
     skos:prefLabel "Imagined"@en ;
-    skos:scopeNote "Fourth and most abstract degree of the scale: the place is set 'somewhere', without any indication of position. Not to be confused with Invented, a fictional place located within a known geography (Reuschel, Piatti and Hurni 2013, pp. 138–139)."@en ;
+    skos:scopeNote "Fourth and most abstract degree of the scale: the place has no identifiable counterpart in reality, even when the author gives it a position. Not to be confused with Invented, a fictional place located within a known geography (Reuschel, Piatti and Hurni 2013, pp. 138–139; definition of Imagined by L. Sabatino, 9/10/2026, D-061)."@en ;
     skos:topConceptOf chora:RealityStatusScheme .
 
 chora:mountain a owl:NamedIndividual,
@@ -37822,6 +37823,19 @@ chora:CompletedRoute a owl:NamedIndividual,
     skos:prefLabel "Completed"@en ;
     skos:topConceptOf chora:RouteTypeScheme .
 
+chora:Invented a owl:NamedIndividual,
+        skos:Concept ;
+    owl:differentFrom chora:Imagined,
+        chora:Imported,
+        chora:Transformed ;
+    skos:altLabel "Inventato"@it ;
+    skos:definition "An invented setting within familiar geographical reality" ;
+    skos:inScheme chora:RealityStatusScheme ;
+    skos:notation "3" ;
+    skos:prefLabel "Invented"@en ;
+    skos:scopeNote "Third degree of the scale: a fictional place set within a known, identifiable geography, so that its position can be indicated or inferred. Not to be confused with Imagined, which has no identifiable counterpart in reality (Reuschel, Piatti and Hurni 2013, pp. 138–139; D-061)."@en ;
+    skos:topConceptOf chora:RealityStatusScheme .
+
 chora:Near a owl:NamedIndividual,
         skos:Concept ;
     dcterms:description "A è in prossimità di B, senza specificare distanza esatta. Relazione qualitativa di vicinanza."@it ;
@@ -37838,19 +37852,6 @@ chora:Route a owl:NamedIndividual,
     skos:inScheme chora:NarrativeRoleScheme ;
     skos:prefLabel "Route"@en ;
     skos:topConceptOf chora:NarrativeRoleScheme .
-
-chora:Invented a owl:NamedIndividual,
-        skos:Concept ;
-    owl:differentFrom chora:Imagined,
-        chora:Imported,
-        chora:Transformed ;
-    skos:altLabel "Inventato"@it ;
-    skos:definition "An invented setting within familiar geographical reality" ;
-    skos:inScheme chora:RealityStatusScheme ;
-    skos:notation "3" ;
-    skos:prefLabel "Invented"@en ;
-    skos:scopeNote "Third degree of the scale: a fictional place set within a known, identifiable geography, so that its position can be indicated or inferred. Not to be confused with Imagined, which has no indication of position at all (Reuschel, Piatti and Hurni 2013, pp. 138–139)."@en ;
-    skos:topConceptOf chora:RealityStatusScheme .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> a chora:GazetteerEntity ;
     rdfs:label "Ferrovia Roma-Velletri"@it ;
@@ -38314,6 +38315,12 @@ chora:Relative a owl:NamedIndividual,
     skos:prefLabel "Relative"@en ;
     skos:topConceptOf chora:SpatialDeterminationScheme .
 
+geosparql:Geometry a owl:Class ;
+    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ;
+    skos:altLabel "Geometria"@it ;
+    skos:definition "A coherent set of direct positions in space"@en ;
+    skos:prefLabel "Geometry"@en .
+
 chora:Imported a owl:NamedIndividual,
         skos:Concept ;
     owl:differentFrom chora:Imagined,
@@ -38326,12 +38333,6 @@ chora:Imported a owl:NamedIndividual,
     skos:prefLabel "Imported"@en ;
     skos:scopeNote "Motivazione standard dello statuto (D-046): referente identificato nel repertorio. Un luogo Imported non richiede un'asserzione di statuto motivata, salvo i casi contesi."@it ;
     skos:topConceptOf chora:RealityStatusScheme .
-
-geosparql:Geometry a owl:Class ;
-    rdfs:isDefinedBy <http://www.opengis.net/ont/geosparql> ;
-    skos:altLabel "Geometria"@it ;
-    skos:definition "A coherent set of direct positions in space"@en ;
-    skos:prefLabel "Geometry"@en .
 
 chora:GazetteerEntity a owl:Class ;
     rdfs:comment "GazetteerEntity does not belong to the world of the text: it models the external topographic counterpart. The relation to a NarrativePlace is not assumed as identity but as a typed anchoring, asserted by SpatialInterpretation."@en,
