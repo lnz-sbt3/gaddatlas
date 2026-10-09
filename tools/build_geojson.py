@@ -249,7 +249,8 @@ Q_INTERPRETATIONS = """
 PREFIX ga: <https://w3id.org/chora#>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 SELECT ?si ?ref ?place ?route ?gaz ?role ?det ?rel ?foc ?conf ?nodeOf ?order ?note WHERE {
-  ?si a ga:SpatialInterpretation ; ga:interpretsReference ?ref ; ga:hasFocalizer ?foc .
+  ?si a ga:SpatialInterpretation ; ga:interpretsReference ?ref ; ga:hasFocalizer ?foc ;
+      ga:adoptedByProject true .   # solo le letture adottate (D-070)
   OPTIONAL { ?si ga:targetsPlace ?place }
   OPTIONAL { ?si ga:targetsRoute ?route }
   OPTIONAL { ?si ga:anchorsToEntity ?gaz }

@@ -506,10 +506,13 @@ ga:MemoryAssertionShape
     sh:targetClass ga:Assertion ;
     sh:or (
         [ sh:not [ sh:path ( prov:wasGeneratedBy hico:hasInterpretationType ) ; sh:hasValue ga:MemoryAssertion ] ]
-        [ sh:path ga:assertsValue ; sh:minCount 1 ;
-          sh:in ( ga:AuthorMemory ga:CharacterMemory ga:UndecidableMemory ) ]
+        [ sh:and (
+            [ sh:path ga:aboutSubject ; sh:class ga:PlaceReference ]
+            [ sh:path ga:assertsValue ; sh:minCount 1 ;
+              sh:in ( ga:AuthorMemory ga:CharacterMemory ga:UndecidableMemory ) ]
+          ) ]
     ) ;
-    sh:message "Un'asserzione di memoria ha valori dello schema MemoryAttribution." .
+    sh:message "Un'asserzione di memoria riguarda un'occorrenza e ha valori dello schema MemoryAttribution (D-070)." .
 
 
 # =============================================================================
@@ -611,11 +614,11 @@ ga:VariantAssertionShape
     sh:or (
         [ sh:not [ sh:path ( prov:wasGeneratedBy hico:hasInterpretationType ) ; sh:hasValue ga:VariantAssertion ] ]
         [ sh:and (
-            [ sh:path ga:aboutSubject ; sh:class ga:NarrativePlace ]
-            [ sh:path ga:assertsValue ; sh:minCount 2 ; sh:class ga:PlaceReference ]
+            [ sh:path ga:aboutSubject ; sh:class ga:PlaceReference ]
+            [ sh:path ga:assertsValue ; sh:minCount 1 ; sh:maxCount 1 ; sh:class ga:PlaceReference ]
           ) ]
     ) ;
-    sh:message "Una variante riguarda un luogo e collega almeno due occorrenze (PlaceReference)." .
+    sh:message "Una variante ha per soggetto l'occorrenza del testimone di riferimento e per valore un'occorrenza di un altro testimone (D-070)." .
 
 
 # =============================================================================
@@ -737,3 +740,97 @@ ga:LocationAssertionShape
           ) ]
     ) ;
     sh:message "Una posizione attribuita riguarda un'entita' del gazetteer e ha una geometria WKT con un repertorio." .
+
+
+# =============================================================================
+# SHAPE 22 — L'occorrenza come primitiva (D-070, AUDIT_2b B4)
+# =============================================================================
+
+# Incertezza: soggetto per asse (nome -> occorrenza; identificazione -> luogo;
+# geometria -> entita' del gazetteer).
+ga:UncertaintySubjectShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion ;
+    sh:or (
+        [ sh:not [ sh:path ( prov:wasGeneratedBy hico:hasInterpretationType ) ; sh:hasValue ga:UncertaintyAssertion ] ]
+        [ sh:and ( [ sh:path ga:uncertaintyAxis ; sh:hasValue ga:NameAxis ]
+                   [ sh:path ga:aboutSubject ; sh:class ga:PlaceReference ] ) ]
+        [ sh:and ( [ sh:path ga:uncertaintyAxis ; sh:hasValue ga:IdentificationAxis ]
+                   [ sh:path ga:aboutSubject ; sh:class ga:NarrativePlace ] ) ]
+        [ sh:and ( [ sh:path ga:uncertaintyAxis ; sh:hasValue ga:GeometryAxis ]
+                   [ sh:path ga:aboutSubject ; sh:class ga:GazetteerEntity ] ) ]
+    ) ;
+    sh:message "Incertezza: asse nome -> occorrenza, identificazione -> luogo, geometria -> entita' del gazetteer (D-070)." .
+
+ga:GroundingShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion ;
+    sh:property [
+        sh:path ga:groundedIn ;
+        sh:class ga:PlaceReference ;
+        sh:message "chora:groundedIn punta a un'occorrenza." ;
+    ] .
+
+# Interpretazioni: l'adozione e' sempre dichiarata (M2).
+ga:InterpretationAdoptionShape
+    a sh:NodeShape ;
+    sh:targetClass ga:SpatialInterpretation ;
+    sh:property [
+        sh:path ga:adoptedByProject ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:datatype xsd:boolean ;
+        sh:message "Ogni interpretazione dichiara se e' adottata (true/false)." ;
+    ] ;
+    sh:property [
+        sh:path prov:wasRevisionOf ;
+        sh:class ga:SpatialInterpretation ;
+        sh:message "Un'interpretazione rivede un'altra interpretazione." ;
+    ] .
+
+# Un'interpretazione non adottata e' una lettura altrui o una lettura rivista.
+ga:NonAdoptedInterpretationShape
+    a sh:NodeShape ;
+    sh:targetClass ga:SpatialInterpretation ;
+    sh:severity sh:Warning ;
+    sh:or (
+        [ sh:path ga:adoptedByProject ; sh:hasValue true ]
+        [ sh:path [ sh:inversePath prov:wasRevisionOf ] ; sh:minCount 1 ]
+        [ sh:path ( prov:wasGeneratedBy [ sh:inversePath prov:wasInformedBy ] ) ; sh:minCount 1 ]
+    ) ;
+    sh:message "Interpretazione non adottata che non e' ne' di uno studioso ne' rivista (D-070)." .
+
+# Coerenza tipo -> soggetto/valore, dalla proprieta' reificata del tipo (D-070).
+# Le letture superate (oggetto di prov:wasRevisionOf) sono escluse: possono
+# riferirsi a risorse ritirate (C-casal_bruciato, D-051).
+ga: sh:declare [ sh:prefix "ga" ; sh:namespace "https://w3id.org/chora#"^^xsd:anyURI ] .
+
+ga:ReifiedTypeShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Soggetto o valore incompatibili con la proprieta' reificata dal tipo della lettura ({?p})." ;
+        sh:prefixes ga: ;
+        sh:select """
+            PREFIX ga: <https://w3id.org/chora#>
+            PREFIX prov: <http://www.w3.org/ns/prov#>
+            PREFIX hico: <http://purl.org/emmedi/hico/>
+            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+            PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+            PREFIX dcterms: <http://purl.org/dc/terms/>
+            SELECT $this ?p ?value WHERE {
+              $this prov:wasGeneratedBy/hico:hasInterpretationType ?t ;
+                    ga:aboutSubject ?s ; ga:assertsValue ?value .
+              ?t ga:reifiesProperty ?p .
+              FILTER NOT EXISTS { ?nuova prov:wasRevisionOf $this }
+              OPTIONAL { ?p rdfs:domain ?d . FILTER(isIRI(?d)) }
+              OPTIONAL { ?p rdfs:range ?r . FILTER(isIRI(?r)) }
+              OPTIONAL { ?p dcterms:references ?schema }
+              FILTER (
+                   (BOUND(?d) && NOT EXISTS { ?s a/rdfs:subClassOf* ?d })
+                || (BOUND(?schema) && NOT EXISTS { ?value skos:inScheme ?schema })
+                || (!BOUND(?schema) && BOUND(?r) && NOT EXISTS { ?value a/rdfs:subClassOf* ?r })
+              )
+            }
+        """ ;
+    ] .

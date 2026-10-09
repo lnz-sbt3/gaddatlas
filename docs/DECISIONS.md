@@ -1379,8 +1379,54 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 - Alternative scartate: derivare dall'adottata la coordinata dell'entità (due sorgenti per lo stesso dato); due colonne di geometria in `Assertions.tsv` (la geometria non entra in `Value`).
 - Motivazione (fonte, pagina): Manzotti 2010, pp. 268–269, Tavv. VI–VII (pp. 300–301); D-037; Cap. 4, R03.
 - Fase in cui è maturata: revisione critica
-- File toccati (manifest): `ontology/chora.ttl` r. 1720–1754 (sezione «Posizioni attribuite»); `ontology/shapes/chora-shapes.ttl` (prefisso `geo:`, shape 21 in coda); `ontology/queries/integrity.rq` (IQ19); `tools/etl.py` r. 1521–1547 (`process_locations`) e chiamata; `data/source/tables/Locations.tsv` (nuovo), `Assertions.tsv` (L-0001, L-0002), `Sources.tsv` (due repertori), `GazetteerEntities.tsv` (`Authority_Source` di gaz_casale_abbruciato); XLSX corrispondenti; `data/source/mapping.yaml` (documentazione Locations); `data/README.md`; conteggio delle integrity query in `CLAUDE.md`, `Makefile`, `README.md`; `docs/thesis/DATA_CHECKS_GaddAtlas.md` (DC-07).
+- File toccati (manifest): `ontology/chora.ttl` r. 1720–1752 (sezione «Posizioni attribuite»); `ontology/shapes/chora-shapes.ttl` (prefisso `geo:`, shape 21 in coda); `ontology/queries/integrity.rq` (IQ19); `tools/etl.py` r. 1521–1547 (`process_locations`) e chiamata; `data/source/tables/Locations.tsv` (nuovo), `Assertions.tsv` (L-0001, L-0002), `Sources.tsv` (due repertori), `GazetteerEntities.tsv` (`Authority_Source` di gaz_casale_abbruciato); XLSX corrispondenti; `data/source/mapping.yaml` (documentazione Locations); `data/README.md`; conteggio delle integrity query in `CLAUDE.md`, `Makefile`, `README.md`; `docs/thesis/DATA_CHECKS_GaddAtlas.md` (DC-07).
 - Effetto su KG (triple prima/dopo, SHACL): TBox 1.422 → **1.444**; ABox 38.588 → **38.668**; full 40.580 → **40.682**. SHACL conforme, 50 avvertenze; IQ1–IQ17 e IQ19 a 0. GeoJSON: cambia solo `tripleCount`.
+
+---
+
+## D-070 — L'occorrenza come primitiva: fondamento, varianti, memoria, incertezza, interpretazioni sorelle (9 ottobre 2026)
+
+- Requisito/i: R01, R04, R09, R22 · Ipotesi: H8 · Data check: — (AUDIT_2b, B4, con la modifica M2, le risposte 9 e 12, C3 e C4)
+- Stato precedente: varianti, memoria e incertezze sul nome avevano per soggetto un luogo o un'interpretazione; nessuna lettura dichiarava le occorrenze su cui si fonda; le interpretazioni non avevano adozione né revisione.
+- Decisione (di Lorenzo, 9/10/2026):
+  - **fondamento:** nuova `chora:groundedIn` (Assertion → PlaceReference, ⊑ `cito:citesAsEvidence`, dichiarata in locale), sulla lettura. Colonna `Grounded_In` in `Assertions.tsv` per il fondamento esplicito; altrimenti default (`apply_default_grounding`): le occorrenze delle interpretazioni adottate sul luogo soggetto, ancorate all'entità soggetto, o portatrici del percorso soggetto. Nessun default per posizioni e partizioni (risposta 9), né per le letture che hanno per soggetto un'occorrenza. Espliciti: S-castello, A-0001, A-0002 e U-0002 su ref_00651 (QP 279, l'occorrenza della stazione: castello non ne ha di proprie); U-0003 su ref_00435; U-0006 su ref_00541; U-0008 su ref_00535, ref_00635, ref_00703. Le 258 letture generate di B2 seguono il default. Totale: **764** triple `groundedIn`;
+  - **varianti:** soggetto = occorrenza di QP, valore = occorrenza dell'altro testimone, un valore per lettura. V-0001 (ref_00588 → ref_00724), V-0002 (ref_00436 → ref_00725). V-0003 e V-0004 si dividono secondo le corrispondenze confermate da Lorenzo (C3): **QPL 285 ↔ QP 16, QPL 293 ↔ QP 25**. V-0003a (ref_00007 → ref_00726), V-0003b (ref_00036 → ref_00727), V-0004a (ref_00008 → ref_00726), V-0004b (ref_00038 → ref_00727). Le varianti sono 6. L'ETL materializza `chora:hasVariant` per tutte, perché non sono letture alternative;
+  - **memoria:** soggetto = occorrenza (M-0001…M-0003 su ref_00144, Dosso Faiti; M-0004…M-0006 su ref_00145, Monte Cengio). Motivo: la persistenza memoriale è un fenomeno del passo, letto dai critici, non dell'interpretazione del progetto. `memoryAttribution` si materializza solo per le letture adottate: oggi nessuna;
+  - **incertezza, soggetto per asse:** nome → occorrenza (U-0004 su ref_00403, U-0007 su ref_00523); identificazione → luogo (U-0002, U-0003, U-0006, U-0008); geometria → entità del gazetteer (U-0001 su gaz_casale_abbruciato, U-0005 su gaz_edicola_due_santi);
+  - **interpretazioni sorelle:** `chora:adoptedByProject` (dominio esteso: Assertion ∪ SpatialInterpretation) è **scritto su tutte le 961 interpretazioni, vero o falso** (M2): oggi tutte vere. Nuove colonne in `SpatialInterpretations.tsv`: `Adopted` (compilata «si» su ogni riga), `Reading_Author_ID` (vuoto = annotatore; se è uno studioso, atto e codifica sono distinti come in D-067), `Revision_Of` (`prov:wasRevisionOf`), `Source_ID`, `Source_Page`;
+  - **unicità** (risposta 12): al più una interpretazione adottata per **occorrenza, luogo e focalizzatore**, verificata da **IQ20, avvertenza**. Restano 6 terne, descritte per la decisione di Lorenzo in `docs/alignment/TERNE_IQ20.md` (C4), ciascuna con un caso candidato:
+    - ref_00028, via delle Oche: identificazione contesa, Milano o Bologna;
+    - ref_00088, «tra Tevere e Biferno»: ancoraggio relazionale `between`;
+    - ref_00271, via Nicotera: doppio ruolo;
+    - ref_00404, Cassero: ancoraggio relazionale;
+    - ref_00491, Aliciaro: ancoraggio relazionale o referenza plurale;
+    - ref_00577, bivio Falcognana: ancoraggio relazionale.
+  - **adapter:** legge solo le interpretazioni adottate. Il GeoJSON è identico salvo `tripleCount` (verificato sul contenuto).
+- Shape e query:
+  - **shape 22:** `UncertaintySubjectShape` (soggetto per asse), `GroundingShape`, `InterpretationAdoptionShape` (adozione esattamente una, booleana), `NonAdoptedInterpretationShape` (Warning: una non adottata è di uno studioso o rivista);
+  - **`ReifiedTypeShape`** (SHACL-SPARQL): soggetto e valore compatibili con dominio, codominio o schema (`dcterms:references`) della proprietà reificata dal tipo. Esclude le letture superate, che possono riferirsi a risorse ritirate (C-casal_bruciato). Provata con due errori iniettati: 2 violazioni;
+  - `VariantAssertionShape` e `MemoryAssertionShape` aggiornate;
+  - **IQ16** estesa alle interpretazioni (stessa occorrenza e stesso luogo); **IQ18** (variante: soggetto nel testimone di riferimento, valore fuori); **IQ20**;
+  - **audit:** «ogni variante collega due occorrenze dello stesso luogo» (sorgenti).
+- **Tabella finale** (tipo, classe del soggetto, classe del valore, fondamento):
+
+  | tipo | soggetto | valore | fondamento |
+  |---|---|---|---|
+  | StatusAssertion | NarrativePlace | RealityStatusScheme | occorrenze del luogo (default) o `Grounded_In` |
+  | IdentificationAssertion | NarrativePlace | GazetteerEntity | occorrenze del luogo; castello: ref_00651 |
+  | LocationAssertion | GazetteerEntity | geo:Geometry | nessun default (repertorio e fonte) |
+  | PartitionAssertion | Partition | PartitionZone | nessuno (criterio) |
+  | MemoryAssertion | PlaceReference | MemoryAttributionScheme | l'occorrenza soggetto |
+  | UncertaintyAssertion, nome | PlaceReference | UncertaintyTypeScheme | l'occorrenza soggetto |
+  | UncertaintyAssertion, identificazione | NarrativePlace | UncertaintyTypeScheme | `Grounded_In` o occorrenze del luogo |
+  | UncertaintyAssertion, geometria | GazetteerEntity | UncertaintyTypeScheme | occorrenze ancorate all'entità |
+  | VariantAssertion | PlaceReference (QP) | PlaceReference (altro testimone) | l'occorrenza soggetto |
+  | RouteTypeAssertion | NarrativeRoute | RouteTypeScheme | occorrenze portatrici del percorso |
+  | SpatialInterpretation (SpatialReading) | PlaceReference | NarrativePlace e qualificazioni | l'occorrenza interpretata |
+- Motivazione (fonte, pagina): AUDIT_2b, B4; Cap. 4, § 4.3 (r. 87, 93) e R04.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `ontology/chora.ttl` (prefisso `cito:`, dominio di `adoptedByProject`, r. 1755–1770 sezione «L'occorrenza come primitiva»); `ontology/shapes/chora-shapes.ttl` (shape 13 e 15 per varianti e memoria, r. 746–836 shape 22, `sh:declare`); `ontology/queries/integrity.rq` (IQ16, IQ18, IQ20); `tools/etl.py` r. 1028–1050 (interpretazioni: autore, fonte, adozione, revisione), r. 1442–1449 (`Grounded_In`), r. 1546–1574 (`apply_default_grounding`), r. 1608–1625 (materializzazione); `tools/build_geojson.py` (`Q_INTERPRETATIONS`: solo adottate); `tools/audit_alignment.py` (controllo delle varianti); `data/source/tables/Assertions.tsv` (colonna `Grounded_In`; soggetti di memoria, incertezze, varianti; V-0003 e V-0004 divise), `SpatialInterpretations.tsv` (cinque colonne, `Adopted = si` su 961 righe); XLSX corrispondenti; `data/source/mapping.yaml` (documentazione); `docs/alignment/TERNE_IQ20.md` (nuovo); conteggio delle integrity query in `CLAUDE.md`, `Makefile`, `README.md`, `data/README.md`.
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.444 → **1.459**; ABox 38.668 → **40.459**; full 40.682 → **42.488**. Asserzioni 99 → **101** (varianti 4 → 6). SHACL conforme, 50 avvertenze, nessuna violazione; IQ1–IQ19 a 0, **IQ20 = 6** (avvertenza, terne note). Test dell'app 7/7.
 
 ---
 

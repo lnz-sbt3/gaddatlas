@@ -21,7 +21,7 @@
   "ontologyVersion": "1.0.0",
   "buildVersion": "4.3",
   "source": "gaddatlas-full.ttl",
-  "tripleCount": 40682,
+  "tripleCount": 42488,
   "projection": {
    "type": "equirectangular",
    "center": [
@@ -18246,6 +18246,38 @@
    "criticalNote": null
   },
   {
+   "id": "interp_00168",
+   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00168",
+   "referenceId": "ref_00144",
+   "narrativePlaceId": "dosso_faiti",
+   "routeId": null,
+   "gazetteerId": "gaz_dosso_faiti",
+   "narrativeRole": "ProjectedSpace",
+   "spatialDetermination": "Relative",
+   "spatialRelation": null,
+   "focalizerId": "ingravallo",
+   "confidence": 1.0,
+   "isNodeOfRoute": null,
+   "routeOrder": null,
+   "criticalNote": null
+  },
+  {
+   "id": "interp_00169",
+   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00169",
+   "referenceId": "ref_00145",
+   "narrativePlaceId": "monte_cengio",
+   "routeId": null,
+   "gazetteerId": "gaz_monte_cengio",
+   "narrativeRole": "ProjectedSpace",
+   "spatialDetermination": "Relative",
+   "spatialRelation": null,
+   "focalizerId": "ingravallo",
+   "confidence": 1.0,
+   "isNodeOfRoute": null,
+   "routeOrder": null,
+   "criticalNote": "La visione del sangue produce uno slittamento semantico tra il personaggio di Ingravallo e un elemento biografico centrale dell'esperienza di Gadda, l'esperienza del fronte e la morte del fratello, attraverso il referente topografico del Cengio e del Faiti"
+  },
+  {
    "id": "interp_00170",
    "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00170",
    "referenceId": "ref_00146",
@@ -30916,38 +30948,6 @@
    "isNodeOfRoute": null,
    "routeOrder": null,
    "criticalNote": null
-  },
-  {
-   "id": "interp_00168",
-   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00168",
-   "referenceId": "ref_00144",
-   "narrativePlaceId": "dosso_faiti",
-   "routeId": null,
-   "gazetteerId": "gaz_dosso_faiti",
-   "narrativeRole": "ProjectedSpace",
-   "spatialDetermination": "Relative",
-   "spatialRelation": null,
-   "focalizerId": "ingravallo",
-   "confidence": 1.0,
-   "isNodeOfRoute": null,
-   "routeOrder": null,
-   "criticalNote": null
-  },
-  {
-   "id": "interp_00169",
-   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00169",
-   "referenceId": "ref_00145",
-   "narrativePlaceId": "monte_cengio",
-   "routeId": null,
-   "gazetteerId": "gaz_monte_cengio",
-   "narrativeRole": "ProjectedSpace",
-   "spatialDetermination": "Relative",
-   "spatialRelation": null,
-   "focalizerId": "ingravallo",
-   "confidence": 1.0,
-   "isNodeOfRoute": null,
-   "routeOrder": null,
-   "criticalNote": "La visione del sangue produce uno slittamento semantico tra il personaggio di Ingravallo e un elemento biografico centrale dell'esperienza di Gadda, l'esperienza del fronte e la morte del fratello, attraverso il referente topografico del Cengio e del Faiti"
   }
  ],
  "references": [

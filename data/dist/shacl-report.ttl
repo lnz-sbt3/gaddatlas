@@ -5,117 +5,12 @@
 [] a sh:ValidationReport ;
     sh:conforms true ;
     sh:result [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/terzo_piano_219> ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/monte_nuncupale> ;
             sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
             sh:resultSeverity sh:Warning ;
             sh:sourceConstraintComponent sh:OrConstraintComponent ;
             sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/terzo_piano_219> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/monte_circeo> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/monte_circeo> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/barbiere> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/barbiere> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/grotta_de_sor_pippo> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/grotta_de_sor_pippo> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/villino_lungotevere> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/villino_lungotevere> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_del_mappamondo> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_del_mappamondo> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/ca_francesi> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/ca_francesi> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/piccarozzi> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/piccarozzi> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/pensione_burgess> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/pensione_burgess> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/piani_alti_219> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/piani_alti_219> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/colli_saluberrimi> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/colli_saluberrimi> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/montagne_degli_equi> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/montagne_degli_equi> ],
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/monte_nuncupale> ],
         [ a sh:ValidationResult ;
             sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/castel_porcano> ;
             sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
@@ -124,68 +19,19 @@
             sh:sourceShape chora:StatusRationaleShape ;
             sh:value <https://w3id.org/gaddatlas/id/narrativeplace/castel_porcano> ],
         [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/area_oltre_tevere> ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/ditta_ciurlani> ;
             sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
             sh:resultSeverity sh:Warning ;
             sh:sourceConstraintComponent sh:OrConstraintComponent ;
             sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/area_oltre_tevere> ],
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/ditta_ciurlani> ],
         [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/cantinone_albano> ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/pensione_burgess> ;
             sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
             sh:resultSeverity sh:Warning ;
             sh:sourceConstraintComponent sh:OrConstraintComponent ;
             sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/cantinone_albano> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/bottega_ceccherelli> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/bottega_ceccherelli> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/monte_nuncupale> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/monte_nuncupale> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/ponte_divino_amore> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/ponte_divino_amore> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/scale> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/scale> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/gioielliere_catellani> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/gioielliere_catellani> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/robine_vecchie> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/robine_vecchie> ],
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/pensione_burgess> ],
         [ a sh:ValidationResult ;
             sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/casa_del_butiro> ;
             sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
@@ -194,54 +40,26 @@
             sh:sourceShape chora:StatusRationaleShape ;
             sh:value <https://w3id.org/gaddatlas/id/narrativeplace/casa_del_butiro> ],
         [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/buco_a_santignazio> ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_del_mappamondo> ;
             sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
             sh:resultSeverity sh:Warning ;
             sh:sourceConstraintComponent sh:OrConstraintComponent ;
             sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/buco_a_santignazio> ],
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_del_mappamondo> ],
         [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/cobianchi> ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/bottega_ceccherelli> ;
             sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
             sh:resultSeverity sh:Warning ;
             sh:sourceConstraintComponent sh:OrConstraintComponent ;
             sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/cobianchi> ],
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/bottega_ceccherelli> ],
         [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/scala_b> ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/ponte_divino_amore> ;
             sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
             sh:resultSeverity sh:Warning ;
             sh:sourceConstraintComponent sh:OrConstraintComponent ;
             sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/scala_b> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/camera_casello> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/camera_casello> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/strada_di_campagna_celio> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/strada_di_campagna_celio> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/tenenza_carabinieri_marino> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/tenenza_carabinieri_marino> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/stazione_pavona> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/stazione_pavona> ],
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/ponte_divino_amore> ],
         [ a sh:ValidationResult ;
             sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/passaggio_livello_casal_bruciato> ;
             sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
@@ -250,54 +68,12 @@
             sh:sourceShape chora:StatusRationaleShape ;
             sh:value <https://w3id.org/gaddatlas/id/narrativeplace/passaggio_livello_casal_bruciato> ],
         [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/stazione_carabinieri_castello> ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/area_oltre_tevere> ;
             sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
             sh:resultSeverity sh:Warning ;
             sh:sourceConstraintComponent sh:OrConstraintComponent ;
             sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/stazione_carabinieri_castello> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/ditta_ciurlani> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/ditta_ciurlani> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/porta_borgo_marino> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/porta_borgo_marino> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/ponte_di_santa_fumia> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/ponte_di_santa_fumia> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/pozzofondo> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/pozzofondo> ],
-        [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/casa_crocchiapani> ;
-            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
-            sh:resultSeverity sh:Warning ;
-            sh:sourceConstraintComponent sh:OrConstraintComponent ;
-            sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/casa_crocchiapani> ],
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/area_oltre_tevere> ],
         [ a sh:ValidationResult ;
             sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/tor_di_gheppio> ;
             sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
@@ -306,12 +82,103 @@
             sh:sourceShape chora:StatusRationaleShape ;
             sh:value <https://w3id.org/gaddatlas/id/narrativeplace/tor_di_gheppio> ],
         [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/cassero> ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_simonetti> ;
             sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
             sh:resultSeverity sh:Warning ;
             sh:sourceConstraintComponent sh:OrConstraintComponent ;
             sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/cassero> ],
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_simonetti> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/pozzofondo> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/pozzofondo> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/porta_borgo_marino> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/porta_borgo_marino> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/cantinone_albano> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/cantinone_albano> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/monte_circeo> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/monte_circeo> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/stazione_carabinieri_castello> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/stazione_carabinieri_castello> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/gioielliere_catellani> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/gioielliere_catellani> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/piccarozzi> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/piccarozzi> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/barbiere> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/barbiere> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/piani_alti_219> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/piani_alti_219> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/terzo_piano_219> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/terzo_piano_219> ],
         [ a sh:ValidationResult ;
             sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/scerpure> ;
             sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
@@ -320,26 +187,47 @@
             sh:sourceShape chora:StatusRationaleShape ;
             sh:value <https://w3id.org/gaddatlas/id/narrativeplace/scerpure> ],
         [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/via_delle_oche> ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/stazione_pavona> ;
             sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
             sh:resultSeverity sh:Warning ;
             sh:sourceConstraintComponent sh:OrConstraintComponent ;
             sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/via_delle_oche> ],
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/stazione_pavona> ],
         [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/scala_a> ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/ponte_di_santa_fumia> ;
             sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
             sh:resultSeverity sh:Warning ;
             sh:sourceConstraintComponent sh:OrConstraintComponent ;
             sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/scala_a> ],
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/ponte_di_santa_fumia> ],
         [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/edicola_due_santi> ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/colli_saluberrimi> ;
             sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
             sh:resultSeverity sh:Warning ;
             sh:sourceConstraintComponent sh:OrConstraintComponent ;
             sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/edicola_due_santi> ],
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/colli_saluberrimi> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/robine_vecchie> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/robine_vecchie> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira> ],
         [ a sh:ValidationResult ;
             sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/roccafringoli> ;
             sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
@@ -348,10 +236,122 @@
             sh:sourceShape chora:StatusRationaleShape ;
             sh:value <https://w3id.org/gaddatlas/id/narrativeplace/roccafringoli> ],
         [ a sh:ValidationResult ;
-            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_simonetti> ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/montagne_degli_equi> ;
             sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
             sh:resultSeverity sh:Warning ;
             sh:sourceConstraintComponent sh:OrConstraintComponent ;
             sh:sourceShape chora:StatusRationaleShape ;
-            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_simonetti> ] .
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/montagne_degli_equi> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/ca_francesi> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/ca_francesi> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/cobianchi> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/cobianchi> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/casa_crocchiapani> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/casa_crocchiapani> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/grotta_de_sor_pippo> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/grotta_de_sor_pippo> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/cassero> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/cassero> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/strada_di_campagna_celio> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/strada_di_campagna_celio> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/buco_a_santignazio> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/buco_a_santignazio> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/scala_a> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/scala_a> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/via_delle_oche> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/via_delle_oche> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/camera_casello> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/camera_casello> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/tenenza_carabinieri_marino> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/tenenza_carabinieri_marino> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/villino_lungotevere> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/villino_lungotevere> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/scale> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/scale> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/edicola_due_santi> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/edicola_due_santi> ],
+        [ a sh:ValidationResult ;
+            sh:focusNode <https://w3id.org/gaddatlas/id/narrativeplace/scala_b> ;
+            sh:resultMessage "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
+            sh:resultSeverity sh:Warning ;
+            sh:sourceConstraintComponent sh:OrConstraintComponent ;
+            sh:sourceShape chora:StatusRationaleShape ;
+            sh:value <https://w3id.org/gaddatlas/id/narrativeplace/scala_b> ] .
 

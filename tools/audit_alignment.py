@@ -203,18 +203,20 @@ def main() -> int:
     witness_ref = {r["Reference_ID"]: r.get("Witness_ID", "") for r in read_tsv("References.tsv")}
     reference_ids = {w["Witness_ID"] for w in read_tsv("Witnesses.tsv")
                      if w.get("Reference", "").strip().lower() in ("si", "sì")}
+    # D-070: soggetto = occorrenza di QP, valore = occorrenza dell'altro testimone
     bad_variant = []
     for row in read_tsv("Assertions.tsv"):
         if row["Assertion_Type"].strip().lower() != "variant":
             continue
-        place = row["Subject"].split("/", 1)[-1]
+        subj = row["Subject"].split("/", 1)[-1]
+        place = ref_place.get(subj)
         for v in row["Value"].split("|"):
             rid = v.strip().split("/", 1)[-1]
             if ref_place.get(rid) != place:
-                bad_variant.append(f'{row["Assertion_ID"]}: {rid} -> {ref_place.get(rid)!r}, soggetto {place!r}')
+                bad_variant.append(f'{row["Assertion_ID"]}: {rid} -> {ref_place.get(rid)!r}, soggetto {subj} -> {place!r}')
     a.check(
         not bad_variant,
-        "ogni occorrenza di una variante ha il luogo del soggetto della variante (sorgenti TSV)",
+        "ogni variante collega due occorrenze dello stesso luogo (sorgenti TSV)",
         "\n".join(bad_variant[:20]),
     )
     stray = sorted(rid for rid, w in witness_ref.items() if w and w not in reference_ids

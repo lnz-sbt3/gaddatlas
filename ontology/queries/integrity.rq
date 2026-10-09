@@ -204,8 +204,16 @@ PREFIX hico: <http://purl.org/emmedi/hico/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 SELECT ?nuova ?vecchia WHERE {
   ?nuova prov:wasRevisionOf ?vecchia .
-  ?nuova ga:aboutSubject ?s1 ; prov:wasGeneratedBy/hico:hasInterpretationType ?t1 .
-  OPTIONAL { ?vecchia ga:aboutSubject ?s2 ; prov:wasGeneratedBy/hico:hasInterpretationType ?t2 }
+  {
+    ?nuova ga:aboutSubject ?s1 ; prov:wasGeneratedBy/hico:hasInterpretationType ?t1 .
+    OPTIONAL { ?vecchia ga:aboutSubject ?s2 ; prov:wasGeneratedBy/hico:hasInterpretationType ?t2 }
+  } UNION {
+    # interpretazioni (D-070): stessa occorrenza e stesso luogo
+    ?nuova a ga:SpatialInterpretation ; ga:interpretsReference ?r1 ; ga:targetsPlace ?l1 .
+    BIND (CONCAT(STR(?r1), STR(?l1)) AS ?s1) BIND ("si" AS ?t1)
+    OPTIONAL { ?vecchia ga:interpretsReference ?r2 ; ga:targetsPlace ?l2 .
+               BIND (CONCAT(STR(?r2), STR(?l2)) AS ?s2) BIND ("si" AS ?t2) }
+  }
   OPTIONAL { ?vecchia ga:adoptedByProject ?adottata }
   FILTER (!BOUND(?s2) || ?s1 != ?s2 || ?t1 != ?t2 || COALESCE(?adottata, false))
 }
@@ -252,3 +260,31 @@ SELECT ?entita ?lat ?long ?wkt WHERE {
   BIND (xsd:decimal(STRAFTER(?xy, " ")) AS ?y)
   FILTER (ABS(?x - xsd:decimal(?long)) > 0.000001 || ABS(?y - xsd:decimal(?lat)) > 0.000001)
 }
+
+
+# ==== IQ18 — Variante il cui soggetto non e' nel testimone di riferimento, o il cui valore lo e' (atteso: 0) ====
+# Una variante va dall'occorrenza del testimone di riferimento (QP) a
+# un'occorrenza di un altro testimone (D-070).
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX hico: <http://purl.org/emmedi/hico/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?variante ?soggetto ?valore WHERE {
+  ?variante prov:wasGeneratedBy/hico:hasInterpretationType ga:VariantAssertion ;
+            ga:aboutSubject ?soggetto ; ga:assertsValue ?valore .
+  FILTER ( NOT EXISTS { ?soggetto ga:appearsInWitness ?w1 . ?o1 ga:referenceWitness ?w1 }
+        || EXISTS { ?valore ga:appearsInWitness ?w2 . ?o2 ga:referenceWitness ?w2 } )
+}
+ORDER BY ?variante
+
+# ==== IQ20 — Piu' interpretazioni adottate per occorrenza, luogo e focalizzatore (AVVERTENZA: 6 terne note, docs/alignment/TERNE_IQ20.md) ====
+# Al piu' una interpretazione adottata per (occorrenza, luogo, focalizzatore)
+# (D-070). Le 6 terne di doppio ancoraggio o doppio ruolo attendono la decisione
+# di Lorenzo; finche' non sono risolte, la query e' un'avvertenza.
+PREFIX ga: <https://w3id.org/chora#>
+SELECT ?occorrenza ?luogo ?focalizzatore (COUNT(?si) AS ?n) WHERE {
+  ?si ga:interpretsReference ?occorrenza ; ga:targetsPlace ?luogo ;
+      ga:hasFocalizer ?focalizzatore ; ga:adoptedByProject true .
+}
+GROUP BY ?occorrenza ?luogo ?focalizzatore
+HAVING (COUNT(?si) > 1)
+ORDER BY ?occorrenza

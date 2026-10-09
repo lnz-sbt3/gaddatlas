@@ -18,9 +18,17 @@
     <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
     <schema:name>Paola Maria Carmela Italia</schema:name>
   </rdf:Description>
+  <rdf:Description rdf:nodeID="cb10a908c9eedb6c189a5072c75d685b2b412de7d9cab31415e8acf14d1e509e509">
+    <rdf:first rdf:resource="https://w3id.org/chora#SpatialInterpretation"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
   <rdf:Description rdf:nodeID="cb1130fbd8fb39c74755e753bdfa7ccbdf787faad22c2cf70c906db0bc3afb76680">
     <rdf:first rdf:resource="https://w3id.org/chora#NarrativePlace"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cb1609a098237628e9cfea4eeceb51db3623fb93d7f185c26888e88ec4820c442bf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="cbcebdd885876923f3911c2383aeec72aee47a7716c77a30a9bfb8cb445097ed20"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="cb189cafc8f3827ce355fd2bfc8c5243822807fce9831244a27a61c8dff250d707">
     <rdf:first rdf:resource="https://w3id.org/chora#GazetteerEntity"/>
@@ -29,6 +37,10 @@
   <rdf:Description rdf:nodeID="cb68067f2b743e19efb21ee5d853c3161b0666d622a2f0455c63f429b69f182231">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <owl:unionOf rdf:nodeID="cb189cafc8f3827ce355fd2bfc8c5243822807fce9831244a27a61c8dff250d707"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="cbcebdd885876923f3911c2383aeec72aee47a7716c77a30a9bfb8cb445097ed20">
+    <rdf:first rdf:resource="https://w3id.org/chora#Assertion"/>
+    <rdf:rest rdf:nodeID="cb10a908c9eedb6c189a5072c75d685b2b412de7d9cab31415e8acf14d1e509e509"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="cbd6fccde0583b4d389e08d55895ea9035dedc354bac783318d89f5883c74ad587">
     <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
@@ -105,6 +117,10 @@
     <rdfs:domain rdf:resource="http://purl.org/emmedi/hico/InterpretationAct"/>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/emmedi/hico"/>
     <rdfs:range rdf:resource="http://purl.org/vocab/frbr/core#Expression"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/spar/cito/citesAsEvidence">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/spar/cito"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/vocab/frbr/core#Expression">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -1528,8 +1544,8 @@
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#adoptedByProject">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:comment xml:lang="en">True when the project adopts this reading (the one shown by the interface). It marks a choice, not a truth: the adopted reading is attributed like the others.</rdfs:comment>
-    <rdfs:domain rdf:resource="https://w3id.org/chora#Assertion"/>
+    <rdfs:comment xml:lang="en">True when the project adopts this reading (the one shown by the interface). It marks a choice, not a truth: the adopted reading is attributed like the others. Stated on every assertion that offers alternatives and on every spatial interpretation, true or false (D-070).</rdfs:comment>
+    <rdfs:domain rdf:nodeID="cb1609a098237628e9cfea4eeceb51db3623fb93d7f185c26888e88ec4820c442bf"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
     <skos:altLabel xml:lang="it">adottata dal progetto</skos:altLabel>
     <skos:prefLabel xml:lang="en">adopted by project</skos:prefLabel>
@@ -1672,6 +1688,15 @@
     <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
     <skos:altLabel xml:lang="it">estratto</skos:altLabel>
     <skos:prefLabel xml:lang="en">excerpt</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#groundedIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">The occurrences of the text on which a reading rests. Stated explicitly (Grounded_In) or, by default, all the reference-witness occurrences interpreted on the subject place, anchored to the subject entity, or carrying the subject route (D-070).</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#Assertion"/>
+    <rdfs:range rdf:resource="https://w3id.org/chora#PlaceReference"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/spar/cito/citesAsEvidence"/>
+    <skos:altLabel xml:lang="it">si fonda su</skos:altLabel>
+    <skos:prefLabel xml:lang="en">grounded in</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#hasFocalizer">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>

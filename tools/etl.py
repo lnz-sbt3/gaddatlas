@@ -1026,15 +1026,30 @@ class GaddaETL:
                     raise ValueError(f"Interpretation {interp_id}: Annotator_ID mancante (D-043)")
                 annotator_uri = self.agent_uri(annotator, f"Interpretation {interp_id}")
                 # Atto interpretativo (D-067): anche l'interpretazione e' generata da
-                # un hico:InterpretationAct di tipo chora:SpatialReading; autore e
-                # codificatore coincidono, quindi un atto solo.
+                # un hico:InterpretationAct di tipo chora:SpatialReading. L'autore e'
+                # l'annotatore, salvo una lettura di uno studioso (Reading_Author_ID,
+                # con fonte): allora l'atto e la codifica sono distinti (D-070).
+                where_si = f"Interpretation {interp_id}"
                 annotation_date = row.get('Annotation_Date')
                 enc_date = None
                 if has_value(annotation_date):
                     enc_date = pd.to_datetime(annotation_date).date().isoformat()
+                reader = str(row.get('Reading_Author_ID') or '').strip()
+                reader_uri = self.agent_uri(reader, where_si) if reader else annotator_uri
                 self.add_reading_provenance(
-                    interp_uri, interp_id, CHORA.SpatialReading, [annotator_uri],
-                    [annotator_uri], f"Interpretation {interp_id}", encoding_date=enc_date)
+                    interp_uri, interp_id, CHORA.SpatialReading, [reader_uri],
+                    [annotator_uri], where_si, encoding_date=enc_date,
+                    source=self.resolve_source(row.get('Source_ID'), where_si),
+                    page=row.get('Source_Page'))
+                # Adozione sempre dichiarata, vera o falsa (D-070, M2)
+                adopted_si = str(row.get('Adopted') or '').strip().lower()
+                if adopted_si not in ("si", "sì", "no"):
+                    raise ValueError(f"{where_si}: Adopted {adopted_si!r} (atteso si / no)")
+                self.graph.add((interp_uri, CHORA.adoptedByProject,
+                                Literal(adopted_si != "no", datatype=XSD.boolean)))
+                rev_si = str(row.get('Revision_Of') or '').strip()
+                if rev_si:
+                    self.graph.add((interp_uri, PROV.wasRevisionOf, ID_NS[f"interpretation/{rev_si}"]))
 
                 # Datatype properties
                 self.add_literal(interp_uri, CHORA.interpretationType,
@@ -1424,6 +1439,14 @@ class GaddaETL:
                     raise ValueError(f"{where}: Review_Status {review!r} (atteso bozza / validata)")
                 self.graph.add((a, CHORA.reviewStatus, CHORA[self.REVIEW_STATUSES[review]]))
             self.add_literal(a, RDFS.comment, row.get('Note'), lang='it')
+            # fondamento testuale esplicito (D-070)
+            for g in str(row.get('Grounded_In', '')).split('|'):
+                g = g.strip()
+                if not g:
+                    continue
+                if g not in self.id_cache['Reference_ID']:
+                    raise ValueError(f"{where}: Grounded_In {g!r} non e' un'occorrenza")
+                self.graph.add((a, CHORA.groundedIn, self.resolve_lookup(g, '@Reference_ID')))
             rev = str(row.get('Revision_Of', '')).strip()
             if rev:
                 self.graph.add((a, PROV.wasRevisionOf, ID_NS[f"assertion/{rev}"]))
@@ -1516,6 +1539,41 @@ class GaddaETL:
         logger.info(f"Statuti generati: {n} letture (con repertorio esterno: {n_ext})")
 
     # ------------------------------------------------------------------
+    # FONDAMENTO TESTUALE (D-070, AUDIT_2b B4)
+    # ------------------------------------------------------------------
+    NO_DEFAULT_GROUNDING = {CHORA.LocationAssertion, CHORA.PartitionAssertion}
+
+    def apply_default_grounding(self):
+        """Per le letture senza Grounded_In: le occorrenze del testimone di
+        riferimento interpretate sul luogo soggetto, ancorate all'entita'
+        soggetto, o portatrici del percorso soggetto. Nessun default per
+        posizioni (la prova e' il repertorio) e partizioni (criterio), ne' per
+        le letture che hanno per soggetto un'occorrenza."""
+        n = 0
+        for a in sorted(self.graph.subjects(RDF.type, CHORA.Assertion), key=str):
+            if (a, CHORA.groundedIn, None) in self.graph:
+                continue
+            atype = self.graph.value(self.graph.value(a, PROV.wasGeneratedBy), HICO.hasInterpretationType)
+            if atype in self.NO_DEFAULT_GROUNDING:
+                continue
+            subj = self.graph.value(a, CHORA.aboutSubject)
+            if (subj, RDF.type, CHORA.NarrativePlace) in self.graph:
+                sis = self.graph.subjects(CHORA.targetsPlace, subj)
+            elif (subj, RDF.type, CHORA.GazetteerEntity) in self.graph:
+                sis = self.graph.subjects(CHORA.anchorsToEntity, subj)
+            elif (subj, RDF.type, CHORA.NarrativeRoute) in self.graph:
+                sis = self.graph.subjects(CHORA.targetsRoute, subj)
+            else:
+                continue
+            for si in sis:
+                if (si, CHORA.adoptedByProject, Literal(True)) not in self.graph:
+                    continue
+                for ref in self.graph.objects(si, CHORA.interpretsReference):
+                    self.graph.add((a, CHORA.groundedIn, ref))
+                    n += 1
+        logger.info(f"Fondamento di default: {n} triple groundedIn")
+
+    # ------------------------------------------------------------------
     # POSIZIONI ATTRIBUITE (D-069, AUDIT_2b B3)
     # ------------------------------------------------------------------
     def process_locations(self, file_path):
@@ -1546,14 +1604,18 @@ class GaddaETL:
             self.add_literal(geom, CHORA.datum, row.get('Datum'), datatype=XSD.string)
         logger.info(f"Locations: {len(df)} posizioni attribuite")
 
-    MATERIALIZED = {"RouteTypeAssertion": (CHORA.hasRouteType, CHORA.NarrativeRoute),
-                    "IdentificationAssertion": (CHORA.identifiedWith, CHORA.NarrativePlace)}
+    # tipo -> (proprieta' reificata, classe del soggetto, solo le adottate?)
+    MATERIALIZED = {"RouteTypeAssertion": (CHORA.hasRouteType, CHORA.NarrativeRoute, True),
+                    "IdentificationAssertion": (CHORA.identifiedWith, CHORA.NarrativePlace, True),
+                    "MemoryAssertion": (CHORA.memoryAttribution, CHORA.PlaceReference, True),
+                    # le varianti non sono letture alternative: tutte (D-070)
+                    "VariantAssertion": (CHORA.hasVariant, CHORA.PlaceReference, False)}
 
     def materialize_adopted(self):
-        for tname, (prop, subject_class) in self.MATERIALIZED.items():
+        for tname, (prop, subject_class, only_adopted) in self.MATERIALIZED.items():
             for act in self.graph.subjects(HICO.hasInterpretationType, CHORA[tname]):
                 for a in self.graph.subjects(PROV.wasGeneratedBy, act):
-                    if (a, CHORA.adoptedByProject, Literal(True)) not in self.graph:
+                    if only_adopted and (a, CHORA.adoptedByProject, Literal(True)) not in self.graph:
                         continue
                     subj = self.graph.value(a, CHORA.aboutSubject)
                     if (subj, RDF.type, subject_class) not in self.graph:
@@ -1771,6 +1833,7 @@ class GaddaETL:
         self.process_assertions(self.data_dir / "Assertions.tsv")
         self.generate_imported_statuses()
         self.process_locations(self.data_dir / "Locations.tsv")
+        self.apply_default_grounding()
 
         # 3. Validazione
         logger.info("\n--- FASE 5: Validazione ---")

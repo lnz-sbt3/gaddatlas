@@ -2,6 +2,7 @@
   "@context": {
     "brick": "https://brickschema.org/schema/Brick#",
     "chora": "https://w3id.org/chora#",
+    "cito": "http://purl.org/spar/cito/",
     "csvw": "http://www.w3.org/ns/csvw#",
     "dc": "http://purl.org/dc/elements/1.1/",
     "dcam": "http://purl.org/dc/dcam/",
@@ -37,6 +38,20 @@
       "@id": "_:cb108560042ebfadee765c269031a1dc3c7c3c4563864b02b5632113040a9addfa1",
       "@type": "prov:Agent",
       "schema:name": "Paola Maria Carmela Italia"
+    },
+    {
+      "@id": "_:cb1609a098237628e9cfea4eeceb51db3623fb93d7f185c26888e88ec4820c442bf",
+      "@type": "owl:Class",
+      "owl:unionOf": {
+        "@list": [
+          {
+            "@id": "chora:Assertion"
+          },
+          {
+            "@id": "chora:SpatialInterpretation"
+          }
+        ]
+      }
     },
     {
       "@id": "_:cb68067f2b743e19efb21ee5d853c3161b0666d622a2f0455c63f429b69f182231",
@@ -2942,10 +2957,10 @@
       "@type": "owl:DatatypeProperty",
       "rdfs:comment": {
         "@language": "en",
-        "@value": "True when the project adopts this reading (the one shown by the interface). It marks a choice, not a truth: the adopted reading is attributed like the others."
+        "@value": "True when the project adopts this reading (the one shown by the interface). It marks a choice, not a truth: the adopted reading is attributed like the others. Stated on every assertion that offers alternatives and on every spatial interpretation, true or false (D-070)."
       },
       "rdfs:domain": {
-        "@id": "chora:Assertion"
+        "@id": "_:cb1609a098237628e9cfea4eeceb51db3623fb93d7f185c26888e88ec4820c442bf"
       },
       "rdfs:range": {
         "@id": "xsd:boolean"
@@ -3333,6 +3348,31 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "excerpt"
+      }
+    },
+    {
+      "@id": "chora:groundedIn",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The occurrences of the text on which a reading rests. Stated explicitly (Grounded_In) or, by default, all the reference-witness occurrences interpreted on the subject place, anchored to the subject entity, or carrying the subject route (D-070)."
+      },
+      "rdfs:domain": {
+        "@id": "chora:Assertion"
+      },
+      "rdfs:range": {
+        "@id": "chora:PlaceReference"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "cito:citesAsEvidence"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "si fonda su"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "grounded in"
       }
     },
     {
@@ -4419,6 +4459,13 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "witness type"
+      }
+    },
+    {
+      "@id": "cito:citesAsEvidence",
+      "@type": "owl:ObjectProperty",
+      "rdfs:isDefinedBy": {
+        "@id": "http://purl.org/spar/cito"
       }
     },
     {

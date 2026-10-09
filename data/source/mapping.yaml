@@ -801,7 +801,8 @@ documentation:
       Review_Status:  "lettura: chora:reviewStatus: bozza | validata"
       Uncertainty_Axis:   "lettura: chora:uncertaintyAxis: nome | identificazione | geometria (solo uncertainty)"
       Uncertainty_Origin: "lettura: chora:uncertaintyOrigin: documentaria | costruttiva (solo uncertainty)"
-    derived: "per le letture adottate: chora:hasRouteType (route), chora:identifiedWith (identification)"
+      Grounded_In:    "lettura: chora:groundedIn reference/{id} (piu' id con '|'); se vuota, default di apply_default_grounding (D-070)"
+    derived: "per le letture adottate: chora:hasRouteType (route), chora:identifiedWith (identification), chora:memoryAttribution (memory); per tutte le varianti: chora:hasVariant (D-070)"
 
   Sources:
     source_file: "Sources.tsv"
@@ -878,3 +879,13 @@ documentation:
       Precision:    "chora:precision (xsd:string)"
       Datum:        "chora:datum (xsd:string)"
       Repertory_ID: "chora:repertory source/{id} (Sources.tsv)"
+
+  SpatialInterpretations_readings:
+    source_file: "SpatialInterpretations.tsv"
+    etl: "process_spatial_interpretations, provenienza e adozione (D-067, D-070)"
+    columns:
+      Adopted:           "chora:adoptedByProject (xsd:boolean), sempre scritto: si | no (M2)"
+      Reading_Author_ID: "autore della lettura (associazione ReadingAuthor sull'atto); vuoto = Annotator_ID. Se diverso dal codificatore, atto e codifica distinti"
+      Revision_Of:       "prov:wasRevisionOf interpretation/{id}"
+      Source_ID:         "atto: hico:isExtractedFrom source/{id} o witness/{id}"
+      Source_Page:       "atto: chora:sourcePage"

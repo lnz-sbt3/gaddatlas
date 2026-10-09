@@ -1,4 +1,5 @@
 @prefix chora: <https://w3id.org/chora#> .
+@prefix cito: <http://purl.org/spar/cito/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix frbr: <http://purl.org/vocab/frbr/core#> .
@@ -858,8 +859,8 @@ chora:assertsValue a owl:ObjectProperty ;
     skos:prefLabel "asserts value"@en .
 
 chora:adoptedByProject a owl:DatatypeProperty ;
-    rdfs:comment "True when the project adopts this reading (the one shown by the interface). It marks a choice, not a truth: the adopted reading is attributed like the others."@en ;
-    rdfs:domain chora:Assertion ;
+    rdfs:comment "True when the project adopts this reading (the one shown by the interface). It marks a choice, not a truth: the adopted reading is attributed like the others. Stated on every assertion that offers alternatives and on every spatial interpretation, true or false (D-070)."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( chora:Assertion chora:SpatialInterpretation ) ] ;
     rdfs:range xsd:boolean ;
     skos:altLabel "adottata dal progetto"@it ;
     skos:prefLabel "adopted by project"@en .
@@ -1750,3 +1751,20 @@ chora:datum a owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     skos:altLabel "datum"@it ;
     skos:prefLabel "datum"@en .
+
+# =============================================================================
+# L'OCCORRENZA COME PRIMITIVA (D-070, AUDIT_2b B4)
+# Le letture nate da un passo riguardano l'occorrenza; quelle su luogo,
+# percorso o entita' dichiarano le occorrenze su cui si fondano.
+# =============================================================================
+
+cito:citesAsEvidence a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/spar/cito> .
+
+chora:groundedIn a owl:ObjectProperty ;
+    rdfs:comment "The occurrences of the text on which a reading rests. Stated explicitly (Grounded_In) or, by default, all the reference-witness occurrences interpreted on the subject place, anchored to the subject entity, or carrying the subject route (D-070)."@en ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range chora:PlaceReference ;
+    rdfs:subPropertyOf cito:citesAsEvidence ;
+    skos:altLabel "si fonda su"@it ;
+    skos:prefLabel "grounded in"@en .
