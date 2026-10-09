@@ -38,6 +38,104 @@
     chora:sourcePage "293"^^xsd:string ;
     chora:sourceWork "Manzotti 2010"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/assertion/M-0001> a chora:Assertion ;
+    rdfs:comment "Cap. 4, § 4.3: le tre letture convivono, nessuna è adottata dal progetto."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/M-0001-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/M-0001-readingauthor-perosa> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/perosa> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/interpretation/interp_00168> ;
+    chora:adoptedByProject false ;
+    chora:assertionType chora:MemoryAssertion ;
+    chora:assertsValue chora:AuthorMemory ;
+    chora:rationale "«Gadda sembra infatti proiettare sul personaggio di Ingravallo una propria tessera autobiografica»: la memoria della morte del fratello Enrico e del lutto materno (QP 61, Dosso Faiti)."@it ;
+    chora:rationaleType chora:CriticalReading ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "103–104"^^xsd:string ;
+    chora:sourceWork "Perosa 2023a"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/M-0002> a chora:Assertion ;
+    rdfs:comment "Cap. 4, § 4.3: le tre letture convivono, nessuna è adottata dal progetto."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/M-0002-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/M-0002-readingauthor-lugnani> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/lugnani> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/interpretation/interp_00168> ;
+    chora:adoptedByProject false ;
+    chora:assertionType chora:MemoryAssertion ;
+    chora:assertsValue chora:CharacterMemory ;
+    chora:rationale "La «mamma» rinvia al «figlio e fante don Ciccio», e forse ai suoi fratelli caduti in guerra (QP 61, Dosso Faiti)."@it ;
+    chora:rationaleType chora:CriticalReading ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "104, n. 97"^^xsd:string ;
+    chora:sourceWork "Lugnani, cit. in Perosa 2023a"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/M-0003> a chora:Assertion ;
+    rdfs:comment "Cap. 4, § 4.3: le tre letture convivono, nessuna è adottata dal progetto."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/M-0003-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/M-0003-readingauthor-cortellessa> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/cortellessa> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/interpretation/interp_00168> ;
+    chora:adoptedByProject false ;
+    chora:assertionType chora:MemoryAssertion ;
+    chora:assertsValue chora:AuthorMemory,
+        chora:CharacterMemory ;
+    chora:rationale "La sequenza «sovrappone la memoria del personaggio, anzi la sovrimprime, a quella dell'autore» (QP 61, Dosso Faiti)."@it ;
+    chora:rationaleType chora:CriticalReading ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "669"^^xsd:string ;
+    chora:sourceWork "Cortellessa 2023"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/M-0004> a chora:Assertion ;
+    rdfs:comment "Cap. 4, § 4.3: le tre letture convivono, nessuna è adottata dal progetto."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/M-0004-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/M-0004-readingauthor-perosa> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/perosa> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/interpretation/interp_00169> ;
+    chora:adoptedByProject false ;
+    chora:assertionType chora:MemoryAssertion ;
+    chora:assertsValue chora:AuthorMemory ;
+    chora:rationale "«Gadda sembra infatti proiettare sul personaggio di Ingravallo una propria tessera autobiografica»: la memoria della morte del fratello Enrico e del lutto materno (QP 61, Monte Cengio)."@it ;
+    chora:rationaleType chora:CriticalReading ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "103–104"^^xsd:string ;
+    chora:sourceWork "Perosa 2023a"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/M-0005> a chora:Assertion ;
+    rdfs:comment "Cap. 4, § 4.3: le tre letture convivono, nessuna è adottata dal progetto."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/M-0005-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/M-0005-readingauthor-lugnani> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/lugnani> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/interpretation/interp_00169> ;
+    chora:adoptedByProject false ;
+    chora:assertionType chora:MemoryAssertion ;
+    chora:assertsValue chora:CharacterMemory ;
+    chora:rationale "La «mamma» rinvia al «figlio e fante don Ciccio», e forse ai suoi fratelli caduti in guerra (QP 61, Monte Cengio)."@it ;
+    chora:rationaleType chora:CriticalReading ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "104, n. 97"^^xsd:string ;
+    chora:sourceWork "Lugnani, cit. in Perosa 2023a"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/assertion/M-0006> a chora:Assertion ;
+    rdfs:comment "Cap. 4, § 4.3: le tre letture convivono, nessuna è adottata dal progetto."@it ;
+    prov:generatedAtTime "2026-10-09"^^xsd:date ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/M-0006-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/M-0006-readingauthor-cortellessa> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/cortellessa> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/interpretation/interp_00169> ;
+    chora:adoptedByProject false ;
+    chora:assertionType chora:MemoryAssertion ;
+    chora:assertsValue chora:AuthorMemory,
+        chora:CharacterMemory ;
+    chora:rationale "La sequenza «sovrappone la memoria del personaggio, anzi la sovrimprime, a quella dell'autore» (QP 61, Monte Cengio)."@it ;
+    chora:rationaleType chora:CriticalReading ;
+    chora:reviewStatus chora:Draft ;
+    chora:sourcePage "669"^^xsd:string ;
+    chora:sourceWork "Cortellessa 2023"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/assertion/S-area_oltre_tevere> a chora:Assertion ;
     rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
     prov:generatedAtTime "2026-10-09"^^xsd:date ;
@@ -3669,31 +3767,6 @@
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pompeo> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00143> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/via_merulana> .
-
-<https://w3id.org/gaddatlas/id/interpretation/interp_00168> a prov:Entity,
-        chora:SpatialInterpretation ;
-    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/interp_00168-encoder-lorenzo_sabatino>,
-        <https://w3id.org/gaddatlas/id/attribution/interp_00168-readingauthor-lorenzo_sabatino> ;
-    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_dosso_faiti> ;
-    chora:assignsNarrativeRole chora:ProjectedSpace ;
-    chora:assignsSpatialDetermination chora:Relative ;
-    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/ingravallo> ;
-    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00144> ;
-    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/dosso_faiti> .
-
-<https://w3id.org/gaddatlas/id/interpretation/interp_00169> a prov:Entity,
-        chora:SpatialInterpretation ;
-    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/interp_00169-encoder-lorenzo_sabatino>,
-        <https://w3id.org/gaddatlas/id/attribution/interp_00169-readingauthor-lorenzo_sabatino> ;
-    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_monte_cengio> ;
-    chora:assignsNarrativeRole chora:ProjectedSpace ;
-    chora:assignsSpatialDetermination chora:Relative ;
-    chora:criticalNote "La visione del sangue produce uno slittamento semantico tra il personaggio di Ingravallo e un elemento biografico centrale dell'esperienza di Gadda, l'esperienza del fronte e la morte del fratello, attraverso il referente topografico del Cengio e del Faiti"@it ;
-    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/ingravallo> ;
-    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00145> ;
-    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/monte_cengio> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00170> a prov:Entity,
         chora:SpatialInterpretation ;
@@ -7787,7 +7860,9 @@
     chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ciampino> ;
     chora:assignsNarrativeRole chora:Marker ;
     chora:assignsSpatialDetermination chora:Approximate ;
+    chora:criticalNote "Voce narrante distinta dal focalizzatore: la voce «tradisce l'incursione del narratore gaddiano» (Perosa 2023a, p. 238)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/santarella> ;
+    chora:hasNarratingVoice <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00432> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/ciampino> .
 
@@ -7799,7 +7874,9 @@
     chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba> ;
     chora:assignsNarrativeRole chora:Marker ;
     chora:assignsSpatialDetermination chora:Approximate ;
+    chora:criticalNote "Voce narrante distinta dal focalizzatore: la voce «tradisce l'incursione del narratore gaddiano» (Perosa 2023a, p. 238)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/santarella> ;
+    chora:hasNarratingVoice <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00433> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/santa_palomba> .
 
@@ -9432,7 +9509,9 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_porta_san_paolo> ;
     chora:assignsNarrativeRole chora:Marker ;
     chora:assignsSpatialDetermination chora:Approximate ;
+    chora:criticalNote "Voce narrante distinta dal focalizzatore: «divaricazione tra voce e punto di vista» (Savettieri 2020, p. 44)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pestalozzi> ;
+    chora:hasNarratingVoice <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00530> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/porta_san_paolo> .
 
@@ -13528,6 +13607,54 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/attribution/A-0002-readingauthor-manzotti> a prov:Attribution ;
     prov:agent <https://w3id.org/gaddatlas/id/agent/manzotti> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/M-0001-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/M-0001-readingauthor-perosa> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/perosa> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/M-0002-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/M-0002-readingauthor-lugnani> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/lugnani> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/M-0003-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/M-0003-readingauthor-cortellessa> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/cortellessa> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/M-0004-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/M-0004-readingauthor-perosa> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/perosa> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/M-0005-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/M-0005-readingauthor-lugnani> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/lugnani> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/attribution/M-0006-encoder-lorenzo_sabatino> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/attribution/M-0006-readingauthor-cortellessa> a prov:Attribution ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/cortellessa> ;
     prov:hadRole chora:ReadingAuthor .
 
 <https://w3id.org/gaddatlas/id/attribution/S-area_oltre_tevere-encoder-lorenzo_sabatino> a prov:Attribution ;
@@ -31479,6 +31606,33 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     geo1:lat 41.89558786458463 ;
     geo1:long 12.50606607937935 .
 
+<https://w3id.org/gaddatlas/id/interpretation/interp_00168> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/interp_00168-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/interp_00168-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_dosso_faiti> ;
+    chora:assignsNarrativeRole chora:ProjectedSpace ;
+    chora:assignsSpatialDetermination chora:Relative ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/ingravallo> ;
+    chora:hasNarratingVoice <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00144> ;
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/dosso_faiti> .
+
+<https://w3id.org/gaddatlas/id/interpretation/interp_00169> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:qualifiedAttribution <https://w3id.org/gaddatlas/id/attribution/interp_00169-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/attribution/interp_00169-readingauthor-lorenzo_sabatino> ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_monte_cengio> ;
+    chora:assignsNarrativeRole chora:ProjectedSpace ;
+    chora:assignsSpatialDetermination chora:Relative ;
+    chora:criticalNote "La visione del sangue produce uno slittamento semantico tra il personaggio di Ingravallo e un elemento biografico centrale dell'esperienza di Gadda, l'esperienza del fronte e la morte del fratello, attraverso il referente topografico del Cengio e del Faiti"@it ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/ingravallo> ;
+    chora:hasNarratingVoice <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00145> ;
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/monte_cengio> .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/ardea> a chora:NarrativePlace ;
     rdfs:label "Ardea"@it ;
     chora:hasPlaceCategory chora:locality ;
@@ -31835,6 +31989,18 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/route/tragitto_marino_santo_stefano> a chora:NarrativeRoute .
 
 <https://w3id.org/gaddatlas/id/route/tragitto_merulana_policlinico> a chora:NarrativeRoute .
+
+<https://w3id.org/gaddatlas/id/agent/cortellessa> a prov:Agent ;
+    rdfs:comment "Archeologia con pescecane (Cortellessa 2023)"@it ;
+    schema:name "Andrea Cortellessa" .
+
+<https://w3id.org/gaddatlas/id/agent/lugnani> a prov:Agent ;
+    rdfs:comment "Citato in Perosa 2023a, p. 104, n. 97"@it ;
+    schema:name "Lucio Lugnani" .
+
+<https://w3id.org/gaddatlas/id/agent/perosa> a prov:Agent ;
+    rdfs:comment "Gadda e il paesaggio (Perosa 2023a)"@it ;
+    schema:name "Giulia Perosa" .
 
 <https://w3id.org/gaddatlas/id/focalizer/bigliettaio_merlani> a chora:Character,
         chora:FocalizingAgent ;
@@ -33933,11 +34099,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:pageRange "238-277"^^xsd:string ;
     chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> .
 
-<https://w3id.org/gaddatlas/id/focalizer/narrator> a chora:FocalizingAgent,
-        chora:Narrator ;
-    dcterms:description "Voce narrante gaddiana: onnisciente ma pervasa di digressioni, ironia e plurilinguismo; focalizzatore a pieno titolo."@it ;
-    chora:narratorType "onnisciente-eterodiegetico"^^xsd:string .
-
 <https://w3id.org/gaddatlas/id/focalizer/pestalozzi> a chora:Character,
         chora:FocalizingAgent ;
     dcterms:description "Brigadiere Pestalozzi, conduce le indagini nell'area dei Castelli, dalla tenenza dei carabinieri di Marino"@it ;
@@ -33949,6 +34110,11 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:chapterNumber 10 ;
     chora:pageRange "278-307"^^xsd:string ;
     chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> .
+
+<https://w3id.org/gaddatlas/id/focalizer/narrator> a chora:FocalizingAgent,
+        chora:Narrator ;
+    dcterms:description "Voce narrante gaddiana: onnisciente ma pervasa di digressioni, ironia e plurilinguismo; focalizzatore a pieno titolo."@it ;
+    chora:narratorType "onnisciente-eterodiegetico"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> a chora:Chapter ;
     dcterms:title "Capitolo VI"@it ;

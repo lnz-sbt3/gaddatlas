@@ -977,6 +977,24 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-049 — Livelli enunciativi: voce narrante e attribuzione della memoria (9 ottobre 2026)
+
+- Requisito/i: R08, R19 · Ipotesi: H6 · Data check: — (work order T-36)
+- Stato precedente: ogni interpretazione aveva solo il focalizzatore (`chora:hasFocalizer`); `narratorType` era usato da un solo agente (`narrator`); nessuna voce, nessuna attribuzione della memoria.
+- Decisione (di Lorenzo, 9/10/2026: «modello completo; popola solo i casi del Cap. 4; il resto è non annotato, e va dichiarato»):
+  - **enunciazione:** nuova `chora:hasNarratingVoice` (SpatialInterpretation → FocalizingAgent), colonna `Narrating_Voice_ID` in `SpatialInterpretations.tsv`. Popolata su 5 interpretazioni, tutte con voce `narrator`: QP 211 Porta San Paolo, focalizzatore Pestalozzi (Savettieri 2020, p. 44); QP 175 Ciampino e Santa Palomba, focalizzatore Santarella (Perosa 2023a, p. 238); QP 61 Dosso Faiti e Monte Cengio, focalizzatore Ingravallo (Cap. 4, § 4.3: «la voce narrante che scivola nel discorso indiretto libero»). Per le prime tre la fonte sta in `criticalNote`;
+  - **«non annotato»:** l'assenza della proprietà vale «non annotato», non «voce = focalizzatore». Lo dichiarano il commento della proprietà nella TBox, `mapping.yaml` e `docs/EXCLUSIONS.md` (T-45);
+  - **persistenza memoriale:** nuovo schema `chora:MemoryAttributionScheme` (AuthorMemory, CharacterMemory, UndecidableMemory), valori di `chora:MemoryAssertion`. Una lettura che sovrappone le due memorie asserisce entrambi i valori. Sei asserzioni (M-0001…M-0006), tre per ciascuna delle due interpretazioni di QP 61: Perosa 2023a, pp. 103–104 (autore); Lugnani, cit. in Perosa 2023a, p. 104, n. 97 (personaggio); Cortellessa 2023, p. 669 (autore e personaggio, «sovrimprime»). Nessuna è adottata: il Cap. 4 chiede di conservarle in parallelo. Tutte «bozza», da validare in REVIEW_2. Nuovi agenti: `perosa`, `lugnani`, `cortellessa`;
+  - **momento del racconto:** è la posizione dell'occorrenza nel testo (capitolo e pagina del riferimento; il segmento verrà con T-51), già nel grafo. Non si aggiunge un tempo della storia o della stesura, perché la temporalità non è modellata (T-45). L'irruzione del «tempo della stesura» in QP 211 (Savettieri 2020, p. 44) riguarda un'allusione, non un luogo. Scelta segnalata in REVIEW_2.
+- Alternative scartate: voce sulla PlaceReference (il work order lo ammetteva), scartata perché focalizzatore e voce devono stare sullo stesso nodo; un valore «non annotato» esplicito su 955 interpretazioni, scartato come rumore: la dichiarazione sta nel modello.
+- Controlli: l'ETL rifiuta una voce assente da `FocalizingAgents.tsv`; shape 11 (`NarratingVoiceShape`: al più una voce, di classe FocalizingAgent; `MemoryAssertionShape`: valori dello schema).
+- Motivazione (fonte, pagina): Cap. 4, § 4.3 (tre livelli: percezione, enunciazione, persistenza memoriale) e R19.
+- Fase in cui è maturata: analisi del testo
+- File toccati (manifest): `ontology/chora.ttl` r. 1239–1281 (sezione «Livelli enunciativi»); `ontology/shapes/chora-shapes.ttl` r. 434–458 (shape 11); `data/source/mapping.yaml` r. 416–423; `tools/etl.py` r. 956–965; `data/source/tables/SpatialInterpretations.tsv` (colonna `Narrating_Voice_ID`, 5 valori; 3 `Critical_Note`); `data/source/tables/Agents.tsv` (3 righe); `data/source/tables/Assertions.tsv` (M-0001…M-0006); XLSX corrispondenti.
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.013 → **1.049**; ABox 25.772 → **25.917**; full 27.355 → **27.536**. SHACL conforme, 49 avvertenze (T-33); IQ1–IQ14 a 0.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

@@ -429,3 +429,30 @@ ga:LocalizationStatusShape
         [ sh:path ga:localizationReason ; sh:minCount 1 ]
     ) ;
     sh:message "Una sospensione motivata dell'ancoraggio richiede chora:localizationReason." .
+
+
+# =============================================================================
+# SHAPE 11 — Livelli enunciativi (D-049, work order T-36)
+# La voce narrante e' facoltativa: la sua assenza vale «non annotato».
+# Un'asserzione di memoria usa i valori dello schema MemoryAttribution.
+# =============================================================================
+
+ga:NarratingVoiceShape
+    a sh:NodeShape ;
+    sh:targetClass ga:SpatialInterpretation ;
+    sh:property [
+        sh:path ga:hasNarratingVoice ;
+        sh:maxCount 1 ;
+        sh:class ga:FocalizingAgent ;
+        sh:message "hasNarratingVoice: al piu' una voce, che sia un FocalizingAgent." ;
+    ] .
+
+ga:MemoryAssertionShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion ;
+    sh:or (
+        [ sh:not [ sh:path ga:assertionType ; sh:hasValue ga:MemoryAssertion ] ]
+        [ sh:path ga:assertsValue ; sh:minCount 1 ;
+          sh:in ( ga:AuthorMemory ga:CharacterMemory ga:UndecidableMemory ) ]
+    ) ;
+    sh:message "Un'asserzione di memoria ha valori dello schema MemoryAttribution." .

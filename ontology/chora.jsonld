@@ -251,6 +251,31 @@
       }
     },
     {
+      "@id": "chora:AuthorMemory",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "memoria dell'autore"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "The remembered space belongs to the author's memory."
+      },
+      "skos:inScheme": {
+        "@id": "chora:MemoryAttributionScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Author's memory"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:MemoryAttributionScheme"
+      }
+    },
+    {
       "@id": "chora:Below",
       "@type": [
         "owl:NamedIndividual",
@@ -293,6 +318,31 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "Character"
+      }
+    },
+    {
+      "@id": "chora:CharacterMemory",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "memoria del personaggio"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "The remembered space belongs to the character's memory."
+      },
+      "skos:inScheme": {
+        "@id": "chora:MemoryAttributionScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Character's memory"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:MemoryAttributionScheme"
       }
     },
     {
@@ -977,6 +1027,36 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:AssertionTypeScheme"
+      }
+    },
+    {
+      "@id": "chora:MemoryAttributionScheme",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Memory attribution"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Attribuzione della memoria"
+      },
+      "skos:hasTopConcept": [
+        {
+          "@id": "chora:AuthorMemory"
+        },
+        {
+          "@id": "chora:CharacterMemory"
+        },
+        {
+          "@id": "chora:UndecidableMemory"
+        }
+      ],
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Memory attribution"
       }
     },
     {
@@ -1981,6 +2061,35 @@
       }
     },
     {
+      "@id": "chora:UndecidableMemory",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "attribuzione indecidibile"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "The text does not allow the memory to be attributed to author or character."
+      },
+      "skos:inScheme": {
+        "@id": "chora:MemoryAttributionScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Undecidable"
+      },
+      "skos:scopeNote": {
+        "@language": "en",
+        "@value": "A reading that superimposes the two memories asserts both AuthorMemory and CharacterMemory."
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:MemoryAttributionScheme"
+      }
+    },
+    {
       "@id": "chora:Vagueness",
       "@type": [
         "owl:NamedIndividual",
@@ -2468,6 +2577,28 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "has interpretation"
+      }
+    },
+    {
+      "@id": "chora:hasNarratingVoice",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The voice that utters the passage of a spatial interpretation (who speaks), distinct from the focalizer (who perceives). Annotated only where a critical source discusses it; an interpretation without this property is «not annotated», which does not mean that voice and focalizer coincide."
+      },
+      "rdfs:domain": {
+        "@id": "chora:SpatialInterpretation"
+      },
+      "rdfs:range": {
+        "@id": "chora:FocalizingAgent"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "ha voce narrante"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "has narrating voice"
       }
     },
     {

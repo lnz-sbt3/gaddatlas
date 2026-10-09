@@ -413,6 +413,14 @@ mappings:
           to: "@Focalizer_ID"
           optional: true
 
+        # *** D-049 (T-36): voce narrante, distinta dal focalizzatore. Si
+        # annota solo dove una fonte critica ne discute; cella vuota = «non
+        # annotato», non «voce = focalizzatore». ***
+        - property: "chora:hasNarratingVoice"
+          column: "Narrating_Voice_ID"
+          to: "@Focalizer_ID"
+          optional: true
+
         - property: "chora:anchorsToEntity"
           column: "Anchors_To_Entity_ID"
           to: "@GazetteerEntity_ID"

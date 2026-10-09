@@ -953,6 +953,16 @@ class GaddaETL:
                             self.add_literal(focalizer_uri, CHORA.characterName, focalizer_id, lang='it')
                         self.graph.add((interp_uri, CHORA.hasFocalizer, focalizer_uri))
 
+                # *** VOCE NARRANTE (D-049, T-36): chi parla, distinto da chi
+                # percepisce. Facoltativa: l'assenza vale «non annotato». ***
+                voice_id = str(row.get('Narrating_Voice_ID') or '').strip()
+                if voice_id:
+                    if voice_id not in self.id_cache['Focalizer_ID']:
+                        raise ValueError(f"Interpretation {interp_id}: voce narrante "
+                                         f"{voice_id!r} assente da FocalizingAgents.tsv")
+                    self.graph.add((interp_uri, CHORA.hasNarratingVoice,
+                                    self.resolve_lookup(voice_id, '@Focalizer_ID')))
+
                 # *** ANCHOR MODEL: v4.1.1, anchorsToEntity è l'unica property ***
                 # Alcune celle contengono più ID separati da "|" (es.
                 # "gaz_monte_manno | gaz_palestrina"): un anchorsToEntity

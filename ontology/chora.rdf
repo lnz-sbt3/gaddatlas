@@ -488,6 +488,15 @@
     <skos:hasTopConcept rdf:resource="https://w3id.org/chora#ReadingAuthor"/>
     <skos:prefLabel xml:lang="en">Attribution role</skos:prefLabel>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#AuthorMemory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">memoria dell'autore</skos:altLabel>
+    <skos:definition xml:lang="en">The remembered space belongs to the author's memory.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#MemoryAttributionScheme"/>
+    <skos:prefLabel xml:lang="en">Author's memory</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#MemoryAttributionScheme"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#Below">
     <dcterms:description xml:lang="it">A è verticalmente sotto B lungo l'asse gravitazionale. Relazione inversa di Above.</dcterms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -506,6 +515,15 @@
     <rdfs:subClassOf rdf:resource="https://w3id.org/chora#FocalizingAgent"/>
     <skos:altLabel>Personaggio</skos:altLabel>
     <skos:prefLabel xml:lang="en">Character</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#CharacterMemory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">memoria del personaggio</skos:altLabel>
+    <skos:definition xml:lang="en">The remembered space belongs to the character's memory.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#MemoryAttributionScheme"/>
+    <skos:prefLabel xml:lang="en">Character's memory</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#MemoryAttributionScheme"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#Confusion">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -754,6 +772,16 @@
     <skos:notation>memory</skos:notation>
     <skos:prefLabel xml:lang="en">Memory assertion</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#AssertionTypeScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#MemoryAttributionScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:label xml:lang="en">Memory attribution</rdfs:label>
+    <skos:altLabel xml:lang="it">Attribuzione della memoria</skos:altLabel>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#AuthorMemory"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#CharacterMemory"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#UndecidableMemory"/>
+    <skos:prefLabel xml:lang="en">Memory attribution</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#NameAxis">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -1104,6 +1132,16 @@
     <skos:hasTopConcept rdf:resource="https://w3id.org/chora#Vagueness"/>
     <skos:prefLabel xml:lang="en">Uncertainty type</skos:prefLabel>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#UndecidableMemory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">attribuzione indecidibile</skos:altLabel>
+    <skos:definition xml:lang="en">The text does not allow the memory to be attributed to author or character.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#MemoryAttributionScheme"/>
+    <skos:prefLabel xml:lang="en">Undecidable</skos:prefLabel>
+    <skos:scopeNote xml:lang="en">A reading that superimposes the two memories asserts both AuthorMemory and CharacterMemory.</skos:scopeNote>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#MemoryAttributionScheme"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#Vagueness">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -1288,6 +1326,14 @@
     <rdfs:range rdf:resource="https://w3id.org/chora#SpatialInterpretation"/>
     <owl:inverseOf rdf:resource="https://w3id.org/chora#interpretsReference"/>
     <skos:prefLabel xml:lang="en">has interpretation</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#hasNarratingVoice">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">The voice that utters the passage of a spatial interpretation (who speaks), distinct from the focalizer (who perceives). Annotated only where a critical source discusses it; an interpretation without this property is «not annotated», which does not mean that voice and focalizer coincide.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#SpatialInterpretation"/>
+    <rdfs:range rdf:resource="https://w3id.org/chora#FocalizingAgent"/>
+    <skos:altLabel xml:lang="it">ha voce narrante</skos:altLabel>
+    <skos:prefLabel xml:lang="en">has narrating voice</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#hasPlaceCategory">
     <dcterms:references rdf:resource="https://w3id.org/chora#PlaceCategoryScheme"/>

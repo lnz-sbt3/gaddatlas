@@ -1235,3 +1235,47 @@ chora:NotApplicable a owl:NamedIndividual, skos:Concept ;
     skos:inScheme chora:LocalizationStatusScheme ;
     skos:prefLabel "Not applicable"@en ;
     skos:topConceptOf chora:LocalizationStatusScheme .
+
+# =============================================================================
+# LIVELLI ENUNCIATIVI (D-049, work order T-36, R08, R19)
+# Percezione (chora:hasFocalizer), enunciazione (chora:hasNarratingVoice) e
+# persistenza memoriale (asserzione chora:MemoryAssertion) sono piani distinti.
+# Il momento del racconto e' la posizione dell'occorrenza nel testo (capitolo,
+# pagina del riferimento): la temporalita' della storia non e' modellata
+# (docs/EXCLUSIONS.md).
+# =============================================================================
+
+chora:hasNarratingVoice a owl:ObjectProperty ;
+    rdfs:comment "The voice that utters the passage of a spatial interpretation (who speaks), distinct from the focalizer (who perceives). Annotated only where a critical source discusses it; an interpretation without this property is «not annotated», which does not mean that voice and focalizer coincide."@en ;
+    rdfs:domain chora:SpatialInterpretation ;
+    rdfs:range chora:FocalizingAgent ;
+    skos:altLabel "ha voce narrante"@it ;
+    skos:prefLabel "has narrating voice"@en .
+
+chora:MemoryAttributionScheme a owl:NamedIndividual, skos:ConceptScheme ;
+    rdfs:label "Memory attribution"@en ;
+    skos:altLabel "Attribuzione della memoria"@it ;
+    skos:hasTopConcept chora:AuthorMemory, chora:CharacterMemory, chora:UndecidableMemory ;
+    skos:prefLabel "Memory attribution"@en .
+
+chora:AuthorMemory a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "memoria dell'autore"@it ;
+    skos:definition "The remembered space belongs to the author's memory."@en ;
+    skos:inScheme chora:MemoryAttributionScheme ;
+    skos:prefLabel "Author's memory"@en ;
+    skos:topConceptOf chora:MemoryAttributionScheme .
+
+chora:CharacterMemory a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "memoria del personaggio"@it ;
+    skos:definition "The remembered space belongs to the character's memory."@en ;
+    skos:inScheme chora:MemoryAttributionScheme ;
+    skos:prefLabel "Character's memory"@en ;
+    skos:topConceptOf chora:MemoryAttributionScheme .
+
+chora:UndecidableMemory a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "attribuzione indecidibile"@it ;
+    skos:definition "The text does not allow the memory to be attributed to author or character."@en ;
+    skos:inScheme chora:MemoryAttributionScheme ;
+    skos:prefLabel "Undecidable"@en ;
+    skos:scopeNote "A reading that superimposes the two memories asserts both AuthorMemory and CharacterMemory."@en ;
+    skos:topConceptOf chora:MemoryAttributionScheme .
