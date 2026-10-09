@@ -25,6 +25,7 @@ Date: 2026-07-26
 
 import json
 import logging
+import re
 import sys
 from pathlib import Path
 from typing import Dict, Any, Optional, Set, List
@@ -994,6 +995,96 @@ class GaddaETL:
     # VALIDATORI
     # ============================================================
 
+    # ------------------------------------------------------------------
+    # ASSERZIONI ATTRIBUITE (D-042, work order T-30)
+    # ------------------------------------------------------------------
+    ASSERTION_TYPES = {
+        "status": "StatusAssertion", "identification": "IdentificationAssertion",
+        "location": "LocationAssertion", "partition": "PartitionAssertion",
+        "memory": "MemoryAssertion", "uncertainty": "UncertaintyAssertion",
+        "variant": "VariantAssertion",
+    }
+
+    def resolve_compact(self, value: str, where: str) -> URIRef:
+        """Risolve un riferimento del foglio Assertions: 'chora:Termine' oppure
+        un percorso relativo al namespace del dataset ('narrativeplace/castello').
+        Un valore che non rientra in nessuna delle due forme e' un errore."""
+        v = str(value).strip()
+        if v.startswith("chora:"):
+            return CHORA[v.split(":", 1)[1]]
+        if re.fullmatch(r"[a-z]+/[A-Za-z0-9_\-]+", v):
+            return ID_NS[v]
+        raise ValueError(f"{where}: riferimento non valido {v!r} "
+                         "(atteso 'chora:Termine' o 'tipo/id')")
+
+    def add_attribution(self, subject: URIRef, local_id: str, agent: URIRef, role: str):
+        """prov:qualifiedAttribution con prov:hadRole (D-042). Il nodo di
+        attribuzione ha un IRI stabile, derivato da soggetto, ruolo e agente."""
+        att = ID_NS[f"attribution/{local_id}-{role.lower()}-{str(agent).rsplit('/', 1)[-1]}"]
+        self.graph.add((subject, PROV.qualifiedAttribution, att))
+        self.graph.add((att, RDF.type, PROV.Attribution))
+        self.graph.add((att, PROV.agent, agent))
+        self.graph.add((att, PROV.hadRole, CHORA[role]))
+        if role == "ReadingAuthor":
+            # forma breve per le query semplici
+            self.graph.add((subject, PROV.wasAttributedTo, agent))
+
+    def process_assertions(self, file_path):
+        """
+        Processa Assertions.tsv (facoltativo). Una riga = una lettura attribuita.
+
+        Colonne: Assertion_ID, Assertion_Type (status | identification | location |
+        partition | memory | uncertainty | variant), Subject, Value (anche piu'
+        valori separati da '|'), Author_ID, Encoder_ID (anche piu' codificatori
+        separati da '|'), Source_Work, Source_Page, Adopted (si | no), Rationale,
+        Revision_Of (Assertion_ID), Date (AAAA-MM-GG), Note.
+        """
+        if not Path(file_path).is_file():
+            logger.info("Assertions.tsv assente: nessuna asserzione attribuita")
+            return
+        df = pd.read_csv(file_path, sep='\t', encoding='utf-8', dtype=str,
+                         keep_default_na=False, na_values=[])
+        logger.info(f"Caricate {len(df)} righe da Assertions")
+        for idx, row in df.iterrows():
+            aid = str(row.get('Assertion_ID', '')).strip()
+            where = f"Assertions riga {idx + 2} ({aid or 'senza id'})"
+            if not aid:
+                raise ValueError(f"{where}: Assertion_ID mancante")
+            atype = str(row.get('Assertion_Type', '')).strip().lower()
+            if atype not in self.ASSERTION_TYPES:
+                raise ValueError(f"{where}: tipo {atype!r} non ammesso")
+            a = ID_NS[f"assertion/{aid}"]
+            self.graph.add((a, RDF.type, CHORA.Assertion))
+            self.graph.add((a, CHORA.assertionType, CHORA[self.ASSERTION_TYPES[atype]]))
+            self.graph.add((a, CHORA.aboutSubject, self.resolve_compact(row.get('Subject'), where)))
+            for v in str(row.get('Value', '')).split('|'):
+                if v.strip():
+                    self.graph.add((a, CHORA.assertsValue, self.resolve_compact(v, where)))
+            author = str(row.get('Author_ID', '')).strip()
+            if not author:
+                raise ValueError(f"{where}: Author_ID mancante")
+            self.add_attribution(a, aid, self.resolve_compact(author, where), "ReadingAuthor")
+            encoders = [e.strip() for e in str(row.get('Encoder_ID', '')).split('|') if e.strip()]
+            if not encoders:
+                raise ValueError(f"{where}: Encoder_ID mancante")
+            for e in encoders:
+                self.add_attribution(a, aid, self.resolve_compact(e, where), "Encoder")
+            adopted = str(row.get('Adopted', '')).strip().lower()
+            if adopted:
+                if adopted not in ("si", "sì", "no"):
+                    raise ValueError(f"{where}: Adopted {adopted!r} (atteso si / no)")
+                self.graph.add((a, CHORA.adoptedByProject,
+                                Literal(adopted != "no", datatype=XSD.boolean)))
+            self.add_literal(a, CHORA.sourceWork, row.get('Source_Work'), datatype=XSD.string)
+            self.add_literal(a, CHORA.sourcePage, row.get('Source_Page'), datatype=XSD.string)
+            self.add_literal(a, CHORA.rationale, row.get('Rationale'), lang='it')
+            self.add_literal(a, RDFS.comment, row.get('Note'), lang='it')
+            self.add_literal(a, PROV.generatedAtTime, row.get('Date'), datatype=XSD.date)
+            rev = str(row.get('Revision_Of', '')).strip()
+            if rev:
+                self.graph.add((a, PROV.wasRevisionOf, ID_NS[f"assertion/{rev}"]))
+        logger.info(f"Assertions: {len(df)} asserzioni attribuite")
+
     def validate_interpretation_targets(self):
         """
         Valida che ogni SpatialInterpretation abbia almeno un target.
@@ -1190,6 +1281,9 @@ class GaddaETL:
         self.process_spatial_interpretations(
             self.data_dir / "SpatialInterpretations.tsv"
         )
+
+        logger.info("\n--- FASE 4b: Asserzioni attribuite ---")
+        self.process_assertions(self.data_dir / "Assertions.tsv")
 
         # 3. Validazione
         logger.info("\n--- FASE 5: Validazione ---")

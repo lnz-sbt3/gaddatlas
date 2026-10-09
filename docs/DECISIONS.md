@@ -868,6 +868,19 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-042 — Asserzioni attribuite: `chora:Assertion` (9 ottobre 2026)
+
+- Requisito/i: R07, R10, R20, R22 · Ipotesi: H3, H8 · Data check: DM-02 (work order T-30; AUDIT_2, § 2)
+- Stato precedente: nessun modo di registrare letture concorrenti attribuite. Le identificazioni passavano per `owl:sameAs`, lo statuto era solo un valore sul luogo, `prov:wasAttributedTo` confondeva chi formula una lettura con chi la codifica. `chora:evidenceSource` e `chora:interpretationType` erano dichiarate e mai usate.
+- Decisione (di Lorenzo, 9/10/2026): un nodo per ogni lettura. `chora:Assertion rdfs:subClassOf prov:Entity, hico:InterpretationAct` (HiCO allineato senza importarlo). Campi: `chora:assertionType` (nuovo schema `chora:AssertionTypeScheme`: status, identification, location, partition, memory, uncertainty, variant), `chora:aboutSubject`, `chora:assertsValue`, `chora:sourceWork` e `chora:sourcePage` (opera e pagina; le risorse bibliografiche con CiTO restano per la fase 3), `prov:generatedAtTime`, `prov:wasRevisionOf`, `chora:adoptedByProject` (booleano), `chora:rationale`. **Attribuzioni** con `prov:qualifiedAttribution` e `prov:hadRole`, due ruoli SKOS in `chora:AttributionRoleScheme`: `chora:ReadingAuthor` (autore della lettura) e `chora:Encoder` (codificatore); l'ETL genera anche la forma breve `prov:wasAttributedTo` verso l'autore. Niente RDF-star, niente named graph. `chora:interpretationType` è deprecata. Sorgente dati: nuovo foglio facoltativo `data/source/tables/Assertions.tsv` (oggi vuoto: le letture degli studiosi sono la fase 3; le prime righe arrivano con T-31), letto da `process_assertions` in `tools/etl.py`, che si ferma con un errore su tipo non ammesso, riferimento malformato, autore o codificatore mancante.
+- Controlli: shape `AssertionShape` (un tipo dello schema, un soggetto, almeno un valore, forma breve dell'autore, adozione al più una volta) e `QualifiedAttributionShape` (almeno un'attribuzione per ciascun ruolo), `AttributionShape` (un agente tipizzato `prov:Agent`, un ruolo). IQ12: al più una lettura adottata per soggetto e tipo. Prova in scratchpad: un'asserzione senza codificatore ferma l'ETL; con agenti non tipizzati la SHACL segnala due violazioni (risolte da T-32).
+- Motivazione (fonte, pagina): Cap. 4, § 4.4 e § 4.7 (letture concorrenti senza default, R22); Daquino, Pasqual e Tomasi 2020 (HiCO); work order T-30.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `ontology/chora.ttl:4` (prefisso `hico:`), `:392-394` (deprecazione di `interpretationType`), `:792-969` (sezione nuova); `ontology/shapes/chora-shapes.ttl:33` (prefisso `prov:`), `:278-354` (shape 7); `ontology/queries/integrity.rq:126-140` (IQ12); `tools/etl.py:28` (`import re`), `:998-1087` (`process_assertions` e funzioni di servizio), `:1285-1287` (chiamata); `data/source/tables/Assertions.tsv` (nuovo, intestazione); `data/source/xlsx/Assertions.xlsx` (generato); `data/source/mapping.yaml` (nota sul foglio); `data/README.md:12`.
+- Effetto su KG (triple prima/dopo, SHACL): TBox 600 → **756**; ABox 16.093 → 16.093; full 17.263 → **17.419**. SHACL conforme, 0 violazioni; IQ12 = 0.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

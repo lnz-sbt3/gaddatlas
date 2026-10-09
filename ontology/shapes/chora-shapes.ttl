@@ -30,6 +30,7 @@
 @prefix ga:   <https://w3id.org/chora#> .
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 
 
 # =============================================================================
@@ -273,4 +274,81 @@ ga:GazetteerEntityShape
         sh:maxCount 1 ;
         sh:message "long, se presente, deve essere singola." ;
         sh:severity sh:Warning ;
+    ] .
+
+
+# =============================================================================
+# SHAPE 7 — Assertion (D-042, work order T-30)
+# Una lettura attribuita: tipo, soggetto, valore; almeno un autore della
+# lettura e almeno un codificatore (prov:qualifiedAttribution con prov:hadRole);
+# la forma breve prov:wasAttributedTo verso l'autore, generata dall'ETL;
+# al piu' un flag di adozione. La regola «una sola lettura adottata per
+# soggetto e tipo» sta in integrity.rq (IQ12).
+# =============================================================================
+
+ga:AssertionShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion ;
+    sh:property [
+        sh:path ga:assertionType ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:in ( ga:StatusAssertion ga:IdentificationAssertion ga:LocationAssertion
+                ga:PartitionAssertion ga:MemoryAssertion ga:UncertaintyAssertion
+                ga:VariantAssertion ) ;
+        sh:message "Ogni Assertion ha esattamente un tipo dello schema AssertionType." ;
+    ] ;
+    sh:property [
+        sh:path ga:aboutSubject ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "Ogni Assertion riguarda esattamente un soggetto." ;
+    ] ;
+    sh:property [
+        sh:path ga:assertsValue ;
+        sh:minCount 1 ;
+        sh:message "Ogni Assertion assegna almeno un valore." ;
+    ] ;
+    sh:property [
+        sh:path ga:adoptedByProject ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:boolean ;
+        sh:message "adoptedByProject, se presente, e' un booleano singolo." ;
+    ] ;
+    sh:property [
+        sh:path prov:wasAttributedTo ;
+        sh:minCount 1 ;
+        sh:message "Ogni Assertion porta la forma breve prov:wasAttributedTo verso l'autore della lettura." ;
+    ] .
+
+# Attribuzioni qualificate: almeno un autore della lettura e almeno un
+# codificatore. Si estende alle interpretazioni con T-32 (annotatori).
+ga:QualifiedAttributionShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion ;
+    sh:property [
+        sh:path prov:qualifiedAttribution ;
+        sh:qualifiedValueShape [ sh:path prov:hadRole ; sh:hasValue ga:ReadingAuthor ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:message "Manca un'attribuzione con ruolo chora:ReadingAuthor (autore della lettura)." ;
+    ] ;
+    sh:property [
+        sh:path prov:qualifiedAttribution ;
+        sh:qualifiedValueShape [ sh:path prov:hadRole ; sh:hasValue ga:Encoder ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:message "Manca un'attribuzione con ruolo chora:Encoder (codificatore)." ;
+    ] .
+
+ga:AttributionShape
+    a sh:NodeShape ;
+    sh:targetObjectsOf prov:qualifiedAttribution ;
+    sh:property [
+        sh:path prov:agent ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:class prov:Agent ;
+        sh:message "Ogni attribuzione ha esattamente un agente, tipizzato prov:Agent." ;
+    ] ;
+    sh:property [
+        sh:path prov:hadRole ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:in ( ga:ReadingAuthor ga:Encoder ) ;
+        sh:message "Ogni attribuzione ha esattamente un ruolo: ReadingAuthor o Encoder." ;
     ] .

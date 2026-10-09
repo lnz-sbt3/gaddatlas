@@ -9,6 +9,7 @@ Le sorgenti sono:
 | file | cos'è |
 |---|---|
 | `source/tables/*.tsv` | l'annotazione: **sorgente canonica** (D-019), diffabile in git |
+| `source/tables/Assertions.tsv` | le letture attribuite (D-042): una riga per lettura, con autore, codificatore, fonte, adozione; facoltativo |
 | `source/mapping.yaml` | etichette italiane → URI dell'ontologia |
 | `source/void_seeds.json` | 48 semi congelati dei tasselli fittizi |
 | `source/roma.geojson` | contorno amministrativo di Roma, sfondo della mappa |

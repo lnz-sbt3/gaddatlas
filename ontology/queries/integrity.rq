@@ -123,3 +123,18 @@ SELECT ?ref (COUNT(DISTINCT ?place) AS ?luoghi) WHERE {
 GROUP BY ?ref
 HAVING (COUNT(DISTINCT ?place) > 1)
 ORDER BY ?ref
+
+
+# ==== IQ12 — Piu' letture adottate per lo stesso soggetto e tipo (atteso: 0) ====
+# Nessuna lettura e' il default del modello, ma il progetto ne adotta al piu'
+# una per soggetto e tipo di asserzione (D-042): e' quella che l'interfaccia
+# mostra. Due letture adottate sullo stesso punto sono un errore.
+PREFIX ga: <https://w3id.org/chora#>
+SELECT ?soggetto ?tipo (COUNT(?a) AS ?adottate) WHERE {
+  ?a a ga:Assertion ;
+     ga:aboutSubject ?soggetto ;
+     ga:assertionType ?tipo ;
+     ga:adoptedByProject true .
+}
+GROUP BY ?soggetto ?tipo
+HAVING (COUNT(?a) > 1)

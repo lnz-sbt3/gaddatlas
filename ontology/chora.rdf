@@ -51,6 +51,10 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
     <rdfs:comment xml:lang="en">Links a property to the SKOS ConceptScheme from which its values are drawn. The rdfs:range of these properties is the generic skos:Concept; this annotation states which controlled vocabulary is actually admissible, and drives the cross-links in the generated documentation.</rdfs:comment>
   </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/emmedi/hico/InterpretationAct">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/emmedi/hico"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
   </rdf:Description>
@@ -226,11 +230,39 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o"/>
   </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#Attribution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/ns/prov#Entity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o"/>
   </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#Role">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#agent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#generatedAtTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#hadRole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#qualifiedAttribution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasAttributedTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasRevisionOf">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o"/>
   </rdf:Description>
@@ -415,6 +447,38 @@
     <skos:prefLabel xml:lang="en">Approximate</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#SpatialDeterminationScheme"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#Assertion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">An attributed reading about a resource of the dataset: who formulated it (prov:qualifiedAttribution with role chora:ReadingAuthor), who encoded it (role chora:Encoder), on which source, when, which earlier assertion it revises, and whether the project adopts it. Competing readings coexist as distinct assertions; the adopted one is attributed like the others.</rdfs:comment>
+    <rdfs:comment xml:lang="it">Lettura attribuita su una risorsa del dataset: chi l'ha formulata (prov:qualifiedAttribution con ruolo chora:ReadingAuthor), chi l'ha codificata (ruolo chora:Encoder), su quale fonte, quando, quale asserzione precedente rivede, e se il progetto la adotta. Le letture concorrenti convivono come asserzioni distinte; quella adottata e' attribuita come le altre.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/emmedi/hico/InterpretationAct"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <skos:altLabel xml:lang="it">Asserzione</skos:altLabel>
+    <skos:prefLabel xml:lang="en">Assertion</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#AssertionTypeScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:label xml:lang="en">Assertion type</rdfs:label>
+    <skos:altLabel xml:lang="it">Tipo di asserzione</skos:altLabel>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#IdentificationAssertion"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#LocationAssertion"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#MemoryAssertion"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#PartitionAssertion"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#StatusAssertion"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#UncertaintyAssertion"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#VariantAssertion"/>
+    <skos:prefLabel xml:lang="en">Assertion type</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#AttributionRoleScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:label xml:lang="en">Attribution role</rdfs:label>
+    <skos:altLabel xml:lang="it">Ruolo dell'attribuzione</skos:altLabel>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#Encoder"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#ReadingAuthor"/>
+    <skos:prefLabel xml:lang="en">Attribution role</skos:prefLabel>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#Below">
     <dcterms:description xml:lang="it">A è verticalmente sotto B lungo l'asse gravitazionale. Relazione inversa di Above.</dcterms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -444,6 +508,16 @@
     <skos:prefLabel xml:lang="en">Contains</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#SpatialRelationTypeScheme"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#Encoder">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/ns/prov#Role"/>
+    <skos:altLabel xml:lang="it">codificatore</skos:altLabel>
+    <skos:definition xml:lang="en">The agent who encoded the reading in the knowledge graph.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#AttributionRoleScheme"/>
+    <skos:prefLabel xml:lang="en">Encoder</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#AttributionRoleScheme"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#FocalizingAgent">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:comment xml:lang="it">Entità attraverso cui lo spazio è percepito/descritto</rdfs:comment>
@@ -456,6 +530,16 @@
     <rdfs:comment xml:lang="it">GazetteerEntity non appartiene al mondo del testo: modella la controparte topografica esterna. La relazione con NarrativePlace non è assunta come identità, ma come ancoraggio tipizzato, espresso da SpatialInterpretation.</rdfs:comment>
     <skos:definition xml:lang="en">An extra-textual georeferenceable place described as an authority/gazetteer entity, typically endowed with stable geometry (coordinates or GeoJSON) and persistent identifiers; it provides the external topographic referent to which narrative places may be anchored.</skos:definition>
     <skos:definition xml:lang="it">Luogo extra-testuale georeferenziabile, descritto come entità di authority/gazetteer e tipicamente dotato di geometria stabile (coordinate o GeoJSON) e identificatori persistenti; costituisce il referente topografico esterno a cui possono essere ancorati i luoghi narrativi.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#IdentificationAssertion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">identificazione</skos:altLabel>
+    <skos:definition xml:lang="en">Identifies a narrative place or a place reference with a gazetteer entity. Replaces owl:sameAs as a judgement of identity.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#AssertionTypeScheme"/>
+    <skos:notation>identification</skos:notation>
+    <skos:prefLabel xml:lang="en">Identification assertion</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#AssertionTypeScheme"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#Imagined">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -521,6 +605,16 @@
   <rdf:Description rdf:about="https://w3id.org/chora#LiteraryWork">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#LocationAssertion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">posizione</skos:altLabel>
+    <skos:definition xml:lang="en">Locates a gazetteer entity according to a dated repertory.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#AssertionTypeScheme"/>
+    <skos:notation>location</skos:notation>
+    <skos:prefLabel xml:lang="en">Location assertion</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#AssertionTypeScheme"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#Marker">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -531,6 +625,16 @@
     <skos:inScheme rdf:resource="https://w3id.org/chora#NarrativeRoleScheme"/>
     <skos:prefLabel xml:lang="en">Marker</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#NarrativeRoleScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#MemoryAssertion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">memoria</skos:altLabel>
+    <skos:definition xml:lang="en">Attributes a remembered or projected space to the author, to a character, or declares it undecidable.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#AssertionTypeScheme"/>
+    <skos:notation>memory</skos:notation>
+    <skos:prefLabel xml:lang="en">Memory assertion</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#AssertionTypeScheme"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#NarrativePlace">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -588,6 +692,16 @@
     <skos:prefLabel xml:lang="en">Overlaps</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#SpatialRelationTypeScheme"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#PartitionAssertion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">partizione</skos:altLabel>
+    <skos:definition xml:lang="en">Assigns a place to an interpretive partition (e.g. city / countryside).</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#AssertionTypeScheme"/>
+    <skos:notation>partition</skos:notation>
+    <skos:prefLabel xml:lang="en">Partition assertion</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#AssertionTypeScheme"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#PlaceReference">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:comment xml:lang="en">A PlaceReference does not “resolve” a referent nor determine the place type: disambiguation, classification, and any topographic anchoring are asserted at the level of SpatialInterpretation.</rdfs:comment>
@@ -613,6 +727,16 @@
     <skos:inScheme rdf:resource="https://w3id.org/chora#NarrativeRoleScheme"/>
     <skos:prefLabel xml:lang="en">Projected Space</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#NarrativeRoleScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#ReadingAuthor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/ns/prov#Role"/>
+    <skos:altLabel xml:lang="it">autore della lettura</skos:altLabel>
+    <skos:definition xml:lang="en">The agent who formulated the reading: a scholar, or the project when the reading is its own.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#AttributionRoleScheme"/>
+    <skos:prefLabel xml:lang="en">Reading author</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#AttributionRoleScheme"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#RealityStatusScheme">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -695,6 +819,16 @@
     <skos:hasTopConcept rdf:resource="https://w3id.org/chora#RelatedTo"/>
     <skos:prefLabel xml:lang="en">Narrative Spatial Relations</skos:prefLabel>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#StatusAssertion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">statuto</skos:altLabel>
+    <skos:definition xml:lang="en">Assigns a reality status to a narrative place.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#AssertionTypeScheme"/>
+    <skos:notation>status</skos:notation>
+    <skos:prefLabel xml:lang="en">Status assertion</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#AssertionTypeScheme"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#Transformed">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -708,6 +842,26 @@
     <skos:prefLabel xml:lang="en">Transformed</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#RealityStatusScheme"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#UncertaintyAssertion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">incertezza</skos:altLabel>
+    <skos:definition xml:lang="en">Qualifies the uncertainty of a reading by type, axis and origin.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#AssertionTypeScheme"/>
+    <skos:notation>uncertainty</skos:notation>
+    <skos:prefLabel xml:lang="en">Uncertainty assertion</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#AssertionTypeScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#VariantAssertion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">variante</skos:altLabel>
+    <skos:definition xml:lang="en">Records a reading of another witness corresponding to an occurrence of the reference text.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#AssertionTypeScheme"/>
+    <skos:notation>variant</skos:notation>
+    <skos:prefLabel xml:lang="en">Variant assertion</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#AssertionTypeScheme"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#ZoneOfAction">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -716,6 +870,21 @@
     <skos:inScheme rdf:resource="https://w3id.org/chora#NarrativeRoleScheme"/>
     <skos:prefLabel xml:lang="en">Zone of Action</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#NarrativeRoleScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#aboutSubject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">The resource the assertion is about (a narrative place, a place reference, a gazetteer entity, an interpretation).</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#Assertion"/>
+    <skos:altLabel xml:lang="it">riguarda</skos:altLabel>
+    <skos:prefLabel xml:lang="en">about subject</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#adoptedByProject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">True when the project adopts this reading (the one shown by the interface). It marks a choice, not a truth: the adopted reading is attributed like the others.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#Assertion"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <skos:altLabel xml:lang="it">adottata dal progetto</skos:altLabel>
+    <skos:prefLabel xml:lang="en">adopted by project</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#anchorsToEntity">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -737,6 +906,21 @@
     <rdfs:label xml:lang="en">appears in work</rdfs:label>
     <rdfs:range rdf:resource="https://w3id.org/chora#LiteraryWork"/>
     <skos:altLabel xml:lang="it">compare nell'opera</skos:altLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#assertionType">
+    <dcterms:references rdf:resource="https://w3id.org/chora#AssertionTypeScheme"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#Assertion"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">tipo di asserzione</skos:altLabel>
+    <skos:prefLabel xml:lang="en">assertion type</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#assertsValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">The value the assertion assigns to its subject: a concept (e.g. a reality status) or a resource (e.g. the gazetteer entity of an identification).</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#Assertion"/>
+    <skos:altLabel xml:lang="it">asserisce il valore</skos:altLabel>
+    <skos:prefLabel xml:lang="en">asserts value</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#assignsNarrativeRole">
     <dcterms:references rdf:resource="https://w3id.org/chora#NarrativeRoleScheme"/>
@@ -872,7 +1056,9 @@
     <rdfs:comment xml:lang="en">Classifies the kind of spatial interpretation asserted by the annotation.</rdfs:comment>
     <rdfs:domain rdf:resource="https://w3id.org/chora#SpatialInterpretation"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:deprecated>
     <skos:altLabel xml:lang="it">tipo di interpretazione</skos:altLabel>
+    <skos:historyNote xml:lang="it">Deprecata il 9/10/2026 (D-042): il tipo di una lettura e' chora:assertionType su chora:Assertion.</skos:historyNote>
     <skos:prefLabel xml:lang="en">interpretation type</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#interpretsReference">
@@ -937,6 +1123,14 @@
     <skos:altLabel xml:lang="it">localizzazione attuale</skos:altLabel>
     <skos:prefLabel xml:lang="en">present location</skos:prefLabel>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#rationale">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Textual, philological or critical motivation of the assertion (R07).</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#Assertion"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <skos:altLabel xml:lang="it">motivazione</skos:altLabel>
+    <skos:prefLabel xml:lang="en">rationale</skos:prefLabel>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#routeOrder">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:comment xml:lang="en">Ordinal position (1-based) of a node within its narrative route. Meaningful only together with isNodeOfRoute.</rdfs:comment>
@@ -944,10 +1138,26 @@
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     <skos:prefLabel xml:lang="en">route order</skos:prefLabel>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#sourcePage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Page or pages of the source work.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#Assertion"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:altLabel xml:lang="it">pagina della fonte</skos:altLabel>
+    <skos:prefLabel xml:lang="en">source page</skos:prefLabel>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#sourceReference">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:domain rdf:resource="https://w3id.org/chora#PlaceReference"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#sourceWork">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Bibliographic key (author-date, as in the thesis bibliography) of the source on which the reading rests.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#Assertion"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:altLabel xml:lang="it">opera fonte</skos:altLabel>
+    <skos:prefLabel xml:lang="en">source work</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#targetsPlace">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>

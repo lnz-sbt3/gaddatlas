@@ -584,6 +584,17 @@ mappings:
           optional: true
 
 # ============================================================
+# FILE: Assertions.tsv (letture attribuite, D-042)
+# Non ha un blocco di mapping: lo legge tools/etl.py (process_assertions),
+# perche' Subject e Value puntano a risorse di tipo diverso. Formato:
+#   Subject, Value, Author_ID, Encoder_ID = 'tipo/id' relativo a
+#   https://w3id.org/gaddatlas/id/ (es. narrativeplace/castello,
+#   gazetteer/gaz_castel_gandolfo, annotator/lorenzo_sabatino) oppure
+#   'chora:Termine' (es. chora:Invented). Value ed Encoder_ID ammettono piu'
+#   valori separati da '|'. Assertion_Type: status | identification | location |
+#   partition | memory | uncertainty | variant. Adopted: si | no.
+# ============================================================
+
 # FILE: Chapters.tsv (Capitoli dell'opera)
 # ============================================================
   Chapters:

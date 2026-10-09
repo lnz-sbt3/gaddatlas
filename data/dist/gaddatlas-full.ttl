@@ -83,7 +83,25 @@ skos:prefLabel a owl:AnnotationProperty .
 
 skos:topConceptOf a owl:AnnotationProperty .
 
+prov:Attribution a owl:Class ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+prov:agent a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+prov:generatedAtTime a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+prov:hadRole a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+prov:qualifiedAttribution a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
 prov:wasAttributedTo a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+prov:wasRevisionOf a owl:ObjectProperty ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
 
 schema:name a owl:AnnotationProperty .
@@ -111,6 +129,19 @@ schema:name a owl:AnnotationProperty .
     owl:versionIRI <https://w3id.org/chora/1.0.0> ;
     owl:versionInfo "1.0.0" .
 
+chora:aboutSubject a owl:ObjectProperty ;
+    rdfs:comment "The resource the assertion is about (a narrative place, a place reference, a gazetteer entity, an interpretation)."@en ;
+    rdfs:domain chora:Assertion ;
+    skos:altLabel "riguarda"@it ;
+    skos:prefLabel "about subject"@en .
+
+chora:adoptedByProject a owl:DatatypeProperty ;
+    rdfs:comment "True when the project adopts this reading (the one shown by the interface). It marks a choice, not a truth: the adopted reading is attributed like the others."@en ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range xsd:boolean ;
+    skos:altLabel "adottata dal progetto"@it ;
+    skos:prefLabel "adopted by project"@en .
+
 chora:anchorsToEntity a owl:ObjectProperty ;
     rdfs:domain chora:SpatialInterpretation ;
     rdfs:range chora:GazetteerEntity ;
@@ -128,6 +159,19 @@ chora:appearsInWork a owl:ObjectProperty ;
     rdfs:domain chora:PlaceReference ;
     rdfs:range chora:LiteraryWork ;
     skos:altLabel "compare nell'opera"@it .
+
+chora:assertionType a owl:ObjectProperty ;
+    dcterms:references chora:AssertionTypeScheme ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "tipo di asserzione"@it ;
+    skos:prefLabel "assertion type"@en .
+
+chora:assertsValue a owl:ObjectProperty ;
+    rdfs:comment "The value the assertion assigns to its subject: a concept (e.g. a reality status) or a resource (e.g. the gazetteer entity of an identification)."@en ;
+    rdfs:domain chora:Assertion ;
+    skos:altLabel "asserisce il valore"@it ;
+    skos:prefLabel "asserts value"@en .
 
 chora:assignsNarrativeRole a owl:ObjectProperty ;
     dcterms:references chora:NarrativeRoleScheme ;
@@ -240,7 +284,9 @@ chora:interpretationType a owl:DatatypeProperty ;
     rdfs:comment "Classifies the kind of spatial interpretation asserted by the annotation."@en ;
     rdfs:domain chora:SpatialInterpretation ;
     rdfs:range xsd:string ;
+    owl:deprecated true ;
     skos:altLabel "tipo di interpretazione"@it ;
+    skos:historyNote "Deprecata il 9/10/2026 (D-042): il tipo di una lettura e' chora:assertionType su chora:Assertion."@it ;
     skos:prefLabel "interpretation type"@en .
 
 chora:isNodeOfRoute a owl:ObjectProperty ;
@@ -290,15 +336,36 @@ chora:presentLocation a owl:DatatypeProperty ;
     skos:altLabel "localizzazione attuale"@it ;
     skos:prefLabel "present location"@en .
 
+chora:rationale a owl:DatatypeProperty ;
+    rdfs:comment "Textual, philological or critical motivation of the assertion (R07)."@en ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range rdf:langString ;
+    skos:altLabel "motivazione"@it ;
+    skos:prefLabel "rationale"@en .
+
 chora:routeOrder a owl:DatatypeProperty ;
     rdfs:comment "Ordinal position (1-based) of a node within its narrative route. Meaningful only together with isNodeOfRoute."@en ;
     rdfs:domain chora:SpatialInterpretation ;
     rdfs:range xsd:integer ;
     skos:prefLabel "route order"@en .
 
+chora:sourcePage a owl:DatatypeProperty ;
+    rdfs:comment "Page or pages of the source work."@en ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range xsd:string ;
+    skos:altLabel "pagina della fonte"@it ;
+    skos:prefLabel "source page"@en .
+
 chora:sourceReference a owl:DatatypeProperty ;
     rdfs:domain chora:PlaceReference ;
     rdfs:range xsd:string .
+
+chora:sourceWork a owl:DatatypeProperty ;
+    rdfs:comment "Bibliographic key (author-date, as in the thesis bibliography) of the source on which the reading rests."@en ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range xsd:string ;
+    skos:altLabel "opera fonte"@it ;
+    skos:prefLabel "source work"@en .
 
 chora:targetsPlace a owl:ObjectProperty ;
     rdfs:comment "Links a spatial interpretation to the diegetic narrative place it activates."@en ;
@@ -10213,6 +10280,9 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     dcterms:title "Quer pasticciaccio brutto de via Merulana"@it ;
     rdfs:comment "Prima pubblicazione in cinque puntate sulla rivista «Letteratura», fascicoli 26, 27, 28, 29 e 31 del 1946 (Pinotti 2016, p. 200, n. 4)"@it .
 
+<http://purl.org/emmedi/hico/InterpretationAct> a owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/emmedi/hico> .
+
 <http://vocab.getty.edu/aat/300000810> a owl:NamedIndividual .
 
 <http://vocab.getty.edu/aat/300004420> a owl:NamedIndividual .
@@ -10365,10 +10435,64 @@ chora:Contains a owl:NamedIndividual,
     skos:prefLabel "Contains"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
 
+chora:Encoder a owl:NamedIndividual,
+        skos:Concept,
+        prov:Role ;
+    skos:altLabel "codificatore"@it ;
+    skos:definition "The agent who encoded the reading in the knowledge graph."@en ;
+    skos:inScheme chora:AttributionRoleScheme ;
+    skos:prefLabel "Encoder"@en ;
+    skos:topConceptOf chora:AttributionRoleScheme .
+
+chora:IdentificationAssertion a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "identificazione"@it ;
+    skos:definition "Identifies a narrative place or a place reference with a gazetteer entity. Replaces owl:sameAs as a judgement of identity."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "identification" ;
+    skos:prefLabel "Identification assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:LocationAssertion a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "posizione"@it ;
+    skos:definition "Locates a gazetteer entity according to a dated repertory."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "location" ;
+    skos:prefLabel "Location assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:MemoryAssertion a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "memoria"@it ;
+    skos:definition "Attributes a remembered or projected space to the author, to a character, or declares it undecidable."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "memory" ;
+    skos:prefLabel "Memory assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
 chora:Narrator a owl:Class ;
     rdfs:subClassOf chora:FocalizingAgent ;
     skos:altLabel "Narratore"@it ;
     skos:prefLabel "Narrator"@en .
+
+chora:PartitionAssertion a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "partizione"@it ;
+    skos:definition "Assigns a place to an interpretive partition (e.g. city / countryside)."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "partition" ;
+    skos:prefLabel "Partition assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:ReadingAuthor a owl:NamedIndividual,
+        skos:Concept,
+        prov:Role ;
+    skos:altLabel "autore della lettura"@it ;
+    skos:definition "The agent who formulated the reading: a scholar, or the project when the reading is its own."@en ;
+    skos:inScheme chora:AttributionRoleScheme ;
+    skos:prefLabel "Reading author"@en ;
+    skos:topConceptOf chora:AttributionRoleScheme .
 
 chora:RelatedTo a owl:NamedIndividual,
         skos:Concept ;
@@ -10377,6 +10501,33 @@ chora:RelatedTo a owl:NamedIndividual,
     skos:inScheme chora:SpatialRelationTypeScheme ;
     skos:prefLabel "Related to"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+chora:StatusAssertion a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "statuto"@it ;
+    skos:definition "Assigns a reality status to a narrative place."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "status" ;
+    skos:prefLabel "Status assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:UncertaintyAssertion a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "incertezza"@it ;
+    skos:definition "Qualifies the uncertainty of a reading by type, axis and origin."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "uncertainty" ;
+    skos:prefLabel "Uncertainty assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:VariantAssertion a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "variante"@it ;
+    skos:definition "Records a reading of another witness corresponding to an occurrence of the reference text."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "variant" ;
+    skos:prefLabel "Variant assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
 
 chora:apartment a owl:NamedIndividual,
         skos:Concept ;
@@ -17705,6 +17856,9 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 
 <http://vocab.getty.edu/aat/300008591> a owl:NamedIndividual .
 
+prov:Role a owl:Class ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
 <http://www.wikidata.org/entity/Q174782> a owl:NamedIndividual .
 
 <https://ror.org/01111rn36> a owl:NamedIndividual,
@@ -20970,6 +21124,14 @@ chora:temple a owl:NamedIndividual,
 
 <https://w3id.org/gaddatlas/id/route/tragitto_merulana_policlinico> a chora:NarrativeRoute .
 
+chora:AttributionRoleScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Attribution role"@en ;
+    skos:altLabel "Ruolo dell'attribuzione"@it ;
+    skos:hasTopConcept chora:Encoder,
+        chora:ReadingAuthor ;
+    skos:prefLabel "Attribution role"@en .
+
 chora:ZoneOfAction a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "Zona dell'Azione"@it ;
@@ -21595,8 +21757,6 @@ chora:police_station a owl:NamedIndividual,
 
 <https://w3id.org/gaddatlas/id/route/tragitto_policlinico_san_lorenzo_al_verano> a chora:NarrativeRoute .
 
-skos:ConceptScheme a owl:Class .
-
 chora:LiteraryWork a owl:Class .
 
 chora:building a owl:NamedIndividual,
@@ -22208,6 +22368,16 @@ chora:interior a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/route/tragitto_colonna_treccani> a chora:NarrativeRoute .
 
 <https://w3id.org/gaddatlas/id/route/tragitto_frattocchie_ciampino> a chora:NarrativeRoute .
+
+skos:ConceptScheme a owl:Class .
+
+chora:Assertion a owl:Class ;
+    rdfs:comment "An attributed reading about a resource of the dataset: who formulated it (prov:qualifiedAttribution with role chora:ReadingAuthor), who encoded it (role chora:Encoder), on which source, when, which earlier assertion it revises, and whether the project adopts it. Competing readings coexist as distinct assertions; the adopted one is attributed like the others."@en,
+        "Lettura attribuita su una risorsa del dataset: chi l'ha formulata (prov:qualifiedAttribution con ruolo chora:ReadingAuthor), chi l'ha codificata (ruolo chora:Encoder), su quale fonte, quando, quale asserzione precedente rivede, e se il progetto la adotta. Le letture concorrenti convivono come asserzioni distinte; quella adottata e' attribuita come le altre."@it ;
+    rdfs:subClassOf <http://purl.org/emmedi/hico/InterpretationAct>,
+        prov:Entity ;
+    skos:altLabel "Asserzione"@it ;
+    skos:prefLabel "Assertion"@en .
 
 chora:city_gate a owl:NamedIndividual,
         skos:Concept ;
@@ -22835,6 +23005,19 @@ chora:mountain a owl:NamedIndividual,
     chora:hasPlaceCategory chora:locality ;
     chora:hasRealityStatus chora:Invented .
 
+chora:AssertionTypeScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Assertion type"@en ;
+    skos:altLabel "Tipo di asserzione"@it ;
+    skos:hasTopConcept chora:IdentificationAssertion,
+        chora:LocationAssertion,
+        chora:MemoryAssertion,
+        chora:PartitionAssertion,
+        chora:StatusAssertion,
+        chora:UncertaintyAssertion,
+        chora:VariantAssertion ;
+    skos:prefLabel "Assertion type"@en .
+
 chora:district a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "Quartiere"@it ;
@@ -23409,13 +23592,13 @@ chora:FocalizingAgent a owl:Class ;
     skos:altLabel "Agente Focalizzatore"@it ;
     skos:prefLabel "Focalizing Agent"@en .
 
-skos:Concept a owl:Class .
-
 <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> a chora:Chapter ;
     dcterms:title "Capitolo VI"@it ;
     chora:chapterNumber 6 ;
     chora:pageRange "152-175"^^xsd:string ;
     chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> .
+
+skos:Concept a owl:Class .
 
 chora:Precise a owl:NamedIndividual,
         skos:Concept ;

@@ -11,6 +11,7 @@
     "doap": "http://usefulinc.com/ns/doap#",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "geo": "http://www.opengis.net/ont/geosparql#",
+    "hico": "http://purl.org/emmedi/hico/",
     "odrl": "http://www.w3.org/ns/odrl/2/",
     "org": "http://www.w3.org/ns/org#",
     "owl": "http://www.w3.org/2002/07/owl#",
@@ -126,6 +127,105 @@
       }
     },
     {
+      "@id": "chora:Assertion",
+      "@type": "owl:Class",
+      "rdfs:comment": [
+        {
+          "@language": "en",
+          "@value": "An attributed reading about a resource of the dataset: who formulated it (prov:qualifiedAttribution with role chora:ReadingAuthor), who encoded it (role chora:Encoder), on which source, when, which earlier assertion it revises, and whether the project adopts it. Competing readings coexist as distinct assertions; the adopted one is attributed like the others."
+        },
+        {
+          "@language": "it",
+          "@value": "Lettura attribuita su una risorsa del dataset: chi l'ha formulata (prov:qualifiedAttribution con ruolo chora:ReadingAuthor), chi l'ha codificata (ruolo chora:Encoder), su quale fonte, quando, quale asserzione precedente rivede, e se il progetto la adotta. Le letture concorrenti convivono come asserzioni distinte; quella adottata e' attribuita come le altre."
+        }
+      ],
+      "rdfs:subClassOf": [
+        {
+          "@id": "hico:InterpretationAct"
+        },
+        {
+          "@id": "prov:Entity"
+        }
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Asserzione"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Assertion"
+      }
+    },
+    {
+      "@id": "chora:AssertionTypeScheme",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Assertion type"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Tipo di asserzione"
+      },
+      "skos:hasTopConcept": [
+        {
+          "@id": "chora:IdentificationAssertion"
+        },
+        {
+          "@id": "chora:LocationAssertion"
+        },
+        {
+          "@id": "chora:MemoryAssertion"
+        },
+        {
+          "@id": "chora:PartitionAssertion"
+        },
+        {
+          "@id": "chora:StatusAssertion"
+        },
+        {
+          "@id": "chora:UncertaintyAssertion"
+        },
+        {
+          "@id": "chora:VariantAssertion"
+        }
+      ],
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Assertion type"
+      }
+    },
+    {
+      "@id": "chora:AttributionRoleScheme",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Attribution role"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Ruolo dell'attribuzione"
+      },
+      "skos:hasTopConcept": [
+        {
+          "@id": "chora:Encoder"
+        },
+        {
+          "@id": "chora:ReadingAuthor"
+        }
+      ],
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Attribution role"
+      }
+    },
+    {
       "@id": "chora:Below",
       "@type": [
         "owl:NamedIndividual",
@@ -197,6 +297,32 @@
       }
     },
     {
+      "@id": "chora:Encoder",
+      "@type": [
+        "owl:NamedIndividual",
+        "prov:Role",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "codificatore"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "The agent who encoded the reading in the knowledge graph."
+      },
+      "skos:inScheme": {
+        "@id": "chora:AttributionRoleScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Encoder"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:AttributionRoleScheme"
+      }
+    },
+    {
       "@id": "chora:FocalizingAgent",
       "@type": "owl:Class",
       "rdfs:comment": {
@@ -235,6 +361,32 @@
           "@value": "Luogo extra-testuale georeferenziabile, descritto come entità di authority/gazetteer e tipicamente dotato di geometria stabile (coordinate o GeoJSON) e identificatori persistenti; costituisce il referente topografico esterno a cui possono essere ancorati i luoghi narrativi."
         }
       ]
+    },
+    {
+      "@id": "chora:IdentificationAssertion",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "identificazione"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "Identifies a narrative place or a place reference with a gazetteer entity. Replaces owl:sameAs as a judgement of identity."
+      },
+      "skos:inScheme": {
+        "@id": "chora:AssertionTypeScheme"
+      },
+      "skos:notation": "identification",
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Identification assertion"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:AssertionTypeScheme"
+      }
     },
     {
       "@id": "chora:Imagined",
@@ -409,6 +561,32 @@
       "@type": "owl:Class"
     },
     {
+      "@id": "chora:LocationAssertion",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "posizione"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "Locates a gazetteer entity according to a dated repertory."
+      },
+      "skos:inScheme": {
+        "@id": "chora:AssertionTypeScheme"
+      },
+      "skos:notation": "location",
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Location assertion"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:AssertionTypeScheme"
+      }
+    },
+    {
       "@id": "chora:Marker",
       "@type": [
         "owl:NamedIndividual",
@@ -439,6 +617,32 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:NarrativeRoleScheme"
+      }
+    },
+    {
+      "@id": "chora:MemoryAssertion",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "memoria"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "Attributes a remembered or projected space to the author, to a character, or declares it undecidable."
+      },
+      "skos:inScheme": {
+        "@id": "chora:AssertionTypeScheme"
+      },
+      "skos:notation": "memory",
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Memory assertion"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:AssertionTypeScheme"
       }
     },
     {
@@ -612,6 +816,32 @@
       }
     },
     {
+      "@id": "chora:PartitionAssertion",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "partizione"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "Assigns a place to an interpretive partition (e.g. city / countryside)."
+      },
+      "skos:inScheme": {
+        "@id": "chora:AssertionTypeScheme"
+      },
+      "skos:notation": "partition",
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Partition assertion"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:AssertionTypeScheme"
+      }
+    },
+    {
       "@id": "chora:PlaceReference",
       "@type": "owl:Class",
       "rdfs:comment": [
@@ -682,6 +912,32 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:NarrativeRoleScheme"
+      }
+    },
+    {
+      "@id": "chora:ReadingAuthor",
+      "@type": [
+        "owl:NamedIndividual",
+        "prov:Role",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "autore della lettura"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "The agent who formulated the reading: a scholar, or the project when the reading is its own."
+      },
+      "skos:inScheme": {
+        "@id": "chora:AttributionRoleScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Reading author"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:AttributionRoleScheme"
       }
     },
     {
@@ -923,6 +1179,32 @@
       }
     },
     {
+      "@id": "chora:StatusAssertion",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "statuto"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "Assigns a reality status to a narrative place."
+      },
+      "skos:inScheme": {
+        "@id": "chora:AssertionTypeScheme"
+      },
+      "skos:notation": "status",
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Status assertion"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:AssertionTypeScheme"
+      }
+    },
+    {
       "@id": "chora:Transformed",
       "@type": [
         "owl:NamedIndividual",
@@ -957,6 +1239,58 @@
       }
     },
     {
+      "@id": "chora:UncertaintyAssertion",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "incertezza"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "Qualifies the uncertainty of a reading by type, axis and origin."
+      },
+      "skos:inScheme": {
+        "@id": "chora:AssertionTypeScheme"
+      },
+      "skos:notation": "uncertainty",
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Uncertainty assertion"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:AssertionTypeScheme"
+      }
+    },
+    {
+      "@id": "chora:VariantAssertion",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "variante"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "Records a reading of another witness corresponding to an occurrence of the reference text."
+      },
+      "skos:inScheme": {
+        "@id": "chora:AssertionTypeScheme"
+      },
+      "skos:notation": "variant",
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Variant assertion"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:AssertionTypeScheme"
+      }
+    },
+    {
       "@id": "chora:ZoneOfAction",
       "@type": [
         "owl:NamedIndividual",
@@ -979,6 +1313,47 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:NarrativeRoleScheme"
+      }
+    },
+    {
+      "@id": "chora:aboutSubject",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The resource the assertion is about (a narrative place, a place reference, a gazetteer entity, an interpretation)."
+      },
+      "rdfs:domain": {
+        "@id": "chora:Assertion"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "riguarda"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "about subject"
+      }
+    },
+    {
+      "@id": "chora:adoptedByProject",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "True when the project adopts this reading (the one shown by the interface). It marks a choice, not a truth: the adopted reading is attributed like the others."
+      },
+      "rdfs:domain": {
+        "@id": "chora:Assertion"
+      },
+      "rdfs:range": {
+        "@id": "xsd:boolean"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "adottata dal progetto"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "adopted by project"
       }
     },
     {
@@ -1033,6 +1408,46 @@
       "skos:altLabel": {
         "@language": "it",
         "@value": "compare nell'opera"
+      }
+    },
+    {
+      "@id": "chora:assertionType",
+      "@type": "owl:ObjectProperty",
+      "dcterms:references": {
+        "@id": "chora:AssertionTypeScheme"
+      },
+      "rdfs:domain": {
+        "@id": "chora:Assertion"
+      },
+      "rdfs:range": {
+        "@id": "skos:Concept"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "tipo di asserzione"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "assertion type"
+      }
+    },
+    {
+      "@id": "chora:assertsValue",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The value the assertion assigns to its subject: a concept (e.g. a reality status) or a resource (e.g. the gazetteer entity of an identification)."
+      },
+      "rdfs:domain": {
+        "@id": "chora:Assertion"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "asserisce il valore"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "asserts value"
       }
     },
     {
@@ -1379,6 +1794,7 @@
     {
       "@id": "chora:interpretationType",
       "@type": "owl:DatatypeProperty",
+      "owl:deprecated": true,
       "rdfs:comment": {
         "@language": "en",
         "@value": "Classifies the kind of spatial interpretation asserted by the annotation."
@@ -1392,6 +1808,10 @@
       "skos:altLabel": {
         "@language": "it",
         "@value": "tipo di interpretazione"
+      },
+      "skos:historyNote": {
+        "@language": "it",
+        "@value": "Deprecata il 9/10/2026 (D-042): il tipo di una lettura e' chora:assertionType su chora:Assertion."
       },
       "skos:prefLabel": {
         "@language": "en",
@@ -1566,6 +1986,28 @@
       }
     },
     {
+      "@id": "chora:rationale",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Textual, philological or critical motivation of the assertion (R07)."
+      },
+      "rdfs:domain": {
+        "@id": "chora:Assertion"
+      },
+      "rdfs:range": {
+        "@id": "rdf:langString"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "motivazione"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "rationale"
+      }
+    },
+    {
       "@id": "chora:routeOrder",
       "@type": "owl:DatatypeProperty",
       "rdfs:comment": {
@@ -1584,6 +2026,28 @@
       }
     },
     {
+      "@id": "chora:sourcePage",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Page or pages of the source work."
+      },
+      "rdfs:domain": {
+        "@id": "chora:Assertion"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "pagina della fonte"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "source page"
+      }
+    },
+    {
       "@id": "chora:sourceReference",
       "@type": "owl:DatatypeProperty",
       "rdfs:domain": {
@@ -1591,6 +2055,28 @@
       },
       "rdfs:range": {
         "@id": "xsd:string"
+      }
+    },
+    {
+      "@id": "chora:sourceWork",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Bibliographic key (author-date, as in the thesis bibliography) of the source on which the reading rests."
+      },
+      "rdfs:domain": {
+        "@id": "chora:Assertion"
+      },
+      "rdfs:range": {
+        "@id": "xsd:string"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "opera fonte"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "source work"
       }
     },
     {
@@ -1729,6 +2215,13 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "has geometry"
+      }
+    },
+    {
+      "@id": "hico:InterpretationAct",
+      "@type": "owl:Class",
+      "rdfs:isDefinedBy": {
+        "@id": "http://purl.org/emmedi/hico"
       }
     },
     {
@@ -2127,6 +2620,13 @@
       }
     },
     {
+      "@id": "prov:Attribution",
+      "@type": "owl:Class",
+      "rdfs:isDefinedBy": {
+        "@id": "http://www.w3.org/ns/prov-o"
+      }
+    },
+    {
       "@id": "prov:Entity",
       "@type": "owl:Class",
       "rdfs:isDefinedBy": {
@@ -2134,7 +2634,49 @@
       }
     },
     {
+      "@id": "prov:Role",
+      "@type": "owl:Class",
+      "rdfs:isDefinedBy": {
+        "@id": "http://www.w3.org/ns/prov-o"
+      }
+    },
+    {
+      "@id": "prov:agent",
+      "@type": "owl:ObjectProperty",
+      "rdfs:isDefinedBy": {
+        "@id": "http://www.w3.org/ns/prov-o"
+      }
+    },
+    {
+      "@id": "prov:generatedAtTime",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:isDefinedBy": {
+        "@id": "http://www.w3.org/ns/prov-o"
+      }
+    },
+    {
+      "@id": "prov:hadRole",
+      "@type": "owl:ObjectProperty",
+      "rdfs:isDefinedBy": {
+        "@id": "http://www.w3.org/ns/prov-o"
+      }
+    },
+    {
+      "@id": "prov:qualifiedAttribution",
+      "@type": "owl:ObjectProperty",
+      "rdfs:isDefinedBy": {
+        "@id": "http://www.w3.org/ns/prov-o"
+      }
+    },
+    {
       "@id": "prov:wasAttributedTo",
+      "@type": "owl:ObjectProperty",
+      "rdfs:isDefinedBy": {
+        "@id": "http://www.w3.org/ns/prov-o"
+      }
+    },
+    {
+      "@id": "prov:wasRevisionOf",
       "@type": "owl:ObjectProperty",
       "rdfs:isDefinedBy": {
         "@id": "http://www.w3.org/ns/prov-o"

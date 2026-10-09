@@ -2,6 +2,7 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix hico: <http://purl.org/emmedi/hico/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -388,6 +389,8 @@ chora:historicalLocation a owl:DatatypeProperty ;
     skos:prefLabel "historical location"@en .
 
 chora:interpretationType a owl:DatatypeProperty ;
+    owl:deprecated true ;
+    skos:historyNote "Deprecata il 9/10/2026 (D-042): il tipo di una lettura e' chora:assertionType su chora:Assertion."@it ;
     rdfs:comment "Classifies the kind of spatial interpretation asserted by the annotation."@en ;
     rdfs:domain chora:SpatialInterpretation ;
     rdfs:range xsd:string ;
@@ -785,3 +788,181 @@ chora:SpatialRelationTypeScheme a owl:NamedIndividual,
 
 skos:Concept a owl:Class .
 
+# =============================================================================
+# ASSERZIONI ATTRIBUITE (D-042, work order T-30)
+# Ogni lettura che il progetto registra (statuto, identificazione, posizione,
+# partizione, memoria, incertezza, variante) e' un nodo chora:Assertion: chi
+# l'ha formulata, chi l'ha codificata, su quale fonte, quando, quale versione
+# rivede, e se e' la lettura adottata dal progetto. Nessuna lettura e' il
+# default del modello: quella adottata e' attribuita come le altre.
+# =============================================================================
+
+chora:Assertion a owl:Class ;
+    rdfs:subClassOf prov:Entity,
+        hico:InterpretationAct ;
+    rdfs:comment "An attributed reading about a resource of the dataset: who formulated it (prov:qualifiedAttribution with role chora:ReadingAuthor), who encoded it (role chora:Encoder), on which source, when, which earlier assertion it revises, and whether the project adopts it. Competing readings coexist as distinct assertions; the adopted one is attributed like the others."@en,
+        "Lettura attribuita su una risorsa del dataset: chi l'ha formulata (prov:qualifiedAttribution con ruolo chora:ReadingAuthor), chi l'ha codificata (ruolo chora:Encoder), su quale fonte, quando, quale asserzione precedente rivede, e se il progetto la adotta. Le letture concorrenti convivono come asserzioni distinte; quella adottata e' attribuita come le altre."@it ;
+    skos:altLabel "Asserzione"@it ;
+    skos:prefLabel "Assertion"@en .
+
+hico:InterpretationAct a owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/emmedi/hico> .
+
+chora:assertionType a owl:ObjectProperty ;
+    dcterms:references chora:AssertionTypeScheme ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "tipo di asserzione"@it ;
+    skos:prefLabel "assertion type"@en .
+
+chora:aboutSubject a owl:ObjectProperty ;
+    rdfs:comment "The resource the assertion is about (a narrative place, a place reference, a gazetteer entity, an interpretation)."@en ;
+    rdfs:domain chora:Assertion ;
+    skos:altLabel "riguarda"@it ;
+    skos:prefLabel "about subject"@en .
+
+chora:assertsValue a owl:ObjectProperty ;
+    rdfs:comment "The value the assertion assigns to its subject: a concept (e.g. a reality status) or a resource (e.g. the gazetteer entity of an identification)."@en ;
+    rdfs:domain chora:Assertion ;
+    skos:altLabel "asserisce il valore"@it ;
+    skos:prefLabel "asserts value"@en .
+
+chora:adoptedByProject a owl:DatatypeProperty ;
+    rdfs:comment "True when the project adopts this reading (the one shown by the interface). It marks a choice, not a truth: the adopted reading is attributed like the others."@en ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range xsd:boolean ;
+    skos:altLabel "adottata dal progetto"@it ;
+    skos:prefLabel "adopted by project"@en .
+
+chora:rationale a owl:DatatypeProperty ;
+    rdfs:comment "Textual, philological or critical motivation of the assertion (R07)."@en ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range rdf:langString ;
+    skos:altLabel "motivazione"@it ;
+    skos:prefLabel "rationale"@en .
+
+chora:sourceWork a owl:DatatypeProperty ;
+    rdfs:comment "Bibliographic key (author-date, as in the thesis bibliography) of the source on which the reading rests."@en ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range xsd:string ;
+    skos:altLabel "opera fonte"@it ;
+    skos:prefLabel "source work"@en .
+
+chora:sourcePage a owl:DatatypeProperty ;
+    rdfs:comment "Page or pages of the source work."@en ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range xsd:string ;
+    skos:altLabel "pagina della fonte"@it ;
+    skos:prefLabel "source page"@en .
+
+chora:AssertionTypeScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Assertion type"@en ;
+    skos:altLabel "Tipo di asserzione"@it ;
+    skos:hasTopConcept chora:StatusAssertion,
+        chora:IdentificationAssertion,
+        chora:LocationAssertion,
+        chora:PartitionAssertion,
+        chora:MemoryAssertion,
+        chora:UncertaintyAssertion,
+        chora:VariantAssertion ;
+    skos:prefLabel "Assertion type"@en .
+
+chora:StatusAssertion a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "statuto"@it ;
+    skos:definition "Assigns a reality status to a narrative place."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "status" ;
+    skos:prefLabel "Status assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:IdentificationAssertion a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "identificazione"@it ;
+    skos:definition "Identifies a narrative place or a place reference with a gazetteer entity. Replaces owl:sameAs as a judgement of identity."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "identification" ;
+    skos:prefLabel "Identification assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:LocationAssertion a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "posizione"@it ;
+    skos:definition "Locates a gazetteer entity according to a dated repertory."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "location" ;
+    skos:prefLabel "Location assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:PartitionAssertion a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "partizione"@it ;
+    skos:definition "Assigns a place to an interpretive partition (e.g. city / countryside)."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "partition" ;
+    skos:prefLabel "Partition assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:MemoryAssertion a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "memoria"@it ;
+    skos:definition "Attributes a remembered or projected space to the author, to a character, or declares it undecidable."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "memory" ;
+    skos:prefLabel "Memory assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:UncertaintyAssertion a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "incertezza"@it ;
+    skos:definition "Qualifies the uncertainty of a reading by type, axis and origin."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "uncertainty" ;
+    skos:prefLabel "Uncertainty assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:VariantAssertion a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "variante"@it ;
+    skos:definition "Records a reading of another witness corresponding to an occurrence of the reference text."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "variant" ;
+    skos:prefLabel "Variant assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:AttributionRoleScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Attribution role"@en ;
+    skos:altLabel "Ruolo dell'attribuzione"@it ;
+    skos:hasTopConcept chora:Encoder,
+        chora:ReadingAuthor ;
+    skos:prefLabel "Attribution role"@en .
+
+chora:ReadingAuthor a owl:NamedIndividual, prov:Role, skos:Concept ;
+    skos:altLabel "autore della lettura"@it ;
+    skos:definition "The agent who formulated the reading: a scholar, or the project when the reading is its own."@en ;
+    skos:inScheme chora:AttributionRoleScheme ;
+    skos:prefLabel "Reading author"@en ;
+    skos:topConceptOf chora:AttributionRoleScheme .
+
+chora:Encoder a owl:NamedIndividual, prov:Role, skos:Concept ;
+    skos:altLabel "codificatore"@it ;
+    skos:definition "The agent who encoded the reading in the knowledge graph."@en ;
+    skos:inScheme chora:AttributionRoleScheme ;
+    skos:prefLabel "Encoder"@en ;
+    skos:topConceptOf chora:AttributionRoleScheme .
+
+prov:Role a owl:Class ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+prov:Attribution a owl:Class ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+prov:qualifiedAttribution a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+prov:agent a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+prov:hadRole a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+prov:wasRevisionOf a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+prov:generatedAtTime a owl:DatatypeProperty ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
