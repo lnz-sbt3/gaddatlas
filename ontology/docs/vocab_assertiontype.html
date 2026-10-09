@@ -2,7 +2,7 @@
 
 <html>
 <head>
-<title>Narrative Role</title>
+<title>Assertion type</title>
 <style>
         #pylode {
             position: fixed;
@@ -298,7 +298,7 @@
 <script id="schema.org" type="application/ld+json">
 [
   {
-    "@id": "https://w3id.org/chora#NarrativeRoleScheme",
+    "@id": "https://w3id.org/chora#AssertionTypeScheme",
     "@type": [
       "https://schema.org/DefinedTermSet"
     ],
@@ -329,7 +329,7 @@
 	</script>
 </head>
 <body>
-<div id="content"><div class="ga-injected" style="margin:0 0 1.5em 0;padding:.6em .9em;border-left:3px solid #666;background:#f4f4f4;font-size:.9em;">↑ <a href="index.html">CHORA Ontology</a><br/>Other vocabularies: <a href="vocab_assertiontype.html">Assertion type</a> · <a href="vocab_attributionrole.html">Attribution role</a> · <a href="vocab_placecategory.html">GaddAtlas Place Category Vocabulary</a> · <a href="vocab_localizationstatus.html">Localization status</a> · <a href="vocab_memoryattribution.html">Memory attribution</a> · <a href="vocab_spatialrelationtype.html">Narrative Spatial Relations</a> · <a href="vocab_rationaletype.html">Rationale type</a> · <a href="vocab_realitystatus.html">Reality Status</a> · <a href="vocab_reviewstatus.html">Review status</a> · <a href="vocab_routetype.html">Route type</a> · <a href="vocab_spatialdetermination.html">Spatial determination</a> · <a href="vocab_uncertaintyaxis.html">Uncertainty axis</a> · <a href="vocab_uncertaintyorigin.html">Uncertainty origin</a> · <a href="vocab_uncertaintytype.html">Uncertainty type</a> · <a href="vocab_witnesstype.html">Witness type</a></div>
+<div id="content"><div class="ga-injected" style="margin:0 0 1.5em 0;padding:.6em .9em;border-left:3px solid #666;background:#f4f4f4;font-size:.9em;">↑ <a href="index.html">CHORA Ontology</a><br/>Other vocabularies: <a href="vocab_attributionrole.html">Attribution role</a> · <a href="vocab_placecategory.html">GaddAtlas Place Category Vocabulary</a> · <a href="vocab_localizationstatus.html">Localization status</a> · <a href="vocab_memoryattribution.html">Memory attribution</a> · <a href="vocab_narrativerole.html">Narrative Role</a> · <a href="vocab_spatialrelationtype.html">Narrative Spatial Relations</a> · <a href="vocab_rationaletype.html">Rationale type</a> · <a href="vocab_realitystatus.html">Reality Status</a> · <a href="vocab_reviewstatus.html">Review status</a> · <a href="vocab_routetype.html">Route type</a> · <a href="vocab_spatialdetermination.html">Spatial determination</a> · <a href="vocab_uncertaintyaxis.html">Uncertainty axis</a> · <a href="vocab_uncertaintyorigin.html">Uncertainty origin</a> · <a href="vocab_uncertaintytype.html">Uncertainty type</a> · <a href="vocab_witnesstype.html">Witness type</a></div>
 <div class="section" id="metadata">
 <h1></h1>
 <h2>Metadata</h2>
@@ -339,7 +339,7 @@
 <strong>IRI</strong>
 </dt>
 <dd>
-<code>https://w3id.org/chora#NarrativeRoleScheme</code>
+<code>https://w3id.org/chora#AssertionTypeScheme</code>
 </dd>
 </div>
 <div>
@@ -389,10 +389,10 @@
 <dd>
 <div>
 <p>
-<a href="http://www.w3.org/2002/07/owl#NamedIndividual">Named Individual</a>
+<a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a>
 </p>
 <p>
-<a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a>
+<a href="http://www.w3.org/2002/07/owl#NamedIndividual">Named Individual</a>
 </p>
 </div>
 </dd>
@@ -413,7 +413,7 @@
 </dt>
 <dd>
 <div>
-<p>Ruolo Narrativo</p>
+<p>Tipo di asserzione</p>
 </div>
 </dd>
 </div>
@@ -424,19 +424,31 @@
 <dd>
 <div>
 <p>
-<a href="https://w3id.org/chora#ProjectedSpace">Projected Space</a>
+<a href="https://w3id.org/chora#IdentificationAssertion">Identification assertion</a>
 </p>
 <p>
-<a href="https://w3id.org/chora#Setting">Setting</a>
+<a href="https://w3id.org/chora#UncertaintyAssertion">Uncertainty assertion</a>
 </p>
 <p>
-<a href="https://w3id.org/chora#Route">Route</a>
+<a href="https://w3id.org/chora#StatusAssertion">Status assertion</a>
 </p>
 <p>
-<a href="https://w3id.org/chora#Marker">Marker</a>
+<a href="https://w3id.org/chora#PartitionAssertion">Partition assertion</a>
 </p>
 <p>
-<a href="https://w3id.org/chora#ZoneOfAction">Zone of Action</a>
+<a href="https://w3id.org/chora#SpatialReading">Spatial reading</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#MemoryAssertion">Memory assertion</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#VariantAssertion">Variant assertion</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#LocationAssertion">Location assertion</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#RouteTypeAssertion">Route type assertion</a>
 </p>
 </div>
 </dd>
@@ -447,7 +459,7 @@
 </dt>
 <dd>
 <div>
-<p>Narrative Role</p>
+<p>Assertion type</p>
 </div>
 </dd>
 </div>
@@ -458,19 +470,31 @@
 <div class="hierarchy">
 <ul class="hierarchy">
 <li>
-<a href="#Marker">Marker</a>
+<a href="#IdentificationAssertion">Identification assertion</a>
 </li>
 <li>
-<a href="#ProjectedSpace">Projected Space</a>
+<a href="#LocationAssertion">Location assertion</a>
 </li>
 <li>
-<a href="#Route">Route</a>
+<a href="#MemoryAssertion">Memory assertion</a>
 </li>
 <li>
-<a href="#Setting">Setting</a>
+<a href="#PartitionAssertion">Partition assertion</a>
 </li>
 <li>
-<a href="#ZoneOfAction">Zone of Action</a>
+<a href="#RouteTypeAssertion">Route type assertion</a>
+</li>
+<li>
+<a href="#SpatialReading">Spatial reading</a>
+</li>
+<li>
+<a href="#StatusAssertion">Status assertion</a>
+</li>
+<li>
+<a href="#UncertaintyAssertion">Uncertainty assertion</a>
+</li>
+<li>
+<a href="#VariantAssertion">Variant assertion</a>
 </li>
 </ul>
 </div>
@@ -478,127 +502,227 @@
 <div id="concepts">
 <h2>Concept Definitions</h2>
 <div class="entity">
-<h3 id="chora_Marker">Marker</h3>
+<h3 id="chora_IdentificationAssertion">Identification assertion</h3>
 <table>
 <tr>
 <td style="width:250px;">
 <strong>IRI</strong>
 </td>
 <td>
-<code>https://w3id.org/chora#Marker</code>
+<code>https://w3id.org/chora#IdentificationAssertion</code>
 </td>
 </tr>
 <tr>
 <td>
 <a href="https://schema.org/description" title="A description of the item.">Description</a>
 </td>
-<td>Place only mentioned in passing, without active role in the plot</td>
+<td>Identifies a narrative place or a place reference with a gazetteer entity. Replaces owl:sameAs as a judgement of identity.</td>
 </tr>
 <tr>
 <td>
 <a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
 </td>
-<td>Marcatore</td>
+<td>identificazione</td>
 </tr>
 </table>
 </div>
 <div class="entity">
-<h3 id="chora_ProjectedSpace">Projected Space</h3>
+<h3 id="chora_LocationAssertion">Location assertion</h3>
 <table>
 <tr>
 <td style="width:250px;">
 <strong>IRI</strong>
 </td>
 <td>
-<code>https://w3id.org/chora#ProjectedSpace</code>
+<code>https://w3id.org/chora#LocationAssertion</code>
 </td>
 </tr>
 <tr>
 <td>
 <a href="https://schema.org/description" title="A description of the item.">Description</a>
 </td>
-<td>Characters are not present in this location, but they dream of, remember, or long for it</td>
+<td>Locates a gazetteer entity according to a dated repertory.</td>
 </tr>
 <tr>
 <td>
 <a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
 </td>
-<td>Spazio di Proiezione</td>
+<td>posizione</td>
 </tr>
 </table>
 </div>
 <div class="entity">
-<h3 id="chora_Route">Route</h3>
+<h3 id="chora_MemoryAssertion">Memory assertion</h3>
 <table>
 <tr>
 <td style="width:250px;">
 <strong>IRI</strong>
 </td>
 <td>
-<code>https://w3id.org/chora#Route</code>
+<code>https://w3id.org/chora#MemoryAssertion</code>
 </td>
 </tr>
 <tr>
 <td>
 <a href="https://schema.org/description" title="A description of the item.">Description</a>
 </td>
-<td>Path along which characters move, connecting multiple settings or projected spaces</td>
+<td>Attributes a remembered or projected space to the author, to a character, or declares it undecidable.</td>
 </tr>
 <tr>
 <td>
 <a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
 </td>
-<td>Percorso</td>
+<td>memoria</td>
 </tr>
 </table>
 </div>
 <div class="entity">
-<h3 id="chora_Setting">Setting</h3>
+<h3 id="chora_PartitionAssertion">Partition assertion</h3>
 <table>
 <tr>
 <td style="width:250px;">
 <strong>IRI</strong>
 </td>
 <td>
-<code>https://w3id.org/chora#Setting</code>
+<code>https://w3id.org/chora#PartitionAssertion</code>
 </td>
 </tr>
 <tr>
 <td>
 <a href="https://schema.org/description" title="A description of the item.">Description</a>
 </td>
-<td>Place where the action occurs, with characters physically present</td>
+<td>Assigns a place to an interpretive partition (e.g. city / countryside).</td>
 </tr>
 <tr>
 <td>
 <a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
 </td>
-<td>Ambientazione</td>
+<td>partizione</td>
 </tr>
 </table>
 </div>
 <div class="entity">
-<h3 id="chora_ZoneOfAction">Zone of Action</h3>
+<h3 id="chora_RouteTypeAssertion">Route type assertion</h3>
 <table>
 <tr>
 <td style="width:250px;">
 <strong>IRI</strong>
 </td>
 <td>
-<code>https://w3id.org/chora#ZoneOfAction</code>
+<code>https://w3id.org/chora#RouteTypeAssertion</code>
 </td>
 </tr>
 <tr>
 <td>
 <a href="https://schema.org/description" title="A description of the item.">Description</a>
 </td>
-<td>Several settings or projected spaces logically connected in the narrative by the scholar</td>
+<td>Assigns a route type to a narrative route.</td>
 </tr>
 <tr>
 <td>
 <a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
 </td>
-<td>Zona dell'Azione</td>
+<td>tipo di percorso</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="chora_SpatialReading">Spatial reading</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#SpatialReading</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>The interpretation type of a chora:SpatialInterpretation: which place an occurrence activates, with role, determination and anchoring.</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>lettura spaziale</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="chora_StatusAssertion">Status assertion</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#StatusAssertion</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>Assigns a reality status to a narrative place.</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>statuto</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="chora_UncertaintyAssertion">Uncertainty assertion</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#UncertaintyAssertion</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>Qualifies the uncertainty of a reading by type, axis and origin.</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>incertezza</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="chora_VariantAssertion">Variant assertion</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#VariantAssertion</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>Records a reading of another witness corresponding to an occurrence of the reference text.</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>variante</td>
 </tr>
 </table>
 </div>
@@ -613,6 +737,10 @@
 <dt id="dcterms">dcterms</dt>
 <dd>
 <code>http://purl.org/dc/terms/</code>
+</dd>
+<dt id="geo">geo</dt>
+<dd>
+<code>http://www.opengis.net/ont/geosparql#</code>
 </dd>
 <dt id="owl">owl</dt>
 <dd>
@@ -670,6 +798,9 @@
 </li>
 <li>
 <a href="#dcterms">dcterms</a>
+</li>
+<li>
+<a href="#geo">geo</a>
 </li>
 <li>
 <a href="#owl">owl</a>

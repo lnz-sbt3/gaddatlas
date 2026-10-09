@@ -1527,6 +1527,22 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-077 — Chiusura della fase 2: confronto visivo, stato dei dati, voci aperte (10 ottobre 2026)
+
+- Requisito/i: — · Ipotesi: — · Data check: tutti quelli toccati in fase 2 (parte D)
+- **Confronto visivo sui 10 stati** (stadi 1–5 × tutti/Pestalozzi, capitolo al massimo; `main` al tag `fase1-allineamento-cap4` contro il ramo, due server di sviluppo, `.playwright-mcp/vis/f2prima_*`, `f2dopo_*`, compositi `f2comp_*`). Pixel cambiati: stadio 1 0,04% / 0,01%; stadio 2 0,17% / 0,02%; stadio 3 0,57% / 0,09%; stadio 4 1,26% / 0,44%; stadio 5 2,65% / 2,15% (tutti / Pestalozzi).
+  - **Rumore misurato:** due catture dello stesso build danno l'1,26% allo stadio 4 e l'1,02% allo stadio 5. La differenza dello stadio 4 è tutta rumore; allo stadio 5 resta circa 1,6 punti oltre il rumore.
+  - **Differenze reali, tutte spiegate dai dati:** tessere della fascia della campagna (Robine Vecchie fuori carta, D-057; ancore di Casal Bruciato e del bivio, D-057 e D-072; Cassero), via delle Oche ancorata solo a Bologna (D-072), ranghi del diagramma radiale cambiati con le occorrenze (D-072, D-075), linee dei percorsi da 18 a 15 (D-060). Sequenza delle occorrenze: 930 → 925 passi (Pestalozzi 70). Nessun difetto di disegno.
+- **Stato dei dati in CLAUDE.md:** `tripleCount` 42.515, `buildVersion` 4.3, ABox 40.472, TBox 1.473; statuti 261 · 30 · 13 · 5; 265 entità, 958 interpretazioni, 733 occorrenze (729 in QPa), 21 percorsi, 360 letture, 5 testimoni con le sigle QPL / QP / QPa (convenzione in «Invarianti», D-073), 14 fonti; 300 feature in carta, 1 fuori carta.
+- **DATA_CHECKS v1.6:** stati aggiornati (DM-02, DM-03, DM-04, DC-01, DC-02, DC-05, DC-06, DC-08, DC-09, DC-11, DC-13, DC-14, DC-15) e nuova sezione D con le voci aperte per la fase 3: motivazioni di statuto (DC-22), Cassero (DC-21), estratti da verificare (DC-23), data della carta TCI, Nota al testo di Pinotti 2018, identificatori esterni (T-46), data del Censimento, letture degli studiosi dell'appendice A.
+- **Work order:** fase 2 chiusa in § 11, voci aperte nella riga della fase 3; § 10 aggiornato (modello delle asserzioni, castello, annotatori, varianti del Palazzo degli ori).
+- **Documentazione dell'ontologia** (`make docs`, rinviata a fine fase): rigenerata, con i nuovi schemi (tipi di asserzione, ruoli, testimoni, percorsi, incertezza e altri).
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `CLAUDE.md` («Stato dei dati», titolo della sezione di allineamento); `docs/thesis/DATA_CHECKS_GaddAtlas.md`; `docs/thesis/GaddAtlas_Cap4_Allineamento_WorkOrder.md` (§ 10, § 11); `ontology/docs/` (derivati, `make docs`).
+- Effetto su KG: nessuno (TBox 1.473, ABox 40.472, full 42.515). SHACL conforme, 48 avvertenze; IQ20 = 1.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

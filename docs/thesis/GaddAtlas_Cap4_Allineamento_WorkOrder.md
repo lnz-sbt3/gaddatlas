@@ -571,18 +571,18 @@ Pagine «metodo», legende e tooltip devono usare la terminologia del Cap. 4: st
 
 **Aperte:**
 
-- [ ] Modello delle asserzioni: n-ario + HiCO / RDF-star / named graph (T-30)
+- [x] Modello delle asserzioni: n-ario + HiCO (D-042, D-067)
 - [x] Glifi degli statuti: seguono il nome (D-034)
 - [x] I 5 luoghi divenuti Imagined: nessuna riassegnazione (D-035)
 - [ ] Conflitto cromatico ruolo / densità (T-86)
 - [x] Palazzo 219: Transformed (D-035)
 - [x] Palazzo Simonetti: Transformed, ancorato a via Lanza (D-035, D-036)
-- [ ] Castello: lettura adottata (T-13)
+- [x] Castello: lettura adottata Manzotti, statuto Imported (D-045, D-061)
 - [x] Robine Vecchie: una sola occorrenza, QP 169 (D-035)
 - [ ] `confidence` / `hasFuzzinessLevel`: rimuovere o declassare (T-34)
-- [ ] Le 801 interpretazioni senza annotatore sono tutte di LS? (T-32)
+- [x] Le 801 interpretazioni senza annotatore sono di LS (D-043)
 - [x] Temporalità: esclusa (D-035)
-- [ ] Casi esempio del Palazzo degli ori (T-41)
+- [x] Varianti del Palazzo degli ori: «degli ori» / «dell'Oro», civico 119 / 219 (D-053, D-070)
 - [ ] Canale visivo della SpatialDetermination (T-61)
 - [x] Resa dei percorsi non compiuti: esclusa (D-035)
 - [x] Soglia di lunghezza degli estratti: invariata (D-034)
@@ -595,8 +595,8 @@ Pagine «metodo», legende e tooltip devono usare la terminologia del Cap. 4: st
 |---|---|---|
 | 0 | Audit in sola lettura (fatto: `AUDIT_0.md`) | — |
 | 1 | **Infrastruttura e correzioni decise**, in quest'ordine: T-81 (TBox canonica), T-80 (TSV canonici), T-82 (bug `sameAs`), T-83 (sincronizzazione `app/public/data/`), T-01 (Frattocchie), DC-05 (metadati di «Letteratura», T-40), T-84 e T-85 (incoerenze e pulizia), T-15 (coordinate di Casal Bruciato), T-04 (permutazione), T-03 (edicola). T-02 dopo la verifica sul volume | KG rigenerato, SHACL ok, voci D-019 e seguenti |
-| 2 | Estensioni del modello: T-30…T-38, T-40…T-45, T-47, T-48, T-53, T-54 | TBox v1.1, shapes, ETL/YAML aggiornati |
-| 3 | Popolamento delle asserzioni attribuite (§3 e T-16) dal foglio delle asserzioni validato da Lorenzo | KG con letture concorrenti |
+| 2 | Estensioni del modello: T-30…T-38, T-40…T-45, T-47, T-48, T-53, T-54 — **chiusa il 10/10/2026** (D-041…D-077, tag `fase2-allineamento-cap4`) | TBox v1.1, shapes, ETL/YAML aggiornati |
+| 3 | Popolamento delle asserzioni attribuite (§3 e T-16) dal foglio delle asserzioni validato da Lorenzo. Voci aperte dalla fase 2: motivazioni di statuto in bozza (48) e `StatusRationaleShape` a Violation; Cassero (entità di Sant'Ignazio, IQ20); estratti da verificare sul volume (DATA_CHECKS DC-23); data della carta TCI; pagina della Nota al testo di Pinotti 2018 (derivazione QPa ← QP); identificatori esterni (T-46); data del Censimento | KG con letture concorrenti |
 | 4 | Query R01–R22 e P1–P8 (T-71, T-72), documentazione (T-70, T-73) | Report di conformità |
 | 5 | Interfaccia: T-86, adapter (T-67), poi T-60…T-66 | Prototipo allineato |
 
