@@ -1488,6 +1488,45 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-074 — Cassero rinviato alla fase 3 (10 ottobre 2026)
+
+- Requisito/i: R04 · Ipotesi: — · Data check: DC-21 (TERNE_IQ20, ref_00404)
+- Stato precedente: Cassero (ref_00404, QP 169) ha due interpretazioni dello stesso passo e focalizzatore (Santarella), ancorate a `gaz_frattocchie` e `gaz_pavona`. È l'unico caso residuo di IQ20 (D-072).
+- Decisione (di Lorenzo, 10/10/2026): resta aperto e passa alla fase 3. Serve una fonte cartografica per l'entità di Sant'Ignazio presso le Frattocchie, a cui ancorare il Cassero («Cassero a Sant'Ignazio»). Restano le due interpretazioni attuali; IQ20 resta un'avvertenza con questo caso dichiarato.
+- Registrato in DATA_CHECKS (DC-21, nuova voce, «aperto, fase 3»), nel work order (voci aperte della fase 3) e in TERNE_IQ20.md.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `docs/thesis/DATA_CHECKS_GaddAtlas.md` (DC-21); `docs/alignment/TERNE_IQ20.md`.
+- Effetto su KG: nessuno.
+
+---
+
+## D-075 — Menzioni multiple: tre occorrenze divise, quattro restano uniche (10 ottobre 2026)
+
+- Requisito/i: R14, R21 · Ipotesi: — · Data check: DC-23 (TERNE_IQ20, censimento di D-072)
+- Stato precedente: 7 estratti in cui lo stesso toponimo compare due volte (censimento di D-072), residuo della vecchia colonna «occurrences».
+- Decisione (di Lorenzo, 10/10/2026): si dividono in due PlaceReference, ciascuna con il proprio estratto breve (la frase della menzione) e la propria interpretazione, solo tre casi:
+  - **ref_00151, Sacro Cuore (QP 65):** ref_00151 «…era tornata dar Sacro Core, in quer momento.» con interp_00175 (marker, Luigia Zanchetti); nuova **ref_00731** «Sì, un po' prima della Gina, che annava ar Sacro Core alle otto.» con la nuova **interp_00965** (marker, stesso focalizzatore). Forma attestata «Sacro Core» su entrambe;
+  - **ref_00177, via Merulana (QP 76):** ref_00177 «…tanto a via Merulana che giù, a Sante Stefene.» con interp_00205 (setting, narratore); nuova **ref_00732** «Orribile delitto a via Merulana,» gridavano li strilloni…» con la nuova **interp_00966**. **Ruolo proposto: marker**: nel titolo gridato dagli strilloni la via è nominata come riferimento del delitto, non come scena dell'azione. Focalizzatore: il narratore;
+  - **ref_00241, Santi Quattro (QP 105):** una menzione per focalizzatore. ref_00241 «E poi co li Santi Quattro là vicino.» con interp_00276 (Liliana); nuova **ref_00733** «Che Liliana, Madonna! guai a sentimme dì de portalla via da li Santi Quattro!» con interp_00277 (Remo Balducci), spostata. Forma attestata «Santi Quattro» su entrambe.
+  Restano uniche: Genova (QP 63), scala B (QP 63), Padova (QP 70), Grottaferrata (QP 284). Decisione annotata in TERNE_IQ20.md.
+- **Da verificare:** gli estratti nuovi (ref_00731, ref_00732, ref_00733) e quelli accorciati (ref_00151, ref_00177, ref_00241) vengono dalla copia digitale e vanno verificati da Lorenzo sul volume a stampa: DATA_CHECKS DC-23 (nuova voce, che comprende anche ref_00730 di D-072).
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `data/source/tables/References.tsv` (ref_00151, ref_00177, ref_00241; nuove ref_00731, ref_00732, ref_00733), `SpatialInterpretations.tsv` (interp_00277 su ref_00733; nuove interp_00965, interp_00966); XLSX corrispondenti; `docs/alignment/TERNE_IQ20.md`; `docs/thesis/DATA_CHECKS_GaddAtlas.md` (DC-23).
+- Effetto su KG (triple prima/dopo, SHACL): ABox 40.393 → **40.472**; full 42.436 → **42.515**. Occorrenze 730 → **733** (729 di QPa); interpretazioni 956 → **958**; righe di rilievo 924 → **926**; feature 300 invariate. SHACL conforme, 48 avvertenze; IQ20 = 1.
+
+---
+
+## D-076 — Motivazioni di statuto in bozza rinviate alla fase 3 (10 ottobre 2026)
+
+- Requisito/i: R07 · Ipotesi: — · Data check: DC-22 (REVIEW_2 § 1)
+- Stato precedente: 48 luoghi non Imported hanno un'asserzione di statuto adottata ma «bozza» (T-33, D-046); 10 senza motivazione nei documenti. La parte D della fase 2 prevedeva di portare `StatusRationaleShape` a Violation dopo la validazione.
+- Decisione (di Lorenzo, 10/10/2026): le motivazioni passano alla fase 3. `StatusRationaleShape` resta **Warning** (48 avvertenze), dichiarata come voce aperta in DATA_CHECKS (DC-22, nuova voce) e nel work order. Diventerà Violation quando Lorenzo avrà validato le bozze e compilato le 10 motivazioni mancanti.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `docs/thesis/DATA_CHECKS_GaddAtlas.md` (DC-22).
+- Effetto su KG: nessuno. SHACL conforme, 48 avvertenze.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

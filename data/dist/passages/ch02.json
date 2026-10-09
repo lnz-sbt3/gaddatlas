@@ -1,6 +1,6 @@
 {
  "chapter": 2,
- "count": 55,
+ "count": 56,
  "passages": {
   "ref_00122": {
    "id": "ref_00122",
@@ -329,7 +329,7 @@
    "work": "quer_pasticciaccio",
    "witness": "qpa",
    "witnessLabel": "QP (Adelphi 2018)",
-   "excerpt": "Riferirono ad Ingravallo che la Gina, la pupilla, era tornata dar Sacro Core, in quer momento. Il giovedì rientrava all’una: per la colazione. [...] Sì, un po’ prima della Gina, che annava ar Sacro Core alle otto. Non volle sostare a quella vista: «Nun me riesce de guardalla.» Se fece er segno de la croce.",
+   "excerpt": "Riferirono ad Ingravallo che la Gina, la pupilla, era tornata dar Sacro Core, in quer momento.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00151"
   },
   "ref_00152": {
@@ -606,6 +606,17 @@
    "witnessLabel": "QP (Adelphi 2018)",
    "excerpt": "L’ambo non auspicato del delitto. Tac, tac. Senz’altra connessione che la topica, cioè la causale esterna ’e chella gran fama dei pescicani pesci: e del loro oro del diavolo. Fama ubiqua, oramai, pe tutto San Giovanni: da Porta Maggiore insino al Celio, insino all’antica marana, la suburra: in dove però il vino è gelato, l’estate.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00176"
+  },
+  "ref_00731": {
+   "id": "ref_00731",
+   "chapter": 2,
+   "page": 65,
+   "sourceReference": "A 65",
+   "work": "quer_pasticciaccio",
+   "witness": "qpa",
+   "witnessLabel": "QP (Adelphi 2018)",
+   "excerpt": "Sì, un po’ prima della Gina, che annava ar Sacro Core alle otto.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00731"
   }
  }
 }

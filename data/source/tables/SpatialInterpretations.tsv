@@ -273,7 +273,7 @@ interp_00273	ref_00239	via_merulana	gaz_via_merulana	remo_balducci	projectedspac
 interp_00274	ref_00240	palazzo_219	gaz_via_merulana	liliana	projectedspace	relative	inside					lorenzo_sabatino							si				
 interp_00275	ref_00240	palazzo_219	gaz_via_merulana	remo_balducci	projectedspace	relative	inside					lorenzo_sabatino							si				
 interp_00276	ref_00241	santi_quattro_coronati	gaz_santi_quattro_coronati	liliana	projectedspace	approximate						lorenzo_sabatino							si				
-interp_00277	ref_00241	santi_quattro_coronati	gaz_santi_quattro_coronati	remo_balducci	projectedspace	approximate						lorenzo_sabatino							si				
+interp_00277	ref_00733	santi_quattro_coronati	gaz_santi_quattro_coronati	remo_balducci	projectedspace	approximate						lorenzo_sabatino							si				
 interp_00278	ref_00242	palazzo_219	gaz_via_merulana	remo_balducci	projectedspace	precise	inside					lorenzo_sabatino							si				
 interp_00279	ref_00243	quartierino_prati	gaz_prati_di_castello	remo_balducci	projectedspace	relative	inside				1.0	lorenzo_sabatino	2026-04-08 00:00:00						si				
 interp_00280	ref_00244	villino_lungotevere	gaz_lungotevere_prati	remo_balducci	projectedspace	relative	inside				0.5	lorenzo_sabatino	2026-04-08 00:00:00						si				
@@ -957,3 +957,5 @@ interp_00961	ref_00722	tenenza_carabinieri_marino	gaz_marino	assunta	projectedsp
 interp_00962	ref_00722	tenenza_carabinieri_marino	gaz_marino	pestalozzi	projectedspace	relative	inside					lorenzo_sabatino							si				
 interp_00963	ref_00728	tragitto_sogno_casal_bruciato_campo_morto		pestalozzi	route							lorenzo_sabatino	2026-10-09	close_reading					si				
 interp_00964	ref_00729	tragitto_castel_di_leva_casal_bruciato		camilla_mattonari	route							lorenzo_sabatino	2026-10-09	close_reading					si				
+interp_00965	ref_00731	sacro_cuore	gaz_sacro_cuore	luigia_zanchetti	marker	approximate						lorenzo_sabatino	2026-10-10						si				
+interp_00966	ref_00732	via_merulana	gaz_via_merulana	narrator	marker	approximate						lorenzo_sabatino	2026-10-10	close_reading	Titolo gridato dagli strilloni: via Merulana nominata come riferimento del delitto, non scena dell'azione; ruolo proposto (D-075).				si				

@@ -21,7 +21,7 @@
   "ontologyVersion": "1.0.0",
   "buildVersion": "4.3",
   "source": "gaddatlas-full.ttl",
-  "tripleCount": 42436,
+  "tripleCount": 42515,
   "projection": {
    "type": "equirectangular",
    "center": [
@@ -111,17 +111,36 @@
   "counts": {
    "gazetteer": 265,
    "narrativePlaces": 309,
-   "interpretations": 956,
-   "references": 726,
+   "interpretations": 958,
+   "references": 729,
    "routes": 21,
    "chapters": 10,
    "agents": 83,
    "derivedSequences": 103,
-   "reliefRows": 924,
+   "reliefRows": 926,
    "ownTiles": 47
   }
  },
  "gazetteer": [
+  {
+   "id": "gaz_via_merulana",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_merulana",
+   "label": "Via Merulana",
+   "lon": 12.50204620435122,
+   "lat": 41.8919173419505,
+   "x": 420.235,
+   "y": 1088.266,
+   "scaleBand": "urbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 1.3,
+   "refCountAnchored": 59,
+   "planeCount": 24,
+   "interpCount": 28,
+   "narrativePlaceCount": 8,
+   "densityClass": "hub",
+   "densityLevel": 5
+  },
   {
    "id": "gaz_santo_stefano_del_cacco_celio_santo_stefano",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_santo_stefano_del_cacco_celio_santo_stefano",
@@ -138,25 +157,6 @@
    "planeCount": 23,
    "interpCount": 36,
    "narrativePlaceCount": 1,
-   "densityClass": "hub",
-   "densityLevel": 5
-  },
-  {
-   "id": "gaz_via_merulana",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_merulana",
-   "label": "Via Merulana",
-   "lon": 12.50204620435122,
-   "lat": 41.8919173419505,
-   "x": 420.235,
-   "y": 1088.266,
-   "scaleBand": "urbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 1.3,
-   "refCountAnchored": 58,
-   "planeCount": 23,
-   "interpCount": 27,
-   "narrativePlaceCount": 8,
    "densityClass": "hub",
    "densityLevel": 5
   },
@@ -275,6 +275,25 @@
    "densityLevel": 4
   },
   {
+   "id": "gaz_santi_quattro_coronati",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_santi_quattro_coronati",
+   "label": "Santi Quattro Coronati",
+   "lon": 12.498505681387911,
+   "lat": 41.88828469760136,
+   "x": 156.721,
+   "y": 1451.53,
+   "scaleBand": "urbano",
+   "presentLocation": "Via dei SS. Quattro, 20, 00184",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 1.6,
+   "refCountAnchored": 10,
+   "planeCount": 9,
+   "interpCount": 10,
+   "narrativePlaceCount": 1,
+   "densityClass": "nodale",
+   "densityLevel": 4
+  },
+  {
    "id": "gaz_casale_abbruciato",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato",
    "label": "Casale Abbruciato",
@@ -289,25 +308,6 @@
    "refCountAnchored": 13,
    "planeCount": 8,
    "interpCount": 13,
-   "narrativePlaceCount": 1,
-   "densityClass": "frequente",
-   "densityLevel": 3
-  },
-  {
-   "id": "gaz_santi_quattro_coronati",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_santi_quattro_coronati",
-   "label": "Santi Quattro Coronati",
-   "lon": 12.498505681387911,
-   "lat": 41.88828469760136,
-   "x": 156.721,
-   "y": 1451.53,
-   "scaleBand": "urbano",
-   "presentLocation": "Via dei SS. Quattro, 20, 00184",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 1.6,
-   "refCountAnchored": 10,
-   "planeCount": 8,
-   "interpCount": 10,
    "narrativePlaceCount": 1,
    "densityClass": "frequente",
    "densityLevel": 3
@@ -381,6 +381,25 @@
    "presentLocation": "Via Giovanni Maria Lancisi, 2, 00161",
    "historicalLocation": null,
    "distanceFromRomeKm": 1.2,
+   "refCountAnchored": 7,
+   "planeCount": 6,
+   "interpCount": 7,
+   "narrativePlaceCount": 1,
+   "densityClass": "frequente",
+   "densityLevel": 3
+  },
+  {
+   "id": "gaz_sacro_cuore",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_sacro_cuore",
+   "label": "Sacro Cuore",
+   "lon": 12.502382758820149,
+   "lat": 41.90255587411117,
+   "x": 445.284,
+   "y": 24.413,
+   "scaleBand": "urbano",
+   "presentLocation": "Via Marsala, 42, 00185",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 0.5,
    "refCountAnchored": 7,
    "planeCount": 6,
    "interpCount": 7,
@@ -479,25 +498,6 @@
    "refCountAnchored": 5,
    "planeCount": 5,
    "interpCount": 5,
-   "narrativePlaceCount": 1,
-   "densityClass": "ricorrente",
-   "densityLevel": 2
-  },
-  {
-   "id": "gaz_sacro_cuore",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_sacro_cuore",
-   "label": "Sacro Cuore",
-   "lon": 12.502382758820149,
-   "lat": 41.90255587411117,
-   "x": 445.284,
-   "y": 24.413,
-   "scaleBand": "urbano",
-   "presentLocation": "Via Marsala, 42, 00185",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 0.5,
-   "refCountAnchored": 6,
-   "planeCount": 5,
-   "interpCount": 6,
    "narrativePlaceCount": 1,
    "densityClass": "ricorrente",
    "densityLevel": 2
@@ -5213,8 +5213,8 @@
    "description": null,
    "fuzziness": null,
    "partOf": null,
-   "interpCount": 26,
-   "planeCount": 22,
+   "interpCount": 27,
+   "planeCount": 23,
    "targets": [
     {
      "gazetteerId": "gaz_via_merulana",
@@ -5232,13 +5232,13 @@
     },
     {
      "role": "Marker",
-     "n": 1
+     "n": 2
     }
    ],
    "determinations": [
     {
      "determination": "Approximate",
-     "n": 13
+     "n": 14
     },
     {
      "determination": "Precise",
@@ -5765,6 +5765,43 @@
    "densityClass": "nodale"
   },
   {
+   "id": "santi_quattro_coronati",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/santi_quattro_coronati",
+   "label": "Santi Quattro Coronati",
+   "realityStatus": "Imported",
+   "placeCategory": "basilica",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 10,
+   "planeCount": 9,
+   "targets": [
+    {
+     "gazetteerId": "gaz_santi_quattro_coronati",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Marker",
+     "n": 5
+    },
+    {
+     "role": "ProjectedSpace",
+     "n": 5
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 10
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "nodale"
+  },
+  {
    "id": "casal_bruciato",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato",
    "label": "Casal Bruciato",
@@ -5807,43 +5844,6 @@
     {
      "determination": "Relative",
      "n": 1
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "frequente"
-  },
-  {
-   "id": "santi_quattro_coronati",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/santi_quattro_coronati",
-   "label": "Santi Quattro Coronati",
-   "realityStatus": "Imported",
-   "placeCategory": "basilica",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 10,
-   "planeCount": 8,
-   "targets": [
-    {
-     "gazetteerId": "gaz_santi_quattro_coronati",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "Marker",
-     "n": 5
-    },
-    {
-     "role": "ProjectedSpace",
-     "n": 5
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 10
     }
    ],
    "anchorInherited": false,
@@ -6093,6 +6093,47 @@
    "densityClass": "frequente"
   },
   {
+   "id": "sacro_cuore",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/sacro_cuore",
+   "label": "Sacro Cuore",
+   "realityStatus": "Imported",
+   "placeCategory": "basilica",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 7,
+   "planeCount": 6,
+   "targets": [
+    {
+     "gazetteerId": "gaz_sacro_cuore",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Marker",
+     "n": 5
+    },
+    {
+     "role": "ProjectedSpace",
+     "n": 2
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 6
+    },
+    {
+     "determination": "Indeterminate",
+     "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "frequente"
+  },
+  {
    "id": "via_nicotera",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_nicotera",
    "label": "Via Nicotera",
@@ -6242,47 +6283,6 @@
     {
      "determination": "Approximate",
      "n": 5
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "ricorrente"
-  },
-  {
-   "id": "sacro_cuore",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/sacro_cuore",
-   "label": "Sacro Cuore",
-   "realityStatus": "Imported",
-   "placeCategory": "basilica",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 6,
-   "planeCount": 5,
-   "targets": [
-    {
-     "gazetteerId": "gaz_sacro_cuore",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "Marker",
-     "n": 4
-    },
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 5
-    },
-    {
-     "determination": "Indeterminate",
-     "n": 1
     }
    ],
    "anchorInherited": false,
@@ -19944,7 +19944,7 @@
   {
    "id": "interp_00277",
    "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00277",
-   "referenceId": "ref_00241",
+   "referenceId": "ref_00733",
    "narrativePlaceId": "santi_quattro_coronati",
    "routeId": null,
    "gazetteerId": "gaz_santi_quattro_coronati",
@@ -30852,6 +30852,38 @@
    "isNodeOfRoute": null,
    "routeOrder": null,
    "criticalNote": null
+  },
+  {
+   "id": "interp_00965",
+   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00965",
+   "referenceId": "ref_00731",
+   "narrativePlaceId": "sacro_cuore",
+   "routeId": null,
+   "gazetteerId": "gaz_sacro_cuore",
+   "narrativeRole": "Marker",
+   "spatialDetermination": "Approximate",
+   "spatialRelation": null,
+   "focalizerId": "luigia_zanchetti",
+   "confidence": 1.0,
+   "isNodeOfRoute": null,
+   "routeOrder": null,
+   "criticalNote": null
+  },
+  {
+   "id": "interp_00966",
+   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00966",
+   "referenceId": "ref_00732",
+   "narrativePlaceId": "via_merulana",
+   "routeId": null,
+   "gazetteerId": "gaz_via_merulana",
+   "narrativeRole": "Marker",
+   "spatialDetermination": "Approximate",
+   "spatialRelation": null,
+   "focalizerId": "narrator",
+   "confidence": 1.0,
+   "isNodeOfRoute": null,
+   "routeOrder": null,
+   "criticalNote": "Titolo gridato dagli strilloni: via Merulana nominata come riferimento del delitto, non scena dell'azione; ruolo proposto (D-075)."
   }
  ],
  "references": [
@@ -37388,6 +37420,33 @@
    "sourceReference": "A 116",
    "chapterId": "capitolo_IV",
    "workId": "quer_pasticciaccio"
+  },
+  {
+   "id": "ref_00731",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00731",
+   "edition": "A",
+   "page": 65,
+   "sourceReference": "A 65",
+   "chapterId": "capitolo_II",
+   "workId": "quer_pasticciaccio"
+  },
+  {
+   "id": "ref_00732",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00732",
+   "edition": "A",
+   "page": 76,
+   "sourceReference": "A 76",
+   "chapterId": "capitolo_III",
+   "workId": "quer_pasticciaccio"
+  },
+  {
+   "id": "ref_00733",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00733",
+   "edition": "A",
+   "page": 105,
+   "sourceReference": "A 105",
+   "chapterId": "capitolo_IV",
+   "workId": "quer_pasticciaccio"
   }
  ],
  "routes": [
@@ -40464,7 +40523,7 @@
    "name": "narrator",
    "gender": null,
    "description": "Voce narrante gaddiana: onnisciente ma pervasa di digressioni, ironia e plurilinguismo; focalizzatore a pieno titolo.",
-   "refCount": 74
+   "refCount": 75
   },
   {
    "id": "santarella",
@@ -40659,17 +40718,17 @@
    "refCount": 9
   },
   {
-   "id": "irene_spinaci",
-   "iri": "https://w3id.org/gaddatlas/id/focalizer/irene_spinaci",
-   "name": "Irene Spinaci",
-   "gender": "female",
-   "description": null,
-   "refCount": 7
-  },
-  {
    "id": "luigia_zanchetti",
    "iri": "https://w3id.org/gaddatlas/id/focalizer/luigia_zanchetti",
    "name": "Luigia Zanchetti",
+   "gender": "female",
+   "description": null,
+   "refCount": 8
+  },
+  {
+   "id": "irene_spinaci",
+   "iri": "https://w3id.org/gaddatlas/id/focalizer/irene_spinaci",
+   "name": "Irene Spinaci",
    "gender": "female",
    "description": null,
    "refCount": 7
@@ -43128,9 +43187,9 @@
    "agentName": "Luigia Zanchetti",
    "chapterId": "capitolo_II",
    "chapter": 2,
-   "length": 2,
+   "length": 3,
    "distinctTargets": 1,
-   "dispersion": 0.5,
+   "dispersion": 0.333,
    "pageRange": [
     65,
     66
@@ -43144,7 +43203,17 @@
      "gazetteerId": "gaz_sacro_cuore",
      "interpretationId": "interp_00175",
      "role": "Marker",
-     "simultaneous": false
+     "simultaneous": true
+    },
+    {
+     "page": 65,
+     "referenceId": "ref_00731",
+     "targetId": "gaz_sacro_cuore",
+     "narrativePlaceId": "sacro_cuore",
+     "gazetteerId": "gaz_sacro_cuore",
+     "interpretationId": "interp_00965",
+     "role": "Marker",
+     "simultaneous": true
     },
     {
      "page": 66,
@@ -43363,9 +43432,9 @@
    "agentName": "narrator",
    "chapterId": "capitolo_III",
    "chapter": 3,
-   "length": 7,
+   "length": 8,
    "distinctTargets": 6,
-   "dispersion": 0.857,
+   "dispersion": 0.75,
    "pageRange": [
     76,
     90
@@ -43398,6 +43467,16 @@
      "narrativePlaceId": "piazza_vittorio_emanuele",
      "gazetteerId": "gaz_piazza_vittorio_emanuele",
      "interpretationId": "interp_00207",
+     "role": "Marker",
+     "simultaneous": true
+    },
+    {
+     "page": 76,
+     "referenceId": "ref_00732",
+     "targetId": "gaz_via_merulana",
+     "narrativePlaceId": "via_merulana",
+     "gazetteerId": "gaz_via_merulana",
+     "interpretationId": "interp_00966",
      "role": "Marker",
      "simultaneous": true
     },
@@ -43928,16 +44007,6 @@
     },
     {
      "page": 105,
-     "referenceId": "ref_00241",
-     "targetId": "gaz_santi_quattro_coronati",
-     "narrativePlaceId": "santi_quattro_coronati",
-     "gazetteerId": "gaz_santi_quattro_coronati",
-     "interpretationId": "interp_00277",
-     "role": "ProjectedSpace",
-     "simultaneous": true
-    },
-    {
-     "page": 105,
      "referenceId": "ref_00242",
      "targetId": "palazzo_219",
      "narrativePlaceId": "palazzo_219",
@@ -43974,6 +44043,16 @@
      "gazetteerId": "gaz_dazeglio",
      "interpretationId": "interp_00281",
      "role": "Marker",
+     "simultaneous": true
+    },
+    {
+     "page": 105,
+     "referenceId": "ref_00733",
+     "targetId": "gaz_santi_quattro_coronati",
+     "narrativePlaceId": "santi_quattro_coronati",
+     "gazetteerId": "gaz_santi_quattro_coronati",
+     "interpretationId": "interp_00277",
+     "role": "ProjectedSpace",
      "simultaneous": true
     },
     {
@@ -53292,6 +53371,18 @@
    "isRouteNode": null
   },
   {
+   "targetId": "gaz_sacro_cuore",
+   "interpretationId": "interp_00965",
+   "referenceId": "ref_00731",
+   "page": 65,
+   "chapter": 2,
+   "agentId": "luigia_zanchetti",
+   "role": "Marker",
+   "determination": "Approximate",
+   "criticalNote": null,
+   "isRouteNode": null
+  },
+  {
    "targetId": "palazzo_219",
    "interpretationId": "interp_00178",
    "referenceId": "ref_00154",
@@ -53649,6 +53740,18 @@
    "role": "Marker",
    "determination": "Approximate",
    "criticalNote": null,
+   "isRouteNode": null
+  },
+  {
+   "targetId": "gaz_via_merulana",
+   "interpretationId": "interp_00966",
+   "referenceId": "ref_00732",
+   "page": 76,
+   "chapter": 3,
+   "agentId": "narrator",
+   "role": "Marker",
+   "determination": "Approximate",
+   "criticalNote": "Titolo gridato dagli strilloni: via Merulana nominata come riferimento del delitto, non scena dell'azione; ruolo proposto (D-075).",
    "isRouteNode": null
   },
   {
@@ -54468,18 +54571,6 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_santi_quattro_coronati",
-   "interpretationId": "interp_00277",
-   "referenceId": "ref_00241",
-   "page": 105,
-   "chapter": 4,
-   "agentId": "remo_balducci",
-   "role": "ProjectedSpace",
-   "determination": "Approximate",
-   "criticalNote": null,
-   "isRouteNode": null
-  },
-  {
    "targetId": "palazzo_219",
    "interpretationId": "interp_00278",
    "referenceId": "ref_00242",
@@ -54523,6 +54614,18 @@
    "chapter": 4,
    "agentId": "remo_balducci",
    "role": "Marker",
+   "determination": "Approximate",
+   "criticalNote": null,
+   "isRouteNode": null
+  },
+  {
+   "targetId": "gaz_santi_quattro_coronati",
+   "interpretationId": "interp_00277",
+   "referenceId": "ref_00733",
+   "page": 105,
+   "chapter": 4,
+   "agentId": "remo_balducci",
+   "role": "ProjectedSpace",
    "determination": "Approximate",
    "criticalNote": null,
    "isRouteNode": null

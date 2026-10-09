@@ -2393,7 +2393,8 @@ chora:witnessType a owl:ObjectProperty ;
         <https://w3id.org/gaddatlas/id/reference/ref_00151>,
         <https://w3id.org/gaddatlas/id/reference/ref_00155>,
         <https://w3id.org/gaddatlas/id/reference/ref_00297>,
-        <https://w3id.org/gaddatlas/id/reference/ref_00325> ;
+        <https://w3id.org/gaddatlas/id/reference/ref_00325>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00731> ;
     chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-auto-salsomaggiore> a chora:Assertion ;
@@ -2720,7 +2721,8 @@ chora:witnessType a owl:ObjectProperty ;
         <https://w3id.org/gaddatlas/id/reference/ref_00227>,
         <https://w3id.org/gaddatlas/id/reference/ref_00241>,
         <https://w3id.org/gaddatlas/id/reference/ref_00320>,
-        <https://w3id.org/gaddatlas/id/reference/ref_00335> ;
+        <https://w3id.org/gaddatlas/id/reference/ref_00335>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00733> ;
     chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-auto-santo_stefano_del_cacco_celio_santo_stefano> a chora:Assertion ;
@@ -3460,7 +3462,8 @@ chora:witnessType a owl:ObjectProperty ;
         <https://w3id.org/gaddatlas/id/reference/ref_00483>,
         <https://w3id.org/gaddatlas/id/reference/ref_00561>,
         <https://w3id.org/gaddatlas/id/reference/ref_00676>,
-        <https://w3id.org/gaddatlas/id/reference/ref_00681> ;
+        <https://w3id.org/gaddatlas/id/reference/ref_00681>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00732> ;
     chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-auto-via_milano> a chora:Assertion ;
@@ -8625,7 +8628,7 @@ chora:witnessType a owl:ObjectProperty ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Approximate ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/remo_balducci> ;
-    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00241> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00733> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/santi_quattro_coronati> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00278> a prov:Entity,
@@ -17001,6 +17004,32 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/camilla_mattonari> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00729> ;
     chora:targetsRoute <https://w3id.org/gaddatlas/id/route/tragitto_castel_di_leva_casal_bruciato> .
+
+<https://w3id.org/gaddatlas/id/interpretation/interp_00965> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00965> ;
+    chora:adoptedByProject true ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_sacro_cuore> ;
+    chora:assignsNarrativeRole chora:Marker ;
+    chora:assignsSpatialDetermination chora:Approximate ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/luigia_zanchetti> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00731> ;
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/sacro_cuore> .
+
+<https://w3id.org/gaddatlas/id/interpretation/interp_00966> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00966> ;
+    chora:adoptedByProject true ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_merulana> ;
+    chora:annotationMethod "close_reading"^^xsd:string ;
+    chora:assignsNarrativeRole chora:Marker ;
+    chora:assignsSpatialDetermination chora:Approximate ;
+    chora:criticalNote "Titolo gridato dagli strilloni: via Merulana nominata come riferimento del delitto, non scena dell'azione; ruolo proposto (D-075)."@it ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00732> ;
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/via_merulana> .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00723> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
@@ -27260,6 +27289,22 @@ chora:witnessOf a owl:ObjectProperty ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00964-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/association/interp_00964-readingauthor-lorenzo_sabatino> ;
     prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
+
+<https://w3id.org/gaddatlas/id/act/interp_00965> a hico:InterpretationAct ;
+    dcterms:date "2026-10-10"^^xsd:date ;
+    hico:hasInterpretationType chora:SpatialReading ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00965-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/interp_00965-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-10T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
+
+<https://w3id.org/gaddatlas/id/act/interp_00966> a hico:InterpretationAct ;
+    dcterms:date "2026-10-10"^^xsd:date ;
+    hico:hasInterpretationType chora:SpatialReading ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00966-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/interp_00966-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-10T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
 
 <https://w3id.org/gaddatlas/id/assertion/C-casal_bruciato> a chora:Assertion ;
@@ -37845,6 +37890,22 @@ chora:witnessOf a owl:ObjectProperty ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
+<https://w3id.org/gaddatlas/id/association/interp_00965-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/interp_00965-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/interp_00966-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/interp_00966-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
 <https://w3id.org/gaddatlas/id/focalizer/barbezzi_gallo> a chora:Character,
         chora:FocalizingAgent ;
     chora:characterName "Barbezzi Gallo"@it ;
@@ -44676,10 +44737,11 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:sourceReference "A 63"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00151> a chora:PlaceReference ;
+    rdfs:comment "Prima menzione della pagina; la seconda e' un'occorrenza distinta (D-075). Estratto da verificare sul volume a stampa."@it ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
     chora:attestedForm "Sacro Core"@it ;
-    chora:excerpt "Riferirono ad Ingravallo che la Gina, la pupilla, era tornata dar Sacro Core, in quer momento. Il giovedì rientrava all’una: per la colazione. [...] Sì, un po’ prima della Gina, che annava ar Sacro Core alle otto. Non volle sostare a quella vista: «Nun me riesce de guardalla.» Se fece er segno de la croce."@it ;
+    chora:excerpt "Riferirono ad Ingravallo che la Gina, la pupilla, era tornata dar Sacro Core, in quer momento."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_II> ;
     chora:sourceReference "A 65"^^xsd:string .
 
@@ -44834,9 +44896,10 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:sourceReference "A 75"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00177> a chora:PlaceReference ;
+    rdfs:comment "Prima menzione della pagina; la seconda e' un'occorrenza distinta (D-075). Estratto da verificare sul volume a stampa."@it ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:excerpt "La mattina dopo i giornali diedero notizia del fatto. Era venerdì. Li cronisti e il telefono aveveno rotto l’anima tutta la sera: tanto a via Merulana che giù, a Sante Stefene. Sicché, la mattina, un subisso. «Orribile delitto a via Merulana,» gridavano li strilloni, co li pacchi fra li ginocchi de la gente: fino all’undici e tre quarti."@it ;
+    chora:excerpt "Li cronisti e il telefono aveveno rotto l’anima tutta la sera: tanto a via Merulana che giù, a Sante Stefene."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_III> ;
     chora:sourceReference "A 76"^^xsd:string .
 
@@ -45248,6 +45311,15 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:excerpt "A via Merulana, sicché... Nel diciassette, dopo du anni de fidanzamento a momenti, questi me sa che nun la pianteno, me so detto tra me."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
     chora:sourceReference "A 104"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00241> a chora:PlaceReference ;
+    rdfs:comment "Prima menzione della pagina; la seconda e' un'occorrenza distinta (D-075). Estratto da verificare sul volume a stampa."@it ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Santi Quattro"@it ;
+    chora:excerpt "E poi co li Santi Quattro là vicino."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
+    chora:sourceReference "A 105"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00242> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
@@ -47658,6 +47730,32 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
     chora:sourceReference "A 116"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/reference/ref_00731> a chora:PlaceReference ;
+    rdfs:comment "Seconda menzione della pagina, separata da ref_00151 (D-075). Estratto da verificare sul volume a stampa."@it ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Sacro Core"@it ;
+    chora:excerpt "Sì, un po’ prima della Gina, che annava ar Sacro Core alle otto."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_II> ;
+    chora:sourceReference "A 65"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00732> a chora:PlaceReference ;
+    rdfs:comment "Seconda menzione della pagina, separata da ref_00177 (D-075). Estratto da verificare sul volume a stampa."@it ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:excerpt "«Orribile delitto a via Merulana,» gridavano li strilloni, co li pacchi fra li ginocchi de la gente: fino all’undici e tre quarti."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_III> ;
+    chora:sourceReference "A 76"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00733> a chora:PlaceReference ;
+    rdfs:comment "Seconda menzione della pagina, separata da ref_00241 (D-075). Estratto da verificare sul volume a stampa."@it ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Santi Quattro"@it ;
+    chora:excerpt "«Che Liliana, Madonna! guai a sentimme dì de portalla via da li Santi Quattro!»"@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
+    chora:sourceReference "A 105"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/source/lugnani_2001> a chora:Source ;
     rdfs:label "Lugnani 2001" ;
     dcterms:bibliographicCitation "Lugnani, L. (2001). Racconto ed esperienza umana del tempo. The Edinburgh Journal of Gadda Studies, 1."@it ;
@@ -48749,14 +48847,6 @@ chora:temple a owl:NamedIndividual,
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
     chora:excerpt "Quela casa era come si fusse nostra, vojo dì mia e de Liliana."@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
-    chora:sourceReference "A 105"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/reference/ref_00241> a chora:PlaceReference ;
-    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:attestedForm "Santi Quattro"@it ;
-    chora:excerpt "E quella malinconia di Liliana. Quella specie di fissazione. E poi co li Santi Quattro là vicino. «Che Liliana, Madonna! guai a sentimme dì de portalla via da li Santi Quattro!»"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
     chora:sourceReference "A 105"^^xsd:string .
 
@@ -51186,29 +51276,6 @@ chora:interior a owl:NamedIndividual,
     geo1:lat 41.89712290196547 ;
     geo1:long 12.483780073676602 .
 
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_sacro_cuore> a chora:GazetteerEntity ;
-    rdfs:label "Sacro Cuore"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "coordinates": [
-          12.502382758820147,
-          41.90255587411117
-        ],
-        "type": "Point"
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 41.90255587411117 ;
-    geo1:long 12.502382758820149 ;
-    chora:presentLocation "Via Marsala, 42, 00185"@it .
-
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_maria_maggiore> a chora:GazetteerEntity ;
     rdfs:label "Santa Maria Maggiore"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -51471,11 +51538,6 @@ chora:station a owl:NamedIndividual,
     chora:characterName "Irene Spinaci"@it ;
     chora:hasGender "female"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/focalizer/luigia_zanchetti> a chora:Character,
-        chora:FocalizingAgent ;
-    chora:characterName "Luigia Zanchetti"@it ;
-    chora:hasGender "female"^^xsd:string .
-
 <https://w3id.org/gaddatlas/id/focalizer/nonna_lanciani> a chora:Character,
         chora:FocalizingAgent ;
     dcterms:description "Zia della madre di Ascanio Lanciani"@it ;
@@ -51505,6 +51567,29 @@ chora:station a owl:NamedIndividual,
     geo1:long 12.50917293969651 ;
     skos:altLabel "Policlinico Umberto I"@it ;
     chora:presentLocation "Via Giovanni Maria Lancisi, 2, 00161"@it .
+
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_sacro_cuore> a chora:GazetteerEntity ;
+    rdfs:label "Sacro Cuore"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          12.502382758820147,
+          41.90255587411117
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 41.90255587411117 ;
+    geo1:long 12.502382758820149 ;
+    chora:presentLocation "Via Marsala, 42, 00185"@it .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_santo_stefano_rotondo> a chora:GazetteerEntity ;
     rdfs:label "Santo Stefano Rotondo"@it ;
@@ -51563,12 +51648,6 @@ chora:station a owl:NamedIndividual,
     dcterms:description "Città"@it ;
     chora:hasPlaceCategory chora:locality ;
     chora:hasRealityStatus chora:Imported .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/sacro_cuore> a chora:NarrativePlace ;
-    rdfs:label "Sacro Cuore"@it ;
-    chora:hasPlaceCategory chora:basilica ;
-    chora:hasRealityStatus chora:Imported ;
-    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/santa_maria_maggiore> a chora:NarrativePlace ;
     rdfs:label "Santa Maria Maggiore"@it ;
@@ -51648,6 +51727,11 @@ chora:restaurant a owl:NamedIndividual,
     skos:prefLabel "Restaurant"@en ;
     skos:topConceptOf chora:PlaceCategoryScheme .
 
+<https://w3id.org/gaddatlas/id/focalizer/luigia_zanchetti> a chora:Character,
+        chora:FocalizingAgent ;
+    chora:characterName "Luigia Zanchetti"@it ;
+    chora:hasGender "female"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/bivio_falcognana_casal_bruciato> a chora:NarrativePlace ;
     rdfs:label "Bivio tra Falcognana e Casal Bruciato"@it ;
     chora:hasPlaceCategory chora:road_junction ;
@@ -51657,6 +51741,12 @@ chora:restaurant a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/narrativeplace/policlinico> a chora:NarrativePlace ;
     rdfs:label "Policlinico"@it ;
     chora:hasPlaceCategory chora:hospital ;
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/sacro_cuore> a chora:NarrativePlace ;
+    rdfs:label "Sacro Cuore"@it ;
+    chora:hasPlaceCategory chora:basilica ;
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
@@ -52581,18 +52671,18 @@ chora:SpatialRelationTypeScheme a owl:NamedIndividual,
     chora:characterName "Maresciallo Di Pietrantonio"@it ;
     chora:hasGender "male"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/via_merulana> a chora:NarrativePlace ;
-    rdfs:label "Via Merulana"@it ;
-    chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported ;
-    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/tenenza_carabinieri_marino> a chora:NarrativePlace ;
     rdfs:label "Tenenza dei Carabinieri di Marino"@it ;
     dcterms:description "Stazione di Polizia di Marino"@it ;
     chora:hasPlaceCategory chora:building ;
     chora:hasRealityStatus chora:Transformed ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/via_merulana> a chora:NarrativePlace ;
+    rdfs:label "Via Merulana"@it ;
+    chora:hasPlaceCategory chora:street ;
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/focalizer/agente_runzato> a chora:Character,
         chora:FocalizingAgent ;
@@ -52709,12 +52799,6 @@ chora:AdjacentTo a owl:NamedIndividual,
     chora:characterName "Diomede Lanciani"@it ;
     chora:hasGender "male"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/chapter/capitolo_III> a chora:Chapter ;
-    dcterms:title "Capitolo III"@it ;
-    chora:chapterNumber 3 ;
-    chora:pageRange "76-91"^^xsd:string ;
-    chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
-
 <https://w3id.org/gaddatlas/id/focalizer/pompeo> a chora:Character,
         chora:FocalizingAgent ;
     dcterms:description "Pompeo, detto lo Sgranfia, agente/informatore nell'orbita dell'indagine."@it ;
@@ -52744,6 +52828,12 @@ chora:AdjacentTo a owl:NamedIndividual,
     geo1:long 12.47948307900791 ;
     chora:housedIn <https://w3id.org/gaddatlas/id/gazetteer/gaz_collegio_romano> ;
     chora:presentLocation "via Santo Stefano del Cacco"@it .
+
+<https://w3id.org/gaddatlas/id/chapter/capitolo_III> a chora:Chapter ;
+    dcterms:title "Capitolo III"@it ;
+    chora:chapterNumber 3 ;
+    chora:pageRange "76-91"^^xsd:string ;
+    chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> a chora:NarrativePlace ;
     rdfs:label "Palazzo di via Merulana 219"@it ;

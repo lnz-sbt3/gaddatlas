@@ -1,6 +1,6 @@
 {
  "chapter": 4,
- "count": 68,
+ "count": 69,
  "passages": {
   "ref_00213": {
    "id": "ref_00213",
@@ -318,7 +318,7 @@
    "work": "quer_pasticciaccio",
    "witness": "qpa",
    "witnessLabel": "QP (Adelphi 2018)",
-   "excerpt": "E quella malinconia di Liliana. Quella specie di fissazione. E poi co li Santi Quattro là vicino. «Che Liliana, Madonna! guai a sentimme dì de portalla via da li Santi Quattro!»",
+   "excerpt": "E poi co li Santi Quattro là vicino.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00241"
   },
   "ref_00242": {
@@ -749,6 +749,17 @@
    "witnessLabel": "QP (Adelphi 2018)",
    "excerpt": "Sul marmo del cassettone, a via Nicotera, \"fu rinvenuto\"…",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00730"
+  },
+  "ref_00733": {
+   "id": "ref_00733",
+   "chapter": 4,
+   "page": 105,
+   "sourceReference": "A 105",
+   "work": "quer_pasticciaccio",
+   "witness": "qpa",
+   "witnessLabel": "QP (Adelphi 2018)",
+   "excerpt": "«Che Liliana, Madonna! guai a sentimme dì de portalla via da li Santi Quattro!»",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00733"
   }
  }
 }

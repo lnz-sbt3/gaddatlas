@@ -1,6 +1,6 @@
 {
  "chapter": 3,
- "count": 36,
+ "count": 37,
  "passages": {
   "ref_00177": {
    "id": "ref_00177",
@@ -10,7 +10,7 @@
    "work": "quer_pasticciaccio",
    "witness": "qpa",
    "witnessLabel": "QP (Adelphi 2018)",
-   "excerpt": "La mattina dopo i giornali diedero notizia del fatto. Era venerdì. Li cronisti e il telefono aveveno rotto l’anima tutta la sera: tanto a via Merulana che giù, a Sante Stefene. Sicché, la mattina, un subisso. «Orribile delitto a via Merulana,» gridavano li strilloni, co li pacchi fra li ginocchi de la gente: fino all’undici e tre quarti.",
+   "excerpt": "Li cronisti e il telefono aveveno rotto l’anima tutta la sera: tanto a via Merulana che giù, a Sante Stefene.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00177"
   },
   "ref_00178": {
@@ -397,6 +397,17 @@
    "witnessLabel": "QP (Adelphi 2018)",
    "excerpt": "No. Il prezzo... Si sa. Anche gli orologi ne trova di quelli da quattordici e cinquanta in un botteghino a via dei Greci: e se ne trova però da duemila lire da Catellani.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00212"
+  },
+  "ref_00732": {
+   "id": "ref_00732",
+   "chapter": 3,
+   "page": 76,
+   "sourceReference": "A 76",
+   "work": "quer_pasticciaccio",
+   "witness": "qpa",
+   "witnessLabel": "QP (Adelphi 2018)",
+   "excerpt": "«Orribile delitto a via Merulana,» gridavano li strilloni, co li pacchi fra li ginocchi de la gente: fino all’undici e tre quarti.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00732"
   }
  }
 }
