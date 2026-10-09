@@ -1065,6 +1065,11 @@ class GaddaETL:
         "variant": "VariantAssertion",
     }
 
+    RATIONALE_TYPES = {"prova referenziale": "ReferentialEvidence",
+                       "prova testuale": "TextualEvidence",
+                       "lettura critica": "CriticalReading"}
+    REVIEW_STATUSES = {"bozza": "Draft", "validata": "Validated"}
+
     def resolve_compact(self, value: str, where: str) -> URIRef:
         """Risolve un riferimento del foglio Assertions: 'chora:Termine' oppure
         un percorso relativo al namespace del dataset ('narrativeplace/castello').
@@ -1097,7 +1102,9 @@ class GaddaETL:
         partition | memory | uncertainty | variant), Subject, Value (anche piu'
         valori separati da '|'), Author_ID, Encoder_ID (anche piu' codificatori
         separati da '|'), Source_Work, Source_Page, Adopted (si | no), Rationale,
-        Revision_Of (Assertion_ID), Date (AAAA-MM-GG), Note.
+        Revision_Of (Assertion_ID), Date (AAAA-MM-GG), Note, Rationale_Type
+        (prova referenziale | prova testuale | lettura critica), Review_Status
+        (bozza | validata).
         """
         if not Path(file_path).is_file():
             logger.info("Assertions.tsv assente: nessuna asserzione attribuita")
@@ -1138,6 +1145,16 @@ class GaddaETL:
             self.add_literal(a, CHORA.sourceWork, row.get('Source_Work'), datatype=XSD.string)
             self.add_literal(a, CHORA.sourcePage, row.get('Source_Page'), datatype=XSD.string)
             self.add_literal(a, CHORA.rationale, row.get('Rationale'), lang='it')
+            rtype = str(row.get('Rationale_Type', '')).strip().lower()
+            if rtype:
+                if rtype not in self.RATIONALE_TYPES:
+                    raise ValueError(f"{where}: Rationale_Type {rtype!r} non ammesso")
+                self.graph.add((a, CHORA.rationaleType, CHORA[self.RATIONALE_TYPES[rtype]]))
+            review = str(row.get('Review_Status', '')).strip().lower()
+            if review:
+                if review not in self.REVIEW_STATUSES:
+                    raise ValueError(f"{where}: Review_Status {review!r} (atteso bozza / validata)")
+                self.graph.add((a, CHORA.reviewStatus, CHORA[self.REVIEW_STATUSES[review]]))
             self.add_literal(a, RDFS.comment, row.get('Note'), lang='it')
             self.add_literal(a, PROV.generatedAtTime, row.get('Date'), datatype=XSD.date)
             rev = str(row.get('Revision_Of', '')).strip()

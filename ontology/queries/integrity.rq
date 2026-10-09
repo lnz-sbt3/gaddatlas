@@ -138,3 +138,18 @@ SELECT ?soggetto ?tipo (COUNT(?a) AS ?adottate) WHERE {
 }
 GROUP BY ?soggetto ?tipo
 HAVING (COUNT(?a) > 1)
+
+
+# ==== IQ13 — Statuto del luogo diverso da quello della lettura adottata (atteso: 0) ====
+# hasRealityStatus sul luogo e' il valore adottato: deve coincidere con il valore
+# dell'asserzione di statuto adottata, se c'e' (D-046).
+PREFIX ga: <https://w3id.org/chora#>
+SELECT ?luogo ?statuto ?adottato WHERE {
+  ?a a ga:Assertion ;
+     ga:assertionType ga:StatusAssertion ;
+     ga:adoptedByProject true ;
+     ga:aboutSubject ?luogo ;
+     ga:assertsValue ?adottato .
+  ?luogo ga:hasRealityStatus ?statuto .
+  FILTER (?statuto != ?adottato)
+}

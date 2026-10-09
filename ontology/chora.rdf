@@ -508,6 +508,24 @@
     <skos:prefLabel xml:lang="en">Contains</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#SpatialRelationTypeScheme"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#CriticalReading">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">lettura critica</skos:altLabel>
+    <skos:definition xml:lang="en">The reading rests on a scholar's interpretation, cited with work and page.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#RationaleTypeScheme"/>
+    <skos:prefLabel xml:lang="en">Critical reading</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#RationaleTypeScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#Draft">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">bozza</skos:altLabel>
+    <skos:definition xml:lang="en">Prepared from the existing documents (sheet descriptions, Chapter 4), not yet validated.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#ReviewStatusScheme"/>
+    <skos:prefLabel xml:lang="en">Draft</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#ReviewStatusScheme"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#Encoder">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -566,6 +584,7 @@
     <skos:inScheme rdf:resource="https://w3id.org/chora#RealityStatusScheme"/>
     <skos:notation>1</skos:notation>
     <skos:prefLabel xml:lang="en">Imported</skos:prefLabel>
+    <skos:scopeNote xml:lang="it">Motivazione standard dello statuto (D-046): referente identificato nel repertorio. Un luogo Imported non richiede un'asserzione di statuto motivata, salvo i casi contesi.</skos:scopeNote>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#RealityStatusScheme"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#Indeterminate">
@@ -728,6 +747,16 @@
     <skos:prefLabel xml:lang="en">Projected Space</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#NarrativeRoleScheme"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#RationaleTypeScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:label xml:lang="en">Rationale type</rdfs:label>
+    <skos:altLabel xml:lang="it">Tipo di motivazione</skos:altLabel>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#CriticalReading"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#ReferentialEvidence"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#TextualEvidence"/>
+    <skos:prefLabel xml:lang="en">Rationale type</skos:prefLabel>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#ReadingAuthor">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -749,6 +778,15 @@
     <skos:hasTopConcept rdf:resource="https://w3id.org/chora#Transformed"/>
     <skos:prefLabel xml:lang="en">Reality Status</skos:prefLabel>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#ReferentialEvidence">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">prova referenziale</skos:altLabel>
+    <skos:definition xml:lang="en">The reading rests on a repertory (map, guide, gazetteer) that documents or excludes the referent.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#RationaleTypeScheme"/>
+    <skos:prefLabel xml:lang="en">Referential evidence</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#RationaleTypeScheme"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#RelatedTo">
     <dcterms:description xml:lang="it">Relazione spaziale generica tra A e B, non ulteriormente specificata sul piano topologico.</dcterms:description>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -765,6 +803,15 @@
     <skos:inScheme rdf:resource="https://w3id.org/chora#SpatialDeterminationScheme"/>
     <skos:prefLabel xml:lang="en">Relative</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#SpatialDeterminationScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#ReviewStatusScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:label xml:lang="en">Review status</rdfs:label>
+    <skos:altLabel xml:lang="it">Stato di revisione</skos:altLabel>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#Draft"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#Validated"/>
+    <skos:prefLabel xml:lang="en">Review status</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#Route">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -829,6 +876,15 @@
     <skos:prefLabel xml:lang="en">Status assertion</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#AssertionTypeScheme"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#TextualEvidence">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">prova testuale</skos:altLabel>
+    <skos:definition xml:lang="en">The reading rests on the text itself (wording, position, context of the occurrences).</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#RationaleTypeScheme"/>
+    <skos:prefLabel xml:lang="en">Textual evidence</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#RationaleTypeScheme"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#Transformed">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -851,6 +907,15 @@
     <skos:notation>uncertainty</skos:notation>
     <skos:prefLabel xml:lang="en">Uncertainty assertion</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#AssertionTypeScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#Validated">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">validata</skos:altLabel>
+    <skos:definition xml:lang="en">Validated by the project.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#ReviewStatusScheme"/>
+    <skos:prefLabel xml:lang="en">Validated</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#ReviewStatusScheme"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#VariantAssertion">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -1139,6 +1204,23 @@
     <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
     <skos:altLabel xml:lang="it">motivazione</skos:altLabel>
     <skos:prefLabel xml:lang="en">rationale</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#rationaleType">
+    <dcterms:references rdf:resource="https://w3id.org/chora#RationaleTypeScheme"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#Assertion"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">tipo di motivazione</skos:altLabel>
+    <skos:prefLabel xml:lang="en">rationale type</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#reviewStatus">
+    <dcterms:references rdf:resource="https://w3id.org/chora#ReviewStatusScheme"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">Whether the content of the assertion has been validated by the project, or is a draft prepared from existing documents.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#Assertion"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">stato di revisione</skos:altLabel>
+    <skos:prefLabel xml:lang="en">review status</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#routeOrder">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>

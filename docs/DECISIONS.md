@@ -938,6 +938,19 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-046 — Motivazione dello statuto: tipo, testo, stato di revisione (9 ottobre 2026)
+
+- Requisito/i: R07 · Ipotesi: H3 · Data check: DC-09 (work order T-33)
+- Stato precedente: nessuna motivazione strutturata dello statuto di realtà; per 49 luoghi non Imported lo statuto era un valore senza ragione dichiarata.
+- Decisione (di Lorenzo, 9/10/2026): la motivazione sta sull'asserzione di statuto adottata (D-042): testo libero (`chora:rationale`) e tipo, nuovo schema `chora:RationaleTypeScheme` (prova referenziale, prova testuale, lettura critica). Nuovo schema `chora:ReviewStatusScheme` (bozza, validata) con `chora:reviewStatus`. Obbligatoria per i 49 luoghi non Imported e per i casi contesi; per gli Imported vale la motivazione standard «referente identificato nel repertorio» (`skos:scopeNote` di `chora:Imported`). Shape `StatusRationaleShape` a livello **sh:Warning**: diventa sh:Violation quando Lorenzo ha validato. Perché un Warning non renda il grafo non conforme, `tools/validate_shacl.py` passa `allow_warnings=True` e conta i risultati per gravità. IQ13: lo statuto del luogo deve coincidere con quello della lettura adottata.
+- Bozze: 51 asserzioni `S-<luogo>` (49 non Imported più Casal Bruciato ed edicola), adottate, autore e codificatore Lorenzo, **stato bozza**, preparate **solo** da documenti esistenti, senza aggiungere nulla: 15 da passi del Cap. 4 o da decisioni registrate (con riga, paragrafo, pagina di QP e, dove c'è, opera e pagina dello studioso); 18 dalla descrizione del censimento; 8 dal legame `Is_Part_Of` del censimento (6 con descrizione); 10 senza fonte, dichiarate «da compilare» e senza tipo. Le tre bozze di Roccafringoli, Monte Nuncupale e Scerpure riportano che il Cap. 4 (§ 4.3) li dice *inventati* mentre i dati li danno Imagined dopo la permutazione (D-030, D-035). L'elenco è in REVIEW_2.
+- Motivazione (fonte, pagina): Cap. 4, § 4.3 (r. 85) e R07; Reuschel, Piatti e Hurni 2013, pp. 138–139.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `ontology/chora.ttl` (scopeNote di `chora:Imported`; proprietà e schemi nuovi in fondo); `ontology/shapes/chora-shapes.ttl` (shape 8); `ontology/queries/integrity.rq` (IQ13); `tools/etl.py` (colonne `Rationale_Type`, `Review_Status`); `tools/validate_shacl.py` (`allow_warnings`, conteggio per gravità); `data/source/tables/Assertions.tsv` (due colonne nuove; righe `S-…`); `data/source/xlsx/Assertions.xlsx`.
+- Effetto su KG (triple prima/dopo, SHACL): TBox 763 → **827**; ABox 24.600 → **25.579**; full 25.933 → **26.976**. SHACL conforme, 0 violazioni, **49 avvertenze** (le bozze non validate); IQ12 = 0, IQ13 = 0.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

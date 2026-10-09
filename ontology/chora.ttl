@@ -615,6 +615,7 @@ chora:Imported a owl:NamedIndividual,
     skos:altLabel "Importato"@it ;
     skos:definition "The setting corresponds with the geographical reality by realistically portraying the surrounding" ;
     skos:notation "1" ;
+    skos:scopeNote "Motivazione standard dello statuto (D-046): referente identificato nel repertorio. Un luogo Imported non richiede un'asserzione di statuto motivata, salvo i casi contesi."@it ;
     skos:inScheme chora:RealityStatusScheme ;
     skos:prefLabel "Imported"@en ;
     skos:topConceptOf chora:RealityStatusScheme .
@@ -977,3 +978,66 @@ chora:housedIn a owl:ObjectProperty ;
     rdfs:range chora:GazetteerEntity ;
     skos:altLabel "ha sede in"@it ;
     skos:prefLabel "housed in"@en .
+
+# Motivazione e revisione delle asserzioni (D-046, work order T-33)
+chora:rationaleType a owl:ObjectProperty ;
+    dcterms:references chora:RationaleTypeScheme ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "tipo di motivazione"@it ;
+    skos:prefLabel "rationale type"@en .
+
+chora:reviewStatus a owl:ObjectProperty ;
+    dcterms:references chora:ReviewStatusScheme ;
+    rdfs:comment "Whether the content of the assertion has been validated by the project, or is a draft prepared from existing documents."@en ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "stato di revisione"@it ;
+    skos:prefLabel "review status"@en .
+
+chora:RationaleTypeScheme a owl:NamedIndividual, skos:ConceptScheme ;
+    rdfs:label "Rationale type"@en ;
+    skos:altLabel "Tipo di motivazione"@it ;
+    skos:hasTopConcept chora:ReferentialEvidence, chora:TextualEvidence, chora:CriticalReading ;
+    skos:prefLabel "Rationale type"@en .
+
+chora:ReferentialEvidence a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "prova referenziale"@it ;
+    skos:definition "The reading rests on a repertory (map, guide, gazetteer) that documents or excludes the referent."@en ;
+    skos:inScheme chora:RationaleTypeScheme ;
+    skos:prefLabel "Referential evidence"@en ;
+    skos:topConceptOf chora:RationaleTypeScheme .
+
+chora:TextualEvidence a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "prova testuale"@it ;
+    skos:definition "The reading rests on the text itself (wording, position, context of the occurrences)."@en ;
+    skos:inScheme chora:RationaleTypeScheme ;
+    skos:prefLabel "Textual evidence"@en ;
+    skos:topConceptOf chora:RationaleTypeScheme .
+
+chora:CriticalReading a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "lettura critica"@it ;
+    skos:definition "The reading rests on a scholar's interpretation, cited with work and page."@en ;
+    skos:inScheme chora:RationaleTypeScheme ;
+    skos:prefLabel "Critical reading"@en ;
+    skos:topConceptOf chora:RationaleTypeScheme .
+
+chora:ReviewStatusScheme a owl:NamedIndividual, skos:ConceptScheme ;
+    rdfs:label "Review status"@en ;
+    skos:altLabel "Stato di revisione"@it ;
+    skos:hasTopConcept chora:Draft, chora:Validated ;
+    skos:prefLabel "Review status"@en .
+
+chora:Draft a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "bozza"@it ;
+    skos:definition "Prepared from the existing documents (sheet descriptions, Chapter 4), not yet validated."@en ;
+    skos:inScheme chora:ReviewStatusScheme ;
+    skos:prefLabel "Draft"@en ;
+    skos:topConceptOf chora:ReviewStatusScheme .
+
+chora:Validated a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "validata"@it ;
+    skos:definition "Validated by the project."@en ;
+    skos:inScheme chora:ReviewStatusScheme ;
+    skos:prefLabel "Validated"@en ;
+    skos:topConceptOf chora:ReviewStatusScheme .

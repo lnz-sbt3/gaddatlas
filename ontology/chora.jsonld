@@ -297,6 +297,56 @@
       }
     },
     {
+      "@id": "chora:CriticalReading",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "lettura critica"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "The reading rests on a scholar's interpretation, cited with work and page."
+      },
+      "skos:inScheme": {
+        "@id": "chora:RationaleTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Critical reading"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:RationaleTypeScheme"
+      }
+    },
+    {
+      "@id": "chora:Draft",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "bozza"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "Prepared from the existing documents (sheet descriptions, Chapter 4), not yet validated."
+      },
+      "skos:inScheme": {
+        "@id": "chora:ReviewStatusScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Draft"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:ReviewStatusScheme"
+      }
+    },
+    {
       "@id": "chora:Encoder",
       "@type": [
         "owl:NamedIndividual",
@@ -455,6 +505,10 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "Imported"
+      },
+      "skos:scopeNote": {
+        "@language": "it",
+        "@value": "Motivazione standard dello statuto (D-046): referente identificato nel repertorio. Un luogo Imported non richiede un'asserzione di statuto motivata, salvo i casi contesi."
       },
       "skos:topConceptOf": {
         "@id": "chora:RealityStatusScheme"
@@ -915,6 +969,36 @@
       }
     },
     {
+      "@id": "chora:RationaleTypeScheme",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Rationale type"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Tipo di motivazione"
+      },
+      "skos:hasTopConcept": [
+        {
+          "@id": "chora:CriticalReading"
+        },
+        {
+          "@id": "chora:ReferentialEvidence"
+        },
+        {
+          "@id": "chora:TextualEvidence"
+        }
+      ],
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Rationale type"
+      }
+    },
+    {
       "@id": "chora:ReadingAuthor",
       "@type": [
         "owl:NamedIndividual",
@@ -974,6 +1058,31 @@
       }
     },
     {
+      "@id": "chora:ReferentialEvidence",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "prova referenziale"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "The reading rests on a repertory (map, guide, gazetteer) that documents or excludes the referent."
+      },
+      "skos:inScheme": {
+        "@id": "chora:RationaleTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Referential evidence"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:RationaleTypeScheme"
+      }
+    },
+    {
       "@id": "chora:RelatedTo",
       "@type": [
         "owl:NamedIndividual",
@@ -1017,6 +1126,33 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:SpatialDeterminationScheme"
+      }
+    },
+    {
+      "@id": "chora:ReviewStatusScheme",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Review status"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Stato di revisione"
+      },
+      "skos:hasTopConcept": [
+        {
+          "@id": "chora:Draft"
+        },
+        {
+          "@id": "chora:Validated"
+        }
+      ],
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Review status"
       }
     },
     {
@@ -1205,6 +1341,31 @@
       }
     },
     {
+      "@id": "chora:TextualEvidence",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "prova testuale"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "The reading rests on the text itself (wording, position, context of the occurrences)."
+      },
+      "skos:inScheme": {
+        "@id": "chora:RationaleTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Textual evidence"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:RationaleTypeScheme"
+      }
+    },
+    {
       "@id": "chora:Transformed",
       "@type": [
         "owl:NamedIndividual",
@@ -1262,6 +1423,31 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:AssertionTypeScheme"
+      }
+    },
+    {
+      "@id": "chora:Validated",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "validata"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "Validated by the project."
+      },
+      "skos:inScheme": {
+        "@id": "chora:ReviewStatusScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Validated"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:ReviewStatusScheme"
       }
     },
     {
@@ -2033,6 +2219,52 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "rationale"
+      }
+    },
+    {
+      "@id": "chora:rationaleType",
+      "@type": "owl:ObjectProperty",
+      "dcterms:references": {
+        "@id": "chora:RationaleTypeScheme"
+      },
+      "rdfs:domain": {
+        "@id": "chora:Assertion"
+      },
+      "rdfs:range": {
+        "@id": "skos:Concept"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "tipo di motivazione"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "rationale type"
+      }
+    },
+    {
+      "@id": "chora:reviewStatus",
+      "@type": "owl:ObjectProperty",
+      "dcterms:references": {
+        "@id": "chora:ReviewStatusScheme"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Whether the content of the assertion has been validated by the project, or is a draft prepared from existing documents."
+      },
+      "rdfs:domain": {
+        "@id": "chora:Assertion"
+      },
+      "rdfs:range": {
+        "@id": "skos:Concept"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "stato di revisione"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "review status"
       }
     },
     {
