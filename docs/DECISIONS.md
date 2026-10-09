@@ -1259,6 +1259,18 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-063 — Etichetta di Milano (9 ottobre 2026)
+
+- Requisito/i: R05 · Ipotesi: — · Data check: — (work order T-74; REVIEW_2 § 11)
+- Stato precedente: l'etichetta normalizzata del luogo `milano` era «Milanno», una forma che nessuna occorrenza stampa. Le 6 occorrenze leggono «Milano», e D-059 le aveva registrate come forme attestate diverse dall'etichetta.
+- Decisione (di Lorenzo, 9/10/2026): etichetta «Milano». Le 6 forme attestate «Milano» (ref_00152, ref_00164, ref_00213, ref_00296, ref_00407, ref_00408) coincidono ora con l'etichetta e sono tolte: la forma attestata si registra solo dove differisce (D-059). Forme attestate 178 → **172**.
+- Motivazione (fonte, pagina): REVIEW_2 § 11; QP, occorrenze citate.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `data/source/tables/NarrativePlaces.tsv` (milano), `References.tsv` (6 `Attested_Form`); XLSX corrispondenti.
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.320 invariata; ABox 27.863 → **27.857**; full 29.753 → **29.747**. SHACL conforme, 51 avvertenze; IQ1–IQ17 a 0.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

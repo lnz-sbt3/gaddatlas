@@ -21,7 +21,7 @@
   "ontologyVersion": "1.0.0",
   "buildVersion": "4.3",
   "source": "gaddatlas-full.ttl",
-  "tripleCount": 29753,
+  "tripleCount": 29747,
   "projection": {
    "type": "equirectangular",
    "center": [
@@ -5976,7 +5976,7 @@
   {
    "id": "milano",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/milano",
-   "label": "Milanno",
+   "label": "Milano",
    "realityStatus": "Imported",
    "placeCategory": "locality",
    "description": "Città",

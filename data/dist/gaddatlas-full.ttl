@@ -28258,7 +28258,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00152> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:attestedForm "Milano"@it ;
     chora:excerpt "Il Balducci doveva arrivare da Milano l’indomani... o da Verona."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_II> ;
     chora:sourceReference "A 65"^^xsd:string .
@@ -28331,7 +28330,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00164> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:attestedForm "Milano"@it ;
     chora:excerpt "Milano, Padova, eventualmente Bologna, perché aveva da annà pure a Padova."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_II> ;
     chora:sourceReference "A 70"^^xsd:string .
@@ -28659,7 +28657,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00213> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:attestedForm "Milano"@it ;
     chora:excerpt "Intanto erano state sollecitate le questure: Milano, Bologna, Vicenza, Padova."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
     chora:sourceReference "A 92"^^xsd:string .
@@ -29165,7 +29162,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00296> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:attestedForm "Milano"@it ;
     chora:excerpt "Il « diffusa » l’aveva letto a Milano, sur Secolo, in un articolo di Maroccus... Er dottore der Secolo : finissimo!"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
     chora:sourceReference "A 138"^^xsd:string .
@@ -29833,7 +29829,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00407> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:attestedForm "Milano"@it ;
     chora:excerpt "Veniva fuori, la cara voce, manco a dirlo, usciva dallo stipo della radio: di cui Fabrizio Santarella s’era provveduto a Milano, quando v’era andato in « missione speciale »"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 170"^^xsd:string .
@@ -29841,7 +29836,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00408> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:attestedForm "Milano"@it ;
     chora:excerpt "e n’era tornato coi due Salvatori, da Milano, e, in più, con una radio a due valvole: prodigioso ritrovato di quella prodigiosa civiltà"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 170"^^xsd:string .
@@ -36646,7 +36640,7 @@ chora:interior a owl:NamedIndividual,
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/milano> a chora:NarrativePlace ;
-    rdfs:label "Milanno"@it ;
+    rdfs:label "Milano"@it ;
     dcterms:description "Città"@it ;
     chora:hasPlaceCategory chora:locality ;
     chora:hasRealityStatus chora:Imported .
