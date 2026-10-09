@@ -97,7 +97,7 @@ export default function createTextPanel({ relief, entities, agents, aliasGroups 
               const available = passage?.excerpt && passage?.sourceReference;
               return html`<article class=${id === referenceId ? "text-reference selected" : "text-reference"} data-reference-id=${id} tabindex="-1">
                 ${available ? html`<blockquote>${passage.excerpt}</blockquote>
-                  <p class="text-source">Carlo Emilio Gadda, <cite>Quer pasticciaccio brutto de via Merulana</cite> · ${passage.witness === "qp" ? "Adelphi, 2018 · " : ""}${passage.sourceReference}</p>`
+                  <p class="text-source">Carlo Emilio Gadda, <cite>Quer pasticciaccio brutto de via Merulana</cite> · ${passage.witnessLabel ? `${passage.witnessLabel} · ` : ""}${passage.sourceReference}</p>`
                   : html`<p>Brano o attribuzione non disponibili per ${id}.</p>`}
                 ${apparatus(rows)}
               </article>`;

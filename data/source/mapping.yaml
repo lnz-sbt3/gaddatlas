@@ -650,8 +650,10 @@ mappings:
 # Allineamento a LRMoo (dichiarato qui, non adottato in blocco):
 #   chora:LiteraryWork  ~ lrmoo:F1_Work
 #   chora:Witness       ~ lrmoo:F2_Expression (lo stato redazionale) che si
-#                         incarna in lrmoo:F3_Manifestation (QPL, QP57, RR II,
-#                         QP) o in lrmoo:F5_Item (dtsFG, bzFG, esemplari unici)
+#                         incarna in lrmoo:F3_Manifestation (QPL, QP, QPa) o
+#                         in lrmoo:F5_Item (dtsFG, bzFG, esemplari unici).
+#                         RR II e' un'edizione (Sources.tsv) in cui QPL e QP
+#                         sono letti (chora:readIn), non un testimone (D-073)
 #   chora:witnessOf     ~ lrmoo:R3i_realises (Expression -> Work)
 #   prov:wasDerivedFrom ~ lrmoo:R76_is_derivative_of
 # CHORA non distingue Expression e Manifestation: per i luoghi conta lo stato
@@ -845,6 +847,9 @@ documentation:
       Derivation_Source: "dcterms:source (@it)"
       Reference:    "si -> work chora:referenceWitness witness"
       Note:         "rdfs:comment (@it)"
+      Display_Label: "skos:prefLabel (@it): etichetta per l'interfaccia, es. «QP (Adelphi 2018)» per QPa (D-073)"
+      Read_In:      "chora:readIn source/{id}: l'edizione in cui il testimone e' letto (RR II per QPL e QP)"
+      Page_Range:   "chora:pageRange (xsd:string): pagine dell'edizione che contengono il testimone"
 
   PartitionZones:
     source_file: "PartitionZones.tsv"

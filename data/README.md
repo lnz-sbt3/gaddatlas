@@ -11,7 +11,7 @@ Le sorgenti sono:
 | `source/tables/*.tsv` | l'annotazione: **sorgente canonica** (D-019), diffabile in git |
 | `source/tables/Assertions.tsv` | le letture attribuite (D-042): una riga per lettura, con autore, codificatore, fonte, adozione; facoltativo |
 | `source/tables/PartitionZones.tsv`, `PartitionMembers.tsv` | le zone delle partizioni interpretative (città / campagna, D-050) e i luoghi assegnati a ciascuna; la partizione è attribuita in `Assertions.tsv`; facoltativi |
-| `source/tables/Witnesses.tsv` | i testimoni dell'opera (QPL, dtsFG, bzFG, QP57, RR II, QP; D-052): tipo, data, curatore, derivazioni documentate; allineamento LRMoo in `mapping.yaml` |
+| `source/tables/Witnesses.tsv` | i testimoni dell'opera (D-052, D-073): QPL, dtsFG, bzFG, QP (versione in volume, 1957), QPa (Adelphi 2018, testo di riferimento); tipo, data, curatore, edizione in cui sono letti (RR II), derivazioni documentate; allineamento LRMoo in `mapping.yaml` |
 | `source/tables/Sources.tsv` | le fonti delle letture (bibliografia del Cap. 4, censimento; D-067): l'atto interpretativo ne cita una con `hico:isExtractedFrom`, e la sua data è la data dell'atto di uno studioso |
 | `source/tables/Locations.tsv` | la geometria (WKT, precisione, datum, repertorio) delle posizioni attribuite (`location` in Assertions.tsv; D-069) |
 | `source/mapping.yaml` | etichette italiane → URI dell'ontologia |

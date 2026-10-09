@@ -1775,3 +1775,17 @@ chora:originalSource a owl:ObjectProperty ;
     rdfs:range chora:Source ;
     skos:altLabel "fonte originale"@it ;
     skos:prefLabel "original source"@en .
+
+chora:readIn a owl:ObjectProperty ;
+    rdfs:comment "The edition in which the project reads a witness: the pages of its occurrences are pages of that edition (e.g. QPL and QP read in RR II). The edition is a source, not a witness (D-073)."@en ;
+    rdfs:domain chora:Witness ;
+    rdfs:range chora:Source ;
+    skos:altLabel "letto in"@it ;
+    skos:prefLabel "read in"@en .
+
+chora:pageRange a owl:DatatypeProperty ;
+    rdfs:comment "Pages of the edition (chora:readIn) that contain the witness."@en ;
+    rdfs:domain chora:Witness ;
+    rdfs:range xsd:string ;
+    skos:altLabel "intervallo di pagine"@it ;
+    skos:prefLabel "page range"@en .

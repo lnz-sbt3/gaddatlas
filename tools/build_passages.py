@@ -24,6 +24,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from rdflib import Graph, Namespace, RDF
+from rdflib.namespace import SKOS
 
 ROOT = Path(__file__).resolve().parents[1]
 TTL = ROOT / "data" / "dist" / "gaddatlas-full.ttl"
@@ -111,6 +112,8 @@ def main() -> int:
             "sourceReference": src,
             "work": local(work) if work else None,
             "witness": local(g.value(ref, CHORA.appearsInWitness)),
+            # etichetta del testimone per l'interfaccia (skos:prefLabel, D-073)
+            "witnessLabel": str(g.value(g.value(ref, CHORA.appearsInWitness), SKOS.prefLabel) or ""),
             "excerpt": text,
             "iri": str(ref),
         }

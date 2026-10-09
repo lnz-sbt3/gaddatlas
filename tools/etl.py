@@ -1125,6 +1125,14 @@ class GaddaETL:
             self.graph.add((uri, CHORA.witnessOf, work))
             self.graph.add((uri, CHORA.witnessType, CHORA[self.WITNESS_TYPES[wtype]]))
             self.add_literal(uri, RDFS.label, row.get('Siglum'))
+            # etichetta per l'interfaccia e edizione in cui il testimone e' letto (D-073)
+            self.add_literal(uri, SKOS.prefLabel, row.get('Display_Label'), lang='it')
+            read_in = str(row.get('Read_In', '')).strip()
+            if read_in:
+                if read_in not in self.sources:
+                    raise ValueError(f"{where}: Read_In {read_in!r} assente da Sources.tsv")
+                self.graph.add((uri, CHORA.readIn, self.sources[read_in][0]))
+            self.add_literal(uri, CHORA.pageRange, row.get('Page_Range'), datatype=XSD.string)
             date = str(row.get('Date', '')).strip()
             if date:
                 dtype = XSD.date if re.fullmatch(r"\d{4}-\d{2}-\d{2}", date) else XSD.gYear
@@ -1818,8 +1826,9 @@ class GaddaETL:
         self.process_chapters(
             self.data_dir / "Chapters.tsv"
         )
-        self.process_witnesses(self.data_dir / "Witnesses.tsv")
+        # le fonti prima dei testimoni: un testimone e' letto in un'edizione (D-073)
         self.process_sources(self.data_dir / "Sources.tsv")
+        self.process_witnesses(self.data_dir / "Witnesses.tsv")
         self.process_focalizing_agents(
             self.data_dir / "FocalizingAgents.tsv"
         )

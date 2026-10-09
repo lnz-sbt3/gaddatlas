@@ -21,7 +21,7 @@
   "ontologyVersion": "1.0.0",
   "buildVersion": "4.3",
   "source": "gaddatlas-full.ttl",
-  "tripleCount": 42425,
+  "tripleCount": 42436,
   "projection": {
    "type": "equirectangular",
    "center": [
@@ -5770,7 +5770,7 @@
    "label": "Casal Bruciato",
    "realityStatus": "Imported",
    "placeCategory": "district",
-   "description": "Casale reale dell'Agro romano a sud di Roma (Casal(e) Bruciato / Abbruciato / Abbrusciato: Nibby, Dintorni di Roma, p. 569), fra le ferrovie Roma–Velletri e Roma–Napoli. Non è il quartiere omonimo del Tiburtino. Forme attestate: «Casal Bruciato» (QP 212, 237, 240, 241, 262, 274, 298), «Casale Abbrusciato» (QP 297).",
+   "description": "Casale reale dell'Agro romano a sud di Roma (Casal(e) Bruciato / Abbruciato / Abbrusciato: Nibby, Dintorni di Roma, p. 569), fra le ferrovie Roma–Velletri e Roma–Napoli. Non è il quartiere omonimo del Tiburtino. Forme attestate: «Casal Bruciato» (QPa 212, 237, 240, 241, 262, 274, 298), «Casale Abbrusciato» (QPa 297).",
    "fuzziness": null,
    "partOf": null,
    "interpCount": 13,
@@ -7185,7 +7185,7 @@
    "label": "Edicola ai Due Santi",
    "realityStatus": "Imported",
    "placeCategory": "shrine",
-   "description": "Tabernacolo a due pioventi che interrompe il muriccio dell'orto o vigna di fronte al laboratorio della Zamira, sul lato opposto della via Appia (QP 216, 219). Luogo importato: Manzotti (2010, p. 246) ne trova traccia nella piantina dei Castelli del Touring.",
+   "description": "Tabernacolo a due pioventi che interrompe il muriccio dell'orto o vigna di fronte al laboratorio della Zamira, sul lato opposto della via Appia (QPa 216, 219). Luogo importato: Manzotti (2010, p. 246) ne trova traccia nella piantina dei Castelli del Touring.",
    "fuzziness": null,
    "partOf": null,
    "interpCount": 3,
@@ -11619,7 +11619,7 @@
    "label": "Palazzo Simonetti",
    "realityStatus": "Transformed",
    "placeCategory": "historical_building",
-   "description": "Luogo trasformato per rilocazione: il palazzo Simonetti (o De Carolis) è reale e sorge in via Lata, presso piazza del Collegio Romano, dove lo colloca il dattiloscritto dei capitoli nuovi; in QP 177 Gadda lo sposta in via Lanza, dove non esiste (Pinotti 2025, p. 78). Ancorato a via Lanza, la sua collocazione nel testo; nessuna coordinata propria.",
+   "description": "Luogo trasformato per rilocazione: il palazzo Simonetti (o De Carolis) è reale e sorge in via Lata, presso piazza del Collegio Romano, dove lo colloca il dattiloscritto dei capitoli nuovi; in QPa 177 Gadda lo sposta in via Lanza, dove non esiste (Pinotti 2025, p. 78). Ancorato a via Lanza, la sua collocazione nel testo; nessuna coordinata propria.",
    "fuzziness": null,
    "partOf": null,
    "interpCount": 1,
@@ -15322,7 +15322,7 @@
    "label": "Castello",
    "realityStatus": "Imported",
    "placeCategory": "castle",
-   "description": "Luogo testuale della \"stazione di Castello\" (QP 279); identificazione adottata Castel Savello (Manzotti 2010, p. 293), concorrente Castel Gandolfo (LS)",
+   "description": "Luogo testuale della \"stazione di Castello\" (QPa 279); identificazione adottata Castel Savello (Manzotti 2010, p. 293), concorrente Castel Gandolfo (LS)",
    "fuzziness": null,
    "partOf": null,
    "interpCount": 0,
@@ -25747,7 +25747,7 @@
    "confidence": 1.0,
    "isNodeOfRoute": "tragitto_sogno_casal_bruciato_campo_morto",
    "routeOrder": 1,
-   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 212, percorso sognato (Pestalozzi): Manzotti (p. 269) legge «per fil a dest» come un cambio di direzione perpendicolare, in realtà verso sinistra (a sud, verso il Circeo); lettura attribuita, fase 3."
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QPa 212, percorso sognato (Pestalozzi): Manzotti (p. 269) legge «per fil a dest» come un cambio di direzione perpendicolare, in realtà verso sinistra (a sud, verso il Circeo); lettura attribuita, fase 3."
   },
   {
    "id": "interp_00642",
@@ -29827,7 +29827,7 @@
    "confidence": 1.0,
    "isNodeOfRoute": "tragitto_torraccio_ponte_divino_amore",
    "routeOrder": 8,
-   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore."
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QPa 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore."
   },
   {
    "id": "interp_00901",
@@ -29843,7 +29843,7 @@
    "confidence": 1.0,
    "isNodeOfRoute": "tragitto_torraccio_ponte_divino_amore",
    "routeOrder": 8,
-   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore."
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QPa 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore."
   },
   {
    "id": "interp_00902",
@@ -29859,7 +29859,7 @@
    "confidence": 1.0,
    "isNodeOfRoute": "tragitto_torraccio_ponte_divino_amore",
    "routeOrder": 8,
-   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore."
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QPa 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore."
   },
   {
    "id": "interp_00903",
@@ -29875,7 +29875,7 @@
    "confidence": 1.0,
    "isNodeOfRoute": "tragitto_torraccio_ponte_divino_amore",
    "routeOrder": 8,
-   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore."
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QPa 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore."
   },
   {
    "id": "interp_00904",
@@ -58712,7 +58712,7 @@
    "agentId": "pestalozzi",
    "role": "ProjectedSpace",
    "determination": "Indeterminate",
-   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 212, percorso sognato (Pestalozzi): Manzotti (p. 269) legge «per fil a dest» come un cambio di direzione perpendicolare, in realtà verso sinistra (a sud, verso il Circeo); lettura attribuita, fase 3.",
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QPa 212, percorso sognato (Pestalozzi): Manzotti (p. 269) legge «per fil a dest» come un cambio di direzione perpendicolare, in realtà verso sinistra (a sud, verso il Circeo); lettura attribuita, fase 3.",
    "isRouteNode": "tragitto_sogno_casal_bruciato_campo_morto"
   },
   {
@@ -61664,7 +61664,7 @@
    "agentId": "ingravallo",
    "role": null,
    "determination": null,
-   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore.",
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QPa 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore.",
    "isRouteNode": "tragitto_torraccio_ponte_divino_amore"
   },
   {
@@ -61676,7 +61676,7 @@
    "agentId": "maresciallo_di_pietrantonio",
    "role": null,
    "determination": null,
-   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore.",
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QPa 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore.",
    "isRouteNode": "tragitto_torraccio_ponte_divino_amore"
   },
   {
@@ -61688,7 +61688,7 @@
    "agentId": "autista_questura",
    "role": null,
    "determination": null,
-   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore.",
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QPa 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore.",
    "isRouteNode": "tragitto_torraccio_ponte_divino_amore"
   },
   {
@@ -61700,7 +61700,7 @@
    "agentId": "agente_runzato",
    "role": null,
    "determination": null,
-   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore.",
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QPa 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore.",
    "isRouteNode": "tragitto_torraccio_ponte_divino_amore"
   },
   {

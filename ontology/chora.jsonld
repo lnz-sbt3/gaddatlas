@@ -4020,9 +4020,18 @@
     {
       "@id": "chora:pageRange",
       "@type": "owl:DatatypeProperty",
-      "rdfs:domain": {
-        "@id": "chora:Chapter"
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Pages of the edition (chora:readIn) that contain the witness."
       },
+      "rdfs:domain": [
+        {
+          "@id": "chora:Chapter"
+        },
+        {
+          "@id": "chora:Witness"
+        }
+      ],
       "rdfs:range": {
         "@id": "xsd:string"
       },
@@ -4147,6 +4156,28 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "rationale type"
+      }
+    },
+    {
+      "@id": "chora:readIn",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The edition in which the project reads a witness: the pages of its occurrences are pages of that edition (e.g. QPL and QP read in RR II). The edition is a source, not a witness (D-073)."
+      },
+      "rdfs:domain": {
+        "@id": "chora:Witness"
+      },
+      "rdfs:range": {
+        "@id": "chora:Source"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "letto in"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "read in"
       }
     },
     {

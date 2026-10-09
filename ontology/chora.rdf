@@ -1935,7 +1935,9 @@
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#pageRange">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Pages of the edition (chora:readIn) that contain the witness.</rdfs:comment>
     <rdfs:domain rdf:resource="https://w3id.org/chora#Chapter"/>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#Witness"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <skos:altLabel xml:lang="it">intervallo di pagine</skos:altLabel>
     <skos:prefLabel xml:lang="en">page range</skos:prefLabel>
@@ -1981,6 +1983,14 @@
     <skos:altLabel xml:lang="it">tipo di motivazione</skos:altLabel>
     <skos:historyNote xml:lang="it">Deprecata il 9/10/2026 (D-067): sostituita da hico:hasInterpretationCriterion sull'atto interpretativo.</skos:historyNote>
     <skos:prefLabel xml:lang="en">rationale type</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#readIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">The edition in which the project reads a witness: the pages of its occurrences are pages of that edition (e.g. QPL and QP read in RR II). The edition is a source, not a witness (D-073).</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#Witness"/>
+    <rdfs:range rdf:resource="https://w3id.org/chora#Source"/>
+    <skos:altLabel xml:lang="it">letto in</skos:altLabel>
+    <skos:prefLabel xml:lang="en">read in</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#referenceWitness">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>

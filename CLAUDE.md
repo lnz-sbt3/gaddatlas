@@ -20,9 +20,9 @@ Due artefatti distinti nello stesso repository:
 
 ## Le decisioni sono già prese
 
-`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-072; quelle dell'allineamento al
+`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-073; quelle dell'allineamento al
 Capitolo 4 partono da D-019 (D-015…D-018 sono del porting, su `main`). Nel file sono in
-ordine cronologico, non numerico. Prossimo numero libero: **D-073**. **Leggile
+ordine cronologico, non numerico. Prossimo numero libero: **D-074**. **Leggile
 prima di proporre alternative architetturali.** Se una scelta ti sembra
 sbagliata, dillo citando la decisione — non aggirarla in silenzio.
 
@@ -127,6 +127,14 @@ aggiornato.
   dell'editore (es. Fattocchie → Frattocchie in QP 241).
 - **Testo di riferimento:** QP (Adelphi 2018) nel volume **a stampa**. La copia
   digitale ha almeno una lezione non emendata: nel dubbio segnala, non correggere.
+- **Sigle dei testimoni (D-073).** Nel dataset: **QPL** = redazione di «Letteratura»
+  (1946), letta in RR II (pagine di RR II); **QP** = versione in volume (princeps
+  Garzanti 1957), letta in RR II (pagine di RR II); **QPa** = Adelphi 2018 a cura di
+  Pinotti, testo di riferimento, su cui sono annotate le occorrenze (`witness/qpa`,
+  `skos:prefLabel` «QP (Adelphi 2018)»). RR II è un'edizione (`source/rr2`), non un
+  testimone. Nella tesi, nel README, nei documenti e nell'interfaccia vale la
+  convenzione della tesi: QPL, QP di RR II, «QP (Adelphi 2018)» per l'Adelphi.
+  `witness/qp` fino al 9/10/2026 era l'Adelphi.
 - I percorsi tipizzati (compiuto, indicato, sognato, inferito, direzionale,
   proposto) riguardano **solo i personaggi**: gli oggetti sono esclusi (DM-03).
   QP 237 («Pe la strada de Castel de Leva…») è un percorso *indicato*; il

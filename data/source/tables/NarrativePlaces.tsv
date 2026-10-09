@@ -35,7 +35,7 @@ cantinone_albano	Cantinone d'Albano		invented		ristorante	Ristorante non identif
 carsoli	Carsoli		imported		comune	Comune in Abruzzo					
 casa_crocchiapani	Casa Crocchiapani		invented	tor_di_gheppio	casa rurale	Abitazione immaginaria di Assunta (Tina) Crocchiapani					
 casa_del_butiro	Casa del Butiro		imagined		casa rurale	Casa immaginata nella zona dei Due Santi					
-casal_bruciato	Casal Bruciato	Casale Abbrusciato	imported		quartiere	Casale reale dell'Agro romano a sud di Roma (Casal(e) Bruciato / Abbruciato / Abbrusciato: Nibby, Dintorni di Roma, p. 569), fra le ferrovie Roma–Velletri e Roma–Napoli. Non è il quartiere omonimo del Tiburtino. Forme attestate: «Casal Bruciato» (QP 212, 237, 240, 241, 262, 274, 298), «Casale Abbrusciato» (QP 297).					
+casal_bruciato	Casal Bruciato	Casale Abbrusciato	imported		quartiere	Casale reale dell'Agro romano a sud di Roma (Casal(e) Bruciato / Abbruciato / Abbrusciato: Nibby, Dintorni di Roma, p. 569), fra le ferrovie Roma–Velletri e Roma–Napoli. Non è il quartiere omonimo del Tiburtino. Forme attestate: «Casal Bruciato» (QPa 212, 237, 240, 241, 262, 274, 298), «Casale Abbrusciato» (QPa 297).					
 casello_km_20_25	Casello al chilometro 20-25		transformed		casello ferroviario	casello ferroviario in prossimità di Casal Bruciato					
 cassero	Cassero		invented		castello						
 castelli_romani	Castelli Romani		imported		località						
@@ -43,7 +43,7 @@ castel_di_leva	Castel di Leva		imported		località
 castel_gandolfo	Castel Gandolfo		imported		località						
 castel_porcano	Castel Porcano	Castel Porcino	imagined		castello	Castello d'immaginazione, deformazione linguistica di Castel Porziano					
 castel_savello	Castel Savello	Castel Savelli	imported		località						
-castello	Castello		imported		castello	"Luogo testuale della ""stazione di Castello"" (QP 279); identificazione adottata Castel Savello (Manzotti 2010, p. 293), concorrente Castel Gandolfo (LS)"					
+castello	Castello		imported		castello	"Luogo testuale della ""stazione di Castello"" (QPa 279); identificazione adottata Castel Savello (Manzotti 2010, p. 293), concorrente Castel Gandolfo (LS)"					
 casuccia_zamira	Casuccia della Zamira		invented		abitazione						
 cecchina	Cecchina		imported		stazione						
 celio	Celio		imported		quartiere						
@@ -65,7 +65,7 @@ ditta_ciurlani	Ditta Ciurlani		transformed		esercizio commerciale
 divino_amore	Divino Amore		imported		località						
 dosso_faiti	Dosso Faiti		imported		monte						
 due_santi	Due Santi	li Du Santi	imported		località	Frazione di Marino (Castelli Romani)	Non presente in Indice dei Luoghi Isella				
-edicola_due_santi	Edicola ai Due Santi	tabernacolo appia	imported		edicola	Tabernacolo a due pioventi che interrompe il muriccio dell'orto o vigna di fronte al laboratorio della Zamira, sul lato opposto della via Appia (QP 216, 219). Luogo importato: Manzotti (2010, p. 246) ne trova traccia nella piantina dei Castelli del Touring.					
+edicola_due_santi	Edicola ai Due Santi	tabernacolo appia	imported		edicola	Tabernacolo a due pioventi che interrompe il muriccio dell'orto o vigna di fronte al laboratorio della Zamira, sul lato opposto della via Appia (QPa 216, 219). Luogo importato: Manzotti (2010, p. 246) ne trova traccia nella piantina dei Castelli del Touring.					
 esquilino	Esquilino		imported		quartiere						
 falcognana	Falcognana		imported		località						
 ferrovia_roma_velletri	Ferrovia Roma-Velletri		imported		ferrovia						
@@ -123,7 +123,7 @@ palazzo_del_mappamondo	Palazzo der Mappamonno		transformed		palazzo storico
 palazzo_della_immacolatella	Palazzo della Immacolatella		imported		palazzo storico	Palazzo situato al porto di Napoli					
 palazzo_pio	Palazzo Pio		imported		palazzo storico						
 palazzo_ruspoli	Palazzo Ruspoli		imported		palazzo storico						
-palazzo_simonetti	Palazzo Simonetti		transformed		palazzo storico	Luogo trasformato per rilocazione: il palazzo Simonetti (o De Carolis) è reale e sorge in via Lata, presso piazza del Collegio Romano, dove lo colloca il dattiloscritto dei capitoli nuovi; in QP 177 Gadda lo sposta in via Lanza, dove non esiste (Pinotti 2025, p. 78). Ancorato a via Lanza, la sua collocazione nel testo; nessuna coordinata propria.					
+palazzo_simonetti	Palazzo Simonetti		transformed		palazzo storico	Luogo trasformato per rilocazione: il palazzo Simonetti (o De Carolis) è reale e sorge in via Lata, presso piazza del Collegio Romano, dove lo colloca il dattiloscritto dei capitoli nuovi; in QPa 177 Gadda lo sposta in via Lanza, dove non esiste (Pinotti 2025, p. 78). Ancorato a via Lanza, la sua collocazione nel testo; nessuna coordinata propria.					
 palestrina	Palestrina		imported		località	Frazione di Roma lungo i Colli Albani					
 pantheon	Pantheon		imported		tempio						
 passaggio_livello_casal_bruciato	Passaggio a livello Casal Bruciato		transformed	casello_km_20_25	passaggio a livello						
@@ -168,7 +168,7 @@ quattro_cantoni	Quattro Cantoni		imported		via
 reggio_calabria	Reggio Calabria		imported		città						
 regina_coeli	Regina Coeli		imported		carcere						
 ripetta	Ripetta		imported		via						
-robine_vecchie	Robine Vecchie		transformed		località	Robine Vecchie è un microtoponimo gaddiano non identificato, forse deformazione di un nome locale o denominazione fantastica applicata al paesaggio reale di Frattocchie–Due Santi.			sospensione motivata	Solo ancoraggio relazionale: il passo colloca le Robine Vecchie fra Frattocchie e Due Santi (QP 169), senza una posizione. Toponimo «non registrato nelle carte topografiche» (Terzoli 2015, p. 491).	
+robine_vecchie	Robine Vecchie		transformed		località	Robine Vecchie è un microtoponimo gaddiano non identificato, forse deformazione di un nome locale o denominazione fantastica applicata al paesaggio reale di Frattocchie–Due Santi.			sospensione motivata	Solo ancoraggio relazionale: il passo colloca le Robine Vecchie fra Frattocchie e Due Santi (QPa 169), senza una posizione. Toponimo «non registrato nelle carte topografiche» (Terzoli 2015, p. 491).	
 rocca_di_papa	Rocca di Papa		imported		località						
 rocca_orsina	Rocca Orsina		imported		località		"«Rocca Orsina» non è il nome moderno di un comune, ma può essere ricondotto con buone ragioni alla fortificazione degli Orsini a Marino.
 

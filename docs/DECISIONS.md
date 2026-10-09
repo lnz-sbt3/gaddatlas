@@ -1467,6 +1467,27 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-073 — Sigle dei testimoni: QPL, QP, QPa (10 ottobre 2026)
+
+- Requisito/i: R01 · Ipotesi: — · Data check: DM-04 (AUDIT_2b, T, con le decisioni di Lorenzo del 10/10, punto 3)
+- Stato precedente: `witness/qp` era l'Adelphi 2018, testimone di riferimento delle 725 occorrenze. QP57 (princeps) e RR II erano due testimoni distinti. «Fattocchie» (ref_00724) era un'occorrenza di RR II. Nei campi dei dati «QP n» indicava l'Adelphi.
+- Decisione (di Lorenzo, 10/10/2026), sigle del dataset **QPL, QP, QPa**:
+  - **QPa** = Adelphi 2018, a cura di Pinotti: `id:witness/qpa`, `rdfs:label` «QPa», `skos:prefLabel` «QP (Adelphi 2018)»@it (colonna `Display_Label`), testimone di riferimento. Le **726** occorrenze annotate (725 più la nuova ref_00730 di D-072) e le **22** fonti delle letture passano a `qpa`. I brani portano `witnessLabel`, il `prefLabel` del testimone, e il pannello del testo lo mostra al posto dell'id («QP (Adelphi 2018) · A 241», prima «Adelphi, 2018 · A 241»). Nuovo test `app/test/passages.test.js`;
+  - **QP** = versione in volume (1957): QP57 è fuso in un unico testimone, **`id:witness/qp`**, princeps Garzanti, 22 giugno 1957. Le derivazioni già scritte (← QPL, ← bzFG) restano su di esso. Non si crea un testimone «QP in RR II»: il progetto non lavora su quel testo;
+  - **`witness/qp` cambia significato:** fino al 9/10/2026 era l'Adelphi, ora è la versione in volume. I documenti precedenti (TBOX_2, REVIEW_2, AUDIT_2b, D-052…D-070) lo usano nel vecchio senso. Il ramo non è pubblicato, quindi nessun IRI esterno si rompe;
+  - **QPL** invariato, salvo l'edizione in cui è letto;
+  - **RR II** esce da `Witnesses.tsv` ed entra in `Sources.tsv` (`source/rr2`, *Romanzi e racconti II*, Garzanti 1989). Nuove `chora:readIn` (Witness → Source) e `chora:pageRange`: QPL `readIn rr2`, pagine 277–460; QP `readIn rr2`, senza intervallo. Le pagine di QPL e di QP nelle occorrenze sono pagine di RR II;
+  - **ref_00724** («Fattocchie») → testimone `qp`, `Source_Reference` «QP 219 (RR II)». **V-0001**: soggetto ref_00588 (QPa 241), valore ref_00724 (QP), motivazione «Fattocchie (QP, RR II 219) / Frattocchie (QPa 241): emendamento dell'editore»;
+  - **«QP n» → «QPa n» nei campi dei dati**, riga per riga (**46** sostituzioni): **Assertions**: A-0001 (Rationale), A-0002 (Rationale), S-castello (Rationale), S-palazzo_219 (Rationale), S-palazzo_simonetti (Rationale), S-robine_vecchie (Rationale), U-0002 (Rationale), U-0003 (Rationale), U-0004 (Rationale), U-0006 (Rationale), U-0007 (Rationale), M-0001 (Rationale), M-0002 (Rationale), M-0003 (Rationale), M-0004 (Rationale), M-0005 (Rationale), M-0006 (Rationale), C-palazzo_simonetti (Rationale), V-0002 (Rationale), V-0003a (Rationale), V-0003a (Note), V-0003b (Rationale), V-0003b (Note), V-0004a (Rationale), V-0004a (Note), V-0004b (Rationale), V-0004b (Note), R-0002 (Note), R-0006 (Rationale), R-0010 (Note), U-0009 (Note); **NarrativePlaces**: casal_bruciato (Description, 2), castello (Description), edicola_due_santi (Description), palazzo_simonetti (Description), robine_vecchie (Localization_Reason); **SpatialInterpretations**: interp_00641 (Critical_Note), interp_00900 (Critical_Note), interp_00901 (Critical_Note), interp_00902 (Critical_Note), interp_00903 (Critical_Note); **References**: ref_00271 (Notes), ref_00724 (Notes), ref_00725 (Notes), ref_00730 (Notes). **Non sostituite**, perché stanno dentro citazioni letterali del Cap. 4 («…»), dove QP segue la convenzione della tesi: S-edicola_due_santi, S-monte_nuncupale, S-roccafringoli, S-scala_a, S-scerpure. Nei documenti (DECISIONS, REVIEW, AUDIT, work order, DATA_CHECKS, tesi) nessuna sostituzione. Aggiornate anche le note di `quer_pasticciaccio` (LiteraryWorks) e di `pinotti` (Agents);
+  - **CLAUDE.md:** convenzione aggiunta (dataset QPL / QP / QPa; tesi QPL / QP di RR II / «QP (Adelphi 2018)»);
+  - **derivazione QPa ← QP:** non scritta, perché manca la pagina della *Nota al testo* di Pinotti 2018.
+- Motivazione (fonte, pagina): AUDIT_2b, T; Cap. 4, n. 4 (sigle); D-052.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `data/source/tables/Witnesses.tsv` (qp57 fuso in qp, qp → qpa, rr2 tolto; colonne `Display_Label`, `Read_In`, `Page_Range`), `Sources.tsv` (rr2), `References.tsv` (`Witness_ID` di 726 righe, ref_00724, note), `Assertions.tsv` (`Source_Work`, V-0001, motivazioni e note), `NarrativePlaces.tsv`, `SpatialInterpretations.tsv`, `LiteraryWorks.tsv`, `Agents.tsv`; XLSX corrispondenti; `tools/etl.py` r. 1128–1136 (`prefLabel`, `readIn`, `pageRange`), ordine fonti/testimoni; `tools/build_passages.py` (`witnessLabel`); `app/src/ui/text-panel.js` r. 100; `app/test/passages.test.js` (nuovo); `ontology/chora.ttl` (`readIn`, `pageRange`, in coda); `data/source/mapping.yaml` (LRMoo, documentazione Witnesses); `data/README.md`; `CLAUDE.md`.
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.465 → **1.473**; ABox 40.390 → **40.393**; full 42.425 → **42.436**. Testimoni 6 → **5**, fonti 13 → **14**. SHACL conforme, 48 avvertenze; IQ1–IQ19 a 0, IQ20 = 1 (avvertenza). Test dell'app 8/8.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`
