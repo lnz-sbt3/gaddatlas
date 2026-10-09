@@ -2771,6 +2771,28 @@
       }
     },
     {
+      "@id": "chora:attestedForm",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The form of the toponym as printed in the witness of the reference, recorded where it differs from the normalized label of the place. It is transcribed, not corrected."
+      },
+      "rdfs:domain": {
+        "@id": "chora:PlaceReference"
+      },
+      "rdfs:range": {
+        "@id": "rdf:langString"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "forma attestata"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "attested form"
+      }
+    },
+    {
       "@id": "chora:chapterNumber",
       "@type": "owl:DatatypeProperty",
       "rdfs:domain": {
@@ -3377,6 +3399,31 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "narrator type"
+      }
+    },
+    {
+      "@id": "chora:nickname",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "A nickname of the place used in the text (antonomasia, popular name), distinct from a variant spelling of its toponym."
+      },
+      "rdfs:domain": {
+        "@id": "chora:NarrativePlace"
+      },
+      "rdfs:range": {
+        "@id": "rdf:langString"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "skos:altLabel"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "soprannome"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "nickname"
       }
     },
     {

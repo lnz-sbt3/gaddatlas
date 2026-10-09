@@ -1181,6 +1181,24 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-059 — Forma attestata sull'occorrenza, soprannomi sul luogo (9 ottobre 2026)
+
+- Requisito/i: R05 · Ipotesi: H1 · Data check: DC-01, T-74 (work order T-48)
+- Stato precedente: solo `rdfs:label` e `skos:altLabel` sul luogo. `Alternative_Toponym` arrivava nel grafo come un solo letterale con le forme unite da «;». Nessuna forma attestata sulle occorrenze.
+- Decisione (di Lorenzo, 9/10/2026: forma attestata sulla PlaceReference, distinta dall'etichetta normalizzata sul luogo; soprannomi come proprietà del luogo; estrarre dagli estratti le forme che differiscono dall'etichetta ed elencarle in REVIEW_2):
+  - **forma attestata:** nuova `chora:attestedForm` sulla PlaceReference, colonna `Attested_Form` in `References.tsv`. È una trascrizione, non una correzione. Compilata per **178** occorrenze: 176 di QP e 2 di confronto («Fattocchie», RR II 219; «via Lata», dtsFG);
+  - **soprannomi:** nuova `chora:nickname` (sottoproprietà di `skos:altLabel`), colonna `Nickname` in `NarrativePlaces.tsv`. Palazzo di via Merulana 219: «palazzo de li pescicani», «er palazzo dell'oro», spostati da `Alternative_Toponym`;
+  - **forme varianti del luogo** (`skos:altLabel`): «li Du Santi» (due_santi), «Castel Savelli» (castel_savello, QP 173), «Castel Porcino» (castel_porcano, QP 213; prima «castel porcino» minuscolo). «Casale Abbrusciato» (QP 297) c'era già. Ora ogni forma di `Alternative_Toponym` è un letterale distinto (separatore «;», T-85);
+  - **estrazione:** sono state considerate le 325 occorrenze di QP il cui estratto non contiene l'etichetta del luogo. Per ognuna si cercano prima le forme registrate del luogo, apostrofi compresi; poi la sequenza di parole più simile all'etichetta (soglia 0,72), rifilata delle parole di contorno. 14 bordi sono corretti a mano (per esempio «La A», «la B», «Reggio (Calabria)», «stazzione»). Ogni forma è una sottostringa esatta dell'estratto. Le altre 149 occorrenze evocano il luogo con una descrizione o un pronome («quela casa», «la tenenza») e non hanno forma attestata. L'elenco completo è in REVIEW_2, da confermare: gli estratti vengono dalla copia digitale, e il testo di riferimento è il volume a stampa.
+- Da segnalare (REVIEW_2): l'etichetta del luogo `milano` è «Milanno», mentre le 6 occorrenze stampano «Milano» (T-74); le perifrasi del palazzo 219 rimaste in `Alternative_Toponym` («ben nota architettura», «casermone color pidocchio», «sto palazzo»…) sono forme attestate, non varianti del toponimo; la classificazione di «li Du Santi», «Castel Savelli» e «Castel Porcino» come varianti e non come soprannomi.
+- Controlli: shape 18 (`AttestedFormShape`: al più una forma per occorrenza).
+- Motivazione (fonte, pagina): Cap. 4, § 4.3 (r. 83, 93) e R05; QP 16, 24, 25, 173, 213, 297.
+- Fase in cui è maturata: analisi del testo
+- File toccati (manifest): `ontology/chora.ttl` r. 1482–1502 (sezione «Forma attestata»); `ontology/shapes/chora-shapes.ttl` r. 34, 616–630 (prefisso `rdf:`, shape 18); `data/source/mapping.yaml` r. 239–243, 291–301; `tools/etl.py` r. 561–567, 787–789; `data/source/tables/References.tsv` (colonna `Attested_Form`, 178 valori), `NarrativePlaces.tsv` (colonna `Nickname`; quattro luoghi); XLSX corrispondenti.
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.217 → **1.230**; ABox 27.148 → **27.336**; full 28.935 → **29.136**. SHACL conforme, 52 avvertenze; IQ1–IQ17 a 0. Vista invariata (GeoJSON: cambia solo `tripleCount`).
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

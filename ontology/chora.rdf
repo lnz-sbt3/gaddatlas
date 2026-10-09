@@ -1404,6 +1404,14 @@
     <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="en">assigns spatial relation type</skos:prefLabel>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#attestedForm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">The form of the toponym as printed in the witness of the reference, recorded where it differs from the normalized label of the place. It is transcribed, not corrected.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#PlaceReference"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <skos:altLabel xml:lang="it">forma attestata</skos:altLabel>
+    <skos:prefLabel xml:lang="en">attested form</skos:prefLabel>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#chapterNumber">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:domain rdf:resource="https://w3id.org/chora#Chapter"/>
@@ -1629,6 +1637,15 @@
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <skos:altLabel xml:lang="it">tipo di narratore</skos:altLabel>
     <skos:prefLabel xml:lang="en">narrator type</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#nickname">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">A nickname of the place used in the text (antonomasia, popular name), distinct from a variant spelling of its toponym.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#NarrativePlace"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+    <skos:altLabel xml:lang="it">soprannome</skos:altLabel>
+    <skos:prefLabel xml:lang="en">nickname</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#pageRange">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>

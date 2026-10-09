@@ -1478,3 +1478,25 @@ chora:Boundary a owl:NamedIndividual, skos:Concept ;
     skos:inScheme chora:SpatialRelationTypeScheme ;
     skos:prefLabel "Boundary"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+# =============================================================================
+# FORMA ATTESTATA E FORMA NORMALIZZATA (D-059, work order T-48, R05)
+# L'etichetta del luogo (rdfs:label) e' la forma normalizzata; la forma
+# stampata nel testimone sta sull'occorrenza. Le forme varianti del luogo sono
+# skos:altLabel; i soprannomi, chora:nickname.
+# =============================================================================
+
+chora:attestedForm a owl:DatatypeProperty ;
+    rdfs:comment "The form of the toponym as printed in the witness of the reference, recorded where it differs from the normalized label of the place. It is transcribed, not corrected."@en ;
+    rdfs:domain chora:PlaceReference ;
+    rdfs:range rdf:langString ;
+    skos:altLabel "forma attestata"@it ;
+    skos:prefLabel "attested form"@en .
+
+chora:nickname a owl:DatatypeProperty ;
+    rdfs:comment "A nickname of the place used in the text (antonomasia, popular name), distinct from a variant spelling of its toponym."@en ;
+    rdfs:domain chora:NarrativePlace ;
+    rdfs:range rdf:langString ;
+    rdfs:subPropertyOf skos:altLabel ;
+    skos:altLabel "soprannome"@it ;
+    skos:prefLabel "nickname"@en .

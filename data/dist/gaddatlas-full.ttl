@@ -61,8 +61,6 @@ geo1:long a owl:DatatypeProperty ;
     skos:altLabel "longitudine"@it ;
     skos:prefLabel "longitude"@en .
 
-skos:altLabel a owl:AnnotationProperty .
-
 skos:broadMatch a owl:AnnotationProperty .
 
 skos:closeMatch a owl:AnnotationProperty .
@@ -199,6 +197,13 @@ chora:assignsSpatialRelationType a owl:ObjectProperty ;
     rdfs:domain chora:SpatialInterpretation ;
     rdfs:range skos:Concept ;
     skos:prefLabel "assigns spatial relation type"@en .
+
+chora:attestedForm a owl:DatatypeProperty ;
+    rdfs:comment "The form of the toponym as printed in the witness of the reference, recorded where it differs from the normalized label of the place. It is transcribed, not corrected."@en ;
+    rdfs:domain chora:PlaceReference ;
+    rdfs:range rdf:langString ;
+    skos:altLabel "forma attestata"@it ;
+    skos:prefLabel "attested form"@en .
 
 chora:chapterNumber a owl:DatatypeProperty ;
     rdfs:domain chora:Chapter ;
@@ -384,6 +389,14 @@ chora:narratorType a owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     skos:altLabel "tipo di narratore"@it ;
     skos:prefLabel "narrator type"@en .
+
+chora:nickname a owl:DatatypeProperty ;
+    rdfs:comment "A nickname of the place used in the text (antonomasia, popular name), distinct from a variant spelling of its toponym."@en ;
+    rdfs:domain chora:NarrativePlace ;
+    rdfs:range rdf:langString ;
+    rdfs:subPropertyOf skos:altLabel ;
+    skos:altLabel "soprannome"@it ;
+    skos:prefLabel "nickname"@en .
 
 chora:pageRange a owl:DatatypeProperty ;
     rdfs:domain chora:Chapter ;
@@ -14234,6 +14247,8 @@ dcterms:contributor a owl:AnnotationProperty .
 
 <http://vocab.getty.edu/aat/300386699> a owl:NamedIndividual .
 
+skos:altLabel a owl:AnnotationProperty .
+
 <http://www.wikidata.org/entity/Q1076486> a owl:NamedIndividual .
 
 <http://www.wikidata.org/entity/Q1134686> a owl:NamedIndividual .
@@ -25954,6 +25969,7 @@ chora:witnessOf a owl:ObjectProperty ;
 
 <https://w3id.org/gaddatlas/id/narrativeplace/castel_savello> a chora:NarrativePlace ;
     rdfs:label "Castel Savello"@it ;
+    skos:altLabel "Castel Savelli"@it ;
     chora:hasPlaceCategory chora:locality ;
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
@@ -26722,6 +26738,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00011> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "frascatano"@it ;
     chora:excerpt "un senso d’aria dei giorni sereni e lontani tra frascatano e tiburtino"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 17"^^xsd:string .
@@ -26785,6 +26802,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00020> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Santi Quattro"@it ;
     chora:excerpt "Tutto questo il dottor Ingravallo lo aveva in parte intuito, in parte integrato da qualche accenno del Balducci, o dai dolcissimi «momenti» della tristezza di lei: anche don Corpi, don Lorenzo, don Lorenzo Corpi, don Corpi Lorenzo dei Santi Quattro brillava spesso lui pure, nei ragionamenti della signora Liliana."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 19"^^xsd:string .
@@ -26792,6 +26810,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00021> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Porta Paradisi"@it ;
     chora:excerpt "«Ccà ce sta una nepote cchiù ’mbrogliata,» rimuginò tra sé e sé, con quel bianco secco in Porta Paradisi che ancora gli titillava il velopendolo. Sì, sì. Dietro quel nome «nipote», ci doveva star nascosto tutto un groviglio... di fili, un ragnatelo di sentimenti, dei più rari,... delicati."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 20"^^xsd:string .
@@ -26834,6 +26853,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00027> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "palazzo dell’Oro"@it ;
     chora:excerpt "E a via Merulana 219, scala A, piano terzo, ci rifioriva la nipote, nel meglio grumolo, propio, del palazzo dell’Oro."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 22"^^xsd:string .
@@ -26848,6 +26868,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00030> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "ducentodicinnove"@it ;
     chora:excerpt "Quando i due agenti gli dissero: «Se so’ sparati a via Merulana: ar ducentodicinnove: su le scale: ner palazzo de li pescicani...», un fiotto di sangue incuriosito, forse angosciato, gli inondò il ventricolo di destra."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 24"^^xsd:string .
@@ -26862,6 +26883,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00032> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Botteghe Oscure"@it ;
     chora:excerpt "«Ci andate voi, Ingravallo, a via Merulana? Vedete nu poco. Na fesseria, m’hanno detto. E stamattina, con chell’ata storia della marchesa di viale Liegi... e poi ’o pasticcio ccà vicino, alle Botteghe Oscure: e poi chillo buchè ’e violette: e ddoje cugnate e ’e ttre nepote: e poi avimmo de pelà la coda dell’affare nuosto: e poi, e poi,»"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 25"^^xsd:string .
@@ -26876,6 +26898,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00039> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "ben nota architettura"@it ;
     chora:excerpt "Ingravallo, si può dire, la conosceva col cuore: e difatti un lieve batticuore lo prese, ad avvicinare coi due agenti la ben nota architettura, investito di tanta e tanto risolutiva autorità."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 26"^^xsd:string .
@@ -26883,6 +26906,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00041> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Sto palazzo"@it ;
     chora:excerpt "Sto palazzo, drento c’è più oro che monnezza."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 26"^^xsd:string .
@@ -26904,6 +26928,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00044> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Sacro Core"@it ;
     chora:excerpt "La Gina era a scuola tutto il giorno: ar Sacro Core, da le moniche: dove ci faceva colazione e anche merenda, alle volte."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 28"^^xsd:string .
@@ -26918,6 +26943,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00046> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "ducentodiciannove"@it ;
     chora:excerpt "Il ducentodiciannove, cinque piani a strada più l’attico e le due scale A e B, con alcuni uffici sulla B, al mezzanino, era un porto di mare."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 32"^^xsd:string .
@@ -26932,6 +26958,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00048> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "La A"@it ;
     chora:excerpt "La A più tranquilla della consorella: tutti signori autentici da quella parte, du côté de chez madame."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 32"^^xsd:string .
@@ -26967,6 +26994,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00053> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Tranvie de li Castelli"@it ;
     chora:excerpt "Un biglietto azzurrino, quasi appallottolato, der tramme. Si chinò, lo raccattò, lo spiegò molto cautamente, col faccione chino su quel nulla: che apparve logoro, quasi. Tranvie de li Castelli. Bucato alla data del dì avanti."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 36"^^xsd:string .
@@ -27002,6 +27030,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00058> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Santi Quattro"@it ;
     chora:excerpt "Abitava difatti, da epoca immemorabile, in una catapecchiucola delle più tignose a via de’ Querceti, a metà, soto el dedrìo dei Santi Quattro, con una sorella, una gemella, un poco più piccina di lei, poco poco."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 37"^^xsd:string .
@@ -27044,6 +27073,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00064> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "la Scrofa"@it ;
     chora:excerpt "Impercepiti dal passante distratto e da quello che va de prescia, a ora d’agio, un piede appresso l’altro, sogliono deambulare le loro dilette stradicce, dall’arco de Sant’Agostino e da la Scrofa, pe via de le Coppelle o pel Pozzo de le Cornacchie, fin su, a Santa Maria in Aquiro."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 40"^^xsd:string .
@@ -27051,6 +27081,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00065> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "via de le Coppelle"@it ;
     chora:excerpt "Impercepiti dal passante distratto e da quello che va de prescia, a ora d’agio, un piede appresso l’altro, sogliono deambulare le loro dilette stradicce, dall’arco de Sant’Agostino e da la Scrofa, pe via de le Coppelle o pel Pozzo de le Cornacchie, fin su, a Santa Maria in Aquiro."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 40"^^xsd:string .
@@ -27058,6 +27089,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00066> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Pozzo de le Cornacchie"@it ;
     chora:excerpt "Impercepiti dal passante distratto e da quello che va de prescia, a ora d’agio, un piede appresso l’altro, sogliono deambulare le loro dilette stradicce, dall’arco de Sant’Agostino e da la Scrofa, pe via de le Coppelle o pel Pozzo de le Cornacchie, fin su, a Santa Maria in Aquiro."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 40"^^xsd:string .
@@ -27079,6 +27111,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00069> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "via Colonna"@it ;
     chora:excerpt "Alle rare occasioni si avventurano chiane chiane per via Colonna o s’inoltrano agorafobici su li serci de piazza de Pietra, non senza disdegnare la fojetta, e la pizza snobistica der napoletano: e poi pe quer budello de via de Pietra arriveno magari a sfociar sul Corso, ma sabato grasso ha da essere, dirimpetto all’Enciclopedia Treccani, ai più invitanti orologi del gioielliere Catellani."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 40"^^xsd:string .
@@ -27086,6 +27119,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00070> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "piazza de Pietra"@it ;
     chora:excerpt "Alle rare occasioni si avventurano chiane chiane per via Colonna o s’inoltrano agorafobici su li serci de piazza de Pietra, non senza disdegnare la fojetta, e la pizza snobistica der napoletano: e poi pe quer budello de via de Pietra arriveno magari a sfociar sul Corso, ma sabato grasso ha da essere, dirimpetto all’Enciclopedia Treccani, ai più invitanti orologi del gioielliere Catellani."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 40"^^xsd:string .
@@ -27093,6 +27127,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00071> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "via de Pietra"@it ;
     chora:excerpt "Alle rare occasioni si avventurano chiane chiane per via Colonna o s’inoltrano agorafobici su li serci de piazza de Pietra, non senza disdegnare la fojetta, e la pizza snobistica der napoletano: e poi pe quer budello de via de Pietra arriveno magari a sfociar sul Corso, ma sabato grasso ha da essere, dirimpetto all’Enciclopedia Treccani, ai più invitanti orologi del gioielliere Catellani."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 40"^^xsd:string .
@@ -27107,6 +27142,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00073> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Enciclopedia Treccani"@it ;
     chora:excerpt "Alle rare occasioni si avventurano chiane chiane per via Colonna o s’inoltrano agorafobici su li serci de piazza de Pietra, non senza disdegnare la fojetta, e la pizza snobistica der napoletano: e poi pe quer budello de via de Pietra arriveno magari a sfociar sul Corso, ma sabato grasso ha da essere, dirimpetto all’Enciclopedia Treccani, ai più invitanti orologi del gioielliere Catellani."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 40"^^xsd:string .
@@ -27135,6 +27171,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00077> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Palommella"@it ;
     chora:excerpt "Di quaresima, luttuosi e boffici, si contentano lungheggiar Santa Chiara, sotto ai due globi de’ due alberghi, fino all’elefante e al suo gentile obelisco, e alle vetrine dei rosari e delle madonne: passo passo: oppure, passo passo, riscendono: schivata per un pelo una bicicletta, imboccheno la Palommella e sfioreno er dedietro ar Panteone, già oramai però sulla via del ritorno, e come un po’ delusi del crepuscolo."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 41"^^xsd:string .
@@ -27142,6 +27179,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00078> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Panteone"@it ;
     chora:excerpt "Di quaresima, luttuosi e boffici, si contentano lungheggiar Santa Chiara, sotto ai due globi de’ due alberghi, fino all’elefante e al suo gentile obelisco, e alle vetrine dei rosari e delle madonne: passo passo: oppure, passo passo, riscendono: schivata per un pelo una bicicletta, imboccheno la Palommella e sfioreno er dedietro ar Panteone, già oramai però sulla via del ritorno, e come un po’ delusi del crepuscolo."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 41"^^xsd:string .
@@ -27156,6 +27194,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00080> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Campo Marzio"@it ;
     chora:excerpt "Da qualche anno il commendator Angeloni s’era trasferito a via Merulana, in seguito alle demolizioni di via del Parlamento-Campo Marzio. Là ci aveva abitato da sempre."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 41"^^xsd:string .
@@ -27177,6 +27216,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00083> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "ducentodicinnove"@it ;
     chora:excerpt "E qualche volta, del resto, glie li mandavano anche a casa ar ducentodicinnove su in cima"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 41"^^xsd:string .
@@ -27191,6 +27231,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00086> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "via der Gesù"@it ;
     chora:excerpt "«Come ve pare, commendatore. In ogni caso, quanno che volete, er Maccheronaro, qui a via der Gesù, ce sta apposta. Ce conosce tutti, che semo boni clienti. Er rosbiffe ar sangue è la specialità de Peppì.»"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 43"^^xsd:string .
@@ -27198,6 +27239,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00087> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Santo Stefano der Cacco"@it ;
     chora:excerpt "« A Santo Stefano der Cacco avemio da capità. Brutti posti!»"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 43"^^xsd:string .
@@ -27219,6 +27261,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00091> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "de li Serpenti"@it ;
     chora:excerpt "«Giusto me lo so’ fatto mannà a casa. Dar salumaro de via Panisperna, già, in fonno in fonno, quasi all’angolo de li Serpenti... È un bolognese.»"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 45"^^xsd:string .
@@ -27226,6 +27269,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00092> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "li Serpenti"@it ;
     chora:excerpt "Il giovanotto che Gaudenzio era pervenuto a racimolare a li Serpenti fu introdotto a sua volta."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 45"^^xsd:string .
@@ -27261,6 +27305,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00097> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "palazzo dell’Oro"@it ;
     chora:excerpt "Era scritto che il ducentodiciannove de via Merulana, il palazzo dell’Oro, o dei pescicani che fosse, era scritto: che doveva fiorire anche lui un bel viore, come tant’altri fabbricati ’e sto munno, del resto."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 49"^^xsd:string .
@@ -27268,6 +27313,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00100> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "San Giovanni"@it ;
     chora:excerpt "Ai giardinetti di San Giovanni, dove la Tina la conduceva a passeggio, quella smemorata: e invece di badarle, c’era dimolti perdigiorno che le badavan loro a lei: all’Assunta."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 51"^^xsd:string .
@@ -27289,6 +27335,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00103> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "la B"@it ;
     chora:excerpt "der terzo piano der ducentodicinnove (scala A, spiegamese bene, che la B è un artro conto)"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 52"^^xsd:string .
@@ -27303,6 +27350,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00105> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Sant’Antonio de Padova"@it ;
     chora:excerpt "Di quel nome e di quelle gioie, vere o supposte, di quel mucchio d’ori della «contessa» der terzo piano der ducentodicinnove (scala A, spiegamese bene, che la B è un artro conto) pe tutta via Merulana e Labbicana insino a Sant’Antonio de Padova e a San Clemente e a li Santi Quattro, l’epos omai s’era insignorito, e mannava fora bagliori, lividori: come fiamma dalla carta unta."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 52"^^xsd:string .
@@ -27310,6 +27358,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00106> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Santi Quattro"@it ;
     chora:excerpt "Di quel nome e di quelle gioie, vere o supposte, di quel mucchio d’ori della «contessa» der terzo piano der ducentodicinnove (scala A, spiegamese bene, che la B è un artro conto) pe tutta via Merulana e Labbicana insino a Sant’Antonio de Padova e a San Clemente e a li Santi Quattro, l’epos omai s’era insignorito, e mannava fora bagliori, lividori: come fiamma dalla carta unta."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 52"^^xsd:string .
@@ -27317,6 +27366,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00107> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Labbicana"@it ;
     chora:excerpt "Di quel nome e di quelle gioie, vere o supposte, di quel mucchio d’ori della «contessa» der terzo piano der ducentodicinnove (scala A, spiegamese bene, che la B è un artro conto) pe tutta via Merulana e Labbicana insino a Sant’Antonio de Padova e a San Clemente e a li Santi Quattro, l’epos omai s’era insignorito, e mannava fora bagliori, lividori: come fiamma dalla carta unta."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 52"^^xsd:string .
@@ -27338,6 +27388,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00110> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "San Lorenzo in Lucina"@it ;
     chora:excerpt "sicché lo aveva lasciato da Cobianchi a San Lorenzo in Lucina, l’anello, sapete bene, là dentro l’angolo di Palazzo Ruspoli, un po’ sottoterra però, e poi però miracolosamente lo ritrovò"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 53"^^xsd:string .
@@ -27352,6 +27403,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00112> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "San Silvestro"@it ;
     chora:excerpt "previa accensione d’una candela a sant’Antonio ch’entrò apposta a San Silvestro a falla accenne, e solo dopo avella accesa ritornò addietro a cercallo;"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 53"^^xsd:string .
@@ -27436,6 +27488,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00125> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "grotta der sor Pippo"@it ;
     chora:excerpt "A Marino, artro che quel’ambrosia ce sta! a la grotta der sor Pippo ce steva un bianco malvagio"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_II> ;
     chora:sourceReference "A 55"^^xsd:string .
@@ -27506,6 +27559,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00135> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Giannicolo"@it ;
     chora:excerpt "Le poche macchine a disposizione della polizia vagavano raminghe pel septimonzio, o impegnate a foro o a terrazza, o ar Pincio o ar Giannicolo, così"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_II> ;
     chora:sourceReference "A 56"^^xsd:string .
@@ -27513,6 +27567,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00136> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Colleggio Romano"@it ;
     chora:excerpt "o se faceveno una pennichella, ar Colleggio Romano, come tanti strucchioni de piazza, però pronte pe daje er giro puro a loro, nun se sa mai."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_II> ;
     chora:sourceReference "A 57"^^xsd:string .
@@ -27562,6 +27617,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00144> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Faiti"@it ;
     chora:excerpt "Er sangue aveva impiastrato tutto er collo, er davanti de la camicetta, una manica: la mano: una spaventevole colatura d’un rosso nero, da Faiti o da Cengio (don Ciccio rammemorò subito, con un lontano pianto nell’anima, povera mamma!)."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_II> ;
     chora:sourceReference "A 61"^^xsd:string .
@@ -27583,6 +27639,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00147> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Forte de marmo"@it ;
     chora:excerpt "pareva d’esse a Ostia d’estate, o ar Forte de marmo de Viareggio, quanno so sdraiate su la rena a cocese, che te fanno vede tutto quello che vonno."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_II> ;
     chora:sourceReference "A 62"^^xsd:string .
@@ -27611,6 +27668,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00151> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Sacro Core"@it ;
     chora:excerpt "Riferirono ad Ingravallo che la Gina, la pupilla, era tornata dar Sacro Core, in quer momento. Il giovedì rientrava all’una: per la colazione. [...] Sì, un po’ prima della Gina, che annava ar Sacro Core alle otto. Non volle sostare a quella vista: «Nun me riesce de guardalla.» Se fece er segno de la croce."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_II> ;
     chora:sourceReference "A 65"^^xsd:string .
@@ -27618,6 +27676,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00152> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Milano"@it ;
     chora:excerpt "Il Balducci doveva arrivare da Milano l’indomani... o da Verona."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_II> ;
     chora:sourceReference "A 65"^^xsd:string .
@@ -27639,6 +27698,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00155> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Sacro Core"@it ;
     chora:excerpt "Sì, un po’ prima della Gina, che annava ar Sacro Core alle otto."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_II> ;
     chora:sourceReference "A 66"^^xsd:string .
@@ -27674,6 +27734,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00162> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "via de li Banchi Vecchi"@it ;
     chora:excerpt "Faceva er maschietto tosto, o er tu-mi-stufi, certe volte, o er superbioso; o er signorino de casa de famija scerta der generone de via de li Banchi Vecchi: o l’uomo d’affari, che nun cià tempo de stà a discorre."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_II> ;
     chora:sourceReference "A 69"^^xsd:string .
@@ -27688,6 +27749,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00164> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Milano"@it ;
     chora:excerpt "Milano, Padova, eventualmente Bologna, perché aveva da annà pure a Padova."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_II> ;
     chora:sourceReference "A 70"^^xsd:string .
@@ -27709,6 +27771,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00167> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Tranvie de li Castelli"@it ;
     chora:excerpt "Levò meccanicamente di tasca il biglietto: dalla tasca destra della giacca, dove lo aveva riposto la mattina, e dove stava ancora dopo tanta pena del giorno: con mezza sigheretta e con alcune briciole: il biglietto allungato verdolino-azzurro delle Tranvie de li Castelli, cor buco ner 13, con quell’altro foro o strappo al Torraccio."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_II> ;
     chora:sourceReference "A 73"^^xsd:string .
@@ -27779,6 +27842,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00179> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "piazza Vittorio"@it ;
     chora:excerpt "Ereno passati li tempi belli... che pe un pizzico ar mandolino d’una serva a piazza Vittorio, c’era un brodo longo de mezza paggina."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_III> ;
     chora:sourceReference "A 76"^^xsd:string .
@@ -27786,6 +27850,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00180> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Palazzo Chiggi"@it ;
     chora:excerpt "Pensare che ce fossero dei ladri, a Roma, ora? Co quer gallinaccio co la faccia fanatica a Palazzo Chiggi?"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_III> ;
     chora:sourceReference "A 77"^^xsd:string .
@@ -27856,6 +27921,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00191> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "via Frangipani"@it ;
     chora:excerpt "La necessaria frequenza della malavita, l’approfondimento abbreviato, ottenuto così per intuito, de queli «stati de famija», lo aveveno ridotto che lui, là pe llà, te spifferava tutte le «coabitazzione», ponghiamo, de via Capo d’Africa o de via Frangipani, e fin su a li Zingari, a via de li Capocci, ar vicolo Ciancaleoni: e giù poi, passata piazza Montanara nun ne parlamo nemmeno, a via de Monte Caprino, ar vicolo de la Bucimazza, a via de’ Fienili: quanti nun ne conosceva!"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_III> ;
     chora:sourceReference "A 81"^^xsd:string .
@@ -27863,6 +27929,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00192> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "li Zingari"@it ;
     chora:excerpt "La necessaria frequenza della malavita, l’approfondimento abbreviato, ottenuto così per intuito, de queli «stati de famija», lo aveveno ridotto che lui, là pe llà, te spifferava tutte le «coabitazzione», ponghiamo, de via Capo d’Africa o de via Frangipani, e fin su a li Zingari, a via de li Capocci, ar vicolo Ciancaleoni: e giù poi, passata piazza Montanara nun ne parlamo nemmeno, a via de Monte Caprino, ar vicolo de la Bucimazza, a via de’ Fienili: quanti nun ne conosceva!"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_III> ;
     chora:sourceReference "A 81"^^xsd:string .
@@ -27870,6 +27937,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00193> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "via de li Capocci"@it ;
     chora:excerpt "La necessaria frequenza della malavita, l’approfondimento abbreviato, ottenuto così per intuito, de queli «stati de famija», lo aveveno ridotto che lui, là pe llà, te spifferava tutte le «coabitazzione», ponghiamo, de via Capo d’Africa o de via Frangipani, e fin su a li Zingari, a via de li Capocci, ar vicolo Ciancaleoni: e giù poi, passata piazza Montanara nun ne parlamo nemmeno, a via de Monte Caprino, ar vicolo de la Bucimazza, a via de’ Fienili: quanti nun ne conosceva!"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_III> ;
     chora:sourceReference "A 81"^^xsd:string .
@@ -27891,6 +27959,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00196> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "via de Monte Caprino"@it ;
     chora:excerpt "La necessaria frequenza della malavita, l’approfondimento abbreviato, ottenuto così per intuito, de queli «stati de famija», lo aveveno ridotto che lui, là pe llà, te spifferava tutte le «coabitazzione», ponghiamo, de via Capo d’Africa o de via Frangipani, e fin su a li Zingari, a via de li Capocci, ar vicolo Ciancaleoni: e giù poi, passata piazza Montanara nun ne parlamo nemmeno, a via de Monte Caprino, ar vicolo de la Bucimazza, a via de’ Fienili: quanti nun ne conosceva!"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_III> ;
     chora:sourceReference "A 81"^^xsd:string .
@@ -27898,6 +27967,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00197> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "vicolo de la Bucimazza"@it ;
     chora:excerpt "La necessaria frequenza della malavita, l’approfondimento abbreviato, ottenuto così per intuito, de queli «stati de famija», lo aveveno ridotto che lui, là pe llà, te spifferava tutte le «coabitazzione», ponghiamo, de via Capo d’Africa o de via Frangipani, e fin su a li Zingari, a via de li Capocci, ar vicolo Ciancaleoni: e giù poi, passata piazza Montanara nun ne parlamo nemmeno, a via de Monte Caprino, ar vicolo de la Bucimazza, a via de’ Fienili: quanti nun ne conosceva!"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_III> ;
     chora:sourceReference "A 81"^^xsd:string .
@@ -27905,6 +27975,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00198> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "via de’ Fienili"@it ;
     chora:excerpt "La necessaria frequenza della malavita, l’approfondimento abbreviato, ottenuto così per intuito, de queli «stati de famija», lo aveveno ridotto che lui, là pe llà, te spifferava tutte le «coabitazzione», ponghiamo, de via Capo d’Africa o de via Frangipani, e fin su a li Zingari, a via de li Capocci, ar vicolo Ciancaleoni: e giù poi, passata piazza Montanara nun ne parlamo nemmeno, a via de Monte Caprino, ar vicolo de la Bucimazza, a via de’ Fienili: quanti nun ne conosceva!"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_III> ;
     chora:sourceReference "A 81"^^xsd:string .
@@ -27919,6 +27990,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00200> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Sant’Andrea de la Valle"@it ;
     chora:excerpt "[...] o intorno a quell’antra tigna de Palazzo Pio, pe tutti queli budelli de dietro a Sant’Andrea de la Valle, a Grotta Pinta, a via di Ferro, ar vicolo de le Grotte der Teatro: e magari a piazza Pollarola, con tutto che so’ gente der generone, magara, ma quarche aggregato un po’ misto o quarche tipo nun tanto in bona co la squadra mobbile ce po puro stà."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_III> ;
     chora:sourceReference "A 81"^^xsd:string .
@@ -27926,6 +27998,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00201> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Grotta Pinta"@it ;
     chora:excerpt "[...] o intorno a quell’antra tigna de Palazzo Pio, pe tutti queli budelli de dietro a Sant’Andrea de la Valle, a Grotta Pinta, a via di Ferro, ar vicolo de le Grotte der Teatro: e magari a piazza Pollarola, con tutto che so’ gente der generone, magara, ma quarche aggregato un po’ misto o quarche tipo nun tanto in bona co la squadra mobbile ce po puro stà."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_III> ;
     chora:sourceReference "A 81"^^xsd:string .
@@ -27940,6 +28013,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00203> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "vicolo de le Grotte der Teatro"@it ;
     chora:excerpt "[...] o intorno a quell’antra tigna de Palazzo Pio, pe tutti queli budelli de dietro a Sant’Andrea de la Valle, a Grotta Pinta, a via di Ferro, ar vicolo de le Grotte der Teatro: e magari a piazza Pollarola, con tutto che so’ gente der generone, magara, ma quarche aggregato un po’ misto o quarche tipo nun tanto in bona co la squadra mobbile ce po puro stà."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_III> ;
     chora:sourceReference "A 81"^^xsd:string .
@@ -28003,6 +28077,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00213> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Milano"@it ;
     chora:excerpt "Intanto erano state sollecitate le questure: Milano, Bologna, Vicenza, Padova."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
     chora:sourceReference "A 92"^^xsd:string .
@@ -28066,6 +28141,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00222> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "palazzo Chiggi"@it ;
     chora:excerpt "Quello de palazzo Chiggi nun j’era parso vero de dì la sua puro lui, più forte de tutti: «Il bieco assassino dovrebbe essere già fucilato da sei ore.»"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
     chora:sourceReference "A 93"^^xsd:string .
@@ -28073,6 +28149,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00224> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Banca Commerciale"@it ;
     chora:excerpt "«I libretti de risparmio de Liliana.» «Di che colore?» «Colore! Uno der Banco de Santo Spirito, uno de la Banca Commerciale.» «Intestati a... Lei?...» «Sì, a Liliana mia. »"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
     chora:sourceReference "A 95"^^xsd:string .
@@ -28080,6 +28157,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00225> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Banco de Santo Spirito"@it ;
     chora:excerpt "«I libretti de risparmio de Liliana.» «Di che colore?» «Colore! Uno der Banco de Santo Spirito, uno de la Banca Commerciale.» «Intestati a... Lei?...» «Sì, a Liliana mia. »"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
     chora:sourceReference "A 95"^^xsd:string .
@@ -28094,6 +28172,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00228> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "palazzo Chiggi"@it ;
     chora:excerpt "Queli marenghini gialli gialli tonni tonni de quanno nun c’era ancora sto Pupazzo a palazzo Chiggi, a strillà dar balcone come uno stracciarolo?"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
     chora:sourceReference "A 97"^^xsd:string .
@@ -28129,6 +28208,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00233> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "piazza Vittorio"@it ;
     chora:excerpt "Liliana teneva la cassetta de sicurezza a la banca, a l’agenzia numero undici de la Commerciale che faceva puro servizio de cassette con un caveau de li più moderni: a piazza Vittorio propio de fronte ar mercato, sotto li portici: bravo: all’angolo de via Carlo Alberto."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
     chora:sourceReference "A 103"^^xsd:string .
@@ -28143,6 +28223,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00235> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Banco de Santo Spirito"@it ;
     chora:excerpt "E poi però ce n'aveva un'artra a corso Umberto, ar Banco de Santo Spirito."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
     chora:sourceReference "A 103"^^xsd:string .
@@ -28164,6 +28245,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00242> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "palazzo del ducentodicinnove"@it ;
     chora:excerpt "Tutto un po’ li aveva indotti a rimanere dov’erano: in quel maledetto palazzo del ducentodicinnove."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
     chora:sourceReference "A 105"^^xsd:string .
@@ -28171,6 +28253,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00243> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Prati"@it ;
     chora:excerpt "Chiunque artro, ar posto loro, avrebbe cercato de mejo. Ora lo capiva: troppo tardi! Un ber quartierino in Prati, un villino a lungotevere... Sospirò."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
     chora:sourceReference "A 105"^^xsd:string .
@@ -28178,6 +28261,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00244> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "villino a lungotevere"@it ;
     chora:excerpt "Chiunque artro, ar posto loro, avrebbe cercato de mejo. Ora lo capiva: troppo tardi! Un ber quartierino in Prati, un villino a lungotevere... Sospirò."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
     chora:sourceReference "A 105"^^xsd:string .
@@ -28339,6 +28423,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00269> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "palazzo Chigge"@it ;
     chora:excerpt "da chillo fetente d’ ’o balcone ’e palazzo Chigge"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
     chora:sourceReference "A 115"^^xsd:string .
@@ -28409,6 +28494,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00284> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "de li Banchi Vecchi"@it ;
     chora:excerpt "la famiglia Valdarena e addentellati, e cioè la nonna de Giuliano, il Balducci medesimo, le du zie de li Banchi Vecchi, e zi’ Carlo, e zi’ Elvira, e li parenti un po’ tutti"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
     chora:sourceReference "A 134"^^xsd:string .
@@ -28416,6 +28502,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00285> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Banco de Santo Spirito"@it ;
     chora:excerpt "je venne subito dietro quella più bona ancora del cassiere-capo de la banca: der Banco de Santo Spirito."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
     chora:sourceReference "A 134"^^xsd:string .
@@ -28465,6 +28552,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00292> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "piazza Vittorio"@it ;
     chora:excerpt "chi dice ma, cuore contento non ha... ai bambini, a le belle serve tutte fronzute de sélleri e de spinaci, in della sporta, quanno veniveno da piazza Vittorio"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
     chora:sourceReference "A 136"^^xsd:string .
@@ -28472,6 +28560,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00293> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Soriano ar Cimìno"@it ;
     chora:excerpt "Una vorta me fece una mezza scena a me, suo marito, p’una ragazza de Soriano ar Cimìno: una contadina ch’era venuta a Roma co la viterbese, a portamme li confetti."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
     chora:sourceReference "A 137"^^xsd:string .
@@ -28479,6 +28568,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00294> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "San Giovanni"@it ;
     chora:excerpt "La sposa, povera pupa, arrivò co lo sposo, preceduti da na panza come na mongolfiera a San Giovanni, a li fochi. Diceveno: avemo portato li confetti. Se sa, ereno un po’ imbarazzati."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
     chora:sourceReference "A 137"^^xsd:string .
@@ -28493,6 +28583,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00296> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Milano"@it ;
     chora:excerpt "Il « diffusa » l’aveva letto a Milano, sur Secolo, in un articolo di Maroccus... Er dottore der Secolo : finissimo!"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
     chora:sourceReference "A 138"^^xsd:string .
@@ -28500,6 +28591,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00297> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Sacro Core"@it ;
     chora:excerpt "orfanelle che piagneveno, moniche der Sacro Core che nun piagneveno, perch’ereno sicure ch’era già in Paradiso, a quell’ora, lo poteveno giurà"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
     chora:sourceReference "A 138"^^xsd:string .
@@ -28521,6 +28613,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00303> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "San Lorenzo ar Verano"@it ;
     chora:excerpt "e a le otto e mezza otto e quaranta arrivarono a San Lorenzo ar Verano, dopo avé sollevato un ber po’ de porvere, dato ch’er catrame nun l’aveveno ancora passato, ma c’ereno già li barili."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
     chora:sourceReference "A 140"^^xsd:string .
@@ -28605,6 +28698,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00320> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Santi Quattro"@it ;
     chora:excerpt "Le visite e le implorazioni della Balducci, ai Santi Quattro, a certe stagioni liete nel cielo, o men tristi, erano si poteva dire cotidiane."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
     chora:sourceReference "A 141"^^xsd:string .
@@ -28654,6 +28748,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00328> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "San Giovanni Laterano"@it ;
     chora:excerpt "I dieci ditoni del gigante si abbandonarono sul grembo, interzati stretti l’uni all’artri: pettine e contro-pettine: quasi d’un apostolo de travertino, de quelli che stanno in piedi su la balustrata, sopra ar cornicione de San Giovanni Laterano."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
     chora:sourceReference "A 148"^^xsd:string .
@@ -28745,6 +28840,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00341> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Toraccio"@it ;
     chora:excerpt "Sì... no... già... perfettamente. No, no... al Toraccio nun l'aveveno trovato. In parole povere, uccel di bosco."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 152"^^xsd:string .
@@ -28752,6 +28848,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00342> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "via Orà-zio"@it ;
     chora:excerpt "No, la signora gondessa è in gliniga... In gliniga dal signor ammiraglio… a via Orà-zio: Orà-zio! Sì, signorsì. No, signor no. Mo domando. Precedenza servizio polizia, questura di Roma."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 153"^^xsd:string .
@@ -28808,6 +28905,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00352> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "via der Gesù"@it ;
     chora:excerpt "Er Maccheronaro, a via der Gesù lì a du passi, nun perdeva l’occasione de dimostraje la propria simpatia"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 154"^^xsd:string .
@@ -28927,6 +29025,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00374> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "piazza Vittorio"@it ;
     chora:excerpt "«E trattenuta per sospetto di complicità in un furto,» rammentò Di Pietrantonio al commissario capo. «Qua' furto?» «Un pollo.» «Addo' l'ha rubato?» «A piazza Vittorio.»"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 158"^^xsd:string .
@@ -28955,6 +29054,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00379> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "li Du Santi"@it ;
     chora:excerpt "e d'aver già lavorato come carzonara a li Du Santi, dopo le Frattocchie. «E poi?» Poi, d'essersi ridotta a Roma: a cercà lavoro."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 159"^^xsd:string .
@@ -28969,6 +29069,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00381> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Santo Stefano del Cacco"@it ;
     chora:excerpt "Il pollo puzzava maledettamente: tradotto in questura pure lui, con le due scarpe tutt'e due sinistre, una vorta a Santo Stefano del Cacco se vede che j'aveva preso paura"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 159"^^xsd:string .
@@ -28997,6 +29098,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00385> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "li Du Santi"@it ;
     chora:excerpt "La di lei attività era ufficialmente quella di rammendatrice e rimagliatrice, carzonara, tintora, in qualche caso merciara, impirica de guarì la sciatica per segreto d’erbe, indovina chiromante e cartomante patentata con spaccio di vini e liquori alli Du Santi"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 162"^^xsd:string .
@@ -29018,6 +29120,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00388> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "li Du Santi"@it ;
     chora:excerpt "E aveveno er grugno pure de dì che li Du Santi... ereno... un par de «nun zo se me spiego»"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 163"^^xsd:string .
@@ -29060,6 +29163,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00394> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "laboratorio della Zamira"@it ;
     chora:excerpt "Un luogo, insomma, il laboratorio della Zamira, da non si poter incontrare il più opportuno a distillarvi una goccia, una goccia sola e splendida della eternamente proibita o eternamente inverisimile Probabilità."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 166"^^xsd:string .
@@ -29081,6 +29185,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00397> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "l'Ardeatina"@it ;
     chora:excerpt "disponeva, la Zamira, di buon organico di nipotine apprendiste: e riserve, poi, dislocate lungo l'Appia, lungo l'Ardeatina o l'Anziate, al tale, o tal altro chilometro, di rimagliatrici aggiunte"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 167"^^xsd:string .
@@ -29088,6 +29193,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00398> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "l'Anziate"@it ;
     chora:excerpt "disponeva, la Zamira, di buon organico di nipotine apprendiste: e riserve, poi, dislocate lungo l'Appia, lungo l'Ardeatina o l'Anziate, al tale, o tal altro chilometro, di rimagliatrici aggiunte"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 167"^^xsd:string .
@@ -29130,6 +29236,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00405> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Divino Amore"@it ;
     chora:excerpt "Si preannunciava di lontano, dal Torraccio, dalle ultime case de le Frattocchie, dalle Robine Vecchie altre volte o dal Cassero a Sant'Ignazio, o dal Divino Amore"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 169"^^xsd:string .
@@ -29144,6 +29251,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00407> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Milano"@it ;
     chora:excerpt "Veniva fuori, la cara voce, manco a dirlo, usciva dallo stipo della radio: di cui Fabrizio Santarella s’era provveduto a Milano, quando v’era andato in « missione speciale »"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 170"^^xsd:string .
@@ -29151,6 +29259,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00408> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Milano"@it ;
     chora:excerpt "e n’era tornato coi due Salvatori, da Milano, e, in più, con una radio a due valvole: prodigioso ritrovato di quella prodigiosa civiltà"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 170"^^xsd:string .
@@ -29186,6 +29295,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00413> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Castel Savelli"@it ;
     chora:excerpt "Lui tutt'al rovescio, appena rosa e oro il cielo: da Rocca di Papa a Castel Savelli, giù: da Rocca Orsina al Monte Nuncupale, su"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 173"^^xsd:string .
@@ -29256,6 +29366,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00423> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "l'Ardeatina"@it ;
     chora:excerpt "Infilava au ralenti la mala curva d'aa stazione d'aa Cecchina: spengeva solo, poi bloccava, il caso richiedendo, a Santa Palomba stazione, a Campoleone Stazione: dove l'Ardeatina o dove la strada Anziate incrocia, al passaggio, l'avvento gittato del Roma-Napoli"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 173"^^xsd:string .
@@ -29263,6 +29374,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00424> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Anziate"@it ;
     chora:excerpt "Infilava au ralenti la mala curva d'aa stazione d'aa Cecchina: spengeva solo, poi bloccava, il caso richiedendo, a Santa Palomba stazione, a Campoleone Stazione: dove l'Ardeatina o dove la strada Anziate incrocia, al passaggio, l'avvento gittato del Roma-Napoli"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 173"^^xsd:string .
@@ -29326,6 +29438,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00433> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Palomba"@it ;
     chora:excerpt "Poi, presso a Ciampino o alla Palomba, levava gli occhi: su, su: carovane bianche di nuvole trascorrendo a mezzo marzo nel cielo"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 175"^^xsd:string .
@@ -29354,6 +29467,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00438> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "carabinieri di Marino"@it ;
     chora:excerpt "Tutto il merito, ora, ai carabinieri di Marino. « Sti lanternoni d’ ’o tteate ’e Pulcinella. »"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 177"^^xsd:string .
@@ -29368,6 +29482,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00452> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "li Du Santi"@it ;
     chora:excerpt "E tutti ’o dicevano, a li Du Santi."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 180"^^xsd:string .
@@ -29382,6 +29497,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00455> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "trasteverino"@it ;
     chora:excerpt "Si differiva passo passo da un quartiere all’altro: monticiano a le dieci, trasteverino a le quattro, a Piazza Colonna o a l’Esedra con le luci e i rossoverdi richiami della sera."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 182"^^xsd:string .
@@ -29445,6 +29561,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00466> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "pensione Bergèss"@it ;
     chora:excerpt "« Ho capito, la pensione Bergèss, » fece Pompeo, pronunziando a suo modo."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 189"^^xsd:string .
@@ -29452,6 +29569,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00467> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Pensione Bergesse"@it ;
     chora:excerpt "« All’ufficio stranieri, Pompè, allo schedario. Pensione Bergesse. E bbuona pesca. »"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 189"^^xsd:string .
@@ -29508,6 +29626,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00475> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Reggio (Calabria)"@it ;
     chora:excerpt "Lui, Norman Douglas, o lui, Lawrence, li riconosceva emergere dalle tre città di Reggio (Calabria), Sassari e Civitavecchia, con gran dispetto dei palermitani."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 192"^^xsd:string .
@@ -29543,6 +29662,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00487> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "funtanella de Borghese"@it ;
     chora:excerpt "« Un’ingozzata d’acqua Marcia a la Scrofa, o a la funtanella de Borghese. »"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 199"^^xsd:string .
@@ -29585,6 +29705,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00494> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Buco a Sant’Ignazzio"@it ;
     chora:excerpt "« Pure ar Buco a Sant’Ignazzio, quarche vorta, che so’ toscani, m’ha detto: propio de la Toscana. »"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 200"^^xsd:string .
@@ -29592,6 +29713,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00495> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Villa Porchese"@it ;
     chora:excerpt "« Scusi, mi dire Villa Porchese àu do jo è? E stanno a via Veneto. All’archi de porta Pinciana, stanno! sti fregni. »"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 201"^^xsd:string .
@@ -29655,6 +29777,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00506> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "piazza Vittorio"@it ;
     chora:excerpt "Dove staveno a venne la porchetta: sì, a piazza Vittorio, sì: dove tenevano il posteggio."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 205"^^xsd:string .
@@ -29669,6 +29792,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00508> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "bottega"@it ;
     chora:excerpt "Già il brigadiere Pestalozzi usciva (in motocicletta) dalla caserma degli erre erre ci ci di Marino per catapultarsi alla bottega-laboratorio dove non era minimamente aspettato."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 206"^^xsd:string .
@@ -29697,6 +29821,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00519> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Carseolani"@it ;
     chora:excerpt "Era l’alba, e più. Le vette dell’Algido, dei Carseolani e dei Velini inopinatamente presenti, grigie."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 210"^^xsd:string .
@@ -29739,6 +29864,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00525> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Velino"@it ;
     chora:excerpt "Bordeggiavano la scogliera cinerina delle montagne degli Equi, la nudità dealbata del Velino, antemurale della Marsica."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 210"^^xsd:string .
@@ -29760,6 +29886,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00528> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Ladìspoli"@it ;
     chora:excerpt "Là là sopra il litorale di Fiumicino e di Ladìspoli, era un gregge color marrone."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 210"^^xsd:string .
@@ -29802,6 +29929,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00536> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Campo Morto"@it ;
     chora:excerpt "S’era buttato alla campagna nella notte verso le gore senza foce del Campo Morto e la macchia e l’intrico del litorale pometino."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 212"^^xsd:string .
@@ -29809,6 +29937,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00537> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "monte della contessa Circia"@it ;
     chora:excerpt "Perscrutava e la giuncaia e la tenebra fino laggiù, dove i nomi si diradano, appiè il monte della contessa Circia."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 213"^^xsd:string .
@@ -29823,6 +29952,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00539> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Castel Porcino"@it ;
     chora:excerpt "A Castel Porcino, sotto festoni di pere gialle da due watt e palloncini sbronzi e dolcemente obesi nell’alitare e nello smorire d’ogni mèlode, la maga dalla tabacchiera elicitava al fiuto gli imminenti suini."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 213"^^xsd:string .
@@ -29837,6 +29967,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00542> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Simbruini"@it ;
     chora:excerpt "Un punto di fuoco, d’in vetta al crinale degli Ernici o dei Simbruini l’insostenibile pupilla."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 215"^^xsd:string .
@@ -29858,6 +29989,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00547> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "botteguccia"@it ;
     chora:excerpt "L’usciolo a vetri opachi o colorati d’una botteguccia, il cui limitare di peperino grigio e consunto era a livello dell’asfalto."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 216"^^xsd:string .
@@ -29893,6 +30025,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00552> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "li Du Santi"@it ;
     chora:excerpt "La luce, in Italia, è madre agli alluci: e se uno è un pittore italiano non ischerza, bah, come non ischerzò il Manieroni alli Du Santi"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 217"^^xsd:string .
@@ -29900,6 +30033,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00553> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "edicola delli Du Santi"@it ;
     chora:excerpt "Nella edicola delli Du Santi rifiorita e riccioluta di stucchi in un pallore di ricotta, gli venne finalmente fatto di radunare e adibire ad opera i titoli"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 219"^^xsd:string .
@@ -29963,6 +30097,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00564> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "li Du Santi"@it ;
     chora:excerpt "Quello, in ogni modo, che s’era potuto riscontrare più volte essere giurato nemico a li Du Santi: che s’incavernava nella rocca, a notte, a Marino."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 234"^^xsd:string .
@@ -29977,6 +30112,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00566> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Castel de Leva"@it ;
     chora:excerpt "« Quale passaggio? » « Pe la strada de Castel de Leva, fino ar ponte: poi, a sinistra, fino ar passaggio a livello de Casal Bruciato. »"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 237"^^xsd:string .
@@ -30005,6 +30141,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00570> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Divino Amore"@it ;
     chora:excerpt "Ripeté: « Su la strada der Divino Amore. Fino ar ponte, quasi. Poi a sinistra. »"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 237"^^xsd:string .
@@ -30012,6 +30149,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00571> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "ponte del Divino Amore"@it ;
     chora:excerpt "mentre la di lei guardata la si acuminava nella cattiveria: « ar ponte del Divino Amore! » gridò."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 237"^^xsd:string .
@@ -30019,6 +30157,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00576> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Falcognana"@it ;
     chora:excerpt "Se veniva in su, la Camilla Mattonari, così disse Lavinia, l'avrebbero certamente incontrata, a scarpettare su l'asfalto, o almeno su l'asciutto, cioè precisamente su la strada di Falcognana."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
     chora:sourceReference "A 238"^^xsd:string .
@@ -30054,6 +30193,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00582> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Falcognana"@it ;
     chora:excerpt "Dalla strada di Falcognana, che sorpassa col ponte del Divino Amore la mezza trincera della ferrovia qualche centinaio di metri più giù, si disgiungeva in quel punto la vicinale per Casal Bruciato."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
     chora:sourceReference "A 240"^^xsd:string .
@@ -30061,6 +30201,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00583> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "ponte del Divino Amore"@it ;
     chora:excerpt "Dalla strada di Falcognana, che sorpassa col ponte del Divino Amore la mezza trincera della ferrovia qualche centinaio di metri più giù, si disgiungeva in quel punto la vicinale per Casal Bruciato."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
     chora:sourceReference "A 240"^^xsd:string .
@@ -30117,6 +30258,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00594> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "ponte (del Divino Amore)"@it ;
     chora:excerpt "I pennacchi di fumo che s'era lasciato dietro dopo il ponte (del Divino Amore) e prima d'arrivare al casello"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
     chora:sourceReference "A 245"^^xsd:string .
@@ -30131,6 +30273,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00596> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "bottega"@it ;
     chora:excerpt "Non c'era jettatura come alla bottega della maga, ma forse jactura: preterintenzionale."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
     chora:sourceReference "A 247"^^xsd:string .
@@ -30208,6 +30351,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00611> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "chilometro 20,25"@it ;
     chora:excerpt "logora cintura, ora: che non separa l'indigenza domestica, al chilometro 20,25, dall'aperta accessione della campagna."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
     chora:sourceReference "A 262"^^xsd:string .
@@ -30243,6 +30387,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00620> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "li Du Santi"@it ;
     chora:excerpt "Le donne bisogna studialle bene prima de comincià, sentenziava a li Du Santi, a metà il bicchiere, davanti al beveratoio di marmo bianco striato."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
     chora:sourceReference "A 268"^^xsd:string .
@@ -30278,6 +30423,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00626> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Santa Rita in Vitàcolo"@it ;
     chora:excerpt "fino al Torraccio, fino al Ponte, fino a Santa Palomba dove sono i pali della radio, e quarche volta, sì, fino a Santa Rita in Vitàcolo."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
     chora:sourceReference "A 270"^^xsd:string .
@@ -30285,6 +30431,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00628> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Castelli"@it ;
     chora:excerpt "L'immagine di quella campagna così desolata nel marzo, che con il ristare di scirocco e delle raminghe sue piove, dal lido, ora, approdava in una chiarìa tersa ai Castelli, a le case degli umani, lo fascinò ad un tratto come apparita di magia."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
     chora:sourceReference "A 273"^^xsd:string .
@@ -30306,6 +30453,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00633> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "l'ardeatina"@it ;
     chora:excerpt "Posando invece anche un momento solo al casello, Iginio poteva poi raggiungere Casal Bruciato, superare o no l'ardeatina, svignarsela non veduto sotto gli spalti d'arenaria che fanno la sicurezza invisibile di Ardea."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
     chora:sourceReference "A 274"^^xsd:string .
@@ -30467,6 +30615,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00672> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Piazza Vittorio Manuele"@it ;
     chora:excerpt "e nemmeno er Biondone, comandato a Piazza Vittorio Manuele: ma invece tutto bello secco a baffi ritti il maresciallo Di Pietrantonio."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 291"^^xsd:string .
@@ -30474,6 +30623,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00673> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "piazza de Spagna"@it ;
     chora:excerpt "Sicché nun ve dico quaa locomotiva. La barcaccia de piazza de Spagna che va a spasso."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 292"^^xsd:string .
@@ -30495,6 +30645,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00681> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Merulana"@it ;
     chora:excerpt "I platani e i rami della Merulana furon selva, allo svoltare, intrico, per lo sguardo, sul discendere parallelo dei fili, di cui si alimentavano i tramme."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 292"^^xsd:string .
@@ -30537,6 +30688,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00718> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Crocchiapani"@it ;
     chora:excerpt "Questa, della Tina Crocchiapani, era una picola casa quadrata, un po' disgiunta dal branco: una porticina chiusa, col numero civico 3, a piano terra."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 299"^^xsd:string .
@@ -30544,6 +30696,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/reference/ref_00719> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Tor de Gheppio"@it ;
     chora:excerpt "« C'è una donna de qui, de Tor de Gheppio, che m'aiuta a stà intorno ar malato... si è che non vié quarche vicina, de chelle ch'avrete visto de fori. »"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 302"^^xsd:string .
@@ -30552,6 +30705,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     rdfs:comment "Lezione della stampa Garzanti, emendata dall'editore in QP 241 (variante V-0001)."@it ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/rr2> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Fattocchie"@it ;
     chora:excerpt "su su su fu fu fu da 'e Fattocchie"@it ;
     chora:sourceReference "RR II 219"^^xsd:string .
 
@@ -30559,6 +30713,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     rdfs:comment "Il dattiloscritto dei capitoli nuovi legge «via Lata» dove QP 177 legge «via Lanza» (Pinotti 2025, p. 78; variante V-0002). Pagina del dattiloscritto non registrata."@it ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/dtsfg> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "via Lata"@it ;
     chora:sourceReference "dtsFG"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/relanchor/interp_00472> a chora:RelationalAnchoring ;
@@ -32619,6 +32774,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00007> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "palazzo der ducentodicinnove"@it ;
     chora:excerpt "Già in quer gran palazzo der ducentodicinnove nun ce staveno che signori grossi: quarche famija der generone: ma soprattutto signori novi de commercio, de quelli che un po’ d’anni avanti li chiamaveno ancora pescicani."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 16"^^xsd:string .
@@ -32626,6 +32782,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00008> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "er palazzo dell’oro"@it ;
     chora:excerpt "E il palazzo, poi, la gente der popolo lo chiamaveno er palazzo dell’oro."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 16"^^xsd:string .
@@ -32689,6 +32846,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00171> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "via Panesperna"@it ;
     chora:excerpt "«’O cummendatore Angelone!» sospirò con certa enfasi. «A chillu lle piaceno ’e carcioffole. Jammo a vedè. ’O presutto ’e montagna ’e via Panesperna lle piace. Laggiù al cantone, all’angolo di via dei Serpenti.»"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_II> ;
     chora:sourceReference "A 74"^^xsd:string .
@@ -32696,6 +32854,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00188> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "cantina di Albano"@it ;
     chora:excerpt "Gli pareva di ricordare una frase del Balducci, una sera alla « cantina di Albano », uscita come a un benigno opinante da quel suo faccione rubizzo"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_III> ;
     chora:sourceReference "A 78"^^xsd:string .
@@ -32703,6 +32862,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00208> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "ducentodiciannove"@it ;
     chora:excerpt "Secondo i più attendibili tra i molti e melodiosi susurri del ducentodiciannove così prontamente captati dallo Sgranfia, pareva..."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_III> ;
     chora:sourceReference "A 85"^^xsd:string .
@@ -32717,6 +32877,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00227> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Santi Quattro"@it ;
     chora:excerpt "E il coadiutore di Cristo, ai Santi Quattro, aveva benedetto il trattato. Con tanto di asperges in nomine Domini: senza troppo inzaccheralli, però."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
     chora:sourceReference "A 97"^^xsd:string .
@@ -32745,6 +32906,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00241> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Santi Quattro"@it ;
     chora:excerpt "E quella malinconia di Liliana. Quella specie di fissazione. E poi co li Santi Quattro là vicino. «Che Liliana, Madonna! guai a sentimme dì de portalla via da li Santi Quattro!»"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
     chora:sourceReference "A 105"^^xsd:string .
@@ -32787,6 +32949,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00278> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "San Lorenzo in Lucina"@it ;
     chora:excerpt "« C’era perfino da ridere, povera Liliana! Dunque ce vai domani, ce vai oggi stesso, diceva. Promettimi! Sì, sì, a Campo Marzio, sì, Ceccherelli, aricòrdete, poco prima d’arrivà in Lucina, dove ce sta la pizzeria. Sì, sì a San Lorenzo in Lucina: nun me fa er tonto, mo, che ce ’o sai benissimo. A destra, però.»"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
     chora:sourceReference "A 126"^^xsd:string .
@@ -32794,6 +32957,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00298> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "de li Banchi Vecchi"@it ;
     chora:excerpt "e zi’ Marietta e zi’ Elvira in gramaglie, e un paro d’altre zie, de li Banchi Vecchi, pure piuttosto nere pure loro."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
     chora:sourceReference "A 138"^^xsd:string .
@@ -32829,6 +32993,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00325> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Sacro Core"@it ;
     chora:excerpt "ma quando sentì che la Gina era ar Sacro Core s'azzittò: tant'è tanto... che ce veniva a fa?"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
     chora:sourceReference "A 144"^^xsd:string .
@@ -32892,6 +33057,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00439> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "via der Gesù"@it ;
     chora:excerpt "Pestalozzi cenò di buon appetito a ’o tavolino de marmo: a via der Gesù: dal Maccheronaro: dove ce l’aveva accompagnato Pompé."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 177"^^xsd:string .
@@ -32920,6 +33086,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00444> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "strada de campagna"@it ;
     chora:excerpt "La « strada de campagna » si riuscì a scoprire che doveva essere una strada (in quegli anni tuttavia romita e campestre) del Celio."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 179"^^xsd:string .
@@ -32941,6 +33108,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00447> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Santo Stefano Rotondo"@it ;
     chora:excerpt "Forse via di San Paolo della Croce, con più probabilità via della Navicella o di Santo Stefano Rotondo."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 180"^^xsd:string .
@@ -32962,6 +33130,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00450> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Tempio d’Agrippa"@it ;
     chora:excerpt "La ritonna... « dove manco ce stanno più li preti », non era, non poteva essere er Tempio d’Agrippa, dove i segugi s’erano riportati col pensiero, subito escludendolo dato che non sorge « in campagna »."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 180"^^xsd:string .
@@ -33011,6 +33180,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00480> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "li Du Santi"@it ;
     chora:excerpt "Al brigadiere Pestalozzi parve anzi rammemorarne senza pena il tacito essere, del Diomede: che aveva incontrato alla mescita de li Du Santi."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 197"^^xsd:string .
@@ -33025,6 +33195,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00482> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "piazza Vittorio"@it ;
     chora:excerpt "« Da le parte de la stazzione, me pare: passato piazza Vittorio, però. Ma io... nun so’ pratica de queli posti. »"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 199"^^xsd:string .
@@ -33039,6 +33210,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00484> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "San Giovanni"@it ;
     chora:excerpt "« Na strada larga, longa, » disse lei titubando fra vergogna e rimorso, « dritta dritta... che va a finì a San Giovanni. »"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 199"^^xsd:string .
@@ -33053,6 +33225,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00504> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "piazza Vittorio"@it ;
     chora:excerpt "« Addo’? » « ... a piazza Vittorio, che m’ha dato pure na pagnottella sverto sverto, da sotto ar zinale. »"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 204"^^xsd:string .
@@ -33095,6 +33268,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00516> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "porta del borgo"@it ;
     chora:excerpt "Discesero fino alla porta del borgo. Passato l’archivolto, la strada prese a dilungarsi verso l’Appia."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 210"^^xsd:string .
@@ -33116,6 +33290,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00533> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "li Du Santi"@it ;
     chora:excerpt "Il brigadiere filava in discesa verso li Du Santi. Era giornata lasca, il dolco aveva bevuto ai padùli."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 211"^^xsd:string .
@@ -33123,6 +33298,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00540> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "li Du Santi"@it ;
     chora:excerpt "Il brigadiere filava, crepitando secco, in direzione delli Du Santi, con il milite abbrancato alla vita."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 215"^^xsd:string .
@@ -33151,6 +33327,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00586> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "casello chilometro 20,25"@it ;
     chora:excerpt "Arrivato, col fido Farafilio ro farà-figli-d'oro, al casello chilometro 20,25, furono accolti dai furibondi latrati d'un bastardaccio."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
     chora:sourceReference "A 241"^^xsd:string .
@@ -33214,6 +33391,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00630> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "anziate"@it ;
     chora:excerpt "Lungo le vie maggiori, come l'Appia o come la strada anziate, c'era sorveglianza: agenti motociclisti: pattuglie, forse, d'altre stazioni di carabinieri."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
     chora:sourceReference "A 273"^^xsd:string .
@@ -33249,6 +33427,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00657> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "piazza Vittorio"@it ;
     chora:excerpt "« chisto guaglione ci hai penzà tu. Fatte na passeggiata a l'Esquilino, e poi a via Carlo Alberto, vacce un po' tu, che di sicuro a piazza Vittorio 'o pizzichi. »"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 280"^^xsd:string .
@@ -33298,6 +33477,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00666> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Caffarella"@it ;
     chora:excerpt "« che de qua, » fece il gesto, « se scegne giù tra le canne fino a la marana de la Caffarella. »"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 285"^^xsd:string .
@@ -33312,6 +33492,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00702> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "stazzione"@it ;
     chora:excerpt "« Lu paese della Pavona è chillu, è là sotto, vede? chella è la stazzione. »"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 298"^^xsd:string .
@@ -33326,6 +33507,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00704> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Tor der Gheppio"@it ;
     chora:excerpt "Quanto ar ritorno, poi, si è che lei, dopo Tor der Gheppio, avete d’annà puro a la Pavona, alora potressimo scegne fino a Casal Bruciato: a imboccà l’ardeatina, appunto."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 298"^^xsd:string .
@@ -33347,6 +33529,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00707> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "l’ardeatina"@it ;
     chora:excerpt "Quanto ar ritorno, poi, si è che lei, dopo Tor der Gheppio, avete d’annà puro a la Pavona, alora potressimo scegne fino a Casal Bruciato: a imboccà l’ardeatina, appunto."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 298"^^xsd:string .
@@ -33382,6 +33565,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00712> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Pratica de Mare"@it ;
     chora:excerpt "Là, si lei volete, s’incrocia su la strada de la Solforata e de Pratica de Mare: sicché, p’er Palazzo, potemo venì su diritti fino a la Pavona che in tutto, da Casal Bruciato, saranno sei chilometri o sette, a dì tanto."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 298"^^xsd:string .
@@ -34053,7 +34237,7 @@ chora:temple a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/narrativeplace/castel_porcano> a chora:NarrativePlace ;
     rdfs:label "Castel Porcano"@it ;
     dcterms:description "Castello d'immaginazione, deformazione linguistica di Castel Porziano"@it ;
-    skos:altLabel "castel porcino"@it ;
+    skos:altLabel "Castel Porcino"@it ;
     chora:hasPlaceCategory chora:castle ;
     chora:hasRealityStatus chora:Imagined ;
     chora:localizationStatus chora:NotApplicable .
@@ -34237,6 +34421,7 @@ chora:temple a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00040> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "casermone color pidocchio"@it ;
     chora:excerpt "Davanti al casermone color pidocchio, una folla: circonfusa d’una rete protettiva di biciclette."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 26"^^xsd:string .
@@ -34279,6 +34464,7 @@ chora:temple a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00558> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "bottega"@it ;
     chora:excerpt "Vo a chiamalle, si me guardate la bottega: de voi me fido"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 222"^^xsd:string .
@@ -34286,6 +34472,7 @@ chora:temple a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00572> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "ponte del Divino Amore"@it ;
     chora:excerpt "Ar ponte del Divino Amore! è na parola! due chilometri emmezzo e pure più: quaranta minuti di cammino: e con la ragazza, e co quele scarpe che ciaveva."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
     chora:sourceReference "A 238"^^xsd:string .
@@ -34405,6 +34592,7 @@ chora:temple a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00684> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "via Massimo Dazzélio"@it ;
     chora:excerpt "Il selciato scivoloso. Una lastra al cantone: via Massimo Dazzélio."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 294"^^xsd:string .
@@ -34985,6 +35173,7 @@ chora:police_station a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00036> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "civico ducentodicinnove"@it ;
     chora:excerpt "Saliti sul PV e discesi appunto al Viminale, presero il tram di San Giovanni. Sicché in una ventina di minuti raggiunsero il civico ducentodicinnove."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 25"^^xsd:string .
@@ -34992,6 +35181,7 @@ chora:police_station a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00038> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "palazzo dell’Oro"@it ;
     chora:excerpt "Il palazzo dell’Oro, o dei pescicani che fusse, era là: cinque piani, più il mezzanino. Intignazzato e grigio."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 25"^^xsd:string .
@@ -35027,6 +35217,7 @@ chora:police_station a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00641> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "anziate"@it ;
     chora:excerpt "Così almanaccando s'avvide alfine della strada: erano quasi all'anziate."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
     chora:sourceReference "A 274"^^xsd:string .
@@ -35090,6 +35281,7 @@ chora:police_station a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00695> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Casale Abbrusciato"@it ;
     chora:excerpt "Per il ponte di Santa Fumia verso Tor di Gheppio e poi verso il Casale Abbrusciato."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 297"^^xsd:string .
@@ -35097,6 +35289,7 @@ chora:police_station a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00696> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "ferrovia di Velletri"@it ;
     chora:excerpt "Valicò invece il binario (della ferrovia di Velletri) a un passaggio, simile a quello ch'era due chilometri più a nord, presso il ponte del Divino Amore."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 297"^^xsd:string .
@@ -35104,6 +35297,7 @@ chora:police_station a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/reference/ref_00697> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "ponte del Divino Amore"@it ;
     chora:excerpt "Valicò invece il binario (della ferrovia di Velletri) a un passaggio, simile a quello ch'era due chilometri più a nord, presso il ponte del Divino Amore."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 297"^^xsd:string .
@@ -36843,7 +37037,9 @@ chora:CriticalReading a owl:NamedIndividual,
 
 <https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira> a chora:NarrativePlace ;
     rdfs:label "Laboratorio della Zamira Pacori"@it ;
-    skos:altLabel "antro; botteguccia; bottega"@it ;
+    skos:altLabel "antro"@it,
+        "bottega"@it,
+        "botteguccia"@it ;
     chora:hasPlaceCategory chora:building ;
     chora:hasRealityStatus chora:Invented ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> ;
@@ -36953,6 +37149,7 @@ chora:Route a owl:NamedIndividual,
     rdfs:label "Due Santi"@it ;
     dcterms:description "Frazione di Marino (Castelli Romani)"@it ;
     rdfs:comment "Non presente in Indice dei Luoghi Isella"@it ;
+    skos:altLabel "li Du Santi"@it ;
     chora:hasPlaceCategory chora:locality ;
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
@@ -37072,10 +37269,16 @@ chora:AdjacentTo a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> a chora:NarrativePlace ;
     rdfs:label "Palazzo di via Merulana 219"@it ;
     dcterms:description "Luogo che identifica il palazzo in via Merulana 219"@it ;
-    skos:altLabel "palazzo dell'oro; palazzo de li pescicani; ben nota architettura; casermone color pidocchio; sto palazzo; camere al duecentodiciannove; il duecentodiciannove"@it ;
+    skos:altLabel "ben nota architettura"@it,
+        "camere al duecentodiciannove"@it,
+        "casermone color pidocchio"@it,
+        "il duecentodiciannove"@it,
+        "sto palazzo"@it ;
     chora:hasPlaceCategory chora:historical_building ;
     chora:hasRealityStatus chora:Transformed ;
-    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> ;
+    chora:nickname "er palazzo dell'oro"@it,
+        "palazzo de li pescicani"@it .
 
 chora:TextualEvidence a owl:NamedIndividual,
         skos:Concept ;

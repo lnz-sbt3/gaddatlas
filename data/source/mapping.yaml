@@ -236,6 +236,12 @@ mappings:
           datatype: "xsd:string"
           optional: true
         
+        # Forma stampata nel testimone, se diversa dall'etichetta del luogo (D-059)
+        - column: "Attested_Form"
+          property: "chora:attestedForm"
+          lang: "it"
+          optional: true
+
         # Notes (note editoriali/testuali)
         - column: "Notes"
           property: "rdfs:comment"
@@ -282,8 +288,15 @@ mappings:
           property: "rdfs:label"
           lang: "it"
         
+        # piu' forme separate da ';', un letterale per forma (D-059)
         - column: "Alternative_Toponym"
           property: "skos:altLabel"
+          lang: "it"
+          optional: true
+
+        # soprannomi (D-059), sottoproprieta' di skos:altLabel
+        - column: "Nickname"
+          property: "chora:nickname"
           lang: "it"
           optional: true
         

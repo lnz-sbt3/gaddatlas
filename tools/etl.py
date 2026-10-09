@@ -558,7 +558,13 @@ class GaddaETL:
 
                 # Labels
                 self.add_literal(place_uri, RDFS.label, row.get('Narrative_Toponym'), lang='it')
-                self.add_literal(place_uri, SKOS.altLabel, row.get('Alternative_Toponym'), lang='it')
+                # Forme alternative e soprannomi (D-059, T-48): un letterale per
+                # forma, separate da ';' nel foglio. Il soprannome
+                # (chora:nickname) e' una sottoproprieta' di skos:altLabel.
+                for form in str(row.get('Alternative_Toponym') or '').split(';'):
+                    self.add_literal(place_uri, SKOS.altLabel, form.strip(), lang='it')
+                for form in str(row.get('Nickname') or '').split(';'):
+                    self.add_literal(place_uri, CHORA.nickname, form.strip(), lang='it')
 
                 # Description & Notes
                 self.add_literal(place_uri, DCTERMS.description, row.get('Description'), lang='it')
@@ -778,6 +784,9 @@ class GaddaETL:
                     self.add_literal(ref_uri, CHORA.occurrenceCount,
                                    int(occurrences), datatype=XSD.integer)
                 self.add_literal(ref_uri, RDFS.comment, row.get('Notes'), lang='it')
+                # forma attestata nel testimone, se diversa dall'etichetta del
+                # luogo (D-059, T-48)
+                self.add_literal(ref_uri, CHORA.attestedForm, row.get('Attested_Form'), lang='it')
 
             logger.info(f"PlaceReferences: processate {len(self.id_cache['Reference_ID'])} referenze")
 

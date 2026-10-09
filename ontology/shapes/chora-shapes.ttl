@@ -31,6 +31,7 @@
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 
 # =============================================================================
@@ -612,3 +613,18 @@ ga:RelationalAnchoringShape
         [ sh:path ga:relatum ; sh:minCount 2 ]
     ) ;
     sh:message "«Tra» richiede almeno due termini." .
+
+
+# =============================================================================
+# SHAPE 18 — Forma attestata (D-059, work order T-48)
+# =============================================================================
+
+ga:AttestedFormShape
+    a sh:NodeShape ;
+    sh:targetClass ga:PlaceReference ;
+    sh:property [
+        sh:path ga:attestedForm ;
+        sh:maxCount 1 ;
+        sh:datatype rdf:langString ;
+        sh:message "Un'occorrenza ha al piu' una forma attestata." ;
+    ] .
