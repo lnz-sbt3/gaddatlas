@@ -714,6 +714,16 @@
   <rdf:Description rdf:about="https://w3id.org/chora#LiteraryWork">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#LocalizationStatusScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:label xml:lang="en">Localization status</rdfs:label>
+    <skos:altLabel xml:lang="it">Stato di localizzazione</skos:altLabel>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#NotApplicable"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#NotYetAnalysed"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#SuspendedWithReason"/>
+    <skos:prefLabel xml:lang="en">Localization status</skos:prefLabel>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#LocationAssertion">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -817,6 +827,24 @@
     <skos:inScheme rdf:resource="https://w3id.org/chora#UncertaintyTypeScheme"/>
     <skos:prefLabel xml:lang="en">Non Specificity</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#UncertaintyTypeScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#NotApplicable">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">coordinata non applicabile</skos:altLabel>
+    <skos:definition xml:lang="en">A coordinate does not apply to the place (e.g. an imagined place, located «somewhere»).</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#LocalizationStatusScheme"/>
+    <skos:prefLabel xml:lang="en">Not applicable</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#LocalizationStatusScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#NotYetAnalysed">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">analisi non condotta</skos:altLabel>
+    <skos:definition xml:lang="en">The anchoring has not been analysed yet.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#LocalizationStatusScheme"/>
+    <skos:prefLabel xml:lang="en">Not yet analysed</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#LocalizationStatusScheme"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#Overlaps">
     <dcterms:description xml:lang="it">A e B condividono una porzione di spazio senza che l'uno contenga l'altro. Sovrapposizione parziale.</dcterms:description>
@@ -1001,6 +1029,15 @@
     <skos:notation>status</skos:notation>
     <skos:prefLabel xml:lang="en">Status assertion</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#AssertionTypeScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#SuspendedWithReason">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">sospensione motivata</skos:altLabel>
+    <skos:definition xml:lang="en">The anchoring is deliberately suspended, for a stated reason (chora:localizationReason).</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#LocalizationStatusScheme"/>
+    <skos:prefLabel xml:lang="en">Suspended with reason</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#LocalizationStatusScheme"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#TextualEvidence">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -1327,6 +1364,23 @@
     <rdfs:range rdf:resource="https://w3id.org/chora#NarrativePlace"/>
     <skos:altLabel xml:lang="it">è parte di</skos:altLabel>
     <skos:prefLabel xml:lang="en">is part of</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#localizationReason">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Motivation of a suspended localization.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#NarrativePlace"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <skos:altLabel xml:lang="it">motivo della sospensione</skos:altLabel>
+    <skos:prefLabel xml:lang="en">localization reason</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#localizationStatus">
+    <dcterms:references rdf:resource="https://w3id.org/chora#LocalizationStatusScheme"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">Why a narrative place has no geographic anchoring. It is distinct from missing data: a place without anchoring and without this status is an error (integrity query IQ14).</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#NarrativePlace"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">stato di localizzazione</skos:altLabel>
+    <skos:prefLabel xml:lang="en">localization status</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#mentionedInChapter">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>

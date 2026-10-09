@@ -153,3 +153,19 @@ SELECT ?luogo ?statuto ?adottato WHERE {
   ?luogo ga:hasRealityStatus ?statuto .
   FILTER (?statuto != ?adottato)
 }
+
+
+# ==== IQ14 — Luoghi senza ancoraggio e senza stato di localizzazione (atteso: 0) ====
+# Un luogo narrativo senza ancoraggio (proprio, ereditato via isPartOf o da
+# un'identificazione adottata) deve dichiarare perche': analisi non condotta,
+# sospensione motivata, coordinata non applicabile (D-048). Il dato mancante
+# non e' un'astensione.
+PREFIX ga: <https://w3id.org/chora#>
+SELECT ?luogo WHERE {
+  ?luogo a ga:NarrativePlace .
+  FILTER NOT EXISTS { ?luogo ga:isPartOf* ?q . ?si ga:targetsPlace ?q ; ga:anchorsToEntity ?e }
+  FILTER NOT EXISTS { ?luogo ga:isPartOf* ?q2 . ?a ga:aboutSubject ?q2 ;
+                      ga:assertionType ga:IdentificationAssertion ; ga:adoptedByProject true }
+  FILTER NOT EXISTS { ?luogo ga:localizationStatus ?s }
+}
+ORDER BY ?luogo

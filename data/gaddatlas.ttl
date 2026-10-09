@@ -13425,62 +13425,74 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 <https://w3id.org/gaddatlas/id/narrativeplace/colli_albani> a chora:NarrativePlace ;
     rdfs:label "Colli Albani"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:localizationStatus chora:NotYetAnalysed .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/colosseo> a chora:NarrativePlace ;
     rdfs:label "Colosseo"@it ;
     chora:hasPlaceCategory chora:monument ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:localizationStatus chora:NotYetAnalysed .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/fontanella_della_scrofa> a chora:NarrativePlace ;
     rdfs:label "Fontanella della Scrofa"@it ;
     chora:hasPlaceCategory chora:fountain ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:localizationStatus chora:NotYetAnalysed .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/foro_italico> a chora:NarrativePlace ;
     rdfs:label "Foro Italico"@it ;
     chora:hasPlaceCategory chora:sports_complex ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:localizationStatus chora:NotYetAnalysed .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/galleria_colonna> a chora:NarrativePlace ;
     rdfs:label "Galleria Colonna"@it ;
     chora:hasPlaceCategory chora:historical_building ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:localizationStatus chora:NotYetAnalysed .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/lungotevere_prati> a chora:NarrativePlace ;
     rdfs:label "Lungotevere di Prati"@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:localizationStatus chora:NotYetAnalysed .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_garibaldi> a chora:NarrativePlace ;
     rdfs:label "Piazza Garibaldi"@it ;
     chora:hasPlaceCategory chora:square ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:localizationStatus chora:NotYetAnalysed .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_san_pietro> a chora:NarrativePlace ;
     rdfs:label "Piazza San Pietro"@it ;
     chora:hasPlaceCategory chora:square ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:localizationStatus chora:NotYetAnalysed .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/prati_di_castello> a chora:NarrativePlace ;
     rdfs:label "Prati di Castello"@it ;
     chora:hasPlaceCategory chora:district ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:localizationStatus chora:NotYetAnalysed .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/quarto_di_santa_fumia> a chora:NarrativePlace ;
     rdfs:label "Quarto di Santa Fumia"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:localizationStatus chora:NotYetAnalysed .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/san_callisto> a chora:NarrativePlace ;
     rdfs:label "San Callisto"@it ;
     chora:hasPlaceCategory chora:catacombs ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:localizationStatus chora:NotYetAnalysed .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/terme_di_caracalla> a chora:NarrativePlace ;
     rdfs:label "Terme di Caracalla"@it ;
     chora:hasPlaceCategory chora:archaeological_site ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Imported ;
+    chora:localizationStatus chora:NotYetAnalysed .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00723> a chora:PlaceReference ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
@@ -30105,7 +30117,8 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     rdfs:label "Monte Nuncupale"@it ;
     dcterms:description "Monte inventato, collocato nella zona dei Colli Albani/marino"@it ;
     chora:hasPlaceCategory chora:mountain ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Imagined ;
+    chora:localizationStatus chora:NotApplicable .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/monte_velino> a chora:NarrativePlace ;
     rdfs:label "Monte Velino"@it ;
@@ -31485,7 +31498,8 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     rdfs:label "Casa del Butiro"@it ;
     dcterms:description "Casa immaginata nella zona dei Due Santi"@it ;
     chora:hasPlaceCategory chora:farmhouse ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Imagined ;
+    chora:localizationStatus chora:NotApplicable .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/cassero> a chora:NarrativePlace ;
     rdfs:label "Cassero"@it ;
@@ -31497,7 +31511,8 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     dcterms:description "Castello d'immaginazione, deformazione linguistica di Castel Porziano"@it ;
     skos:altLabel "castel porcino"@it ;
     chora:hasPlaceCategory chora:castle ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Imagined ;
+    chora:localizationStatus chora:NotApplicable .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/celio> a chora:NarrativePlace ;
     rdfs:label "Celio"@it ;
@@ -31562,7 +31577,8 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/roccafringoli> a chora:NarrativePlace ;
     rdfs:label "Roccafringoli"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Imagined ;
+    chora:localizationStatus chora:NotApplicable .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/solforata> a chora:NarrativePlace ;
     rdfs:label "Solforata"@it ;
@@ -32231,7 +32247,8 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     dcterms:description "Toponimo indiano fittizio, ancorato a un referente reale (Brahmaputra) ma non identificabile:"@it ;
     chora:hasFuzzinessLevel 3.0 ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Imagined ;
+    chora:localizationStatus chora:NotApplicable .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/termini> a chora:NarrativePlace ;
     rdfs:label "Termini"@it ;

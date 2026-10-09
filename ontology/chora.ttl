@@ -1187,3 +1187,51 @@ chora:ConstructiveOrigin a owl:NamedIndividual, skos:Concept ;
     skos:inScheme chora:UncertaintyOriginScheme ;
     skos:prefLabel "Constructive Origin"@en ;
     skos:topConceptOf chora:UncertaintyOriginScheme .
+
+# =============================================================================
+# ASTENSIONE DALL'ANCORAGGIO (D-048, work order T-35)
+# Tre valori, distinti dal dato mancante: un luogo senza ancoraggio dichiara
+# perche'. Un luogo ancorato non porta lo stato.
+# =============================================================================
+
+chora:localizationStatus a owl:ObjectProperty ;
+    dcterms:references chora:LocalizationStatusScheme ;
+    rdfs:comment "Why a narrative place has no geographic anchoring. It is distinct from missing data: a place without anchoring and without this status is an error (integrity query IQ14)."@en ;
+    rdfs:domain chora:NarrativePlace ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "stato di localizzazione"@it ;
+    skos:prefLabel "localization status"@en .
+
+chora:localizationReason a owl:DatatypeProperty ;
+    rdfs:comment "Motivation of a suspended localization."@en ;
+    rdfs:domain chora:NarrativePlace ;
+    rdfs:range rdf:langString ;
+    skos:altLabel "motivo della sospensione"@it ;
+    skos:prefLabel "localization reason"@en .
+
+chora:LocalizationStatusScheme a owl:NamedIndividual, skos:ConceptScheme ;
+    rdfs:label "Localization status"@en ;
+    skos:altLabel "Stato di localizzazione"@it ;
+    skos:hasTopConcept chora:NotYetAnalysed, chora:SuspendedWithReason, chora:NotApplicable ;
+    skos:prefLabel "Localization status"@en .
+
+chora:NotYetAnalysed a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "analisi non condotta"@it ;
+    skos:definition "The anchoring has not been analysed yet."@en ;
+    skos:inScheme chora:LocalizationStatusScheme ;
+    skos:prefLabel "Not yet analysed"@en ;
+    skos:topConceptOf chora:LocalizationStatusScheme .
+
+chora:SuspendedWithReason a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "sospensione motivata"@it ;
+    skos:definition "The anchoring is deliberately suspended, for a stated reason (chora:localizationReason)."@en ;
+    skos:inScheme chora:LocalizationStatusScheme ;
+    skos:prefLabel "Suspended with reason"@en ;
+    skos:topConceptOf chora:LocalizationStatusScheme .
+
+chora:NotApplicable a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "coordinata non applicabile"@it ;
+    skos:definition "A coordinate does not apply to the place (e.g. an imagined place, located «somewhere»)."@en ;
+    skos:inScheme chora:LocalizationStatusScheme ;
+    skos:prefLabel "Not applicable"@en ;
+    skos:topConceptOf chora:LocalizationStatusScheme .

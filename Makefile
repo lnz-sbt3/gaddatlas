@@ -11,7 +11,7 @@ help:
 	@echo "  make publish-data  data/dist -> app/public/data (GeoJSON e brani)"
 	@echo "  make audit     verifica la coerenza fra sorgenti e derivati"
 	@echo "  make shacl     validazione SHACL (deve dire CONFORMS: True)"
-	@echo "  make queries   12 competency + 11 integrity query"
+	@echo "  make queries   12 competency + 14 integrity query"
 	@echo "  make docs      rigenera la documentazione pyLODE"
 	@echo "  make xlsx      TSV canonici -> data/source/xlsx/ (per chi lavora in Excel)"
 	@echo "  make clean     rimuove i derivati"

@@ -73,7 +73,7 @@ chora.rdf                        TBox in RDF/XML per Protégé (derivata dall'ET
 shapes/chora-shapes.ttl          vincoli SHACL sulla struttura
 shapes/chora-placecategories.ttl vocabolario SKOS delle categorie di luogo
 queries/competency.rq            12 competency question
-queries/integrity.rq             11 controlli di integrità
+queries/integrity.rq             14 controlli di integrità
 docs/index.html                  documentazione pyLODE
 ```
 

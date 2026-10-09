@@ -865,6 +865,36 @@
       "@type": "owl:Class"
     },
     {
+      "@id": "chora:LocalizationStatusScheme",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Localization status"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Stato di localizzazione"
+      },
+      "skos:hasTopConcept": [
+        {
+          "@id": "chora:NotApplicable"
+        },
+        {
+          "@id": "chora:NotYetAnalysed"
+        },
+        {
+          "@id": "chora:SuspendedWithReason"
+        }
+      ],
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Localization status"
+      }
+    },
+    {
       "@id": "chora:LocationAssertion",
       "@type": [
         "owl:NamedIndividual",
@@ -1163,6 +1193,56 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:UncertaintyTypeScheme"
+      }
+    },
+    {
+      "@id": "chora:NotApplicable",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "coordinata non applicabile"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "A coordinate does not apply to the place (e.g. an imagined place, located «somewhere»)."
+      },
+      "skos:inScheme": {
+        "@id": "chora:LocalizationStatusScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Not applicable"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:LocalizationStatusScheme"
+      }
+    },
+    {
+      "@id": "chora:NotYetAnalysed",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "analisi non condotta"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "The anchoring has not been analysed yet."
+      },
+      "skos:inScheme": {
+        "@id": "chora:LocalizationStatusScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Not yet analysed"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:LocalizationStatusScheme"
       }
     },
     {
@@ -1688,6 +1768,31 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:AssertionTypeScheme"
+      }
+    },
+    {
+      "@id": "chora:SuspendedWithReason",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "sospensione motivata"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "The anchoring is deliberately suspended, for a stated reason (chora:localizationReason)."
+      },
+      "skos:inScheme": {
+        "@id": "chora:LocalizationStatusScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Suspended with reason"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:LocalizationStatusScheme"
       }
     },
     {
@@ -2574,6 +2679,53 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "is part of"
+      }
+    },
+    {
+      "@id": "chora:localizationReason",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Motivation of a suspended localization."
+      },
+      "rdfs:domain": {
+        "@id": "chora:NarrativePlace"
+      },
+      "rdfs:range": {
+        "@id": "rdf:langString"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "motivo della sospensione"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "localization reason"
+      }
+    },
+    {
+      "@id": "chora:localizationStatus",
+      "@type": "owl:ObjectProperty",
+      "dcterms:references": {
+        "@id": "chora:LocalizationStatusScheme"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Why a narrative place has no geographic anchoring. It is distinct from missing data: a place without anchoring and without this status is an error (integrity query IQ14)."
+      },
+      "rdfs:domain": {
+        "@id": "chora:NarrativePlace"
+      },
+      "rdfs:range": {
+        "@id": "skos:Concept"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "stato di localizzazione"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "localization status"
       }
     },
     {

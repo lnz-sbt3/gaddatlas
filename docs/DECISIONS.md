@@ -964,6 +964,19 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-048 — Astensione dall'ancoraggio a tre valori (9 ottobre 2026)
+
+- Requisito/i: R11 · Ipotesi: — · Data check: DM-05 (work order T-35)
+- Stato precedente: un luogo senza ancoraggio era indistinguibile da un dato mancante.
+- Decisione (di Lorenzo, 9/10/2026): nuovo schema `chora:LocalizationStatusScheme` con tre valori, distinti dal dato mancante: `chora:NotYetAnalysed` (analisi non condotta), `chora:SuspendedWithReason` (sospensione motivata, con `chora:localizationReason` obbligatorio), `chora:NotApplicable` (coordinata non applicabile); proprietà `chora:localizationStatus` sul luogo. Nuove colonne `Localization_Status` e `Localization_Reason` in `NarrativePlaces.tsv`. Valori di default applicati: i 5 luoghi **Imagined** → coordinata non applicabile; i 12 luoghi **senza alcun ancoraggio** (tutti Imported e senza occorrenze, il residuo di censimento segnalato da IQ9: colli_albani, colosseo, fontanella_della_scrofa, foro_italico, galleria_colonna, lungotevere_prati, piazza_garibaldi, piazza_san_pietro, prati_di_castello, quarto_di_santa_fumia, san_callisto, terme_di_caracalla) → analisi non condotta; nessuna sospensione motivata, finché Lorenzo non ne indica. Un luogo è ancorato se lo è una sua interpretazione, se eredita l'ancora via `isPartOf`, o se ha un'identificazione adottata (`castello`, D-045).
+- Controlli: l'ETL rifiuta valori fuori schema e una sospensione senza motivo; shape 10 (valori, motivo); **IQ14**: nessun luogo senza ancoraggio e senza stato (provata togliendo lo stato a un luogo).
+- Motivazione (fonte, pagina): Cap. 4, § 4.4 e tab. 4.2, R11 («Analisi non condotta, sospensione motivata e irrilevanza sono distinguibili?»).
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `ontology/chora.ttl` (sezione «Astensione dall'ancoraggio»); `ontology/shapes/chora-shapes.ttl` (shape 10); `ontology/queries/integrity.rq` (IQ14); `tools/etl.py` (`LOCALIZATION_STATUSES`, lettura delle due colonne); `data/source/tables/NarrativePlaces.tsv` (due colonne, 17 valori); `data/source/xlsx/NarrativePlaces.xlsx`.
+- Effetto su KG (triple prima/dopo, SHACL): TBox 971 → **1.013**; ABox 25.755 → **25.772**; full 27.296 → **27.355**. SHACL conforme, 49 avvertenze (T-33); IQ14 = 0.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

@@ -406,3 +406,26 @@ ga:UncertaintyAssertionShape
           ) ]
     ) ;
     sh:message "Un'asserzione d'incertezza ha un tipo dello schema UncertaintyType, un asse e un'origine." .
+
+
+# =============================================================================
+# SHAPE 10 — Astensione dall'ancoraggio (D-048, work order T-35)
+# Valori ammessi; la sospensione motivata richiede il motivo. La regola «un
+# luogo senza ancoraggio dichiara uno stato» sta in integrity.rq (IQ14), perche'
+# l'ancoraggio puo' essere ereditato (isPartOf) o venire da una lettura adottata.
+# =============================================================================
+
+ga:LocalizationStatusShape
+    a sh:NodeShape ;
+    sh:targetClass ga:NarrativePlace ;
+    sh:property [
+        sh:path ga:localizationStatus ;
+        sh:maxCount 1 ;
+        sh:in ( ga:NotYetAnalysed ga:SuspendedWithReason ga:NotApplicable ) ;
+        sh:message "localizationStatus: al piu' un valore dello schema LocalizationStatus." ;
+    ] ;
+    sh:or (
+        [ sh:not [ sh:path ga:localizationStatus ; sh:hasValue ga:SuspendedWithReason ] ]
+        [ sh:path ga:localizationReason ; sh:minCount 1 ]
+    ) ;
+    sh:message "Una sospensione motivata dell'ancoraggio richiede chora:localizationReason." .

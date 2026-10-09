@@ -524,6 +524,10 @@ class GaddaETL:
             logger.error(f"Errore processando FocalizingAgents: {e}", exc_info=True)
             raise
 
+    LOCALIZATION_STATUSES = {"analisi non condotta": "NotYetAnalysed",
+                             "sospensione motivata": "SuspendedWithReason",
+                             "non applicabile": "NotApplicable"}
+
     def process_discrete_narrative_places(self, file_path: str):
         """
         Processa NarrativePlaces.tsv (funzione e log mantengono il nome
@@ -591,6 +595,18 @@ class GaddaETL:
                     parent_uri = self.resolve_lookup(str(part_of).strip(), '@NarrativePlace_ID')
                     if parent_uri:
                         self.graph.add((place_uri, CHORA.isPartOf, parent_uri))
+
+                # Astensione dall'ancoraggio (D-048)
+                loc = str(row.get('Localization_Status') or '').strip().lower()
+                if loc:
+                    if loc not in self.LOCALIZATION_STATUSES:
+                        raise ValueError(f"NarrativePlace {place_id}: Localization_Status {loc!r} "
+                                         "(atteso analisi non condotta / sospensione motivata / non applicabile)")
+                    self.graph.add((place_uri, CHORA.localizationStatus,
+                                    CHORA[self.LOCALIZATION_STATUSES[loc]]))
+                    if loc == "sospensione motivata" and not has_value(row.get('Localization_Reason')):
+                        raise ValueError(f"NarrativePlace {place_id}: sospensione senza Localization_Reason")
+                self.add_literal(place_uri, CHORA.localizationReason, row.get('Localization_Reason'), lang='it')
 
                 # Fuzziness level (vocabolario controllato)
                 fuzziness = row.get('Fuzziness_Level')
