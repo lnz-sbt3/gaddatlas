@@ -20,22 +20,23 @@ Due artefatti distinti nello stesso repository:
 
 ## Le decisioni sono già prese
 
-`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-077; quelle dell'allineamento al
+`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-083; quelle dell'allineamento al
 Capitolo 4 partono da D-019 (D-015…D-018 sono del porting, su `main`). Nel file sono in
-ordine cronologico, non numerico. Prossimo numero libero: **D-078**. **Leggile
+ordine cronologico, non numerico. Prossimo numero libero: **D-084**. **Leggile
 prima di proporre alternative architetturali.** Se una scelta ti sembra
 sbagliata, dillo citando la decisione — non aggirarla in silenzio.
 
-**Stato dei dati: allineato (chiusura della fase 2, 10 ottobre 2026).**
-`data/dist/gaddatlas.geojson` dichiara `tripleCount 42515`, `buildVersion 4.3`,
-`ontology CHORA`. ABox 40.472 triple, TBox 1.473; 309 luoghi (Imported 261 ·
+**Stato dei dati: allineato (chiusura della fase 2 e delle sue voci aperte, 10 ottobre 2026).**
+`data/dist/gaddatlas.geojson` dichiara `tripleCount 42550`, `buildVersion 4.3`,
+`ontology CHORA`. ABox 40.507 triple, TBox 1.473; 309 luoghi (Imported 261 ·
 Transformed 30 · Invented 13 · Imagined 5), 265 entità del gazetteer, 958
 interpretazioni (tutte adottate), 733 occorrenze (729 nel testimone di riferimento
 QPa), 21 percorsi tipizzati, 360 letture attribuite (102 esplicite in
 `Assertions.tsv`, 258 statuti generati dall'ETL), 5 testimoni (QPL, dtsFG, bzFG,
-QP, QPa; sigle in «Invarianti»), 14 fonti. In carta 300 feature; fuori carta 1
-(Robine Vecchie). SHACL conforme con 48 avvertenze (motivazioni di statuto in
-bozza, fase 3); IQ20 = 1 (Cassero, fase 3). Ogni task che cambia questi valori ne dà conto nella sua voce di
+QP, QPa; sigle in «Invarianti»), 16 fonti. In carta 300 feature; fuori carta 1
+(Robine Vecchie). SHACL conforme senza risultati: tutte le motivazioni di statuto
+sono validate e `StatusRationaleShape` è una Violation; IQ20 = 1 (Cassero, fase 3).
+Ogni task che cambia questi valori ne dà conto nella sua voce di
 `DECISIONS.md`; un conteggio diverso senza una voce che lo spieghi vuol dire che i
 derivati non sono allineati: `make all`. Il build è deterministico (D-022): due
 `make all` consecutivi non devono produrre alcun diff.

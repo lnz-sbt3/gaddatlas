@@ -901,14 +901,14 @@ chora:witnessType a owl:ObjectProperty ;
     chora:reviewStatus chora:Draft .
 
 <https://w3id.org/gaddatlas/id/assertion/S-area_oltre_tevere> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-area_oltre_tevere> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/area_oltre_tevere> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Transformed ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00025> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-auto-acqua_pia_antica_marcia> a chora:Assertion ;
     rdfs:comment "Lettura generata dall'ETL (D-068)."@it ;
@@ -3779,17 +3779,17 @@ chora:witnessType a owl:ObjectProperty ;
     chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-barbiere> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-barbiere> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/barbiere> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Transformed ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00005> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-bottega_ceccherelli> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Motivazione nuova di LS (10/10/2026, D-080)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-bottega_ceccherelli> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/bottega_ceccherelli> ;
@@ -3799,40 +3799,40 @@ chora:witnessType a owl:ObjectProperty ;
         <https://w3id.org/gaddatlas/id/reference/ref_00281>,
         <https://w3id.org/gaddatlas/id/reference/ref_00282>,
         <https://w3id.org/gaddatlas/id/reference/ref_00283> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-buco_a_santignazio> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Motivazione nuova di LS (10/10/2026, D-080)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-buco_a_santignazio> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/buco_a_santignazio> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Transformed ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00494> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-ca_francesi> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Motivazione nuova di LS (10/10/2026, D-080)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-ca_francesi> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/ca_francesi> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Transformed ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00428> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-camera_casello> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-camera_casello> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/camera_casello> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Transformed ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00600> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-cantinone_albano> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-cantinone_albano> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/cantinone_albano> ;
@@ -3841,10 +3841,10 @@ chora:witnessType a owl:ObjectProperty ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00159>,
         <https://w3id.org/gaddatlas/id/reference/ref_00160>,
         <https://w3id.org/gaddatlas/id/reference/ref_00188> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-casa_crocchiapani> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-casa_crocchiapani> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/casa_crocchiapani> ;
@@ -3853,17 +3853,17 @@ chora:witnessType a owl:ObjectProperty ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00717>,
         <https://w3id.org/gaddatlas/id/reference/ref_00718>,
         <https://w3id.org/gaddatlas/id/reference/ref_00720> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-casa_del_butiro> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-casa_del_butiro> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/casa_del_butiro> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Imagined ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00479> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-casal_bruciato> a chora:Assertion ;
     rdfs:comment "Statuto deciso e motivato da LS: D-029, D-037. Validata (D-071)."@it ;
@@ -3883,7 +3883,7 @@ chora:witnessType a owl:ObjectProperty ;
     chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-casello_km_20_25> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-casello_km_20_25> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> ;
@@ -3902,20 +3902,20 @@ chora:witnessType a owl:ObjectProperty ;
         <https://w3id.org/gaddatlas/id/reference/ref_00631>,
         <https://w3id.org/gaddatlas/id/reference/ref_00642>,
         <https://w3id.org/gaddatlas/id/reference/ref_00643> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-cassero> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Motivazione nuova di LS (10/10/2026, D-080)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-cassero> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/cassero> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Invented ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00404> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-castel_porcano> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Motivazione riscritta da LS (10/10/2026, D-079)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-castel_porcano> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/castel_porcano> ;
@@ -3923,7 +3923,7 @@ chora:witnessType a owl:ObjectProperty ;
     chora:assertsValue chora:Imagined ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00538>,
         <https://w3id.org/gaddatlas/id/reference/ref_00539> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-castello> a chora:Assertion ;
     rdfs:comment "Decisione di LS (9/10/2026, REVIEW_2 § 2); prima Invented (bozza T-33)."@it ;
@@ -3936,37 +3936,37 @@ chora:witnessType a owl:ObjectProperty ;
     chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-casuccia_zamira> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Motivazione nuova di LS (10/10/2026, D-080)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-casuccia_zamira> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Invented ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00511> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-cobianchi> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-cobianchi> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/cobianchi> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Transformed ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00109> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-colli_saluberrimi> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Motivazione nuova di LS (10/10/2026, D-080)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-colli_saluberrimi> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/colli_saluberrimi> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Transformed ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00434> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-ditta_ciurlani> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Motivazione nuova di LS (10/10/2026, D-080). Pagina di Terzoli 2015 da compilare."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-ditta_ciurlani> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/ditta_ciurlani> ;
@@ -3974,7 +3974,7 @@ chora:witnessType a owl:ObjectProperty ;
     chora:assertsValue chora:Transformed ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00364>,
         <https://w3id.org/gaddatlas/id/reference/ref_00513> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-edicola_due_santi> a chora:Assertion ;
     rdfs:comment "Statuto deciso e motivato da LS: D-031. Validata (D-071)."@it ;
@@ -3990,27 +3990,27 @@ chora:witnessType a owl:ObjectProperty ;
     chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-gioielliere_catellani> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-gioielliere_catellani> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/gioielliere_catellani> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Transformed ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00074> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-grotta_de_sor_pippo> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-grotta_de_sor_pippo> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/grotta_de_sor_pippo> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Invented ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00125> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-laboratorio_zamira> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-laboratorio_zamira> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira> ;
@@ -4028,20 +4028,20 @@ chora:witnessType a owl:ObjectProperty ;
         <https://w3id.org/gaddatlas/id/reference/ref_00558>,
         <https://w3id.org/gaddatlas/id/reference/ref_00563>,
         <https://w3id.org/gaddatlas/id/reference/ref_00596> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-montagne_degli_equi> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-montagne_degli_equi> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/montagne_degli_equi> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Transformed ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00524> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-monte_circeo> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-monte_circeo> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/monte_circeo> ;
@@ -4049,30 +4049,30 @@ chora:witnessType a owl:ObjectProperty ;
     chora:assertsValue chora:Transformed ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00474>,
         <https://w3id.org/gaddatlas/id/reference/ref_00537> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-monte_nuncupale> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Motivazione riscritta da LS (10/10/2026, D-079)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-monte_nuncupale> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/monte_nuncupale> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Imagined ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00415> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-orto_vigna_due_santi> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-orto_vigna_due_santi> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Invented ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00549> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-palazzo_219> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-palazzo_219> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> ;
@@ -4099,20 +4099,20 @@ chora:witnessType a owl:ObjectProperty ;
         <https://w3id.org/gaddatlas/id/reference/ref_00240>,
         <https://w3id.org/gaddatlas/id/reference/ref_00242>,
         <https://w3id.org/gaddatlas/id/reference/ref_00503> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-palazzo_del_mappamondo> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Motivazione nuova di LS (10/10/2026, D-080)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-palazzo_del_mappamondo> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_del_mappamondo> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Transformed ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00437> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-palazzo_simonetti> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-palazzo_simonetti> ;
     prov:wasRevisionOf <https://w3id.org/gaddatlas/id/assertion/C-palazzo_simonetti> ;
@@ -4120,20 +4120,20 @@ chora:witnessType a owl:ObjectProperty ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Transformed ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00435> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-passaggio_livello_casal_bruciato> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-passaggio_livello_casal_bruciato> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/passaggio_livello_casal_bruciato> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Transformed ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00587> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-pensione_burgess> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-pensione_burgess> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/pensione_burgess> ;
@@ -4142,40 +4142,40 @@ chora:witnessType a owl:ObjectProperty ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00466>,
         <https://w3id.org/gaddatlas/id/reference/ref_00467>,
         <https://w3id.org/gaddatlas/id/reference/ref_00671> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-piani_alti_219> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-piani_alti_219> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/piani_alti_219> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Transformed ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00045> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-piccarozzi> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-piccarozzi> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/piccarozzi> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Transformed ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00485> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-ponte_di_santa_fumia> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Motivazione nuova di LS (10/10/2026, D-080)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-ponte_di_santa_fumia> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/ponte_di_santa_fumia> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Transformed ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00693> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-ponte_divino_amore> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-ponte_divino_amore> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/ponte_divino_amore> ;
@@ -4191,40 +4191,40 @@ chora:witnessType a owl:ObjectProperty ;
         <https://w3id.org/gaddatlas/id/reference/ref_00594>,
         <https://w3id.org/gaddatlas/id/reference/ref_00624>,
         <https://w3id.org/gaddatlas/id/reference/ref_00697> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-porta_borgo_marino> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-porta_borgo_marino> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/porta_borgo_marino> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Transformed ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00516> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-pozzofondo> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-pozzofondo> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/pozzofondo> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Invented ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00556> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-robine_vecchie> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-robine_vecchie> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/robine_vecchie> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Transformed ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00403> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-roccafringoli> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Motivazione riscritta da LS (10/10/2026, D-079)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-roccafringoli> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/roccafringoli> ;
@@ -4232,10 +4232,10 @@ chora:witnessType a owl:ObjectProperty ;
     chora:assertsValue chora:Imagined ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00250>,
         <https://w3id.org/gaddatlas/id/reference/ref_00321> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-scala_a> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-scala_a> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/scala_a> ;
@@ -4248,10 +4248,10 @@ chora:witnessType a owl:ObjectProperty ;
         <https://w3id.org/gaddatlas/id/reference/ref_00102>,
         <https://w3id.org/gaddatlas/id/reference/ref_00169>,
         <https://w3id.org/gaddatlas/id/reference/ref_00300> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-scala_b> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-scala_b> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/scala_b> ;
@@ -4261,10 +4261,10 @@ chora:witnessType a owl:ObjectProperty ;
         <https://w3id.org/gaddatlas/id/reference/ref_00103>,
         <https://w3id.org/gaddatlas/id/reference/ref_00150>,
         <https://w3id.org/gaddatlas/id/reference/ref_00299> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-scale> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-scale> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/scale> ;
@@ -4273,10 +4273,10 @@ chora:witnessType a owl:ObjectProperty ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00009>,
         <https://w3id.org/gaddatlas/id/reference/ref_00047>,
         <https://w3id.org/gaddatlas/id/reference/ref_00329> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-scerpure> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Motivazione riscritta da LS (10/10/2026, D-079)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-scerpure> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/scerpure> ;
@@ -4285,40 +4285,40 @@ chora:witnessType a owl:ObjectProperty ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00306>,
         <https://w3id.org/gaddatlas/id/reference/ref_00314>,
         <https://w3id.org/gaddatlas/id/reference/ref_00316> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-stazione_carabinieri_castello> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-stazione_carabinieri_castello> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/stazione_carabinieri_castello> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Transformed ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00651> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-stazione_pavona> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-stazione_pavona> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/stazione_pavona> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Transformed ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00702> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-strada_di_campagna_celio> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-strada_di_campagna_celio> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/strada_di_campagna_celio> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Transformed ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00444> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-tenenza_carabinieri_marino> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-tenenza_carabinieri_marino> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/tenenza_carabinieri_marino> ;
@@ -4343,20 +4343,20 @@ chora:witnessType a owl:ObjectProperty ;
         <https://w3id.org/gaddatlas/id/reference/ref_00618>,
         <https://w3id.org/gaddatlas/id/reference/ref_00683>,
         <https://w3id.org/gaddatlas/id/reference/ref_00722> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-terzo_piano_219> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-terzo_piano_219> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/terzo_piano_219> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Transformed ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00101> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-tor_di_gheppio> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-tor_di_gheppio> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/tor_di_gheppio> ;
@@ -4369,27 +4369,27 @@ chora:witnessType a owl:ObjectProperty ;
         <https://w3id.org/gaddatlas/id/reference/ref_00716>,
         <https://w3id.org/gaddatlas/id/reference/ref_00719>,
         <https://w3id.org/gaddatlas/id/reference/ref_00721> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-via_delle_oche> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Motivazione riscritta da LS (10/10/2026, D-079)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-via_delle_oche> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/via_delle_oche> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Invented ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00028> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-villino_lungotevere> a chora:Assertion ;
-    rdfs:comment "Bozza T-33 (D-046): da validare in REVIEW_2"@it ;
+    rdfs:comment "Motivazione nuova di LS (10/10/2026, D-080)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-villino_lungotevere> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/villino_lungotevere> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Invented ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00244> ;
-    chora:reviewStatus chora:Draft .
+    chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/U-0001> a chora:Assertion ;
     rdfs:comment "Bozza T-34 (D-047): classificazione da validare in REVIEW_2"@it ;
@@ -17044,6 +17044,22 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     dcterms:type "repertorio"@it ;
     rdfs:comment "Come sopra (D-068)."@it .
 
+<https://w3id.org/gaddatlas/id/source/tci_guida_1925> a chora:Source ;
+    rdfs:label "Guida TCI 1925" ;
+    dcterms:bibliographicCitation "Touring Club Italiano, Guida d'Italia (1925): cartine tra le pp. 736–737 (cart. 4) e 758–759 (cart. 1), citate da Terzoli 2015, p. 911."@it ;
+    dcterms:creator "Touring Club Italiano"@it ;
+    dcterms:date "1925"^^xsd:gYear ;
+    dcterms:type "guida, repertorio"@it ;
+    rdfs:comment "Volume della Guida da precisare. Non collegata alla carta TCI di Manzotti (tci_italia_centrale_1), la cui data resta aperta (D-080)."@it .
+
+<https://w3id.org/gaddatlas/id/source/terzoli_2008> a chora:Source ;
+    rdfs:label "Terzoli 2008" ;
+    dcterms:bibliographicCitation "Terzoli, M. A. (2008). Riferimento bibliografico completo da compilare (citato in Terzoli 2015, p. 911, per le pp. 109–113)."@it ;
+    dcterms:creator "Maria Antonietta Terzoli"@it ;
+    dcterms:date "2008"^^xsd:gYear ;
+    dcterms:type "saggio"@it ;
+    rdfs:comment "Riferimento completo da compilare (D-080)."@it .
+
 <https://w3id.org/gaddatlas/id/source/wikidata> a chora:Source ;
     rdfs:label "Wikidata" ;
     dcterms:bibliographicCitation "Wikidata, base di conoscenza libera (Wikimedia Foundation). https://www.wikidata.org"@it ;
@@ -20672,30 +20688,35 @@ chora:witnessOf a owl:ObjectProperty ;
 
 <https://w3id.org/gaddatlas/id/act/S-bottega_ceccherelli> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
+    hico:hasInterpretationCriterion chora:ReferentialEvidence ;
     hico:hasInterpretationType chora:StatusAssertion ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-bottega_ceccherelli-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/association/S-bottega_ceccherelli-readingauthor-lorenzo_sabatino> ;
     prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    chora:rationale "Nessuna motivazione nei documenti del progetto (descrizione vuota, nessun passo del Cap. 4): da compilare."@it .
+    chora:rationale "Bottega senza riscontro nei repertori: nome e collocazione d'autore."@it .
 
 <https://w3id.org/gaddatlas/id/act/S-buco_a_santignazio> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
+    hico:hasInterpretationCriterion chora:ReferentialEvidence ;
     hico:hasInterpretationType chora:StatusAssertion ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-buco_a_santignazio-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/association/S-buco_a_santignazio-readingauthor-lorenzo_sabatino> ;
     prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    chora:rationale "Nessuna motivazione nei documenti del progetto (descrizione vuota, nessun passo del Cap. 4): da compilare."@it .
+    chora:rationale "Denominazione popolare di un luogo reale presso Sant'Ignazio a Roma: il Buco a Sant'Ignazio (ancora gaz_buco_a_santignazio, 41,898 N 12,480 E)."@it .
 
 <https://w3id.org/gaddatlas/id/act/S-ca_francesi> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
+    hico:hasInterpretationCriterion chora:CriticalReading ;
     hico:hasInterpretationType chora:StatusAssertion ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/source/terzoli_2015> ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-ca_francesi-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/association/S-ca_francesi-readingauthor-lorenzo_sabatino> ;
     prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    chora:rationale "Nessuna motivazione nei documenti del progetto (descrizione vuota, nessun passo del Cap. 4): da compilare."@it .
+    chora:rationale "Località reale nei pressi della stazione delle Frattocchie."@it ;
+    chora:sourcePage "512"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/act/S-camera_casello> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
@@ -20766,12 +20787,15 @@ chora:witnessOf a owl:ObjectProperty ;
 
 <https://w3id.org/gaddatlas/id/act/S-cassero> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
+    hico:hasInterpretationCriterion chora:TextualEvidence ;
     hico:hasInterpretationType chora:StatusAssertion ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/witness/qpa> ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-cassero-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/association/S-cassero-readingauthor-lorenzo_sabatino> ;
     prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    chora:rationale "Nessuna motivazione nei documenti del progetto (descrizione vuota, nessun passo del Cap. 4): da compilare."@it .
+    chora:rationale "Toponimo senza riscontro, collocato dal testo \"a Sant'Ignazio\", fra le provenienze di QPa 169."@it ;
+    chora:sourcePage "169"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/act/S-castel_porcano> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
@@ -20782,7 +20806,7 @@ chora:witnessOf a owl:ObjectProperty ;
         <https://w3id.org/gaddatlas/id/association/S-castel_porcano-readingauthor-lorenzo_sabatino> ;
     prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    chora:rationale "Cap. 4, § 4.3 (r. 85): la denominazione è una «deformazione paraetimologica d'un toponimo reale» (Castelporziano, «il che penderebbe verso il luogo trasformato»), mentre la festa notturna «appartiene a uno spazio onirico e destrutturato, privo di collocazione metrica e dunque ascrivibile alla categoria dell'immaginato». Perimetro d'identità da dichiarare (H3, DC-09, DC-11)."@it ;
+    chora:rationale "Luogo senza corrispondenza con un luogo attestato: il nome deforma Castelporziano, ma la festa notturna appartiene a uno spazio d'immaginazione d'autore."@it ;
     chora:sourcePage "273, 276"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/act/S-castello> a hico:InterpretationAct ;
@@ -20799,12 +20823,13 @@ chora:witnessOf a owl:ObjectProperty ;
 
 <https://w3id.org/gaddatlas/id/act/S-casuccia_zamira> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
+    hico:hasInterpretationCriterion chora:TextualEvidence ;
     hico:hasInterpretationType chora:StatusAssertion ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-casuccia_zamira-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/association/S-casuccia_zamira-readingauthor-lorenzo_sabatino> ;
     prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    chora:rationale "Nessuna motivazione nei documenti del progetto (descrizione vuota, nessun passo del Cap. 4): da compilare."@it .
+    chora:rationale "Luogo del mondo diegetico della Zamira: segue lo statuto del laboratorio (laboratorio_zamira)."@it .
 
 <https://w3id.org/gaddatlas/id/act/S-cobianchi> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
@@ -20819,21 +20844,24 @@ chora:witnessOf a owl:ObjectProperty ;
 
 <https://w3id.org/gaddatlas/id/act/S-colli_saluberrimi> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
+    hico:hasInterpretationCriterion chora:CriticalReading ;
     hico:hasInterpretationType chora:StatusAssertion ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-colli_saluberrimi-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/association/S-colli_saluberrimi-readingauthor-lorenzo_sabatino> ;
     prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    chora:rationale "Nessuna motivazione nei documenti del progetto (descrizione vuota, nessun passo del Cap. 4): da compilare."@it .
+    chora:rationale "Perifrasi d'autore per colli reali: i Colli Albani (ancora gaz_colli_albani)."@it .
 
 <https://w3id.org/gaddatlas/id/act/S-ditta_ciurlani> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
+    hico:hasInterpretationCriterion chora:CriticalReading ;
     hico:hasInterpretationType chora:StatusAssertion ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/source/terzoli_2015> ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-ditta_ciurlani-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/association/S-ditta_ciurlani-readingauthor-lorenzo_sabatino> ;
     prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    chora:rationale "Nessuna motivazione nei documenti del progetto (descrizione vuota, nessun passo del Cap. 4): da compilare."@it .
+    chora:rationale "Terzoli ricostruisce l'origine onomastica di Ciurlani e il gioco di parole con \"truffaldino\"; nessun elemento di collocazione topografica."@it .
 
 <https://w3id.org/gaddatlas/id/act/S-edicola_due_santi> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
@@ -20906,12 +20934,13 @@ chora:witnessOf a owl:ObjectProperty ;
     dcterms:date "2026-10-09"^^xsd:date ;
     hico:hasInterpretationCriterion chora:TextualEvidence ;
     hico:hasInterpretationType chora:StatusAssertion ;
-    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/source/sabatino_cap4> ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/witness/qpa> ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-monte_nuncupale-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/association/S-monte_nuncupale-readingauthor-lorenzo_sabatino> ;
     prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    chora:rationale "Cap. 4, § 4.3 (r. 85): «il Monte Nuncupale, posto a chiusura d'un orizzonte che spazia «da Rocca di Papa a Castel Savelli, giù: da Rocca Orsina al Monte Nuncupale, su» (QP 173)», fra i luoghi inventati. NB: nei dati è Imagined dopo la permutazione (D-030, D-035)."@it .
+    chora:rationale "Monte senza corrispondenza con un rilievo attestato; l'autore lo immagina a chiusura dell'orizzonte dei Colli Albani (\"da Rocca Orsina al Monte Nuncupale, su\", QPa 173)."@it ;
+    chora:sourcePage "173"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/act/S-orto_vigna_due_santi> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
@@ -20937,12 +20966,13 @@ chora:witnessOf a owl:ObjectProperty ;
 
 <https://w3id.org/gaddatlas/id/act/S-palazzo_del_mappamondo> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
+    hico:hasInterpretationCriterion chora:CriticalReading ;
     hico:hasInterpretationType chora:StatusAssertion ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-palazzo_del_mappamondo-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/association/S-palazzo_del_mappamondo-readingauthor-lorenzo_sabatino> ;
     prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    chora:rationale "Nessuna motivazione nei documenti del progetto (descrizione vuota, nessun passo del Cap. 4): da compilare."@it .
+    chora:rationale "Palazzo Venezia, sede di Mussolini, indicato per antonomasia dalla Sala del Mappamondo e deformato in \"Mappamonno\": referente reale, nome trasformato."@it .
 
 <https://w3id.org/gaddatlas/id/act/S-palazzo_simonetti> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
@@ -21002,12 +21032,15 @@ chora:witnessOf a owl:ObjectProperty ;
 
 <https://w3id.org/gaddatlas/id/act/S-ponte_di_santa_fumia> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
+    hico:hasInterpretationCriterion chora:ReferentialEvidence ;
     hico:hasInterpretationType chora:StatusAssertion ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/source/terzoli_2015> ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-ponte_di_santa_fumia-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/association/S-ponte_di_santa_fumia-readingauthor-lorenzo_sabatino> ;
     prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    chora:rationale "Nessuna motivazione nei documenti del progetto (descrizione vuota, nessun passo del Cap. 4): da compilare."@it .
+    chora:rationale "Strada che dall'Anziate va verso Casal Bruciato, parallela alla strada di Falconara percorsa da Pestalozzi, e scavalca la ferrovia Roma–Velletri in località Ponte di Santa Fumia: planimetria e toponimi corrispondono a quelli delle cartine della Guida Touring 1925 (tra le pp. 736–737, cart. 4, e 758–759, cart. 1)."@it ;
+    chora:sourcePage "911 (cfr. Terzoli 2008, pp. 109–113)"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/act/S-ponte_divino_amore> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
@@ -21058,12 +21091,13 @@ chora:witnessOf a owl:ObjectProperty ;
     dcterms:date "2026-10-09"^^xsd:date ;
     hico:hasInterpretationCriterion chora:TextualEvidence ;
     hico:hasInterpretationType chora:StatusAssertion ;
-    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/source/sabatino_cap4> ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/witness/qpa> ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-roccafringoli-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/association/S-roccafringoli-readingauthor-lorenzo_sabatino> ;
     prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    chora:rationale "Cap. 4, § 4.3 (r. 85): tra i luoghi inventati con «una precisa collocazione topografica», «Roccafringoli, situata «su su in cima ai monti, a monte Manno, quasi, che da Palestrina ce se va cor ciuccio» (QP 107)». NB: il capitolo lo dice inventato; nei dati è Imagined dopo la permutazione (D-030, D-035)."@it .
+    chora:rationale "Paese senza corrispondenza con un luogo attestato; l'autore lo immagina sui monti presso Palestrina (\"a monte Manno, quasi\", QPa 107)."@it ;
+    chora:sourcePage "107"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/act/S-scala_a> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
@@ -21102,12 +21136,13 @@ chora:witnessOf a owl:ObjectProperty ;
     dcterms:date "2026-10-09"^^xsd:date ;
     hico:hasInterpretationCriterion chora:TextualEvidence ;
     hico:hasInterpretationType chora:StatusAssertion ;
-    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/source/sabatino_cap4> ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/witness/qpa> ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-scerpure-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/association/S-scerpure-readingauthor-lorenzo_sabatino> ;
     prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    chora:rationale "Cap. 4, § 4.3 (r. 85): «Scerpure, la favolosa città del maharajah posizionata «sulle rive, più o meno, del nativo Brahmaputra» (QP 141)», fra i luoghi inventati; «Scerpure esibisce un nome inventato a fronte d'una collocazione geografica nota». NB: nei dati è Imagined dopo la permutazione (D-030, D-035)."@it .
+    chora:rationale "Città senza corrispondenza con un luogo attestato; l'autore la immagina \"sulle rive, più o meno, del nativo Brahmaputra\" (QPa 141)."@it ;
+    chora:sourcePage "141"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/act/S-stazione_carabinieri_castello> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
@@ -21181,21 +21216,23 @@ chora:witnessOf a owl:ObjectProperty ;
     dcterms:date "2026-10-09"^^xsd:date ;
     hico:hasInterpretationCriterion chora:TextualEvidence ;
     hico:hasInterpretationType chora:StatusAssertion ;
-    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/source/censimento_gaddatlas> ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/witness/qpa> ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-via_delle_oche-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/association/S-via_delle_oche-readingauthor-lorenzo_sabatino> ;
     prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    chora:rationale "Descrizione del censimento: «via topograficamente non precisata»."@it .
+    chora:rationale "Via reale di Bologna, nota via di prostituzione, che il testo traslata a Milano (QPa 22; U-0009)."@it ;
+    chora:sourcePage "22"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/act/S-villino_lungotevere> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
+    hico:hasInterpretationCriterion chora:TextualEvidence ;
     hico:hasInterpretationType chora:StatusAssertion ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-villino_lungotevere-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/association/S-villino_lungotevere-readingauthor-lorenzo_sabatino> ;
     prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    chora:rationale "Nessuna motivazione nei documenti del progetto (descrizione vuota, nessun passo del Cap. 4): da compilare."@it .
+    chora:rationale "Villino senza riscontro, collocato dal testo sul Lungotevere."@it .
 
 <https://w3id.org/gaddatlas/id/act/U-0002> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
@@ -47772,12 +47809,12 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     dcterms:type "edizione"@it ;
     rdfs:comment "Edizione che contiene QPL (pp. 277–460) e QP: non e' un testimone; QPL e QP vi sono letti (chora:readIn, D-073). Edizione da cui citano Manzotti 2010, Pinotti 2016 e Perosa 2023a."@it .
 
-<https://w3id.org/gaddatlas/id/source/terzoli_2015> a chora:Source ;
-    rdfs:label "Terzoli 2015" ;
-    dcterms:bibliographicCitation "Terzoli, M. A. (2015). Commento a «Quer pasticciaccio brutto de via Merulana» di Carlo Emilio Gadda (con la collaborazione di V. Vitale; 2 voll.). Carocci."@it ;
-    dcterms:creator "Maria Antonietta Terzoli"@it ;
-    dcterms:date "2015"^^xsd:gYear ;
-    dcterms:type "monografia"@it .
+<https://w3id.org/gaddatlas/id/source/sabatino_cap4> a chora:Source ;
+    rdfs:label "Capitolo 4" ;
+    dcterms:bibliographicCitation "Sabatino, L. (2026). Capitolo 4, in GaddAtlas: tesi di dottorato in Digital Humanities, Università di Bologna (FICLIT)."@it ;
+    dcterms:creator "Lorenzo Sabatino"@it ;
+    dcterms:date "2026"^^xsd:gYear ;
+    dcterms:type "capitolo di tesi"@it .
 
 <http://purl.org/vocab/frbr/core#Expression> a owl:Class ;
     rdfs:isDefinedBy <http://purl.org/vocab/frbr/core> .
@@ -51175,12 +51212,12 @@ chora:retail_business a owl:NamedIndividual,
     dcterms:date "2023"^^xsd:gYear ;
     dcterms:type "articolo"@it .
 
-<https://w3id.org/gaddatlas/id/source/sabatino_cap4> a chora:Source ;
-    rdfs:label "Capitolo 4" ;
-    dcterms:bibliographicCitation "Sabatino, L. (2026). Capitolo 4, in GaddAtlas: tesi di dottorato in Digital Humanities, Università di Bologna (FICLIT)."@it ;
-    dcterms:creator "Lorenzo Sabatino"@it ;
-    dcterms:date "2026"^^xsd:gYear ;
-    dcterms:type "capitolo di tesi"@it .
+<https://w3id.org/gaddatlas/id/source/terzoli_2015> a chora:Source ;
+    rdfs:label "Terzoli 2015" ;
+    dcterms:bibliographicCitation "Terzoli, M. A. (2015). Commento a «Quer pasticciaccio brutto de via Merulana» di Carlo Emilio Gadda (con la collaborazione di V. Vitale; 2 voll.). Carocci."@it ;
+    dcterms:creator "Maria Antonietta Terzoli"@it ;
+    dcterms:date "2015"^^xsd:gYear ;
+    dcterms:type "monografia"@it .
 
 chora:LiteraryWork a owl:Class .
 
@@ -52362,12 +52399,6 @@ chora:Overlaps a owl:NamedIndividual,
     skos:prefLabel "Overlaps"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
 
-chora:Source a owl:Class ;
-    rdfs:comment "A bibliographic source of readings: a scholarly work, the thesis, the project census, a dated map or repertory (Sources.tsv)."@en ;
-    rdfs:subClassOf <http://purl.org/vocab/frbr/core#Expression> ;
-    skos:altLabel "Fonte"@it ;
-    skos:prefLabel "Source"@en .
-
 chora:UncertaintyTypeScheme a owl:NamedIndividual,
         skos:ConceptScheme ;
     rdfs:label "Uncertainty type"@en ;
@@ -52503,6 +52534,12 @@ chora:RelationalAnchoring a owl:Class ;
     skos:altLabel "Ancoraggio relazionale"@it ;
     skos:prefLabel "Relational anchoring"@en .
 
+chora:Source a owl:Class ;
+    rdfs:comment "A bibliographic source of readings: a scholarly work, the thesis, the project census, a dated map or repertory (Sources.tsv)."@en ;
+    rdfs:subClassOf <http://purl.org/vocab/frbr/core#Expression> ;
+    skos:altLabel "Fonte"@it ;
+    skos:prefLabel "Source"@en .
+
 <https://w3id.org/gaddatlas/id/focalizer/autista_questura> a chora:Character,
         chora:FocalizingAgent ;
     dcterms:description "Personaggio non nominato, che accompagna Ingravallo da Santo Stefano ai Colli Albani"@it ;
@@ -52514,15 +52551,6 @@ chora:RelationalAnchoring a owl:Class ;
     dcterms:description "Gaudenzio, detto Biondone, collega di Ingravallo coinvolto nelle indagini dell'omicidio di Liliana Balducci"@it ;
     chora:characterName "Gaudenzio"@it ;
     chora:hasGender "male"^^xsd:string .
-
-chora:CriticalReading a hico:InterpretationCriterion,
-        owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "lettura critica"@it ;
-    skos:definition "The reading rests on a scholar's interpretation, cited with work and page."@en ;
-    skos:inScheme chora:RationaleTypeScheme ;
-    skos:prefLabel "Critical reading"@en ;
-    skos:topConceptOf chora:RationaleTypeScheme .
 
 <https://w3id.org/gaddatlas/id/agent/manzotti> a prov:Agent,
         prov:Person,
@@ -52639,6 +52667,15 @@ chora:NarrativeRoute a owl:Class ;
     rdfs:label "Via Appia"@it ;
     chora:hasPlaceCategory chora:street ;
     chora:hasRealityStatus chora:Imported .
+
+chora:CriticalReading a hico:InterpretationCriterion,
+        owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "lettura critica"@it ;
+    skos:definition "The reading rests on a scholar's interpretation, cited with work and page."@en ;
+    skos:inScheme chora:RationaleTypeScheme ;
+    skos:prefLabel "Critical reading"@en ;
+    skos:topConceptOf chora:RationaleTypeScheme .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> a chora:NarrativePlace ;
     rdfs:label "Casello al chilometro 20-25"@it ;
@@ -52829,6 +52866,14 @@ chora:AdjacentTo a owl:NamedIndividual,
     chora:housedIn <https://w3id.org/gaddatlas/id/gazetteer/gaz_collegio_romano> ;
     chora:presentLocation "via Santo Stefano del Cacco"@it .
 
+chora:Draft a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "bozza"@it ;
+    skos:definition "Prepared from the existing documents (sheet descriptions, Chapter 4), not yet validated."@en ;
+    skos:inScheme chora:ReviewStatusScheme ;
+    skos:prefLabel "Draft"@en ;
+    skos:topConceptOf chora:ReviewStatusScheme .
+
 <https://w3id.org/gaddatlas/id/chapter/capitolo_III> a chora:Chapter ;
     dcterms:title "Capitolo III"@it ;
     chora:chapterNumber 3 ;
@@ -52969,15 +53014,6 @@ chora:locality a owl:NamedIndividual,
     rdfs:label "Campagna romana"@it ;
     skos:definition "La campagna intorno a Roma, Castelli compresi: i luoghi la cui ancora primaria dista fra 10 e 30 km dal Campidoglio."@it .
 
-chora:TextualEvidence a hico:InterpretationCriterion,
-        owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "prova testuale"@it ;
-    skos:definition "The reading rests on the text itself (wording, position, context of the occurrences)."@en ;
-    skos:inScheme chora:RationaleTypeScheme ;
-    skos:prefLabel "Textual evidence"@en ;
-    skos:topConceptOf chora:RationaleTypeScheme .
-
 chora:Transformed a owl:NamedIndividual,
         skos:Concept ;
     owl:differentFrom chora:Imagined,
@@ -52989,6 +53025,15 @@ chora:Transformed a owl:NamedIndividual,
     skos:notation "2" ;
     skos:prefLabel "Transformed"@en ;
     skos:topConceptOf chora:RealityStatusScheme .
+
+chora:TextualEvidence a hico:InterpretationCriterion,
+        owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "prova testuale"@it ;
+    skos:definition "The reading rests on the text itself (wording, position, context of the occurrences)."@en ;
+    skos:inScheme chora:RationaleTypeScheme ;
+    skos:prefLabel "Textual evidence"@en ;
+    skos:topConceptOf chora:RationaleTypeScheme .
 
 <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> a chora:Chapter ;
     dcterms:title "Capitolo VIII"@it ;
@@ -53044,14 +53089,6 @@ chora:Character a owl:Class ;
     rdfs:subClassOf chora:FocalizingAgent ;
     skos:altLabel "Personaggio" ;
     skos:prefLabel "Character"@en .
-
-chora:Draft a owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "bozza"@it ;
-    skos:definition "Prepared from the existing documents (sheet descriptions, Chapter 4), not yet validated."@en ;
-    skos:inScheme chora:ReviewStatusScheme ;
-    skos:prefLabel "Draft"@en ;
-    skos:topConceptOf chora:ReviewStatusScheme .
 
 chora:FocalizingAgent a owl:Class ;
     rdfs:comment "Entità attraverso cui lo spazio è percepito/descritto"@it ;
@@ -53223,14 +53260,6 @@ chora:GazetteerEntity a owl:Class ;
     skos:definition "An extra-textual georeferenceable place described as an authority/gazetteer entity, typically endowed with stable geometry (coordinates or GeoJSON) and persistent identifiers; it provides the external topographic referent to which narrative places may be anchored."@en,
         "Luogo extra-testuale georeferenziabile, descritto come entità di authority/gazetteer e tipicamente dotato di geometria stabile (coordinate o GeoJSON) e identificatori persistenti; costituisce il referente topografico esterno a cui possono essere ancorati i luoghi narrativi."@it .
 
-chora:Validated a owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "validata"@it ;
-    skos:definition "Validated by the project."@en ;
-    skos:inScheme chora:ReviewStatusScheme ;
-    skos:prefLabel "Validated"@en ;
-    skos:topConceptOf chora:ReviewStatusScheme .
-
 <https://w3id.org/gaddatlas/id/source/censimento_gaddatlas> a chora:Source ;
     rdfs:label "Censimento GaddAtlas" ;
     dcterms:bibliographicCitation "Censimento dei luoghi del Pasticciaccio (GaddAtlas): fogli NarrativePlaces e GazetteerEntities, descrizioni e statuti."@it ;
@@ -53257,6 +53286,14 @@ chora:NarrativePlace a owl:Class ;
     owl:disjointWith chora:PlaceReference ;
     skos:definition "A spatial entity belonging to the world of the text: a place constructed and recognizable within the diegesis, independently of any correspondence with an extra-textual georeferenceable place."@en,
         "Entità spaziale appartenente al mondo del testo: un luogo costruito e riconoscibile nella diegesi, indipendentemente dalla sua eventuale corrispondenza con un luogo extra-testuale georeferenziabile."@it .
+
+chora:Validated a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "validata"@it ;
+    skos:definition "Validated by the project."@en ;
+    skos:inScheme chora:ReviewStatusScheme ;
+    skos:prefLabel "Validated"@en ;
+    skos:topConceptOf chora:ReviewStatusScheme .
 
 chora:Assertion a owl:Class ;
     rdfs:comment "An attributed reading about a resource of the dataset (subject, value), generated by an interpretation act (prov:wasGeneratedBy hico:InterpretationAct) that carries its type, criterion, source, rationale and author. The reading itself carries whether the project adopts it, its review status and which earlier reading it revises. Competing readings coexist as distinct assertions; the adopted one is attributed like the others (D-067)."@en,
