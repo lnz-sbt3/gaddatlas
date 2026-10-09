@@ -20,8 +20,6 @@ dc:title a owl:AnnotationProperty .
 
 dcterms:bibliographicCitation a owl:AnnotationProperty .
 
-dcterms:contributor a owl:AnnotationProperty .
-
 dcterms:created a owl:AnnotationProperty .
 
 dcterms:description a owl:AnnotationProperty .
@@ -223,6 +221,13 @@ chora:criticalNote a owl:DatatypeProperty ;
     skos:altLabel "nota critica"@it ;
     skos:prefLabel "critical note"@en .
 
+chora:editor a owl:DatatypeProperty ;
+    rdfs:comment "Editor(s) of an edition («a cura di»)."@en ;
+    rdfs:domain chora:Witness ;
+    rdfs:subPropertyOf dcterms:contributor ;
+    skos:altLabel "curatore"@it ;
+    skos:prefLabel "editor"@en .
+
 chora:evidenceSource a owl:DatatypeProperty ;
     rdfs:comment "Records textual or critical evidence supporting a spatial interpretation."@en ;
     rdfs:domain chora:SpatialInterpretation ;
@@ -291,6 +296,13 @@ chora:hasZone a owl:ObjectProperty ;
     rdfs:range chora:PartitionZone ;
     skos:altLabel "ha zona"@it ;
     skos:prefLabel "has zone"@en .
+
+chora:heldAt a owl:DatatypeProperty ;
+    rdfs:comment "Institution and fonds holding an unpublished witness."@en ;
+    rdfs:domain chora:Witness ;
+    rdfs:range rdf:langString ;
+    skos:altLabel "conservato presso"@it ;
+    skos:prefLabel "held at"@en .
 
 chora:historicalLocation a owl:DatatypeProperty ;
     rdfs:comment "Describes the historical location or historical-toponymic context of a gazetteer entity."@en ;
@@ -399,6 +411,13 @@ chora:rationaleType a owl:ObjectProperty ;
     skos:altLabel "tipo di motivazione"@it ;
     skos:prefLabel "rationale type"@en .
 
+chora:referenceWitness a owl:ObjectProperty ;
+    rdfs:comment "The witness chosen by the project as reference text of the work: occurrences are annotated on its readings."@en ;
+    rdfs:domain chora:LiteraryWork ;
+    rdfs:range chora:Witness ;
+    skos:altLabel "testimone di riferimento"@it ;
+    skos:prefLabel "reference witness"@en .
+
 chora:reviewStatus a owl:ObjectProperty ;
     dcterms:references chora:ReviewStatusScheme ;
     rdfs:comment "Whether the content of the assertion has been validated by the project, or is a draft prepared from existing documents."@en ;
@@ -458,6 +477,20 @@ chora:uncertaintyOrigin a owl:ObjectProperty ;
     rdfs:range skos:Concept ;
     skos:altLabel "origine dell'incertezza"@it ;
     skos:prefLabel "uncertainty origin"@en .
+
+chora:witnessOf a owl:ObjectProperty ;
+    rdfs:comment "Links a witness to the work whose text it carries."@en ;
+    rdfs:domain chora:Witness ;
+    rdfs:range chora:LiteraryWork ;
+    skos:altLabel "testimone di"@it ;
+    skos:prefLabel "witness of"@en .
+
+chora:witnessType a owl:ObjectProperty ;
+    dcterms:references chora:WitnessTypeScheme ;
+    rdfs:domain chora:Witness ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "tipo di testimone"@it ;
+    skos:prefLabel "witness type"@en .
 
 <https://w3id.org/gaddatlas/id/assertion/A-0001> a chora:Assertion ;
     rdfs:comment "Sostituisce owl:sameAs gaz_castello <-> gaz_castel_gandolfo (D-044)"@it ;
@@ -14065,12 +14098,39 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
     chora:sourceReference "A 241"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> a chora:LiteraryWork ;
-    dcterms:bibliographicCitation "Garzanti, Milano, 1957 (ed. definitiva)"@it ;
+<https://w3id.org/gaddatlas/id/witness/dtsfg> a chora:Witness ;
+    rdfs:label "dtsFG" ;
+    dcterms:description "Dattiloscritto parziale dei capitoli nuovi (Pinotti 2025, pp. 73–74)."@it ;
+    chora:heldAt "Pavia, Fondazione Maria Corti, Fondo Gelli"@it ;
+    chora:witnessOf <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:witnessType chora:Typescript .
+
+<https://w3id.org/gaddatlas/id/witness/qp57> a chora:Witness ;
+    rdfs:label "QP57" ;
+    dcterms:date "1957-06-22"^^xsd:date ;
+    dcterms:description "Princeps Garzanti: finito di stampare del 22 giugno 1957. Nuovi capitoli consegnati fra il 23 aprile 1955 e il 6 febbraio 1957; il romanesco dei «tratti» di rivista rivisto con Dell'Arco, il quarto sacrificato, il tutto riorganizzato in dieci capitoli (Matt e Pinotti 2022, pp. 271–272)."@it ;
+    dcterms:publisher "Garzanti, Milano"@it ;
+    dcterms:source "Matt e Pinotti 2022, pp. 271–272 (revisione dei «tratti» di rivista); Cap. 4, n. 10 (bzFG = bozze del volume)"@it ;
+    prov:wasDerivedFrom <https://w3id.org/gaddatlas/id/witness/bzfg>,
+        <https://w3id.org/gaddatlas/id/witness/qpl> ;
+    chora:witnessOf <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:witnessType chora:FirstEdition .
+
+<https://w3id.org/gaddatlas/id/witness/rr2> a chora:Witness ;
+    rdfs:label "RR II" ;
+    dcterms:date "1989"^^xsd:gYear ;
+    dcterms:description "C. E. Gadda, Romanzi e racconti II, in Opere di Carlo Emilio Gadda. Edizione da cui citano Manzotti 2010, Pinotti 2016 e Perosa 2023a."@it ;
+    dcterms:publisher "Garzanti, Milano"@it ;
+    chora:editor "Giorgio Pinotti, Dante Isella, Raffaella Rodondi"@it ;
+    chora:witnessOf <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:witnessType chora:Edition .
+
+<https://w3id.org/gaddatlas/id/work/il_palazzo_degli_ori> a chora:LiteraryWork ;
     dcterms:creator "Carlo Emilio Gadda"@it ;
-    dcterms:date "1957"^^xsd:gYear ;
-    dcterms:title "Quer pasticciaccio brutto de via Merulana"@it ;
-    rdfs:comment "Romanzo giallo-filosofico; prima pubblicazione parziale su Letteratura (1946), edizione in volume 1957."@it .
+    dcterms:date "1948"^^xsd:gYear ;
+    dcterms:relation <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    dcterms:title "Il palazzo degli ori"@it ;
+    rdfs:comment "Soggetto cinematografico scritto nel 1948 per la Lux Film, con la «sceneggiatura minore» La casa dei ricchi: derivazione per un altro medium (Pinotti 2016, pp. 201–203). Opera correlata, senza occorrenze, fuori dall'interfaccia (DM-04)."@it .
 
 <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_letteratura> a chora:LiteraryWork ;
     dcterms:bibliographicCitation "Letteratura, Bonsanti"@it ;
@@ -14078,6 +14138,8 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     dcterms:date "1946"^^xsd:gYear ;
     dcterms:title "Quer pasticciaccio brutto de via Merulana"@it ;
     rdfs:comment "Prima pubblicazione in cinque puntate sulla rivista «Letteratura», fascicoli 26, 27, 28, 29 e 31 del 1946 (Pinotti 2016, p. 200, n. 4)"@it .
+
+dcterms:contributor a owl:AnnotationProperty .
 
 <http://purl.org/emmedi/hico/InterpretationAct> a owl:Class ;
     rdfs:isDefinedBy <http://purl.org/emmedi/hico> .
@@ -29862,6 +29924,30 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 302"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/witness/bzfg> a chora:Witness ;
+    rdfs:label "bzFG" ;
+    dcterms:description "Un giro di bozze del volume (Pinotti 2025, pp. 73–74)."@it ;
+    chora:heldAt "Pavia, Fondazione Maria Corti, Fondo Gelli"@it ;
+    chora:witnessOf <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:witnessType chora:Proofs .
+
+<https://w3id.org/gaddatlas/id/witness/qp> a chora:Witness ;
+    rdfs:label "QP" ;
+    dcterms:date "2018"^^xsd:gYear ;
+    dcterms:description "Edizione di riferimento della tesi, nel volume a stampa. La copia digitale ha almeno una lezione non emendata."@it ;
+    dcterms:publisher "Adelphi, Milano"@it ;
+    chora:editor "Giorgio Pinotti"@it ;
+    chora:witnessOf <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:witnessType chora:Edition .
+
+<https://w3id.org/gaddatlas/id/witness/qpl> a chora:Witness ;
+    rdfs:label "QPL" ;
+    dcterms:date "1946"^^xsd:gYear ;
+    dcterms:description "Redazione in rivista, in cinque puntate: fascicoli 26, 27, 28, 29 e 31 del 1946, senza il n. 30 (Pinotti 2016, p. 200, n. 4; Pinotti 2024, § 7.2). Citata da RR II, pp. 277–460."@it ;
+    dcterms:publisher "«Letteratura»"@it ;
+    chora:witnessOf <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:witnessType chora:PeriodicalRedaction .
+
 <http://vocab.getty.edu/aat/300000745> a owl:NamedIndividual .
 
 <http://vocab.getty.edu/aat/300008247> a owl:NamedIndividual .
@@ -29885,6 +29971,13 @@ chora:Above a owl:NamedIndividual,
     skos:inScheme chora:SpatialRelationTypeScheme ;
     skos:prefLabel "Above"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+chora:FirstEdition a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "princeps"@it ;
+    skos:inScheme chora:WitnessTypeScheme ;
+    skos:prefLabel "First edition"@en ;
+    skos:topConceptOf chora:WitnessTypeScheme .
 
 chora:Incompleteness a owl:NamedIndividual,
         skos:Concept ;
@@ -29916,6 +30009,20 @@ chora:PartitionAssertion a owl:NamedIndividual,
     skos:prefLabel "Partition assertion"@en ;
     skos:topConceptOf chora:AssertionTypeScheme .
 
+chora:PeriodicalRedaction a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "redazione in rivista"@it ;
+    skos:inScheme chora:WitnessTypeScheme ;
+    skos:prefLabel "Periodical redaction"@en ;
+    skos:topConceptOf chora:WitnessTypeScheme .
+
+chora:Proofs a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "bozze"@it ;
+    skos:inScheme chora:WitnessTypeScheme ;
+    skos:prefLabel "Proofs"@en ;
+    skos:topConceptOf chora:WitnessTypeScheme .
+
 chora:Railway_line a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "Linea ferroviaria"@it ;
@@ -29924,6 +30031,13 @@ chora:Railway_line a owl:NamedIndividual,
     skos:inScheme chora:PlaceCategoryScheme ;
     skos:prefLabel "Railway line"@en ;
     skos:topConceptOf chora:PlaceCategoryScheme .
+
+chora:Typescript a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "dattiloscritto"@it ;
+    skos:inScheme chora:WitnessTypeScheme ;
+    skos:prefLabel "Typescript"@en ;
+    skos:topConceptOf chora:WitnessTypeScheme .
 
 chora:archaeological_site a owl:NamedIndividual,
         skos:Concept ;
@@ -32493,6 +32607,14 @@ chora:ContestedIdentification a owl:NamedIndividual,
     skos:prefLabel "Contested Identification"@en ;
     skos:topConceptOf chora:UncertaintyTypeScheme .
 
+chora:Edition a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "edizione"@it ;
+    skos:definition "A later edition of the work, edited (e.g. collected works, the reference edition)."@en ;
+    skos:inScheme chora:WitnessTypeScheme ;
+    skos:prefLabel "Edition"@en ;
+    skos:topConceptOf chora:WitnessTypeScheme .
+
 chora:GeometryAxis a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "geometria"@it ;
@@ -34124,8 +34246,6 @@ chora:IdentificationAxis a owl:NamedIndividual,
     skos:prefLabel "Identification Axis"@en ;
     skos:topConceptOf chora:UncertaintyAxisScheme .
 
-chora:LiteraryWork a owl:Class .
-
 chora:ReviewStatusScheme a owl:NamedIndividual,
         skos:ConceptScheme ;
     rdfs:label "Review status"@en ;
@@ -35027,8 +35147,17 @@ chora:station a owl:NamedIndividual,
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
+<https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> a chora:LiteraryWork ;
+    dcterms:creator "Carlo Emilio Gadda"@it ;
+    dcterms:date "1957"^^xsd:gYear ;
+    dcterms:title "Quer pasticciaccio brutto de via Merulana"@it ;
+    rdfs:comment "Romanzo. Testimoni in Witnesses.tsv (D-052): QPL, dtsFG, bzFG, QP57, RR II, QP (testo di riferimento)."@it ;
+    chora:referenceWitness <https://w3id.org/gaddatlas/id/witness/qp> .
+
 prov:Agent a owl:Class ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+chora:LiteraryWork a owl:Class .
 
 chora:restaurant a owl:NamedIndividual,
         skos:Concept ;
@@ -35279,6 +35408,23 @@ chora:NarrativeRoleScheme a owl:NamedIndividual,
         chora:ZoneOfAction ;
     skos:prefLabel "Narrative Role"@en .
 
+chora:Witness a owl:Class ;
+    rdfs:comment "A witness of a literary work: a periodical redaction, a typescript, a set of proofs, a first edition or a later edition, each carrying a state of the text. Derivations between witnesses (prov:wasDerivedFrom) are stated only where documented."@en ;
+    rdfs:subClassOf prov:Entity ;
+    skos:altLabel "Testimone"@it ;
+    skos:prefLabel "Witness"@en .
+
+chora:WitnessTypeScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Witness type"@en ;
+    skos:altLabel "Tipo di testimone"@it ;
+    skos:hasTopConcept chora:Edition,
+        chora:FirstEdition,
+        chora:PeriodicalRedaction,
+        chora:Proofs,
+        chora:Typescript ;
+    skos:prefLabel "Witness type"@en .
+
 <https://w3id.org/gaddatlas/id/focalizer/assunta> a chora:Character,
         chora:FocalizingAgent ;
     dcterms:description "Assunta Crocchiapani, detta anche Tina, una delle \"nipoti\" assunte dai Balducci, originaria di Pozzofondo"@it ;
@@ -35446,8 +35592,6 @@ chora:historical_building a owl:NamedIndividual,
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
-skos:ConceptScheme a owl:Class .
-
 chora:Chapter a owl:Class .
 
 chora:Imagined a owl:NamedIndividual,
@@ -35535,6 +35679,8 @@ chora:mountain a owl:NamedIndividual,
     chora:hasRealityStatus chora:Transformed ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> .
+
+skos:ConceptScheme a owl:Class .
 
 chora:AssertionTypeScheme a owl:NamedIndividual,
         skos:ConceptScheme ;

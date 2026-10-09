@@ -395,6 +395,11 @@ class GaddaETL:
                 self.add_literal(work_uri, DCTERMS.date, row.get('Publication_Year'), datatype=XSD.gYear)
                 self.add_literal(work_uri, DCTERMS.bibliographicCitation, row.get('Edition_Used'), lang='it')
                 self.add_literal(work_uri, RDFS.comment, row.get('Notes'), lang='it')
+                related = str(row.get('Related_Work') or '').strip()
+                if related:
+                    # opera correlata (D-052): avantesto o derivazione
+                    self.graph.add((work_uri, DCTERMS.relation,
+                                    self.resolve_lookup(related, '@Work_ID')))
 
             logger.info(f"LiteraryWorks: processate {len(self.id_cache['Work_ID'])} opere")
 
@@ -1040,6 +1045,59 @@ class GaddaETL:
     # ============================================================
 
     # ------------------------------------------------------------------
+    # TESTIMONI (D-052, work order T-40)
+    # ------------------------------------------------------------------
+    WITNESS_TYPES = {"redazione in rivista": "PeriodicalRedaction", "dattiloscritto": "Typescript",
+                     "bozze": "Proofs", "princeps": "FirstEdition", "edizione": "Edition"}
+
+    def process_witnesses(self, file_path):
+        """Processa Witnesses.tsv: i testimoni dell'opera (colonne in mapping.yaml)."""
+        self.id_cache.setdefault('Witness_ID', set())
+        df = pd.read_csv(file_path, sep='\t', encoding='utf-8', dtype=str,
+                         keep_default_na=False, na_values=[])
+        derived = []
+        for idx, row in df.iterrows():
+            wid = str(row.get('Witness_ID', '')).strip()
+            where = f"Witnesses riga {idx + 2} ({wid or 'senza id'})"
+            work_id = str(row.get('Work_ID', '')).strip()
+            wtype = str(row.get('Witness_Type', '')).strip().lower()
+            if not wid:
+                raise ValueError(f"{where}: Witness_ID mancante")
+            if work_id not in self.id_cache['Work_ID']:
+                raise ValueError(f"{where}: opera {work_id!r} assente da LiteraryWorks.tsv")
+            if wtype not in self.WITNESS_TYPES:
+                raise ValueError(f"{where}: Witness_Type {wtype!r} non ammesso")
+            uri = self.resolve_lookup(wid, '@Witness_ID')
+            work = self.resolve_lookup(work_id, '@Work_ID')
+            self.id_cache['Witness_ID'].add(wid)
+            self.graph.add((uri, RDF.type, CHORA.Witness))
+            self.graph.add((uri, CHORA.witnessOf, work))
+            self.graph.add((uri, CHORA.witnessType, CHORA[self.WITNESS_TYPES[wtype]]))
+            self.add_literal(uri, RDFS.label, row.get('Siglum'))
+            date = str(row.get('Date', '')).strip()
+            if date:
+                dtype = XSD.date if re.fullmatch(r"\d{4}-\d{2}-\d{2}", date) else XSD.gYear
+                self.graph.add((uri, DCTERMS.date, Literal(date, datatype=dtype)))
+            self.add_literal(uri, CHORA.editor, row.get('Editor'), lang='it')
+            self.add_literal(uri, DCTERMS.publisher, row.get('Publisher'), lang='it')
+            self.add_literal(uri, CHORA.heldAt, row.get('Held_At'), lang='it')
+            self.add_literal(uri, DCTERMS.description, row.get('Description'), lang='it')
+            self.add_literal(uri, RDFS.comment, row.get('Note'), lang='it')
+            ref = str(row.get('Reference', '')).strip().lower()
+            if ref in ('si', 'sì'):
+                self.graph.add((work, CHORA.referenceWitness, uri))
+            sources = [d.strip() for d in str(row.get('Derived_From', '')).split('|') if d.strip()]
+            if sources and not str(row.get('Derivation_Source', '')).strip():
+                raise ValueError(f"{where}: una derivazione richiede Derivation_Source")
+            self.add_literal(uri, DCTERMS.source, row.get('Derivation_Source'), lang='it')
+            derived += [(where, uri, d) for d in sources]
+        for where, uri, d in derived:
+            if d not in self.id_cache['Witness_ID']:
+                raise ValueError(f"{where}: Derived_From {d!r} non e' un testimone")
+            self.graph.add((uri, PROV.wasDerivedFrom, self.resolve_lookup(d, '@Witness_ID')))
+        logger.info(f"Witnesses: {len(df)} testimoni, {len(derived)} derivazioni")
+
+    # ------------------------------------------------------------------
     # AGENTI (D-043, work order T-32)
     # ------------------------------------------------------------------
     AGENT_NAMESPACES = {"annotator": "annotator", "scholar": "agent"}
@@ -1403,7 +1461,7 @@ class GaddaETL:
         # 0. Verifica che tutti i TSV attesi esistano, PRIMA di iniziare:
         # un file mancante produceva in precedenza solo un log di errore e un
         # grafo parziale silenziosamente incompleto.
-        attesi = ["LiteraryWorks", "Chapters", "FocalizingAgents", "Agents", "NarrativePlaces",
+        attesi = ["LiteraryWorks", "Witnesses", "Chapters", "FocalizingAgents", "Agents", "NarrativePlaces",
                   "GazetteerEntities", "References", "SpatialInterpretations"]
         mancanti = [n for n in attesi if not (self.data_dir / f"{n}.tsv").is_file()]
         if mancanti:
@@ -1426,6 +1484,7 @@ class GaddaETL:
         self.process_chapters(
             self.data_dir / "Chapters.tsv"
         )
+        self.process_witnesses(self.data_dir / "Witnesses.tsv")
         self.process_focalizing_agents(
             self.data_dir / "FocalizingAgents.tsv"
         )

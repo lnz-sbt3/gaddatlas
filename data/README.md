@@ -11,6 +11,7 @@ Le sorgenti sono:
 | `source/tables/*.tsv` | l'annotazione: **sorgente canonica** (D-019), diffabile in git |
 | `source/tables/Assertions.tsv` | le letture attribuite (D-042): una riga per lettura, con autore, codificatore, fonte, adozione; facoltativo |
 | `source/tables/PartitionZones.tsv`, `PartitionMembers.tsv` | le zone delle partizioni interpretative (città / campagna, D-050) e i luoghi assegnati a ciascuna; la partizione è attribuita in `Assertions.tsv`; facoltativi |
+| `source/tables/Witnesses.tsv` | i testimoni dell'opera (QPL, dtsFG, bzFG, QP57, RR II, QP; D-052): tipo, data, curatore, derivazioni documentate; allineamento LRMoo in `mapping.yaml` |
 | `source/mapping.yaml` | etichette italiane → URI dell'ontologia |
 | `source/void_seeds.json` | 48 semi congelati dei tasselli fittizi |
 | `source/roma.geojson` | contorno amministrativo di Roma, sfondo della mappa |

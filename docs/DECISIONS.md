@@ -1032,6 +1032,33 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-052 — Opera e testimoni: modello minimo (9 ottobre 2026)
+
+- Requisito/i: R01 · Ipotesi: — · Data check: DC-05, DM-04 (work order T-40)
+- Stato precedente: tre `LiteraryWork` che confondevano opera ed edizioni: `quer_pasticciaccio` («Garzanti 1957 (ed. definitiva)»), `quer_pasticciaccio_letteratura`, `quer_pasticciaccio_adelphi`. Nessuna relazione fra loro, nessun testimone.
+- Decisione (di Lorenzo, 9/10/2026):
+  - **opera:** `quer_pasticciaccio` è l'opera. Il campo `Edition_Used` è svuotato, perché un'opera non è un'edizione;
+  - **testimoni:** nuova classe `chora:Witness` (sottoclasse di `prov:Entity`) e nuovo foglio `Witnesses.tsv`, sei righe. Ogni testimone ha `chora:witnessOf`, `chora:witnessType` (schema `WitnessTypeScheme`: redazione in rivista, dattiloscritto, bozze, princeps, edizione), data, curatore (`chora:editor`), editore o sede di conservazione (`chora:heldAt`). L'opera indica il testimone di riferimento con `chora:referenceWitness`:
+    - **QPL**, redazione in rivista, 1946, «Letteratura», fascicoli 26–29 e 31 (Pinotti 2016, p. 200, n. 4);
+    - **dtsFG**, dattiloscritto dei capitoli nuovi, Fondo Gelli, Fondazione Maria Corti, Pavia;
+    - **bzFG**, bozze del volume, stessa sede;
+    - **QP57**, princeps, Garzanti, finito di stampare del 22 giugno 1957;
+    - **RR II**, edizione, Garzanti 1989, a cura di Giorgio Pinotti, Dante Isella e Raffaella Rodondi: l'edizione delle citazioni di Manzotti, Pinotti 2016 e Perosa;
+    - **QP**, edizione, Adelphi 2018, a cura di Giorgio Pinotti, volume a stampa: testimone di riferimento;
+  - **derivazioni:** `prov:wasDerivedFrom` solo dove documentato, con la fonte (`dcterms:source`): QP57 ← QPL (revisione dei «tratti» di rivista, Matt e Pinotti 2022, pp. 271–272) e QP57 ← bzFG (bozze del volume, Cap. 4, n. 10). Le altre derivazioni non sono scritte: dtsFG → bzFG, QP57 → RR II, QP57 → QP;
+  - **metadati mancanti, lasciati vuoti (REVIEW_2):** data di dtsFG e di bzFG; curatore o direttore di QPL (il foglio delle opere riportava «Letteratura, Bonsanti»); fascicoli e pagine di QPL dentro la rivista;
+  - **LRMoo:** allineamento dichiarato in `mapping.yaml` (Work ~ F1, Witness ~ F2 incarnata in F3 o F5, witnessOf ~ R3i, wasDerivedFrom ~ R76), non adottato in blocco: CHORA non distingue Expression e Manifestation, perché per i luoghi conta lo stato del testo;
+  - **opera correlata:** `il_palazzo_degli_ori` (soggetto per la Lux Film, 1948; Pinotti 2016, pp. 201–203), legata all'opera con `dcterms:relation`, senza occorrenze e fuori dall'interfaccia (DM-04);
+  - **pseudo-opere:** `quer_pasticciaccio_letteratura` e `quer_pasticciaccio_adelphi` restano fino a T-44, che sposta i 723 riferimenti e i 10 capitoli sull'opera e sul testimone QP. Il pannello del testo dell'app riconosce oggi l'edizione dall'id `quer_pasticciaccio_adelphi`: va cambiato nello stesso task, non prima.
+- Alternative scartate: adottare LRMoo per intero (quattro livelli per un caso di studio che ne usa uno); un `LiteraryWork` per testimone (lo stato precedente, che confonde opera ed edizione).
+- Controlli: l'ETL rifiuta tipi fuori schema, opere e derivazioni inesistenti, derivazioni senza fonte; shape 14 (`WitnessShape`: un'opera, un tipo, derivazione solo da testimoni; `ReferenceWitnessShape`: al più un testimone di riferimento).
+- Motivazione (fonte, pagina): Cap. 4, § 4.2 (cinque ordini della tradizione; r. 41, 43) e note 4 e 10 (sigle).
+- Fase in cui è maturata: analisi del testo
+- File toccati (manifest): `ontology/chora.ttl` r. 1318–1402 (sezione «Opera e testimoni»); `ontology/shapes/chora-shapes.ttl` r. 510–545 (shape 14); `data/source/mapping.yaml` r. 599–633 (`Related_Work`, blocco `Witnesses` con l'allineamento LRMoo); `tools/etl.py` r. 1047–1099 (`process_witnesses`), `Related_Work` in `process_literary_works`, `Witnesses` fra i fogli attesi; `data/source/tables/Witnesses.tsv` (nuovo), `LiteraryWorks.tsv` (colonna `Related_Work`, opera ripulita, nuova riga); XLSX corrispondenti; `data/README.md`.
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.070 → **1.146**; ABox 26.249 → **26.300**; full 27.889 → **28.016**. SHACL conforme, 49 avvertenze (T-33); IQ1–IQ16 a 0. Vista invariata (GeoJSON: cambia solo `tripleCount`).
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

@@ -596,6 +596,41 @@ mappings:
           lang: "it"
           optional: true
 
+        # Opera correlata (D-052): dcterms:relation verso l'opera di cui e'
+        # un avantesto o una derivazione (es. Il palazzo degli ori).
+        - column: "Related_Work"
+          property: "dcterms:relation"
+          to: "@Work_ID"
+          optional: true
+
+# ============================================================
+# FILE: Witnesses.tsv (testimoni dell'opera, D-052)
+# ============================================================
+# Lo legge tools/etl.py (process_witnesses). Colonne: Witness_ID, Siglum,
+# Work_ID, Witness_Type (redazione in rivista | dattiloscritto | bozze |
+# princeps | edizione), Date (AAAA o AAAA-MM-GG), Editor, Publisher, Held_At,
+# Description, Derived_From (Witness_ID, anche piu' d'uno separati da '|'),
+# Derivation_Source, Reference (si = testimone di riferimento dell'opera), Note.
+# prov:wasDerivedFrom si scrive solo dove la derivazione e' documentata, con
+# la fonte in Derivation_Source.
+#
+# Allineamento a LRMoo (dichiarato qui, non adottato in blocco):
+#   chora:LiteraryWork  ~ lrmoo:F1_Work
+#   chora:Witness       ~ lrmoo:F2_Expression (lo stato redazionale) che si
+#                         incarna in lrmoo:F3_Manifestation (QPL, QP57, RR II,
+#                         QP) o in lrmoo:F5_Item (dtsFG, bzFG, esemplari unici)
+#   chora:witnessOf     ~ lrmoo:R3i_realises (Expression -> Work)
+#   prov:wasDerivedFrom ~ lrmoo:R76_is_derivative_of
+# CHORA non distingue Expression e Manifestation: per i luoghi conta lo stato
+# del testo, non l'oggetto fisico.
+  Witnesses:
+    source_file: "Witnesses.tsv"
+
+    Witness_ID:
+      as_uri: "https://w3id.org/gaddatlas/id/witness/{value}"
+      rdf_type:
+        - "chora:Witness"
+
 # ============================================================
 # FILE: Assertions.tsv (letture attribuite, D-042)
 # Non ha un blocco di mapping: lo legge tools/etl.py (process_assertions),

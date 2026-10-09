@@ -1,4 +1,5 @@
-Work_ID	Full_Title	Author	Publication_Year	Edition_Used	Notes
-quer_pasticciaccio	Quer pasticciaccio brutto de via Merulana	Carlo Emilio Gadda	1957	Garzanti, Milano, 1957 (ed. definitiva)	Romanzo giallo-filosofico; prima pubblicazione parziale su Letteratura (1946), edizione in volume 1957.
-quer_pasticciaccio_letteratura	Quer pasticciaccio brutto de via Merulana	Carlo Emilio Gadda	1946	Letteratura, Bonsanti	Prima pubblicazione in cinque puntate sulla rivista «Letteratura», fascicoli 26, 27, 28, 29 e 31 del 1946 (Pinotti 2016, p. 200, n. 4)
-quer_pasticciaccio_adelphi	Quer pasticciaccio brutto de via Merulana	Carlo Emilio Gadda	2018	Adelphi	Ripubblicazione curata da Giorgio Pinotti
+Work_ID	Full_Title	Author	Publication_Year	Edition_Used	Notes	Related_Work
+quer_pasticciaccio	Quer pasticciaccio brutto de via Merulana	Carlo Emilio Gadda	1957		Romanzo. Testimoni in Witnesses.tsv (D-052): QPL, dtsFG, bzFG, QP57, RR II, QP (testo di riferimento).	
+quer_pasticciaccio_letteratura	Quer pasticciaccio brutto de via Merulana	Carlo Emilio Gadda	1946	Letteratura, Bonsanti	Prima pubblicazione in cinque puntate sulla rivista «Letteratura», fascicoli 26, 27, 28, 29 e 31 del 1946 (Pinotti 2016, p. 200, n. 4)	
+quer_pasticciaccio_adelphi	Quer pasticciaccio brutto de via Merulana	Carlo Emilio Gadda	2018	Adelphi	Ripubblicazione curata da Giorgio Pinotti	
+il_palazzo_degli_ori	Il palazzo degli ori	Carlo Emilio Gadda	1948		Soggetto cinematografico scritto nel 1948 per la Lux Film, con la «sceneggiatura minore» La casa dei ricchi: derivazione per un altro medium (Pinotti 2016, pp. 201–203). Opera correlata, senza occorrenze, fuori dall'interfaccia (DM-04).	quer_pasticciaccio

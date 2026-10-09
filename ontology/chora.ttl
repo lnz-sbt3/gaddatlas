@@ -1314,3 +1314,89 @@ chora:inPartitionZone a owl:ObjectProperty ;
     rdfs:range chora:PartitionZone ;
     skos:altLabel "in zona"@it ;
     skos:prefLabel "in partition zone"@en .
+
+# =============================================================================
+# OPERA E TESTIMONI (D-052, work order T-40, R01)
+# Modello minimo: un'opera (chora:LiteraryWork) e i suoi testimoni, ciascuno
+# portatore di uno stato redazionale del testo. L'allineamento a LRMoo e'
+# dichiarato in data/source/mapping.yaml, non adottato in blocco.
+# =============================================================================
+
+chora:Witness a owl:Class ;
+    rdfs:comment "A witness of a literary work: a periodical redaction, a typescript, a set of proofs, a first edition or a later edition, each carrying a state of the text. Derivations between witnesses (prov:wasDerivedFrom) are stated only where documented."@en ;
+    rdfs:subClassOf prov:Entity ;
+    skos:altLabel "Testimone"@it ;
+    skos:prefLabel "Witness"@en .
+
+chora:witnessOf a owl:ObjectProperty ;
+    rdfs:comment "Links a witness to the work whose text it carries."@en ;
+    rdfs:domain chora:Witness ;
+    rdfs:range chora:LiteraryWork ;
+    skos:altLabel "testimone di"@it ;
+    skos:prefLabel "witness of"@en .
+
+chora:referenceWitness a owl:ObjectProperty ;
+    rdfs:comment "The witness chosen by the project as reference text of the work: occurrences are annotated on its readings."@en ;
+    rdfs:domain chora:LiteraryWork ;
+    rdfs:range chora:Witness ;
+    skos:altLabel "testimone di riferimento"@it ;
+    skos:prefLabel "reference witness"@en .
+
+chora:witnessType a owl:ObjectProperty ;
+    dcterms:references chora:WitnessTypeScheme ;
+    rdfs:domain chora:Witness ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "tipo di testimone"@it ;
+    skos:prefLabel "witness type"@en .
+
+chora:editor a owl:DatatypeProperty ;
+    rdfs:comment "Editor(s) of an edition («a cura di»)."@en ;
+    rdfs:domain chora:Witness ;
+    rdfs:subPropertyOf dcterms:contributor ;
+    skos:altLabel "curatore"@it ;
+    skos:prefLabel "editor"@en .
+
+chora:heldAt a owl:DatatypeProperty ;
+    rdfs:comment "Institution and fonds holding an unpublished witness."@en ;
+    rdfs:domain chora:Witness ;
+    rdfs:range rdf:langString ;
+    skos:altLabel "conservato presso"@it ;
+    skos:prefLabel "held at"@en .
+
+chora:WitnessTypeScheme a owl:NamedIndividual, skos:ConceptScheme ;
+    rdfs:label "Witness type"@en ;
+    skos:altLabel "Tipo di testimone"@it ;
+    skos:hasTopConcept chora:PeriodicalRedaction, chora:Typescript, chora:Proofs,
+        chora:FirstEdition, chora:Edition ;
+    skos:prefLabel "Witness type"@en .
+
+chora:PeriodicalRedaction a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "redazione in rivista"@it ;
+    skos:inScheme chora:WitnessTypeScheme ;
+    skos:prefLabel "Periodical redaction"@en ;
+    skos:topConceptOf chora:WitnessTypeScheme .
+
+chora:Typescript a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "dattiloscritto"@it ;
+    skos:inScheme chora:WitnessTypeScheme ;
+    skos:prefLabel "Typescript"@en ;
+    skos:topConceptOf chora:WitnessTypeScheme .
+
+chora:Proofs a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "bozze"@it ;
+    skos:inScheme chora:WitnessTypeScheme ;
+    skos:prefLabel "Proofs"@en ;
+    skos:topConceptOf chora:WitnessTypeScheme .
+
+chora:FirstEdition a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "princeps"@it ;
+    skos:inScheme chora:WitnessTypeScheme ;
+    skos:prefLabel "First edition"@en ;
+    skos:topConceptOf chora:WitnessTypeScheme .
+
+chora:Edition a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "edizione"@it ;
+    skos:definition "A later edition of the work, edited (e.g. collected works, the reference edition)."@en ;
+    skos:inScheme chora:WitnessTypeScheme ;
+    skos:prefLabel "Edition"@en ;
+    skos:topConceptOf chora:WitnessTypeScheme .

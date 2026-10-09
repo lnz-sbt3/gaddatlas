@@ -507,3 +507,39 @@ ga:RevisionShape
         sh:class ga:Assertion ;
         sh:message "prov:wasRevisionOf punta a un'altra asserzione attribuita." ;
     ] .
+
+
+# =============================================================================
+# SHAPE 14 — Opera e testimoni (D-052, work order T-40)
+# =============================================================================
+
+ga:WitnessShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Witness ;
+    sh:property [
+        sh:path ga:witnessOf ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:class ga:LiteraryWork ;
+        sh:message "Un testimone e' testimone di una e una sola opera." ;
+    ] ;
+    sh:property [
+        sh:path ga:witnessType ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:in ( ga:PeriodicalRedaction ga:Typescript ga:Proofs ga:FirstEdition ga:Edition ) ;
+        sh:message "Un testimone ha un tipo dello schema WitnessType." ;
+    ] ;
+    sh:property [
+        sh:path prov:wasDerivedFrom ;
+        sh:class ga:Witness ;
+        sh:message "Un testimone deriva solo da un altro testimone." ;
+    ] .
+
+ga:ReferenceWitnessShape
+    a sh:NodeShape ;
+    sh:targetClass ga:LiteraryWork ;
+    sh:property [
+        sh:path ga:referenceWitness ;
+        sh:maxCount 1 ;
+        sh:class ga:Witness ;
+        sh:message "Un'opera ha al piu' un testimone di riferimento." ;
+    ] .

@@ -547,6 +547,31 @@
       }
     },
     {
+      "@id": "chora:Edition",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "edizione"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "A later edition of the work, edited (e.g. collected works, the reference edition)."
+      },
+      "skos:inScheme": {
+        "@id": "chora:WitnessTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Edition"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:WitnessTypeScheme"
+      }
+    },
+    {
       "@id": "chora:Encoder",
       "@type": [
         "owl:NamedIndividual",
@@ -570,6 +595,27 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:AttributionRoleScheme"
+      }
+    },
+    {
+      "@id": "chora:FirstEdition",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "princeps"
+      },
+      "skos:inScheme": {
+        "@id": "chora:WitnessTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "First edition"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:WitnessTypeScheme"
       }
     },
     {
@@ -1438,6 +1484,27 @@
       }
     },
     {
+      "@id": "chora:PeriodicalRedaction",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "redazione in rivista"
+      },
+      "skos:inScheme": {
+        "@id": "chora:WitnessTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Periodical redaction"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:WitnessTypeScheme"
+      }
+    },
+    {
       "@id": "chora:PlaceReference",
       "@type": "owl:Class",
       "rdfs:comment": [
@@ -1508,6 +1575,27 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:NarrativeRoleScheme"
+      }
+    },
+    {
+      "@id": "chora:Proofs",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "bozze"
+      },
+      "skos:inScheme": {
+        "@id": "chora:WitnessTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Proofs"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:WitnessTypeScheme"
       }
     },
     {
@@ -1971,6 +2059,27 @@
       }
     },
     {
+      "@id": "chora:Typescript",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "dattiloscritto"
+      },
+      "skos:inScheme": {
+        "@id": "chora:WitnessTypeScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Typescript"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:WitnessTypeScheme"
+      }
+    },
+    {
       "@id": "chora:UncertaintyAssertion",
       "@type": [
         "owl:NamedIndividual",
@@ -2199,6 +2308,61 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:AssertionTypeScheme"
+      }
+    },
+    {
+      "@id": "chora:Witness",
+      "@type": "owl:Class",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "A witness of a literary work: a periodical redaction, a typescript, a set of proofs, a first edition or a later edition, each carrying a state of the text. Derivations between witnesses (prov:wasDerivedFrom) are stated only where documented."
+      },
+      "rdfs:subClassOf": {
+        "@id": "prov:Entity"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Testimone"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Witness"
+      }
+    },
+    {
+      "@id": "chora:WitnessTypeScheme",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Witness type"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Tipo di testimone"
+      },
+      "skos:hasTopConcept": [
+        {
+          "@id": "chora:Edition"
+        },
+        {
+          "@id": "chora:FirstEdition"
+        },
+        {
+          "@id": "chora:PeriodicalRedaction"
+        },
+        {
+          "@id": "chora:Proofs"
+        },
+        {
+          "@id": "chora:Typescript"
+        }
+      ],
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Witness type"
       }
     },
     {
@@ -2497,6 +2661,28 @@
       }
     },
     {
+      "@id": "chora:editor",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Editor(s) of an edition («a cura di»)."
+      },
+      "rdfs:domain": {
+        "@id": "chora:Witness"
+      },
+      "rdfs:subPropertyOf": {
+        "@id": "dcterms:contributor"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "curatore"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "editor"
+      }
+    },
+    {
       "@id": "chora:evidenceSource",
       "@type": "owl:DatatypeProperty",
       "rdfs:comment": {
@@ -2722,6 +2908,28 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "has zone"
+      }
+    },
+    {
+      "@id": "chora:heldAt",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Institution and fonds holding an unpublished witness."
+      },
+      "rdfs:domain": {
+        "@id": "chora:Witness"
+      },
+      "rdfs:range": {
+        "@id": "rdf:langString"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "conservato presso"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "held at"
       }
     },
     {
@@ -3081,6 +3289,28 @@
       }
     },
     {
+      "@id": "chora:referenceWitness",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The witness chosen by the project as reference text of the work: occurrences are annotated on its readings."
+      },
+      "rdfs:domain": {
+        "@id": "chora:LiteraryWork"
+      },
+      "rdfs:range": {
+        "@id": "chora:Witness"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "testimone di riferimento"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "reference witness"
+      }
+    },
+    {
       "@id": "chora:reviewStatus",
       "@type": "owl:ObjectProperty",
       "dcterms:references": {
@@ -3261,6 +3491,49 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "uncertainty origin"
+      }
+    },
+    {
+      "@id": "chora:witnessOf",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "Links a witness to the work whose text it carries."
+      },
+      "rdfs:domain": {
+        "@id": "chora:Witness"
+      },
+      "rdfs:range": {
+        "@id": "chora:LiteraryWork"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "testimone di"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "witness of"
+      }
+    },
+    {
+      "@id": "chora:witnessType",
+      "@type": "owl:ObjectProperty",
+      "dcterms:references": {
+        "@id": "chora:WitnessTypeScheme"
+      },
+      "rdfs:domain": {
+        "@id": "chora:Witness"
+      },
+      "rdfs:range": {
+        "@id": "skos:Concept"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "tipo di testimone"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "witness type"
       }
     },
     {

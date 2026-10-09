@@ -598,6 +598,15 @@
     <skos:prefLabel xml:lang="en">Draft</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#ReviewStatusScheme"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#Edition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">edizione</skos:altLabel>
+    <skos:definition xml:lang="en">A later edition of the work, edited (e.g. collected works, the reference edition).</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#WitnessTypeScheme"/>
+    <skos:prefLabel xml:lang="en">Edition</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#WitnessTypeScheme"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#Encoder">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -607,6 +616,14 @@
     <skos:inScheme rdf:resource="https://w3id.org/chora#AttributionRoleScheme"/>
     <skos:prefLabel xml:lang="en">Encoder</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#AttributionRoleScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#FirstEdition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">princeps</skos:altLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#WitnessTypeScheme"/>
+    <skos:prefLabel xml:lang="en">First edition</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#WitnessTypeScheme"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#FocalizingAgent">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -915,6 +932,14 @@
     <skos:altLabel xml:lang="it">Zona di una partizione</skos:altLabel>
     <skos:prefLabel xml:lang="en">Partition zone</skos:prefLabel>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#PeriodicalRedaction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">redazione in rivista</skos:altLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#WitnessTypeScheme"/>
+    <skos:prefLabel xml:lang="en">Periodical redaction</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#WitnessTypeScheme"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#PlaceReference">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:comment xml:lang="en">A PlaceReference does not “resolve” a referent nor determine the place type: disambiguation, classification, and any topographic anchoring are asserted at the level of SpatialInterpretation.</rdfs:comment>
@@ -940,6 +965,14 @@
     <skos:inScheme rdf:resource="https://w3id.org/chora#NarrativeRoleScheme"/>
     <skos:prefLabel xml:lang="en">Projected Space</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#NarrativeRoleScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#Proofs">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">bozze</skos:altLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#WitnessTypeScheme"/>
+    <skos:prefLabel xml:lang="en">Proofs</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#WitnessTypeScheme"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#RationaleTypeScheme">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -1102,6 +1135,14 @@
     <skos:prefLabel xml:lang="en">Transformed</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#RealityStatusScheme"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#Typescript">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">dattiloscritto</skos:altLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/chora#WitnessTypeScheme"/>
+    <skos:prefLabel xml:lang="en">Typescript</skos:prefLabel>
+    <skos:topConceptOf rdf:resource="https://w3id.org/chora#WitnessTypeScheme"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#UncertaintyAssertion">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -1182,6 +1223,25 @@
     <skos:notation>variant</skos:notation>
     <skos:prefLabel xml:lang="en">Variant assertion</skos:prefLabel>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#AssertionTypeScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#Witness">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A witness of a literary work: a periodical redaction, a typescript, a set of proofs, a first edition or a later edition, each carrying a state of the text. Derivations between witnesses (prov:wasDerivedFrom) are stated only where documented.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <skos:altLabel xml:lang="it">Testimone</skos:altLabel>
+    <skos:prefLabel xml:lang="en">Witness</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#WitnessTypeScheme">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:label xml:lang="en">Witness type</rdfs:label>
+    <skos:altLabel xml:lang="it">Tipo di testimone</skos:altLabel>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#Edition"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#FirstEdition"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#PeriodicalRedaction"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#Proofs"/>
+    <skos:hasTopConcept rdf:resource="https://w3id.org/chora#Typescript"/>
+    <skos:prefLabel xml:lang="en">Witness type</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#ZoneOfAction">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
@@ -1295,6 +1355,14 @@
     <skos:altLabel xml:lang="it">nota critica</skos:altLabel>
     <skos:prefLabel xml:lang="en">critical note</skos:prefLabel>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#editor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Editor(s) of an edition («a cura di»).</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#Witness"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/contributor"/>
+    <skos:altLabel xml:lang="it">curatore</skos:altLabel>
+    <skos:prefLabel xml:lang="en">editor</skos:prefLabel>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#evidenceSource">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:comment xml:lang="en">Records textual or critical evidence supporting a spatial interpretation.</rdfs:comment>
@@ -1379,6 +1447,14 @@
     <rdfs:range rdf:resource="https://w3id.org/chora#PartitionZone"/>
     <skos:altLabel xml:lang="it">ha zona</skos:altLabel>
     <skos:prefLabel xml:lang="en">has zone</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#heldAt">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Institution and fonds holding an unpublished witness.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#Witness"/>
+    <rdfs:range rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+    <skos:altLabel xml:lang="it">conservato presso</skos:altLabel>
+    <skos:prefLabel xml:lang="en">held at</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#historicalLocation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
@@ -1510,6 +1586,14 @@
     <skos:altLabel xml:lang="it">tipo di motivazione</skos:altLabel>
     <skos:prefLabel xml:lang="en">rationale type</skos:prefLabel>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#referenceWitness">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">The witness chosen by the project as reference text of the work: occurrences are annotated on its readings.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#LiteraryWork"/>
+    <rdfs:range rdf:resource="https://w3id.org/chora#Witness"/>
+    <skos:altLabel xml:lang="it">testimone di riferimento</skos:altLabel>
+    <skos:prefLabel xml:lang="en">reference witness</skos:prefLabel>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#reviewStatus">
     <dcterms:references rdf:resource="https://w3id.org/chora#ReviewStatusScheme"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -1578,5 +1662,21 @@
     <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:altLabel xml:lang="it">origine dell'incertezza</skos:altLabel>
     <skos:prefLabel xml:lang="en">uncertainty origin</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#witnessOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">Links a witness to the work whose text it carries.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#Witness"/>
+    <rdfs:range rdf:resource="https://w3id.org/chora#LiteraryWork"/>
+    <skos:altLabel xml:lang="it">testimone di</skos:altLabel>
+    <skos:prefLabel xml:lang="en">witness of</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#witnessType">
+    <dcterms:references rdf:resource="https://w3id.org/chora#WitnessTypeScheme"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#Witness"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:altLabel xml:lang="it">tipo di testimone</skos:altLabel>
+    <skos:prefLabel xml:lang="en">witness type</skos:prefLabel>
   </rdf:Description>
 </rdf:RDF>

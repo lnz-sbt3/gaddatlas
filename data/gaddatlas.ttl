@@ -13614,12 +13614,39 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
     chora:sourceReference "A 241"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> a chora:LiteraryWork ;
-    dcterms:bibliographicCitation "Garzanti, Milano, 1957 (ed. definitiva)"@it ;
+<https://w3id.org/gaddatlas/id/witness/dtsfg> a chora:Witness ;
+    rdfs:label "dtsFG" ;
+    dcterms:description "Dattiloscritto parziale dei capitoli nuovi (Pinotti 2025, pp. 73–74)."@it ;
+    chora:heldAt "Pavia, Fondazione Maria Corti, Fondo Gelli"@it ;
+    chora:witnessOf <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:witnessType chora:Typescript .
+
+<https://w3id.org/gaddatlas/id/witness/qp57> a chora:Witness ;
+    rdfs:label "QP57" ;
+    dcterms:date "1957-06-22"^^xsd:date ;
+    dcterms:description "Princeps Garzanti: finito di stampare del 22 giugno 1957. Nuovi capitoli consegnati fra il 23 aprile 1955 e il 6 febbraio 1957; il romanesco dei «tratti» di rivista rivisto con Dell'Arco, il quarto sacrificato, il tutto riorganizzato in dieci capitoli (Matt e Pinotti 2022, pp. 271–272)."@it ;
+    dcterms:publisher "Garzanti, Milano"@it ;
+    dcterms:source "Matt e Pinotti 2022, pp. 271–272 (revisione dei «tratti» di rivista); Cap. 4, n. 10 (bzFG = bozze del volume)"@it ;
+    prov:wasDerivedFrom <https://w3id.org/gaddatlas/id/witness/bzfg>,
+        <https://w3id.org/gaddatlas/id/witness/qpl> ;
+    chora:witnessOf <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:witnessType chora:FirstEdition .
+
+<https://w3id.org/gaddatlas/id/witness/rr2> a chora:Witness ;
+    rdfs:label "RR II" ;
+    dcterms:date "1989"^^xsd:gYear ;
+    dcterms:description "C. E. Gadda, Romanzi e racconti II, in Opere di Carlo Emilio Gadda. Edizione da cui citano Manzotti 2010, Pinotti 2016 e Perosa 2023a."@it ;
+    dcterms:publisher "Garzanti, Milano"@it ;
+    chora:editor "Giorgio Pinotti, Dante Isella, Raffaella Rodondi"@it ;
+    chora:witnessOf <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:witnessType chora:Edition .
+
+<https://w3id.org/gaddatlas/id/work/il_palazzo_degli_ori> a chora:LiteraryWork ;
     dcterms:creator "Carlo Emilio Gadda"@it ;
-    dcterms:date "1957"^^xsd:gYear ;
-    dcterms:title "Quer pasticciaccio brutto de via Merulana"@it ;
-    rdfs:comment "Romanzo giallo-filosofico; prima pubblicazione parziale su Letteratura (1946), edizione in volume 1957."@it .
+    dcterms:date "1948"^^xsd:gYear ;
+    dcterms:relation <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    dcterms:title "Il palazzo degli ori"@it ;
+    rdfs:comment "Soggetto cinematografico scritto nel 1948 per la Lux Film, con la «sceneggiatura minore» La casa dei ricchi: derivazione per un altro medium (Pinotti 2016, pp. 201–203). Opera correlata, senza occorrenze, fuori dall'interfaccia (DM-04)."@it .
 
 <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_letteratura> a chora:LiteraryWork ;
     dcterms:bibliographicCitation "Letteratura, Bonsanti"@it ;
@@ -29077,6 +29104,30 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 302"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/witness/bzfg> a chora:Witness ;
+    rdfs:label "bzFG" ;
+    dcterms:description "Un giro di bozze del volume (Pinotti 2025, pp. 73–74)."@it ;
+    chora:heldAt "Pavia, Fondazione Maria Corti, Fondo Gelli"@it ;
+    chora:witnessOf <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:witnessType chora:Proofs .
+
+<https://w3id.org/gaddatlas/id/witness/qp> a chora:Witness ;
+    rdfs:label "QP" ;
+    dcterms:date "2018"^^xsd:gYear ;
+    dcterms:description "Edizione di riferimento della tesi, nel volume a stampa. La copia digitale ha almeno una lezione non emendata."@it ;
+    dcterms:publisher "Adelphi, Milano"@it ;
+    chora:editor "Giorgio Pinotti"@it ;
+    chora:witnessOf <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:witnessType chora:Edition .
+
+<https://w3id.org/gaddatlas/id/witness/qpl> a chora:Witness ;
+    rdfs:label "QPL" ;
+    dcterms:date "1946"^^xsd:gYear ;
+    dcterms:description "Redazione in rivista, in cinque puntate: fascicoli 26, 27, 28, 29 e 31 del 1946, senza il n. 30 (Pinotti 2016, p. 200, n. 4; Pinotti 2024, § 7.2). Citata da RR II, pp. 277–460."@it ;
+    dcterms:publisher "«Letteratura»"@it ;
+    chora:witnessOf <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:witnessType chora:PeriodicalRedaction .
+
 <https://w3id.org/gaddatlas/id/focalizer/agente_paolillo> a chora:Character,
         chora:FocalizingAgent ;
     chora:characterName "Agente Paolillo"@it ;
@@ -33601,6 +33652,13 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasPlaceCategory chora:street ;
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
+
+<https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> a chora:LiteraryWork ;
+    dcterms:creator "Carlo Emilio Gadda"@it ;
+    dcterms:date "1957"^^xsd:gYear ;
+    dcterms:title "Quer pasticciaccio brutto de via Merulana"@it ;
+    rdfs:comment "Romanzo. Testimoni in Witnesses.tsv (D-052): QPL, dtsFG, bzFG, QP57, RR II, QP (testo di riferimento)."@it ;
+    chora:referenceWitness <https://w3id.org/gaddatlas/id/witness/qp> .
 
 <https://w3id.org/gaddatlas/id/focalizer/dottor_fumi> a chora:Character,
         chora:FocalizingAgent ;
