@@ -78,6 +78,19 @@ export default function s4Entities(gadda_real) {
   // rilievo per densita'.
   const fictData = entities.filter(d => !(d.geometry && d.geometry.coordinates));
 
+  // Ogni tessera fittizia deve avere uno statuto che ha un glifo (T-87, D-040).
+  // Nel notebook uno statuto sconosciuto finiva in silenzio sul glifo «invented»:
+  // qui si ferma il caricamento con un errore che dice quale tessera e quale valore.
+  const { FICT_GLYPH_PATHS } = s4Config;
+  const badStatus = fictData.filter(d => !FICT_GLYPH_PATHS[d.properties.reality_status]);
+  if (badStatus.length) {
+    throw new Error(
+      "statuto di realtà senza glifo per " + badStatus.length + " tessere fittizie: " +
+      badStatus.slice(0, 5).map(d => `${d.properties.GazetteerEntity_ID}=${JSON.stringify(d.properties.reality_status)}`).join(", ") +
+      ` (ammessi: ${Object.keys(FICT_GLYPH_PATHS).join(", ")})`
+    );
+  }
+
   // indici unificati: i referenziali (0..N_GEO-1, hanno pts/cellRings) precedono i
   // fittizi (N_GEO..allData.length-1, nessun pts / cellRings=null)
   const N_INMAP = geoData.length;

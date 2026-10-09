@@ -8,12 +8,16 @@ Le sorgenti sono:
 
 | file | cos'è |
 |---|---|
-| `source/xlsx/*.xlsx` | l'annotazione, superficie di editing in Excel |
-| `source/tables/*.tsv` | gli stessi dati, diffabili in git |
+| `source/tables/*.tsv` | l'annotazione: **sorgente canonica** (D-019), diffabile in git |
 | `source/mapping.yaml` | etichette italiane → URI dell'ontologia |
 | `source/void_seeds.json` | 48 semi congelati dei tasselli fittizi |
 | `source/roma.geojson` | contorno amministrativo di Roma, sfondo della mappa |
-| `../ontology/chora.rdf` | la TBox, curata in Protégé |
+| `../ontology/chora.ttl` | la TBox (D-020); `chora.rdf` ne è il derivato RDF/XML |
+
+Gli XLSX in `source/xlsx/` sono un **derivato** dei TSV (`make xlsx`), comodo per
+chi lavora in Excel. Una modifica fatta lì torna nel TSV con
+`python3 tools/xlsx_to_tsv.py data/source/xlsx/<Foglio>.xlsx` e poi spostando il TSV
+in `source/tables/`: lo script sovrascrive, quindi va controllato il diff.
 
 Dopo ogni modifica a una di queste:
 
@@ -63,7 +67,7 @@ Al 2026-09-06, con `make all && make audit && make shacl`:
 | Righe di `relief` | 933 — tutte risolvono a una feature |
 | Audit | 9 invarianti su 9 |
 | SHACL | conforme, nessuna violazione |
-| Query | 12/12 competency, 10/10 integrity |
+| Query | 12/12 competency, 11/11 integrity |
 
 Esclusioni verificate come volute, non come perdite:
 

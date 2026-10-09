@@ -539,6 +539,323 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-022 — Build deterministico (8 ottobre 2026)
+
+- Requisito/i: — (invariante «algoritmi deterministici», work order § 1) · Ipotesi: — · Data check: —
+- Stato precedente: due build consecutivi dalle stesse sorgenti producevano derivati diversi. (1) In `tools/build_geojson.py` i 48 tasselli propri erano ordinati solo per `planeCount`; i pareggi seguivano l'iterazione di un `set`, quindi l'hash randomizzato di Python, e l'ordine delle feature del GeoJSON cambiava a ogni build (contenuto per id identico). (2) `tools/etl.py` serializzava TBox e grafo completo con i nodi anonimi di rdflib, che hanno id casuali: due serializzazioni equivalenti si alternavano anche a seed fisso. Il controllo della CI «derivati = build» poteva quindi fallire a caso, e ogni commit portava un diff rumoroso.
+- Decisione: chiave di ordinamento `(-planeCount, id)` per i tasselli propri; serializzazione di TBox e grafo completo dopo `rdflib.compare.to_canonical_graph` (funzione `canonical()` in `etl.py`). Scartato `PYTHONHASHSEED` fisso nel Makefile: provato, non basta, perché gli id dei nodi anonimi sono casuali indipendentemente dal seed.
+- Motivazione (fonte, pagina): verifica sperimentale (8/10/2026): GeoJSON diverso fra seed diversi prima della correzione, identico dopo; `chora.ttl` alternava due varianti dei nodi `schema:name` dei contributori anche con `PYTHONHASHSEED=1`. Dopo la correzione tre `make all` con seed diversi danno derivati identici byte per byte.
+- Integrazione (8/10/2026, durante T-80): dopo T-81 `chora.rdf` è generato dall'ETL, e il serializzatore RDF/XML di rdflib, a differenza di quello Turtle, non ordina i soggetti: l'ordine seguiva l'iterazione dello store in memoria, dipendente dall'hash. `canonical()` restituisce ora un `_SortedGraph`, che itera le triple in ordine (`tools/etl.py:1226-1236`). Verificato con tre seed diversi: tutti i derivati identici; `chora.rdf` isomorfo (588 triple).
+- Fase in cui è maturata: revisione critica (audit di fase 1, passo 0)
+- File toccati (manifest): `tools/build_geojson.py:703-706`; `tools/etl.py:36`, `:1226-1239` (nuova `canonical()`), `:1329`, `:1351`; derivati rigenerati (`data/dist/gaddatlas.geojson`, `data/dist/gaddatlas-full.ttl`).
+- Effetto su KG (triple prima/dopo, SHACL): nessuno. ABox 16.045 → 16.045; full 17.203 → 17.203, isomorfo; `chora.ttl` invariata (588); SHACL conforme, 0 violazioni. L'ordine delle feature fittizie del GeoJSON cambia rispetto alla versione precedente, che era a sua volta casuale: il confronto visivo con il notebook va rifatto al porting. Il grafo completo contiene ancora i `file:///` dei `sameAs` (ora con il percorso di questa macchina): li elimina D-021 (T-82).
+- Fusione: il controllo in CI è quello di `main` (`tools/check_reproducible.py`), esteso con il confronto dei byte e con i derivati della TBox: v. D-039.
+
+---
+
+## D-020 — `chora.ttl` è la sorgente canonica della TBox (8 ottobre 2026)
+
+- Requisito/i: — (infrastruttura; aggiorna D-002 e D-005) · Ipotesi: — · Data check: — (work order T-81; AUDIT_0, premessa 1)
+- Stato precedente: la sorgente era `ontology/chora.rdf` (RDF/XML salvato da Protégé); `tools/etl.py` la leggeva e riserializzava `chora.ttl` a ogni build. Le patch alla TBox in Turtle sparivano quindi al build successivo, mentre `CLAUDE.md` indicava già `chora.ttl` come file modificabile.
+- Decisione: la catena si inverte. `chora.ttl` è la sorgente, curata in Turtle (diff leggibili, patch chirurgiche); `chora.rdf` è un derivato in RDF/XML, rigenerato dall'ETL per chi apre l'ontologia in Protégé. Chi lavora in Protégé salva su `chora.ttl`. Scartata l'alternativa di continuare in Protégé con una specifica applicata a mano (work order § 4, opzione a): rende impossibili review e patch puntuali. Decisione di Lorenzo dell'8/10/2026.
+- Motivazione (fonte, pagina): prima dell'inversione `chora.rdf` e `chora.ttl` sono stati verificati isomorfi (`rdflib.compare.isomorphic`, 588 triple ciascuno, 0 differenze); dopo, il `chora.rdf` rigenerato è isomorfo a quello precedente. Il passaggio non cambia il contenuto dell'ontologia, solo la direzione della derivazione.
+- Fase in cui è maturata: revisione critica (audit di fase 0)
+- File toccati (manifest): `tools/etl.py:1268-1270`, `:1274-1276` (default e help degli argomenti), `:1310-1313` (commento), `:1321` (lettura in Turtle), `:1330` (scrittura in RDF/XML); `Makefile:24-26`, `:32-33`; `README.md:37-38`, `:62`, `:68`; `ontology/README.md:71-72`; `data/README.md:16`; `CLAUDE.md:49-51`. Derivato rigenerato: `ontology/chora.rdf` (serializzazione rdflib al posto di quella di Protégé: i commenti XML di Protégé non ci sono più).
+- Effetto su KG (triple prima/dopo, SHACL): TBox 588 → 588; ABox 16.045 → 16.045; full 17.203 → 17.203; `chora.ttl` e `data/dist/` identici byte per byte; SHACL conforme, 0 violazioni; 22 query eseguite, IQ9 = 14 come prima. **Ambiente:** durante il task `pip install pylode` ha aggiornato in `dh_env` rdflib (7.6.0), pyshacl (0.40.1), owlrl e altre dipendenze; le versioni precedenti non sono state registrate. Con le nuove versioni i derivati sono identici, salvo la serializzazione RDF/XML di `chora.rdf`, che resta isomorfa. Su decisione di Lorenzo si tengono le versioni attuali, le stesse che la CI installa senza versione fissa. **Rinviato:** `make docs` (pyLODE 3.6.0 ha una dipendenza rotta, `kurra`); la documentazione si rigenera alla fine della fase 1, dopo T-04.
+
+---
+
+## D-019 — I TSV sono la sorgente canonica dei dati (8 ottobre 2026)
+
+> **Rinumerazione (9 ottobre 2026).** Le voci dell'allineamento al Capitolo 4 erano state numerate D-015…D-034 sul branch `allinea-cap4-fase1`, mentre su `main` D-015…D-018 erano già assegnate a decisioni del porting. Per non toccare numeri già pubblicati, le voci del branch sono state spostate di quattro: D-015…D-034 → **D-019…D-038**. Tutti i rimandi in DECISIONS, DATA_CHECKS, work order, AUDIT_0, `CLAUDE.md` e nei commenti del codice sono stati aggiornati; i messaggi dei commit precedenti alla rinumerazione citano ancora i numeri vecchi.
+>
+> | Numero sul branch (commit) | Numero definitivo |
+> |---|---|
+> | D-015 | D-019 |
+> | D-016 | D-020 |
+> | D-017 | D-021 |
+> | D-018 | D-022 |
+> | D-019 | D-023 |
+> | D-020 | D-024 |
+> | D-021 | D-025 |
+> | D-022 | D-026 |
+> | D-023 | D-027 |
+> | D-024 | D-028 |
+> | D-025 | D-029 |
+> | D-026 | D-030 |
+> | D-027 | D-031 |
+> | D-028 | D-032 |
+> | D-029 | D-033 |
+> | D-030 | D-034 |
+> | D-031 | D-035 |
+> | D-032 | D-036 |
+> | D-033 | D-037 |
+> | D-034 | D-038 |
+
+
+- Requisito/i: — (infrastruttura; aggiorna D-002) · Ipotesi: — · Data check: — (work order T-80; AUDIT_0, premessa 2)
+- Stato precedente: la documentazione indicava come sorgente gli XLSX di `data/source/xlsx/`, ma l'ETL legge i TSV di `data/source/tables/` (`Makefile`, target `rdf`). La conversione `tools/xlsx_to_tsv.py` era manuale e fuori dal Makefile: una modifica fatta in Excel e non riconvertita veniva ignorata in silenzio. All'audit XLSX e TSV coincidevano (0 differenze di valore).
+- Decisione: i TSV sono la sorgente canonica, diffabile e revisionabile in git. Gli XLSX diventano un derivato per chi lavora in Excel e si rigenerano con `make xlsx` (`tools/tsv_to_xlsx.py`, nuovo). `tools/xlsx_to_tsv.py` resta solo per riportare nei TSV una modifica fatta in Excel, con un avviso: sovrascrive il TSV. Scartata l'alternativa di tenere gli XLSX come sorgente e mettere la conversione nel Makefile: gli XLSX sono binari, non diffabili, e la conversione altera i decimali (v. sotto). Decisione di Lorenzo dell'8/10/2026.
+- Motivazione (fonte, pagina): giro TSV → XLSX → TSV verificato byte per byte su tutti e sette i fogli. In `tsv_to_xlsx.py` diventano numeri solo gli interi; i decimali restano testo, perché openpyxl li scrive con 16 cifre significative e le coordinate perderebbero l'ultima cifra al ritorno (es. 12.563362579004666 → 12.56336257900467), mentre «1.0» di `Confidence` tornerebbe «1».
+- Fase in cui è maturata: revisione critica (audit di fase 0)
+- File toccati (manifest): `tools/tsv_to_xlsx.py` (nuovo, 1-69); `tools/xlsx_to_tsv.py:5-9` (avviso); `Makefile:1`, `:15` (help), `:25-30` (target `xlsx`); `README.md:45-46`, `:61-63`, `:66`; `data/README.md:11`, `:17-21`; `CLAUDE.md:49-50`. Rigenerati con `make xlsx`: i sette `data/source/xlsx/*.xlsx`. Cambiano nome del foglio (ora quello del file, prima talvolta «Sheet1»); `GazetteerEntities.xlsx` perde quattro colonne finali senza intestazione e vuote, che la conversione già scartava.
+- Effetto su KG (triple prima/dopo, SHACL): nessuno, i TSV non cambiano. ABox 16.045, full 17.203; SHACL conforme, 0 violazioni. Nota: openpyxl scrive data e ora nei metadati degli XLSX, quindi ogni `make xlsx` produce binari diversi anche a dati invariati. `make xlsx` non fa parte di `make all` e la CI non confronta gli XLSX.
+
+---
+
+## D-021 — `owl:sameAs` con IRI assoluti; controllo sugli IRI del grafo (8 ottobre 2026)
+
+- Requisito/i: R10, R22 (premessa tecnica) · Ipotesi: — · Data check: DC-17, DC-10 (work order T-82; AUDIT_0, premessa 7). Aggiorna D-009 (§ 3) e D-011.
+- Stato precedente: `tools/etl.py` costruiva `URIRef(same_as)` sul valore della colonna `sameAs` di `GazetteerEntities.tsv`, che contiene id di altre GazetteerEntity (`gaz_castello`), non URI. Ne uscivano IRI relativi in `data/gaddatlas.ttl` (`<gaz_castello>`), che al parsing del grafo completo diventavano `file:///<percorso della macchina di build>/data/gaz_…`. D-009 dichiarava chiuso il difetto, ma la correzione era stata applicata al derivato (`tools/migrate_namespace.py`) e non alla causa: al build successivo era tornato, con il percorso di desktop di chi aveva lanciato la build. Nessun controllo lo intercettava (IQ3 non guarda `owl:sameAs`).
+- Decisione: un id senza schema si risolve nel namespace del gazetteer con la stessa funzione che costruisce gli URI delle entità (`resolve_lookup(…, '@GazetteerEntity_ID')`); un valore con schema `http(s)://` resta com'è (link esterno, come previsto dal commento di `mapping.yaml:320`). Il numero delle coppie non cambia (3 coppie, 6 triple). La sostituzione dei `sameAs` con identificazioni attribuite resta T-31 (DM-06). Nuovo controllo in `tools/audit_alignment.py`: fallisce se un IRI dell'ABox o del grafo completo non ha schema `http(s)`, o se un IRI dei namespace del progetto è in `http` invece che in `https`. La formulazione letterale del work order («ogni IRI comincia con `https://`») fallirebbe sui vocabolari W3C, che sono `http://www.w3.org/…` per definizione: il controllo è stato riformulato così.
+- Motivazione (fonte, pagina): AUDIT_0, premessa 7. Prova del controllo: sui derivati precedenti segnala esattamente i 6 IRI `file:///…`; dopo la correzione passa.
+- Fase in cui è maturata: revisione critica (audit di fase 0)
+- File toccati (manifest): `tools/etl.py:672-677` (commento), `:680-686` (risoluzione); `tools/audit_alignment.py:20`, `:28-29` (`PROJECT_NS_HTTP`), `:144-168` (controllo). Derivati rigenerati.
+- Effetto su KG (triple prima/dopo, SHACL): ABox 16.045 → 16.045; full 17.203 → 17.203. I 6 `owl:sameAs` puntano ora a `https://w3id.org/gaddatlas/id/gazetteer/…`; il grafo completo non contiene più percorsi locali. SHACL conforme, 0 violazioni; query senza errori. **Effetto collaterale:** il GeoJSON e `atlas.slim.json` cambiano solo nell'ordine delle feature referenziali (contenuto identico per id; relief, paths e meta identici), perché la query SPARQL di `build_geojson.py` non ha `ORDER BY` e l'ordine dei risultati segue il grafo. È deterministico (D-022) ma si sposterà a ogni cambiamento dei dati: da valutare prima del porting, perché il prototipo usa l'indice come criterio di pareggio. Dopo questa voce, D-011 conta due fonti di alias corrette (grafo e notebook), non più una rotta.
+
+---
+
+## D-023 — `app/public/data/` si pubblica dai derivati (8 ottobre 2026)
+
+- Requisito/i: R21 (gli estratti pubblicati sono quelli verificati) · Ipotesi: — · Data check: — (work order T-83; AUDIT_0, premessa 10)
+- Stato precedente: l'interfaccia carica i dati da `app/public/data/`, ma nessun target del Makefile ci copiava i derivati: la copia si faceva a mano. Il GeoJSON versionato lì differiva da `data/dist/` (ordine delle feature, `meta.excerptsIncluded: true` contro `false`; contenuto per id identico). I passages coincidevano, ma nel working tree erano in CRLF. Una correzione dei dati (per esempio T-01) non sarebbe arrivata all'app.
+- Decisione: nuovo target `make publish-data`, incluso in `make all` prima di `audit`, che copia `data/dist/gaddatlas.geojson` e `data/dist/passages/*.json` in `app/public/data/`. `roma.geojson` resta fuori: ha sorgente propria (`data/source/roma.geojson`, già identica). `audit_alignment.py` fallisce se una delle 12 copie non coincide byte per byte con il derivato. La CI esegue anche `publish-data` e include `app/public/data` nel confronto «derivati = build».
+- Motivazione (fonte, pagina): AUDIT_0, premessa 10. Prova del controllo: sullo stato precedente segnala 12/12 file non allineati; dopo `make all` passa (12/12).
+- Fase in cui è maturata: revisione critica (audit di fase 0)
+- File toccati (manifest): `Makefile:1`, `:5`, `:11` (help), `:22` (`all`), `:57-64` (target); `tools/audit_alignment.py:26` (`APP_DATA`), `:170-184` (controllo); `.github/workflows/data.yml:22`, `:37`, `:40`. Copia rigenerata: `app/public/data/gaddatlas.geojson`; i passages non cambiano contenuto.
+- Effetto su KG (triple prima/dopo, SHACL): nessuno. ABox 16.045, full 17.203; SHACL conforme, 0 violazioni.
+
+---
+
+## D-024 — «Fattocchie» → «Frattocchie» nell'estratto di QP 241 (8 ottobre 2026)
+
+- Requisito/i: R21 (evidenza testuale stabile e verificabile), R01 · Ipotesi: — · Data check: DC-01 (work order T-01)
+- Stato precedente: l'estratto di `ref_00588` (QP 241, cap. IX) leggeva «su su su fu fu fu da 'e Fattocchie», lezione della copia digitale Adelphi da cui è stato condotto il censimento. Il luogo (`frattocchie`) e l'ancoraggio (`gaz_frattocchie`) erano già corretti: l'errore stava solo nel testo dell'estratto.
+- Decisione: l'estratto segue il volume a stampa, «Frattocchie». È una correzione di trascrizione verso il testo di riferimento, non un'emendazione del progetto: l'emendazione è dell'editore. «Fattocchie» resta una lezione di RR II (p. 219, stampa Garzanti), da registrare come variante di testimone con il modello di T-41, insieme alla lettura di Terzoli (2015, p. 771: «se non è refuso, rafforza l'onomatopea precedente») e all'emendazione di Pinotti (QP 241; Italia 2020, pp. 101–102): fase 2–3.
+- Motivazione (fonte, pagina): verifica di LS sul volume a stampa (6/10/2026): Pinotti emenda «Fattocchie» (RR II 219) in «Frattocchie» (QP 241). Cap. 4, § 4.3 e n. 23.
+- Fase in cui è maturata: analisi del testo
+- File toccati (manifest): `data/source/tables/References.tsv:589`; `data/source/xlsx/References.xlsx` (rigenerato). Derivati: `data/gaddatlas.ttl`, `data/dist/gaddatlas-full.ttl`, `data/dist/passages/ch09.json`, `app/public/data/passages/ch09.json`.
+- Effetto su KG (triple prima/dopo, SHACL): cambia solo un letterale. ABox 16.045 → 16.045; full 17.203 → 17.203; SHACL conforme, 0 violazioni. Nessuna occorrenza di «Fattocchie» resta nei dati o nell'app: compare solo nei documenti che ne discutono (Cap. 4, work order, registro, AUDIT_0, `CLAUDE.md`). Il controllo a campione delle altre lezioni sul cartaceo resta T-12 / T-56.
+
+---
+
+## D-025 — Metadati della redazione in «Letteratura» (8 ottobre 2026)
+
+- Requisito/i: R01 (testimone e redazione) · Ipotesi: H2 · Data check: DC-05 (work order T-40, parte di fase 1)
+- Stato precedente: `work/quer_pasticciaccio_letteratura`, nota: «Prima pubblicazione in 5 tratti sulla rivista Letteratura, dal 1946 al 1948». L'arco 1946–1948 è errato: le puntate escono tutte nel 1946.
+- Decisione: nota corretta in «Prima pubblicazione in cinque puntate sulla rivista «Letteratura», fascicoli 26, 27, 28, 29 e 31 del 1946 (Pinotti 2016, p. 200, n. 4)». Il resto della riga è invariato. La separazione fra opera e testimoni (QPL, dtsFG, bzFG, QP57, QP) resta T-40, `DA DECIDERE` (fase 2).
+- Motivazione (fonte, pagina): Pinotti 2016, p. 200, n. 4; Pinotti 2024, § 7.2; Cap. 4, § 4.2 (r. 41): fascicoli 26, 27, 28, 29 e 31 del 1946, con la sola omissione del n. 30.
+- Fase in cui è maturata: analisi del testo (revisione della bibliografia per il Cap. 4)
+- File toccati (manifest): `data/source/tables/LiteraryWorks.tsv:3` (colonna `Notes`); `data/source/xlsx/LiteraryWorks.xlsx` (rigenerato). Derivati: `data/gaddatlas.ttl`, `data/dist/gaddatlas-full.ttl`.
+- Effetto su KG (triple prima/dopo, SHACL): cambia solo il letterale `rdfs:comment` dell'opera. ABox 16.045 → 16.045; full 17.203 → 17.203; SHACL conforme, 0 violazioni.
+
+---
+
+## D-026 — Sei interpretazioni incoerenti con il riferimento; controllo sulle sorgenti (8 ottobre 2026)
+
+- Requisito/i: R04, R22 · Ipotesi: — · Data check: DC-19 (work order T-84; AUDIT_0, § 3)
+- Stato precedente: in `SpatialInterpretations.tsv` sei interpretazioni avevano un luogo diverso da quello del loro riferimento. Nessun controllo li intercettava: nel grafo la PlaceReference non porta il proprio luogo, quindi l'incoerenza era invisibile a SHACL e alle query.
+- Decisione (caso per caso, dopo verifica sull'estratto; casi non univoci decisi da Lorenzo l'8/10/2026):
+  - `interp_00245` (QP 92, «Milano, Bologna, Vicenza, Padova»): id del luogo «vicenza » con spazio finale → «vicenza». Univoco: l'ETL già lo ripuliva, nel grafo non cambia nulla.
+  - `interp_00627` / `interp_00628` (QP 210, «da dietro a Tivoli e a Càrsoli»): riferimenti scambiati fra Càrsoli e Tivoli. Si scambiano i `Reference_ID` (00627 → `ref_00523`, 00628 → `ref_00522`); luoghi e ancore erano giusti. Univoco: stesso estratto, stessa pagina.
+  - `interp_00331` (QP 135, «L'antro jeri mattina ereno ancora a Piazza Verdi»): luogo `banca_ditalia` → `piazza_verdi`. Riferimento e ancora (`gaz_piazza_verdi`) indicavano già piazza Verdi; la Banca d'Italia ha un proprio riferimento sulla stessa pagina (`ref_00286`). Decisione di Lorenzo.
+  - `interp_00858` (QP 294, «davanti al portone della rocca», Ingravallo) e `interp_00859` (QP 294, «via Massimo Dazzélio», Di Pietrantonio): **eliminate**. Erano doppioni: per gli stessi focalizzatori e riferimenti esistono già `interp_00861` (Tenenza) e `interp_00865` (via Massimo d'Azeglio), e la collocazione a Marino è già data dalle ancore (`gaz_marino`; `gaz_via_massimo_dazeglio` è geocodificata a Marino). Decisione di Lorenzo.
+- Controllo: il confronto vero si fa sulle sorgenti, in `tools/audit_alignment.py`: fallisce se il luogo di un'interpretazione è diverso dal `NarrativePlace_ID` del suo riferimento (interpretazioni di route escluse). Lanciato sui TSV precedenti, segnala esattamente i sei casi. `IQ11` in `ontology/queries/integrity.rq` è informativa («riferimenti con più luoghi»): nel grafo non si può fare di più senza cambiare il modello della PlaceReference, e un riferimento con più luoghi può essere una referenza plurale voluta (R04, T-47). Scartata la proprietà PlaceReference → NarrativePlace nel grafo: contraddice la definizione attuale della classe e andrebbe decisa a parte. Decisione di Lorenzo.
+- Motivazione (fonte, pagina): estratti di QP 92, 135, 210, 294; AUDIT_0, § 3.
+- Fase in cui è maturata: revisione critica (audit di fase 0)
+- File toccati (manifest): `data/source/tables/SpatialInterpretations.tsv:246`, `:332`, `:628-629`, `:861-862` (righe eliminate); `data/source/xlsx/SpatialInterpretations.xlsx` (rigenerato); `tools/audit_alignment.py:16`, `:28`, `:172-192`; `ontology/queries/integrity.rq:5`, `:110-125` (IQ11); conteggio delle query («11 integrity») in `CLAUDE.md:149`, `Makefile:14`, `README.md:27,40,93`, `data/README.md:70`, `ontology/README.md:76`.
+- Effetto su KG (triple prima/dopo, SHACL): ABox 16.045 → **16.029**; full 17.203 → **17.187** (−16: 8 triple per ciascuna interpretazione eliminata); interpretazioni 962 → **960**; righe di relief 933 → 931; Marino da 15 a 13 occorrenze. Le altre correzioni non cambiano la vista: i luoghi Imported confluiscono nella tessera della loro ancora, che era già quella giusta. IQ9 da 14 a 13 (piazza Verdi ora è interpretata); IQ11 = 0. SHACL conforme, 0 violazioni. Il `tripleCount` del GeoJSON passa a 17.187: il riferimento in `CLAUDE.md` (17.203) si aggiorna a fine fase.
+
+---
+
+## D-027 — Pulizia di label, spazi, maiuscole e separatori (8 ottobre 2026)
+
+- Requisito/i: R05 (forme normalizzate leggibili) · Ipotesi: — · Data check: DC-13 (work order T-85, comprende la parte di pulizia di T-74)
+- Stato precedente: spazi finali in quattro label (`palazzo` «Palazzo », `piazza_colonna`, `via_dei_greci`, `via_lanza` «Via Lanza ») e in tre descrizioni (`centrale_del_latte`, `collina_molisana`, `orto_vigna_due_santi`); uno spazio non separabile (U+00A0) in coda all'ancoraggio `gaz_brahmaputra` di cinque interpretazioni (`interp_00356`, `00357`, `00365`, `00366`, `00367`); relazione spaziale scritta «adjacentTo» in 7 righe e «adjacentto» in 3; `Annotation_Method` «close reading» in 2 righe (`interp_00144`, `interp_00205`) contro «close_reading» in 143; separatori incoerenti in `Alternative_Toponym` (`palazzo_219`, `laboratorio_zamira`, con un «;» finale).
+- Decisione: rimossi gli spazi ai bordi e gli U+00A0; relazione uniformata a «adjacentto», la forma minuscola usata da tutti gli altri valori di vocabolario nei fogli (`inside`, `projectedspace`, `zoneofaction`) e già chiave di `mapping.yaml:185` (il piano indicava «adjacentTo»: cambiato per coerenza); metodo uniformato a «close_reading»; `Alternative_Toponym` con separatore «; » e senza elementi vuoti. Nessun valore semantico cambia.
+- Motivazione (fonte, pagina): AUDIT_0, T-74 e § 3; DATA_CHECKS DC-13. L'ETL già ripuliva U+00A0 e maiuscole delle relazioni (`resolve_lookup` e `map_vocabulary` fanno `strip()` e `lower()`), quindi quelle due correzioni non toccano il grafo: rendono pulite le sorgenti.
+- Fase in cui è maturata: revisione critica (audit di fase 0)
+- File toccati (manifest): `data/source/tables/NarrativePlaces.tsv` (9 righe: `centrale_del_latte`, `collina_molisana`, `laboratorio_zamira`, `orto_vigna_due_santi`, `palazzo`, `palazzo_219`, `piazza_colonna`, `via_dei_greci`, `via_lanza`); `data/source/tables/SpatialInterpretations.tsv` (14 righe: `interp_00144`, `00205`, `00356`, `00357`, `00365`–`00367`, `00527`, `00528`, `00552`, `00553`, `00555`, `00585`, `00836`); i due XLSX corrispondenti, rigenerati.
+- Effetto su KG (triple prima/dopo, SHACL): ABox 16.029 → 16.029; full 17.187 → 17.187. Cambiano 11 letterali (4 `rdfs:label`, 3 `dcterms:description`, 2 `chora:annotationMethod`, 2 `skos:altLabel`). SHACL conforme, 0 violazioni. **Da segnalare per T-48:** l'ETL non divide `Alternative_Toponym`, quindi ogni cella diventa un unico `skos:altLabel` con i punti e virgola dentro («palazzo dell'oro; palazzo de li pescicani; …»); inoltre alcune celle contengono id invece di forme (`prati` ↔ `quartierino_prati`) o valori dubbi (`tiburtino` → «Tivoli», `san_giovanni` → «Galilei»). Non toccati: sono decisioni di contenuto (R05).
+
+---
+
+## D-028 — Adapter: un record per interpretazione anche con più ancore (8 ottobre 2026)
+
+- Requisito/i: R04 (molti-a-molti), R15 (regola di aggregazione) · Ipotesi: — · Data check: — (emerso durante T-15)
+- Stato precedente: `tools/build_geojson.py` interroga le interpretazioni con `OPTIONAL { ?si ga:anchorsToEntity ?gaz }`. Un'interpretazione con più ancore torna quindi una volta per ancora, e ogni riga diventava un record separato: interpretazioni, ruoli, determinazioni e righe di rilievo moltiplicati per il numero delle ancore. Era un difetto latente, perché fino a T-15 nessuna interpretazione aveva più di un'ancora (l'ETL lo permette con gli id separati da `|`). Con l'ancoraggio relazionale di Casal Bruciato (4 ancore) le 13 interpretazioni diventavano 52 righe di rilievo.
+- Decisione: un solo record per interpretazione. Le ancore in più contribuiscono soltanto ai referenti del luogo (`refers_to_entity_ID`) e al conteggio delle interpretazioni ancorate di ciascuna entità (`anchoredTotal`). Il campo singolo `gazetteerId` prende il primo id in ordine alfabetico, per restare deterministico (D-022). Limite dichiarato: per un luogo **Imported** con più ancore, che oggi non esiste, il rilievo andrebbe a una sola entità; la regola di aggregazione per quel caso resta da decidere con R15 / T-63.
+- Motivazione (fonte, pagina): verifica sul GeoJSON di T-15: senza correzione 960 → 999 interpretazioni e 931 → 970 righe di rilievo, a grafo invariato (960 interpretazioni); con la correzione i conteggi restano 960 e 931.
+- Fase in cui è maturata: prototipazione (adapter dati, durante T-15)
+- File toccati (manifest): `tools/build_geojson.py:322-327` (commento), `:337-346` (accumulo delle ancore in più), `:363` (`rec_by_si`).
+- Effetto su KG (triple prima/dopo, SHACL): nessuno sul grafo. Con i dati precedenti a T-15 i derivati sono identici byte per byte a quelli versionati.
+
+---
+
+## D-029 — Casal Bruciato: luogo trasformato con ancoraggio relazionale (8 ottobre 2026)
+
+- Requisito/i: R03, R04, R07, R10 · Ipotesi: H1, H3 · Data check: DC-18, DC-07 (work order T-15)
+- Stato precedente: `casal_bruciato` era Imported e le sue 13 interpretazioni erano ancorate a `gaz_casal_bruciato`, collocato a 41,9070 N 12,5506 E: il **quartiere romano** di Casal Bruciato (Tiburtino), non il luogo del romanzo. Il casello al km 20,25 (22 interpretazioni) e i suoi interni ereditavano la stessa posizione.
+- Decisione (di Lorenzo, 8/10/2026): Casal Bruciato **non ha coordinate reali**. Diventa un luogo **Transformed**, ancorato in modo relazionale ai riferimenti geografici che lo circoscrivono: a nord/nord-est i Castelli (Marino, da cui parte Pestalozzi) e l'Appia verso Albano (`gaz_albano_laziale`, scelto al posto di `gaz_via_appia`, il cui punto è a 41,85 N, presso Roma); a ovest Pavona, snodo del percorso e della ferrovia; a sud Santa Palomba e le sue antenne. In pratica: le 13 interpretazioni hanno quattro ancore (`gaz_marino|gaz_albano_laziale|gaz_pavona|gaz_santa_palomba`) con relazione `near` e una nota critica che riporta le direzioni e la lettura di Manzotti. `gaz_casal_bruciato` è **eliminata** dal gazetteer (referente errato, nessun uso residuo). Il casello diventa **parte di** `casal_bruciato` (`Is_Part_Of`) ed eredita l'ancoraggio: le sue 22 interpretazioni perdono l'ancora propria e la relazione `near`, che si riferiva al vecchio punto. Le direzioni cardinali e un concetto di «ancoraggio relazionale» non sono ancora esprimibili nella TBox: restano nella nota e vanno in T-47/T-53 (fase 2), come per Robine Vecchie.
+- Motivazione (fonte, pagina): QP 240 (la vicinale per Casal Bruciato si stacca dalla strada di Falcognana presso il ponte del Divino Amore), QP 237, 274, 298 (verso l'Ardeatina), QP 241 («detto da taluni di Casal Bruciato»); Manzotti 2010, pp. 268–270 (TCI tra le ferrovie Roma–Velletri e Roma–Napoli, IGM a ovest della Roma–Napoli; la topografia del casello «pare combinare e forse confondere» le due tratte); Cap. 4, § 4.3 (r. 93, ancoraggio relazionale) e § 4.4.
+- Fase in cui è maturata: analisi del testo
+- File toccati (manifest): `data/source/tables/GazetteerEntities.tsv` (eliminata la riga `gaz_casal_bruciato`, già r. 467–482 con la geometria multiriga); `data/source/tables/NarrativePlaces.tsv:38` (statuto, descrizione), `:39` (`Is_Part_Of`); `data/source/tables/SpatialInterpretations.tsv`: 13 righe di `casal_bruciato` (ancore, relazione, nota) e 22 di `casello_km_20_25` (ancora e relazione rimosse); `data/source/void_seeds.json` (nuovo seme `casal_bruciato` = 0,661939, lo stesso che il build avrebbe calcolato dall'hash dell'id); tre XLSX rigenerati. Correzione delle righe nel manifest di D-028.
+- Effetto su KG (triple prima/dopo, SHACL): ABox 16.029 → **16.044**; full 17.187 → **17.202** (+15: −7 per l'entità eliminata; +65 per le 13 interpretazioni, cioè 3 ancore, relazione e nota ciascuna; −44 per le 22 del casello; +1 `isPartOf`). Gazetteer 265 → 264; Imported 260 → **259**, Transformed 29 → **30**. Vista: tessere proprie 48 → 49 (nuova per `casal_bruciato`, 13 interpretazioni, 8 occorrenze), i 48 semi preesistenti invariati; generatori della tassellazione 222 → 221; le tre tessere del casello ora ereditano le quattro ancore. Il rilievo non cambia (931 righe, D-028). SHACL conforme, 0 violazioni; IQ3 = 0, IQ11 = 0. **Per la tesi:** i conteggi per statuto cambiano (259/30/15/5 prima della permutazione di T-04).
+- Revisione: **rivista da D-037** (9/10/2026): Casal Bruciato è un casale reale, Imported, ancorato a `gaz_casale_abbruciato`; Marino e Albano tolti dalle ancore; il casello non è più parte di Casal Bruciato.
+
+---
+
+## D-030 — Permutazione Invented ↔ Imagined (8 ottobre 2026)
+
+- Requisito/i: R07 · Ipotesi: H3 · Data check: DM-01, DC-16 (work order T-04)
+- Stato precedente: nella TBox le definizioni SKOS dei due concetti erano invertite rispetto a Reuschel, Piatti e Hurni (2013, pp. 138–139): `chora:Imagined` aveva la definizione dell'*invented* («An invented setting within familiar geographical reality») e `chora:Invented` quella dell'*imagined* («no hint at all about the position… ‘somewhere’»). L'ordine della scala non era dichiarato e il commento di `hasRealityStatus` elencava «imported, transformed, imagined, invented». Gli `owl:differentFrom` erano asimmetrici (Imported senza Imagined, Invented solo con Transformed, Transformed senza alcuno). Dati: 15 Imagined, 5 Invented.
+- Decisione (di Lorenzo, 8/10/2026): le due etichette erano invertite di nome, in TBox e nei dati. Si corregge con una **permutazione completa**, non con una revisione caso per caso (unica eccezione decisa alla regola «niente sostituzioni globali sui valori semantici»). Nella TBox: definizioni scambiate; `skos:notation` 1–4 (Imported, Transformed, Invented, Imagined: dal concreto all'astratto); uno `skos:scopeNote` su Invented e su Imagined con la fonte; commento di `hasRealityStatus` riscritto con l'ordine della scala; `owl:differentFrom` completi fra i quattro concetti. Nei dati: scambio atomico dei valori in `NarrativePlaces.tsv`, passando per un valore temporaneo (script una tantum, non versionato). Ordine allineato anche in shape, mapping e README. I **glifi** del prototipo non sono toccati: restano legati al nome dello statuto, ed è DA DECIDERE con T-65 se debbano seguire il significato.
+- Motivazione (fonte, pagina): Reuschel, Piatti e Hurni 2013, pp. 138–139; Cap. 4, § 4.3 (r. 85); DATA_CHECKS DM-01.
+- Fase in cui è maturata: revisione critica (stesura del Cap. 4)
+- File toccati (manifest): `ontology/chora.ttl:377` (commento), `:527-529` (Imagined: definizione, notation, scopeNote), `:609-614` (Imported: differentFrom, notation), `:657-663` (Invented: differentFrom, definizione, notation, scopeNote), `:697-702` (Transformed: differentFrom, notation); `ontology/shapes/chora-shapes.ttl:185`; `data/source/mapping.yaml:38-43`; `README.md:111`, `:129`; `data/source/tables/NarrativePlaces.tsv` (20 righe, colonna `Reality_Status`); `NarrativePlaces.xlsx` e `chora.rdf` rigenerati.
+- Effetto su KG (triple prima/dopo, SHACL): TBox 588 → **600** (+4 `skos:notation`, +2 `skos:scopeNote`, +6 `owl:differentFrom`); ABox 16.044 → 16.044 (cambiano solo i valori); full 17.202 → **17.214**. Statuti: Imported 259, Transformed 30, **Invented 15, Imagined 5**. I conteggi attesi dal work order (260/29/15/5) precedono T-15, che ha portato Casal Bruciato da Imported a Transformed. GeoJSON: cambia solo `reality_status` su 19 tessere (`castello` non ne ha una). SHACL conforme, 0 violazioni. **Elenchi.** Ora Invented (prima Imagined): bottega_ceccherelli, cantinone_albano, casa_crocchiapani, cassero, castello, casuccia_zamira, edicola_due_santi, grotta_de_sor_pippo, laboratorio_zamira, orto_vigna_due_santi, pensione_burgess, pozzofondo, tor_di_gheppio, via_delle_oche, villino_lungotevere. Ora Imagined (prima Invented): casa_del_butiro, castel_porcano, monte_nuncupale, roccafringoli, scerpure. **Da fare:** `make docs` (rinviato a fine fase); `ontology/chora.jsonld` non è generato da nessuno strumento e contiene ancora le definizioni invertite.
+
+---
+
+## D-031 — Edicola ai Due Santi: luogo importato (8 ottobre 2026)
+
+- Requisito/i: R03, R07, R22 · Ipotesi: H3 · Data check: DC-03 (work order T-03)
+- Stato precedente: `edicola_due_santi` era Invented (Imagined prima della permutazione di D-030), parte di `orto_vigna_due_santi`, senza ancoraggio nelle sue 3 interpretazioni; descrizione «Edicola immaginata…». Nessuna GazetteerEntity adatta.
+- Decisione (di Lorenzo, 8/10/2026): statuto **Imported**, nuova descrizione, `Is_Part_Of` tolto (un luogo importato parte di un luogo fittizio era incoerente, e `isPartOf` gli avrebbe fatto ereditare l'ancoraggio sbagliato). Nuova `gaz_edicola_due_santi`. Non esistendo una coordinata TCI, la posizione **eredita quella di `gaz_due_santi`** con uno scarto convenzionale di +0,0003° in latitudine e longitudine (circa 40 m), al solo scopo di non far coincidere due generatori della tassellazione. Lo scarto è dichiarato in `Authority_Source`, che l'ETL serializza come `dcterms:source` (in AUDIT_0, T-46, avevo scritto per errore che la colonna non era mappata: è mappata, ma era vuota in tutte le 265 righe). Le 3 interpretazioni sono ancorate alla nuova entità. La relazione qualitativa con l'orto (`AdjacentTo`: il tabernacolo «interrompeva» il muriccio, QP 216) è rinviata a T-53, perché oggi il modello non ha relazioni fra luoghi narrativi oltre a `isPartOf`. L'asserzione attribuita a Manzotti e la revisione superata della lettura di LS entrano in fase 3. Il seme `edicola_due_santi` resta in `data/source/void_seeds.json`, inutilizzato, perché un eventuale ritorno della tessera propria non ne cambi la forma.
+- Motivazione (fonte, pagina): Manzotti 2010, p. 246 (traccia del tabernacolo nella piantina dei Castelli, TCI, *Italia centrale* IV); QP 216, 219; Cap. 4, n. 24 (r. 601).
+- Fase in cui è maturata: analisi del testo
+- File toccati (manifest): `data/source/tables/GazetteerEntities.tsv:789-804` (nuova riga, con la geometria multiriga); `data/source/tables/NarrativePlaces.tsv:68`; `data/source/tables/SpatialInterpretations.tsv:663`, `:666-667`; tre XLSX rigenerati.
+- Effetto su KG (triple prima/dopo, SHACL): ABox 16.044 → **16.055**; full 17.214 → **17.225** (+11: 9 per la nuova entità, comprese `dcterms:source` e la geometria; +3 ancore; −1 `isPartOf`). Gazetteer 264 → 265; Imported 259 → **260**, Invented 15 → **14**. Vista: tessere proprie 49 → 48 (l'edicola confluisce nella tessera di `gaz_edicola_due_santi`: 3 occorrenze, classe «raro», 18,6 km dal centro); generatori 221 → 222; semi delle 48 tessere restanti invariati; nessun'altra feature cambia. `excludedUnanchored` resta 0. SHACL conforme, 0 violazioni.
+
+---
+
+## D-032 — Documentazione pyLODE rigenerata (8 ottobre 2026)
+
+- Requisito/i: — (documentazione; work order T-73) · Ipotesi: — · Data check: DM-01
+- Stato precedente: `ontology/docs/` era ferma a una versione anteriore all'audit: versione «4.1.1», ancore `ga_*` (prefisso abbandonato con D-013), definizioni di Invented e Imagined invertite. `make docs` era rinviato (D-020) perché pyLODE 3.6.0 non si avvia con l'ultima `kurra`.
+- Decisione: `make docs` eseguito con pyLODE 3.5.1 (la versione che aveva generato le pagine esistenti) e `kurra` 3.0.0 in `dh_env`. Il downgrade di `kurra` tocca solo quel pacchetto, installato durante D-020 come dipendenza di pyLODE, e nessun altro (verificato con un dry-run).
+- Motivazione (fonte, pagina): allineare la documentazione pubblicata alla TBox canonica (D-020) e alla permutazione (D-030).
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `ontology/docs/index.html` e i cinque `ontology/docs/vocab_*.html` (rigenerati).
+- Effetto su KG (triple prima/dopo, SHACL): nessuno. Le pagine riportano ora versione 1.0.0, ancore `chora_*` e le definizioni corrette (Invented: «An invented setting within familiar geographical reality»; Imagined: «There is no hint at all about the position…»). Nessun link del repository puntava alle vecchie ancore `#ga_`. **Limiti:** VocPub elenca i concetti in ordine alfabetico e non mostra `skos:notation` né `skos:scopeNote`, quindi l'ordine della scala Imported → Transformed → Invented → Imagined non compare nelle pagine. Durante la generazione pyLODE (tramite `kurra`) interroga un servizio esterno (`fuseki.dev.kurrawong.ai`) per le etichette dei termini non definiti nel file.
+
+---
+
+## D-033 — `chora.jsonld` generato dall'ETL (8 ottobre 2026)
+
+- Requisito/i: — (pubblicazione dell'ontologia; aggiorna D-020) · Ipotesi: — · Data check: —
+- Stato precedente: `ontology/chora.jsonld`, servito da w3id per negoziazione del contenuto (`w3id/chora/.htaccess:23`, `:29`), non era generato da nessuno strumento. Era fermo a una TBox ancora più vecchia (572 triple, non isomorfa né alla TBox di partenza né a quella attuale) e conteneva le definizioni invertite di Invented e Imagined.
+- Decisione: l'ETL genera `chora.jsonld` da `chora.ttl` accanto a `chora.rdf` (nuovo argomento `--ontology-jsonld`), con `auto_compact=True` come indicato in `w3id/README.md`. Il JSON prodotto da rdflib cambia ordine a ogni esecuzione, quindi viene riordinato (`stable_json()`: chiavi e array in ordine, liste `@list` intatte), in coerenza con D-022.
+- Motivazione (fonte, pagina): il file pubblicato su w3id deve dire le stesse cose della sorgente; verificato isomorfo a `chora.ttl` (600 triple) e identico byte per byte con tre seed diversi.
+- Fase in cui è maturata: revisione critica (chiusura della fase 1)
+- File toccati (manifest): `tools/etl.py:26` (`import json`), `:1251-1269` (`stable_json()`), `:1322-1327` (argomento), `:1381-1384` (scrittura); `Makefile:42`; `ontology/chora.jsonld` (rigenerato).
+- Effetto su KG (triple prima/dopo, SHACL): nessuno su ABox (16.055) e grafo completo (17.225). `chora.jsonld` passa da 572 triple non allineate a 600, isomorfo alla TBox. SHACL conforme.
+
+---
+
+## D-034 — Glifi degli statuti e soglia degli estratti (8 ottobre 2026)
+
+- Requisito/i: R07, R21 · Ipotesi: — · Data check: DM-01 (work order T-65, T-55)
+- Stato precedente: dopo la permutazione (D-030) restava aperto se i glifi del prototipo (`_archivio/chartD.js:219-237`, `FICT_GLYPH_PATHS`, uno per statuto) dovessero seguire il nome dello statuto o il suo significato; la soglia di lunghezza degli estratti (R21) era da decidere (oggi: tetto di 700 caratteri in `tools/build_passages.py`; mediana 141, massimo 573).
+- Decisione (di Lorenzo, 8/10/2026): (1) **i glifi restano legati al nome dello statuto**: il glifo «invented» va ai luoghi Invented e quello «imagined» ai luoghi Imagined. Poiché i valori sono stati permutati, i 15 luoghi ora Invented ricevono il glifo che prima avevano i 5 e viceversa: nessuna modifica al codice né all'archivio. (2) **La soglia degli estratti resta quella attuale**: nessun estratto supera il tetto di 700 caratteri, e la policy non richiede tagli.
+- Motivazione (fonte, pagina): la forma del glifo codifica lo statuto (grammatica visiva, `CLAUDE.md`); la correzione di D-030 era di nome, non di contenuto grafico.
+- Fase in cui è maturata: prototipazione (vista diagramma)
+- File toccati (manifest): nessuno nel codice o nei dati; `docs/thesis/DATA_CHECKS_GaddAtlas.md` (lista delle decisioni).
+- Effetto su KG (triple prima/dopo, SHACL): nessuno.
+- Approvazione: approvata da L. Sabatino, 9/10/2026 (i glifi seguono il nome dello statuto).
+
+---
+
+## D-035 — Decisioni sui casi aperti della fase 1 (8 ottobre 2026)
+
+- Requisito/i: R02, R07, R18, R22 · Ipotesi: H3 · Data check: DC-01, DC-02, DC-07, DC-08, DC-15, DC-16
+- Stato precedente: casi lasciati aperti alla chiusura della fase 1 (v. D-030, D-031).
+- Decisione (di Lorenzo, 8/10/2026):
+  - **DC-16, permutazione:** resta com'è. Invented e Imagined erano stati usati con le definizioni incrociate: la tipologia dei luoghi è identica, è cambiato solo il nome. Nessuna riassegnazione caso per caso. Resta da segnalare per la tesi: il Cap. 4, § 4.3 (r. 85) chiama «inventati» Roccafringoli, Monte Nuncupale e Scerpure, che nei dati sono ora Imagined.
+  - **DC-08, palazzo di via Merulana 219:** Transformed. I dati lo sono già; nessuna modifica. Le varianti 119 → 219 e «palazzo degli ori» → «palazzo dell'Oro» restano per il modello dei testimoni (T-41).
+  - **DC-02, palazzo Simonetti:** Transformed, non Invented. È un palazzo reale, collocato correttamente in via Lata; in QP Gadda lo sposta in via Lanza, cioè trasforma la collocazione reale di un luogo reale in un'altra via reale. Ancoraggio da applicare con un passo successivo.
+  - **DC-01, Robine Vecchie:** una sola occorrenza, a QP 169. I dati erano già corretti (`ref_00403`); erano errati i rinvii a «QP 161», corretti nel Cap. 4 (`docs/thesis/Capitolo 4.md`, § 4.3 e n. 23), nel registro e nel work order. AUDIT_0 resta com'era, come documento dello stato al momento dell'audit. Il docx della tesi va corretto allo stesso modo.
+  - **DC-07, Casal Bruciato:** le due collocazioni (TCI tra le ferrovie, IGM a ovest della Roma–Napoli) diventano due asserzioni attribuite a Manzotti e interrogabili. Si fanno con la provenance.
+  - **Provenance e modello delle asserzioni (DC-15, T-30, T-32):** rinviati a un secondo momento. Il modello si sceglierà in funzione delle attribuzioni da assegnare, con i dati alla mano.
+  - **Temporalità (R02, T-45): esclusa.** Va dichiarata fra le esclusioni (R12, T-70).
+  - **Resa dei percorsi non compiuti (T-64): esclusa.**
+- Motivazione (fonte, pagina): verifica di LS sul volume (Robine, QP 169); Pinotti 2025, p. 78 (palazzo Simonetti in via Lata nel dattiloscritto); Reuschel, Piatti e Hurni 2013, pp. 138–139 (definizioni).
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `docs/thesis/Capitolo 4.md:83`, `:599`; `docs/thesis/DATA_CHECKS_GaddAtlas.md` (DC-01, DC-02, DC-07, DC-08, DC-16 e lista delle decisioni); `docs/thesis/GaddAtlas_Cap4_Allineamento_WorkOrder.md:163` e § 10.
+- Effetto su KG (triple prima/dopo, SHACL): nessuno. ABox 16.055, full 17.225.
+- Approvazione: approvata da L. Sabatino, 9/10/2026 (palazzo di via Merulana 219 Transformed). Robine Vecchie: verificato da LS sul volume a stampa, 9/10/2026, che a QP 161 non compare. DC-16 chiuso senza riesame: la permutazione è puramente nominale.
+
+---
+
+## D-036 — Palazzo Simonetti: luogo trasformato, ancorato a via Lanza (8 ottobre 2026)
+
+- Requisito/i: R07, R10 · Ipotesi: H1 · Data check: DC-02 (work order T-11)
+- Stato precedente: `palazzo_simonetti` Imported, senza descrizione, ancorato a `gaz_via_lanza`. L'entità `gaz_palazzo_simonetti` non era il palazzo di via Lata ma il palazzo Odescalchi Simonetti di via Vittoria Colonna (coordinate in Prati, «Via Vittoria Colonna, 13»), cioè il candidato della lettura di Terzoli, e nessuna interpretazione la usava.
+- Decisione (di Lorenzo, 8/10/2026): **Transformed**. È un palazzo reale, in via Lata; in QP Gadda lo colloca in via Lanza, trasformando la collocazione reale di un luogo reale in un'altra via reale. Non ha coordinate proprie e resta **ancorato a `gaz_via_lanza`**, dove lo pone il testo. L'entità di Terzoli diventa `gaz_palazzo_odescalchi_simonetti` (stessi dati, nome corretto, fonte e nota sul civico, 11 secondo Pinotti contro il 13 del dato precedente), senza ancoraggi: sarà il bersaglio dell'identificazione attribuita quando si farà la provenance. Scartati l'ancoraggio doppio (via Lata + via Lanza) e l'ancoraggio al solo referente reale.
+- Motivazione (fonte, pagina): Pinotti 2025 («Il Gaddus» 3), p. 78: in via Lanza non esiste alcun palazzo Simonetti; il dattiloscritto dei capitoli nuovi (Fondo Gelli) legge via Lata; Terzoli (cit. ivi) vi legge un riferimento autobiografico al palazzo Odescalchi Simonetti. Cap. 4, § 4.2 (r. 45, 47).
+- Fase in cui è maturata: analisi del testo
+- File toccati (manifest): `data/source/tables/NarrativePlaces.tsv:126` (statuto, descrizione); `data/source/tables/GazetteerEntities.tsv:1607` (id, toponimo, `Authority_Source`); `data/source/void_seeds.json` (nuovo seme `palazzo_simonetti` = 0,173276, quello che il build calcolerebbe dall'hash dell'id); due XLSX rigenerati.
+- Effetto su KG (triple prima/dopo, SHACL): ABox 16.055 → **16.057**; full 17.225 → **17.227** (+2: descrizione del palazzo, `dcterms:source` dell'entità di Terzoli; il cambio di statuto e di id non cambia il numero). Statuti: Imported **259**, Transformed **31**, Invented 14, Imagined 5. Vista: tessere proprie 48 → 49 (nuova per `palazzo_simonetti`, ancorata a via Lanza); via Lanza da 3 a 2 occorrenze proprie. SHACL conforme, 0 violazioni.
+- Approvazione: approvata da L. Sabatino, 9/10/2026 (Transformed, ancorato a via Lanza). La lettura di Terzoli entra in fase 3.
+
+---
+
+## D-037 — Casal Bruciato: luogo importato, casale reale dell'Agro romano (rivede D-029) (9 ottobre 2026)
+
+- Requisito/i: R03, R04, R05, R06, R07, R10 · Ipotesi: H1, H3 · Data check: DC-07, DC-18 (work order T-15)
+- Stato precedente (D-029): `casal_bruciato` Transformed, senza coordinate, ancorato a Marino, Albano, Pavona e Santa Palomba; casello al km 20,25 parte di Casal Bruciato; `gaz_casal_bruciato` (quartiere del Tiburtino) eliminata.
+- Decisione (di Lorenzo, 9/10/2026):
+  - **Referente reale.** Casal Bruciato è il casale dell'Agro romano a sud di Roma, attestato come «Casal(e) Bruciato / Abbruciato / Abbrusciato» (Nibby, *Dintorni di Roma*, p. 569). Non è il quartiere del Tiburtino: l'eliminazione di D-029 resta giusta.
+  - **Statuto Imported.** L'incertezza della posizione riguarda la SpatialDetermination, non lo statuto. Le determinazioni delle singole occorrenze non sono state toccate. La discrepanza fra testo e repertorio è in nota e non si corregge (Manzotti 2010, p. 269: la topografia «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»).
+  - **Nuova `gaz_casale_abbruciato`, con due posizioni datate.** (a) **Adottata**, TCI, *Italia centrale* I, carta «Colli Laziali, Monti Lepini ed Ernici» 1:250.000, fra le pp. 480 e 481 (Manzotti, Tav. VI, p. 300): casale fra le due ferrovie, all'altezza di Santa Fumia, lungo il fosso di Casale Abbrusciato. Coordinate stimate 41,7335 N 12,5830 E, precisione circa 1 km: alla scala 1:250.000 1 mm vale 250 m e la scansione non permette una lettura puntuale. Il punto è mediano fra la Roma–Napoli (12,563 E a quella latitudine, dalla Tav. VII) e la Roma–Velletri (circa 12,602 E, interpolata fra `gaz_ferrovia_roma_velletri` e Pavona), alla latitudine di Borgo Santa Fumia (OpenStreetMap: 41,7331 N 12,5809 E). (b) **Alternativa**, IGM, F. 150 III SO, 1:25.000, rilievo 1872, aggiornamenti 1931 e 1940 (Manzotti, Tav. VII, p. 301): «Casale Abbruciato» a ovest della Roma–Napoli, in discrepanza con il testo. Stimata a 41,7168 N 12,5683 E, precisione circa 250 m. È letta sul reticolo chilometrico della tavola, identificato come UTM fuso 33 (ED50): E 297,7 km, N 4621,3 km, convertiti con l'inversa UTM sull'ellissoide internazionale. Verifica: la ferrovia della tavola cade a circa 100 m dalla stazione di Santa Palomba del dataset. (a) è l'ancoraggio; (b) è in `Authority_Source` e in nota. In fase 3 entrambe diventano asserzioni di localizzazione attribuite a Manzotti 2010, pp. 268–269. Le tavole si citano secondo le didascalie (VI = TCI, VII = IGM), non secondo i rinvii sfasati della nota di Manzotti.
+  - **Ancore per passo.** L'ancora principale è sempre `gaz_casale_abbruciato`. Si aggiungono, con relazione `near`, i luoghi reali che ciascun passo dispone intorno al casale: QP 237 Castel di Leva e ponte del Divino Amore; QP 240 via della Falcognana, ponte del Divino Amore e ferrovia Roma–Velletri; QP 274 Ardeatina; QP 297 ferrovia Roma–Velletri; QP 298 Ardeatina e Santa Palomba. QP 212 e 262 hanno solo il casale. Marino e Albano sono tolti, perché nessun passo li mette in rapporto con il casale. Pavona e Santa Maria delle Mole sono tolti dalle ancore e messi in nota come inferenza di Manzotti (km 17,55 e 23,38 della Roma–Velletri, fase 3). Tor di Gheppio (Invented) e il ponte di Santa Fumia (Transformed) sono luoghi narrativi, non ancore geografiche: sono in nota per QP 297, in attesa delle relazioni fra luoghi (T-47/T-53). Da rimodellare come ancoraggio relazionale (DC-07).
+  - **Riferimenti e forme attestate (R05).** Aggiunto `ref_00723` per QP 241 («Al casello, detto da taluni di Casal Bruciato…»: lo stesso estratto breve di `ref_00590`, cap. IX), per ora senza interpretazione. Mantenuta l'occorrenza di QP 262 (`ref_00614`), assente dall'elenco del 9/10 ma presente nel testo. Forme: «Casal Bruciato» (QP 212, 237, 240, 241, 262, 274, 298) nell'etichetta, «Casale Abbrusciato» (QP 297) come `skos:altLabel` del luogo; l'entità porta anche «Casale Abbruciato» (IGM) e «Casal Bruciato».
+  - **Casello al km 20,25** (luogo senza toponimo, R06, statuto invariato). Non è più parte di Casal Bruciato: è un casello della Roma–Velletri, «detto da taluni di Casal Bruciato». Le sue 22 interpretazioni sono ancorate a `gaz_ferrovia_roma_velletri` con relazione `adjacentto`. Camera del casello e passaggio a livello restano parti del casello e ne ereditano l'ancora. Il bivio Falcognana–Casal Bruciato non aveva mai ereditato dal Tiburtino: invariato. Era la soluzione (a) proposta il 9/10, applicata su indicazione di completare il lavoro.
+  - **Percorsi (solo annotazione, si applica in T-54):** QP 237 indicato (dialogo, Camilla); QP 212 sognato (Pestalozzi). La lettura di Manzotti di «per fil a dest» (p. 269: cambio di direzione perpendicolare, in realtà verso sinistra, a sud verso il Circeo) è nella nota dell'interpretazione di QP 212, come lettura attribuita per la fase 3.
+- Motivazione (fonte, pagina): Manzotti 2010, nota ai rr. 182–183, pp. 268–269; p. 273; Tavv. VI–VII, pp. 300–301; Nibby, *Dintorni di Roma*, p. 569; QP 212, 237, 240, 241, 262, 274, 297, 298.
+- Fase in cui è maturata: analisi del testo
+- File toccati (manifest): `data/source/tables/GazetteerEntities.tsv:467-482` (nuova `gaz_casale_abbruciato`, geometria multiriga); `data/source/tables/NarrativePlaces.tsv:38` (statuto, forma attestata, descrizione), `:39` (`Is_Part_Of` del casello tolto); `data/source/tables/References.tsv:724` (`ref_00723`); `data/source/tables/SpatialInterpretations.tsv`: 13 righe di `casal_bruciato` (ancore, relazione, nota) e 22 di `casello_km_20_25` (ancora, relazione); quattro XLSX rigenerati. Il seme `casal_bruciato` resta in `void_seeds.json`, inutilizzato.
+- Effetto su KG (triple prima/dopo, SHACL): ABox 16.057 → **16.093**; full 17.227 → **17.263** (+36: +10 per la nuova entità, +1 `altLabel`, −1 `isPartOf`, +5 per il nuovo riferimento, −21 ancore e −2 relazioni sulle interpretazioni del casale, +22 ancore e +22 relazioni sul casello). Statuti: Imported **260**, Transformed **30**, Invented 14, Imagined 5. Gazetteer 265 → 266; riferimenti 722 → 723 (uno in più fuori dal rilievo perché ancora senza interpretazione). Vista: tessere proprie 49 → 48 (Casal Bruciato confluisce nella tessera di `gaz_casale_abbruciato`: 13 interpretazioni, 8 occorrenze, classe «frequente», 20,1 km dal centro); generatori 222 → 223; il casello e i suoi interni si appoggiano alla ferrovia Roma–Velletri; nelle entità circostanti cambia solo `anchoredTotal`. SHACL conforme, 0 violazioni.
+- Approvazione: coordinate di `gaz_casale_abbruciato` accettate da L. Sabatino con la precisione dichiarata (9/10/2026). Aggiunta in `Authority_Source` la nota sul datum: il reticolo della Tav. VII è ED50, e lo scarto verso WGS84 (~100–200 m) rientra nella precisione di 250 m.
+
+---
+
+## D-038 — Adapter: ancora principale per le interpretazioni con più ancore (9 ottobre 2026)
+
+- Requisito/i: R04, R15 · Ipotesi: — · Data check: DC-07 (completa D-028)
+- Stato precedente: con D-028 un'interpretazione con più ancore produce un solo record, e il campo `gazetteerId` prendeva il primo id in ordine alfabetico. Restava aperto il caso di un luogo **Imported** con più ancore, che deposita il rilievo su `gazetteerId`: la scelta alfabetica era arbitraria.
+- Decisione: l'ancora principale è quella che compare nel **maggior numero di interpretazioni dello stesso luogo**, cioè il suo referente. Per Casal Bruciato è `gaz_casale_abbruciato`, presente in tutte le 13 interpretazioni; le altre ancore sono i luoghi intorno. A parità vale l'ordine alfabetico. La regola vale per ogni interpretazione con più ancore; per i luoghi con tessera propria non cambia il rilievo. Resta da sostituire con l'ancoraggio relazionale esplicito di T-47.
+- Motivazione (fonte, pagina): D-037; R15 (regola di aggregazione dichiarata).
+- Fase in cui è maturata: prototipazione (adapter dati)
+- File toccati (manifest): `tools/build_geojson.py:328` (`anchors_by_si`), `:338-339` (raccolta delle ancore), `:375-389` (scelta dell'ancora principale); tolta la scelta alfabetica nel ramo delle ancore in più (ex `:343-345`).
+- Effetto su KG (triple prima/dopo, SHACL): nessuno sul grafo. Con i dati precedenti a D-037 i derivati sono identici; con D-037 le 13 righe di rilievo di Casal Bruciato vanno tutte a `gaz_casale_abbruciato`.
+
+---
+
+## D-039 — Un solo controllo di riproducibilità: `check_reproducible.py` (9 ottobre 2026)
+
+- Requisito/i: — (infrastruttura; fonde D-022 con il lavoro di `main`) · Ipotesi: — · Data check: —
+- Stato precedente: due controlli paralleli per la stessa cosa. Sul branch di allineamento la CI rigenerava i derivati e chiedeva `git diff` vuoto su `data/dist`, `ontology` e `app/public/data`, possibile perché la build era stata resa deterministica byte per byte (D-022). Su `main` (commit `40ce9b2`, `12c9976`) la CI usava `tools/check_reproducible.py`: confronto per isomorfismo dei TTL e per contenuto dei JSON, con il grafo completo escluso perché i due contributori anonimi non si canonicalizzavano in modo stabile. Anche l'ordinamento deterministico del GeoJSON era stato fatto due volte: chiavi secondarie per id in tutti i `sorted()` su `main`, una sola sul branch.
+- Decisione (di Lorenzo, 9/10/2026): si tiene il controllo di `main`, esteso allo stato del branch. In `check_reproducible.py`: (1) confronto dei **byte** come primo passo, poi isomorfismo per RDF e contenuto per JSON; (2) `ontology/chora.ttl` esce dai target, perché è la sorgente della TBox (D-020), ed entrano i suoi derivati `ontology/chora.rdf` (RDF/XML) e `ontology/chora.jsonld` (D-033); (3) `data/dist/gaddatlas-full.ttl` rientra: dal D-022 è identico byte per byte fra build; (4) entrano le copie in `app/public/data` (anche `make audit` le confronta byte per byte, D-023). In `build_geojson.py` restano l'ordinamento di `main` (id come chiave secondaria ovunque, «NOTA SULL'ORDINAMENTO») e la regola dell'ancora principale (D-038); il commento locale del branch è assorbito dalla nota generale. Nel workflow `data.yml` resta lo step di `main`, con `publish-data` fra i passi di rigenerazione.
+- Motivazione (fonte, pagina): un solo strumento, che dice perché un derivato è cambiato (byte, triple, chiavi), invece di due controlli che possono divergere.
+- Fase in cui è maturata: revisione critica (merge di `main` nel branch di allineamento)
+- File toccati (manifest): `tools/check_reproducible.py` (blocco `TARGETS`, `compare_rdf` con formato, confronto dei byte in `main()`); `.github/workflows/data.yml` (risoluzione del conflitto, commento); `tools/build_geojson.py` (risoluzione del conflitto: tolto il commento duplicato).
+- Effetto su KG (triple prima/dopo, SHACL): nessuno.
+
+---
+
+## D-040 — Statuto di realtà senza glifo: errore esplicito (9 ottobre 2026)
+
+- Requisito/i: R07 · Ipotesi: — · Data check: DC-20 (work order T-87)
+- Stato precedente: nel codice portato (come nel notebook, `_archivio/chartD.js:4930-4935`) qualunque statuto diverso da «transformed» e «imagined» veniva disegnato con il glifo «invented»: in `app/src/atlas.js` con una catena `if / else`, in `app/src/render/painters.js` con un ripiego `FICT_GLYPH_PATHS[status] ? status : "invented"`. Un valore sbagliato o nuovo nei dati sarebbe passato inosservato con la forma di un altro statuto.
+- Decisione: il glifo segue il nome dello statuto, senza ripiego (D-034). Al caricamento, `model/entities.js` verifica che ogni tessera fittizia abbia uno statuto presente in `FICT_GLYPH_PATHS` e altrimenti ferma l'app con un errore che dice quale tessera e quale valore. `painters.drawFictGlyph` lancia un errore per uno statuto sconosciuto invece di ripiegare. L'archivio non è toccato. Modifica di comportamento in un commit separato dal porting e dal merge, come chiedono le regole del porting.
+- Motivazione (fonte, pagina): work order T-87; grammatica visiva semantica (`CLAUDE.md`): la forma del glifo dice lo statuto, quindi un glifo sbagliato è un dato falso.
+- Fase in cui è maturata: prototipazione (vista diagramma)
+- File toccati (manifest): `app/src/model/entities.js:81-93` (validazione); `app/src/render/painters.js:166-169`; `app/src/atlas.js:919-920`; `app/test/entities-status.test.js` (nuovo: i dati pubblicati passano, uno statuto finto dà l'errore).
+- Effetto su KG (triple prima/dopo, SHACL): nessuno. Test dell'app 4/4; build di produzione riuscita.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

@@ -20,7 +20,7 @@ jobs:
       - run: pip install rdflib pandas pyyaml openpyxl pyshacl
 
       - name: rigenera i derivati dalle sorgenti
-        run: make rdf geojson passages
+        run: make rdf geojson passages publish-data
 
       - name: verifica di coerenza fra sorgenti e derivati
         run: make audit
@@ -31,9 +31,9 @@ jobs:
       - name: competency e integrity query
         run: make queries
 
-      # Non `git diff`: l'ordine dei nodi anonimi nei TTL non e' deterministico
-      # in rdflib, quindi il confronto byte-a-byte fallirebbe sempre pur essendo
-      # i grafi identici. check_reproducible.py confronta i TTL per isomorfismo
-      # e i JSON per contenuto.
+      # check_reproducible.py confronta ogni derivato versionato con quello
+      # appena rigenerato: prima i byte (la build e' deterministica, D-022), poi,
+      # se differiscono, l'isomorfismo per l'RDF e il contenuto per il JSON.
+      # Le copie in app/public/data sono controllate anche da make audit (D-023).
       - name: i derivati versionati devono coincidere con la build
         run: python3 tools/check_reproducible.py

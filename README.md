@@ -24,7 +24,7 @@ FICLIT, XXXIX ciclo.
 | Dataset | 17.203 triple · 265 entità di gazetteer · 309 luoghi narrativi |
 | Annotazione | 722 riferimenti testuali · 962 interpretazioni · 83 focalizzatori · 18 route |
 | Copertura testuale | 722/722 riferimenti con estratto (100%) |
-| Qualità | SHACL conforme · 12/12 competency · 10/10 integrity · ETL 0 warning |
+| Qualità | SHACL conforme · 12/12 competency · 11/11 integrity · ETL 0 warning |
 | Interfaccia | in migrazione da prototipo Observable a applicazione statica |
 
 ---
@@ -34,16 +34,16 @@ FICLIT, XXXIX ciclo.
 ```
 gaddatlas/
 ├── ontology/                    ← CHORA: lo schema, riusabile oltre Gadda
-│   ├── chora.rdf                  TBox (SORGENTE, curata in Protégé)
-│   ├── chora.ttl                  TBox in Turtle (derivata dall'RDF)
+│   ├── chora.ttl                  TBox (SORGENTE, D-020)
+│   ├── chora.rdf                  TBox in RDF/XML per Protégé (derivata)
 │   ├── shapes/                    vincoli SHACL + vocabolario SKOS
-│   ├── queries/                   12 competency + 10 integrity query
+│   ├── queries/                   12 competency + 11 integrity query
 │   ├── docs/                      documentazione pyLODE
 │   ├── CHANGELOG.md  README.md
 ├── data/                        ← GaddAtlas: il caso di studio
 │   ├── source/                    ← SORGENTE
-│   │   ├── xlsx/                    annotazione, superficie di editing
-│   │   ├── tables/                  gli stessi dati in TSV, diffabili in git
+│   │   ├── tables/                  annotazione in TSV (SORGENTE, D-019)
+│   │   ├── xlsx/                    gli stessi dati per Excel (derivati, make xlsx)
 │   │   └── mapping.yaml             etichette italiane → URI dell'ontologia
 │   ├── gaddatlas.ttl              ABox (derivata)
 │   └── dist/                      ← derivati, rigenerabili
@@ -58,14 +58,14 @@ gaddatlas/
 
 ### Il principio architetturale
 
-Le sorgenti modificabili a mano sono **due**: i fogli di annotazione in
-`data/source/xlsx/` e la TBox in `ontology/chora.rdf`. Tutto il resto è
-derivato e rigenerabile con `make all`.
+Le sorgenti modificabili a mano sono **due**: le tabelle di annotazione in
+`data/source/tables/*.tsv` (D-019) e la TBox in `ontology/chora.ttl` (D-020).
+Tutto il resto è derivato: gli XLSX con `make xlsx`, il resto con `make all`.
 
 ```
-data/source/xlsx/*.xlsx  ──▶  tables/*.tsv  ─┐
+data/source/tables/*.tsv  ───────────────────┐
                                               ├─(tools/etl.py + mapping.yaml)─▶  data/gaddatlas.ttl
-ontology/chora.rdf  ─────────────────────────┘                                        │
+ontology/chora.ttl  ─────────────────────────┘                                        │
                                                                                       ▼
                                                                     data/dist/gaddatlas-full.ttl
                                                                           │              │
@@ -90,7 +90,7 @@ Requisiti: Python 3.11+, `rdflib`, `pandas`, `pyyaml`, `openpyxl`, `pyshacl`.
 pip install rdflib pandas pyyaml openpyxl pyshacl
 make all          # rdf → passages → audit
 make shacl        # validazione SHACL — deve dire CONFORME
-make queries      # 12/12 competency, 10/10 integrity
+make queries      # 12/12 competency, 11/11 integrity
 ```
 
 L'audit va eseguito **dopo ogni modifica al TTL**. Verifica nove invarianti,
@@ -108,7 +108,7 @@ SKOS controllato:
 
 | Asse | Valori |
 |---|---|
-| **Reality Status** | Imported · Transformed · Imagined · Invented |
+| **Reality Status** | Imported · Transformed · Invented · Imagined (dal concreto all'astratto) |
 | **Narrative Role** | Setting · ZoneOfAction · Route · Marker · ProjectedSpace |
 | **Spatial Determination** | Precise · Relative · Approximate · Indeterminate |
 | **Spatial Relation Type** | Inside · Near · Toward · Through · … |
@@ -126,7 +126,7 @@ Le entità principali:
 
 La distinzione fra `NarrativePlace` e `GazetteerEntity` è il cuore
 dell'argomento: un luogo *Imported* coincide con il suo referente e ne eredita
-la posizione, mentre *Transformed*, *Imagined* e *Invented* richiedono una
+la posizione, mentre *Transformed*, *Invented* e *Imagined* richiedono una
 collocazione propria nello spazio diagrammatico.
 
 ---

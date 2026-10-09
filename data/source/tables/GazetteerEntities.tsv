@@ -464,7 +464,7 @@ gaz_carsoli	Carsoli					42.14567518996888	13.094053163953856	"{
     }
   ]
 }"	
-gaz_casal_bruciato	Casal Bruciato					41.90695676286888	12.550603021665	"{
+gaz_casale_abbruciato	Casale Abbruciato		Casal Bruciato; Casale Abbrusciato; Casale Bruciato	Casale dell'Agro romano a sud di Roma (Nibby, Dintorni di Roma, p. 569)		41.7335	12.583	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
     {
@@ -473,13 +473,13 @@ gaz_casal_bruciato	Casal Bruciato					41.90695676286888	12.550603021665	"{
       ""geometry"": {
         ""type"": ""Point"",
         ""coordinates"": [
-          12.550603021665,
-          41.90695676286888
+          12.583,
+          41.7335
         ]
       }
     }
   ]
-}"	
+}"	Posizione ADOTTATA: TCI, Italia centrale I, carta «Colli Laziali, Monti Lepini ed Ernici» 1:250.000, inserita tra le pp. 480 e 481 (Manzotti 2010, Tav. VI, p. 300): casale fra le ferrovie Roma–Velletri e Roma–Napoli, all'altezza di Santa Fumia, lungo il fosso di Casale Abbrusciato. Coordinate stimate (precisione ~1 km): punto mediano fra le due ferrovie alla latitudine di Borgo Santa Fumia (OpenStreetMap). Posizione ALTERNATIVA: IGM, F. 150 III SO, 1:25.000, rilievo 1872, aggiornamenti 1931 e 1940 (Manzotti 2010, Tav. VII, p. 301): «Casale Abbruciato» a ovest della Roma–Napoli, stimato a 41.7168 N 12.5683 E (reticolo UTM 33 della tavola, E 297,7 N 4621,3 km; precisione ~250 m; il reticolo della tavola è in datum ED50, e lo scarto verso WGS84, ~100–200 m, rientra in questa precisione). Manzotti 2010, pp. 268–269. Nella nota Manzotti rinvia alle tavole come «V» e «VI»: qui si citano secondo le didascalie.
 gaz_castelli_romani	Castelli Romani					41.76583589207368	12.708345346043885	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -802,6 +802,22 @@ gaz_due_santi	Due Santi					41.76118209967858	12.616571382457442	"{
     }
   ]
 }"	
+gaz_edicola_due_santi	Edicola ai Due Santi		tabernacolo			41.761482099679	12.616871382457	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          12.616871382457,
+          41.761482099679
+        ]
+      }
+    }
+  ]
+}"	Posizione derivata da gaz_due_santi con uno scarto convenzionale di circa 40 m (+0,0003° lat/long), solo per distinguere i generatori della tassellazione: nessuna coordinata TCI disponibile. Esistenza del tabernacolo: piantina dei Castelli, TCI, Italia centrale IV (Manzotti 2010, p. 246).
 gaz_esquilino	Esquilino				Rione XV	41.893298797354646	12.505248214532829	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -1604,7 +1620,7 @@ gaz_palazzo_ruspoli	Palazzo Ruspoli				Via della Fontanella di Borghese, 56, 001
     }
   ]
 }"	
-gaz_palazzo_simonetti	Palazzo Simonetti				Via Vittoria Colonna, 13, 00193	41.90520237070184	12.472392994101876	"{
+gaz_palazzo_odescalchi_simonetti	Palazzo Odescalchi Simonetti				Via Vittoria Colonna, 13, 00193	41.90520237070184	12.472392994101876	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
     {
@@ -1619,7 +1635,7 @@ gaz_palazzo_simonetti	Palazzo Simonetti				Via Vittoria Colonna, 13, 00193	41.90
       }
     }
   ]
-}"	
+}"	Candidato della lettura di Terzoli (cit. in Pinotti 2025, p. 78): palazzo Odescalchi Simonetti, già pensione White, dove Gadda aveva abitato. Civico 11 secondo Pinotti; il dato precedente indicava 13. Non è il referente di palazzo_simonetti: entità predisposta per l'identificazione attribuita.
 gaz_palazzo_venezia	Palazzo Venezia		Palazzo del Mappamondo		Piazza di Venezia, 3, 00186 Roma RM	41.89608880158758	12.482488256557962	"{
   ""type"": ""FeatureCollection"",
   ""features"": [

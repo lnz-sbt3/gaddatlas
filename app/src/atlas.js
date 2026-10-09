@@ -916,9 +916,8 @@ export default function chartS4(model, roma, { onTileSelect = () => {} } = {}) {
         const status = allData[i].properties.reality_status;
         context.save();
         context.globalAlpha = contentAlpha(i, {presence: fictBirthEased[i]});
-        if (status === "transformed") painters.drawFictGlyph(frame, cx, cy, gr, "transformed");
-        else if (status === "imagined") painters.drawFictGlyph(frame, cx, cy, gr, "imagined");
-        else painters.drawFictGlyph(frame, cx, cy, gr, "invented");
+        // il glifo segue il nome dello statuto (D-034); niente ripiego su «invented» (T-87, D-040)
+        painters.drawFictGlyph(frame, cx, cy, gr, status);
         context.restore();
       };
       if (B <= 0 && tiltEased <= 0.01) {

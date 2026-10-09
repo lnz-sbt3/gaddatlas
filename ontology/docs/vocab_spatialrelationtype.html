@@ -329,7 +329,7 @@
 	</script>
 </head>
 <body>
-<div id="content"><div class="ga-injected" style="margin:0 0 1.5em 0;padding:.6em .9em;border-left:3px solid #666;background:#f4f4f4;font-size:.9em;">↑ <a href="gaddatlas_doc.html">GaddAtlas Ontology</a><br/>Other vocabularies: <a href="vocab_placecategory.html">GaddAtlas Place Category Vocabulary</a> · <a href="vocab_narrativerole.html">Narrative Role</a> · <a href="vocab_realitystatus.html">Reality Status</a> · <a href="vocab_spatialdetermination.html">Spatial determination</a></div>
+<div id="content"><div class="ga-injected" style="margin:0 0 1.5em 0;padding:.6em .9em;border-left:3px solid #666;background:#f4f4f4;font-size:.9em;">↑ <a href="index.html">CHORA Ontology</a><br/>Other vocabularies: <a href="vocab_placecategory.html">GaddAtlas Place Category Vocabulary</a> · <a href="vocab_narrativerole.html">Narrative Role</a> · <a href="vocab_realitystatus.html">Reality Status</a> · <a href="vocab_spatialdetermination.html">Spatial determination</a></div>
 <div class="section" id="metadata">
 <h1></h1>
 <h2>Metadata</h2>
@@ -389,10 +389,10 @@
 <dd>
 <div>
 <p>
-<a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a>
+<a href="http://www.w3.org/2002/07/owl#NamedIndividual">Named Individual</a>
 </p>
 <p>
-<a href="http://www.w3.org/2002/07/owl#NamedIndividual">Named Individual</a>
+<a href="http://www.w3.org/2004/02/skos/core#ConceptScheme">Concept Scheme</a>
 </p>
 </div>
 </dd>
@@ -403,7 +403,7 @@
 </dt>
 <dd>
 <div>
-<p>4.1.1</p>
+<p>1.0.0</p>
 </div>
 </dd>
 </div>
@@ -424,28 +424,28 @@
 <dd>
 <div>
 <p>
-<a href="https://w3id.org/chora#Below">Below</a>
-</p>
-<p>
-<a href="https://w3id.org/chora#Inside">Inside</a>
-</p>
-<p>
 <a href="https://w3id.org/chora#Near">Near</a>
 </p>
 <p>
-<a href="https://w3id.org/chora#Above">Above</a>
+<a href="https://w3id.org/chora#Below">Below</a>
 </p>
 <p>
-<a href="https://w3id.org/chora#RelatedTo">Related to</a>
-</p>
-<p>
-<a href="https://w3id.org/chora#Contains">Contains</a>
+<a href="https://w3id.org/chora#AdjacentTo">Adjacent to</a>
 </p>
 <p>
 <a href="https://w3id.org/chora#Overlaps">Overlaps</a>
 </p>
 <p>
-<a href="https://w3id.org/chora#AdjacentTo">Adjacent to</a>
+<a href="https://w3id.org/chora#RelatedTo">Related to</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#Inside">Inside</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#Contains">Contains</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#Above">Above</a>
 </p>
 </div>
 </dd>
@@ -506,7 +506,7 @@
 <div id="concepts">
 <h2>Concept Definitions</h2>
 <div class="entity">
-<h3 id="ga_Above">Above</h3>
+<h3 id="chora_Above">Above</h3>
 <table>
 <tr>
 <td style="width:250px;">
@@ -531,7 +531,7 @@
 </table>
 </div>
 <div class="entity">
-<h3 id="ga_AdjacentTo">Adjacent to</h3>
+<h3 id="chora_AdjacentTo">Adjacent to</h3>
 <table>
 <tr>
 <td style="width:250px;">
@@ -556,7 +556,7 @@
 </table>
 </div>
 <div class="entity">
-<h3 id="ga_Below">Below</h3>
+<h3 id="chora_Below">Below</h3>
 <table>
 <tr>
 <td style="width:250px;">
@@ -581,7 +581,7 @@
 </table>
 </div>
 <div class="entity">
-<h3 id="ga_Contains">Contains</h3>
+<h3 id="chora_Contains">Contains</h3>
 <table>
 <tr>
 <td style="width:250px;">
@@ -606,7 +606,7 @@
 </table>
 </div>
 <div class="entity">
-<h3 id="ga_Inside">Inside</h3>
+<h3 id="chora_Inside">Inside</h3>
 <table>
 <tr>
 <td style="width:250px;">
@@ -631,7 +631,7 @@
 </table>
 </div>
 <div class="entity">
-<h3 id="ga_Near">Near</h3>
+<h3 id="chora_Near">Near</h3>
 <table>
 <tr>
 <td style="width:250px;">
@@ -656,7 +656,7 @@
 </table>
 </div>
 <div class="entity">
-<h3 id="ga_Overlaps">Overlaps</h3>
+<h3 id="chora_Overlaps">Overlaps</h3>
 <table>
 <tr>
 <td style="width:250px;">
@@ -681,7 +681,7 @@
 </table>
 </div>
 <div class="entity">
-<h3 id="ga_RelatedTo">Related to</h3>
+<h3 id="chora_RelatedTo">Related to</h3>
 <table>
 <tr>
 <td style="width:250px;">
@@ -709,13 +709,13 @@
 <div id="namespaces">
 <h2>Namespaces</h2>
 <dl>
+<dt id="chora">chora</dt>
+<dd>
+<code>https://w3id.org/chora#</code>
+</dd>
 <dt id="dcterms">dcterms</dt>
 <dd>
 <code>http://purl.org/dc/terms/</code>
-</dd>
-<dt id="ga">ga</dt>
-<dd>
-<code>https://w3id.org/chora#</code>
 </dd>
 <dt id="owl">owl</dt>
 <dd>
@@ -769,10 +769,10 @@
 </h4>
 <ul class="second">
 <li>
-<a href="#dcterms">dcterms</a>
+<a href="#chora">chora</a>
 </li>
 <li>
-<a href="#ga">ga</a>
+<a href="#dcterms">dcterms</a>
 </li>
 <li>
 <a href="#owl">owl</a>

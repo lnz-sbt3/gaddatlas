@@ -223,7 +223,7 @@ chora:hasPlaceCategory a owl:ObjectProperty ;
 
 chora:hasRealityStatus a owl:ObjectProperty ;
     dcterms:references chora:RealityStatusScheme ;
-    rdfs:comment "Assigns the reality–fiction status (imported, transformed, imagined, invented) of a narrative place. This is an invariant property of the place as an authorial transposition of the real world into the text, NOT dependent on focalizer or interpretation."@en ;
+    rdfs:comment "Assigns the reality–fiction status of a narrative place, on a scale ordered from the concrete to the abstract: imported, transformed, invented, imagined (skos:notation 1–4; Reuschel, Piatti and Hurni 2013, pp. 138–139). This is an invariant property of the place as an authorial transposition of the real world into the text, NOT dependent on focalizer or interpretation."@en ;
     rdfs:domain chora:NarrativePlace ;
     rdfs:range skos:Concept ;
     skos:altLabel "ha stato di realtà"@it ;
@@ -338,29 +338,6 @@ chora:targetsRoute a owl:ObjectProperty ;
     chora:historicalLocation "Piazza degli Otto Cantoni"@it ;
     chora:presentLocation "Piazza Augusto Imperatore"@it .
 
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_castello> a chora:GazetteerEntity ;
-    rdfs:label "Castello"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.648544024883735,
-          41.75143747946607
-        ]
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    owl:sameAs <file:///Users/lnz_sbt/Documents/gaddatlas/data/gaz_castel_gandolfo> ;
-    geo1:lat 41.75143747946607 ;
-    geo1:long 12.648544024883735 .
-
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_colosseo> a chora:GazetteerEntity ;
     rdfs:label "Colosseo"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -455,8 +432,9 @@ chora:targetsRoute a owl:ObjectProperty ;
     geo1:lat 40.84161917254697 ;
     geo1:long 14.258960456507776 .
 
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_palazzo_simonetti> a chora:GazetteerEntity ;
-    rdfs:label "Palazzo Simonetti"@it ;
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_palazzo_odescalchi_simonetti> a chora:GazetteerEntity ;
+    rdfs:label "Palazzo Odescalchi Simonetti"@it ;
+    dcterms:source "Candidato della lettura di Terzoli (cit. in Pinotti 2025, p. 78): palazzo Odescalchi Simonetti, già pensione White, dove Gadda aveva abitato. Civico 11 secondo Pinotti; il dato precedente indicava 13. Non è il referente di palazzo_simonetti: entità predisposta per l'identificazione attribuita."^^xsd:string ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
             geosparql:asGeoJSON """{
   "type": "FeatureCollection",
@@ -2541,7 +2519,7 @@ chora:targetsRoute a owl:ObjectProperty ;
     prov:generatedAtTime "2026-04-06T00:00:00"^^xsd:dateTime ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_marino> ;
-    chora:annotationMethod "close reading"^^xsd:string ;
+    chora:annotationMethod "close_reading"^^xsd:string ;
     chora:assignsNarrativeRole chora:ZoneOfAction ;
     chora:assignsSpatialDetermination chora:Approximate ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/ingravallo> ;
@@ -3100,7 +3078,7 @@ chora:targetsRoute a owl:ObjectProperty ;
     prov:generatedAtTime "2026-04-07T00:00:00"^^xsd:dateTime ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_merulana> ;
-    chora:annotationMethod "close reading"^^xsd:string ;
+    chora:annotationMethod "close_reading"^^xsd:string ;
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Approximate ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
@@ -4270,7 +4248,7 @@ chora:targetsRoute a owl:ObjectProperty ;
     chora:assignsSpatialDetermination chora:Approximate ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/cassiere_capo_del_bo> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00287> ;
-    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/banca_ditalia> .
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/piazza_verdi> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00332> a prov:Entity,
         chora:SpatialInterpretation ;
@@ -7040,7 +7018,7 @@ chora:targetsRoute a owl:ObjectProperty ;
     chora:assignsNarrativeRole chora:Marker ;
     chora:assignsSpatialDetermination chora:Approximate ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pestalozzi> ;
-    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00522> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00523> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/carsoli> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00628> a prov:Entity,
@@ -7049,7 +7027,7 @@ chora:targetsRoute a owl:ObjectProperty ;
     chora:assignsNarrativeRole chora:Marker ;
     chora:assignsSpatialDetermination chora:Approximate ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pestalozzi> ;
-    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00523> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00522> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/tivoli> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00629> a prov:Entity,
@@ -7170,9 +7148,10 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00641> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Indeterminate ;
+    chora:criticalNote "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 212, percorso sognato (Pestalozzi): Manzotti (p. 269) legge «per fil a dest» come un cambio di direzione perpendicolare, in realtà verso sinistra (a sud, verso il Circeo); lettura attribuita, fase 3."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pestalozzi> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00534> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> .
@@ -7342,6 +7321,7 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00660> a prov:Entity,
         chora:SpatialInterpretation ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_edicola_due_santi> ;
     chora:assignsNarrativeRole chora:Marker ;
     chora:assignsSpatialDetermination chora:Precise ;
     chora:assignsSpatialRelationType chora:Overlaps ;
@@ -7369,6 +7349,7 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00663> a prov:Entity,
         chora:SpatialInterpretation ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_edicola_due_santi> ;
     chora:assignsNarrativeRole chora:Marker ;
     chora:assignsSpatialDetermination chora:Precise ;
     chora:assignsSpatialRelationType chora:Overlaps ;
@@ -7378,6 +7359,7 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00664> a prov:Entity,
         chora:SpatialInterpretation ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_edicola_due_santi> ;
     chora:assignsNarrativeRole chora:Marker ;
     chora:assignsSpatialDetermination chora:Approximate ;
     chora:assignsSpatialRelationType chora:Overlaps ;
@@ -7539,9 +7521,13 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00681> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_di_leva>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_ponte_divino_amore> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Approximate ;
+    chora:assignsSpatialRelationType chora:Near ;
+    chora:criticalNote "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/camilla_mattonari> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00568> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> .
@@ -7793,29 +7779,34 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00709> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_ponte_divino_amore>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_della_falcognana> ;
     chora:assignsNarrativeRole chora:Marker ;
     chora:assignsSpatialDetermination chora:Precise ;
+    chora:assignsSpatialRelationType chora:Near ;
+    chora:criticalNote "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00585> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00710> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Approximate ;
-    chora:assignsSpatialRelationType chora:Near ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pestalozzi> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00586> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00711> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Approximate ;
-    chora:assignsSpatialRelationType chora:Near ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/cocullo> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00586> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
@@ -7839,60 +7830,60 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00714> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
     chora:assignsNarrativeRole chora:Marker ;
     chora:assignsSpatialDetermination chora:Precise ;
-    chora:assignsSpatialRelationType chora:Near ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00589> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00715> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
     chora:assignsNarrativeRole chora:Marker ;
     chora:assignsSpatialDetermination chora:Precise ;
-    chora:assignsSpatialRelationType chora:Near ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00590> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00716> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Precise ;
-    chora:assignsSpatialRelationType chora:Near ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/nonna_mattonari> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00591> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00717> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Precise ;
-    chora:assignsSpatialRelationType chora:Near ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/nonna_mattonari> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00592> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00718> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Precise ;
-    chora:assignsSpatialRelationType chora:Near ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pestalozzi> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00592> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00719> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Precise ;
-    chora:assignsSpatialRelationType chora:Near ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/cocullo> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00592> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
@@ -7917,10 +7908,10 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00722> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Approximate ;
-    chora:assignsSpatialRelationType chora:Near ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00595> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
@@ -7964,30 +7955,30 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00727> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Precise ;
-    chora:assignsSpatialRelationType chora:Near ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/camilla_mattonari> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00599> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00728> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Precise ;
-    chora:assignsSpatialRelationType chora:Near ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pestalozzi> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00599> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00729> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Precise ;
-    chora:assignsSpatialRelationType chora:Near ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/cocullo> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00599> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
@@ -8124,10 +8115,10 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00744> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Approximate ;
-    chora:assignsSpatialRelationType chora:Near ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/camilla_mattonari> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00611> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
@@ -8154,29 +8145,30 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00747> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Approximate ;
-    chora:assignsSpatialRelationType chora:Near ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/camilla_mattonari> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00613> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00748> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Approximate ;
-    chora:assignsSpatialRelationType chora:Near ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/zio_cantoniere> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00613> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00749> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Approximate ;
+    chora:criticalNote "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/zio_cantoniere> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00614> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> .
@@ -8279,30 +8271,30 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00760> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Relative ;
-    chora:assignsSpatialRelationType chora:Near ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/enea_retalli> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00621> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00761> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Relative ;
-    chora:assignsSpatialRelationType chora:Near ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/camilla_mattonari> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00621> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00762> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Relative ;
-    chora:assignsSpatialRelationType chora:Near ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/lavinia_mattonari> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00621> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
@@ -8417,19 +8409,22 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00775> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Relative ;
-    chora:assignsSpatialRelationType chora:Near ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/enea_retalli> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00631> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00776> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_ardeatina> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Relative ;
+    chora:assignsSpatialRelationType chora:Near ;
+    chora:criticalNote "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/enea_retalli> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00632> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> .
@@ -8544,30 +8539,30 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00789> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Relative ;
-    chora:assignsSpatialRelationType chora:Near ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/enea_retalli> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00642> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00790> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Relative ;
-    chora:assignsSpatialRelationType chora:Near ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/enea_retalli> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00643> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00791> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Relative ;
-    chora:assignsSpatialRelationType chora:Near ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/camilla_mattonari> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00643> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
@@ -9165,24 +9160,6 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00682> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/marino> .
 
-<https://w3id.org/gaddatlas/id/interpretation/interp_00858> a prov:Entity,
-        chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_marino> ;
-    chora:assignsNarrativeRole chora:Marker ;
-    chora:assignsSpatialDetermination chora:Approximate ;
-    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/ingravallo> ;
-    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00683> ;
-    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/marino> .
-
-<https://w3id.org/gaddatlas/id/interpretation/interp_00859> a prov:Entity,
-        chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_marino> ;
-    chora:assignsNarrativeRole chora:Marker ;
-    chora:assignsSpatialDetermination chora:Approximate ;
-    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/maresciallo_di_pietrantonio> ;
-    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00684> ;
-    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/marino> .
-
 <https://w3id.org/gaddatlas/id/interpretation/interp_00860> a prov:Entity,
         chora:SpatialInterpretation ;
     chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_marino> ;
@@ -9557,7 +9534,10 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00900> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
+    chora:assignsSpatialRelationType chora:Near ;
+    chora:criticalNote "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/ingravallo> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00695> ;
     chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_torraccio_ponte_divino_amore> ;
@@ -9566,7 +9546,10 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00901> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
+    chora:assignsSpatialRelationType chora:Near ;
+    chora:criticalNote "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/maresciallo_di_pietrantonio> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00695> ;
     chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_torraccio_ponte_divino_amore> ;
@@ -9575,7 +9558,10 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00902> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
+    chora:assignsSpatialRelationType chora:Near ;
+    chora:criticalNote "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/autista_questura> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00695> ;
     chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_torraccio_ponte_divino_amore> ;
@@ -9584,7 +9570,10 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00903> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
+    chora:assignsSpatialRelationType chora:Near ;
+    chora:criticalNote "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/agente_runzato> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00695> ;
     chora:isNodeOfRoute <https://w3id.org/gaddatlas/id/route/tragitto_torraccio_ponte_divino_amore> ;
@@ -9810,18 +9799,26 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00928> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_ardeatina> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Approximate ;
+    chora:assignsSpatialRelationType chora:Near ;
+    chora:criticalNote "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/ingravallo> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00706> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00929> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_ardeatina> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Approximate ;
+    chora:assignsSpatialRelationType chora:Near ;
+    chora:criticalNote "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/agente_runzato> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00706> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> .
@@ -9972,18 +9969,26 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00946> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_ardeatina> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Approximate ;
+    chora:assignsSpatialRelationType chora:Near ;
+    chora:criticalNote "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/ingravallo> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00715> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00947> a prov:Entity,
         chora:SpatialInterpretation ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_ardeatina> ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Approximate ;
+    chora:assignsSpatialRelationType chora:Near ;
+    chora:criticalNote "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/agente_runzato> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00715> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> .
@@ -10126,7 +10131,7 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     rdfs:label "Castello"@it ;
     dcterms:description "Luogo narrativo immaginato, un castello nella zona tra Pavona e Frattocchie"@it ;
     chora:hasPlaceCategory chora:castle ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/colli_albani> a chora:NarrativePlace ;
     rdfs:label "Colli Albani"@it ;
@@ -10168,11 +10173,6 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:hasPlaceCategory chora:square ;
     chora:hasRealityStatus chora:Imported .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/piazza_verdi> a chora:NarrativePlace ;
-    rdfs:label "Piazza Verdi"@it ;
-    chora:hasPlaceCategory chora:square ;
-    chora:hasRealityStatus chora:Imported .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/prati_di_castello> a chora:NarrativePlace ;
     rdfs:label "Prati di Castello"@it ;
     chora:hasPlaceCategory chora:district ;
@@ -10193,6 +10193,12 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:hasPlaceCategory chora:archaeological_site ;
     chora:hasRealityStatus chora:Imported .
 
+<https://w3id.org/gaddatlas/id/reference/ref_00723> a chora:PlaceReference ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
+    chora:excerpt "Al casello, detto da taluni di Casal Bruciato, lo si attendeva ogni giorno, una volta al giorno."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
+    chora:sourceReference "A 241"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> a chora:LiteraryWork ;
     dcterms:bibliographicCitation "Garzanti, Milano, 1957 (ed. definitiva)"@it ;
     dcterms:creator "Carlo Emilio Gadda"@it ;
@@ -10205,7 +10211,7 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     dcterms:creator "Carlo Emilio Gadda"@it ;
     dcterms:date "1946"^^xsd:gYear ;
     dcterms:title "Quer pasticciaccio brutto de via Merulana"@it ;
-    rdfs:comment "Prima pubblicazione in 5 tratti sulla rivista Letteratura, dal 1946 al 1948"@it .
+    rdfs:comment "Prima pubblicazione in cinque puntate sulla rivista «Letteratura», fascicoli 26, 27, 28, 29 e 31 del 1946 (Pinotti 2016, p. 200, n. 4)"@it .
 
 <http://vocab.getty.edu/aat/300000810> a owl:NamedIndividual .
 
@@ -11032,6 +11038,29 @@ chora:ward a owl:NamedIndividual,
 }"""^^geosparql:geoJSONLiteral ] ;
     geo1:lat 41.76583589207368 ;
     geo1:long 12.708345346043885 .
+
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_castello> a chora:GazetteerEntity ;
+    rdfs:label "Castello"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.648544024883735,
+          41.75143747946607
+        ]
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    owl:sameAs <https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_gandolfo> ;
+    geo1:lat 41.75143747946607 ;
+    geo1:long 12.648544024883735 .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_civitavecchia> a chora:GazetteerEntity ;
     rdfs:label "Civitavecchia"@it ;
@@ -13526,6 +13555,11 @@ chora:ward a owl:NamedIndividual,
     chora:hasPlaceCategory chora:hill ;
     chora:hasRealityStatus chora:Imported .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/banca_ditalia> a chora:NarrativePlace ;
+    rdfs:label "Banca d’Italia"@it ;
+    chora:hasPlaceCategory chora:bank ;
+    chora:hasRealityStatus chora:Imported .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/barbiere> a chora:NarrativePlace ;
     rdfs:label "Barbiere"@it ;
     dcterms:description "Luogo generico: barbiere"@it ;
@@ -13688,7 +13722,7 @@ chora:ward a owl:NamedIndividual,
     rdfs:label "Grotta de Sor Pippo"@it ;
     dcterms:description "Trattoria non meglio identificata nel territorio di Marino"@it ;
     chora:hasPlaceCategory chora:restaurant ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/india> a chora:NarrativePlace ;
     rdfs:label "India"@it ;
@@ -13756,7 +13790,7 @@ chora:ward a owl:NamedIndividual,
     rdfs:label "Monte Nuncupale"@it ;
     dcterms:description "Monte inventato, collocato nella zona dei Colli Albani/marino"@it ;
     chora:hasPlaceCategory chora:mountain ;
-    chora:hasRealityStatus chora:Invented .
+    chora:hasRealityStatus chora:Imagined .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/monte_soratte> a chora:NarrativePlace ;
     rdfs:label "Monte Soratte"@it ;
@@ -13797,6 +13831,14 @@ chora:ward a owl:NamedIndividual,
     chora:hasPlaceCategory chora:mountain ;
     chora:hasRealityStatus chora:Imported .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi> a chora:NarrativePlace ;
+    rdfs:label "Orto o Vigna ai Due Santi"@it ;
+    dcterms:description "Luogo non precisato simile a un orto o una vigna, di fronte al laboratorio della Zamira, al lato opposto della via Appia"@it ;
+    chora:hasFuzzinessLevel 4.0 ;
+    chora:hasPlaceCategory chora:kitchen_garden ;
+    chora:hasRealityStatus chora:Invented ;
+    chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira> .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_del_mappamondo> a chora:NarrativePlace ;
     rdfs:label "Palazzo der Mappamonno"@it ;
     chora:hasPlaceCategory chora:historical_building ;
@@ -13820,8 +13862,9 @@ chora:ward a owl:NamedIndividual,
 
 <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_simonetti> a chora:NarrativePlace ;
     rdfs:label "Palazzo Simonetti"@it ;
+    dcterms:description "Luogo trasformato per rilocazione: il palazzo Simonetti (o De Carolis) è reale e sorge in via Lata, presso piazza del Collegio Romano, dove lo colloca il dattiloscritto dei capitoli nuovi; in QP 177 Gadda lo sposta in via Lanza, dove non esiste (Pinotti 2025, p. 78). Ancorato a via Lanza, la sua collocazione nel testo; nessuna coordinata propria."@it ;
     chora:hasPlaceCategory chora:historical_building ;
-    chora:hasRealityStatus chora:Imported .
+    chora:hasRealityStatus chora:Transformed .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/palestrina> a chora:NarrativePlace ;
     rdfs:label "Palestrina"@it ;
@@ -13848,7 +13891,7 @@ chora:ward a owl:NamedIndividual,
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_colonna> a chora:NarrativePlace ;
-    rdfs:label "Piazza Colonna "@it ;
+    rdfs:label "Piazza Colonna"@it ;
     chora:hasPlaceCategory chora:square ;
     chora:hasRealityStatus chora:Imported .
 
@@ -13879,6 +13922,11 @@ chora:ward a owl:NamedIndividual,
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_rusticucci> a chora:NarrativePlace ;
     rdfs:label "Piazza Rusticucci"@it ;
+    chora:hasPlaceCategory chora:square ;
+    chora:hasRealityStatus chora:Imported .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/piazza_verdi> a chora:NarrativePlace ;
+    rdfs:label "Piazza Verdi"@it ;
     chora:hasPlaceCategory chora:square ;
     chora:hasRealityStatus chora:Imported .
 
@@ -13919,7 +13967,7 @@ chora:ward a owl:NamedIndividual,
     rdfs:label "Pozzofondo"@it ;
     dcterms:description "località immaginaria, luogo d'origine di Clelia Farcioni"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/quartierino_prati> a chora:NarrativePlace ;
     rdfs:label "Quartierino Prati"@it ;
@@ -14158,7 +14206,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasRealityStatus chora:Imported .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_dei_greci> a chora:NarrativePlace ;
-    rdfs:label "Via dei Greci "@it ;
+    rdfs:label "Via dei Greci"@it ;
     chora:hasPlaceCategory chora:street ;
     chora:hasRealityStatus chora:Imported .
 
@@ -14290,7 +14338,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 <https://w3id.org/gaddatlas/id/narrativeplace/villino_lungotevere> a chora:NarrativePlace ;
     rdfs:label "Villino Lungotevere"@it ;
     chora:hasPlaceCategory chora:villa ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/vite> a chora:NarrativePlace ;
     rdfs:label "Vite"@it ;
@@ -17251,7 +17299,7 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 
 <https://w3id.org/gaddatlas/id/reference/ref_00588> a chora:PlaceReference ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
-    chora:excerpt "il quale difatti, già in ansimo, annunciava il lùbrico gioco de' manovellismi su su su fu fu fu da 'e Fattocchie, vincendo la implorazione lontana der cuccù."@it ;
+    chora:excerpt "il quale difatti, già in ansimo, annunciava il lùbrico gioco de' manovellismi su su su fu fu fu da 'e Frattocchie, vincendo la implorazione lontana der cuccù."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
     chora:sourceReference "A 241"^^xsd:string .
 
@@ -17998,28 +18046,6 @@ chora:village a owl:NamedIndividual,
     geo1:long 12.52018048622454 ;
     skos:altLabel "Cimitero Monumentale del Verano"@it ;
     chora:presentLocation "Piazzale del Verano"@it .
-
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_di_leva> a chora:GazetteerEntity ;
-    rdfs:label "Castel di Leva"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.504796743330868,
-          41.7788626363677
-        ]
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 41.7788626363677 ;
-    geo1:long 12.504796743330868 .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_porziano> a chora:GazetteerEntity ;
     rdfs:label "Castel Porziano"@it ;
@@ -19087,11 +19113,6 @@ chora:village a owl:NamedIndividual,
     chora:hasPlaceCategory chora:locality ;
     chora:hasRealityStatus chora:Imported .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/banca_ditalia> a chora:NarrativePlace ;
-    rdfs:label "Banca d’Italia"@it ;
-    chora:hasPlaceCategory chora:bank ;
-    chora:hasRealityStatus chora:Imported .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/bologna> a chora:NarrativePlace ;
     rdfs:label "Bologna"@it ;
     dcterms:description "Città"@it ;
@@ -19112,12 +19133,12 @@ chora:village a owl:NamedIndividual,
     rdfs:label "Casa del Butiro"@it ;
     dcterms:description "Casa immaginata nella zona dei Due Santi"@it ;
     chora:hasPlaceCategory chora:farmhouse ;
-    chora:hasRealityStatus chora:Invented .
+    chora:hasRealityStatus chora:Imagined .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/cassero> a chora:NarrativePlace ;
     rdfs:label "Cassero"@it ;
     chora:hasPlaceCategory chora:castle ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/castel_di_leva> a chora:NarrativePlace ;
     rdfs:label "Castel di Leva"@it ;
@@ -19129,7 +19150,7 @@ chora:village a owl:NamedIndividual,
     dcterms:description "Castello d'immaginazione, deformazione linguistica di Castel Porziano"@it ;
     skos:altLabel "castel porcino"@it ;
     chora:hasPlaceCategory chora:castle ;
-    chora:hasRealityStatus chora:Invented .
+    chora:hasRealityStatus chora:Imagined .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/cecchina> a chora:NarrativePlace ;
     rdfs:label "Cecchina"@it ;
@@ -19138,14 +19159,14 @@ chora:village a owl:NamedIndividual,
 
 <https://w3id.org/gaddatlas/id/narrativeplace/centrale_del_latte> a chora:NarrativePlace ;
     rdfs:label "Centrale del Latte"@it ;
-    dcterms:description " Il complesso, progettato dall'architetto Innocenzo Costantini, si estendeva su tutta l'area di Piazza Pepe, sulla quale si affaccia anche il famoso Teatro Ambra Jovinelli.[5] La struttura, sorta nel pieno periodo fascista (1929), era inoltre disposta nel cortile dove troneggiava l'Acquedotto Giulio (Aqua Iulia)."@it ;
+    dcterms:description "Il complesso, progettato dall'architetto Innocenzo Costantini, si estendeva su tutta l'area di Piazza Pepe, sulla quale si affaccia anche il famoso Teatro Ambra Jovinelli.[5] La struttura, sorta nel pieno periodo fascista (1929), era inoltre disposta nel cortile dove troneggiava l'Acquedotto Giulio (Aqua Iulia)."@it ;
     rdfs:comment "Abattuto nel 1990"@it ;
     chora:hasPlaceCategory chora:building ;
     chora:hasRealityStatus chora:Imported .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/collina_molisana> a chora:NarrativePlace ;
     rdfs:label "Collina molisana"@it ;
-    dcterms:description "Espressione evocativa usata come sineddoche spaziale dell’origine sociale e culturale del personaggio; non luogo diegetico "@it ;
+    dcterms:description "Espressione evocativa usata come sineddoche spaziale dell’origine sociale e culturale del personaggio; non luogo diegetico"@it ;
     rdfs:comment "Uso retorico-identitario"@it ;
     chora:hasFuzzinessLevel 3.0 ;
     chora:hasPlaceCategory chora:hill ;
@@ -19205,14 +19226,6 @@ chora:village a owl:NamedIndividual,
     dcterms:description "Monte tra Lazio e Abruzzo"@it ;
     chora:hasPlaceCategory chora:mountain ;
     chora:hasRealityStatus chora:Imported .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi> a chora:NarrativePlace ;
-    rdfs:label "Orto o Vigna ai Due Santi"@it ;
-    dcterms:description "Luogo non precisato simile a un orto o una vigna, di fronte al laboratorio della Zamira, al lato opposto della via Appia "@it ;
-    chora:hasFuzzinessLevel 4.0 ;
-    chora:hasPlaceCategory chora:kitchen_garden ;
-    chora:hasRealityStatus chora:Imagined ;
-    chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/ostia> a chora:NarrativePlace ;
     rdfs:label "Ostia"@it ;
@@ -19289,7 +19302,7 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/narrativeplace/roccafringoli> a chora:NarrativePlace ;
     rdfs:label "Roccafringoli"@it ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Invented .
+    chora:hasRealityStatus chora:Imagined .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/santa_margherita_in_abitacolo> a chora:NarrativePlace ;
     rdfs:label "Santa Margherita in Abitacolo"@it ;
@@ -19393,7 +19406,7 @@ chora:village a owl:NamedIndividual,
     dcterms:description "via topograficamente non precisata"@it ;
     rdfs:comment "Toponimo non attestato nella toponomastica storica milanese. L’espressione «via delle Oche» è qui utilizzata in modo allusivo e deformante; la localizzazione urbana non va intesa in senso referenziale, ma come costruzione narrativa simbolica."@it ;
     chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_di_san_paolo_della_croce> a chora:NarrativePlace ;
     rdfs:label "Via di San Paolo della Croce"@it ;
@@ -20316,8 +20329,8 @@ chora:temple a owl:NamedIndividual,
     geo1:lat 44.49555555061309 ;
     geo1:long 11.344545396805216 .
 
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_gandolfo> a chora:GazetteerEntity ;
-    rdfs:label "Castel Gandolfo"@it ;
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_di_leva> a chora:GazetteerEntity ;
+    rdfs:label "Castel di Leva"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
             geosparql:asGeoJSON """{
   "type": "FeatureCollection",
@@ -20328,17 +20341,15 @@ chora:temple a owl:NamedIndividual,
       "geometry": {
         "type": "Point",
         "coordinates": [
-          12.64847290122697,
-          41.75005641875434
-
+          12.504796743330868,
+          41.7788626363677
         ]
       }
     }
   ]
 }"""^^geosparql:geoJSONLiteral ] ;
-    owl:sameAs <file:///Users/lnz_sbt/Documents/gaddatlas/data/gaz_castello> ;
-    geo1:lat 41.75005641875434 ;
-    geo1:long 12.64847290122697 .
+    geo1:lat 41.7788626363677 ;
+    geo1:long 12.504796743330868 .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_colli_albani> a chora:GazetteerEntity ;
     rdfs:label "Colli Albani"@it ;
@@ -20361,6 +20372,30 @@ chora:temple a owl:NamedIndividual,
 }"""^^geosparql:geoJSONLiteral ] ;
     geo1:lat 41.7320873 ;
     geo1:long 12.6960074 .
+
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_edicola_due_santi> a chora:GazetteerEntity ;
+    rdfs:label "Edicola ai Due Santi"@it ;
+    dcterms:source "Posizione derivata da gaz_due_santi con uno scarto convenzionale di circa 40 m (+0,0003° lat/long), solo per distinguere i generatori della tassellazione: nessuna coordinata TCI disponibile. Esistenza del tabernacolo: piantina dei Castelli, TCI, Italia centrale IV (Manzotti 2010, p. 246)."^^xsd:string ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.616871382457,
+          41.761482099679
+        ]
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 41.761482099679 ;
+    geo1:long 12.616871382457 ;
+    skos:altLabel "tabernacolo"@it .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_falcognana> a chora:GazetteerEntity ;
     rdfs:label "Falcognana"@it ;
@@ -20429,30 +20464,6 @@ chora:temple a owl:NamedIndividual,
     geo1:lat 41.89499585680336 ;
     geo1:long 12.49962004376294 ;
     chora:presentLocation "Largo Brancaccio"@it .
-
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_lungara> a chora:GazetteerEntity ;
-    rdfs:label "Lungara"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.465430919268728,
-          41.895495366978146
-        ]
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    owl:sameAs <file:///Users/lnz_sbt/Documents/gaddatlas/data/gaz_regina_coeli> ;
-    geo1:lat 41.89549536697815 ;
-    geo1:long 12.465430919268728 ;
-    chora:presentLocation "via della Lungara"@it .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_monte_manno> a chora:GazetteerEntity ;
     rdfs:label "Monte Manno"@it ;
@@ -20662,7 +20673,7 @@ chora:temple a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira> a chora:NarrativePlace ;
     rdfs:label "Casuccia della Zamira"@it ;
     chora:hasPlaceCategory chora:dwelling ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/celio> a chora:NarrativePlace ;
     rdfs:label "Celio"@it ;
@@ -20671,11 +20682,10 @@ chora:temple a owl:NamedIndividual,
 
 <https://w3id.org/gaddatlas/id/narrativeplace/edicola_due_santi> a chora:NarrativePlace ;
     rdfs:label "Edicola ai Due Santi"@it ;
-    dcterms:description "Edicola immaginata al di sopra del muro di cinta della vigna/orto sul lato opposto della via Appia rispetto al laboratorio della Zamira"@it ;
+    dcterms:description "Tabernacolo a due pioventi che interrompe il muriccio dell'orto o vigna di fronte al laboratorio della Zamira, sul lato opposto della via Appia (QP 216, 219). Luogo importato: Manzotti (2010, p. 246) ne trova traccia nella piantina dei Castelli del Touring."@it ;
     skos:altLabel "tabernacolo appia"@it ;
     chora:hasPlaceCategory chora:shrine ;
-    chora:hasRealityStatus chora:Imagined ;
-    chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi> .
+    chora:hasRealityStatus chora:Imported .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/falcognana> a chora:NarrativePlace ;
     rdfs:label "Falcognana"@it ;
@@ -20703,7 +20713,7 @@ chora:temple a owl:NamedIndividual,
     dcterms:description "Albergo immaginario, possibile deformazione di Pensione Villa Borghese, via Sgambati 4, vicino Porta Pinciana"@it ;
     chora:hasFuzzinessLevel 4.0 ;
     chora:hasPlaceCategory chora:hotel ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_san_lorenzo_in_lucina> a chora:NarrativePlace ;
     rdfs:label "Piazza San Lorenzo in Lucina"@it ;
@@ -20727,7 +20737,7 @@ chora:temple a owl:NamedIndividual,
     dcterms:description "Toponimo indiano fittizio, ancorato a un referente reale (Brahmaputra) ma non identificabile:"@it ;
     chora:hasFuzzinessLevel 3.0 ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Invented .
+    chora:hasRealityStatus chora:Imagined .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/solforata> a chora:NarrativePlace ;
     rdfs:label "Solforata"@it ;
@@ -20934,6 +20944,18 @@ chora:temple a owl:NamedIndividual,
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 292"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/reference/ref_00683> a chora:PlaceReference ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
+    chora:excerpt "quando la strombazzò due volte poh! poh! davanti al portone della rocca."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
+    chora:sourceReference "A 294"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00684> a chora:PlaceReference ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
+    chora:excerpt "Il selciato scivoloso. Una lastra al cantone: via Massimo Dazzélio."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
+    chora:sourceReference "A 294"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/reference/ref_00720> a chora:PlaceReference ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
     chora:excerpt "« Fate passare, in ogni modo. Andiamo. Su. Devo far perquisire la casa. »"@it ;
@@ -21100,8 +21122,8 @@ chora:police_station a owl:NamedIndividual,
     skos:altLabel "Campo di Marte"@it ;
     chora:presentLocation "Rione IV"@it .
 
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_collegio_romano> a chora:GazetteerEntity ;
-    rdfs:label "Collegio Romano"@it ;
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_gandolfo> a chora:GazetteerEntity ;
+    rdfs:label "Castel Gandolfo"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
             geosparql:asGeoJSON """{
   "type": "FeatureCollection",
@@ -21112,17 +21134,17 @@ chora:police_station a owl:NamedIndividual,
       "geometry": {
         "type": "Point",
         "coordinates": [
-          12.47948307900791,
-          41.89737347768524
+          12.64847290122697,
+          41.75005641875434
+
         ]
       }
     }
   ]
 }"""^^geosparql:geoJSONLiteral ] ;
-    owl:sameAs <file:///Users/lnz_sbt/Documents/gaddatlas/data/gaz_santo_stefano_del_cacco_celio_santo_stefano> ;
-    geo1:lat 41.89737347768524 ;
-    geo1:long 12.47948307900791 ;
-    chora:presentLocation "via Santo Stefano del Cacco"@it .
+    owl:sameAs <https://w3id.org/gaddatlas/id/gazetteer/gaz_castello> ;
+    geo1:lat 41.75005641875434 ;
+    geo1:long 12.64847290122697 .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_direttissima_roma_napoli> a chora:GazetteerEntity ;
     rdfs:label "Direttissima Roma-Napoli"@it ;
@@ -21145,6 +21167,30 @@ chora:police_station a owl:NamedIndividual,
 }"""^^geosparql:geoJSONLiteral ] ;
     geo1:lat 41.64771889912876 ;
     geo1:long 12.64899568499919 .
+
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_lungara> a chora:GazetteerEntity ;
+    rdfs:label "Lungara"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.465430919268728,
+          41.895495366978146
+        ]
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    owl:sameAs <https://w3id.org/gaddatlas/id/gazetteer/gaz_regina_coeli> ;
+    geo1:lat 41.89549536697815 ;
+    geo1:long 12.465430919268728 ;
+    chora:presentLocation "via della Lungara"@it .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_palazzo> a chora:GazetteerEntity ;
     rdfs:label "Palazzo"@it ;
@@ -21366,7 +21412,7 @@ chora:police_station a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/narrativeplace/bottega_ceccherelli> a chora:NarrativePlace ;
     rdfs:label "Bottega Ceccherelli"@it ;
     chora:hasPlaceCategory chora:retail_business ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/campo_marzio> a chora:NarrativePlace ;
     rdfs:label "Campo Marzio"@it ;
@@ -21396,7 +21442,7 @@ chora:police_station a owl:NamedIndividual,
     chora:hasRealityStatus chora:Imported .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/palazzo> a chora:NarrativePlace ;
-    rdfs:label "Palazzo "@it ;
+    rdfs:label "Palazzo"@it ;
     chora:hasPlaceCategory chora:station ;
     chora:hasRealityStatus chora:Imported .
 
@@ -21431,7 +21477,7 @@ chora:police_station a owl:NamedIndividual,
     chora:hasRealityStatus chora:Imported .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_lanza> a chora:NarrativePlace ;
-    rdfs:label "Via Lanza "@it ;
+    rdfs:label "Via Lanza"@it ;
     chora:hasPlaceCategory chora:street ;
     chora:hasRealityStatus chora:Imported .
 
@@ -21464,18 +21510,6 @@ chora:police_station a owl:NamedIndividual,
     chora:excerpt "Così almanaccando s'avvide alfine della strada: erano quasi all'anziate."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
     chora:sourceReference "A 274"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/reference/ref_00683> a chora:PlaceReference ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
-    chora:excerpt "quando la strombazzò due volte poh! poh! davanti al portone della rocca."@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
-    chora:sourceReference "A 294"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/reference/ref_00684> a chora:PlaceReference ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
-    chora:excerpt "Il selciato scivoloso. Una lastra al cantone: via Massimo Dazzélio."@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
-    chora:sourceReference "A 294"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00687> a chora:PlaceReference ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> ;
@@ -21672,6 +21706,30 @@ chora:retail_business a owl:NamedIndividual,
     geo1:long 12.599503897985612 ;
     chora:presentLocation "Ciampino"@it .
 
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_collegio_romano> a chora:GazetteerEntity ;
+    rdfs:label "Collegio Romano"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.47948307900791,
+          41.89737347768524
+        ]
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    owl:sameAs <https://w3id.org/gaddatlas/id/gazetteer/gaz_santo_stefano_del_cacco_celio_santo_stefano> ;
+    geo1:lat 41.89737347768524 ;
+    geo1:long 12.47948307900791 ;
+    chora:presentLocation "via Santo Stefano del Cacco"@it .
+
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_molo_beverello> a chora:GazetteerEntity ;
     rdfs:label "Molo Beverello"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -21763,30 +21821,6 @@ chora:retail_business a owl:NamedIndividual,
     geo1:lat 41.90968492139161 ;
     geo1:long 12.488262466067692 ;
     chora:presentLocation "Via Vittorio Veneto, 196, 00187"@it .
-
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_regina_coeli> a chora:GazetteerEntity ;
-    rdfs:label "Regina Coeli"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "coordinates": [
-          12.463486619911357,
-          41.89541963959722
-        ],
-        "type": "Point"
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    owl:sameAs <file:///Users/lnz_sbt/Documents/gaddatlas/data/gaz_lungara> ;
-    geo1:lat 41.89541963959722 ;
-    geo1:long 12.463486619911356 ;
-    chora:presentLocation "Via della Lungara, 29, 00165"@it .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_san_giovanni> a chora:GazetteerEntity ;
     rdfs:label "San Giovanni"@it ;
@@ -21955,8 +21989,8 @@ chora:interior a owl:NamedIndividual,
     chora:characterName "Zio Cantoniere"@it ;
     chora:hasGender "male"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> a chora:GazetteerEntity ;
-    rdfs:label "Ferrovia Roma-Velletri"@it ;
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_regina_coeli> a chora:GazetteerEntity ;
+    rdfs:label "Regina Coeli"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
             geosparql:asGeoJSON """{
   "type": "FeatureCollection",
@@ -21965,17 +21999,19 @@ chora:interior a owl:NamedIndividual,
       "type": "Feature",
       "properties": {},
       "geometry": {
-        "type": "Point",
         "coordinates": [
-          12.601126265148837,
-          41.75795460249268
-        ]
+          12.463486619911357,
+          41.89541963959722
+        ],
+        "type": "Point"
       }
     }
   ]
 }"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 41.75795460249268 ;
-    geo1:long 12.601126265148835 .
+    owl:sameAs <https://w3id.org/gaddatlas/id/gazetteer/gaz_lungara> ;
+    geo1:lat 41.89541963959722 ;
+    geo1:long 12.463486619911356 ;
+    chora:presentLocation "Via della Lungara, 29, 00165"@it .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_roma> a chora:GazetteerEntity ;
     rdfs:label "Roma"@it ;
@@ -22045,51 +22081,6 @@ chora:interior a owl:NamedIndividual,
     geo1:long 12.498397680304144 ;
     skos:altLabel "Santa Maria della Neve"@it ;
     chora:presentLocation "P.za di Santa Maria Maggiore, 00100"@it .
-
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba> a chora:GazetteerEntity ;
-    rdfs:label "Santa Palomba"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "coordinates": [
-          12.573826656277753,
-          41.70649880109798
-        ],
-        "type": "Point"
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 41.70649880109798 ;
-    geo1:long 12.573826656277753 ;
-    chora:presentLocation "Via della Stazione, 00040"@it .
-
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_via_ardeatina> a chora:GazetteerEntity ;
-    rdfs:label "Via Ardeatina"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "coordinates": [
-          12.560749021883575,
-          41.748548036845285
-        ],
-        "type": "Point"
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 41.748548036845285 ;
-    geo1:long 12.560749021883575 .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_del_gesu> a chora:GazetteerEntity ;
     rdfs:label "Via del Gesù"@it ;
@@ -22161,7 +22152,7 @@ chora:interior a owl:NamedIndividual,
     rdfs:label "Cantinone d'Albano"@it ;
     dcterms:description "Ristorante non identificato nel territorio di Albano Laziale"@it ;
     chora:hasPlaceCategory chora:restaurant ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/milano> a chora:NarrativePlace ;
     rdfs:label "Milanno"@it ;
@@ -22359,15 +22350,6 @@ chora:station a owl:NamedIndividual,
     chora:hasPlaceCategory chora:street ;
     chora:hasRealityStatus chora:Imported .
 
-chora:Invented a owl:NamedIndividual,
-        skos:Concept ;
-    owl:differentFrom chora:Transformed ;
-    skos:altLabel "Inventato"@it ;
-    skos:definition "There is no hint at all about the position of the setting, it is located ‘somewhere’, with no real-world counterpart, only existing within the narration. Consequently, it is not possible to assign coordinates" ;
-    skos:inScheme chora:RealityStatusScheme ;
-    skos:prefLabel "Invented"@en ;
-    skos:topConceptOf chora:RealityStatusScheme .
-
 chora:restaurant a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "Ristorante"@it ;
@@ -22381,8 +22363,21 @@ chora:restaurant a owl:NamedIndividual,
     rdfs:label "Casa Crocchiapani"@it ;
     dcterms:description "Abitazione immaginaria di Assunta (Tina) Crocchiapani"@it ;
     chora:hasPlaceCategory chora:farmhouse ;
-    chora:hasRealityStatus chora:Imagined ;
+    chora:hasRealityStatus chora:Invented ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/tor_di_gheppio> .
+
+chora:Imagined a owl:NamedIndividual,
+        skos:Concept ;
+    owl:differentFrom chora:Imported,
+        chora:Invented,
+        chora:Transformed ;
+    skos:altLabel "Immaginato"@it ;
+    skos:definition "There is no hint at all about the position of the setting, it is located ‘somewhere’, with no real-world counterpart, only existing within the narration. Consequently, it is not possible to assign coordinates" ;
+    skos:inScheme chora:RealityStatusScheme ;
+    skos:notation "4" ;
+    skos:prefLabel "Imagined"@en ;
+    skos:scopeNote "Fourth and most abstract degree of the scale: the place is set 'somewhere', without any indication of position. Not to be confused with Invented, a fictional place located within a known geography (Reuschel, Piatti and Hurni 2013, pp. 138–139)."@en ;
+    skos:topConceptOf chora:RealityStatusScheme .
 
 chora:RealityStatusScheme a owl:NamedIndividual,
         skos:ConceptScheme ;
@@ -22529,6 +22524,29 @@ chora:Church a owl:NamedIndividual,
     geo1:lat 41.72979996535707 ;
     geo1:long 12.65920047759274 .
 
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba> a chora:GazetteerEntity ;
+    rdfs:label "Santa Palomba"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          12.573826656277753,
+          41.70649880109798
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 41.70649880109798 ;
+    geo1:long 12.573826656277753 ;
+    chora:presentLocation "Via della Stazione, 00040"@it .
+
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_santi_quattro_coronati> a chora:GazetteerEntity ;
     rdfs:label "Santi Quattro Coronati"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -22562,15 +22580,6 @@ chora:Church a owl:NamedIndividual,
     chora:hasPlaceCategory chora:basilica ;
     chora:hasRealityStatus chora:Imported .
 
-chora:AdjacentTo a owl:NamedIndividual,
-        skos:Concept ;
-    dcterms:description "A è adiacente a B, i loro confini si toccano senza sovrapporsi."@it ;
-    rdfs:comment "Basato su RCC-8 EC (Externally Connected) e GeoSPARQL sfTouches" ;
-    skos:altLabel "Adiacente a"@it ;
-    skos:inScheme chora:SpatialRelationTypeScheme ;
-    skos:prefLabel "Adjacent to"@en ;
-    skos:topConceptOf chora:SpatialRelationTypeScheme .
-
 chora:NarrativeRoleScheme a owl:NamedIndividual,
         skos:ConceptScheme ;
     rdfs:label "Narrative Role"@en ;
@@ -22593,6 +22602,28 @@ chora:NarrativeRoleScheme a owl:NamedIndividual,
     dcterms:description "Virginia Troddu: ex pupilla e “nipote” adottiva informale di Liliana Balducci, originaria della Pavona; già convivente presso i Balducci in una condizione forse assimilabile al mezzo servizio, beneficiaria della loro protezione e di una dote, seduttrice di entrambi i coniugi e assassina implicita di Liliana."@it ;
     chora:characterName "Virginia Troddu"@it ;
     chora:hasGender "female"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_via_ardeatina> a chora:GazetteerEntity ;
+    rdfs:label "Via Ardeatina"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          12.560749021883575,
+          41.748548036845285
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 41.748548036845285 ;
+    geo1:long 12.560749021883575 .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/frattocchie> a chora:NarrativePlace ;
     rdfs:label "Frattocchie"@it ;
@@ -22642,6 +22673,31 @@ chora:historical_building a owl:NamedIndividual,
     skos:inScheme chora:PlaceCategoryScheme ;
     skos:prefLabel "Historical building"@en ;
     skos:topConceptOf chora:PlaceCategoryScheme .
+
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato> a chora:GazetteerEntity ;
+    rdfs:label "Casale Abbruciato"@it ;
+    dcterms:source "Posizione ADOTTATA: TCI, Italia centrale I, carta «Colli Laziali, Monti Lepini ed Ernici» 1:250.000, inserita tra le pp. 480 e 481 (Manzotti 2010, Tav. VI, p. 300): casale fra le ferrovie Roma–Velletri e Roma–Napoli, all'altezza di Santa Fumia, lungo il fosso di Casale Abbrusciato. Coordinate stimate (precisione ~1 km): punto mediano fra le due ferrovie alla latitudine di Borgo Santa Fumia (OpenStreetMap). Posizione ALTERNATIVA: IGM, F. 150 III SO, 1:25.000, rilievo 1872, aggiornamenti 1931 e 1940 (Manzotti 2010, Tav. VII, p. 301): «Casale Abbruciato» a ovest della Roma–Napoli, stimato a 41.7168 N 12.5683 E (reticolo UTM 33 della tavola, E 297,7 N 4621,3 km; precisione ~250 m; il reticolo della tavola è in datum ED50, e lo scarto verso WGS84, ~100–200 m, rientra in questa precisione). Manzotti 2010, pp. 268–269. Nella nota Manzotti rinvia alle tavole come «V» e «VI»: qui si citano secondo le didascalie."^^xsd:string ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.583,
+          41.7335
+        ]
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 41.7335 ;
+    geo1:long 12.583 ;
+    skos:altLabel "Casal Bruciato; Casale Abbrusciato; Casale Bruciato"@it ;
+    chora:historicalLocation "Casale dell'Agro romano a sud di Roma (Nibby, Dintorni di Roma, p. 569)"@it .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_frattocchie> a chora:GazetteerEntity ;
     rdfs:label "Frattocchie"@it ;
@@ -22712,31 +22768,10 @@ chora:historical_building a owl:NamedIndividual,
     geo1:long 12.5048427733034 ;
     chora:presentLocation "Piazza Vittorio Emanuele II"@it .
 
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_via_della_falcognana> a chora:GazetteerEntity ;
-    rdfs:label "Via della Falcognana"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.58052436788742,
-          41.759899372035875
-        ]
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 41.75989937203588 ;
-    geo1:long 12.58052436788742 .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> a chora:NarrativePlace ;
     rdfs:label "Casal Bruciato"@it ;
-    dcterms:description "Quartiere di Roma"@it ;
+    dcterms:description "Casale reale dell'Agro romano a sud di Roma (Casal(e) Bruciato / Abbruciato / Abbrusciato: Nibby, Dintorni di Roma, p. 569), fra le ferrovie Roma–Velletri e Roma–Napoli. Non è il quartiere omonimo del Tiburtino. Forme attestate: «Casal Bruciato» (QP 212, 237, 240, 241, 262, 274, 298), «Casale Abbrusciato» (QP 297)."@it ;
+    skos:altLabel "Casale Abbrusciato"@it ;
     chora:hasPlaceCategory chora:district ;
     chora:hasRealityStatus chora:Imported .
 
@@ -22764,12 +22799,41 @@ chora:mountain a owl:NamedIndividual,
     skos:prefLabel "Mountain"@en ;
     skos:topConceptOf chora:PlaceCategoryScheme .
 
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_via_della_falcognana> a chora:GazetteerEntity ;
+    rdfs:label "Via della Falcognana"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.58052436788742,
+          41.759899372035875
+        ]
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 41.75989937203588 ;
+    geo1:long 12.58052436788742 .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/marino> a chora:NarrativePlace ;
+    rdfs:label "Marino"@it ;
+    dcterms:description "Località dei Castelli Romani"@it ;
+    rdfs:comment "Non presente in Indice dei Luoghi Isella"@it ;
+    chora:hasPlaceCategory chora:locality ;
+    chora:hasRealityStatus chora:Imported .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/tor_di_gheppio> a chora:NarrativePlace ;
     rdfs:label "Tor di Gheppio"@it ;
     dcterms:description "Località inventata, natali dell'Assunta Crocchiapani"@it ;
     chora:hasFuzzinessLevel 4.0 ;
     chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imagined .
+    chora:hasRealityStatus chora:Invented .
 
 chora:district a owl:NamedIndividual,
         skos:Concept ;
@@ -22800,46 +22864,6 @@ chora:square a owl:NamedIndividual,
     dcterms:description "Il «ponte» è il cavalcavia stradale della SP 91/b sulla ferrovia Roma–Velletri, oggi linea FL4. Non attraversa un corso d’acqua e non coincide con un ponte situato accanto al santuario."@it ;
     chora:hasPlaceCategory chora:street ;
     chora:hasRealityStatus chora:Transformed .
-
-chora:Imagined a owl:NamedIndividual,
-        skos:Concept ;
-    owl:differentFrom chora:Imported,
-        chora:Invented,
-        chora:Transformed ;
-    skos:altLabel "Immaginato"@it ;
-    skos:definition "An invented setting within familiar geographical reality" ;
-    skos:inScheme chora:RealityStatusScheme ;
-    skos:prefLabel "Imagined"@en ;
-    skos:topConceptOf chora:RealityStatusScheme .
-
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_ponte_divino_amore> a chora:GazetteerEntity ;
-    rdfs:label "Ponte al Divino Amore"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.599632278065911,
-          41.760714200375276
-        ]
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 41.76071420037528 ;
-    geo1:long 12.599632278065911 .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/marino> a chora:NarrativePlace ;
-    rdfs:label "Marino"@it ;
-    dcterms:description "Località dei Castelli Romani"@it ;
-    rdfs:comment "Non presente in Indice dei Luoghi Isella"@it ;
-    chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
 
 chora:SpatialRelationTypeScheme a owl:NamedIndividual,
         skos:ConceptScheme ;
@@ -22893,11 +22917,46 @@ chora:basilica a owl:NamedIndividual,
     geo1:lat 41.73247489501876 ;
     geo1:long 12.58446168893847 .
 
+chora:Invented a owl:NamedIndividual,
+        skos:Concept ;
+    owl:differentFrom chora:Imagined,
+        chora:Imported,
+        chora:Transformed ;
+    skos:altLabel "Inventato"@it ;
+    skos:definition "An invented setting within familiar geographical reality" ;
+    skos:inScheme chora:RealityStatusScheme ;
+    skos:notation "3" ;
+    skos:prefLabel "Invented"@en ;
+    skos:scopeNote "Third degree of the scale: a fictional place set within a known, identifiable geography, so that its position can be indicated or inferred. Not to be confused with Imagined, which has no indication of position at all (Reuschel, Piatti and Hurni 2013, pp. 138–139)."@en ;
+    skos:topConceptOf chora:RealityStatusScheme .
+
 <https://w3id.org/gaddatlas/id/focalizer/giuliano_valdarena> a chora:Character,
         chora:FocalizingAgent ;
     dcterms:description "Giuliano Valdarena, cugino di Liliana, tra i sospettati."@it ;
     chora:characterName "Giuliano Valdarena"@it ;
     chora:hasGender "male"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_ponte_divino_amore> a chora:GazetteerEntity ;
+    rdfs:label "Ponte al Divino Amore"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.599632278065911,
+          41.760714200375276
+        ]
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 41.76071420037528 ;
+    geo1:long 12.599632278065911 .
 
 chora:Overlaps a owl:NamedIndividual,
         skos:Concept ;
@@ -22929,9 +22988,9 @@ chora:NarrativeRoute a owl:Class ;
 
 <https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira> a chora:NarrativePlace ;
     rdfs:label "Laboratorio della Zamira Pacori"@it ;
-    skos:altLabel "antro;botteguccia; bottega;"@it ;
+    skos:altLabel "antro; botteguccia; bottega"@it ;
     chora:hasPlaceCategory chora:building ;
-    chora:hasRealityStatus chora:Imagined ;
+    chora:hasRealityStatus chora:Invented ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira> .
 
 <https://w3id.org/gaddatlas/id/focalizer/camilla_mattonari> a chora:Character,
@@ -23019,16 +23078,16 @@ chora:NarrativeRoute a owl:Class ;
     chora:hasPlaceCategory chora:street ;
     chora:hasRealityStatus chora:Imported .
 
+<https://w3id.org/gaddatlas/id/focalizer/maresciallo_di_pietrantonio> a chora:Character,
+        chora:FocalizingAgent ;
+    chora:characterName "Maresciallo Di Pietrantonio"@it ;
+    chora:hasGender "male"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/tenenza_carabinieri_marino> a chora:NarrativePlace ;
     rdfs:label "Tenenza dei Carabinieri di Marino"@it ;
     dcterms:description "Stazione di Polizia di Marino"@it ;
     chora:hasPlaceCategory chora:building ;
     chora:hasRealityStatus chora:Transformed .
-
-<https://w3id.org/gaddatlas/id/focalizer/maresciallo_di_pietrantonio> a chora:Character,
-        chora:FocalizingAgent ;
-    chora:characterName "Maresciallo Di Pietrantonio"@it ;
-    chora:hasGender "male"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/focalizer/agente_runzato> a chora:Character,
         chora:FocalizingAgent ;
@@ -23069,22 +23128,17 @@ chora:Route a owl:NamedIndividual,
     chora:hasPlaceCategory chora:locality ;
     chora:hasRealityStatus chora:Imported .
 
-chora:Transformed a owl:NamedIndividual,
+chora:AdjacentTo a owl:NamedIndividual,
         skos:Concept ;
-    skos:altLabel "Trasformato"@it ;
-    skos:definition "The setting is transformed, with techniques of remodelling, renaming, relocation or a synthesis of several places" ;
-    skos:inScheme chora:RealityStatusScheme ;
-    skos:prefLabel "Transformed"@en ;
-    skos:topConceptOf chora:RealityStatusScheme .
+    dcterms:description "A è adiacente a B, i loro confini si toccano senza sovrapporsi."@it ;
+    rdfs:comment "Basato su RCC-8 EC (Externally Connected) e GeoSPARQL sfTouches" ;
+    skos:altLabel "Adiacente a"@it ;
+    skos:inScheme chora:SpatialRelationTypeScheme ;
+    skos:prefLabel "Adjacent to"@en ;
+    skos:topConceptOf chora:SpatialRelationTypeScheme .
 
-<https://w3id.org/gaddatlas/id/focalizer/commendador_angeloni> a chora:Character,
-        chora:FocalizingAgent ;
-    dcterms:description "Commendator Angeloni, vicino di casa dei Balducci, interrogato all'inizio dell'indagine."@it ;
-    chora:characterName "Commendador Angeloni"@it ;
-    chora:hasGender "male"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato> a chora:GazetteerEntity ;
-    rdfs:label "Casal Bruciato"@it ;
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> a chora:GazetteerEntity ;
+    rdfs:label "Ferrovia Roma-Velletri"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
             geosparql:asGeoJSON """{
   "type": "FeatureCollection",
@@ -23095,15 +23149,42 @@ chora:Transformed a owl:NamedIndividual,
       "geometry": {
         "type": "Point",
         "coordinates": [
-          12.550603021665,
-          41.90695676286888
+          12.601126265148837,
+          41.75795460249268
         ]
       }
     }
   ]
 }"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 41.90695676286888 ;
-    geo1:long 12.550603021665 .
+    geo1:lat 41.75795460249268 ;
+    geo1:long 12.601126265148835 .
+
+chora:Near a owl:NamedIndividual,
+        skos:Concept ;
+    dcterms:description "A è in prossimità di B, senza specificare distanza esatta. Relazione qualitativa di vicinanza."@it ;
+    rdfs:comment "Basato su Distance Relations in narratologia spaziale (Ryan 2001)"@it ;
+    skos:altLabel "Vicino a"@it ;
+    skos:inScheme chora:SpatialRelationTypeScheme ;
+    skos:prefLabel "Near"@en ;
+    skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+chora:Transformed a owl:NamedIndividual,
+        skos:Concept ;
+    owl:differentFrom chora:Imagined,
+        chora:Imported,
+        chora:Invented ;
+    skos:altLabel "Trasformato"@it ;
+    skos:definition "The setting is transformed, with techniques of remodelling, renaming, relocation or a synthesis of several places" ;
+    skos:inScheme chora:RealityStatusScheme ;
+    skos:notation "2" ;
+    skos:prefLabel "Transformed"@en ;
+    skos:topConceptOf chora:RealityStatusScheme .
+
+<https://w3id.org/gaddatlas/id/focalizer/commendador_angeloni> a chora:Character,
+        chora:FocalizingAgent ;
+    dcterms:description "Commendator Angeloni, vicino di casa dei Balducci, interrogato all'inizio dell'indagine."@it ;
+    chora:characterName "Commendador Angeloni"@it ;
+    chora:hasGender "male"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/chapter/capitolo_III> a chora:Chapter ;
     dcterms:title "Capitolo III"@it ;
@@ -23122,6 +23203,18 @@ chora:Transformed a owl:NamedIndividual,
     dcterms:description "Pompeo, detto lo Sgranfia, agente/informatore nell'orbita dell'indagine."@it ;
     chora:characterName "Pompeo"@it ;
     chora:hasGender "male"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> a chora:NarrativePlace ;
+    rdfs:label "Palazzo di via Merulana 219"@it ;
+    dcterms:description "Luogo che identifica il palazzo in via Merulana 219"@it ;
+    skos:altLabel "palazzo dell'oro; palazzo de li pescicani; ben nota architettura; casermone color pidocchio; sto palazzo; camere al duecentodiciannove; il duecentodiciannove"@it ;
+    chora:hasPlaceCategory chora:historical_building ;
+    chora:hasRealityStatus chora:Transformed .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/santo_stefano_del_cacco_celio_santo_stefano> a chora:NarrativePlace ;
+    rdfs:label "Santo Stefano del Cacco, Celio-Santo Stefano"@it ;
+    chora:hasPlaceCategory chora:police_station ;
+    chora:hasRealityStatus chora:Imported .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_santo_stefano_del_cacco_celio_santo_stefano> a chora:GazetteerEntity ;
     rdfs:label "Santo Stefano del Cacco, Celio-Santo Stefano"@it ;
@@ -23142,36 +23235,15 @@ chora:Transformed a owl:NamedIndividual,
     }
   ]
 }"""^^geosparql:geoJSONLiteral ] ;
-    owl:sameAs <file:///Users/lnz_sbt/Documents/gaddatlas/data/gaz_collegio_romano> ;
+    owl:sameAs <https://w3id.org/gaddatlas/id/gazetteer/gaz_collegio_romano> ;
     geo1:lat 41.89737347768524 ;
     geo1:long 12.47948307900791 ;
     chora:presentLocation "via Santo Stefano del Cacco"@it .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> a chora:NarrativePlace ;
-    rdfs:label "Palazzo di via Merulana 219"@it ;
-    dcterms:description "Luogo che identifica il palazzo in via Merulana 219"@it ;
-    skos:altLabel "palazzo dell'oro;palazzo de li pescicani; ben nota architettura; casermone color pidocchio; sto palazzo; camere al duecentodiciannove; il duecentodiciannove"@it ;
-    chora:hasPlaceCategory chora:historical_building ;
-    chora:hasRealityStatus chora:Transformed .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/santo_stefano_del_cacco_celio_santo_stefano> a chora:NarrativePlace ;
-    rdfs:label "Santo Stefano del Cacco, Celio-Santo Stefano"@it ;
-    chora:hasPlaceCategory chora:police_station ;
-    chora:hasRealityStatus chora:Imported .
 
 <https://w3id.org/gaddatlas/id/focalizer/ines_cionini> a chora:Character,
         chora:FocalizingAgent ;
     chora:characterName "Ines Cionini"@it ;
     chora:hasGender "female"^^xsd:string .
-
-chora:Near a owl:NamedIndividual,
-        skos:Concept ;
-    dcterms:description "A è in prossimità di B, senza specificare distanza esatta. Relazione qualitativa di vicinanza."@it ;
-    rdfs:comment "Basato su Distance Relations in narratologia spaziale (Ryan 2001)"@it ;
-    skos:altLabel "Vicino a"@it ;
-    skos:inScheme chora:SpatialRelationTypeScheme ;
-    skos:prefLabel "Near"@en ;
-    skos:topConceptOf chora:SpatialRelationTypeScheme .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_marino> a chora:GazetteerEntity ;
     rdfs:label "Marino"@it ;
@@ -23289,12 +23361,6 @@ chora:locality a owl:NamedIndividual,
     chora:pageRange "92-131"^^xsd:string ;
     chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> .
 
-<https://w3id.org/gaddatlas/id/chapter/capitolo_IX> a chora:Chapter ;
-    dcterms:title "Capitolo IX"@it ;
-    chora:chapterNumber 9 ;
-    chora:pageRange "238-277"^^xsd:string ;
-    chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> .
-
 <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> a chora:Chapter ;
     dcterms:title "Capitolo VII"@it ;
     chora:chapterNumber 7 ;
@@ -23309,6 +23375,12 @@ chora:street a owl:NamedIndividual,
     skos:inScheme chora:PlaceCategoryScheme ;
     skos:prefLabel "Street"@en ;
     skos:topConceptOf chora:PlaceCategoryScheme .
+
+<https://w3id.org/gaddatlas/id/chapter/capitolo_IX> a chora:Chapter ;
+    dcterms:title "Capitolo IX"@it ;
+    chora:chapterNumber 9 ;
+    chora:pageRange "238-277"^^xsd:string ;
+    chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi> .
 
 <https://w3id.org/gaddatlas/id/focalizer/narrator> a chora:FocalizingAgent,
         chora:Narrator ;
@@ -23479,11 +23551,13 @@ chora:Relative a owl:NamedIndividual,
 
 chora:Imported a owl:NamedIndividual,
         skos:Concept ;
-    owl:differentFrom chora:Invented,
+    owl:differentFrom chora:Imagined,
+        chora:Invented,
         chora:Transformed ;
     skos:altLabel "Importato"@it ;
     skos:definition "The setting corresponds with the geographical reality by realistically portraying the surrounding" ;
     skos:inScheme chora:RealityStatusScheme ;
+    skos:notation "1" ;
     skos:prefLabel "Imported"@en ;
     skos:topConceptOf chora:RealityStatusScheme .
 

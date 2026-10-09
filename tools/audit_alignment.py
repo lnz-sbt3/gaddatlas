@@ -13,18 +13,23 @@ Uso:  python3 tools/audit_alignment.py [--verbose]
 from __future__ import annotations
 
 import collections
+import csv
 import json
 import sys
 from pathlib import Path
 
-from rdflib import Graph, Namespace, RDF
+from rdflib import Graph, Namespace, RDF, URIRef
 
 ROOT = Path(__file__).resolve().parents[1]
 TTL = ROOT / "data" / "dist" / "gaddatlas-full.ttl"
 GEOJSON = ROOT / "data" / "dist" / "gaddatlas.geojson"
 PASSAGES = ROOT / "data" / "dist" / "passages" / "index.json"
+APP_DATA = ROOT / "app" / "public" / "data"
+TABLES = ROOT / "data" / "source" / "tables"
 
 CHORA = Namespace("https://w3id.org/chora#")
+# namespace del progetto nella forma da NON trovare (http al posto di https)
+PROJECT_NS_HTTP = ("http://w3id.org/chora", "http://w3id.org/gaddatlas")
 
 VERBOSE = "--verbose" in sys.argv
 
@@ -137,6 +142,67 @@ def main() -> int:
         f"ogni PlaceReference del TTL ha un excerpt "
         f"({len(refs_with_excerpt)}/{len(ttl_refs)})",
         "\n".join(sorted(ttl_refs - refs_with_excerpt)[:20]),
+    )
+
+    # IRI assoluti e pubblicabili (D-021). Un IRI relativo nel TTL viene
+    # risolto al parsing contro il percorso del file e diventa file:///...:
+    # e' cosi' che un percorso di desktop era finito nel grafo pubblicato.
+    # Tutti gli IRI devono avere schema http(s); quelli dei namespace del
+    # progetto devono essere https. I vocabolari W3C (http://www.w3.org/...)
+    # restano http per definizione.
+    abox = Graph()
+    abox.parse(ROOT / "data" / "gaddatlas.ttl", format="turtle")
+    bad_iri = set()
+    for graph in (g, abox):
+        for triple in graph:
+            for term in triple:
+                if not isinstance(term, URIRef):
+                    continue
+                iri = str(term)
+                if not iri.startswith(("http://", "https://")):
+                    bad_iri.add(iri)
+                elif any(iri.startswith(ns) for ns in PROJECT_NS_HTTP):
+                    bad_iri.add(iri)
+    a.check(
+        not bad_iri,
+        "ogni IRI del grafo e' assoluto (http/https), e https nei namespace del progetto",
+        "\n".join(sorted(bad_iri)[:20]),
+    )
+
+    # coerenza fra interpretazione e riferimento, sulle sorgenti (T-84).
+    # Il controllo non si puo' fare sul grafo: per scelta di modello la
+    # PlaceReference non porta il proprio luogo (lo dice solo il foglio
+    # References). Le interpretazioni senza luogo (vettori di route) sono escluse.
+    def read_tsv(name):
+        with open(TABLES / name, encoding="utf-8", newline="") as f:
+            return list(csv.DictReader(f, delimiter="\t"))
+    ref_place = {r["Reference_ID"]: r["NarrativePlace_ID"]
+                 for r in read_tsv("References.tsv")}
+    mismatch = [
+        f'{s["Interpretation_ID"]}: luogo {s["NarrativePlace_ID"]!r}, '
+        f'riferimento {s["Reference_ID"]} -> {ref_place.get(s["Reference_ID"])!r}'
+        for s in read_tsv("SpatialInterpretations.tsv")
+        if s["NarrativePlace_ID"] and ref_place.get(s["Reference_ID"]) != s["NarrativePlace_ID"]
+    ]
+    a.check(
+        not mismatch,
+        "ogni interpretazione ha lo stesso luogo del suo riferimento (sorgenti TSV)",
+        "\n".join(mismatch[:20]),
+    )
+
+    # copie pubblicate per l'interfaccia (T-83): byte per byte uguali ai
+    # derivati, altrimenti l'app mostra dati diversi da quelli del grafo
+    published = [GEOJSON, *sorted(PASSAGES.parent.glob("*.json"))]
+    stale = []
+    for src in published:
+        dst = APP_DATA / src.relative_to(ROOT / "data" / "dist")
+        if not dst.exists() or dst.read_bytes() != src.read_bytes():
+            stale.append(str(dst.relative_to(ROOT)))
+    a.check(
+        not stale,
+        f"app/public/data coincide con data/dist ({len(published) - len(stale)}/"
+        f"{len(published)} file; se no: make publish-data)",
+        "\n".join(stale),
     )
 
     # ── esclusioni attese: informative, non errori ───────────────────────

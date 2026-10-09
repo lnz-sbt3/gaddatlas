@@ -142,7 +142,7 @@ interp_00140	ref_00118	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_ste
 interp_00141	ref_00119	santo_stefano_rotondo	gaz_santo_stefano_rotondo	ines_cionini	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
 interp_00142	ref_00120	via_frangipane	gaz_via_frangipane	narrator	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
 interp_00143	ref_00121	santa_croce_in_gerusalemme	gaz_santa_croce_in_gerusalemme	narrator	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	
-interp_00144	ref_00122	marino	gaz_marino	ingravallo	zoneofaction	approximate						lorenzo_sabatino	2026-04-06 00:00:00	close reading	
+interp_00144	ref_00122	marino	gaz_marino	ingravallo	zoneofaction	approximate						lorenzo_sabatino	2026-04-06 00:00:00	close_reading	
 interp_00145	ref_00123	viminale	gaz_viminale	ingravallo	setting	approximate									
 interp_00146	ref_00123	viminale	gaz_viminale	gaudenzio	setting	approximate									
 interp_00147	ref_00124	marino	gaz_marino	ingravallo	zoneofaction	approximate									
@@ -203,7 +203,7 @@ interp_00201	ref_00173	san_giovanni_in_laterano	gaz_san_giovanni_in_laterano	ing
 interp_00202	ref_00174	porta_maggiore	gaz_porta_maggiore	ingravallo	projectedspace	approximate									
 interp_00203	ref_00175	celio	gaz_celio	ingravallo	projectedspace	approximate									
 interp_00204	ref_00176	suburra	gaz_suburra	ingravallo	projectedspace	approximate									
-interp_00205	ref_00177	via_merulana	gaz_via_merulana	narrator	setting	approximate						lorenzo_sabatino	2026-04-07 00:00:00	close reading	
+interp_00205	ref_00177	via_merulana	gaz_via_merulana	narrator	setting	approximate						lorenzo_sabatino	2026-04-07 00:00:00	close_reading	
 interp_00206	ref_00178	santo_stefano_rotondo	gaz_santo_stefano_rotondo	narrator	setting	approximate									
 interp_00207	ref_00179	piazza_vittorio_emanuele	gaz_piazza_vittorio_emanuele	narrator	marker	approximate									
 interp_00208	ref_00180	palazzo_chigi	gaz_palazzo_chigi	mussolini	marker	approximate									
@@ -243,7 +243,7 @@ interp_00241	ref_00211	lungara	gaz_lungara	commendador_angeloni	setting	approxim
 interp_00242	ref_00212	via_dei_greci	gaz_via_dei_greci	narrator	marker	approximate									
 interp_00243	ref_00213	milano	gaz_milano	remo_balducci	projectedspace	relative									
 interp_00244	ref_00214	bologna	gaz_bologna	remo_balducci	projectedspace	relative									
-interp_00245	ref_00215	vicenza 	gaz_vicenza	remo_balducci	projectedspace	relative									
+interp_00245	ref_00215	vicenza	gaz_vicenza	remo_balducci	projectedspace	relative									
 interp_00246	ref_00216	padova	gaz_padova	remo_balducci	projectedspace	relative									
 interp_00247	ref_00217	termini	gaz_termini	remo_balducci	marker	approximate									
 interp_00248	ref_00218	policlinico	gaz_policlinico	liliana	marker	approximate									
@@ -329,7 +329,7 @@ interp_00327	ref_00283	bottega_ceccherelli	gaz_roma	liliana	projectedspace	appro
 interp_00328	ref_00284	via_dei_banchi_vecchi	gaz_via_dei_banchi_vecchi	zie_valdarena	marker	approximate									
 interp_00329	ref_00285	banco_di_santo_spirito	gaz_banco_di_santo_spirito	cassiere_capo_del_bo	marker	approximate									
 interp_00330	ref_00286	banca_ditalia	gaz_banca_ditalia	cassiere_capo_del_bo	projectedspace	approximate									
-interp_00331	ref_00287	banca_ditalia	gaz_piazza_verdi	cassiere_capo_del_bo	projectedspace	approximate									
+interp_00331	ref_00287	piazza_verdi	gaz_piazza_verdi	cassiere_capo_del_bo	projectedspace	approximate									
 interp_00332	ref_00288	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	ingravallo	setting	precise									
 interp_00333	ref_00289	teatro_jovinelli	gaz_teatro_jovinelli	ingravallo	projectedspace	precise									
 interp_00334	ref_00290	golfo_di_napoli	gaz_golfo_di_napoli	dottor_fumi	projectedspace	relative									
@@ -354,8 +354,8 @@ interp_00352	ref_00303	san_lorenzo_al_verano	gaz_san_lorenzo_al_verano	corteo_fu
 interp_00353	ref_00304	tragitto_policlinico_san_lorenzo_al_verano		corteo_funebre	route	approximate									
 interp_00354	ref_00305	molo_beverello	gaz_molo_beverello	maharaja_di_tripura	marker	relative					0.5				
 interp_00355	ref_00305	molo_beverello	gaz_molo_beverello	mussolini	marker	relative									
-interp_00356	ref_00306	scerpure	gaz_brahmaputra 	maharaja_di_tripura	projectedspace	relative	adjacentto								
-interp_00357	ref_00307	rive_del_brahmaputra	gaz_brahmaputra 	maharaja_di_tripura	projectedspace	relative									
+interp_00356	ref_00306	scerpure	gaz_brahmaputra	maharaja_di_tripura	projectedspace	relative	adjacentto								
+interp_00357	ref_00307	rive_del_brahmaputra	gaz_brahmaputra	maharaja_di_tripura	projectedspace	relative									
 interp_00358	ref_00308	predappio	gaz_predappio	maharaja_di_tripura	marker	relative									
 interp_00359	ref_00308	predappio	gaz_predappio	mussolini	marker	relative									
 interp_00360	ref_00309	india	gaz_india	mussolini	marker	approximate									
@@ -363,9 +363,9 @@ interp_00361	ref_00310	policlinico	gaz_policlinico	maharaja_di_tripura	marker	ap
 interp_00362	ref_00311	centrale_del_latte	gaz_centrale_del_latte	maharaja_di_tripura	marker	relative									
 interp_00363	ref_00312	centrale_del_latte	gaz_centrale_del_latte	narrator	marker	relative									
 interp_00364	ref_00313	policlinico	gaz_policlinico	maharaja_di_tripura	marker	approximate									
-interp_00365	ref_00314	scerpure	gaz_brahmaputra 	maharaja_di_tripura	projectedspace	relative	adjacentto								
-interp_00366	ref_00315	rive_del_brahmaputra	gaz_brahmaputra 	maharaja_di_tripura	projectedspace	relative	inside								
-interp_00367	ref_00316	scerpure	gaz_brahmaputra 	maharaja_di_tripura	projectedspace	relative	adjacentto								
+interp_00365	ref_00314	scerpure	gaz_brahmaputra	maharaja_di_tripura	projectedspace	relative	adjacentto								
+interp_00366	ref_00315	rive_del_brahmaputra	gaz_brahmaputra	maharaja_di_tripura	projectedspace	relative	inside								
+interp_00367	ref_00316	scerpure	gaz_brahmaputra	maharaja_di_tripura	projectedspace	relative	adjacentto								
 interp_00368	ref_00317	san_lorenzo_al_verano	gaz_san_lorenzo_al_verano	ingravallo	setting	approximate									
 interp_00369	ref_00317	san_lorenzo_al_verano	gaz_san_lorenzo_al_verano	pompeo	setting	approximate									
 interp_00370	ref_00317	san_lorenzo_al_verano	gaz_san_lorenzo_al_verano	gaudenzio	setting	approximate									
@@ -525,8 +525,8 @@ interp_00523	ref_00446	via_della_navicella	gaz_via_della_navicella	ines_cionini	
 interp_00524	ref_00446	via_della_navicella	gaz_via_della_navicella	virginia_troddu	projectedspace	relative									
 interp_00525	ref_00447	via_di_santo_stefano_rotondo	gaz_via_di_santo_stefano_rotondo	ines_cionini	projectedspace	relative									
 interp_00526	ref_00447	via_di_santo_stefano_rotondo	gaz_via_di_santo_stefano_rotondo	virginia_troddu	projectedspace	relative									
-interp_00527	ref_00448	villa_celimontana	gaz_santa_maria_in_domnica	ines_cionini	projectedspace	relative	adjacentTo								
-interp_00528	ref_00448	villa_celimontana	gaz_santa_maria_in_domnica	virginia_troddu	projectedspace	relative	adjacentTo								
+interp_00527	ref_00448	villa_celimontana	gaz_santa_maria_in_domnica	ines_cionini	projectedspace	relative	adjacentto								
+interp_00528	ref_00448	villa_celimontana	gaz_santa_maria_in_domnica	virginia_troddu	projectedspace	relative	adjacentto								
 interp_00529	ref_00449	santa_maria_in_domnica	gaz_santa_maria_in_domnica	ines_cionini	projectedspace	relative									
 interp_00530	ref_00449	santa_maria_in_domnica	gaz_santa_maria_in_domnica	virginia_troddu	projectedspace	relative									
 interp_00531	ref_00450	tempio_di_agrippa	gaz_tempio_di_agrippa	ines_cionini	projectedspace	indeterminate									
@@ -550,10 +550,10 @@ interp_00548	ref_00462	rocca_savella	gaz_rocca_savella	ines_cionini	projectedspa
 interp_00549	ref_00463	prati	gaz_prati	ines_cionini	projectedspace	indeterminate									
 interp_00550	ref_00464	via_boncompagni	gaz_via_boncompagni	americana_inglese	projectedspace	relative									
 interp_00551	ref_00465	via_veneto	gaz_via_veneto	americana_inglese	projectedspace	relative									
-interp_00552	ref_00466	pensione_burgess	gaz_porta_pinciana	americana_inglese	projectedspace	relative	adjacentTo								
-interp_00553	ref_00467	pensione_burgess	gaz_porta_pinciana	pompeo	projectedspace	relative	adjacentTo								
+interp_00552	ref_00466	pensione_burgess	gaz_porta_pinciana	americana_inglese	projectedspace	relative	adjacentto								
+interp_00553	ref_00467	pensione_burgess	gaz_porta_pinciana	pompeo	projectedspace	relative	adjacentto								
 interp_00554	ref_00468	via_veneto	gaz_via_veneto	pompeo	projectedspace	approximate									
-interp_00555	ref_00469	palazzo_della_immacolatella	gaz_molo_beverello	americana_inglese	projectedspace	relative	adjacentTo								
+interp_00555	ref_00469	palazzo_della_immacolatella	gaz_molo_beverello	americana_inglese	projectedspace	relative	adjacentto								
 interp_00556	ref_00470	molo_beverello	gaz_molo_beverello	americana_inglese	projectedspace	relative									
 interp_00557	ref_00471	basilica_dei_frari	gaz_basilica_dei_frari	dottor_fumi	projectedspace	approximate									
 interp_00558	ref_00472	calabria	gaz_calabria	ingravallo	projectedspace	relative									
@@ -583,7 +583,7 @@ interp_00581	ref_00488	bottaro	gaz_ripetta	diomede	projectedspace	relative	insid
 interp_00582	ref_00489	ripetta	gaz_ripetta	diomede	projectedspace	approximate									
 interp_00583	ref_00490	quattro_cantoni	gaz_quattro_cantoni	diomede	projectedspace	approximate									
 interp_00584	ref_00491	aliciaro	gaz_quattro_cantoni	diomede	projectedspace	relative	inside								
-interp_00585	ref_00491	aliciaro	gaz_san_carlo_alle_quattro_fontane	diomede	projectedspace	relative	adjacentTo								
+interp_00585	ref_00491	aliciaro	gaz_san_carlo_alle_quattro_fontane	diomede	projectedspace	relative	adjacentto								
 interp_00586	ref_00492	san_carlo_alle_quattro_fontane	gaz_san_carlo_alle_quattro_fontane	diomede	projectedspace	approximate									
 interp_00587	ref_00493	vite	gaz_via_della_vite	diomede	projectedspace	relative	inside								
 interp_00588	ref_00494	buco_a_santignazio	gaz_buco_a_santignazio	diomede	projectedspace	relative									
@@ -625,8 +625,8 @@ interp_00623	ref_00518	monte_algido	gaz_monte_algido	pestalozzi	marker	precise
 interp_00624	ref_00519	monti_carseolani	gaz_monti_carseolani	pestalozzi	marker	precise									
 interp_00625	ref_00520	monte_velino	gaz_monte_velino	pestalozzi	marker	precise									
 interp_00626	ref_00521	monte_soratte	gaz_monte_soratte	pestalozzi	marker	precise									
-interp_00627	ref_00522	carsoli	gaz_carsoli	pestalozzi	marker	approximate									
-interp_00628	ref_00523	tivoli	gaz_tivoli	pestalozzi	marker	approximate									
+interp_00627	ref_00523	carsoli	gaz_carsoli	pestalozzi	marker	approximate									
+interp_00628	ref_00522	tivoli	gaz_tivoli	pestalozzi	marker	approximate									
 interp_00629	ref_00524	montagne_degli_equi	gaz_monti_carseolani	pestalozzi	marker	relative	overlaps				0.7				
 interp_00630	ref_00525	monte_velino	gaz_monte_velino	pestalozzi	marker	approximate									
 interp_00631	ref_00526	marsica	gaz_marsica	pestalozzi	marker	approximate									
@@ -641,7 +641,7 @@ interp_00637	ref_00531	cupola_san_pietro	gaz_piazza_san_pietro	pestalozzi	marker
 interp_00638	ref_00532	acquedotto_claudio	gaz_acquedotto_claudio	pestalozzi	marker	approximate									
 interp_00639	ref_00533	due_santi	gaz_due_santi	pestalozzi	projectedspace	approximate									
 interp_00640	ref_00533	due_santi	gaz_due_santi	cocullo	projectedspace	approximate									
-interp_00641	ref_00534	casal_bruciato	gaz_casal_bruciato	pestalozzi	projectedspace	indeterminate									
+interp_00641	ref_00534	casal_bruciato	gaz_casale_abbruciato	pestalozzi	projectedspace	indeterminate									Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 212, percorso sognato (Pestalozzi): Manzotti (p. 269) legge «per fil a dest» come un cambio di direzione perpendicolare, in realtà verso sinistra (a sud, verso il Circeo); lettura attribuita, fase 3.
 interp_00642	ref_00535	direttissima_roma_napoli	gaz_direttissima_roma_napoli	pestalozzi	projectedspace	indeterminate									
 interp_00643	ref_00536	campo_morto	gaz_campo_morto	pestalozzi	projectedspace	indeterminate									
 interp_00644	ref_00537	monte_circeo	gaz_monte_circeo	pestalozzi	projectedspace	indeterminate									
@@ -660,11 +660,11 @@ interp_00656	ref_00546	albano_laziale	gaz_albano_laziale	narrator	marker	relativ
 interp_00657	ref_00547	laboratorio_zamira	gaz_due_santi	narrator	setting	precise	inside								
 interp_00658	ref_00548	via_appia	gaz_via_appia	narrator	marker	relative									
 interp_00659	ref_00549	orto_vigna_due_santi		narrator	marker	indeterminate	near								
-interp_00660	ref_00550	edicola_due_santi		narrator	marker	precise	overlaps								
+interp_00660	ref_00550	edicola_due_santi	gaz_edicola_due_santi	narrator	marker	precise	overlaps								
 interp_00661	ref_00551	via_appia	gaz_via_appia	narrator	marker	relative									
 interp_00662	ref_00552	due_santi	gaz_due_santi	narrator	marker	relative									
-interp_00663	ref_00553	edicola_due_santi		narrator	marker	precise	overlaps								
-interp_00664	ref_00554	edicola_due_santi		cocullo	marker	approximate	overlaps								
+interp_00663	ref_00553	edicola_due_santi	gaz_edicola_due_santi	narrator	marker	precise	overlaps								
+interp_00664	ref_00554	edicola_due_santi	gaz_edicola_due_santi	cocullo	marker	approximate	overlaps								
 interp_00665	ref_00555	frattocchie	gaz_frattocchie	cocullo	projectedspace	relative									
 interp_00666	ref_00556	pozzofondo	gaz_valle_fondo	clelia_farcioni	projectedspace	indeterminate	overlaps				0.5				
 interp_00667	ref_00557	pavona	gaz_pavona	camilla_mattonari	projectedspace	relative									
@@ -681,7 +681,7 @@ interp_00677	ref_00564	due_santi	gaz_due_santi	zamira_pacori	projectedspace	rela
 interp_00678	ref_00565	tenenza_carabinieri_marino	gaz_marino	pestalozzi	projectedspace	relative	inside								
 interp_00679	ref_00566	castel_di_leva	gaz_castel_di_leva	camilla_mattonari	projectedspace	approximate									
 interp_00680	ref_00567	ponte_divino_amore	gaz_ponte_divino_amore	camilla_mattonari	projectedspace	approximate									
-interp_00681	ref_00568	casal_bruciato	gaz_casal_bruciato	camilla_mattonari	projectedspace	approximate									
+interp_00681	ref_00568	casal_bruciato	gaz_casale_abbruciato|gaz_castel_di_leva|gaz_ponte_divino_amore	camilla_mattonari	projectedspace	approximate	near								Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita).
 interp_00682	ref_00569	divino_amore	gaz_divino_amore	camilla_mattonari	projectedspace	approximate									
 interp_00683	ref_00570	ponte_divino_amore	gaz_ponte_divino_amore	camilla_mattonari	projectedspace	approximate									
 interp_00684	ref_00571	ponte_divino_amore	gaz_ponte_divino_amore	camilla_mattonari	projectedspace	approximate									
@@ -709,27 +709,27 @@ interp_00705	ref_00581	bivio_falcognana_casal_bruciato	gaz_via_della_falcognana	
 interp_00706	ref_00582	via_della_falcognana	gaz_via_della_falcognana	narrator	marker	precise									
 interp_00707	ref_00583	ponte_divino_amore	gaz_ponte_divino_amore	narrator	marker	precise									
 interp_00708	ref_00584	ferrovia_roma_velletri	gaz_ferrovia_roma_velletri	narrator	marker	precise									
-interp_00709	ref_00585	casal_bruciato	gaz_casal_bruciato	narrator	marker	precise									
-interp_00710	ref_00586	casello_km_20_25	gaz_casal_bruciato	pestalozzi	setting	approximate	near								
-interp_00711	ref_00586	casello_km_20_25	gaz_casal_bruciato	cocullo	setting	approximate	near								
+interp_00709	ref_00585	casal_bruciato	gaz_casale_abbruciato|gaz_via_della_falcognana|gaz_ponte_divino_amore|gaz_ferrovia_roma_velletri	narrator	marker	precise	near								Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita).
+interp_00710	ref_00586	casello_km_20_25	gaz_ferrovia_roma_velletri	pestalozzi	setting	approximate	adjacentto								
+interp_00711	ref_00586	casello_km_20_25	gaz_ferrovia_roma_velletri	cocullo	setting	approximate	adjacentto								
 interp_00712	ref_00587	passaggio_livello_casal_bruciato		nonna_mattonari	setting	approximate									
 interp_00713	ref_00588	frattocchie	gaz_frattocchie	narrator	marker	precise									
-interp_00714	ref_00589	casello_km_20_25	gaz_casal_bruciato	narrator	marker	precise	near								
-interp_00715	ref_00590	casello_km_20_25	gaz_casal_bruciato	narrator	marker	precise	near								
-interp_00716	ref_00591	casello_km_20_25	gaz_casal_bruciato	nonna_mattonari	setting	precise	near								
-interp_00717	ref_00592	casello_km_20_25	gaz_casal_bruciato	nonna_mattonari	setting	precise	near								
-interp_00718	ref_00592	casello_km_20_25	gaz_casal_bruciato	pestalozzi	setting	precise	near								
-interp_00719	ref_00592	casello_km_20_25	gaz_casal_bruciato	cocullo	setting	precise	near								
+interp_00714	ref_00589	casello_km_20_25	gaz_ferrovia_roma_velletri	narrator	marker	precise	adjacentto								
+interp_00715	ref_00590	casello_km_20_25	gaz_ferrovia_roma_velletri	narrator	marker	precise	adjacentto								
+interp_00716	ref_00591	casello_km_20_25	gaz_ferrovia_roma_velletri	nonna_mattonari	setting	precise	adjacentto								
+interp_00717	ref_00592	casello_km_20_25	gaz_ferrovia_roma_velletri	nonna_mattonari	setting	precise	adjacentto								
+interp_00718	ref_00592	casello_km_20_25	gaz_ferrovia_roma_velletri	pestalozzi	setting	precise	adjacentto								
+interp_00719	ref_00592	casello_km_20_25	gaz_ferrovia_roma_velletri	cocullo	setting	precise	adjacentto								
 interp_00720	ref_00593	ciampino	gaz_ciampino	narrator	projectedspace	relative									
 interp_00721	ref_00594	ponte_divino_amore	gaz_ponte_divino_amore	narrator	projectedspace	relative									
-interp_00722	ref_00595	casello_km_20_25	gaz_casal_bruciato	narrator	setting	approximate	near								
+interp_00722	ref_00595	casello_km_20_25	gaz_ferrovia_roma_velletri	narrator	setting	approximate	adjacentto								
 interp_00723	ref_00596	laboratorio_zamira	gaz_due_santi	pestalozzi	projectedspace	relative	inside								
 interp_00724	ref_00597	due_santi	gaz_due_santi	pestalozzi	projectedspace	relative									
 interp_00725	ref_00597	due_santi	gaz_due_santi	camilla_mattonari	projectedspace	relative									
 interp_00726	ref_00598	ciampino	gaz_ciampino	zio_cantoniere	projectedspace	relative									
-interp_00727	ref_00599	casello_km_20_25	gaz_casal_bruciato	camilla_mattonari	setting	precise	near								
-interp_00728	ref_00599	casello_km_20_25	gaz_casal_bruciato	pestalozzi	setting	precise	near								
-interp_00729	ref_00599	casello_km_20_25	gaz_casal_bruciato	cocullo	setting	precise	near								
+interp_00727	ref_00599	casello_km_20_25	gaz_ferrovia_roma_velletri	camilla_mattonari	setting	precise	adjacentto								
+interp_00728	ref_00599	casello_km_20_25	gaz_ferrovia_roma_velletri	pestalozzi	setting	precise	adjacentto								
+interp_00729	ref_00599	casello_km_20_25	gaz_ferrovia_roma_velletri	cocullo	setting	precise	adjacentto								
 interp_00730	ref_00600	camera_casello		camilla_mattonari	setting	precise	inside								
 interp_00731	ref_00600	camera_casello		pestalozzi	setting	precise	inside								
 interp_00732	ref_00600	camera_casello		cocullo	setting	precise	inside								
@@ -744,12 +744,12 @@ interp_00740	ref_00607	tenenza_carabinieri_marino	gaz_marino	camilla_mattonari	p
 interp_00741	ref_00608	via_veneto	gaz_via_veneto	camilla_mattonari	projectedspace	relative									
 interp_00742	ref_00609	ciampino	gaz_ciampino	zio_cantoniere	projectedspace	relative									
 interp_00743	ref_00610	cecchina	gaz_cecchina	zio_cantoniere	projectedspace	relative									
-interp_00744	ref_00611	casello_km_20_25	gaz_casal_bruciato	camilla_mattonari	projectedspace	approximate	near								
+interp_00744	ref_00611	casello_km_20_25	gaz_ferrovia_roma_velletri	camilla_mattonari	projectedspace	approximate	adjacentto								
 interp_00745	ref_00612	tenenza_carabinieri_marino	gaz_marino	camilla_mattonari	projectedspace	approximate	inside								
 interp_00746	ref_00612	tenenza_carabinieri_marino	gaz_marino	zio_cantoniere	projectedspace	approximate	inside								
-interp_00747	ref_00613	casello_km_20_25	gaz_casal_bruciato	camilla_mattonari	projectedspace	approximate	near								
-interp_00748	ref_00613	casello_km_20_25	gaz_casal_bruciato	zio_cantoniere	projectedspace	approximate	near								
-interp_00749	ref_00614	casal_bruciato	gaz_casal_bruciato	zio_cantoniere	projectedspace	approximate									
+interp_00747	ref_00613	casello_km_20_25	gaz_ferrovia_roma_velletri	camilla_mattonari	projectedspace	approximate	adjacentto								
+interp_00748	ref_00613	casello_km_20_25	gaz_ferrovia_roma_velletri	zio_cantoniere	projectedspace	approximate	adjacentto								
+interp_00749	ref_00614	casal_bruciato	gaz_casale_abbruciato	zio_cantoniere	projectedspace	approximate									Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita).
 interp_00750	ref_00615	velletri	gaz_velletri	nonna_mattonari	projectedspace	approximate									
 interp_00751	ref_00616	bivio_falcognana_casal_bruciato	gaz_via_della_falcognana	pestalozzi	setting	approximate	overlaps								
 interp_00752	ref_00616	bivio_falcognana_casal_bruciato	gaz_via_della_falcognana	cocullo	setting	approximate	overlaps								
@@ -760,9 +760,9 @@ interp_00756	ref_00618	tenenza_carabinieri_marino	gaz_marino	camilla_mattonari	p
 interp_00757	ref_00618	tenenza_carabinieri_marino	gaz_marino	lavinia_mattonari	projectedspace	approximate	inside								
 interp_00758	ref_00619	frattocchie	gaz_frattocchie	vetturale	projectedspace	relative									
 interp_00759	ref_00620	due_santi	gaz_due_santi	vetturale	projectedspace	relative									
-interp_00760	ref_00621	casello_km_20_25	gaz_casal_bruciato	enea_retalli	projectedspace	relative	near								
-interp_00761	ref_00621	casello_km_20_25	gaz_casal_bruciato	camilla_mattonari	projectedspace	relative	near								
-interp_00762	ref_00621	casello_km_20_25	gaz_casal_bruciato	lavinia_mattonari	projectedspace	relative	near								
+interp_00760	ref_00621	casello_km_20_25	gaz_ferrovia_roma_velletri	enea_retalli	projectedspace	relative	adjacentto								
+interp_00761	ref_00621	casello_km_20_25	gaz_ferrovia_roma_velletri	camilla_mattonari	projectedspace	relative	adjacentto								
+interp_00762	ref_00621	casello_km_20_25	gaz_ferrovia_roma_velletri	lavinia_mattonari	projectedspace	relative	adjacentto								
 interp_00763	ref_00622	santa_rita_invitacolo	gaz_santa_rita_invitacolo	clelia_farcioni	projectedspace	relative									
 interp_00764	ref_00623	torraccio	gaz_torraccio	santarella	projectedspace	relative									
 interp_00765	ref_00624	ponte_divino_amore	gaz_ponte_divino_amore	santarella	projectedspace	relative									
@@ -775,8 +775,8 @@ interp_00771	ref_00629	via_appia	gaz_via_appia	pestalozzi	projectedspace	relativ
 interp_00772	ref_00629	via_appia	gaz_via_appia	enea_retalli	projectedspace	relative									
 interp_00773	ref_00630	via_anziate	gaz_via_anziate	pestalozzi	projectedspace	relative									
 interp_00774	ref_00630	via_anziate	gaz_via_anziate	enea_retalli	projectedspace	relative									
-interp_00775	ref_00631	casello_km_20_25	gaz_casal_bruciato	enea_retalli	projectedspace	relative	near								
-interp_00776	ref_00632	casal_bruciato	gaz_casal_bruciato	enea_retalli	projectedspace	relative									
+interp_00775	ref_00631	casello_km_20_25	gaz_ferrovia_roma_velletri	enea_retalli	projectedspace	relative	adjacentto								
+interp_00776	ref_00632	casal_bruciato	gaz_casale_abbruciato|gaz_via_ardeatina	enea_retalli	projectedspace	relative	near								Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita).
 interp_00777	ref_00633	via_ardeatina	gaz_via_ardeatina	enea_retalli	projectedspace	relative									
 interp_00778	ref_00634	ardea	gaz_ardea	enea_retalli	projectedspace	relative									
 interp_00779	ref_00635	direttissima_roma_napoli	gaz_direttissima_roma_napoli	enea_retalli	projectedspace	relative									
@@ -789,9 +789,9 @@ interp_00785	ref_00641	via_anziate	gaz_via_anziate	camilla_mattonari	marker	appr
 interp_00786	ref_00641	via_anziate	gaz_via_anziate	lavinia_mattonari	marker	approximate									
 interp_00787	ref_00641	via_anziate	gaz_via_anziate	pestalozzi	marker	approximate									
 interp_00788	ref_00641	via_anziate	gaz_via_anziate	cocullo	marker	approximate									
-interp_00789	ref_00642	casello_km_20_25	gaz_casal_bruciato	enea_retalli	projectedspace	relative	near								
-interp_00790	ref_00643	casello_km_20_25	gaz_casal_bruciato	enea_retalli	projectedspace	relative	near								
-interp_00791	ref_00643	casello_km_20_25	gaz_casal_bruciato	camilla_mattonari	projectedspace	relative	near								
+interp_00789	ref_00642	casello_km_20_25	gaz_ferrovia_roma_velletri	enea_retalli	projectedspace	relative	adjacentto								
+interp_00790	ref_00643	casello_km_20_25	gaz_ferrovia_roma_velletri	enea_retalli	projectedspace	relative	adjacentto								
+interp_00791	ref_00643	casello_km_20_25	gaz_ferrovia_roma_velletri	camilla_mattonari	projectedspace	relative	adjacentto								
 interp_00792	ref_00644	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	ascanio_lanciani	projectedspace	approximate									
 interp_00793	ref_00645	torraccio	gaz_torraccio	enea_retalli	projectedspace	approximate									
 interp_00794	ref_00646	marino	gaz_marino	santarella				routenode	tragitto_marino_albano_laziale	1					
@@ -836,7 +836,7 @@ interp_00832	ref_00668	via_ricasoli	gaz_via_ricasoli	santarella	marker	approxima
 interp_00833	ref_00668	via_ricasoli	gaz_via_ricasoli	due_militi	marker	approximate									
 interp_00834	ref_00669	santa_maria_della_neve	gaz_santa_maria_della_neve	ingravallo	marker	relative									
 interp_00835	ref_00670	benevento	gaz_benevento	ingravallo	projectedspace	relative									
-interp_00836	ref_00671	pensione_burgess	gaz_porta_pinciana	pompeo	marker	approximate	adjacentTo								
+interp_00836	ref_00671	pensione_burgess	gaz_porta_pinciana	pompeo	marker	approximate	adjacentto								
 interp_00837	ref_00672	piazza_vittorio_emanuele	gaz_piazza_vittorio_emanuele	gaudenzio	marker	approximate									
 interp_00838	ref_00673	piazza_di_spagna	gaz_piazza_di_spagna	narrator	marker	relative									
 interp_00839	ref_00674	via_lanza	gaz_via_lanza	ingravallo	marker	approximate									
@@ -858,8 +858,6 @@ interp_00854	ref_00679	santa_maria_maggiore	gaz_santa_maria_maggiore	ingravallo	
 interp_00855	ref_00680	viminale	gaz_viminale	narrator	marker	relative									
 interp_00856	ref_00681	via_merulana	gaz_via_merulana	ingravallo	setting	precise									
 interp_00857	ref_00682	marino	gaz_marino	autista_questura	marker	approximate									
-interp_00858	ref_00683	marino	gaz_marino	ingravallo	marker	approximate									
-interp_00859	ref_00684	marino	gaz_marino	maresciallo_di_pietrantonio	marker	approximate									
 interp_00860	ref_00683	tenenza_carabinieri_marino	gaz_marino	autista_questura	setting	approximate	inside								
 interp_00861	ref_00683	tenenza_carabinieri_marino	gaz_marino	ingravallo	setting	approximate	inside								
 interp_00862	ref_00683	tenenza_carabinieri_marino	gaz_marino	maresciallo_di_pietrantonio	setting	approximate	inside								
@@ -900,10 +898,10 @@ interp_00896	ref_00694	tor_di_gheppio	gaz_quarto_di_santa_fumia	ingravallo			nea
 interp_00897	ref_00694	tor_di_gheppio	gaz_quarto_di_santa_fumia	maresciallo_di_pietrantonio			near	routenode	tragitto_torraccio_ponte_divino_amore	7					
 interp_00898	ref_00694	tor_di_gheppio	gaz_quarto_di_santa_fumia	autista_questura			near	routenode	tragitto_torraccio_ponte_divino_amore	7					
 interp_00899	ref_00694	tor_di_gheppio	gaz_quarto_di_santa_fumia	agente_runzato			near	routenode	tragitto_torraccio_ponte_divino_amore	7					
-interp_00900	ref_00695	casal_bruciato	gaz_casal_bruciato	ingravallo				routenode	tragitto_torraccio_ponte_divino_amore	8					
-interp_00901	ref_00695	casal_bruciato	gaz_casal_bruciato	maresciallo_di_pietrantonio				routenode	tragitto_torraccio_ponte_divino_amore	8					
-interp_00902	ref_00695	casal_bruciato	gaz_casal_bruciato	autista_questura				routenode	tragitto_torraccio_ponte_divino_amore	8					
-interp_00903	ref_00695	casal_bruciato	gaz_casal_bruciato	agente_runzato				routenode	tragitto_torraccio_ponte_divino_amore	8					
+interp_00900	ref_00695	casal_bruciato	gaz_casale_abbruciato|gaz_ferrovia_roma_velletri	ingravallo			near	routenode	tragitto_torraccio_ponte_divino_amore	8					Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore.
+interp_00901	ref_00695	casal_bruciato	gaz_casale_abbruciato|gaz_ferrovia_roma_velletri	maresciallo_di_pietrantonio			near	routenode	tragitto_torraccio_ponte_divino_amore	8					Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore.
+interp_00902	ref_00695	casal_bruciato	gaz_casale_abbruciato|gaz_ferrovia_roma_velletri	autista_questura			near	routenode	tragitto_torraccio_ponte_divino_amore	8					Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore.
+interp_00903	ref_00695	casal_bruciato	gaz_casale_abbruciato|gaz_ferrovia_roma_velletri	agente_runzato			near	routenode	tragitto_torraccio_ponte_divino_amore	8					Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore.
 interp_00904	ref_00696	ferrovia_roma_velletri	gaz_ferrovia_roma_velletri	ingravallo				routenode	tragitto_torraccio_ponte_divino_amore	9					
 interp_00905	ref_00696	ferrovia_roma_velletri	gaz_ferrovia_roma_velletri	maresciallo_di_pietrantonio				routenode	tragitto_torraccio_ponte_divino_amore	9					
 interp_00906	ref_00696	ferrovia_roma_velletri	gaz_ferrovia_roma_velletri	autista_questura				routenode	tragitto_torraccio_ponte_divino_amore	9					
@@ -928,8 +926,8 @@ interp_00924	ref_00704	tor_di_gheppio	gaz_quarto_di_santa_fumia	ingravallo	proje
 interp_00925	ref_00704	tor_di_gheppio	gaz_quarto_di_santa_fumia	agente_runzato	projectedspace	approximate	near								
 interp_00926	ref_00705	pavona	gaz_pavona	ingravallo	projectedspace	approximate									
 interp_00927	ref_00705	pavona	gaz_pavona	agente_runzato	projectedspace	approximate									
-interp_00928	ref_00706	casal_bruciato	gaz_casal_bruciato	ingravallo	projectedspace	approximate									
-interp_00929	ref_00706	casal_bruciato	gaz_casal_bruciato	agente_runzato	projectedspace	approximate									
+interp_00928	ref_00706	casal_bruciato	gaz_casale_abbruciato|gaz_via_ardeatina|gaz_santa_palomba	ingravallo	projectedspace	approximate	near								Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita).
+interp_00929	ref_00706	casal_bruciato	gaz_casale_abbruciato|gaz_via_ardeatina|gaz_santa_palomba	agente_runzato	projectedspace	approximate	near								Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita).
 interp_00930	ref_00707	via_ardeatina	gaz_via_ardeatina	ingravallo	projectedspace	approximate									
 interp_00931	ref_00707	via_ardeatina	gaz_via_ardeatina	agente_runzato	projectedspace	approximate									
 interp_00932	ref_00708	ardea	gaz_ardea	ingravallo	projectedspace	approximate									
@@ -946,8 +944,8 @@ interp_00942	ref_00713	palazzo	gaz_palazzo	ingravallo	projectedspace	approximate
 interp_00943	ref_00713	palazzo	gaz_palazzo	agente_runzato	projectedspace	approximate									
 interp_00944	ref_00714	pavona	gaz_pavona	ingravallo	projectedspace	approximate									
 interp_00945	ref_00714	pavona	gaz_pavona	agente_runzato	projectedspace	approximate									
-interp_00946	ref_00715	casal_bruciato	gaz_casal_bruciato	ingravallo	projectedspace	approximate									
-interp_00947	ref_00715	casal_bruciato	gaz_casal_bruciato	agente_runzato	projectedspace	approximate									
+interp_00946	ref_00715	casal_bruciato	gaz_casale_abbruciato|gaz_via_ardeatina|gaz_santa_palomba	ingravallo	projectedspace	approximate	near								Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita).
+interp_00947	ref_00715	casal_bruciato	gaz_casale_abbruciato|gaz_via_ardeatina|gaz_santa_palomba	agente_runzato	projectedspace	approximate	near								Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita).
 interp_00948	ref_00716	tor_di_gheppio	gaz_quarto_di_santa_fumia	ingravallo	projectedspace	approximate	near								
 interp_00949	ref_00716	tor_di_gheppio	gaz_quarto_di_santa_fumia	agente_runzato	projectedspace	approximate	near								
 interp_00950	ref_00717	casa_crocchiapani		ingravallo	setting	approximate									

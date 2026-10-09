@@ -2,7 +2,7 @@
 
 <html>
 <head>
-<title>GaddAtlas Ontology</title>
+<title>CHORA — an Ontology for Narrative Spatiality</title>
 <style>
         #pylode {
             position: fixed;
@@ -298,22 +298,82 @@
 <script id="schema.org" type="application/ld+json">
 [
   {
-    "@id": "https://w3id.org/chora#NarrativeRoleScheme",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@language": "en",
-        "@value": "Narrative Role"
-      }
-    ]
-  },
-  {
     "@id": "https://ror.org/01111rn36",
     "https://schema.org/name": [
       {
         "@value": "Università di Bologna"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/chora",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/contributor": [
+      {
+        "@id": "_:n2fb1ec2ba4b14db7917e52347e8534b3b1"
+      },
+      {
+        "@id": "_:n2fb1ec2ba4b14db7917e52347e8534b3b2"
+      }
+    ],
+    "https://schema.org/creator": [
+      {
+        "@id": "https://orcid.org/0009-0007-1496-722X"
+      }
+    ],
+    "https://schema.org/dateCreated": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2025-10-01"
+      }
+    ],
+    "https://schema.org/dateModified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2026-08-11"
+      }
+    ],
+    "https://schema.org/description": [
+      {
+        "@language": "en",
+        "@value": "An ontology for modelling narrative spatiality in modern and contemporary literatures, integrating place references, critical spatial interpretations, and geographic anchoring across a three-tier data model."
+      },
+      {
+        "@language": "en",
+        "@value": "CHORA reuses terms from SKOS, PROV-O, GeoSPARQL, and Web Annotation without importing the complete ontologies, to maintain lightweight reasoning and avoid unintended inferences."
+      }
+    ],
+    "https://schema.org/license": [
+      {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "CHORA — an Ontology for Narrative Spatiality"
+      }
+    ],
+    "https://schema.org/publisher": [
+      {
+        "@id": "https://ror.org/01111rn36"
+      }
+    ]
+  },
+  {
+    "@id": "_:n2fb1ec2ba4b14db7917e52347e8534b3b1",
+    "https://schema.org/name": [
+      {
+        "@value": "Paola Maria Carmela Italia"
+      }
+    ]
+  },
+  {
+    "@id": "_:n2fb1ec2ba4b14db7917e52347e8534b3b2",
+    "https://schema.org/name": [
+      {
+        "@value": "Francesca Tomasi"
       }
     ]
   },
@@ -326,6 +386,18 @@
       {
         "@language": "en",
         "@value": "Reality Status"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/chora#NarrativeRoleScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Narrative Role"
       }
     ]
   },
@@ -362,78 +434,6 @@
         "@value": "Narrative Spatial Relations"
       }
     ]
-  },
-  {
-    "@id": "https://w3id.org/chora",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/contributor": [
-      {
-        "@id": "_:N8b82764713d941fd9337ea7fceee5927"
-      },
-      {
-        "@id": "_:Na6b5eb9311024e378684fe01b7e1e0b6"
-      }
-    ],
-    "https://schema.org/creator": [
-      {
-        "@id": "https://orcid.org/0009-0007-1496-722X"
-      }
-    ],
-    "https://schema.org/dateCreated": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2025-10-01"
-      }
-    ],
-    "https://schema.org/dateModified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2026-08-11"
-      }
-    ],
-    "https://schema.org/description": [
-      {
-        "@language": "en",
-        "@value": "An ontology for modelling narrative spatiality in Carlo Emilio Gadda's \"Quer pasticciaccio brutto de via Merulana\", integrating place references, critical spatial interpretations, and geographic anchoring across a three-tier data model."
-      },
-      {
-        "@language": "en",
-        "@value": "GaddAtlas reuses terms from SKOS, PROV-O, GeoSPARQL, and Web Annotation without importing the complete ontologies, to maintain lightweight reasoning and avoid unintended inferences."
-      }
-    ],
-    "https://schema.org/license": [
-      {
-        "@id": "https://creativecommons.org/licenses/by/4.0/"
-      }
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "GaddAtlas Ontology"
-      }
-    ],
-    "https://schema.org/publisher": [
-      {
-        "@id": "https://ror.org/01111rn36"
-      }
-    ]
-  },
-  {
-    "@id": "_:N8b82764713d941fd9337ea7fceee5927",
-    "https://schema.org/name": [
-      {
-        "@value": "Francesca Tomasi"
-      }
-    ]
-  },
-  {
-    "@id": "_:Na6b5eb9311024e378684fe01b7e1e0b6",
-    "https://schema.org/name": [
-      {
-        "@value": "Paola Maria Carmela Italia"
-      }
-    ]
   }
 ]
 	</script>
@@ -441,7 +441,7 @@
 <body>
 <div id="content">
 <div class="section" id="metadata">
-<h1>GaddAtlas Ontology</h1>
+<h1>CHORA — an Ontology for Narrative Spatiality</h1>
 <h2>Metadata</h2>
 <dl>
 <div>
@@ -457,7 +457,7 @@
 <a class="hover_property" href="http://purl.org/dc/terms/title" title="A name given to the resource. Defined in DCMI Metadata Terms">Title</a>
 </dt>
 <dd>
-<ul class="pylodelitlist"><li><p>GaddAtlas Ontology</p></li></ul>
+<ul class="pylodelitlist"><li><p>CHORA — an Ontology for Narrative Spatiality</p></li></ul>
 </dd>
 </div>
 <div>
@@ -502,12 +502,12 @@
 <ul class="pylodelitlist">
 <li>
 <span>
-<span>Francesca Tomasi</span>
+<span>Paola Maria Carmela Italia</span>
 </span>
 </li>
 <li>
 <span>
-<span>Paola Maria Carmela Italia</span>
+<span>Francesca Tomasi</span>
 </span>
 </li>
 </ul>
@@ -538,27 +538,27 @@
 <a class="hover_property" href="http://www.w3.org/2002/07/owl#versionIRI" title="The property that identifies the version IRI of an ontology. Defined in The OWL 2 Schema vocabulary (OWL 2)">Version Iri</a>
 </dt>
 <dd>
-<a href="https://w3id.org/chora/4.1.1">https://w3id.org/chora/4.1.1</a>
+<a href="https://w3id.org/chora/1.0.0">https://w3id.org/chora/1.0.0</a>
 </dd>
 </div>
 <div>
 <dt>
 <a class="hover_property" href="http://www.w3.org/2002/07/owl#versionInfo" title="The annotation property that provides version information for an ontology or another OWL construct. Defined in The OWL 2 Schema vocabulary (OWL 2)">Version Info</a>
 </dt>
-<dd><p>4.1.1</p></dd>
+<dd><p>1.0.0</p></dd>
 </div>
 <div>
 <dt>
 <a class="hover_property" href="http://purl.org/vocab/vann/preferredNamespacePrefix" title="None. Defined in None">Preferred Namespace Prefix</a>
 </dt>
-<dd><p>ga</p></dd>
+<dd><p>chora</p></dd>
 </div>
 <div>
 <dt>
 <a class="hover_property" href="http://purl.org/vocab/vann/preferredNamespaceUri" title="None. Defined in None">Preferred Namespace Uri</a>
 </dt>
 <dd>
-<a href="https://w3id.org/chora#">https://w3id.org/chora#</a>
+<a href="https://w3id.org/chora#">chora:</a>
 </dd>
 </div>
 <div>
@@ -566,7 +566,7 @@
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </dt>
 <dd>
-<ul class="pylodelitlist"><li><p>An ontology for modelling narrative spatiality in Carlo Emilio Gadda's "Quer pasticciaccio brutto de via Merulana", integrating place references, critical spatial interpretations, and geographic anchoring across a three-tier data model.</p></li><li><p>GaddAtlas reuses terms from SKOS, PROV-O, GeoSPARQL, and Web Annotation without importing the complete ontologies, to maintain lightweight reasoning and avoid unintended inferences.</p></li></ul>
+<ul class="pylodelitlist"><li><p>An ontology for modelling narrative spatiality in modern and contemporary literatures, integrating place references, critical spatial interpretations, and geographic anchoring across a three-tier data model.</p></li><li><p>CHORA reuses terms from SKOS, PROV-O, GeoSPARQL, and Web Annotation without importing the complete ontologies, to maintain lightweight reasoning and avoid unintended inferences.</p></li></ul>
 </dd>
 </div>
 </dl>
@@ -581,6 +581,12 @@
 </li>
 <li>
 <a href="#Chapter">Chapter</a>
+</li>
+<li>
+<a href="#Concept">Concept</a>
+</li>
+<li>
+<a href="#ConceptScheme">Concept Scheme</a>
 </li>
 <li>
 <a href="#Entity">Entity</a>
@@ -622,6 +628,166 @@
 </ul>
 </div>
 <h3 id="class-definitions">Class Definitions</h3>
+<div class="property entity" id="Character">
+<h3>Character
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#Character</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+</th>
+<td>
+<span>
+<a href="#FocalizingAgent">Focalizing Agent</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="Narrator">
+<h3>Narrator
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#Narrator</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
+</th>
+<td>
+<span>
+<a href="#FocalizingAgent">Focalizing Agent</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="Entity">
+<h3>Entity
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://www.w3.org/ns/prov#Entity</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+</th>
+<td>
+<a href="http://www.w3.org/ns/prov-o">http://www.w3.org/ns/prov-o</a>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
+</th>
+<td>
+<span>
+<a href="#SpatialInterpretation">chora:SpatialInterpretation</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="LiteraryWork">
+<h3>Literary Work
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#LiteraryWork</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+</th>
+<td>
+<ul class="pylodelitlist">
+<li>
+<span>
+<a href="#appearsInWork">appears in work</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#partOfWork">part of work</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="NarrativeRoute">
+<h3>Narrative Route
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#NarrativeRoute</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td>
+<ul class="pylodelitlist">
+<li><p>A route (tragitto): an ordered aggregate of narrative places traversed by a focalizer. Distinct from NarrativePlace — a route is not a place but a second-order sequence of places. Carries its own interpretations (per focalizer) via SpatialInterpretation, and aggregates ordered nodes via isNodeOfRoute / routeOrder.</p></li>
+<li><p>A second-order spatial entity representing an ordered path connecting multiple narrative places, as perceived by one or more focalizers.</p></li>
+<li><p>Entità spaziale di secondo livello che rappresenta un percorso ordinato che connette più luoghi narrativi, così come percepito da uno o più focalizzatori.</p></li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+</th>
+<td>
+<ul class="pylodelitlist">
+<li>
+<span>
+<a href="#isNodeOfRoute">is node of route</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#targetsRoute">targets route</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+</div>
 <div class="property entity" id="Geometry">
 <h3>Geometry
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -702,34 +868,15 @@
 </tr>
 </table>
 </div>
-<div class="property entity" id="Entity">
-<h3>Entity
+<div class="property entity" id="ConceptScheme">
+<h3>Concept Scheme
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </h3>
 <table>
 <tr>
 <th>IRI</th>
 <td>
-<code>http://www.w3.org/ns/prov#Entity</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
-</th>
-<td>
-<a href="http://www.w3.org/ns/prov-o">http://www.w3.org/ns/prov-o</a>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/superClassOf" title="Inverse of RDFS' subClassOf. Defined in Ontology Documentation Profile">Super Class Of</a>
-</th>
-<td>
-<span>
-<a href="#SpatialInterpretation">SpatialInterpretation</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
+<code>http://www.w3.org/2004/02/skos/core#ConceptScheme</code>
 </td>
 </tr>
 </table>
@@ -753,12 +900,6 @@
 <ul class="pylodelitlist">
 <li>
 <span>
-<a href="#partOfWork">part of work</a>
-<sup class="sup-op" title="OWL Object Property">op</sup>
-</span>
-</li>
-<li>
-<span>
 <a href="#chapterNumber">chapter number</a>
 <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
 </span>
@@ -767,6 +908,12 @@
 <span>
 <a href="#pageRange">page range</a>
 <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#partOfWork">part of work</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
 </span>
 </li>
 </ul>
@@ -780,30 +927,6 @@
 <span>
 <a href="#mentionedInChapter">mentioned in Chapter</a>
 <sup class="sup-op" title="OWL Object Property">op</sup>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="Character">
-<h3>Character
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/chora#Character</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<span>
-<a href="#FocalizingAgent">Focalizing Agent</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
 </tr>
@@ -963,40 +1086,6 @@
 </tr>
 </table>
 </div>
-<div class="property entity" id="LiteraryWork">
-<h3>Literary Work
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/chora#LiteraryWork</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
-</th>
-<td>
-<ul class="pylodelitlist">
-<li>
-<span>
-<a href="#appearsInWork">appears in work</a>
-<sup class="sup-op" title="OWL Object Property">op</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#partOfWork">part of work</a>
-<sup class="sup-op" title="OWL Object Property">op</sup>
-</span>
-</li>
-</ul>
-</td>
-</tr>
-</table>
-</div>
 <div class="property entity" id="NarrativePlace">
 <h3>Narrative Place
             <sup class="sup-c" title="OWL/RDFS Class">c</sup>
@@ -1014,10 +1103,10 @@
 </th>
 <td>
 <ul class="pylodelitlist">
-<li><p>NarrativePlace include sia luoghi importati o riconducibili a toponimi reali, sia luoghi inventati ma diegeticamente localizzati (es. edifici finzionali collocati in una via reale). L’eventuale corrispondenza topografica è dichiarata tramite ancoraggio a GazetteerEntity e qualificata da status/relazioni.</p></li>
 <li><p>NarrativePlace includes both imported places traceable to real toponyms and invented places that are diegetically localized (e.g., fictional buildings located on a real street). Any topographic correspondence is declared via anchoring to a GazetteerEntity and qualified by status/relations.</p></li>
-<li><p>NarrativePlace modella l’unità spaziale “nel romanzo”, distinta dal referente topografico esterno (GazetteerEntity). La relazione fra i due piani è espressa tramite ancoraggi e relazioni tipizzate a livello di SpatialInterpretation.</p></li>
 <li><p>NarrativePlace models the spatial unit “in the novel”, distinct from the external topographic referent (GazetteerEntity). The relation between the two planes is expressed through anchoring and typed relations at the level of SpatialInterpretation.</p></li>
+<li><p>NarrativePlace include sia luoghi importati o riconducibili a toponimi reali, sia luoghi inventati ma diegeticamente localizzati (es. edifici finzionali collocati in una via reale). L’eventuale corrispondenza topografica è dichiarata tramite ancoraggio a GazetteerEntity e qualificata da status/relazioni.</p></li>
+<li><p>NarrativePlace modella l’unità spaziale “nel romanzo”, distinta dal referente topografico esterno (GazetteerEntity). La relazione fra i due piani è espressa tramite ancoraggi e relazioni tipizzate a livello di SpatialInterpretation.</p></li>
 <li><p>A spatial entity belonging to the world of the text: a place constructed and recognizable within the diegesis, independently of any correspondence with an extra-textual georeferenceable place.</p></li>
 <li><p>Entità spaziale appartenente al mondo del testo: un luogo costruito e riconoscibile nella diegesi, indipendentemente dalla sua eventuale corrispondenza con un luogo extra-testuale georeferenziabile.</p></li>
 </ul>
@@ -1029,6 +1118,12 @@
 </th>
 <td>
 <ul class="pylodelitlist">
+<li>
+<span>
+<a href="#hasFuzzinessLevel">has fuzziness level</a>
+<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</span>
+</li>
 <li>
 <span>
 <a href="#hasPlaceCategory">has place category</a>
@@ -1045,12 +1140,6 @@
 <span>
 <a href="#isPartOf">is part of</a>
 <sup class="sup-op" title="OWL Object Property">op</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#hasFuzzinessLevel">has fuzziness level</a>
-<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
 </span>
 </li>
 </ul>
@@ -1075,76 +1164,6 @@
 </span>
 </li>
 </ul>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="NarrativeRoute">
-<h3>Narrative Route
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/chora#NarrativeRoute</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-</th>
-<td>
-<ul class="pylodelitlist">
-<li><p>A route (tragitto): an ordered aggregate of narrative places traversed by a focalizer. Distinct from NarrativePlace — a route is not a place but a second-order sequence of places. Carries its own interpretations (per focalizer) via SpatialInterpretation, and aggregates ordered nodes via isNodeOfRoute / routeOrder.</p></li>
-<li><p>A second-order spatial entity representing an ordered path connecting multiple narrative places, as perceived by one or more focalizers.</p></li>
-<li><p>Entità spaziale di secondo livello che rappresenta un percorso ordinato che connette più luoghi narrativi, così come percepito da uno o più focalizzatori.</p></li>
-</ul>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
-</th>
-<td>
-<ul class="pylodelitlist">
-<li>
-<span>
-<a href="#isNodeOfRoute">is node of route</a>
-<sup class="sup-op" title="OWL Object Property">op</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#targetsRoute">targets route</a>
-<sup class="sup-op" title="OWL Object Property">op</sup>
-</span>
-</li>
-</ul>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="Narrator">
-<h3>Narrator
-            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/chora#Narrator</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#subClassOf" title="The subject is a subclass of a class. Defined in The RDF Schema vocabulary (RDFS)">Sub Class Of</a>
-</th>
-<td>
-<span>
-<a href="#FocalizingAgent">Focalizing Agent</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
 </td>
 </tr>
 </table>
@@ -1187,6 +1206,12 @@
 </li>
 <li>
 <span>
+<a href="#excerpt">excerpt</a>
+<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</span>
+</li>
+<li>
+<span>
 <a href="#hasInterpretation">has interpretation</a>
 <sup class="sup-op" title="OWL Object Property">op</sup>
 </span>
@@ -1199,13 +1224,7 @@
 </li>
 <li>
 <span>
-<a href="#excerpt">excerpt</a>
-<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#sourceReference">sourceReference</a>
+<a href="#sourceReference">chora:sourceReference</a>
 <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
 </span>
 </li>
@@ -1242,8 +1261,8 @@
 </th>
 <td>
 <ul class="pylodelitlist">
-<li><p>SpatialInterpretation esplicita la natura dichiarativa e tracciabile dell’annotazione: diverse interpretazioni possono coesistere per lo stesso PlaceReference, con diverse assunzioni e livelli di confidenza; per questo il modello privilegia proprietà “targets/assigns/anchors” a questo livello.</p></li>
 <li><p>SpatialInterpretation makes the declarative and traceable nature of annotation explicit: multiple interpretations may coexist for the same PlaceReference, with different assumptions and confidence levels; therefore the model privileges “targets/assigns/anchors” properties at this level.</p></li>
+<li><p>SpatialInterpretation esplicita la natura dichiarativa e tracciabile dell’annotazione: diverse interpretazioni possono coesistere per lo stesso PlaceReference, con diverse assunzioni e livelli di confidenza; per questo il modello privilegia proprietà “targets/assigns/anchors” a questo livello.</p></li>
 <li><p>An interpretive act that operates on a PlaceReference and asserts (i) the diegetic place it activates (target), (ii) semantic qualifications via controlled vocabularies (e.g., narrative role, reality status, degree of spatial determination, spatial relation type), and (iii) any anchoring to an external topographic referent (gazetteer).</p></li>
 <li><p>Atto interpretativo che prende in carico un PlaceReference e asserisce (i) quale luogo diegetico esso attiva (target), (ii) le qualificazioni semantiche tramite vocabolari controllati (es. ruolo narrativo, status di realtà, grado di determinazione spaziale, tipo di relazione spaziale), e (iii) l’eventuale ancoraggio a un referente topografico esterno (gazetteer).</p></li>
 </ul>
@@ -1274,6 +1293,12 @@
 </li>
 <li>
 <span>
+<a href="#annotationMethod">annotation method</a>
+<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</span>
+</li>
+<li>
+<span>
 <a href="#assignsNarrativeRole">assigns narrative role</a>
 <sup class="sup-op" title="OWL Object Property">op</sup>
 </span>
@@ -1292,37 +1317,7 @@
 </li>
 <li>
 <span>
-<a href="#hasFocalizer">has focalizer</a>
-<sup class="sup-op" title="OWL Object Property">op</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#interpretsReference">interprets reference</a>
-<sup class="sup-op" title="OWL Object Property">op</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#isNodeOfRoute">is node of route</a>
-<sup class="sup-op" title="OWL Object Property">op</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#targetsPlace">targets place</a>
-<sup class="sup-op" title="OWL Object Property">op</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#targetsRoute">targets route</a>
-<sup class="sup-op" title="OWL Object Property">op</sup>
-</span>
-</li>
-<li>
-<span>
-<a href="#annotationMethod">annotation method</a>
+<a href="#confidence">chora:confidence</a>
 <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
 </span>
 </li>
@@ -1340,20 +1335,44 @@
 </li>
 <li>
 <span>
+<a href="#hasFocalizer">has focalizer</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
 <a href="#interpretationType">interpretation type</a>
 <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
 </span>
 </li>
 <li>
 <span>
-<a href="#confidence">confidence</a>
-<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+<a href="#isNodeOfRoute">is node of route</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
 </span>
 </li>
 <li>
 <span>
 <a href="#routeOrder">route order</a>
 <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#targetsPlace">targets place</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#targetsRoute">targets route</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#interpretsReference">interprets reference</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
 </span>
 </li>
 </ul>
@@ -1368,6 +1387,58 @@
 <a href="#hasInterpretation">has interpretation</a>
 <sup class="sup-op" title="OWL Object Property">op</sup>
 </span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="Concept">
+<h3>Concept
+            <sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://www.w3.org/2004/02/skos/core#Concept</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="https://w3id.org/profile/ontdoc/inRangeOf" title="Inverse of rdfs:range. Defined in Ontology Documentation Profile">In Range Of</a>
+</th>
+<td>
+<ul class="pylodelitlist">
+<li>
+<span>
+<a href="#assignsNarrativeRole">assigns narrative role</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#assignsSpatialDetermination">assigns spatial determination</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#assignsSpatialRelationType">assigns spatial relation type</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#hasPlaceCategory">has place category</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#hasRealityStatus">has reality status</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+</ul>
 </td>
 </tr>
 </table>
@@ -1468,7 +1539,7 @@
 </th>
 <td>
 <span>
-<a href="#GazetteerEntity">GazetteerEntity</a>
+<a href="#GazetteerEntity">chora:GazetteerEntity</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -1524,7 +1595,7 @@
 </th>
 <td>
 <span>
-<a href="#SpatialInterpretation">SpatialInterpretation</a>
+<a href="#SpatialInterpretation">chora:SpatialInterpretation</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -1535,7 +1606,7 @@
 </th>
 <td>
 <span>
-<a href="#GazetteerEntity">GazetteerEntity</a>
+<a href="#GazetteerEntity">chora:GazetteerEntity</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -1559,7 +1630,7 @@
 </th>
 <td>
 <span>
-<a href="#PlaceReference">PlaceReference</a>
+<a href="#PlaceReference">chora:PlaceReference</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -1570,7 +1641,7 @@
 </th>
 <td>
 <span>
-<a href="#LiteraryWork">LiteraryWork</a>
+<a href="#LiteraryWork">chora:LiteraryWork</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -1600,7 +1671,7 @@
 </th>
 <td>
 <span>
-<a href="#SpatialInterpretation">SpatialInterpretation</a>
+<a href="#SpatialInterpretation">chora:SpatialInterpretation</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -1641,7 +1712,7 @@
 </th>
 <td>
 <span>
-<a href="#SpatialInterpretation">SpatialInterpretation</a>
+<a href="#SpatialInterpretation">chora:SpatialInterpretation</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -1676,7 +1747,7 @@
 </th>
 <td>
 <span>
-<a href="#SpatialInterpretation">SpatialInterpretation</a>
+<a href="#SpatialInterpretation">chora:SpatialInterpretation</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -1717,7 +1788,7 @@
 </th>
 <td>
 <span>
-<a href="#SpatialInterpretation">SpatialInterpretation</a>
+<a href="#SpatialInterpretation">chora:SpatialInterpretation</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -1752,7 +1823,7 @@
 </th>
 <td>
 <span>
-<a href="#PlaceReference">PlaceReference</a>
+<a href="#PlaceReference">chora:PlaceReference</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -1763,7 +1834,7 @@
 </th>
 <td>
 <span>
-<a href="#SpatialInterpretation">SpatialInterpretation</a>
+<a href="#SpatialInterpretation">chora:SpatialInterpretation</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -1793,7 +1864,7 @@
 </th>
 <td>
 <span>
-<a href="#NarrativePlace">NarrativePlace</a>
+<a href="#NarrativePlace">chora:NarrativePlace</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -1826,7 +1897,7 @@
 <th>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </th>
-<td><p>Assigns the reality–fiction status (imported, transformed, imagined, invented) of a narrative place. This is an invariant property of the place as an authorial transposition of the real world into the text, NOT dependent on focalizer or interpretation.</p></td>
+<td><p>Assigns the reality–fiction status of a narrative place, on a scale ordered from the concrete to the abstract: imported, transformed, invented, imagined (skos:notation 1–4; Reuschel, Piatti and Hurni 2013, pp. 138–139). This is an invariant property of the place as an authorial transposition of the real world into the text, NOT dependent on focalizer or interpretation.</p></td>
 </tr>
 <tr>
 <th>
@@ -1834,7 +1905,7 @@
 </th>
 <td>
 <span>
-<a href="#NarrativePlace">NarrativePlace</a>
+<a href="#NarrativePlace">chora:NarrativePlace</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -1851,6 +1922,246 @@
 </td>
 </tr>
 <tr class="ga-injected"><th>Vocabulary</th><td><a href="vocab_realitystatus.html">Reality Status</a> — 4 concepts</td></tr></table>
+</div>
+<div class="property entity" id="isNodeOfRoute">
+<h3>is node of route
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#isNodeOfRoute</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Declares that a spatial interpretation is a node (stop) of a narrative route. The node's place is reached via targetsPlace; its position via routeOrder; its focalizer via hasFocalizer. The route of a node and the node share the same focalizer.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#SpatialInterpretation">chora:SpatialInterpretation</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="#NarrativeRoute">Narrative Route</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="isPartOf">
+<h3>is part of
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#isPartOf</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Meronymic relation between narrative places: the subject place is a structural component of the object place (e.g. a staircase of a building). Invariant with respect to focalizer. A place with isPartOf inherits its geographic anchoring from the parent and should NOT carry its own anchorsToEntity.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#NarrativePlace">chora:NarrativePlace</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="#NarrativePlace">chora:NarrativePlace</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="mentionedInChapter">
+<h3>mentioned in Chapter
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#mentionedInChapter</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#PlaceReference">chora:PlaceReference</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="#Chapter">chora:Chapter</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="partOfWork">
+<h3>part of work
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#partOfWork</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Relates a chapter to the literary work it belongs to.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#Chapter">chora:Chapter</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="#LiteraryWork">chora:LiteraryWork</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="targetsPlace">
+<h3>targets place
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#targetsPlace</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Links a spatial interpretation to the diegetic narrative place it activates.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#SpatialInterpretation">chora:SpatialInterpretation</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="#NarrativePlace">chora:NarrativePlace</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="targetsRoute">
+<h3>targets route
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#targetsRoute</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Links a spatial interpretation to the narrative route it activates (used for route-level rows, where narrative role is 'route'), as the analogue of targetsPlace for routes.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#SpatialInterpretation">chora:SpatialInterpretation</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="#NarrativeRoute">Narrative Route</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
 </div>
 <div class="property entity" id="hasSpatialGeometry">
 <h3>has spatial geometry
@@ -1910,7 +2221,7 @@
 </th>
 <td>
 <span>
-<a href="#SpatialInterpretation">SpatialInterpretation</a>
+<a href="#SpatialInterpretation">chora:SpatialInterpretation</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -1921,247 +2232,7 @@
 </th>
 <td>
 <span>
-<a href="#PlaceReference">PlaceReference</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="isNodeOfRoute">
-<h3>is node of route
-            <sup class="sup-op" title="OWL Object Property">op</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/chora#isNodeOfRoute</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-</th>
-<td><p>Declares that a spatial interpretation is a node (stop) of a narrative route. The node's place is reached via targetsPlace; its position via routeOrder; its focalizer via hasFocalizer. The route of a node and the node share the same focalizer.</p></td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#SpatialInterpretation">SpatialInterpretation</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<span>
-<a href="#NarrativeRoute">Narrative Route</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="isPartOf">
-<h3>is part of
-            <sup class="sup-op" title="OWL Object Property">op</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/chora#isPartOf</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-</th>
-<td><p>Meronymic relation between narrative places: the subject place is a structural component of the object place (e.g. a staircase of a building). Invariant with respect to focalizer. A place with isPartOf inherits its geographic anchoring from the parent and should NOT carry its own anchorsToEntity.</p></td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#NarrativePlace">NarrativePlace</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<span>
-<a href="#NarrativePlace">NarrativePlace</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="mentionedInChapter">
-<h3>mentioned in Chapter
-            <sup class="sup-op" title="OWL Object Property">op</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/chora#mentionedInChapter</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#PlaceReference">PlaceReference</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<span>
-<a href="#Chapter">Chapter</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="partOfWork">
-<h3>part of work
-            <sup class="sup-op" title="OWL Object Property">op</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/chora#partOfWork</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-</th>
-<td><p>Relates a chapter to the literary work it belongs to.</p></td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#Chapter">Chapter</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<span>
-<a href="#LiteraryWork">LiteraryWork</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="targetsPlace">
-<h3>targets place
-            <sup class="sup-op" title="OWL Object Property">op</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/chora#targetsPlace</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-</th>
-<td><p>Links a spatial interpretation to the diegetic narrative place it activates.</p></td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#SpatialInterpretation">SpatialInterpretation</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<span>
-<a href="#NarrativePlace">NarrativePlace</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="targetsRoute">
-<h3>targets route
-            <sup class="sup-op" title="OWL Object Property">op</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/chora#targetsRoute</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-</th>
-<td><p>Links a spatial interpretation to the narrative route it activates (used for route-level rows, where narrative role is 'route'), as the analogue of targetsPlace for routes.</p></td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#SpatialInterpretation">SpatialInterpretation</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<span>
-<a href="#NarrativeRoute">Narrative Route</a>
+<a href="#PlaceReference">chora:PlaceReference</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -2220,7 +2291,7 @@
 </th>
 <td>
 <span>
-<a href="#GazetteerEntity">GazetteerEntity</a>
+<a href="#GazetteerEntity">chora:GazetteerEntity</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -2252,7 +2323,7 @@
 </th>
 <td>
 <span>
-<a href="#GazetteerEntity">GazetteerEntity</a>
+<a href="#GazetteerEntity">chora:GazetteerEntity</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -2290,7 +2361,7 @@
 </th>
 <td>
 <span>
-<a href="#SpatialInterpretation">SpatialInterpretation</a>
+<a href="#SpatialInterpretation">chora:SpatialInterpretation</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -2301,196 +2372,6 @@
 </th>
 <td>
 <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="criticalNote">
-<h3>critical note
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/chora#criticalNote</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-</th>
-<td><p>Stores an interpretive or editorial note attached to a spatial interpretation.</p></td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#SpatialInterpretation">SpatialInterpretation</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">langString</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="evidenceSource">
-<h3>evidence source
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/chora#evidenceSource</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-</th>
-<td><p>Records textual or critical evidence supporting a spatial interpretation.</p></td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#SpatialInterpretation">SpatialInterpretation</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">langString</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="historicalLocation">
-<h3>historical location
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/chora#historicalLocation</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-</th>
-<td><p>Describes the historical location or historical-toponymic context of a gazetteer entity.</p></td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#GazetteerEntity">GazetteerEntity</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">langString</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="interpretationType">
-<h3>interpretation type
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/chora#interpretationType</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-</th>
-<td><p>Classifies the kind of spatial interpretation asserted by the annotation.</p></td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#SpatialInterpretation">SpatialInterpretation</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="property entity" id="presentLocation">
-<h3>present location
-            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</h3>
-<table>
-<tr>
-<th>IRI</th>
-<td>
-<code>https://w3id.org/chora#presentLocation</code>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
-</th>
-<td><p>Describes the present-day location or administrative context of a gazetteer entity.</p></td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
-</th>
-<td>
-<span>
-<a href="#GazetteerEntity">GazetteerEntity</a>
-<sup class="sup-c" title="OWL/RDFS Class">c</sup>
-</span>
-</td>
-</tr>
-<tr>
-<th>
-<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
-</th>
-<td>
-<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">langString</a>
 </td>
 </tr>
 </table>
@@ -2512,7 +2393,7 @@
 </th>
 <td>
 <span>
-<a href="#Chapter">Chapter</a>
+<a href="#Chapter">chora:Chapter</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -2576,7 +2457,7 @@
 </th>
 <td>
 <span>
-<a href="#SpatialInterpretation">SpatialInterpretation</a>
+<a href="#SpatialInterpretation">chora:SpatialInterpretation</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -2587,6 +2468,82 @@
 </th>
 <td>
 <a href="http://www.w3.org/2001/XMLSchema#decimal">xsd:decimal</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="criticalNote">
+<h3>critical note
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#criticalNote</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Stores an interpretive or editorial note attached to a spatial interpretation.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#SpatialInterpretation">chora:SpatialInterpretation</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">langString</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="evidenceSource">
+<h3>evidence source
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#evidenceSource</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Records textual or critical evidence supporting a spatial interpretation.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#SpatialInterpretation">chora:SpatialInterpretation</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">langString</a>
 </td>
 </tr>
 </table>
@@ -2608,7 +2565,7 @@
 </th>
 <td>
 <span>
-<a href="#PlaceReference">PlaceReference</a>
+<a href="#PlaceReference">chora:PlaceReference</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -2646,7 +2603,7 @@
 </th>
 <td>
 <span>
-<a href="#NarrativePlace">NarrativePlace</a>
+<a href="#NarrativePlace">chora:NarrativePlace</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -2679,6 +2636,82 @@
 <td>
 <span>
 <a href="#FocalizingAgent">Focalizing Agent</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="historicalLocation">
+<h3>historical location
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#historicalLocation</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Describes the historical location or historical-toponymic context of a gazetteer entity.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#GazetteerEntity">chora:GazetteerEntity</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">langString</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="interpretationType">
+<h3>interpretation type
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#interpretationType</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Classifies the kind of spatial interpretation asserted by the annotation.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#SpatialInterpretation">chora:SpatialInterpretation</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -2742,7 +2775,7 @@
 </th>
 <td>
 <span>
-<a href="#Chapter">Chapter</a>
+<a href="#Chapter">chora:Chapter</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -2753,6 +2786,44 @@
 </th>
 <td>
 <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="presentLocation">
+<h3>present location
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#presentLocation</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>Describes the present-day location or administrative context of a gazetteer entity.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#GazetteerEntity">chora:GazetteerEntity</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">langString</a>
 </td>
 </tr>
 </table>
@@ -2780,7 +2851,7 @@
 </th>
 <td>
 <span>
-<a href="#SpatialInterpretation">SpatialInterpretation</a>
+<a href="#SpatialInterpretation">chora:SpatialInterpretation</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -2812,7 +2883,7 @@
 </th>
 <td>
 <span>
-<a href="#PlaceReference">PlaceReference</a>
+<a href="#PlaceReference">chora:PlaceReference</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -2830,6 +2901,19 @@
 </div>
 <div class="section" id="annotationproperties">
 <h2>Annotation Properties</h2>
+<div class="property entity" id="creator">
+<h3>creator
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://purl.org/dc/elements/1.1/creator</code>
+</td>
+</tr>
+</table>
+</div>
 <div class="property entity" id="description">
 <h3>description
             <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
@@ -2838,7 +2922,111 @@
 <tr>
 <th>IRI</th>
 <td>
+<code>http://purl.org/dc/elements/1.1/description</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="title">
+<h3>title
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://purl.org/dc/elements/1.1/title</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="bibliographicCitation">
+<h3>bibliographic citation
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://purl.org/dc/terms/bibliographicCitation</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="contributor">
+<h3>contributor
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://purl.org/dc/terms/contributor</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="created">
+<h3>created
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://purl.org/dc/terms/created</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="description1">
+<h3>description
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
 <code>http://purl.org/dc/terms/description</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="license">
+<h3>license
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://purl.org/dc/terms/license</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="modified">
+<h3>modified
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://purl.org/dc/terms/modified</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="publisher">
+<h3>publisher
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://purl.org/dc/terms/publisher</code>
 </td>
 </tr>
 </table>
@@ -2859,6 +3047,32 @@
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </th>
 <td><p>Links a property to the SKOS ConceptScheme from which its values are drawn. The rdfs:range of these properties is the generic skos:Concept; this annotation states which controlled vocabulary is actually admissible, and drives the cross-links in the generated documentation.</p></td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="preferredNamespacePrefix">
+<h3>preferred namespace prefix
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://purl.org/vocab/vann/preferredNamespacePrefix</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="preferredNamespaceUri">
+<h3>preferred namespace uri
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://purl.org/vocab/vann/preferredNamespaceUri</code>
+</td>
 </tr>
 </table>
 </div>
@@ -2992,11 +3206,40 @@
 </tr>
 </table>
 </div>
+<div class="property entity" id="name">
+<h3>name
+            <sup class="sup-ap" title="OWL Annotation Property">ap</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://schema.org/name</code>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="section" id="datatypes">
+<h2>Custom Datatypes</h2>
+<div class="property entity" id="date">
+<h3>date
+            <sup class="sup-dt" title="RDFS Datatypes">dt</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://www.w3.org/2001/XMLSchema#date</code>
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="section ga-injected" id="vocabularies"><h2>Vocabularies</h2><p>The values of the properties above are drawn from the following SKOS concept schemes, each documented in its own page.</p><ul><li><a href="vocab_placecategory.html">GaddAtlas Place Category Vocabulary</a> — 64 concepts · used by <a href="#hasPlaceCategory">hasPlaceCategory</a></li><li><a href="vocab_narrativerole.html">Narrative Role</a> — 5 concepts · used by <a href="#assignsNarrativeRole">assignsNarrativeRole</a></li><li><a href="vocab_spatialrelationtype.html">Narrative Spatial Relations</a> — 8 concepts · used by <a href="#assignsSpatialRelationType">assignsSpatialRelationType</a></li><li><a href="vocab_realitystatus.html">Reality Status</a> — 4 concepts · used by <a href="#hasRealityStatus">hasRealityStatus</a></li><li><a href="vocab_spatialdetermination.html">Spatial determination</a> — 4 concepts · used by <a href="#assignsSpatialDetermination">assignsSpatialDetermination</a></li></ul></div><div id="namespaces">
 <h2>Namespaces</h2>
 <dl>
-<dt id=":">:</dt>
+<dt id="chora">chora</dt>
 <dd>
 <code>https://w3id.org/chora#</code>
 </dd>
@@ -3028,7 +3271,7 @@
 <dd>
 <code>http://www.w3.org/2000/01/rdf-schema#</code>
 </dd>
-<dt id="sdo">sdo</dt>
+<dt id="schema">schema</dt>
 <dd>
 <code>https://schema.org/</code>
 </dd>
@@ -3109,19 +3352,31 @@
 </h5>
 <ul class="second">
 <li style="margin-left:10px;">
+<a href="#Character">Character</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#Narrator">Narrator</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#Entity">Entity</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#LiteraryWork">Literary Work</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#NarrativeRoute">Narrative Route</a>
+</li>
+<li style="margin-left:10px;">
 <a href="#Geometry">Geometry</a>
 </li>
 <li style="margin-left:10px;">
 <a href="#Agent">Agent</a>
 </li>
 <li style="margin-left:10px;">
-<a href="#Entity">Entity</a>
+<a href="#ConceptScheme">Concept Scheme</a>
 </li>
 <li style="margin-left:10px;">
 <a href="#Chapter">Chapter</a>
-</li>
-<li style="margin-left:10px;">
-<a href="#Character">Character</a>
 </li>
 <li style="margin-left:10px;">
 <a href="#FocalizingAgent">Focalizing Agent</a>
@@ -3130,22 +3385,16 @@
 <a href="#GazetteerEntity">Gazetteer Entity</a>
 </li>
 <li style="margin-left:10px;">
-<a href="#LiteraryWork">Literary Work</a>
-</li>
-<li style="margin-left:10px;">
 <a href="#NarrativePlace">Narrative Place</a>
-</li>
-<li style="margin-left:10px;">
-<a href="#NarrativeRoute">Narrative Route</a>
-</li>
-<li style="margin-left:10px;">
-<a href="#Narrator">Narrator</a>
 </li>
 <li style="margin-left:10px;">
 <a href="#PlaceReference">Place Reference</a>
 </li>
 <li style="margin-left:10px;">
 <a href="#SpatialInterpretation">Spatial Interpretation</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#Concept">Concept</a>
 </li>
 </ul>
 </li>
@@ -3194,12 +3443,6 @@
 <a href="#hasRealityStatus">has reality status</a>
 </li>
 <li style="margin-left:10px;">
-<a href="#hasSpatialGeometry">has spatial geometry</a>
-</li>
-<li style="margin-left:10px;">
-<a href="#interpretsReference">interprets reference</a>
-</li>
-<li style="margin-left:10px;">
 <a href="#isNodeOfRoute">is node of route</a>
 </li>
 <li style="margin-left:10px;">
@@ -3216,6 +3459,12 @@
 </li>
 <li style="margin-left:10px;">
 <a href="#targetsRoute">targets route</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#hasSpatialGeometry">has spatial geometry</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#interpretsReference">interprets reference</a>
 </li>
 </ul>
 </li>
@@ -3237,21 +3486,6 @@
 <a href="#annotationMethod">annotation method</a>
 </li>
 <li>
-<a href="#criticalNote">critical note</a>
-</li>
-<li>
-<a href="#evidenceSource">evidence source</a>
-</li>
-<li>
-<a href="#historicalLocation">historical location</a>
-</li>
-<li>
-<a href="#interpretationType">interpretation type</a>
-</li>
-<li>
-<a href="#presentLocation">present location</a>
-</li>
-<li>
 <a href="#chapterNumber">chapter number</a>
 </li>
 <li>
@@ -3259,6 +3493,12 @@
 </li>
 <li>
 <a href="#confidence">confidence</a>
+</li>
+<li>
+<a href="#criticalNote">critical note</a>
+</li>
+<li>
+<a href="#evidenceSource">evidence source</a>
 </li>
 <li>
 <a href="#excerpt">excerpt</a>
@@ -3270,10 +3510,19 @@
 <a href="#hasGender">has gender</a>
 </li>
 <li>
+<a href="#historicalLocation">historical location</a>
+</li>
+<li>
+<a href="#interpretationType">interpretation type</a>
+</li>
+<li>
 <a href="#narratorType">narrator type</a>
 </li>
 <li>
 <a href="#pageRange">page range</a>
+</li>
+<li>
+<a href="#presentLocation">present location</a>
 </li>
 <li>
 <a href="#routeOrder">route order</a>
@@ -3289,10 +3538,43 @@
 </h4>
 <ul class="second">
 <li>
+<a href="#creator">creator</a>
+</li>
+<li>
 <a href="#description">description</a>
 </li>
 <li>
+<a href="#title">title</a>
+</li>
+<li>
+<a href="#bibliographicCitation">bibliographic citation</a>
+</li>
+<li>
+<a href="#contributor">contributor</a>
+</li>
+<li>
+<a href="#created">created</a>
+</li>
+<li>
+<a href="#description1">description</a>
+</li>
+<li>
+<a href="#license">license</a>
+</li>
+<li>
+<a href="#modified">modified</a>
+</li>
+<li>
+<a href="#publisher">publisher</a>
+</li>
+<li>
 <a href="#references">references</a>
+</li>
+<li>
+<a href="#preferredNamespacePrefix">preferred namespace prefix</a>
+</li>
+<li>
+<a href="#preferredNamespaceUri">preferred namespace uri</a>
 </li>
 <li>
 <a href="#altLabel">alt label</a>
@@ -3324,6 +3606,19 @@
 <li>
 <a href="#topConceptOf">top concept of</a>
 </li>
+<li>
+<a href="#name">name</a>
+</li>
+</ul>
+</li>
+<li>
+<h4>
+<a href="#datatypes">Custom Datatypes</a>
+</h4>
+<ul class="second">
+<li>
+<a href="#date">date</a>
+</li>
 </ul>
 </li>
 <li class="ga-injected"><h4><a href="#vocabularies">Vocabularies</a></h4><ul class="second"><li style="margin-left:10px;"><a href="vocab_placecategory.html">GaddAtlas Place Category Vocabulary</a></li><li style="margin-left:10px;"><a href="vocab_narrativerole.html">Narrative Role</a></li><li style="margin-left:10px;"><a href="vocab_spatialrelationtype.html">Narrative Spatial Relations</a></li><li style="margin-left:10px;"><a href="vocab_realitystatus.html">Reality Status</a></li><li style="margin-left:10px;"><a href="vocab_spatialdetermination.html">Spatial determination</a></li></ul></li><li>
@@ -3332,7 +3627,7 @@
 </h4>
 <ul class="second">
 <li>
-<a href="#"></a>
+<a href="#chora">chora</a>
 </li>
 <li>
 <a href="#dc">dc</a>
@@ -3356,7 +3651,7 @@
 <a href="#rdfs">rdfs</a>
 </li>
 <li>
-<a href="#sdo">sdo</a>
+<a href="#schema">schema</a>
 </li>
 <li>
 <a href="#skos">skos</a>

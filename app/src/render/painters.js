@@ -163,7 +163,10 @@ export default function s4Painters(s4Entities, s4Chapters, s4Voronoi) {
     }
 
     function drawFictGlyph(frame, cx, cy, r, status) {
-      const key = FICT_GLYPH_PATHS[status] ? status : "invented";
+      // Nessun ripiego (T-87, D-040): gli statuti sono validati al caricamento in
+      // model/entities.js, quindi uno statuto sconosciuto qui e' un errore.
+      if (!FICT_GLYPH_PATHS[status]) throw new Error(`statuto di realtà senza glifo: ${JSON.stringify(status)}`);
+      const key = status;
       const box = FICT_GLYPH_BOX[key];
       const gain = FICT_GLYPH_GAIN[key] ?? 1;
       const s = (r * gain) / box.half;

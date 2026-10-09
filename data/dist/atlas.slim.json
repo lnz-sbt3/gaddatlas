@@ -21,7 +21,7 @@
   "ontologyVersion": "1.0.0",
   "buildVersion": "4.3",
   "source": "gaddatlas-full.ttl",
-  "tripleCount": 17203,
+  "tripleCount": 17263,
   "projection": {
    "type": "equirectangular",
    "center": [
@@ -90,7 +90,7 @@
     "periurbano",
     "urbano"
    ],
-   "generatorCount": 222,
+   "generatorCount": 223,
    "peripheralCount": 30,
    "excludedUnanchored": 0,
    "bbox": {
@@ -109,15 +109,15 @@
   "excerptsIncluded": false,
   "voidSeeds": "frozen",
   "counts": {
-   "gazetteer": 265,
+   "gazetteer": 266,
    "narrativePlaces": 309,
-   "interpretations": 962,
-   "references": 722,
+   "interpretations": 960,
+   "references": 723,
    "routes": 18,
    "chapters": 10,
    "agents": 83,
    "derivedSequences": 103,
-   "reliefRows": 933,
+   "reliefRows": 931,
    "ownTiles": 48
   }
  },
@@ -175,7 +175,7 @@
    "refCountAnchored": 54,
    "planeCount": 21,
    "interpCount": 30,
-   "narrativePlaceCount": 7,
+   "narrativePlaceCount": 6,
    "densityClass": "hub",
    "densityLevel": 5
   },
@@ -199,25 +199,6 @@
    "densityLevel": 5
   },
   {
-   "id": "gaz_marino",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_marino",
-   "label": "Marino",
-   "lon": 12.66366867693179,
-   "lat": 41.77540942594233,
-   "x": 12449.455,
-   "y": 12739.057,
-   "scaleBand": "periurbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 19.8,
-   "refCountAnchored": 48,
-   "planeCount": 15,
-   "interpCount": 16,
-   "narrativePlaceCount": 5,
-   "densityClass": "hub",
-   "densityLevel": 5
-  },
-  {
    "id": "gaz_via_appia",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_appia",
    "label": "Via Appia",
@@ -235,6 +216,25 @@
    "narrativePlaceCount": 1,
    "densityClass": "hub",
    "densityLevel": 5
+  },
+  {
+   "id": "gaz_marino",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_marino",
+   "label": "Marino",
+   "lon": 12.66366867693179,
+   "lat": 41.77540942594233,
+   "x": 12449.455,
+   "y": 12739.057,
+   "scaleBand": "periurbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 19.8,
+   "refCountAnchored": 46,
+   "planeCount": 13,
+   "interpCount": 14,
+   "narrativePlaceCount": 5,
+   "densityClass": "nodale",
+   "densityLevel": 4
   },
   {
    "id": "gaz_frattocchie",
@@ -275,21 +275,21 @@
    "densityLevel": 4
   },
   {
-   "id": "gaz_casal_bruciato",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_casal_bruciato",
-   "label": "Casal Bruciato",
-   "lon": 12.550603021665,
-   "lat": 41.90695676286888,
-   "x": 4034.217,
-   "y": -415.676,
-   "scaleBand": "urbano",
+   "id": "gaz_casale_abbruciato",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_casale_abbruciato",
+   "label": "Casale Abbruciato",
+   "lon": 12.583,
+   "lat": 41.7335,
+   "x": 6445.455,
+   "y": 16930.0,
+   "scaleBand": "periurbano",
    "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 4.5,
-   "refCountAnchored": 35,
+   "historicalLocation": "Casale dell'Agro romano a sud di Roma (Nibby, Dintorni di Roma, p. 569)",
+   "distanceFromRomeKm": 20.1,
+   "refCountAnchored": 13,
    "planeCount": 8,
    "interpCount": 13,
-   "narrativePlaceCount": 4,
+   "narrativePlaceCount": 1,
    "densityClass": "frequente",
    "densityLevel": 3
   },
@@ -400,10 +400,10 @@
    "presentLocation": null,
    "historicalLocation": null,
    "distanceFromRomeKm": 17.4,
-   "refCountAnchored": 13,
+   "refCountAnchored": 14,
    "planeCount": 6,
    "interpCount": 13,
-   "narrativePlaceCount": 2,
+   "narrativePlaceCount": 3,
    "densityClass": "frequente",
    "densityLevel": 3
   },
@@ -514,10 +514,10 @@
    "presentLocation": "Via della Stazione, 00040",
    "historicalLocation": null,
    "distanceFromRomeKm": 22.8,
-   "refCountAnchored": 6,
+   "refCountAnchored": 10,
    "planeCount": 5,
    "interpCount": 6,
-   "narrativePlaceCount": 1,
+   "narrativePlaceCount": 2,
    "densityClass": "ricorrente",
    "densityLevel": 2
   },
@@ -571,10 +571,10 @@
    "presentLocation": null,
    "historicalLocation": null,
    "distanceFromRomeKm": 18.0,
-   "refCountAnchored": 6,
+   "refCountAnchored": 11,
    "planeCount": 5,
    "interpCount": 6,
-   "narrativePlaceCount": 1,
+   "narrativePlaceCount": 2,
    "densityClass": "ricorrente",
    "densityLevel": 2
   },
@@ -883,6 +883,25 @@
    "densityLevel": 1
   },
   {
+   "id": "gaz_edicola_due_santi",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_edicola_due_santi",
+   "label": "Edicola ai Due Santi",
+   "lon": 12.616871382457,
+   "lat": 41.761482099679,
+   "x": 8966.431,
+   "y": 14131.79,
+   "scaleBand": "periurbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 18.6,
+   "refCountAnchored": 3,
+   "planeCount": 3,
+   "interpCount": 3,
+   "narrativePlaceCount": 1,
+   "densityClass": "raro",
+   "densityLevel": 1
+  },
+  {
    "id": "gaz_ferrovia_roma_velletri",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri",
    "label": "Ferrovia Roma-Velletri",
@@ -894,10 +913,10 @@
    "presentLocation": null,
    "historicalLocation": null,
    "distanceFromRomeKm": 18.3,
-   "refCountAnchored": 6,
+   "refCountAnchored": 33,
    "planeCount": 3,
    "interpCount": 6,
-   "narrativePlaceCount": 2,
+   "narrativePlaceCount": 6,
    "densityClass": "raro",
    "densityLevel": 1
   },
@@ -1054,25 +1073,6 @@
    "densityLevel": 1
   },
   {
-   "id": "gaz_via_lanza",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_lanza",
-   "label": "Via Lanza",
-   "lon": 12.496558649455126,
-   "lat": 41.8952468123314,
-   "x": 11.808,
-   "y": 755.319,
-   "scaleBand": "urbano",
-   "presentLocation": "via Giovanni Lanza",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 0.8,
-   "refCountAnchored": 5,
-   "planeCount": 3,
-   "interpCount": 5,
-   "narrativePlaceCount": 2,
-   "densityClass": "raro",
-   "densityLevel": 1
-  },
-  {
    "id": "gaz_viminale",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_viminale",
    "label": "Viminale",
@@ -1198,10 +1198,10 @@
    "presentLocation": null,
    "historicalLocation": null,
    "distanceFromRomeKm": 13.8,
-   "refCountAnchored": 2,
+   "refCountAnchored": 3,
    "planeCount": 2,
    "interpCount": 2,
-   "narrativePlaceCount": 1,
+   "narrativePlaceCount": 2,
    "densityClass": "raro",
    "densityLevel": 1
   },
@@ -1848,6 +1848,25 @@
    "planeCount": 2,
    "interpCount": 2,
    "narrativePlaceCount": 1,
+   "densityClass": "raro",
+   "densityLevel": 1
+  },
+  {
+   "id": "gaz_via_lanza",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_lanza",
+   "label": "Via Lanza",
+   "lon": 12.496558649455126,
+   "lat": 41.8952468123314,
+   "x": 11.808,
+   "y": 755.319,
+   "scaleBand": "urbano",
+   "presentLocation": "via Giovanni Lanza",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 0.8,
+   "refCountAnchored": 5,
+   "planeCount": 2,
+   "interpCount": 4,
+   "narrativePlaceCount": 2,
    "densityClass": "raro",
    "densityLevel": 1
   },
@@ -3098,10 +3117,10 @@
    "presentLocation": null,
    "historicalLocation": null,
    "distanceFromRomeKm": 18.0,
-   "refCountAnchored": 16,
+   "refCountAnchored": 18,
    "planeCount": 1,
    "interpCount": 1,
-   "narrativePlaceCount": 2,
+   "narrativePlaceCount": 3,
    "densityClass": "hapax",
    "densityLevel": 0
   },
@@ -4949,9 +4968,9 @@
    "densityLevel": -1
   },
   {
-   "id": "gaz_palazzo_simonetti",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_palazzo_simonetti",
-   "label": "Palazzo Simonetti",
+   "id": "gaz_palazzo_odescalchi_simonetti",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_palazzo_odescalchi_simonetti",
+   "label": "Palazzo Odescalchi Simonetti",
    "lon": 12.472392994101876,
    "lat": 41.90520237070184,
    "x": -1786.791,
@@ -5430,55 +5449,6 @@
    "densityClass": "hub"
   },
   {
-   "id": "marino",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/marino",
-   "label": "Marino",
-   "realityStatus": "Imported",
-   "placeCategory": "locality",
-   "description": "Località dei Castelli Romani",
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 16,
-   "planeCount": 15,
-   "targets": [
-    {
-     "gazetteerId": "gaz_marino",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 8
-    },
-    {
-     "role": "ZoneOfAction",
-     "n": 3
-    },
-    {
-     "role": "Marker",
-     "n": 3
-    },
-    {
-     "role": "Setting",
-     "n": 1
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 10
-    },
-    {
-     "determination": "Relative",
-     "n": 5
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "hub"
-  },
-  {
    "id": "via_appia",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_appia",
    "label": "Via Appia",
@@ -5536,7 +5506,7 @@
    "planeCount": 13,
    "targets": [
     {
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "weight": 1.0
     }
    ],
@@ -5573,10 +5543,59 @@
    "densityClass": "nodale"
   },
   {
+   "id": "marino",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/marino",
+   "label": "Marino",
+   "realityStatus": "Imported",
+   "placeCategory": "locality",
+   "description": "Località dei Castelli Romani",
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 14,
+   "planeCount": 13,
+   "targets": [
+    {
+     "gazetteerId": "gaz_marino",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 8
+    },
+    {
+     "role": "ZoneOfAction",
+     "n": 3
+    },
+    {
+     "role": "Setting",
+     "n": 1
+    },
+    {
+     "role": "Marker",
+     "n": 1
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 8
+    },
+    {
+     "determination": "Relative",
+     "n": 5
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "nodale"
+  },
+  {
    "id": "laboratorio_zamira",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira",
    "label": "Laboratorio della Zamira Pacori",
-   "realityStatus": "Imagined",
+   "realityStatus": "Invented",
    "placeCategory": "building",
    "description": null,
    "fuzziness": null,
@@ -5770,15 +5789,39 @@
    "label": "Casal Bruciato",
    "realityStatus": "Imported",
    "placeCategory": "district",
-   "description": "Quartiere di Roma",
+   "description": "Casale reale dell'Agro romano a sud di Roma (Casal(e) Bruciato / Abbruciato / Abbrusciato: Nibby, Dintorni di Roma, p. 569), fra le ferrovie Roma–Velletri e Roma–Napoli. Non è il quartiere omonimo del Tiburtino. Forme attestate: «Casal Bruciato» (QP 212, 237, 240, 241, 262, 274, 298), «Casale Abbrusciato» (QP 297).",
    "fuzziness": null,
    "partOf": null,
    "interpCount": 13,
    "planeCount": 8,
    "targets": [
     {
-     "gazetteerId": "gaz_casal_bruciato",
-     "weight": 1.0
+     "gazetteerId": "gaz_casale_abbruciato",
+     "weight": 0.4194
+    },
+    {
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
+     "weight": 0.1613
+    },
+    {
+     "gazetteerId": "gaz_via_ardeatina",
+     "weight": 0.1613
+    },
+    {
+     "gazetteerId": "gaz_santa_palomba",
+     "weight": 0.129
+    },
+    {
+     "gazetteerId": "gaz_ponte_divino_amore",
+     "weight": 0.0645
+    },
+    {
+     "gazetteerId": "gaz_castel_di_leva",
+     "weight": 0.0323
+    },
+    {
+     "gazetteerId": "gaz_via_della_falcognana",
+     "weight": 0.0323
     }
    ],
    "roles": [
@@ -5810,7 +5853,7 @@
     }
    ],
    "anchorInherited": false,
-   "multiTarget": false,
+   "multiTarget": true,
    "densityClass": "frequente"
   },
   {
@@ -5940,7 +5983,7 @@
    "id": "tor_di_gheppio",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/tor_di_gheppio",
    "label": "Tor di Gheppio",
-   "realityStatus": "Imagined",
+   "realityStatus": "Invented",
    "placeCategory": "locality",
    "description": "Località inventata, natali dell'Assunta Crocchiapani",
    "fuzziness": 4.0,
@@ -6707,7 +6750,7 @@
    "id": "bottega_ceccherelli",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/bottega_ceccherelli",
    "label": "Bottega Ceccherelli",
-   "realityStatus": "Imagined",
+   "realityStatus": "Invented",
    "placeCategory": "retail_business",
    "description": null,
    "fuzziness": null,
@@ -7031,7 +7074,7 @@
    "id": "cantinone_albano",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/cantinone_albano",
    "label": "Cantinone d'Albano",
-   "realityStatus": "Imagined",
+   "realityStatus": "Invented",
    "placeCategory": "restaurant",
    "description": "Ristorante non identificato nel territorio di Albano Laziale",
    "fuzziness": null,
@@ -7064,7 +7107,7 @@
    "id": "casa_crocchiapani",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/casa_crocchiapani",
    "label": "Casa Crocchiapani",
-   "realityStatus": "Imagined",
+   "realityStatus": "Invented",
    "placeCategory": "farmhouse",
    "description": "Abitazione immaginaria di Assunta (Tina) Crocchiapani",
    "fuzziness": null,
@@ -7191,16 +7234,16 @@
    "id": "edicola_due_santi",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/edicola_due_santi",
    "label": "Edicola ai Due Santi",
-   "realityStatus": "Imagined",
+   "realityStatus": "Imported",
    "placeCategory": "shrine",
-   "description": "Edicola immaginata al di sopra del muro di cinta della vigna/orto sul lato opposto della via Appia rispetto al laboratorio della Zamira",
+   "description": "Tabernacolo a due pioventi che interrompe il muriccio dell'orto o vigna di fronte al laboratorio della Zamira, sul lato opposto della via Appia (QP 216, 219). Luogo importato: Manzotti (2010, p. 246) ne trova traccia nella piantina dei Castelli del Touring.",
    "fuzziness": null,
-   "partOf": "orto_vigna_due_santi",
+   "partOf": null,
    "interpCount": 3,
    "planeCount": 3,
    "targets": [
     {
-     "gazetteerId": "gaz_due_santi",
+     "gazetteerId": "gaz_edicola_due_santi",
      "weight": 1.0
     }
    ],
@@ -7220,7 +7263,7 @@
      "n": 1
     }
    ],
-   "anchorInherited": true,
+   "anchorInherited": false,
    "multiTarget": false,
    "densityClass": "raro"
   },
@@ -7387,7 +7430,7 @@
   {
    "id": "palazzo",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/palazzo",
-   "label": "Palazzo ",
+   "label": "Palazzo",
    "realityStatus": "Imported",
    "placeCategory": "station",
    "description": null,
@@ -7421,7 +7464,7 @@
    "id": "pensione_burgess",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/pensione_burgess",
    "label": "Pensione Burgess",
-   "realityStatus": "Imagined",
+   "realityStatus": "Invented",
    "placeCategory": "hotel",
    "description": "Albergo immaginario, possibile deformazione di Pensione Villa Borghese, via Sgambati 4, vicino Porta Pinciana",
    "fuzziness": 4.0,
@@ -7499,7 +7542,7 @@
    "id": "scerpure",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/scerpure",
    "label": "Scerpure",
-   "realityStatus": "Invented",
+   "realityStatus": "Imagined",
    "placeCategory": "locality",
    "description": "Toponimo indiano fittizio, ancorato a un referente reale (Brahmaputra) ma non identificabile:",
    "fuzziness": 3.0,
@@ -7989,43 +8032,6 @@
    "densityClass": "raro"
   },
   {
-   "id": "banca_ditalia",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/banca_ditalia",
-   "label": "Banca d’Italia",
-   "realityStatus": "Imported",
-   "placeCategory": "bank",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 2,
-   "planeCount": 2,
-   "targets": [
-    {
-     "gazetteerId": "gaz_banca_ditalia",
-     "weight": 0.5
-    },
-    {
-     "gazetteerId": "gaz_piazza_verdi",
-     "weight": 0.5
-    }
-   ],
-   "roles": [
-    {
-     "role": "ProjectedSpace",
-     "n": 2
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": true,
-   "densityClass": "raro"
-  },
-  {
    "id": "bologna",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/bologna",
    "label": "Bologna",
@@ -8144,7 +8150,7 @@
    "id": "castel_porcano",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/castel_porcano",
    "label": "Castel Porcano",
-   "realityStatus": "Invented",
+   "realityStatus": "Imagined",
    "placeCategory": "castle",
    "description": "Castello d'immaginazione, deformazione linguistica di Castel Porziano",
    "fuzziness": null,
@@ -8212,7 +8218,7 @@
    "label": "Centrale del Latte",
    "realityStatus": "Imported",
    "placeCategory": "building",
-   "description": " Il complesso, progettato dall'architetto Innocenzo Costantini, si estendeva su tutta l'area di Piazza Pepe, sulla quale si affaccia anche il famoso Teatro Ambra Jovinelli.[5] La struttura, sorta nel pieno periodo fascista (1929), era inoltre disposta nel cortile dove troneggiava l'Acquedotto Giulio (Aqua Iulia).",
+   "description": "Il complesso, progettato dall'architetto Innocenzo Costantini, si estendeva su tutta l'area di Piazza Pepe, sulla quale si affaccia anche il famoso Teatro Ambra Jovinelli.[5] La struttura, sorta nel pieno periodo fascista (1929), era inoltre disposta nel cortile dove troneggiava l'Acquedotto Giulio (Aqua Iulia).",
    "fuzziness": null,
    "partOf": null,
    "interpCount": 2,
@@ -8245,7 +8251,7 @@
    "label": "Collina molisana",
    "realityStatus": "Imported",
    "placeCategory": "hill",
-   "description": "Espressione evocativa usata come sineddoche spaziale dell’origine sociale e culturale del personaggio; non luogo diegetico ",
+   "description": "Espressione evocativa usata come sineddoche spaziale dell’origine sociale e culturale del personaggio; non luogo diegetico",
    "fuzziness": 3.0,
    "partOf": null,
    "interpCount": 2,
@@ -8901,7 +8907,7 @@
    "id": "roccafringoli",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/roccafringoli",
    "label": "Roccafringoli",
-   "realityStatus": "Invented",
+   "realityStatus": "Imagined",
    "placeCategory": "locality",
    "description": null,
    "fuzziness": null,
@@ -9324,7 +9330,7 @@
   {
    "id": "via_lanza",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_lanza",
-   "label": "Via Lanza ",
+   "label": "Via Lanza",
    "realityStatus": "Imported",
    "placeCategory": "street",
    "description": null,
@@ -9676,6 +9682,39 @@
    "densityClass": "hapax"
   },
   {
+   "id": "banca_ditalia",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/banca_ditalia",
+   "label": "Banca d’Italia",
+   "realityStatus": "Imported",
+   "placeCategory": "bank",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 1,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_banca_ditalia",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 1
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
    "id": "barbiere",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/barbiere",
    "label": "Barbiere",
@@ -9942,7 +9981,7 @@
    "planeCount": 1,
    "targets": [
     {
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "weight": 1.0
     }
    ],
@@ -10125,7 +10164,7 @@
    "id": "casa_del_butiro",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/casa_del_butiro",
    "label": "Casa del Butiro",
-   "realityStatus": "Invented",
+   "realityStatus": "Imagined",
    "placeCategory": "farmhouse",
    "description": "Casa immaginata nella zona dei Due Santi",
    "fuzziness": null,
@@ -10158,7 +10197,7 @@
    "id": "cassero",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/cassero",
    "label": "Cassero",
-   "realityStatus": "Imagined",
+   "realityStatus": "Invented",
    "placeCategory": "castle",
    "description": null,
    "fuzziness": null,
@@ -10274,7 +10313,7 @@
    "id": "casuccia_zamira",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira",
    "label": "Casuccia della Zamira",
-   "realityStatus": "Imagined",
+   "realityStatus": "Invented",
    "placeCategory": "dwelling",
    "description": null,
    "fuzziness": null,
@@ -10815,7 +10854,7 @@
    "id": "grotta_de_sor_pippo",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/grotta_de_sor_pippo",
    "label": "Grotta de Sor Pippo",
-   "realityStatus": "Imagined",
+   "realityStatus": "Invented",
    "placeCategory": "restaurant",
    "description": "Trattoria non meglio identificata nel territorio di Marino",
    "fuzziness": null,
@@ -11224,7 +11263,7 @@
    "id": "monte_nuncupale",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/monte_nuncupale",
    "label": "Monte Nuncupale",
-   "realityStatus": "Invented",
+   "realityStatus": "Imagined",
    "placeCategory": "mountain",
    "description": "Monte inventato, collocato nella zona dei Colli Albani/marino",
    "fuzziness": null,
@@ -11435,9 +11474,9 @@
    "id": "orto_vigna_due_santi",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi",
    "label": "Orto o Vigna ai Due Santi",
-   "realityStatus": "Imagined",
+   "realityStatus": "Invented",
    "placeCategory": "kitchen_garden",
-   "description": "Luogo non precisato simile a un orto o una vigna, di fronte al laboratorio della Zamira, al lato opposto della via Appia ",
+   "description": "Luogo non precisato simile a un orto o una vigna, di fronte al laboratorio della Zamira, al lato opposto della via Appia",
    "fuzziness": 4.0,
    "partOf": "laboratorio_zamira",
    "interpCount": 1,
@@ -11633,9 +11672,9 @@
    "id": "palazzo_simonetti",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/palazzo_simonetti",
    "label": "Palazzo Simonetti",
-   "realityStatus": "Imported",
+   "realityStatus": "Transformed",
    "placeCategory": "historical_building",
-   "description": null,
+   "description": "Luogo trasformato per rilocazione: il palazzo Simonetti (o De Carolis) è reale e sorge in via Lata, presso piazza del Collegio Romano, dove lo colloca il dattiloscritto dei capitoli nuovi; in QP 177 Gadda lo sposta in via Lanza, dove non esiste (Pinotti 2025, p. 78). Ancorato a via Lanza, la sua collocazione nel testo; nessuna coordinata propria.",
    "fuzziness": null,
    "partOf": null,
    "interpCount": 1,
@@ -11731,7 +11770,7 @@
    "planeCount": 1,
    "targets": [
     {
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "weight": 1.0
     }
    ],
@@ -11787,7 +11826,7 @@
   {
    "id": "piazza_colonna",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/piazza_colonna",
-   "label": "Piazza Colonna ",
+   "label": "Piazza Colonna",
    "realityStatus": "Imported",
    "placeCategory": "square",
    "description": null,
@@ -11972,6 +12011,39 @@
    "roles": [
     {
      "role": "Marker",
+     "n": 1
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "piazza_verdi",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/piazza_verdi",
+   "label": "Piazza Verdi",
+   "realityStatus": "Imported",
+   "placeCategory": "square",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 1,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_piazza_verdi",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
      "n": 1
     }
    ],
@@ -12266,7 +12338,7 @@
    "id": "pozzofondo",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/pozzofondo",
    "label": "Pozzofondo",
-   "realityStatus": "Imagined",
+   "realityStatus": "Invented",
    "placeCategory": "locality",
    "description": "località immaginaria, luogo d'origine di Clelia Farcioni",
    "fuzziness": null,
@@ -14074,7 +14146,7 @@
   {
    "id": "via_dei_greci",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_dei_greci",
-   "label": "Via dei Greci ",
+   "label": "Via dei Greci",
    "realityStatus": "Imported",
    "placeCategory": "street",
    "description": null,
@@ -14309,7 +14381,7 @@
    "id": "via_delle_oche",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_delle_oche",
    "label": "via delle Oche",
-   "realityStatus": "Imagined",
+   "realityStatus": "Invented",
    "placeCategory": "street",
    "description": "via topograficamente non precisata",
    "fuzziness": null,
@@ -15184,7 +15256,7 @@
    "id": "villino_lungotevere",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/villino_lungotevere",
    "label": "Villino Lungotevere",
-   "realityStatus": "Imagined",
+   "realityStatus": "Invented",
    "placeCategory": "villa",
    "description": null,
    "fuzziness": null,
@@ -15316,7 +15388,7 @@
    "id": "castello",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/castello",
    "label": "Castello",
-   "realityStatus": "Imagined",
+   "realityStatus": "Invented",
    "placeCategory": "castle",
    "description": "Luogo narrativo immaginato, un castello nella zona tra Pavona e Frattocchie",
    "fuzziness": null,
@@ -15460,24 +15532,6 @@
    "id": "piazza_san_pietro",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/piazza_san_pietro",
    "label": "Piazza San Pietro",
-   "realityStatus": "Imported",
-   "placeCategory": "square",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 0,
-   "planeCount": 0,
-   "targets": [],
-   "roles": [],
-   "determinations": [],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": null
-  },
-  {
-   "id": "piazza_verdi",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/piazza_verdi",
-   "label": "Piazza Verdi",
    "realityStatus": "Imported",
    "placeCategory": "square",
    "description": null,
@@ -20850,7 +20904,7 @@
    "id": "interp_00331",
    "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00331",
    "referenceId": "ref_00287",
-   "narrativePlaceId": "banca_ditalia",
+   "narrativePlaceId": "piazza_verdi",
    "routeId": null,
    "gazetteerId": "gaz_piazza_verdi",
    "narrativeRole": "ProjectedSpace",
@@ -25585,7 +25639,7 @@
   {
    "id": "interp_00627",
    "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00627",
-   "referenceId": "ref_00522",
+   "referenceId": "ref_00523",
    "narrativePlaceId": "carsoli",
    "routeId": null,
    "gazetteerId": "gaz_carsoli",
@@ -25601,7 +25655,7 @@
   {
    "id": "interp_00628",
    "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00628",
-   "referenceId": "ref_00523",
+   "referenceId": "ref_00522",
    "narrativePlaceId": "tivoli",
    "routeId": null,
    "gazetteerId": "gaz_tivoli",
@@ -25812,7 +25866,7 @@
    "referenceId": "ref_00534",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_casale_abbruciato",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Indeterminate",
    "spatialRelation": null,
@@ -25820,7 +25874,7 @@
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
-   "criticalNote": null
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 212, percorso sognato (Pestalozzi): Manzotti (p. 269) legge «per fil a dest» come un cambio di direzione perpendicolare, in realtà verso sinistra (a sud, verso il Circeo); lettura attribuita, fase 3."
   },
   {
    "id": "interp_00642",
@@ -26116,7 +26170,7 @@
    "referenceId": "ref_00550",
    "narrativePlaceId": "edicola_due_santi",
    "routeId": null,
-   "gazetteerId": null,
+   "gazetteerId": "gaz_edicola_due_santi",
    "narrativeRole": "Marker",
    "spatialDetermination": "Precise",
    "spatialRelation": "Overlaps",
@@ -26164,7 +26218,7 @@
    "referenceId": "ref_00553",
    "narrativePlaceId": "edicola_due_santi",
    "routeId": null,
-   "gazetteerId": null,
+   "gazetteerId": "gaz_edicola_due_santi",
    "narrativeRole": "Marker",
    "spatialDetermination": "Precise",
    "spatialRelation": "Overlaps",
@@ -26180,7 +26234,7 @@
    "referenceId": "ref_00554",
    "narrativePlaceId": "edicola_due_santi",
    "routeId": null,
-   "gazetteerId": null,
+   "gazetteerId": "gaz_edicola_due_santi",
    "narrativeRole": "Marker",
    "spatialDetermination": "Approximate",
    "spatialRelation": "Overlaps",
@@ -26452,15 +26506,15 @@
    "referenceId": "ref_00568",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_casale_abbruciato",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Approximate",
-   "spatialRelation": null,
+   "spatialRelation": "Near",
    "focalizerId": "camilla_mattonari",
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
-   "criticalNote": null
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita)."
   },
   {
    "id": "interp_00682",
@@ -26900,15 +26954,15 @@
    "referenceId": "ref_00585",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_casale_abbruciato",
    "narrativeRole": "Marker",
    "spatialDetermination": "Precise",
-   "spatialRelation": null,
+   "spatialRelation": "Near",
    "focalizerId": "narrator",
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
-   "criticalNote": null
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita)."
   },
   {
    "id": "interp_00710",
@@ -26916,10 +26970,10 @@
    "referenceId": "ref_00586",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_ferrovia_roma_velletri",
    "narrativeRole": "Setting",
    "spatialDetermination": "Approximate",
-   "spatialRelation": "Near",
+   "spatialRelation": "AdjacentTo",
    "focalizerId": "pestalozzi",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -26932,10 +26986,10 @@
    "referenceId": "ref_00586",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_ferrovia_roma_velletri",
    "narrativeRole": "Setting",
    "spatialDetermination": "Approximate",
-   "spatialRelation": "Near",
+   "spatialRelation": "AdjacentTo",
    "focalizerId": "cocullo",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -26980,10 +27034,10 @@
    "referenceId": "ref_00589",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_ferrovia_roma_velletri",
    "narrativeRole": "Marker",
    "spatialDetermination": "Precise",
-   "spatialRelation": "Near",
+   "spatialRelation": "AdjacentTo",
    "focalizerId": "narrator",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -26996,10 +27050,10 @@
    "referenceId": "ref_00590",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_ferrovia_roma_velletri",
    "narrativeRole": "Marker",
    "spatialDetermination": "Precise",
-   "spatialRelation": "Near",
+   "spatialRelation": "AdjacentTo",
    "focalizerId": "narrator",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27012,10 +27066,10 @@
    "referenceId": "ref_00591",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_ferrovia_roma_velletri",
    "narrativeRole": "Setting",
    "spatialDetermination": "Precise",
-   "spatialRelation": "Near",
+   "spatialRelation": "AdjacentTo",
    "focalizerId": "nonna_mattonari",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27028,10 +27082,10 @@
    "referenceId": "ref_00592",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_ferrovia_roma_velletri",
    "narrativeRole": "Setting",
    "spatialDetermination": "Precise",
-   "spatialRelation": "Near",
+   "spatialRelation": "AdjacentTo",
    "focalizerId": "nonna_mattonari",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27044,10 +27098,10 @@
    "referenceId": "ref_00592",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_ferrovia_roma_velletri",
    "narrativeRole": "Setting",
    "spatialDetermination": "Precise",
-   "spatialRelation": "Near",
+   "spatialRelation": "AdjacentTo",
    "focalizerId": "pestalozzi",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27060,10 +27114,10 @@
    "referenceId": "ref_00592",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_ferrovia_roma_velletri",
    "narrativeRole": "Setting",
    "spatialDetermination": "Precise",
-   "spatialRelation": "Near",
+   "spatialRelation": "AdjacentTo",
    "focalizerId": "cocullo",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27108,10 +27162,10 @@
    "referenceId": "ref_00595",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_ferrovia_roma_velletri",
    "narrativeRole": "Setting",
    "spatialDetermination": "Approximate",
-   "spatialRelation": "Near",
+   "spatialRelation": "AdjacentTo",
    "focalizerId": "narrator",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27188,10 +27242,10 @@
    "referenceId": "ref_00599",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_ferrovia_roma_velletri",
    "narrativeRole": "Setting",
    "spatialDetermination": "Precise",
-   "spatialRelation": "Near",
+   "spatialRelation": "AdjacentTo",
    "focalizerId": "camilla_mattonari",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27204,10 +27258,10 @@
    "referenceId": "ref_00599",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_ferrovia_roma_velletri",
    "narrativeRole": "Setting",
    "spatialDetermination": "Precise",
-   "spatialRelation": "Near",
+   "spatialRelation": "AdjacentTo",
    "focalizerId": "pestalozzi",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27220,10 +27274,10 @@
    "referenceId": "ref_00599",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_ferrovia_roma_velletri",
    "narrativeRole": "Setting",
    "spatialDetermination": "Precise",
-   "spatialRelation": "Near",
+   "spatialRelation": "AdjacentTo",
    "focalizerId": "cocullo",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27460,10 +27514,10 @@
    "referenceId": "ref_00611",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_ferrovia_roma_velletri",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Approximate",
-   "spatialRelation": "Near",
+   "spatialRelation": "AdjacentTo",
    "focalizerId": "camilla_mattonari",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27508,10 +27562,10 @@
    "referenceId": "ref_00613",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_ferrovia_roma_velletri",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Approximate",
-   "spatialRelation": "Near",
+   "spatialRelation": "AdjacentTo",
    "focalizerId": "camilla_mattonari",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27524,10 +27578,10 @@
    "referenceId": "ref_00613",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_ferrovia_roma_velletri",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Approximate",
-   "spatialRelation": "Near",
+   "spatialRelation": "AdjacentTo",
    "focalizerId": "zio_cantoniere",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27540,7 +27594,7 @@
    "referenceId": "ref_00614",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_casale_abbruciato",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Approximate",
    "spatialRelation": null,
@@ -27548,7 +27602,7 @@
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
-   "criticalNote": null
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita)."
   },
   {
    "id": "interp_00750",
@@ -27716,10 +27770,10 @@
    "referenceId": "ref_00621",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_ferrovia_roma_velletri",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Relative",
-   "spatialRelation": "Near",
+   "spatialRelation": "AdjacentTo",
    "focalizerId": "enea_retalli",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27732,10 +27786,10 @@
    "referenceId": "ref_00621",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_ferrovia_roma_velletri",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Relative",
-   "spatialRelation": "Near",
+   "spatialRelation": "AdjacentTo",
    "focalizerId": "camilla_mattonari",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27748,10 +27802,10 @@
    "referenceId": "ref_00621",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_ferrovia_roma_velletri",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Relative",
-   "spatialRelation": "Near",
+   "spatialRelation": "AdjacentTo",
    "focalizerId": "lavinia_mattonari",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27956,10 +28010,10 @@
    "referenceId": "ref_00631",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_ferrovia_roma_velletri",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Relative",
-   "spatialRelation": "Near",
+   "spatialRelation": "AdjacentTo",
    "focalizerId": "enea_retalli",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -27972,15 +28026,15 @@
    "referenceId": "ref_00632",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_casale_abbruciato",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Relative",
-   "spatialRelation": null,
+   "spatialRelation": "Near",
    "focalizerId": "enea_retalli",
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
-   "criticalNote": null
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita)."
   },
   {
    "id": "interp_00777",
@@ -28180,10 +28234,10 @@
    "referenceId": "ref_00642",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_ferrovia_roma_velletri",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Relative",
-   "spatialRelation": "Near",
+   "spatialRelation": "AdjacentTo",
    "focalizerId": "enea_retalli",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -28196,10 +28250,10 @@
    "referenceId": "ref_00643",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_ferrovia_roma_velletri",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Relative",
-   "spatialRelation": "Near",
+   "spatialRelation": "AdjacentTo",
    "focalizerId": "enea_retalli",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -28212,10 +28266,10 @@
    "referenceId": "ref_00643",
    "narrativePlaceId": "casello_km_20_25",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_ferrovia_roma_velletri",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Relative",
-   "spatialRelation": "Near",
+   "spatialRelation": "AdjacentTo",
    "focalizerId": "camilla_mattonari",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -29279,38 +29333,6 @@
    "criticalNote": null
   },
   {
-   "id": "interp_00858",
-   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00858",
-   "referenceId": "ref_00683",
-   "narrativePlaceId": "marino",
-   "routeId": null,
-   "gazetteerId": "gaz_marino",
-   "narrativeRole": "Marker",
-   "spatialDetermination": "Approximate",
-   "spatialRelation": null,
-   "focalizerId": "ingravallo",
-   "confidence": 1.0,
-   "isNodeOfRoute": null,
-   "routeOrder": null,
-   "criticalNote": null
-  },
-  {
-   "id": "interp_00859",
-   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00859",
-   "referenceId": "ref_00684",
-   "narrativePlaceId": "marino",
-   "routeId": null,
-   "gazetteerId": "gaz_marino",
-   "narrativeRole": "Marker",
-   "spatialDetermination": "Approximate",
-   "spatialRelation": null,
-   "focalizerId": "maresciallo_di_pietrantonio",
-   "confidence": 1.0,
-   "isNodeOfRoute": null,
-   "routeOrder": null,
-   "criticalNote": null
-  },
-  {
    "id": "interp_00860",
    "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00860",
    "referenceId": "ref_00683",
@@ -29956,15 +29978,15 @@
    "referenceId": "ref_00695",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_casale_abbruciato",
    "narrativeRole": null,
    "spatialDetermination": null,
-   "spatialRelation": null,
+   "spatialRelation": "Near",
    "focalizerId": "ingravallo",
    "confidence": 1.0,
    "isNodeOfRoute": "tragitto_torraccio_ponte_divino_amore",
    "routeOrder": 8,
-   "criticalNote": null
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore."
   },
   {
    "id": "interp_00901",
@@ -29972,15 +29994,15 @@
    "referenceId": "ref_00695",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_casale_abbruciato",
    "narrativeRole": null,
    "spatialDetermination": null,
-   "spatialRelation": null,
+   "spatialRelation": "Near",
    "focalizerId": "maresciallo_di_pietrantonio",
    "confidence": 1.0,
    "isNodeOfRoute": "tragitto_torraccio_ponte_divino_amore",
    "routeOrder": 8,
-   "criticalNote": null
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore."
   },
   {
    "id": "interp_00902",
@@ -29988,15 +30010,15 @@
    "referenceId": "ref_00695",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_casale_abbruciato",
    "narrativeRole": null,
    "spatialDetermination": null,
-   "spatialRelation": null,
+   "spatialRelation": "Near",
    "focalizerId": "autista_questura",
    "confidence": 1.0,
    "isNodeOfRoute": "tragitto_torraccio_ponte_divino_amore",
    "routeOrder": 8,
-   "criticalNote": null
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore."
   },
   {
    "id": "interp_00903",
@@ -30004,15 +30026,15 @@
    "referenceId": "ref_00695",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_casale_abbruciato",
    "narrativeRole": null,
    "spatialDetermination": null,
-   "spatialRelation": null,
+   "spatialRelation": "Near",
    "focalizerId": "agente_runzato",
    "confidence": 1.0,
    "isNodeOfRoute": "tragitto_torraccio_ponte_divino_amore",
    "routeOrder": 8,
-   "criticalNote": null
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore."
   },
   {
    "id": "interp_00904",
@@ -30404,15 +30426,15 @@
    "referenceId": "ref_00706",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_casale_abbruciato",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Approximate",
-   "spatialRelation": null,
+   "spatialRelation": "Near",
    "focalizerId": "ingravallo",
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
-   "criticalNote": null
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita)."
   },
   {
    "id": "interp_00929",
@@ -30420,15 +30442,15 @@
    "referenceId": "ref_00706",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_casale_abbruciato",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Approximate",
-   "spatialRelation": null,
+   "spatialRelation": "Near",
    "focalizerId": "agente_runzato",
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
-   "criticalNote": null
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita)."
   },
   {
    "id": "interp_00930",
@@ -30692,15 +30714,15 @@
    "referenceId": "ref_00715",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_casale_abbruciato",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Approximate",
-   "spatialRelation": null,
+   "spatialRelation": "Near",
    "focalizerId": "ingravallo",
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
-   "criticalNote": null
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita)."
   },
   {
    "id": "interp_00947",
@@ -30708,15 +30730,15 @@
    "referenceId": "ref_00715",
    "narrativePlaceId": "casal_bruciato",
    "routeId": null,
-   "gazetteerId": "gaz_casal_bruciato",
+   "gazetteerId": "gaz_casale_abbruciato",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Approximate",
-   "spatialRelation": null,
+   "spatialRelation": "Near",
    "focalizerId": "agente_runzato",
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
-   "criticalNote": null
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita)."
   },
   {
    "id": "interp_00948",
@@ -37457,6 +37479,15 @@
    "sourceReference": "A 306",
    "chapterId": "capitolo_X",
    "workId": "quer_pasticciaccio_adelphi"
+  },
+  {
+   "id": "ref_00723",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00723",
+   "edition": "A",
+   "page": 241,
+   "sourceReference": "A 241",
+   "chapterId": "capitolo_IX",
+   "workId": "quer_pasticciaccio_adelphi"
   }
  ],
  "routes": [
@@ -37819,8 +37850,8 @@
      "order": 8,
      "interpretationId": "interp_00900",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
-     "targetId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_casale_abbruciato",
+     "targetId": "gaz_casale_abbruciato",
      "focalizerId": "ingravallo",
      "referenceId": "ref_00695",
      "page": 297
@@ -37829,8 +37860,8 @@
      "order": 8,
      "interpretationId": "interp_00901",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
-     "targetId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_casale_abbruciato",
+     "targetId": "gaz_casale_abbruciato",
      "focalizerId": "maresciallo_di_pietrantonio",
      "referenceId": "ref_00695",
      "page": 297
@@ -37839,8 +37870,8 @@
      "order": 8,
      "interpretationId": "interp_00902",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
-     "targetId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_casale_abbruciato",
+     "targetId": "gaz_casale_abbruciato",
      "focalizerId": "autista_questura",
      "referenceId": "ref_00695",
      "page": 297
@@ -37849,8 +37880,8 @@
      "order": 8,
      "interpretationId": "interp_00903",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
-     "targetId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_casale_abbruciato",
+     "targetId": "gaz_casale_abbruciato",
      "focalizerId": "agente_runzato",
      "referenceId": "ref_00695",
      "page": 297
@@ -38083,7 +38114,7 @@
     {
      "order": 8,
      "targetIds": [
-      "gaz_casal_bruciato"
+      "gaz_casale_abbruciato"
      ],
      "focalizerIds": [
       "agente_runzato",
@@ -40254,7 +40285,7 @@
    "name": "Ingravallo",
    "gender": "male",
    "description": "Commissario molisano, detto don Ciccio; protagonista-investigatore e principale centro di focalizzazione del romanzo.",
-   "refCount": 114
+   "refCount": 113
   },
   {
    "id": "pestalozzi",
@@ -40350,7 +40381,7 @@
    "name": "Maresciallo Di Pietrantonio",
    "gender": "male",
    "description": null,
-   "refCount": 28
+   "refCount": 27
   },
   {
    "id": "cocullo",
@@ -44352,7 +44383,7 @@
      "referenceId": "ref_00586",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "interpretationId": "interp_00710",
      "role": "Setting",
      "simultaneous": false
@@ -44362,7 +44393,7 @@
      "referenceId": "ref_00592",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "interpretationId": "interp_00718",
      "role": "Setting",
      "simultaneous": false
@@ -44392,7 +44423,7 @@
      "referenceId": "ref_00599",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "interpretationId": "interp_00728",
      "role": "Setting",
      "simultaneous": true
@@ -44517,7 +44548,7 @@
      "referenceId": "ref_00621",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "interpretationId": "interp_00760",
      "role": "ProjectedSpace",
      "simultaneous": false
@@ -44557,7 +44588,7 @@
      "referenceId": "ref_00631",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "interpretationId": "interp_00775",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -44565,9 +44596,9 @@
     {
      "page": 274,
      "referenceId": "ref_00632",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "gaz_casale_abbruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_casale_abbruciato",
      "interpretationId": "interp_00776",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -44657,7 +44688,7 @@
      "referenceId": "ref_00642",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "interpretationId": "interp_00789",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -44667,7 +44698,7 @@
      "referenceId": "ref_00643",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "interpretationId": "interp_00790",
      "role": "ProjectedSpace",
      "simultaneous": false
@@ -44712,7 +44743,7 @@
      "referenceId": "ref_00599",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "interpretationId": "interp_00727",
      "role": "Setting",
      "simultaneous": true
@@ -44752,7 +44783,7 @@
      "referenceId": "ref_00611",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "interpretationId": "interp_00744",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -44772,7 +44803,7 @@
      "referenceId": "ref_00613",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "interpretationId": "interp_00747",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -44812,7 +44843,7 @@
      "referenceId": "ref_00621",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "interpretationId": "interp_00761",
      "role": "ProjectedSpace",
      "simultaneous": false
@@ -44832,7 +44863,7 @@
      "referenceId": "ref_00643",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "interpretationId": "interp_00791",
      "role": "ProjectedSpace",
      "simultaneous": false
@@ -44915,9 +44946,9 @@
     {
      "page": 240,
      "referenceId": "ref_00585",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "gaz_casale_abbruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_casale_abbruciato",
      "interpretationId": "interp_00709",
      "role": "Marker",
      "simultaneous": true
@@ -44937,7 +44968,7 @@
      "referenceId": "ref_00589",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "interpretationId": "interp_00714",
      "role": "Marker",
      "simultaneous": true
@@ -44947,7 +44978,7 @@
      "referenceId": "ref_00590",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "interpretationId": "interp_00715",
      "role": "Marker",
      "simultaneous": true
@@ -44977,7 +45008,7 @@
      "referenceId": "ref_00595",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "interpretationId": "interp_00722",
      "role": "Setting",
      "simultaneous": true
@@ -45062,7 +45093,7 @@
      "referenceId": "ref_00586",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "interpretationId": "interp_00711",
      "role": "Setting",
      "simultaneous": false
@@ -45072,7 +45103,7 @@
      "referenceId": "ref_00592",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "interpretationId": "interp_00719",
      "role": "Setting",
      "simultaneous": false
@@ -45082,7 +45113,7 @@
      "referenceId": "ref_00599",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "interpretationId": "interp_00729",
      "role": "Setting",
      "simultaneous": true
@@ -45197,7 +45228,7 @@
      "referenceId": "ref_00621",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "interpretationId": "interp_00762",
      "role": "ProjectedSpace",
      "simultaneous": false
@@ -45282,7 +45313,7 @@
      "referenceId": "ref_00613",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "interpretationId": "interp_00748",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -45290,9 +45321,9 @@
     {
      "page": 262,
      "referenceId": "ref_00614",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "gaz_casale_abbruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_casale_abbruciato",
      "interpretationId": "interp_00749",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -45402,7 +45433,7 @@
      "referenceId": "ref_00591",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "interpretationId": "interp_00716",
      "role": "Setting",
      "simultaneous": true
@@ -45412,7 +45443,7 @@
      "referenceId": "ref_00592",
      "targetId": "casello_km_20_25",
      "narrativePlaceId": "casello_km_20_25",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_ferrovia_roma_velletri",
      "interpretationId": "interp_00717",
      "role": "Setting",
      "simultaneous": true
@@ -45821,7 +45852,7 @@
      "page": 135,
      "referenceId": "ref_00287",
      "targetId": "gaz_piazza_verdi",
-     "narrativePlaceId": "banca_ditalia",
+     "narrativePlaceId": "piazza_verdi",
      "gazetteerId": "gaz_piazza_verdi",
      "interpretationId": "interp_00331",
      "role": "ProjectedSpace",
@@ -48100,8 +48131,8 @@
    "chapterId": "capitolo_VII",
    "chapter": 7,
    "length": 8,
-   "distinctTargets": 7,
-   "dispersion": 0.875,
+   "distinctTargets": 8,
+   "dispersion": 1.0,
    "pageRange": [
     177,
     192
@@ -48110,7 +48141,7 @@
     {
      "page": 177,
      "referenceId": "ref_00435",
-     "targetId": "gaz_via_lanza",
+     "targetId": "palazzo_simonetti",
      "narrativePlaceId": "palazzo_simonetti",
      "gazetteerId": "gaz_via_lanza",
      "interpretationId": "interp_00506",
@@ -48630,20 +48661,20 @@
     {
      "page": 210,
      "referenceId": "ref_00522",
-     "targetId": "gaz_carsoli",
-     "narrativePlaceId": "carsoli",
-     "gazetteerId": "gaz_carsoli",
-     "interpretationId": "interp_00627",
+     "targetId": "gaz_tivoli",
+     "narrativePlaceId": "tivoli",
+     "gazetteerId": "gaz_tivoli",
+     "interpretationId": "interp_00628",
      "role": "Marker",
      "simultaneous": true
     },
     {
      "page": 210,
      "referenceId": "ref_00523",
-     "targetId": "gaz_tivoli",
-     "narrativePlaceId": "tivoli",
-     "gazetteerId": "gaz_tivoli",
-     "interpretationId": "interp_00628",
+     "targetId": "gaz_carsoli",
+     "narrativePlaceId": "carsoli",
+     "gazetteerId": "gaz_carsoli",
+     "interpretationId": "interp_00627",
      "role": "Marker",
      "simultaneous": true
     },
@@ -48750,9 +48781,9 @@
     {
      "page": 212,
      "referenceId": "ref_00534",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "gaz_casale_abbruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_casale_abbruciato",
      "interpretationId": "interp_00641",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -48995,9 +49026,9 @@
     {
      "page": 219,
      "referenceId": "ref_00554",
-     "targetId": "edicola_due_santi",
+     "targetId": "gaz_edicola_due_santi",
      "narrativePlaceId": "edicola_due_santi",
-     "gazetteerId": null,
+     "gazetteerId": "gaz_edicola_due_santi",
      "interpretationId": "interp_00664",
      "role": "Marker",
      "simultaneous": true
@@ -49090,9 +49121,9 @@
     {
      "page": 216,
      "referenceId": "ref_00550",
-     "targetId": "edicola_due_santi",
+     "targetId": "gaz_edicola_due_santi",
      "narrativePlaceId": "edicola_due_santi",
-     "gazetteerId": null,
+     "gazetteerId": "gaz_edicola_due_santi",
      "interpretationId": "interp_00660",
      "role": "Marker",
      "simultaneous": true
@@ -49120,9 +49151,9 @@
     {
      "page": 219,
      "referenceId": "ref_00553",
-     "targetId": "edicola_due_santi",
+     "targetId": "gaz_edicola_due_santi",
      "narrativePlaceId": "edicola_due_santi",
-     "gazetteerId": null,
+     "gazetteerId": "gaz_edicola_due_santi",
      "interpretationId": "interp_00663",
      "role": "Marker",
      "simultaneous": false
@@ -49175,9 +49206,9 @@
     {
      "page": 237,
      "referenceId": "ref_00568",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "gaz_casale_abbruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_casale_abbruciato",
      "interpretationId": "interp_00681",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -49374,9 +49405,9 @@
    "agentName": "Ingravallo",
    "chapterId": "capitolo_X",
    "chapter": 10,
-   "length": 41,
+   "length": 40,
    "distinctTargets": 30,
-   "dispersion": 0.732,
+   "dispersion": 0.75,
    "pageRange": [
     286,
     302
@@ -49460,16 +49491,6 @@
      "gazetteerId": "gaz_via_merulana",
      "interpretationId": "interp_00856",
      "role": "Setting",
-     "simultaneous": true
-    },
-    {
-     "page": 294,
-     "referenceId": "ref_00683",
-     "targetId": "gaz_marino",
-     "narrativePlaceId": "marino",
-     "gazetteerId": "gaz_marino",
-     "interpretationId": "interp_00858",
-     "role": "Marker",
      "simultaneous": true
     },
     {
@@ -49575,9 +49596,9 @@
     {
      "page": 297,
      "referenceId": "ref_00695",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "gaz_casale_abbruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_casale_abbruciato",
      "interpretationId": "interp_00900",
      "role": null,
      "simultaneous": true
@@ -49655,9 +49676,9 @@
     {
      "page": 298,
      "referenceId": "ref_00706",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "gaz_casale_abbruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_casale_abbruciato",
      "interpretationId": "interp_00928",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -49745,9 +49766,9 @@
     {
      "page": 298,
      "referenceId": "ref_00715",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "gaz_casale_abbruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_casale_abbruciato",
      "interpretationId": "interp_00946",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -49890,9 +49911,9 @@
     {
      "page": 297,
      "referenceId": "ref_00695",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "gaz_casale_abbruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_casale_abbruciato",
      "interpretationId": "interp_00903",
      "role": null,
      "simultaneous": true
@@ -49970,9 +49991,9 @@
     {
      "page": 298,
      "referenceId": "ref_00706",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "gaz_casale_abbruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_casale_abbruciato",
      "interpretationId": "interp_00929",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -50060,9 +50081,9 @@
     {
      "page": 298,
      "referenceId": "ref_00715",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "gaz_casale_abbruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_casale_abbruciato",
      "interpretationId": "interp_00947",
      "role": "ProjectedSpace",
      "simultaneous": true
@@ -50094,9 +50115,9 @@
    "agentName": "Maresciallo Di Pietrantonio",
    "chapterId": "capitolo_X",
    "chapter": 10,
-   "length": 20,
-   "distinctTargets": 18,
-   "dispersion": 0.9,
+   "length": 19,
+   "distinctTargets": 17,
+   "dispersion": 0.895,
    "pageRange": [
     292,
     302
@@ -50150,16 +50171,6 @@
      "gazetteerId": "gaz_marino",
      "interpretationId": "interp_00862",
      "role": "Setting",
-     "simultaneous": true
-    },
-    {
-     "page": 294,
-     "referenceId": "ref_00684",
-     "targetId": "gaz_marino",
-     "narrativePlaceId": "marino",
-     "gazetteerId": "gaz_marino",
-     "interpretationId": "interp_00859",
-     "role": "Marker",
      "simultaneous": true
     },
     {
@@ -50255,9 +50266,9 @@
     {
      "page": 297,
      "referenceId": "ref_00695",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "gaz_casale_abbruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_casale_abbruciato",
      "interpretationId": "interp_00901",
      "role": null,
      "simultaneous": true
@@ -50470,9 +50481,9 @@
     {
      "page": 297,
      "referenceId": "ref_00695",
-     "targetId": "gaz_casal_bruciato",
+     "targetId": "gaz_casale_abbruciato",
      "narrativePlaceId": "casal_bruciato",
-     "gazetteerId": "gaz_casal_bruciato",
+     "gazetteerId": "gaz_casale_abbruciato",
      "interpretationId": "interp_00902",
      "role": null,
      "simultaneous": true
@@ -57064,7 +57075,7 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_via_lanza",
+   "targetId": "palazzo_simonetti",
    "interpretationId": "interp_00506",
    "referenceId": "ref_00435",
    "page": 177,
@@ -58492,8 +58503,8 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_carsoli",
-   "interpretationId": "interp_00627",
+   "targetId": "gaz_tivoli",
+   "interpretationId": "interp_00628",
    "referenceId": "ref_00522",
    "page": 210,
    "chapter": 8,
@@ -58504,8 +58515,8 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_tivoli",
-   "interpretationId": "interp_00628",
+   "targetId": "gaz_carsoli",
+   "interpretationId": "interp_00627",
    "referenceId": "ref_00523",
    "page": 210,
    "chapter": 8,
@@ -58660,7 +58671,7 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "gaz_casale_abbruciato",
    "interpretationId": "interp_00641",
    "referenceId": "ref_00534",
    "page": 212,
@@ -58668,7 +58679,7 @@
    "agentId": "pestalozzi",
    "role": "ProjectedSpace",
    "determination": "Indeterminate",
-   "criticalNote": null,
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 212, percorso sognato (Pestalozzi): Manzotti (p. 269) legge «per fil a dest» come un cambio di direzione perpendicolare, in realtà verso sinistra (a sud, verso il Circeo); lettura attribuita, fase 3.",
    "isRouteNode": null
   },
   {
@@ -58864,7 +58875,7 @@
    "isRouteNode": null
   },
   {
-   "targetId": "edicola_due_santi",
+   "targetId": "gaz_edicola_due_santi",
    "interpretationId": "interp_00660",
    "referenceId": "ref_00550",
    "page": 216,
@@ -58900,7 +58911,7 @@
    "isRouteNode": null
   },
   {
-   "targetId": "edicola_due_santi",
+   "targetId": "gaz_edicola_due_santi",
    "interpretationId": "interp_00663",
    "referenceId": "ref_00553",
    "page": 219,
@@ -58912,7 +58923,7 @@
    "isRouteNode": null
   },
   {
-   "targetId": "edicola_due_santi",
+   "targetId": "gaz_edicola_due_santi",
    "interpretationId": "interp_00664",
    "referenceId": "ref_00554",
    "page": 219,
@@ -59116,7 +59127,7 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "gaz_casale_abbruciato",
    "interpretationId": "interp_00681",
    "referenceId": "ref_00568",
    "page": 237,
@@ -59124,7 +59135,7 @@
    "agentId": "camilla_mattonari",
    "role": "ProjectedSpace",
    "determination": "Approximate",
-   "criticalNote": null,
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita).",
    "isRouteNode": null
   },
   {
@@ -59416,7 +59427,7 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "gaz_casale_abbruciato",
    "interpretationId": "interp_00709",
    "referenceId": "ref_00585",
    "page": 240,
@@ -59424,7 +59435,7 @@
    "agentId": "narrator",
    "role": "Marker",
    "determination": "Precise",
-   "criticalNote": null,
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita).",
    "isRouteNode": null
   },
   {
@@ -59896,7 +59907,7 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "gaz_casale_abbruciato",
    "interpretationId": "interp_00749",
    "referenceId": "ref_00614",
    "page": 262,
@@ -59904,7 +59915,7 @@
    "agentId": "zio_cantoniere",
    "role": "ProjectedSpace",
    "determination": "Approximate",
-   "criticalNote": null,
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita).",
    "isRouteNode": null
   },
   {
@@ -60220,7 +60231,7 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "gaz_casale_abbruciato",
    "interpretationId": "interp_00776",
    "referenceId": "ref_00632",
    "page": 274,
@@ -60228,7 +60239,7 @@
    "agentId": "enea_retalli",
    "role": "ProjectedSpace",
    "determination": "Relative",
-   "criticalNote": null,
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita).",
    "isRouteNode": null
   },
   {
@@ -61156,18 +61167,6 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_marino",
-   "interpretationId": "interp_00858",
-   "referenceId": "ref_00683",
-   "page": 294,
-   "chapter": 10,
-   "agentId": "ingravallo",
-   "role": "Marker",
-   "determination": "Approximate",
-   "criticalNote": null,
-   "isRouteNode": null
-  },
-  {
    "targetId": "tenenza_carabinieri_marino",
    "interpretationId": "interp_00860",
    "referenceId": "ref_00683",
@@ -61199,18 +61198,6 @@
    "chapter": 10,
    "agentId": "maresciallo_di_pietrantonio",
    "role": "Setting",
-   "determination": "Approximate",
-   "criticalNote": null,
-   "isRouteNode": null
-  },
-  {
-   "targetId": "gaz_marino",
-   "interpretationId": "interp_00859",
-   "referenceId": "ref_00684",
-   "page": 294,
-   "chapter": 10,
-   "agentId": "maresciallo_di_pietrantonio",
-   "role": "Marker",
    "determination": "Approximate",
    "criticalNote": null,
    "isRouteNode": null
@@ -61660,7 +61647,7 @@
    "isRouteNode": "tragitto_torraccio_ponte_divino_amore"
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "gaz_casale_abbruciato",
    "interpretationId": "interp_00900",
    "referenceId": "ref_00695",
    "page": 297,
@@ -61668,11 +61655,11 @@
    "agentId": "ingravallo",
    "role": null,
    "determination": null,
-   "criticalNote": null,
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore.",
    "isRouteNode": "tragitto_torraccio_ponte_divino_amore"
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "gaz_casale_abbruciato",
    "interpretationId": "interp_00901",
    "referenceId": "ref_00695",
    "page": 297,
@@ -61680,11 +61667,11 @@
    "agentId": "maresciallo_di_pietrantonio",
    "role": null,
    "determination": null,
-   "criticalNote": null,
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore.",
    "isRouteNode": "tragitto_torraccio_ponte_divino_amore"
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "gaz_casale_abbruciato",
    "interpretationId": "interp_00902",
    "referenceId": "ref_00695",
    "page": 297,
@@ -61692,11 +61679,11 @@
    "agentId": "autista_questura",
    "role": null,
    "determination": null,
-   "criticalNote": null,
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore.",
    "isRouteNode": "tragitto_torraccio_ponte_divino_amore"
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "gaz_casale_abbruciato",
    "interpretationId": "interp_00903",
    "referenceId": "ref_00695",
    "page": 297,
@@ -61704,7 +61691,7 @@
    "agentId": "agente_runzato",
    "role": null,
    "determination": null,
-   "criticalNote": null,
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita). QP 297: il passo dispone intorno al casale anche il ponte di Santa Fumia e Tor di Gheppio (luoghi narrativi, non ancore geografiche: relazione fra luoghi narrativi da modellare in T-47/T-53) e il passaggio a livello sulla ferrovia di Velletri «due chilometri più a nord» del Divino Amore.",
    "isRouteNode": "tragitto_torraccio_ponte_divino_amore"
   },
   {
@@ -61948,7 +61935,7 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "gaz_casale_abbruciato",
    "interpretationId": "interp_00928",
    "referenceId": "ref_00706",
    "page": 298,
@@ -61956,11 +61943,11 @@
    "agentId": "ingravallo",
    "role": "ProjectedSpace",
    "determination": "Approximate",
-   "criticalNote": null,
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita).",
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "gaz_casale_abbruciato",
    "interpretationId": "interp_00929",
    "referenceId": "ref_00706",
    "page": 298,
@@ -61968,7 +61955,7 @@
    "agentId": "agente_runzato",
    "role": "ProjectedSpace",
    "determination": "Approximate",
-   "criticalNote": null,
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita).",
    "isRouteNode": null
   },
   {
@@ -62164,7 +62151,7 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "gaz_casale_abbruciato",
    "interpretationId": "interp_00946",
    "referenceId": "ref_00715",
    "page": 298,
@@ -62172,11 +62159,11 @@
    "agentId": "ingravallo",
    "role": "ProjectedSpace",
    "determination": "Approximate",
-   "criticalNote": null,
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita).",
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_casal_bruciato",
+   "targetId": "gaz_casale_abbruciato",
    "interpretationId": "interp_00947",
    "referenceId": "ref_00715",
    "page": 298,
@@ -62184,7 +62171,7 @@
    "agentId": "agente_runzato",
    "role": "ProjectedSpace",
    "determination": "Approximate",
-   "criticalNote": null,
+   "criticalNote": "Ancora: gaz_casale_abbruciato, nella posizione TCI adottata (Manzotti 2010, Tav. VI); posizione alternativa IGM a ovest della Roma–Napoli (Tav. VII), in discrepanza con il testo. Manzotti (2010, p. 269): la topografia di Gadda «pare combinare e forse confondere» le due ferrovie, «fondandosi […] più sulla memoria di escursioni in loco, che sui rilievi delle carte»: il testo prevale, la discrepanza non si corregge. Le altre ancore sono i luoghi che il passo dispone intorno al casale (relazione near, da rimodellare come ancoraggio relazionale, T-47). Pavona e Santa Maria delle Mole non sono nel testo: sono un'inferenza di Manzotti dai km 17,55 e 23,38 della Roma–Velletri (fase 3, lettura attribuita).",
    "isRouteNode": null
   },
   {

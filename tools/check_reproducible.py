@@ -35,33 +35,33 @@ from rdflib.compare import isomorphic, to_isomorphic, graph_diff
 ROOT = Path(__file__).resolve().parents[1]
 VERBOSE = "--verbose" in sys.argv
 
-# I derivati versionati che la build rigenera.
+# I derivati versionati che la build rigenera (D-039).
 #
-# data/dist/gaddatlas-full.ttl NON e' in elenco, ed e' una scelta motivata.
-# E' il semplice merge di ontology/chora.ttl + ontology/shapes/
-# chora-placecategories.ttl + data/gaddatlas.ttl, e contiene due contributori
-# dichiarati come nodi anonimi della stessa forma (a prov:Agent ; schema:name).
-# La canonicalizzazione di rdflib non riesce a distinguerli in modo stabile fra
-# processi diversi: il confronto riportava sistematicamente 6 triple di
-# differenza (due dcterms:contributor, due rdf:type, due schema:name) su un
-# grafo per il resto identico.
+# ontology/chora.ttl non e' in elenco: dal D-020 e' la SORGENTE della TBox, non
+# un derivato. Ci sono invece i suoi derivati, chora.rdf e chora.jsonld (D-033).
 #
-# Escluderlo non lascia scoperto nulla:
-#   1. le sue due componenti rigenerate sono confrontate qui sopra;
-#   2. tools/audit_alignment.py legge proprio questo file e ne verifica nove
-#      invarianti di contenuto, quindi un merge sbagliato verrebbe comunque
-#      intercettato.
+# data/dist/gaddatlas-full.ttl e' rientrato in elenco. Era escluso perche' i due
+# contributori dichiarati come nodi anonimi della stessa forma non venivano
+# canonicalizzati in modo stabile fra processi. Dal D-022 l'ETL serializza il
+# grafo dopo rdflib.compare.to_canonical_graph e in ordine: il file e' identico
+# byte per byte fra build diverse, e il confronto dei byte (sotto) basta. La
+# correzione alla radice resta dare URI ai contributori.
 #
-# La correzione alla radice e' dare URI ai contributori invece di nodi anonimi
-# (vedi docs/DECISIONS.md): a quel punto il file puo' rientrare in elenco.
+# Le copie in app/public/data sono confrontate qui con i derivati di data/dist
+# e, byte per byte, anche da tools/audit_alignment.py (D-023).
 TARGETS = [
-    "ontology/chora.ttl",
+    "ontology/chora.rdf",
+    "ontology/chora.jsonld",
     "data/gaddatlas.ttl",
+    "data/dist/gaddatlas-full.ttl",
     "data/dist/gaddatlas.geojson",
     "data/dist/atlas.slim.json",
     "data/dist/void_seeds.json",
     "data/dist/passages/index.json",
-] + [f"data/dist/passages/ch{n:02d}.json" for n in range(1, 11)]
+    "app/public/data/gaddatlas.geojson",
+    "app/public/data/passages/index.json",
+] + [f"data/dist/passages/ch{n:02d}.json" for n in range(1, 11)] + [
+    f"app/public/data/passages/ch{n:02d}.json" for n in range(1, 11)]
 
 
 def from_head(path: str) -> bytes | None:
@@ -75,10 +75,10 @@ def from_head(path: str) -> bytes | None:
         return None
 
 
-def compare_rdf(old: bytes, new: bytes) -> tuple[bool, str]:
+def compare_rdf(old: bytes, new: bytes, fmt: str = "turtle") -> tuple[bool, str]:
     a, b = Graph(), Graph()
-    a.parse(data=old, format="turtle")
-    b.parse(data=new, format="turtle")
+    a.parse(data=old, format=fmt)
+    b.parse(data=new, format=fmt)
     if isomorphic(a, b):
         return True, f"{len(b)} triple, grafi isomorfi"
     _, in_old, in_new = graph_diff(to_isomorphic(a), to_isomorphic(b))
@@ -117,8 +117,14 @@ def main() -> int:
             continue
 
         new = path.read_bytes()
-        if rel.endswith(".ttl"):
-            ok, detail = compare_rdf(old, new)
+        if old == new:
+            ok, detail = True, "byte identici"
+        elif rel.endswith(".ttl"):
+            ok, detail = compare_rdf(old, new, "turtle")
+        elif rel.endswith(".rdf"):
+            ok, detail = compare_rdf(old, new, "xml")
+        elif rel.endswith(".jsonld"):
+            ok, detail = compare_rdf(old, new, "json-ld")
         else:
             ok, detail = compare_json(old, new)
 
