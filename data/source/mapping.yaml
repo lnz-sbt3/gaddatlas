@@ -22,6 +22,11 @@ namespaces:
 constants:
   work_uri: "https://w3id.org/gaddatlas/id/work/quer_pasticciaccio_adelphi"
   default_focalizer: "https://w3id.org/gaddatlas/id/focalizer/narrator"
+  # Letture di statuto generate per i luoghi Imported senza asserzione
+  # esplicita (D-068): data costante, perche' il build sia deterministico (D-022),
+  # e motivazione standard (ripetuta nello scopeNote di chora:Imported).
+  generated_readings_date: "2026-10-09"
+  imported_standard_rationale: "Motivazione standard dello statuto: referente identificato nel repertorio."
 
 # ============================================================
 # VOCABOLARI CONTROLLATI

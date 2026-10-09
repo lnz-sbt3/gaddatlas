@@ -21,7 +21,7 @@
   "ontologyVersion": "1.0.0",
   "buildVersion": "4.3",
   "source": "gaddatlas-full.ttl",
-  "tripleCount": 34377,
+  "tripleCount": 40580,
   "projection": {
    "type": "equirectangular",
    "center": [
@@ -15338,7 +15338,7 @@
    "label": "Castello",
    "realityStatus": "Imported",
    "placeCategory": "castle",
-   "description": "Luogo narrativo immaginato, un castello nella zona tra Pavona e Frattocchie",
+   "description": "Luogo testuale della \"stazione di Castello\" (QP 279); identificazione adottata Castel Savello (Manzotti 2010, p. 293), concorrente Castel Gandolfo (LS)",
    "fuzziness": null,
    "partOf": null,
    "interpCount": 0,

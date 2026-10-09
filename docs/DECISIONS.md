@@ -1343,6 +1343,28 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-068 — Statuto degli Imported generato dall'ETL (9 ottobre 2026)
+
+- Requisito/i: R07, R22 · Ipotesi: — · Data check: DC-04 (AUDIT_2b, B2, con la modifica M3, le risposte 4 e 6 e C2)
+- Stato precedente: 258 luoghi Imported avevano `hasRealityStatus` senza alcuna lettura attribuita (TBOX_2 § 6), per la regola di D-046 «un Imported non richiede un'asserzione». IQ13 controllava la coerenza solo dove una lettura c'era.
+- Decisione (di Lorenzo, 9/10/2026, opzione b):
+  - **generazione:** per ogni luogo Imported senza un'asserzione di statuto adottata in `Assertions.tsv`, l'ETL genera la lettura `assertion/S-auto-{luogo}` e il suo atto (`act/S-auto-{luogo}`): valore Imported, autore e codificatore Lorenzo (un atto solo, D-067), criterio ReferentialEvidence, adottata, validata, `rdfs:comment` «Lettura generata dall'ETL». La data è costante (decisione 4): `generated_readings_date` nelle costanti di `mapping.yaml`, 2026-10-09, perché il build resti deterministico. **I TSV non cambiano**;
+  - **motivazione:** testo standard (`imported_standard_rationale`, ripetuto nello scopeNote di `chora:Imported`), più l'ancora primaria con la regola dell'adapter (D-038, D-045), cioè l'entità più frequente fra le ancore delle interpretazioni, oppure l'identificazione adottata, oppure l'ancora del luogo di cui è parte;
+  - **fonte del repertorio (M3):** se l'ancora primaria ha un `owl:sameAs` esterno, la motivazione cita il repertorio. L'atto lo registra con `hico:isExtractedFrom` verso una `chora:Source` per repertorio (nuove righe `wikidata` e `geonames` in `Sources.tsv`) e con `chora:sourcePage` uguale all'identificatore esterno. Altrimenti la fonte è il Censimento e la motivazione dice «Fonte del repertorio non registrata». **Oggi: 0 su 258 hanno un identificatore esterno.** Nessuna delle 265 entità del gazetteer ha un `owl:sameAs` esterno (T-46);
+  - **i 12 Imported senza ancora** (decisione 6): lettura generata con la motivazione «Nessuna ancora: analisi non condotta (D-048)»;
+  - **revisione:** una riga esplicita sostituisce la generata. Se la riga rivede la generata (`Revision_Of = S-auto-{luogo}`), la generata esiste ma non è adottata;
+  - **IQ13 riscritta su tutti i 309 luoghi:** ogni `hasRealityStatus` ha esattamente una lettura di statuto adottata, con lo stesso valore. Provata togliendo l'adozione a S-auto-colosseo e cambiando lo statuto di marino: 2 righe;
+  - **StatusRationaleShape:** ora su tutti i luoghi, non più solo sui non Imported;
+  - **scopeNote di `chora:Imported`:** tolta la regola «un Imported non richiede un'asserzione»; descrive la generazione;
+  - **C2:** descrizione di `castello` in `NarrativePlaces.tsv`: «Luogo testuale della "stazione di Castello" (QP 279); identificazione adottata Castel Savello (Manzotti 2010, p. 293), concorrente Castel Gandolfo (LS)».
+- Avvertenze: 48 → **50**. La shape copre ora anche gli Imported, e le due asserzioni esplicite di luoghi Imported (S-casal_bruciato, S-edicola_due_santi) sono ancora «bozza». Le 258 generate sono validate e non danno avvertenze.
+- Motivazione (fonte, pagina): AUDIT_2b, B2; Cap. 4, R07 («statuto motivato per ogni assegnazione»).
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `tools/etl.py` r. 1442–1516 (`primary_anchor`, `generate_imported_statuses`), r. 1741 (chiamata); `data/source/mapping.yaml` r. 25–29 (costanti); `data/source/tables/Sources.tsv` (wikidata, geonames), `NarrativePlaces.tsv` (castello); XLSX corrispondenti; `ontology/chora.ttl` (scopeNote di `chora:Imported`); `ontology/queries/integrity.rq` (IQ13); `ontology/shapes/chora-shapes.ttl` (shape 8); `docs/thesis/DATA_CHECKS_GaddAtlas.md` (DC-04).
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.422 invariata nel numero; ABox 32.385 → **38.588** (+258 letture con i loro atti, +2 fonti); full 34.377 → **40.580**. Letture di statuto 53 → **311** (309 adottate). SHACL conforme, 50 avvertenze; IQ1–IQ17 a 0. GeoJSON: cambia solo `tripleCount`.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

@@ -420,9 +420,8 @@ ga:StatusRationaleShape
     a sh:NodeShape ;
     sh:targetClass ga:NarrativePlace ;
     sh:severity sh:Warning ;
-    sh:message "Luogo non Imported senza un'asserzione di statuto adottata, motivata e validata (T-33)." ;
+    sh:message "Luogo senza un'asserzione di statuto adottata, motivata e validata (T-33; gli Imported l'hanno generata dall'ETL, D-068)." ;
     sh:or (
-        [ sh:path ga:hasRealityStatus ; sh:hasValue ga:Imported ]
         [ sh:path [ sh:inversePath ga:aboutSubject ] ;
           sh:qualifiedValueShape [
               sh:and (

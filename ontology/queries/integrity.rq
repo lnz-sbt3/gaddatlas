@@ -149,20 +149,23 @@ GROUP BY ?soggetto ?tipo
 HAVING (COUNT(?a) > 1)
 
 
-# ==== IQ13 — Statuto del luogo diverso da quello della lettura adottata (atteso: 0) ====
-# hasRealityStatus sul luogo e' il valore adottato: deve coincidere con il valore
-# dell'asserzione di statuto adottata, se c'e' (D-046).
+# ==== IQ13 — Statuto del luogo senza esattamente una lettura adottata, o diverso da essa (atteso: 0) ====
+# Su tutti i luoghi (D-068): ogni hasRealityStatus deriva da esattamente una
+# lettura di statuto adottata (esplicita o generata dall'ETL), e il valore coincide.
 PREFIX ga: <https://w3id.org/chora#>
 PREFIX hico: <http://purl.org/emmedi/hico/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
-SELECT ?luogo ?statuto ?adottato WHERE {
-  ?a a ga:Assertion ;
-     prov:wasGeneratedBy/hico:hasInterpretationType ga:StatusAssertion ;
-     ga:adoptedByProject true ;
-     ga:aboutSubject ?luogo ;
-     ga:assertsValue ?adottato .
-  ?luogo ga:hasRealityStatus ?statuto .
-  FILTER (?statuto != ?adottato)
+SELECT ?luogo ?statuto ?n ?adottato WHERE {
+  {
+    SELECT ?luogo ?statuto (COUNT(DISTINCT ?a) AS ?n) (SAMPLE(?v) AS ?adottato) WHERE {
+      ?luogo a ga:NarrativePlace ; ga:hasRealityStatus ?statuto .
+      OPTIONAL {
+        ?a ga:aboutSubject ?luogo ; ga:adoptedByProject true ; ga:assertsValue ?v ;
+           prov:wasGeneratedBy/hico:hasInterpretationType ga:StatusAssertion .
+      }
+    } GROUP BY ?luogo ?statuto
+  }
+  FILTER (?n != 1 || ?adottato != ?statuto)
 }
 
 

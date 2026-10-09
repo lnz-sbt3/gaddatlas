@@ -836,7 +836,7 @@
     <skos:inScheme rdf:resource="https://w3id.org/chora#RealityStatusScheme"/>
     <skos:notation>1</skos:notation>
     <skos:prefLabel xml:lang="en">Imported</skos:prefLabel>
-    <skos:scopeNote xml:lang="it">Motivazione standard dello statuto (D-046): referente identificato nel repertorio. Un luogo Imported non richiede un'asserzione di statuto motivata, salvo i casi contesi.</skos:scopeNote>
+    <skos:scopeNote xml:lang="it">Motivazione standard dello statuto (D-046): referente identificato nel repertorio. Per un luogo Imported senza un'asserzione di statuto esplicita, l'ETL genera la lettura (assertion/S-auto-{luogo}) con questa motivazione, la fonte del repertorio dell'ancora primaria se registrata, autore e codificatore L. Sabatino, adottata e validata (D-068).</skos:scopeNote>
     <skos:topConceptOf rdf:resource="https://w3id.org/chora#RealityStatusScheme"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#Incompleteness">

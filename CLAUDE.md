@@ -20,9 +20,9 @@ Due artefatti distinti nello stesso repository:
 
 ## Le decisioni sono già prese
 
-`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-067; quelle dell'allineamento al
+`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-068; quelle dell'allineamento al
 Capitolo 4 partono da D-019 (D-015…D-018 sono del porting, su `main`). Nel file sono in
-ordine cronologico, non numerico. Prossimo numero libero: **D-068**. **Leggile
+ordine cronologico, non numerico. Prossimo numero libero: **D-069**. **Leggile
 prima di proporre alternative architetturali.** Se una scelta ti sembra
 sbagliata, dillo citando la decisione — non aggirarla in silenzio.
 

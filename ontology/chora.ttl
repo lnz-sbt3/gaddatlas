@@ -619,7 +619,7 @@ chora:Imported a owl:NamedIndividual,
     skos:altLabel "Importato"@it ;
     skos:definition "The setting corresponds with the geographical reality by realistically portraying the surrounding" ;
     skos:notation "1" ;
-    skos:scopeNote "Motivazione standard dello statuto (D-046): referente identificato nel repertorio. Un luogo Imported non richiede un'asserzione di statuto motivata, salvo i casi contesi."@it ;
+    skos:scopeNote "Motivazione standard dello statuto (D-046): referente identificato nel repertorio. Per un luogo Imported senza un'asserzione di statuto esplicita, l'ETL genera la lettura (assertion/S-auto-{luogo}) con questa motivazione, la fonte del repertorio dell'ancora primaria se registrata, autore e codificatore L. Sabatino, adottata e validata (D-068)."@it ;
     skos:inScheme chora:RealityStatusScheme ;
     skos:prefLabel "Imported"@en ;
     skos:topConceptOf chora:RealityStatusScheme .

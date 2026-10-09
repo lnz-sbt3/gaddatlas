@@ -1434,6 +1434,87 @@ class GaddaETL:
         self.materialize_adopted()
         logger.info(f"Assertions: {len(df)} asserzioni attribuite")
 
+    # ------------------------------------------------------------------
+    # STATUTI GENERATI PER GLI IMPORTED (D-068, AUDIT_2b B2)
+    # ------------------------------------------------------------------
+    EXTERNAL_REPERTORIES = {"wikidata.org": "wikidata", "geonames.org": "geonames"}
+
+    def primary_anchor(self, place):
+        """Ancora primaria di un luogo, con la regola dell'adapter (D-038, D-045):
+        l'entita' piu' frequente fra le ancore delle sue interpretazioni (a parita',
+        la prima in ordine alfabetico); altrimenti l'identificazione adottata;
+        altrimenti quella del luogo di cui e' parte."""
+        seen = set()
+        while place is not None and place not in seen:
+            seen.add(place)
+            freq = {}
+            for si in self.graph.subjects(CHORA.targetsPlace, place):
+                for e in set(self.graph.objects(si, CHORA.anchorsToEntity)):
+                    freq[e] = freq.get(e, 0) + 1
+            if freq:
+                return min(freq, key=lambda e: (-freq[e], str(e)))
+            ident = sorted(self.graph.objects(place, CHORA.identifiedWith))
+            if ident:
+                return ident[0]
+            place = self.graph.value(place, CHORA.isPartOf)
+        return None
+
+    def generate_imported_statuses(self):
+        """Per ogni luogo Imported senza un'asserzione di statuto adottata in
+        Assertions.tsv, genera la lettura assertion/S-auto-{luogo} e il suo atto:
+        autore e codificatore L. Sabatino, criterio ReferentialEvidence,
+        motivazione standard piu' la fonte del repertorio dell'ancora primaria
+        (owl:sameAs esterno: Wikidata, GeoNames), adottata, validata, data
+        costante. Una riga esplicita la sostituisce; se la rivede (Revision_Of =
+        S-auto-{luogo}), la generata esiste ma non e' adottata."""
+        date = self.constants.get('generated_readings_date')
+        standard = self.constants.get('imported_standard_rationale')
+        author = self.agents['lorenzo_sabatino']
+        revised = {str(o) for o in self.graph.objects(None, PROV.wasRevisionOf)}
+        explicit = set()
+        for act in self.graph.subjects(HICO.hasInterpretationType, CHORA.StatusAssertion):
+            for a in self.graph.subjects(PROV.wasGeneratedBy, act):
+                if (a, CHORA.adoptedByProject, Literal(True)) in self.graph:
+                    explicit.add(self.graph.value(a, CHORA.aboutSubject))
+        n = n_ext = 0
+        for place in sorted(self.graph.subjects(CHORA.hasRealityStatus, CHORA.Imported), key=str):
+            pid = str(place).rsplit('/', 1)[-1]
+            a = ID_NS[f"assertion/S-auto-{pid}"]
+            superseded = str(a) in revised
+            if place in explicit and not superseded:
+                continue
+            anchor = self.primary_anchor(place)
+            source, page, where_from = self.sources['censimento_gaddatlas'], None, None
+            if anchor is not None:
+                label = self.graph.value(anchor, RDFS.label)
+                for ext in sorted(str(x) for x in self.graph.objects(anchor, OWL.sameAs)):
+                    for host, sid in self.EXTERNAL_REPERTORIES.items():
+                        if host in ext and sid in self.sources:
+                            source, page, where_from = self.sources[sid], ext, sid
+                            break
+                    if where_from:
+                        break
+                rationale = (f"{standard} Ancora primaria: {label} "
+                             f"({str(anchor).rsplit('/', 1)[-1]}). "
+                             + (f"Repertorio: {self.graph.value(source[0], RDFS.label)}, {page}."
+                                if where_from else "Fonte del repertorio non registrata."))
+            else:
+                rationale = (f"{standard} Nessuna ancora: analisi non condotta (D-048). "
+                             "Fonte del repertorio non registrata.")
+            self.graph.add((a, RDF.type, CHORA.Assertion))
+            self.graph.add((a, CHORA.aboutSubject, place))
+            self.graph.add((a, CHORA.assertsValue, CHORA.Imported))
+            self.graph.add((a, CHORA.adoptedByProject, Literal(not superseded, datatype=XSD.boolean)))
+            self.graph.add((a, CHORA.reviewStatus, CHORA.Validated))
+            self.add_literal(a, RDFS.comment, "Lettura generata dall'ETL (D-068).", lang='it')
+            self.add_reading_provenance(
+                a, f"S-auto-{pid}", CHORA.StatusAssertion, [author], [author], str(a),
+                source=source, page=page, rationale=rationale,
+                criterion=CHORA.ReferentialEvidence, encoding_date=date)
+            n += 1
+            n_ext += bool(where_from)
+        logger.info(f"Statuti generati: {n} letture (con repertorio esterno: {n_ext})")
+
     MATERIALIZED = {"RouteTypeAssertion": (CHORA.hasRouteType, CHORA.NarrativeRoute),
                     "IdentificationAssertion": (CHORA.identifiedWith, CHORA.NarrativePlace)}
 
@@ -1657,6 +1738,7 @@ class GaddaETL:
 
         logger.info("\n--- FASE 4b: Asserzioni attribuite ---")
         self.process_assertions(self.data_dir / "Assertions.tsv")
+        self.generate_imported_statuses()
 
         # 3. Validazione
         logger.info("\n--- FASE 5: Validazione ---")
