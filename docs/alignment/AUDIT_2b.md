@@ -486,3 +486,192 @@ Il GeoJSON cambia solo in `tripleCount`, e in B4 il filtro delle adottate non ca
 12. **Chiave dell'unicità delle interpretazioni adottate:** (occorrenza, luogo, focalizzatore) invece di (occorrenza, luogo).
 13. **`Authority_Source` di gaz_casale_abbruciato:** accorciarlo a un rinvio alle letture L-0001 e L-0002, perché le posizioni passano nel foglio delle posizioni.
 14. **Foglio delle fonti:** la bibliografia completa di ciascuna fonte va presa dal Cap. 4. Per «Censimento GaddAtlas» serve una descrizione (data, autore).
+
+
+---
+
+## T · Sigle dei testimoni (proposta, 9 ottobre 2026)
+
+Decisione di Lorenzo sulla nomenclatura del dataset:
+
+- **QPL:** la redazione di «Letteratura» (1946), letta nell'edizione RR II, quindi con pagine di RR II;
+- **QP:** la versione in volume, letta in RR II, con pagine di RR II («RR II 219» di V-0001 è QP 219);
+- **QPA:** la ristampa Adelphi 2018 a cura di Giorgio Pinotti, testo di riferimento del progetto, su cui sono annotate le 725 occorrenze.
+
+Nella tesi, nel README e nell'interfaccia l'Adelphi resta «QP (Adelphi 2018)».
+
+### T.1 Censimento degli usi
+
+**Valori nei fogli e nel codice** (gli id nudi, che il censimento per espressioni non distingue):
+
+| dove | uso | n. |
+|---|---|---|
+| `References.tsv`, `Witness_ID` | `qp` (l'Adelphi) | **725** |
+| `References.tsv`, `Witness_ID` | `qpl` (ref_00726, ref_00727), `dtsfg` (ref_00725), `rr2` (ref_00724, «RR II 219») | 4 |
+| `References.tsv`, `Source_Reference` | «A n» (A = Adelphi) | 725 |
+| `References.tsv`, `Source_Reference` | «RR II 219», «dtsFG», «QPL 285», «QPL 293» | 4 |
+| `Assertions.tsv`, `Source_Work` | `qp` (fonte = testimone Adelphi) | **22** |
+| `Witnesses.tsv` | righe `qpl`, `dtsfg`, `bzfg`, `qp57`, `rr2`, `qp` (`Reference = si`) | 6 |
+| `Agents.tsv` r. 7 | nota di `pinotti`: «Curatore di QP (Adelphi 2018) e di RR II» | 1 |
+| `app/src/ui/text-panel.js` r. 100 | `passage.witness === "qp"` → «Adelphi, 2018 ·» | 1 |
+| `tools/build_passages.py` | campo `witness` = id locale del testimone (oggi «qp») | — |
+| TBox, shape, query, `build_geojson.py`, `audit_alignment.py` | **nessun id cablato**: usano `chora:referenceWitness` | 0 |
+
+**Sigle nel testo** (espressioni regolari; righe dei file versionati, esclusi i derivati):
+
+| file | sigla | n. righe | righe |
+|---|---|---|---|
+| `CLAUDE.md` | QP + pagina | 5 | 127, 132, 133, 143, 147 |
+| `CLAUDE.md` | QP (Adelphi 2018) | 1 | 128 |
+| `CLAUDE.md` | QPL | 1 | 134 |
+| `app/src/ui/text-panel.js` | "qp" (codice) | 1 | 100 |
+| `data/README.md` | QP + pagina | 1 | 14 |
+| `data/README.md` | QP57 | 1 | 14 |
+| `data/README.md` | QPL | 1 | 14 |
+| `data/README.md` | RR II | 1 | 14 |
+| `data/README.md` | dtsFG/bzFG | 1 | 14 |
+| `data/source/mapping.yaml` | QP + pagina | 1 | 651 |
+| `data/source/mapping.yaml` | QP57 | 1 | 651 |
+| `data/source/mapping.yaml` | QPL | 1 | 651 |
+| `data/source/mapping.yaml` | RR II | 1 | 651 |
+| `data/source/mapping.yaml` | dtsFG/bzFG | 1 | 652 |
+| `data/source/mapping.yaml` | quer_pasticciaccio_adelphi | 1 | 23 |
+| `data/source/tables/Agents.tsv` | QP (Adelphi 2018) | 1 | 7 |
+| `data/source/tables/Agents.tsv` | RR II | 1 | 7 |
+| `data/source/tables/Assertions.tsv` | QP + pagina | 32 | 2, 3, 17, 22, 28, 30, 32, 41 … |
+| `data/source/tables/Assertions.tsv` | QPL | 5 | 30, 76, 77, 78, 79 |
+| `data/source/tables/Assertions.tsv` | RR II | 2 | 41, 74 |
+| `data/source/tables/Assertions.tsv` | dtsFG/bzFG | 1 | 75 |
+| `data/source/tables/LiteraryWorks.tsv` | QP + pagina | 1 | 2 |
+| `data/source/tables/LiteraryWorks.tsv` | QP57 | 1 | 2 |
+| `data/source/tables/LiteraryWorks.tsv` | QPL | 1 | 2 |
+| `data/source/tables/LiteraryWorks.tsv` | RR II | 1 | 2 |
+| `data/source/tables/LiteraryWorks.tsv` | dtsFG/bzFG | 1 | 2 |
+| `data/source/tables/NarrativePlaces.tsv` | QP + pagina | 5 | 38, 46, 68, 126, 171 |
+| `data/source/tables/References.tsv` | id testimone (qp|qpl|qp57|rr2|dtsfg|bzfg) | 4 | 725, 726, 727, 728 |
+| `data/source/tables/References.tsv` | QP + pagina | 2 | 725, 726 |
+| `data/source/tables/References.tsv` | QPL | 2 | 727, 728 |
+| `data/source/tables/References.tsv` | RR II | 3 | 725, 727, 728 |
+| `data/source/tables/References.tsv` | dtsFG/bzFG | 1 | 726 |
+| `data/source/tables/References.tsv` | "A n" sourceReference | 725 | 2, 3, 4, 5, 6, 7, 8, 9 … |
+| `data/source/tables/SpatialInterpretations.tsv` | QP + pagina | 5 | 643, 900, 901, 902, 903 |
+| `data/source/tables/Witnesses.tsv` | id testimone (qp|qpl|qp57|rr2|dtsfg|bzfg) | 5 | 2, 3, 4, 5, 6 |
+| `data/source/tables/Witnesses.tsv` | QP + pagina | 1 | 5 |
+| `data/source/tables/Witnesses.tsv` | QP57 | 1 | 5 |
+| `data/source/tables/Witnesses.tsv` | QPL | 1 | 2 |
+| `data/source/tables/Witnesses.tsv` | RR II | 2 | 2, 6 |
+| `data/source/tables/Witnesses.tsv` | dtsFG/bzFG | 3 | 3, 4, 5 |
+| `docs/DECISIONS.md` | QP + pagina | 60 | 639, 642, 643, 644, 655, 668, 669, 670 … |
+| `docs/DECISIONS.md` | QP57 | 3 | 655, 1045, 1048 |
+| `docs/DECISIONS.md` | QPL | 13 | 655, 1042, 1048, 1049, 1071, 1075, 1076, 1080 … |
+| `docs/DECISIONS.md` | RR II | 7 | 643, 644, 1046, 1048, 1069, 1073, 1189 |
+| `docs/DECISIONS.md` | dtsFG/bzFG | 11 | 655, 1043, 1044, 1048, 1049, 1070, 1074, 1080 … |
+| `docs/DECISIONS.md` | quer_pasticciaccio_adelphi | 4 | 1038, 1052, 1114, 1118 |
+| `docs/DECISIONS.md` | "qp" (codice) | 1 | 1119 |
+| `docs/EXCLUSIONS.md` | QP + pagina | 2 | 73, 74 |
+| `docs/EXCLUSIONS.md` | QP (Adelphi 2018) | 1 | 48 |
+| `docs/EXCLUSIONS.md` | QPL | 1 | 40 |
+| `docs/alignment/AUDIT_0.md` | QP + pagina | 26 | 67, 72, 95, 108, 109, 112, 211, 237 … |
+| `docs/alignment/AUDIT_0.md` | QP57 | 1 | 95 |
+| `docs/alignment/AUDIT_0.md` | RR II | 1 | 95 |
+| `docs/alignment/AUDIT_0.md` | dtsFG/bzFG | 1 | 221 |
+| `docs/alignment/AUDIT_0.md` | quer_pasticciaccio_adelphi | 3 | 396, 399, 422 |
+| `docs/alignment/AUDIT_2.md` | quer_pasticciaccio_adelphi | 1 | 26 |
+| `docs/alignment/AUDIT_2b.md` | witness/qp(\b|57|l) | 2 | 58, 88 |
+| `docs/alignment/AUDIT_2b.md` | QP + pagina | 18 | 134, 154, 162, 361, 369, 370, 371, 372 … |
+| `docs/alignment/AUDIT_2b.md` | QP (Adelphi 2018) | 1 | 88 |
+| `docs/alignment/AUDIT_2b.md` | QPL | 5 | 371, 372, 373, 374, 484 |
+| `docs/alignment/AUDIT_2b.md` | RR II | 1 | 369 |
+| `docs/alignment/AUDIT_2b.md` | dtsFG/bzFG | 1 | 370 |
+| `docs/alignment/REVIEW_2.md` | QP + pagina | 132 | 43, 48, 54, 56, 58, 67, 68, 69 … |
+| `docs/alignment/REVIEW_2.md` | QP57 | 1 | 212 |
+| `docs/alignment/REVIEW_2.md` | QPL | 5 | 56, 206, 207, 219, 222 |
+| `docs/alignment/REVIEW_2.md` | RR II | 4 | 67, 207, 212, 279 |
+| `docs/alignment/REVIEW_2.md` | dtsFG/bzFG | 7 | 208, 209, 210, 211, 220, 223, 348 |
+| `docs/alignment/TBOX_2.md` | witness/qp(\b|57|l) | 7 | 183, 184, 199, 424, 431, 440, 474 |
+| `docs/alignment/TBOX_2.md` | QP + pagina | 9 | 174, 223, 309, 366, 425, 439, 482, 512 … |
+| `docs/alignment/TBOX_2.md` | QP (Adelphi 2018) | 1 | 370 |
+| `docs/alignment/TBOX_2.md` | QP57 | 3 | 174, 425, 439 |
+| `docs/alignment/TBOX_2.md` | QPL | 1 | 439 |
+| `docs/alignment/TBOX_2.md` | RR II | 2 | 366, 439 |
+| `docs/alignment/TBOX_2.md` | dtsFG/bzFG | 3 | 429, 439, 486 |
+| `docs/alignment/TERNE_IQ20.md` | QP + pagina | 6 | 7, 20, 33, 46, 59, 72 |
+| `docs/thesis/DATA_CHECKS_GaddAtlas.md` | QP + pagina | 10 | 42, 43, 44, 45, 46, 49, 52, 55 … |
+| `docs/thesis/DATA_CHECKS_GaddAtlas.md` | QP57 | 1 | 46 |
+| `docs/thesis/DATA_CHECKS_GaddAtlas.md` | QPL | 4 | 32, 43, 46, 49 |
+| `docs/thesis/DATA_CHECKS_GaddAtlas.md` | RR II | 1 | 42 |
+| `docs/thesis/DATA_CHECKS_GaddAtlas.md` | dtsFG/bzFG | 2 | 43, 46 |
+| `docs/thesis/GaddAtlas_Cap4_Allineamento_WorkOrder.md` | QP + pagina | 38 | 153, 156, 163, 173, 201, 212, 214, 235 … |
+| `docs/thesis/GaddAtlas_Cap4_Allineamento_WorkOrder.md` | QP57 | 3 | 394, 410, 614 |
+| `docs/thesis/GaddAtlas_Cap4_Allineamento_WorkOrder.md` | QPL | 10 | 201, 207, 271, 391, 407, 408, 411, 421 … |
+| `docs/thesis/GaddAtlas_Cap4_Allineamento_WorkOrder.md` | RR II | 3 | 156, 410, 614 |
+| `docs/thesis/GaddAtlas_Cap4_Allineamento_WorkOrder.md` | dtsFG/bzFG | 8 | 207, 216, 222, 225, 392, 393, 409, 617 |
+| `docs/thesis/GaddAtlas_Cap4_Allineamento_WorkOrder.md` | quer_pasticciaccio_adelphi | 1 | 389 |
+
+**Lettura del censimento:**
+
+- Nei **dati** «QP + pagina» indica quasi sempre l'Adelphi (pagine «A n»): nelle motivazioni delle asserzioni (32 righe), nelle descrizioni dei luoghi (5), nelle note delle interpretazioni (5). Secondo la nuova nomenclatura sarebbero **QPA**.
+- Le eccezioni sono V-0001 («Fattocchie (RR II 219…) / Frattocchie (QP 241)»: RR II 219 = QP, QP 241 = QPA), ref_00724 e la descrizione del testimone `rr2`.
+- Nei **documenti** (DECISIONS, REVIEW_2, AUDIT, work order, DATA_CHECKS) «QP n» segue la convenzione della tesi: restano come sono, perché documentano decisioni già prese.
+
+### T.2 Proposta
+
+**Testimone di riferimento.**
+
+- IRI `id:witness/qpa`, `rdfs:label "QPA"`, `skos:altLabel "QP (Adelphi 2018)"@it`. È il testimone su cui stanno le 725 occorrenze (`Witness_ID = qpa`) e la fonte delle 22 letture «prova testuale» (`Source_Work = qpa`).
+- Si aggiunge `skos:prefLabel "QP (Adelphi 2018)"@it` per l'interfaccia: l'app e i brani mostrano il `prefLabel`, il dataset usa la sigla.
+- `passage.witness` diventa `"qpa"`, e `text-panel.js` lo confronta con `"qpa"` (oppure, meglio, legge `witnessLabel` dai brani, così il pannello non dipende da un id). «A n» resta la notazione della pagina Adelphi.
+
+**RR II non è un testimone, ma un'edizione che contiene due testi.**
+
+- `rr2` esce da `Witnesses.tsv` ed entra in `Sources.tsv` (`source/rr2`: *Romanzi e racconti II*, a cura di Pinotti, Isella e Rodondi, Garzanti 1989).
+- QPL e QP restano testimoni, cioè stati del testo, e dichiarano dove sono letti con una proprietà nuova `chora:readIn` (Witness → Source), più l'intervallo di pagine:
+  - `witness/qpl chora:readIn source/rr2 ; chora:pageRange "277–460"`;
+  - `witness/qp chora:readIn source/rr2` (intervallo da compilare).
+- Le pagine delle loro occorrenze («QPL 285», «QP 219») sono pagine di RR II.
+- I testimoni originali restano distinti dall'edizione che li riproduce: `witness/qpl` ha data 1946 ed editore «Letteratura»; `witness/qp57` è la princeps Garzanti del 1957.
+
+**Rapporto QP57 ↔ QP** (da decidere):
+
+| opzione | modello | pro | contro |
+|---|---|---|---|
+| (a) **QP è la versione in volume, QP57 la sua prima stampa** | un testimone `qp` (lo stato del testo del volume) e `qp57` con `chora:embodies witness/qp` (o `frbr:embodimentOf`), oppure `qp57` fuso in `qp` con data 1957 | aderisce alla definizione di Lorenzo («versione in volume»); le varianti QPL ↔ QP e dtsFG ↔ QP si leggono come varianti fra stati del testo | serve una proprietà in più, o la perdita della distinzione princeps/edizione |
+| (b) **QP è il testo critico di RR II, distinto da QP57** | `witness/qp` (1989) `prov:wasDerivedFrom witness/qp57` | distingue un eventuale intervento editoriale di RR II sul testo del 1957 | la derivazione non è documentata nei file del progetto; moltiplica i testimoni senza differenze registrate |
+
+Proposta: **(a)**, con `qp57` come manifestazione della princeps che incarna `qp`. Le varianti di D-053 restano valide: dtsFG via Lata ↔ QP via Lanza, QPL ↔ QP.
+
+**Conseguenze sui dati** (dopo l'approvazione):
+
+| oggetto | oggi | dopo |
+|---|---|---|
+| 725 occorrenze Adelphi | `Witness_ID = qp` | `qpa` |
+| ref_00724 («Fattocchie») | `rr2`, «RR II 219» | `qp`, «QP 219» (pagina di RR II) |
+| `Witnesses.tsv` | `qp` = Adelphi; `rr2` testimone | `qpa` = Adelphi (`Reference = si`); nuova `qp` = versione in volume letta in RR II; `rr2` tolto (diventa fonte) |
+| V-0001 | «Fattocchie (RR II 219, stampa Garzanti) / Frattocchie (QP 241)» | «Fattocchie (QP 219) / Frattocchie (QPA 241)», con soggetto ref_00588 (QPA) e valore ref_00724 (QP) |
+| V-0003a/b, V-0004a/b | QPL ↔ «QP 16, 25» | QPL ↔ QPA 16, 25 (C3, «QPL 285 ↔ QPA 16») |
+| `Assertions.tsv`, `Source_Work = qp` (22) | testimone Adelphi | `qpa` |
+| motivazioni con «QP n» (32 righe), descrizioni (5), note (5) | Adelphi | **proposta: invariate**: sono prosa con la convenzione della tesi. In alternativa, sostituzione puntuale «QP n» → «QPA n» solo nei campi dei dati (non nei documenti) |
+| `Agents.tsv` (pinotti) | «Curatore di QP (Adelphi 2018) e di RR II» | «Curatore di QPA (QP, Adelphi 2018) e di RR II» |
+| app | `witness === "qp"` | `"qpa"`, o `witnessLabel` |
+| IRI | `witness/qp` = Adelphi | `witness/qpa` = Adelphi, `witness/qp` = versione in volume |
+
+Il ramo non è pubblicato, quindi nessun IRI esterno si rompe. Ma `witness/qp` cambierebbe significato: va dichiarato nella voce D-0nn, perché TBOX_2 e REVIEW_2 lo usano nel vecchio senso.
+
+**Derivazioni** (`prov:wasDerivedFrom`, solo dove documentate):
+
+| derivazione | stato | fonte |
+|---|---|---|
+| QP57 ← QPL | già scritta (D-052) | Matt e Pinotti 2022, pp. 271–272 |
+| QP57 ← bzFG | già scritta (D-052) | Cap. 4, n. 10 |
+| QPA ← QP (o ← QP57) | **non documentata nei file**: la base del testo Adelphi è nella *Nota al testo* di Pinotti 2018 (pp. 309–370, nella bibliografia del Cap. 4), che il progetto non ha letto in questa sede | da aggiungere quando Lorenzo indica la pagina |
+| QP (RR II) ← QP57 | con l'opzione (a) non serve (stesso testo); con la (b) non documentata | — |
+| bzFG ← dtsFG | non documentata | — |
+
+### T.3 Decisioni aperte
+
+1. Opzione (a) o (b) per QP57 ↔ QP.
+2. `chora:readIn` e `chora:pageRange` (nomi e dominio).
+3. Pagine di RR II per QP (intervallo).
+4. «QP n» → «QPA n» nelle motivazioni e descrizioni dei dati: invariate (proposta) o sostituzione puntuale.
+5. Pannello del testo: confronto con `"qpa"` o lettura del `prefLabel` (proposta: `prefLabel`, nei brani come `witnessLabel`).
+6. Pagina della *Nota al testo* di Pinotti 2018 per la derivazione di QPA.
