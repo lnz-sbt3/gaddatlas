@@ -269,7 +269,7 @@ ref_00267	viale_della_regina	capitolo_IV	A 111	111		(lo zio Peppe, difatti, obla
 ref_00268	san_camillo	capitolo_IV	A 111	111		Non aveva dimenticato neppure la vecchia ex-domestica Rosa Taddei, paralitica all’ospizio de San Camillo	qp	
 ref_00269	palazzo_chigi	capitolo_IV	A 115	115		da chillo fetente d’ ’o balcone ’e palazzo Chigge	qp	palazzo Chigge
 ref_00270	prati	capitolo_IV	A 116	116		il Valdarena: che abitava in Prati, in una bella camera-studio a via Nicotera: un villino […].	qp	
-ref_00271	via_nicotera	capitolo_IV	A 116	116		il Valdarena: che abitava in Prati, in una bella camera-studio a via Nicotera: un villino […].	qp	
+ref_00271	via_nicotera	capitolo_IV	A 116	116	Prima menzione di via Nicotera a QP 116; la seconda e' ref_00730 (D-072).	il Valdarena: che abitava in Prati, in una bella camera-studio a via Nicotera: un villino […].	qp	
 ref_00272	via_nicotera	capitolo_IV	A 116	116		Sul marmo del cassettone, a via Nicotera, « fu rinvenuto » un ritratto de Liliana: dentro, ner primo cassetto, un anello d’oro da uomo con brillante	qp	
 ref_00273	santo_stefano_del_cacco_celio_santo_stefano	capitolo_IV	A 119	119		Piangeva. A Santo Stefano der Cacco veniva convocato ogni giorno, se po dì.	qp	
 ref_00274	via_nicotera	capitolo_IV	A 119	119		Nella scrivania piccola vicino ar balcone, a via Nicotera, il maresciallo Di Pietrantonio, coadiuvato dall’agente scelto Paolillo, ritrovò diecimila lire: in dieci fogli da mille novi novi.	qp	
@@ -728,3 +728,4 @@ ref_00726	palazzo_219		QPL 285	285	Redazione di «Letteratura»: civico 119 e «
 ref_00727	palazzo_219		QPL 293	293	Redazione di «Letteratura»: civico 119 e «palazzo degli ori» (varianti V-0003, V-0004). Citata da RR II.		qpl	
 ref_00728	tragitto_sogno_casal_bruciato_campo_morto	capitolo_VIII	A 212	212		Tantoché al passaggio a livello di Casal Bruciato il vetrone girasole... per fil a dest! […] E il Roma-Napoli filava filava a tutta corsa dietro al crepuscolo e pressoché già nella notte e nella tenebra circèa. […] S’era buttato alla campagna nella notte verso le gore senza foce del Campo Morto e la macchia e l’intrico del litorale pometino.	qp	
 ref_00729	tragitto_castel_di_leva_casal_bruciato	capitolo_VIII	A 237	237		« Quale passaggio? » « Pe la strada de Castel de Leva, fino ar ponte: poi, a sinistra, fino ar passaggio a livello de Casal Bruciato. »	qp	
+ref_00730	via_nicotera	capitolo_IV	A 116	116	Seconda menzione di via Nicotera a QP 116, separata da ref_00271 (D-072). Estratto fornito da LS.	"Sul marmo del cassettone, a via Nicotera, ""fu rinvenuto""…"	qp	

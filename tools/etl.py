@@ -959,20 +959,30 @@ class GaddaETL:
                 # *** ANCORAGGIO RELAZIONALE (D-057, T-47): il passo colloca il
                 # luogo rispetto ad altri, senza dargli una posizione. Nessuna
                 # geometria: la posizione sta solo in anchorsToEntity. ***
-                rel_ids = [x.strip() for x in str(row.get('Relational_Anchor_IDs') or '').split('|') if x.strip()]
+                # Ogni termine puo' portare il proprio tipo («near:gaz_x»), per piu'
+                # relazioni sulla stessa interpretazione (D-072); senza prefisso vale
+                # Relational_Anchor_Type, e il nodo resta relanchor/{interpretazione}.
                 rel_type = str(row.get('Relational_Anchor_Type') or '').strip()
-                if bool(rel_ids) != bool(rel_type):
-                    raise ValueError(f"Interpretation {interp_id}: Relational_Anchor_IDs e "
-                                     "Relational_Anchor_Type vanno insieme")
-                if rel_ids:
-                    node = ID_NS[f"relanchor/{interp_id}"]
-                    rel_uri = self.map_vocabulary(rel_type, 'spatial_relations')
+                groups = {}
+                for x in str(row.get('Relational_Anchor_IDs') or '').split('|'):
+                    x = x.strip()
+                    if not x:
+                        continue
+                    t, gid = (x.split(':', 1) if ':' in x else (None, x))
+                    groups.setdefault(t, []).append(gid.strip())
+                if None in groups and not rel_type:
+                    raise ValueError(f"Interpretation {interp_id}: Relational_Anchor_IDs senza tipo")
+                if rel_type and None not in groups:
+                    raise ValueError(f"Interpretation {interp_id}: Relational_Anchor_Type senza termini")
+                for t, gids in sorted(groups.items(), key=lambda kv: (kv[0] is not None, kv[0] or '')):
+                    node = ID_NS[f"relanchor/{interp_id}" if t is None else f"relanchor/{interp_id}-{t}"]
+                    rel_uri = self.map_vocabulary(t or rel_type, 'spatial_relations')
                     if not rel_uri:
-                        raise ValueError(f"Interpretation {interp_id}: relazione {rel_type!r} non ammessa")
+                        raise ValueError(f"Interpretation {interp_id}: relazione {t or rel_type!r} non ammessa")
                     self.graph.add((interp_uri, CHORA.hasRelationalAnchoring, node))
                     self.graph.add((node, RDF.type, CHORA.RelationalAnchoring))
                     self.graph.add((node, CHORA.relationalType, rel_uri))
-                    for gid in rel_ids:
+                    for gid in gids:
                         # termine: un'entita' del gazetteer o, per una relazione
                         # senza referente, un luogo narrativo (D-058)
                         if gid in self.id_cache['GazetteerEntity_ID']:

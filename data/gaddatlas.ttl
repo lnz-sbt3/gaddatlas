@@ -2939,7 +2939,8 @@
         <https://w3id.org/gaddatlas/id/reference/ref_00207>,
         <https://w3id.org/gaddatlas/id/reference/ref_00271>,
         <https://w3id.org/gaddatlas/id/reference/ref_00272>,
-        <https://w3id.org/gaddatlas/id/reference/ref_00274> ;
+        <https://w3id.org/gaddatlas/id/reference/ref_00274>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00730> ;
     chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-auto-via_orazio> a chora:Assertion ;
@@ -3919,6 +3920,17 @@
     chora:uncertaintyAxis chora:IdentificationAxis ;
     chora:uncertaintyOrigin chora:DocumentaryOrigin .
 
+<https://w3id.org/gaddatlas/id/assertion/U-0009> a chora:Assertion ;
+    rdfs:comment "Luogo: via_delle_oche (QP 22). Soggetto l'entità dell'ancora, per la regola dell'asse geometria (D-070); lo statuto del luogo non cambia (D-072)."@it ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/U-0009> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/gazetteer/gaz_bologna> ;
+    chora:assertsValue chora:Discrepancy ;
+    chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00028> ;
+    chora:reviewStatus chora:Validated ;
+    chora:uncertaintyAxis chora:GeometryAxis ;
+    chora:uncertaintyOrigin chora:DocumentaryOrigin .
+
 <https://w3id.org/gaddatlas/id/assertion/V-0001> a chora:Assertion ;
     rdfs:comment "Cap. 4, § 4.3 (r. 83) e n. 26. La lettura di Terzoli 2015, p. 771 («se non è refuso, rafforza l'onomatopea») e quella di Italia 2020, pp. 101–102 entrano in fase 3."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/pinotti> ;
@@ -4780,22 +4792,6 @@
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00027> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> .
-
-<https://w3id.org/gaddatlas/id/interpretation/interp_00028> a prov:Entity,
-        chora:SpatialInterpretation ;
-    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00028> ;
-    chora:adoptedByProject true ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_milano> ;
-    chora:annotationMethod "close_reading"^^xsd:string ;
-    chora:assignsNarrativeRole chora:ProjectedSpace ;
-    chora:assignsSpatialDetermination chora:Relative ;
-    chora:assignsSpatialRelationType chora:Inside ;
-    chora:confidence 0.5 ;
-    chora:criticalNote "L’espressione «via delle Oche», riferita a Milano, non risulta attestata nella toponomastica urbana storica. Il toponimo può essere interpretato come una trasposizione simbolica e ironica della via delle Oche bolognese, luogo storicamente associato alla prostituzione e alla cultura popolare femminile. Il contesto discorsivo (la figura della «ragazza» e il riferimento al «dispensario celtico» come \"luogo di marginalità femminile travestito da antropologia nordica\") suggerisce un uso allusivo e deformante dello spazio urbano, coerente con la pratica gaddiana di sovrapposizione e travestimento topografico. Il riferimento non va quindi inteso in senso referenziale, ma come costruzione narrativa a forte densità simbolica (prostituzione, oralità popolare, corpo femminile)."@it ;
-    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/ingravallo> ;
-    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00028> ;
-    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/via_delle_oche> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00029> a prov:Entity,
         chora:SpatialInterpretation ;
@@ -5858,27 +5854,12 @@
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00102> ;
     chora:adoptedByProject true ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_tevere> ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_biferno>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_tevere> ;
     chora:annotationMethod "close_reading"^^xsd:string ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Indeterminate ;
-    chora:assignsSpatialRelationType chora:Overlaps ;
-    chora:confidence 0.5 ;
-    chora:criticalNote "Tevere e Biferno sono impiegati come sineddoche spaziale dei tratti diatopici della lingua di Ingravallo"@it ;
-    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/ingravallo> ;
-    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00088> ;
-    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/tevere_biferno> .
-
-<https://w3id.org/gaddatlas/id/interpretation/interp_00103> a prov:Entity,
-        chora:SpatialInterpretation ;
-    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00103> ;
-    chora:adoptedByProject true ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_biferno> ;
-    chora:annotationMethod "close_reading"^^xsd:string ;
-    chora:assignsNarrativeRole chora:ProjectedSpace ;
-    chora:assignsSpatialDetermination chora:Indeterminate ;
-    chora:assignsSpatialRelationType chora:Overlaps ;
+    chora:assignsSpatialRelationType chora:Between ;
     chora:confidence 0.5 ;
     chora:criticalNote "Tevere e Biferno sono impiegati come sineddoche spaziale dei tratti diatopici della lingua di Ingravallo"@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/ingravallo> ;
@@ -8481,7 +8462,7 @@
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Approximate ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/giuliano_valdarena> ;
-    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00271> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00730> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/via_nicotera> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00311> a prov:Entity,
@@ -11831,19 +11812,7 @@
     chora:assignsSpatialDetermination chora:Relative ;
     chora:assignsSpatialRelationType chora:Inside ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/diomede> ;
-    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00491> ;
-    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/aliciaro> .
-
-<https://w3id.org/gaddatlas/id/interpretation/interp_00585> a prov:Entity,
-        chora:SpatialInterpretation ;
-    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00585> ;
-    chora:adoptedByProject true ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_san_carlo_alle_quattro_fontane> ;
-    chora:assignsNarrativeRole chora:ProjectedSpace ;
-    chora:assignsSpatialDetermination chora:Relative ;
-    chora:assignsSpatialRelationType chora:AdjacentTo ;
-    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/diomede> ;
+    chora:hasRelationalAnchoring <https://w3id.org/gaddatlas/id/relanchor/interp_00584> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00491> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/aliciaro> .
 
@@ -13270,32 +13239,8 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:assignsSpatialDetermination chora:Relative ;
     chora:assignsSpatialRelationType chora:Overlaps ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/cocullo> ;
-    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00577> ;
-    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/bivio_falcognana_casal_bruciato> .
-
-<https://w3id.org/gaddatlas/id/interpretation/interp_00700> a prov:Entity,
-        chora:SpatialInterpretation ;
-    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00700> ;
-    chora:adoptedByProject true ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ponte_divino_amore> ;
-    chora:assignsNarrativeRole chora:Marker ;
-    chora:assignsSpatialDetermination chora:Relative ;
-    chora:assignsSpatialRelationType chora:Near ;
-    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/cocullo> ;
-    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00577> ;
-    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/bivio_falcognana_casal_bruciato> .
-
-<https://w3id.org/gaddatlas/id/interpretation/interp_00701> a prov:Entity,
-        chora:SpatialInterpretation ;
-    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00701> ;
-    chora:adoptedByProject true ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> ;
-    chora:assignsNarrativeRole chora:Marker ;
-    chora:assignsSpatialDetermination chora:Relative ;
-    chora:assignsSpatialRelationType chora:Above ;
-    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/cocullo> ;
+    chora:hasRelationalAnchoring <https://w3id.org/gaddatlas/id/relanchor/interp_00699-above>,
+        <https://w3id.org/gaddatlas/id/relanchor/interp_00699-near> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00577> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/bivio_falcognana_casal_bruciato> .
 
@@ -20279,6 +20224,16 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:rationale "Il tabernacolo ha traccia nella piantina dei Castelli del Touring (Manzotti), ma il progetto non dispone di una coordinata: la posizione deriva da Due Santi con uno scarto dichiarato di circa 40 m (D-031); il volume TCI citato è da verificare (DC-03)."@it ;
     chora:sourcePage "246"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/act/U-0009> a hico:InterpretationAct ;
+    dcterms:date "2026-10-10"^^xsd:date ;
+    hico:hasInterpretationCriterion chora:ReferentialEvidence ;
+    hico:hasInterpretationType chora:UncertaintyAssertion ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/U-0009-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/U-0009-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-10T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:rationale "Il testo colloca a Milano (\"udito a Milano […] al dispensario celtico di via delle Oche\") la via bolognese delle Oche, nota via di prostituzione: traslazione d'autore, registrata e non corretta."@it .
+
 <https://w3id.org/gaddatlas/id/act/interp_00001> a hico:InterpretationAct ;
     dcterms:date "2026-01-17"^^xsd:date ;
     hico:hasInterpretationType chora:SpatialReading ;
@@ -20492,14 +20447,6 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     hico:hasInterpretationType chora:SpatialReading ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00027-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/association/interp_00027-readingauthor-lorenzo_sabatino> ;
-    prov:startedAtTime "2026-02-01T00:00:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
-
-<https://w3id.org/gaddatlas/id/act/interp_00028> a hico:InterpretationAct ;
-    dcterms:date "2026-02-01"^^xsd:date ;
-    hico:hasInterpretationType chora:SpatialReading ;
-    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00028-encoder-lorenzo_sabatino>,
-        <https://w3id.org/gaddatlas/id/association/interp_00028-readingauthor-lorenzo_sabatino> ;
     prov:startedAtTime "2026-02-01T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
 
@@ -21092,14 +21039,6 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     hico:hasInterpretationType chora:SpatialReading ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00102-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/association/interp_00102-readingauthor-lorenzo_sabatino> ;
-    prov:startedAtTime "2026-04-04T00:00:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
-
-<https://w3id.org/gaddatlas/id/act/interp_00103> a hico:InterpretationAct ;
-    dcterms:date "2026-04-04"^^xsd:date ;
-    hico:hasInterpretationType chora:SpatialReading ;
-    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00103-encoder-lorenzo_sabatino>,
-        <https://w3id.org/gaddatlas/id/association/interp_00103-readingauthor-lorenzo_sabatino> ;
     prov:startedAtTime "2026-04-04T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
 
@@ -24077,12 +24016,6 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
         <https://w3id.org/gaddatlas/id/association/interp_00584-readingauthor-lorenzo_sabatino> ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
 
-<https://w3id.org/gaddatlas/id/act/interp_00585> a hico:InterpretationAct ;
-    hico:hasInterpretationType chora:SpatialReading ;
-    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00585-encoder-lorenzo_sabatino>,
-        <https://w3id.org/gaddatlas/id/association/interp_00585-readingauthor-lorenzo_sabatino> ;
-    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
-
 <https://w3id.org/gaddatlas/id/act/interp_00586> a hico:InterpretationAct ;
     hico:hasInterpretationType chora:SpatialReading ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00586-encoder-lorenzo_sabatino>,
@@ -24765,18 +24698,6 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     hico:hasInterpretationType chora:SpatialReading ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00699-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/association/interp_00699-readingauthor-lorenzo_sabatino> ;
-    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
-
-<https://w3id.org/gaddatlas/id/act/interp_00700> a hico:InterpretationAct ;
-    hico:hasInterpretationType chora:SpatialReading ;
-    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00700-encoder-lorenzo_sabatino>,
-        <https://w3id.org/gaddatlas/id/association/interp_00700-readingauthor-lorenzo_sabatino> ;
-    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
-
-<https://w3id.org/gaddatlas/id/act/interp_00701> a hico:InterpretationAct ;
-    hico:hasInterpretationType chora:SpatialReading ;
-    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00701-encoder-lorenzo_sabatino>,
-        <https://w3id.org/gaddatlas/id/association/interp_00701-readingauthor-lorenzo_sabatino> ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
 
 <https://w3id.org/gaddatlas/id/act/interp_00702> a hico:InterpretationAct ;
@@ -29212,6 +29133,14 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     prov:agent <https://w3id.org/gaddatlas/id/agent/manzotti> ;
     prov:hadRole chora:ReadingAuthor .
 
+<https://w3id.org/gaddatlas/id/association/U-0009-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/U-0009-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
 <https://w3id.org/gaddatlas/id/association/V-0001-encoder-lorenzo_sabatino> a prov:Association ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:Encoder .
@@ -29489,14 +29418,6 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     prov:hadRole chora:Encoder .
 
 <https://w3id.org/gaddatlas/id/association/interp_00027-readingauthor-lorenzo_sabatino> a prov:Association ;
-    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:hadRole chora:ReadingAuthor .
-
-<https://w3id.org/gaddatlas/id/association/interp_00028-encoder-lorenzo_sabatino> a prov:Association ;
-    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:hadRole chora:Encoder .
-
-<https://w3id.org/gaddatlas/id/association/interp_00028-readingauthor-lorenzo_sabatino> a prov:Association ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
@@ -30089,14 +30010,6 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     prov:hadRole chora:Encoder .
 
 <https://w3id.org/gaddatlas/id/association/interp_00102-readingauthor-lorenzo_sabatino> a prov:Association ;
-    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:hadRole chora:ReadingAuthor .
-
-<https://w3id.org/gaddatlas/id/association/interp_00103-encoder-lorenzo_sabatino> a prov:Association ;
-    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:hadRole chora:Encoder .
-
-<https://w3id.org/gaddatlas/id/association/interp_00103-readingauthor-lorenzo_sabatino> a prov:Association ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
@@ -33940,14 +33853,6 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
-<https://w3id.org/gaddatlas/id/association/interp_00585-encoder-lorenzo_sabatino> a prov:Association ;
-    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:hadRole chora:Encoder .
-
-<https://w3id.org/gaddatlas/id/association/interp_00585-readingauthor-lorenzo_sabatino> a prov:Association ;
-    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:hadRole chora:ReadingAuthor .
-
 <https://w3id.org/gaddatlas/id/association/interp_00586-encoder-lorenzo_sabatino> a prov:Association ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:Encoder .
@@ -34857,22 +34762,6 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     prov:hadRole chora:Encoder .
 
 <https://w3id.org/gaddatlas/id/association/interp_00699-readingauthor-lorenzo_sabatino> a prov:Association ;
-    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:hadRole chora:ReadingAuthor .
-
-<https://w3id.org/gaddatlas/id/association/interp_00700-encoder-lorenzo_sabatino> a prov:Association ;
-    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:hadRole chora:Encoder .
-
-<https://w3id.org/gaddatlas/id/association/interp_00700-readingauthor-lorenzo_sabatino> a prov:Association ;
-    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:hadRole chora:ReadingAuthor .
-
-<https://w3id.org/gaddatlas/id/association/interp_00701-encoder-lorenzo_sabatino> a prov:Association ;
-    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:hadRole chora:Encoder .
-
-<https://w3id.org/gaddatlas/id/association/interp_00701-readingauthor-lorenzo_sabatino> a prov:Association ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
@@ -40074,6 +39963,10 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:relatum <https://w3id.org/gaddatlas/id/gazetteer/gaz_due_santi>,
         <https://w3id.org/gaddatlas/id/gazetteer/gaz_frattocchie> .
 
+<https://w3id.org/gaddatlas/id/relanchor/interp_00584> a chora:RelationalAnchoring ;
+    chora:relationalType chora:AdjacentTo ;
+    chora:relatum <https://w3id.org/gaddatlas/id/gazetteer/gaz_san_carlo_alle_quattro_fontane> .
+
 <https://w3id.org/gaddatlas/id/relanchor/interp_00660> a chora:RelationalAnchoring ;
     chora:relationalType chora:AdjacentTo ;
     chora:relatum <https://w3id.org/gaddatlas/id/narrativeplace/orto_vigna_due_santi> .
@@ -40082,6 +39975,14 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:relationalType chora:Near ;
     chora:relatum <https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_di_leva>,
         <https://w3id.org/gaddatlas/id/gazetteer/gaz_ponte_divino_amore> .
+
+<https://w3id.org/gaddatlas/id/relanchor/interp_00699-above> a chora:RelationalAnchoring ;
+    chora:relationalType chora:Above ;
+    chora:relatum <https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri> .
+
+<https://w3id.org/gaddatlas/id/relanchor/interp_00699-near> a chora:RelationalAnchoring ;
+    chora:relationalType chora:Near ;
+    chora:relatum <https://w3id.org/gaddatlas/id/gazetteer/gaz_ponte_divino_amore> .
 
 <https://w3id.org/gaddatlas/id/relanchor/interp_00709> a chora:RelationalAnchoring ;
     chora:relationalType chora:Near ;
@@ -41572,6 +41473,12 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:hasPlaceCategory chora:aqueduct ;
     chora:hasRealityStatus chora:Imported .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/aliciaro> a chora:NarrativePlace ;
+    rdfs:label "Aliciaro"@it ;
+    chora:hasPlaceCategory chora:restaurant ;
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/area_oltre_tevere> a chora:NarrativePlace ;
     rdfs:label "Area oltre il Tevere"@it ;
     dcterms:description "Area paesaggistica vaga e analogica, delimitata dal Tevere e costruita per accumulo descrittivo (castelli, vigne, colli, monti, piane)"@it ;
@@ -42214,6 +42121,14 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/tevere_biferno> a chora:NarrativePlace ;
+    rdfs:label "Tra Tevere e Biferno"@it ;
+    dcterms:description "Area paesaggistica vaga delimitata dal Tevere e dal Biferno, sineddoche spaziale per Roma e Molise, i topoi linguistici di Ingravallo"@it ;
+    rdfs:comment "Uso retorico-identitario"@it ;
+    chora:hasFuzzinessLevel 4.0 ;
+    chora:hasPlaceCategory chora:locality ;
+    chora:hasRealityStatus chora:Imported .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/tiburtino> a chora:NarrativePlace ;
     rdfs:label "Tiburtino"@it ;
     dcterms:description "Località che indica il paesaggio aereo dei Colli Albani/Castelli Romani"@it ;
@@ -42336,6 +42251,13 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasPlaceCategory chora:street ;
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/via_delle_oche> a chora:NarrativePlace ;
+    rdfs:label "via delle Oche"@it ;
+    dcterms:description "via topograficamente non precisata"@it ;
+    rdfs:comment "Toponimo non attestato nella toponomastica storica milanese. L’espressione «via delle Oche» è qui utilizzata in modo allusivo e deformante; la localizzazione urbana non va intesa in senso referenziale, ma come costruzione narrativa simbolica."@it ;
+    chora:hasPlaceCategory chora:street ;
+    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_di_ferro> a chora:NarrativePlace ;
     rdfs:label "Via di Ferro"@it ;
@@ -43039,6 +42961,13 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:excerpt "« A Santo Stefano der Cacco avemio da capità. Brutti posti!»"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 43"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00088> a chora:PlaceReference ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:excerpt "Più Ingravallo si buttava al folklore, tra Tevere e Biferno, più lo pizzicava dicendo pizzicarolo e guaglione"@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
+    chora:sourceReference "A 44"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00089> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
@@ -44207,6 +44136,14 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:sourceReference "A 115"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00270> a chora:PlaceReference ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:excerpt "il Valdarena: che abitava in Prati, in una bella camera-studio a via Nicotera: un villino […]."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
+    chora:sourceReference "A 116"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00271> a chora:PlaceReference ;
+    rdfs:comment "Prima menzione di via Nicotera a QP 116; la seconda e' ref_00730 (D-072)."@it ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
     chora:excerpt "il Valdarena: che abitava in Prati, in una bella camera-studio a via Nicotera: un villino […]."@it ;
@@ -45449,6 +45386,13 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 200"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/reference/ref_00491> a chora:PlaceReference ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:excerpt "« O a li Quattro Cantoni, da l’Aliciaro, de dietro a San Carlo. »"@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
+    chora:sourceReference "A 200"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/reference/ref_00492> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
@@ -46406,6 +46350,14 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 237"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/reference/ref_00730> a chora:PlaceReference ;
+    rdfs:comment "Seconda menzione di via Nicotera a QP 116, separata da ref_00271 (D-072). Estratto fornito da LS."@it ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:excerpt "Sul marmo del cassettone, a via Nicotera, \"fu rinvenuto\"…"@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
+    chora:sourceReference "A 116"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/source/lugnani_2001> a chora:Source ;
     rdfs:label "Lugnani 2001" ;
     dcterms:bibliographicCitation "Lugnani, L. (2001). Racconto ed esperienza umana del tempo. The Edinburgh Journal of Gadda Studies, 1."@it ;
@@ -46511,28 +46463,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     skos:altLabel "Comit"@it ;
     chora:historicalLocation "Palazzo Doria Pamphilj in Via del Plebiscito 112 (fino al 1922)"@it ;
     chora:presentLocation "Via del Corso 226"@it .
-
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_bologna> a chora:GazetteerEntity ;
-    rdfs:label "Bologna"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "coordinates": [
-          11.344545396805216,
-          44.49555555061309
-        ],
-        "type": "Point"
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 44.49555555061309 ;
-    geo1:long 11.344545396805216 .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_di_leva> a chora:GazetteerEntity ;
     rdfs:label "Castel di Leva"@it ;
@@ -46852,12 +46782,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     geo1:lat 41.89558786458463 ;
     geo1:long 12.50606607937935 .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/aliciaro> a chora:NarrativePlace ;
-    rdfs:label "Aliciaro"@it ;
-    chora:hasPlaceCategory chora:restaurant ;
-    chora:hasRealityStatus chora:Imported ;
-    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/aniene> a chora:NarrativePlace ;
     rdfs:label "Aniene"@it ;
     dcterms:description "Fiume a nord di Roma"@it ;
@@ -47153,14 +47077,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasPlaceCategory chora:locality ;
     chora:hasRealityStatus chora:Imported .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/tevere_biferno> a chora:NarrativePlace ;
-    rdfs:label "Tra Tevere e Biferno"@it ;
-    dcterms:description "Area paesaggistica vaga delimitata dal Tevere e dal Biferno, sineddoche spaziale per Roma e Molise, i topoi linguistici di Ingravallo"@it ;
-    rdfs:comment "Uso retorico-identitario"@it ;
-    chora:hasFuzzinessLevel 4.0 ;
-    chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/traforo> a chora:NarrativePlace ;
     rdfs:label "Traforo"@it ;
     chora:hasPlaceCategory chora:gallery ;
@@ -47201,13 +47117,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasPlaceCategory chora:street ;
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/via_delle_oche> a chora:NarrativePlace ;
-    rdfs:label "via delle Oche"@it ;
-    dcterms:description "via topograficamente non precisata"@it ;
-    rdfs:comment "Toponimo non attestato nella toponomastica storica milanese. L’espressione «via delle Oche» è qui utilizzata in modo allusivo e deformante; la localizzazione urbana non va intesa in senso referenziale, ma come costruzione narrativa simbolica."@it ;
-    chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_di_san_paolo_della_croce> a chora:NarrativePlace ;
     rdfs:label "Via di San Paolo della Croce"@it ;
@@ -47294,13 +47203,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:excerpt "« Tenersi a disposizione » significò, in pratica, accompagnare don Ciccio sul saliscendi vario dei tramme, degli autobus, fino a Santo Stefano del Cacco."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 43"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/reference/ref_00088> a chora:PlaceReference ;
-    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:excerpt "Più Ingravallo si buttava al folklore, tra Tevere e Biferno, più lo pizzicava dicendo pizzicarolo e guaglione"@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
-    chora:sourceReference "A 44"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00123> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
@@ -47418,13 +47320,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:excerpt "s’era fatto premura di ricercare il testamento olografo a lui di propria mano affidato dalla «compianta» signora Balducci, ch’era anche «andato a trovare» al Policlinico la sera avanti, «pace all’anima»."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
     chora:sourceReference "A 107"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/reference/ref_00271> a chora:PlaceReference ;
-    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:excerpt "il Valdarena: che abitava in Prati, in una bella camera-studio a via Nicotera: un villino […]."@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
-    chora:sourceReference "A 116"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00272> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
@@ -47717,13 +47612,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 199"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/reference/ref_00491> a chora:PlaceReference ;
-    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:excerpt "« O a li Quattro Cantoni, da l’Aliciaro, de dietro a San Carlo. »"@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
-    chora:sourceReference "A 200"^^xsd:string .
-
 <https://w3id.org/gaddatlas/id/reference/ref_00504> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
@@ -47846,6 +47734,13 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:excerpt "« E la motocicletta? » balbettò la Zamira, a cui l’idea solo di quella macchina in laboratorio senza il padrone dava un fastidio da non dire"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 234"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00577> a chora:PlaceReference ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:excerpt "Pervennero a un bivio, col cavallo, già in vista del ponte detto del Divino Amore, con cui la provinciale sullodata soprappassa la ferrovia di Velletri."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
+    chora:sourceReference "A 239"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00586> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
@@ -48179,6 +48074,28 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     geo1:long 12.466807906113214 ;
     skos:altLabel "Istituto di Credito Fondiario del Banco di Santo Spirito"@it ;
     chora:historicalLocation "Arcispedale di Santo Spirito in Saxia - Palazzo del Banco di Santo Spirito, già \"della Zecca Vecchia\""@it .
+
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_bologna> a chora:GazetteerEntity ;
+    rdfs:label "Bologna"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          11.344545396805216,
+          44.49555555061309
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 44.49555555061309 ;
+    geo1:long 11.344545396805216 .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_campo_marzio> a chora:GazetteerEntity ;
     rdfs:label "Campo Marzio"@it ;
@@ -49377,13 +49294,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 237"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/reference/ref_00577> a chora:PlaceReference ;
-    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:excerpt "Pervennero a un bivio, col cavallo, già in vista del ponte detto del Divino Amore, con cui la provinciale sullodata soprappassa la ferrovia di Velletri."@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
-    chora:sourceReference "A 239"^^xsd:string .
-
 <https://w3id.org/gaddatlas/id/reference/ref_00585> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qp> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
@@ -49568,6 +49478,29 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     dcterms:description "Zio di Camilla Mattonari"@it ;
     chora:characterName "Zio Cantoniere"@it ;
     chora:hasGender "male"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_milano> a chora:GazetteerEntity ;
+    rdfs:label "Milano"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          9.188743384040578,
+          45.46417984291975
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 45.46417984291975 ;
+    geo1:long 9.188743384040578 ;
+    chora:presentLocation "Città"@it .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_roma> a chora:GazetteerEntity ;
     rdfs:label "Roma"@it ;
@@ -49803,29 +49736,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:characterName "Nonna Lanciani"@it ;
     chora:hasGender "female"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_milano> a chora:GazetteerEntity ;
-    rdfs:label "Milano"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "coordinates": [
-          9.188743384040578,
-          45.46417984291975
-        ],
-        "type": "Point"
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 45.46417984291975 ;
-    geo1:long 9.188743384040578 ;
-    chora:presentLocation "Città"@it .
-
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_policlinico> a chora:GazetteerEntity ;
     rdfs:label "Policlinico"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -49974,6 +49884,12 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 
 <https://w3id.org/gaddatlas/id/route/tragitto_frattocchie_ciampino> a chora:NarrativeRoute ;
     chora:hasRouteType chora:InferredRoute .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/bivio_falcognana_casal_bruciato> a chora:NarrativePlace ;
+    rdfs:label "Bivio tra Falcognana e Casal Bruciato"@it ;
+    chora:hasPlaceCategory chora:road_junction ;
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/policlinico> a chora:NarrativePlace ;
     rdfs:label "Policlinico"@it ;
@@ -50164,12 +50080,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     geo1:lat 41.88828469760136 ;
     geo1:long 12.498505681387911 ;
     chora:presentLocation "Via dei SS. Quattro, 20, 00184"@it .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/bivio_falcognana_casal_bruciato> a chora:NarrativePlace ;
-    rdfs:label "Bivio tra Falcognana e Casal Bruciato"@it ;
-    chora:hasPlaceCategory chora:road_junction ;
-    chora:hasRealityStatus chora:Imported ;
-    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/san_giovanni_in_laterano> a chora:NarrativePlace ;
     rdfs:label "San Giovanni in Laterano"@it ;
@@ -50538,6 +50448,12 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     rdfs:comment "Commento al cap. VIII del Pasticciaccio (Manzotti 2010, «Per leggere» 19)"@it ;
     schema:name "Emilio Manzotti" .
 
+<https://w3id.org/gaddatlas/id/focalizer/cocullo> a chora:Character,
+        chora:FocalizingAgent ;
+    dcterms:description "Agente Cocullo, accompagna il brigadiere Pestalozzi in moto dalla tenenza dei carabinieri di Marino alla casa di Camilla Mattonari"@it ;
+    chora:characterName "Cocullo"@it ;
+    chora:hasGender "male"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/source/manzotti_2010> a chora:Source ;
     rdfs:label "Manzotti 2010" ;
     dcterms:bibliographicCitation "Manzotti, E. (2010). «Era l'alba, e più» (C. E. Gadda, Pasticciaccio, VIII). Per leggere, 10(19), 217–312."@it ;
@@ -50605,12 +50521,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     dcterms:description "Camilla Mattonari, una delle cugine legate ad Enea Retalli, coinvolta nel furto di gioielli della Menegazzi"@it ;
     chora:characterName "Camilla Mattonari"@it ;
     chora:hasGender "female"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/focalizer/cocullo> a chora:Character,
-        chora:FocalizingAgent ;
-    dcterms:description "Agente Cocullo, accompagna il brigadiere Pestalozzi in moto dalla tenenza dei carabinieri di Marino alla casa di Camilla Mattonari"@it ;
-    chora:characterName "Cocullo"@it ;
-    chora:hasGender "male"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/focalizer/enea_retalli> a chora:Character,
         chora:FocalizingAgent ;
@@ -50716,17 +50626,17 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:characterName "Commendador Angeloni"@it ;
     chora:hasGender "male"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/chapter/capitolo_III> a chora:Chapter ;
-    dcterms:title "Capitolo III"@it ;
-    chora:chapterNumber 3 ;
-    chora:pageRange "76-91"^^xsd:string ;
-    chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
-
 <https://w3id.org/gaddatlas/id/focalizer/diomede> a chora:Character,
         chora:FocalizingAgent ;
     dcterms:description "Diomede Lanciani è il fidanzato o amante (“paìno”) di Ines Cionini, fratello maggiore di Ascanio"@it ;
     chora:characterName "Diomede Lanciani"@it ;
     chora:hasGender "male"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/chapter/capitolo_III> a chora:Chapter ;
+    dcterms:title "Capitolo III"@it ;
+    chora:chapterNumber 3 ;
+    chora:pageRange "76-91"^^xsd:string ;
+    chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
 
 <https://w3id.org/gaddatlas/id/focalizer/pompeo> a chora:Character,
         chora:FocalizingAgent ;
@@ -50874,16 +50784,16 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     rdfs:label "Campagna romana"@it ;
     skos:definition "La campagna intorno a Roma, Castelli compresi: i luoghi la cui ancora primaria dista fra 10 e 30 km dal Campidoglio."@it .
 
-<https://w3id.org/gaddatlas/id/chapter/capitolo_IV> a chora:Chapter ;
-    dcterms:title "Capitolo IV"@it ;
-    chora:chapterNumber 4 ;
-    chora:pageRange "92-131"^^xsd:string ;
-    chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
-
 <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> a chora:Chapter ;
     dcterms:title "Capitolo VIII"@it ;
     chora:chapterNumber 8 ;
     chora:pageRange "206-237"^^xsd:string ;
+    chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
+
+<https://w3id.org/gaddatlas/id/chapter/capitolo_IV> a chora:Chapter ;
+    dcterms:title "Capitolo IV"@it ;
+    chora:chapterNumber 4 ;
+    chora:pageRange "92-131"^^xsd:string ;
     chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
 
 <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> a chora:Chapter ;

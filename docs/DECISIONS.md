@@ -1446,6 +1446,27 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-072 — Terne di IQ20: cinque risolte, Cassero fermo, censimento delle menzioni multiple (10 ottobre 2026)
+
+- Requisito/i: R04, R09 · Ipotesi: — · Data check: — (decisioni di Lorenzo del 10/10, punto 2; `docs/alignment/TERNE_IQ20.md`)
+- Stato precedente: 6 terne (occorrenza, luogo, focalizzatore) con più interpretazioni adottate (IQ20 = 6, D-070).
+- Decisione (di Lorenzo, 10/10/2026):
+  - **a, ref_00028, via delle Oche (QP 22):** la via non è mai esistita a Milano: è la via bolognese della prostituzione, che Gadda trasla a Milano. Resta una sola interpretazione, interp_00029, ancorata a `gaz_bologna` (non c'è un'entità per la via); tolta interp_00028 (gaz_milano). Nuova **U-0009**: Discrepancy, asse geometria, origine documentaria, autore Lorenzo, validata, fondata su ref_00028, con la motivazione di Lorenzo. Il soggetto è `gaz_bologna`, cioè l'entità dell'ancora, per la regola dell'asse geometria (D-070); il luogo è indicato nella nota. Statuto del luogo invariato;
+  - **b, ref_00088, «tra Tevere e Biferno» (QP 44):** una sola interpretazione, interp_00102, con due ancore (gaz_tevere, gaz_biferno) e relazione `between`. Resta in carta, come le interpretazioni con più ancore (D-028); tolta interp_00103;
+  - **c, ref_00271, via Nicotera (QP 116):** le due menzioni sono due occorrenze. ref_00271 (prima menzione) resta con interp_00309 (marker); la nuova **ref_00730** («Sul marmo del cassettone, a via Nicotera, "fu rinvenuto"…», estratto fornito da Lorenzo) ha interp_00310 (setting);
+  - **d, ref_00404, Cassero (QP 169): fermo.** Nel gazetteer non c'è un'entità per Sant'Ignazio presso Frattocchie; c'è solo `gaz_buco_a_santignazio`, a Roma, che è un altro luogo. Le due interpretazioni (gaz_frattocchie, gaz_pavona) restano finché Lorenzo non fornisce l'entità;
+  - **e, ref_00491, Aliciaro (QP 200):** una sola interpretazione, interp_00584, ancora gaz_quattro_cantoni, ancoraggio relazionale adjacentTo verso gaz_san_carlo_alle_quattro_fontane; tolta interp_00585;
+  - **f, ref_00577, bivio Falcognana (QP 239):** una sola interpretazione, interp_00699, ancora gaz_via_della_falcognana, ancoraggi relazionali `near` verso gaz_ponte_divino_amore e `above` verso gaz_ferrovia_roma_velletri; tolte interp_00700 e interp_00701.
+  Per avere due tipi di relazione sulla stessa interpretazione, `Relational_Anchor_IDs` accetta ora `tipo:id` (es. `near:gaz_ponte_divino_amore|above:gaz_ferrovia_roma_velletri`). Un termine senza prefisso vale `Relational_Anchor_Type`. Il nodo è `relanchor/{interpretazione}-{tipo}`; gli IRI esistenti non cambiano.
+- **Censimento di 2c:** 7 estratti in cui lo stesso toponimo compare due volte (ref_00148 Genova, ref_00150 scala B, ref_00151 Sacro Cuore, ref_00165 Padova, ref_00177 via Merulana, ref_00241 Santi Quattro, ref_00661 Grottaferrata), elencati in TERNE_IQ20.md per la decisione di Lorenzo. Nessun'altra coppia con stesso riferimento, luogo e focalizzatore ma ruolo diverso. Per questo **IQ20 resta un'avvertenza**: oggi vale 1 (Cassero).
+- Verifica in carta: nessuno dei luoghi coinvolti è fuori carta. Fuori carta resta solo Robine Vecchie; feature 300 invariate; righe di rilievo 929 → **924** (5 interpretazioni tolte).
+- Motivazione (fonte, pagina): QP 22, 44, 116, 169, 200, 239; Cap. 4, § 4.3 (r. 93).
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `data/source/tables/SpatialInterpretations.tsv` (5 righe tolte; interp_00102, 00310, 00584, 00699), `References.tsv` (ref_00271, nuova ref_00730), `Assertions.tsv` (U-0009); XLSX corrispondenti; `tools/etl.py` r. 962–999 (termini relazionali con tipo); `docs/alignment/TERNE_IQ20.md` (decisioni, Cassero, censimento).
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.465 invariata; ABox 40.468 → **40.390**; full 42.503 → **42.425**. Interpretazioni 961 → **956**; occorrenze 729 → **730** (726 di QP). SHACL conforme, 48 avvertenze; IQ1–IQ19 a 0, **IQ20 = 1** (Cassero, avvertenza).
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

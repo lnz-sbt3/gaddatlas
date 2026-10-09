@@ -1,6 +1,6 @@
 {
  "chapter": 4,
- "count": 67,
+ "count": 68,
  "passages": {
   "ref_00213": {
    "id": "ref_00213",
@@ -671,6 +671,16 @@
    "witness": "qp",
    "excerpt": "Domandi un po’ ar Ceccherelli, all’orefice de Campo Marzio.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00279"
+  },
+  "ref_00730": {
+   "id": "ref_00730",
+   "chapter": 4,
+   "page": 116,
+   "sourceReference": "A 116",
+   "work": "quer_pasticciaccio",
+   "witness": "qp",
+   "excerpt": "Sul marmo del cassettone, a via Nicotera, \"fu rinvenuto\"…",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00730"
   }
  }
 }

@@ -21,7 +21,7 @@
   "ontologyVersion": "1.0.0",
   "buildVersion": "4.3",
   "source": "gaddatlas-full.ttl",
-  "tripleCount": 42503,
+  "tripleCount": 42425,
   "projection": {
    "type": "equirectangular",
    "center": [
@@ -111,13 +111,13 @@
   "counts": {
    "gazetteer": 265,
    "narrativePlaces": 309,
-   "interpretations": 961,
-   "references": 725,
+   "interpretations": 956,
+   "references": 726,
    "routes": 21,
    "chapters": 10,
    "agents": 83,
    "derivedSequences": 103,
-   "reliefRows": 929,
+   "reliefRows": 924,
    "ownTiles": 47
   }
  },
@@ -343,10 +343,10 @@
    "presentLocation": "Città",
    "historicalLocation": null,
    "distanceFromRomeKm": 476.9,
-   "refCountAnchored": 7,
+   "refCountAnchored": 6,
    "planeCount": 6,
    "interpCount": 6,
-   "narrativePlaceCount": 2,
+   "narrativePlaceCount": 1,
    "densityClass": "frequente",
    "densityLevel": 3
   },
@@ -404,6 +404,25 @@
    "planeCount": 6,
    "interpCount": 13,
    "narrativePlaceCount": 2,
+   "densityClass": "frequente",
+   "densityLevel": 3
+  },
+  {
+   "id": "gaz_via_nicotera",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_nicotera",
+   "label": "Via Nicotera",
+   "lon": 12.468244588924025,
+   "lat": 41.91624918540069,
+   "x": -2095.548,
+   "y": -1344.919,
+   "scaleBand": "urbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 2.8,
+   "refCountAnchored": 9,
+   "planeCount": 6,
+   "interpCount": 9,
+   "narrativePlaceCount": 1,
    "densityClass": "frequente",
    "densityLevel": 3
   },
@@ -574,25 +593,6 @@
    "refCountAnchored": 6,
    "planeCount": 5,
    "interpCount": 6,
-   "narrativePlaceCount": 1,
-   "densityClass": "ricorrente",
-   "densityLevel": 2
-  },
-  {
-   "id": "gaz_via_nicotera",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_nicotera",
-   "label": "Via Nicotera",
-   "lon": 12.468244588924025,
-   "lat": 41.91624918540069,
-   "x": -2095.548,
-   "y": -1344.919,
-   "scaleBand": "urbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 2.8,
-   "refCountAnchored": 9,
-   "planeCount": 5,
-   "interpCount": 9,
    "narrativePlaceCount": 1,
    "densityClass": "ricorrente",
    "densityLevel": 2
@@ -898,25 +898,6 @@
    "planeCount": 3,
    "interpCount": 3,
    "narrativePlaceCount": 1,
-   "densityClass": "raro",
-   "densityLevel": 1
-  },
-  {
-   "id": "gaz_ferrovia_roma_velletri",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri",
-   "label": "Ferrovia Roma-Velletri",
-   "lon": 12.601126265148835,
-   "lat": 41.75795460249268,
-   "x": 7794.555,
-   "y": 14484.54,
-   "scaleBand": "periurbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 18.3,
-   "refCountAnchored": 28,
-   "planeCount": 3,
-   "interpCount": 6,
-   "narrativePlaceCount": 5,
    "densityClass": "raro",
    "densityLevel": 1
   },
@@ -1282,6 +1263,25 @@
    "densityLevel": 1
   },
   {
+   "id": "gaz_ferrovia_roma_velletri",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_ferrovia_roma_velletri",
+   "label": "Ferrovia Roma-Velletri",
+   "lon": 12.601126265148835,
+   "lat": 41.75795460249268,
+   "x": 7794.555,
+   "y": 14484.54,
+   "scaleBand": "periurbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 18.3,
+   "refCountAnchored": 27,
+   "planeCount": 2,
+   "interpCount": 5,
+   "narrativePlaceCount": 4,
+   "densityClass": "raro",
+   "densityLevel": 1
+  },
+  {
    "id": "gaz_frascati",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_frascati",
    "label": "Frascati",
@@ -1600,25 +1600,6 @@
    "refCountAnchored": 4,
    "planeCount": 2,
    "interpCount": 4,
-   "narrativePlaceCount": 2,
-   "densityClass": "raro",
-   "densityLevel": 1
-  },
-  {
-   "id": "gaz_san_carlo_alle_quattro_fontane",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_san_carlo_alle_quattro_fontane",
-   "label": "San Carlo alle quattro fontane",
-   "lon": 12.490746406108268,
-   "lat": 41.901863522116905,
-   "x": -420.785,
-   "y": 93.648,
-   "scaleBand": "urbano",
-   "presentLocation": "Via del Quirinale, 23, 00187",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 0.5,
-   "refCountAnchored": 2,
-   "planeCount": 2,
-   "interpCount": 2,
    "narrativePlaceCount": 2,
    "densityClass": "raro",
    "densityLevel": 1
@@ -3106,25 +3087,6 @@
    "densityLevel": 0
   },
   {
-   "id": "gaz_ponte_divino_amore",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_ponte_divino_amore",
-   "label": "Ponte al Divino Amore",
-   "lon": 12.599632278065911,
-   "lat": 41.76071420037528,
-   "x": 7683.361,
-   "y": 14208.58,
-   "scaleBand": "periurbano",
-   "presentLocation": null,
-   "historicalLocation": null,
-   "distanceFromRomeKm": 18.0,
-   "refCountAnchored": 16,
-   "planeCount": 1,
-   "interpCount": 1,
-   "narrativePlaceCount": 2,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
    "id": "gaz_porta_angelica",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_porta_angelica",
    "label": "Porta Angelica",
@@ -3345,6 +3307,25 @@
    "presentLocation": "Circonvallazione Gianicolense, 87, 00149",
    "historicalLocation": null,
    "distanceFromRomeKm": 5.0,
+   "refCountAnchored": 1,
+   "planeCount": 1,
+   "interpCount": 1,
+   "narrativePlaceCount": 1,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
+   "id": "gaz_san_carlo_alle_quattro_fontane",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_san_carlo_alle_quattro_fontane",
+   "label": "San Carlo alle quattro fontane",
+   "lon": 12.490746406108268,
+   "lat": 41.901863522116905,
+   "x": -420.785,
+   "y": 93.648,
+   "scaleBand": "urbano",
+   "presentLocation": "Via del Quirinale, 23, 00187",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 0.5,
    "refCountAnchored": 1,
    "planeCount": 1,
    "interpCount": 1,
@@ -3766,25 +3747,6 @@
    "refCountAnchored": 2,
    "planeCount": 1,
    "interpCount": 2,
-   "narrativePlaceCount": 1,
-   "densityClass": "hapax",
-   "densityLevel": 0
-  },
-  {
-   "id": "gaz_tevere",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_tevere",
-   "label": "Tevere",
-   "lon": 12.467929197570816,
-   "lat": 41.89465722886191,
-   "x": -2119.022,
-   "y": 814.277,
-   "scaleBand": "urbano",
-   "presentLocation": "Fiume",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 2.5,
-   "refCountAnchored": 1,
-   "planeCount": 1,
-   "interpCount": 1,
    "narrativePlaceCount": 1,
    "densityClass": "hapax",
    "densityLevel": 0
@@ -5006,6 +4968,25 @@
    "densityLevel": -1
   },
   {
+   "id": "gaz_ponte_divino_amore",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_ponte_divino_amore",
+   "label": "Ponte al Divino Amore",
+   "lon": 12.599632278065911,
+   "lat": 41.76071420037528,
+   "x": 7683.361,
+   "y": 14208.58,
+   "scaleBand": "periurbano",
+   "presentLocation": null,
+   "historicalLocation": null,
+   "distanceFromRomeKm": 18.0,
+   "refCountAnchored": 15,
+   "planeCount": 0,
+   "interpCount": 0,
+   "narrativePlaceCount": 1,
+   "densityClass": null,
+   "densityLevel": -1
+  },
+  {
    "id": "gaz_publicii_clivio_de",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_publicii_clivio_de",
    "label": "Publicii clivio de'",
@@ -5097,6 +5078,25 @@
    "planeCount": 0,
    "interpCount": 0,
    "narrativePlaceCount": 0,
+   "densityClass": null,
+   "densityLevel": -1
+  },
+  {
+   "id": "gaz_tevere",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_tevere",
+   "label": "Tevere",
+   "lon": 12.467929197570816,
+   "lat": 41.89465722886191,
+   "x": -2119.022,
+   "y": 814.277,
+   "scaleBand": "urbano",
+   "presentLocation": "Fiume",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 2.5,
+   "refCountAnchored": 1,
+   "planeCount": 0,
+   "interpCount": 0,
+   "narrativePlaceCount": 1,
    "densityClass": null,
    "densityLevel": -1
   },
@@ -6093,6 +6093,43 @@
    "densityClass": "frequente"
   },
   {
+   "id": "via_nicotera",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_nicotera",
+   "label": "Via Nicotera",
+   "realityStatus": "Imported",
+   "placeCategory": "street",
+   "description": null,
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 9,
+   "planeCount": 6,
+   "targets": [
+    {
+     "gazetteerId": "gaz_via_nicotera",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Setting",
+     "n": 6
+    },
+    {
+     "role": "Marker",
+     "n": 3
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 9
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "frequente"
+  },
+  {
    "id": "ciampino",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/ciampino",
    "label": "Ciampino",
@@ -6463,43 +6500,6 @@
     {
      "determination": "Approximate",
      "n": 2
-    }
-   ],
-   "anchorInherited": false,
-   "multiTarget": false,
-   "densityClass": "ricorrente"
-  },
-  {
-   "id": "via_nicotera",
-   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_nicotera",
-   "label": "Via Nicotera",
-   "realityStatus": "Imported",
-   "placeCategory": "street",
-   "description": null,
-   "fuzziness": null,
-   "partOf": null,
-   "interpCount": 9,
-   "planeCount": 5,
-   "targets": [
-    {
-     "gazetteerId": "gaz_via_nicotera",
-     "weight": 1.0
-    }
-   ],
-   "roles": [
-    {
-     "role": "Setting",
-     "n": 6
-    },
-    {
-     "role": "Marker",
-     "n": 3
-    }
-   ],
-   "determinations": [
-    {
-     "determination": "Approximate",
-     "n": 9
     }
    ],
    "anchorInherited": false,
@@ -6946,44 +6946,36 @@
    "description": null,
    "fuzziness": null,
    "partOf": null,
-   "interpCount": 9,
+   "interpCount": 7,
    "planeCount": 3,
    "targets": [
     {
      "gazetteerId": "gaz_via_della_falcognana",
-     "weight": 0.7778
-    },
-    {
-     "gazetteerId": "gaz_ponte_divino_amore",
-     "weight": 0.1111
-    },
-    {
-     "gazetteerId": "gaz_ferrovia_roma_velletri",
-     "weight": 0.1111
+     "weight": 1.0
     }
    ],
    "roles": [
     {
-     "role": "Marker",
-     "n": 5
-    },
-    {
      "role": "Setting",
      "n": 4
+    },
+    {
+     "role": "Marker",
+     "n": 3
     }
    ],
    "determinations": [
     {
-     "determination": "Relative",
-     "n": 5
-    },
-    {
      "determination": "Approximate",
      "n": 4
+    },
+    {
+     "determination": "Relative",
+     "n": 3
     }
    ],
    "anchorInherited": false,
-   "multiTarget": true,
+   "multiTarget": false,
    "densityClass": "raro"
   },
   {
@@ -9544,32 +9536,28 @@
    "description": null,
    "fuzziness": null,
    "partOf": null,
-   "interpCount": 2,
+   "interpCount": 1,
    "planeCount": 1,
    "targets": [
     {
      "gazetteerId": "gaz_quattro_cantoni",
-     "weight": 0.5
-    },
-    {
-     "gazetteerId": "gaz_san_carlo_alle_quattro_fontane",
-     "weight": 0.5
+     "weight": 1.0
     }
    ],
    "roles": [
     {
      "role": "ProjectedSpace",
-     "n": 2
+     "n": 1
     }
    ],
    "determinations": [
     {
      "determination": "Relative",
-     "n": 2
+     "n": 1
     }
    ],
    "anchorInherited": false,
-   "multiTarget": true,
+   "multiTarget": false,
    "densityClass": "hapax"
   },
   {
@@ -13588,28 +13576,28 @@
    "description": "Area paesaggistica vaga delimitata dal Tevere e dal Biferno, sineddoche spaziale per Roma e Molise, i topoi linguistici di Ingravallo",
    "fuzziness": 4.0,
    "partOf": null,
-   "interpCount": 2,
+   "interpCount": 1,
    "planeCount": 1,
    "targets": [
     {
-     "gazetteerId": "gaz_tevere",
+     "gazetteerId": "gaz_biferno",
      "weight": 0.5
     },
     {
-     "gazetteerId": "gaz_biferno",
+     "gazetteerId": "gaz_tevere",
      "weight": 0.5
     }
    ],
    "roles": [
     {
      "role": "ProjectedSpace",
-     "n": 2
+     "n": 1
     }
    ],
    "determinations": [
     {
      "determination": "Indeterminate",
-     "n": 2
+     "n": 1
     }
    ],
    "anchorInherited": false,
@@ -14334,32 +14322,28 @@
    "description": "via topograficamente non precisata",
    "fuzziness": null,
    "partOf": null,
-   "interpCount": 2,
+   "interpCount": 1,
    "planeCount": 1,
    "targets": [
     {
-     "gazetteerId": "gaz_milano",
-     "weight": 0.5
-    },
-    {
      "gazetteerId": "gaz_bologna",
-     "weight": 0.5
+     "weight": 1.0
     }
    ],
    "roles": [
     {
      "role": "ProjectedSpace",
-     "n": 2
+     "n": 1
     }
    ],
    "determinations": [
     {
      "determination": "Relative",
-     "n": 2
+     "n": 1
     }
    ],
    "anchorInherited": false,
-   "multiTarget": true,
+   "multiTarget": false,
    "densityClass": "hapax"
   },
   {
@@ -16006,22 +15990,6 @@
    "criticalNote": "Palazzo del \"fattaccio\", in cui prende luogo l'evento principale del romanzo"
   },
   {
-   "id": "interp_00028",
-   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00028",
-   "referenceId": "ref_00028",
-   "narrativePlaceId": "via_delle_oche",
-   "routeId": null,
-   "gazetteerId": "gaz_milano",
-   "narrativeRole": "ProjectedSpace",
-   "spatialDetermination": "Relative",
-   "spatialRelation": "Inside",
-   "focalizerId": "ingravallo",
-   "confidence": 0.5,
-   "isNodeOfRoute": null,
-   "routeOrder": null,
-   "criticalNote": "L’espressione «via delle Oche», riferita a Milano, non risulta attestata nella toponomastica urbana storica. Il toponimo può essere interpretato come una trasposizione simbolica e ironica della via delle Oche bolognese, luogo storicamente associato alla prostituzione e alla cultura popolare femminile. Il contesto discorsivo (la figura della «ragazza» e il riferimento al «dispensario celtico» come \"luogo di marginalità femminile travestito da antropologia nordica\") suggerisce un uso allusivo e deformante dello spazio urbano, coerente con la pratica gaddiana di sovrapposizione e travestimento topografico. Il riferimento non va quindi inteso in senso referenziale, ma come costruzione narrativa a forte densità simbolica (prostituzione, oralità popolare, corpo femminile)."
-  },
-  {
    "id": "interp_00029",
    "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00029",
    "referenceId": "ref_00028",
@@ -17195,26 +17163,10 @@
    "referenceId": "ref_00088",
    "narrativePlaceId": "tevere_biferno",
    "routeId": null,
-   "gazetteerId": "gaz_tevere",
-   "narrativeRole": "ProjectedSpace",
-   "spatialDetermination": "Indeterminate",
-   "spatialRelation": "Overlaps",
-   "focalizerId": "ingravallo",
-   "confidence": 0.5,
-   "isNodeOfRoute": null,
-   "routeOrder": null,
-   "criticalNote": "Tevere e Biferno sono impiegati come sineddoche spaziale dei tratti diatopici della lingua di Ingravallo"
-  },
-  {
-   "id": "interp_00103",
-   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00103",
-   "referenceId": "ref_00088",
-   "narrativePlaceId": "tevere_biferno",
-   "routeId": null,
    "gazetteerId": "gaz_biferno",
    "narrativeRole": "ProjectedSpace",
    "spatialDetermination": "Indeterminate",
-   "spatialRelation": "Overlaps",
+   "spatialRelation": "Between",
    "focalizerId": "ingravallo",
    "confidence": 0.5,
    "isNodeOfRoute": null,
@@ -20520,7 +20472,7 @@
   {
    "id": "interp_00310",
    "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00310",
-   "referenceId": "ref_00271",
+   "referenceId": "ref_00730",
    "narrativePlaceId": "via_nicotera",
    "routeId": null,
    "gazetteerId": "gaz_via_nicotera",
@@ -24902,22 +24854,6 @@
    "criticalNote": null
   },
   {
-   "id": "interp_00585",
-   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00585",
-   "referenceId": "ref_00491",
-   "narrativePlaceId": "aliciaro",
-   "routeId": null,
-   "gazetteerId": "gaz_san_carlo_alle_quattro_fontane",
-   "narrativeRole": "ProjectedSpace",
-   "spatialDetermination": "Relative",
-   "spatialRelation": "AdjacentTo",
-   "focalizerId": "diomede",
-   "confidence": 1.0,
-   "isNodeOfRoute": null,
-   "routeOrder": null,
-   "criticalNote": null
-  },
-  {
    "id": "interp_00586",
    "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00586",
    "referenceId": "ref_00492",
@@ -26735,38 +26671,6 @@
    "narrativeRole": "Marker",
    "spatialDetermination": "Relative",
    "spatialRelation": "Overlaps",
-   "focalizerId": "cocullo",
-   "confidence": 1.0,
-   "isNodeOfRoute": null,
-   "routeOrder": null,
-   "criticalNote": null
-  },
-  {
-   "id": "interp_00700",
-   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00700",
-   "referenceId": "ref_00577",
-   "narrativePlaceId": "bivio_falcognana_casal_bruciato",
-   "routeId": null,
-   "gazetteerId": "gaz_ponte_divino_amore",
-   "narrativeRole": "Marker",
-   "spatialDetermination": "Relative",
-   "spatialRelation": "Near",
-   "focalizerId": "cocullo",
-   "confidence": 1.0,
-   "isNodeOfRoute": null,
-   "routeOrder": null,
-   "criticalNote": null
-  },
-  {
-   "id": "interp_00701",
-   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00701",
-   "referenceId": "ref_00577",
-   "narrativePlaceId": "bivio_falcognana_casal_bruciato",
-   "routeId": null,
-   "gazetteerId": "gaz_ferrovia_roma_velletri",
-   "narrativeRole": "Marker",
-   "spatialDetermination": "Relative",
-   "spatialRelation": "Above",
    "focalizerId": "cocullo",
    "confidence": 1.0,
    "isNodeOfRoute": null,
@@ -37475,6 +37379,15 @@
    "sourceReference": "A 237",
    "chapterId": "capitolo_VIII",
    "workId": "quer_pasticciaccio"
+  },
+  {
+   "id": "ref_00730",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00730",
+   "edition": "A",
+   "page": 116,
+   "sourceReference": "A 116",
+   "chapterId": "capitolo_IV",
+   "workId": "quer_pasticciaccio"
   }
  ],
  "routes": [
@@ -40535,7 +40448,7 @@
    "name": "Ingravallo",
    "gender": "male",
    "description": "Commissario molisano, detto don Ciccio; protagonista-investigatore e principale centro di focalizzazione del romanzo.",
-   "refCount": 113
+   "refCount": 111
   },
   {
    "id": "pestalozzi",
@@ -40570,20 +40483,20 @@
    "refCount": 38
   },
   {
-   "id": "diomede",
-   "iri": "https://w3id.org/gaddatlas/id/focalizer/diomede",
-   "name": "Diomede Lanciani",
-   "gender": "male",
-   "description": "Diomede Lanciani è il fidanzato o amante (“paìno”) di Ines Cionini, fratello maggiore di Ascanio",
-   "refCount": 36
-  },
-  {
    "id": "pompeo",
    "iri": "https://w3id.org/gaddatlas/id/focalizer/pompeo",
    "name": "Pompeo",
    "gender": "male",
    "description": "Pompeo, detto lo Sgranfia, agente/informatore nell'orbita dell'indagine.",
    "refCount": 36
+  },
+  {
+   "id": "diomede",
+   "iri": "https://w3id.org/gaddatlas/id/focalizer/diomede",
+   "name": "Diomede Lanciani",
+   "gender": "male",
+   "description": "Diomede Lanciani è il fidanzato o amante (“paìno”) di Ines Cionini, fratello maggiore di Ascanio",
+   "refCount": 35
   },
   {
    "id": "commendador_angeloni",
@@ -40642,20 +40555,20 @@
    "refCount": 24
   },
   {
-   "id": "cocullo",
-   "iri": "https://w3id.org/gaddatlas/id/focalizer/cocullo",
-   "name": "Cocullo",
-   "gender": "male",
-   "description": "Agente Cocullo, accompagna il brigadiere Pestalozzi in moto dalla tenenza dei carabinieri di Marino alla casa di Camilla Mattonari",
-   "refCount": 24
-  },
-  {
    "id": "enea_retalli",
    "iri": "https://w3id.org/gaddatlas/id/focalizer/enea_retalli",
    "name": "Enea Retalli",
    "gender": "male",
    "description": "Giovane sospettato, legato all'ambiente dei Castelli Romani.",
    "refCount": 24
+  },
+  {
+   "id": "cocullo",
+   "iri": "https://w3id.org/gaddatlas/id/focalizer/cocullo",
+   "name": "Cocullo",
+   "gender": "male",
+   "description": "Agente Cocullo, accompagna il brigadiere Pestalozzi in moto dalla tenenza dei carabinieri di Marino alla casa di Camilla Mattonari",
+   "refCount": 22
   },
   {
    "id": "autista_questura",
@@ -41196,301 +41109,6 @@
  ],
  "derivedSequences": [
   {
-   "agentId": "ingravallo",
-   "agentName": "Ingravallo",
-   "chapterId": "capitolo_I",
-   "chapter": 1,
-   "length": 28,
-   "distinctTargets": 20,
-   "dispersion": 0.714,
-   "pageRange": [
-    11,
-    44
-   ],
-   "steps": [
-    {
-     "page": 11,
-     "referenceId": "ref_00001",
-     "targetId": "gaz_molise",
-     "narrativePlaceId": "collina_molisana",
-     "gazetteerId": "gaz_molise",
-     "interpretationId": "interp_00001",
-     "role": "ProjectedSpace",
-     "simultaneous": false
-    },
-    {
-     "page": 14,
-     "referenceId": "ref_00003",
-     "targetId": "gaz_collegio_romano",
-     "narrativePlaceId": "collegio_romano",
-     "gazetteerId": "gaz_collegio_romano",
-     "interpretationId": "interp_00003",
-     "role": "Marker",
-     "simultaneous": true
-    },
-    {
-     "page": 14,
-     "referenceId": "ref_00004",
-     "targetId": "gaz_santo_stefano_del_cacco_celio_santo_stefano",
-     "narrativePlaceId": "santo_stefano_del_cacco_celio_santo_stefano",
-     "gazetteerId": "gaz_santo_stefano_del_cacco_celio_santo_stefano",
-     "interpretationId": "interp_00004",
-     "role": "Setting",
-     "simultaneous": true
-    },
-    {
-     "page": 14,
-     "referenceId": "ref_00005",
-     "targetId": "barbiere",
-     "narrativePlaceId": "barbiere",
-     "gazetteerId": "gaz_roma",
-     "interpretationId": "interp_00005",
-     "role": "Marker",
-     "simultaneous": true
-    },
-    {
-     "page": 20,
-     "referenceId": "ref_00013",
-     "targetId": "gaz_lazio",
-     "narrativePlaceId": "lazio",
-     "gazetteerId": "gaz_lazio",
-     "interpretationId": "interp_00013",
-     "role": "ProjectedSpace",
-     "simultaneous": true
-    },
-    {
-     "page": 20,
-     "referenceId": "ref_00014",
-     "targetId": "gaz_marsica",
-     "narrativePlaceId": "marsica",
-     "gazetteerId": "gaz_marsica",
-     "interpretationId": "interp_00014",
-     "role": "ProjectedSpace",
-     "simultaneous": true
-    },
-    {
-     "page": 20,
-     "referenceId": "ref_00015",
-     "targetId": "gaz_piceno",
-     "narrativePlaceId": "piceno",
-     "gazetteerId": "gaz_piceno",
-     "interpretationId": "interp_00015",
-     "role": "ProjectedSpace",
-     "simultaneous": true
-    },
-    {
-     "page": 20,
-     "referenceId": "ref_00016",
-     "targetId": "gaz_sannio",
-     "narrativePlaceId": "sannio",
-     "gazetteerId": "gaz_sannio",
-     "interpretationId": "interp_00016",
-     "role": "ProjectedSpace",
-     "simultaneous": true
-    },
-    {
-     "page": 20,
-     "referenceId": "ref_00017",
-     "targetId": "gaz_molise",
-     "narrativePlaceId": "collina_molisana",
-     "gazetteerId": "gaz_molise",
-     "interpretationId": "interp_00017",
-     "role": "ProjectedSpace",
-     "simultaneous": true
-    },
-    {
-     "page": 20,
-     "referenceId": "ref_00021",
-     "targetId": "gaz_santa_maria_in_porta_paradisi",
-     "narrativePlaceId": "santa_maria_in_porta_paradisi",
-     "gazetteerId": "gaz_santa_maria_in_porta_paradisi",
-     "interpretationId": "interp_00021",
-     "role": "Marker",
-     "simultaneous": true
-    },
-    {
-     "page": 21,
-     "referenceId": "ref_00024",
-     "targetId": "gaz_anzio",
-     "narrativePlaceId": "anzio",
-     "gazetteerId": "gaz_anzio",
-     "interpretationId": "interp_00024",
-     "role": "Marker",
-     "simultaneous": false
-    },
-    {
-     "page": 22,
-     "referenceId": "ref_00028",
-     "targetId": "via_delle_oche",
-     "narrativePlaceId": "via_delle_oche",
-     "gazetteerId": "gaz_milano",
-     "interpretationId": "interp_00028",
-     "role": "ProjectedSpace",
-     "simultaneous": true
-    },
-    {
-     "page": 22,
-     "referenceId": "ref_00028",
-     "targetId": "via_delle_oche",
-     "narrativePlaceId": "via_delle_oche",
-     "gazetteerId": "gaz_bologna",
-     "interpretationId": "interp_00029",
-     "role": "ProjectedSpace",
-     "simultaneous": true
-    },
-    {
-     "page": 24,
-     "referenceId": "ref_00029",
-     "targetId": "gaz_via_merulana",
-     "narrativePlaceId": "via_merulana",
-     "gazetteerId": "gaz_via_merulana",
-     "interpretationId": "interp_00030",
-     "role": "Setting",
-     "simultaneous": true
-    },
-    {
-     "page": 24,
-     "referenceId": "ref_00030",
-     "targetId": "palazzo_219",
-     "narrativePlaceId": "palazzo_219",
-     "gazetteerId": "gaz_via_merulana",
-     "interpretationId": "interp_00031",
-     "role": "Setting",
-     "simultaneous": true
-    },
-    {
-     "page": 25,
-     "referenceId": "ref_00031",
-     "targetId": "gaz_via_merulana",
-     "narrativePlaceId": "via_merulana",
-     "gazetteerId": "gaz_via_merulana",
-     "interpretationId": "interp_00032",
-     "role": "Setting",
-     "simultaneous": true
-    },
-    {
-     "page": 25,
-     "referenceId": "ref_00034",
-     "targetId": "gaz_viminale",
-     "narrativePlaceId": "viminale",
-     "gazetteerId": "gaz_viminale",
-     "interpretationId": "interp_00035",
-     "role": null,
-     "simultaneous": true
-    },
-    {
-     "page": 25,
-     "referenceId": "ref_00035",
-     "targetId": "gaz_san_giovanni_in_laterano",
-     "narrativePlaceId": "san_giovanni_in_laterano",
-     "gazetteerId": "gaz_san_giovanni_in_laterano",
-     "interpretationId": "interp_00038",
-     "role": null,
-     "simultaneous": true
-    },
-    {
-     "page": 25,
-     "referenceId": "ref_00036",
-     "targetId": "palazzo_219",
-     "narrativePlaceId": "palazzo_219",
-     "gazetteerId": "gaz_via_merulana",
-     "interpretationId": "interp_00041",
-     "role": null,
-     "simultaneous": true
-    },
-    {
-     "page": 25,
-     "referenceId": "ref_00038",
-     "targetId": "palazzo_219",
-     "narrativePlaceId": "palazzo_219",
-     "gazetteerId": "gaz_via_merulana",
-     "interpretationId": "interp_00047",
-     "role": "Setting",
-     "simultaneous": true
-    },
-    {
-     "page": 26,
-     "referenceId": "ref_00039",
-     "targetId": "palazzo_219",
-     "narrativePlaceId": "palazzo_219",
-     "gazetteerId": "gaz_via_merulana",
-     "interpretationId": "interp_00050",
-     "role": "Setting",
-     "simultaneous": true
-    },
-    {
-     "page": 26,
-     "referenceId": "ref_00040",
-     "targetId": "palazzo_219",
-     "narrativePlaceId": "palazzo_219",
-     "gazetteerId": "gaz_via_merulana",
-     "interpretationId": "interp_00051",
-     "role": "Setting",
-     "simultaneous": true
-    },
-    {
-     "page": 27,
-     "referenceId": "ref_00043",
-     "targetId": "scala_a",
-     "narrativePlaceId": "scala_a",
-     "gazetteerId": null,
-     "interpretationId": "interp_00056",
-     "role": "Setting",
-     "simultaneous": false
-    },
-    {
-     "page": 36,
-     "referenceId": "ref_00053",
-     "targetId": "gaz_tranvie_dei_castelli",
-     "narrativePlaceId": "tranvie_dei_castelli",
-     "gazetteerId": "gaz_tranvie_dei_castelli",
-     "interpretationId": "interp_00066",
-     "role": "Marker",
-     "simultaneous": true
-    },
-    {
-     "page": 36,
-     "referenceId": "ref_00054",
-     "targetId": "gaz_due_santi",
-     "narrativePlaceId": "due_santi",
-     "gazetteerId": "gaz_due_santi",
-     "interpretationId": "interp_00067",
-     "role": "Marker",
-     "simultaneous": true
-    },
-    {
-     "page": 43,
-     "referenceId": "ref_00084",
-     "targetId": "gaz_santo_stefano_del_cacco_celio_santo_stefano",
-     "narrativePlaceId": "santo_stefano_del_cacco_celio_santo_stefano",
-     "gazetteerId": "gaz_santo_stefano_del_cacco_celio_santo_stefano",
-     "interpretationId": "interp_00098",
-     "role": "ProjectedSpace",
-     "simultaneous": false
-    },
-    {
-     "page": 44,
-     "referenceId": "ref_00088",
-     "targetId": "gaz_tevere",
-     "narrativePlaceId": "tevere_biferno",
-     "gazetteerId": "gaz_tevere",
-     "interpretationId": "interp_00102",
-     "role": "ProjectedSpace",
-     "simultaneous": true
-    },
-    {
-     "page": 44,
-     "referenceId": "ref_00088",
-     "targetId": "gaz_biferno",
-     "narrativePlaceId": "tevere_biferno",
-     "gazetteerId": "gaz_biferno",
-     "interpretationId": "interp_00103",
-     "role": "ProjectedSpace",
-     "simultaneous": true
-    }
-   ]
-  },
-  {
    "agentId": "narrator",
    "agentName": "narrator",
    "chapterId": "capitolo_I",
@@ -41772,6 +41390,281 @@
      "interpretationId": "interp_00143",
      "role": "Marker",
      "simultaneous": true
+    }
+   ]
+  },
+  {
+   "agentId": "ingravallo",
+   "agentName": "Ingravallo",
+   "chapterId": "capitolo_I",
+   "chapter": 1,
+   "length": 26,
+   "distinctTargets": 19,
+   "dispersion": 0.731,
+   "pageRange": [
+    11,
+    44
+   ],
+   "steps": [
+    {
+     "page": 11,
+     "referenceId": "ref_00001",
+     "targetId": "gaz_molise",
+     "narrativePlaceId": "collina_molisana",
+     "gazetteerId": "gaz_molise",
+     "interpretationId": "interp_00001",
+     "role": "ProjectedSpace",
+     "simultaneous": false
+    },
+    {
+     "page": 14,
+     "referenceId": "ref_00003",
+     "targetId": "gaz_collegio_romano",
+     "narrativePlaceId": "collegio_romano",
+     "gazetteerId": "gaz_collegio_romano",
+     "interpretationId": "interp_00003",
+     "role": "Marker",
+     "simultaneous": true
+    },
+    {
+     "page": 14,
+     "referenceId": "ref_00004",
+     "targetId": "gaz_santo_stefano_del_cacco_celio_santo_stefano",
+     "narrativePlaceId": "santo_stefano_del_cacco_celio_santo_stefano",
+     "gazetteerId": "gaz_santo_stefano_del_cacco_celio_santo_stefano",
+     "interpretationId": "interp_00004",
+     "role": "Setting",
+     "simultaneous": true
+    },
+    {
+     "page": 14,
+     "referenceId": "ref_00005",
+     "targetId": "barbiere",
+     "narrativePlaceId": "barbiere",
+     "gazetteerId": "gaz_roma",
+     "interpretationId": "interp_00005",
+     "role": "Marker",
+     "simultaneous": true
+    },
+    {
+     "page": 20,
+     "referenceId": "ref_00013",
+     "targetId": "gaz_lazio",
+     "narrativePlaceId": "lazio",
+     "gazetteerId": "gaz_lazio",
+     "interpretationId": "interp_00013",
+     "role": "ProjectedSpace",
+     "simultaneous": true
+    },
+    {
+     "page": 20,
+     "referenceId": "ref_00014",
+     "targetId": "gaz_marsica",
+     "narrativePlaceId": "marsica",
+     "gazetteerId": "gaz_marsica",
+     "interpretationId": "interp_00014",
+     "role": "ProjectedSpace",
+     "simultaneous": true
+    },
+    {
+     "page": 20,
+     "referenceId": "ref_00015",
+     "targetId": "gaz_piceno",
+     "narrativePlaceId": "piceno",
+     "gazetteerId": "gaz_piceno",
+     "interpretationId": "interp_00015",
+     "role": "ProjectedSpace",
+     "simultaneous": true
+    },
+    {
+     "page": 20,
+     "referenceId": "ref_00016",
+     "targetId": "gaz_sannio",
+     "narrativePlaceId": "sannio",
+     "gazetteerId": "gaz_sannio",
+     "interpretationId": "interp_00016",
+     "role": "ProjectedSpace",
+     "simultaneous": true
+    },
+    {
+     "page": 20,
+     "referenceId": "ref_00017",
+     "targetId": "gaz_molise",
+     "narrativePlaceId": "collina_molisana",
+     "gazetteerId": "gaz_molise",
+     "interpretationId": "interp_00017",
+     "role": "ProjectedSpace",
+     "simultaneous": true
+    },
+    {
+     "page": 20,
+     "referenceId": "ref_00021",
+     "targetId": "gaz_santa_maria_in_porta_paradisi",
+     "narrativePlaceId": "santa_maria_in_porta_paradisi",
+     "gazetteerId": "gaz_santa_maria_in_porta_paradisi",
+     "interpretationId": "interp_00021",
+     "role": "Marker",
+     "simultaneous": true
+    },
+    {
+     "page": 21,
+     "referenceId": "ref_00024",
+     "targetId": "gaz_anzio",
+     "narrativePlaceId": "anzio",
+     "gazetteerId": "gaz_anzio",
+     "interpretationId": "interp_00024",
+     "role": "Marker",
+     "simultaneous": false
+    },
+    {
+     "page": 22,
+     "referenceId": "ref_00028",
+     "targetId": "via_delle_oche",
+     "narrativePlaceId": "via_delle_oche",
+     "gazetteerId": "gaz_bologna",
+     "interpretationId": "interp_00029",
+     "role": "ProjectedSpace",
+     "simultaneous": false
+    },
+    {
+     "page": 24,
+     "referenceId": "ref_00029",
+     "targetId": "gaz_via_merulana",
+     "narrativePlaceId": "via_merulana",
+     "gazetteerId": "gaz_via_merulana",
+     "interpretationId": "interp_00030",
+     "role": "Setting",
+     "simultaneous": true
+    },
+    {
+     "page": 24,
+     "referenceId": "ref_00030",
+     "targetId": "palazzo_219",
+     "narrativePlaceId": "palazzo_219",
+     "gazetteerId": "gaz_via_merulana",
+     "interpretationId": "interp_00031",
+     "role": "Setting",
+     "simultaneous": true
+    },
+    {
+     "page": 25,
+     "referenceId": "ref_00031",
+     "targetId": "gaz_via_merulana",
+     "narrativePlaceId": "via_merulana",
+     "gazetteerId": "gaz_via_merulana",
+     "interpretationId": "interp_00032",
+     "role": "Setting",
+     "simultaneous": true
+    },
+    {
+     "page": 25,
+     "referenceId": "ref_00034",
+     "targetId": "gaz_viminale",
+     "narrativePlaceId": "viminale",
+     "gazetteerId": "gaz_viminale",
+     "interpretationId": "interp_00035",
+     "role": null,
+     "simultaneous": true
+    },
+    {
+     "page": 25,
+     "referenceId": "ref_00035",
+     "targetId": "gaz_san_giovanni_in_laterano",
+     "narrativePlaceId": "san_giovanni_in_laterano",
+     "gazetteerId": "gaz_san_giovanni_in_laterano",
+     "interpretationId": "interp_00038",
+     "role": null,
+     "simultaneous": true
+    },
+    {
+     "page": 25,
+     "referenceId": "ref_00036",
+     "targetId": "palazzo_219",
+     "narrativePlaceId": "palazzo_219",
+     "gazetteerId": "gaz_via_merulana",
+     "interpretationId": "interp_00041",
+     "role": null,
+     "simultaneous": true
+    },
+    {
+     "page": 25,
+     "referenceId": "ref_00038",
+     "targetId": "palazzo_219",
+     "narrativePlaceId": "palazzo_219",
+     "gazetteerId": "gaz_via_merulana",
+     "interpretationId": "interp_00047",
+     "role": "Setting",
+     "simultaneous": true
+    },
+    {
+     "page": 26,
+     "referenceId": "ref_00039",
+     "targetId": "palazzo_219",
+     "narrativePlaceId": "palazzo_219",
+     "gazetteerId": "gaz_via_merulana",
+     "interpretationId": "interp_00050",
+     "role": "Setting",
+     "simultaneous": true
+    },
+    {
+     "page": 26,
+     "referenceId": "ref_00040",
+     "targetId": "palazzo_219",
+     "narrativePlaceId": "palazzo_219",
+     "gazetteerId": "gaz_via_merulana",
+     "interpretationId": "interp_00051",
+     "role": "Setting",
+     "simultaneous": true
+    },
+    {
+     "page": 27,
+     "referenceId": "ref_00043",
+     "targetId": "scala_a",
+     "narrativePlaceId": "scala_a",
+     "gazetteerId": null,
+     "interpretationId": "interp_00056",
+     "role": "Setting",
+     "simultaneous": false
+    },
+    {
+     "page": 36,
+     "referenceId": "ref_00053",
+     "targetId": "gaz_tranvie_dei_castelli",
+     "narrativePlaceId": "tranvie_dei_castelli",
+     "gazetteerId": "gaz_tranvie_dei_castelli",
+     "interpretationId": "interp_00066",
+     "role": "Marker",
+     "simultaneous": true
+    },
+    {
+     "page": 36,
+     "referenceId": "ref_00054",
+     "targetId": "gaz_due_santi",
+     "narrativePlaceId": "due_santi",
+     "gazetteerId": "gaz_due_santi",
+     "interpretationId": "interp_00067",
+     "role": "Marker",
+     "simultaneous": true
+    },
+    {
+     "page": 43,
+     "referenceId": "ref_00084",
+     "targetId": "gaz_santo_stefano_del_cacco_celio_santo_stefano",
+     "narrativePlaceId": "santo_stefano_del_cacco_celio_santo_stefano",
+     "gazetteerId": "gaz_santo_stefano_del_cacco_celio_santo_stefano",
+     "interpretationId": "interp_00098",
+     "role": "ProjectedSpace",
+     "simultaneous": false
+    },
+    {
+     "page": 44,
+     "referenceId": "ref_00088",
+     "targetId": "gaz_biferno",
+     "narrativePlaceId": "tevere_biferno",
+     "gazetteerId": "gaz_biferno",
+     "interpretationId": "interp_00102",
+     "role": "ProjectedSpace",
+     "simultaneous": false
     }
    ]
   },
@@ -44140,7 +44033,7 @@
     },
     {
      "page": 116,
-     "referenceId": "ref_00271",
+     "referenceId": "ref_00730",
      "targetId": "gaz_via_nicotera",
      "narrativePlaceId": "via_nicotera",
      "gazetteerId": "gaz_via_nicotera",
@@ -45270,9 +45163,9 @@
    "agentName": "Cocullo",
    "chapterId": "capitolo_IX",
    "chapter": 9,
-   "length": 12,
-   "distinctTargets": 9,
-   "dispersion": 0.75,
+   "length": 10,
+   "distinctTargets": 7,
+   "dispersion": 0.7,
    "pageRange": [
     238,
     274
@@ -45316,27 +45209,7 @@
      "gazetteerId": "gaz_via_della_falcognana",
      "interpretationId": "interp_00699",
      "role": "Marker",
-     "simultaneous": true
-    },
-    {
-     "page": 239,
-     "referenceId": "ref_00577",
-     "targetId": "gaz_ponte_divino_amore",
-     "narrativePlaceId": "bivio_falcognana_casal_bruciato",
-     "gazetteerId": "gaz_ponte_divino_amore",
-     "interpretationId": "interp_00700",
-     "role": "Marker",
-     "simultaneous": true
-    },
-    {
-     "page": 239,
-     "referenceId": "ref_00577",
-     "targetId": "gaz_ferrovia_roma_velletri",
-     "narrativePlaceId": "bivio_falcognana_casal_bruciato",
-     "gazetteerId": "gaz_ferrovia_roma_velletri",
-     "interpretationId": "interp_00701",
-     "role": "Marker",
-     "simultaneous": true
+     "simultaneous": false
     },
     {
      "page": 241,
@@ -47685,9 +47558,9 @@
    "agentName": "Diomede Lanciani",
    "chapterId": "capitolo_VII",
    "chapter": 7,
-   "length": 35,
+   "length": 34,
    "distinctTargets": 28,
-   "dispersion": 0.8,
+   "dispersion": 0.824,
    "pageRange": [
     181,
     201
@@ -47920,16 +47793,6 @@
      "narrativePlaceId": "aliciaro",
      "gazetteerId": "gaz_quattro_cantoni",
      "interpretationId": "interp_00584",
-     "role": "ProjectedSpace",
-     "simultaneous": true
-    },
-    {
-     "page": 200,
-     "referenceId": "ref_00491",
-     "targetId": "gaz_san_carlo_alle_quattro_fontane",
-     "narrativePlaceId": "aliciaro",
-     "gazetteerId": "gaz_san_carlo_alle_quattro_fontane",
-     "interpretationId": "interp_00585",
      "role": "ProjectedSpace",
      "simultaneous": true
     },
@@ -51738,18 +51601,6 @@
   },
   {
    "targetId": "via_delle_oche",
-   "interpretationId": "interp_00028",
-   "referenceId": "ref_00028",
-   "page": 22,
-   "chapter": 1,
-   "agentId": "ingravallo",
-   "role": "ProjectedSpace",
-   "determination": "Relative",
-   "criticalNote": "L’espressione «via delle Oche», riferita a Milano, non risulta attestata nella toponomastica urbana storica. Il toponimo può essere interpretato come una trasposizione simbolica e ironica della via delle Oche bolognese, luogo storicamente associato alla prostituzione e alla cultura popolare femminile. Il contesto discorsivo (la figura della «ragazza» e il riferimento al «dispensario celtico» come \"luogo di marginalità femminile travestito da antropologia nordica\") suggerisce un uso allusivo e deformante dello spazio urbano, coerente con la pratica gaddiana di sovrapposizione e travestimento topografico. Il riferimento non va quindi inteso in senso referenziale, ma come costruzione narrativa a forte densità simbolica (prostituzione, oralità popolare, corpo femminile).",
-   "isRouteNode": null
-  },
-  {
-   "targetId": "via_delle_oche",
    "interpretationId": "interp_00029",
    "referenceId": "ref_00028",
    "page": 22,
@@ -52553,20 +52404,8 @@
    "isRouteNode": null
   },
   {
-   "targetId": "gaz_tevere",
-   "interpretationId": "interp_00102",
-   "referenceId": "ref_00088",
-   "page": 44,
-   "chapter": 1,
-   "agentId": "ingravallo",
-   "role": "ProjectedSpace",
-   "determination": "Indeterminate",
-   "criticalNote": "Tevere e Biferno sono impiegati come sineddoche spaziale dei tratti diatopici della lingua di Ingravallo",
-   "isRouteNode": null
-  },
-  {
    "targetId": "gaz_biferno",
-   "interpretationId": "interp_00103",
+   "interpretationId": "interp_00102",
    "referenceId": "ref_00088",
    "page": 44,
    "chapter": 1,
@@ -55026,18 +54865,6 @@
   },
   {
    "targetId": "gaz_via_nicotera",
-   "interpretationId": "interp_00310",
-   "referenceId": "ref_00271",
-   "page": 116,
-   "chapter": 4,
-   "agentId": "giuliano_valdarena",
-   "role": "Setting",
-   "determination": "Approximate",
-   "criticalNote": null,
-   "isRouteNode": null
-  },
-  {
-   "targetId": "gaz_via_nicotera",
    "interpretationId": "interp_00311",
    "referenceId": "ref_00272",
    "page": 116,
@@ -55055,6 +54882,18 @@
    "page": 116,
    "chapter": 4,
    "agentId": "agente_paolillo",
+   "role": "Setting",
+   "determination": "Approximate",
+   "criticalNote": null,
+   "isRouteNode": null
+  },
+  {
+   "targetId": "gaz_via_nicotera",
+   "interpretationId": "interp_00310",
+   "referenceId": "ref_00730",
+   "page": 116,
+   "chapter": 4,
+   "agentId": "giuliano_valdarena",
    "role": "Setting",
    "determination": "Approximate",
    "criticalNote": null,
@@ -58218,18 +58057,6 @@
   },
   {
    "targetId": "gaz_san_carlo_alle_quattro_fontane",
-   "interpretationId": "interp_00585",
-   "referenceId": "ref_00491",
-   "page": 200,
-   "chapter": 7,
-   "agentId": "diomede",
-   "role": "ProjectedSpace",
-   "determination": "Relative",
-   "criticalNote": null,
-   "isRouteNode": null
-  },
-  {
-   "targetId": "gaz_san_carlo_alle_quattro_fontane",
    "interpretationId": "interp_00586",
    "referenceId": "ref_00492",
    "page": 200,
@@ -59515,30 +59342,6 @@
   {
    "targetId": "gaz_via_della_falcognana",
    "interpretationId": "interp_00699",
-   "referenceId": "ref_00577",
-   "page": 239,
-   "chapter": 9,
-   "agentId": "cocullo",
-   "role": "Marker",
-   "determination": "Relative",
-   "criticalNote": null,
-   "isRouteNode": null
-  },
-  {
-   "targetId": "gaz_ponte_divino_amore",
-   "interpretationId": "interp_00700",
-   "referenceId": "ref_00577",
-   "page": 239,
-   "chapter": 9,
-   "agentId": "cocullo",
-   "role": "Marker",
-   "determination": "Relative",
-   "criticalNote": null,
-   "isRouteNode": null
-  },
-  {
-   "targetId": "gaz_ferrovia_roma_velletri",
-   "interpretationId": "interp_00701",
    "referenceId": "ref_00577",
    "page": 239,
    "chapter": 9,

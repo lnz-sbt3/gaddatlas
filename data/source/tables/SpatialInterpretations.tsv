@@ -26,7 +26,6 @@ interp_00024	ref_00024	anzio	gaz_anzio	ingravallo	marker	indeterminate					0.8	l
 interp_00025	ref_00025	area_oltre_tevere	gaz_colli_albani	liliana	projectedspace	relative	overlaps				0.5	lorenzo_sabatino	2026-02-01 00:00:00	close_reading	Area paesaggistica vaga e analogica, delimitata dal Tevere e costruita per accumulo descrittivo (castelli, vigne, colli, monti, piane), contrapposta alla città di Roma; spazio percepito e mitizzato da Liliana Balducci. Il Tevere funziona come barriera idrografica e simbolica di separazione tra spazio urbano e spazio campestre, più che come luogo in sé.				si				
 interp_00026	ref_00026	via_merulana	gaz_via_merulana	narrator	setting	precise					1.0	lorenzo_sabatino	2026-02-01 00:00:00	close_reading					si				
 interp_00027	ref_00027	palazzo_219	gaz_via_merulana	narrator	setting	precise	inside				1.0	lorenzo_sabatino	2026-02-01 00:00:00	close_reading	"Palazzo del ""fattaccio"", in cui prende luogo l'evento principale del romanzo"				si				
-interp_00028	ref_00028	via_delle_oche	gaz_milano	ingravallo	projectedspace	relative	inside				0.5	lorenzo_sabatino	2026-02-01 00:00:00	close_reading	"L’espressione «via delle Oche», riferita a Milano, non risulta attestata nella toponomastica urbana storica. Il toponimo può essere interpretato come una trasposizione simbolica e ironica della via delle Oche bolognese, luogo storicamente associato alla prostituzione e alla cultura popolare femminile. Il contesto discorsivo (la figura della «ragazza» e il riferimento al «dispensario celtico» come ""luogo di marginalità femminile travestito da antropologia nordica"") suggerisce un uso allusivo e deformante dello spazio urbano, coerente con la pratica gaddiana di sovrapposizione e travestimento topografico. Il riferimento non va quindi inteso in senso referenziale, ma come costruzione narrativa a forte densità simbolica (prostituzione, oralità popolare, corpo femminile)."				si				
 interp_00029	ref_00028	via_delle_oche	gaz_bologna	ingravallo	projectedspace	relative	inside				0.5	lorenzo_sabatino	2026-02-01 00:00:00	close_reading	"L’espressione «via delle Oche», riferita a Milano, non risulta attestata nella toponomastica urbana storica. Il toponimo può essere interpretato come una trasposizione simbolica e ironica della via delle Oche bolognese, luogo storicamente associato alla prostituzione e alla cultura popolare femminile. Il contesto discorsivo (la figura della «ragazza» e il riferimento al «dispensario celtico» come ""luogo di marginalità femminile travestito da antropologia nordica"") suggerisce un uso allusivo e deformante dello spazio urbano, coerente con la pratica gaddiana di sovrapposizione e travestimento topografico. Il riferimento non va quindi inteso in senso referenziale, ma come costruzione narrativa a forte densità simbolica (prostituzione, oralità popolare, corpo femminile)."				si				
 interp_00030	ref_00029	via_merulana	gaz_via_merulana	ingravallo	setting	approximate					1.0	lorenzo_sabatino	2026-02-01 00:00:00	close_reading					si				
 interp_00031	ref_00030	palazzo_219	gaz_via_merulana	ingravallo	setting	approximate	inside				1.0	lorenzo_sabatino	2026-02-01 00:00:00	close_reading	"Palazzo del ""fattaccio"", in cui prende luogo l'evento principale del romanzo"				si				
@@ -100,8 +99,7 @@ interp_00098	ref_00084	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_ste
 interp_00099	ref_00085	maccheronaro	gaz_maccheronaro	pompeo	marker	relative					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading					si				
 interp_00100	ref_00086	via_del_gesu	gaz_via_del_gesu	pompeo	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading					si				
 interp_00101	ref_00087	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	sor_manuela	setting	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading					si				
-interp_00102	ref_00088	tevere_biferno	gaz_tevere	ingravallo	projectedspace	indeterminate	overlaps				0.5	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	Tevere e Biferno sono impiegati come sineddoche spaziale dei tratti diatopici della lingua di Ingravallo				si				
-interp_00103	ref_00088	tevere_biferno	gaz_biferno	ingravallo	projectedspace	indeterminate	overlaps				0.5	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	Tevere e Biferno sono impiegati come sineddoche spaziale dei tratti diatopici della lingua di Ingravallo				si				
+interp_00102	ref_00088	tevere_biferno	gaz_tevere|gaz_biferno	ingravallo	projectedspace	indeterminate	between				0.5	lorenzo_sabatino	2026-04-04 00:00:00	close_reading	Tevere e Biferno sono impiegati come sineddoche spaziale dei tratti diatopici della lingua di Ingravallo				si				
 interp_00104	ref_00089	via_venti_settembre	gaz_via_venti_settembre	commendador_angeloni	projectedspace	precise					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading					si				
 interp_00105	ref_00090	via_panisperna	gaz_via_panisperna	commendador_angeloni	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading					si				
 interp_00106	ref_00091	via_dei_serpenti	gaz_via_dei_serpenti	gaudenzio	marker	approximate					1.0	lorenzo_sabatino	2026-04-04 00:00:00	close_reading					si				
@@ -308,7 +306,7 @@ interp_00306	ref_00268	san_camillo	gaz_san_camillo	rosa_taddei	marker	approximat
 interp_00307	ref_00269	palazzo_chigi	gaz_palazzo_chigi	mussolini	marker	relative						lorenzo_sabatino							si				
 interp_00308	ref_00270	prati	gaz_prati	giuliano_valdarena	marker	approximate						lorenzo_sabatino							si				
 interp_00309	ref_00271	via_nicotera	gaz_via_nicotera	giuliano_valdarena	marker	approximate						lorenzo_sabatino							si				
-interp_00310	ref_00271	via_nicotera	gaz_via_nicotera	giuliano_valdarena	setting	approximate						lorenzo_sabatino							si				
+interp_00310	ref_00730	via_nicotera	gaz_via_nicotera	giuliano_valdarena	setting	approximate						lorenzo_sabatino							si				
 interp_00311	ref_00272	via_nicotera	gaz_via_nicotera	maresciallo_di_pietrantonio	setting	approximate						lorenzo_sabatino							si				
 interp_00312	ref_00272	via_nicotera	gaz_via_nicotera	agente_paolillo	setting	approximate						lorenzo_sabatino							si				
 interp_00313	ref_00273	santo_stefano_del_cacco_celio_santo_stefano	gaz_santo_stefano_del_cacco_celio_santo_stefano	remo_balducci	setting	approximate						lorenzo_sabatino							si				
@@ -581,8 +579,7 @@ interp_00580	ref_00487	fontanella_di_borghese	gaz_fontanella_di_borghese	diomede
 interp_00581	ref_00488	bottaro	gaz_ripetta	diomede	projectedspace	relative	inside					lorenzo_sabatino							si				
 interp_00582	ref_00489	ripetta	gaz_ripetta	diomede	projectedspace	approximate						lorenzo_sabatino							si				
 interp_00583	ref_00490	quattro_cantoni	gaz_quattro_cantoni	diomede	projectedspace	approximate						lorenzo_sabatino							si				
-interp_00584	ref_00491	aliciaro	gaz_quattro_cantoni	diomede	projectedspace	relative	inside					lorenzo_sabatino							si				
-interp_00585	ref_00491	aliciaro	gaz_san_carlo_alle_quattro_fontane	diomede	projectedspace	relative	adjacentto					lorenzo_sabatino							si				
+interp_00584	ref_00491	aliciaro	gaz_quattro_cantoni	diomede	projectedspace	relative	inside					lorenzo_sabatino					gaz_san_carlo_alle_quattro_fontane	adjacentto	si				
 interp_00586	ref_00492	san_carlo_alle_quattro_fontane	gaz_san_carlo_alle_quattro_fontane	diomede	projectedspace	approximate						lorenzo_sabatino							si				
 interp_00587	ref_00493	vite	gaz_via_della_vite	diomede	projectedspace	relative	inside					lorenzo_sabatino							si				
 interp_00588	ref_00494	buco_a_santignazio	gaz_buco_a_santignazio	diomede	projectedspace	relative						lorenzo_sabatino							si				
@@ -698,9 +695,7 @@ interp_00695	ref_00575	tragitto_appia_falcognana		pestalozzi	route	approximate		
 interp_00696	ref_00575	tragitto_appia_falcognana		cocullo	route	approximate						lorenzo_sabatino							si				
 interp_00697	ref_00576	via_della_falcognana	gaz_via_della_falcognana	camilla_mattonari	projectedspace	approximate						lorenzo_sabatino							si				
 interp_00698	ref_00577	bivio_falcognana_casal_bruciato	gaz_via_della_falcognana	lavinia_mattonari	marker	relative	overlaps					lorenzo_sabatino							si				
-interp_00699	ref_00577	bivio_falcognana_casal_bruciato	gaz_via_della_falcognana	cocullo	marker	relative	overlaps					lorenzo_sabatino							si				
-interp_00700	ref_00577	bivio_falcognana_casal_bruciato	gaz_ponte_divino_amore	cocullo	marker	relative	near					lorenzo_sabatino							si				
-interp_00701	ref_00577	bivio_falcognana_casal_bruciato	gaz_ferrovia_roma_velletri	cocullo	marker	relative	above					lorenzo_sabatino							si				
+interp_00699	ref_00577	bivio_falcognana_casal_bruciato	gaz_via_della_falcognana	cocullo	marker	relative	overlaps					lorenzo_sabatino					near:gaz_ponte_divino_amore|above:gaz_ferrovia_roma_velletri		si				
 interp_00702	ref_00578	divino_amore	gaz_divino_amore	narrator	marker	precise						lorenzo_sabatino							si				
 interp_00703	ref_00579	castel_di_leva	gaz_castel_di_leva	narrator	marker	precise						lorenzo_sabatino							si				
 interp_00704	ref_00580	ponte_divino_amore	gaz_ponte_divino_amore	narrator	setting	precise						lorenzo_sabatino							si				
