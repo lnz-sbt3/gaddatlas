@@ -325,6 +325,7 @@ def main(ttl_path, out_dir, seeds_path=None):
     # ancore in piu' alimentano solo i referenti del luogo (tgt_acc), non il
     # conteggio delle interpretazioni, dei ruoli e del rilievo.
     rec_by_si = {}
+    anchors_by_si = defaultdict(list)   # si -> id delle ancore, in ordine di query
     for row in g.query(Q_INTERPRETATIONS):
         gaz_iri = str(row.gaz) if row.gaz else None
         if gaz_iri:
@@ -334,15 +335,14 @@ def main(ttl_path, out_dir, seeds_path=None):
                     if gv["id"] == canon:
                         gaz_iri = gk
                         break
+        if gaz_iri:
+            anchors_by_si[str(row.si)].append(sid(gaz_iri))
         prev = rec_by_si.get(str(row.si))
         if prev is not None:
             if gaz_iri and row.place:
                 p = str(row.place)
                 tgt_acc[p][gaz_iri] += float(row.conf) if row.conf else 1.0
                 gaz[gaz_iri]["refCountAnchored"] += 1
-                # gazetteerId deterministico: il primo id in ordine alfabetico
-                if prev["gazetteerId"] is None or sid(gaz_iri) < prev["gazetteerId"]:
-                    prev["gazetteerId"] = sid(gaz_iri)
             continue
         rec = {
             "id": sid(row.si), "iri": str(row.si),
@@ -371,6 +371,21 @@ def main(ttl_path, out_dir, seeds_path=None):
             if gaz_iri:
                 tgt_acc[p][gaz_iri] += float(row.conf) if row.conf else 1.0
                 gaz[gaz_iri]["refCountAnchored"] += 1
+
+    # Ancora principale di un'interpretazione con piu' ancore (D-034): quella
+    # che compare nel maggior numero di interpretazioni dello stesso luogo, cioe'
+    # il suo referente (per Casal Bruciato, gaz_casale_abbruciato); le altre
+    # sono i luoghi che il testo dispone intorno. A parita', l'ordine alfabetico.
+    # Per un luogo Imported e' l'entita' su cui la tessera deposita il rilievo.
+    anchor_freq = defaultdict(Counter)
+    for rec in sis:
+        if rec["narrativePlaceId"]:
+            anchor_freq[rec["narrativePlaceId"]].update(set(anchors_by_si[rec["iri"]]))
+    for rec in sis:
+        ids = anchors_by_si[rec["iri"]]
+        if len(set(ids)) > 1:
+            freq = anchor_freq[rec["narrativePlaceId"]]
+            rec["gazetteerId"] = min(set(ids), key=lambda a: (-freq[a], a))
 
     for p, refset in np_refs.items():
         nps[p]["planeCount"] = len(refset)

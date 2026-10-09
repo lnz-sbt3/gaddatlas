@@ -20,15 +20,15 @@ Due artefatti distinti nello stesso repository:
 
 ## Le decisioni sono già prese
 
-`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-032; quelle dell'allineamento al
+`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-034; quelle dell'allineamento al
 Capitolo 4 partono da D-015. Nel file sono in ordine cronologico, non numerico. **Leggile
 prima di proporre alternative architetturali.** Se una scelta ti sembra
 sbagliata, dillo citando la decisione — non aggirarla in silenzio.
 
-**Stato dei dati: allineato (fine della fase 1, 8 ottobre 2026).**
-`data/dist/gaddatlas.geojson` dichiara `tripleCount 17227`, `buildVersion 4.3`,
-`ontology CHORA`. ABox 16.057 triple, TBox 600; 309 luoghi (Imported 259 ·
-Transformed 31 · Invented 14 · Imagined 5), 265 entità del gazetteer, 960
+**Stato dei dati: allineato (chiusura della fase 1, 9 ottobre 2026).**
+`data/dist/gaddatlas.geojson` dichiara `tripleCount 17263`, `buildVersion 4.3`,
+`ontology CHORA`. ABox 16.093 triple, TBox 600; 309 luoghi (Imported 260 ·
+Transformed 30 · Invented 14 · Imagined 5), 266 entità del gazetteer, 960
 interpretazioni. Ogni task che cambia questi valori ne dà conto nella sua voce di
 `DECISIONS.md`; un conteggio diverso senza una voce che lo spieghi vuol dire che i
 derivati non sono allineati: `make all`. Il build è deterministico (D-018): due
@@ -140,8 +140,9 @@ aggiornato.
   `gaz_edicola_due_santi` dalla piantina TCI (Manzotti 2010, p. 246); perde
   `Is_Part_Of = orto_vigna_due_santi`, sostituito da una relazione qualitativa
   (`Above` o `AdjacentTo`, da scegliere sul testo di QP 216). Si fa dopo T-04 (T-03);
-- `gaz_casal_bruciato` oggi punta al quartiere romano (Tiburtino): è un errore
-  di referente da correggere in fase 1 (T-15).
+- Casal Bruciato è il casale reale dell'Agro romano (non il quartiere del
+  Tiburtino, eliminato): Imported, ancorato a `gaz_casale_abbruciato` nella
+  posizione TCI adottata; la posizione IGM è l'alternativa (D-033, T-15).
 
 ## Comandi
 

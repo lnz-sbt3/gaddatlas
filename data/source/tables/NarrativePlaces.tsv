@@ -35,8 +35,8 @@ cantinone_albano	Cantinone d'Albano		invented		ristorante	Ristorante non identif
 carsoli	Carsoli		imported		comune	Comune in Abruzzo		
 casa_crocchiapani	Casa Crocchiapani		invented	tor_di_gheppio	casa rurale	Abitazione immaginaria di Assunta (Tina) Crocchiapani		
 casa_del_butiro	Casa del Butiro		imagined		casa rurale	Casa immaginata nella zona dei Due Santi		
-casal_bruciato	Casal Bruciato		transformed		quartiere	Luogo trasformato, senza coordinate proprie: località dell'agro romano circoscritta da Marino e dall'Appia verso Albano (nord/nord-est), da Pavona (ovest) e da Santa Palomba (sud). Non è il quartiere romano omonimo.		
-casello_km_20_25	Casello al chilometro 20-25		transformed	casal_bruciato	casello ferroviario	casello ferroviario in prossimità di Casal Bruciato		
+casal_bruciato	Casal Bruciato	Casale Abbrusciato	imported		quartiere	Casale reale dell'Agro romano a sud di Roma (Casal(e) Bruciato / Abbruciato / Abbrusciato: Nibby, Dintorni di Roma, p. 569), fra le ferrovie Roma–Velletri e Roma–Napoli. Non è il quartiere omonimo del Tiburtino. Forme attestate: «Casal Bruciato» (QP 212, 237, 240, 241, 262, 274, 298), «Casale Abbrusciato» (QP 297).		
+casello_km_20_25	Casello al chilometro 20-25		transformed		casello ferroviario	casello ferroviario in prossimità di Casal Bruciato		
 cassero	Cassero		invented		castello			
 castelli_romani	Castelli Romani		imported		località			
 castel_di_leva	Castel di Leva		imported		località			

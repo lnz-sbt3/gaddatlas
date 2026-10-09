@@ -613,7 +613,7 @@ Le pagine vengono dal Capitolo 4. Formato proposto (una nuova tabella `data/sour
 | Robine Vecchie | status | Transformed, «ironico abbassamento» (Terzoli 2015, p. 491) **adottata**; refuso «Robinie/Rovine vecchie» (Terzoli 2015, p. 491) alternativa |
 | Frattocchie (QP 241) | variant | «Fattocchie» RR II 219 / QP57; «se non è refuso…» (Terzoli 2015, p. 771); emendazione (Pinotti 2018; Italia 2020, pp. 101–102) |
 | Castello / stazione di Castello | identification | Castel Gandolfo (LS); Castel Savello (Manzotti 2010, p. 293) |
-| Casal Bruciato | location | Tra le due ferrovie (TCI; testo); a ovest della Roma–Napoli (IGM) (Manzotti 2010, pp. 268–270) |
+| Casal Bruciato | location | TCI (adottata) / IGM (alternativa), Manzotti 2010, pp. 268–269, Tavv. VI–VII |
 | Palazzo Simonetti (QP 177) | status, identification, variant | Invented in via Lanza (Pinotti 2025, p. 78); palazzo Simonetti/De Carolis, via Lata (dtsFG; Pinotti 2025, p. 78); palazzo Odescalchi Simonetti, via Vittoria Colonna 11 (Terzoli, cit. in Pinotti 2025, p. 78) |
 | Tenenza di Marino | status | Transformed: «re-invenzione romantica» (Manzotti 2010, p. 293; p. 239 per la «rocca-caserma») |
 | Castel Porcano | status, identification | Deformazione paraetimologica di Castelporziano (Manzotti 2010, pp. 273, 276); festa = spazio onirico |

@@ -1,7 +1,16 @@
 {
  "chapter": 9,
- "count": 73,
+ "count": 74,
  "passages": {
+  "ref_00723": {
+   "id": "ref_00723",
+   "chapter": 9,
+   "page": 241,
+   "sourceReference": "A 241",
+   "work": "quer_pasticciaccio_adelphi",
+   "excerpt": "Al casello, detto da taluni di Casal Bruciato, lo si attendeva ogni giorno, una volta al giorno.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00723"
+  },
   "ref_00576": {
    "id": "ref_00576",
    "chapter": 9,
