@@ -856,6 +856,18 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-041 — Ordine delle feature per id; ordine di disegno deciso dall'app (9 ottobre 2026)
+
+- Requisito/i: R15 · Ipotesi: — · Data check: — (AUDIT_2, § 1)
+- Stato precedente: il GeoJSON ordinava le feature per `(-planeCount, id)` (D-022 e ordinamento di `main`, D-039): deterministico fra build, ma non stabile rispetto ai dati, perché una correzione che cambiava un conteggio, o un'entità aggiunta o tolta, spostava l'indice di tutte le feature successive. L'app usava quell'indice come ordine di disegno: in vista piana disegnava in ordine di indice (`atlas.js:828-830`), in assonometria a pari profondità vinceva l'indice (`atlas.js:832`), e l'hit test in vista piana restituiva la prima tessera trovata in ordine di indice (`interaction/hit-test.js`). Verificato: dentro ciascun gruppo (referenziali in mappa, fuori mappa, fittizi), l'indice equivaleva a «più occorrenze pubblicate prima, poi id»; per le tessere fuse da `ALIAS_GROUPS`, alla posizione del primo membro del gruppo nel file.
+- Decisione (di Lorenzo, 9/10/2026): **il file è ordinato per id** dentro ciascun gruppo (referenziali, poi tessere proprie), così che una correzione ai dati non sposti nulla. **L'ordine lo decide l'app** con un criterio esplicito, in `app/src/model/entities.js`: dentro ciascun gruppo, più occorrenze pubblicate prima, poi id. Una tessera fusa da `ALIAS_GROUPS` prende la chiave del membro del gruppo che viene primo con lo stesso criterio. Il criterio riproduce esattamente l'ordine su cui il notebook è stato calibrato, quindi il significato visivo resta («i più frequenti si disegnano prima, cioè sotto»), ma non dipende più dalla posizione nel file. Le sezioni di `atlas.slim.json`, che non sono indici di disegno, restano ordinate per frequenza.
+- Motivazione (fonte, pagina): `allData` è identico con il file precedente, con il file ordinato per id e con tre rimescolamenti casuali delle feature; nuovo test dell'app (ordine invariato con le feature in ordine inverso). Confronto visivo sui 10 stati di riferimento (5 stadi × tutti / Pestalozzi), prima e dopo l'ordinamento per id: nessuna differenza oltre al rumore di animazione (al massimo 2.537 pixel; la striscia dei controlli dello stadio 2 differisce per una transizione di opacità del selettore «per capitolo / per pagina»).
+- Fase in cui è maturata: prototipazione (porting dell'interfaccia)
+- File toccati (manifest): `app/src/model/entities.js:1` (import di d3), `:8-10` (occorrenze pubblicate), `:75-97`, `:104` (criterio e ordinamento dei tre gruppi); `tools/build_geojson.py:721-726`, `:747`; `app/test/entities-status.test.js` (nuovo test); derivati rigenerati (`data/dist/gaddatlas.geojson`, `app/public/data/gaddatlas.geojson`).
+- Effetto su KG (triple prima/dopo, SHACL): nessuno (16.093 / 17.263). Il GeoJSON cambia solo nell'ordine delle feature: contenuto per id, relief, paths e meta identici. Test dell'app 5/5.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

@@ -718,8 +718,12 @@ def main(ttl_path, out_dir, seeds_path=None):
 
     # un GazetteerEntity entra nel payload solo se il grafo lo tocca: senza
     # nemmeno un ancoraggio non e' ne' una tessera ne' un'ancora, e' rumore.
+    # Ordine delle feature (D-041): per id dentro ciascun gruppo (referenziali,
+    # poi tessere proprie). Una correzione ai dati non sposta nessuna feature:
+    # l'ordine di disegno e dell'hit test lo decide l'app con un criterio
+    # esplicito (app/src/model/entities.js), non la posizione nel file.
     features = []
-    for v in sorted(gaz.values(), key=lambda d: (-d["planeCount"], d["id"])):
+    for v in sorted(gaz.values(), key=lambda d: d["id"]):
         if not (v["planeCount"] or v["refCountAnchored"]):
             continue
         cr = {c: len(s) for c, s in chap_refs.get(v["id"], {}).items()}
@@ -740,7 +744,7 @@ def main(ttl_path, out_dir, seeds_path=None):
             },
         })
 
-    for k in sorted(own_tile, key=lambda k: (-nps[k]["planeCount"], nps[k]["id"])):
+    for k in sorted(own_tile, key=lambda k: nps[k]["id"]):
         v = nps[k]
         cr = {c: len(s) for c, s in chap_refs.get(v["id"], {}).items()}
         seed = frozen_seeds.get(v["id"])
