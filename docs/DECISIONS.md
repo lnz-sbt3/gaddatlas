@@ -584,6 +584,7 @@ guardato a schermo prima di darlo per buono.
 - Fase in cui è maturata: prototipazione (vista diagramma)
 - File toccati (manifest): nessuno nel codice o nei dati; `docs/thesis/DATA_CHECKS_GaddAtlas.md` (lista delle decisioni).
 - Effetto su KG (triple prima/dopo, SHACL): nessuno.
+- Approvazione: approvata da L. Sabatino, 9/10/2026 (i glifi seguono il nome dello statuto).
 
 ---
 
@@ -604,6 +605,7 @@ guardato a schermo prima di darlo per buono.
 - Fase in cui è maturata: revisione critica
 - File toccati (manifest): `docs/thesis/Capitolo 4.md:83`, `:599`; `docs/thesis/DATA_CHECKS_GaddAtlas.md` (DC-01, DC-02, DC-07, DC-08, DC-16 e lista delle decisioni); `docs/thesis/GaddAtlas_Cap4_Allineamento_WorkOrder.md:163` e § 10.
 - Effetto su KG (triple prima/dopo, SHACL): nessuno. ABox 16.055, full 17.225.
+- Approvazione: approvata da L. Sabatino, 9/10/2026 (palazzo di via Merulana 219 Transformed). Robine Vecchie: verificato da LS sul volume a stampa, 9/10/2026, che a QP 161 non compare. DC-16 chiuso senza riesame: la permutazione è puramente nominale.
 
 ---
 
@@ -616,6 +618,7 @@ guardato a schermo prima di darlo per buono.
 - Fase in cui è maturata: analisi del testo
 - File toccati (manifest): `data/source/tables/NarrativePlaces.tsv:126` (statuto, descrizione); `data/source/tables/GazetteerEntities.tsv:1607` (id, toponimo, `Authority_Source`); `data/source/void_seeds.json` (nuovo seme `palazzo_simonetti` = 0,173276, quello che il build calcolerebbe dall'hash dell'id); due XLSX rigenerati.
 - Effetto su KG (triple prima/dopo, SHACL): ABox 16.055 → **16.057**; full 17.225 → **17.227** (+2: descrizione del palazzo, `dcterms:source` dell'entità di Terzoli; il cambio di statuto e di id non cambia il numero). Statuti: Imported **259**, Transformed **31**, Invented 14, Imagined 5. Vista: tessere proprie 48 → 49 (nuova per `palazzo_simonetti`, ancorata a via Lanza); via Lanza da 3 a 2 occorrenze proprie. SHACL conforme, 0 violazioni.
+- Approvazione: approvata da L. Sabatino, 9/10/2026 (Transformed, ancorato a via Lanza). La lettura di Terzoli entra in fase 3.
 
 ---
 
