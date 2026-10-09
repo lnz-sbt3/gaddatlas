@@ -1126,6 +1126,24 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-056 — Esclusioni dichiarate: docs/EXCLUSIONS.md (9 ottobre 2026)
+
+- Requisito/i: R12 (e R02, che resta non soddisfatto) · Ipotesi: — · Data check: DM-03, DM-04 (work order T-45, T-70)
+- Stato precedente: `docs/EXCLUSIONS.md` non esisteva; `CLAUDE.md` lo citava già.
+- Decisione (di Lorenzo, 9/10/2026): nuovo file con quattro voci:
+  - **temporalità**, con il testo stabilito da Lorenzo («La temporalità della storia, del racconto e del referente non è modellata. La diacronia dei testimoni è registrata nel grafo (T-40) ma non è esposta nell'interfaccia (DM-04).»). Il file dichiara anche la conseguenza: R02 non è soddisfatto, e il «momento del racconto» di R19 è la posizione nel testo (D-049);
+  - **percorsi degli oggetti** (DM-03);
+  - **diacronia dei testimoni nell'interfaccia** (DM-04), con i rimandi a D-052…D-054;
+  - **resa grafica dei percorsi non compiuti** (T-64). Il prototipo disegna oggi tutte le route come linee: il filtro sul tipo arriva con il porting, e il file lo dice.
+  Una sezione distinta, «Copertura parziale dichiarata», raccoglie i fenomeni che il modello prevede ma i dati coprono solo in parte: voce narrante e memoria (D-049), partizione (D-050), varianti (D-053). Lì l'assenza vale «non annotato». È la dichiarazione promessa in D-049.
+- Non aggiunto, da decidere (REVIEW_2): il Cap. 4, § 4.6 (r. 190) chiede di dichiarare fra i fenomeni esclusi la figuralità delle occorrenze, perché la proposizione che la riguarda non è interrogabile senza quell'annotazione. Non era nell'elenco di Lorenzo.
+- Motivazione (fonte, pagina): Cap. 4, R12 (§ 4.8, r. 255) e R02 (§ 4.2, r. 63).
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `docs/EXCLUSIONS.md` (nuovo); `README.md` r. 56–57.
+- Effetto su KG (triple prima/dopo, SHACL): invariato (TBox 1.158, ABox 27.136, full 28.864). SHACL conforme, 52 avvertenze.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

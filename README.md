@@ -53,7 +53,8 @@ gaddatlas/
 ├── app/                         ← interfaccia web (Vite + moduli ES)
 ├── tools/                         ETL, build, audit, migrazione namespace
 ├── w3id/                          configurazione dei redirect w3id.org
-└── docs/DECISIONS.md              registro delle decisioni
+├── docs/DECISIONS.md              registro delle decisioni
+└── docs/EXCLUSIONS.md             esclusioni dichiarate e copertura parziale (R12)
 ```
 
 ### Il principio architetturale
