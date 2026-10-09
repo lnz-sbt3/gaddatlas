@@ -1176,7 +1176,7 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 - Controlli: l'ETL accetta come termine un id del gazetteer o di un luogo narrativo, e rifiuta il resto; shape 7 (`assignsSpatialRelationType`) e shape 17 aggiornati.
 - Motivazione (fonte, pagina): Cap. 4, § 4.6 e R17 («soglia, adiacenza, verticalità, confine […] anche quando tali contesti risultino sprovvisti di un referente geografico reale»); QP 216.
 - Fase in cui è maturata: analisi del testo
-- File toccati (manifest): `ontology/chora.ttl` (schema delle relazioni; `chora:relatum` con range unione; tre concetti in coda); `ontology/shapes/chora-shapes.ttl` r. 90–91, shape 17; `data/source/mapping.yaml` (vocabolario `spatial_relations`, commento del blocco relazionale); `tools/etl.py` (termini luogo); `data/source/tables/SpatialInterpretations.tsv` (`interp_00660`); `SpatialInterpretations.xlsx`.
+- File toccati (manifest): `ontology/chora.ttl` r. 778–797 (schema delle relazioni), r. 1438–1442 (`chora:relatum` con range unione), r. 1459–1480 (tre concetti); `ontology/shapes/chora-shapes.ttl` r. 90–91, r. 599–607 (shape 17); `data/source/mapping.yaml` r. 190–193, r. 424–425; `tools/etl.py` r. 963–974 (termini luogo); `data/source/tables/SpatialInterpretations.tsv` (`interp_00660`); `SpatialInterpretations.xlsx`.
 - Effetto su KG (triple prima/dopo, SHACL): TBox 1.187 → **1.217**; ABox 27.144 → **27.148**; full 28.901 → **28.935**. SHACL conforme, 52 avvertenze; IQ1–IQ17 a 0. Vista invariata (GeoJSON: cambia solo `tripleCount`). Due build consecutivi identici.
 
 ---
