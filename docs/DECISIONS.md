@@ -244,6 +244,9 @@ non dipende più da come il foglio è stato esportato.
 10/10 integrity query eseguibili, tutte a zero tranne IQ9 (informativa: 14
 luoghi narrativi mai interpretati).
 
+
+**Aggiornamento (9/10/2026, D-021 e D-044).** Il § 3 non era chiuso: la causa era nell'ETL, corretta in D-021. Con D-044 gli `owl:sameAs` fra entità del dataset spariscono del tutto: l'identificazione Castello ↔ Castel Gandolfo è un'asserzione di Lorenzo non adottata, le due coppie istituzione/sede sono `chora:housedIn`. La proposta di derivare `ALIAS_GROUPS` dai `sameAs` decade.
+
 ---
 
 ## D-010 · Versioni fuori dai nomi dei file
@@ -297,6 +300,9 @@ portate nel grafo come `owl:sameAs`; le due del solo grafo confermate o rimosse.
 
 **Attenzione al verso.** `owl:sameAs` è simmetrico, la fusione no: serve
 comunque dichiarare quale id è il canonico.
+
+
+**Aggiornamento (9/10/2026, D-044).** Il grafo non è più una delle tre fonti: non contiene `owl:sameAs` fra entità del dataset e non dichiara fusioni (le coppie diventano un'asserzione d'identificazione e due `chora:housedIn`). Restano `ALIAS_GROUPS` del notebook, portato così com'è, e `MERGE_MAP`, vuota. Nessuna fusione nuova introdotta. Da notare: `ALIAS_GROUPS` fonde ancora Collegio Romano e Santo Stefano del Cacco, che il grafo ora tratta come istituzione e sede distinte.
 
 ---
 
@@ -890,6 +896,22 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 - Fase in cui è maturata: revisione critica
 - File toccati (manifest): `tools/etl.py:73` (namespace `schema:`), `:950-961` (attribuzioni delle interpretazioni), `:1005-1046` (`process_agents`, `agent_uri`), `:1115`, `:1120` (autori e codificatori delle asserzioni via `agent_uri`), `:1289` (foglio atteso), `:1329-1331` (chiamata); `ontology/shapes/chora-shapes.ttl:323`, `:326` (shape estesa alle interpretazioni); `data/source/mapping.yaml` (nota sul blocco provenance); `data/source/tables/Agents.tsv` (nuovo); `data/source/tables/SpatialInterpretations.tsv` (799 righe, colonna `Annotator_ID`); `data/source/xlsx/Agents.xlsx` (nuovo), `SpatialInterpretations.xlsx` (rigenerato).
 - Effetto su KG (triple prima/dopo, SHACL): ABox 16.093 → **24.575**; full 17.419 → **25.901** (+8.482: 960 × 8 triple di attribuzione qualificata, 799 forme brevi nuove, 3 triple per l'agente). 1.920 attribuzioni, 1 agente. SHACL conforme, 0 violazioni. GeoJSON invariato salvo `tripleCount`.
+
+---
+
+## D-044 — Niente `owl:sameAs` per i giudizi d'identità; `chora:housedIn` per istituzione e sede (9 ottobre 2026)
+
+- Requisito/i: R10, R22 · Ipotesi: — · Data check: DM-06, DC-04, DC-10 (work order T-31; AUDIT_2, § 4)
+- Stato precedente: tre coppie di `owl:sameAs` (6 triple) dalla colonna `sameAs` di `GazetteerEntities.tsv`: `gaz_castello` ↔ `gaz_castel_gandolfo`, `gaz_collegio_romano` ↔ `gaz_santo_stefano_del_cacco_celio_santo_stefano`, `gaz_lungara` ↔ `gaz_regina_coeli`. Tre relazioni di tipo diverso espresse come identità, troppo forti e non attribuite.
+- Decisione (di Lorenzo, 9/10/2026): tipi diversi.
+  - **Castello ↔ Castel Gandolfo** è un'identificazione contesa: diventa l'asserzione `A-0001` (tipo identification, soggetto `narrativeplace/castello`, valore `gaz_castel_gandolfo`, autore e codificatore Lorenzo), **non adottata** finché DC-04 non è deciso. La lettura di Manzotti (Castel Savello, 2010, p. 293) entra in fase 3.
+  - **Le due coppie istituzione / sede** diventano la relazione nuova `chora:housedIn` (dominio e codominio GazetteerEntity): Santo Stefano del Cacco, il commissariato del romanzo («Santo Stefano (al Collegio Romano)», QP 152), ha sede nel Collegio Romano; Regina Coeli ha sede in via della Lungara. Non è un'identità né un'identificazione, e non fonde le entità. Nuova colonna `Housed_In` in `GazetteerEntities.tsv`.
+  - **`owl:sameAs` resta solo per la coreferenza tecnica** con URI esterni (http/https): l'ETL si ferma se la colonna `sameAs` contiene un id del dataset. Nessuna fusione nuova (D-011).
+- Motivazione (fonte, pagina): Cap. 4, § 4.4 (identificazione contesa, R10); Manzotti 2010, p. 293; QP 152, 279.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `ontology/chora.ttl:971-980` (`chora:housedIn`); `tools/etl.py` (gazetteer: `sameAs` solo esterno, `Housed_In` risolto a fine ciclo); `tools/build_geojson.py:104-127` (commento sulle fonti di fusione); `data/source/mapping.yaml` (nota su `sameAs`); `data/source/tables/GazetteerEntities.tsv` (6 valori di `sameAs` tolti, colonna `Housed_In`); `data/source/tables/Assertions.tsv` (riga `A-0001`); due XLSX rigenerati; aggiornamenti in D-009 e D-011.
+- Effetto su KG (triple prima/dopo, SHACL): TBox 756 → **763**; ABox 24.575 → **24.588**; full 25.901 → **25.921** (−6 `owl:sameAs`, +2 `chora:housedIn`, +17 per l'asserzione e le sue attribuzioni). SHACL conforme, 0 violazioni; IQ3 = 0, IQ12 = 0. GeoJSON invariato salvo `tripleCount` (`MERGE_MAP` è vuota).
+- Da segnalare, non toccato: (1) `gaz_castello` («Castello», alle coordinate di Castel Gandolfo) resta un'entità senza interpretazioni, che esisteva solo per il `sameAs`; (2) la stazione dei carabinieri di Castello è ancora ancorata direttamente a `gaz_castel_gandolfo`, cioè porta dentro l'interpretazione la lettura non adottata (DC-04: collegare la stazione a `castello`); (3) `ALIAS_GROUPS` nel codice portato fonde ancora Collegio Romano e Santo Stefano del Cacco (D-011, non si tocca).
 
 ---
 

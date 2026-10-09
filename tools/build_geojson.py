@@ -102,13 +102,14 @@ MIN_SEQUENCE_LEN = 2               # sequenze derivate: sotto 2 tappe non c'e' p
 # Fusione di varianti toponomastiche che nel grafo sono GazetteerEntity distinte
 # ma designano lo stesso referente. Formato: { "gaz_variante": "gaz_canonico" }
 #
-# DECISIONE APERTA (vedi docs/DECISIONS.md § D-011). Oggi esistono TRE fonti che
-# si contraddicono, e questa mappa vuota e' la terza:
-#
-#   nel GRAFO (owl:sameAs, 3 coppie)
-#     gaz_castel_gandolfo   <-> gaz_castello
-#     gaz_collegio_romano   <-> gaz_santo_stefano_del_cacco_celio_santo_stefano
-#     gaz_lungara           <-> gaz_regina_coeli
+# DECISIONE APERTA (vedi docs/DECISIONS.md § D-011). Dal D-044 il GRAFO non
+# contiene piu' owl:sameAs fra entita' del dataset, quindi non e' una fonte di
+# fusioni: le tre coppie che dichiarava sono diventate
+#     gaz_castello -> narrativeplace/castello, asserzione d'identificazione
+#       con gaz_castel_gandolfo (Lorenzo, NON adottata: DC-04)
+#     gaz_santo_stefano_del_cacco_celio_santo_stefano chora:housedIn gaz_collegio_romano
+#     gaz_regina_coeli chora:housedIn gaz_lungara
+# e nessuna delle due relazioni e' una fusione. Restano due fonti:
 #
 #   nel NOTEBOOK (s4Config.ALIAS_GROUPS, 5 gruppi)
 #     gaz_collegio_romano   <-> gaz_santo_stefano_del_cacco_celio_santo_stefano
@@ -119,11 +120,11 @@ MIN_SEQUENCE_LEN = 2               # sequenze derivate: sotto 2 tappe non c'e' p
 #
 #   qui: vuota.
 #
-# Una sola coppia su sette e' condivisa. Finche' la decisione non e' presa la
-# mappa resta vuota, perche' e' cio' che riproduce esattamente il GeoJSON su cui
-# il notebook e' stato calibrato. Una volta decisa, la fonte deve diventare UNA:
-# gli owl:sameAs del grafo, da cui questa mappa si deriva e da cui il notebook
-# ricava ALIAS_GROUPS, invece di mantenere due liste parallele.
+# Finche' la decisione non e' presa la mappa resta vuota, perche' e' cio' che
+# riproduce esattamente il GeoJSON su cui il notebook e' stato calibrato. Una
+# volta decisa, la fonte deve diventare UNA. Non sono piu' gli owl:sameAs (D-044):
+# una fusione andra' dichiarata come scelta esplicita (un'asserzione adottata o
+# una tabella delle fusioni), da cui derivare questa mappa e ALIAS_GROUPS.
 MERGE_MAP = {}
 
 

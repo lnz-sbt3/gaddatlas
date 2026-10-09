@@ -1051,6 +1051,15 @@
     <skos:altLabel xml:lang="it">localizzazione storica</skos:altLabel>
     <skos:prefLabel xml:lang="en">historical location</skos:prefLabel>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/chora#housedIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">An institution (e.g. a police station, a prison) is housed in a site (a building, a street). The two gazetteer entities are distinct referents: this is neither an identity (owl:sameAs) nor an identification assertion, and it never merges them.</rdfs:comment>
+    <rdfs:comment xml:lang="it">Un'istituzione (un commissariato, un carcere) ha sede in un luogo (un edificio, una via). Le due entita' del gazetteer sono referenti distinti: non e' un'identita' (owl:sameAs) ne' un'asserzione d'identificazione, e non le fonde.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/chora#GazetteerEntity"/>
+    <rdfs:range rdf:resource="https://w3id.org/chora#GazetteerEntity"/>
+    <skos:altLabel xml:lang="it">ha sede in</skos:altLabel>
+    <skos:prefLabel xml:lang="en">housed in</skos:prefLabel>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/chora#interpretationType">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:comment xml:lang="en">Classifies the kind of spatial interpretation asserted by the annotation.</rdfs:comment>

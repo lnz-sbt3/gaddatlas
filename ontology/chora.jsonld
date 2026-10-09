@@ -1792,6 +1792,34 @@
       }
     },
     {
+      "@id": "chora:housedIn",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": [
+        {
+          "@language": "en",
+          "@value": "An institution (e.g. a police station, a prison) is housed in a site (a building, a street). The two gazetteer entities are distinct referents: this is neither an identity (owl:sameAs) nor an identification assertion, and it never merges them."
+        },
+        {
+          "@language": "it",
+          "@value": "Un'istituzione (un commissariato, un carcere) ha sede in un luogo (un edificio, una via). Le due entita' del gazetteer sono referenti distinti: non e' un'identita' (owl:sameAs) ne' un'asserzione d'identificazione, e non le fonde."
+        }
+      ],
+      "rdfs:domain": {
+        "@id": "chora:GazetteerEntity"
+      },
+      "rdfs:range": {
+        "@id": "chora:GazetteerEntity"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "ha sede in"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "housed in"
+      }
+    },
+    {
       "@id": "chora:interpretationType",
       "@type": "owl:DatatypeProperty",
       "owl:deprecated": true,

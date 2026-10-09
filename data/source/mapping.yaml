@@ -317,7 +317,10 @@ mappings:
           vocabulary: "place_categories"
           optional: true
         
-        # sameAs (Wikidata, Geonames, etc.)
+        # sameAs: SOLO URI esterni (Wikidata, Geonames...), coreferenza tecnica.
+        # Un id interno fa fallire l'ETL: le identita' fra entita' del dataset
+        # sono asserzioni d'identificazione (Assertions.tsv) e le coppie
+        # istituzione / sede sono la colonna Housed_In -> chora:housedIn (D-044).
         - column: "sameAs"
           property: "owl:sameAs"
           as_uri: true

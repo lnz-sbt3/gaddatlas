@@ -966,3 +966,14 @@ prov:wasRevisionOf a owl:ObjectProperty ;
 
 prov:generatedAtTime a owl:DatatypeProperty ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
+
+# Istituzione e sede (D-044, work order T-31): relazione fra due entita' del
+# gazetteer che NON sono lo stesso referente. Sostituisce gli owl:sameAs usati
+# per le coppie istituzione / sede; non e' un'identita' ne' una fusione.
+chora:housedIn a owl:ObjectProperty ;
+    rdfs:comment "An institution (e.g. a police station, a prison) is housed in a site (a building, a street). The two gazetteer entities are distinct referents: this is neither an identity (owl:sameAs) nor an identification assertion, and it never merges them."@en,
+        "Un'istituzione (un commissariato, un carcere) ha sede in un luogo (un edificio, una via). Le due entita' del gazetteer sono referenti distinti: non e' un'identita' (owl:sameAs) ne' un'asserzione d'identificazione, e non le fonde."@it ;
+    rdfs:domain chora:GazetteerEntity ;
+    rdfs:range chora:GazetteerEntity ;
+    skos:altLabel "ha sede in"@it ;
+    skos:prefLabel "housed in"@en .

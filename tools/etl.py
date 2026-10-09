@@ -620,12 +620,14 @@ class GaddaETL:
         - Longitude
         - Geometry (GeoJSON)
         - Authority_Source
+        - Housed_In (id di un'altra entita': istituzione -> sede, D-044)
         """
         logger.info(f"Processando GazetteerEntities da {file_path}")
 
         try:
             df = pd.read_csv(file_path, sep='\t', encoding='utf-8', dtype=str, keep_default_na=False, na_values=[])
             logger.info(f"Caricate {len(df)} righe da GazetteerEntities")
+            self.housed_in = []
 
             for idx, row in df.iterrows():
                 entity_id = row.get('GazetteerEntity_ID')
@@ -672,27 +674,36 @@ class GaddaETL:
                     if category_uri:
                         self.graph.add((entity_uri, CHORA.hasPlaceCategory, category_uri))
 
-                # sameAs: nei dati la colonna contiene id di altre
-                # GazetteerEntity (es. gaz_castello), non URI esterni. Un id
-                # nudo passato a URIRef diventava un IRI relativo, risolto poi
-                # contro il percorso del file (file:///...): D-021. Gli id si
-                # risolvono nel namespace del gazetteer; un URI con schema
-                # http(s) resta com'e'.
+                # sameAs: solo coreferenza tecnica con un URI esterno (http/https,
+                # es. Wikidata). I giudizi d'identita' sono asserzioni
+                # d'identificazione (Assertions.tsv), le coppie istituzione /
+                # sede sono chora:housedIn (colonna Housed_In): D-044. Un id
+                # interno qui e' un errore, non una fusione.
                 same_as = row.get('sameAs')
                 if has_value(same_as):
                     same_as = str(same_as).strip()
-                    if same_as.startswith(('http://', 'https://')):
-                        same_as_uri = URIRef(same_as)
-                    else:
-                        same_as_uri = self.resolve_lookup(same_as, '@GazetteerEntity_ID')
-                    if same_as_uri:
-                        self.graph.add((entity_uri, OWL.sameAs, same_as_uri))
+                    if not same_as.startswith(('http://', 'https://')):
+                        raise ValueError(
+                            f"GazetteerEntity {entity_id}: sameAs {same_as!r} non e' un URI esterno. "
+                            "Un'identita' fra entita' del dataset va in Assertions.tsv (D-044)")
+                    self.graph.add((entity_uri, OWL.sameAs, URIRef(same_as)))
+
+                # istituzione ospitata in una sede (D-044)
+                housed_in = row.get('Housed_In')
+                if has_value(housed_in):
+                    self.housed_in.append((entity_id, entity_uri, str(housed_in).strip()))
 
                 # Geometry (GeoSPARQL)
                 geom = row.get('Geometry')
                 if has_value(geom):
                     self.create_geometry_node(geom, GEOSPARQL.hasGeometry, entity_uri)
 
+            # chora:housedIn dopo il ciclo, quando tutti gli id sono noti (D-044)
+            for entity_id, entity_uri, target in self.housed_in:
+                if target not in self.id_cache['GazetteerEntity_ID']:
+                    raise ValueError(f"GazetteerEntity {entity_id}: Housed_In {target!r} non esiste")
+                self.graph.add((entity_uri, CHORA.housedIn,
+                                self.resolve_lookup(target, '@GazetteerEntity_ID')))
             logger.info(f"GazetteerEntities: processate {len(self.id_cache['GazetteerEntity_ID'])} entità")
 
         except FileNotFoundError:
