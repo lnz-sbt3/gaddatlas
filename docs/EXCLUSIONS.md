@@ -55,10 +55,10 @@ I percorsi indicati, sognati, inferiti, direzionali e proposti sono registrati
 e tipizzati nel grafo (T-54), ma non hanno una resa grafica sulla carta. Le
 linee restano riservate ai percorsi compiuti, attestati e ordinati.
 
-- **Conseguenza per l'interfaccia:** il prototipo disegna oggi come linee tutte
-  le route, senza distinzione di tipo; il filtro sul tipo si applica con il
-  porting dell'interfaccia (work order T-64). Fino ad allora la regola vale per
-  i dati, non ancora per la carta.
+- **Conseguenza per l'interfaccia:** la carta disegna come linee solo i
+  percorsi di tipo compiuto (`app/src/model/attested-routes.js`, D-060); gli
+  altri tipi non hanno, per ora, alcuna resa. Un trattamento distinto per i
+  percorsi non compiuti resta una decisione aperta del work order (T-64).
 - **Decisione:** Lorenzo Sabatino, 9 ottobre 2026 (work order T-64).
 
 ---
