@@ -72,6 +72,7 @@ GEOSPARQL = Namespace("http://www.opengis.net/ont/geosparql#")
 PROV = Namespace("http://www.w3.org/ns/prov#")
 SCHEMA = Namespace("https://schema.org/")
 HICO = Namespace("http://purl.org/emmedi/hico/")
+CITO = Namespace("http://purl.org/spar/cito/")
 
 
 def has_value(x: Any) -> bool:
@@ -993,6 +994,11 @@ class GaddaETL:
                             raise ValueError(f"Interpretation {interp_id}: termine {gid!r} "
                                              "assente dal gazetteer e dai luoghi narrativi")
                         self.graph.add((node, CHORA.relatum, rel))
+                        # D-084: senza ancore dirette, i termini del gazetteer sono le
+                        # ancore dell'interpretazione (nessun luogo fuori dall'interfaccia)
+                        if not has_value(row.get('Anchors_To_Entity_ID')) and \
+                                gid in self.id_cache['GazetteerEntity_ID']:
+                            self.graph.add((interp_uri, CHORA.anchorsToEntity, rel))
 
                 # *** VOCE NARRANTE (D-049, T-36): chi parla, distinto da chi
                 # percepisce. Facoltativa: l'assenza vale «non annotato». ***
@@ -1259,12 +1265,15 @@ class GaddaETL:
         "location": "LocationAssertion", "partition": "PartitionAssertion",
         "memory": "MemoryAssertion", "uncertainty": "UncertaintyAssertion",
         "variant": "VariantAssertion", "route": "RouteTypeAssertion",
+        "repertory": "RepertoryAttestation", "naming": "NamingAssertion",
+        "commentary": "CommentaryAssertion",
     }
 
     RATIONALE_TYPES = {"prova referenziale": "ReferentialEvidence",
                        "prova testuale": "TextualEvidence",
                        "lettura critica": "CriticalReading"}
     REVIEW_STATUSES = {"bozza": "Draft", "validata": "Validated"}
+    VARIANT_KINDS = {"forma": "FormVariant", "sostituzione": "SubstitutionVariant"}
     UNCERTAINTY_AXES = {"nome": "NameAxis", "identificazione": "IdentificationAxis",
                         "geometria": "GeometryAxis"}
     UNCERTAINTY_ORIGINS = {"documentaria": "DocumentaryOrigin", "costruttiva": "ConstructiveOrigin"}
@@ -1335,7 +1344,7 @@ class GaddaETL:
     def add_reading_provenance(self, reading: URIRef, local_id: str, itype: URIRef,
                                authors, encoders, where: str, source=None, page=None,
                                rationale=None, criterion=None, encoding_date=None,
-                               original=None):
+                               original=None, quotation=None):
         """Atto interpretativo e codifica di una lettura (D-067, pattern HiCO).
 
         - L'hico:InterpretationAct (act/{id}) e' l'atto dell'autore: genera la
@@ -1358,6 +1367,7 @@ class GaddaETL:
             self.graph.add((act, HICO.isExtractedFrom, src_uri))
         self.add_literal(act, CHORA.sourcePage, page, datatype=XSD.string)
         self.add_literal(act, CHORA.rationale, rationale, lang='it')
+        self.add_literal(act, CHORA.quotation, quotation, lang='it')
         for au in authors:
             self.add_association(act, local_id, au, "ReadingAuthor")
             self.graph.add((reading, PROV.wasAttributedTo, au))
@@ -1420,9 +1430,26 @@ class GaddaETL:
             a = ID_NS[f"assertion/{aid}"]
             self.graph.add((a, RDF.type, CHORA.Assertion))
             self.graph.add((a, CHORA.aboutSubject, self.resolve_compact(row.get('Subject'), where)))
-            for v in str(row.get('Value', '')).split('|'):
-                if v.strip():
-                    self.graph.add((a, CHORA.assertsValue, self.resolve_compact(v, where)))
+            values = [v for v in str(row.get('Value', '')).split('|') if v.strip()]
+            if not values and atype != "commentary":
+                raise ValueError(f"{where}: Value mancante (solo un commento puo' non averlo)")
+            for v in values:
+                self.graph.add((a, CHORA.assertsValue, self.resolve_compact(v, where)))
+            # loci critici (D-085): toponimo su cui il nome gioca, tipo di variante,
+            # disaccordo con un'altra lettura
+            for x in str(row.get('Plays_On', '')).split('|'):
+                if x.strip():
+                    self.graph.add((a, CHORA.playsOn, self.resolve_compact(x, where)))
+            vk = str(row.get('Variant_Kind', '')).strip().lower()
+            if atype == "variant":
+                if vk not in self.VARIANT_KINDS:
+                    raise ValueError(f"{where}: Variant_Kind {vk!r} (atteso forma / sostituzione)")
+                self.graph.add((a, CHORA.variantKind, CHORA[self.VARIANT_KINDS[vk]]))
+            elif vk:
+                raise ValueError(f"{where}: Variant_Kind vale solo per le varianti")
+            for x in str(row.get('Disagrees_With', '')).split('|'):
+                if x.strip():
+                    self.graph.add((a, CITO.disagreesWith, ID_NS[f"assertion/{x.strip()}"]))
             # piu' autori separati da '|' (es. Matt e Pinotti 2022, D-053)
             authors = [self.agent_uri(x.strip(), where)
                        for x in str(row.get('Author_ID', '')).split('|') if x.strip()]
@@ -1447,7 +1474,7 @@ class GaddaETL:
                 source=self.resolve_source(row.get('Source_Work'), where),
                 page=row.get('Source_Page'), rationale=row.get('Rationale'),
                 criterion=CHORA[self.RATIONALE_TYPES[rtype]] if rtype else None,
-                encoding_date=row.get('Date'),
+                encoding_date=row.get('Date'), quotation=row.get('Quotation'),
                 original=self.resolve_source(row.get('Original_Source'), where)
                 if str(row.get('Original_Source') or '').strip() else None)
             axis = str(row.get('Uncertainty_Axis', '')).strip().lower()
@@ -1510,6 +1537,26 @@ class GaddaETL:
             place = self.graph.value(place, CHORA.isPartOf)
         return None
 
+    def repertory_attestations(self, entity):
+        """Testi delle attestazioni di un'entita' in un repertorio (D-087):
+        «Bertarelli 1925, 418–419 (…), secondo Terzoli 2015»."""
+        out = []
+        for act in self.graph.subjects(HICO.hasInterpretationType, CHORA.RepertoryAttestation):
+            for a in self.graph.subjects(PROV.wasGeneratedBy, act):
+                if self.graph.value(a, CHORA.aboutSubject) != entity:
+                    continue
+                rep = self.graph.value(a, CHORA.assertsValue)
+                src = self.graph.value(act, HICO.isExtractedFrom)
+                page = self.graph.value(act, CHORA.sourcePage)
+                # sourcePage «418–419 (Bertarelli 1925, cart. 4, …)»: pagine del
+                # critico e, fra parentesi, il locatore nel repertorio
+                m = re.match(r"(.+?) \((.+)\)$", str(page or ''))
+                where = m.group(2) if m else str(self.graph.value(rep, RDFS.label))
+                pages = m.group(1) if m else str(page or '')
+                pp = "pp." if any(c in pages for c in "–-,") else "p."
+                out.append(f"{where} ({self.graph.value(src, RDFS.label)}, {pp} {pages})")
+        return out
+
     def generate_imported_statuses(self):
         """Per ogni luogo Imported senza un'asserzione di statuto adottata in
         Assertions.tsv, genera la lettura assertion/S-auto-{luogo} e il suo atto:
@@ -1550,6 +1597,9 @@ class GaddaETL:
                              + (f"Repertorio: {self.graph.value(source[0], RDFS.label)}, {page}."
                                 if where_from else "Referente identificato nel gazetteer del progetto "
                                 "(GazetteerEntities), coordinate registrate."))
+                # attestazioni dell'ancora in un repertorio (D-087): la motivazione le cita
+                for att in sorted(self.repertory_attestations(anchor)):
+                    rationale += f" Attestata in {att}."
             else:
                 rationale = f"{standard} Nessuna ancora: analisi non condotta (D-048)."
             self.graph.add((a, RDF.type, CHORA.Assertion))
@@ -1630,6 +1680,8 @@ class GaddaETL:
             self.graph.add((geom, CHORA.repertory, self.sources[rep_id][0]))
             self.add_literal(geom, CHORA.precision, row.get('Precision'), datatype=XSD.string)
             self.add_literal(geom, CHORA.datum, row.get('Datum'), datatype=XSD.string)
+            # locatore della carta nel volume del repertorio (D-086)
+            self.add_literal(geom, CHORA.sourcePage, row.get('Repertory_Locator'), datatype=XSD.string)
         logger.info(f"Locations: {len(df)} posizioni attribuite")
 
     # tipo -> (proprieta' reificata, classe del soggetto, solo le adottate?)
@@ -1637,7 +1689,10 @@ class GaddaETL:
                     "IdentificationAssertion": (CHORA.identifiedWith, CHORA.NarrativePlace, True),
                     "MemoryAssertion": (CHORA.memoryAttribution, CHORA.PlaceReference, True),
                     # le varianti non sono letture alternative: tutte (D-070)
-                    "VariantAssertion": (CHORA.hasVariant, CHORA.PlaceReference, False)}
+                    "VariantAssertion": (CHORA.hasVariant, CHORA.PlaceReference, False),
+                    # le attestazioni nel repertorio nemmeno (D-085)
+                    "RepertoryAttestation": (CHORA.attestedInRepertory, CHORA.GazetteerEntity, False),
+                    "NamingAssertion": (CHORA.nameReading, None, True)}
 
     def materialize_adopted(self):
         for tname, (prop, subject_class, only_adopted) in self.MATERIALIZED.items():
@@ -1646,7 +1701,7 @@ class GaddaETL:
                     if only_adopted and (a, CHORA.adoptedByProject, Literal(True)) not in self.graph:
                         continue
                     subj = self.graph.value(a, CHORA.aboutSubject)
-                    if (subj, RDF.type, subject_class) not in self.graph:
+                    if subject_class is not None and (subj, RDF.type, subject_class) not in self.graph:
                         raise ValueError(f"{a}: il soggetto non e' {subject_class}")
                     for v in self.graph.objects(a, CHORA.assertsValue):
                         self.graph.add((subj, prop, v))

@@ -807,6 +807,10 @@ documentation:
       Uncertainty_Origin: "lettura: chora:uncertaintyOrigin: documentaria | costruttiva (solo uncertainty)"
       Grounded_In:    "lettura: chora:groundedIn reference/{id} (piu' id con '|'); se vuota, default di apply_default_grounding (D-070)"
       Original_Source: "atto: chora:originalSource source/{id}, per una lettura citata di seconda mano; l'atto prende la data dell'opera originale (D-071)"
+      Quotation:      "atto: chora:quotation (@it): estratto breve del critico, una o due frasi (D-085)"
+      Plays_On:       "lettura: chora:playsOn gazetteer/{id}: il toponimo reale su cui il nome gioca (naming, D-085)"
+      Variant_Kind:   "lettura: chora:variantKind: forma (stesso luogo, D-054) | sostituzione (luoghi diversi, D-085); obbligatorio per le varianti"
+      Disagrees_With: "lettura: cito:disagreesWith assertion/{id} (D-085)"
     derived: "per le letture adottate: chora:hasRouteType (route), chora:identifiedWith (identification), chora:memoryAttribution (memory); per tutte le varianti: chora:hasVariant (D-070)"
 
   Sources:
@@ -887,6 +891,7 @@ documentation:
       Precision:    "chora:precision (xsd:string)"
       Datum:        "chora:datum (xsd:string)"
       Repertory_ID: "chora:repertory source/{id} (Sources.tsv)"
+      Repertory_Locator: "chora:sourcePage della geometria: la carta nel volume (es. «cart. 2, tra pp. 480–481», D-086)"
 
   SpatialInterpretations_readings:
     source_file: "SpatialInterpretations.tsv"

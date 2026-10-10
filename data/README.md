@@ -72,7 +72,7 @@ Al 2026-09-06, con `make all && make audit && make shacl`:
 | Righe di `relief` | 933 — tutte risolvono a una feature |
 | Audit | 9 invarianti su 9 |
 | SHACL | conforme, nessuna violazione |
-| Query | 12/12 competency, 20/20 integrity |
+| Query | 12/12 competency, 21/21 integrity |
 
 Esclusioni verificate come volute, non come perdite:
 

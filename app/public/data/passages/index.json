@@ -1,6 +1,6 @@
 {
  "generatedFrom": "gaddatlas-full.ttl",
- "totalPassages": 729,
+ "totalPassages": 730,
  "chapters": {
   "1": {
    "file": "ch01.json",
@@ -36,7 +36,7 @@
   },
   "9": {
    "file": "ch09.json",
-   "count": 74
+   "count": 75
   },
   "10": {
    "file": "ch10.json",
@@ -695,6 +695,7 @@
   "ref_00643": 9,
   "ref_00644": 9,
   "ref_00723": 9,
+  "ref_00736": 9,
   "ref_00645": 10,
   "ref_00646": 10,
   "ref_00647": 10,

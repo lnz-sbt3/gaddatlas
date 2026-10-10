@@ -18,7 +18,7 @@ import json
 import sys
 from pathlib import Path
 
-from rdflib import Graph, Namespace, RDF, URIRef
+from rdflib import Graph, Literal, Namespace, RDF, URIRef
 
 ROOT = Path(__file__).resolve().parents[1]
 TTL = ROOT / "data" / "dist" / "gaddatlas-full.ttl"
@@ -208,6 +208,8 @@ def main() -> int:
     for row in read_tsv("Assertions.tsv"):
         if row["Assertion_Type"].strip().lower() != "variant":
             continue
+        if row.get("Variant_Kind", "").strip().lower() == "sostituzione":
+            continue   # variante di sostituzione: luoghi diversi ammessi (D-085)
         subj = row["Subject"].split("/", 1)[-1]
         place = ref_place.get(subj)
         for v in row["Value"].split("|"):
@@ -216,7 +218,7 @@ def main() -> int:
                 bad_variant.append(f'{row["Assertion_ID"]}: {rid} -> {ref_place.get(rid)!r}, soggetto {subj} -> {place!r}')
     a.check(
         not bad_variant,
-        "ogni variante collega due occorrenze dello stesso luogo (sorgenti TSV)",
+        "ogni variante di forma collega due occorrenze dello stesso luogo (sorgenti TSV)",
         "\n".join(bad_variant[:20]),
     )
     stray = sorted(rid for rid, w in witness_ref.items() if w and w not in reference_ids
@@ -224,6 +226,22 @@ def main() -> int:
                                if row["Assertion_Type"].strip().lower() == "variant"))
     a.check(not stray, "ogni occorrenza di un altro testimone sta in una variante (sorgenti TSV)",
             "\n".join(stray[:20]))
+
+    # nessun luogo annotato fuori dall'interfaccia (D-084): ogni luogo con
+    # un'interpretazione adottata compare nel GeoJSON, con tessera propria o
+    # nella tessera della sua ancora; nessun campo offMap.
+    place_of_si = {}
+    for si, pl in g.subject_objects(CHORA.targetsPlace):
+        if (si, CHORA.adoptedByProject, Literal(True)) in g:
+            place_of_si[local(si)] = local(pl)
+    target_of_si = {r["interpretationId"]: r["targetId"] for r in gj["relief"]}
+    shown = {pl for si, pl in place_of_si.items()
+             if pl in feats or target_of_si.get(si) in feats}
+    missing = sorted(set(place_of_si.values()) - shown)
+    a.check(not missing,
+            f"ogni luogo annotato compare nel GeoJSON ({len(shown)}/{len(set(place_of_si.values()))})",
+            "\n".join(missing[:20]))
+    a.check("offMap" not in gj, "nessun elenco offMap nel GeoJSON (D-084)")
 
     # copie pubblicate per l'interfaccia (T-83): byte per byte uguali ai
     # derivati, altrimenti l'app mostra dati diversi da quelli del grafo
