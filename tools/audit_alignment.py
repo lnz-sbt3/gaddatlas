@@ -208,6 +208,8 @@ def main() -> int:
     for row in read_tsv("Assertions.tsv"):
         if row["Assertion_Type"].strip().lower() != "variant":
             continue
+        if row.get("Variant_Kind", "").strip().lower() == "sostituzione":
+            continue   # variante di sostituzione: luoghi diversi ammessi (D-085)
         subj = row["Subject"].split("/", 1)[-1]
         place = ref_place.get(subj)
         for v in row["Value"].split("|"):
@@ -216,7 +218,7 @@ def main() -> int:
                 bad_variant.append(f'{row["Assertion_ID"]}: {rid} -> {ref_place.get(rid)!r}, soggetto {subj} -> {place!r}')
     a.check(
         not bad_variant,
-        "ogni variante collega due occorrenze dello stesso luogo (sorgenti TSV)",
+        "ogni variante di forma collega due occorrenze dello stesso luogo (sorgenti TSV)",
         "\n".join(bad_variant[:20]),
     )
     stray = sorted(rid for rid, w in witness_ref.items() if w and w not in reference_ids

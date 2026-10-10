@@ -3940,7 +3940,8 @@
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/V-0001> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/reference/ref_00588> ;
     chora:assertsValue <https://w3id.org/gaddatlas/id/reference/ref_00724> ;
-    chora:reviewStatus chora:Validated .
+    chora:reviewStatus chora:Validated ;
+    chora:variantKind chora:FormVariant .
 
 <https://w3id.org/gaddatlas/id/assertion/V-0002> a chora:Assertion ;
     rdfs:comment "Cap. 4, § 4.2 (r. 45). La lettura di Terzoli (palazzo Odescalchi Simonetti) entra in fase 3."@it ;
@@ -3948,7 +3949,8 @@
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/V-0002> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/reference/ref_00436> ;
     chora:assertsValue <https://w3id.org/gaddatlas/id/reference/ref_00725> ;
-    chora:reviewStatus chora:Validated .
+    chora:reviewStatus chora:Validated ;
+    chora:variantKind chora:FormVariant .
 
 <https://w3id.org/gaddatlas/id/assertion/V-0003a> a chora:Assertion ;
     rdfs:comment "Corrispondenza QPL 285 ↔ QPa 16 confermata da LS (9/10/2026). Cap. 4, § 4.2 (r. 45)."@it ;
@@ -3957,7 +3959,8 @@
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/V-0003a> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/reference/ref_00007> ;
     chora:assertsValue <https://w3id.org/gaddatlas/id/reference/ref_00726> ;
-    chora:reviewStatus chora:Validated .
+    chora:reviewStatus chora:Validated ;
+    chora:variantKind chora:FormVariant .
 
 <https://w3id.org/gaddatlas/id/assertion/V-0003b> a chora:Assertion ;
     rdfs:comment "Corrispondenza QPL 293 ↔ QPa 25 confermata da LS (9/10/2026). Cap. 4, § 4.2 (r. 45)."@it ;
@@ -3966,7 +3969,8 @@
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/V-0003b> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/reference/ref_00036> ;
     chora:assertsValue <https://w3id.org/gaddatlas/id/reference/ref_00727> ;
-    chora:reviewStatus chora:Validated .
+    chora:reviewStatus chora:Validated ;
+    chora:variantKind chora:FormVariant .
 
 <https://w3id.org/gaddatlas/id/assertion/V-0004a> a chora:Assertion ;
     rdfs:comment "Corrispondenza QPL 285 ↔ QPa 16 confermata da LS (9/10/2026). Cap. 4, § 4.2 (r. 45)."@it ;
@@ -3975,7 +3979,8 @@
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/V-0004a> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/reference/ref_00008> ;
     chora:assertsValue <https://w3id.org/gaddatlas/id/reference/ref_00726> ;
-    chora:reviewStatus chora:Validated .
+    chora:reviewStatus chora:Validated ;
+    chora:variantKind chora:FormVariant .
 
 <https://w3id.org/gaddatlas/id/assertion/V-0004b> a chora:Assertion ;
     rdfs:comment "Corrispondenza QPL 293 ↔ QPa 25 confermata da LS (9/10/2026). Cap. 4, § 4.2 (r. 45)."@it ;
@@ -3984,7 +3989,8 @@
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/V-0004b> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/reference/ref_00038> ;
     chora:assertsValue <https://w3id.org/gaddatlas/id/reference/ref_00727> ;
-    chora:reviewStatus chora:Validated .
+    chora:reviewStatus chora:Validated ;
+    chora:variantKind chora:FormVariant .
 
 <https://w3id.org/gaddatlas/id/encoding/A-0002> a chora:EncodingActivity ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/A-0002-encoder-lorenzo_sabatino> ;

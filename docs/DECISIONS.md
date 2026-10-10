@@ -1642,6 +1642,24 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-085 — Tre tipi di lettura per i loci critici; varianti di forma e di sostituzione (10 ottobre 2026)
+
+- Requisito/i: R03, R05, R07 · Ipotesi: — · Data check: — (AUDIT_3, blocco A; decisioni 2 e 5)
+- Decisione (di Lorenzo, 10/10/2026):
+  - **A1, `chora:RepertoryAttestation`:** reifica `chora:attestedInRepertory` (GazetteerEntity → chora:Source). L'atto porta il locatore della carta in `chora:sourcePage`. Materializzata per tutte, perché le attestazioni non sono alternative;
+  - **A2, `chora:NamingAssertion`:** reifica `chora:nameReading` (PlaceReference ∪ NarrativePlace → `chora:NamingMechanismScheme`: Paraetymology, Synecdoche, Paronomasia, IronicLowering, TypoHypothesis, OnomasticPun). Materializzata solo per le adottate. `chora:playsOn` (lettura → GazetteerEntity, facoltativa, colonna `Plays_On`);
+  - **A3, `chora:CommentaryAssertion`:** commento attribuito, senza proprietà reificata e senza valore obbligatorio. `AssertionShape` ammette un valore assente solo per questo tipo; `ReifiedTypeShape` non lo tocca, perché vale solo per i tipi con `reifiesProperty`. Il soggetto può essere anche l'opera (decisione 4);
+  - **A4, `chora:quotation`** (langString, sull'atto): l'estratto breve del critico, colonna `Quotation`;
+  - **varianti** (decisione 2): `chora:variantKind` con due valori, `FormVariant` (stesso luogo, la regola di D-054) e `SubstitutionVariant` (luoghi diversi, ammessa e dichiarata). La colonna `Variant_Kind` (forma / sostituzione) è obbligatoria per le varianti: le 6 esistenti sono «forma». Il controllo dell'audit sullo stesso luogo vale solo per le varianti di forma;
+  - **risposte** (decisione 5): `cito:disagreesWith` (lettura → lettura), colonna `Disagrees_With`; CiTO è dichiarato in locale.
+  Nessuna di queste letture cambia posizione, ancore o visibilità dei luoghi.
+- Controlli: shape 24 (`LociCriticiShape`: `playsOn` verso un'entità del gazetteer, `variantKind` nello schema e obbligatorio per le varianti, `disagreesWith` verso una lettura); `AssertionShape` aggiornata; l'ETL rifiuta un valore mancante fuori dai commenti e un `Variant_Kind` fuori dalle varianti.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `ontology/chora.ttl` (tre tipi nello schema delle asserzioni, sezione «Loci critici» in coda); `ontology/shapes/chora-shapes.ttl` (prefisso `cito:`, `AssertionShape`, shape 24); `tools/etl.py` (tipi, colonne, quotation, materializzazione); `tools/audit_alignment.py` (regola dello stesso luogo solo per «forma»); `data/source/tables/Assertions.tsv` (quattro colonne; `Variant_Kind` = forma sulle 6 varianti); `Assertions.xlsx`; `data/source/mapping.yaml` (documentazione).
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.473 → **1.612**; ABox 40.507 → **40.513**; full 42.550 → **42.695**. SHACL conforme, 0 risultati; IQ21 = 0, IQ20 = 1.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

@@ -901,7 +901,10 @@ chora:AssertionTypeScheme a owl:NamedIndividual,
         chora:UncertaintyAssertion,
         chora:VariantAssertion,
         chora:RouteTypeAssertion,
-        chora:SpatialReading ;
+        chora:SpatialReading,
+        chora:RepertoryAttestation,
+        chora:NamingAssertion,
+        chora:CommentaryAssertion ;
     skos:prefLabel "Assertion type"@en .
 
 chora:StatusAssertion a owl:NamedIndividual, skos:Concept, hico:InterpretationType ;
@@ -1791,3 +1794,137 @@ chora:pageRange a owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     skos:altLabel "intervallo di pagine"@it ;
     skos:prefLabel "page range"@en .
+
+# =============================================================================
+# LOCI CRITICI: TRE TIPI DI LETTURA (D-085, AUDIT_3 blocco A)
+# Attestazione in un repertorio, lettura onomastica, commento critico. Nessuna
+# cambia posizione, ancore o visibilita' dei luoghi.
+# =============================================================================
+
+cito:disagreesWith a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/spar/cito> .
+
+chora:RepertoryAttestation a owl:NamedIndividual, skos:Concept, hico:InterpretationType ;
+    chora:reifiesProperty chora:attestedInRepertory ;
+    skos:altLabel "attestazione nel repertorio"@it ;
+    skos:definition "States that a gazetteer entity is recorded in a repertory (a map, a guide); the act gives the locator (chora:sourcePage, e.g. «cart. 4, tra pp. 736–737»)."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "repertory" ;
+    skos:prefLabel "Repertory attestation"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:attestedInRepertory a owl:ObjectProperty ;
+    rdfs:comment "A repertory in which the gazetteer entity is recorded; materialized for every repertory attestation (they are not alternatives)."@en ;
+    rdfs:domain chora:GazetteerEntity ;
+    rdfs:range chora:Source ;
+    skos:altLabel "attestata nel repertorio"@it ;
+    skos:prefLabel "attested in repertory"@en .
+
+chora:NamingAssertion a owl:NamedIndividual, skos:Concept, hico:InterpretationType ;
+    chora:reifiesProperty chora:nameReading ;
+    skos:altLabel "lettura onomastica"@it ;
+    skos:definition "A reading of how a toponym is made: the naming mechanism, and optionally the real toponym it plays on (chora:playsOn)."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "naming" ;
+    skos:prefLabel "Naming assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:nameReading a owl:ObjectProperty ;
+    dcterms:references chora:NamingMechanismScheme ;
+    rdfs:comment "The naming mechanism of an occurrence or of a narrative place, from the adopted naming assertion."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( chora:PlaceReference chora:NarrativePlace ) ] ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "lettura del nome"@it ;
+    skos:prefLabel "name reading"@en .
+
+chora:playsOn a owl:ObjectProperty ;
+    rdfs:comment "The real toponym (gazetteer entity) on which a name plays."@en ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range chora:GazetteerEntity ;
+    skos:altLabel "gioca su"@it ;
+    skos:prefLabel "plays on"@en .
+
+chora:NamingMechanismScheme a owl:NamedIndividual, skos:ConceptScheme ;
+    rdfs:label "Naming mechanism"@en ;
+    skos:altLabel "Meccanismo del nome"@it ;
+    skos:hasTopConcept chora:Paraetymology, chora:Synecdoche, chora:Paronomasia,
+        chora:IronicLowering, chora:TypoHypothesis, chora:OnomasticPun ;
+    skos:prefLabel "Naming mechanism"@en .
+
+chora:Paraetymology a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "paraetimologia"@it ;
+    skos:inScheme chora:NamingMechanismScheme ;
+    skos:prefLabel "Paraetymology"@en ;
+    skos:topConceptOf chora:NamingMechanismScheme .
+
+chora:Synecdoche a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "sineddoche"@it ;
+    skos:inScheme chora:NamingMechanismScheme ;
+    skos:prefLabel "Synecdoche"@en ;
+    skos:topConceptOf chora:NamingMechanismScheme .
+
+chora:Paronomasia a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "paronomasia"@it ;
+    skos:inScheme chora:NamingMechanismScheme ;
+    skos:prefLabel "Paronomasia"@en ;
+    skos:topConceptOf chora:NamingMechanismScheme .
+
+chora:IronicLowering a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "abbassamento ironico"@it ;
+    skos:inScheme chora:NamingMechanismScheme ;
+    skos:prefLabel "Ironic lowering"@en ;
+    skos:topConceptOf chora:NamingMechanismScheme .
+
+chora:TypoHypothesis a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "ipotesi di refuso"@it ;
+    skos:inScheme chora:NamingMechanismScheme ;
+    skos:prefLabel "Typo hypothesis"@en ;
+    skos:topConceptOf chora:NamingMechanismScheme .
+
+chora:OnomasticPun a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "gioco onomastico"@it ;
+    skos:inScheme chora:NamingMechanismScheme ;
+    skos:prefLabel "Onomastic pun"@en ;
+    skos:topConceptOf chora:NamingMechanismScheme .
+
+chora:CommentaryAssertion a owl:NamedIndividual, skos:Concept, hico:InterpretationType ;
+    skos:altLabel "commento"@it ;
+    skos:definition "An attributed critical comment on an occurrence, a place, a route, an entity or the work, with no reified property and no required value: its content is the rationale and the quotation."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "commentary" ;
+    skos:prefLabel "Commentary assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
+chora:quotation a owl:DatatypeProperty ;
+    rdfs:comment "A short quotation of the critic (one or two sentences), with the page in chora:sourcePage. Never a whole note."@en ;
+    rdfs:domain hico:InterpretationAct ;
+    rdfs:range rdf:langString ;
+    skos:altLabel "citazione"@it ;
+    skos:prefLabel "quotation"@en .
+
+chora:variantKind a owl:ObjectProperty ;
+    dcterms:references chora:VariantKindScheme ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "tipo di variante"@it ;
+    skos:prefLabel "variant kind"@en .
+
+chora:VariantKindScheme a owl:NamedIndividual, skos:ConceptScheme ;
+    rdfs:label "Variant kind"@en ;
+    skos:altLabel "Tipo di variante"@it ;
+    skos:hasTopConcept chora:FormVariant, chora:SubstitutionVariant ;
+    skos:prefLabel "Variant kind"@en .
+
+chora:FormVariant a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "variante di forma"@it ;
+    skos:definition "The two occurrences name the same place (D-054)."@en ;
+    skos:inScheme chora:VariantKindScheme ;
+    skos:prefLabel "Form variant"@en ;
+    skos:topConceptOf chora:VariantKindScheme .
+
+chora:SubstitutionVariant a owl:NamedIndividual, skos:Concept ;
+    skos:altLabel "variante di sostituzione"@it ;
+    skos:definition "The other witness names a different place, or a place the project does not record: admitted and declared."@en ;
+    skos:inScheme chora:VariantKindScheme ;
+    skos:prefLabel "Substitution variant"@en ;
+    skos:topConceptOf chora:VariantKindScheme .

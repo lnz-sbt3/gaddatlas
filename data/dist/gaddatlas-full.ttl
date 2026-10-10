@@ -49,6 +49,9 @@ hico:isExtractedFrom a owl:ObjectProperty ;
     rdfs:isDefinedBy <http://purl.org/emmedi/hico> ;
     rdfs:range <http://purl.org/vocab/frbr/core#Expression> .
 
+<http://purl.org/spar/cito/disagreesWith> a owl:ObjectProperty ;
+    rdfs:isDefinedBy <http://purl.org/spar/cito> .
+
 vann:preferredNamespacePrefix a owl:AnnotationProperty .
 
 vann:preferredNamespaceUri a owl:AnnotationProperty .
@@ -441,6 +444,13 @@ chora:partOfWork a owl:ObjectProperty ;
     skos:altLabel "fa parte dell'opera"@it ;
     skos:prefLabel "part of work"@en .
 
+chora:playsOn a owl:ObjectProperty ;
+    rdfs:comment "The real toponym (gazetteer entity) on which a name plays."@en ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range chora:GazetteerEntity ;
+    skos:altLabel "gioca su"@it ;
+    skos:prefLabel "plays on"@en .
+
 chora:precision a owl:DatatypeProperty ;
     rdfs:comment "Stated precision of a position (e.g. «~1 km»)."@en ;
     rdfs:domain geosparql:Geometry ;
@@ -454,6 +464,13 @@ chora:presentLocation a owl:DatatypeProperty ;
     rdfs:range rdf:langString ;
     skos:altLabel "localizzazione attuale"@it ;
     skos:prefLabel "present location"@en .
+
+chora:quotation a owl:DatatypeProperty ;
+    rdfs:comment "A short quotation of the critic (one or two sentences), with the page in chora:sourcePage. Never a whole note."@en ;
+    rdfs:domain hico:InterpretationAct ;
+    rdfs:range rdf:langString ;
+    skos:altLabel "citazione"@it ;
+    skos:prefLabel "quotation"@en .
 
 chora:rationale a owl:DatatypeProperty ;
     rdfs:comment "Textual, philological or critical motivation of the reading (R07), stated on the interpretation act (D-067)."@en ;
@@ -566,6 +583,13 @@ chora:uncertaintyOrigin a owl:ObjectProperty ;
     rdfs:range skos:Concept ;
     skos:altLabel "origine dell'incertezza"@it ;
     skos:prefLabel "uncertainty origin"@en .
+
+chora:variantKind a owl:ObjectProperty ;
+    dcterms:references chora:VariantKindScheme ;
+    rdfs:domain chora:Assertion ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "tipo di variante"@it ;
+    skos:prefLabel "variant kind"@en .
 
 chora:witnessType a owl:ObjectProperty ;
     dcterms:references chora:WitnessTypeScheme ;
@@ -4505,7 +4529,8 @@ chora:witnessType a owl:ObjectProperty ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/V-0001> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/reference/ref_00588> ;
     chora:assertsValue <https://w3id.org/gaddatlas/id/reference/ref_00724> ;
-    chora:reviewStatus chora:Validated .
+    chora:reviewStatus chora:Validated ;
+    chora:variantKind chora:FormVariant .
 
 <https://w3id.org/gaddatlas/id/assertion/V-0002> a chora:Assertion ;
     rdfs:comment "Cap. 4, § 4.2 (r. 45). La lettura di Terzoli (palazzo Odescalchi Simonetti) entra in fase 3."@it ;
@@ -4513,7 +4538,8 @@ chora:witnessType a owl:ObjectProperty ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/V-0002> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/reference/ref_00436> ;
     chora:assertsValue <https://w3id.org/gaddatlas/id/reference/ref_00725> ;
-    chora:reviewStatus chora:Validated .
+    chora:reviewStatus chora:Validated ;
+    chora:variantKind chora:FormVariant .
 
 <https://w3id.org/gaddatlas/id/assertion/V-0003a> a chora:Assertion ;
     rdfs:comment "Corrispondenza QPL 285 ↔ QPa 16 confermata da LS (9/10/2026). Cap. 4, § 4.2 (r. 45)."@it ;
@@ -4522,7 +4548,8 @@ chora:witnessType a owl:ObjectProperty ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/V-0003a> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/reference/ref_00007> ;
     chora:assertsValue <https://w3id.org/gaddatlas/id/reference/ref_00726> ;
-    chora:reviewStatus chora:Validated .
+    chora:reviewStatus chora:Validated ;
+    chora:variantKind chora:FormVariant .
 
 <https://w3id.org/gaddatlas/id/assertion/V-0003b> a chora:Assertion ;
     rdfs:comment "Corrispondenza QPL 293 ↔ QPa 25 confermata da LS (9/10/2026). Cap. 4, § 4.2 (r. 45)."@it ;
@@ -4531,7 +4558,8 @@ chora:witnessType a owl:ObjectProperty ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/V-0003b> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/reference/ref_00036> ;
     chora:assertsValue <https://w3id.org/gaddatlas/id/reference/ref_00727> ;
-    chora:reviewStatus chora:Validated .
+    chora:reviewStatus chora:Validated ;
+    chora:variantKind chora:FormVariant .
 
 <https://w3id.org/gaddatlas/id/assertion/V-0004a> a chora:Assertion ;
     rdfs:comment "Corrispondenza QPL 285 ↔ QPa 16 confermata da LS (9/10/2026). Cap. 4, § 4.2 (r. 45)."@it ;
@@ -4540,7 +4568,8 @@ chora:witnessType a owl:ObjectProperty ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/V-0004a> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/reference/ref_00008> ;
     chora:assertsValue <https://w3id.org/gaddatlas/id/reference/ref_00726> ;
-    chora:reviewStatus chora:Validated .
+    chora:reviewStatus chora:Validated ;
+    chora:variantKind chora:FormVariant .
 
 <https://w3id.org/gaddatlas/id/assertion/V-0004b> a chora:Assertion ;
     rdfs:comment "Corrispondenza QPL 293 ↔ QPa 25 confermata da LS (9/10/2026). Cap. 4, § 4.2 (r. 45)."@it ;
@@ -4549,7 +4578,8 @@ chora:witnessType a owl:ObjectProperty ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/V-0004b> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/reference/ref_00038> ;
     chora:assertsValue <https://w3id.org/gaddatlas/id/reference/ref_00727> ;
-    chora:reviewStatus chora:Validated .
+    chora:reviewStatus chora:Validated ;
+    chora:variantKind chora:FormVariant .
 
 <https://w3id.org/gaddatlas/id/encoding/A-0002> a chora:EncodingActivity ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/A-0002-encoder-lorenzo_sabatino> ;
@@ -17254,6 +17284,16 @@ chora:Boundary a owl:NamedIndividual,
     skos:prefLabel "Boundary"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
 
+chora:CommentaryAssertion a hico:InterpretationType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "commento"@it ;
+    skos:definition "An attributed critical comment on an occurrence, a place, a route, an entity or the work, with no reified property and no required value: its content is the rationale and the quotation."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "commentary" ;
+    skos:prefLabel "Commentary assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme .
+
 chora:Confusion a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "confusione"@it ;
@@ -17279,6 +17319,24 @@ chora:Facing a owl:NamedIndividual,
     skos:prefLabel "Facing"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
 
+chora:IronicLowering a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "abbassamento ironico"@it ;
+    skos:inScheme chora:NamingMechanismScheme ;
+    skos:prefLabel "Ironic lowering"@en ;
+    skos:topConceptOf chora:NamingMechanismScheme .
+
+chora:NamingAssertion a hico:InterpretationType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "lettura onomastica"@it ;
+    skos:definition "A reading of how a toponym is made: the naming mechanism, and optionally the real toponym it plays on (chora:playsOn)."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "naming" ;
+    skos:prefLabel "Naming assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme ;
+    chora:reifiesProperty chora:nameReading .
+
 chora:Narrator a owl:Class ;
     rdfs:subClassOf chora:FocalizingAgent ;
     skos:altLabel "Narratore"@it ;
@@ -17300,6 +17358,13 @@ chora:NotApplicable a owl:NamedIndividual,
     skos:prefLabel "Not applicable"@en ;
     skos:topConceptOf chora:LocalizationStatusScheme .
 
+chora:OnomasticPun a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "gioco onomastico"@it ;
+    skos:inScheme chora:NamingMechanismScheme ;
+    skos:prefLabel "Onomastic pun"@en ;
+    skos:topConceptOf chora:NamingMechanismScheme .
+
 chora:Oversight a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "svista"@it ;
@@ -17307,6 +17372,20 @@ chora:Oversight a owl:NamedIndividual,
     skos:definition "A probable slip of the author (e.g. a misplaced accent)."@en ;
     skos:inScheme chora:UncertaintyTypeScheme ;
     skos:prefLabel "Oversight"@en .
+
+chora:Paraetymology a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "paraetimologia"@it ;
+    skos:inScheme chora:NamingMechanismScheme ;
+    skos:prefLabel "Paraetymology"@en ;
+    skos:topConceptOf chora:NamingMechanismScheme .
+
+chora:Paronomasia a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "paronomasia"@it ;
+    skos:inScheme chora:NamingMechanismScheme ;
+    skos:prefLabel "Paronomasia"@en ;
+    skos:topConceptOf chora:NamingMechanismScheme .
 
 chora:ProposedRoute a owl:NamedIndividual,
         skos:Concept ;
@@ -17325,6 +17404,25 @@ chora:RelatedTo a owl:NamedIndividual,
     skos:prefLabel "Related to"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
 
+chora:RepertoryAttestation a hico:InterpretationType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "attestazione nel repertorio"@it ;
+    skos:definition "States that a gazetteer entity is recorded in a repertory (a map, a guide); the act gives the locator (chora:sourcePage, e.g. «cart. 4, tra pp. 736–737»)."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "repertory" ;
+    skos:prefLabel "Repertory attestation"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme ;
+    chora:reifiesProperty chora:attestedInRepertory .
+
+chora:SubstitutionVariant a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "variante di sostituzione"@it ;
+    skos:definition "The other witness names a different place, or a place the project does not record: admitted and declared."@en ;
+    skos:inScheme chora:VariantKindScheme ;
+    skos:prefLabel "Substitution variant"@en ;
+    skos:topConceptOf chora:VariantKindScheme .
+
 chora:SuspendedWithReason a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "sospensione motivata"@it ;
@@ -17333,6 +17431,13 @@ chora:SuspendedWithReason a owl:NamedIndividual,
     skos:prefLabel "Suspended with reason"@en ;
     skos:topConceptOf chora:LocalizationStatusScheme .
 
+chora:Synecdoche a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "sineddoche"@it ;
+    skos:inScheme chora:NamingMechanismScheme ;
+    skos:prefLabel "Synecdoche"@en ;
+    skos:topConceptOf chora:NamingMechanismScheme .
+
 chora:Threshold a owl:NamedIndividual,
         skos:Concept ;
     dcterms:description "A e' la soglia di B: il punto di passaggio fra un dentro e un fuori (porta, uscio, ingresso)."@it ;
@@ -17340,6 +17445,13 @@ chora:Threshold a owl:NamedIndividual,
     skos:inScheme chora:SpatialRelationTypeScheme ;
     skos:prefLabel "Threshold"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+chora:TypoHypothesis a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "ipotesi di refuso"@it ;
+    skos:inScheme chora:NamingMechanismScheme ;
+    skos:prefLabel "Typo hypothesis"@en ;
+    skos:topConceptOf chora:NamingMechanismScheme .
 
 chora:UndecidableMemory a owl:NamedIndividual,
         skos:Concept ;
@@ -17372,6 +17484,13 @@ chora:appearsInWitness a owl:ObjectProperty ;
     rdfs:range chora:Witness ;
     skos:altLabel "compare nel testimone"@it ;
     skos:prefLabel "appears in witness"@en .
+
+chora:attestedInRepertory a owl:ObjectProperty ;
+    rdfs:comment "A repertory in which the gazetteer entity is recorded; materialized for every repertory attestation (they are not alternatives)."@en ;
+    rdfs:domain chora:GazetteerEntity ;
+    rdfs:range chora:Source ;
+    skos:altLabel "attestata nel repertorio"@it ;
+    skos:prefLabel "attested in repertory"@en .
 
 chora:bridge a owl:NamedIndividual,
         skos:Concept ;
@@ -17469,6 +17588,15 @@ chora:memoryAttribution a owl:ObjectProperty ;
     rdfs:range skos:Concept ;
     skos:altLabel "attribuzione della memoria"@it ;
     skos:prefLabel "memory attribution"@en .
+
+chora:nameReading a owl:ObjectProperty ;
+    dcterms:references chora:NamingMechanismScheme ;
+    rdfs:comment "The naming mechanism of an occurrence or of a narrative place, from the adopted naming assertion."@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( chora:PlaceReference chora:NarrativePlace ) ] ;
+    rdfs:range skos:Concept ;
+    skos:altLabel "lettura del nome"@it ;
+    skos:prefLabel "name reading"@en .
 
 chora:palace a owl:NamedIndividual,
         skos:Concept ;
@@ -50563,6 +50691,14 @@ chora:UncertaintyOriginScheme a owl:NamedIndividual,
         chora:DocumentaryOrigin ;
     skos:prefLabel "Uncertainty origin"@en .
 
+chora:VariantKindScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Variant kind"@en ;
+    skos:altLabel "Tipo di variante"@it ;
+    skos:hasTopConcept chora:FormVariant,
+        chora:SubstitutionVariant ;
+    skos:prefLabel "Variant kind"@en .
+
 chora:building a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "Edificio"@it ;
@@ -51494,6 +51630,14 @@ chora:Discrepancy a owl:NamedIndividual,
     skos:prefLabel "Discrepancy"@en ;
     skos:topConceptOf chora:UncertaintyTypeScheme .
 
+chora:FormVariant a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "variante di forma"@it ;
+    skos:definition "The two occurrences name the same place (D-054)."@en ;
+    skos:inScheme chora:VariantKindScheme ;
+    skos:prefLabel "Form variant"@en ;
+    skos:topConceptOf chora:VariantKindScheme .
+
 chora:LocalizationStatusScheme a owl:NamedIndividual,
         skos:ConceptScheme ;
     rdfs:label "Localization status"@en ;
@@ -51916,10 +52060,6 @@ chora:SpatialDeterminationScheme a owl:NamedIndividual,
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/tor_di_gheppio> .
 
-hico:InterpretationType a owl:Class ;
-    rdfs:isDefinedBy <http://purl.org/emmedi/hico> ;
-    rdfs:subClassOf skos:Concept .
-
 chora:Church a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "Chiesa"@it ;
@@ -52150,6 +52290,22 @@ chora:WitnessTypeScheme a owl:NamedIndividual,
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
+hico:InterpretationType a owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/emmedi/hico> ;
+    rdfs:subClassOf skos:Concept .
+
+chora:NamingMechanismScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Naming mechanism"@en ;
+    skos:altLabel "Meccanismo del nome"@it ;
+    skos:hasTopConcept chora:IronicLowering,
+        chora:OnomasticPun,
+        chora:Paraetymology,
+        chora:Paronomasia,
+        chora:Synecdoche,
+        chora:TypoHypothesis ;
+    skos:prefLabel "Naming mechanism"@en .
+
 chora:NotYetAnalysed a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "analisi non condotta"@it ;
@@ -52372,8 +52528,6 @@ chora:square a owl:NamedIndividual,
     chora:hasRealityStatus chora:Invented ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
-skos:ConceptScheme a owl:Class .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/casal_bruciato> a chora:NarrativePlace ;
     rdfs:label "Casal Bruciato"@it ;
     dcterms:description "Casale reale dell'Agro romano a sud di Roma (Casal(e) Bruciato / Abbruciato / Abbrusciato: Nibby, Dintorni di Roma, p. 569), fra le ferrovie Roma–Velletri e Roma–Napoli. Non è il quartiere omonimo del Tiburtino. Forme attestate: «Casal Bruciato» (QPa 212, 237, 240, 241, 262, 274, 298), «Casale Abbrusciato» (QPa 297)."@it ;
@@ -52449,6 +52603,8 @@ chora:basilica a owl:NamedIndividual,
     geo1:lat 41.73247489501876 ;
     geo1:long 12.58446168893847 .
 
+skos:ConceptScheme a owl:Class .
+
 <https://w3id.org/gaddatlas/id/agent/pinotti> a prov:Agent,
         prov:Person,
         chora:Scholar ;
@@ -52507,21 +52663,6 @@ chora:basilica a owl:NamedIndividual,
 }"""^^geosparql:geoJSONLiteral ] ;
     geo1:lat 41.76071420037528 ;
     geo1:long 12.599632278065911 .
-
-chora:AssertionTypeScheme a owl:NamedIndividual,
-        skos:ConceptScheme ;
-    rdfs:label "Assertion type"@en ;
-    skos:altLabel "Tipo di asserzione"@it ;
-    skos:hasTopConcept chora:IdentificationAssertion,
-        chora:LocationAssertion,
-        chora:MemoryAssertion,
-        chora:PartitionAssertion,
-        chora:RouteTypeAssertion,
-        chora:SpatialReading,
-        chora:StatusAssertion,
-        chora:UncertaintyAssertion,
-        chora:VariantAssertion ;
-    skos:prefLabel "Assertion type"@en .
 
 chora:EncodingActivity a owl:Class ;
     rdfs:comment "The encoding of a reading in the knowledge graph by an annotator, distinct from the interpretation act when the author of the reading is someone else. It uses the source (prov:used) and is informed by the interpretation act (prov:wasInformedBy); its date is the date of the encoding."@en ;
@@ -52667,6 +52808,24 @@ chora:NarrativeRoute a owl:Class ;
     rdfs:label "Via Appia"@it ;
     chora:hasPlaceCategory chora:street ;
     chora:hasRealityStatus chora:Imported .
+
+chora:AssertionTypeScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Assertion type"@en ;
+    skos:altLabel "Tipo di asserzione"@it ;
+    skos:hasTopConcept chora:CommentaryAssertion,
+        chora:IdentificationAssertion,
+        chora:LocationAssertion,
+        chora:MemoryAssertion,
+        chora:NamingAssertion,
+        chora:PartitionAssertion,
+        chora:RepertoryAttestation,
+        chora:RouteTypeAssertion,
+        chora:SpatialReading,
+        chora:StatusAssertion,
+        chora:UncertaintyAssertion,
+        chora:VariantAssertion ;
+    skos:prefLabel "Assertion type"@en .
 
 chora:CriticalReading a hico:InterpretationCriterion,
         owl:NamedIndividual,
@@ -53199,8 +53358,6 @@ chora:PlaceCategoryScheme a owl:NamedIndividual,
         chora:ward ;
     skos:prefLabel "Place Category"@en .
 
-skos:Concept a owl:Class .
-
 chora:Inside a owl:NamedIndividual,
         skos:Concept ;
     dcterms:description "A è contenuto spazialmente in B. Relazione topologica di contenimento."@it ;
@@ -53221,6 +53378,8 @@ chora:Setting a owl:NamedIndividual,
     skos:inScheme chora:NarrativeRoleScheme ;
     skos:prefLabel "Setting"@en ;
     skos:topConceptOf chora:NarrativeRoleScheme .
+
+skos:Concept a owl:Class .
 
 chora:Marker a owl:NamedIndividual,
         skos:Concept ;

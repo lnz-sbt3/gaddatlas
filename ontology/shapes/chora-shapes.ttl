@@ -32,6 +32,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix hico: <http://purl.org/emmedi/hico/> .
+@prefix cito: <http://purl.org/spar/cito/> .
 @prefix geo:  <http://www.opengis.net/ont/geosparql#> .
 @prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
@@ -317,7 +318,8 @@ ga:AssertionShape
         sh:minCount 1 ; sh:maxCount 1 ;
         sh:in ( ga:StatusAssertion ga:IdentificationAssertion ga:LocationAssertion
                 ga:PartitionAssertion ga:MemoryAssertion ga:UncertaintyAssertion
-                ga:VariantAssertion ga:RouteTypeAssertion ) ;
+                ga:VariantAssertion ga:RouteTypeAssertion ga:RepertoryAttestation
+                ga:NamingAssertion ga:CommentaryAssertion ) ;
         sh:message "Ogni Assertion ha esattamente un tipo dello schema AssertionType." ;
     ] ;
     sh:property [
@@ -325,11 +327,10 @@ ga:AssertionShape
         sh:minCount 1 ; sh:maxCount 1 ;
         sh:message "Ogni Assertion riguarda esattamente un soggetto." ;
     ] ;
-    sh:property [
-        sh:path ga:assertsValue ;
-        sh:minCount 1 ;
-        sh:message "Ogni Assertion assegna almeno un valore." ;
-    ] ;
+    sh:or (
+        [ sh:path ( prov:wasGeneratedBy hico:hasInterpretationType ) ; sh:hasValue ga:CommentaryAssertion ]
+        [ sh:path ga:assertsValue ; sh:minCount 1 ]
+    ) ;
     sh:property [
         sh:path ga:adoptedByProject ;
         sh:maxCount 1 ;
@@ -857,3 +858,35 @@ ga:AnnotatedPlaceAnchorShape
             }
         """ ;
     ] .
+
+
+# =============================================================================
+# SHAPE 24 — Tre tipi di lettura dei loci critici (D-085)
+# Coerenza tipo -> soggetto/valore: ReifiedTypeShape (attestazione, lettura
+# onomastica). Il commento non ha valore ne' proprieta' reificata.
+# =============================================================================
+
+ga:LociCriticiShape
+    a sh:NodeShape ;
+    sh:targetClass ga:Assertion ;
+    sh:property [
+        sh:path ga:playsOn ;
+        sh:class ga:GazetteerEntity ;
+        sh:message "playsOn punta a un'entita' del gazetteer." ;
+    ] ;
+    sh:property [
+        sh:path ga:variantKind ;
+        sh:maxCount 1 ;
+        sh:in ( ga:FormVariant ga:SubstitutionVariant ) ;
+        sh:message "variantKind: FormVariant o SubstitutionVariant." ;
+    ] ;
+    sh:property [
+        sh:path cito:disagreesWith ;
+        sh:class ga:Assertion ;
+        sh:message "disagreesWith punta a un'altra lettura." ;
+    ] ;
+    sh:or (
+        [ sh:not [ sh:path ( prov:wasGeneratedBy hico:hasInterpretationType ) ; sh:hasValue ga:VariantAssertion ] ]
+        [ sh:path ga:variantKind ; sh:minCount 1 ]
+    ) ;
+    sh:message "Una variante dichiara il tipo (forma o sostituzione)." .

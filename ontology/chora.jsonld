@@ -35,26 +35,17 @@
   },
   "@graph": [
     {
-      "@id": "_:cb108560042ebfadee765c269031a1dc3c7c3c4563864b02b5632113040a9addfa1",
+      "@id": "_:cb12e8e201411aa769942a15b3c4a2f3cb79096bf23060c2fd795db22138b2cccbc",
+      "@type": "prov:Agent",
+      "schema:name": "Francesca Tomasi"
+    },
+    {
+      "@id": "_:cb15fe75276a56a08480a5aeee6ce627049757ee00fbe442814ef4cf9d06d8fd6d6",
       "@type": "prov:Agent",
       "schema:name": "Paola Maria Carmela Italia"
     },
     {
-      "@id": "_:cb1609a098237628e9cfea4eeceb51db3623fb93d7f185c26888e88ec4820c442bf",
-      "@type": "owl:Class",
-      "owl:unionOf": {
-        "@list": [
-          {
-            "@id": "chora:Assertion"
-          },
-          {
-            "@id": "chora:SpatialInterpretation"
-          }
-        ]
-      }
-    },
-    {
-      "@id": "_:cb68067f2b743e19efb21ee5d853c3161b0666d622a2f0455c63f429b69f182231",
+      "@id": "_:cb1859b1fbef42885ed219a9c0aaffe38e88b570f0f3a1aa50809d2b34d1f934175",
       "@type": "owl:Class",
       "owl:unionOf": {
         "@list": [
@@ -68,9 +59,32 @@
       }
     },
     {
-      "@id": "_:cbd6fccde0583b4d389e08d55895ea9035dedc354bac783318d89f5883c74ad587",
-      "@type": "prov:Agent",
-      "schema:name": "Francesca Tomasi"
+      "@id": "_:cb2263e2ed776b5335d5666d83f30d07f4aec26e1269fc2f34586691dcbbafc0d7f",
+      "@type": "owl:Class",
+      "owl:unionOf": {
+        "@list": [
+          {
+            "@id": "chora:Assertion"
+          },
+          {
+            "@id": "chora:SpatialInterpretation"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "_:cb6da6353f68e2b68dd73c816fb52a4475a7bc3951e3d15d3fc781c1079d3a1eaf",
+      "@type": "owl:Class",
+      "owl:unionOf": {
+        "@list": [
+          {
+            "@id": "chora:PlaceReference"
+          },
+          {
+            "@id": "chora:NarrativePlace"
+          }
+        ]
+      }
     },
     {
       "@id": "chora:Above",
@@ -241,6 +255,9 @@
       },
       "skos:hasTopConcept": [
         {
+          "@id": "chora:CommentaryAssertion"
+        },
+        {
           "@id": "chora:IdentificationAssertion"
         },
         {
@@ -250,7 +267,13 @@
           "@id": "chora:MemoryAssertion"
         },
         {
+          "@id": "chora:NamingAssertion"
+        },
+        {
           "@id": "chora:PartitionAssertion"
+        },
+        {
+          "@id": "chora:RepertoryAttestation"
         },
         {
           "@id": "chora:RouteTypeAssertion"
@@ -443,6 +466,33 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:MemoryAttributionScheme"
+      }
+    },
+    {
+      "@id": "chora:CommentaryAssertion",
+      "@type": [
+        "hico:InterpretationType",
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "commento"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "An attributed critical comment on an occurrence, a place, a route, an entity or the work, with no reified property and no required value: its content is the rationale and the quotation."
+      },
+      "skos:inScheme": {
+        "@id": "chora:AssertionTypeScheme"
+      },
+      "skos:notation": "commentary",
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Commentary assertion"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:AssertionTypeScheme"
       }
     },
     {
@@ -862,6 +912,31 @@
       }
     },
     {
+      "@id": "chora:FormVariant",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "variante di forma"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "The two occurrences name the same place (D-054)."
+      },
+      "skos:inScheme": {
+        "@id": "chora:VariantKindScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Form variant"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:VariantKindScheme"
+      }
+    },
+    {
       "@id": "chora:GazetteerEntity",
       "@type": "owl:Class",
       "rdfs:comment": [
@@ -1249,6 +1324,27 @@
       }
     },
     {
+      "@id": "chora:IronicLowering",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "abbassamento ironico"
+      },
+      "skos:inScheme": {
+        "@id": "chora:NamingMechanismScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Ironic lowering"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:NamingMechanismScheme"
+      }
+    },
+    {
       "@id": "chora:LiteraryWork",
       "@type": "owl:Class"
     },
@@ -1428,6 +1524,75 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:UncertaintyAxisScheme"
+      }
+    },
+    {
+      "@id": "chora:NamingAssertion",
+      "@type": [
+        "hico:InterpretationType",
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "chora:reifiesProperty": {
+        "@id": "chora:nameReading"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "lettura onomastica"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "A reading of how a toponym is made: the naming mechanism, and optionally the real toponym it plays on (chora:playsOn)."
+      },
+      "skos:inScheme": {
+        "@id": "chora:AssertionTypeScheme"
+      },
+      "skos:notation": "naming",
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Naming assertion"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:AssertionTypeScheme"
+      }
+    },
+    {
+      "@id": "chora:NamingMechanismScheme",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Naming mechanism"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Meccanismo del nome"
+      },
+      "skos:hasTopConcept": [
+        {
+          "@id": "chora:IronicLowering"
+        },
+        {
+          "@id": "chora:OnomasticPun"
+        },
+        {
+          "@id": "chora:Paraetymology"
+        },
+        {
+          "@id": "chora:Paronomasia"
+        },
+        {
+          "@id": "chora:Synecdoche"
+        },
+        {
+          "@id": "chora:TypoHypothesis"
+        }
+      ],
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Naming mechanism"
       }
     },
     {
@@ -1672,6 +1837,27 @@
       }
     },
     {
+      "@id": "chora:OnomasticPun",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "gioco onomastico"
+      },
+      "skos:inScheme": {
+        "@id": "chora:NamingMechanismScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Onomastic pun"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:NamingMechanismScheme"
+      }
+    },
+    {
       "@id": "chora:Overlaps",
       "@type": [
         "owl:NamedIndividual",
@@ -1723,6 +1909,48 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "Oversight"
+      }
+    },
+    {
+      "@id": "chora:Paraetymology",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "paraetimologia"
+      },
+      "skos:inScheme": {
+        "@id": "chora:NamingMechanismScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Paraetymology"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:NamingMechanismScheme"
+      }
+    },
+    {
+      "@id": "chora:Paronomasia",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "paronomasia"
+      },
+      "skos:inScheme": {
+        "@id": "chora:NamingMechanismScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Paronomasia"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:NamingMechanismScheme"
       }
     },
     {
@@ -2110,6 +2338,36 @@
       }
     },
     {
+      "@id": "chora:RepertoryAttestation",
+      "@type": [
+        "hico:InterpretationType",
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "chora:reifiesProperty": {
+        "@id": "chora:attestedInRepertory"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "attestazione nel repertorio"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "States that a gazetteer entity is recorded in a repertory (a map, a guide); the act gives the locator (chora:sourcePage, e.g. «cart. 4, tra pp. 736–737»)."
+      },
+      "skos:inScheme": {
+        "@id": "chora:AssertionTypeScheme"
+      },
+      "skos:notation": "repertory",
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Repertory attestation"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:AssertionTypeScheme"
+      }
+    },
+    {
       "@id": "chora:ReviewStatusScheme",
       "@type": [
         "owl:NamedIndividual",
@@ -2475,6 +2733,31 @@
       }
     },
     {
+      "@id": "chora:SubstitutionVariant",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "variante di sostituzione"
+      },
+      "skos:definition": {
+        "@language": "en",
+        "@value": "The other witness names a different place, or a place the project does not record: admitted and declared."
+      },
+      "skos:inScheme": {
+        "@id": "chora:VariantKindScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Substitution variant"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:VariantKindScheme"
+      }
+    },
+    {
       "@id": "chora:SuspendedWithReason",
       "@type": [
         "owl:NamedIndividual",
@@ -2497,6 +2780,27 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:LocalizationStatusScheme"
+      }
+    },
+    {
+      "@id": "chora:Synecdoche",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "sineddoche"
+      },
+      "skos:inScheme": {
+        "@id": "chora:NamingMechanismScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Synecdoche"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:NamingMechanismScheme"
       }
     },
     {
@@ -2603,6 +2907,27 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:WitnessTypeScheme"
+      }
+    },
+    {
+      "@id": "chora:TypoHypothesis",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:Concept"
+      ],
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "ipotesi di refuso"
+      },
+      "skos:inScheme": {
+        "@id": "chora:NamingMechanismScheme"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Typo hypothesis"
+      },
+      "skos:topConceptOf": {
+        "@id": "chora:NamingMechanismScheme"
       }
     },
     {
@@ -2845,6 +3170,33 @@
       }
     },
     {
+      "@id": "chora:VariantKindScheme",
+      "@type": [
+        "owl:NamedIndividual",
+        "skos:ConceptScheme"
+      ],
+      "rdfs:label": {
+        "@language": "en",
+        "@value": "Variant kind"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "Tipo di variante"
+      },
+      "skos:hasTopConcept": [
+        {
+          "@id": "chora:FormVariant"
+        },
+        {
+          "@id": "chora:SubstitutionVariant"
+        }
+      ],
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "Variant kind"
+      }
+    },
+    {
       "@id": "chora:Witness",
       "@type": "owl:Class",
       "rdfs:comment": {
@@ -2960,7 +3312,7 @@
         "@value": "True when the project adopts this reading (the one shown by the interface). It marks a choice, not a truth: the adopted reading is attributed like the others. Stated on every assertion that offers alternatives and on every spatial interpretation, true or false (D-070)."
       },
       "rdfs:domain": {
-        "@id": "_:cb1609a098237628e9cfea4eeceb51db3623fb93d7f185c26888e88ec4820c442bf"
+        "@id": "_:cb2263e2ed776b5335d5666d83f30d07f4aec26e1269fc2f34586691dcbbafc0d7f"
       },
       "rdfs:range": {
         "@id": "xsd:boolean"
@@ -3196,6 +3548,28 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "attested form"
+      }
+    },
+    {
+      "@id": "chora:attestedInRepertory",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "A repertory in which the gazetteer entity is recorded; materialized for every repertory attestation (they are not alternatives)."
+      },
+      "rdfs:domain": {
+        "@id": "chora:GazetteerEntity"
+      },
+      "rdfs:range": {
+        "@id": "chora:Source"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "attestata nel repertorio"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "attested in repertory"
       }
     },
     {
@@ -3953,6 +4327,31 @@
       }
     },
     {
+      "@id": "chora:nameReading",
+      "@type": "owl:ObjectProperty",
+      "dcterms:references": {
+        "@id": "chora:NamingMechanismScheme"
+      },
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The naming mechanism of an occurrence or of a narrative place, from the adopted naming assertion."
+      },
+      "rdfs:domain": {
+        "@id": "_:cb6da6353f68e2b68dd73c816fb52a4475a7bc3951e3d15d3fc781c1079d3a1eaf"
+      },
+      "rdfs:range": {
+        "@id": "skos:Concept"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "lettura del nome"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "name reading"
+      }
+    },
+    {
       "@id": "chora:narratorType",
       "@type": "owl:DatatypeProperty",
       "rdfs:domain": {
@@ -4067,6 +4466,28 @@
       }
     },
     {
+      "@id": "chora:playsOn",
+      "@type": "owl:ObjectProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "The real toponym (gazetteer entity) on which a name plays."
+      },
+      "rdfs:domain": {
+        "@id": "chora:Assertion"
+      },
+      "rdfs:range": {
+        "@id": "chora:GazetteerEntity"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "gioca su"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "plays on"
+      }
+    },
+    {
       "@id": "chora:precision",
       "@type": "owl:DatatypeProperty",
       "rdfs:comment": {
@@ -4108,6 +4529,28 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "present location"
+      }
+    },
+    {
+      "@id": "chora:quotation",
+      "@type": "owl:DatatypeProperty",
+      "rdfs:comment": {
+        "@language": "en",
+        "@value": "A short quotation of the critic (one or two sentences), with the page in chora:sourcePage. Never a whole note."
+      },
+      "rdfs:domain": {
+        "@id": "hico:InterpretationAct"
+      },
+      "rdfs:range": {
+        "@id": "rdf:langString"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "citazione"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "quotation"
       }
     },
     {
@@ -4250,7 +4693,7 @@
         "@id": "chora:RelationalAnchoring"
       },
       "rdfs:range": {
-        "@id": "_:cb68067f2b743e19efb21ee5d853c3161b0666d622a2f0455c63f429b69f182231"
+        "@id": "_:cb1859b1fbef42885ed219a9c0aaffe38e88b570f0f3a1aa50809d2b34d1f934175"
       },
       "skos:altLabel": {
         "@language": "it",
@@ -4472,6 +4915,27 @@
       }
     },
     {
+      "@id": "chora:variantKind",
+      "@type": "owl:ObjectProperty",
+      "dcterms:references": {
+        "@id": "chora:VariantKindScheme"
+      },
+      "rdfs:domain": {
+        "@id": "chora:Assertion"
+      },
+      "rdfs:range": {
+        "@id": "skos:Concept"
+      },
+      "skos:altLabel": {
+        "@language": "it",
+        "@value": "tipo di variante"
+      },
+      "skos:prefLabel": {
+        "@language": "en",
+        "@value": "variant kind"
+      }
+    },
+    {
       "@id": "chora:witnessOf",
       "@type": "owl:ObjectProperty",
       "rdfs:comment": {
@@ -4516,6 +4980,13 @@
     },
     {
       "@id": "cito:citesAsEvidence",
+      "@type": "owl:ObjectProperty",
+      "rdfs:isDefinedBy": {
+        "@id": "http://purl.org/spar/cito"
+      }
+    },
+    {
+      "@id": "cito:disagreesWith",
       "@type": "owl:ObjectProperty",
       "rdfs:isDefinedBy": {
         "@id": "http://purl.org/spar/cito"
@@ -5053,10 +5524,10 @@
       },
       "dcterms:contributor": [
         {
-          "@id": "_:cb108560042ebfadee765c269031a1dc3c7c3c4563864b02b5632113040a9addfa1"
+          "@id": "_:cb12e8e201411aa769942a15b3c4a2f3cb79096bf23060c2fd795db22138b2cccbc"
         },
         {
-          "@id": "_:cbd6fccde0583b4d389e08d55895ea9035dedc354bac783318d89f5883c74ad587"
+          "@id": "_:cb15fe75276a56a08480a5aeee6ce627049757ee00fbe442814ef4cf9d06d8fd6d6"
         }
       ],
       "dcterms:created": {
