@@ -1,3 +1,3 @@
-Assertion_ID	Geometry_WKT	Precision	Datum	Repertory_ID
-L-0001	POINT(12.583 41.7335)	~1 km		tci_italia_centrale_1
-L-0002	POINT(12.5683 41.7168)	~250 m	ED50 (scarto verso WGS84 ~100–200 m, entro la precisione)	igm_150_iii_so
+Assertion_ID	Geometry_WKT	Precision	Datum	Repertory_ID	Repertory_Locator
+L-0001	POINT(12.583 41.7335)	~1 km		bertarelli_1924	cart. 2, tra pp. 480–481
+L-0002	POINT(12.5683 41.7168)	~250 m	ED50 (scarto verso WGS84 ~100–200 m, entro la precisione)	igm_150_iii_so	

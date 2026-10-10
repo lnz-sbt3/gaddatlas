@@ -40,26 +40,26 @@
       "schema:name": "Francesca Tomasi"
     },
     {
-      "@id": "_:cb15fe75276a56a08480a5aeee6ce627049757ee00fbe442814ef4cf9d06d8fd6d6",
-      "@type": "prov:Agent",
-      "schema:name": "Paola Maria Carmela Italia"
-    },
-    {
-      "@id": "_:cb1859b1fbef42885ed219a9c0aaffe38e88b570f0f3a1aa50809d2b34d1f934175",
+      "@id": "_:cb155582062cbad0474ea98a14d7156702ff738200600a981489f07d57abde76c40",
       "@type": "owl:Class",
       "owl:unionOf": {
         "@list": [
           {
-            "@id": "chora:GazetteerEntity"
+            "@id": "hico:InterpretationAct"
           },
           {
-            "@id": "chora:NarrativePlace"
+            "@id": "geo:Geometry"
           }
         ]
       }
     },
     {
-      "@id": "_:cb2263e2ed776b5335d5666d83f30d07f4aec26e1269fc2f34586691dcbbafc0d7f",
+      "@id": "_:cb15fe75276a56a08480a5aeee6ce627049757ee00fbe442814ef4cf9d06d8fd6d6",
+      "@type": "prov:Agent",
+      "schema:name": "Paola Maria Carmela Italia"
+    },
+    {
+      "@id": "_:cb1de7f47d34310e6256753fc6df05fd1160af3d775de56cd110c67d5a6bcaa9cf6",
       "@type": "owl:Class",
       "owl:unionOf": {
         "@list": [
@@ -68,6 +68,20 @@
           },
           {
             "@id": "chora:SpatialInterpretation"
+          }
+        ]
+      }
+    },
+    {
+      "@id": "_:cb21db388db482b431f1e621e1bdadf3a89ea0b118958503ee503b07d233d5e4515",
+      "@type": "owl:Class",
+      "owl:unionOf": {
+        "@list": [
+          {
+            "@id": "chora:GazetteerEntity"
+          },
+          {
+            "@id": "chora:NarrativePlace"
           }
         ]
       }
@@ -3312,7 +3326,7 @@
         "@value": "True when the project adopts this reading (the one shown by the interface). It marks a choice, not a truth: the adopted reading is attributed like the others. Stated on every assertion that offers alternatives and on every spatial interpretation, true or false (D-070)."
       },
       "rdfs:domain": {
-        "@id": "_:cb2263e2ed776b5335d5666d83f30d07f4aec26e1269fc2f34586691dcbbafc0d7f"
+        "@id": "_:cb1de7f47d34310e6256753fc6df05fd1160af3d775de56cd110c67d5a6bcaa9cf6"
       },
       "rdfs:range": {
         "@id": "xsd:boolean"
@@ -4693,7 +4707,7 @@
         "@id": "chora:RelationalAnchoring"
       },
       "rdfs:range": {
-        "@id": "_:cb1859b1fbef42885ed219a9c0aaffe38e88b570f0f3a1aa50809d2b34d1f934175"
+        "@id": "_:cb21db388db482b431f1e621e1bdadf3a89ea0b118958503ee503b07d233d5e4515"
       },
       "skos:altLabel": {
         "@language": "it",
@@ -4774,10 +4788,10 @@
       "@type": "owl:DatatypeProperty",
       "rdfs:comment": {
         "@language": "en",
-        "@value": "Page or pages in the source of the interpretation act (hico:isExtractedFrom)."
+        "@value": "Page, pages or locator (e.g. «cart. 4, tra pp. 736–737») in the source of an interpretation act (hico:isExtractedFrom), or in the repertory of a position (chora:repertory) (D-086)."
       },
       "rdfs:domain": {
-        "@id": "hico:InterpretationAct"
+        "@id": "_:cb155582062cbad0474ea98a14d7156702ff738200600a981489f07d57abde76c40"
       },
       "rdfs:range": {
         "@id": "xsd:string"

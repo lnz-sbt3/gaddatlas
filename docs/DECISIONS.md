@@ -1660,6 +1660,24 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-086 — Fonti dei loci critici: le guide del Touring come volumi, carte come locatori (10 ottobre 2026)
+
+- Requisito/i: R03 · Ipotesi: — · Data check: DC-03 (AUDIT_3, blocco B; decisioni 10 e 13)
+- Decisione (di Lorenzo, 10/10/2026):
+  - **una fonte per volume, le carte come locatori** (`chora:sourcePage` dell'atto, o della geometria con la nuova colonna `Repertory_Locator` di `Locations.tsv`). Il dominio di `chora:sourcePage` si estende a `geo:Geometry`;
+  - **bertarelli_1924**: Bertarelli, L. V. (1924), *Italia centrale*, vol. I (Guida d'Italia del TCI). Cartine «Colli laziali, Monti Lepini ed Ernici (Roma, Frosinone)», tra pp. 480–481 (Terzoli CART. 2); «Sabina meridionale, Monti Tiburtini, Prenestini e Carseolani», tra pp. 456–457 (CART. 3). **Assorbe `tci_italia_centrale_1`**: la carta di Manzotti per Casal Bruciato (L-0001) è la CART. 2 del 1924 (conferma: Terzoli 2015, p. 766, «C. Abbruciato» sulla cartina del 1924). La geometria di L-0001 ha ora repertorio `bertarelli_1924`, locatore «cart. 2, tra pp. 480–481». **La voce «data della carta TCI» si chiude**;
+  - **bertarelli_1925**: Bertarelli, L. V. (1925), *Roma e dintorni* = *Italia centrale*, vol. IV. Cartine «Roma e dintorni», tra pp. 736–737 (CART. 4); «Colli Albani», tra pp. 758–759 (CART. 1). **Assorbe `tci_guida_1925`**. «TCI, Italia centrale IV, p. 761» di Manzotti 2010 (pp. 239–240) rinvia a questo volume;
+  - **DC-03** (edicola, Manzotti 2010, p. 246): la CART. 1 del 1925 è annotata come candidata (Terzoli 2015, p. 419); la voce resta aperta;
+  - **terzoli_2008**: anno 2008, nota «Terzoli 2015 lo cita come 2007 (p. 419) e 2008 (p. 911), stesse pp. 109–113: anno da verificare»;
+  - **italia_2020** (dalla bibliografia del Cap. 4) e **glm_1997a**: Grassadonia, F., Lagossi, P., & Marchetti, M. (a cura di) (1997a), *Quer pasticciaccio brutto de via Merulana. Strumenti per la lettura* (2 voll.), Garzanti Scuola. Citati di seconda mano in Terzoli 2015, pp. 535–537 (`chora:originalSource`); vale anche per «G.L.M., Commento» citato da Manzotti 2010. **Voce chiusa**;
+  - **Censimento GaddAtlas**: data 2026, autore Lorenzo Sabatino. **Voce chiusa**;
+  - **agenti nuovi**: terzoli (Maria Antonietta Terzoli), italia (Paola Italia), grassadonia (Fabio Grassadonia), lagossi (Paola Lagossi), marchetti (Mario Marchetti).
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `data/source/tables/Sources.tsv` (2 fonti fuse e rinominate, 2 nuove, 2 corrette), `Locations.tsv` (`Repertory_ID`, colonna `Repertory_Locator`), `Agents.tsv` (5 righe); XLSX corrispondenti; `tools/etl.py` (`Repertory_Locator`); `ontology/chora.ttl` (dominio di `chora:sourcePage`); `data/source/mapping.yaml` (documentazione Locations); `docs/thesis/DATA_CHECKS_GaddAtlas.md` (DC-03).
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.612 → **1.618**; ABox 40.513 → **40.553**; full 42.695 → **42.741**. Fonti 16 → **18**, agenti 7 → **12**. SHACL conforme, 0 risultati; IQ21 = 0, IQ20 = 1.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

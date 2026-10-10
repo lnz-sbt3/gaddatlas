@@ -9,6 +9,36 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<https://w3id.org/gaddatlas/id/agent/grassadonia> a prov:Agent,
+        prov:Person,
+        chora:Scholar ;
+    rdfs:comment "Grassadonia, Lagossi e Marchetti 1997a"@it ;
+    schema:name "Fabio Grassadonia" .
+
+<https://w3id.org/gaddatlas/id/agent/italia> a prov:Agent,
+        prov:Person,
+        chora:Scholar ;
+    rdfs:comment "Editing Duemila (Italia 2020)"@it ;
+    schema:name "Paola Italia" .
+
+<https://w3id.org/gaddatlas/id/agent/lagossi> a prov:Agent,
+        prov:Person,
+        chora:Scholar ;
+    rdfs:comment "Grassadonia, Lagossi e Marchetti 1997a"@it ;
+    schema:name "Paola Lagossi" .
+
+<https://w3id.org/gaddatlas/id/agent/marchetti> a prov:Agent,
+        prov:Person,
+        chora:Scholar ;
+    rdfs:comment "Grassadonia, Lagossi e Marchetti 1997a"@it ;
+    schema:name "Mario Marchetti" .
+
+<https://w3id.org/gaddatlas/id/agent/terzoli> a prov:Agent,
+        prov:Person,
+        chora:Scholar ;
+    rdfs:comment "Commento a «Quer pasticciaccio brutto de via Merulana» (Terzoli 2015)"@it ;
+    schema:name "Maria Antonietta Terzoli" .
+
 <https://w3id.org/gaddatlas/id/assertion/A-0001> a chora:Assertion ;
     rdfs:comment "Sostituisce owl:sameAs gaz_castello <-> gaz_castel_gandolfo (D-044)"@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
@@ -16481,19 +16511,34 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IX> ;
     chora:sourceReference "A 241"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/source/bertarelli_1925> a chora:Source ;
+    rdfs:label "Bertarelli 1925" ;
+    dcterms:bibliographicCitation "Bertarelli, L. V. (1925). Roma e dintorni = Italia centrale, vol. IV (Guida d'Italia del TCI). Touring Club Italiano."@it ;
+    dcterms:creator "Luigi Vittorio Bertarelli"@it ;
+    dcterms:date "1925"^^xsd:gYear ;
+    dcterms:type "guida, repertorio"@it ;
+    rdfs:comment "Cartine: «Roma e dintorni», tra pp. 736–737 (Terzoli 2015, CART. 4); «Colli Albani», tra pp. 758–759 (CART. 1). Vi rinvia «TCI, Italia centrale IV, p. 761» di Manzotti 2010, pp. 239–240. Candidata per l'edicola ai Due Santi la CART. 1 (Terzoli 2015, p. 419; DC-03, aperta). Le carte sono locatori (D-086)."@it .
+
 <https://w3id.org/gaddatlas/id/source/geonames> a chora:Source ;
     rdfs:label "GeoNames" ;
     dcterms:bibliographicCitation "GeoNames, base di dati geografica. https://www.geonames.org"@it ;
     dcterms:type "repertorio"@it ;
     rdfs:comment "Come sopra (D-068)."@it .
 
-<https://w3id.org/gaddatlas/id/source/tci_guida_1925> a chora:Source ;
-    rdfs:label "Guida TCI 1925" ;
-    dcterms:bibliographicCitation "Touring Club Italiano, Guida d'Italia (1925): cartine tra le pp. 736–737 (cart. 4) e 758–759 (cart. 1), citate da Terzoli 2015, p. 911."@it ;
-    dcterms:creator "Touring Club Italiano"@it ;
-    dcterms:date "1925"^^xsd:gYear ;
-    dcterms:type "guida, repertorio"@it ;
-    rdfs:comment "Volume della Guida da precisare. Non collegata alla carta TCI di Manzotti (tci_italia_centrale_1), la cui data resta aperta (D-080)."@it .
+<https://w3id.org/gaddatlas/id/source/glm_1997a> a chora:Source ;
+    rdfs:label "Grassadonia, Lagossi e Marchetti 1997a" ;
+    dcterms:bibliographicCitation "Grassadonia, F., Lagossi, P., & Marchetti, M. (a cura di) (1997a). Quer pasticciaccio brutto de via Merulana. Strumenti per la lettura (2 voll.). Milano: Garzanti Scuola."@it ;
+    dcterms:creator "Fabio Grassadonia; Paola Lagossi; Mario Marchetti"@it ;
+    dcterms:date "1997"^^xsd:gYear ;
+    dcterms:type "commento"@it ;
+    rdfs:comment "Citati di seconda mano in Terzoli 2015, pp. 535–537 (chora:originalSource); vale anche per «G.L.M., Commento» citato da Manzotti 2010 (D-086)."@it .
+
+<https://w3id.org/gaddatlas/id/source/italia_2020> a chora:Source ;
+    rdfs:label "Italia 2020" ;
+    dcterms:bibliographicCitation "Italia, P. (2020). Editing Duemila: Per una filologia dei testi digitali. Salerno Editrice."@it ;
+    dcterms:creator "Paola Italia"@it ;
+    dcterms:date "2020"^^xsd:gYear ;
+    dcterms:type "monografia"@it .
 
 <https://w3id.org/gaddatlas/id/source/terzoli_2008> a chora:Source ;
     rdfs:label "Terzoli 2008" ;
@@ -16501,7 +16546,7 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     dcterms:creator "Maria Antonietta Terzoli"@it ;
     dcterms:date "2008"^^xsd:gYear ;
     dcterms:type "saggio"@it ;
-    rdfs:comment "Riferimento completo da compilare (D-080)."@it .
+    rdfs:comment "Terzoli 2015 lo cita come 2007 (p. 419) e 2008 (p. 911), stesse pp. 109–113: anno da verificare. Riferimento bibliografico completo da compilare (D-086)."@it .
 
 <https://w3id.org/gaddatlas/id/source/wikidata> a chora:Source ;
     rdfs:label "Wikidata" ;
@@ -39969,7 +40014,8 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
 <https://w3id.org/gaddatlas/id/geometry/L-0001> a geosparql:Geometry ;
     geosparql:asWKT "POINT(12.583 41.7335)"^^geosparql:wktLiteral ;
     chora:precision "~1 km"^^xsd:string ;
-    chora:repertory <https://w3id.org/gaddatlas/id/source/tci_italia_centrale_1> .
+    chora:repertory <https://w3id.org/gaddatlas/id/source/bertarelli_1924> ;
+    chora:sourcePage "cart. 2, tra pp. 480–481"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/geometry/L-0002> a geosparql:Geometry ;
     geosparql:asWKT "POINT(12.5683 41.7168)"^^geosparql:wktLiteral ;
@@ -40125,6 +40171,14 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:relatum <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba>,
         <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_ardeatina> .
 
+<https://w3id.org/gaddatlas/id/source/bertarelli_1924> a chora:Source ;
+    rdfs:label "Bertarelli 1924" ;
+    dcterms:bibliographicCitation "Bertarelli, L. V. (1924). Italia centrale, vol. I (Guida d'Italia del TCI). Touring Club Italiano."@it ;
+    dcterms:creator "Luigi Vittorio Bertarelli"@it ;
+    dcterms:date "1924"^^xsd:gYear ;
+    dcterms:type "guida, repertorio"@it ;
+    rdfs:comment "Cartine: «Colli laziali, Monti Lepini ed Ernici (Roma, Frosinone)», tra pp. 480–481 (Terzoli 2015, CART. 2; la carta di Manzotti 2010, Tav. V/VI, per Casal Bruciato, L-0001; conferma: Terzoli 2015, p. 766); «Sabina meridionale, Monti Tiburtini, Prenestini e Carseolani», tra pp. 456–457 (CART. 3). Le carte sono locatori (D-086)."@it .
+
 <https://w3id.org/gaddatlas/id/source/igm_150_iii_so> a chora:Source ;
     rdfs:label "IGM, F. 150 III SO" ;
     dcterms:bibliographicCitation "Istituto Geografico Militare, F. 150 III SO, 1:25.000, rilievo 1872, aggiornamenti 1931 e 1940 (riprodotta in Manzotti 2010, Tav. VII, p. 301)."@it ;
@@ -40132,13 +40186,6 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     dcterms:date "1940"^^xsd:gYear ;
     dcterms:type "carta"@it ;
     rdfs:comment "Data: ultimo aggiornamento della tavoletta (rilievo 1872)."@it .
-
-<https://w3id.org/gaddatlas/id/source/tci_italia_centrale_1> a chora:Source ;
-    rdfs:label "TCI, Italia centrale I" ;
-    dcterms:bibliographicCitation "Touring Club Italiano, Guida d'Italia, Italia centrale I: carta «Colli Laziali, Monti Lepini ed Ernici», 1:250.000, inserita tra le pp. 480 e 481 (riprodotta in Manzotti 2010, Tav. VI, p. 300)."@it ;
-    dcterms:creator "Touring Club Italiano"@it ;
-    dcterms:type "carta"@it ;
-    rdfs:comment "Data dell'edizione da compilare (non registrata nei documenti del progetto)."@it .
 
 <https://w3id.org/gaddatlas/id/witness/bzfg> a chora:Witness ;
     rdfs:label "bzFG" ;
@@ -50986,8 +51033,8 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     rdfs:label "Censimento GaddAtlas" ;
     dcterms:bibliographicCitation "Censimento dei luoghi del Pasticciaccio (GaddAtlas): fogli NarrativePlaces e GazetteerEntities, descrizioni e statuti."@it ;
     dcterms:creator "Lorenzo Sabatino"@it ;
-    dcterms:type "dataset"@it ;
-    rdfs:comment "Data da compilare (Lorenzo)."@it .
+    dcterms:date "2026"^^xsd:gYear ;
+    dcterms:type "dataset"@it .
 
 <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> a chora:LiteraryWork ;
     dcterms:creator "Carlo Emilio Gadda"@it ;

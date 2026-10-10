@@ -1657,6 +1657,8 @@ class GaddaETL:
             self.graph.add((geom, CHORA.repertory, self.sources[rep_id][0]))
             self.add_literal(geom, CHORA.precision, row.get('Precision'), datatype=XSD.string)
             self.add_literal(geom, CHORA.datum, row.get('Datum'), datatype=XSD.string)
+            # locatore della carta nel volume del repertorio (D-086)
+            self.add_literal(geom, CHORA.sourcePage, row.get('Repertory_Locator'), datatype=XSD.string)
         logger.info(f"Locations: {len(df)} posizioni attribuite")
 
     # tipo -> (proprieta' reificata, classe del soggetto, solo le adottate?)

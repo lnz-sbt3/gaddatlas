@@ -883,8 +883,8 @@ chora:sourceWork a owl:DatatypeProperty ;
     skos:prefLabel "source work"@en .
 
 chora:sourcePage a owl:DatatypeProperty ;
-    rdfs:comment "Page or pages in the source of the interpretation act (hico:isExtractedFrom)."@en ;
-    rdfs:domain hico:InterpretationAct ;
+    rdfs:comment "Page, pages or locator (e.g. «cart. 4, tra pp. 736–737») in the source of an interpretation act (hico:isExtractedFrom), or in the repertory of a position (chora:repertory) (D-086)."@en ;
+    rdfs:domain [ a owl:Class ; owl:unionOf ( hico:InterpretationAct geo:Geometry ) ] ;
     rdfs:range xsd:string ;
     skos:altLabel "pagina della fonte"@it ;
     skos:prefLabel "source page"@en .
