@@ -1707,6 +1707,19 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-088 — Esclusioni: partizioni dei critici, frizione dei luoghi di soglia (10 ottobre 2026)
+
+- Requisito/i: R12, R17, R20 · Ipotesi: — · Data check: — (AUDIT_3, blocco D)
+- Decisione (di Lorenzo, 10/10/2026): due voci nuove in `docs/EXCLUSIONS.md`:
+  - **5, partizioni città/campagna dei critici** (Roggia, Perosa, Savettieri, Alfano, Calvino): non mappate. Nel grafo c'è solo l'ipotesi metrica del progetto (P-0001, D-050), dichiarata come tale;
+  - **6, frizione dei luoghi di soglia:** non mappata. `chora:Threshold` esiste nella TBox (D-058) senza istanze.
+  Restano escluse dal file anche figuralità, logica simmetrica e annotazione assiologica (D-065).
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `docs/EXCLUSIONS.md` (voci 5 e 6).
+- Effetto su KG: nessuno (TBox 1.618, ABox 42.501, full 44.689). SHACL conforme, 0 risultati.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

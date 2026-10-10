@@ -61,6 +61,27 @@ linee restano riservate ai percorsi compiuti, attestati e ordinati.
   percorsi non compiuti resta una decisione aperta del work order (T-64).
 - **Decisione:** Lorenzo Sabatino, 9 ottobre 2026 (work order T-64).
 
+## 5. Partizioni città/campagna dei critici
+
+Le partizioni del territorio proposte dalla critica (Roggia: polarità
+etico-morale; Perosa: antitesi di regimi descrittivi; Savettieri: confine
+attraversato; Alfano: «meticciarsi»; Calvino: i «due poli dell'azione») non sono
+mappate.
+
+- **Dove sta:** nel grafo c'è solo l'ipotesi metrica del progetto (P-0001, D-050),
+  dichiarata come tale: una partizione per distanza dal Campidoglio, non una
+  lettura critica.
+- **Decisione:** Lorenzo Sabatino, 10 ottobre 2026 (D-088).
+
+## 6. Frizione dei luoghi di soglia
+
+La frizione dei luoghi di soglia (il passaggio fra un dentro e un fuori come
+evento narrativo) non è mappata.
+
+- **Dove sta:** il concetto `chora:Threshold` esiste nella TBox (D-058), senza
+  istanze.
+- **Decisione:** Lorenzo Sabatino, 10 ottobre 2026 (D-088).
+
 ---
 
 ## Copertura parziale dichiarata
