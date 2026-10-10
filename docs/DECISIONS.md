@@ -1720,6 +1720,29 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-089 — Documentazione e query dei loci critici; voci aperte (10 ottobre 2026)
+
+- Requisito/i: R22 · Ipotesi: H8 · Data check: DC-21, DC-03 (AUDIT_3, blocco E)
+- Decisione (di Lorenzo, 10/10/2026):
+  - **E1, `docs/MODELLO_LETTURE.md`:** guida unica al modello delle letture e della provenienza. Contiene:
+    - il pattern lettura → atto → codifica;
+    - i tipi di lettura con la proprietà reificata, soggetto, valore, materializzazione e fondamento;
+    - per ogni colonna di Assertions, Agents, Sources, Witnesses, Locations e SpatialInterpretations: tripla, regola ETL e shape;
+    - che cosa arriva al GeoJSON (solo le letture adottate) e la regola «nessun luogo annotato senza ancora»;
+    - «Come aggiungere una lettura», con tre esempi compilati (identificazione contesa per Aliciaro, lettura onomastica per Bottaro, commento per Falcognana) e la regola «una lettura nuova non toglie mai un luogo dall'interfaccia»;
+    - la tabella dei controlli.
+    TBOX_2 e AUDIT_2b sono marcati superati;
+  - **E2, `ontology/queries/loci_critici.rq`:** sette query eseguite da `make queries`: LC1 letture su un luogo (7 per Robine Vecchie), LC2 letture di un autore (43 per Terzoli), LC3 letture concorrenti (10), LC4 letture fondate su un'occorrenza, LC5 fonte, pagina ed estratto (158 letture esplicite), LC6 revisioni (3), LC7 attestazioni per carta (25);
+  - **E3, DATA_CHECKS e work order:**
+    - **chiuse:** data della carta TCI (cart. 2 di Bertarelli 1924), Sant'Ignazio/Cassero (DC-21), Censimento (2026), Ciurlani, `offMap` (D-057 corretta), GLM, pagina QPL di «Marino»;
+    - **restano aperte:** Nota al testo di Pinotti 2018 (derivazione QPa ← QP), identificatori esterni (T-46), anno di Terzoli 2008, DC-03 (volume della carta dell'edicola);
+  - **CLAUDE.md:** «Stato dei dati» aggiornato.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `docs/MODELLO_LETTURE.md` (nuovo); `ontology/queries/loci_critici.rq` (nuovo); `Makefile` (target `queries`); `docs/alignment/TBOX_2.md`, `docs/alignment/AUDIT_2b.md` (nota «superato»); `docs/thesis/DATA_CHECKS_GaddAtlas.md` (DC-21, § D); `docs/thesis/GaddAtlas_Cap4_Allineamento_WorkOrder.md` (§ 11); `CLAUDE.md`.
+- Effetto su KG: nessuno (TBox 1.618, ABox 42.501, full 44.689). SHACL conforme, 0 risultati; IQ1–IQ21 a 0 (IQ9 informativa).
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

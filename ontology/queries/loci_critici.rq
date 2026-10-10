@@ -1,0 +1,92 @@
+# Query dei loci critici (D-089): letture attribuite, autori, fonti, revisioni.
+# Eseguite da `make queries`. Le query con VALUES si adattano cambiando il valore.
+# Una lettura e' una chora:Assertion generata da un hico:InterpretationAct
+# (tipo, criterio, fonte, pagina, estratto, autore); vedi docs/MODELLO_LETTURE.md.
+
+# ==== LC1 — Tutte le letture su un luogo (esempio: Robine Vecchie, luogo e sue occorrenze) ====
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX hico: <http://purl.org/emmedi/hico/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?lettura ?tipo ?soggetto ?valore ?autore WHERE {
+  VALUES ?luogo { <https://w3id.org/gaddatlas/id/narrativeplace/robine_vecchie> }
+  { ?lettura ga:aboutSubject ?luogo . BIND(?luogo AS ?soggetto) }
+  UNION
+  { ?si ga:targetsPlace ?luogo ; ga:interpretsReference ?soggetto .
+    ?lettura ga:aboutSubject ?soggetto }
+  ?lettura prov:wasGeneratedBy/hico:hasInterpretationType ?tipo ; prov:wasAttributedTo ?autore .
+  OPTIONAL { ?lettura ga:assertsValue ?valore }
+}
+ORDER BY ?tipo ?lettura
+
+# ==== LC2 — Tutte le letture di un autore (esempio: Terzoli) ====
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX hico: <http://purl.org/emmedi/hico/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?lettura ?tipo ?soggetto ?pagina WHERE {
+  VALUES ?autore { <https://w3id.org/gaddatlas/id/agent/terzoli> }
+  ?lettura a ga:Assertion ; prov:wasAttributedTo ?autore ; ga:aboutSubject ?soggetto ;
+           prov:wasGeneratedBy ?atto .
+  ?atto hico:hasInterpretationType ?tipo .
+  OPTIONAL { ?atto ga:sourcePage ?pagina }
+}
+ORDER BY ?tipo ?lettura
+
+# ==== LC3 — Letture concorrenti: piu' di una sullo stesso soggetto e dello stesso tipo ====
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX hico: <http://purl.org/emmedi/hico/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?soggetto ?tipo (COUNT(?lettura) AS ?n) (GROUP_CONCAT(STRAFTER(STR(?lettura), "assertion/"); separator=", ") AS ?letture) WHERE {
+  ?lettura a ga:Assertion ; ga:aboutSubject ?soggetto ;
+           prov:wasGeneratedBy/hico:hasInterpretationType ?tipo .
+  FILTER (?tipo NOT IN (ga:RepertoryAttestation, ga:CommentaryAssertion))
+}
+GROUP BY ?soggetto ?tipo
+HAVING (COUNT(?lettura) > 1)
+ORDER BY ?tipo ?soggetto
+
+# ==== LC4 — Letture fondate su un'occorrenza (esempio: ref_00403, QPa 169) ====
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX hico: <http://purl.org/emmedi/hico/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?lettura ?tipo ?autore WHERE {
+  VALUES ?occorrenza { <https://w3id.org/gaddatlas/id/reference/ref_00403> }
+  { ?lettura ga:groundedIn ?occorrenza } UNION { ?lettura ga:aboutSubject ?occorrenza }
+  ?lettura prov:wasGeneratedBy/hico:hasInterpretationType ?tipo ; prov:wasAttributedTo ?autore .
+}
+ORDER BY ?tipo ?lettura
+
+# ==== LC5 — Fonte, pagina ed estratto di ogni lettura d'autore (non generata dall'ETL) ====
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX hico: <http://purl.org/emmedi/hico/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?lettura ?fonte ?pagina ?estratto WHERE {
+  ?lettura a ga:Assertion ; prov:wasGeneratedBy ?atto .
+  FILTER (!CONTAINS(STR(?lettura), "S-auto-"))
+  OPTIONAL { ?atto hico:isExtractedFrom ?f . ?f rdfs:label ?fonte }
+  OPTIONAL { ?atto ga:sourcePage ?pagina }
+  OPTIONAL { ?atto ga:quotation ?estratto }
+}
+ORDER BY ?lettura
+
+# ==== LC6 — Revisioni: letture che ne rivedono altre ====
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?nuova ?vecchia ?soggetto WHERE {
+  ?nuova prov:wasRevisionOf ?vecchia .
+  OPTIONAL { ?nuova ga:aboutSubject ?soggetto }
+}
+ORDER BY ?nuova
+
+# ==== LC7 — Attestazioni nel repertorio, per carta ====
+PREFIX ga: <https://w3id.org/chora#>
+PREFIX hico: <http://purl.org/emmedi/hico/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?repertorio ?locatore ?entita WHERE {
+  ?lettura prov:wasGeneratedBy ?atto ; ga:aboutSubject ?e ; ga:assertsValue ?r .
+  ?atto hico:hasInterpretationType ga:RepertoryAttestation .
+  ?r rdfs:label ?repertorio . ?e rdfs:label ?entita .
+  OPTIONAL { ?atto ga:sourcePage ?locatore }
+}
+ORDER BY ?repertorio ?locatore ?entita
