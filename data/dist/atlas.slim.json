@@ -21,7 +21,7 @@
   "ontologyVersion": "1.0.0",
   "buildVersion": "4.3",
   "source": "gaddatlas-full.ttl",
-  "tripleCount": 42741,
+  "tripleCount": 44689,
   "projection": {
    "type": "equirectangular",
    "center": [
@@ -110,15 +110,15 @@
   "voidSeeds": "frozen",
   "counts": {
    "gazetteer": 265,
-   "narrativePlaces": 309,
+   "narrativePlaces": 310,
    "interpretations": 958,
-   "references": 729,
+   "references": 730,
    "routes": 21,
    "chapters": 10,
    "agents": 83,
    "derivedSequences": 103,
    "reliefRows": 927,
-   "ownTiles": 48
+   "ownTiles": 49
   }
  },
  "gazetteer": [
@@ -210,10 +210,10 @@
    "presentLocation": null,
    "historicalLocation": null,
    "distanceFromRomeKm": 6.2,
-   "refCountAnchored": 23,
+   "refCountAnchored": 24,
    "planeCount": 15,
    "interpCount": 23,
-   "narrativePlaceCount": 1,
+   "narrativePlaceCount": 2,
    "densityClass": "hub",
    "densityLevel": 5
   },
@@ -248,10 +248,10 @@
    "presentLocation": "Frazione",
    "historicalLocation": null,
    "distanceFromRomeKm": 18.1,
-   "refCountAnchored": 13,
+   "refCountAnchored": 14,
    "planeCount": 10,
    "interpCount": 11,
-   "narrativePlaceCount": 3,
+   "narrativePlaceCount": 4,
    "densityClass": "nodale",
    "densityLevel": 4
   },
@@ -362,10 +362,10 @@
    "presentLocation": "Pavona",
    "historicalLocation": null,
    "distanceFromRomeKm": 21.9,
-   "refCountAnchored": 13,
+   "refCountAnchored": 12,
    "planeCount": 6,
    "interpCount": 10,
-   "narrativePlaceCount": 3,
+   "narrativePlaceCount": 2,
    "densityClass": "frequente",
    "densityLevel": 3
   },
@@ -1255,10 +1255,10 @@
    "presentLocation": null,
    "historicalLocation": null,
    "distanceFromRomeKm": 14.6,
-   "refCountAnchored": 2,
+   "refCountAnchored": 4,
    "planeCount": 2,
    "interpCount": 2,
-   "narrativePlaceCount": 1,
+   "narrativePlaceCount": 3,
    "densityClass": "raro",
    "densityLevel": 1
   },
@@ -10147,15 +10147,15 @@
    "description": null,
    "fuzziness": null,
    "partOf": null,
-   "interpCount": 2,
+   "interpCount": 1,
    "planeCount": 1,
    "targets": [
     {
-     "gazetteerId": "gaz_frattocchie",
+     "gazetteerId": "gaz_divino_amore",
      "weight": 0.5
     },
     {
-     "gazetteerId": "gaz_pavona",
+     "gazetteerId": "gaz_frattocchie",
      "weight": 0.5
     }
    ],
@@ -11446,6 +11446,47 @@
    ],
    "anchorInherited": true,
    "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "osteriuccia_bivio",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/osteriuccia_bivio",
+   "label": "Osteriuccia del bivio",
+   "realityStatus": "Transformed",
+   "placeCategory": null,
+   "description": "Osteria registrata dalla guida del Touring sul bivio fra Appia Antica e strada del Divino Amore, presso le Frattocchie (Terzoli 2015, p. 776); nel testo «osteriuccia del bivio» (QPa 239).",
+   "fuzziness": null,
+   "partOf": null,
+   "interpCount": 1,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_divino_amore",
+     "weight": 0.3333
+    },
+    {
+     "gazetteerId": "gaz_frattocchie",
+     "weight": 0.3333
+    },
+    {
+     "gazetteerId": "gaz_via_appia",
+     "weight": 0.3333
+    }
+   ],
+   "roles": [
+    {
+     "role": "Marker",
+     "n": 1
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Relative",
+     "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": true,
    "densityClass": "hapax"
   },
   {
@@ -23092,23 +23133,7 @@
    "referenceId": "ref_00404",
    "narrativePlaceId": "cassero",
    "routeId": null,
-   "gazetteerId": "gaz_frattocchie",
-   "narrativeRole": null,
-   "spatialDetermination": null,
-   "spatialRelation": "Near",
-   "focalizerId": "santarella",
-   "confidence": 0.5,
-   "isNodeOfRoute": "tragitto_santarella_torraccio_divino_amore",
-   "routeOrder": 4,
-   "criticalNote": "Possibile referente: Castello della Castelluccia, circa 41.7443, 12.6165"
-  },
-  {
-   "id": "interp_00475",
-   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00475",
-   "referenceId": "ref_00404",
-   "narrativePlaceId": "cassero",
-   "routeId": null,
-   "gazetteerId": "gaz_pavona",
+   "gazetteerId": "gaz_divino_amore",
    "narrativeRole": null,
    "spatialDetermination": null,
    "spatialRelation": "Near",
@@ -30893,6 +30918,22 @@
    "isNodeOfRoute": null,
    "routeOrder": null,
    "criticalNote": "Titolo gridato dagli strilloni: via Merulana nominata come riferimento del delitto, non scena dell'azione; ruolo proposto (D-075)."
+  },
+  {
+   "id": "interp_00967",
+   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00967",
+   "referenceId": "ref_00736",
+   "narrativePlaceId": "osteriuccia_bivio",
+   "routeId": null,
+   "gazetteerId": "gaz_divino_amore",
+   "narrativeRole": "Marker",
+   "spatialDetermination": "Relative",
+   "spatialRelation": "Near",
+   "focalizerId": "cocullo",
+   "confidence": 1.0,
+   "isNodeOfRoute": null,
+   "routeOrder": null,
+   "criticalNote": "Ancore ai toponimi riconoscibili più prossimi, secondo Terzoli 2015, p. 776: «nei pressi delle Frattocchie […] proprio su un bivio tra l'Appia Antica e la strada per il santuario del Divino Amore, è registrata un'\"Osteria\"». gaz_via_appia è la via Appia, senza distinzione fra Antica e Nuova (D-087)."
   }
  ],
  "references": [
@@ -37456,6 +37497,15 @@
    "sourceReference": "A 105",
    "chapterId": "capitolo_IV",
    "workId": "quer_pasticciaccio"
+  },
+  {
+   "id": "ref_00736",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00736",
+   "edition": "A",
+   "page": 239,
+   "sourceReference": "A 239",
+   "chapterId": "capitolo_IX",
+   "workId": "quer_pasticciaccio"
   }
  ],
  "routes": [
@@ -38748,155 +38798,6 @@
    ]
   },
   {
-   "id": "tragitto_santarella_torraccio_divino_amore",
-   "iri": "https://w3id.org/gaddatlas/id/route/tragitto_santarella_torraccio_divino_amore",
-   "label": "santarella torraccio divino amore",
-   "routeType": "InferredRoute",
-   "nodes": [
-    {
-     "order": 1,
-     "interpretationId": "interp_00470",
-     "narrativePlaceId": "torraccio",
-     "gazetteerId": "gaz_torraccio",
-     "targetId": "gaz_torraccio",
-     "focalizerId": "santarella",
-     "referenceId": "ref_00401",
-     "page": 169
-    },
-    {
-     "order": 2,
-     "interpretationId": "interp_00471",
-     "narrativePlaceId": "frattocchie",
-     "gazetteerId": "gaz_frattocchie",
-     "targetId": "gaz_frattocchie",
-     "focalizerId": "santarella",
-     "referenceId": "ref_00402",
-     "page": 169
-    },
-    {
-     "order": 3,
-     "interpretationId": "interp_00472",
-     "narrativePlaceId": "robine_vecchie",
-     "gazetteerId": "gaz_due_santi",
-     "targetId": "robine_vecchie",
-     "focalizerId": "santarella",
-     "referenceId": "ref_00403",
-     "page": 169
-    },
-    {
-     "order": 4,
-     "interpretationId": "interp_00474",
-     "narrativePlaceId": "cassero",
-     "gazetteerId": "gaz_frattocchie",
-     "targetId": "cassero",
-     "focalizerId": "santarella",
-     "referenceId": "ref_00404",
-     "page": 169
-    },
-    {
-     "order": 4,
-     "interpretationId": "interp_00475",
-     "narrativePlaceId": "cassero",
-     "gazetteerId": "gaz_pavona",
-     "targetId": "cassero",
-     "focalizerId": "santarella",
-     "referenceId": "ref_00404",
-     "page": 169
-    },
-    {
-     "order": 5,
-     "interpretationId": "interp_00476",
-     "narrativePlaceId": "ponte_divino_amore",
-     "gazetteerId": "gaz_ponte_divino_amore",
-     "targetId": "ponte_divino_amore",
-     "focalizerId": "santarella",
-     "referenceId": "ref_00405",
-     "page": 169
-    }
-   ],
-   "nodeCount": 6,
-   "steps": [
-    {
-     "order": 1,
-     "targetIds": [
-      "gaz_torraccio"
-     ],
-     "focalizerIds": [
-      "santarella"
-     ],
-     "interpretationIds": [
-      "interp_00470"
-     ]
-    },
-    {
-     "order": 2,
-     "targetIds": [
-      "gaz_frattocchie"
-     ],
-     "focalizerIds": [
-      "santarella"
-     ],
-     "interpretationIds": [
-      "interp_00471"
-     ]
-    },
-    {
-     "order": 3,
-     "targetIds": [
-      "robine_vecchie"
-     ],
-     "focalizerIds": [
-      "santarella"
-     ],
-     "interpretationIds": [
-      "interp_00472"
-     ]
-    },
-    {
-     "order": 4,
-     "targetIds": [
-      "cassero"
-     ],
-     "focalizerIds": [
-      "santarella"
-     ],
-     "interpretationIds": [
-      "interp_00474",
-      "interp_00475"
-     ]
-    },
-    {
-     "order": 5,
-     "targetIds": [
-      "ponte_divino_amore"
-     ],
-     "focalizerIds": [
-      "santarella"
-     ],
-     "interpretationIds": [
-      "interp_00476"
-     ]
-    }
-   ],
-   "stepCount": 5,
-   "isPartialOrder": false,
-   "carrierIds": [
-    "interp_00477"
-   ],
-   "carrierRoles": [
-    "Route"
-   ],
-   "referenceIds": [
-    "ref_00406"
-   ],
-   "focalizerIds": [
-    "santarella"
-   ],
-   "nodeFocalizerIds": [
-    "santarella"
-   ]
-  },
-  {
    "id": "tragitto_agostino_aquiro",
    "iri": "https://w3id.org/gaddatlas/id/route/tragitto_agostino_aquiro",
    "label": "agostino aquiro",
@@ -39440,6 +39341,144 @@
    ],
    "referenceIds": [
     "ref_00431"
+   ],
+   "focalizerIds": [
+    "santarella"
+   ],
+   "nodeFocalizerIds": [
+    "santarella"
+   ]
+  },
+  {
+   "id": "tragitto_santarella_torraccio_divino_amore",
+   "iri": "https://w3id.org/gaddatlas/id/route/tragitto_santarella_torraccio_divino_amore",
+   "label": "santarella torraccio divino amore",
+   "routeType": "InferredRoute",
+   "nodes": [
+    {
+     "order": 1,
+     "interpretationId": "interp_00470",
+     "narrativePlaceId": "torraccio",
+     "gazetteerId": "gaz_torraccio",
+     "targetId": "gaz_torraccio",
+     "focalizerId": "santarella",
+     "referenceId": "ref_00401",
+     "page": 169
+    },
+    {
+     "order": 2,
+     "interpretationId": "interp_00471",
+     "narrativePlaceId": "frattocchie",
+     "gazetteerId": "gaz_frattocchie",
+     "targetId": "gaz_frattocchie",
+     "focalizerId": "santarella",
+     "referenceId": "ref_00402",
+     "page": 169
+    },
+    {
+     "order": 3,
+     "interpretationId": "interp_00472",
+     "narrativePlaceId": "robine_vecchie",
+     "gazetteerId": "gaz_due_santi",
+     "targetId": "robine_vecchie",
+     "focalizerId": "santarella",
+     "referenceId": "ref_00403",
+     "page": 169
+    },
+    {
+     "order": 4,
+     "interpretationId": "interp_00474",
+     "narrativePlaceId": "cassero",
+     "gazetteerId": "gaz_divino_amore",
+     "targetId": "cassero",
+     "focalizerId": "santarella",
+     "referenceId": "ref_00404",
+     "page": 169
+    },
+    {
+     "order": 5,
+     "interpretationId": "interp_00476",
+     "narrativePlaceId": "ponte_divino_amore",
+     "gazetteerId": "gaz_ponte_divino_amore",
+     "targetId": "ponte_divino_amore",
+     "focalizerId": "santarella",
+     "referenceId": "ref_00405",
+     "page": 169
+    }
+   ],
+   "nodeCount": 5,
+   "steps": [
+    {
+     "order": 1,
+     "targetIds": [
+      "gaz_torraccio"
+     ],
+     "focalizerIds": [
+      "santarella"
+     ],
+     "interpretationIds": [
+      "interp_00470"
+     ]
+    },
+    {
+     "order": 2,
+     "targetIds": [
+      "gaz_frattocchie"
+     ],
+     "focalizerIds": [
+      "santarella"
+     ],
+     "interpretationIds": [
+      "interp_00471"
+     ]
+    },
+    {
+     "order": 3,
+     "targetIds": [
+      "robine_vecchie"
+     ],
+     "focalizerIds": [
+      "santarella"
+     ],
+     "interpretationIds": [
+      "interp_00472"
+     ]
+    },
+    {
+     "order": 4,
+     "targetIds": [
+      "cassero"
+     ],
+     "focalizerIds": [
+      "santarella"
+     ],
+     "interpretationIds": [
+      "interp_00474"
+     ]
+    },
+    {
+     "order": 5,
+     "targetIds": [
+      "ponte_divino_amore"
+     ],
+     "focalizerIds": [
+      "santarella"
+     ],
+     "interpretationIds": [
+      "interp_00476"
+     ]
+    }
+   ],
+   "stepCount": 5,
+   "isPartialOrder": false,
+   "carrierIds": [
+    "interp_00477"
+   ],
+   "carrierRoles": [
+    "Route"
+   ],
+   "referenceIds": [
+    "ref_00406"
    ],
    "focalizerIds": [
     "santarella"
@@ -40542,7 +40581,7 @@
    "name": "Santarella",
    "gender": "male",
    "description": "Maresciallo Santarella, conduce le indagini nell'area dei Castelli, dalla tenenza dei carabinieri di Marino",
-   "refCount": 54
+   "refCount": 53
   },
   {
    "id": "ines_cionini",
@@ -40638,7 +40677,7 @@
    "name": "Cocullo",
    "gender": "male",
    "description": "Agente Cocullo, accompagna il brigadiere Pestalozzi in moto dalla tenenza dei carabinieri di Marino alla casa di Camilla Mattonari",
-   "refCount": 22
+   "refCount": 23
   },
   {
    "id": "autista_questura",
@@ -45253,9 +45292,9 @@
    "agentName": "Cocullo",
    "chapterId": "capitolo_IX",
    "chapter": 9,
-   "length": 10,
-   "distinctTargets": 7,
-   "dispersion": 0.7,
+   "length": 11,
+   "distinctTargets": 8,
+   "dispersion": 0.727,
    "pageRange": [
     238,
     274
@@ -45299,7 +45338,17 @@
      "gazetteerId": "gaz_via_della_falcognana",
      "interpretationId": "interp_00699",
      "role": "Marker",
-     "simultaneous": false
+     "simultaneous": true
+    },
+    {
+     "page": 239,
+     "referenceId": "ref_00736",
+     "targetId": "osteriuccia_bivio",
+     "narrativePlaceId": "osteriuccia_bivio",
+     "gazetteerId": "gaz_divino_amore",
+     "interpretationId": "interp_00967",
+     "role": "Marker",
+     "simultaneous": true
     },
     {
      "page": 241,
@@ -46433,9 +46482,9 @@
    "agentName": "Santarella",
    "chapterId": "capitolo_VI",
    "chapter": 6,
-   "length": 33,
+   "length": 32,
    "distinctTargets": 23,
-   "dispersion": 0.697,
+   "dispersion": 0.719,
    "pageRange": [
     155,
     175
@@ -46516,18 +46565,8 @@
      "referenceId": "ref_00404",
      "targetId": "cassero",
      "narrativePlaceId": "cassero",
-     "gazetteerId": "gaz_frattocchie",
+     "gazetteerId": "gaz_divino_amore",
      "interpretationId": "interp_00474",
-     "role": null,
-     "simultaneous": true
-    },
-    {
-     "page": 169,
-     "referenceId": "ref_00404",
-     "targetId": "cassero",
-     "narrativePlaceId": "cassero",
-     "gazetteerId": "gaz_pavona",
-     "interpretationId": "interp_00475",
      "role": null,
      "simultaneous": true
     },
@@ -56932,18 +56971,6 @@
    "isRouteNode": "tragitto_santarella_torraccio_divino_amore"
   },
   {
-   "targetId": "cassero",
-   "interpretationId": "interp_00475",
-   "referenceId": "ref_00404",
-   "page": 169,
-   "chapter": 6,
-   "agentId": "santarella",
-   "role": null,
-   "determination": null,
-   "criticalNote": "Possibile referente: Castello della Castelluccia, circa 41.7443, 12.6165",
-   "isRouteNode": "tragitto_santarella_torraccio_divino_amore"
-  },
-  {
    "targetId": "ponte_divino_amore",
    "interpretationId": "interp_00476",
    "referenceId": "ref_00405",
@@ -59533,6 +59560,18 @@
    "role": "Marker",
    "determination": "Relative",
    "criticalNote": null,
+   "isRouteNode": null
+  },
+  {
+   "targetId": "osteriuccia_bivio",
+   "interpretationId": "interp_00967",
+   "referenceId": "ref_00736",
+   "page": 239,
+   "chapter": 9,
+   "agentId": "cocullo",
+   "role": "Marker",
+   "determination": "Relative",
+   "criticalNote": "Ancore ai toponimi riconoscibili più prossimi, secondo Terzoli 2015, p. 776: «nei pressi delle Frattocchie […] proprio su un bivio tra l'Appia Antica e la strada per il santuario del Divino Amore, è registrata un'\"Osteria\"». gaz_via_appia è la via Appia, senza distinzione fra Antica e Nuova (D-087).",
    "isRouteNode": null
   },
   {

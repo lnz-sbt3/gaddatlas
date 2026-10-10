@@ -1678,6 +1678,35 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-087 — Loci critici: 56 letture, osteriuccia del bivio, Cassero, varianti di sostituzione (10 ottobre 2026)
+
+- Requisito/i: R03, R05, R07, R10 · Ipotesi: H1, H3 · Data check: DC-21 (AUDIT_3, blocco C; decisioni 1–8, 11, 12, 14)
+- Decisione (di Lorenzo, 10/10/2026), dal documento «Loci critici – saggi» (estratti brevi in `Quotation`, sempre con pagina):
+  - **letture nuove: 56**:
+
+    | tipo | n. | contenuto |
+    |---|---|---|
+    | attestazioni nel repertorio | 25 | T-0001…T-0025: le 20 della topografia della guida sulla cart. 4 di Bertarelli 1925 (Terzoli 2015, pp. 418–419); Casale Abbruciato sulla cart. 2 del 1924 (p. 766); Ponte di Santa Fumia (p. 911); Fontana di Papa (p. 658, Guida 1924 p. 561); osteria del bivio (p. 776, cart. 1 e 4); Monti Ernici (p. 696) |
+    | identificazioni | 11 | I-0001 Ca' Francesi, I-0002 Tor ser Paolo, I-0003 Fontana di Papa, I-0009 Mappamonno = Palazzo Venezia, I-0011 Vite = ristorante Le Grotte (Terzoli 2015, p. 616): **adottate**. I-0004 osteria, I-0005 caserma di Marino = palazzo Colonna (Manzotti), I-0006 Odescalchi Simonetti (Terzoli), I-0007 De Carolis Simonetti (GLM, cit. in Terzoli), I-0008 De Carolis Simonetti (Pinotti 2025), I-0010 Palazzo Chigi (GLM): non adottate |
+    | commenti | 10 | K-0001 Italia su Robine; K-0002 risposta di Lorenzo, `cito:disagreesWith` K-0001; K-0003 Italia su Frattocchie; K-0004 la topografia della guida (soggetto: l'opera); K-0005 percorso di QPa 297; K-0006 e K-0007 «immaginario» casello e Tor di Gheppio (Terzoli 2015, p. 911; lo statuto non cambia); K-0008 «per fil a dest» (Manzotti, sostituisce la nota «fase 3» di R-0020); K-0009 Marino; K-0010 Castel Porcino |
+    | letture onomastiche | 6 | N-0001…N-0003 tre ipotesi di Terzoli su Robine (refuso ×2, abbassamento ironico; non adottate); N-0004 Castel Porcano, paraetimologia su Castelporziano (`playsOn`); N-0005 Mappamonno, sineddoche (`playsOn` Palazzo Venezia); N-0006 Ciurlani, gioco onomastico |
+    | varianti | 2 | V-0005 QPL «Marino» (RR II, p. 324, nuova occorrenza ref_00734, luogo marino) ↔ fermate del tram di QPa 56; V-0006 dtsFG «da Faraja» (nuova occorrenza ref_00735, **senza luogo**) ↔ «a la Vite». Entrambe **di sostituzione** |
+    | incertezze | 1 | U-0010, Cassero e Sant'Ignazio «non segnalati nelle carte topografiche» (asse nome) |
+    | statuti | 1 | S-osteriuccia_bivio |
+
+  - **osteriuccia del bivio (QPa 239):** nuovo luogo `osteriuccia_bivio`, Transformed. Nuova occorrenza ref_00736 con l'estratto di Lorenzo e forma attestata «osteriuccia del bivio». Interpretazione interp_00967: focalizzatore e ruolo del passo del bivio (ref_00577: Cocullo, marker). Ancore `gaz_frattocchie`, `gaz_via_appia` (la via Appia: il gazetteer non distingue Antica e Nuova) e `gaz_divino_amore`, relazione `near`. Compare nel Diagramma con il suo glifo. Nuova entità `gaz_osteria_bivio_frattocchie`, senza coordinate;
+  - **Cassero:** una sola interpretazione (interp_00474), ancore gaz_frattocchie e gaz_divino_amore, relazione `near`; tolta interp_00475 (Pavona). IQ20 = 0, e ora anche Violation (shape 25). **La voce Sant'Ignazio (DC-21) si chiude**;
+  - **entità senza coordinate:** `gaz_palazzo_colonna_marino`, `gaz_palazzo_de_carolis_simonetti`, `gaz_osteria_bivio_frattocchie`, `gaz_ponte_di_santa_fumia`. Sono bersagli di letture non adottate o di attestazioni; nessuna è un'ancora. Il luogo `ponte_di_santa_fumia` resta ancorato a gaz_quarto_di_santa_fumia. **IQ8** vale ora per le sole entità usate come ancora;
+  - **correzioni:** S-tenenza_carabinieri_marino ha per autore Manzotti (pp. 293–294); S-ditta_ciurlani riceve le pagine «433–435, 644» (**voce Ciurlani chiusa**); S-palazzo_del_mappamondo resta di Lorenzo, con fonte Terzoli 2015, p. 537;
+  - **motivazioni degli statuti generati:** citano ora le attestazioni dell'ancora primaria («Attestata in Bertarelli 1925, cart. 4, tra pp. 736–737 (Terzoli 2015, pp. 418–419)»): 18 luoghi;
+  - **locatore delle attestazioni:** l'atto ha per fonte il critico (`isExtractedFrom` Terzoli 2015, così la data dell'atto è il 2015). La carta sta in `sourcePage` insieme alla pagina del critico: «418–419 (Bertarelli 1925, cart. 4, tra pp. 736–737)». È la forma che concilia «carte come locatori» (decisione 13) e la data dell'atto dello studioso (D-067).
+- Non inseriti: Terzoli 2015, p. 877 (diacronia, DM-04) e p. 861.
+- Fase in cui è maturata: analisi del testo, revisione critica
+- File toccati (manifest): `data/source/tables/Assertions.tsv` (56 righe nuove; S-tenenza, S-ditta_ciurlani, S-palazzo_del_mappamondo, R-0020), `NarrativePlaces.tsv` (osteriuccia_bivio), `GazetteerEntities.tsv` (4 entità senza coordinate), `References.tsv` (ref_00734, ref_00735, ref_00736), `SpatialInterpretations.tsv` (interp_00474, interp_00475 tolta, interp_00967); XLSX corrispondenti; `tools/etl.py` (`repertory_attestations`, motivazioni); `ontology/shapes/chora-shapes.ttl` (shape 25); `ontology/queries/integrity.rq` (IQ8, IQ20).
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.618 invariata; ABox 40.553 → **42.501**; full 42.741 → **44.689**. Letture 360 → **416**; luoghi 309 → **310**; entità 265 → **269**; occorrenze 733 → **736**; interpretazioni 958 (+1 osteriuccia, −1 Cassero). Feature 301 → **302**. SHACL conforme, 0 risultati; IQ20 = 0, IQ21 = 0; 297 luoghi annotati su 297 nel GeoJSON.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

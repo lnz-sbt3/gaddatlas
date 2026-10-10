@@ -1537,6 +1537,26 @@ class GaddaETL:
             place = self.graph.value(place, CHORA.isPartOf)
         return None
 
+    def repertory_attestations(self, entity):
+        """Testi delle attestazioni di un'entita' in un repertorio (D-087):
+        «Bertarelli 1925, 418–419 (…), secondo Terzoli 2015»."""
+        out = []
+        for act in self.graph.subjects(HICO.hasInterpretationType, CHORA.RepertoryAttestation):
+            for a in self.graph.subjects(PROV.wasGeneratedBy, act):
+                if self.graph.value(a, CHORA.aboutSubject) != entity:
+                    continue
+                rep = self.graph.value(a, CHORA.assertsValue)
+                src = self.graph.value(act, HICO.isExtractedFrom)
+                page = self.graph.value(act, CHORA.sourcePage)
+                # sourcePage «418–419 (Bertarelli 1925, cart. 4, …)»: pagine del
+                # critico e, fra parentesi, il locatore nel repertorio
+                m = re.match(r"(.+?) \((.+)\)$", str(page or ''))
+                where = m.group(2) if m else str(self.graph.value(rep, RDFS.label))
+                pages = m.group(1) if m else str(page or '')
+                pp = "pp." if any(c in pages for c in "–-,") else "p."
+                out.append(f"{where} ({self.graph.value(src, RDFS.label)}, {pp} {pages})")
+        return out
+
     def generate_imported_statuses(self):
         """Per ogni luogo Imported senza un'asserzione di statuto adottata in
         Assertions.tsv, genera la lettura assertion/S-auto-{luogo} e il suo atto:
@@ -1577,6 +1597,9 @@ class GaddaETL:
                              + (f"Repertorio: {self.graph.value(source[0], RDFS.label)}, {page}."
                                 if where_from else "Referente identificato nel gazetteer del progetto "
                                 "(GazetteerEntities), coordinate registrate."))
+                # attestazioni dell'ancora in un repertorio (D-087): la motivazione le cita
+                for att in sorted(self.repertory_attestations(anchor)):
+                    rationale += f" Attestata in {att}."
             else:
                 rationale = f"{standard} Nessuna ancora: analisi non condotta (D-048)."
             self.graph.add((a, RDF.type, CHORA.Assertion))

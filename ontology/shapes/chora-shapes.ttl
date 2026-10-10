@@ -890,3 +890,27 @@ ga:LociCriticiShape
         [ sh:path ga:variantKind ; sh:minCount 1 ]
     ) ;
     sh:message "Una variante dichiara il tipo (forma o sostituzione)." .
+
+
+# =============================================================================
+# SHAPE 25 — Una sola interpretazione adottata per occorrenza, luogo e
+# focalizzatore (IQ20 a Violation dopo il Cassero, D-087)
+# =============================================================================
+
+ga:AdoptedInterpretationUniqueShape
+    a sh:NodeShape ;
+    sh:targetClass ga:SpatialInterpretation ;
+    sh:severity sh:Violation ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Piu' interpretazioni adottate per la stessa occorrenza, lo stesso luogo e lo stesso focalizzatore (D-070, D-087)." ;
+        sh:prefixes ga: ;
+        sh:select """
+            PREFIX ga: <https://w3id.org/chora#>
+            SELECT $this WHERE {
+              $this ga:interpretsReference ?r ; ga:targetsPlace ?l ; ga:hasFocalizer ?f ; ga:adoptedByProject true .
+              ?altra ga:interpretsReference ?r ; ga:targetsPlace ?l ; ga:hasFocalizer ?f ; ga:adoptedByProject true .
+              FILTER (?altra != $this)
+            }
+        """ ;
+    ] .

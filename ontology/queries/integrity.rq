@@ -85,11 +85,15 @@ SELECT ?route WHERE {
 }
 
 
-# ==== IQ8 — Entita' di gazetteer senza coordinate (atteso: 0) ====
+# ==== IQ8 — Entita' di gazetteer usate come ancora senza coordinate (atteso: 0) ====
+# Un'entita' senza coordinate e' ammessa se non e' ancora di alcuna
+# interpretazione: bersaglio di identificazioni non adottate o di attestazioni
+# nel repertorio (D-087). Un'ancora senza coordinate non darebbe posizione.
 PREFIX ga: <https://w3id.org/chora#>
 PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
 SELECT ?gaz WHERE {
   ?gaz a ga:GazetteerEntity .
+  ?si ga:anchorsToEntity ?gaz .
   FILTER NOT EXISTS { ?gaz geo:lat ?lat }
 }
 
@@ -276,10 +280,10 @@ SELECT ?variante ?soggetto ?valore WHERE {
 }
 ORDER BY ?variante
 
-# ==== IQ20 — Piu' interpretazioni adottate per occorrenza, luogo e focalizzatore (AVVERTENZA: 6 terne note, docs/alignment/TERNE_IQ20.md) ====
+# ==== IQ20 — Piu' interpretazioni adottate per occorrenza, luogo e focalizzatore (atteso: 0, Violation dal D-087) ====
 # Al piu' una interpretazione adottata per (occorrenza, luogo, focalizzatore)
-# (D-070). Le 6 terne di doppio ancoraggio o doppio ruolo attendono la decisione
-# di Lorenzo; finche' non sono risolte, la query e' un'avvertenza.
+# (D-070). Le terne di TERNE_IQ20.md sono risolte (D-072, D-087): la regola e'
+# anche una Violation SHACL (shape 25).
 PREFIX ga: <https://w3id.org/chora#>
 SELECT ?occorrenza ?luogo ?focalizzatore (COUNT(?si) AS ?n) WHERE {
   ?si ga:interpretsReference ?occorrenza ; ga:targetsPlace ?luogo ;

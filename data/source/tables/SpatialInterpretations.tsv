@@ -469,8 +469,7 @@ interp_00469	ref_00400	tenenza_carabinieri_marino	gaz_marino	santarella	setting	
 interp_00470	ref_00401	torraccio	gaz_torraccio	santarella				routenode	tragitto_santarella_torraccio_divino_amore	1		lorenzo_sabatino							si				
 interp_00471	ref_00402	frattocchie	gaz_frattocchie	santarella				routenode	tragitto_santarella_torraccio_divino_amore	2		lorenzo_sabatino							si				
 interp_00472	ref_00403	robine_vecchie		santarella				routenode	tragitto_santarella_torraccio_divino_amore	3	0.5	lorenzo_sabatino					gaz_frattocchie|gaz_due_santi	between	si				
-interp_00474	ref_00404	cassero	gaz_frattocchie	santarella			near	routenode	tragitto_santarella_torraccio_divino_amore	4	0.5	lorenzo_sabatino			Possibile referente: Castello della Castelluccia, circa 41.7443, 12.6165				si				
-interp_00475	ref_00404	cassero	gaz_pavona	santarella			near	routenode	tragitto_santarella_torraccio_divino_amore	4	0.5	lorenzo_sabatino			Possibile referente: Castello della Castelluccia, circa 41.7443, 12.6165				si				
+interp_00474	ref_00404	cassero	gaz_frattocchie|gaz_divino_amore	santarella			near	routenode	tragitto_santarella_torraccio_divino_amore	4	0.5	lorenzo_sabatino			Possibile referente: Castello della Castelluccia, circa 41.7443, 12.6165				si				
 interp_00476	ref_00405	ponte_divino_amore	gaz_ponte_divino_amore	santarella				routenode	tragitto_santarella_torraccio_divino_amore	5		lorenzo_sabatino							si				
 interp_00477	ref_00406	tragitto_santarella_torraccio_divino_amore		santarella	route	approximate						lorenzo_sabatino							si				
 interp_00478	ref_00407	milano	gaz_milano	santarella	projectedspace	indeterminate						lorenzo_sabatino							si				
@@ -959,3 +958,4 @@ interp_00963	ref_00728	tragitto_sogno_casal_bruciato_campo_morto		pestalozzi	rou
 interp_00964	ref_00729	tragitto_castel_di_leva_casal_bruciato		camilla_mattonari	route							lorenzo_sabatino	2026-10-09	close_reading					si				
 interp_00965	ref_00731	sacro_cuore	gaz_sacro_cuore	luigia_zanchetti	marker	approximate						lorenzo_sabatino	2026-10-10						si				
 interp_00966	ref_00732	via_merulana	gaz_via_merulana	narrator	marker	approximate						lorenzo_sabatino	2026-10-10	close_reading	Titolo gridato dagli strilloni: via Merulana nominata come riferimento del delitto, non scena dell'azione; ruolo proposto (D-075).				si				
+interp_00967	ref_00736	osteriuccia_bivio	gaz_frattocchie|gaz_via_appia|gaz_divino_amore	cocullo	marker	relative	near					lorenzo_sabatino	2026-10-10	close_reading	"Ancore ai toponimi riconoscibili più prossimi, secondo Terzoli 2015, p. 776: «nei pressi delle Frattocchie […] proprio su un bivio tra l'Appia Antica e la strada per il santuario del Divino Amore, è registrata un'""Osteria""». gaz_via_appia è la via Appia, senza distinzione fra Antica e Nuova (D-087)."				si				
