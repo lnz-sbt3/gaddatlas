@@ -11014,6 +11014,8 @@ chora:witnessType a owl:ObjectProperty ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00472> ;
     chora:adoptedByProject true ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_due_santi>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_frattocchie> ;
     chora:confidence 0.5 ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/santarella> ;
     chora:hasRelationalAnchoring <https://w3id.org/gaddatlas/id/relanchor/interp_00472> ;
@@ -17322,6 +17324,14 @@ chora:RelatedTo a owl:NamedIndividual,
     skos:inScheme chora:SpatialRelationTypeScheme ;
     skos:prefLabel "Related to"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+chora:SuspendedWithReason a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "sospensione motivata"@it ;
+    skos:definition "The anchoring is deliberately suspended, for a stated reason (chora:localizationReason)."@en ;
+    skos:inScheme chora:LocalizationStatusScheme ;
+    skos:prefLabel "Suspended with reason"@en ;
+    skos:topConceptOf chora:LocalizationStatusScheme .
 
 chora:Threshold a owl:NamedIndividual,
         skos:Concept ;
@@ -41258,14 +41268,6 @@ chora:Railway_line a owl:NamedIndividual,
     skos:prefLabel "Railway line"@en ;
     skos:topConceptOf chora:PlaceCategoryScheme .
 
-chora:SuspendedWithReason a owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "sospensione motivata"@it ;
-    skos:definition "The anchoring is deliberately suspended, for a stated reason (chora:localizationReason)."@en ;
-    skos:inScheme chora:LocalizationStatusScheme ;
-    skos:prefLabel "Suspended with reason"@en ;
-    skos:topConceptOf chora:LocalizationStatusScheme .
-
 chora:Typescript a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "dattiloscritto"@it ;
@@ -43356,9 +43358,7 @@ chora:village a owl:NamedIndividual,
     dcterms:description "Robine Vecchie è un microtoponimo gaddiano non identificato, forse deformazione di un nome locale o denominazione fantastica applicata al paesaggio reale di Frattocchie–Due Santi."@it ;
     chora:hasPlaceCategory chora:locality ;
     chora:hasRealityStatus chora:Transformed ;
-    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> ;
-    chora:localizationReason "Solo ancoraggio relazionale: il passo colloca le Robine Vecchie fra Frattocchie e Due Santi (QPa 169), senza una posizione. Toponimo «non registrato nelle carte topografiche» (Terzoli 2015, p. 491)."@it ;
-    chora:localizationStatus chora:SuspendedWithReason .
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/rocca_di_papa> a chora:NarrativePlace ;
     rdfs:label "Rocca di Papa"@it ;
@@ -52187,29 +52187,6 @@ chora:historical_building a owl:NamedIndividual,
     skos:prefLabel "Historical building"@en ;
     skos:topConceptOf chora:PlaceCategoryScheme .
 
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_frattocchie> a chora:GazetteerEntity ;
-    rdfs:label "Frattocchie"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "coordinates": [
-          12.616317604540413,
-          41.766863233033725
-        ],
-        "type": "Point"
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 41.766863233033725 ;
-    geo1:long 12.616317604540413 ;
-    chora:presentLocation "Frazione"@it .
-
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_pavona> a chora:GazetteerEntity ;
     rdfs:label "Pavona"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -52295,6 +52272,29 @@ chora:mountain a owl:NamedIndividual,
     skos:inScheme chora:PlaceCategoryScheme ;
     skos:prefLabel "Mountain"@en ;
     skos:topConceptOf chora:PlaceCategoryScheme .
+
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_frattocchie> a chora:GazetteerEntity ;
+    rdfs:label "Frattocchie"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          12.616317604540413,
+          41.766863233033725
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 41.766863233033725 ;
+    geo1:long 12.616317604540413 ;
+    chora:presentLocation "Frazione"@it .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_della_falcognana> a chora:GazetteerEntity ;
     rdfs:label "Via della Falcognana"@it ;
@@ -52530,7 +52530,7 @@ chora:EncodingActivity a owl:Class ;
     skos:prefLabel "Encoding activity"@en .
 
 chora:RelationalAnchoring a owl:Class ;
-    rdfs:comment "The placement of a narrative place relative to one or more geographic entities («between», «near»), as stated by a passage. It produces no geometry: a place without an adopted position stays off the map, with its relational anchoring."@en ;
+    rdfs:comment "How a passage places a narrative place relative to one or more geographic entities («between», «near», «adjacent to»). The relata qualify the anchors of the place, they do not replace them: when the interpretation has no direct anchor, the gazetteer relata are its anchors, and the place is positioned from them (D-084). No annotated place is left out of the interface."@en ;
     skos:altLabel "Ancoraggio relazionale"@it ;
     skos:prefLabel "Relational anchoring"@en .
 
@@ -52936,6 +52936,15 @@ chora:Draft a owl:NamedIndividual,
     chora:characterName "Santarella"@it ;
     chora:hasGender "male"^^xsd:string .
 
+chora:Indeterminate a owl:NamedIndividual,
+        skos:Concept ;
+    owl:differentFrom chora:Precise,
+        chora:Relative ;
+    skos:altLabel "Indeterminata"@it ;
+    skos:inScheme chora:SpatialDeterminationScheme ;
+    skos:prefLabel "Indeterminate"@en ;
+    skos:topConceptOf chora:SpatialDeterminationScheme .
+
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_due_santi> a chora:GazetteerEntity ;
     rdfs:label "Due Santi"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -52957,15 +52966,6 @@ chora:Draft a owl:NamedIndividual,
 }"""^^geosparql:geoJSONLiteral ] ;
     geo1:lat 41.76118209967858 ;
     geo1:long 12.616571382457442 .
-
-chora:Indeterminate a owl:NamedIndividual,
-        skos:Concept ;
-    owl:differentFrom chora:Precise,
-        chora:Relative ;
-    skos:altLabel "Indeterminata"@it ;
-    skos:inScheme chora:SpatialDeterminationScheme ;
-    skos:prefLabel "Indeterminate"@en ;
-    skos:topConceptOf chora:SpatialDeterminationScheme .
 
 <https://w3id.org/gaddatlas/id/chapter/capitolo_II> a chora:Chapter ;
     dcterms:title "Capitolo II"@it ;

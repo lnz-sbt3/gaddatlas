@@ -10449,6 +10449,8 @@
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00472> ;
     chora:adoptedByProject true ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_due_santi>,
+        <https://w3id.org/gaddatlas/id/gazetteer/gaz_frattocchie> ;
     chora:confidence 0.5 ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/santarella> ;
     chora:hasRelationalAnchoring <https://w3id.org/gaddatlas/id/relanchor/interp_00472> ;
@@ -42048,9 +42050,7 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     dcterms:description "Robine Vecchie è un microtoponimo gaddiano non identificato, forse deformazione di un nome locale o denominazione fantastica applicata al paesaggio reale di Frattocchie–Due Santi."@it ;
     chora:hasPlaceCategory chora:locality ;
     chora:hasRealityStatus chora:Transformed ;
-    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> ;
-    chora:localizationReason "Solo ancoraggio relazionale: il passo colloca le Robine Vecchie fra Frattocchie e Due Santi (QPa 169), senza una posizione. Toponimo «non registrato nelle carte topografiche» (Terzoli 2015, p. 491)."@it ;
-    chora:localizationStatus chora:SuspendedWithReason .
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/rocca_di_papa> a chora:NarrativePlace ;
     rdfs:label "Rocca di Papa"@it ;
@@ -50315,29 +50315,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_frattocchie> a chora:GazetteerEntity ;
-    rdfs:label "Frattocchie"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "coordinates": [
-          12.616317604540413,
-          41.766863233033725
-        ],
-        "type": "Point"
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 41.766863233033725 ;
-    geo1:long 12.616317604540413 ;
-    chora:presentLocation "Frazione"@it .
-
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_pavona> a chora:GazetteerEntity ;
     rdfs:label "Pavona"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -50397,6 +50374,29 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 
 <https://w3id.org/gaddatlas/id/route/tragitto_viminale_merulana> a chora:NarrativeRoute ;
     chora:hasRouteType chora:CompletedRoute .
+
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_frattocchie> a chora:GazetteerEntity ;
+    rdfs:label "Frattocchie"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          12.616317604540413,
+          41.766863233033725
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 41.766863233033725 ;
+    geo1:long 12.616317604540413 ;
+    chora:presentLocation "Frazione"@it .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_della_falcognana> a chora:GazetteerEntity ;
     rdfs:label "Via della Falcognana"@it ;

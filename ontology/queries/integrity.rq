@@ -288,3 +288,17 @@ SELECT ?occorrenza ?luogo ?focalizzatore (COUNT(?si) AS ?n) WHERE {
 GROUP BY ?occorrenza ?luogo ?focalizzatore
 HAVING (COUNT(?si) > 1)
 ORDER BY ?occorrenza
+
+
+# ==== IQ21 — Luogo annotato senza ancora (atteso: 0, Violation) ====
+# Ogni NarrativePlace con un'interpretazione adottata ha almeno un'ancora:
+# diretta, ereditata con isPartOf, da un'identificazione adottata, o dai termini
+# relazionali (che l'ETL scrive come ancore quando non ce ne sono di dirette).
+# Nessun luogo annotato esce dall'interfaccia (D-084).
+PREFIX ga: <https://w3id.org/chora#>
+SELECT DISTINCT ?luogo WHERE {
+  ?si ga:targetsPlace ?luogo ; ga:adoptedByProject true .
+  FILTER NOT EXISTS { ?luogo ga:isPartOf* ?q . ?s2 ga:targetsPlace ?q ; ga:anchorsToEntity ?e }
+  FILTER NOT EXISTS { ?luogo ga:isPartOf* ?q2 . ?q2 ga:identifiedWith ?g }
+}
+ORDER BY ?luogo

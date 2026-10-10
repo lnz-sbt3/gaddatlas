@@ -1460,12 +1460,14 @@ chora:appearsInWitness a owl:ObjectProperty ;
 # una posizione. E' distinto dalla referenza plurale (un passo che nomina piu'
 # luoghi: un riferimento per luogo) e dall'identificazione contesa (letture
 # alternative dello stesso referente: chora:IdentificationAssertion).
-# Regola di geometria: un luogo prende geometria solo dalla posizione adottata
-# (chora:anchorsToEntity); gli ancoraggi relazionali non producono un punto.
+# Regola (corretta da D-084): l'ancoraggio relazionale qualifica le ancore, non
+# le sostituisce. I termini (relata) che sono entita' del gazetteer sono ancore
+# del luogo quando l'interpretazione non ne ha di dirette; nessun luogo annotato
+# resta fuori dall'interfaccia.
 # =============================================================================
 
 chora:RelationalAnchoring a owl:Class ;
-    rdfs:comment "The placement of a narrative place relative to one or more geographic entities («between», «near»), as stated by a passage. It produces no geometry: a place without an adopted position stays off the map, with its relational anchoring."@en ;
+    rdfs:comment "How a passage places a narrative place relative to one or more geographic entities («between», «near», «adjacent to»). The relata qualify the anchors of the place, they do not replace them: when the interpretation has no direct anchor, the gazetteer relata are its anchors, and the place is positioned from them (D-084). No annotated place is left out of the interface."@en ;
     skos:altLabel "Ancoraggio relazionale"@it ;
     skos:prefLabel "Relational anchoring"@en .
 

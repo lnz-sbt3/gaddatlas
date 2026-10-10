@@ -993,6 +993,11 @@ class GaddaETL:
                             raise ValueError(f"Interpretation {interp_id}: termine {gid!r} "
                                              "assente dal gazetteer e dai luoghi narrativi")
                         self.graph.add((node, CHORA.relatum, rel))
+                        # D-084: senza ancore dirette, i termini del gazetteer sono le
+                        # ancore dell'interpretazione (nessun luogo fuori dall'interfaccia)
+                        if not has_value(row.get('Anchors_To_Entity_ID')) and \
+                                gid in self.id_cache['GazetteerEntity_ID']:
+                            self.graph.add((interp_uri, CHORA.anchorsToEntity, rel))
 
                 # *** VOCE NARRANTE (D-049, T-36): chi parla, distinto da chi
                 # percepisce. Facoltativa: l'assenza vale «non annotato». ***

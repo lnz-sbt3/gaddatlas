@@ -1162,6 +1162,7 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 - File toccati (manifest): `ontology/chora.ttl` r. 1414–1454 (sezione «Ancoraggio relazionale»; `chora:Between` nello schema); `ontology/shapes/chora-shapes.ttl` r. 90 (`Between` ammesso), r. 588–613 (shape 17); `data/source/mapping.yaml` r. 190, r. 419–423; `tools/etl.py` r. 949–970; `tools/build_geojson.py` r. 213–223 (`Q_OFF_MAP_INFO`), r. 485–495 (regola fuori carta), r. 690–715 (`offMap`), r. 868; `data/source/tables/SpatialInterpretations.tsv` (due colonne, 12 righe, una eliminata), `NarrativePlaces.tsv` (Robine Vecchie: stato e motivo); XLSX corrispondenti.
 - Effetto su KG (triple prima/dopo, SHACL): TBox 1.158 → **1.187**; ABox 27.136 → **27.144**; full 28.864 → **28.901**. SHACL conforme, 52 avvertenze; IQ1–IQ17 a 0 (IQ9 informativa: 13). Test dell'app 5/5.
 
+- **Correzione (D-084, 10/10/2026):** lo stato «fuori carta» (`offMap`) era un errore. Nessun luogo annotato esce dall'interfaccia: i termini relazionali del gazetteer sono le ancore di un'interpretazione che non ne ha di dirette, e Robine Vecchie si posiziona da Frattocchie e Due Santi. Elenco `offMap` e sospensione motivata di Robine tolti; controlli permanenti in D-084.
 ---
 
 ## D-058 — Soglia, frontalità, confine; edicola adiacente all'orto (9 ottobre 2026)
@@ -1619,6 +1620,25 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 - Fase in cui è maturata: revisione critica
 - File toccati (manifest): nessuno nei dati; `docs/thesis/DATA_CHECKS_GaddAtlas.md`, work order.
 - Effetto su KG: nessuno.
+
+---
+
+## D-084 — Nessun luogo annotato fuori dall'interfaccia (corregge D-057) (10 ottobre 2026)
+
+- Requisito/i: R04, R11 · Ipotesi: — · Data check: — (AUDIT_3, blocco F; decisione 9 di Lorenzo)
+- Stato precedente: D-057 toglieva da carta e rilievo un luogo interpretato senza ancora diretta e lo metteva in un elenco `offMap`. Robine Vecchie (ancoraggio relazionale Between, senza ancore) era assente dall'interfaccia, con stato «sospensione motivata».
+- Decisione (di Lorenzo, 10/10/2026): «senza coordinate» non vuol dire «fuori dall'interfaccia». Transformed, Invented e Imagined compaiono nel Diagramma con il loro glifo, posizionati dalle ancore.
+  - **Regola:** l'ancoraggio relazionale qualifica le ancore, non le sostituisce. **Quando l'interpretazione non ha un'ancora diretta**, i termini relazionali che sono entità del gazetteer diventano le sue ancore (`chora:anchorsToEntity`, scritte dall'ETL). Oggi l'unico caso è Robine Vecchie (gaz_frattocchie, gaz_due_santi, Between), che si posiziona come tevere_biferno. Aliciaro, bivio e Casal Bruciato, che hanno ancore dirette, non cambiano (decisione 9). Definizione di `chora:RelationalAnchoring` e commento della sezione riscritti; nota di correzione in D-057;
+  - **Robine Vecchie:** tolti `SuspendedWithReason` e il motivo. L'incertezza sul nome resta in U-0004 e nelle letture di Terzoli (D-087);
+  - **adapter:** tolti la regola `off_map`, l'elenco `offMap` del GeoJSON e la query che lo alimentava. Un luogo interpretato senza ancore fa fallire il build; `excludedUnanchored` vale sempre 0.
+- **Controlli permanenti:**
+  - (a) **IQ21** e shape 23 (`AnnotatedPlaceAnchorShape`, SHACL-SPARQL, **Violation**): ogni luogo con un'interpretazione adottata ha almeno un'ancora (diretta, ereditata con `isPartOf`, da identificazione adottata). Provata togliendo le ancore di Robine: non conforme;
+  - (b) `audit_alignment.py`: ogni luogo annotato compare nel GeoJSON (tessera propria o tessera dell'ancora primaria), altrimenti `make audit` fallisce. Oggi 296 su 296;
+  - (c) `audit_alignment.py`: nessun elenco `offMap` nel GeoJSON.
+- App: nessun codice usava `offMap`.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `ontology/chora.ttl` (sezione «Ancoraggio relazionale», `chora:RelationalAnchoring`); `tools/etl.py` (termini relazionali come ancore); `tools/build_geojson.py` (regola `off_map` e `Q_OFF_MAP_INFO` tolte, controllo bloccante); `tools/audit_alignment.py` (controlli b, c); `ontology/queries/integrity.rq` (IQ21); `ontology/shapes/chora-shapes.ttl` (shape 23); `data/source/tables/NarrativePlaces.tsv` (Robine Vecchie), `NarrativePlaces.xlsx`; `docs/DECISIONS.md` (nota in D-057).
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.473 invariata; ABox 40.507 invariata (+2 ancore, −2 triple di stato); full 42.550. Feature **300 → 301** (Robine Vecchie torna in carta); righe di rilievo 926 → **927**. SHACL conforme, 0 risultati; IQ21 = 0, IQ20 = 1.
 
 ---
 

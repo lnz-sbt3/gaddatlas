@@ -2077,7 +2077,7 @@
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
-        "@value": "The placement of a narrative place relative to one or more geographic entities («between», «near»), as stated by a passage. It produces no geometry: a place without an adopted position stays off the map, with its relational anchoring."
+        "@value": "How a passage places a narrative place relative to one or more geographic entities («between», «near», «adjacent to»). The relata qualify the anchors of the place, they do not replace them: when the interpretation has no direct anchor, the gazetteer relata are its anchors, and the place is positioned from them (D-084). No annotated place is left out of the interface."
       },
       "skos:altLabel": {
         "@language": "it",

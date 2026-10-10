@@ -92,7 +92,7 @@
    ],
    "generatorCount": 223,
    "peripheralCount": 30,
-   "excludedUnanchored": 1,
+   "excludedUnanchored": 0,
    "bbox": {
     "minX": -52088.754,
     "maxX": 85484.375,
@@ -117,8 +117,8 @@
    "chapters": 10,
    "agents": 83,
    "derivedSequences": 103,
-   "reliefRows": 926,
-   "ownTiles": 47
+   "reliefRows": 927,
+   "ownTiles": 48
   }
  },
  "gazetteer": [
@@ -172,10 +172,10 @@
    "presentLocation": null,
    "historicalLocation": null,
    "distanceFromRomeKm": 18.6,
-   "refCountAnchored": 53,
+   "refCountAnchored": 54,
    "planeCount": 21,
    "interpCount": 30,
-   "narrativePlaceCount": 5,
+   "narrativePlaceCount": 6,
    "densityClass": "hub",
    "densityLevel": 5
   },
@@ -248,10 +248,10 @@
    "presentLocation": "Frazione",
    "historicalLocation": null,
    "distanceFromRomeKm": 18.1,
-   "refCountAnchored": 12,
+   "refCountAnchored": 13,
    "planeCount": 10,
    "interpCount": 11,
-   "narrativePlaceCount": 2,
+   "narrativePlaceCount": 3,
    "densityClass": "nodale",
    "densityLevel": 4
   },
@@ -12521,11 +12521,20 @@
    "partOf": null,
    "interpCount": 1,
    "planeCount": 1,
-   "targets": [],
+   "targets": [
+    {
+     "gazetteerId": "gaz_due_santi",
+     "weight": 0.5
+    },
+    {
+     "gazetteerId": "gaz_frattocchie",
+     "weight": 0.5
+    }
+   ],
    "roles": [],
    "determinations": [],
    "anchorInherited": false,
-   "multiTarget": false,
+   "multiTarget": true,
    "densityClass": "hapax"
   },
   {
@@ -23067,7 +23076,7 @@
    "referenceId": "ref_00403",
    "narrativePlaceId": "robine_vecchie",
    "routeId": null,
-   "gazetteerId": null,
+   "gazetteerId": "gaz_due_santi",
    "narrativeRole": null,
    "spatialDetermination": null,
    "spatialRelation": null,
@@ -38768,8 +38777,8 @@
      "order": 3,
      "interpretationId": "interp_00472",
      "narrativePlaceId": "robine_vecchie",
-     "gazetteerId": null,
-     "targetId": null,
+     "gazetteerId": "gaz_due_santi",
+     "targetId": "robine_vecchie",
      "focalizerId": "santarella",
      "referenceId": "ref_00403",
      "page": 169
@@ -38833,7 +38842,9 @@
     },
     {
      "order": 3,
-     "targetIds": [],
+     "targetIds": [
+      "robine_vecchie"
+     ],
      "focalizerIds": [
       "santarella"
      ],
@@ -46422,9 +46433,9 @@
    "agentName": "Santarella",
    "chapterId": "capitolo_VI",
    "chapter": 6,
-   "length": 32,
-   "distinctTargets": 22,
-   "dispersion": 0.688,
+   "length": 33,
+   "distinctTargets": 23,
+   "dispersion": 0.697,
    "pageRange": [
     155,
     175
@@ -46487,6 +46498,16 @@
      "narrativePlaceId": "frattocchie",
      "gazetteerId": "gaz_frattocchie",
      "interpretationId": "interp_00471",
+     "role": null,
+     "simultaneous": true
+    },
+    {
+     "page": 169,
+     "referenceId": "ref_00403",
+     "targetId": "robine_vecchie",
+     "narrativePlaceId": "robine_vecchie",
+     "gazetteerId": "gaz_due_santi",
+     "interpretationId": "interp_00472",
      "role": null,
      "simultaneous": true
     },
@@ -56878,6 +56899,18 @@
    "targetId": "gaz_frattocchie",
    "interpretationId": "interp_00471",
    "referenceId": "ref_00402",
+   "page": 169,
+   "chapter": 6,
+   "agentId": "santarella",
+   "role": null,
+   "determination": null,
+   "criticalNote": null,
+   "isRouteNode": "tragitto_santarella_torraccio_divino_amore"
+  },
+  {
+   "targetId": "robine_vecchie",
+   "interpretationId": "interp_00472",
+   "referenceId": "ref_00403",
    "page": 169,
    "chapter": 6,
    "agentId": "santarella",

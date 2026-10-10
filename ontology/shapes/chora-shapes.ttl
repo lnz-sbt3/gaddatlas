@@ -834,3 +834,26 @@ ga:ReifiedTypeShape
             }
         """ ;
     ] .
+
+
+# =============================================================================
+# SHAPE 23 — Nessun luogo annotato senza ancora (D-084, corregge D-057)
+# =============================================================================
+
+ga:AnnotatedPlaceAnchorShape
+    a sh:NodeShape ;
+    sh:targetClass ga:NarrativePlace ;
+    sh:severity sh:Violation ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Luogo annotato senza ancora: non comparirebbe nell'interfaccia (D-084)." ;
+        sh:prefixes ga: ;
+        sh:select """
+            PREFIX ga: <https://w3id.org/chora#>
+            SELECT $this WHERE {
+              ?si ga:targetsPlace $this ; ga:adoptedByProject true .
+              FILTER NOT EXISTS { $this ga:isPartOf* ?q . ?s2 ga:targetsPlace ?q ; ga:anchorsToEntity ?e }
+              FILTER NOT EXISTS { $this ga:isPartOf* ?q2 . ?q2 ga:identifiedWith ?g }
+            }
+        """ ;
+    ] .
