@@ -107,6 +107,7 @@ Ogni voce rinvia ai task del work order (`docs/thesis/GaddAtlas_Cap4_Allineament
 - [x] **Ditta Ciurlani**: Terzoli 2015, pp. 433–435, 644 (D-087)
 - [x] **Fuori carta** (`offMap`, D-057): eliminato; nessun luogo annotato fuori dall'interfaccia (D-084)
 - [x] **Grassadonia, Lagossi, Marchetti** (glm_1997a) e **pagina QPL di «Marino»** (RR II, p. 324) (D-086, D-087)
+- [x] **Verifica visiva della fase 3**: Robine Vecchie, Cassero e osteriuccia nel Diagramma presso le loro ancore. Lo slittamento di otto tessere dell'anello dei Castelli (0,11% e 0,24% di pixel, stadi 2 e 3) è accettato come effetto del layout radiale; catture in `docs/alignment/verifica_fase3/` (D-084)
 - [ ] **Nota al testo di Pinotti 2018**: pagina per la derivazione QPa ← QP (D-073)
 - [ ] **Identificatori esterni** delle entità del gazetteer (Wikidata, GeoNames; T-46, D-071)
 - [ ] **Anno di Terzoli 2008** (Terzoli 2015 lo cita come 2007 e 2008) e riferimento completo (D-086)

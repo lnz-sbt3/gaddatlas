@@ -34,7 +34,9 @@ coordinate, nessuna usata come ancora), 958 interpretazioni (tutte adottate), 73
 occorrenze (730 nel testimone di riferimento QPa), 21 percorsi tipizzati, 416
 letture attribuite (158 esplicite in `Assertions.tsv`, 258 statuti generati
 dall'ETL), 5 testimoni (QPL, dtsFG, bzFG, QP, QPa), 18 fonti, 12 agenti. 302
-feature; **nessun luogo annotato fuori dall'interfaccia** (297 su 297, D-084).
+feature; **nessun luogo annotato fuori dall'interfaccia** (297 su 297, D-084);
+verifica visiva della fase 3 chiusa (D-084: lo slittamento lungo l'arco delle
+tessere vicine a un host che riceve satelliti è l'effetto atteso del layout radiale).
 SHACL conforme senza risultati; IQ20 = 0, IQ21 = 0. Il modello delle letture è
 descritto in `docs/MODELLO_LETTURE.md`.
 Ogni task che cambia questi valori ne dà conto nella sua voce di
