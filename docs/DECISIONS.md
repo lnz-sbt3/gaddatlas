@@ -1162,6 +1162,7 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 - File toccati (manifest): `ontology/chora.ttl` r. 1414–1454 (sezione «Ancoraggio relazionale»; `chora:Between` nello schema); `ontology/shapes/chora-shapes.ttl` r. 90 (`Between` ammesso), r. 588–613 (shape 17); `data/source/mapping.yaml` r. 190, r. 419–423; `tools/etl.py` r. 949–970; `tools/build_geojson.py` r. 213–223 (`Q_OFF_MAP_INFO`), r. 485–495 (regola fuori carta), r. 690–715 (`offMap`), r. 868; `data/source/tables/SpatialInterpretations.tsv` (due colonne, 12 righe, una eliminata), `NarrativePlaces.tsv` (Robine Vecchie: stato e motivo); XLSX corrispondenti.
 - Effetto su KG (triple prima/dopo, SHACL): TBox 1.158 → **1.187**; ABox 27.136 → **27.144**; full 28.864 → **28.901**. SHACL conforme, 52 avvertenze; IQ1–IQ17 a 0 (IQ9 informativa: 13). Test dell'app 5/5.
 
+- **Correzione (D-084, 10/10/2026):** lo stato «fuori carta» (`offMap`) era un errore. Nessun luogo annotato esce dall'interfaccia: i termini relazionali del gazetteer sono le ancore di un'interpretazione che non ne ha di dirette, e Robine Vecchie si posiziona da Frattocchie e Due Santi. Elenco `offMap` e sospensione motivata di Robine tolti; controlli permanenti in D-084.
 ---
 
 ## D-058 — Soglia, frontalità, confine; edicola adiacente all'orto (9 ottobre 2026)
@@ -1619,6 +1620,131 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 - Fase in cui è maturata: revisione critica
 - File toccati (manifest): nessuno nei dati; `docs/thesis/DATA_CHECKS_GaddAtlas.md`, work order.
 - Effetto su KG: nessuno.
+
+---
+
+## D-084 — Nessun luogo annotato fuori dall'interfaccia (corregge D-057) (10 ottobre 2026)
+
+- Requisito/i: R04, R11 · Ipotesi: — · Data check: — (AUDIT_3, blocco F; decisione 9 di Lorenzo)
+- Stato precedente: D-057 toglieva da carta e rilievo un luogo interpretato senza ancora diretta e lo metteva in un elenco `offMap`. Robine Vecchie (ancoraggio relazionale Between, senza ancore) era assente dall'interfaccia, con stato «sospensione motivata».
+- Decisione (di Lorenzo, 10/10/2026): «senza coordinate» non vuol dire «fuori dall'interfaccia». Transformed, Invented e Imagined compaiono nel Diagramma con il loro glifo, posizionati dalle ancore.
+  - **Regola:** l'ancoraggio relazionale qualifica le ancore, non le sostituisce. **Quando l'interpretazione non ha un'ancora diretta**, i termini relazionali che sono entità del gazetteer diventano le sue ancore (`chora:anchorsToEntity`, scritte dall'ETL). Oggi l'unico caso è Robine Vecchie (gaz_frattocchie, gaz_due_santi, Between), che si posiziona come tevere_biferno. Aliciaro, bivio e Casal Bruciato, che hanno ancore dirette, non cambiano (decisione 9). Definizione di `chora:RelationalAnchoring` e commento della sezione riscritti; nota di correzione in D-057;
+  - **Robine Vecchie:** tolti `SuspendedWithReason` e il motivo. L'incertezza sul nome resta in U-0004 e nelle letture di Terzoli (D-087);
+  - **adapter:** tolti la regola `off_map`, l'elenco `offMap` del GeoJSON e la query che lo alimentava. Un luogo interpretato senza ancore fa fallire il build; `excludedUnanchored` vale sempre 0.
+- **Controlli permanenti:**
+  - (a) **IQ21** e shape 23 (`AnnotatedPlaceAnchorShape`, SHACL-SPARQL, **Violation**): ogni luogo con un'interpretazione adottata ha almeno un'ancora (diretta, ereditata con `isPartOf`, da identificazione adottata). Provata togliendo le ancore di Robine: non conforme;
+  - (b) `audit_alignment.py`: ogni luogo annotato compare nel GeoJSON (tessera propria o tessera dell'ancora primaria), altrimenti `make audit` fallisce. Oggi 296 su 296;
+  - (c) `audit_alignment.py`: nessun elenco `offMap` nel GeoJSON.
+- App: nessun codice usava `offMap`.
+- **Verifica visiva** (a fine fase 3, sul build con i blocchi F–E; accettata da Lorenzo il 10/10/2026). Diagramma, focalizzatore «tutti», capitolo 10, vista spostata in basso perché il canvas taglia l'anello esterno.
+  - Robine Vecchie, il Cassero e l'osteriuccia compaiono come satelliti presso le loro ancore (Frattocchie, Divino Amore), con il glifo dello statuto. Il glifo compare dallo stadio 3/5, il primo che mostra i luoghi fittizi.
+  - Rispetto a `main` cambia lo **0,11%** dei pixel allo stadio 2 e lo **0,24%** allo stadio 3 (soglia 24 sul canale massimo). Le differenze stanno tutte nel settore dei Castelli: **otto tessere dello stesso anello esterno scivolano lungo l'arco** di pochi pixel; nessuna cambia anello, nessuna fuori da quel settore si muove.
+  - **Causa:** ogni satellite allarga il blocco del suo host (`groupRadius`), e `packRingAngles` ridistribuisce gli angoli dell'anello (`app/src/model/radial-layout.js`). È l'effetto atteso del layout radiale: **nessuna modifica al layout**.
+  - Catture di confronto in `docs/alignment/verifica_fase3/`: `main_s{2,3}.png`, `fase3_s{2,3}.png` e i dettagli del settore `settore_castelli_s{2,3}.png` (sopra `main`, sotto la fase 3).
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `ontology/chora.ttl` (sezione «Ancoraggio relazionale», `chora:RelationalAnchoring`); `tools/etl.py` (termini relazionali come ancore); `tools/build_geojson.py` (regola `off_map` e `Q_OFF_MAP_INFO` tolte, controllo bloccante); `tools/audit_alignment.py` (controlli b, c); `ontology/queries/integrity.rq` (IQ21); `ontology/shapes/chora-shapes.ttl` (shape 23); `data/source/tables/NarrativePlaces.tsv` (Robine Vecchie), `NarrativePlaces.xlsx`; `docs/DECISIONS.md` (nota in D-057).
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.473 invariata; ABox 40.507 invariata (+2 ancore, −2 triple di stato); full 42.550. Feature **300 → 301** (Robine Vecchie torna in carta); righe di rilievo 926 → **927**. SHACL conforme, 0 risultati; IQ21 = 0, IQ20 = 1.
+
+---
+
+## D-085 — Tre tipi di lettura per i loci critici; varianti di forma e di sostituzione (10 ottobre 2026)
+
+- Requisito/i: R03, R05, R07 · Ipotesi: — · Data check: — (AUDIT_3, blocco A; decisioni 2 e 5)
+- Decisione (di Lorenzo, 10/10/2026):
+  - **A1, `chora:RepertoryAttestation`:** reifica `chora:attestedInRepertory` (GazetteerEntity → chora:Source). L'atto porta il locatore della carta in `chora:sourcePage`. Materializzata per tutte, perché le attestazioni non sono alternative;
+  - **A2, `chora:NamingAssertion`:** reifica `chora:nameReading` (PlaceReference ∪ NarrativePlace → `chora:NamingMechanismScheme`: Paraetymology, Synecdoche, Paronomasia, IronicLowering, TypoHypothesis, OnomasticPun). Materializzata solo per le adottate. `chora:playsOn` (lettura → GazetteerEntity, facoltativa, colonna `Plays_On`);
+  - **A3, `chora:CommentaryAssertion`:** commento attribuito, senza proprietà reificata e senza valore obbligatorio. `AssertionShape` ammette un valore assente solo per questo tipo; `ReifiedTypeShape` non lo tocca, perché vale solo per i tipi con `reifiesProperty`. Il soggetto può essere anche l'opera (decisione 4);
+  - **A4, `chora:quotation`** (langString, sull'atto): l'estratto breve del critico, colonna `Quotation`;
+  - **varianti** (decisione 2): `chora:variantKind` con due valori, `FormVariant` (stesso luogo, la regola di D-054) e `SubstitutionVariant` (luoghi diversi, ammessa e dichiarata). La colonna `Variant_Kind` (forma / sostituzione) è obbligatoria per le varianti: le 6 esistenti sono «forma». Il controllo dell'audit sullo stesso luogo vale solo per le varianti di forma;
+  - **risposte** (decisione 5): `cito:disagreesWith` (lettura → lettura), colonna `Disagrees_With`; CiTO è dichiarato in locale.
+  Nessuna di queste letture cambia posizione, ancore o visibilità dei luoghi.
+- Controlli: shape 24 (`LociCriticiShape`: `playsOn` verso un'entità del gazetteer, `variantKind` nello schema e obbligatorio per le varianti, `disagreesWith` verso una lettura); `AssertionShape` aggiornata; l'ETL rifiuta un valore mancante fuori dai commenti e un `Variant_Kind` fuori dalle varianti.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `ontology/chora.ttl` (tre tipi nello schema delle asserzioni, sezione «Loci critici» in coda); `ontology/shapes/chora-shapes.ttl` (prefisso `cito:`, `AssertionShape`, shape 24); `tools/etl.py` (tipi, colonne, quotation, materializzazione); `tools/audit_alignment.py` (regola dello stesso luogo solo per «forma»); `data/source/tables/Assertions.tsv` (quattro colonne; `Variant_Kind` = forma sulle 6 varianti); `Assertions.xlsx`; `data/source/mapping.yaml` (documentazione).
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.473 → **1.612**; ABox 40.507 → **40.513**; full 42.550 → **42.695**. SHACL conforme, 0 risultati; IQ21 = 0, IQ20 = 1.
+
+---
+
+## D-086 — Fonti dei loci critici: le guide del Touring come volumi, carte come locatori (10 ottobre 2026)
+
+- Requisito/i: R03 · Ipotesi: — · Data check: DC-03 (AUDIT_3, blocco B; decisioni 10 e 13)
+- Decisione (di Lorenzo, 10/10/2026):
+  - **una fonte per volume, le carte come locatori** (`chora:sourcePage` dell'atto, o della geometria con la nuova colonna `Repertory_Locator` di `Locations.tsv`). Il dominio di `chora:sourcePage` si estende a `geo:Geometry`;
+  - **bertarelli_1924**: Bertarelli, L. V. (1924), *Italia centrale*, vol. I (Guida d'Italia del TCI). Cartine «Colli laziali, Monti Lepini ed Ernici (Roma, Frosinone)», tra pp. 480–481 (Terzoli CART. 2); «Sabina meridionale, Monti Tiburtini, Prenestini e Carseolani», tra pp. 456–457 (CART. 3). **Assorbe `tci_italia_centrale_1`**: la carta di Manzotti per Casal Bruciato (L-0001) è la CART. 2 del 1924 (conferma: Terzoli 2015, p. 766, «C. Abbruciato» sulla cartina del 1924). La geometria di L-0001 ha ora repertorio `bertarelli_1924`, locatore «cart. 2, tra pp. 480–481». **La voce «data della carta TCI» si chiude**;
+  - **bertarelli_1925**: Bertarelli, L. V. (1925), *Roma e dintorni* = *Italia centrale*, vol. IV. Cartine «Roma e dintorni», tra pp. 736–737 (CART. 4); «Colli Albani», tra pp. 758–759 (CART. 1). **Assorbe `tci_guida_1925`**. «TCI, Italia centrale IV, p. 761» di Manzotti 2010 (pp. 239–240) rinvia a questo volume;
+  - **DC-03** (edicola, Manzotti 2010, p. 246): la CART. 1 del 1925 è annotata come candidata (Terzoli 2015, p. 419); la voce resta aperta;
+  - **terzoli_2008**: anno 2008, nota «Terzoli 2015 lo cita come 2007 (p. 419) e 2008 (p. 911), stesse pp. 109–113: anno da verificare»;
+  - **italia_2020** (dalla bibliografia del Cap. 4) e **glm_1997a**: Grassadonia, F., Lagossi, P., & Marchetti, M. (a cura di) (1997a), *Quer pasticciaccio brutto de via Merulana. Strumenti per la lettura* (2 voll.), Garzanti Scuola. Citati di seconda mano in Terzoli 2015, pp. 535–537 (`chora:originalSource`); vale anche per «G.L.M., Commento» citato da Manzotti 2010. **Voce chiusa**;
+  - **Censimento GaddAtlas**: data 2026, autore Lorenzo Sabatino. **Voce chiusa**;
+  - **agenti nuovi**: terzoli (Maria Antonietta Terzoli), italia (Paola Italia), grassadonia (Fabio Grassadonia), lagossi (Paola Lagossi), marchetti (Mario Marchetti).
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `data/source/tables/Sources.tsv` (2 fonti fuse e rinominate, 2 nuove, 2 corrette), `Locations.tsv` (`Repertory_ID`, colonna `Repertory_Locator`), `Agents.tsv` (5 righe); XLSX corrispondenti; `tools/etl.py` (`Repertory_Locator`); `ontology/chora.ttl` (dominio di `chora:sourcePage`); `data/source/mapping.yaml` (documentazione Locations); `docs/thesis/DATA_CHECKS_GaddAtlas.md` (DC-03).
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.612 → **1.618**; ABox 40.513 → **40.553**; full 42.695 → **42.741**. Fonti 16 → **18**, agenti 7 → **12**. SHACL conforme, 0 risultati; IQ21 = 0, IQ20 = 1.
+
+---
+
+## D-087 — Loci critici: 56 letture, osteriuccia del bivio, Cassero, varianti di sostituzione (10 ottobre 2026)
+
+- Requisito/i: R03, R05, R07, R10 · Ipotesi: H1, H3 · Data check: DC-21 (AUDIT_3, blocco C; decisioni 1–8, 11, 12, 14)
+- Decisione (di Lorenzo, 10/10/2026), dal documento «Loci critici – saggi» (estratti brevi in `Quotation`, sempre con pagina):
+  - **letture nuove: 56**:
+
+    | tipo | n. | contenuto |
+    |---|---|---|
+    | attestazioni nel repertorio | 25 | T-0001…T-0025: le 20 della topografia della guida sulla cart. 4 di Bertarelli 1925 (Terzoli 2015, pp. 418–419); Casale Abbruciato sulla cart. 2 del 1924 (p. 766); Ponte di Santa Fumia (p. 911); Fontana di Papa (p. 658, Guida 1924 p. 561); osteria del bivio (p. 776, cart. 1 e 4); Monti Ernici (p. 696) |
+    | identificazioni | 11 | I-0001 Ca' Francesi, I-0002 Tor ser Paolo, I-0003 Fontana di Papa, I-0009 Mappamonno = Palazzo Venezia, I-0011 Vite = ristorante Le Grotte (Terzoli 2015, p. 616): **adottate**. I-0004 osteria, I-0005 caserma di Marino = palazzo Colonna (Manzotti), I-0006 Odescalchi Simonetti (Terzoli), I-0007 De Carolis Simonetti (GLM, cit. in Terzoli), I-0008 De Carolis Simonetti (Pinotti 2025), I-0010 Palazzo Chigi (GLM): non adottate |
+    | commenti | 10 | K-0001 Italia su Robine; K-0002 risposta di Lorenzo, `cito:disagreesWith` K-0001; K-0003 Italia su Frattocchie; K-0004 la topografia della guida (soggetto: l'opera); K-0005 percorso di QPa 297; K-0006 e K-0007 «immaginario» casello e Tor di Gheppio (Terzoli 2015, p. 911; lo statuto non cambia); K-0008 «per fil a dest» (Manzotti, sostituisce la nota «fase 3» di R-0020); K-0009 Marino; K-0010 Castel Porcino |
+    | letture onomastiche | 6 | N-0001…N-0003 tre ipotesi di Terzoli su Robine (refuso ×2, abbassamento ironico; non adottate); N-0004 Castel Porcano, paraetimologia su Castelporziano (`playsOn`); N-0005 Mappamonno, sineddoche (`playsOn` Palazzo Venezia); N-0006 Ciurlani, gioco onomastico |
+    | varianti | 2 | V-0005 QPL «Marino» (RR II, p. 324, nuova occorrenza ref_00734, luogo marino) ↔ fermate del tram di QPa 56; V-0006 dtsFG «da Faraja» (nuova occorrenza ref_00735, **senza luogo**) ↔ «a la Vite». Entrambe **di sostituzione** |
+    | incertezze | 1 | U-0010, Cassero e Sant'Ignazio «non segnalati nelle carte topografiche» (asse nome) |
+    | statuti | 1 | S-osteriuccia_bivio |
+
+  - **osteriuccia del bivio (QPa 239):** nuovo luogo `osteriuccia_bivio`, Transformed. Nuova occorrenza ref_00736 con l'estratto di Lorenzo e forma attestata «osteriuccia del bivio». Interpretazione interp_00967: focalizzatore e ruolo del passo del bivio (ref_00577: Cocullo, marker). Ancore `gaz_frattocchie`, `gaz_via_appia` (la via Appia: il gazetteer non distingue Antica e Nuova) e `gaz_divino_amore`, relazione `near`. Compare nel Diagramma con il suo glifo. Nuova entità `gaz_osteria_bivio_frattocchie`, senza coordinate;
+  - **Cassero:** una sola interpretazione (interp_00474), ancore gaz_frattocchie e gaz_divino_amore, relazione `near`; tolta interp_00475 (Pavona). IQ20 = 0, e ora anche Violation (shape 25). **La voce Sant'Ignazio (DC-21) si chiude**;
+  - **entità senza coordinate:** `gaz_palazzo_colonna_marino`, `gaz_palazzo_de_carolis_simonetti`, `gaz_osteria_bivio_frattocchie`, `gaz_ponte_di_santa_fumia`. Sono bersagli di letture non adottate o di attestazioni; nessuna è un'ancora. Il luogo `ponte_di_santa_fumia` resta ancorato a gaz_quarto_di_santa_fumia. **IQ8** vale ora per le sole entità usate come ancora;
+  - **correzioni:** S-tenenza_carabinieri_marino ha per autore Manzotti (pp. 293–294); S-ditta_ciurlani riceve le pagine «433–435, 644» (**voce Ciurlani chiusa**); S-palazzo_del_mappamondo resta di Lorenzo, con fonte Terzoli 2015, p. 537;
+  - **motivazioni degli statuti generati:** citano ora le attestazioni dell'ancora primaria («Attestata in Bertarelli 1925, cart. 4, tra pp. 736–737 (Terzoli 2015, pp. 418–419)»): 18 luoghi;
+  - **locatore delle attestazioni:** l'atto ha per fonte il critico (`isExtractedFrom` Terzoli 2015, così la data dell'atto è il 2015). La carta sta in `sourcePage` insieme alla pagina del critico: «418–419 (Bertarelli 1925, cart. 4, tra pp. 736–737)». È la forma che concilia «carte come locatori» (decisione 13) e la data dell'atto dello studioso (D-067).
+- Non inseriti: Terzoli 2015, p. 877 (diacronia, DM-04) e p. 861.
+- Fase in cui è maturata: analisi del testo, revisione critica
+- File toccati (manifest): `data/source/tables/Assertions.tsv` (56 righe nuove; S-tenenza, S-ditta_ciurlani, S-palazzo_del_mappamondo, R-0020), `NarrativePlaces.tsv` (osteriuccia_bivio), `GazetteerEntities.tsv` (4 entità senza coordinate), `References.tsv` (ref_00734, ref_00735, ref_00736), `SpatialInterpretations.tsv` (interp_00474, interp_00475 tolta, interp_00967); XLSX corrispondenti; `tools/etl.py` (`repertory_attestations`, motivazioni); `ontology/shapes/chora-shapes.ttl` (shape 25); `ontology/queries/integrity.rq` (IQ8, IQ20).
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.618 invariata; ABox 40.553 → **42.501**; full 42.741 → **44.689**. Letture 360 → **416**; luoghi 309 → **310**; entità 265 → **269**; occorrenze 733 → **736**; interpretazioni 958 (+1 osteriuccia, −1 Cassero). Feature 301 → **302**. SHACL conforme, 0 risultati; IQ20 = 0, IQ21 = 0; 297 luoghi annotati su 297 nel GeoJSON.
+
+---
+
+## D-088 — Esclusioni: partizioni dei critici, frizione dei luoghi di soglia (10 ottobre 2026)
+
+- Requisito/i: R12, R17, R20 · Ipotesi: — · Data check: — (AUDIT_3, blocco D)
+- Decisione (di Lorenzo, 10/10/2026): due voci nuove in `docs/EXCLUSIONS.md`:
+  - **5, partizioni città/campagna dei critici** (Roggia, Perosa, Savettieri, Alfano, Calvino): non mappate. Nel grafo c'è solo l'ipotesi metrica del progetto (P-0001, D-050), dichiarata come tale;
+  - **6, frizione dei luoghi di soglia:** non mappata. `chora:Threshold` esiste nella TBox (D-058) senza istanze.
+  Restano escluse dal file anche figuralità, logica simmetrica e annotazione assiologica (D-065).
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `docs/EXCLUSIONS.md` (voci 5 e 6).
+- Effetto su KG: nessuno (TBox 1.618, ABox 42.501, full 44.689). SHACL conforme, 0 risultati.
+
+---
+
+## D-089 — Documentazione e query dei loci critici; voci aperte (10 ottobre 2026)
+
+- Requisito/i: R22 · Ipotesi: H8 · Data check: DC-21, DC-03 (AUDIT_3, blocco E)
+- Decisione (di Lorenzo, 10/10/2026):
+  - **E1, `docs/MODELLO_LETTURE.md`:** guida unica al modello delle letture e della provenienza. Contiene:
+    - il pattern lettura → atto → codifica;
+    - i tipi di lettura con la proprietà reificata, soggetto, valore, materializzazione e fondamento;
+    - per ogni colonna di Assertions, Agents, Sources, Witnesses, Locations e SpatialInterpretations: tripla, regola ETL e shape;
+    - che cosa arriva al GeoJSON (solo le letture adottate) e la regola «nessun luogo annotato senza ancora»;
+    - «Come aggiungere una lettura», con tre esempi compilati (identificazione contesa per Aliciaro, lettura onomastica per Bottaro, commento per Falcognana) e la regola «una lettura nuova non toglie mai un luogo dall'interfaccia»;
+    - la tabella dei controlli.
+    TBOX_2 e AUDIT_2b sono marcati superati;
+  - **E2, `ontology/queries/loci_critici.rq`:** sette query eseguite da `make queries`: LC1 letture su un luogo (7 per Robine Vecchie), LC2 letture di un autore (43 per Terzoli), LC3 letture concorrenti (10), LC4 letture fondate su un'occorrenza, LC5 fonte, pagina ed estratto (158 letture esplicite), LC6 revisioni (3), LC7 attestazioni per carta (25);
+  - **E3, DATA_CHECKS e work order:**
+    - **chiuse:** data della carta TCI (cart. 2 di Bertarelli 1924), Sant'Ignazio/Cassero (DC-21), Censimento (2026), Ciurlani, `offMap` (D-057 corretta), GLM, pagina QPL di «Marino»;
+    - **restano aperte:** Nota al testo di Pinotti 2018 (derivazione QPa ← QP), identificatori esterni (T-46), anno di Terzoli 2008, DC-03 (volume della carta dell'edicola);
+  - **CLAUDE.md:** «Stato dei dati» aggiornato.
+- Fase in cui è maturata: revisione critica
+- File toccati (manifest): `docs/MODELLO_LETTURE.md` (nuovo); `ontology/queries/loci_critici.rq` (nuovo); `Makefile` (target `queries`); `docs/alignment/TBOX_2.md`, `docs/alignment/AUDIT_2b.md` (nota «superato»); `docs/thesis/DATA_CHECKS_GaddAtlas.md` (DC-21, § D); `docs/thesis/GaddAtlas_Cap4_Allineamento_WorkOrder.md` (§ 11); `CLAUDE.md`.
+- Effetto su KG: nessuno (TBox 1.618, ABox 42.501, full 44.689). SHACL conforme, 0 risultati; IQ1–IQ21 a 0 (IQ9 informativa).
 
 ---
 

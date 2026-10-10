@@ -1,6 +1,6 @@
 {
  "chapter": 9,
- "count": 74,
+ "count": 75,
  "passages": {
   "ref_00572": {
    "id": "ref_00572",
@@ -815,6 +815,17 @@
    "witnessLabel": "QP (Adelphi 2018)",
    "excerpt": "Al casello, detto da taluni di Casal Bruciato, lo si attendeva ogni giorno, una volta al giorno.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00723"
+  },
+  "ref_00736": {
+   "id": "ref_00736",
+   "chapter": 9,
+   "page": 239,
+   "sourceReference": "A 239",
+   "work": "quer_pasticciaccio",
+   "witness": "qpa",
+   "witnessLabel": "QP (Adelphi 2018)",
+   "excerpt": "Imbarcati i due sposi, lui ritornò addietro verso l’osteriuccia del bivio, a chiedere una bicicletta da quarcuno: e se no sarebbe risalito fino dalla Zamira, a recuperare la cavalla.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00736"
   }
  }
 }

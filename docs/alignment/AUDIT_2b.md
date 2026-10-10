@@ -1,5 +1,7 @@
 # AUDIT_2b — Progetto delle quattro decisioni del 9/10 (B1–B4)
 
+> **Superato** (10 ottobre 2026, D-089): il riferimento per il modello delle letture è `docs/MODELLO_LETTURE.md`. Questo documento resta come testimonianza della fase 2.
+
 **9 ottobre 2026** · ramo `allinea-cap4-fase2`, dopo D-066 · progetto in sola lettura: nessuna sorgente modificata per la parte B.
 
 Stato di partenza (dopo la parte A): TBox 1.320 triple, ABox 27.857, grafo completo 29.747; 97 asserzioni; 961 interpretazioni; 729 occorrenze (725 di QP); SHACL conforme con 48 avvertenze (le motivazioni di statuto in bozza); IQ1–IQ17 a 0.

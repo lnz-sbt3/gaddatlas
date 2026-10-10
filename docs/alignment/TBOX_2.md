@@ -1,5 +1,7 @@
 # TBOX_2 — Modello di fase 2: TBox, mapping, asserzioni
 
+> **Superato** (10 ottobre 2026, D-089): il riferimento per il modello delle letture è `docs/MODELLO_LETTURE.md`. Questo documento resta come testimonianza della fase 2.
+
 **9 ottobre 2026** · ramo `allinea-cap4-fase2`, HEAD `eadb380` · report in sola lettura: nessuna sorgente modificata.
 
 Confronto: `ontology/chora.ttl` al tag `fase1-allineamento-cap4` (600 triple) contro HEAD (1.306 triple). Righe = righe di `ontology/chora.ttl` a HEAD; per `tools/etl.py` e `data/source/mapping.yaml` le righe sono quelle di HEAD. Conteggi dal grafo pubblicato `data/dist/gaddatlas-full.ttl` (29.730 triple).
