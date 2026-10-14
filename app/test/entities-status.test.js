@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import s4Entities from "../src/model/entities.js";
+import s4Config from "../src/model/config.js";
 
 // T-87, D-040: uno statuto di realtà senza glifo deve fermare il caricamento,
 // non finire in silenzio sul glifo «invented» come nel notebook.
@@ -18,6 +19,19 @@ test("uno statuto sconosciuto produce un errore esplicito", () => {
   const fict = data.features.find(f => !f.geometry);
   fict.properties.reality_status = "sconosciuto";
   assert.throws(() => s4Entities(data), /statuto di realtà senza glifo/);
+});
+
+// D-090: Imagined resta nel vocabolario senza istanze nel Pasticciaccio. Il suo
+// glifo deve restare definito anche se nessun dato pubblicato lo usa, perche'
+// i dati non lo verificano piu'. Imported non ha glifo: ha sempre una geometria.
+test("i tre statuti senza geometria hanno un glifo, anche senza istanze", () => {
+  for (const status of ["transformed", "invented", "imagined"]) {
+    assert.ok(s4Config.FICT_GLYPH_PATHS[status], `glifo mancante per ${status}`);
+  }
+  const data = structuredClone(gaddaReal);
+  const fict = data.features.find(f => !f.geometry);
+  fict.properties.reality_status = "imagined";
+  assert.doesNotThrow(() => s4Entities(data));
 });
 
 // D-041: l'ordine delle tessere nell'app (disegno a pari profondita', hit test)
