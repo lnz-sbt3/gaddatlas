@@ -25,23 +25,30 @@ LIMIT 20
 # ==== CQ2 — Come si distribuiscono i luoghi per statuto di realta'? ====
 # RealityStatus e' invariante del luogo (non dell'interpretazione): il conteggio
 # e' quindi su ga:NarrativePlace, non su ga:SpatialInterpretation.
+# La query parte dai concetti di ga:RealityStatusScheme, non dai luoghi: mostra
+# anche gli statuti senza istanze (OPTIONAL sui luoghi, conteggio 0), in ordine
+# di skos:notation. Nel Pasticciaccio Imagined = 0 e' il risultato atteso:
+# nessun luogo e' privo di ogni indicazione di posizione (D-090).
 PREFIX ga: <https://w3id.org/chora#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-SELECT ?statuto (COUNT(?place) AS ?luoghi)
+SELECT ?notazione ?statuto (COUNT(DISTINCT ?place) AS ?luoghi)
 WHERE {
-  ?place a ga:NarrativePlace ;
-         ga:hasRealityStatus ?s .
-  ?s skos:prefLabel ?statuto .
+  ?s skos:topConceptOf ga:RealityStatusScheme ;
+     skos:notation ?notazione ;
+     skos:prefLabel ?statuto .
+  OPTIONAL { ?place a ga:NarrativePlace ; ga:hasRealityStatus ?s . }
 }
-GROUP BY ?statuto
-ORDER BY DESC(?luoghi)
+GROUP BY ?notazione ?statuto
+ORDER BY ?notazione
 
 
 # ==== CQ3 — Lo statuto di realta' condiziona la determinazione spaziale? ====
-# Query teoricamente centrale: verifica se un luogo Invented/Imagined possa
-# essere descritto con precisione. Se comparisse Imagined+Precise, la tesi
+# Query teoricamente centrale: verifica se un luogo fittizio possa essere
+# descritto con precisione. Se compaiono interpretazioni Invented+Precise
+# (luogo inventato in una geografia nota, collocato con precisione), la tesi
 # "la sfocatura appartiene a SpatialDetermination, non a RealityStatus"
-# trova conferma empirica nel dataset.
+# trova conferma empirica nel dataset. Imagined+Precise non e' la prova: per
+# definizione un luogo Imagined non ha posizione (Reuschel e Hurni 2011, D-090).
 PREFIX ga: <https://w3id.org/chora#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 SELECT ?statuto ?determinazione (COUNT(DISTINCT ?interp) AS ?n)
