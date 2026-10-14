@@ -114,6 +114,11 @@ SKOS controllato:
 | **Spatial Determination** | Precise · Relative · Approximate · Indeterminate |
 | **Spatial Relation Type** | Inside · Near · Toward · Through · … |
 
+Lo statuto ha quattro valori (Reuschel e Hurni 2011; Reuschel, Piatti e Hurni
+2013), ma nel *Pasticciaccio* *Imagined* è una categoria del vocabolario senza
+istanze: Gadda colloca tutti i suoi luoghi fittizi dentro una geografia nota,
+quindi sono *Invented* (D-090).
+
 Le entità principali:
 
 - **`chora:PlaceReference`** — un'occorrenza testuale, con il suo estratto
@@ -127,8 +132,9 @@ Le entità principali:
 
 La distinzione fra `NarrativePlace` e `GazetteerEntity` è il cuore
 dell'argomento: un luogo *Imported* coincide con il suo referente e ne eredita
-la posizione, mentre *Transformed*, *Invented* e *Imagined* richiedono una
-collocazione propria nello spazio diagrammatico.
+la posizione, mentre *Transformed* e *Invented* richiedono una collocazione
+propria nello spazio diagrammatico, ricavata dalle ancore. Un luogo *Imagined*,
+per definizione, non avrebbe posizione.
 
 ---
 

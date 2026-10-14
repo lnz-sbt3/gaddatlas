@@ -3588,13 +3588,14 @@
         <https://w3id.org/gaddatlas/id/reference/ref_00720> ;
     chora:reviewStatus chora:Validated .
 
-<https://w3id.org/gaddatlas/id/assertion/S-casa_del_butiro> a chora:Assertion ;
-    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
+<https://w3id.org/gaddatlas/id/assertion/S-casa_del_butiro-2> a chora:Assertion ;
+    rdfs:comment "Revisione critica (D-090)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-casa_del_butiro> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-casa_del_butiro-2> ;
+    prov:wasRevisionOf <https://w3id.org/gaddatlas/id/assertion/S-casa_del_butiro> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/casa_del_butiro> ;
     chora:adoptedByProject true ;
-    chora:assertsValue chora:Imagined ;
+    chora:assertsValue chora:Invented ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00479> ;
     chora:reviewStatus chora:Validated .
 
@@ -3647,13 +3648,14 @@
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00404> ;
     chora:reviewStatus chora:Validated .
 
-<https://w3id.org/gaddatlas/id/assertion/S-castel_porcano> a chora:Assertion ;
-    rdfs:comment "Motivazione riscritta da LS (10/10/2026, D-079)."@it ;
+<https://w3id.org/gaddatlas/id/assertion/S-castel_porcano-2> a chora:Assertion ;
+    rdfs:comment "Revisione critica (D-090)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-castel_porcano> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-castel_porcano-2> ;
+    prov:wasRevisionOf <https://w3id.org/gaddatlas/id/assertion/S-castel_porcano> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/castel_porcano> ;
     chora:adoptedByProject true ;
-    chora:assertsValue chora:Imagined ;
+    chora:assertsValue chora:Invented ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00538>,
         <https://w3id.org/gaddatlas/id/reference/ref_00539> ;
     chora:reviewStatus chora:Validated .
@@ -3784,13 +3786,14 @@
         <https://w3id.org/gaddatlas/id/reference/ref_00537> ;
     chora:reviewStatus chora:Validated .
 
-<https://w3id.org/gaddatlas/id/assertion/S-monte_nuncupale> a chora:Assertion ;
-    rdfs:comment "Motivazione riscritta da LS (10/10/2026, D-079)."@it ;
+<https://w3id.org/gaddatlas/id/assertion/S-monte_nuncupale-2> a chora:Assertion ;
+    rdfs:comment "Revisione critica (D-090)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-monte_nuncupale> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-monte_nuncupale-2> ;
+    prov:wasRevisionOf <https://w3id.org/gaddatlas/id/assertion/S-monte_nuncupale> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/monte_nuncupale> ;
     chora:adoptedByProject true ;
-    chora:assertsValue chora:Imagined ;
+    chora:assertsValue chora:Invented ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00415> ;
     chora:reviewStatus chora:Validated .
 
@@ -3966,13 +3969,14 @@
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00403> ;
     chora:reviewStatus chora:Validated .
 
-<https://w3id.org/gaddatlas/id/assertion/S-roccafringoli> a chora:Assertion ;
-    rdfs:comment "Motivazione riscritta da LS (10/10/2026, D-079)."@it ;
+<https://w3id.org/gaddatlas/id/assertion/S-roccafringoli-2> a chora:Assertion ;
+    rdfs:comment "Revisione critica (D-090)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-roccafringoli> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-roccafringoli-2> ;
+    prov:wasRevisionOf <https://w3id.org/gaddatlas/id/assertion/S-roccafringoli> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/roccafringoli> ;
     chora:adoptedByProject true ;
-    chora:assertsValue chora:Imagined ;
+    chora:assertsValue chora:Invented ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00250>,
         <https://w3id.org/gaddatlas/id/reference/ref_00321> ;
     chora:reviewStatus chora:Validated .
@@ -4018,13 +4022,14 @@
         <https://w3id.org/gaddatlas/id/reference/ref_00329> ;
     chora:reviewStatus chora:Validated .
 
-<https://w3id.org/gaddatlas/id/assertion/S-scerpure> a chora:Assertion ;
-    rdfs:comment "Motivazione riscritta da LS (10/10/2026, D-079)."@it ;
+<https://w3id.org/gaddatlas/id/assertion/S-scerpure-2> a chora:Assertion ;
+    rdfs:comment "Revisione critica (D-090)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-scerpure> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-scerpure-2> ;
+    prov:wasRevisionOf <https://w3id.org/gaddatlas/id/assertion/S-scerpure> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/scerpure> ;
     chora:adoptedByProject true ;
-    chora:assertsValue chora:Imagined ;
+    chora:assertsValue chora:Invented ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00306>,
         <https://w3id.org/gaddatlas/id/reference/ref_00314>,
         <https://w3id.org/gaddatlas/id/reference/ref_00316> ;
@@ -20847,6 +20852,18 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     chora:rationale "Descrizione del censimento: «Casa immaginata nella zona dei Due Santi»."@it .
 
+<https://w3id.org/gaddatlas/id/act/S-casa_del_butiro-2> a hico:InterpretationAct ;
+    dcterms:date "2026-10-14"^^xsd:date ;
+    hico:hasInterpretationCriterion chora:TextualEvidence ;
+    hico:hasInterpretationType chora:StatusAssertion ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-casa_del_butiro-2-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/S-casa_del_butiro-2-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-14T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:rationale "Casa senza riscontro reale, che il testo situa lungo “la stradiccia della fonte de salute” (QPa 193), nella zona dei Due Santi a cui è ancorata. Luogo inventato in una geografia nota (Reuschel e Hurni 2011)."@it ;
+    chora:sourcePage "193"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/act/S-casal_bruciato> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
     hico:hasInterpretationCriterion chora:ReferentialEvidence ;
@@ -20893,6 +20910,18 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     chora:rationale "Luogo senza corrispondenza con un luogo attestato: il nome deforma Castelporziano, ma la festa notturna appartiene a uno spazio d'immaginazione d'autore."@it ;
     chora:sourcePage "273, 276"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/act/S-castel_porcano-2> a hico:InterpretationAct ;
+    dcterms:date "2026-10-14"^^xsd:date ;
+    hico:hasInterpretationCriterion chora:TextualEvidence ;
+    hico:hasInterpretationType chora:StatusAssertion ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-castel_porcano-2-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/S-castel_porcano-2-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-14T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:rationale "Luogo del sogno di Pestalozzi, senza riscontro reale; il nome gioca su Castelporziano (Manzotti 2010, p. 273; N-0004), e attraverso il nome il luogo resta legato a una geografia nota (QPa 213). Luogo inventato secondo Reuschel e Hurni (2011)."@it ;
+    chora:sourcePage "213"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/act/S-castello> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
@@ -21026,6 +21055,18 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     chora:rationale "Monte senza corrispondenza con un rilievo attestato; l'autore lo immagina a chiusura dell'orizzonte dei Colli Albani (\"da Rocca Orsina al Monte Nuncupale, su\", QPa 173)."@it ;
+    chora:sourcePage "173"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/act/S-monte_nuncupale-2> a hico:InterpretationAct ;
+    dcterms:date "2026-10-14"^^xsd:date ;
+    hico:hasInterpretationCriterion chora:TextualEvidence ;
+    hico:hasInterpretationType chora:StatusAssertion ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-monte_nuncupale-2-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/S-monte_nuncupale-2-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-14T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:rationale "Rilievo senza riscontro reale, posto dal testo nell’orizzonte dei Colli Albani: “da Rocca Orsina al Monte Nuncupale, su” (QPa 173). Luogo inventato in una geografia nota (Reuschel e Hurni 2011)."@it ;
     chora:sourcePage "173"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/act/S-orto_vigna_due_santi> a hico:InterpretationAct ;
@@ -21199,6 +21240,18 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:rationale "Paese senza corrispondenza con un luogo attestato; l'autore lo immagina sui monti presso Palestrina (\"a monte Manno, quasi\", QPa 107)."@it ;
     chora:sourcePage "107"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/act/S-roccafringoli-2> a hico:InterpretationAct ;
+    dcterms:date "2026-10-14"^^xsd:date ;
+    hico:hasInterpretationCriterion chora:TextualEvidence ;
+    hico:hasInterpretationType chora:StatusAssertion ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-roccafringoli-2-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/S-roccafringoli-2-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-14T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:rationale "Paese senza riscontro reale, collocato dal testo entro una geografia nota: “su su in cima ai monti, a monte Manno, quasi, che da Palestrina ce se va cor ciuccio” (QPa 107). Luogo inventato secondo Reuschel e Hurni (2011): “an invented setting within familiar geographical reality”."@it ;
+    chora:sourcePage "107"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/act/S-scala_a> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
     hico:hasInterpretationCriterion chora:TextualEvidence ;
@@ -21242,6 +21295,18 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     chora:rationale "Città senza corrispondenza con un luogo attestato; l'autore la immagina \"sulle rive, più o meno, del nativo Brahmaputra\" (QPa 141)."@it ;
+    chora:sourcePage "141"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/act/S-scerpure-2> a hico:InterpretationAct ;
+    dcterms:date "2026-10-14"^^xsd:date ;
+    hico:hasInterpretationCriterion chora:TextualEvidence ;
+    hico:hasInterpretationType chora:StatusAssertion ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-scerpure-2-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/S-scerpure-2-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-14T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:rationale "Città senza riscontro reale, collocata dal testo “sulle rive, più o meno, del nativo Brahmaputra” (QPa 141). Luogo inventato in una geografia nota (Reuschel e Hurni 2011)."@it ;
     chora:sourcePage "141"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/act/S-stazione_carabinieri_castello> a hico:InterpretationAct ;
@@ -27481,6 +27546,60 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00403> ;
     chora:reviewStatus chora:Validated .
 
+<https://w3id.org/gaddatlas/id/assertion/S-casa_del_butiro> a chora:Assertion ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078). Superata dalla lettura S-casa_del_butiro-2 (D-090)."@it ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-casa_del_butiro> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/casa_del_butiro> ;
+    chora:adoptedByProject false ;
+    chora:assertsValue chora:Imagined ;
+    chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00479> ;
+    chora:reviewStatus chora:Validated .
+
+<https://w3id.org/gaddatlas/id/assertion/S-castel_porcano> a chora:Assertion ;
+    rdfs:comment "Motivazione riscritta da LS (10/10/2026, D-079). Superata dalla lettura S-castel_porcano-2 (D-090)."@it ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-castel_porcano> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/castel_porcano> ;
+    chora:adoptedByProject false ;
+    chora:assertsValue chora:Imagined ;
+    chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00538>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00539> ;
+    chora:reviewStatus chora:Validated .
+
+<https://w3id.org/gaddatlas/id/assertion/S-monte_nuncupale> a chora:Assertion ;
+    rdfs:comment "Motivazione riscritta da LS (10/10/2026, D-079). Superata dalla lettura S-monte_nuncupale-2 (D-090)."@it ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-monte_nuncupale> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/monte_nuncupale> ;
+    chora:adoptedByProject false ;
+    chora:assertsValue chora:Imagined ;
+    chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00415> ;
+    chora:reviewStatus chora:Validated .
+
+<https://w3id.org/gaddatlas/id/assertion/S-roccafringoli> a chora:Assertion ;
+    rdfs:comment "Motivazione riscritta da LS (10/10/2026, D-079). Superata dalla lettura S-roccafringoli-2 (D-090)."@it ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-roccafringoli> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/roccafringoli> ;
+    chora:adoptedByProject false ;
+    chora:assertsValue chora:Imagined ;
+    chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00250>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00321> ;
+    chora:reviewStatus chora:Validated .
+
+<https://w3id.org/gaddatlas/id/assertion/S-scerpure> a chora:Assertion ;
+    rdfs:comment "Motivazione riscritta da LS (10/10/2026, D-079). Superata dalla lettura S-scerpure-2 (D-090)."@it ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-scerpure> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/scerpure> ;
+    chora:adoptedByProject false ;
+    chora:assertsValue chora:Imagined ;
+    chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00306>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00314>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00316> ;
+    chora:reviewStatus chora:Validated .
+
 <https://w3id.org/gaddatlas/id/association/A-0001-encoder-lorenzo_sabatino> a prov:Association ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:Encoder .
@@ -30129,6 +30248,14 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
+<https://w3id.org/gaddatlas/id/association/S-casa_del_butiro-2-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/S-casa_del_butiro-2-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
 <https://w3id.org/gaddatlas/id/association/S-casa_del_butiro-encoder-lorenzo_sabatino> a prov:Association ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:Encoder .
@@ -30158,6 +30285,14 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     prov:hadRole chora:Encoder .
 
 <https://w3id.org/gaddatlas/id/association/S-cassero-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/S-castel_porcano-2-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/S-castel_porcano-2-readingauthor-lorenzo_sabatino> a prov:Association ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
@@ -30254,6 +30389,14 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     prov:hadRole chora:Encoder .
 
 <https://w3id.org/gaddatlas/id/association/S-monte_circeo-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/S-monte_nuncupale-2-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/S-monte_nuncupale-2-readingauthor-lorenzo_sabatino> a prov:Association ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
@@ -30377,6 +30520,14 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
+<https://w3id.org/gaddatlas/id/association/S-roccafringoli-2-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/S-roccafringoli-2-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
 <https://w3id.org/gaddatlas/id/association/S-roccafringoli-encoder-lorenzo_sabatino> a prov:Association ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:Encoder .
@@ -30406,6 +30557,14 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     prov:hadRole chora:Encoder .
 
 <https://w3id.org/gaddatlas/id/association/S-scale-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/S-scerpure-2-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/S-scerpure-2-readingauthor-lorenzo_sabatino> a prov:Association ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
@@ -43849,12 +44008,6 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:hasPlaceCategory chora:mountain ;
     chora:hasRealityStatus chora:Imported .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/monte_nuncupale> a chora:NarrativePlace ;
-    rdfs:label "Monte Nuncupale"@it ;
-    dcterms:description "Monte inventato, collocato nella zona dei Colli Albani/marino"@it ;
-    chora:hasPlaceCategory chora:mountain ;
-    chora:hasRealityStatus chora:Imagined .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/monte_soratte> a chora:NarrativePlace ;
     rdfs:label "Monte Soratte"@it ;
     dcterms:description "Monte nel Lazio"@it ;
@@ -45996,13 +46149,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
     chora:sourceReference "A 106"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/reference/ref_00250> a chora:PlaceReference ;
-    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:excerpt "fuori Roma, a trovà certi amichi a Roccafrìngoli, su su in cima ai monti, a monte Manno, quasi, che da Palestrina ce se va cor ciuccio, e rientratovi da nemmeno venti ore, « appena udito del terribile incidente »"@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
-    chora:sourceReference "A 107"^^xsd:string .
-
 <https://w3id.org/gaddatlas/id/reference/ref_00251> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
@@ -46306,13 +46452,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
     chora:sourceReference "A 140"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/reference/ref_00306> a chora:PlaceReference ;
-    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:excerpt "era sbarcato ar molo Beverello, a le undici undici e mezza, er maharagia de Scerpure proveniente da le rive der Brahmaputra pe fa visita a l’Artefice de li nuovi destini de la patria"@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
-    chora:sourceReference "A 140"^^xsd:string .
-
 <https://w3id.org/gaddatlas/id/reference/ref_00307> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
@@ -46355,24 +46494,10 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
     chora:sourceReference "A 141"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/reference/ref_00314> a chora:PlaceReference ;
-    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:excerpt "quanto ar Policlinico, lui intendeva fabbricarne uno a Scerpure sulle rive, più o meno, del nativo Brahmaputra: un po' più piccolo, se sa, ma non però meno bello der nostro"@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
-    chora:sourceReference "A 141"^^xsd:string .
-
 <https://w3id.org/gaddatlas/id/reference/ref_00315> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
     chora:excerpt "quanto ar Policlinico, lui intendeva fabbricarne uno a Scerpure sulle rive, più o meno, del nativo Brahmaputra: un po' più piccolo, se sa, ma non però meno bello der nostro"@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
-    chora:sourceReference "A 141"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/reference/ref_00316> a chora:PlaceReference ;
-    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:excerpt "a Scerpure, la città indove lui era nato vent'anni prima, e indove se trova er Tesoro, er mammone de lo Stato"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
     chora:sourceReference "A 141"^^xsd:string .
 
@@ -46383,13 +46508,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:excerpt "Le visite e le implorazioni della Balducci, ai Santi Quattro, a certe stagioni liete nel cielo, o men tristi, erano si poteva dire cotidiane."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
     chora:sourceReference "A 141"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/reference/ref_00321> a chora:PlaceReference ;
-    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:excerpt "dopo quel primo e oramai superato imbarazzo de la prima vorta (gita a Roccafringoli, ritardo, per quanto involontario, nel «presentarsi all'autorità»)"@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
-    chora:sourceReference "A 142"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00322> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
@@ -46694,13 +46812,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:sourceReference "A 173"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00414> a chora:PlaceReference ;
-    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:excerpt "Lui tutt'al rovescio, appena rosa e oro il cielo: da Rocca di Papa a Castel Savelli, giù: da Rocca Orsina al Monte Nuncupale, su"@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
-    chora:sourceReference "A 173"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/reference/ref_00415> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
     chora:excerpt "Lui tutt'al rovescio, appena rosa e oro il cielo: da Rocca di Papa a Castel Savelli, giù: da Rocca Orsina al Monte Nuncupale, su"@it ;
@@ -48043,12 +48154,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/casa_del_butiro> a chora:NarrativePlace ;
-    rdfs:label "Casa del Butiro"@it ;
-    dcterms:description "Casa immaginata nella zona dei Due Santi"@it ;
-    chora:hasPlaceCategory chora:farmhouse ;
-    chora:hasRealityStatus chora:Imagined .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/castel_di_leva> a chora:NarrativePlace ;
     rdfs:label "Castel di Leva"@it ;
     chora:hasPlaceCategory chora:locality ;
@@ -48118,6 +48223,12 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     skos:altLabel "monte della contessa Circia"@it ;
     chora:hasPlaceCategory chora:mountain ;
     chora:hasRealityStatus chora:Transformed .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/monte_nuncupale> a chora:NarrativePlace ;
+    rdfs:label "Monte Nuncupale"@it ;
+    dcterms:description "Monte inventato, collocato nella zona dei Colli Albani/marino"@it ;
+    chora:hasPlaceCategory chora:mountain ;
+    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/monte_velino> a chora:NarrativePlace ;
     rdfs:label "Monte Velino"@it ;
@@ -48217,11 +48328,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasPlaceCategory chora:street ;
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/roccafringoli> a chora:NarrativePlace ;
-    rdfs:label "Roccafringoli"@it ;
-    chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imagined .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/santa_margherita_in_abitacolo> a chora:NarrativePlace ;
     rdfs:label "Santa Margherita in Abitacolo"@it ;
@@ -48577,6 +48683,13 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
     chora:sourceReference "A 106"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/reference/ref_00250> a chora:PlaceReference ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:excerpt "fuori Roma, a trovà certi amichi a Roccafrìngoli, su su in cima ai monti, a monte Manno, quasi, che da Palestrina ce se va cor ciuccio, e rientratovi da nemmeno venti ore, « appena udito del terribile incidente »"@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> ;
+    chora:sourceReference "A 107"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/reference/ref_00253> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
@@ -48649,12 +48762,33 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
     chora:sourceReference "A 140"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/reference/ref_00306> a chora:PlaceReference ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:excerpt "era sbarcato ar molo Beverello, a le undici undici e mezza, er maharagia de Scerpure proveniente da le rive der Brahmaputra pe fa visita a l’Artefice de li nuovi destini de la patria"@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
+    chora:sourceReference "A 140"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/reference/ref_00308> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
     chora:excerpt "a la casa natale der medesimo, ch’è una bicocca de pochi sordi, però."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
     chora:sourceReference "A 140"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00314> a chora:PlaceReference ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:excerpt "quanto ar Policlinico, lui intendeva fabbricarne uno a Scerpure sulle rive, più o meno, del nativo Brahmaputra: un po' più piccolo, se sa, ma non però meno bello der nostro"@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
+    chora:sourceReference "A 141"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00316> a chora:PlaceReference ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:excerpt "a Scerpure, la città indove lui era nato vent'anni prima, e indove se trova er Tesoro, er mammone de lo Stato"@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
+    chora:sourceReference "A 141"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00318> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
@@ -48669,6 +48803,13 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:excerpt "Lo lasciò spogliare, lo caricò su l’automobbile sua (pe modo de dì, uno scatorcio!), s’ ’o portò a Santo Stefano."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
     chora:sourceReference "A 141"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00321> a chora:PlaceReference ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:excerpt "dopo quel primo e oramai superato imbarazzo de la prima vorta (gita a Roccafringoli, ritardo, per quanto involontario, nel «presentarsi all'autorità»)"@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_V> ;
+    chora:sourceReference "A 142"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00323> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
@@ -48888,6 +49029,13 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:sourceReference "A 171"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00412> a chora:PlaceReference ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:excerpt "Lui tutt'al rovescio, appena rosa e oro il cielo: da Rocca di Papa a Castel Savelli, giù: da Rocca Orsina al Monte Nuncupale, su"@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
+    chora:sourceReference "A 173"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00415> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
     chora:excerpt "Lui tutt'al rovescio, appena rosa e oro il cielo: da Rocca di Papa a Castel Savelli, giù: da Rocca Orsina al Monte Nuncupale, su"@it ;
@@ -49142,13 +49290,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:excerpt "E il Roma-Napoli filava filava a tutta corsa dietro al crepuscolo e pressoché già nella notte e nella tenebra circèa."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 212"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/reference/ref_00538> a chora:PlaceReference ;
-    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:excerpt "Solevano allegrare la notte fascinosa di Castel Porcano."@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
-    chora:sourceReference "A 213"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00544> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
@@ -50129,12 +50270,11 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/casello_km_20_25> .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/castel_porcano> a chora:NarrativePlace ;
-    rdfs:label "Castel Porcano"@it ;
-    dcterms:description "Castello d'immaginazione, deformazione linguistica di Castel Porziano"@it ;
-    skos:altLabel "Castel Porcino"@it ;
-    chora:hasPlaceCategory chora:castle ;
-    chora:hasRealityStatus chora:Imagined .
+<https://w3id.org/gaddatlas/id/narrativeplace/casa_del_butiro> a chora:NarrativePlace ;
+    rdfs:label "Casa del Butiro"@it ;
+    dcterms:description "Casa immaginata nella zona dei Due Santi"@it ;
+    chora:hasPlaceCategory chora:farmhouse ;
+    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira> a chora:NarrativePlace ;
     rdfs:label "Casuccia della Zamira"@it ;
@@ -50213,6 +50353,11 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/roccafringoli> a chora:NarrativePlace ;
+    rdfs:label "Roccafringoli"@it ;
+    chora:hasPlaceCategory chora:locality ;
+    chora:hasRealityStatus chora:Invented .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/scale> a chora:NarrativePlace ;
     rdfs:label "Scale"@it ;
     dcterms:description "Interno del palazzo in via Merulana 219"@it ;
@@ -50220,13 +50365,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasRealityStatus chora:Transformed ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/scerpure> a chora:NarrativePlace ;
-    rdfs:label "Scerpure"@it ;
-    dcterms:description "Toponimo indiano fittizio, ancorato a un referente reale (Brahmaputra) ma non identificabile:"@it ;
-    chora:hasFuzzinessLevel 3.0 ;
-    chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imagined .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/solforata> a chora:NarrativePlace ;
     rdfs:label "Solforata"@it ;
@@ -50513,13 +50651,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 178"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/reference/ref_00479> a chora:PlaceReference ;
-    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:excerpt "O la stradiccia della fonte de salute, verso Casa del Butiro."@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
-    chora:sourceReference "A 193"^^xsd:string .
-
 <https://w3id.org/gaddatlas/id/reference/ref_00480> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
@@ -50564,6 +50695,13 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:excerpt "Il brigadiere filava in discesa verso li Du Santi. Era giornata lasca, il dolco aveva bevuto ai padùli."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 211"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00538> a chora:PlaceReference ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:excerpt "Solevano allegrare la notte fascinosa di Castel Porcano."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
+    chora:sourceReference "A 213"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00540> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
@@ -51234,6 +51372,13 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/castel_porcano> a chora:NarrativePlace ;
+    rdfs:label "Castel Porcano"@it ;
+    dcterms:description "Castello d'immaginazione, deformazione linguistica di Castel Porziano"@it ;
+    skos:altLabel "Castel Porcino"@it ;
+    chora:hasPlaceCategory chora:castle ;
+    chora:hasRealityStatus chora:Invented .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/castello> a chora:NarrativePlace ;
     rdfs:label "Castello"@it ;
     dcterms:description "Luogo testuale della \"stazione di Castello\" (QPa 279); identificazione adottata Castel Savello (Manzotti 2010, p. 293), concorrente Castel Gandolfo (LS)"@it ;
@@ -51285,6 +51430,13 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasPlaceCategory chora:basilica ;
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/scerpure> a chora:NarrativePlace ;
+    rdfs:label "Scerpure"@it ;
+    dcterms:description "Toponimo indiano fittizio, ancorato a un referente reale (Brahmaputra) ma non identificabile:"@it ;
+    chora:hasFuzzinessLevel 3.0 ;
+    chora:hasPlaceCategory chora:locality ;
+    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/termini> a chora:NarrativePlace ;
     rdfs:label "Termini"@it ;
@@ -51384,6 +51536,13 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 193"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/reference/ref_00479> a chora:PlaceReference ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:excerpt "O la stradiccia della fonte de salute, verso Casa del Butiro."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
+    chora:sourceReference "A 193"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/reference/ref_00493> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
@@ -51405,14 +51564,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:excerpt "Il brigadiere premè col piede, accelerò verso la Fontana."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 211"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/reference/ref_00539> a chora:PlaceReference ;
-    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:attestedForm "Castel Porcino"@it ;
-    chora:excerpt "A Castel Porcino, sotto festoni di pere gialle da due watt e palloncini sbronzi e dolcemente obesi nell’alitare e nello smorire d’ogni mèlode, la maga dalla tabacchiera elicitava al fiuto gli imminenti suini."@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
-    chora:sourceReference "A 213"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00558> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
@@ -51942,6 +52093,14 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:excerpt "Nel laboratorio bettola delli Du Santi, tutte le ragazze, ogni volta, e anche la Zamira d’altronde, s’erano smarrite in una trasognata innocenza."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 208"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00539> a chora:PlaceReference ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Castel Porcino"@it ;
+    chora:excerpt "A Castel Porcino, sotto festoni di pere gialle da due watt e palloncini sbronzi e dolcemente obesi nell’alitare e nello smorire d’ogni mèlode, la maga dalla tabacchiera elicitava al fiuto gli imminenti suini."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
+    chora:sourceReference "A 213"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00588> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;

@@ -329,7 +329,7 @@
 	</script>
 </head>
 <body>
-<div id="content"><div class="ga-injected" style="margin:0 0 1.5em 0;padding:.6em .9em;border-left:3px solid #666;background:#f4f4f4;font-size:.9em;">↑ <a href="index.html">CHORA Ontology</a><br/>Other vocabularies: <a href="vocab_attributionrole.html">Attribution role</a> · <a href="vocab_placecategory.html">GaddAtlas Place Category Vocabulary</a> · <a href="vocab_localizationstatus.html">Localization status</a> · <a href="vocab_memoryattribution.html">Memory attribution</a> · <a href="vocab_narrativerole.html">Narrative Role</a> · <a href="vocab_spatialrelationtype.html">Narrative Spatial Relations</a> · <a href="vocab_rationaletype.html">Rationale type</a> · <a href="vocab_realitystatus.html">Reality Status</a> · <a href="vocab_reviewstatus.html">Review status</a> · <a href="vocab_routetype.html">Route type</a> · <a href="vocab_spatialdetermination.html">Spatial determination</a> · <a href="vocab_uncertaintyaxis.html">Uncertainty axis</a> · <a href="vocab_uncertaintyorigin.html">Uncertainty origin</a> · <a href="vocab_uncertaintytype.html">Uncertainty type</a> · <a href="vocab_witnesstype.html">Witness type</a></div>
+<div id="content"><div class="ga-injected" style="margin:0 0 1.5em 0;padding:.6em .9em;border-left:3px solid #666;background:#f4f4f4;font-size:.9em;">↑ <a href="index.html">CHORA Ontology</a><br/>Other vocabularies: <a href="vocab_attributionrole.html">Attribution role</a> · <a href="vocab_placecategory.html">GaddAtlas Place Category Vocabulary</a> · <a href="vocab_localizationstatus.html">Localization status</a> · <a href="vocab_memoryattribution.html">Memory attribution</a> · <a href="vocab_namingmechanism.html">Naming mechanism</a> · <a href="vocab_narrativerole.html">Narrative Role</a> · <a href="vocab_spatialrelationtype.html">Narrative Spatial Relations</a> · <a href="vocab_rationaletype.html">Rationale type</a> · <a href="vocab_realitystatus.html">Reality Status</a> · <a href="vocab_reviewstatus.html">Review status</a> · <a href="vocab_routetype.html">Route type</a> · <a href="vocab_spatialdetermination.html">Spatial determination</a> · <a href="vocab_uncertaintyaxis.html">Uncertainty axis</a> · <a href="vocab_uncertaintyorigin.html">Uncertainty origin</a> · <a href="vocab_uncertaintytype.html">Uncertainty type</a> · <a href="vocab_variantkind.html">Variant kind</a> · <a href="vocab_witnesstype.html">Witness type</a></div>
 <div class="section" id="metadata">
 <h1></h1>
 <h2>Metadata</h2>
@@ -424,31 +424,40 @@
 <dd>
 <div>
 <p>
-<a href="https://w3id.org/chora#IdentificationAssertion">Identification assertion</a>
-</p>
-<p>
 <a href="https://w3id.org/chora#UncertaintyAssertion">Uncertainty assertion</a>
-</p>
-<p>
-<a href="https://w3id.org/chora#StatusAssertion">Status assertion</a>
-</p>
-<p>
-<a href="https://w3id.org/chora#PartitionAssertion">Partition assertion</a>
-</p>
-<p>
-<a href="https://w3id.org/chora#SpatialReading">Spatial reading</a>
-</p>
-<p>
-<a href="https://w3id.org/chora#MemoryAssertion">Memory assertion</a>
-</p>
-<p>
-<a href="https://w3id.org/chora#VariantAssertion">Variant assertion</a>
 </p>
 <p>
 <a href="https://w3id.org/chora#LocationAssertion">Location assertion</a>
 </p>
 <p>
+<a href="https://w3id.org/chora#RepertoryAttestation">Repertory attestation</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#SpatialReading">Spatial reading</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#VariantAssertion">Variant assertion</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#MemoryAssertion">Memory assertion</a>
+</p>
+<p>
 <a href="https://w3id.org/chora#RouteTypeAssertion">Route type assertion</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#IdentificationAssertion">Identification assertion</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#CommentaryAssertion">Commentary assertion</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#NamingAssertion">Naming assertion</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#PartitionAssertion">Partition assertion</a>
+</p>
+<p>
+<a href="https://w3id.org/chora#StatusAssertion">Status assertion</a>
 </p>
 </div>
 </dd>
@@ -470,6 +479,9 @@
 <div class="hierarchy">
 <ul class="hierarchy">
 <li>
+<a href="#CommentaryAssertion">Commentary assertion</a>
+</li>
+<li>
 <a href="#IdentificationAssertion">Identification assertion</a>
 </li>
 <li>
@@ -479,7 +491,13 @@
 <a href="#MemoryAssertion">Memory assertion</a>
 </li>
 <li>
+<a href="#NamingAssertion">Naming assertion</a>
+</li>
+<li>
 <a href="#PartitionAssertion">Partition assertion</a>
+</li>
+<li>
+<a href="#RepertoryAttestation">Repertory attestation</a>
 </li>
 <li>
 <a href="#RouteTypeAssertion">Route type assertion</a>
@@ -501,6 +519,31 @@
 </div>
 <div id="concepts">
 <h2>Concept Definitions</h2>
+<div class="entity">
+<h3 id="chora_CommentaryAssertion">Commentary assertion</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#CommentaryAssertion</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>An attributed critical comment on an occurrence, a place, a route, an entity or the work, with no reified property and no required value: its content is the rationale and the quotation.</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>commento</td>
+</tr>
+</table>
+</div>
 <div class="entity">
 <h3 id="chora_IdentificationAssertion">Identification assertion</h3>
 <table>
@@ -577,6 +620,31 @@
 </table>
 </div>
 <div class="entity">
+<h3 id="chora_NamingAssertion">Naming assertion</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#NamingAssertion</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>A reading of how a toponym is made: the naming mechanism, and optionally the real toponym it plays on (chora:playsOn).</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>lettura onomastica</td>
+</tr>
+</table>
+</div>
+<div class="entity">
 <h3 id="chora_PartitionAssertion">Partition assertion</h3>
 <table>
 <tr>
@@ -598,6 +666,31 @@
 <a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
 </td>
 <td>partizione</td>
+</tr>
+</table>
+</div>
+<div class="entity">
+<h3 id="chora_RepertoryAttestation">Repertory attestation</h3>
+<table>
+<tr>
+<td style="width:250px;">
+<strong>IRI</strong>
+</td>
+<td>
+<code>https://w3id.org/chora#RepertoryAttestation</code>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://schema.org/description" title="A description of the item.">Description</a>
+</td>
+<td>States that a gazetteer entity is recorded in a repertory (a map, a guide); the act gives the locator (chora:sourcePage, e.g. «cart. 4, tra pp. 736–737»).</td>
+</tr>
+<tr>
+<td>
+<a href="http://www.w3.org/2004/02/skos/core#altLabel" title="An alternative lexical label for a resource.">Alternative Label</a>
+</td>
+<td>attestazione nel repertorio</td>
 </tr>
 </table>
 </div>
