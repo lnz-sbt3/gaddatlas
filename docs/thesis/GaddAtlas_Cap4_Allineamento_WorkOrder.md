@@ -517,7 +517,7 @@ Ogni vista dichiara nell'intestazione o nella legenda l'unità contata (occorren
 
 ### T-65 · Legenda, ordine e glifi degli statuti
 
-Imported → Transformed → Invented → Imagined, ovunque (dopo T-04). Oggi non esiste alcuna legenda di statuto e l'ordine dei glifi nel codice è transformed, imagined, invented. **DA DECIDERE:** assegnazione dei glifi ai quattro statuti nel nuovo ordine.
+Imported → Transformed → Invented → Imagined, ovunque (dopo T-04). **Distribuzione dopo D-090 (14/10/2026):** Imported 261 · Transformed 31 · Invented 18 · Imagined 0. Imagined è una categoria del vocabolario senza istanze nel *Pasticciaccio*: il glifo `imagined` resta definito (D-040, test in `app/test/entities-status.test.js`); se una futura legenda debba mostrare la categoria vuota è da decidere qui. Oggi non esiste alcuna legenda di statuto e l'ordine dei glifi nel codice è transformed, imagined, invented. **DA DECIDERE:** assegnazione dei glifi ai quattro statuti nel nuovo ordine.
 
 ### T-66 · Riallineare le stringhe UI e i testi didattici
 
@@ -573,7 +573,7 @@ Pagine «metodo», legende e tooltip devono usare la terminologia del Cap. 4: st
 
 - [x] Modello delle asserzioni: n-ario + HiCO (D-042, D-067)
 - [x] Glifi degli statuti: seguono il nome (D-034)
-- [x] I 5 luoghi divenuti Imagined: nessuna riassegnazione (D-035)
+- [x] I 5 luoghi divenuti Imagined: nessuna riassegnazione (D-035); rivisto da D-090
 - [ ] Conflitto cromatico ruolo / densità (T-86)
 - [x] Palazzo 219: Transformed (D-035)
 - [x] Palazzo Simonetti: Transformed, ancorato a via Lanza (D-035, D-036)

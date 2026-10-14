@@ -116,7 +116,7 @@ Le sorgenti sono i TSV di `data/source/tables/`; la sezione `documentation` di `
 - **Il GeoJSON porta solo le letture adottate:** le interpretazioni con `adoptedByProject true` (rilievo, tessere, percorsi) e le identificazioni adottate (`chora:identifiedWith`) per i luoghi senza ancore proprie. Le letture non adottate, i commenti, le attestazioni e le varianti restano nel grafo e nelle query; l'interfaccia le mostrerà con T-60.
 - **Nessun luogo annotato senza ancora.**
   - Gli Imported confluiscono nella tessera dell'ancora primaria.
-  - Transformed, Invented e Imagined hanno una tessera propria nel Diagramma, posizionata dalle ancore: dirette, ereditate con `isPartOf`, da identificazione adottata o dai termini relazionali.
+  - Transformed e Invented hanno una tessera propria nel Diagramma, posizionata dalle ancore: dirette, ereditate con `isPartOf`, da identificazione adottata o dai termini relazionali. Imagined non ha istanze nel *Pasticciaccio* (D-090): per definizione un luogo Imagined non ha posizione, e un'eventuale istanza annotata oggi non supererebbe la shape 23 e IQ21 (voce aperta in D-090).
   - «Senza coordinate» non vuol dire «fuori dall'interfaccia». Lo garantiscono IQ21 e la shape 23 (Violation), il controllo di `make audit` (ogni luogo annotato è nel GeoJSON) e l'adapter, che si ferma se trova un luogo annotato senza ancore.
 - **Testimoni:** l'interfaccia mostra il `prefLabel` del testimone di riferimento, «QP (Adelphi 2018)», non la sigla del dataset (QPa).
 

@@ -73,7 +73,8 @@ chora.rdf                        TBox in RDF/XML per Protégé (derivata dall'ET
 shapes/chora-shapes.ttl          vincoli SHACL sulla struttura
 shapes/chora-placecategories.ttl vocabolario SKOS delle categorie di luogo
 queries/competency.rq            12 competency question
-queries/integrity.rq             14 controlli di integrità
+queries/integrity.rq             21 controlli di integrità
+queries/loci_critici.rq          7 query sui loci critici
 docs/index.html                  documentazione pyLODE
 ```
 
@@ -81,10 +82,11 @@ docs/index.html                  documentazione pyLODE
 
 ```bash
 python3 tools/validate_shacl.py     # deve dire CONFORME
-python3 tools/run_queries.py        # 12/12 e 10/10 eseguibili
+make queries                        # 12 competency + 21 integrity + 7 loci critici
 ```
 
-Le integrity query devono restituire zero righe, tranne IQ9 che è informativa.
+Le integrity query devono restituire zero righe, tranne IQ9 e IQ11 che sono
+informative.
 
 ## Riuso
 

@@ -20,19 +20,20 @@ Due artefatti distinti nello stesso repository:
 
 ## Le decisioni sono già prese
 
-`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-089; quelle dell'allineamento al
+`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-090; quelle dell'allineamento al
 Capitolo 4 partono da D-019 (D-015…D-018 sono del porting, su `main`). Nel file sono in
-ordine cronologico, non numerico. Prossimo numero libero: **D-090**. **Leggile
+ordine cronologico, non numerico. Prossimo numero libero: **D-091**. **Leggile
 prima di proporre alternative architetturali.** Se una scelta ti sembra
 sbagliata, dillo citando la decisione — non aggirarla in silenzio.
 
-**Stato dei dati: allineato (fase 3, loci critici, 10 ottobre 2026).**
-`data/dist/gaddatlas.geojson` dichiara `tripleCount 44689`, `buildVersion 4.3`,
-`ontology CHORA`. ABox 42.501 triple, TBox 1.618; 310 luoghi (Imported 261 ·
-Transformed 31 · Invented 13 · Imagined 5), 269 entità del gazetteer (4 senza
+**Stato dei dati: allineato (fase 3b, statuti, 14 ottobre 2026).**
+`data/dist/gaddatlas.geojson` dichiara `tripleCount 44830`, `buildVersion 4.3`,
+`ontology CHORA`. ABox 42.640 triple, TBox 1.620; 310 luoghi (Imported 261 ·
+Transformed 31 · Invented 18 · Imagined 0: categoria del vocabolario senza
+istanze nel *Pasticciaccio*, D-090), 269 entità del gazetteer (4 senza
 coordinate, nessuna usata come ancora), 958 interpretazioni (tutte adottate), 736
-occorrenze (730 nel testimone di riferimento QPa), 21 percorsi tipizzati, 416
-letture attribuite (158 esplicite in `Assertions.tsv`, 258 statuti generati
+occorrenze (730 nel testimone di riferimento QPa), 21 percorsi tipizzati, 421
+letture attribuite (163 esplicite in `Assertions.tsv`, 258 statuti generati
 dall'ETL), 5 testimoni (QPL, dtsFG, bzFG, QP, QPa), 18 fonti, 12 agenti. 302
 feature; **nessun luogo annotato fuori dall'interfaccia** (297 su 297, D-084);
 verifica visiva della fase 3 chiusa (D-084: lo slittamento lungo l'arco delle
@@ -99,7 +100,7 @@ aggiornato.
    Invented diventa Imagined, senza revisione critica. Si fa in modo atomico,
    passando per un valore temporaneo, così che nessun valore venga scambiato due
    volte; insieme si scambiano le definizioni SKOS nella TBox. Conteggi attesi
-   dopo: Imported 260, Transformed 29, Invented 15, Imagined 5. Le riassegnazioni
+   dopo: Imported 260, Transformed 29, Invented 15, Imagined 5 (rivista da D-090). Le riassegnazioni
    critiche successive (palazzo 219, palazzo Simonetti, edicola ecc.) seguono
    invece la regola generale.
 5. Ogni decisione applicata va in `docs/DECISIONS.md` (da **D-019** in avanti), con
@@ -111,12 +112,20 @@ aggiornato.
 **Invarianti semantiche introdotte dal Capitolo 4:**
 
 - Statuto di realtà, dal concreto all'astratto: **Imported → Transformed →
-  Invented → Imagined**. *Invented* = luogo fittizio in una geografia nota;
-  *Imagined* = luogo senza alcuna corrispondenza identificabile con un luogo
-  attestato nella realtà, frutto dell'immaginazione d'autore; può essere collocato
-  nel mondo reale se l'autore lo immagina in una certa posizione, ma nella realtà in
-  quel punto non esiste (definizione di Lorenzo, 9/10/2026, D-061; Reuschel, Piatti
-  e Hurni 2013 per la scala).
+  Invented → Imagined**: un ordinamento del vocabolario, non una scala di
+  precisione o di affidabilità. Definizioni alla lettera di Reuschel e Hurni
+  (2011), con Reuschel, Piatti e Hurni (2013, pp. 138–139) (D-090, che supera la
+  definizione di Imagined di D-061): *Imported* = «The setting corresponds with the
+  geographical reality by realistically portraying the surrounding»; *Transformed*
+  = «The setting is transformed; this includes techniques of remodelling,
+  renaming, relocation or a synthesis of several places» (i luoghi spostati e
+  sintetizzati ne sono forme speciali); *Invented* = «An invented setting within
+  familiar geographical reality»; *Imagined* = «There is no hint at all about the
+  position of the setting, it is located ‘somewhere’, with no real-world
+  counterpart, only existing within the narration. Consequently, it is not
+  possible to assign coordinates». Gadda colloca tutti i suoi luoghi fittizi in
+  una geografia nota: **Imagined resta nel vocabolario, senza istanze nel
+  dataset**. Non è un errore e non va tolto.
   Legende, filtri e ordinamenti seguono quest'ordine.
 - Precisione della localizzazione (SpatialDetermination: Precise / Relative /
   Approximate / Indeterminate) e statuto di realtà sono assi **indipendenti**:
