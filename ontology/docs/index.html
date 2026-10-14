@@ -298,14 +298,86 @@
 <script id="schema.org" type="application/ld+json">
 [
   {
-    "@id": "https://w3id.org/chora#RationaleTypeScheme",
+    "@id": "https://w3id.org/chora#SpatialRelationTypeScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/description": [
+      {
+        "@language": "it",
+        "@value": "Vocabolario di relazioni spaziali per analisi letteraria, basato su RCC-8 (Randell et al. 1992), GeoSPARQL (W3C/OGC 2012), e narratologia spaziale (Ryan 2001, Herman 2002)"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Narrative Spatial Relations"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/chora#UncertaintyTypeScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/description": [
+      {
+        "@language": "en",
+        "@value": "Value of a chora:Assertion of type chora:UncertaintyAssertion. The absence of such an assertion means «not analysed», not «certain»."
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Uncertainty type"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/chora#NarrativeRoleScheme",
     "@type": [
       "https://schema.org/DefinedTermSet"
     ],
     "https://schema.org/name": [
       {
         "@language": "en",
-        "@value": "Rationale type"
+        "@value": "Narrative Role"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/chora#RealityStatusScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Reality Status"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/chora#AssertionTypeScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Assertion type"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/chora#UncertaintyAxisScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Uncertainty axis"
       }
     ]
   },
@@ -316,10 +388,10 @@
     ],
     "https://schema.org/contributor": [
       {
-        "@id": "_:n5e60b9ae51a746b2982dc11360052da6b1"
+        "@id": "_:n35916ada2b234776950ae252e6badc28b1"
       },
       {
-        "@id": "_:n5e60b9ae51a746b2982dc11360052da6b2"
+        "@id": "_:n35916ada2b234776950ae252e6badc28b2"
       }
     ],
     "https://schema.org/creator": [
@@ -366,7 +438,7 @@
     ]
   },
   {
-    "@id": "_:n5e60b9ae51a746b2982dc11360052da6b1",
+    "@id": "_:n35916ada2b234776950ae252e6badc28b1",
     "https://schema.org/name": [
       {
         "@value": "Francesca Tomasi"
@@ -374,82 +446,10 @@
     ]
   },
   {
-    "@id": "_:n5e60b9ae51a746b2982dc11360052da6b2",
+    "@id": "_:n35916ada2b234776950ae252e6badc28b2",
     "https://schema.org/name": [
       {
         "@value": "Paola Maria Carmela Italia"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/chora#AssertionTypeScheme",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@language": "en",
-        "@value": "Assertion type"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/chora#SpatialDeterminationScheme",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@language": "en",
-        "@value": "Spatial Determination"
-      },
-      {
-        "@language": "en",
-        "@value": "Spatial determination"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/chora#NarrativeRoleScheme",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@language": "en",
-        "@value": "Narrative Role"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/chora#RealityStatusScheme",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@language": "en",
-        "@value": "Reality Status"
-      }
-    ]
-  },
-  {
-    "@id": "https://ror.org/01111rn36",
-    "https://schema.org/name": [
-      {
-        "@value": "Università di Bologna"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/chora#RouteTypeScheme",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@language": "en",
-        "@value": "Route type"
       }
     ]
   },
@@ -466,20 +466,94 @@
     ]
   },
   {
-    "@id": "https://w3id.org/chora#SpatialRelationTypeScheme",
+    "@id": "https://w3id.org/chora#RouteTypeScheme",
     "@type": [
       "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/description": [
-      {
-        "@language": "it",
-        "@value": "Vocabolario di relazioni spaziali per analisi letteraria, basato su RCC-8 (Randell et al. 1992), GeoSPARQL (W3C/OGC 2012), e narratologia spaziale (Ryan 2001, Herman 2002)"
-      }
     ],
     "https://schema.org/name": [
       {
         "@language": "en",
-        "@value": "Narrative Spatial Relations"
+        "@value": "Route type"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/chora#RationaleTypeScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Rationale type"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/chora#VariantKindScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Variant kind"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/chora#NamingMechanismScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Naming mechanism"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/chora#MemoryAttributionScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Memory attribution"
+      }
+    ]
+  },
+  {
+    "@id": "https://ror.org/01111rn36",
+    "https://schema.org/name": [
+      {
+        "@value": "Università di Bologna"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/chora#ReviewStatusScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Review status"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/chora#AttributionRoleScheme",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/name": [
+      {
+        "@language": "en",
+        "@value": "Attribution role"
       }
     ]
   },
@@ -508,68 +582,18 @@
     ]
   },
   {
-    "@id": "https://w3id.org/chora#AttributionRoleScheme",
+    "@id": "https://w3id.org/chora#SpatialDeterminationScheme",
     "@type": [
       "https://schema.org/DefinedTermSet"
     ],
     "https://schema.org/name": [
       {
         "@language": "en",
-        "@value": "Attribution role"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/chora#UncertaintyTypeScheme",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/description": [
+        "@value": "Spatial Determination"
+      },
       {
         "@language": "en",
-        "@value": "Value of a chora:Assertion of type chora:UncertaintyAssertion. The absence of such an assertion means «not analysed», not «certain»."
-      }
-    ],
-    "https://schema.org/name": [
-      {
-        "@language": "en",
-        "@value": "Uncertainty type"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/chora#MemoryAttributionScheme",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@language": "en",
-        "@value": "Memory attribution"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/chora#ReviewStatusScheme",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@language": "en",
-        "@value": "Review status"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/chora#UncertaintyAxisScheme",
-    "@type": [
-      "https://schema.org/DefinedTermSet"
-    ],
-    "https://schema.org/name": [
-      {
-        "@language": "en",
-        "@value": "Uncertainty axis"
+        "@value": "Spatial determination"
       }
     ]
   }
@@ -703,7 +727,12 @@
 <dt>
 <a class="hover_property" href="http://www.w3.org/2004/02/skos/core#historyNote" title="A note about the past state/use/meaning of a concept. Defined in SKOS Vocabulary">History Note</a>
 </dt>
-<dd><p>Fino all'8/10/2026 le etichette Invented e Imagined erano invertite rispetto alle definizioni (D-030). Lo scambio e' una correzione dello schema, non una revisione delle letture: non genera prov:wasRevisionOf (D-051).</p></dd>
+<dd>
+<ul class="pylodelitlist">
+<li><p>Fino all'8/10/2026 le etichette Invented e Imagined erano invertite rispetto alle definizioni (D-030). Lo scambio e' una correzione dello schema, non una revisione delle letture: non genera prov:wasRevisionOf (D-051).</p></li>
+<li><p>Il 14/10/2026 le definizioni di Invented e Imagined sono state riportate alla lettera di Reuschel e Hurni (2011), superando la definizione di Imagined introdotta il 9/10/2026 (D-061). A differenza dello scambio dell'8/10, e' una revisione critica delle letture: le nuove letture di statuto rivedono le precedenti con prov:wasRevisionOf (D-090).</p></li>
+</ul>
+</dd>
 </div>
 <div>
 <dt>
@@ -1490,6 +1519,12 @@
 <sup class="sup-op" title="OWL Object Property">op</sup>
 </span>
 </li>
+<li>
+<span>
+<a href="#attestedInRepertory">attested in repertory</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
 </ul>
 </td>
 </tr>
@@ -1514,6 +1549,12 @@
 <li>
 <span>
 <a href="#identifiedWith">identified with</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#playsOn">plays on</a>
 <sup class="sup-op" title="OWL Object Property">op</sup>
 </span>
 </li>
@@ -2022,6 +2063,18 @@
 <sup class="sup-op" title="OWL Object Property">op</sup>
 </span>
 </li>
+<li>
+<span>
+<a href="#nameReading">name reading</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#variantKind">variant kind</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
 </ul>
 </td>
 </tr>
@@ -2141,6 +2194,18 @@
 <sup class="sup-op" title="OWL Object Property">op</sup>
 </span>
 </li>
+<li>
+<span>
+<a href="#playsOn">plays on</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#variantKind">variant kind</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
 </ul>
 </td>
 </tr>
@@ -2196,12 +2261,6 @@
 </li>
 <li>
 <span>
-<a href="#sourcePage">source page</a>
-<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
-</span>
-</li>
-<li>
-<span>
 <a href="http://purl.org/emmedi/hico/hasInterpretationType">hico:hasInterpretationType</a>
 <sup class="sup-op" title="OWL Object Property">op</sup>
 </span>
@@ -2222,6 +2281,12 @@
 <span>
 <a href="#originalSource">original source</a>
 <sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
+<li>
+<span>
+<a href="#quotation">quotation</a>
+<sup class="sup-dp" title="OWL Datatype Property">dp</sup>
 </span>
 </li>
 </ul>
@@ -2462,7 +2527,7 @@
 <th>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </th>
-<td><p>The placement of a narrative place relative to one or more geographic entities («between», «near»), as stated by a passage. It produces no geometry: a place without an adopted position stays off the map, with its relational anchoring.</p></td>
+<td><p>How a passage places a narrative place relative to one or more geographic entities («between», «near», «adjacent to»). The relata qualify the anchors of the place, they do not replace them: when the interpretation has no direct anchor, the gazetteer relata are its anchors, and the place is positioned from them (D-084). No annotated place is left out of the interface.</p></td>
 </tr>
 <tr>
 <th>
@@ -2782,6 +2847,12 @@
 <sup class="sup-op" title="OWL Object Property">op</sup>
 </span>
 </li>
+<li>
+<span>
+<a href="#attestedInRepertory">attested in repertory</a>
+<sup class="sup-op" title="OWL Object Property">op</sup>
+</span>
+</li>
 </ul>
 </td>
 </tr>
@@ -2824,12 +2895,18 @@
 <a href="#assignsSpatialRelationType">assigns spatial relation type</a>
 </li>
 <li>
+<a href="#attestedInRepertory">attested in repertory</a>
+</li>
+<li>
 <a href="#citesAsEvidence">cites as evidence</a>
 <ul class="hierarchy">
 <li>
 <a href="#groundedIn">grounded in</a>
 </li>
 </ul>
+</li>
+<li>
+<a href="#disagreesWith">disagrees with</a>
 </li>
 <li>
 <a href="#hadRole">had role</a>
@@ -2909,10 +2986,16 @@
 <a href="#mentionedInChapter">mentioned in Chapter</a>
 </li>
 <li>
+<a href="#nameReading">name reading</a>
+</li>
+<li>
 <a href="#originalSource">original source</a>
 </li>
 <li>
 <a href="#partOfWork">part of work</a>
+</li>
+<li>
+<a href="#playsOn">plays on</a>
 </li>
 <li>
 <a href="#qualifiedAttribution">qualified attribution</a>
@@ -2949,6 +3032,9 @@
 </li>
 <li>
 <a href="#uncertaintyOrigin">uncertainty origin</a>
+</li>
+<li>
+<a href="#variantKind">variant kind</a>
 </li>
 <li>
 <a href="#wasAttributedTo">was attributed to</a>
@@ -3357,7 +3443,7 @@
 <th>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </th>
-<td><p>Assigns the reality–fiction status of a narrative place, on a scale ordered from the concrete to the abstract: imported, transformed, invented, imagined (skos:notation 1–4; Reuschel, Piatti and Hurni 2013, pp. 138–139). This is an invariant property of the place as an authorial transposition of the real world into the text, NOT dependent on focalizer or interpretation.</p></td>
+<td><p>Assigns the reality–fiction status of a narrative place, with four values ordered from the concrete to the abstract: imported, transformed, invented, imagined (skos:notation 1–4; Reuschel and Hurni 2011; Reuschel, Piatti and Hurni 2013, pp. 138–139). The order belongs to the vocabulary: it is not a single scale of precision or of reliability, which are recorded on other axes (SpatialDetermination, typed uncertainty). This is an invariant property of the place as an authorial transposition of the real world into the text, NOT dependent on focalizer or interpretation.</p></td>
 </tr>
 <tr>
 <th>
@@ -3732,7 +3818,7 @@
 </span>
 </td>
 </tr>
-<tr class="ga-injected"><th>Vocabulary</th><td><a href="vocab_assertiontype.html">Assertion type</a> — 9 concepts</td></tr></table>
+<tr class="ga-injected"><th>Vocabulary</th><td><a href="vocab_assertiontype.html">Assertion type</a> — 12 concepts</td></tr></table>
 </div>
 <div class="property entity" id="aboutSubject">
 <h3>about subject
@@ -5038,6 +5124,190 @@
 </tr>
 </table>
 </div>
+<div class="property entity" id="disagreesWith">
+<h3>disagrees with
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>http://purl.org/spar/cito/disagreesWith</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#isDefinedBy" title="The definition of the subject resource. Defined in The RDF Schema vocabulary (RDFS)">Is Defined By</a>
+</th>
+<td>
+<a href="http://purl.org/spar/cito">http://purl.org/spar/cito</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="attestedInRepertory">
+<h3>attested in repertory
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#attestedInRepertory</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A repertory in which the gazetteer entity is recorded; materialized for every repertory attestation (they are not alternatives).</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#GazetteerEntity">chora:GazetteerEntity</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="#Source">Source</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="nameReading">
+<h3>name reading
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#nameReading</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>The naming mechanism of an occurrence or of a narrative place, from the adopted naming assertion.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#PlaceReference">chora:PlaceReference</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
+<a href="#NarrativePlace">chora:NarrativePlace</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr class="ga-injected"><th>Vocabulary</th><td><a href="vocab_namingmechanism.html">Naming mechanism</a> — 6 concepts</td></tr></table>
+</div>
+<div class="property entity" id="playsOn">
+<h3>plays on
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#playsOn</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>The real toponym (gazetteer entity) on which a name plays.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#Assertion">Assertion</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="#GazetteerEntity">chora:GazetteerEntity</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="variantKind">
+<h3>variant kind
+            <sup class="sup-op" title="OWL Object Property">op</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#variantKind</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="#Assertion">Assertion</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<span>
+<a href="http://www.w3.org/2004/02/skos/core#Concept">Concept</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr class="ga-injected"><th>Vocabulary</th><td><a href="vocab_variantkind.html">Variant kind</a> — 2 concepts</td></tr></table>
+</div>
 </div>
 <div class="section" id="datatypeproperties">
 <h2>Datatype Properties</h2>
@@ -5832,7 +6102,7 @@
 </tr>
 </table>
 </div>
-<div class="property entity" id="sourcePage">
+<div class="property entity" id="sourcepage">
 <h3>source page
             <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
 </h3>
@@ -5847,7 +6117,7 @@
 <th>
 <a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
 </th>
-<td><p>Page or pages in the source of the interpretation act (hico:isExtractedFrom).</p></td>
+<td><p>Page, pages or locator (e.g. «cart. 4, tra pp. 736–737») in the source of an interpretation act (hico:isExtractedFrom), or in the repertory of a position (chora:repertory) (D-086).</p></td>
 </tr>
 <tr>
 <th>
@@ -5856,6 +6126,11 @@
 <td>
 <span>
 <a href="http://purl.org/emmedi/hico/InterpretationAct">hico:InterpretationAct</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+<span class="cardinality">or</span>
+<span>
+<a href="http://www.opengis.net/ont/geosparql#Geometry">Geometry</a>
 <sup class="sup-c" title="OWL/RDFS Class">c</sup>
 </span>
 </td>
@@ -6207,6 +6482,44 @@
 </th>
 <td>
 <a href="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="property entity" id="quotation">
+<h3>quotation
+            <sup class="sup-dp" title="OWL Datatype Property">dp</sup>
+</h3>
+<table>
+<tr>
+<th>IRI</th>
+<td>
+<code>https://w3id.org/chora#quotation</code>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://purl.org/dc/terms/description" title="An account of the resource. Defined in DCMI Metadata Terms">Description</a>
+</th>
+<td><p>A short quotation of the critic (one or two sentences), with the page in chora:sourcePage. Never a whole note.</p></td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#domain" title="A domain of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Domain</a>
+</th>
+<td>
+<span>
+<a href="http://purl.org/emmedi/hico/InterpretationAct">hico:InterpretationAct</a>
+<sup class="sup-c" title="OWL/RDFS Class">c</sup>
+</span>
+</td>
+</tr>
+<tr>
+<th>
+<a class="hover_property" href="http://www.w3.org/2000/01/rdf-schema#range" title="A range of the subject property. Defined in The RDF Schema vocabulary (RDFS)">Range</a>
+</th>
+<td>
+<a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString">langString</a>
 </td>
 </tr>
 </table>
@@ -6590,7 +6903,7 @@
 </table>
 </div>
 </div>
-<div class="section ga-injected" id="vocabularies"><h2>Vocabularies</h2><p>The values of the properties above are drawn from the following SKOS concept schemes, each documented in its own page.</p><ul><li><a href="vocab_assertiontype.html">Assertion type</a> — 9 concepts · used by <a href="#assertionType">assertionType</a></li><li><a href="vocab_attributionrole.html">Attribution role</a> — 2 concepts</li><li><a href="vocab_placecategory.html">GaddAtlas Place Category Vocabulary</a> — 64 concepts · used by <a href="#hasPlaceCategory">hasPlaceCategory</a></li><li><a href="vocab_localizationstatus.html">Localization status</a> — 3 concepts · used by <a href="#localizationStatus">localizationStatus</a></li><li><a href="vocab_memoryattribution.html">Memory attribution</a> — 3 concepts · used by <a href="#memoryAttribution">memoryAttribution</a></li><li><a href="vocab_narrativerole.html">Narrative Role</a> — 5 concepts · used by <a href="#assignsNarrativeRole">assignsNarrativeRole</a></li><li><a href="vocab_spatialrelationtype.html">Narrative Spatial Relations</a> — 12 concepts · used by <a href="#assignsSpatialRelationType">assignsSpatialRelationType</a>, <a href="#relationalType">relationalType</a></li><li><a href="vocab_rationaletype.html">Rationale type</a> — 3 concepts · used by <a href="#rationaleType">rationaleType</a></li><li><a href="vocab_realitystatus.html">Reality Status</a> — 4 concepts · used by <a href="#hasRealityStatus">hasRealityStatus</a></li><li><a href="vocab_reviewstatus.html">Review status</a> — 2 concepts · used by <a href="#reviewStatus">reviewStatus</a></li><li><a href="vocab_routetype.html">Route type</a> — 6 concepts · used by <a href="#hasRouteType">hasRouteType</a></li><li><a href="vocab_spatialdetermination.html">Spatial determination</a> — 4 concepts · used by <a href="#assignsSpatialDetermination">assignsSpatialDetermination</a></li><li><a href="vocab_uncertaintyaxis.html">Uncertainty axis</a> — 3 concepts · used by <a href="#uncertaintyAxis">uncertaintyAxis</a></li><li><a href="vocab_uncertaintyorigin.html">Uncertainty origin</a> — 2 concepts · used by <a href="#uncertaintyOrigin">uncertaintyOrigin</a></li><li><a href="vocab_uncertaintytype.html">Uncertainty type</a> — 10 concepts · used by <a href="#hasUncertaintyType">hasUncertaintyType</a></li><li><a href="vocab_witnesstype.html">Witness type</a> — 5 concepts · used by <a href="#witnessType">witnessType</a></li></ul></div><div id="namespaces">
+<div class="section ga-injected" id="vocabularies"><h2>Vocabularies</h2><p>The values of the properties above are drawn from the following SKOS concept schemes, each documented in its own page.</p><ul><li><a href="vocab_assertiontype.html">Assertion type</a> — 12 concepts · used by <a href="#assertionType">assertionType</a></li><li><a href="vocab_attributionrole.html">Attribution role</a> — 2 concepts</li><li><a href="vocab_placecategory.html">GaddAtlas Place Category Vocabulary</a> — 64 concepts · used by <a href="#hasPlaceCategory">hasPlaceCategory</a></li><li><a href="vocab_localizationstatus.html">Localization status</a> — 3 concepts · used by <a href="#localizationStatus">localizationStatus</a></li><li><a href="vocab_memoryattribution.html">Memory attribution</a> — 3 concepts · used by <a href="#memoryAttribution">memoryAttribution</a></li><li><a href="vocab_namingmechanism.html">Naming mechanism</a> — 6 concepts · used by <a href="#nameReading">nameReading</a></li><li><a href="vocab_narrativerole.html">Narrative Role</a> — 5 concepts · used by <a href="#assignsNarrativeRole">assignsNarrativeRole</a></li><li><a href="vocab_spatialrelationtype.html">Narrative Spatial Relations</a> — 12 concepts · used by <a href="#assignsSpatialRelationType">assignsSpatialRelationType</a>, <a href="#relationalType">relationalType</a></li><li><a href="vocab_rationaletype.html">Rationale type</a> — 3 concepts · used by <a href="#rationaleType">rationaleType</a></li><li><a href="vocab_realitystatus.html">Reality Status</a> — 4 concepts · used by <a href="#hasRealityStatus">hasRealityStatus</a></li><li><a href="vocab_reviewstatus.html">Review status</a> — 2 concepts · used by <a href="#reviewStatus">reviewStatus</a></li><li><a href="vocab_routetype.html">Route type</a> — 6 concepts · used by <a href="#hasRouteType">hasRouteType</a></li><li><a href="vocab_spatialdetermination.html">Spatial determination</a> — 4 concepts · used by <a href="#assignsSpatialDetermination">assignsSpatialDetermination</a></li><li><a href="vocab_uncertaintyaxis.html">Uncertainty axis</a> — 3 concepts · used by <a href="#uncertaintyAxis">uncertaintyAxis</a></li><li><a href="vocab_uncertaintyorigin.html">Uncertainty origin</a> — 2 concepts · used by <a href="#uncertaintyOrigin">uncertaintyOrigin</a></li><li><a href="vocab_uncertaintytype.html">Uncertainty type</a> — 10 concepts · used by <a href="#hasUncertaintyType">hasUncertaintyType</a></li><li><a href="vocab_variantkind.html">Variant kind</a> — 2 concepts · used by <a href="#variantKind">variantKind</a></li><li><a href="vocab_witnesstype.html">Witness type</a> — 5 concepts · used by <a href="#witnessType">witnessType</a></li></ul></div><div id="namespaces">
 <h2>Namespaces</h2>
 <dl>
 <dt id="chora">chora</dt>
@@ -6994,6 +7307,21 @@
 <li style="margin-left:10px;">
 <a href="#readIn">read in</a>
 </li>
+<li style="margin-left:10px;">
+<a href="#disagreesWith">disagrees with</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#attestedInRepertory">attested in repertory</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#nameReading">name reading</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#playsOn">plays on</a>
+</li>
+<li style="margin-left:10px;">
+<a href="#variantKind">variant kind</a>
+</li>
 </ul>
 </li>
 <li>
@@ -7068,7 +7396,7 @@
 <a href="#sourceWork">source work</a>
 </li>
 <li>
-<a href="#sourcePage">source page</a>
+<a href="#sourcepage">source page</a>
 </li>
 <li>
 <a href="#generatedAtTime">generated at time</a>
@@ -7096,6 +7424,9 @@
 </li>
 <li>
 <a href="#datum">datum</a>
+</li>
+<li>
+<a href="#quotation">quotation</a>
 </li>
 </ul>
 </li>
@@ -7191,7 +7522,7 @@
 </li>
 </ul>
 </li>
-<li class="ga-injected"><h4><a href="#vocabularies">Vocabularies</a></h4><ul class="second"><li style="margin-left:10px;"><a href="vocab_assertiontype.html">Assertion type</a></li><li style="margin-left:10px;"><a href="vocab_attributionrole.html">Attribution role</a></li><li style="margin-left:10px;"><a href="vocab_placecategory.html">GaddAtlas Place Category Vocabulary</a></li><li style="margin-left:10px;"><a href="vocab_localizationstatus.html">Localization status</a></li><li style="margin-left:10px;"><a href="vocab_memoryattribution.html">Memory attribution</a></li><li style="margin-left:10px;"><a href="vocab_narrativerole.html">Narrative Role</a></li><li style="margin-left:10px;"><a href="vocab_spatialrelationtype.html">Narrative Spatial Relations</a></li><li style="margin-left:10px;"><a href="vocab_rationaletype.html">Rationale type</a></li><li style="margin-left:10px;"><a href="vocab_realitystatus.html">Reality Status</a></li><li style="margin-left:10px;"><a href="vocab_reviewstatus.html">Review status</a></li><li style="margin-left:10px;"><a href="vocab_routetype.html">Route type</a></li><li style="margin-left:10px;"><a href="vocab_spatialdetermination.html">Spatial determination</a></li><li style="margin-left:10px;"><a href="vocab_uncertaintyaxis.html">Uncertainty axis</a></li><li style="margin-left:10px;"><a href="vocab_uncertaintyorigin.html">Uncertainty origin</a></li><li style="margin-left:10px;"><a href="vocab_uncertaintytype.html">Uncertainty type</a></li><li style="margin-left:10px;"><a href="vocab_witnesstype.html">Witness type</a></li></ul></li><li>
+<li class="ga-injected"><h4><a href="#vocabularies">Vocabularies</a></h4><ul class="second"><li style="margin-left:10px;"><a href="vocab_assertiontype.html">Assertion type</a></li><li style="margin-left:10px;"><a href="vocab_attributionrole.html">Attribution role</a></li><li style="margin-left:10px;"><a href="vocab_placecategory.html">GaddAtlas Place Category Vocabulary</a></li><li style="margin-left:10px;"><a href="vocab_localizationstatus.html">Localization status</a></li><li style="margin-left:10px;"><a href="vocab_memoryattribution.html">Memory attribution</a></li><li style="margin-left:10px;"><a href="vocab_namingmechanism.html">Naming mechanism</a></li><li style="margin-left:10px;"><a href="vocab_narrativerole.html">Narrative Role</a></li><li style="margin-left:10px;"><a href="vocab_spatialrelationtype.html">Narrative Spatial Relations</a></li><li style="margin-left:10px;"><a href="vocab_rationaletype.html">Rationale type</a></li><li style="margin-left:10px;"><a href="vocab_realitystatus.html">Reality Status</a></li><li style="margin-left:10px;"><a href="vocab_reviewstatus.html">Review status</a></li><li style="margin-left:10px;"><a href="vocab_routetype.html">Route type</a></li><li style="margin-left:10px;"><a href="vocab_spatialdetermination.html">Spatial determination</a></li><li style="margin-left:10px;"><a href="vocab_uncertaintyaxis.html">Uncertainty axis</a></li><li style="margin-left:10px;"><a href="vocab_uncertaintyorigin.html">Uncertainty origin</a></li><li style="margin-left:10px;"><a href="vocab_uncertaintytype.html">Uncertainty type</a></li><li style="margin-left:10px;"><a href="vocab_variantkind.html">Variant kind</a></li><li style="margin-left:10px;"><a href="vocab_witnesstype.html">Witness type</a></li></ul></li><li>
 <h4>
 <a href="#namespaces">Namespaces</a>
 </h4>
