@@ -18517,7 +18517,7 @@ chora:gulf a owl:NamedIndividual,
 
 chora:hasRealityStatus a owl:ObjectProperty ;
     dcterms:references chora:RealityStatusScheme ;
-    rdfs:comment "Assigns the reality–fiction status of a narrative place, on a scale ordered from the concrete to the abstract: imported, transformed, invented, imagined (skos:notation 1–4; Reuschel, Piatti and Hurni 2013, pp. 138–139). This is an invariant property of the place as an authorial transposition of the real world into the text, NOT dependent on focalizer or interpretation."@en ;
+    rdfs:comment "Assigns the reality–fiction status of a narrative place, with four values ordered from the concrete to the abstract: imported, transformed, invented, imagined (skos:notation 1–4; Reuschel and Hurni 2011; Reuschel, Piatti and Hurni 2013, pp. 138–139). The order belongs to the vocabulary: it is not a single scale of precision or of reliability, which are recorded on other axes (SpatialDetermination, typed uncertainty). This is an invariant property of the place as an authorial transposition of the real world into the text, NOT dependent on focalizer or interpretation."@en ;
     rdfs:domain chora:NarrativePlace ;
     rdfs:range skos:Concept ;
     skos:altLabel "ha stato di realtà"@it ;
@@ -54327,12 +54327,12 @@ chora:Imagined a owl:NamedIndividual,
         chora:Invented,
         chora:Transformed ;
     skos:altLabel "Immaginato"@it ;
-    skos:definition "A place without any identifiable correspondence to a place attested in reality: the product of the author's imagination. It may be set in the real world, if the author imagines it in a certain position, but in reality nothing exists at that point."@en,
-        "Luogo senza alcuna corrispondenza identificabile con un luogo attestato nella realtà, frutto dell'immaginazione d'autore. Può essere collocato nel mondo reale, se l'autore lo immagina in una certa posizione, ma nella realtà in quel punto non esiste."@it ;
+    skos:definition "There is no hint at all about the position of the setting, it is located ‘somewhere’, with no real-world counterpart, only existing within the narration. Consequently, it is not possible to assign coordinates."@en,
+        "Non c'è alcuna indicazione sulla posizione del luogo: è situato «da qualche parte», senza corrispondente nel mondo reale, ed esiste soltanto nella narrazione. Di conseguenza non è possibile assegnargli coordinate."@it ;
     skos:inScheme chora:RealityStatusScheme ;
     skos:notation "4" ;
     skos:prefLabel "Imagined"@en ;
-    skos:scopeNote "Fourth and most abstract degree of the scale: the place has no identifiable counterpart in reality, even when the author gives it a position. Not to be confused with Invented, a fictional place located within a known geography (Reuschel, Piatti and Hurni 2013, pp. 138–139; definition of Imagined by L. Sabatino, 9/10/2026, D-061)."@en ;
+    skos:scopeNote "Fourth value in the order of the vocabulary (Imported, Transformed, Invented, Imagined). Not to be confused with Invented, a fictional place set within a familiar geographical reality: a fictional place that the text locates in a known geography is Invented, not Imagined (Reuschel and Hurni 2011; Reuschel, Piatti and Hurni 2013, pp. 138–139)."@en ;
     skos:topConceptOf chora:RealityStatusScheme .
 
 chora:RealityStatusScheme a owl:NamedIndividual,
@@ -54343,7 +54343,8 @@ chora:RealityStatusScheme a owl:NamedIndividual,
         chora:Imported,
         chora:Invented,
         chora:Transformed ;
-    skos:historyNote "Fino all'8/10/2026 le etichette Invented e Imagined erano invertite rispetto alle definizioni (D-030). Lo scambio e' una correzione dello schema, non una revisione delle letture: non genera prov:wasRevisionOf (D-051)."@it ;
+    skos:historyNote "Fino all'8/10/2026 le etichette Invented e Imagined erano invertite rispetto alle definizioni (D-030). Lo scambio e' una correzione dello schema, non una revisione delle letture: non genera prov:wasRevisionOf (D-051)."@it,
+        "Il 14/10/2026 le definizioni di Invented e Imagined sono state riportate alla lettera di Reuschel e Hurni (2011), superando la definizione di Imagined introdotta il 9/10/2026 (D-061). A differenza dello scambio dell'8/10, e' una revisione critica delle letture: le nuove letture di statuto rivedono le precedenti con prov:wasRevisionOf (D-090)."@it ;
     skos:prefLabel "Reality Status"@en .
 
 chora:SpatialDeterminationScheme a owl:NamedIndividual,
@@ -55466,11 +55467,12 @@ chora:Invented a owl:NamedIndividual,
         chora:Imported,
         chora:Transformed ;
     skos:altLabel "Inventato"@it ;
-    skos:definition "An invented setting within familiar geographical reality" ;
+    skos:definition "An invented setting within familiar geographical reality"@en,
+        "Un luogo d'invenzione collocato entro una realtà geografica nota."@it ;
     skos:inScheme chora:RealityStatusScheme ;
     skos:notation "3" ;
     skos:prefLabel "Invented"@en ;
-    skos:scopeNote "Third degree of the scale: a fictional place set within a known, identifiable geography, so that its position can be indicated or inferred. Not to be confused with Imagined, which has no identifiable counterpart in reality (Reuschel, Piatti and Hurni 2013, pp. 138–139; D-061)."@en ;
+    skos:scopeNote "Third value in the order of the vocabulary (Imported, Transformed, Invented, Imagined): a fictional place set within a familiar geographical reality, so that its position can be indicated or inferred. Not to be confused with Imagined, for which there is no hint at all about the position and no coordinates can be assigned (Reuschel and Hurni 2011; Reuschel, Piatti and Hurni 2013, pp. 138–139)."@en ;
     skos:topConceptOf chora:RealityStatusScheme .
 
 <https://w3id.org/gaddatlas/id/source/bertarelli_1925> a chora:Source ;

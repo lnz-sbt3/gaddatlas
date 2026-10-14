@@ -5,9 +5,9 @@ Versionamento semantico applicato all'ontologia, non al dataset.
 
 ## [1.0.0] — non ancora rilasciata
 
-> **Attenzione:** `owl:versionInfo` nella TBox dichiara ancora `4.1.1`.
-> Prima del rilascio va deciso se pubblicare come 1.0.0 (e aggiornare la
-> TBox in Protégé) o mantenere la numerazione 4.x. Vedi D-010.
+> `owl:versionInfo` nella TBox dichiara `1.0.0` (verificato il 15/10/2026: è
+> così dalla base canonica, commit `df1bd8a`; la nota precedente, «dichiara
+> ancora `4.1.1`», non corrispondeva al file). Vedi D-010.
 
 Prima versione pubblica. Rinomina e stabilizzazione dell'ontologia sviluppata
 internamente come «GaddAtlas Ontology» fino alla v4.1.1.
@@ -23,6 +23,14 @@ internamente come «GaddAtlas Ontology» fino alla v4.1.1.
 - Numerazione ripartita da 1.0.0: la serie 1.x–4.1.1 era interna e senza
   consumatori esterni.
 - I nomi dei file non portano più la versione (§ D-010).
+- Statuto di realtà: definizioni di `chora:Invented` e `chora:Imagined`
+  riportate alla lettera di Reuschel e Hurni (2011), con Reuschel, Piatti e
+  Hurni (2013); `chora:Invented` ha ora la definizione con tag di lingua, in
+  inglese e in italiano. È superata la definizione di Imagined del 9/10/2026
+  («può essere collocato nel mondo reale…», D-061). Il commento di
+  `chora:hasRealityStatus` precisa che l'ordine 1–4 è un ordinamento del
+  vocabolario, non una scala di precisione o di affidabilità. Imagined resta
+  un concetto dello schema con notazione 4 (D-090).
 
 ### Corretto
 - Dieci categorie di luogo presenti nei dati e assenti da `mapping.yaml`
