@@ -16,9 +16,11 @@ bottega_ceccherelli	roma_citta
 buco_a_santignazio	roma_citta
 ca_francesi	campagna_romana
 camera_casello	campagna_romana
+camera_sicurezza_questura	roma_citta
 campo_de_fiori	roma_citta
 campo_marzio	roma_citta
 campo_verano	roma_citta
+cantina_zamira	campagna_romana
 cantinone_albano	campagna_romana
 casa_crocchiapani	campagna_romana
 casal_bruciato	campagna_romana
@@ -110,6 +112,7 @@ robine_vecchie	campagna_romana
 rocca_di_papa	campagna_romana
 rocca_orsina	campagna_romana
 rocca_savella	roma_citta
+sacello_responsale	campagna_romana
 sacro_cuore	roma_citta
 san_camillo	roma_citta
 san_carlo_alle_quattro_fontane	roma_citta

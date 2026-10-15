@@ -1,6 +1,6 @@
 {
  "chapter": 6,
- "count": 97,
+ "count": 102,
  "passages": {
   "ref_00337": {
    "id": "ref_00337",
@@ -1068,6 +1068,61 @@
    "witnessLabel": "QP (Adelphi 2018)",
    "excerpt": "Poi, presso a Ciampino o alla Palomba, levava gli occhi: su, su: carovane bianche di nuvole trascorrendo a mezzo marzo nel cielo",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00433"
+  },
+  "ref_00737": {
+   "id": "ref_00737",
+   "chapter": 6,
+   "page": 165,
+   "sourceReference": "A 165",
+   "work": "quer_pasticciaccio",
+   "witness": "qpa",
+   "witnessLabel": "QP (Adelphi 2018)",
+   "excerpt": "La cantina, o sala seminterrata, era provveduta d’un orinale: e, più, d’un lettuccio: che però crocchiava per un nulla, sto coglione, e aveva tegumento d’una « coperta da letto » verde-stinta",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00737"
+  },
+  "ref_00738": {
+   "id": "ref_00738",
+   "chapter": 6,
+   "page": 165,
+   "sourceReference": "A 165",
+   "work": "quer_pasticciaccio",
+   "witness": "qpa",
+   "witnessLabel": "QP (Adelphi 2018)",
+   "excerpt": "Dava adito, codesto salotto o sala di consultazione, per uscio con catenaccio, al sacello o ricettacolo responsale propriamente detto.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00738"
+  },
+  "ref_00739": {
+   "id": "ref_00739",
+   "chapter": 6,
+   "page": 165,
+   "sourceReference": "A 165",
+   "work": "quer_pasticciaccio",
+   "witness": "qpa",
+   "witnessLabel": "QP (Adelphi 2018)",
+   "excerpt": "Dava adito, codesto salotto o sala di consultazione, per uscio con catenaccio, al sacello o ricettacolo responsale propriamente detto.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00739"
+  },
+  "ref_00740": {
+   "id": "ref_00740",
+   "chapter": 6,
+   "page": 166,
+   "sourceReference": "A 166",
+   "work": "quer_pasticciaccio",
+   "witness": "qpa",
+   "witnessLabel": "QP (Adelphi 2018)",
+   "excerpt": "Un punto d’incontro dei vitali compossibili: magia, maglieria, sartoria, pantaloneria, vino de li Castelli e de Bitonto pure (una botte, la spina: due damigiane, li sifoni de gomma), cacio e fave, d’aprile, il nipotino del duce dei baffoni a ruzzare per entro il teschio, in cantina, cioè nella « sala di tintoria »",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00740"
+  },
+  "ref_00741": {
+   "id": "ref_00741",
+   "chapter": 6,
+   "page": 169,
+   "sourceReference": "A 169",
+   "work": "quer_pasticciaccio",
+   "witness": "qpa",
+   "witnessLabel": "QP (Adelphi 2018)",
+   "excerpt": "La Zamira lo mandò a levarseli in cantina: e gli mandò dietro la Clelia, o, secondo altri, la Camilla, per prendere i pantaloni e portarli su a raccomodare, in laboratorio.",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00741"
   }
  }
 }

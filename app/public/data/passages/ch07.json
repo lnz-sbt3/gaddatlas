@@ -1,6 +1,6 @@
 {
  "chapter": 7,
- "count": 73,
+ "count": 76,
  "passages": {
   "ref_00434": {
    "id": "ref_00434",
@@ -804,6 +804,39 @@
    "witnessLabel": "QP (Adelphi 2018)",
    "excerpt": "Dove staveno a venne la porchetta: sì, a piazza Vittorio, sì: dove tenevano il posteggio.",
    "iri": "https://w3id.org/gaddatlas/id/reference/ref_00506"
+  },
+  "ref_00742": {
+   "id": "ref_00742",
+   "chapter": 7,
+   "page": 195,
+   "sourceReference": "A 195",
+   "work": "quer_pasticciaccio",
+   "witness": "qpa",
+   "witnessLabel": "QP (Adelphi 2018)",
+   "excerpt": "E lui je taceva puro da confidente, allora. E certe vorte nun te l’attirò puro in cantina, pe parlaje co più commodo! Me sa che je dicesse quarche cosa d’importante. Svergognata! a l’età sua!",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00742"
+  },
+  "ref_00743": {
+   "id": "ref_00743",
+   "chapter": 7,
+   "page": 196,
+   "sourceReference": "A 196",
+   "work": "quer_pasticciaccio",
+   "witness": "qpa",
+   "witnessLabel": "QP (Adelphi 2018)",
+   "excerpt": "Ines non proferì per esplicito, ma sembrò loro di poter tuttavia desumere dall’apprezzato raccontino della discesa in antro (del biondo intraprendente con la più che Cumana Sibilla)",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00743"
+  },
+  "ref_00744": {
+   "id": "ref_00744",
+   "chapter": 7,
+   "page": 176,
+   "sourceReference": "A 176",
+   "work": "quer_pasticciaccio",
+   "witness": "qpa",
+   "witnessLabel": "QP (Adelphi 2018)",
+   "excerpt": "Povera figliola, avrebbe atteso l’alba sul tavolaccio della camera di sicurezza, rinvoltata dentro una copertuccia bigia da caserma all’insegna der pidocchietto",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00744"
   }
  }
 }
