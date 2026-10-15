@@ -58,18 +58,18 @@ pubblicabile e il dato citabile senza dover eseguire la pipeline. La CI in
 
 ## Stato verificato
 
-Al 2026-10-15 (fase 3c, D-091), con `make all && make audit && make shacl`:
+Al 2026-10-15 (fase 3d, D-092), con `make all && make audit && make shacl`:
 
 | | |
 |---|---|
-| Triple (full) | 45.261 (ABox 43.071, TBox 1.620) |
-| GazetteerEntity | 269, di cui 253 con tessera in mappa |
-| NarrativePlace | 313, di cui 51 con tessera propria |
-| Reality Status | Imported 262 · Transformed 31 · Invented 20 · Imagined 0 |
-| PlaceReference | 744 — 738 del testimone di riferimento QPa, tutte con `chora:excerpt`; 6 di altri testimoni |
-| SpatialInterpretation | 968 — 937 verso luoghi, 31 verso route |
+| Triple (full) | 45.624 (ABox 43.434, TBox 1.620) |
+| GazetteerEntity | 271, di cui 254 con tessera in mappa (5 senza coordinate) |
+| NarrativePlace | 313, di cui 50 con tessera propria |
+| Reality Status | Imported 263 · Transformed 32 · Invented 18 · Imagined 0 |
+| PlaceReference | 744 — 738 del testimone di riferimento QPa, tutte con `chora:excerpt`, confrontate con il volume a stampa (D-092); 6 di altri testimoni |
+| SpatialInterpretation | 972 (968 adottate) — 941 verso luoghi, 31 verso route |
 | FocalizingAgent | 83 · NarrativeRoute 21 · Chapter 10 |
-| criticalNote | 76 · hasPlaceCategory 312 |
+| criticalNote | 77 · hasPlaceCategory 312 |
 | Righe di `relief` | 937 — tutte risolvono a una feature |
 | Audit | 16 invarianti su 16 |
 | SHACL | conforme, nessun risultato |
@@ -85,8 +85,8 @@ Esclusioni verificate come volute, non come perdite:
 - **22 `PlaceReference` fuori da `relief`**: riferimenti di sola route
   (`targetsRoute` invece di `targetsPlace`).
 - **6 `PlaceReference` di altri testimoni**: corpora di confronto (D-053).
-- **16 `GazetteerEntity` fuori mappa**: zero interpretazioni ancorate.
-- **262 `NarrativePlace` senza tessera propria**: tutti di statuto *Imported*,
+- **17 `GazetteerEntity` fuori mappa**: zero interpretazioni ancorate.
+- **263 `NarrativePlace` senza tessera propria**: tutti di statuto *Imported*,
   le cui occorrenze confluiscono nel rilievo dell'entità che li ancora.
 
 ## `_note/References_manual.xlsx`

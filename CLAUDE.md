@@ -20,20 +20,20 @@ Due artefatti distinti nello stesso repository:
 
 ## Le decisioni sono già prese
 
-`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-091; quelle dell'allineamento al
+`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-092; quelle dell'allineamento al
 Capitolo 4 partono da D-019 (D-015…D-018 sono del porting, su `main`). Nel file sono in
-ordine cronologico, non numerico. Prossimo numero libero: **D-092**. **Leggile
+ordine cronologico, non numerico. Prossimo numero libero: **D-093**. **Leggile
 prima di proporre alternative architetturali.** Se una scelta ti sembra
 sbagliata, dillo citando la decisione — non aggirarla in silenzio.
 
-**Stato dei dati: allineato (fase 3c, sottoluoghi, 15 ottobre 2026).**
-`data/dist/gaddatlas.geojson` dichiara `tripleCount 45261`, `buildVersion 4.3`,
-`ontology CHORA`. ABox 43.071 triple, TBox 1.620; 313 luoghi (Imported 262 ·
-Transformed 31 · Invented 20 · Imagined 0: categoria del vocabolario senza
-istanze nel *Pasticciaccio*, D-090), 269 entità del gazetteer (4 senza
-coordinate, nessuna usata come ancora), 968 interpretazioni (tutte adottate), 744
-occorrenze (738 nel testimone di riferimento QPa), 21 percorsi tipizzati, 424
-letture attribuite (165 esplicite in `Assertions.tsv`, 259 statuti generati
+**Stato dei dati: allineato (fase 3d, statuti dei casi vicini e indice di forma, 15 ottobre 2026).**
+`data/dist/gaddatlas.geojson` dichiara `tripleCount 45624`, `buildVersion 4.3`,
+`ontology CHORA`. ABox 43.434 triple, TBox 1.620; 313 luoghi (Imported 263 ·
+Transformed 32 · Invented 18 · Imagined 0: categoria del vocabolario senza
+istanze nel *Pasticciaccio*, D-090), 271 entità del gazetteer (5 senza
+coordinate, nessuna usata come ancora), 972 interpretazioni (968 adottate), 744
+occorrenze (738 nel testimone di riferimento QPa), 21 percorsi tipizzati, 432
+letture attribuite (173 esplicite in `Assertions.tsv`, 259 statuti generati
 dall'ETL), 5 testimoni (QPL, dtsFG, bzFG, QP, QPa), 18 fonti, 12 agenti. 304
 feature; **nessun luogo annotato fuori dall'interfaccia** (300 su 300, D-084);
 verifica visiva della fase 3 chiusa (D-084: lo slittamento lungo l'arco delle
@@ -53,7 +53,8 @@ Le tre non negoziabili:
    place a 60fps: React combatte quel modello senza dare nulla in cambio.
 2. **Non modificare i file derivati** (D-002, aggiornata da D-019 e D-020). Si
    toccano solo le sorgenti canoniche: `data/source/tables/*.tsv` (D-019),
-   `data/source/mapping.yaml`, `data/source/void_seeds.json` e
+   `data/source/mapping.yaml`, `data/source/void_seeds.json`,
+   `data/source/shape_index.json` (indici di forma, D-092) e
    `ontology/chora.ttl` (D-020). Sono **derivati**: gli XLSX in
    `data/source/xlsx/` (`make xlsx`, per chi lavora in Excel), `ontology/chora.rdf`
    (RDF/XML per Protégé) e `ontology/chora.jsonld` (D-033), la documentazione in
@@ -144,8 +145,11 @@ aggiornato.
 - **Il testo prevale sul repertorio:** discrepanze, sviste e anacronismi si
   registrano tipizzati, non si correggono. Le correzioni di lezione sono solo quelle
   dell'editore (es. Fattocchie → Frattocchie in QP 241).
-- **Testo di riferimento:** QP (Adelphi 2018) nel volume **a stampa**. La copia
-  digitale ha almeno una lezione non emendata: nel dubbio segnala, non correggere.
+- **Testo di riferimento:** QP (Adelphi 2018) nel volume **a stampa**. Tutti gli
+  estratti del dataset sono stati confrontati da Lorenzo con il volume a stampa e
+  con il testo in volume di RR II (D-092, DC-23). Un estratto nuovo si verifica
+  sul volume prima di entrare: la copia digitale ha almeno una lezione non
+  emendata, e nel dubbio si segnala, non si corregge.
 - **Sigle dei testimoni (D-073).** Nel dataset: **QPL** = redazione di «Letteratura»
   (1946), letta in RR II (pagine di RR II); **QP** = versione in volume (princeps
   Garzanti 1957), letta in RR II (pagine di RR II); **QPa** = Adelphi 2018 a cura di

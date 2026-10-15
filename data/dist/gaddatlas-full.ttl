@@ -754,6 +754,47 @@ chora:witnessType a owl:ObjectProperty ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00493> ;
     chora:reviewStatus chora:Validated .
 
+<https://w3id.org/gaddatlas/id/assertion/I-0012> a chora:Assertion ;
+    rdfs:comment "Fase 3d (D-092)."@it ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/terzoli> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/I-0012> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/castel_porcano> ;
+    chora:adoptedByProject true ;
+    chora:assertsValue <https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_porziano> ;
+    chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00538>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00539> ;
+    chora:reviewStatus chora:Validated .
+
+<https://w3id.org/gaddatlas/id/assertion/I-0013> a chora:Assertion ;
+    rdfs:comment "Fase 3d (D-092)."@it ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/terzoli> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/I-0013> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/via_delle_oche> ;
+    chora:adoptedByProject true ;
+    chora:assertsValue <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_delle_oche_milano> ;
+    chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00028> ;
+    chora:reviewStatus chora:Validated .
+
+<https://w3id.org/gaddatlas/id/assertion/I-0014> a chora:Assertion ;
+    rdfs:comment "Fase 3d (D-092). Terzoli data la rocca alla fine del XV secolo (Paolo Orsini); altre fonti la danno al XIII–XIV: la datazione non incide sull'identificazione."@it ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/terzoli> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/I-0014> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/rocca_orsina> ;
+    chora:adoptedByProject true ;
+    chora:assertsValue <https://w3id.org/gaddatlas/id/gazetteer/gaz_rocca_orsina> ;
+    chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00414> ;
+    chora:reviewStatus chora:Validated .
+
+<https://w3id.org/gaddatlas/id/assertion/I-0015> a chora:Assertion ;
+    rdfs:comment "Fase 3d (D-092)."@it ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/terzoli> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/I-0015> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/monte_nuncupale> ;
+    chora:adoptedByProject false ;
+    chora:assertsValue <https://w3id.org/gaddatlas/id/gazetteer/gaz_campidoglio> ;
+    chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00415> ;
+    chora:reviewStatus chora:Validated .
+
 <https://w3id.org/gaddatlas/id/assertion/I-casal_bruciato> a chora:Assertion ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/I-casal_bruciato> ;
@@ -1006,6 +1047,17 @@ chora:witnessType a owl:ObjectProperty ;
     chora:assertsValue chora:OnomasticPun ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00364>,
         <https://w3id.org/gaddatlas/id/reference/ref_00513> ;
+    chora:reviewStatus chora:Validated .
+
+<https://w3id.org/gaddatlas/id/assertion/N-0007> a chora:Assertion ;
+    rdfs:comment "Fase 3d (D-092)."@it ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/terzoli> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/N-0007> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/castel_porcano> ;
+    chora:assertsValue chora:Paraetymology ;
+    chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00538>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00539> ;
+    chora:playsOn <https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_porziano> ;
     chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/P-0001> a chora:Assertion ;
@@ -4263,14 +4315,14 @@ chora:witnessType a owl:ObjectProperty ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00404> ;
     chora:reviewStatus chora:Validated .
 
-<https://w3id.org/gaddatlas/id/assertion/S-castel_porcano-2> a chora:Assertion ;
-    rdfs:comment "Revisione critica (D-090)."@it ;
+<https://w3id.org/gaddatlas/id/assertion/S-castel_porcano-3> a chora:Assertion ;
+    rdfs:comment "Revisione critica (D-092)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-castel_porcano-2> ;
-    prov:wasRevisionOf <https://w3id.org/gaddatlas/id/assertion/S-castel_porcano> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-castel_porcano-3> ;
+    prov:wasRevisionOf <https://w3id.org/gaddatlas/id/assertion/S-castel_porcano-2> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/castel_porcano> ;
     chora:adoptedByProject true ;
-    chora:assertsValue chora:Invented ;
+    chora:assertsValue chora:Transformed ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00538>,
         <https://w3id.org/gaddatlas/id/reference/ref_00539> ;
     chora:reviewStatus chora:Validated .
@@ -4493,10 +4545,11 @@ chora:witnessType a owl:ObjectProperty ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00587> ;
     chora:reviewStatus chora:Validated .
 
-<https://w3id.org/gaddatlas/id/assertion/S-pensione_burgess> a chora:Assertion ;
-    rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
+<https://w3id.org/gaddatlas/id/assertion/S-pensione_burgess-2> a chora:Assertion ;
+    rdfs:comment "Revisione critica (D-092)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-pensione_burgess> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-pensione_burgess-2> ;
+    prov:wasRevisionOf <https://w3id.org/gaddatlas/id/assertion/S-pensione_burgess> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/pensione_burgess> ;
     chora:adoptedByProject true ;
     chora:assertsValue chora:Invented ;
@@ -4744,13 +4797,14 @@ chora:witnessType a owl:ObjectProperty ;
         <https://w3id.org/gaddatlas/id/reference/ref_00721> ;
     chora:reviewStatus chora:Validated .
 
-<https://w3id.org/gaddatlas/id/assertion/S-via_delle_oche> a chora:Assertion ;
-    rdfs:comment "Motivazione riscritta da LS (10/10/2026, D-079)."@it ;
+<https://w3id.org/gaddatlas/id/assertion/S-via_delle_oche-2> a chora:Assertion ;
+    rdfs:comment "Revisione critica (D-092)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-via_delle_oche> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-via_delle_oche-2> ;
+    prov:wasRevisionOf <https://w3id.org/gaddatlas/id/assertion/S-via_delle_oche> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/via_delle_oche> ;
     chora:adoptedByProject true ;
-    chora:assertsValue chora:Invented ;
+    chora:assertsValue chora:Imported ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00028> ;
     chora:reviewStatus chora:Validated .
 
@@ -5235,10 +5289,11 @@ chora:witnessType a owl:ObjectProperty ;
     chora:uncertaintyOrigin chora:DocumentaryOrigin .
 
 <https://w3id.org/gaddatlas/id/assertion/U-0009> a chora:Assertion ;
-    rdfs:comment "Luogo: via_delle_oche (QPa 22). Soggetto l'entità dell'ancora, per la regola dell'asse geometria (D-070); lo statuto del luogo non cambia (D-072)."@it ;
+    rdfs:comment "Luogo: via_delle_oche (QPa 22). Soggetto l'entità dell'ancora, per la regola dell'asse geometria (D-070); lo statuto del luogo non cambia (D-072). Superata: la via è milanese, oggi via Bernardino Zenale (Terzoli 2015, p. 77); la discrepanza non sussiste (D-092)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/U-0009> ;
     chora:aboutSubject <https://w3id.org/gaddatlas/id/gazetteer/gaz_bologna> ;
+    chora:adoptedByProject false ;
     chora:assertsValue chora:Discrepancy ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00028> ;
     chora:reviewStatus chora:Validated ;
@@ -5418,6 +5473,34 @@ chora:witnessType a owl:ObjectProperty ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasInformedBy <https://w3id.org/gaddatlas/id/act/I-0011> .
 
+<https://w3id.org/gaddatlas/id/encoding/I-0012> a chora:EncodingActivity ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/I-0012-encoder-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/gaddatlas/id/source/terzoli_2015> ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasInformedBy <https://w3id.org/gaddatlas/id/act/I-0012> .
+
+<https://w3id.org/gaddatlas/id/encoding/I-0013> a chora:EncodingActivity ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/I-0013-encoder-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/gaddatlas/id/source/terzoli_2015> ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasInformedBy <https://w3id.org/gaddatlas/id/act/I-0013> .
+
+<https://w3id.org/gaddatlas/id/encoding/I-0014> a chora:EncodingActivity ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/I-0014-encoder-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/gaddatlas/id/source/terzoli_2015> ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasInformedBy <https://w3id.org/gaddatlas/id/act/I-0014> .
+
+<https://w3id.org/gaddatlas/id/encoding/I-0015> a chora:EncodingActivity ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/I-0015-encoder-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/gaddatlas/id/source/terzoli_2015> ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasInformedBy <https://w3id.org/gaddatlas/id/act/I-0015> .
+
 <https://w3id.org/gaddatlas/id/encoding/K-0001> a chora:EncodingActivity ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/K-0001-encoder-lorenzo_sabatino> ;
     prov:startedAtTime "2026-10-10T00:00:00"^^xsd:dateTime ;
@@ -5578,6 +5661,13 @@ chora:witnessType a owl:ObjectProperty ;
     prov:used <https://w3id.org/gaddatlas/id/source/terzoli_2015> ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasInformedBy <https://w3id.org/gaddatlas/id/act/N-0006> .
+
+<https://w3id.org/gaddatlas/id/encoding/N-0007> a chora:EncodingActivity ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/N-0007-encoder-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/gaddatlas/id/source/terzoli_2015> ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasInformedBy <https://w3id.org/gaddatlas/id/act/N-0007> .
 
 <https://w3id.org/gaddatlas/id/encoding/S-tenenza_carabinieri_marino> a chora:EncodingActivity ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-tenenza_carabinieri_marino-encoder-lorenzo_sabatino> ;
@@ -6504,22 +6594,6 @@ chora:witnessType a owl:ObjectProperty ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00027> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> .
-
-<https://w3id.org/gaddatlas/id/interpretation/interp_00029> a prov:Entity,
-        chora:SpatialInterpretation ;
-    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00029> ;
-    chora:adoptedByProject true ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_bologna> ;
-    chora:annotationMethod "close_reading"^^xsd:string ;
-    chora:assignsNarrativeRole chora:ProjectedSpace ;
-    chora:assignsSpatialDetermination chora:Relative ;
-    chora:assignsSpatialRelationType chora:Inside ;
-    chora:confidence 0.5 ;
-    chora:criticalNote "L’espressione «via delle Oche», riferita a Milano, non risulta attestata nella toponomastica urbana storica. Il toponimo può essere interpretato come una trasposizione simbolica e ironica della via delle Oche bolognese, luogo storicamente associato alla prostituzione e alla cultura popolare femminile. Il contesto discorsivo (la figura della «ragazza» e il riferimento al «dispensario celtico» come \"luogo di marginalità femminile travestito da antropologia nordica\") suggerisce un uso allusivo e deformante dello spazio urbano, coerente con la pratica gaddiana di sovrapposizione e travestimento topografico. Il riferimento non va quindi inteso in senso referenziale, ma come costruzione narrativa a forte densità simbolica (prostituzione, oralità popolare, corpo femminile)."@it ;
-    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/ingravallo> ;
-    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00028> ;
-    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/via_delle_oche> .
 
 <https://w3id.org/gaddatlas/id/interpretation/interp_00030> a prov:Entity,
         chora:SpatialInterpretation ;
@@ -13111,32 +13185,6 @@ chora:witnessType a owl:ObjectProperty ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00465> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/via_veneto> .
 
-<https://w3id.org/gaddatlas/id/interpretation/interp_00552> a prov:Entity,
-        chora:SpatialInterpretation ;
-    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00552> ;
-    chora:adoptedByProject true ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_porta_pinciana> ;
-    chora:assignsNarrativeRole chora:ProjectedSpace ;
-    chora:assignsSpatialDetermination chora:Relative ;
-    chora:assignsSpatialRelationType chora:AdjacentTo ;
-    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/americana_inglese> ;
-    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00466> ;
-    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/pensione_burgess> .
-
-<https://w3id.org/gaddatlas/id/interpretation/interp_00553> a prov:Entity,
-        chora:SpatialInterpretation ;
-    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00553> ;
-    chora:adoptedByProject true ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_porta_pinciana> ;
-    chora:assignsNarrativeRole chora:ProjectedSpace ;
-    chora:assignsSpatialDetermination chora:Relative ;
-    chora:assignsSpatialRelationType chora:AdjacentTo ;
-    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pompeo> ;
-    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00467> ;
-    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/pensione_burgess> .
-
 <https://w3id.org/gaddatlas/id/interpretation/interp_00554> a prov:Entity,
         chora:SpatialInterpretation ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
@@ -16589,19 +16637,6 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00670> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/benevento> .
 
-<https://w3id.org/gaddatlas/id/interpretation/interp_00836> a prov:Entity,
-        chora:SpatialInterpretation ;
-    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00836> ;
-    chora:adoptedByProject true ;
-    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_porta_pinciana> ;
-    chora:assignsNarrativeRole chora:Marker ;
-    chora:assignsSpatialDetermination chora:Approximate ;
-    chora:assignsSpatialRelationType chora:AdjacentTo ;
-    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pompeo> ;
-    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00671> ;
-    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/pensione_burgess> .
-
 <https://w3id.org/gaddatlas/id/interpretation/interp_00837> a prov:Entity,
         chora:SpatialInterpretation ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
@@ -18314,6 +18349,66 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/ines_cionini> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00744> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/camera_sicurezza_questura> .
+
+<https://w3id.org/gaddatlas/id/interpretation/interp_00979> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00979> ;
+    prov:wasRevisionOf <https://w3id.org/gaddatlas/id/interpretation/interp_00029> ;
+    chora:adoptedByProject true ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_delle_oche_milano> ;
+    chora:annotationMethod "close_reading"^^xsd:string ;
+    chora:assignsNarrativeRole chora:ProjectedSpace ;
+    chora:assignsSpatialDetermination chora:Approximate ;
+    chora:criticalNote "Possibile suggestione della via delle Oche di Bologna, nota per le case chiuse: lettura dell'autore, che non incide su statuto e collocazione."@it ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/ingravallo> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00028> ;
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/via_delle_oche> .
+
+<https://w3id.org/gaddatlas/id/interpretation/interp_00980> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00980> ;
+    prov:wasRevisionOf <https://w3id.org/gaddatlas/id/interpretation/interp_00552> ;
+    chora:adoptedByProject true ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_roma> ;
+    chora:annotationMethod "close_reading"^^xsd:string ;
+    chora:assignsNarrativeRole chora:ProjectedSpace ;
+    chora:assignsSpatialDetermination chora:Indeterminate ;
+    chora:assignsSpatialRelationType chora:Inside ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/americana_inglese> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00466> ;
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/pensione_burgess> .
+
+<https://w3id.org/gaddatlas/id/interpretation/interp_00981> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00981> ;
+    prov:wasRevisionOf <https://w3id.org/gaddatlas/id/interpretation/interp_00553> ;
+    chora:adoptedByProject true ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_roma> ;
+    chora:annotationMethod "close_reading"^^xsd:string ;
+    chora:assignsNarrativeRole chora:ProjectedSpace ;
+    chora:assignsSpatialDetermination chora:Indeterminate ;
+    chora:assignsSpatialRelationType chora:Inside ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pompeo> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00467> ;
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/pensione_burgess> .
+
+<https://w3id.org/gaddatlas/id/interpretation/interp_00982> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00982> ;
+    prov:wasRevisionOf <https://w3id.org/gaddatlas/id/interpretation/interp_00836> ;
+    chora:adoptedByProject true ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_roma> ;
+    chora:annotationMethod "close_reading"^^xsd:string ;
+    chora:assignsNarrativeRole chora:Marker ;
+    chora:assignsSpatialDetermination chora:Indeterminate ;
+    chora:assignsSpatialRelationType chora:Inside ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pompeo> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00671> ;
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/pensione_burgess> .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00723> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
@@ -22166,6 +22261,18 @@ chora:witnessOf a owl:ObjectProperty ;
     chora:rationale "Luogo del sogno di Pestalozzi, senza riscontro reale; il nome gioca su Castelporziano (Manzotti 2010, p. 273; N-0004), e attraverso il nome il luogo resta legato a una geografia nota (QPa 213). Luogo inventato secondo Reuschel e Hurni (2011)."@it ;
     chora:sourcePage "213"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/act/S-castel_porcano-3> a hico:InterpretationAct ;
+    dcterms:date "2026-10-15"^^xsd:date ;
+    hico:hasInterpretationCriterion chora:CriticalReading ;
+    hico:hasInterpretationType chora:StatusAssertion ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/source/terzoli_2015> ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-castel_porcano-3-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/S-castel_porcano-3-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:rationale "Deformazione onomastica di Castel Porziano, tenuta reale di caccia a sud di Roma, luogo della festa notturna nel sogno di Pestalozzi (Terzoli 2015, pp. 633–634, 679): un luogo reale rinominato e rimodellato."@it ;
+    chora:sourcePage "679"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/act/S-castello> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
     hico:hasInterpretationCriterion chora:ReferentialEvidence ;
@@ -22391,6 +22498,18 @@ chora:witnessOf a owl:ObjectProperty ;
     prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     chora:rationale "Descrizione del censimento: «Albergo immaginario, possibile deformazione di Pensione Villa Borghese, via Sgambati 4, vicino Porta Pinciana»."@it .
+
+<https://w3id.org/gaddatlas/id/act/S-pensione_burgess-2> a hico:InterpretationAct ;
+    dcterms:date "2026-10-15"^^xsd:date ;
+    hico:hasInterpretationCriterion chora:CriticalReading ;
+    hico:hasInterpretationType chora:StatusAssertion ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/source/terzoli_2015> ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-pensione_burgess-2-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/S-pensione_burgess-2-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:rationale "Pensione senza referente identificato: il nome varia attraverso più lingue (Bergèss, Bergesse, Burgess) e nella forma esatta evoca l'archeologo Richard Burgess, in coerenza con il cognome di Diomede Lanciani (Terzoli 2015, pp. 22, 574–575). Invenzione collocata a Roma."@it ;
+    chora:sourcePage "22, 574–575"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/act/S-piani_alti_219> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
@@ -22631,6 +22750,18 @@ chora:witnessOf a owl:ObjectProperty ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     chora:rationale "Via reale di Bologna, nota via di prostituzione, che il testo traslata a Milano (QPa 22; U-0009)."@it ;
     chora:sourcePage "22"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/act/S-via_delle_oche-2> a hico:InterpretationAct ;
+    dcterms:date "2026-10-15"^^xsd:date ;
+    hico:hasInterpretationCriterion chora:TextualEvidence ;
+    hico:hasInterpretationType chora:StatusAssertion ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/source/terzoli_2015> ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-via_delle_oche-2-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/S-via_delle_oche-2-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:rationale "Via storica di Milano, oggi via Bernardino Zenale (Terzoli 2015, p. 77; L'Adalgisa, p. 564, n. 53)."@it ;
+    chora:sourcePage "77"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/act/S-villino_lungotevere> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
@@ -28834,6 +28965,40 @@ chora:witnessOf a owl:ObjectProperty ;
     prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
 
+<https://w3id.org/gaddatlas/id/act/interp_00979> a hico:InterpretationAct ;
+    dcterms:date "2026-10-15"^^xsd:date ;
+    hico:hasInterpretationType chora:SpatialReading ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/source/terzoli_2015> ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00979-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/interp_00979-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:sourcePage "77"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/act/interp_00980> a hico:InterpretationAct ;
+    dcterms:date "2026-10-15"^^xsd:date ;
+    hico:hasInterpretationType chora:SpatialReading ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00980-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/interp_00980-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
+
+<https://w3id.org/gaddatlas/id/act/interp_00981> a hico:InterpretationAct ;
+    dcterms:date "2026-10-15"^^xsd:date ;
+    hico:hasInterpretationType chora:SpatialReading ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00981-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/interp_00981-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
+
+<https://w3id.org/gaddatlas/id/act/interp_00982> a hico:InterpretationAct ;
+    dcterms:date "2026-10-15"^^xsd:date ;
+    hico:hasInterpretationType chora:SpatialReading ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00982-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/interp_00982-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
+
 <https://w3id.org/gaddatlas/id/assertion/C-casal_bruciato> a chora:Assertion ;
     rdfs:comment "L'entità gaz_casal_bruciato è stata eliminata (D-029): l'IRI resta come valore di questa lettura superata. Passaggio intermedio D-029 (luogo trasformato senza referente, ancorato a Marino, Albano, Pavona e Santa Palomba), superato da D-037."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
@@ -28902,6 +29067,18 @@ chora:witnessOf a owl:ObjectProperty ;
         <https://w3id.org/gaddatlas/id/reference/ref_00539> ;
     chora:reviewStatus chora:Validated .
 
+<https://w3id.org/gaddatlas/id/assertion/S-castel_porcano-2> a chora:Assertion ;
+    rdfs:comment "Revisione critica (D-090). Superata dalla lettura S-castel_porcano-3 (D-092)."@it ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-castel_porcano-2> ;
+    prov:wasRevisionOf <https://w3id.org/gaddatlas/id/assertion/S-castel_porcano> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/castel_porcano> ;
+    chora:adoptedByProject false ;
+    chora:assertsValue chora:Invented ;
+    chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00538>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00539> ;
+    chora:reviewStatus chora:Validated .
+
 <https://w3id.org/gaddatlas/id/assertion/S-monte_nuncupale> a chora:Assertion ;
     rdfs:comment "Motivazione riscritta da LS (10/10/2026, D-079). Superata dalla lettura S-monte_nuncupale-2 (D-090)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
@@ -28910,6 +29087,18 @@ chora:witnessOf a owl:ObjectProperty ;
     chora:adoptedByProject false ;
     chora:assertsValue chora:Imagined ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00415> ;
+    chora:reviewStatus chora:Validated .
+
+<https://w3id.org/gaddatlas/id/assertion/S-pensione_burgess> a chora:Assertion ;
+    rdfs:comment "Validata da LS (10/10/2026, D-078). Superata dalla lettura S-pensione_burgess-2 (D-092)."@it ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-pensione_burgess> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/pensione_burgess> ;
+    chora:adoptedByProject false ;
+    chora:assertsValue chora:Invented ;
+    chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00466>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00467>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00671> ;
     chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-roccafringoli> a chora:Assertion ;
@@ -28933,6 +29122,16 @@ chora:witnessOf a owl:ObjectProperty ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00306>,
         <https://w3id.org/gaddatlas/id/reference/ref_00314>,
         <https://w3id.org/gaddatlas/id/reference/ref_00316> ;
+    chora:reviewStatus chora:Validated .
+
+<https://w3id.org/gaddatlas/id/assertion/S-via_delle_oche> a chora:Assertion ;
+    rdfs:comment "Motivazione riscritta da LS (10/10/2026, D-079). Superata dalla lettura S-via_delle_oche-2 (D-092)."@it ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-via_delle_oche> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/via_delle_oche> ;
+    chora:adoptedByProject false ;
+    chora:assertsValue chora:Invented ;
+    chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00028> ;
     chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/association/A-0001-encoder-lorenzo_sabatino> a prov:Association ;
@@ -29076,6 +29275,38 @@ chora:witnessOf a owl:ObjectProperty ;
     prov:hadRole chora:Encoder .
 
 <https://w3id.org/gaddatlas/id/association/I-0011-readingauthor-terzoli> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/terzoli> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/I-0012-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/I-0012-readingauthor-terzoli> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/terzoli> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/I-0013-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/I-0013-readingauthor-terzoli> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/terzoli> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/I-0014-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/I-0014-readingauthor-terzoli> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/terzoli> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/I-0015-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/I-0015-readingauthor-terzoli> a prov:Association ;
     prov:agent <https://w3id.org/gaddatlas/id/agent/terzoli> ;
     prov:hadRole chora:ReadingAuthor .
 
@@ -29276,6 +29507,14 @@ chora:witnessOf a owl:ObjectProperty ;
     prov:hadRole chora:Encoder .
 
 <https://w3id.org/gaddatlas/id/association/N-0006-readingauthor-terzoli> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/agent/terzoli> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/N-0007-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/N-0007-readingauthor-terzoli> a prov:Association ;
     prov:agent <https://w3id.org/gaddatlas/id/agent/terzoli> ;
     prov:hadRole chora:ReadingAuthor .
 
@@ -31647,6 +31886,14 @@ chora:witnessOf a owl:ObjectProperty ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
+<https://w3id.org/gaddatlas/id/association/S-castel_porcano-3-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/S-castel_porcano-3-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
 <https://w3id.org/gaddatlas/id/association/S-castel_porcano-encoder-lorenzo_sabatino> a prov:Association ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:Encoder .
@@ -31804,6 +32051,14 @@ chora:witnessOf a owl:ObjectProperty ;
     prov:hadRole chora:Encoder .
 
 <https://w3id.org/gaddatlas/id/association/S-passaggio_livello_casal_bruciato-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/S-pensione_burgess-2-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/S-pensione_burgess-2-readingauthor-lorenzo_sabatino> a prov:Association ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
@@ -31980,6 +32235,14 @@ chora:witnessOf a owl:ObjectProperty ;
     prov:hadRole chora:Encoder .
 
 <https://w3id.org/gaddatlas/id/association/S-tor_di_gheppio-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/S-via_delle_oche-2-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/S-via_delle_oche-2-readingauthor-lorenzo_sabatino> a prov:Association ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
@@ -40103,6 +40366,38 @@ chora:witnessOf a owl:ObjectProperty ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
+<https://w3id.org/gaddatlas/id/association/interp_00979-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/interp_00979-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/interp_00980-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/interp_00980-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/interp_00981-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/interp_00981-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/interp_00982-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/interp_00982-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
 <https://w3id.org/gaddatlas/id/focalizer/barbezzi_gallo> a chora:Character,
         chora:FocalizingAgent ;
     chora:characterName "Barbezzi Gallo"@it ;
@@ -40511,6 +40806,10 @@ chora:witnessOf a owl:ObjectProperty ;
 }"""^^geosparql:geoJSONLiteral ] ;
     geo1:lat 39.42242825933711 ;
     geo1:long 16.29084361444828 .
+
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_campidoglio> a chora:GazetteerEntity ;
+    rdfs:label "Campidoglio"@it ;
+    dcterms:source "Senza coordinate: bersaglio dell'identificazione non adottata I-0015 (Terzoli 2015, pp. 507–508)."^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_campo_de_fiori> a chora:GazetteerEntity ;
     rdfs:label "Campo de' Fiori"@it ;
@@ -41613,29 +41912,6 @@ chora:witnessOf a owl:ObjectProperty ;
 }"""^^geosparql:geoJSONLiteral ] ;
     geo1:lat 38.12747821699881 ;
     geo1:long 15.652447605612965 .
-
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_rocca_orsina> a chora:GazetteerEntity ;
-    rdfs:label "Rocca Orsina"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.658476221527655,
-          41.76991636096222
-
-        ]
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 41.76991636096222 ;
-    geo1:long 12.658476221527655 .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_salsomaggiore> a chora:GazetteerEntity ;
     rdfs:label "Salsomaggiore"@it ;
@@ -43045,6 +43321,61 @@ chora:witnessOf a owl:ObjectProperty ;
     chora:precision "~250 m"^^xsd:string ;
     chora:repertory <https://w3id.org/gaddatlas/id/source/igm_150_iii_so> .
 
+<https://w3id.org/gaddatlas/id/interpretation/interp_00029> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00029> ;
+    chora:adoptedByProject false ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_bologna> ;
+    chora:annotationMethod "close_reading"^^xsd:string ;
+    chora:assignsNarrativeRole chora:ProjectedSpace ;
+    chora:assignsSpatialDetermination chora:Relative ;
+    chora:assignsSpatialRelationType chora:Inside ;
+    chora:confidence 0.5 ;
+    chora:criticalNote "L’espressione «via delle Oche», riferita a Milano, non risulta attestata nella toponomastica urbana storica. Il toponimo può essere interpretato come una trasposizione simbolica e ironica della via delle Oche bolognese, luogo storicamente associato alla prostituzione e alla cultura popolare femminile. Il contesto discorsivo (la figura della «ragazza» e il riferimento al «dispensario celtico» come \"luogo di marginalità femminile travestito da antropologia nordica\") suggerisce un uso allusivo e deformante dello spazio urbano, coerente con la pratica gaddiana di sovrapposizione e travestimento topografico. Il riferimento non va quindi inteso in senso referenziale, ma come costruzione narrativa a forte densità simbolica (prostituzione, oralità popolare, corpo femminile)."@it ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/ingravallo> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00028> ;
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/via_delle_oche> .
+
+<https://w3id.org/gaddatlas/id/interpretation/interp_00552> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00552> ;
+    chora:adoptedByProject false ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_porta_pinciana> ;
+    chora:assignsNarrativeRole chora:ProjectedSpace ;
+    chora:assignsSpatialDetermination chora:Relative ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/americana_inglese> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00466> ;
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/pensione_burgess> .
+
+<https://w3id.org/gaddatlas/id/interpretation/interp_00553> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00553> ;
+    chora:adoptedByProject false ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_porta_pinciana> ;
+    chora:assignsNarrativeRole chora:ProjectedSpace ;
+    chora:assignsSpatialDetermination chora:Relative ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pompeo> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00467> ;
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/pensione_burgess> .
+
+<https://w3id.org/gaddatlas/id/interpretation/interp_00836> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00836> ;
+    chora:adoptedByProject false ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_porta_pinciana> ;
+    chora:assignsNarrativeRole chora:Marker ;
+    chora:assignsSpatialDetermination chora:Approximate ;
+    chora:assignsSpatialRelationType chora:AdjacentTo ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pompeo> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00671> ;
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/pensione_burgess> .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/colli_albani> a chora:NarrativePlace ;
     rdfs:label "Colli Albani"@it ;
     chora:hasPlaceCategory chora:locality ;
@@ -43299,13 +43630,6 @@ chora:OnomasticPun a owl:NamedIndividual,
     skos:altLabel "gioco onomastico"@it ;
     skos:inScheme chora:NamingMechanismScheme ;
     skos:prefLabel "Onomastic pun"@en ;
-    skos:topConceptOf chora:NamingMechanismScheme .
-
-chora:Paraetymology a owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "paraetimologia"@it ;
-    skos:inScheme chora:NamingMechanismScheme ;
-    skos:prefLabel "Paraetymology"@en ;
     skos:topConceptOf chora:NamingMechanismScheme .
 
 chora:Partition a owl:Class ;
@@ -43682,6 +44006,47 @@ chora:village a owl:NamedIndividual,
     chora:rationale "«A la Vite» è probabilmente il ristorante Le Grotte, in via della Vite (rione Campo Marzio)."@it ;
     chora:sourcePage "616"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/act/I-0012> a hico:InterpretationAct ;
+    dcterms:date "2015"^^xsd:gYear ;
+    hico:hasInterpretationCriterion chora:CriticalReading ;
+    hico:hasInterpretationType chora:IdentificationAssertion ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/source/terzoli_2015> ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/I-0012-readingauthor-terzoli> ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/agent/terzoli> ;
+    chora:rationale "Castel Porcano è la deformazione di Castel Porziano, allora tenuta reale di caccia a sud di Roma (cfr. pp. 633–634)."@it ;
+    chora:sourcePage "679"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/act/I-0013> a hico:InterpretationAct ;
+    dcterms:date "2015"^^xsd:gYear ;
+    hico:hasInterpretationCriterion chora:ReferentialEvidence ;
+    hico:hasInterpretationType chora:IdentificationAssertion ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/source/terzoli_2015> ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/I-0013-readingauthor-terzoli> ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/agent/terzoli> ;
+    chora:rationale "Via delle Oche è oggi via Bernardino Zenale, fra via San Vittore e corso Magenta, presso Santa Maria delle Grazie; il commento rinvia all'Adalgisa, p. 564, n. 53 («Via di Okk»)."@it ;
+    chora:sourcePage "77"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/act/I-0014> a hico:InterpretationAct ;
+    dcterms:date "2015"^^xsd:gYear ;
+    hico:hasInterpretationCriterion chora:CriticalReading ;
+    hico:hasInterpretationType chora:IdentificationAssertion ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/source/terzoli_2015> ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/I-0014-readingauthor-terzoli> ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/agent/terzoli> ;
+    chora:rationale "Rocca Orsina è la Rocca Orsini di Marino, di cui il palazzo Colonna occupa il sedime; Gadda la nomina anche in Fuga a Tor di Nona (RD 981)."@it ;
+    chora:sourcePage "507–508"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/act/I-0015> a hico:InterpretationAct ;
+    dcterms:date "2015"^^xsd:gYear ;
+    hico:hasInterpretationCriterion chora:CriticalReading ;
+    hico:hasInterpretationType chora:IdentificationAssertion ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/source/terzoli_2015> ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/I-0015-readingauthor-terzoli> ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/agent/terzoli> ;
+    chora:quotation "forse da identificare con il Campidoglio"@it ;
+    chora:rationale "Ipotesi dubitativa del commento (\"forse da identificare con il Campidoglio\"); non adottata: il \"su\" del passo si accorda con l'orizzonte dei Colli Albani."@it ;
+    chora:sourcePage "507–508"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/act/K-0001> a hico:InterpretationAct ;
     dcterms:date "2020"^^xsd:gYear ;
     hico:hasInterpretationCriterion chora:CriticalReading ;
@@ -43919,6 +44284,16 @@ chora:village a owl:NamedIndividual,
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/agent/terzoli> ;
     chora:rationale "«Ciurlani»: origine onomastica e gioco di parole con «truffaldino»."@it ;
     chora:sourcePage "433–435, 644"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/act/N-0007> a hico:InterpretationAct ;
+    dcterms:date "2015"^^xsd:gYear ;
+    hico:hasInterpretationCriterion chora:CriticalReading ;
+    hico:hasInterpretationType chora:NamingAssertion ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/source/terzoli_2015> ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/N-0007-readingauthor-terzoli> ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/agent/terzoli> ;
+    chora:rationale "Gioco paraetimologico su Castel Porziano, con il rinvio a Circe e alla Guida Touring 1924, p. 569 («già Porciliano»); vale anche per «Castel Porcino»."@it ;
+    chora:sourcePage "679"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/act/S-tenenza_carabinieri_marino> a hico:InterpretationAct ;
     dcterms:date "2010"^^xsd:gYear ;
@@ -45772,7 +46147,6 @@ chora:village a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/narrativeplace/monte_manno> a chora:NarrativePlace ;
     rdfs:label "Monte Manno"@it ;
     dcterms:description "monte dell'Altipiano Laziale, verso Latina"@it ;
-    rdfs:comment "Non presente in Indice dei Luoghi Isella"@it ;
     chora:hasPlaceCategory chora:mountain ;
     chora:hasRealityStatus chora:Imported .
 
@@ -45987,15 +46361,6 @@ chora:village a owl:NamedIndividual,
 
 <https://w3id.org/gaddatlas/id/narrativeplace/rocca_di_papa> a chora:NarrativePlace ;
     rdfs:label "Rocca di Papa"@it ;
-    chora:hasPlaceCategory chora:locality ;
-    chora:hasRealityStatus chora:Imported ;
-    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/rocca_orsina> a chora:NarrativePlace ;
-    rdfs:label "Rocca Orsina"@it ;
-    rdfs:comment """«Rocca Orsina» non è il nome moderno di un comune, ma può essere ricondotto con buone ragioni alla fortificazione degli Orsini a Marino.
-
-Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente fortificazione medievale. L’attuale Palazzo Colonna sorge sul luogo della rocca, della quale sono ancora riconosciute strutture e tracce inglobate nell’edificio successivo. Le fonti locali la indicano come Rocca degli Orsini o fortezza orsinesca."""@it ;
     chora:hasPlaceCategory chora:locality ;
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
@@ -46282,13 +46647,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasPlaceCategory chora:street ;
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/via_delle_oche> a chora:NarrativePlace ;
-    rdfs:label "via delle Oche"@it ;
-    dcterms:description "via topograficamente non precisata"@it ;
-    rdfs:comment "Toponimo non attestato nella toponomastica storica milanese. L’espressione «via delle Oche» è qui utilizzata in modo allusivo e deformante; la localizzazione urbana non va intesa in senso referenziale, ma come costruzione narrativa simbolica."@it ;
-    chora:hasPlaceCategory chora:street ;
-    chora:hasRealityStatus chora:Invented .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_di_ferro> a chora:NarrativePlace ;
     rdfs:label "Via di Ferro"@it ;
@@ -48593,13 +48951,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 173"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/reference/ref_00414> a chora:PlaceReference ;
-    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:excerpt "Lui tutt'al rovescio, appena rosa e oro il cielo: da Rocca di Papa a Castel Savelli, giù: da Rocca Orsina al Monte Nuncupale, su"@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
-    chora:sourceReference "A 173"^^xsd:string .
-
 <https://w3id.org/gaddatlas/id/reference/ref_00416> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
@@ -48747,22 +49098,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
     chora:excerpt "« Là, ne li quartieri alti, a via Boncompagni, a via Veneto. »"@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
-    chora:sourceReference "A 189"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/reference/ref_00466> a chora:PlaceReference ;
-    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:attestedForm "pensione Bergèss"@it ;
-    chora:excerpt "« Ho capito, la pensione Bergèss, » fece Pompeo, pronunziando a suo modo."@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
-    chora:sourceReference "A 189"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/reference/ref_00467> a chora:PlaceReference ;
-    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:attestedForm "Pensione Bergesse"@it ;
-    chora:excerpt "« All’ufficio stranieri, Pompè, allo schedario. Pensione Bergesse. E bbuona pesca. »"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 189"^^xsd:string .
 
@@ -49371,13 +49706,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 291"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/reference/ref_00671> a chora:PlaceReference ;
-    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:excerpt "Tre agenti armati, due di moschetto: non però lo Sgranfia, comandato a la pensione Burgess."@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
-    chora:sourceReference "A 291"^^xsd:string .
-
 <https://w3id.org/gaddatlas/id/reference/ref_00672> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
@@ -49656,6 +49984,13 @@ chora:LocationAssertion a hico:InterpretationType,
     skos:topConceptOf chora:AssertionTypeScheme ;
     chora:reifiesProperty geosparql:hasGeometry .
 
+chora:Paraetymology a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "paraetimologia"@it ;
+    skos:inScheme chora:NamingMechanismScheme ;
+    skos:prefLabel "Paraetymology"@en ;
+    skos:topConceptOf chora:NamingMechanismScheme .
+
 chora:SubstitutionVariant a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "variante di sostituzione"@it ;
@@ -49848,28 +50183,6 @@ chora:temple a owl:NamedIndividual,
     geo1:lat 41.7788626363677 ;
     geo1:long 12.504796743330868 .
 
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_porziano> a chora:GazetteerEntity ;
-    rdfs:label "Castel Porziano"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.400109186081606,
-          41.74517216671914
-        ]
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 41.74517216671914 ;
-    geo1:long 12.400109186081606 .
-
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_savello> a chora:GazetteerEntity ;
     rdfs:label "Castel Savello"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -50007,6 +50320,30 @@ chora:temple a owl:NamedIndividual,
     geo1:lat 41.70507314535531 ;
     geo1:long 12.933066487462336 .
 
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_rocca_orsina> a chora:GazetteerEntity ;
+    rdfs:label "Rocca Orsina"@it ;
+    dcterms:source "Terzoli 2015, pp. 507–508 (identificazione); coordinata nell'area di Palazzo Colonna, che occupa il sedime della rocca; coordinata verificata sul poligono OSM di Palazzo Colonna, way 74413768."^^xsd:string ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.658476221527655,
+          41.76991636096222
+
+        ]
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 41.76991636096222 ;
+    geo1:long 12.658476221527655 .
+
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_soriano_nel_cimino> a chora:GazetteerEntity ;
     rdfs:label "Soriano nel Cimino"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -50073,6 +50410,32 @@ chora:temple a owl:NamedIndividual,
 }"""^^geosparql:geoJSONLiteral ] ;
     geo1:lat 41.90388247365601 ;
     geo1:long 12.481236040688875 .
+
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_via_delle_oche_milano> a chora:GazetteerEntity ;
+    rdfs:label "via delle Oche"@it ;
+    dcterms:source "Terzoli 2015, p. 77; L'Adalgisa, p. 564, n. 53. Coordinata: centroide di via Bernardino Zenale, OpenStreetMap, way 27756097 e 286239491."^^xsd:string ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.170031,
+          45.464649
+        ]
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 45.464649 ;
+    geo1:long 9.170031 ;
+    skos:altLabel "Via di Okk"@it ;
+    chora:historicalLocation "contrada milanese scomparsa"@it ;
+    chora:presentLocation "via Bernardino Zenale, Milano, tra via San Vittore e corso Magenta, presso Santa Maria delle Grazie"@it .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_mamiani> a chora:GazetteerEntity ;
     rdfs:label "Via Mamiani"@it ;
@@ -50227,12 +50590,6 @@ chora:temple a owl:NamedIndividual,
     chora:hasPlaceCategory chora:mountain ;
     chora:hasRealityStatus chora:Transformed .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/monte_nuncupale> a chora:NarrativePlace ;
-    rdfs:label "Monte Nuncupale"@it ;
-    dcterms:description "Monte inventato, collocato nella zona dei Colli Albani/marino"@it ;
-    chora:hasPlaceCategory chora:mountain ;
-    chora:hasRealityStatus chora:Invented .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/monte_velino> a chora:NarrativePlace ;
     rdfs:label "Monte Velino"@it ;
     dcterms:description "Monte tra Lazio e Abruzzo"@it ;
@@ -50325,6 +50682,14 @@ chora:temple a owl:NamedIndividual,
     dcterms:description "Fiume indiano"@it ;
     chora:hasPlaceCategory chora:river ;
     chora:hasRealityStatus chora:Imported .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/rocca_orsina> a chora:NarrativePlace ;
+    rdfs:label "Rocca Orsina"@it ;
+    rdfs:comment "La Rocca Orsini di Marino (Terzoli 2015, pp. 507–508); Gadda la nomina anche in Fuga a Tor di Nona (RD 981). Il palazzo Colonna ne occupa il sedime."@it ;
+    chora:hasPlaceCategory chora:locality ;
+    chora:hasRealityStatus chora:Imported ;
+    chora:identifiedWith <https://w3id.org/gaddatlas/id/gazetteer/gaz_rocca_orsina> ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/rocca_savella> a chora:NarrativePlace ;
     rdfs:label "Rocca Savella"@it ;
@@ -50513,13 +50878,6 @@ chora:temple a owl:NamedIndividual,
     chora:hasVariant <https://w3id.org/gaddatlas/id/reference/ref_00726> ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 16"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/reference/ref_00028> a chora:PlaceReference ;
-    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:excerpt "lui, no, no, non era « bello »: e nemmeno gli riusciva di consolarsi con quel proverbio che aveva udito a Milano da una ragazza, al dispensario celtico di via delle Oche: « I òmen hin semper bèi. »"@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
-    chora:sourceReference "A 22"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00054> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
@@ -51038,7 +51396,7 @@ chora:temple a owl:NamedIndividual,
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 173"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/reference/ref_00415> a chora:PlaceReference ;
+<https://w3id.org/gaddatlas/id/reference/ref_00414> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
     chora:excerpt "Lui tutt'al rovescio, appena rosa e oro il cielo: da Rocca di Papa a Castel Savelli, giù: da Rocca Orsina al Monte Nuncupale, su"@it ;
@@ -52445,19 +52803,17 @@ chora:police_station a owl:NamedIndividual,
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/monte_nuncupale> a chora:NarrativePlace ;
+    rdfs:label "Monte Nuncupale"@it ;
+    dcterms:description "Monte inventato, collocato nella zona dei Colli Albani/marino"@it ;
+    chora:hasPlaceCategory chora:mountain ;
+    chora:hasRealityStatus chora:Invented .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_del_mappamondo> a chora:NarrativePlace ;
     rdfs:label "Palazzo der Mappamonno"@it ;
     chora:hasPlaceCategory chora:historical_building ;
     chora:hasRealityStatus chora:Transformed ;
     chora:identifiedWith <https://w3id.org/gaddatlas/id/gazetteer/gaz_palazzo_venezia> ;
-    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/pensione_burgess> a chora:NarrativePlace ;
-    rdfs:label "Pensione Burgess"@it ;
-    dcterms:description "Albergo immaginario, possibile deformazione di Pensione Villa Borghese, via Sgambati 4, vicino Porta Pinciana"@it ;
-    chora:hasFuzzinessLevel 4.0 ;
-    chora:hasPlaceCategory chora:hotel ;
-    chora:hasRealityStatus chora:Invented ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/piazza_san_lorenzo_in_lucina> a chora:NarrativePlace ;
@@ -52734,6 +53090,13 @@ chora:police_station a owl:NamedIndividual,
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 172"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/reference/ref_00415> a chora:PlaceReference ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:excerpt "Lui tutt'al rovescio, appena rosa e oro il cielo: da Rocca di Papa a Castel Savelli, giù: da Rocca Orsina al Monte Nuncupale, su"@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
+    chora:sourceReference "A 173"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/reference/ref_00417> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
@@ -52769,6 +53132,22 @@ chora:police_station a owl:NamedIndividual,
     chora:excerpt "« Che è, se non erro, » fece il dottor Fumi, « l’amica che lavorava con te dalla Zamira », ai Due Santi."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 178"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00466> a chora:PlaceReference ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "pensione Bergèss"@it ;
+    chora:excerpt "« Ho capito, la pensione Bergèss, » fece Pompeo, pronunziando a suo modo."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
+    chora:sourceReference "A 189"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00467> a chora:PlaceReference ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Pensione Bergesse"@it ;
+    chora:excerpt "« All’ufficio stranieri, Pompè, allo schedario. Pensione Bergesse. E bbuona pesca. »"@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
+    chora:sourceReference "A 189"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00480> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
@@ -52814,13 +53193,6 @@ chora:police_station a owl:NamedIndividual,
     chora:excerpt "Il brigadiere filava in discesa verso li Du Santi. Era giornata lasca, il dolco aveva bevuto ai padùli."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 211"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/reference/ref_00538> a chora:PlaceReference ;
-    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:excerpt "Solevano allegrare la notte fascinosa di Castel Porcano."@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
-    chora:sourceReference "A 213"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00540> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
@@ -53013,6 +53385,13 @@ chora:police_station a owl:NamedIndividual,
     chora:excerpt "Uscirono da la confusione verso via Mamiani o via Ricasoli: c'era un passaggio tra le bancarelle de li pesciaroli e de li pollaroli."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
     chora:sourceReference "A 285"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00671> a chora:PlaceReference ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:excerpt "Tre agenti armati, due di moschetto: non però lo Sgranfia, comandato a la pensione Burgess."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_X> ;
+    chora:sourceReference "A 291"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00674> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
@@ -53293,12 +53672,6 @@ chora:retail_business a owl:NamedIndividual,
     skos:inScheme chora:PlaceCategoryScheme ;
     skos:prefLabel "Retail Business"@en ;
     skos:topConceptOf chora:PlaceCategoryScheme .
-
-<https://w3id.org/gaddatlas/id/focalizer/americana_inglese> a chora:Character,
-        chora:FocalizingAgent ;
-    dcterms:description "Personaggio non qualificato, emblematico di una categoria sociale-culturale (turista anglosassone in Italia)"@it ;
-    chora:characterName "Americana / Inglese"@it ;
-    chora:hasGender "female"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/focalizer/sor_manuela> a chora:Character,
         chora:FocalizingAgent ;
@@ -53584,13 +53957,6 @@ chora:retail_business a owl:NamedIndividual,
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/castel_porcano> a chora:NarrativePlace ;
-    rdfs:label "Castel Porcano"@it ;
-    dcterms:description "Castello d'immaginazione, deformazione linguistica di Castel Porziano"@it ;
-    skos:altLabel "Castel Porcino"@it ;
-    chora:hasPlaceCategory chora:castle ;
-    chora:hasRealityStatus chora:Invented .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/castello> a chora:NarrativePlace ;
     rdfs:label "Castello"@it ;
     dcterms:description "Luogo testuale della \"stazione di Castello\" (QPa 279); identificazione adottata Castel Savello (Manzotti 2010, p. 293), concorrente Castel Gandolfo (LS)"@it ;
@@ -53680,6 +54046,14 @@ chora:retail_business a owl:NamedIndividual,
     chora:hasPlaceCategory chora:street ;
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/via_delle_oche> a chora:NarrativePlace ;
+    rdfs:label "via delle Oche"@it ;
+    dcterms:description "Via storica di Milano, oggi via Bernardino Zenale (Terzoli 2015, p. 77)."@it ;
+    rdfs:comment "Contrada milanese scomparsa, ricordata da Gadda nell'Adalgisa (p. 564, n. 53). Le mappe storiche legano il nome a zone verdi e acquitrini."@it ;
+    chora:hasPlaceCategory chora:street ;
+    chora:hasRealityStatus chora:Imported ;
+    chora:identifiedWith <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_delle_oche_milano> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/via_lanza> a chora:NarrativePlace ;
     rdfs:label "Via Lanza"@it ;
@@ -53984,6 +54358,12 @@ chora:LiteraryWork a owl:Class .
     rdfs:comment "Gadda e il paesaggio (Perosa 2023a)"@it ;
     schema:name "Giulia Perosa" .
 
+<https://w3id.org/gaddatlas/id/focalizer/americana_inglese> a chora:Character,
+        chora:FocalizingAgent ;
+    dcterms:description "Personaggio non qualificato, emblematico di una categoria sociale-culturale (turista anglosassone in Italia)"@it ;
+    chora:characterName "Americana / Inglese"@it ;
+    chora:hasGender "female"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/focalizer/menegazzi> a chora:Character,
         chora:FocalizingAgent ;
     chora:characterName "Menegazzi"@it ;
@@ -53999,6 +54379,28 @@ chora:LiteraryWork a owl:Class .
     dcterms:description "Zio di Camilla Mattonari"@it ;
     chora:characterName "Zio Cantoniere"@it ;
     chora:hasGender "male"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_porziano> a chora:GazetteerEntity ;
+    rdfs:label "Castel Porziano"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.400109186081606,
+          41.74517216671914
+        ]
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 41.74517216671914 ;
+    geo1:long 12.400109186081606 .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_ciampino> a chora:GazetteerEntity ;
     rdfs:label "Ciampino"@it ;
@@ -54069,28 +54471,6 @@ chora:LiteraryWork a owl:Class .
     geo1:lat 41.90123174971493 ;
     geo1:long 12.47981741059732 ;
     chora:presentLocation "P.za Colonna, 391, 00186"@it .
-
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_roma> a chora:GazetteerEntity ;
-    rdfs:label "Roma"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          12.483780073676602,
-          41.89712290196547
-        ]
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 41.89712290196547 ;
-    geo1:long 12.483780073676602 .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_maria_maggiore> a chora:GazetteerEntity ;
     rdfs:label "Santa Maria Maggiore"@it ;
@@ -54293,6 +54673,13 @@ chora:LiteraryWork a owl:Class .
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
+<https://w3id.org/gaddatlas/id/reference/ref_00028> a chora:PlaceReference ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:excerpt "lui, no, no, non era « bello »: e nemmeno gli riusciva di consolarsi con quel proverbio che aveva udito a Milano da una ragazza, al dispensario celtico di via delle Oche: « I òmen hin semper bèi. »"@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
+    chora:sourceReference "A 22"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/reference/ref_00098> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
@@ -54313,14 +54700,6 @@ chora:LiteraryWork a owl:Class .
     chora:excerpt "Nel laboratorio bettola delli Du Santi, tutte le ragazze, ogni volta, e anche la Zamira d’altronde, s’erano smarrite in una trasognata innocenza."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
     chora:sourceReference "A 208"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/reference/ref_00539> a chora:PlaceReference ;
-    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:attestedForm "Castel Porcino"@it ;
-    chora:excerpt "A Castel Porcino, sotto festoni di pere gialle da due watt e palloncini sbronzi e dolcemente obesi nell’alitare e nello smorire d’ogni mèlode, la maga dalla tabacchiera elicitava al fiuto gli imminenti suini."@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
-    chora:sourceReference "A 213"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00588> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
@@ -54426,17 +54805,6 @@ chora:MemoryAttributionScheme a owl:NamedIndividual,
         chora:CharacterMemory,
         chora:UndecidableMemory ;
     skos:prefLabel "Memory attribution"@en .
-
-chora:NamingAssertion a hico:InterpretationType,
-        owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "lettura onomastica"@it ;
-    skos:definition "A reading of how a toponym is made: the naming mechanism, and optionally the real toponym it plays on (chora:playsOn)."@en ;
-    skos:inScheme chora:AssertionTypeScheme ;
-    skos:notation "naming" ;
-    skos:prefLabel "Naming assertion"@en ;
-    skos:topConceptOf chora:AssertionTypeScheme ;
-    chora:reifiesProperty chora:nameReading .
 
 chora:RationaleTypeScheme a owl:NamedIndividual,
         skos:ConceptScheme ;
@@ -54646,6 +55014,13 @@ chora:station a owl:NamedIndividual,
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
     chora:sourceReference "A 177"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/reference/ref_00538> a chora:PlaceReference ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:excerpt "Solevano allegrare la notte fascinosa di Castel Porcano."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
+    chora:sourceReference "A 213"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/reference/ref_00568> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
@@ -54704,6 +55079,17 @@ chora:station a owl:NamedIndividual,
     dcterms:type "guida, repertorio"@it ;
     rdfs:comment "Cartine: «Colli laziali, Monti Lepini ed Ernici (Roma, Frosinone)», tra pp. 480–481 (Terzoli 2015, CART. 2; la carta di Manzotti 2010, Tav. V/VI, per Casal Bruciato, L-0001; conferma: Terzoli 2015, p. 766); «Sabina meridionale, Monti Tiburtini, Prenestini e Carseolani», tra pp. 456–457 (CART. 3). Le carte sono locatori (D-086)."@it .
 
+chora:NamingAssertion a hico:InterpretationType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "lettura onomastica"@it ;
+    skos:definition "A reading of how a toponym is made: the naming mechanism, and optionally the real toponym it plays on (chora:playsOn)."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "naming" ;
+    skos:prefLabel "Naming assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme ;
+    chora:reifiesProperty chora:nameReading .
+
 chora:interior a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "Interno"@it ;
@@ -54730,6 +55116,22 @@ chora:restaurant a owl:NamedIndividual,
     chora:hasPlaceCategory chora:road_junction ;
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/castel_porcano> a chora:NarrativePlace ;
+    rdfs:label "Castel Porcano"@it ;
+    dcterms:description "Deformazione onomastica di Castel Porziano (tenuta reale di caccia), luogo della festa notturna nel sogno di Pestalozzi (Terzoli 2015, pp. 633–634, 679)."@it ;
+    skos:altLabel "Castel Porcino"@it ;
+    chora:hasPlaceCategory chora:castle ;
+    chora:hasRealityStatus chora:Transformed ;
+    chora:identifiedWith <https://w3id.org/gaddatlas/id/gazetteer/gaz_castel_porziano> .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/pensione_burgess> a chora:NarrativePlace ;
+    rdfs:label "Pensione Burgess"@it ;
+    dcterms:description "Pensione romana d'invenzione; il nome evoca l'archeologo Richard Burgess (Terzoli 2015, pp. 22, 574–575)."@it ;
+    chora:hasFuzzinessLevel 4.0 ;
+    chora:hasPlaceCategory chora:hotel ;
+    chora:hasRealityStatus chora:Invented ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/policlinico> a chora:NarrativePlace ;
     rdfs:label "Policlinico"@it ;
@@ -54865,6 +55267,28 @@ chora:VariantAssertion a hico:InterpretationType,
     chora:characterName "Mussolini"@it ;
     chora:hasGender "male"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_roma> a chora:GazetteerEntity ;
+    rdfs:label "Roma"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          12.483780073676602,
+          41.89712290196547
+        ]
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 41.89712290196547 ;
+    geo1:long 12.483780073676602 .
+
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_san_giovanni_in_laterano> a chora:GazetteerEntity ;
     rdfs:label "San Giovanni in Laterano"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -54918,6 +55342,14 @@ chora:VariantAssertion a hico:InterpretationType,
     chora:hasRealityStatus chora:Invented ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> ;
     chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/tor_di_gheppio> .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00539> a chora:PlaceReference ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Castel Porcino"@it ;
+    chora:excerpt "A Castel Porcino, sotto festoni di pere gialle da due watt e palloncini sbronzi e dolcemente obesi nell’alitare e nello smorire d’ogni mèlode, la maga dalla tabacchiera elicitava al fiuto gli imminenti suini."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> ;
+    chora:sourceReference "A 213"^^xsd:string .
 
 chora:Church a owl:NamedIndividual,
         skos:Concept ;
@@ -55383,17 +55815,6 @@ chora:square a owl:NamedIndividual,
 prov:Agent a owl:Class ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o> .
 
-chora:IdentificationAssertion a hico:InterpretationType,
-        owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "identificazione"@it ;
-    skos:definition "Identifies a narrative place or a place reference with a gazetteer entity. Replaces owl:sameAs as a judgement of identity."@en ;
-    skos:inScheme chora:AssertionTypeScheme ;
-    skos:notation "identification" ;
-    skos:prefLabel "Identification assertion"@en ;
-    skos:topConceptOf chora:AssertionTypeScheme ;
-    chora:reifiesProperty chora:identifiedWith .
-
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_frattocchie> a chora:GazetteerEntity ;
     rdfs:label "Frattocchie"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -55430,7 +55851,6 @@ chora:IdentificationAssertion a hico:InterpretationType,
 <https://w3id.org/gaddatlas/id/narrativeplace/marino> a chora:NarrativePlace ;
     rdfs:label "Marino"@it ;
     dcterms:description "Località dei Castelli Romani"@it ;
-    rdfs:comment "Non presente in Indice dei Luoghi Isella"@it ;
     chora:hasPlaceCategory chora:locality ;
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
@@ -55539,6 +55959,17 @@ skos:ConceptScheme a owl:Class .
     geo1:lat 41.76071420037528 ;
     geo1:long 12.599632278065911 ;
     chora:attestedInRepertory <https://w3id.org/gaddatlas/id/source/bertarelli_1925> .
+
+chora:IdentificationAssertion a hico:InterpretationType,
+        owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "identificazione"@it ;
+    skos:definition "Identifies a narrative place or a place reference with a gazetteer entity. Replaces owl:sameAs as a judgement of identity."@en ;
+    skos:inScheme chora:AssertionTypeScheme ;
+    skos:notation "identification" ;
+    skos:prefLabel "Identification assertion"@en ;
+    skos:topConceptOf chora:AssertionTypeScheme ;
+    chora:reifiesProperty chora:identifiedWith .
 
 <https://w3id.org/gaddatlas/id/focalizer/autista_questura> a chora:Character,
         chora:FocalizingAgent ;
@@ -55803,7 +56234,6 @@ chora:CompletedRoute a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/narrativeplace/due_santi> a chora:NarrativePlace ;
     rdfs:label "Due Santi"@it ;
     dcterms:description "Frazione di Marino (Castelli Romani)"@it ;
-    rdfs:comment "Non presente in Indice dei Luoghi Isella"@it ;
     skos:altLabel "li Du Santi"@it ;
     chora:hasPlaceCategory chora:locality ;
     chora:hasRealityStatus chora:Imported ;
@@ -55870,12 +56300,6 @@ chora:AdjacentTo a owl:NamedIndividual,
     skos:prefLabel "Adjacent to"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
 
-<https://w3id.org/gaddatlas/id/focalizer/pompeo> a chora:Character,
-        chora:FocalizingAgent ;
-    dcterms:description "Pompeo, detto lo Sgranfia, agente/informatore nell'orbita dell'indagine."@it ;
-    chora:characterName "Pompeo"@it ;
-    chora:hasGender "male"^^xsd:string .
-
 <https://w3id.org/gaddatlas/id/focalizer/zamira_pacori> a chora:Character,
         chora:FocalizingAgent ;
     dcterms:description "Zamira Pàcori, tenutaria di un laboratorio-osteria a Marino, figura ambigua legata al sottobosco criminale dei Colli Albani"@it ;
@@ -55939,6 +56363,12 @@ chora:Draft a owl:NamedIndividual,
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> ;
     chora:nickname "er palazzo dell'oro"@it,
         "palazzo de li pescicani"@it .
+
+<https://w3id.org/gaddatlas/id/focalizer/pompeo> a chora:Character,
+        chora:FocalizingAgent ;
+    dcterms:description "Pompeo, detto lo Sgranfia, agente/informatore nell'orbita dell'indagine."@it ;
+    chora:characterName "Pompeo"@it ;
+    chora:hasGender "male"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/santo_stefano_del_cacco_celio_santo_stefano> a chora:NarrativePlace ;
     rdfs:label "Santo Stefano del Cacco, Celio-Santo Stefano"@it ;
@@ -56005,6 +56435,12 @@ chora:Invented a owl:NamedIndividual,
     geo1:long 12.66366867693179 ;
     chora:attestedInRepertory <https://w3id.org/gaddatlas/id/source/bertarelli_1925> .
 
+<https://w3id.org/gaddatlas/id/focalizer/santarella> a chora:Character,
+        chora:FocalizingAgent ;
+    dcterms:description "Maresciallo Santarella, conduce le indagini nell'area dei Castelli, dalla tenenza dei carabinieri di Marino"@it ;
+    chora:characterName "Santarella"@it ;
+    chora:hasGender "male"^^xsd:string .
+
 chora:CriticalReading a hico:InterpretationCriterion,
         owl:NamedIndividual,
         skos:Concept ;
@@ -56013,12 +56449,6 @@ chora:CriticalReading a hico:InterpretationCriterion,
     skos:inScheme chora:RationaleTypeScheme ;
     skos:prefLabel "Critical reading"@en ;
     skos:topConceptOf chora:RationaleTypeScheme .
-
-<https://w3id.org/gaddatlas/id/focalizer/santarella> a chora:Character,
-        chora:FocalizingAgent ;
-    dcterms:description "Maresciallo Santarella, conduce le indagini nell'area dei Castelli, dalla tenenza dei carabinieri di Marino"@it ;
-    chora:characterName "Santarella"@it ;
-    chora:hasGender "male"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/chapter/capitolo_II> a chora:Chapter ;
     dcterms:title "Capitolo II"@it ;
@@ -56049,15 +56479,6 @@ chora:CriticalReading a hico:InterpretationCriterion,
     geo1:long 12.616571382457442 ;
     chora:attestedInRepertory <https://w3id.org/gaddatlas/id/source/bertarelli_1925> .
 
-chora:Indeterminate a owl:NamedIndividual,
-        skos:Concept ;
-    owl:differentFrom chora:Precise,
-        chora:Relative ;
-    skos:altLabel "Indeterminata"@it ;
-    skos:inScheme chora:SpatialDeterminationScheme ;
-    skos:prefLabel "Indeterminate"@en ;
-    skos:topConceptOf chora:SpatialDeterminationScheme .
-
 <https://w3id.org/gaddatlas/id/chapter/capitolo_V> a chora:Chapter ;
     dcterms:title "Capitolo V"@it ;
     chora:chapterNumber 5 ;
@@ -56086,6 +56507,15 @@ chora:Indeterminate a owl:NamedIndividual,
     geo1:lat 41.8919173419505 ;
     geo1:long 12.50204620435122 .
 
+chora:Indeterminate a owl:NamedIndividual,
+        skos:Concept ;
+    owl:differentFrom chora:Precise,
+        chora:Relative ;
+    skos:altLabel "Indeterminata"@it ;
+    skos:inScheme chora:SpatialDeterminationScheme ;
+    skos:prefLabel "Indeterminate"@en ;
+    skos:topConceptOf chora:SpatialDeterminationScheme .
+
 chora:locality a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "Località"@it ;
@@ -56099,6 +56529,12 @@ chora:locality a owl:NamedIndividual,
     rdfs:label "Campagna romana"@it ;
     skos:definition "La campagna intorno a Roma, Castelli compresi: i luoghi la cui ancora primaria dista fra 10 e 30 km dal Campidoglio."@it .
 
+<https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> a chora:Chapter ;
+    dcterms:title "Capitolo VIII"@it ;
+    chora:chapterNumber 8 ;
+    chora:pageRange "206-237"^^xsd:string ;
+    chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
+
 chora:Transformed a owl:NamedIndividual,
         skos:Concept ;
     owl:differentFrom chora:Imagined,
@@ -56111,23 +56547,11 @@ chora:Transformed a owl:NamedIndividual,
     skos:prefLabel "Transformed"@en ;
     skos:topConceptOf chora:RealityStatusScheme .
 
-<https://w3id.org/gaddatlas/id/chapter/capitolo_VIII> a chora:Chapter ;
-    dcterms:title "Capitolo VIII"@it ;
-    chora:chapterNumber 8 ;
-    chora:pageRange "206-237"^^xsd:string ;
-    chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
-
 <https://w3id.org/gaddatlas/id/chapter/capitolo_IV> a chora:Chapter ;
     dcterms:title "Capitolo IV"@it ;
     chora:chapterNumber 4 ;
     chora:pageRange "92-131"^^xsd:string ;
     chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
-
-chora:EncodingActivity a owl:Class ;
-    rdfs:comment "The encoding of a reading in the knowledge graph by an annotator, distinct from the interpretation act when the author of the reading is someone else. It uses the source (prov:used) and is informed by the interpretation act (prov:wasInformedBy); its date is the date of the encoding."@en ;
-    rdfs:subClassOf prov:Activity ;
-    skos:altLabel "Codifica"@it ;
-    skos:prefLabel "Encoding activity"@en .
 
 chora:street a owl:NamedIndividual,
         skos:Concept ;
@@ -56171,6 +56595,12 @@ chora:TextualEvidence a hico:InterpretationCriterion,
     chora:pageRange "278-307"^^xsd:string ;
     chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
 
+chora:EncodingActivity a owl:Class ;
+    rdfs:comment "The encoding of a reading in the knowledge graph by an annotator, distinct from the interpretation act when the author of the reading is someone else. It uses the source (prov:used) and is informed by the interpretation act (prov:wasInformedBy); its date is the date of the encoding."@en ;
+    rdfs:subClassOf prov:Activity ;
+    skos:altLabel "Codifica"@it ;
+    skos:prefLabel "Encoding activity"@en .
+
 <https://w3id.org/gaddatlas/id/focalizer/narrator> a chora:FocalizingAgent,
         chora:Narrator ;
     dcterms:description "Voce narrante gaddiana: onnisciente ma pervasa di digressioni, ironia e plurilinguismo; focalizzatore a pieno titolo."@it ;
@@ -56186,13 +56616,6 @@ chora:FocalizingAgent a owl:Class ;
     skos:altLabel "Agente Focalizzatore"@it ;
     skos:prefLabel "Focalizing Agent"@en .
 
-<https://w3id.org/gaddatlas/id/source/terzoli_2015> a chora:Source ;
-    rdfs:label "Terzoli 2015" ;
-    dcterms:bibliographicCitation "Terzoli, M. A. (2015). Commento a «Quer pasticciaccio brutto de via Merulana» di Carlo Emilio Gadda (con la collaborazione di V. Vitale; 2 voll.). Carocci."@it ;
-    dcterms:creator "Maria Antonietta Terzoli"@it ;
-    dcterms:date "2015"^^xsd:gYear ;
-    dcterms:type "monografia"@it .
-
 <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> a chora:Chapter ;
     dcterms:title "Capitolo VI"@it ;
     chora:chapterNumber 6 ;
@@ -56206,6 +56629,13 @@ chora:Precise a owl:NamedIndividual,
     skos:inScheme chora:SpatialDeterminationScheme ;
     skos:prefLabel "Precise"@en ;
     skos:topConceptOf chora:SpatialDeterminationScheme .
+
+<https://w3id.org/gaddatlas/id/source/terzoli_2015> a chora:Source ;
+    rdfs:label "Terzoli 2015" ;
+    dcterms:bibliographicCitation "Terzoli, M. A. (2015). Commento a «Quer pasticciaccio brutto de via Merulana» di Carlo Emilio Gadda (con la collaborazione di V. Vitale; 2 voll.). Carocci."@it ;
+    dcterms:creator "Maria Antonietta Terzoli"@it ;
+    dcterms:date "2015"^^xsd:gYear ;
+    dcterms:type "monografia"@it .
 
 <https://w3id.org/gaddatlas/id/focalizer/ingravallo> a chora:Character,
         chora:FocalizingAgent ;
@@ -56309,6 +56739,14 @@ chora:PlaceCategoryScheme a owl:NamedIndividual,
 
 skos:Concept a owl:Class .
 
+chora:Setting a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Ambientazione"@it ;
+    skos:definition "Place where the action occurs, with characters physically present"@en ;
+    skos:inScheme chora:NarrativeRoleScheme ;
+    skos:prefLabel "Setting"@en ;
+    skos:topConceptOf chora:NarrativeRoleScheme .
+
 chora:Inside a owl:NamedIndividual,
         skos:Concept ;
     dcterms:description "A è contenuto spazialmente in B. Relazione topologica di contenimento."@it ;
@@ -56317,14 +56755,6 @@ chora:Inside a owl:NamedIndividual,
     skos:inScheme chora:SpatialRelationTypeScheme ;
     skos:prefLabel "Inside"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
-
-chora:Setting a owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "Ambientazione"@it ;
-    skos:definition "Place where the action occurs, with characters physically present"@en ;
-    skos:inScheme chora:NarrativeRoleScheme ;
-    skos:prefLabel "Setting"@en ;
-    skos:topConceptOf chora:NarrativeRoleScheme .
 
 chora:Marker a owl:NamedIndividual,
         skos:Concept ;

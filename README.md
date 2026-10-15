@@ -21,8 +21,8 @@ FICLIT, XXXIX ciclo.
 | | |
 |---|---|
 | Ontologia | CHORA — 19 classi proprie, 78 proprietà, 84 concetti SKOS in 17 schemi (più le categorie di luogo) |
-| Dataset | 45.261 triple · 269 entità di gazetteer · 313 luoghi narrativi |
-| Annotazione | 744 riferimenti testuali (738 nel testimone di riferimento) · 968 interpretazioni · 424 letture attribuite · 83 focalizzatori · 21 percorsi |
+| Dataset | 45.624 triple · 271 entità di gazetteer · 313 luoghi narrativi |
+| Annotazione | 744 riferimenti testuali (738 nel testimone di riferimento) · 972 interpretazioni (968 adottate) · 432 letture attribuite · 83 focalizzatori · 21 percorsi |
 | Copertura testuale | 738/738 riferimenti del testimone di riferimento con estratto (100%) |
 | Qualità | SHACL conforme · 12/12 competency · 21/21 integrity · 7/7 loci critici · audit 16/16 |
 | Interfaccia | in migrazione da prototipo Observable a applicazione statica |

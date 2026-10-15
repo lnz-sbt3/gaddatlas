@@ -941,9 +941,12 @@ export default function chartS4(model, roma, { onTileSelect = () => {} } = {}) {
       }
 
       const target = isFict ? reliefFictFull : reliefFull;
+      // indice di forma congelato, non la posizione in allData (D-092): una
+      // feature che entra o esce non cambia il rilievo delle altre
+      const shapeK = allData[i].properties.shapeIndex;
       const seed = isFict
-        ? (allData[i].properties.voidSeed ?? (i * 0.6180339887) % 1)
-        : (i * 0.6180339887) % 1;
+        ? (allData[i].properties.voidSeed ?? (shapeK * 0.6180339887) % 1)
+        : (shapeK * 0.6180339887) % 1;
 
       let radii, rMin, rMed;
       if (isOffmap) {

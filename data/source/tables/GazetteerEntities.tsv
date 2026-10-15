@@ -2245,7 +2245,7 @@ gaz_rocca_orsina	Rocca Orsina					41.76991636096222	12.658476221527655	"{
       }
     }
   ]
-}"		
+}"	Terzoli 2015, pp. 507–508 (identificazione); coordinata nell'area di Palazzo Colonna, che occupa il sedime della rocca; coordinata verificata sul poligono OSM di Palazzo Colonna, way 74413768.	
 gaz_rocca_savella	Rocca Savella				clivo di Rocca Savella	41.88624438963685	12.48057907706965	"{
   ""type"": ""FeatureCollection"",
   ""features"": [
@@ -4252,3 +4252,20 @@ gaz_palazzo_colonna_marino	Palazzo Colonna (Marino)			Palazzo Frangipani-Orsini-
 gaz_palazzo_de_carolis_simonetti	Palazzo De Carolis Simonetti			Via del Corso 307 / via Lata 3, Roma					Grassadonia, Lagossi e Marchetti 1997a, cit. in Terzoli 2015, p. 536; Pinotti 2025, p. 78. Senza coordinate: bersaglio di identificazioni non adottate (I-0007, I-0008, D-087).	
 gaz_osteria_bivio_frattocchie	Osteria al bivio (Frattocchie)			Osteria sul bivio fra Appia Antica e strada del Divino Amore, presso le Frattocchie					Bertarelli 1925, cart. 1 («Osteria») e cart. 4 («Ost.»), secondo Terzoli 2015, p. 776. Senza coordinate: il luogo si posiziona dalle ancore (D-087).	
 gaz_ponte_di_santa_fumia	Ponte di Santa Fumia			Ponte sulla ferrovia Roma–Velletri in località Santa Fumia					Bertarelli 1925, cart. 4, secondo Terzoli 2015, pp. 418–419, 911. Senza coordinate; il luogo ponte_di_santa_fumia resta ancorato a gaz_quarto_di_santa_fumia (D-087).	
+gaz_via_delle_oche_milano	via delle Oche		Via di Okk	contrada milanese scomparsa	via Bernardino Zenale, Milano, tra via San Vittore e corso Magenta, presso Santa Maria delle Grazie	45.464649	9.170031	"{
+  ""type"": ""FeatureCollection"",
+  ""features"": [
+    {
+      ""type"": ""Feature"",
+      ""properties"": {},
+      ""geometry"": {
+        ""type"": ""Point"",
+        ""coordinates"": [
+          9.170031,
+          45.464649
+        ]
+      }
+    }
+  ]
+}"	Terzoli 2015, p. 77; L'Adalgisa, p. 564, n. 53. Coordinata: centroide di via Bernardino Zenale, OpenStreetMap, way 27756097 e 286239491.	
+gaz_campidoglio	Campidoglio								Senza coordinate: bersaglio dell'identificazione non adottata I-0015 (Terzoli 2015, pp. 507–508).	

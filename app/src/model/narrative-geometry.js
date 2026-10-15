@@ -112,9 +112,15 @@ export default function s4NarrativeGeometry(s4Entities, s4Voronoi, s4Satellites,
     return (h & 0xFFFFFF) / 0xFFFFFF;
   }
 
+  // Il seme della forma usa l'indice di forma congelato (D-092), non la
+  // posizione in allData: con la posizione, ogni luogo fittizio aggiunto o tolto
+  // cambiava la forma di quasi tutte le celle (DC-33). Il valore e' la
+  // posizione che la tessera aveva prima della fase 3c (7fde43d), quindi le
+  // forme calibrate restano identiche.
   function seedFor(i) {
-    const raw = allData[i].properties.voidSeed ?? ((i * 0.6180339887) % 1);
-    return Math.max(1, Math.floor(raw * 0xFFFFFF) ^ i);
+    const k = allData[i].properties.shapeIndex;
+    const raw = allData[i].properties.voidSeed ?? ((k * 0.6180339887) % 1);
+    return Math.max(1, Math.floor(raw * 0xFFFFFF) ^ k);
   }
 
   function perturbedTile(Pi, Pj, Oi, Oj, seed, h) {

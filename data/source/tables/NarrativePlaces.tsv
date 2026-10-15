@@ -41,7 +41,7 @@ cassero	Cassero		invented		castello
 castelli_romani	Castelli Romani		imported		località						
 castel_di_leva	Castel di Leva		imported		località						
 castel_gandolfo	Castel Gandolfo		imported		località						
-castel_porcano	Castel Porcano	Castel Porcino	invented		castello	Castello d'immaginazione, deformazione linguistica di Castel Porziano					
+castel_porcano	Castel Porcano	Castel Porcino	transformed		castello	Deformazione onomastica di Castel Porziano (tenuta reale di caccia), luogo della festa notturna nel sogno di Pestalozzi (Terzoli 2015, pp. 633–634, 679).					
 castel_savello	Castel Savello	Castel Savelli	imported		località						
 castello	Castello		imported		castello	"Luogo testuale della ""stazione di Castello"" (QPa 279); identificazione adottata Castel Savello (Manzotti 2010, p. 293), concorrente Castel Gandolfo (LS)"					
 casuccia_zamira	Casuccia della Zamira		invented		abitazione						
@@ -64,7 +64,7 @@ direttissima_roma_napoli	Direttissima Roma-Napoli		imported		ferrovia	La linea �
 ditta_ciurlani	Ditta Ciurlani		transformed		esercizio commerciale						
 divino_amore	Divino Amore		imported		località						
 dosso_faiti	Dosso Faiti		imported		monte						
-due_santi	Due Santi	li Du Santi	imported		località	Frazione di Marino (Castelli Romani)	Non presente in Indice dei Luoghi Isella				
+due_santi	Due Santi	li Du Santi	imported		località	Frazione di Marino (Castelli Romani)					
 edicola_due_santi	Edicola ai Due Santi	tabernacolo appia	imported		edicola	Tabernacolo a due pioventi che interrompe il muriccio dell'orto o vigna di fronte al laboratorio della Zamira, sul lato opposto della via Appia (QPa 216, 219). Luogo importato: Manzotti (2010, p. 246) ne trova traccia nella piantina dei Castelli del Touring.					
 esquilino	Esquilino		imported		quartiere						
 falcognana	Falcognana		imported		località						
@@ -94,7 +94,7 @@ litorale_ladispoli	Litorale di Ladispoli		imported		costa	Costa del litorale di 
 lungara	Lungara		imported		via						
 lungotevere_prati	Lungotevere di Prati		imported		via				analisi non condotta		
 maccheronaro	Maccheronaro		imported		ristorante						
-marino	Marino		imported		località	Località dei Castelli Romani	Non presente in Indice dei Luoghi Isella				
+marino	Marino		imported		località	Località dei Castelli Romani					
 marsica	Marsica		imported		località	Luogo generico nel territorio dell'Abruzzo		3			
 milano	Milano		imported		località	Città					
 molo_beverello	Molo Beverello		imported		porto	Molo del Porto di Napoli					
@@ -102,7 +102,7 @@ montagne_degli_equi	Montagne degli Equi		transformed		monte	Montagne appartenent
 monte_algido	Monte Algido		imported		monte	Monte dei Colli Albani					
 monte_cengio	Monte Cengio		imported		monte	monte dell'Altipiano veneto					
 monte_circeo	Monte Circeo	monte della contessa Circia	transformed		monte	Monte tirrenico, nel Lazio					
-monte_manno	Monte Manno		imported		monte	monte dell'Altipiano Laziale, verso Latina	Non presente in Indice dei Luoghi Isella				
+monte_manno	Monte Manno		imported		monte	monte dell'Altipiano Laziale, verso Latina					
 monte_matese	Monte Matese		imported		monte	Monte del Molise					
 monte_nuncupale	Monte Nuncupale		invented		monte	Monte inventato, collocato nella zona dei Colli Albani/marino					
 monte_soratte	Monte Soratte		imported		monte	Monte nel Lazio					
@@ -128,7 +128,7 @@ palestrina	Palestrina		imported		località	Frazione di Roma lungo i Colli Albani
 pantheon	Pantheon		imported		tempio						
 passaggio_livello_casal_bruciato	Passaggio a livello Casal Bruciato		transformed	casello_km_20_25	passaggio a livello						
 pavona	Pavona		imported		località						
-pensione_burgess	Pensione Burgess		invented		albergo	Albergo immaginario, possibile deformazione di Pensione Villa Borghese, via Sgambati 4, vicino Porta Pinciana		4			
+pensione_burgess	Pensione Burgess		invented		albergo	Pensione romana d'invenzione; il nome evoca l'archeologo Richard Burgess (Terzoli 2015, pp. 22, 574–575).		4			
 piani_alti_219	Piani alti del Palazzo al 219		transformed	palazzo_219	interno	Interno del palazzo in via Merulana 219					
 piazza_colonna	Piazza Colonna		imported		piazza						
 piazza_di_pietra	Piazza di Pietra		imported		piazza						
@@ -170,9 +170,7 @@ regina_coeli	Regina Coeli		imported		carcere
 ripetta	Ripetta		imported		via						
 robine_vecchie	Robine Vecchie		transformed		località	Robine Vecchie è un microtoponimo gaddiano non identificato, forse deformazione di un nome locale o denominazione fantastica applicata al paesaggio reale di Frattocchie–Due Santi.					
 rocca_di_papa	Rocca di Papa		imported		località						
-rocca_orsina	Rocca Orsina		imported		località		"«Rocca Orsina» non è il nome moderno di un comune, ma può essere ricondotto con buone ragioni alla fortificazione degli Orsini a Marino.
-
-Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente fortificazione medievale. L’attuale Palazzo Colonna sorge sul luogo della rocca, della quale sono ancora riconosciute strutture e tracce inglobate nell’edificio successivo. Le fonti locali la indicano come Rocca degli Orsini o fortezza orsinesca."				
+rocca_orsina	Rocca Orsina		imported		località		La Rocca Orsini di Marino (Terzoli 2015, pp. 507–508); Gadda la nomina anche in Fuga a Tor di Nona (RD 981). Il palazzo Colonna ne occupa il sedime.				
 rocca_savella	Rocca Savella		imported		via						
 roccafringoli	Roccafringoli		invented		località						
 sacro_cuore	Sacro Cuore		imported		basilica						
@@ -267,7 +265,7 @@ via_della_navicella	Via della Navicella		imported		via
 via_della_palombella	Via della Palombella		imported		via						
 via_della_scrofa	Via della Scrofa		imported		via						
 via_delle_coppelle	Via delle Coppelle		imported		via						
-via_delle_oche	via delle Oche		invented		via	via topograficamente non precisata	Toponimo non attestato nella toponomastica storica milanese. L’espressione «via delle Oche» è qui utilizzata in modo allusivo e deformante; la localizzazione urbana non va intesa in senso referenziale, ma come costruzione narrativa simbolica.				
+via_delle_oche	via delle Oche		imported		via	Via storica di Milano, oggi via Bernardino Zenale (Terzoli 2015, p. 77).	Contrada milanese scomparsa, ricordata da Gadda nell'Adalgisa (p. 564, n. 53). Le mappe storiche legano il nome a zone verdi e acquitrini.				
 via_di_ferro	Via di Ferro		imported		via						
 via_di_grotta_pinta	Via di Grotta Pinta		imported		via						
 via_di_pietra	Via di Pietra		imported		via						

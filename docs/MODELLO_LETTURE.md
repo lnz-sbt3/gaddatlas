@@ -118,6 +118,7 @@ Le sorgenti sono i TSV di `data/source/tables/`; la sezione `documentation` di `
   - Gli Imported confluiscono nella tessera dell'ancora primaria. Il rilievo va sull'ancora **diretta** dell'interpretazione, non su quella ereditata: un Imported con `Is_Part_Of` porta anche l'ancora diretta del contenitore (camera di sicurezza della questura, D-091).
   - Transformed e Invented hanno una tessera propria nel Diagramma, posizionata dalle ancore: dirette, ereditate con `isPartOf`, da identificazione adottata o dai termini relazionali. Imagined non ha istanze nel *Pasticciaccio* (D-090): per definizione un luogo Imagined non ha posizione, e un'eventuale istanza annotata oggi non supererebbe la shape 23 e IQ21 (voce aperta in D-090).
   - «Senza coordinate» non vuol dire «fuori dall'interfaccia». Lo garantiscono IQ21 e la shape 23 (Violation), il controllo di `make audit` (ogni luogo annotato è nel GeoJSON) e l'adapter, che si ferma se trova un luogo annotato senza ancore.
+- **Indice di forma (D-092):** la forma di ogni cella del Diagramma e il disegno del suo rilievo dipendono da un indice congelato in `data/source/shape_index.json` (`shapeIndex` nel GeoJSON), non dalla posizione della tessera nell'elenco. Ogni feature ha un indice unico; il build e l'app si fermano se ne manca uno o se è ripetuto. Un'entità nuova prende `max + 1`; l'indice di un luogo che perde la tessera resta riservato e non si riusa. Aggiungere o togliere un luogo non cambia quindi la forma degli altri. Restano gli effetti del layout radiale: un satellite che cambia host o un'entità che entra nel rango di distanza possono far scivolare gli anelli (D-084, D-092).
 - **Testimoni:** l'interfaccia mostra il `prefLabel` del testimone di riferimento, «QP (Adelphi 2018)», non la sigla del dataset (QPa).
 
 ---
@@ -134,7 +135,7 @@ Le sorgenti sono i TSV di `data/source/tables/`; la sezione `documentation` di `
 **Esempio 1. Identificazione contesa** (Aliciaro: un critico propone un altro referente):
 
 ```
-Assertion_ID=I-0012  Assertion_Type=identification  Subject=narrativeplace/aliciaro
+Assertion_ID=I-00nn  Assertion_Type=identification  Subject=narrativeplace/aliciaro
 Value=gazetteer/gaz_<referente>  Author_ID=<studioso>  Encoder_ID=lorenzo_sabatino
 Source_Work=<fonte>  Source_Page=<pagina>  Adopted=no
 Rationale=<argomentazione in una frase>  Quotation=<estratto breve>
@@ -146,7 +147,7 @@ Non adottata: la tessera di Aliciaro resta dove la mettono le sue ancore. LC3 la
 **Esempio 2. Lettura onomastica** (Bottaro: il nome gioca su un toponimo reale):
 
 ```
-Assertion_ID=N-0007  Assertion_Type=naming  Subject=reference/ref_00488
+Assertion_ID=N-00nn  Assertion_Type=naming  Subject=reference/ref_00488
 Value=chora:Paronomasia  Plays_On=gazetteer/gaz_<toponimo>  Author_ID=<studioso>
 Encoder_ID=lorenzo_sabatino  Source_Work=<fonte>  Source_Page=<pagina>
 Rationale=<…>  Quotation=<…>  Rationale_Type=lettura critica  Review_Status=validata
@@ -155,13 +156,13 @@ Rationale=<…>  Quotation=<…>  Rationale_Type=lettura critica  Review_Status=
 **Esempio 3. Commento** (Falcognana, Colli Albani: osservazione senza valore):
 
 ```
-Assertion_ID=K-0011  Assertion_Type=commentary  Subject=narrativeplace/via_della_falcognana
+Assertion_ID=K-00nn  Assertion_Type=commentary  Subject=narrativeplace/via_della_falcognana
 Value=  Author_ID=<studioso>  Encoder_ID=lorenzo_sabatino  Source_Work=<fonte>
 Source_Page=<pagina>  Rationale=<…>  Quotation=<…>  Rationale_Type=lettura critica
 Review_Status=validata
 ```
 
-Per rispondere a un'altra lettura: `Disagrees_With=K-0011`.
+Per rispondere a un'altra lettura: `Disagrees_With=K-00nn`.
 
 ---
 
