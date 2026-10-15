@@ -62,15 +62,15 @@ Al 2026-10-15 (fase 3c, D-091), con `make all && make audit && make shacl`:
 
 | | |
 |---|---|
-| Triple (full) | 45.286 (ABox 43.096, TBox 1.620) |
+| Triple (full) | 45.261 (ABox 43.071, TBox 1.620) |
 | GazetteerEntity | 269, di cui 253 con tessera in mappa |
 | NarrativePlace | 313, di cui 51 con tessera propria |
 | Reality Status | Imported 262 · Transformed 31 · Invented 20 · Imagined 0 |
 | PlaceReference | 744 — 738 del testimone di riferimento QPa, tutte con `chora:excerpt`; 6 di altri testimoni |
-| SpatialInterpretation | 969 — 938 verso luoghi, 31 verso route |
+| SpatialInterpretation | 968 — 937 verso luoghi, 31 verso route |
 | FocalizingAgent | 83 · NarrativeRoute 21 · Chapter 10 |
 | criticalNote | 76 · hasPlaceCategory 312 |
-| Righe di `relief` | 938 — tutte risolvono a una feature |
+| Righe di `relief` | 937 — tutte risolvono a una feature |
 | Audit | 16 invarianti su 16 |
 | SHACL | conforme, nessun risultato |
 | Query | 12/12 competency, 21/21 integrity, 7/7 loci critici |

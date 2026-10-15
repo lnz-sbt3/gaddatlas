@@ -21,7 +21,7 @@
   "ontologyVersion": "1.0.0",
   "buildVersion": "4.3",
   "source": "gaddatlas-full.ttl",
-  "tripleCount": 45286,
+  "tripleCount": 45261,
   "projection": {
    "type": "equirectangular",
    "center": [
@@ -111,13 +111,13 @@
   "counts": {
    "gazetteer": 265,
    "narrativePlaces": 313,
-   "interpretations": 969,
+   "interpretations": 968,
    "references": 738,
    "routes": 21,
    "chapters": 10,
    "agents": 83,
    "derivedSequences": 104,
-   "reliefRows": 938,
+   "reliefRows": 937,
    "ownTiles": 51
   }
  },
@@ -5982,7 +5982,7 @@
    "description": "Cantina o sala seminterrata sotto il laboratorio della Zamira, sala delle consultazioni (QPa 165, 166). Luogo entrato con la soglia di censimento (D-091).",
    "fuzziness": null,
    "partOf": "casuccia_zamira",
-   "interpCount": 9,
+   "interpCount": 8,
    "planeCount": 6,
    "targets": [
     {
@@ -5993,7 +5993,7 @@
    "roles": [
     {
      "role": "Setting",
-     "n": 5
+     "n": 4
     },
     {
      "role": "ProjectedSpace",
@@ -6003,15 +6003,15 @@
    "determinations": [
     {
      "determination": "Approximate",
-     "n": 4
-    },
-    {
-     "determination": "Relative",
-     "n": 3
+     "n": 5
     },
     {
      "determination": "Indeterminate",
      "n": 2
+    },
+    {
+     "determination": "Relative",
+     "n": 1
     }
    ],
    "anchorInherited": true,
@@ -31054,13 +31054,13 @@
    "routeId": null,
    "gazetteerId": null,
    "narrativeRole": "Setting",
-   "spatialDetermination": "Relative",
+   "spatialDetermination": "Approximate",
    "spatialRelation": "Inside",
    "focalizerId": "zamira_pacori",
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
-   "criticalNote": "Il passo colloca la cantina «sotto al laboratorio-bettola» (QPa 165): relazione verticale con il laboratorio, dichiarata qui perché la frase non è nell'estratto (D-091)."
+   "criticalNote": null
   },
   {
    "id": "interp_00969",
@@ -31124,23 +31124,7 @@
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
-   "criticalNote": null
-  },
-  {
-   "id": "interp_00973",
-   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00973",
-   "referenceId": "ref_00741",
-   "narrativePlaceId": "cantina_zamira",
-   "routeId": null,
-   "gazetteerId": null,
-   "narrativeRole": "Setting",
-   "spatialDetermination": "Relative",
-   "spatialRelation": "Inside",
-   "focalizerId": "santarella",
-   "confidence": 1.0,
-   "isNodeOfRoute": null,
-   "routeOrder": null,
-   "criticalNote": null
+   "criticalNote": "La Zamira manda a «levarseli in cantina» e a portare i pantaloni «su […] in laboratorio» (QPa 169): la cantina sta sotto il laboratorio (D-091)."
   },
   {
    "id": "interp_00974",
@@ -40940,7 +40924,7 @@
    "name": "Santarella",
    "gender": "male",
    "description": "Maresciallo Santarella, conduce le indagini nell'area dei Castelli, dalla tenenza dei carabinieri di Marino",
-   "refCount": 54
+   "refCount": 53
   },
   {
    "id": "ines_cionini",
@@ -46841,9 +46825,9 @@
    "agentName": "Santarella",
    "chapterId": "capitolo_VI",
    "chapter": 6,
-   "length": 33,
-   "distinctTargets": 24,
-   "dispersion": 0.727,
+   "length": 32,
+   "distinctTargets": 23,
+   "dispersion": 0.719,
    "pageRange": [
     155,
     175
@@ -46937,16 +46921,6 @@
      "gazetteerId": "gaz_ponte_divino_amore",
      "interpretationId": "interp_00476",
      "role": null,
-     "simultaneous": true
-    },
-    {
-     "page": 169,
-     "referenceId": "ref_00741",
-     "targetId": "cantina_zamira",
-     "narrativePlaceId": "cantina_zamira",
-     "gazetteerId": null,
-     "interpretationId": "interp_00973",
-     "role": "Setting",
      "simultaneous": true
     },
     {
@@ -57330,8 +57304,8 @@
    "chapter": 6,
    "agentId": "zamira_pacori",
    "role": "Setting",
-   "determination": "Relative",
-   "criticalNote": "Il passo colloca la cantina «sotto al laboratorio-bettola» (QPa 165): relazione verticale con il laboratorio, dichiarata qui perché la frase non è nell'estratto (D-091).",
+   "determination": "Approximate",
+   "criticalNote": null,
    "isRouteNode": null
   },
   {
@@ -57523,19 +57497,7 @@
    "agentId": "zamira_pacori",
    "role": "Setting",
    "determination": "Relative",
-   "criticalNote": null,
-   "isRouteNode": null
-  },
-  {
-   "targetId": "cantina_zamira",
-   "interpretationId": "interp_00973",
-   "referenceId": "ref_00741",
-   "page": 169,
-   "chapter": 6,
-   "agentId": "santarella",
-   "role": "Setting",
-   "determination": "Relative",
-   "criticalNote": null,
+   "criticalNote": "La Zamira manda a «levarseli in cantina» e a portare i pantaloni «su […] in laboratorio» (QPa 169): la cantina sta sotto il laboratorio (D-091).",
    "isRouteNode": null
   },
   {

@@ -17597,11 +17597,9 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:adoptedByProject true ;
     chora:annotationMethod "close_reading"^^xsd:string ;
     chora:assignsNarrativeRole chora:Setting ;
-    chora:assignsSpatialDetermination chora:Relative ;
+    chora:assignsSpatialDetermination chora:Approximate ;
     chora:assignsSpatialRelationType chora:Inside ;
-    chora:criticalNote "Il passo colloca la cantina «sotto al laboratorio-bettola» (QPa 165): relazione verticale con il laboratorio, dichiarata qui perché la frase non è nell'estratto (D-091)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/zamira_pacori> ;
-    chora:hasRelationalAnchoring <https://w3id.org/gaddatlas/id/relanchor/interp_00968> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00737> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/cantina_zamira> .
 
@@ -17655,20 +17653,9 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:assignsNarrativeRole chora:Setting ;
     chora:assignsSpatialDetermination chora:Relative ;
     chora:assignsSpatialRelationType chora:Inside ;
+    chora:criticalNote "La Zamira manda a «levarseli in cantina» e a portare i pantaloni «su […] in laboratorio» (QPa 169): la cantina sta sotto il laboratorio (D-091)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/zamira_pacori> ;
-    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00741> ;
-    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/cantina_zamira> .
-
-<https://w3id.org/gaddatlas/id/interpretation/interp_00973> a prov:Entity,
-        chora:SpatialInterpretation ;
-    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00973> ;
-    chora:adoptedByProject true ;
-    chora:annotationMethod "close_reading"^^xsd:string ;
-    chora:assignsNarrativeRole chora:Setting ;
-    chora:assignsSpatialDetermination chora:Relative ;
-    chora:assignsSpatialRelationType chora:Inside ;
-    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/santarella> ;
+    chora:hasRelationalAnchoring <https://w3id.org/gaddatlas/id/relanchor/interp_00972> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00741> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/cantina_zamira> .
 
@@ -27754,14 +27741,6 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     hico:hasInterpretationType chora:SpatialReading ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00972-encoder-lorenzo_sabatino>,
         <https://w3id.org/gaddatlas/id/association/interp_00972-readingauthor-lorenzo_sabatino> ;
-    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
-    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
-
-<https://w3id.org/gaddatlas/id/act/interp_00973> a hico:InterpretationAct ;
-    dcterms:date "2026-10-15"^^xsd:date ;
-    hico:hasInterpretationType chora:SpatialReading ;
-    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00973-encoder-lorenzo_sabatino>,
-        <https://w3id.org/gaddatlas/id/association/interp_00973-readingauthor-lorenzo_sabatino> ;
     prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
 
@@ -39034,14 +39013,6 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
-<https://w3id.org/gaddatlas/id/association/interp_00973-encoder-lorenzo_sabatino> a prov:Association ;
-    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:hadRole chora:Encoder .
-
-<https://w3id.org/gaddatlas/id/association/interp_00973-readingauthor-lorenzo_sabatino> a prov:Association ;
-    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:hadRole chora:ReadingAuthor .
-
 <https://w3id.org/gaddatlas/id/association/interp_00974-encoder-lorenzo_sabatino> a prov:Association ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:Encoder .
@@ -42172,13 +42143,13 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:relatum <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba>,
         <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_ardeatina> .
 
-<https://w3id.org/gaddatlas/id/relanchor/interp_00968> a chora:RelationalAnchoring ;
-    chora:relationalType chora:Below ;
-    chora:relatum <https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira> .
-
 <https://w3id.org/gaddatlas/id/relanchor/interp_00970> a chora:RelationalAnchoring ;
     chora:relationalType chora:AdjacentTo ;
     chora:relatum <https://w3id.org/gaddatlas/id/narrativeplace/cantina_zamira> .
+
+<https://w3id.org/gaddatlas/id/relanchor/interp_00972> a chora:RelationalAnchoring ;
+    chora:relationalType chora:Below ;
+    chora:relatum <https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira> .
 
 <https://w3id.org/gaddatlas/id/source/igm_150_iii_so> a chora:Source ;
     rdfs:label "IGM, F. 150 III SO" ;
@@ -48191,9 +48162,18 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
     chora:attestedForm "cantina"@it ;
-    chora:excerpt "Un punto d’incontro dei vitali compossibili: magia, maglieria, sartoria, pantaloneria, vino de li Castelli e de Bitonto pure (una botte, la spina: due damigiane, li sifoni de gomma), cacio e fave, d’aprile, il nipotino del duce dei baffoni a ruzzare per entro il teschio, in cantina, cioè nella « sala di tintoria »"@it ;
+    chora:excerpt "il nipotino del duce dei baffoni a ruzzare per entro il teschio, in cantina, cioè nella « sala di tintoria »"@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
     chora:sourceReference "A 166"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00741> a chora:PlaceReference ;
+    rdfs:comment "Estratto verificato da LS sul volume a stampa (D-091)."@it ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "cantina"@it ;
+    chora:excerpt "La Zamira lo mandò a levarseli in cantina: e gli mandò dietro la Clelia, o, secondo altri, la Camilla, per prendere i pantaloni e portarli su a raccomodare, in laboratorio."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
+    chora:sourceReference "A 169"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00744> a chora:PlaceReference ;
     rdfs:comment "Estratto verificato da LS sul volume a stampa (D-091)."@it ;
@@ -50184,15 +50164,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
     chora:attestedForm "via Lata"@it ;
     chora:sourceReference "dtsFG"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/reference/ref_00741> a chora:PlaceReference ;
-    rdfs:comment "Estratto verificato da LS sul volume a stampa (D-091)."@it ;
-    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:attestedForm "cantina"@it ;
-    chora:excerpt "La Zamira lo mandò a levarseli in cantina: e gli mandò dietro la Clelia, o, secondo altri, la Camilla, per prendere i pantaloni e portarli su a raccomodare, in laboratorio."@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
-    chora:sourceReference "A 169"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00742> a chora:PlaceReference ;
     rdfs:comment "Estratto verificato da LS sul volume a stampa (D-091)."@it ;
@@ -53085,6 +53056,17 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     geo1:long 12.498505681387911 ;
     chora:presentLocation "Via dei SS. Quattro, 20, 00184"@it .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/cantina_zamira> a chora:NarrativePlace ;
+    rdfs:label "Cantina della Zamira"@it ;
+    dcterms:description "Cantina o sala seminterrata sotto il laboratorio della Zamira, sala delle consultazioni (QPa 165, 166). Luogo entrato con la soglia di censimento (D-091)."@it ;
+    skos:altLabel "antro"@it,
+        "sala di tintoria"@it,
+        "salotto o sala di consultazione"@it ;
+    chora:hasPlaceCategory chora:interior ;
+    chora:hasRealityStatus chora:Invented ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> ;
+    chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira> .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/san_giovanni_in_laterano> a chora:NarrativePlace ;
     rdfs:label "San Giovanni in Laterano"@it ;
     chora:hasPlaceCategory chora:basilica ;
@@ -53196,17 +53178,6 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
 }"""^^geosparql:geoJSONLiteral ] ;
     geo1:lat 41.748548036845285 ;
     geo1:long 12.560749021883575 .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/cantina_zamira> a chora:NarrativePlace ;
-    rdfs:label "Cantina della Zamira"@it ;
-    dcterms:description "Cantina o sala seminterrata sotto il laboratorio della Zamira, sala delle consultazioni (QPa 165, 166). Luogo entrato con la soglia di censimento (D-091)."@it ;
-    skos:altLabel "antro"@it,
-        "sala di tintoria"@it,
-        "salotto o sala di consultazione"@it ;
-    chora:hasPlaceCategory chora:interior ;
-    chora:hasRealityStatus chora:Invented ;
-    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> ;
-    chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/pavona> a chora:NarrativePlace ;
     rdfs:label "Pavona"@it ;

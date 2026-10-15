@@ -27,11 +27,11 @@ prima di proporre alternative architetturali.** Se una scelta ti sembra
 sbagliata, dillo citando la decisione — non aggirarla in silenzio.
 
 **Stato dei dati: allineato (fase 3c, sottoluoghi, 15 ottobre 2026).**
-`data/dist/gaddatlas.geojson` dichiara `tripleCount 45286`, `buildVersion 4.3`,
-`ontology CHORA`. ABox 43.096 triple, TBox 1.620; 313 luoghi (Imported 262 ·
+`data/dist/gaddatlas.geojson` dichiara `tripleCount 45261`, `buildVersion 4.3`,
+`ontology CHORA`. ABox 43.071 triple, TBox 1.620; 313 luoghi (Imported 262 ·
 Transformed 31 · Invented 20 · Imagined 0: categoria del vocabolario senza
 istanze nel *Pasticciaccio*, D-090), 269 entità del gazetteer (4 senza
-coordinate, nessuna usata come ancora), 969 interpretazioni (tutte adottate), 744
+coordinate, nessuna usata come ancora), 968 interpretazioni (tutte adottate), 744
 occorrenze (738 nel testimone di riferimento QPa), 21 percorsi tipizzati, 424
 letture attribuite (165 esplicite in `Assertions.tsv`, 259 statuti generati
 dall'ETL), 5 testimoni (QPL, dtsFG, bzFG, QP, QPa), 18 fonti, 12 agenti. 304
