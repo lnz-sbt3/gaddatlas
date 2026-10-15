@@ -20,26 +20,27 @@ Due artefatti distinti nello stesso repository:
 
 ## Le decisioni sono già prese
 
-`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-090; quelle dell'allineamento al
+`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-091; quelle dell'allineamento al
 Capitolo 4 partono da D-019 (D-015…D-018 sono del porting, su `main`). Nel file sono in
-ordine cronologico, non numerico. Prossimo numero libero: **D-091**. **Leggile
+ordine cronologico, non numerico. Prossimo numero libero: **D-092**. **Leggile
 prima di proporre alternative architetturali.** Se una scelta ti sembra
 sbagliata, dillo citando la decisione — non aggirarla in silenzio.
 
-**Stato dei dati: allineato (fase 3b, statuti, 14 ottobre 2026).**
-`data/dist/gaddatlas.geojson` dichiara `tripleCount 44830`, `buildVersion 4.3`,
-`ontology CHORA`. ABox 42.640 triple, TBox 1.620; 310 luoghi (Imported 261 ·
-Transformed 31 · Invented 18 · Imagined 0: categoria del vocabolario senza
+**Stato dei dati: allineato (fase 3c, sottoluoghi, 15 ottobre 2026).**
+`data/dist/gaddatlas.geojson` dichiara `tripleCount 45286`, `buildVersion 4.3`,
+`ontology CHORA`. ABox 43.096 triple, TBox 1.620; 313 luoghi (Imported 262 ·
+Transformed 31 · Invented 20 · Imagined 0: categoria del vocabolario senza
 istanze nel *Pasticciaccio*, D-090), 269 entità del gazetteer (4 senza
-coordinate, nessuna usata come ancora), 958 interpretazioni (tutte adottate), 736
-occorrenze (730 nel testimone di riferimento QPa), 21 percorsi tipizzati, 421
-letture attribuite (163 esplicite in `Assertions.tsv`, 258 statuti generati
-dall'ETL), 5 testimoni (QPL, dtsFG, bzFG, QP, QPa), 18 fonti, 12 agenti. 302
-feature; **nessun luogo annotato fuori dall'interfaccia** (297 su 297, D-084);
+coordinate, nessuna usata come ancora), 969 interpretazioni (tutte adottate), 744
+occorrenze (738 nel testimone di riferimento QPa), 21 percorsi tipizzati, 424
+letture attribuite (165 esplicite in `Assertions.tsv`, 259 statuti generati
+dall'ETL), 5 testimoni (QPL, dtsFG, bzFG, QP, QPa), 18 fonti, 12 agenti. 304
+feature; **nessun luogo annotato fuori dall'interfaccia** (300 su 300, D-084);
 verifica visiva della fase 3 chiusa (D-084: lo slittamento lungo l'arco delle
 tessere vicine a un host che riceve satelliti è l'effetto atteso del layout radiale).
 SHACL conforme senza risultati; IQ20 = 0, IQ21 = 0. Il modello delle letture è
-descritto in `docs/MODELLO_LETTURE.md`.
+descritto in `docs/MODELLO_LETTURE.md`. Un luogo entra nel dataset secondo la soglia
+di censimento di D-091 (attestazione, spazialità, funzione, granularità).
 Ogni task che cambia questi valori ne dà conto nella sua voce di
 `DECISIONS.md`; un conteggio diverso senza una voce che lo spieghi vuol dire che i
 derivati non sono allineati: `make all`. Il build è deterministico (D-022): due

@@ -107,7 +107,7 @@ Le sorgenti sono i TSV di `data/source/tables/`; la sezione `documentation` di `
 | Revision_Of | `prov:wasRevisionOf` | — |
 | Source_ID, Source_Page | fonte e pagina dell'atto | — |
 | Anchors_To_Entity_ID | `chora:anchorsToEntity` (più ancore con «\|») | la posizione del luogo |
-| Relational_Anchor_IDs, Relational_Anchor_Type | `chora:hasRelationalAnchoring` (termini; `tipo:id` per tipi diversi) | **senza ancore dirette, i termini del gazetteer sono le ancore** (D-084) |
+| Relational_Anchor_IDs, Relational_Anchor_Type | `chora:hasRelationalAnchoring` (termini; `tipo:id` per tipi diversi) | **senza ancore dirette, i termini del gazetteer sono le ancore** (D-084). Un termine può essere un luogo narrativo (D-058): è una relazione qualitativa fra luoghi attestata dal passo (l'edicola `adjacentto` l'orto; la cantina della Zamira `below` il laboratorio, il sacello `adjacentto` la cantina, D-091) e non diventa un'ancora |
 
 ---
 
@@ -115,7 +115,7 @@ Le sorgenti sono i TSV di `data/source/tables/`; la sezione `documentation` di `
 
 - **Il GeoJSON porta solo le letture adottate:** le interpretazioni con `adoptedByProject true` (rilievo, tessere, percorsi) e le identificazioni adottate (`chora:identifiedWith`) per i luoghi senza ancore proprie. Le letture non adottate, i commenti, le attestazioni e le varianti restano nel grafo e nelle query; l'interfaccia le mostrerà con T-60.
 - **Nessun luogo annotato senza ancora.**
-  - Gli Imported confluiscono nella tessera dell'ancora primaria.
+  - Gli Imported confluiscono nella tessera dell'ancora primaria. Il rilievo va sull'ancora **diretta** dell'interpretazione, non su quella ereditata: un Imported con `Is_Part_Of` porta anche l'ancora diretta del contenitore (camera di sicurezza della questura, D-091).
   - Transformed e Invented hanno una tessera propria nel Diagramma, posizionata dalle ancore: dirette, ereditate con `isPartOf`, da identificazione adottata o dai termini relazionali. Imagined non ha istanze nel *Pasticciaccio* (D-090): per definizione un luogo Imagined non ha posizione, e un'eventuale istanza annotata oggi non supererebbe la shape 23 e IQ21 (voce aperta in D-090).
   - «Senza coordinate» non vuol dire «fuori dall'interfaccia». Lo garantiscono IQ21 e la shape 23 (Violation), il controllo di `make audit` (ogni luogo annotato è nel GeoJSON) e l'adapter, che si ferma se trova un luogo annotato senza ancore.
 - **Testimoni:** l'interfaccia mostra il `prefLabel` del testimone di riferimento, «QP (Adelphi 2018)», non la sigla del dataset (QPa).

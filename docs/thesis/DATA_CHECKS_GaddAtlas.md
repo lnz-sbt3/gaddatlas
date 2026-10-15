@@ -1,6 +1,6 @@
 # GaddAtlas — Registro dei controlli sui dati e sul modello
 
-**v1.7 · 15 ottobre 2026 (fase 3b, statuti)** · L. Sabatino (integra l'audit di fase 0, `docs/alignment/AUDIT_0.md`)
+**v1.8 · 15 ottobre 2026 (fase 3c, sottoluoghi)** · L. Sabatino (integra l'audit di fase 0, `docs/alignment/AUDIT_0.md`)
 
 Registro delle decisioni e dei controlli emersi dalla stesura e dalla revisione del Capitolo 4. Ogni voce confronta il dataset (sorgenti TSV, ontologia CHORA, `gaddatlas.ttl`) con le fonti critiche e filologiche e con i requisiti del capitolo. **Va smarcato prima di presentare il database e il prototipo nella Parte II.**
 
@@ -67,6 +67,12 @@ Ogni voce rinvia ai task del work order (`docs/thesis/GaddAtlas_Cap4_Allineament
 | DC-26 | Castel Porcano: Invented o Transformed | `castel_porcano` Invented dopo D-090; N-0004 (Manzotti 2010, p. 273) è una lettura di denominazione (paraetimologia), non un'identificazione; interpretazioni `overlaps` con `gaz_castel_porziano`, indeterminate; QPa 213 | Cap. 4, r. 85: la deformazione del nome «penderebbe verso il luogo _trasformato_»; Reuschel e Hurni 2011 (*renaming*) | Invented regge finché il progetto non adotta l'identificazione con Castelporziano (LS, 15/10/2026). Il Cap. 4, r. 85 («ascrivibile alla categoria dell'_immaginato_») va corretto da LS | — | Aperto (AUDIT_3b, A6; D-090) |
 | DC-27 | Rocca Orsina: fonte del nome e della coordinata | `rocca_orsina` Imported, lettura generata S-auto-rocca_orsina (D-068); nota senza fonte: «può essere ricondotto con buone ragioni alla fortificazione degli Orsini a Marino»; `gaz_rocca_orsina` 41,76992 N 12,65848 E, **`Authority_Source` e `sameAs` vuoti** (il punto cade nel centro di Marino, a circa 750 m da `gaz_marino`, sull'area di Palazzo Colonna); ref_00414, QPa 173 | Nessuna nel repository; la segnalazione dell'estrazione assistita («probabile toponimo inventato») non è registrata | Serve una fonte in ogni caso (LS, 15/10/2026). Alla lettera: Imported se il nome è attestato; Transformed se rinomina la rocca orsiniana di Marino; Invented se non ha riscontro. La coordinata senza provenienza è un problema di qualità dei dati indipendente dallo statuto | — | Aperto (AUDIT_3b, A6) |
 | DC-28 | Partizione P-0001 e i cinque ex Imagined | La motivazione di P-0001 esclude d'ufficio i «luoghi Imagined»; dopo D-090 la clausola non ha oggetto. roccafringoli, monte_nuncupale, scerpure, casa_del_butiro e castel_porcano restano fuori dalla partizione | D-050; D-090 | Decidere se assegnarli a Roma città / campagna romana o lasciarli fra i casi di confine. La motivazione di P-0001 non si modifica | — | Aperto (D-090) |
+| DC-29 | Soglia di censimento e sottoluoghi | Parti di luoghi censiti nominate dal testo come unità distinte, assenti dal dataset | Soglia di LS (15/10/2026): attestazione, spazialità, funzione, granularità | Entrano `cantina_zamira` (Invented, parte di `casuccia_zamira`, `below` il laboratorio), `sacello_responsale` (Invented, parte di `casuccia_zamira`, `adjacentto` la cantina), `camera_sicurezza_questura` (Imported, parte della questura di Santo Stefano del Cacco, con ancora diretta). 8 occorrenze con estratti verificati sul volume, 11 interpretazioni. Esclusi: QPa 166 «Nel buio un trespolo…», 226, 276, 176 «in un angolo», 165 «Lì germogliavano…», 188, 204, 224 | — | **Applicato** (D-091) |
+| DC-30 | «antro» come forma variante del laboratorio | `laboratorio_zamira`, `Alternative_Toponym` «antro; botteguccia; bottega» dal censimento; nessun estratto del dataset attesta «antro» per il laboratorio. Dal 15/10/2026 «antro» è anche forma della cantina (QPa 196) | — | Verificare la fonte di «antro» nel censimento e decidere se resta sul laboratorio | — | Aperto (D-091) |
+| DC-31 | Categoria `osteria` fuori vocabolario | `osteriuccia_bivio` ha `Place_Category` «osteria», assente da `mapping.yaml` (`place_categories`): l'ETL dà un avviso a ogni `make all` e perde `hasPlaceCategory` per quel luogo. `README.md` dichiarava «ETL 0 warning» (corretto in D-091) | D-087 | Aggiungere il valore al vocabolario o ricondurre la categoria a un valore esistente, in una fase separata | — | Aperto (D-091) |
+| DC-32 | QPa 169: «in laboratorio» senza occorrenza | L'estratto di ref_00741 (cantina) nomina anche il laboratorio («portarli su a raccomodare, in laboratorio»), che non ha un'occorrenza propria in quel passo | Soglia di D-091 | Decidere se aggiungere l'occorrenza di `laboratorio_zamira`; non aggiunta nella fase 3c | — | Aperto (D-091) |
+| DC-33 | Forma delle tessere narrative legata all'indice | `seedFor(i)` = `floor(voidSeed · 0xFFFFFF) XOR i` (`app/src/model/narrative-geometry.js:115-118`): la perturbazione della cella dipende anche dalla posizione della tessera in `allData`. Aggiungere un luogo fittizio sposta l'indice degli altri e ne cambia la forma, anche con i semi congelati (fase 3c: 42 indici spostati, 41 celle cambiate su 49) | Verifica visiva della fase 3c | Decidere se rendere la forma indipendente dall'indice (per esempio seme dall'id): cambierebbe tutte le forme rispetto alle figure calibrate | — | Aperto (D-091) |
+| DC-34 | Imported con `Is_Part_Of`: rilievo sull'ancora diretta | Per un Imported l'adapter deposita il rilievo sull'ancora diretta dell'interpretazione (`build_geojson.py`, `visual_target`), non su quella ereditata; senza ancora diretta `make audit` fallisce. Regola applicata: l'Imported con `Is_Part_Of` porta anche l'ancora diretta del contenitore | AUDIT_3c, A3 | Alternativa (b): `visual_target` ripiega sull'ancora ereditata per gli Imported (modifica dell'adapter) | — | Aperto (D-091) |
 
 ---
 
@@ -129,3 +135,14 @@ Ogni voce rinvia ai task del work order (`docs/thesis/GaddAtlas_Cap4_Allineament
 - [ ] **DC-28**: assegnazione dei cinque ex Imagined alla partizione P-0001
 - [ ] **Shape 23 / IQ21 e Imagined** (CHORA): un luogo Imagined annotato non ha coordinate né ancore, e oggi non supererebbe la shape 23 né IQ21 (D-090)
 - [ ] **Cap. 4, r. 85**: correggere il passo su Castel Porcano «ascrivibile alla categoria dell'_immaginato_» (LS)
+
+---
+
+## F. Fase 3c, sottoluoghi (15 ottobre 2026, D-091)
+
+- [x] **DC-29**: soglia di censimento; cantina della Zamira, sacello responsale, camera di sicurezza della questura
+- [ ] **DC-30**: fonte di «antro» per il laboratorio
+- [ ] **DC-31**: categoria `osteria` fuori vocabolario (avviso dell'ETL)
+- [ ] **DC-32**: QPa 169, occorrenza del laboratorio
+- [ ] **DC-33**: forma delle tessere narrative legata all'indice
+- [ ] **DC-34**: Imported con `Is_Part_Of`, alternativa (b) nell'adapter
