@@ -21,7 +21,7 @@
   "ontologyVersion": "1.0.0",
   "buildVersion": "4.3",
   "source": "gaddatlas-full.ttl",
-  "tripleCount": 44830,
+  "tripleCount": 45261,
   "projection": {
    "type": "equirectangular",
    "center": [
@@ -110,18 +110,37 @@
   "voidSeeds": "frozen",
   "counts": {
    "gazetteer": 265,
-   "narrativePlaces": 310,
-   "interpretations": 958,
-   "references": 730,
+   "narrativePlaces": 313,
+   "interpretations": 968,
+   "references": 738,
    "routes": 21,
    "chapters": 10,
    "agents": 83,
-   "derivedSequences": 103,
-   "reliefRows": 927,
-   "ownTiles": 49
+   "derivedSequences": 104,
+   "reliefRows": 937,
+   "ownTiles": 51
   }
  },
  "gazetteer": [
+  {
+   "id": "gaz_santo_stefano_del_cacco_celio_santo_stefano",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_santo_stefano_del_cacco_celio_santo_stefano",
+   "label": "Santo Stefano del Cacco, Celio-Santo Stefano",
+   "lon": 12.47948307900791,
+   "lat": 41.89737347768524,
+   "x": -1259.091,
+   "y": 542.652,
+   "scaleBand": "urbano",
+   "presentLocation": "via Santo Stefano del Cacco",
+   "historicalLocation": null,
+   "distanceFromRomeKm": 1.5,
+   "refCountAnchored": 37,
+   "planeCount": 24,
+   "interpCount": 37,
+   "narrativePlaceCount": 2,
+   "densityClass": "hub",
+   "densityLevel": 5
+  },
   {
    "id": "gaz_via_merulana",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_merulana",
@@ -142,25 +161,6 @@
    "densityLevel": 5
   },
   {
-   "id": "gaz_santo_stefano_del_cacco_celio_santo_stefano",
-   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_santo_stefano_del_cacco_celio_santo_stefano",
-   "label": "Santo Stefano del Cacco, Celio-Santo Stefano",
-   "lon": 12.47948307900791,
-   "lat": 41.89737347768524,
-   "x": -1259.091,
-   "y": 542.652,
-   "scaleBand": "urbano",
-   "presentLocation": "via Santo Stefano del Cacco",
-   "historicalLocation": null,
-   "distanceFromRomeKm": 1.5,
-   "refCountAnchored": 36,
-   "planeCount": 23,
-   "interpCount": 36,
-   "narrativePlaceCount": 1,
-   "densityClass": "hub",
-   "densityLevel": 5
-  },
-  {
    "id": "gaz_due_santi",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_due_santi",
    "label": "Due Santi",
@@ -175,7 +175,7 @@
    "refCountAnchored": 54,
    "planeCount": 21,
    "interpCount": 30,
-   "narrativePlaceCount": 6,
+   "narrativePlaceCount": 8,
    "densityClass": "hub",
    "densityLevel": 5
   },
@@ -5974,6 +5974,51 @@
    "densityClass": "frequente"
   },
   {
+   "id": "cantina_zamira",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/cantina_zamira",
+   "label": "Cantina della Zamira",
+   "realityStatus": "Invented",
+   "placeCategory": "interior",
+   "description": "Cantina o sala seminterrata sotto il laboratorio della Zamira, sala delle consultazioni (QPa 165, 166). Luogo entrato con la soglia di censimento (D-091).",
+   "fuzziness": null,
+   "partOf": "casuccia_zamira",
+   "interpCount": 8,
+   "planeCount": 6,
+   "targets": [
+    {
+     "gazetteerId": "gaz_due_santi",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Setting",
+     "n": 4
+    },
+    {
+     "role": "ProjectedSpace",
+     "n": 4
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 5
+    },
+    {
+     "determination": "Indeterminate",
+     "n": 2
+    },
+    {
+     "determination": "Relative",
+     "n": 1
+    }
+   ],
+   "anchorInherited": true,
+   "multiTarget": false,
+   "densityClass": "frequente"
+  },
+  {
    "id": "milano",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/milano",
    "label": "Milano",
@@ -9947,6 +9992,39 @@
    "densityClass": "hapax"
   },
   {
+   "id": "camera_sicurezza_questura",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/camera_sicurezza_questura",
+   "label": "Camera di sicurezza della questura",
+   "realityStatus": "Imported",
+   "placeCategory": "room",
+   "description": "Camera di sicurezza della questura di Santo Stefano del Cacco, dove Ines attende l'alba (QPa 176). Luogo entrato con la soglia di censimento (D-091).",
+   "fuzziness": null,
+   "partOf": "santo_stefano_del_cacco_celio_santo_stefano",
+   "interpCount": 1,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_santo_stefano_del_cacco_celio_santo_stefano",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "ProjectedSpace",
+     "n": 1
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Approximate",
+     "n": 1
+    }
+   ],
+   "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
    "id": "campo_de_fiori",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/campo_de_fiori",
    "label": "Campo de' Fiori",
@@ -12654,6 +12732,39 @@
     }
    ],
    "anchorInherited": false,
+   "multiTarget": false,
+   "densityClass": "hapax"
+  },
+  {
+   "id": "sacello_responsale",
+   "iri": "https://w3id.org/gaddatlas/id/narrativeplace/sacello_responsale",
+   "label": "Sacello responsale",
+   "realityStatus": "Invented",
+   "placeCategory": "interior",
+   "description": "Sacello o ricettacolo responsale della Zamira, a cui la sala di consultazione dà adito per un uscio con catenaccio (QPa 165). Luogo entrato con la soglia di censimento (D-091).",
+   "fuzziness": null,
+   "partOf": "casuccia_zamira",
+   "interpCount": 1,
+   "planeCount": 1,
+   "targets": [
+    {
+     "gazetteerId": "gaz_due_santi",
+     "weight": 1.0
+    }
+   ],
+   "roles": [
+    {
+     "role": "Setting",
+     "n": 1
+    }
+   ],
+   "determinations": [
+    {
+     "determination": "Relative",
+     "n": 1
+    }
+   ],
+   "anchorInherited": true,
    "multiTarget": false,
    "densityClass": "hapax"
   },
@@ -30934,6 +31045,166 @@
    "isNodeOfRoute": null,
    "routeOrder": null,
    "criticalNote": "Ancore ai toponimi riconoscibili più prossimi, secondo Terzoli 2015, p. 776: «nei pressi delle Frattocchie […] proprio su un bivio tra l'Appia Antica e la strada per il santuario del Divino Amore, è registrata un'\"Osteria\"». gaz_via_appia è la via Appia, senza distinzione fra Antica e Nuova (D-087)."
+  },
+  {
+   "id": "interp_00968",
+   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00968",
+   "referenceId": "ref_00737",
+   "narrativePlaceId": "cantina_zamira",
+   "routeId": null,
+   "gazetteerId": null,
+   "narrativeRole": "Setting",
+   "spatialDetermination": "Approximate",
+   "spatialRelation": "Inside",
+   "focalizerId": "zamira_pacori",
+   "confidence": 1.0,
+   "isNodeOfRoute": null,
+   "routeOrder": null,
+   "criticalNote": null
+  },
+  {
+   "id": "interp_00969",
+   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00969",
+   "referenceId": "ref_00738",
+   "narrativePlaceId": "cantina_zamira",
+   "routeId": null,
+   "gazetteerId": null,
+   "narrativeRole": "Setting",
+   "spatialDetermination": "Approximate",
+   "spatialRelation": "Inside",
+   "focalizerId": "zamira_pacori",
+   "confidence": 1.0,
+   "isNodeOfRoute": null,
+   "routeOrder": null,
+   "criticalNote": null
+  },
+  {
+   "id": "interp_00970",
+   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00970",
+   "referenceId": "ref_00739",
+   "narrativePlaceId": "sacello_responsale",
+   "routeId": null,
+   "gazetteerId": null,
+   "narrativeRole": "Setting",
+   "spatialDetermination": "Relative",
+   "spatialRelation": "Inside",
+   "focalizerId": "zamira_pacori",
+   "confidence": 1.0,
+   "isNodeOfRoute": null,
+   "routeOrder": null,
+   "criticalNote": "La sala di consultazione (la cantina) «dava adito», per uscio con catenaccio, al sacello (QPa 165): vani contigui (D-091)."
+  },
+  {
+   "id": "interp_00971",
+   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00971",
+   "referenceId": "ref_00740",
+   "narrativePlaceId": "cantina_zamira",
+   "routeId": null,
+   "gazetteerId": null,
+   "narrativeRole": "Setting",
+   "spatialDetermination": "Approximate",
+   "spatialRelation": "Inside",
+   "focalizerId": "zamira_pacori",
+   "confidence": 1.0,
+   "isNodeOfRoute": null,
+   "routeOrder": null,
+   "criticalNote": null
+  },
+  {
+   "id": "interp_00972",
+   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00972",
+   "referenceId": "ref_00741",
+   "narrativePlaceId": "cantina_zamira",
+   "routeId": null,
+   "gazetteerId": null,
+   "narrativeRole": "Setting",
+   "spatialDetermination": "Relative",
+   "spatialRelation": "Inside",
+   "focalizerId": "zamira_pacori",
+   "confidence": 1.0,
+   "isNodeOfRoute": null,
+   "routeOrder": null,
+   "criticalNote": "La Zamira manda a «levarseli in cantina» e a portare i pantaloni «su […] in laboratorio» (QPa 169): la cantina sta sotto il laboratorio (D-091)."
+  },
+  {
+   "id": "interp_00974",
+   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00974",
+   "referenceId": "ref_00742",
+   "narrativePlaceId": "cantina_zamira",
+   "routeId": null,
+   "gazetteerId": null,
+   "narrativeRole": "ProjectedSpace",
+   "spatialDetermination": "Approximate",
+   "spatialRelation": "Inside",
+   "focalizerId": "zamira_pacori",
+   "confidence": 1.0,
+   "isNodeOfRoute": null,
+   "routeOrder": null,
+   "criticalNote": null
+  },
+  {
+   "id": "interp_00975",
+   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00975",
+   "referenceId": "ref_00742",
+   "narrativePlaceId": "cantina_zamira",
+   "routeId": null,
+   "gazetteerId": null,
+   "narrativeRole": "ProjectedSpace",
+   "spatialDetermination": "Approximate",
+   "spatialRelation": "Inside",
+   "focalizerId": "diomede",
+   "confidence": 1.0,
+   "isNodeOfRoute": null,
+   "routeOrder": null,
+   "criticalNote": null
+  },
+  {
+   "id": "interp_00976",
+   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00976",
+   "referenceId": "ref_00743",
+   "narrativePlaceId": "cantina_zamira",
+   "routeId": null,
+   "gazetteerId": null,
+   "narrativeRole": "ProjectedSpace",
+   "spatialDetermination": "Indeterminate",
+   "spatialRelation": "Inside",
+   "focalizerId": "zamira_pacori",
+   "confidence": 1.0,
+   "isNodeOfRoute": null,
+   "routeOrder": null,
+   "criticalNote": null
+  },
+  {
+   "id": "interp_00977",
+   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00977",
+   "referenceId": "ref_00743",
+   "narrativePlaceId": "cantina_zamira",
+   "routeId": null,
+   "gazetteerId": null,
+   "narrativeRole": "ProjectedSpace",
+   "spatialDetermination": "Indeterminate",
+   "spatialRelation": "Inside",
+   "focalizerId": "diomede",
+   "confidence": 1.0,
+   "isNodeOfRoute": null,
+   "routeOrder": null,
+   "criticalNote": null
+  },
+  {
+   "id": "interp_00978",
+   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00978",
+   "referenceId": "ref_00744",
+   "narrativePlaceId": "camera_sicurezza_questura",
+   "routeId": null,
+   "gazetteerId": "gaz_santo_stefano_del_cacco_celio_santo_stefano",
+   "narrativeRole": "ProjectedSpace",
+   "spatialDetermination": "Approximate",
+   "spatialRelation": "Inside",
+   "focalizerId": "ines_cionini",
+   "confidence": 1.0,
+   "isNodeOfRoute": null,
+   "routeOrder": null,
+   "criticalNote": null
   }
  ],
  "references": [
@@ -37506,6 +37777,78 @@
    "sourceReference": "A 239",
    "chapterId": "capitolo_IX",
    "workId": "quer_pasticciaccio"
+  },
+  {
+   "id": "ref_00737",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00737",
+   "edition": "A",
+   "page": 165,
+   "sourceReference": "A 165",
+   "chapterId": "capitolo_VI",
+   "workId": "quer_pasticciaccio"
+  },
+  {
+   "id": "ref_00738",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00738",
+   "edition": "A",
+   "page": 165,
+   "sourceReference": "A 165",
+   "chapterId": "capitolo_VI",
+   "workId": "quer_pasticciaccio"
+  },
+  {
+   "id": "ref_00739",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00739",
+   "edition": "A",
+   "page": 165,
+   "sourceReference": "A 165",
+   "chapterId": "capitolo_VI",
+   "workId": "quer_pasticciaccio"
+  },
+  {
+   "id": "ref_00740",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00740",
+   "edition": "A",
+   "page": 166,
+   "sourceReference": "A 166",
+   "chapterId": "capitolo_VI",
+   "workId": "quer_pasticciaccio"
+  },
+  {
+   "id": "ref_00741",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00741",
+   "edition": "A",
+   "page": 169,
+   "sourceReference": "A 169",
+   "chapterId": "capitolo_VI",
+   "workId": "quer_pasticciaccio"
+  },
+  {
+   "id": "ref_00742",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00742",
+   "edition": "A",
+   "page": 195,
+   "sourceReference": "A 195",
+   "chapterId": "capitolo_VII",
+   "workId": "quer_pasticciaccio"
+  },
+  {
+   "id": "ref_00743",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00743",
+   "edition": "A",
+   "page": 196,
+   "sourceReference": "A 196",
+   "chapterId": "capitolo_VII",
+   "workId": "quer_pasticciaccio"
+  },
+  {
+   "id": "ref_00744",
+   "iri": "https://w3id.org/gaddatlas/id/reference/ref_00744",
+   "edition": "A",
+   "page": 176,
+   "sourceReference": "A 176",
+   "chapterId": "capitolo_VII",
+   "workId": "quer_pasticciaccio"
   }
  ],
  "routes": [
@@ -40589,7 +40932,15 @@
    "name": "Ines Cionini",
    "gender": "female",
    "description": null,
-   "refCount": 38
+   "refCount": 39
+  },
+  {
+   "id": "diomede",
+   "iri": "https://w3id.org/gaddatlas/id/focalizer/diomede",
+   "name": "Diomede Lanciani",
+   "gender": "male",
+   "description": "Diomede Lanciani è il fidanzato o amante (“paìno”) di Ines Cionini, fratello maggiore di Ascanio",
+   "refCount": 37
   },
   {
    "id": "pompeo",
@@ -40600,12 +40951,12 @@
    "refCount": 36
   },
   {
-   "id": "diomede",
-   "iri": "https://w3id.org/gaddatlas/id/focalizer/diomede",
-   "name": "Diomede Lanciani",
-   "gender": "male",
-   "description": "Diomede Lanciani è il fidanzato o amante (“paìno”) di Ines Cionini, fratello maggiore di Ascanio",
-   "refCount": 35
+   "id": "zamira_pacori",
+   "iri": "https://w3id.org/gaddatlas/id/focalizer/zamira_pacori",
+   "name": "Zamira Pacori",
+   "gender": "female",
+   "description": "Zamira Pàcori, tenutaria di un laboratorio-osteria a Marino, figura ambigua legata al sottobosco criminale dei Colli Albani",
+   "refCount": 36
   },
   {
    "id": "commendador_angeloni",
@@ -40637,14 +40988,6 @@
    "name": "Liliana Balducci",
    "gender": "female",
    "description": "Liliana Balducci, vittima dell'omicidio di via Merulana; figura centrale attorno a cui ruota la doppia indagine del romanzo",
-   "refCount": 29
-  },
-  {
-   "id": "zamira_pacori",
-   "iri": "https://w3id.org/gaddatlas/id/focalizer/zamira_pacori",
-   "name": "Zamira Pacori",
-   "gender": "female",
-   "description": "Zamira Pàcori, tenutaria di un laboratorio-osteria a Marino, figura ambigua legata al sottobosco criminale dei Colli Albani",
    "refCount": 29
   },
   {
@@ -46817,9 +47160,9 @@
    "agentName": "Zamira Pacori",
    "chapterId": "capitolo_VI",
    "chapter": 6,
-   "length": 24,
-   "distinctTargets": 8,
-   "dispersion": 0.333,
+   "length": 29,
+   "distinctTargets": 10,
+   "dispersion": 0.345,
    "pageRange": [
     153,
     171
@@ -47036,6 +47379,36 @@
      "simultaneous": true
     },
     {
+     "page": 165,
+     "referenceId": "ref_00737",
+     "targetId": "cantina_zamira",
+     "narrativePlaceId": "cantina_zamira",
+     "gazetteerId": null,
+     "interpretationId": "interp_00968",
+     "role": "Setting",
+     "simultaneous": true
+    },
+    {
+     "page": 165,
+     "referenceId": "ref_00738",
+     "targetId": "cantina_zamira",
+     "narrativePlaceId": "cantina_zamira",
+     "gazetteerId": null,
+     "interpretationId": "interp_00969",
+     "role": "Setting",
+     "simultaneous": true
+    },
+    {
+     "page": 165,
+     "referenceId": "ref_00739",
+     "targetId": "sacello_responsale",
+     "narrativePlaceId": "sacello_responsale",
+     "gazetteerId": null,
+     "interpretationId": "interp_00970",
+     "role": "Setting",
+     "simultaneous": true
+    },
+    {
      "page": 166,
      "referenceId": "ref_00394",
      "targetId": "laboratorio_zamira",
@@ -47043,7 +47416,17 @@
      "gazetteerId": "gaz_due_santi",
      "interpretationId": "interp_00463",
      "role": "Setting",
-     "simultaneous": false
+     "simultaneous": true
+    },
+    {
+     "page": 166,
+     "referenceId": "ref_00740",
+     "targetId": "cantina_zamira",
+     "narrativePlaceId": "cantina_zamira",
+     "gazetteerId": null,
+     "interpretationId": "interp_00971",
+     "role": "Setting",
+     "simultaneous": true
     },
     {
      "page": 167,
@@ -47052,6 +47435,16 @@
      "narrativePlaceId": "via_appia",
      "gazetteerId": "gaz_via_appia",
      "interpretationId": "interp_00464",
+     "role": "Setting",
+     "simultaneous": false
+    },
+    {
+     "page": 169,
+     "referenceId": "ref_00741",
+     "targetId": "cantina_zamira",
+     "narrativePlaceId": "cantina_zamira",
+     "gazetteerId": null,
+     "interpretationId": "interp_00972",
      "role": "Setting",
      "simultaneous": false
     },
@@ -47697,9 +48090,9 @@
    "agentName": "Diomede Lanciani",
    "chapterId": "capitolo_VII",
    "chapter": 7,
-   "length": 34,
-   "distinctTargets": 28,
-   "dispersion": 0.824,
+   "length": 36,
+   "distinctTargets": 29,
+   "dispersion": 0.806,
    "pageRange": [
     181,
     201
@@ -47814,6 +48207,26 @@
      "interpretationId": "interp_00567",
      "role": "ProjectedSpace",
      "simultaneous": true
+    },
+    {
+     "page": 195,
+     "referenceId": "ref_00742",
+     "targetId": "cantina_zamira",
+     "narrativePlaceId": "cantina_zamira",
+     "gazetteerId": null,
+     "interpretationId": "interp_00975",
+     "role": "ProjectedSpace",
+     "simultaneous": false
+    },
+    {
+     "page": 196,
+     "referenceId": "ref_00743",
+     "targetId": "cantina_zamira",
+     "narrativePlaceId": "cantina_zamira",
+     "gazetteerId": null,
+     "interpretationId": "interp_00977",
+     "role": "ProjectedSpace",
+     "simultaneous": false
     },
     {
      "page": 197,
@@ -48052,14 +48465,24 @@
    "agentName": "Ines Cionini",
    "chapterId": "capitolo_VII",
    "chapter": 7,
-   "length": 19,
-   "distinctTargets": 16,
-   "dispersion": 0.842,
+   "length": 20,
+   "distinctTargets": 17,
+   "dispersion": 0.85,
    "pageRange": [
-    178,
+    176,
     204
    ],
    "steps": [
+    {
+     "page": 176,
+     "referenceId": "ref_00744",
+     "targetId": "gaz_santo_stefano_del_cacco_celio_santo_stefano",
+     "narrativePlaceId": "camera_sicurezza_questura",
+     "gazetteerId": "gaz_santo_stefano_del_cacco_celio_santo_stefano",
+     "interpretationId": "interp_00978",
+     "role": "ProjectedSpace",
+     "simultaneous": false
+    },
     {
      "page": 178,
      "referenceId": "ref_00442",
@@ -48752,6 +49175,41 @@
      "narrativePlaceId": "piazza_vittorio_emanuele",
      "gazetteerId": "gaz_piazza_vittorio_emanuele",
      "interpretationId": "interp_00602",
+     "role": "ProjectedSpace",
+     "simultaneous": false
+    }
+   ]
+  },
+  {
+   "agentId": "zamira_pacori",
+   "agentName": "Zamira Pacori",
+   "chapterId": "capitolo_VII",
+   "chapter": 7,
+   "length": 2,
+   "distinctTargets": 1,
+   "dispersion": 0.5,
+   "pageRange": [
+    195,
+    196
+   ],
+   "steps": [
+    {
+     "page": 195,
+     "referenceId": "ref_00742",
+     "targetId": "cantina_zamira",
+     "narrativePlaceId": "cantina_zamira",
+     "gazetteerId": null,
+     "interpretationId": "interp_00974",
+     "role": "ProjectedSpace",
+     "simultaneous": false
+    },
+    {
+     "page": 196,
+     "referenceId": "ref_00743",
+     "targetId": "cantina_zamira",
+     "narrativePlaceId": "cantina_zamira",
+     "gazetteerId": null,
+     "interpretationId": "interp_00976",
      "role": "ProjectedSpace",
      "simultaneous": false
     }
@@ -56839,6 +57297,42 @@
    "isRouteNode": null
   },
   {
+   "targetId": "cantina_zamira",
+   "interpretationId": "interp_00968",
+   "referenceId": "ref_00737",
+   "page": 165,
+   "chapter": 6,
+   "agentId": "zamira_pacori",
+   "role": "Setting",
+   "determination": "Approximate",
+   "criticalNote": null,
+   "isRouteNode": null
+  },
+  {
+   "targetId": "cantina_zamira",
+   "interpretationId": "interp_00969",
+   "referenceId": "ref_00738",
+   "page": 165,
+   "chapter": 6,
+   "agentId": "zamira_pacori",
+   "role": "Setting",
+   "determination": "Approximate",
+   "criticalNote": null,
+   "isRouteNode": null
+  },
+  {
+   "targetId": "sacello_responsale",
+   "interpretationId": "interp_00970",
+   "referenceId": "ref_00739",
+   "page": 165,
+   "chapter": 6,
+   "agentId": "zamira_pacori",
+   "role": "Setting",
+   "determination": "Relative",
+   "criticalNote": "La sala di consultazione (la cantina) «dava adito», per uscio con catenaccio, al sacello (QPa 165): vani contigui (D-091).",
+   "isRouteNode": null
+  },
+  {
    "targetId": "laboratorio_zamira",
    "interpretationId": "interp_00463",
    "referenceId": "ref_00394",
@@ -56847,6 +57341,18 @@
    "agentId": "zamira_pacori",
    "role": "Setting",
    "determination": "Precise",
+   "criticalNote": null,
+   "isRouteNode": null
+  },
+  {
+   "targetId": "cantina_zamira",
+   "interpretationId": "interp_00971",
+   "referenceId": "ref_00740",
+   "page": 166,
+   "chapter": 6,
+   "agentId": "zamira_pacori",
+   "role": "Setting",
+   "determination": "Approximate",
    "criticalNote": null,
    "isRouteNode": null
   },
@@ -56981,6 +57487,18 @@
    "determination": null,
    "criticalNote": null,
    "isRouteNode": "tragitto_santarella_torraccio_divino_amore"
+  },
+  {
+   "targetId": "cantina_zamira",
+   "interpretationId": "interp_00972",
+   "referenceId": "ref_00741",
+   "page": 169,
+   "chapter": 6,
+   "agentId": "zamira_pacori",
+   "role": "Setting",
+   "determination": "Relative",
+   "criticalNote": "La Zamira manda a «levarseli in cantina» e a portare i pantaloni «su […] in laboratorio» (QPa 169): la cantina sta sotto il laboratorio (D-091).",
+   "isRouteNode": null
   },
   {
    "targetId": "gaz_milano",
@@ -57279,6 +57797,18 @@
    "agentId": "pestalozzi",
    "role": "ProjectedSpace",
    "determination": "Relative",
+   "criticalNote": null,
+   "isRouteNode": null
+  },
+  {
+   "targetId": "gaz_santo_stefano_del_cacco_celio_santo_stefano",
+   "interpretationId": "interp_00978",
+   "referenceId": "ref_00744",
+   "page": 176,
+   "chapter": 7,
+   "agentId": "ines_cionini",
+   "role": "ProjectedSpace",
+   "determination": "Approximate",
    "criticalNote": null,
    "isRouteNode": null
   },
@@ -58011,6 +58541,54 @@
    "agentId": "diomede",
    "role": "ProjectedSpace",
    "determination": "Relative",
+   "criticalNote": null,
+   "isRouteNode": null
+  },
+  {
+   "targetId": "cantina_zamira",
+   "interpretationId": "interp_00974",
+   "referenceId": "ref_00742",
+   "page": 195,
+   "chapter": 7,
+   "agentId": "zamira_pacori",
+   "role": "ProjectedSpace",
+   "determination": "Approximate",
+   "criticalNote": null,
+   "isRouteNode": null
+  },
+  {
+   "targetId": "cantina_zamira",
+   "interpretationId": "interp_00975",
+   "referenceId": "ref_00742",
+   "page": 195,
+   "chapter": 7,
+   "agentId": "diomede",
+   "role": "ProjectedSpace",
+   "determination": "Approximate",
+   "criticalNote": null,
+   "isRouteNode": null
+  },
+  {
+   "targetId": "cantina_zamira",
+   "interpretationId": "interp_00976",
+   "referenceId": "ref_00743",
+   "page": 196,
+   "chapter": 7,
+   "agentId": "zamira_pacori",
+   "role": "ProjectedSpace",
+   "determination": "Indeterminate",
+   "criticalNote": null,
+   "isRouteNode": null
+  },
+  {
+   "targetId": "cantina_zamira",
+   "interpretationId": "interp_00977",
+   "referenceId": "ref_00743",
+   "page": 196,
+   "chapter": 7,
+   "agentId": "diomede",
+   "role": "ProjectedSpace",
+   "determination": "Indeterminate",
    "criticalNote": null,
    "isRouteNode": null
   },

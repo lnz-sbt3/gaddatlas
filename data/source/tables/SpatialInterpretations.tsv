@@ -959,3 +959,13 @@ interp_00964	ref_00729	tragitto_castel_di_leva_casal_bruciato		camilla_mattonari
 interp_00965	ref_00731	sacro_cuore	gaz_sacro_cuore	luigia_zanchetti	marker	approximate						lorenzo_sabatino	2026-10-10						si				
 interp_00966	ref_00732	via_merulana	gaz_via_merulana	narrator	marker	approximate						lorenzo_sabatino	2026-10-10	close_reading	Titolo gridato dagli strilloni: via Merulana nominata come riferimento del delitto, non scena dell'azione; ruolo proposto (D-075).				si				
 interp_00967	ref_00736	osteriuccia_bivio	gaz_frattocchie|gaz_via_appia|gaz_divino_amore	cocullo	marker	relative	near					lorenzo_sabatino	2026-10-10	close_reading	"Ancore ai toponimi riconoscibili più prossimi, secondo Terzoli 2015, p. 776: «nei pressi delle Frattocchie […] proprio su un bivio tra l'Appia Antica e la strada per il santuario del Divino Amore, è registrata un'""Osteria""». gaz_via_appia è la via Appia, senza distinzione fra Antica e Nuova (D-087)."				si				
+interp_00968	ref_00737	cantina_zamira		zamira_pacori	setting	approximate	inside					lorenzo_sabatino	2026-10-15	close_reading					si				
+interp_00969	ref_00738	cantina_zamira		zamira_pacori	setting	approximate	inside					lorenzo_sabatino	2026-10-15	close_reading					si				
+interp_00970	ref_00739	sacello_responsale		zamira_pacori	setting	relative	inside					lorenzo_sabatino	2026-10-15	close_reading	La sala di consultazione (la cantina) «dava adito», per uscio con catenaccio, al sacello (QPa 165): vani contigui (D-091).		cantina_zamira	adjacentto	si				
+interp_00971	ref_00740	cantina_zamira		zamira_pacori	setting	approximate	inside					lorenzo_sabatino	2026-10-15	close_reading					si				
+interp_00972	ref_00741	cantina_zamira		zamira_pacori	setting	relative	inside					lorenzo_sabatino	2026-10-15	close_reading	La Zamira manda a «levarseli in cantina» e a portare i pantaloni «su […] in laboratorio» (QPa 169): la cantina sta sotto il laboratorio (D-091).		laboratorio_zamira	below	si				
+interp_00974	ref_00742	cantina_zamira		zamira_pacori	projectedspace	approximate	inside					lorenzo_sabatino	2026-10-15	close_reading					si				
+interp_00975	ref_00742	cantina_zamira		diomede	projectedspace	approximate	inside					lorenzo_sabatino	2026-10-15	close_reading					si				
+interp_00976	ref_00743	cantina_zamira		zamira_pacori	projectedspace	indeterminate	inside					lorenzo_sabatino	2026-10-15	close_reading					si				
+interp_00977	ref_00743	cantina_zamira		diomede	projectedspace	indeterminate	inside					lorenzo_sabatino	2026-10-15	close_reading					si				
+interp_00978	ref_00744	camera_sicurezza_questura	gaz_santo_stefano_del_cacco_celio_santo_stefano	ines_cionini	projectedspace	approximate	inside					lorenzo_sabatino	2026-10-15	close_reading					si				

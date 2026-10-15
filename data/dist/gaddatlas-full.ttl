@@ -1450,6 +1450,16 @@ chora:witnessType a owl:ObjectProperty ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00472> ;
     chora:reviewStatus chora:Validated .
 
+<https://w3id.org/gaddatlas/id/assertion/S-auto-camera_sicurezza_questura> a chora:Assertion ;
+    rdfs:comment "Lettura generata dall'ETL (D-068)."@it ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-auto-camera_sicurezza_questura> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/camera_sicurezza_questura> ;
+    chora:adoptedByProject true ;
+    chora:assertsValue chora:Imported ;
+    chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00744> ;
+    chora:reviewStatus chora:Validated .
+
 <https://w3id.org/gaddatlas/id/assertion/S-auto-campo_de_fiori> a chora:Assertion ;
     rdfs:comment "Lettura generata dall'ETL (D-068)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
@@ -4154,6 +4164,21 @@ chora:witnessType a owl:ObjectProperty ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00600> ;
     chora:reviewStatus chora:Validated .
 
+<https://w3id.org/gaddatlas/id/assertion/S-cantina_zamira> a chora:Assertion ;
+    rdfs:comment "Luogo entrato con la soglia di censimento (D-091)."@it ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-cantina_zamira> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/cantina_zamira> ;
+    chora:adoptedByProject true ;
+    chora:assertsValue chora:Invented ;
+    chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00737>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00738>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00740>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00741>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00742>,
+        <https://w3id.org/gaddatlas/id/reference/ref_00743> ;
+    chora:reviewStatus chora:Validated .
+
 <https://w3id.org/gaddatlas/id/assertion/S-cantinone_albano> a chora:Assertion ;
     rdfs:comment "Validata da LS (10/10/2026, D-078)."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
@@ -4569,6 +4594,16 @@ chora:witnessType a owl:ObjectProperty ;
     chora:assertsValue chora:Invented ;
     chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00250>,
         <https://w3id.org/gaddatlas/id/reference/ref_00321> ;
+    chora:reviewStatus chora:Validated .
+
+<https://w3id.org/gaddatlas/id/assertion/S-sacello_responsale> a chora:Assertion ;
+    rdfs:comment "Luogo entrato con la soglia di censimento (D-091)."@it ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/S-sacello_responsale> ;
+    chora:aboutSubject <https://w3id.org/gaddatlas/id/narrativeplace/sacello_responsale> ;
+    chora:adoptedByProject true ;
+    chora:assertsValue chora:Invented ;
+    chora:groundedIn <https://w3id.org/gaddatlas/id/reference/ref_00739> ;
     chora:reviewStatus chora:Validated .
 
 <https://w3id.org/gaddatlas/id/assertion/S-scala_a> a chora:Assertion ;
@@ -18145,6 +18180,141 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00736> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/osteriuccia_bivio> .
 
+<https://w3id.org/gaddatlas/id/interpretation/interp_00968> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00968> ;
+    chora:adoptedByProject true ;
+    chora:annotationMethod "close_reading"^^xsd:string ;
+    chora:assignsNarrativeRole chora:Setting ;
+    chora:assignsSpatialDetermination chora:Approximate ;
+    chora:assignsSpatialRelationType chora:Inside ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/zamira_pacori> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00737> ;
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/cantina_zamira> .
+
+<https://w3id.org/gaddatlas/id/interpretation/interp_00969> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00969> ;
+    chora:adoptedByProject true ;
+    chora:annotationMethod "close_reading"^^xsd:string ;
+    chora:assignsNarrativeRole chora:Setting ;
+    chora:assignsSpatialDetermination chora:Approximate ;
+    chora:assignsSpatialRelationType chora:Inside ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/zamira_pacori> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00738> ;
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/cantina_zamira> .
+
+<https://w3id.org/gaddatlas/id/interpretation/interp_00970> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00970> ;
+    chora:adoptedByProject true ;
+    chora:annotationMethod "close_reading"^^xsd:string ;
+    chora:assignsNarrativeRole chora:Setting ;
+    chora:assignsSpatialDetermination chora:Relative ;
+    chora:assignsSpatialRelationType chora:Inside ;
+    chora:criticalNote "La sala di consultazione (la cantina) «dava adito», per uscio con catenaccio, al sacello (QPa 165): vani contigui (D-091)."@it ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/zamira_pacori> ;
+    chora:hasRelationalAnchoring <https://w3id.org/gaddatlas/id/relanchor/interp_00970> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00739> ;
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/sacello_responsale> .
+
+<https://w3id.org/gaddatlas/id/interpretation/interp_00971> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00971> ;
+    chora:adoptedByProject true ;
+    chora:annotationMethod "close_reading"^^xsd:string ;
+    chora:assignsNarrativeRole chora:Setting ;
+    chora:assignsSpatialDetermination chora:Approximate ;
+    chora:assignsSpatialRelationType chora:Inside ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/zamira_pacori> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00740> ;
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/cantina_zamira> .
+
+<https://w3id.org/gaddatlas/id/interpretation/interp_00972> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00972> ;
+    chora:adoptedByProject true ;
+    chora:annotationMethod "close_reading"^^xsd:string ;
+    chora:assignsNarrativeRole chora:Setting ;
+    chora:assignsSpatialDetermination chora:Relative ;
+    chora:assignsSpatialRelationType chora:Inside ;
+    chora:criticalNote "La Zamira manda a «levarseli in cantina» e a portare i pantaloni «su […] in laboratorio» (QPa 169): la cantina sta sotto il laboratorio (D-091)."@it ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/zamira_pacori> ;
+    chora:hasRelationalAnchoring <https://w3id.org/gaddatlas/id/relanchor/interp_00972> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00741> ;
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/cantina_zamira> .
+
+<https://w3id.org/gaddatlas/id/interpretation/interp_00974> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00974> ;
+    chora:adoptedByProject true ;
+    chora:annotationMethod "close_reading"^^xsd:string ;
+    chora:assignsNarrativeRole chora:ProjectedSpace ;
+    chora:assignsSpatialDetermination chora:Approximate ;
+    chora:assignsSpatialRelationType chora:Inside ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/zamira_pacori> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00742> ;
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/cantina_zamira> .
+
+<https://w3id.org/gaddatlas/id/interpretation/interp_00975> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00975> ;
+    chora:adoptedByProject true ;
+    chora:annotationMethod "close_reading"^^xsd:string ;
+    chora:assignsNarrativeRole chora:ProjectedSpace ;
+    chora:assignsSpatialDetermination chora:Approximate ;
+    chora:assignsSpatialRelationType chora:Inside ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/diomede> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00742> ;
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/cantina_zamira> .
+
+<https://w3id.org/gaddatlas/id/interpretation/interp_00976> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00976> ;
+    chora:adoptedByProject true ;
+    chora:annotationMethod "close_reading"^^xsd:string ;
+    chora:assignsNarrativeRole chora:ProjectedSpace ;
+    chora:assignsSpatialDetermination chora:Indeterminate ;
+    chora:assignsSpatialRelationType chora:Inside ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/zamira_pacori> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00743> ;
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/cantina_zamira> .
+
+<https://w3id.org/gaddatlas/id/interpretation/interp_00977> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00977> ;
+    chora:adoptedByProject true ;
+    chora:annotationMethod "close_reading"^^xsd:string ;
+    chora:assignsNarrativeRole chora:ProjectedSpace ;
+    chora:assignsSpatialDetermination chora:Indeterminate ;
+    chora:assignsSpatialRelationType chora:Inside ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/diomede> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00743> ;
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/cantina_zamira> .
+
+<https://w3id.org/gaddatlas/id/interpretation/interp_00978> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00978> ;
+    chora:adoptedByProject true ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_santo_stefano_del_cacco_celio_santo_stefano> ;
+    chora:annotationMethod "close_reading"^^xsd:string ;
+    chora:assignsNarrativeRole chora:ProjectedSpace ;
+    chora:assignsSpatialDetermination chora:Approximate ;
+    chora:assignsSpatialRelationType chora:Inside ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/ines_cionini> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00744> ;
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/camera_sicurezza_questura> .
+
 <https://w3id.org/gaddatlas/id/reference/ref_00723> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
@@ -18340,15 +18510,6 @@ chora:Annotator a owl:Class ;
     rdfs:subClassOf prov:Person ;
     skos:altLabel "Annotatore"@it ;
     skos:prefLabel "Annotator"@en .
-
-chora:Below a owl:NamedIndividual,
-        skos:Concept ;
-    dcterms:description "A è verticalmente sotto B lungo l'asse gravitazionale. Relazione inversa di Above."@it ;
-    rdfs:comment "Inverso di Above, basato su Verticality e preposizioni cognitive"@it ;
-    skos:altLabel "Sotto"@it ;
-    skos:inScheme chora:SpatialRelationTypeScheme ;
-    skos:prefLabel "Below"@en ;
-    skos:topConceptOf chora:SpatialRelationTypeScheme .
 
 chora:Boundary a owl:NamedIndividual,
         skos:Concept ;
@@ -19205,6 +19366,17 @@ chora:witnessOf a owl:ObjectProperty ;
     prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     chora:rationale "Motivazione standard dello statuto: referente identificato nel repertorio. Ancora primaria: Calabria (gaz_calabria). Referente identificato nel gazetteer del progetto (GazetteerEntities), coordinate registrate."@it .
+
+<https://w3id.org/gaddatlas/id/act/S-auto-camera_sicurezza_questura> a hico:InterpretationAct ;
+    dcterms:date "2026-10-09"^^xsd:date ;
+    hico:hasInterpretationCriterion chora:ReferentialEvidence ;
+    hico:hasInterpretationType chora:StatusAssertion ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/source/censimento_gaddatlas> ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-auto-camera_sicurezza_questura-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/S-auto-camera_sicurezza_questura-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:rationale "Motivazione standard dello statuto: referente identificato nel repertorio. Ancora primaria: Santo Stefano del Cacco, Celio-Santo Stefano (gaz_santo_stefano_del_cacco_celio_santo_stefano). Referente identificato nel gazetteer del progetto (GazetteerEntities), coordinate registrate."@it .
 
 <https://w3id.org/gaddatlas/id/act/S-auto-campo_de_fiori> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
@@ -21878,6 +22050,18 @@ chora:witnessOf a owl:ObjectProperty ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     chora:rationale "Parte di casello_km_20_25 nel censimento (Is_Part_Of): lo statuto segue quello del luogo di cui è parte. Descrizione del censimento: «camera da letto della Camilla Mattonari»."@it .
 
+<https://w3id.org/gaddatlas/id/act/S-cantina_zamira> a hico:InterpretationAct ;
+    dcterms:date "2026-10-15"^^xsd:date ;
+    hico:hasInterpretationCriterion chora:TextualEvidence ;
+    hico:hasInterpretationType chora:StatusAssertion ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-cantina_zamira-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/S-cantina_zamira-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:rationale "Parte di casuccia_zamira (Is_Part_Of), sotto il laboratorio della Zamira (QPa 165): lo statuto segue quello del luogo di cui è parte."@it ;
+    chora:sourcePage "165"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/act/S-cantinone_albano> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
     hico:hasInterpretationCriterion chora:TextualEvidence ;
@@ -22310,6 +22494,18 @@ chora:witnessOf a owl:ObjectProperty ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     chora:rationale "Paese senza riscontro reale, collocato dal testo entro una geografia nota: “su su in cima ai monti, a monte Manno, quasi, che da Palestrina ce se va cor ciuccio” (QPa 107). Luogo inventato secondo Reuschel e Hurni (2011): “an invented setting within familiar geographical reality”."@it ;
     chora:sourcePage "107"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/act/S-sacello_responsale> a hico:InterpretationAct ;
+    dcterms:date "2026-10-15"^^xsd:date ;
+    hico:hasInterpretationCriterion chora:TextualEvidence ;
+    hico:hasInterpretationType chora:StatusAssertion ;
+    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/S-sacello_responsale-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/S-sacello_responsale-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    chora:rationale "Parte di casuccia_zamira (Is_Part_Of), oltre l'uscio con catenaccio della sala di consultazione, cioè della cantina (QPa 165): lo statuto segue quello del luogo di cui è parte."@it ;
+    chora:sourcePage "165"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/act/S-scala_a> a hico:InterpretationAct ;
     dcterms:date "2026-10-09"^^xsd:date ;
@@ -28558,6 +28754,86 @@ chora:witnessOf a owl:ObjectProperty ;
     prov:startedAtTime "2026-10-10T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
 
+<https://w3id.org/gaddatlas/id/act/interp_00968> a hico:InterpretationAct ;
+    dcterms:date "2026-10-15"^^xsd:date ;
+    hico:hasInterpretationType chora:SpatialReading ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00968-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/interp_00968-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
+
+<https://w3id.org/gaddatlas/id/act/interp_00969> a hico:InterpretationAct ;
+    dcterms:date "2026-10-15"^^xsd:date ;
+    hico:hasInterpretationType chora:SpatialReading ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00969-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/interp_00969-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
+
+<https://w3id.org/gaddatlas/id/act/interp_00970> a hico:InterpretationAct ;
+    dcterms:date "2026-10-15"^^xsd:date ;
+    hico:hasInterpretationType chora:SpatialReading ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00970-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/interp_00970-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
+
+<https://w3id.org/gaddatlas/id/act/interp_00971> a hico:InterpretationAct ;
+    dcterms:date "2026-10-15"^^xsd:date ;
+    hico:hasInterpretationType chora:SpatialReading ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00971-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/interp_00971-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
+
+<https://w3id.org/gaddatlas/id/act/interp_00972> a hico:InterpretationAct ;
+    dcterms:date "2026-10-15"^^xsd:date ;
+    hico:hasInterpretationType chora:SpatialReading ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00972-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/interp_00972-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
+
+<https://w3id.org/gaddatlas/id/act/interp_00974> a hico:InterpretationAct ;
+    dcterms:date "2026-10-15"^^xsd:date ;
+    hico:hasInterpretationType chora:SpatialReading ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00974-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/interp_00974-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
+
+<https://w3id.org/gaddatlas/id/act/interp_00975> a hico:InterpretationAct ;
+    dcterms:date "2026-10-15"^^xsd:date ;
+    hico:hasInterpretationType chora:SpatialReading ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00975-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/interp_00975-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
+
+<https://w3id.org/gaddatlas/id/act/interp_00976> a hico:InterpretationAct ;
+    dcterms:date "2026-10-15"^^xsd:date ;
+    hico:hasInterpretationType chora:SpatialReading ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00976-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/interp_00976-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
+
+<https://w3id.org/gaddatlas/id/act/interp_00977> a hico:InterpretationAct ;
+    dcterms:date "2026-10-15"^^xsd:date ;
+    hico:hasInterpretationType chora:SpatialReading ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00977-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/interp_00977-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
+
+<https://w3id.org/gaddatlas/id/act/interp_00978> a hico:InterpretationAct ;
+    dcterms:date "2026-10-15"^^xsd:date ;
+    hico:hasInterpretationType chora:SpatialReading ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00978-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/interp_00978-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
+
 <https://w3id.org/gaddatlas/id/assertion/C-casal_bruciato> a chora:Assertion ;
     rdfs:comment "L'entità gaz_casal_bruciato è stata eliminata (D-029): l'IRI resta come valore di questa lettura superata. Passaggio intermedio D-029 (luogo trasformato senza referente, ancorato a Marino, Albano, Pavona e Santa Palomba), superato da D-037."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
@@ -29344,6 +29620,14 @@ chora:witnessOf a owl:ObjectProperty ;
     prov:hadRole chora:Encoder .
 
 <https://w3id.org/gaddatlas/id/association/S-auto-calabria-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/S-auto-camera_sicurezza_questura-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/S-auto-camera_sicurezza_questura-readingauthor-lorenzo_sabatino> a prov:Association ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
@@ -31291,6 +31575,14 @@ chora:witnessOf a owl:ObjectProperty ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
+<https://w3id.org/gaddatlas/id/association/S-cantina_zamira-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/S-cantina_zamira-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
 <https://w3id.org/gaddatlas/id/association/S-cantinone_albano-encoder-lorenzo_sabatino> a prov:Association ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:Encoder .
@@ -31592,6 +31884,14 @@ chora:witnessOf a owl:ObjectProperty ;
     prov:hadRole chora:Encoder .
 
 <https://w3id.org/gaddatlas/id/association/S-roccafringoli-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/S-sacello_responsale-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/S-sacello_responsale-readingauthor-lorenzo_sabatino> a prov:Association ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
@@ -39723,6 +40023,86 @@ chora:witnessOf a owl:ObjectProperty ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
+<https://w3id.org/gaddatlas/id/association/interp_00968-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/interp_00968-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/interp_00969-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/interp_00969-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/interp_00970-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/interp_00970-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/interp_00971-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/interp_00971-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/interp_00972-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/interp_00972-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/interp_00974-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/interp_00974-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/interp_00975-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/interp_00975-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/interp_00976-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/interp_00976-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/interp_00977-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/interp_00977-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/interp_00978-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/interp_00978-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
 <https://w3id.org/gaddatlas/id/focalizer/barbezzi_gallo> a chora:Character,
         chora:FocalizingAgent ;
     chora:characterName "Barbezzi Gallo"@it ;
@@ -42813,6 +43193,14 @@ chora:witnessOf a owl:ObjectProperty ;
     chora:relatum <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba>,
         <https://w3id.org/gaddatlas/id/gazetteer/gaz_via_ardeatina> .
 
+<https://w3id.org/gaddatlas/id/relanchor/interp_00970> a chora:RelationalAnchoring ;
+    chora:relationalType chora:AdjacentTo ;
+    chora:relatum <https://w3id.org/gaddatlas/id/narrativeplace/cantina_zamira> .
+
+<https://w3id.org/gaddatlas/id/relanchor/interp_00972> a chora:RelationalAnchoring ;
+    chora:relationalType chora:Below ;
+    chora:relatum <https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira> .
+
 <https://w3id.org/gaddatlas/id/source/igm_150_iii_so> a chora:Source ;
     rdfs:label "IGM, F. 150 III SO" ;
     dcterms:bibliographicCitation "Istituto Geografico Militare, F. 150 III SO, 1:25.000, rilievo 1872, aggiornamenti 1931 e 1940 (riprodotta in Manzotti 2010, Tav. VII, p. 301)."@it ;
@@ -42865,6 +43253,15 @@ chora:Above a owl:NamedIndividual,
     skos:altLabel "Sopra"@it ;
     skos:inScheme chora:SpatialRelationTypeScheme ;
     skos:prefLabel "Above"@en ;
+    skos:topConceptOf chora:SpatialRelationTypeScheme .
+
+chora:Below a owl:NamedIndividual,
+        skos:Concept ;
+    dcterms:description "A è verticalmente sotto B lungo l'asse gravitazionale. Relazione inversa di Above."@it ;
+    rdfs:comment "Inverso di Above, basato su Verticality e preposizioni cognitive"@it ;
+    skos:altLabel "Sotto"@it ;
+    skos:inScheme chora:SpatialRelationTypeScheme ;
+    skos:prefLabel "Below"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
 
 chora:Edition a owl:NamedIndividual,
@@ -43085,13 +43482,6 @@ chora:road_junction a owl:NamedIndividual,
     skos:altLabel "Bivio stradale"@it ;
     skos:inScheme chora:PlaceCategoryScheme ;
     skos:prefLabel "Road junction"@en ;
-    skos:topConceptOf chora:PlaceCategoryScheme .
-
-chora:room a owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "Camera"@it ;
-    skos:inScheme chora:PlaceCategoryScheme ;
-    skos:prefLabel "Room"@en ;
     skos:topConceptOf chora:PlaceCategoryScheme .
 
 chora:shop a owl:NamedIndividual,
@@ -45179,6 +45569,14 @@ chora:village a owl:NamedIndividual,
     chora:hasPlaceCategory chora:region ;
     chora:hasRealityStatus chora:Imported .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/camera_sicurezza_questura> a chora:NarrativePlace ;
+    rdfs:label "Camera di sicurezza della questura"@it ;
+    dcterms:description "Camera di sicurezza della questura di Santo Stefano del Cacco, dove Ines attende l'alba (QPa 176). Luogo entrato con la soglia di censimento (D-091)."@it ;
+    chora:hasPlaceCategory chora:room ;
+    chora:hasRealityStatus chora:Imported ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> ;
+    chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/santo_stefano_del_cacco_celio_santo_stefano> .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/campo_de_fiori> a chora:NarrativePlace ;
     rdfs:label "Campo de' Fiori"@it ;
     chora:hasPlaceCategory chora:square ;
@@ -45601,6 +45999,14 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:hasPlaceCategory chora:locality ;
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/sacello_responsale> a chora:NarrativePlace ;
+    rdfs:label "Sacello responsale"@it ;
+    dcterms:description "Sacello o ricettacolo responsale della Zamira, a cui la sala di consultazione dà adito per un uscio con catenaccio (QPa 165). Luogo entrato con la soglia di censimento (D-091)."@it ;
+    chora:hasPlaceCategory chora:interior ;
+    chora:hasRealityStatus chora:Invented ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> ;
+    chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/salsomaggiore> a chora:NarrativePlace ;
     rdfs:label "Salsomaggiore"@it ;
@@ -49093,6 +49499,60 @@ Marino passò agli Orsini nel XIII secolo; la famiglia ampliò la precedente for
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
     chora:sourceReference "dtsFG"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/reference/ref_00737> a chora:PlaceReference ;
+    rdfs:comment "Estratto verificato da LS sul volume a stampa (D-091)."@it ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "cantina"@it ;
+    chora:excerpt "La cantina, o sala seminterrata, era provveduta d’un orinale: e, più, d’un lettuccio: che però crocchiava per un nulla, sto coglione, e aveva tegumento d’una « coperta da letto » verde-stinta"@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
+    chora:sourceReference "A 165"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00738> a chora:PlaceReference ;
+    rdfs:comment "Estratto verificato da LS sul volume a stampa (D-091)."@it ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "salotto o sala di consultazione"@it ;
+    chora:excerpt "Dava adito, codesto salotto o sala di consultazione, per uscio con catenaccio, al sacello o ricettacolo responsale propriamente detto."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
+    chora:sourceReference "A 165"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00739> a chora:PlaceReference ;
+    rdfs:comment "Estratto verificato da LS sul volume a stampa (D-091)."@it ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "sacello o ricettacolo responsale"@it ;
+    chora:excerpt "Dava adito, codesto salotto o sala di consultazione, per uscio con catenaccio, al sacello o ricettacolo responsale propriamente detto."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
+    chora:sourceReference "A 165"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00740> a chora:PlaceReference ;
+    rdfs:comment "Estratto verificato da LS sul volume a stampa (D-091)."@it ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "cantina"@it ;
+    chora:excerpt "il nipotino del duce dei baffoni a ruzzare per entro il teschio, in cantina, cioè nella « sala di tintoria »"@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
+    chora:sourceReference "A 166"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00741> a chora:PlaceReference ;
+    rdfs:comment "Estratto verificato da LS sul volume a stampa (D-091)."@it ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "cantina"@it ;
+    chora:excerpt "La Zamira lo mandò a levarseli in cantina: e gli mandò dietro la Clelia, o, secondo altri, la Camilla, per prendere i pantaloni e portarli su a raccomodare, in laboratorio."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VI> ;
+    chora:sourceReference "A 169"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00744> a chora:PlaceReference ;
+    rdfs:comment "Estratto verificato da LS sul volume a stampa (D-091)."@it ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "camera di sicurezza"@it ;
+    chora:excerpt "Povera figliola, avrebbe atteso l’alba sul tavolaccio della camera di sicurezza, rinvoltata dentro una copertuccia bigia da caserma all’insegna der pidocchietto"@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
+    chora:sourceReference "A 176"^^xsd:string .
+
 <https://w3id.org/gaddatlas/id/source/glm_1997a> a chora:Source ;
     rdfs:label "Grassadonia, Lagossi e Marchetti 1997a" ;
     dcterms:bibliographicCitation "Grassadonia, F., Lagossi, P., & Marchetti, M. (a cura di) (1997a). Quer pasticciaccio brutto de via Merulana. Strumenti per la lettura (2 voll.). Milano: Garzanti Scuola."@it ;
@@ -49280,6 +49740,13 @@ chora:river a owl:NamedIndividual,
     skos:exactMatch <http://vocab.getty.edu/aat/300008707> ;
     skos:inScheme chora:PlaceCategoryScheme ;
     skos:prefLabel "River"@en ;
+    skos:topConceptOf chora:PlaceCategoryScheme .
+
+chora:room a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Camera"@it ;
+    skos:inScheme chora:PlaceCategoryScheme ;
+    skos:prefLabel "Room"@en ;
     skos:topConceptOf chora:PlaceCategoryScheme .
 
 chora:temple a owl:NamedIndividual,
@@ -51234,6 +51701,24 @@ chora:temple a owl:NamedIndividual,
     chora:attestedForm "via Lata"@it ;
     chora:sourceReference "dtsFG"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/reference/ref_00742> a chora:PlaceReference ;
+    rdfs:comment "Estratto verificato da LS sul volume a stampa (D-091)."@it ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "cantina"@it ;
+    chora:excerpt "E lui je taceva puro da confidente, allora. E certe vorte nun te l’attirò puro in cantina, pe parlaje co più commodo! Me sa che je dicesse quarche cosa d’importante. Svergognata! a l’età sua!"@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
+    chora:sourceReference "A 195"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00743> a chora:PlaceReference ;
+    rdfs:comment "Estratto verificato da LS sul volume a stampa (D-091)."@it ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "antro"@it ;
+    chora:excerpt "Ines non proferì per esplicito, ma sembrò loro di poter tuttavia desumere dall’apprezzato raccontino della discesa in antro (del biondo intraprendente con la più che Cumana Sibilla)"@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_VII> ;
+    chora:sourceReference "A 196"^^xsd:string .
+
 hico:InterpretationCriterion a owl:Class ;
     rdfs:isDefinedBy <http://purl.org/emmedi/hico> ;
     rdfs:subClassOf skos:Concept .
@@ -51915,12 +52400,6 @@ chora:police_station a owl:NamedIndividual,
     dcterms:description "Casa immaginata nella zona dei Due Santi"@it ;
     chora:hasPlaceCategory chora:farmhouse ;
     chora:hasRealityStatus chora:Invented .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira> a chora:NarrativePlace ;
-    rdfs:label "Casuccia della Zamira"@it ;
-    chora:hasPlaceCategory chora:dwelling ;
-    chora:hasRealityStatus chora:Invented ;
-    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/celio> a chora:NarrativePlace ;
     rdfs:label "Celio"@it ;
@@ -53463,13 +53942,6 @@ chora:retail_business a owl:NamedIndividual,
 
 chora:LiteraryWork a owl:Class .
 
-chora:interior a owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "Interno"@it ;
-    skos:inScheme chora:PlaceCategoryScheme ;
-    skos:prefLabel "Interior"@en ;
-    skos:topConceptOf chora:PlaceCategoryScheme .
-
 <https://w3id.org/gaddatlas/id/agent/cortellessa> a prov:Agent,
         prov:Person,
         chora:Scholar ;
@@ -53758,6 +54230,12 @@ chora:interior a owl:NamedIndividual,
     geo1:lat 41.839732856050645 ;
     geo1:long 12.829976839865571 ;
     chora:attestedInRepertory <https://w3id.org/gaddatlas/id/source/bertarelli_1925> .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira> a chora:NarrativePlace ;
+    rdfs:label "Casuccia della Zamira"@it ;
+    chora:hasPlaceCategory chora:dwelling ;
+    chora:hasRealityStatus chora:Invented ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/ciampino> a chora:NarrativePlace ;
     rdfs:label "Ciampino"@it ;
@@ -54226,6 +54704,13 @@ chora:station a owl:NamedIndividual,
     dcterms:type "guida, repertorio"@it ;
     rdfs:comment "Cartine: «Colli laziali, Monti Lepini ed Ernici (Roma, Frosinone)», tra pp. 480–481 (Terzoli 2015, CART. 2; la carta di Manzotti 2010, Tav. V/VI, per Casal Bruciato, L-0001; conferma: Terzoli 2015, p. 766); «Sabina meridionale, Monti Tiburtini, Prenestini e Carseolani», tra pp. 456–457 (CART. 3). Le carte sono locatori (D-086)."@it .
 
+chora:interior a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "Interno"@it ;
+    skos:inScheme chora:PlaceCategoryScheme ;
+    skos:prefLabel "Interior"@en ;
+    skos:topConceptOf chora:PlaceCategoryScheme .
+
 chora:restaurant a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "Ristorante"@it ;
@@ -54477,6 +54962,17 @@ chora:Church a owl:NamedIndividual,
     geo1:lat 41.88828469760136 ;
     geo1:long 12.498505681387911 ;
     chora:presentLocation "Via dei SS. Quattro, 20, 00184"@it .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/cantina_zamira> a chora:NarrativePlace ;
+    rdfs:label "Cantina della Zamira"@it ;
+    dcterms:description "Cantina o sala seminterrata sotto il laboratorio della Zamira, sala delle consultazioni (QPa 165, 166). Luogo entrato con la soglia di censimento (D-091)."@it ;
+    skos:altLabel "antro"@it,
+        "sala di tintoria"@it,
+        "salotto o sala di consultazione"@it ;
+    chora:hasPlaceCategory chora:interior ;
+    chora:hasRealityStatus chora:Invented ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> ;
+    chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/san_giovanni_in_laterano> a chora:NarrativePlace ;
     rdfs:label "San Giovanni in Laterano"@it ;
@@ -55021,11 +55517,6 @@ skos:ConceptScheme a owl:Class .
     chora:characterName "Giuliano Valdarena"@it ;
     chora:hasGender "male"^^xsd:string .
 
-chora:RelationalAnchoring a owl:Class ;
-    rdfs:comment "How a passage places a narrative place relative to one or more geographic entities («between», «near», «adjacent to»). The relata qualify the anchors of the place, they do not replace them: when the interpretation has no direct anchor, the gazetteer relata are its anchors, and the place is positioned from them (D-084). No annotated place is left out of the interface."@en ;
-    skos:altLabel "Ancoraggio relazionale"@it ;
-    skos:prefLabel "Relational anchoring"@en .
-
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_ponte_divino_amore> a chora:GazetteerEntity ;
     rdfs:label "Ponte al Divino Amore"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -55088,6 +55579,11 @@ chora:RelationalAnchoring a owl:Class ;
         <https://w3id.org/gaddatlas/id/source/bertarelli_1925> ;
     chora:historicalLocation "Casale dell'Agro romano a sud di Roma (Nibby, Dintorni di Roma, p. 569)"@it .
 
+chora:RelationalAnchoring a owl:Class ;
+    rdfs:comment "How a passage places a narrative place relative to one or more geographic entities («between», «near», «adjacent to»). The relata qualify the anchors of the place, they do not replace them: when the interpretation has no direct anchor, the gazetteer relata are its anchors, and the place is positioned from them (D-084). No annotated place is left out of the interface."@en ;
+    skos:altLabel "Ancoraggio relazionale"@it ;
+    skos:prefLabel "Relational anchoring"@en .
+
 chora:RouteTypeAssertion a hico:InterpretationType,
         owl:NamedIndividual,
         skos:Concept ;
@@ -55110,16 +55606,6 @@ chora:Source a owl:Class ;
     dcterms:description "Agente Cocullo, accompagna il brigadiere Pestalozzi in moto dalla tenenza dei carabinieri di Marino alla casa di Camilla Mattonari"@it ;
     chora:characterName "Cocullo"@it ;
     chora:hasGender "male"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira> a chora:NarrativePlace ;
-    rdfs:label "Laboratorio della Zamira Pacori"@it ;
-    skos:altLabel "antro"@it,
-        "bottega"@it,
-        "botteguccia"@it ;
-    chora:hasPlaceCategory chora:building ;
-    chora:hasRealityStatus chora:Invented ;
-    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> ;
-    chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira> .
 
 chora:NarrativeRoute a owl:Class ;
     rdfs:comment "A route (tragitto): an ordered aggregate of narrative places traversed by a focalizer. Distinct from NarrativePlace — a route is not a place but a second-order sequence of places. Carries its own interpretations (per focalizer) via SpatialInterpretation, and aggregates ordered nodes via isNodeOfRoute / routeOrder."@en ;
@@ -55191,6 +55677,16 @@ chora:NarrativeRoute a owl:Class ;
 }"""^^geosparql:geoJSONLiteral ] ;
     geo1:lat 41.85054042792461 ;
     geo1:long 12.52314794887518 .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira> a chora:NarrativePlace ;
+    rdfs:label "Laboratorio della Zamira Pacori"@it ;
+    skos:altLabel "antro"@it,
+        "bottega"@it,
+        "botteguccia"@it ;
+    chora:hasPlaceCategory chora:building ;
+    chora:hasRealityStatus chora:Invented ;
+    chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> ;
+    chora:isPartOf <https://w3id.org/gaddatlas/id/narrativeplace/casuccia_zamira> .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/torraccio> a chora:NarrativePlace ;
     rdfs:label "Torraccio"@it ;
@@ -55282,12 +55778,6 @@ chora:SpatialRelationTypeScheme a owl:NamedIndividual,
     chora:characterName "Liliana Balducci"@it ;
     chora:hasGender "female"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/focalizer/zamira_pacori> a chora:Character,
-        chora:FocalizingAgent ;
-    dcterms:description "Zamira Pàcori, tenutaria di un laboratorio-osteria a Marino, figura ambigua legata al sottobosco criminale dei Colli Albani"@it ;
-    chora:characterName "Zamira Pacori"@it ;
-    chora:hasGender "female"^^xsd:string .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/tenenza_carabinieri_marino> a chora:NarrativePlace ;
     rdfs:label "Tenenza dei Carabinieri di Marino"@it ;
     dcterms:description "Stazione di Polizia di Marino"@it ;
@@ -55365,6 +55855,12 @@ chora:Route a owl:NamedIndividual,
     dcterms:date "2010"^^xsd:gYear ;
     dcterms:type "articolo"@it .
 
+<https://w3id.org/gaddatlas/id/focalizer/commendador_angeloni> a chora:Character,
+        chora:FocalizingAgent ;
+    dcterms:description "Commendator Angeloni, vicino di casa dei Balducci, interrogato all'inizio dell'indagine."@it ;
+    chora:characterName "Commendador Angeloni"@it ;
+    chora:hasGender "male"^^xsd:string .
+
 chora:AdjacentTo a owl:NamedIndividual,
         skos:Concept ;
     dcterms:description "A è adiacente a B, i loro confini si toccano senza sovrapporsi."@it ;
@@ -55374,22 +55870,36 @@ chora:AdjacentTo a owl:NamedIndividual,
     skos:prefLabel "Adjacent to"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
 
-<https://w3id.org/gaddatlas/id/focalizer/commendador_angeloni> a chora:Character,
+<https://w3id.org/gaddatlas/id/focalizer/pompeo> a chora:Character,
         chora:FocalizingAgent ;
-    dcterms:description "Commendator Angeloni, vicino di casa dei Balducci, interrogato all'inizio dell'indagine."@it ;
-    chora:characterName "Commendador Angeloni"@it ;
+    dcterms:description "Pompeo, detto lo Sgranfia, agente/informatore nell'orbita dell'indagine."@it ;
+    chora:characterName "Pompeo"@it ;
     chora:hasGender "male"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/focalizer/zamira_pacori> a chora:Character,
+        chora:FocalizingAgent ;
+    dcterms:description "Zamira Pàcori, tenutaria di un laboratorio-osteria a Marino, figura ambigua legata al sottobosco criminale dei Colli Albani"@it ;
+    chora:characterName "Zamira Pacori"@it ;
+    chora:hasGender "female"^^xsd:string .
+
+chora:Draft a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "bozza"@it ;
+    skos:definition "Prepared from the existing documents (sheet descriptions, Chapter 4), not yet validated."@en ;
+    skos:inScheme chora:ReviewStatusScheme ;
+    skos:prefLabel "Draft"@en ;
+    skos:topConceptOf chora:ReviewStatusScheme .
+
+<https://w3id.org/gaddatlas/id/chapter/capitolo_III> a chora:Chapter ;
+    dcterms:title "Capitolo III"@it ;
+    chora:chapterNumber 3 ;
+    chora:pageRange "76-91"^^xsd:string ;
+    chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
 
 <https://w3id.org/gaddatlas/id/focalizer/diomede> a chora:Character,
         chora:FocalizingAgent ;
     dcterms:description "Diomede Lanciani è il fidanzato o amante (“paìno”) di Ines Cionini, fratello maggiore di Ascanio"@it ;
     chora:characterName "Diomede Lanciani"@it ;
-    chora:hasGender "male"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/focalizer/pompeo> a chora:Character,
-        chora:FocalizingAgent ;
-    dcterms:description "Pompeo, detto lo Sgranfia, agente/informatore nell'orbita dell'indagine."@it ;
-    chora:characterName "Pompeo"@it ;
     chora:hasGender "male"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_santo_stefano_del_cacco_celio_santo_stefano> a chora:GazetteerEntity ;
@@ -55416,20 +55926,6 @@ chora:AdjacentTo a owl:NamedIndividual,
     chora:housedIn <https://w3id.org/gaddatlas/id/gazetteer/gaz_collegio_romano> ;
     chora:presentLocation "via Santo Stefano del Cacco"@it .
 
-chora:Draft a owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "bozza"@it ;
-    skos:definition "Prepared from the existing documents (sheet descriptions, Chapter 4), not yet validated."@en ;
-    skos:inScheme chora:ReviewStatusScheme ;
-    skos:prefLabel "Draft"@en ;
-    skos:topConceptOf chora:ReviewStatusScheme .
-
-<https://w3id.org/gaddatlas/id/chapter/capitolo_III> a chora:Chapter ;
-    dcterms:title "Capitolo III"@it ;
-    chora:chapterNumber 3 ;
-    chora:pageRange "76-91"^^xsd:string ;
-    chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/palazzo_219> a chora:NarrativePlace ;
     rdfs:label "Palazzo di via Merulana 219"@it ;
     dcterms:description "Luogo che identifica il palazzo in via Merulana 219"@it ;
@@ -55450,16 +55946,24 @@ chora:Draft a owl:NamedIndividual,
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
-<https://w3id.org/gaddatlas/id/focalizer/ines_cionini> a chora:Character,
-        chora:FocalizingAgent ;
-    chora:characterName "Ines Cionini"@it ;
-    chora:hasGender "female"^^xsd:string .
-
 <https://w3id.org/gaddatlas/id/agent/manzotti> a prov:Agent,
         prov:Person,
         chora:Scholar ;
     rdfs:comment "Commento al cap. VIII del Pasticciaccio (Manzotti 2010, «Per leggere» 19)"@it ;
     schema:name "Emilio Manzotti" .
+
+<https://w3id.org/gaddatlas/id/focalizer/ines_cionini> a chora:Character,
+        chora:FocalizingAgent ;
+    chora:characterName "Ines Cionini"@it ;
+    chora:hasGender "female"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/source/bertarelli_1925> a chora:Source ;
+    rdfs:label "Bertarelli 1925" ;
+    dcterms:bibliographicCitation "Bertarelli, L. V. (1925). Roma e dintorni = Italia centrale, vol. IV (Guida d'Italia del TCI). Touring Club Italiano."@it ;
+    dcterms:creator "Luigi Vittorio Bertarelli"@it ;
+    dcterms:date "1925"^^xsd:gYear ;
+    dcterms:type "guida, repertorio"@it ;
+    rdfs:comment "Cartine: «Roma e dintorni», tra pp. 736–737 (Terzoli 2015, CART. 4); «Colli Albani», tra pp. 758–759 (CART. 1). Vi rinvia «TCI, Italia centrale IV, p. 761» di Manzotti 2010, pp. 239–240. Candidata per l'edicola ai Due Santi la CART. 1 (Terzoli 2015, p. 419; DC-03, aperta). Le carte sono locatori (D-086)."@it .
 
 chora:Invented a owl:NamedIndividual,
         skos:Concept ;
@@ -55474,14 +55978,6 @@ chora:Invented a owl:NamedIndividual,
     skos:prefLabel "Invented"@en ;
     skos:scopeNote "Third value in the order of the vocabulary (Imported, Transformed, Invented, Imagined): a fictional place set within a familiar geographical reality, so that its position can be indicated or inferred. Not to be confused with Imagined, for which there is no hint at all about the position and no coordinates can be assigned (Reuschel and Hurni 2011; Reuschel, Piatti and Hurni 2013, pp. 138–139)."@en ;
     skos:topConceptOf chora:RealityStatusScheme .
-
-<https://w3id.org/gaddatlas/id/source/bertarelli_1925> a chora:Source ;
-    rdfs:label "Bertarelli 1925" ;
-    dcterms:bibliographicCitation "Bertarelli, L. V. (1925). Roma e dintorni = Italia centrale, vol. IV (Guida d'Italia del TCI). Touring Club Italiano."@it ;
-    dcterms:creator "Luigi Vittorio Bertarelli"@it ;
-    dcterms:date "1925"^^xsd:gYear ;
-    dcterms:type "guida, repertorio"@it ;
-    rdfs:comment "Cartine: «Roma e dintorni», tra pp. 736–737 (Terzoli 2015, CART. 4); «Colli Albani», tra pp. 758–759 (CART. 1). Vi rinvia «TCI, Italia centrale IV, p. 761» di Manzotti 2010, pp. 239–240. Candidata per l'edicola ai Due Santi la CART. 1 (Terzoli 2015, p. 419; DC-03, aperta). Le carte sono locatori (D-086)."@it .
 
 <https://w3id.org/gaddatlas/id/route/tragitto_torraccio_ponte_divino_amore> a chora:NarrativeRoute ;
     chora:hasRouteType chora:CompletedRoute .
@@ -55524,15 +56020,6 @@ chora:CriticalReading a hico:InterpretationCriterion,
     chora:characterName "Santarella"@it ;
     chora:hasGender "male"^^xsd:string .
 
-chora:Indeterminate a owl:NamedIndividual,
-        skos:Concept ;
-    owl:differentFrom chora:Precise,
-        chora:Relative ;
-    skos:altLabel "Indeterminata"@it ;
-    skos:inScheme chora:SpatialDeterminationScheme ;
-    skos:prefLabel "Indeterminate"@en ;
-    skos:topConceptOf chora:SpatialDeterminationScheme .
-
 <https://w3id.org/gaddatlas/id/chapter/capitolo_II> a chora:Chapter ;
     dcterms:title "Capitolo II"@it ;
     chora:chapterNumber 2 ;
@@ -55561,6 +56048,15 @@ chora:Indeterminate a owl:NamedIndividual,
     geo1:lat 41.76118209967858 ;
     geo1:long 12.616571382457442 ;
     chora:attestedInRepertory <https://w3id.org/gaddatlas/id/source/bertarelli_1925> .
+
+chora:Indeterminate a owl:NamedIndividual,
+        skos:Concept ;
+    owl:differentFrom chora:Precise,
+        chora:Relative ;
+    skos:altLabel "Indeterminata"@it ;
+    skos:inScheme chora:SpatialDeterminationScheme ;
+    skos:prefLabel "Indeterminate"@en ;
+    skos:topConceptOf chora:SpatialDeterminationScheme .
 
 <https://w3id.org/gaddatlas/id/chapter/capitolo_V> a chora:Chapter ;
     dcterms:title "Capitolo V"@it ;
@@ -55627,12 +56123,6 @@ chora:Transformed a owl:NamedIndividual,
     chora:pageRange "92-131"^^xsd:string ;
     chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
 
-<https://w3id.org/gaddatlas/id/chapter/capitolo_VII> a chora:Chapter ;
-    dcterms:title "Capitolo VII"@it ;
-    chora:chapterNumber 7 ;
-    chora:pageRange "176-205"^^xsd:string ;
-    chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
-
 chora:EncodingActivity a owl:Class ;
     rdfs:comment "The encoding of a reading in the knowledge graph by an annotator, distinct from the interpretation act when the author of the reading is someone else. It uses the source (prov:used) and is informed by the interpretation act (prov:wasInformedBy); its date is the date of the encoding."@en ;
     rdfs:subClassOf prov:Activity ;
@@ -55648,6 +56138,24 @@ chora:street a owl:NamedIndividual,
     skos:prefLabel "Street"@en ;
     skos:topConceptOf chora:PlaceCategoryScheme .
 
+<https://w3id.org/gaddatlas/id/chapter/capitolo_IX> a chora:Chapter ;
+    dcterms:title "Capitolo IX"@it ;
+    chora:chapterNumber 9 ;
+    chora:pageRange "238-277"^^xsd:string ;
+    chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
+
+<https://w3id.org/gaddatlas/id/chapter/capitolo_VII> a chora:Chapter ;
+    dcterms:title "Capitolo VII"@it ;
+    chora:chapterNumber 7 ;
+    chora:pageRange "176-205"^^xsd:string ;
+    chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
+
+<https://w3id.org/gaddatlas/id/focalizer/pestalozzi> a chora:Character,
+        chora:FocalizingAgent ;
+    dcterms:description "Brigadiere Pestalozzi, conduce le indagini nell'area dei Castelli, dalla tenenza dei carabinieri di Marino"@it ;
+    chora:characterName "Pestalozzi"@it ;
+    chora:hasGender "male"^^xsd:string .
+
 chora:TextualEvidence a hico:InterpretationCriterion,
         owl:NamedIndividual,
         skos:Concept ;
@@ -55656,18 +56164,6 @@ chora:TextualEvidence a hico:InterpretationCriterion,
     skos:inScheme chora:RationaleTypeScheme ;
     skos:prefLabel "Textual evidence"@en ;
     skos:topConceptOf chora:RationaleTypeScheme .
-
-<https://w3id.org/gaddatlas/id/chapter/capitolo_IX> a chora:Chapter ;
-    dcterms:title "Capitolo IX"@it ;
-    chora:chapterNumber 9 ;
-    chora:pageRange "238-277"^^xsd:string ;
-    chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
-
-<https://w3id.org/gaddatlas/id/focalizer/pestalozzi> a chora:Character,
-        chora:FocalizingAgent ;
-    dcterms:description "Brigadiere Pestalozzi, conduce le indagini nell'area dei Castelli, dalla tenenza dei carabinieri di Marino"@it ;
-    chora:characterName "Pestalozzi"@it ;
-    chora:hasGender "male"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/chapter/capitolo_X> a chora:Chapter ;
     dcterms:title "Capitolo X"@it ;
@@ -55690,18 +56186,18 @@ chora:FocalizingAgent a owl:Class ;
     skos:altLabel "Agente Focalizzatore"@it ;
     skos:prefLabel "Focalizing Agent"@en .
 
-<https://w3id.org/gaddatlas/id/chapter/capitolo_VI> a chora:Chapter ;
-    dcterms:title "Capitolo VI"@it ;
-    chora:chapterNumber 6 ;
-    chora:pageRange "152-175"^^xsd:string ;
-    chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
-
 <https://w3id.org/gaddatlas/id/source/terzoli_2015> a chora:Source ;
     rdfs:label "Terzoli 2015" ;
     dcterms:bibliographicCitation "Terzoli, M. A. (2015). Commento a «Quer pasticciaccio brutto de via Merulana» di Carlo Emilio Gadda (con la collaborazione di V. Vitale; 2 voll.). Carocci."@it ;
     dcterms:creator "Maria Antonietta Terzoli"@it ;
     dcterms:date "2015"^^xsd:gYear ;
     dcterms:type "monografia"@it .
+
+<https://w3id.org/gaddatlas/id/chapter/capitolo_VI> a chora:Chapter ;
+    dcterms:title "Capitolo VI"@it ;
+    chora:chapterNumber 6 ;
+    chora:pageRange "152-175"^^xsd:string ;
+    chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
 
 chora:Precise a owl:NamedIndividual,
         skos:Concept ;
@@ -55807,6 +56303,12 @@ chora:PlaceCategoryScheme a owl:NamedIndividual,
     rdfs:comment "Commento a «Quer pasticciaccio brutto de via Merulana» (Terzoli 2015)"@it ;
     schema:name "Maria Antonietta Terzoli" .
 
+<https://w3id.org/gaddatlas/id/zone/roma_citta> a chora:PartitionZone ;
+    rdfs:label "Roma città"@it ;
+    skos:definition "La città di Roma: i luoghi la cui ancora primaria dista al più 10 km dal Campidoglio."@it .
+
+skos:Concept a owl:Class .
+
 chora:Inside a owl:NamedIndividual,
         skos:Concept ;
     dcterms:description "A è contenuto spazialmente in B. Relazione topologica di contenimento."@it ;
@@ -55816,10 +56318,6 @@ chora:Inside a owl:NamedIndividual,
     skos:prefLabel "Inside"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
 
-<https://w3id.org/gaddatlas/id/zone/roma_citta> a chora:PartitionZone ;
-    rdfs:label "Roma città"@it ;
-    skos:definition "La città di Roma: i luoghi la cui ancora primaria dista al più 10 km dal Campidoglio."@it .
-
 chora:Setting a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "Ambientazione"@it ;
@@ -55827,8 +56325,6 @@ chora:Setting a owl:NamedIndividual,
     skos:inScheme chora:NarrativeRoleScheme ;
     skos:prefLabel "Setting"@en ;
     skos:topConceptOf chora:NarrativeRoleScheme .
-
-skos:Concept a owl:Class .
 
 chora:Marker a owl:NamedIndividual,
         skos:Concept ;

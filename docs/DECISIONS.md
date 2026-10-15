@@ -1795,6 +1795,64 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-091 — Soglia di censimento; tre sottoluoghi: cantina della Zamira, sacello responsale, camera di sicurezza della questura (15 ottobre 2026)
+
+- Requisito/i: R04, R05, R11, R17 · Ipotesi: — · Data check: DC-29 (nuove DC-30…DC-34) · Audit: `docs/alignment/AUDIT_3c.md` (fase 3c)
+- Stato precedente: il dataset non aveva un criterio dichiarato per decidere quando uno spazio nominato dal testo diventa luogo narrativo. La cantina della Zamira, il sacello responsale e la camera di sicurezza della questura, che il testo nomina e distingue dal contenitore, non erano censiti. 310 luoghi (Imported 261 · Transformed 31 · Invented 18 · Imagined 0), 736 occorrenze (730 QPa), 958 interpretazioni, 302 feature, 49 tessere proprie, 927 righe di rilievo, 221 membri di P-0001.
+- Decisione (di Lorenzo, 15/10/2026):
+  - **soglia di censimento.** Un'occorrenza entra nel dataset, e lo spazio che designa diventa luogo narrativo, se soddisfa quattro condizioni congiunte:
+    1. **attestazione:** nella pagina c'è un'espressione che designa lo spazio (toponimo, nome comune, perifrasi, forma deformata, deittico o anafora risolvibile nel contesto citabile, allusione riconoscibile);
+    2. **spazialità:** spazio fisico, reale o fittizio, alla scala almeno della stanza; esclusi oggetti, arredi, usi figurati, spazi astratti o escatologici;
+    3. **funzione:** sede o zona d'azione, spazio proiettato, marcatore o tappa di percorso per un personaggio o per il narratore;
+    4. **granularità:** una parte di un luogo già censito diventa luogo a sé solo se il testo la nomina come unità distinta e le dà una distinzione che andrebbe perduta riconducendo l'occorrenza al contenitore;
+  - **tre luoghi nuovi:**
+    - `cantina_zamira`, «Cantina della Zamira»: Invented, `Is_Part_Of` `casuccia_zamira`, categoria `interno`, forme varianti «sala di tintoria», «salotto o sala di consultazione», «antro», zona `campagna_romana`. Relazione qualitativa `below` → `laboratorio_zamira` sull'occorrenza di QPa 169 (`interp_00972`; ancoraggio relazionale verso un luogo narrativo, pattern dell'edicola, D-058): l'estratto verificato la attesta («levarseli in cantina … portarli su … in laboratorio»). Quello di QPa 165 no, e lì la relazione non c'è;
+    - `sacello_responsale`, «Sacello responsale»: Invented, `Is_Part_Of` `casuccia_zamira` (non la cantina: il sacello è un vano contiguo), categoria `interno`, zona `campagna_romana`. Relazione `adjacentto` → `cantina_zamira` su QPa 165 («Dava adito, codesto salotto o sala di consultazione, per uscio con catenaccio, al sacello…»). `Threshold` non si usa (EXCLUSIONS § 6);
+    - `camera_sicurezza_questura`, «Camera di sicurezza della questura»: Imported, `Is_Part_Of` `santo_stefano_del_cacco_celio_santo_stefano`, categoria `camera`, zona `roma_citta`. Lo statuto segue il contenitore: l'Imported si regge sull'ipotesi che la questura di Santo Stefano del Cacco avesse una camera di sicurezza;
+  - **occorrenze:** 8, con estratti verificati da Lorenzo sul volume a stampa (Adelphi 2018). Correzioni di copia, non di lezione, confermate da Lorenzo: «man-dò» → «mandò» (QPa 169), «con$dente» → «confidente» (QPa 195), «pidocchi etto» → «pidocchietto» (QPa 176). Forme attestate solo dove sono sottostringa esatta dell'estratto (D-059):
+    - ref_00737, QPa 165, cantina, «cantina»;
+    - ref_00738, QPa 165, cantina, «salotto o sala di consultazione» (estratto condiviso con ref_00739);
+    - ref_00739, QPa 165, sacello, «sacello o ricettacolo responsale»;
+    - ref_00740, QPa 166, cantina, «cantina» (estratto accorciato alla frase che motiva l'occorrenza: «il nipotino del duce dei baffoni a ruzzare per entro il teschio, in cantina, cioè nella « sala di tintoria »»);
+    - ref_00741, QPa 169, cantina, «cantina»;
+    - ref_00742, QPa 195, cantina, «cantina»;
+    - ref_00743, QPa 196, cantina, «antro»;
+    - ref_00744, QPa 176, camera di sicurezza, «camera di sicurezza»;
+  - **interpretazioni:** 10, `interp_00968`–`interp_00978` senza `interp_00973`, tolta prima del merge (nessuna rinumerazione), una per agente (convenzione del dataset: `narrator` solo se nessun personaggio): QPa 165 (tre occorrenze) e 166, `zamira_pacori`, setting; QPa 169, solo `zamira_pacori`, setting: chi viene mandato in cantina è anonimo e non si registra; QPa 195 e 196, `zamira_pacori` e `diomede`, projectedspace; QPa 176, `ines_cionini`, projectedspace («avrebbe atteso»). Determinazioni come proposte in AUDIT_3c, A5, tranne QPa 165 (cantina, `interp_00968`): `approximate`, perché il suo estratto non colloca la cantina rispetto ad altro; relazione `inside`;
+  - **ancoraggio:** i due Invented non hanno ancore dirette ed ereditano `gaz_due_santi` via `isPartOf`; hanno tessera propria, figlia della casuccia nel blocco di Due Santi. **Regola per gli Imported con `Is_Part_Of`:** l'adapter deposita il rilievo di un Imported sull'ancora *diretta* dell'interpretazione (`visual_target`, `tools/build_geojson.py`), non su quella ereditata; senza ancora diretta il luogo resterebbe fuori dal rilievo e `make audit` fallirebbe. Per questo l'interpretazione della camera porta anche l'ancora diretta del contenitore, `gaz_santo_stefano_del_cacco_celio_santo_stefano`, oltre a `Is_Part_Of`;
+  - **letture di statuto:** `S-cantina_zamira` e `S-sacello_responsale` (Invented, autore e codificatore Lorenzo, qpa 165, prova testuale, validata, «lo statuto segue quello del luogo di cui è parte»); per la camera la lettura generata dall'ETL (D-068), `S-auto-camera_sicurezza_questura`, con ancora primaria la questura;
+  - **semi:** `cantina_zamira` 0,946483 e `sacello_responsale` 0,029107 in `data/source/void_seeds.json`, gli stessi valori che il build calcolerebbe dall'id (pattern di D-036).
+- Esclusioni (non entrano, con la condizione della soglia che non soddisfano):
+  - QPa 166, «Nel buio un trespolo…»: descrive l'interno della cantina senza nominarla (1);
+  - QPa 226, «di cui li regazzini fantasticavano»: allusione non risolvibile nel contesto citabile (1);
+  - QPa 276, «in pollaio»: metafora, ed è la camera di sicurezza della tenenza di Marino, non della questura (2);
+  - QPa 176, «in un angolo»: posizione interna, non un luogo (4);
+  - QPa 165, «Lì germogliavano i vaticini e i responsi…», e QPa 188, «Pompeo l'avrebbe ricondotta ar dormitorio»: giudicate da Lorenzo non mappabili come occorrenze;
+  - QPa 224, «ne la sala di consulto»: localizza un oggetto (la testa di morto), non l'azione di un personaggio (3);
+  - QPa 204, «ma già stavo qua», «prima de cascà qua»: i deittici della testimonianza di Ines designano la questura nel suo insieme (4).
+  Le forme «sala di consulto» (QPa 224) e «dormitorio» (QPa 188), proposte come varianti, non sono registrate: non hanno un'occorrenza nel dataset.
+- Alternative scartate: `Is_Part_Of` del sacello = cantina (vano contiguo, non parte); un valore nuovo *cantina* fra le categorie (si usa `interno`); per l'Imported, la modifica di `visual_target` perché ripieghi sull'ancora ereditata (alternativa (b), voce aperta DC-34); una proprietà diretta luogo → luogo per le relazioni qualitative (già scartata in D-058).
+- Voci aperte: DC-30 («antro» sul laboratorio: fonte nel censimento); DC-31 (categoria `osteria` fuori vocabolario, causa dell'avviso dell'ETL; `README.md` dichiarava «ETL 0 warning»); DC-32 (QPa 169 nomina anche «in laboratorio» senza occorrenza di `laboratorio_zamira`); DC-33 (forma delle tessere narrative legata all'indice, vedi sotto); DC-34 (Imported con `Is_Part_Of`, alternativa (b)).
+- Controlli: IQ14, IQ20, IQ21 e shape 23 a 0; IQ13 (lettura di statuto adottata con lo stesso valore) a 0 anche per la lettura generata della camera; `make audit` superato, «ogni luogo annotato compare nel GeoJSON» 300/300; due `make all` consecutivi senza diff; `tools/check_reproducible.py` riproducibile; test dell'app 9/9. `make docs` rigenerato e scartato: la TBox non cambia e le pagine differivano solo per l'ordine (D-090).
+- Verifica visiva (Diagramma, focalizzatore «tutti», capitolo 10, a disegno fermo; catture stabili, ripetute senza differenze):
+  - nel blocco di Due Santi, la tessera del laboratorio si divide sul bordo della casuccia in tre tessere, laboratorio, cantina (con il rilievo delle sue 6 occorrenze) e sacello, con il glifo Invented (`due_santi_s3.png`, vista spostata in basso, sopra `main`, sotto la fase 3c);
+  - cambia lo **0,0012%** dei pixel allo stadio 2 e lo **0,089%** allo stadio 3. Allo stadio 3 la forma di quasi tutte le tessere narrative cambia di poco, in tutto il Diagramma (`differenze_s3.png`). **Causa:** il seme della perturbazione di una cella è `floor(voidSeed · 0xFFFFFF) XOR i` (`app/src/model/narrative-geometry.js:115-118`), dove `i` è la posizione della tessera in `allData`; i due luoghi nuovi spostano l'indice di 42 tessere fittizie su 49, e 41 celle cambiano forma. Degli host del layout radiale se ne sposta uno solo (`gaz_verona`, 0,0004 rad). Nessuna modifica al codice: rendere la forma indipendente dall'indice cambierebbe tutte le forme rispetto alle figure calibrate (DC-33);
+  - le catture sono state prese prima delle tre correzioni (tolta `interp_00973`, `below` spostato su QPa 169, estratto di QPa 166 accorciato): le correzioni non cambiano l'ordine né il numero delle tessere, e quindi nemmeno le forme; cambia solo il rilievo della cantina (8 interpretazioni invece di 9). Non rifatte;
+  - catture in `docs/alignment/verifica_fase3c/`: `main_s{2,3}.png`, `fase3c_s{2,3}.png`, `main_s3_vista_bassa.png`, `fase3c_s3_vista_bassa.png`, `differenze_s3.png`, `due_santi_s3.png`.
+- Correzioni preesistenti fatte nella stessa fase: la tabella di sintesi di `README.md` era ferma al 6/9/2026 (17.203 triple, 309 luoghi, 722 riferimenti, «ETL 0 warning»): aggiornata, e tolto «ETL 0 warning», che era falso.
+- Motivazione (fonte, pagina): QPa 165, 166, 169, 176, 195, 196 (volume a stampa); Cap. 4, § 4.6 e R17 (relazioni fra luoghi senza referente geografico); D-058, D-059, D-068, D-075, D-084.
+- Fase in cui è maturata: analisi del testo
+- File toccati (manifest):
+  - `data/source/tables/NarrativePlaces.tsv` r. 314–316; `References.tsv` r. 738–745; `SpatialInterpretations.tsv` r. 962–971; `Assertions.tsv` r. 10, 48; `PartitionMembers.tsv` r. 19, 23, 115; `data/source/void_seeds.json` r. 8, 41;
+  - XLSX dei cinque fogli (rigenerati);
+  - `docs/alignment/AUDIT_3c.md` (nuovo), `docs/alignment/verifica_fase3c/` (nuova);
+  - `CLAUDE.md` r. 23–25, 29–43; `README.md` r. 23–27; `data/README.md` r. 61–89; `docs/MODELLO_LETTURE.md` r. 110, 118; `docs/thesis/DATA_CHECKS_GaddAtlas.md` r. 3, 70–75 (DC-29…DC-34), 138–148 (§ F);
+  - derivati: `data/gaddatlas.ttl`, `data/dist/*`, `app/public/data/gaddatlas.geojson`, `app/public/data/passages/ch06.json`, `ch07.json`, `index.json`;
+  - `docs/DECISIONS.md` (questa voce).
+- Effetto su KG (triple prima/dopo, SHACL): TBox 1.620 invariata; ABox 42.640 → **43.071** (+431); full 44.830 → **45.261**. Luoghi 310 → **313**: Imported 261 → **262**, Transformed 31, Invented 18 → **20**, Imagined 0. Occorrenze 736 → **744** (QPa 730 → **738**); interpretazioni 958 → **968**; letture attribuite 421 → **424** (165 esplicite, 259 generate); membri di P-0001 221 → **224** (Roma città 163, campagna romana 61). GeoJSON: feature 302 → **304**, tessere proprie 49 → **51**, righe di rilievo 927 → **937**, sequenze derivate 103 → **104**; la tessera della questura passa da 36 a 37 interpretazioni. SHACL conforme, 0 risultati; IQ1–IQ21 a 0 (IQ9 informativa, 13 righe).
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`

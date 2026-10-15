@@ -1,6 +1,6 @@
 {
  "generatedFrom": "gaddatlas-full.ttl",
- "totalPassages": 730,
+ "totalPassages": 738,
  "chapters": {
   "1": {
    "file": "ch01.json",
@@ -24,11 +24,11 @@
   },
   "6": {
    "file": "ch06.json",
-   "count": 97
+   "count": 102
   },
   "7": {
    "file": "ch07.json",
-   "count": 73
+   "count": 76
   },
   "8": {
    "file": "ch08.json",
@@ -481,6 +481,11 @@
   "ref_00431": 6,
   "ref_00432": 6,
   "ref_00433": 6,
+  "ref_00737": 6,
+  "ref_00738": 6,
+  "ref_00739": 6,
+  "ref_00740": 6,
+  "ref_00741": 6,
   "ref_00434": 7,
   "ref_00435": 7,
   "ref_00436": 7,
@@ -554,6 +559,9 @@
   "ref_00504": 7,
   "ref_00505": 7,
   "ref_00506": 7,
+  "ref_00742": 7,
+  "ref_00743": 7,
+  "ref_00744": 7,
   "ref_00507": 8,
   "ref_00508": 8,
   "ref_00509": 8,
