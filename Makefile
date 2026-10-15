@@ -50,7 +50,8 @@ geojson:
 	python3 tools/build_geojson.py \
 	  data/dist/gaddatlas-full.ttl \
 	  data/dist \
-	  --seeds data/source/void_seeds.json
+	  --seeds data/source/void_seeds.json \
+	  --shape-index data/source/shape_index.json
 
 passages:
 	python3 tools/build_passages.py

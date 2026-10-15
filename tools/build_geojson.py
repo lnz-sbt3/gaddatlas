@@ -41,6 +41,9 @@ REVISIONE 4.2 - COSA CAMBIA RISPETTO ALLA VERSIONE PRECEDENTE
     non versionato. `voidSeed` viene letto da un file di semi congelati
     (--seeds) per non alterare azimut e silhouette dei fittizi gia' calibrati;
     in assenza del file usa un hash deterministico dell'id.
+    Allo stesso modo `shapeIndex` (D-092) viene da un file di indici di forma
+    congelati (--shape-index): e' il numero che entra nel seme della forma
+    delle celle e del rilievo, prima la posizione della tessera nell'elenco.
 
 (5) INDICE DI RILIEVO. Nuovo blocco `relief` nel GeoJSON: una riga per
     interpretazione visibile, con targetId, pagina, capitolo, focalizzatore,
@@ -49,6 +52,7 @@ REVISIONE 4.2 - COSA CAMBIA RISPETTO ALLA VERSIONE PRECEDENTE
     senza dover precalcolare aggregati che poi divergono.
 
 Uso:  python build_atlas.py <input.ttl> <output_dir> [--seeds void_seeds.json]
+                                                   [--shape-index shape_index.json]
 """
 import sys, json, math, re, hashlib, argparse
 from collections import defaultdict, Counter
@@ -288,7 +292,7 @@ SELECT ?a ?name ?gender ?desc WHERE {
 
 
 # ---------------------------------------------------------------------------
-def main(ttl_path, out_dir, seeds_path=None):
+def main(ttl_path, out_dir, seeds_path=None, shape_index_path=None):
     g = Graph()
     g.parse(ttl_path, format="turtle")
     print(f"[build] grafo caricato: {len(g)} triple")
@@ -298,6 +302,18 @@ def main(ttl_path, out_dir, seeds_path=None):
         with open(seeds_path, encoding="utf-8") as f:
             frozen_seeds = json.load(f)
         print(f"[build] semi congelati caricati: {len(frozen_seeds)}")
+    # Indici di forma congelati (D-092): uno per ogni feature, unici. Un indice
+    # liberato (un luogo che perde la tessera) resta riservato nel file e non si
+    # riusa; un'entita' nuova prende max + 1.
+    shape_index = {}
+    if shape_index_path:
+        with open(shape_index_path, encoding="utf-8") as f:
+            shape_index = json.load(f)
+        dup = sorted(k for k, v in shape_index.items()
+                     if list(shape_index.values()).count(v) > 1)
+        if dup:
+            raise SystemExit(f"[build] indici di forma duplicati: {', '.join(dup)} (D-092)")
+        print(f"[build] indici di forma caricati: {len(shape_index)}")
 
     # ---------------- gazetteer -------------------------------------------
     gaz = {}
@@ -808,6 +824,17 @@ def main(ttl_path, out_dir, seeds_path=None):
             },
         })
 
+    # indice di forma su ogni feature (D-092): senza, il build si ferma, come
+    # l'app (app/src/model/entities.js) se ne trovasse una senza indice
+    if shape_index_path:
+        missing = [ft["properties"]["GazetteerEntity_ID"] for ft in features
+                   if ft["properties"]["GazetteerEntity_ID"] not in shape_index]
+        if missing:
+            raise SystemExit(f"[build] feature senza indice di forma: {', '.join(missing)} "
+                             f"(aggiungerle a {shape_index_path} con max + 1, D-092)")
+        for ft in features:
+            ft["properties"]["shapeIndex"] = shape_index[ft["properties"]["GazetteerEntity_ID"]]
+
     geojson = {
         "type": "FeatureCollection",
         "name": "GaddAtlas_real_10ch",
@@ -879,5 +906,7 @@ if __name__ == "__main__":
     ap.add_argument("out", nargs="?", default="data/dist")
     ap.add_argument("--seeds", default="data/source/void_seeds.json",
                     help="file JSON dei voidSeed congelati (id -> seed)")
+    ap.add_argument("--shape-index", default="data/source/shape_index.json",
+                    help="file JSON degli indici di forma congelati (id -> intero, D-092)")
     args = ap.parse_args()
-    main(args.ttl, args.out, args.seeds)
+    main(args.ttl, args.out, args.seeds, args.shape_index)

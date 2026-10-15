@@ -116,6 +116,25 @@ export default function s4Entities(gadda_real) {
     );
   }
 
+  // Ogni tessera ha un indice di forma congelato e unico (D-092): e' il numero
+  // che entra nel seme della cella e del rilievo, al posto della posizione in
+  // allData. Senza, la forma tornerebbe a dipendere dall'ordine: errore esplicito.
+  const tiles = [...geoDataAll, ...fictData];
+  const noIndex = tiles.filter(d => !Number.isInteger(d.properties.shapeIndex));
+  if (noIndex.length) {
+    throw new Error(
+      "indice di forma mancante per " + noIndex.length + " tessere: " +
+      noIndex.slice(0, 5).map(d => d.properties.GazetteerEntity_ID).join(", ") +
+      " (data/source/shape_index.json, D-092)"
+    );
+  }
+  const seenIndex = new Map();
+  for (const d of tiles) {
+    const k = d.properties.shapeIndex, id = d.properties.GazetteerEntity_ID;
+    if (seenIndex.has(k)) throw new Error(`indice di forma ${k} ripetuto: ${seenIndex.get(k)}, ${id} (D-092)`);
+    seenIndex.set(k, id);
+  }
+
   // indici unificati: i referenziali (0..N_GEO-1, hanno pts/cellRings) precedono i
   // fittizi (N_GEO..allData.length-1, nessun pts / cellRings=null)
   const N_INMAP = geoData.length;
