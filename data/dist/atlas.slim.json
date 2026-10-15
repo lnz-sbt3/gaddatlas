@@ -21,7 +21,7 @@
   "ontologyVersion": "1.0.0",
   "buildVersion": "4.3",
   "source": "gaddatlas-full.ttl",
-  "tripleCount": 45261,
+  "tripleCount": 45624,
   "projection": {
    "type": "equirectangular",
    "center": [
@@ -91,7 +91,7 @@
     "urbano"
    ],
    "generatorCount": 223,
-   "peripheralCount": 30,
+   "peripheralCount": 31,
    "excludedUnanchored": 0,
    "bbox": {
     "minX": -52088.754,
@@ -109,7 +109,7 @@
   "excerptsIncluded": false,
   "voidSeeds": "frozen",
   "counts": {
-   "gazetteer": 265,
+   "gazetteer": 266,
    "narrativePlaces": 313,
    "interpretations": 968,
    "references": 738,
@@ -118,7 +118,7 @@
    "agents": 83,
    "derivedSequences": 104,
    "reliefRows": 937,
-   "ownTiles": 51
+   "ownTiles": 50
   }
  },
  "gazetteer": [
@@ -1141,10 +1141,10 @@
    "presentLocation": null,
    "historicalLocation": null,
    "distanceFromRomeKm": 303.0,
-   "refCountAnchored": 3,
+   "refCountAnchored": 2,
    "planeCount": 2,
    "interpCount": 2,
-   "narrativePlaceCount": 2,
+   "narrativePlaceCount": 1,
    "densityClass": "raro",
    "densityLevel": 1
   },
@@ -1502,10 +1502,10 @@
    "presentLocation": "Via Vittorio Veneto, 196, 00187",
    "historicalLocation": null,
    "distanceFromRomeKm": 1.0,
-   "refCountAnchored": 5,
+   "refCountAnchored": 2,
    "planeCount": 2,
    "interpCount": 2,
-   "narrativePlaceCount": 2,
+   "narrativePlaceCount": 1,
    "densityClass": "raro",
    "densityLevel": 1
   },
@@ -4170,6 +4170,25 @@
    "densityLevel": 0
   },
   {
+   "id": "gaz_via_delle_oche_milano",
+   "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_delle_oche_milano",
+   "label": "via delle Oche",
+   "lon": 9.170031,
+   "lat": 45.464649,
+   "x": -247574.629,
+   "y": -356184.9,
+   "scaleBand": "nazionale",
+   "presentLocation": "via Bernardino Zenale, Milano, tra via San Vittore e corso Magenta, presso Santa Maria delle Grazie",
+   "historicalLocation": "contrada milanese scomparsa",
+   "distanceFromRomeKm": 477.8,
+   "refCountAnchored": 1,
+   "planeCount": 1,
+   "interpCount": 1,
+   "narrativePlaceCount": 1,
+   "densityClass": "hapax",
+   "densityLevel": 0
+  },
+  {
    "id": "gaz_via_di_ferro",
    "iri": "https://w3id.org/gaddatlas/id/gazetteer/gaz_via_di_ferro",
    "label": "Via di Ferro",
@@ -5036,10 +5055,10 @@
    "presentLocation": null,
    "historicalLocation": null,
    "distanceFromRomeKm": 1.2,
-   "refCountAnchored": 6,
+   "refCountAnchored": 9,
    "planeCount": 0,
    "interpCount": 0,
-   "narrativePlaceCount": 3,
+   "narrativePlaceCount": 4,
    "densityClass": null,
    "densityLevel": -1
   },
@@ -7460,14 +7479,14 @@
    "label": "Pensione Burgess",
    "realityStatus": "Invented",
    "placeCategory": "hotel",
-   "description": "Albergo immaginario, possibile deformazione di Pensione Villa Borghese, via Sgambati 4, vicino Porta Pinciana",
+   "description": "Pensione romana d'invenzione; il nome evoca l'archeologo Richard Burgess (Terzoli 2015, pp. 22, 574–575).",
    "fuzziness": 4.0,
    "partOf": null,
    "interpCount": 3,
    "planeCount": 3,
    "targets": [
     {
-     "gazetteerId": "gaz_porta_pinciana",
+     "gazetteerId": "gaz_roma",
      "weight": 1.0
     }
    ],
@@ -7483,12 +7502,8 @@
    ],
    "determinations": [
     {
-     "determination": "Relative",
-     "n": 2
-    },
-    {
-     "determination": "Approximate",
-     "n": 1
+     "determination": "Indeterminate",
+     "n": 3
     }
    ],
    "anchorInherited": false,
@@ -8144,9 +8159,9 @@
    "id": "castel_porcano",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/castel_porcano",
    "label": "Castel Porcano",
-   "realityStatus": "Invented",
+   "realityStatus": "Transformed",
    "placeCategory": "castle",
-   "description": "Castello d'immaginazione, deformazione linguistica di Castel Porziano",
+   "description": "Deformazione onomastica di Castel Porziano (tenuta reale di caccia), luogo della festa notturna nel sogno di Pestalozzi (Terzoli 2015, pp. 633–634, 679).",
    "fuzziness": null,
    "partOf": null,
    "interpCount": 2,
@@ -14478,16 +14493,16 @@
    "id": "via_delle_oche",
    "iri": "https://w3id.org/gaddatlas/id/narrativeplace/via_delle_oche",
    "label": "via delle Oche",
-   "realityStatus": "Invented",
+   "realityStatus": "Imported",
    "placeCategory": "street",
-   "description": "via topograficamente non precisata",
+   "description": "Via storica di Milano, oggi via Bernardino Zenale (Terzoli 2015, p. 77).",
    "fuzziness": null,
    "partOf": null,
    "interpCount": 1,
    "planeCount": 1,
    "targets": [
     {
-     "gazetteerId": "gaz_bologna",
+     "gazetteerId": "gaz_via_delle_oche_milano",
      "weight": 1.0
     }
    ],
@@ -14499,7 +14514,7 @@
    ],
    "determinations": [
     {
-     "determination": "Relative",
+     "determination": "Approximate",
      "n": 1
     }
    ],
@@ -16149,22 +16164,6 @@
    "isNodeOfRoute": null,
    "routeOrder": null,
    "criticalNote": "Palazzo del \"fattaccio\", in cui prende luogo l'evento principale del romanzo"
-  },
-  {
-   "id": "interp_00029",
-   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00029",
-   "referenceId": "ref_00028",
-   "narrativePlaceId": "via_delle_oche",
-   "routeId": null,
-   "gazetteerId": "gaz_bologna",
-   "narrativeRole": "ProjectedSpace",
-   "spatialDetermination": "Relative",
-   "spatialRelation": "Inside",
-   "focalizerId": "ingravallo",
-   "confidence": 0.5,
-   "isNodeOfRoute": null,
-   "routeOrder": null,
-   "criticalNote": "L’espressione «via delle Oche», riferita a Milano, non risulta attestata nella toponomastica urbana storica. Il toponimo può essere interpretato come una trasposizione simbolica e ironica della via delle Oche bolognese, luogo storicamente associato alla prostituzione e alla cultura popolare femminile. Il contesto discorsivo (la figura della «ragazza» e il riferimento al «dispensario celtico» come \"luogo di marginalità femminile travestito da antropologia nordica\") suggerisce un uso allusivo e deformante dello spazio urbano, coerente con la pratica gaddiana di sovrapposizione e travestimento topografico. Il riferimento non va quindi inteso in senso referenziale, ma come costruzione narrativa a forte densità simbolica (prostituzione, oralità popolare, corpo femminile)."
   },
   {
    "id": "interp_00030",
@@ -24471,38 +24470,6 @@
    "criticalNote": null
   },
   {
-   "id": "interp_00552",
-   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00552",
-   "referenceId": "ref_00466",
-   "narrativePlaceId": "pensione_burgess",
-   "routeId": null,
-   "gazetteerId": "gaz_porta_pinciana",
-   "narrativeRole": "ProjectedSpace",
-   "spatialDetermination": "Relative",
-   "spatialRelation": "AdjacentTo",
-   "focalizerId": "americana_inglese",
-   "confidence": 1.0,
-   "isNodeOfRoute": null,
-   "routeOrder": null,
-   "criticalNote": null
-  },
-  {
-   "id": "interp_00553",
-   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00553",
-   "referenceId": "ref_00467",
-   "narrativePlaceId": "pensione_burgess",
-   "routeId": null,
-   "gazetteerId": "gaz_porta_pinciana",
-   "narrativeRole": "ProjectedSpace",
-   "spatialDetermination": "Relative",
-   "spatialRelation": "AdjacentTo",
-   "focalizerId": "pompeo",
-   "confidence": 1.0,
-   "isNodeOfRoute": null,
-   "routeOrder": null,
-   "criticalNote": null
-  },
-  {
    "id": "interp_00554",
    "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00554",
    "referenceId": "ref_00468",
@@ -28967,22 +28934,6 @@
    "criticalNote": null
   },
   {
-   "id": "interp_00836",
-   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00836",
-   "referenceId": "ref_00671",
-   "narrativePlaceId": "pensione_burgess",
-   "routeId": null,
-   "gazetteerId": "gaz_porta_pinciana",
-   "narrativeRole": "Marker",
-   "spatialDetermination": "Approximate",
-   "spatialRelation": "AdjacentTo",
-   "focalizerId": "pompeo",
-   "confidence": 1.0,
-   "isNodeOfRoute": null,
-   "routeOrder": null,
-   "criticalNote": null
-  },
-  {
    "id": "interp_00837",
    "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00837",
    "referenceId": "ref_00672",
@@ -31201,6 +31152,70 @@
    "spatialDetermination": "Approximate",
    "spatialRelation": "Inside",
    "focalizerId": "ines_cionini",
+   "confidence": 1.0,
+   "isNodeOfRoute": null,
+   "routeOrder": null,
+   "criticalNote": null
+  },
+  {
+   "id": "interp_00979",
+   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00979",
+   "referenceId": "ref_00028",
+   "narrativePlaceId": "via_delle_oche",
+   "routeId": null,
+   "gazetteerId": "gaz_via_delle_oche_milano",
+   "narrativeRole": "ProjectedSpace",
+   "spatialDetermination": "Approximate",
+   "spatialRelation": null,
+   "focalizerId": "ingravallo",
+   "confidence": 1.0,
+   "isNodeOfRoute": null,
+   "routeOrder": null,
+   "criticalNote": "Possibile suggestione della via delle Oche di Bologna, nota per le case chiuse: lettura dell'autore, che non incide su statuto e collocazione."
+  },
+  {
+   "id": "interp_00980",
+   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00980",
+   "referenceId": "ref_00466",
+   "narrativePlaceId": "pensione_burgess",
+   "routeId": null,
+   "gazetteerId": "gaz_roma",
+   "narrativeRole": "ProjectedSpace",
+   "spatialDetermination": "Indeterminate",
+   "spatialRelation": "Inside",
+   "focalizerId": "americana_inglese",
+   "confidence": 1.0,
+   "isNodeOfRoute": null,
+   "routeOrder": null,
+   "criticalNote": null
+  },
+  {
+   "id": "interp_00981",
+   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00981",
+   "referenceId": "ref_00467",
+   "narrativePlaceId": "pensione_burgess",
+   "routeId": null,
+   "gazetteerId": "gaz_roma",
+   "narrativeRole": "ProjectedSpace",
+   "spatialDetermination": "Indeterminate",
+   "spatialRelation": "Inside",
+   "focalizerId": "pompeo",
+   "confidence": 1.0,
+   "isNodeOfRoute": null,
+   "routeOrder": null,
+   "criticalNote": null
+  },
+  {
+   "id": "interp_00982",
+   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00982",
+   "referenceId": "ref_00671",
+   "narrativePlaceId": "pensione_burgess",
+   "routeId": null,
+   "gazetteerId": "gaz_roma",
+   "narrativeRole": "Marker",
+   "spatialDetermination": "Indeterminate",
+   "spatialRelation": "Inside",
+   "focalizerId": "pompeo",
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
@@ -41971,10 +41986,10 @@
     {
      "page": 22,
      "referenceId": "ref_00028",
-     "targetId": "via_delle_oche",
+     "targetId": "gaz_via_delle_oche_milano",
      "narrativePlaceId": "via_delle_oche",
-     "gazetteerId": "gaz_bologna",
-     "interpretationId": "interp_00029",
+     "gazetteerId": "gaz_via_delle_oche_milano",
+     "interpretationId": "interp_00979",
      "role": "ProjectedSpace",
      "simultaneous": false
     },
@@ -48988,8 +49003,8 @@
      "referenceId": "ref_00467",
      "targetId": "pensione_burgess",
      "narrativePlaceId": "pensione_burgess",
-     "gazetteerId": "gaz_porta_pinciana",
-     "interpretationId": "interp_00553",
+     "gazetteerId": "gaz_roma",
+     "interpretationId": "interp_00981",
      "role": "ProjectedSpace",
      "simultaneous": true
     },
@@ -49043,8 +49058,8 @@
      "referenceId": "ref_00466",
      "targetId": "pensione_burgess",
      "narrativePlaceId": "pensione_burgess",
-     "gazetteerId": "gaz_porta_pinciana",
-     "interpretationId": "interp_00552",
+     "gazetteerId": "gaz_roma",
+     "interpretationId": "interp_00980",
      "role": "ProjectedSpace",
      "simultaneous": true
     },
@@ -52197,15 +52212,15 @@
    "isRouteNode": null
   },
   {
-   "targetId": "via_delle_oche",
-   "interpretationId": "interp_00029",
+   "targetId": "gaz_via_delle_oche_milano",
+   "interpretationId": "interp_00979",
    "referenceId": "ref_00028",
    "page": 22,
    "chapter": 1,
    "agentId": "ingravallo",
    "role": "ProjectedSpace",
-   "determination": "Relative",
-   "criticalNote": "L’espressione «via delle Oche», riferita a Milano, non risulta attestata nella toponomastica urbana storica. Il toponimo può essere interpretato come una trasposizione simbolica e ironica della via delle Oche bolognese, luogo storicamente associato alla prostituzione e alla cultura popolare femminile. Il contesto discorsivo (la figura della «ragazza» e il riferimento al «dispensario celtico» come \"luogo di marginalità femminile travestito da antropologia nordica\") suggerisce un uso allusivo e deformante dello spazio urbano, coerente con la pratica gaddiana di sovrapposizione e travestimento topografico. Il riferimento non va quindi inteso in senso referenziale, ma come costruzione narrativa a forte densità simbolica (prostituzione, oralità popolare, corpo femminile).",
+   "determination": "Approximate",
+   "criticalNote": "Possibile suggestione della via delle Oche di Bologna, nota per le case chiuse: lettura dell'autore, che non incide su statuto e collocazione.",
    "isRouteNode": null
   },
   {
@@ -58354,25 +58369,25 @@
   },
   {
    "targetId": "pensione_burgess",
-   "interpretationId": "interp_00552",
+   "interpretationId": "interp_00980",
    "referenceId": "ref_00466",
    "page": 189,
    "chapter": 7,
    "agentId": "americana_inglese",
    "role": "ProjectedSpace",
-   "determination": "Relative",
+   "determination": "Indeterminate",
    "criticalNote": null,
    "isRouteNode": null
   },
   {
    "targetId": "pensione_burgess",
-   "interpretationId": "interp_00553",
+   "interpretationId": "interp_00981",
    "referenceId": "ref_00467",
    "page": 189,
    "chapter": 7,
    "agentId": "pompeo",
    "role": "ProjectedSpace",
-   "determination": "Relative",
+   "determination": "Indeterminate",
    "criticalNote": null,
    "isRouteNode": null
   },
@@ -61702,13 +61717,13 @@
   },
   {
    "targetId": "pensione_burgess",
-   "interpretationId": "interp_00836",
+   "interpretationId": "interp_00982",
    "referenceId": "ref_00671",
    "page": 291,
    "chapter": 10,
    "agentId": "pompeo",
    "role": "Marker",
-   "determination": "Approximate",
+   "determination": "Indeterminate",
    "criticalNote": null,
    "isRouteNode": null
   },
