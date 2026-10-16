@@ -1,6 +1,6 @@
 # GaddAtlas — Registro dei controlli sui dati e sul modello
 
-**v1.9 · 15 ottobre 2026 (fase 3d, statuti dei casi vicini e indice di forma)** · L. Sabatino (integra l'audit di fase 0, `docs/alignment/AUDIT_0.md`)
+**v1.10 · 16 ottobre 2026 (fase 3e, materiali degli esperimenti)** · L. Sabatino (integra l'audit di fase 0, `docs/alignment/AUDIT_0.md`)
 
 Registro delle decisioni e dei controlli emersi dalla stesura e dalla revisione del Capitolo 4. Ogni voce confronta il dataset (sorgenti TSV, ontologia CHORA, `gaddatlas.ttl`) con le fonti critiche e filologiche e con i requisiti del capitolo. **Va smarcato prima di presentare il database e il prototipo nella Parte II.**
 
@@ -73,6 +73,7 @@ Ogni voce rinvia ai task del work order (`docs/thesis/GaddAtlas_Cap4_Allineament
 | DC-32 | QPa 169: «in laboratorio» senza occorrenza | L'estratto di ref_00741 (cantina) nomina anche il laboratorio («portarli su a raccomodare, in laboratorio»), che non ha un'occorrenza propria in quel passo | Soglia di D-091 | Decidere se aggiungere l'occorrenza di `laboratorio_zamira`; non aggiunta nella fase 3c | — | Aperto (D-091) |
 | DC-33 | Forma delle tessere narrative legata all'indice | `seedFor(i)` = `floor(voidSeed · 0xFFFFFF) XOR i` (`app/src/model/narrative-geometry.js:115-118`): la perturbazione della cella dipende anche dalla posizione della tessera in `allData`. Aggiungere un luogo fittizio sposta l'indice degli altri e ne cambia la forma, anche con i semi congelati (fase 3c: 42 indici spostati, 41 celle cambiate su 49) | Verifica visiva della fase 3c | Decidere se rendere la forma indipendente dall'indice (per esempio seme dall'id): cambierebbe tutte le forme rispetto alle figure calibrate | — | **Chiuso** (D-092): indice di forma congelato in `data/source/shape_index.json` (posizioni di `7fde43d`), letto da build e app per le celle e per il rilievo; rispetto a `7fde43d` cambia solo il gruppo di Due Santi |
 | DC-34 | Imported con `Is_Part_Of`: rilievo sull'ancora diretta | Per un Imported l'adapter deposita il rilievo sull'ancora diretta dell'interpretazione (`build_geojson.py`, `visual_target`), non su quella ereditata; senza ancora diretta `make audit` fallisce. Regola applicata: l'Imported con `Is_Part_Of` porta anche l'ancora diretta del contenitore | AUDIT_3c, A3 | Alternativa (b): `visual_target` ripiega sull'ancora ereditata per gli Imported (modifica dell'adapter) | — | Aperto (D-091) |
+| DC-35 | Zagarolo a QP 20 | Il luogo `zagarolo` (`gaz_zagarolo`) ha occorrenze a partire da QPa 108; nessuna occorrenza a QPa 20 | Il pilota di riconoscimento automatico (ottobre 2025) riconosce «Zagarolo» a p. 20, con giudizio «da verificare» e senza occorrenza abbinata (`docs/esperimenti/pilota/candidati.tsv`) | LS verifica sul volume se il passo di QPa 20 andava annotato secondo la soglia di D-091 | — | Aperto (D-093) |
 
 ---
 
@@ -158,3 +159,10 @@ Ogni voce rinvia ai task del work order (`docs/thesis/GaddAtlas_Cap4_Allineament
 - [x] **DC-33**: indice di forma congelato (`data/source/shape_index.json`)
 - [x] **DC-12, DC-23**: tutti gli estratti confrontati con il volume a stampa e con RR II
 - [x] Note «Non presente in Indice dei Luoghi Isella» di `due_santi`, `marino`, `monte_manno` tolte: Isella, Lucchini e Orlando (1993) e Terzoli (2015) registrano i tre luoghi (verifica di LS)
+
+---
+
+## H. Fase 3e, materiali degli esperimenti (16 ottobre 2026, D-093)
+
+- [x] `docs/esperimenti/`: materiali di verifica dell'Appendice A, senza testo del romanzo (controllo di 6 parole consecutive: nessuna corrispondenza)
+- [ ] **DC-35**: Zagarolo a QP 20, riconosciuto dal pilota e assente dal dataset

@@ -20,9 +20,9 @@ Due artefatti distinti nello stesso repository:
 
 ## Le decisioni sono già prese
 
-`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-092; quelle dell'allineamento al
+`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-093; quelle dell'allineamento al
 Capitolo 4 partono da D-019 (D-015…D-018 sono del porting, su `main`). Nel file sono in
-ordine cronologico, non numerico. Prossimo numero libero: **D-093**. **Leggile
+ordine cronologico, non numerico. Prossimo numero libero: **D-094**. **Leggile
 prima di proporre alternative architetturali.** Se una scelta ti sembra
 sbagliata, dillo citando la decisione — non aggirarla in silenzio.
 
@@ -282,6 +282,12 @@ un file unico, contro D-004. È in `.gitignore`.
   L. 633/1941, serviti per capitolo, sempre con edizione e pagina. **Mai** un
   export cumulativo, mai un endpoint che li restituisca in blocco. Vedi
   `NOTICE-EXCERPTS.md`.
+  `docs/esperimenti/` (materiali di verifica dell'Appendice A, D-093) **non contiene
+  testo del romanzo**: solo pagine, forme brevi, identificatori e giudizi. I materiali
+  con righe di testo o estratti (output del pilota, fogli dell'individuazione
+  assistita) restano fuori dalla repository. Gli script del pilota scrivono in
+  `data/` e `cache/` con percorsi relativi: non vanno eseguiti dalla radice della
+  repository.
 - **Tre licenze distinte** (`LICENSE` MIT per il codice, `LICENSE-DATA` CC BY
   per ontologia e dati, `NOTICE-EXCERPTS.md` per i brani). Non unificarle.
 - **Alias toponomastici: non inventarli.** `s4Config.ALIAS_GROUPS` nel notebook

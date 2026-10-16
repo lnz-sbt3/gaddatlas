@@ -1,0 +1,1316 @@
+riga	capitolo	pagina	modalita	luogo_proposto	stato_proposto	ancora_proposta	statuto_ipotesi	agenti_proposti	percorso_segnalato	esito	occorrenze_abbinate
+1	VI	166	perifrastica	monnezzaro_due_santi	NUOVO	gaz_due_santi	transformed	narrator	no	non accolta	
+2	VI	166	perifrastica	cantina_zamira	NUOVO	laboratorio_zamira	transformed	zamira	no	non accolta	
+3	VI	166	esplicita	castelli_romani;bitonto	NUOVO	gaz_castelli_romani (da creare);gaz_bitonto (da creare)	imported	zamira	no	non accolta	
+4	VI	166	esplicita	cantina_zamira	NUOVO	laboratorio_zamira	transformed	zamira	no	non accolta	
+5	VI	166	perifrastica	cantina_zamira	NUOVO	laboratorio_zamira	transformed	zamira	no	non accolta	
+6	VI	167	esplicita	via_appia	ESISTENTE	gaz_via_appia	imported	zamira;carabinieri	no	accolta	ref_00395
+7	VI	167	perifrastica	campagna_romana	NUOVO	gaz_castelli_romani (da creare)	imagined	carabinieri	no	non accolta	
+8	VI	167	perifrastica	laboratorio_zamira	NUOVO	gaz_due_santi	transformed	zamira;nipotine_zamira	no	non accolta	
+9	VI	167	allusiva	campagna_romana	NUOVO	gaz_castelli_romani (da creare)	imagined	nipotine_zamira	no	non accolta	
+10	VI	167	allusiva	—	SCARTATO	—	—	narrator	no	non accolta	
+11	VI	168	esplicita	libia	NUOVO	gaz_libia (da creare)	imported	zamira;carabinieri	no	non accolta	
+12	VI	168	perifrastica	libia	NUOVO	gaz_libia (da creare)	imported	zamira	no	non accolta	
+13	VI	168	esplicita	via_appia;via_ardeatina;via_anziate	ESISTENTE	gaz_via_appia;gaz_via_ardeatina;gaz_via_anziate	imported	zamira;nipotine_zamira	no	accolta	ref_00396|ref_00397|ref_00398
+14	VI	168	allusiva	poligono_tiro	NUOVO	—	imagined	nipotine_zamira	no	non accolta	
+15	VI	168	perifrastica	laboratorio_zamira	NUOVO	gaz_due_santi	transformed	zamira;carabinieri;nipotine_zamira	no	accolta	ref_00399
+16	VI	169	perifrastica	laboratorio_zamira	NUOVO	gaz_due_santi	transformed	zamira;carabinieri	no	non accolta	
+17	VI	169	anaforica	laboratorio_zamira	NUOVO	gaz_due_santi	transformed	zamira;carabinieri	no	non accolta	
+18	VI	169	esplicita	cantina_zamira;laboratorio_zamira	NUOVO	laboratorio_zamira;gaz_due_santi	transformed	zamira;carabiniere_anonimo;clelia;camilla	no	non accolta	
+19	VI	169	deittica	laboratorio_zamira	NUOVO	gaz_due_santi	transformed	nipotine_zamira;emma;zamira	no	non accolta	
+20	VI	169	esplicita	tenenza_carabinieri_marino	NUOVO	gaz_marino	transformed	maresciallo_santarella;brigadiere_pestalozzi	no	accolta	ref_00400
+21	VI	169	esplicita	torraccio;frattocchie;robine_vecchie;cassero;divino_amore	ESISTENTE	gaz_torraccio;gaz_frattocchie;gaz_robine_vecchie;gaz_cassero;gaz_ponte_al_divino_amore	imported	maresciallo_santarella	no	accolta	ref_00401|ref_00402|ref_00403|ref_00404|ref_00405|ref_00406
+22	VI	169	perifrastica	frattocchie	ESISTENTE	gaz_frattocchie	imported	maresciallo_santarella	no	non accolta	
+23	VI	169	anaforica	laboratorio_zamira	NUOVO	gaz_due_santi	transformed	maresciallo_santarella;zamira	no	non accolta	
+24	VI	170	anaforica	casa_santarella	NUOVO	gaz_marino	imagined	maresciallo_santarella	no	non accolta	
+25	VI	170	anaforica	pensione_ingravallo	NUOVO	gaz_roma	imagined	ingravallo	no	non accolta	
+26	VI	170	perifrastica	casa_santarella	NUOVO	gaz_marino	imagined	maresciallo_santarella	no	non accolta	
+27	VI	170	allusiva	—	SCARTATO	—	—	maresciallo_santarella	no	non accolta	
+28	VI	170	esplicita	milano	ESISTENTE	gaz_milano	imported	maresciallo_santarella	no	accolta	ref_00407
+29	VI	170	esplicita	milano	ESISTENTE	gaz_milano	imported	maresciallo_santarella	no	accolta	ref_00408
+30	VI	170	perifrastica	tragitto_marino_milano	NUOVO	—	imported	maresciallo_santarella	si	non accolta	
+31	VI	171	perifrastica	casa_santarella	NUOVO	gaz_marino	imagined	maresciallo_santarella	no	non accolta	
+32	VI	171	esplicita	via_zanardelli	ESISTENTE	gaz_via_zanardelli	imported	maresciallo_santarella	no	accolta	ref_00409
+33	VI	171	perifrastica	vicinato_santarella	NUOVO	casa_santarella	imagined	maresciallo_santarella	no	non accolta	
+34	VI	171	esplicita	due_santi	ESISTENTE	gaz_due_santi	imported	zamira;maresciallo_santarella	no	accolta	ref_00410
+35	VI	171	allusiva	italia	NUOVO	gaz_italia (da creare)	imported	maresciallo_santarella;narrator	no	non accolta	
+36	VI	171	perifrastica	castelli_romani	NUOVO	gaz_castelli_romani (da creare)	imagined	ladri	no	non accolta	
+37	VI	172	perifrastica	—	SCARTATO	—	—	ladri	no	non accolta	
+38	VI	172	perifrastica	carcere_generico	NUOVO	—	imagined	ladri;maresciallo_santarella	no	non accolta	
+39	VI	173	perifrastica	castelli_romani	NUOVO	gaz_castelli_romani (da creare)	imported	maresciallo_santarella	no	non accolta	
+40	VI	173	perifrastica	castelli_romani	NUOVO	gaz_castelli_romani (da creare)	imagined	narrator	no	non accolta	
+41	VI	173	esplicita	rocca_di_papa;castel_savelli;rocca_orsina;monte_nuncupale	NUOVO	gaz_rocca_di_papa (da creare);gaz_castel_savelli (da creare)	imported	maresciallo_santarella	no	accolta	ref_00412|ref_00413|ref_00414|ref_00415|ref_00416
+42	VI	173	perifrastica	campagna_romana	NUOVO	gaz_castelli_romani (da creare)	imagined	maresciallo_santarella	no	non accolta	
+43	VI	173	esplicita	nemi	NUOVO	gaz_nemi (da creare)	imported	maresciallo_santarella	no	non accolta	
+44	VI	173	esplicita	via_ardeatina;via_appia	ESISTENTE	gaz_via_ardeatina;gaz_via_appia	imported	maresciallo_santarella	no	accolta	ref_00417|ref_00418|ref_00419
+45	VI	173	esplicita	sicilia	NUOVO	gaz_sicilia (da creare)	imported	francesco_messina	no	non accolta	
+46	VI	173	esplicita	cecchina;santa_palomba;campoleone	ESISTENTE	gaz_cecchina;gaz_santa_palomba;gaz_campoleone	imported	maresciallo_santarella	no	non accolta	
+47	VI	173	perifrastica	curva_cecchina	NUOVO	cecchina	transformed	maresciallo_santarella	no	non accolta	
+48	VI	173	esplicita	via_ardeatina;via_anziate;ferrovia_roma_napoli	ESISTENTE/NUOVO	gaz_via_ardeatina;gaz_via_anziate	imported	maresciallo_santarella	no	non accolta	
+49	VI	174	anaforica	ferrovia_roma_napoli	NUOVO	—	imported	narrator	no	non accolta	
+50	VI	174	esplicita	frattocchie;via_appia;ca_francesi;tor_ser_paolo;ciampino	ESISTENTE/NUOVO	gaz_frattocchie;gaz_via_appia;gaz_tor_ser_paolo;gaz_ciampino	imported	maresciallo_santarella	no	accolta	ref_00426|ref_00427|ref_00428|ref_00429|ref_00430|ref_00431
+51	VI	174	perifrastica	tragitto_santarella_castelli	NUOVO	—	imported	maresciallo_santarella	si	non accolta	
+52	VI	174	esplicita	milano	ESISTENTE	gaz_milano	imported	narrator	no	non accolta	
+53	VI	174	esplicita	milano;italia	ESISTENTE/NUOVO	gaz_milano;gaz_italia (da creare)	imported	narrator	no	non accolta	
+54	VI	174	perifrastica	italia	NUOVO	gaz_italia (da creare)	imported	narrator	no	non accolta	
+55	VI	174	esplicita	italia	NUOVO	gaz_italia (da creare)	imported	narrator	no	non accolta	
+56	VI	174	perifrastica	borgo_generico	NUOVO	—	imagined	narrator	no	non accolta	
+57	VI	174	esplicita	valtellina	NUOVO	gaz_valtellina (da creare)	imported	narrator	no	non accolta	
+58	VI	175	perifrastica	via_appia	ESISTENTE	gaz_via_appia	imported	maresciallo_santarella	no	non accolta	
+59	VI	175	esplicita	ciampino;santa_palomba	ESISTENTE	gaz_ciampino;gaz_santa_palomba	imported	maresciallo_santarella	no	accolta	ref_00432|ref_00433
+60	VI	175	perifrastica	antenne_ciampino	NUOVO	ciampino	transformed	maresciallo_santarella	no	non accolta	
+61	VII	176	perifrastica	camera_di_sicurezza_questura	NUOVO	santo_stefano_del_cacco_celio_santo_stefano	transformed	ines_cionini; paolillo	no	non accolta	
+62	VII	176	allusiva	oceano	SCARTATO			narrator	no	non accolta	
+63	VII	176	allusiva	caserma	SCARTATO			ines_cionini	no	non accolta	
+64	VII	176	deittica	angolo_camera_di_sicurezza	SCARTATO	camera_di_sicurezza_questura		narrator	no	non accolta	
+65	VII	176	allusiva	roma	ESISTENTE	gaz_roma	imported	narrator	no	non accolta	
+66	VII	176	perifrastica	colli_albani	NUOVO	gaz_colli_albani	imported	pestalozzi	no	accolta	ref_00434
+67	VII	177	perifrastica	corridoi_questura	NUOVO	santo_stefano_del_cacco_celio_santo_stefano	transformed	pestalozzi; dottor_fumi; ingravallo; maresciallo_di_pietrantonio; pompeo; paolillo	no	non accolta	
+68	VII	177	esplicita	palazzo_simonetti	ESISTENTE	gaz_palazzo_simonetti	imported	ingravallo	no	accolta	ref_00435
+69	VII	177	esplicita	via_lanza	ESISTENTE	gaz_via_lanza	imported	ingravallo	no	accolta	ref_00436
+70	VII	177	perifrastica	palazzo_venezia	NUOVO	gaz_palazzo_venezia (da creare)	imported	mussolini	no	accolta	ref_00437
+71	VII	177	esplicita	corticelli	SCARTATO			narrator	no	non accolta	
+72	VII	177	esplicita	tenenza_carabinieri_marino	ESISTENTE	gaz_marino	transformed	pestalozzi	no	accolta	ref_00438
+73	VII	177	esplicita	marino	ESISTENTE	gaz_marino	imported	pestalozzi	no	non accolta	
+74	VII	177	allusiva	colli_albani	NUOVO	gaz_colli_albani	imagined	ingravallo	no	non accolta	
+75	VII	177	esplicita	via_del_gesu	ESISTENTE	gaz_via_del_gesu	imported	pestalozzi; pompeo	no	accolta	ref_00439
+76	VII	178	esplicita	maccheronaro	ESISTENTE	gaz_maccheronaro	imported	pestalozzi; pompeo	no	accolta	ref_00440
+77	VII	178	allusiva	interno_del_maccheronaro	NUOVO	maccheronaro	transformed	pestalozzi; pompeo	no	non accolta	
+78	VII	178	allusiva	alto_mare	SCARTATO			pompeo	no	non accolta	
+79	VII	178	perifrastica	camerone_questura	NUOVO	santo_stefano_del_cacco_celio_santo_stefano	transformed	dottor_fumi; ingravallo; pestalozzi; pompeo; paolillo; maresciallo_di_pietrantonio; ines_cionini	no	non accolta	
+80	VII	178	perifrastica	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	ines_cionini; zamira_pacori; amica_di_camilla	no	accolta	ref_00442
+81	VII	178	esplicita	due_santi	ESISTENTE	gaz_due_santi	imported	ines_cionini; zamira_pacori; amica_di_camilla	no	non accolta	
+82	VII	179	esplicita	roma	ESISTENTE	gaz_roma	imported	amica_di_camilla	no	non accolta	
+83	VII	179	perifrastica	casa_dei_signori_di_roma	NUOVO	gaz_roma	imported	amica_di_camilla	no	non accolta	
+84	VII	179	esplicita	torino	NUOVO	gaz_torino (da creare)	imported	industriale_torinese	no	non accolta	
+85	VII	179	allusiva	inferno	SCARTATO			amica_di_camilla	no	non accolta	
+86	VII	179	perifrastica	strada_de_campagna_celio	NUOVO	gaz_celio	imported	ines_cionini; amica_di_camilla	no	non accolta	
+87	VII	179	anaforica	strada_de_campagna_celio	NUOVO	gaz_celio	imported	ines_cionini; amica_di_camilla	no	non accolta	
+88	VII	179	allusiva	viche	SCARTATO			dottor_fumi; ines_cionini	no	non accolta	
+89	VII	179	perifrastica	prato_presso_santo_stefano_rotondo	NUOVO	santo_stefano_rotondo	imported	ines_cionini; amica_di_camilla	no	non accolta	
+90	VII	179	perifrastica	santo_stefano_rotondo	ESISTENTE	gaz_santo_stefano_rotondo	imported	ines_cionini; amica_di_camilla	no	accolta	ref_00443
+91	VII	179	anaforica	strada_de_campagna_celio	NUOVO	gaz_celio	imported	ines_cionini; amica_di_camilla	no	accolta	ref_00444
+92	VII	180	esplicita	celio	ESISTENTE	gaz_celio	imported	ines_cionini; amica_di_camilla	no	non accolta	
+93	VII	180	perifrastica	campi_di_carciofi_celio	NUOVO	celio	imported	narrator	no	non accolta	
+94	VII	180	perifrastica	stalla_celio	NUOVO	celio	imported	narrator	no	non accolta	
+95	VII	180	perifrastica	arco_di_via_di_san_paolo_della_croce	NUOVO	via_di_san_paolo_della_croce	imported	ines_cionini; amica_di_camilla	no	non accolta	
+96	VII	180	perifrastica	arco_di_villa_celimontana	NUOVO	villa_celimontana	imported	ines_cionini; amica_di_camilla	no	non accolta	
+97	VII	180	esplicita	via_di_san_paolo_della_croce	ESISTENTE	gaz_via_di_san_paolo_della_croce	imported	ines_cionini; amica_di_camilla	no	accolta	ref_00445
+98	VII	180	esplicita	via_della_navicella	ESISTENTE	gaz_via_della_navicella	imported	ines_cionini; amica_di_camilla	no	accolta	ref_00446
+99	VII	180	esplicita	via_di_santo_stefano_rotondo	ESISTENTE	gaz_via_di_santo_stefano_rotondo	imported	ines_cionini; amica_di_camilla	no	accolta	ref_00447
+100	VII	180	esplicita	villa_celimontana	ESISTENTE	gaz_villa_celimontana	imported	narrator	no	accolta	ref_00448
+101	VII	180	esplicita	santa_maria_in_domnica	ESISTENTE	gaz_santa_maria_in_domnica	imported	narrator	no	accolta	ref_00449
+102	VII	180	esplicita	tempio_di_agrippa	ESISTENTE	gaz_tempio_di_agrippa	imported	dottor_fumi; ingravallo; maresciallo_di_pietrantonio	no	accolta	ref_00450
+103	VII	180	anaforica	campagna_generica	NUOVO		imported	narrator	no	non accolta	
+104	VII	180	esplicita	santo_stefano_rotondo	ESISTENTE	gaz_santo_stefano_rotondo	imported	ines_cionini; amica_di_camilla	no	accolta	ref_00451
+105	VII	180	allusiva	braco	SCARTATO			dottor_fumi; ingravallo	no	non accolta	
+106	VII	180	esplicita	torino	NUOVO	gaz_torino (da creare)	imported	industriale_torinese	no	non accolta	
+107	VII	180	esplicita	pavona	ESISTENTE	gaz_pavona	imported	amica_di_camilla; camilla_mattonari	no	non accolta	
+108	VII	180	perifrastica	casa_dellamica_pavona	NUOVO	pavona	imported	amica_di_camilla	no	non accolta	
+109	VII	180	esplicita	roma	ESISTENTE	gaz_roma	imported	amica_di_camilla	no	non accolta	
+110	VII	180	esplicita	due_santi	ESISTENTE	gaz_due_santi	imported	ines_cionini; zamira_pacori	no	accolta	ref_00452
+111	VII	181	deittica	casa_di_diomede	NUOVO		imported	diomede_lanciani; ines_cionini	no	non accolta	
+112	VII	181	perifrastica	camere_in_affitto	NUOVO	gaz_roma	imported	diomede_lanciani	no	non accolta	
+113	VII	181	esplicita	roma	ESISTENTE	gaz_roma	imported	diomede_lanciani	no	non accolta	
+114	VII	181	esplicita	traforo	ESISTENTE	gaz_traforo	imported	ines_cionini; diomede_lanciani	no	accolta	ref_00453
+115	VII	181	deittica	luogo_indeterminato	NUOVO		imagined	diomede_lanciani	no	non accolta	
+116	VII	181	deittica	casa_di_diomede	NUOVO		imported	diomede_lanciani; ines_cionini	no	non accolta	
+117	VII	181	perifrastica	casa_dei_parenti_di_diomede	NUOVO	gaz_roma	imported	diomede_lanciani; parenti_di_diomede	no	non accolta	
+118	VII	181	perifrastica	casa_della_sarta	NUOVO	gaz_roma	imported	diomede_lanciani; sarta	no	non accolta	
+119	VII	181	perifrastica	casa_dello_zio_defunto	NUOVO	gaz_roma	imported	diomede_lanciani; zio_defunto	no	non accolta	
+120	VII	181	anaforica	roma	ESISTENTE	gaz_roma	imported	diomede_lanciani	no	non accolta	
+121	VII	181	perifrastica	quartieri_di_roma	NUOVO	gaz_roma	imported	diomede_lanciani	si	accolta	ref_00456|ref_00457|ref_00458
+122	VII	182	allusiva	monti	NUOVO	gaz_monti (da creare)	imported	diomede_lanciani	si	accolta	ref_00454
+123	VII	182	allusiva	trastevere	NUOVO	gaz_trastevere (da creare)	imported	diomede_lanciani	si	accolta	ref_00455
+124	VII	182	esplicita	piazza_colonna	ESISTENTE	gaz_piazza_colonna	imported	diomede_lanciani	si	non accolta	
+125	VII	182	esplicita	piazza_esedra	ESISTENTE	gaz_piazza_esedra	imported	diomede_lanciani	si	non accolta	
+126	VII	182	perifrastica	quartieri_alti	NUOVO	gaz_roma	imported	diomede_lanciani	no	non accolta	
+127	VII	182	esplicita	via_veneto	ESISTENTE	gaz_via_veneto	imported	diomede_lanciani	no	accolta	ref_00459
+128	VII	182	esplicita	via_ludovisi	ESISTENTE	gaz_via_ludovisi	imported	diomede_lanciani	no	accolta	ref_00460
+129	VII	182	perifrastica	marciapiedi_di_via_veneto	NUOVO	via_veneto	imported	diomede_lanciani	no	non accolta	
+130	VII	182	perifrastica	caffe_di_via_veneto	NUOVO	via_veneto	imported	diomede_lanciani	no	non accolta	
+131	VII	182	allusiva	capo_ar_monno	SCARTATO			diomede_lanciani; ines_cionini	no	non accolta	
+132	VII	182	anaforica	casa_di_diomede	NUOVO		imported	diomede_lanciani	no	non accolta	
+133	VII	183	perifrastica	questura_di_roma	NUOVO	santo_stefano_del_cacco_celio_santo_stefano	transformed	ines_cionini; diomede_lanciani	no	non accolta	
+134	VII	183	anaforica	questura_di_roma	NUOVO	santo_stefano_del_cacco_celio_santo_stefano	transformed	dottor_fumi	no	non accolta	
+135	VII	183	deittica	camerone_questura	NUOVO	santo_stefano_del_cacco_celio_santo_stefano	transformed	dottor_fumi; ines_cionini	no	non accolta	
+136	VII	183	deittica	luogo_indeterminato	NUOVO		imagined	ines_cionini	no	non accolta	
+137	VII	184	allusiva	sannio	ESISTENTE	gaz_sannio	imported	diomede_lanciani	no	non accolta	
+138	VII	184	perifrastica	deposito_questura	NUOVO	santo_stefano_del_cacco_celio_santo_stefano	transformed	paolillo; ines_cionini	no	non accolta	
+139	VII	184	allusiva	assenza_di_dimora	SCARTATO			ines_cionini	no	non accolta	
+140	VII	184	esplicita	lazio	ESISTENTE	gaz_lazio	imported	diomede_lanciani	no	non accolta	
+141	VII	184	esplicita	foro_italico	ESISTENTE	gaz_foro_italico	imported	diomede_lanciani	no	non accolta	
+142	VII	185	perifrastica	tra_du_muri	SCARTATO	publicii_clivio_de		ines_cionini; diomede_lanciani	no	non accolta	
+143	VII	185	perifrastica	lampione_clivo_publicii	SCARTATO	publicii_clivio_de		ines_cionini; diomede_lanciani	no	non accolta	
+144	VII	185	esplicita	publicii_clivio_de	ESISTENTE	gaz_publicii_clivio_de	imported	ines_cionini; diomede_lanciani	no	accolta	ref_00461
+145	VII	185	esplicita	rocca_savella	ESISTENTE	gaz_rocca_savella	imported	ines_cionini; diomede_lanciani	no	accolta	ref_00462
+146	VII	185	perifrastica	priorato_dei_cavalieri_di_malta	NUOVO	gaz_priorato_di_malta (da creare); in alternativa gaz_aventino	imported	ines_cionini; diomede_lanciani	no	non accolta	
+147	VII	185	perifrastica	finestra_del_camerone	SCARTATO	camerone_questura		pompeo; dottor_fumi	no	non accolta	
+148	VII	185	deittica	esterno_del_camerone	NUOVO	gaz_roma	imported	narrator	no	non accolta	
+149	VII	186	anaforica	camerone_questura	NUOVO	santo_stefano_del_cacco_celio_santo_stefano	transformed	ines_cionini; dottor_fumi; ingravallo; pompeo; paolillo; maresciallo_di_pietrantonio; pestalozzi	no	non accolta	
+150	VII	186	perifrastica	squadra_mobile	NUOVO	santo_stefano_del_cacco_celio_santo_stefano	transformed	dottor_fumi; ingravallo	no	non accolta	
+151	VII	186	allusiva	arena_della_terra	SCARTATO			ines_cionini	no	non accolta	
+152	VII	186	allusiva	assenza_di_dimora	SCARTATO			ines_cionini	no	non accolta	
+153	VII	186	perifrastica	macchia_delle_querci	NUOVO	gaz_due_santi	imported	ines_cionini; diomede_lanciani	si	non accolta	
+154	VII	186	anaforica	macchia_delle_querci	NUOVO	gaz_due_santi	imported	ines_cionini; diomede_lanciani	si	non accolta	
+155	VII	186	allusiva	fontana	SCARTATO			ines_cionini	no	non accolta	
+156	VII	187	perifrastica	finestrone_di_crocedomini	NUOVO	crocedomini	transformed	ines_cionini	no	non accolta	
+157	VII	187	esplicita	crocedomini	NUOVO	gaz_crocedomini (da creare)	imported	ines_cionini	no	non accolta	
+158	VII	187	perifrastica	strada_generica	NUOVO	gaz_roma	imported	ines_cionini	no	non accolta	
+159	VII	187	perifrastica	panchina_di_lungotevere	NUOVO	lungotevere_prati	imported	ines_cionini	no	accolta	ref_00463
+160	VII	187	perifrastica	lungotevere_prati	NUOVO	gaz_lungotevere_prati	imported	ines_cionini	no	non accolta	
+161	VII	187	esplicita	prati	ESISTENTE	gaz_prati	imported	ines_cionini	no	non accolta	
+162	VII	188	allusiva	confraternita_della_buona_morte	NUOVO	gaz_roma	imported	pompeo	no	non accolta	
+163	VII	188	anaforica	camera_di_sicurezza_questura	NUOVO	santo_stefano_del_cacco_celio_santo_stefano	transformed	ines_cionini; pompeo	no	non accolta	
+164	VII	188	allusiva	fontana	SCARTATO			ines_cionini	no	non accolta	
+165	VII	189	perifrastica	alberghi_di_lusso	NUOVO	quartieri_alti	imported	americana_inglese	no	non accolta	
+166	VII	189	deittica	alberghi_di_lusso	NUOVO	quartieri_alti	imported	americana_inglese	no	non accolta	
+167	VII	189	deittica	quartieri_alti	NUOVO	gaz_roma	imported	americana_inglese	no	non accolta	
+168	VII	189	esplicita	via_boncompagni	ESISTENTE	gaz_via_boncompagni	imported	americana_inglese	no	accolta	ref_00464
+169	VII	189	esplicita	via_veneto	ESISTENTE	gaz_via_veneto	imported	americana_inglese	no	accolta	ref_00465
+170	VII	189	esplicita	pensione_burgess	ESISTENTE	gaz_pensione_burgess	imported	americana_inglese; pompeo	no	accolta	ref_00466
+171	VII	189	esplicita	pensione_burgess	ESISTENTE	gaz_pensione_burgess	imported	americana_inglese; pompeo	no	accolta	ref_00467
+172	VII	189	perifrastica	mattonato_del_camerone	SCARTATO	camerone_questura		ingravallo	no	non accolta	
+173	VII	189	perifrastica	ufficio_stranieri	NUOVO	questura_di_roma	transformed	pompeo	no	non accolta	
+174	VII	189	perifrastica	schedario_ufficio_stranieri	NUOVO	ufficio_stranieri	transformed	pompeo	no	non accolta	
+175	VII	189	anaforica	alberghi_di_lusso	NUOVO	quartieri_alti	imported	pompeo	no	non accolta	
+176	VII	189	perifrastica	pensioni_di_roma	NUOVO	gaz_roma	imported	pompeo	no	non accolta	
+177	VII	189	esplicita	via_veneto	ESISTENTE	gaz_via_veneto	imported	pompeo; americana_inglese	no	accolta	ref_00468
+178	VII	190	esplicita	immacolatella	NUOVO	gaz_immacolatella (da creare)	imported	ragazze_americane	si	accolta	ref_00469
+179	VII	190	esplicita	molo_beverello	ESISTENTE	gaz_molo_beverello	imported	ragazze_americane	si	accolta	ref_00470
+180	VII	190	esplicita	conte_verde	NUOVO	nessun ancoraggio geografico (entità mobile)	imported	ragazze_americane	no	non accolta	
+181	VII	190	perifrastica	panza_del_conte_verde	NUOVO	conte_verde	transformed	ragazze_americane	no	non accolta	
+182	VII	190	allusiva	gabbia	SCARTATO			ragazze_americane	no	non accolta	
+183	VII	190	esplicita	scalandrone_del_conte_verde	NUOVO	conte_verde	transformed	ragazze_americane	si	non accolta	
+184	VII	190	anaforica	molo_beverello	ESISTENTE	gaz_molo_beverello	imported	ragazze_americane	si	non accolta	
+185	VII	190	esplicita	chicago	NUOVO	gaz_chicago (da creare)	imported	genitori_americani	no	non accolta	
+186	VII	191	perifrastica	musei_vaticani	NUOVO	gaz_musei_vaticani (da creare)	imported	ragazze_americane; genitori_americani	no	non accolta	
+187	VII	191	perifrastica	cappella_niccolina	NUOVO	musei_vaticani	transformed	ragazze_americane	no	non accolta	
+188	VII	191	perifrastica	stanze_di_raffaello	NUOVO	musei_vaticani	transformed	ragazze_americane	no	non accolta	
+189	VII	191	perifrastica	appartamento_borgia	NUOVO	musei_vaticani	transformed	ragazze_americane	no	non accolta	
+190	VII	191	perifrastica	stanze_dalbergo	NUOVO	alberghi_di_lusso	imported	ragazze_americane	no	non accolta	
+191	VII	191	anaforica	camerone_questura	NUOVO	santo_stefano_del_cacco_celio_santo_stefano	transformed	dottor_fumi; ingravallo; ines_cionini	no	non accolta	
+192	VII	191	esplicita	frari	NUOVO	gaz_frari (da creare)	imported	dottor_fumi	no	accolta	ref_00471
+193	VII	191	esplicita	gallerie_dellaccademia	NUOVO	gaz_gallerie_dellaccademia (da creare)	imported	dottor_fumi	no	non accolta	
+194	VII	191	allusiva	cielo_apocalittico	SCARTATO			dottor_fumi	no	non accolta	
+195	VII	191	esplicita	boston	NUOVO	gaz_boston (da creare)	imported	genitori_americani	no	non accolta	
+196	VII	191	esplicita	brooklyn	NUOVO	gaz_brooklyn (da creare)	imported	genitori_americani	no	non accolta	
+197	VII	191	esplicita	italia	NUOVO	gaz_italia (da creare)	imported	ragazze_americane	no	non accolta	
+198	VII	191	allusiva	collegio	SCARTATO			ragazze_americane	no	non accolta	
+199	VII	191	anaforica	musei_vaticani	NUOVO	gaz_musei_vaticani (da creare)	imported	ragazze_americane	no	non accolta	
+200	VII	191	perifrastica	teatro_generico	NUOVO	gaz_roma	imported	ragazze_americane	no	non accolta	
+201	VII	191	perifrastica	acquario_romano	NUOVO	gaz_acquario_romano (da creare)	imported	ragazze_americane	no	non accolta	
+202	VII	191	perifrastica	acquario_di_napoli	NUOVO	gaz_acquario_di_napoli (da creare)	imported	ragazze_americane	no	non accolta	
+203	VII	191	esplicita	terme_di_caracalla	ESISTENTE	gaz_terme_di_caracalla	imported	ragazze_americane	no	non accolta	
+204	VII	191	esplicita	san_callisto	ESISTENTE	gaz_san_callisto	imported	ragazze_americane; zi_monaco	no	non accolta	
+205	VII	191	esplicita	barcarizzo_del_conte_verde	NUOVO	conte_verde	transformed	ragazze_americane	si	non accolta	
+206	VII	191	deittica	luogo_indeterminato	NUOVO		imagined	ragazze_americane	no	non accolta	
+207	VII	191	allusiva	napoli	NUOVO	gaz_napoli (da creare)	imported	dottor_fumi	no	non accolta	
+208	VII	192	esplicita	taormina	NUOVO	gaz_taormina (da creare)	imported	ragazze_americane	si	non accolta	
+209	VII	192	esplicita	cernobbio	NUOVO	gaz_cernobbio (da creare)	imported	ragazze_americane	no	non accolta	
+210	VII	192	esplicita	positano	NUOVO	gaz_positano (da creare)	imported	ragazze_americane	no	non accolta	
+211	VII	192	esplicita	baveno	NUOVO	gaz_baveno (da creare)	imported	ragazze_americane	no	non accolta	
+212	VII	192	esplicita	capri	NUOVO	gaz_capri (da creare)	imported	ragazze_americane	no	non accolta	
+213	VII	192	esplicita	fiesole	NUOVO	gaz_fiesole (da creare)	imported	ragazze_americane	no	non accolta	
+214	VII	192	esplicita	santa_margherita_ligure	NUOVO	gaz_santa_margherita_ligure (da creare)	imported	ragazze_americane	no	non accolta	
+215	VII	192	esplicita	venezia	NUOVO	gaz_venezia (da creare)	imported	ragazze_americane	no	non accolta	
+216	VII	192	esplicita	cortina_dampezzo	NUOVO	gaz_cortina_dampezzo (da creare)	imported	ragazze_americane	no	non accolta	
+217	VII	192	anaforica	cortina_dampezzo	NUOVO	gaz_cortina_dampezzo (da creare)	imported	ingravallo	no	non accolta	
+218	VII	192	anaforica	cortina_dampezzo	NUOVO	gaz_cortina_dampezzo (da creare)	imported	dottor_fumi	no	non accolta	
+219	VII	192	anaforica	cortina_dampezzo	NUOVO	gaz_cortina_dampezzo (da creare)	imported	ragazze_americane	no	non accolta	
+220	VII	192	anaforica	positano	NUOVO	gaz_positano (da creare)	imported	ragazze_americane	no	non accolta	
+221	VII	192	deittica	molo_beverello	ESISTENTE	gaz_molo_beverello	imported	ragazze_americane	si	non accolta	
+222	VII	192	esplicita	molo_beverello	ESISTENTE	gaz_molo_beverello	imported	ragazze_americane	si	non accolta	
+223	VII	192	anaforica	stanze_di_raffaello	NUOVO	musei_vaticani	transformed	ragazze_americane	no	non accolta	
+224	VII	192	anaforica	appartamento_borgia	NUOVO	musei_vaticani	transformed	ragazze_americane	no	non accolta	
+225	VII	192	perifrastica	stanze_dalbergo	NUOVO	alberghi_di_lusso	imported	ragazze_americane; pompeo	no	non accolta	
+226	VII	192	anaforica	molo_beverello	ESISTENTE	gaz_molo_beverello	imported	ragazze_americane	no	non accolta	
+227	VII	192	perifrastica	panza_del_conte_verde	NUOVO	conte_verde	transformed	ragazze_americane	no	non accolta	
+228	VII	192	perifrastica	italia	NUOVO	gaz_italia (da creare)	imported	ragazze_americane	no	non accolta	
+229	VII	192	allusiva	calabria	NUOVO	gaz_calabria (da creare)	imported	ingravallo	no	accolta	ref_00472
+230	VII	192	allusiva	sardegna	NUOVO	gaz_sardegna (da creare)	imported	ingravallo	no	accolta	ref_00473
+231	VII	192	perifrastica	superficie_terrestre	NUOVO	nessun ancoraggio (globo)	imported	norman_douglas; lawrence	no	non accolta	
+232	VII	192	esplicita	circeo	NUOVO	gaz_monte_circeo (da creare)	imported	circe; norman_douglas; lawrence	no	accolta	ref_00474
+233	VII	192	perifrastica	triangolo_geodetico_maschile	NUOVO	nessun ancoraggio (regione costruita)	imagined	norman_douglas; lawrence	no	non accolta	
+234	VII	192	esplicita	reggio_calabria	NUOVO	gaz_reggio_calabria (da creare)	imported	norman_douglas; lawrence	no	accolta	ref_00475|ref_00476
+235	VII	192	esplicita	sassari	NUOVO	gaz_sassari (da creare)	imported	norman_douglas; lawrence	no	non accolta	
+236	VII	192	esplicita	civitavecchia	NUOVO	gaz_civitavecchia (da creare)	imported	norman_douglas; lawrence	no	accolta	ref_00477
+237	VII	192	allusiva	palermo	NUOVO	gaz_palermo (da creare)	imported	palermitani	no	non accolta	
+238	VII	192	deittica	nord_levante	SCARTATO			ingravallo	no	non accolta	
+239	VII	192	esplicita	monte_matese	ESISTENTE	gaz_monte_matese	imported	ingravallo	si	non accolta	
+240	VII	193	perifrastica	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	diomede_lanciani; ines_cionini; zamira_pacori	no	non accolta	
+241	VII	193	perifrastica	stradina_di_campagna_due_santi	NUOVO	gaz_due_santi	imported	diomede_lanciani; ines_cionini	no	non accolta	
+242	VII	193	perifrastica	fratte	NUOVO	stradina_di_campagna_due_santi	imported	diomede_lanciani; ines_cionini	no	non accolta	
+243	VII	193	perifrastica	sentiero_della_macchia	NUOVO	gaz_due_santi	imported	diomede_lanciani; ines_cionini	si	non accolta	
+244	VII	193	esplicita	macchia_delle_querci	NUOVO	gaz_due_santi	imported	diomede_lanciani; ines_cionini	no	non accolta	
+245	VII	193	esplicita	tor_ser_paolo	ESISTENTE	gaz_tor_ser_paolo	imported	diomede_lanciani; ines_cionini	si	accolta	ref_00478
+246	VII	193	perifrastica	strada_della_fonte_de_salute	NUOVO	gaz_due_santi	imported	diomede_lanciani; ines_cionini	si	non accolta	
+247	VII	193	allusiva	fonte_de_salute	NUOVO	gaz_due_santi	imported	diomede_lanciani; ines_cionini	no	non accolta	
+248	VII	193	esplicita	casa_del_butiro	ESISTENTE	gaz_casa_del_butiro	imported	diomede_lanciani; ines_cionini	si	accolta	ref_00479
+249	VII	194	allusiva	confessionale	SCARTATO			zamira_pacori; diomede_lanciani	no	non accolta	
+250	VII	194	perifrastica	intimita_del_timpano	SCARTATO			zamira_pacori; diomede_lanciani	no	non accolta	
+251	VII	194	allusiva	a_parte_teatrale	SCARTATO			zamira_pacori; diomede_lanciani	no	non accolta	
+252	VII	194	perifrastica	nascondiglio_del_tesoro	NUOVO	nessun ancoraggio (non localizzabile)	imagined	zamira_pacori	no	non accolta	
+253	VII	194	allusiva	frangente_risacca	SCARTATO			zamira_pacori	no	non accolta	
+254	VII	195	allusiva	zecca_del_frulla	NUOVO	gaz_zecca_del_frulla (da creare)	imported	zamira_pacori	no	non accolta	
+255	VII	195	perifrastica	cantina_di_zamira	NUOVO	laboratorio_zamira	transformed	zamira_pacori; diomede_lanciani	no	non accolta	
+256	VII	195	perifrastica	scaluccia_di_zamira	NUOVO	laboratorio_zamira	transformed	zamira_pacori; diomede_lanciani	si	non accolta	
+257	VII	195	perifrastica	casa_dei_cionini	NUOVO	gaz_due_santi	imported	ines_cionini; padre_di_ines	no	non accolta	
+258	VII	195	allusiva	galera_generica	NUOVO	nessun ancoraggio (non determinato)	imported	padre_di_ines	no	non accolta	
+259	VII	196	perifrastica	campagna_generica	NUOVO		imported	veneri_della_campagna	no	non accolta	
+260	VII	196	perifrastica	roma	ESISTENTE	gaz_roma	imported	veneri_della_campagna	no	non accolta	
+261	VII	196	deittica	luogo_delliniziazione	NUOVO	nessun ancoraggio (non localizzabile)	imagined	veneri_della_campagna	no	non accolta	
+262	VII	196	perifrastica	orizzonte	SCARTATO			veneri_della_campagna	no	non accolta	
+263	VII	196	deittica	sto_munno	SCARTATO			ingravallo	no	non accolta	
+264	VII	196	perifrastica	colle_generico	NUOVO	gaz_colli_albani	imported	diomede_lanciani	no	non accolta	
+265	VII	196	perifrastica	padule	NUOVO	nessun ancoraggio (non determinato)	imported	diomede_lanciani	no	non accolta	
+266	VII	196	anaforica	camerone_questura	NUOVO	santo_stefano_del_cacco_celio_santo_stefano	transformed	dottor_fumi; ingravallo; maresciallo_di_pietrantonio; pompeo; paolillo; pestalozzi; ines_cionini	no	non accolta	
+267	VII	196	perifrastica	cantina_di_zamira	NUOVO	laboratorio_zamira	transformed	diomede_lanciani; zamira_pacori	no	non accolta	
+268	VII	196	allusiva	antro_della_sibilla_cumana	NUOVO	gaz_cuma (da creare)	imported	zamira_pacori	no	non accolta	
+269	VII	196	allusiva	mescita_di_zamira	NUOVO	laboratorio_zamira	transformed	zamira_pacori	no	non accolta	
+270	VII	197	allusiva	regno_di_venere	SCARTATO			narrator	no	non accolta	
+271	VII	197	allusiva	itinerari_metaforici	SCARTATO			pestalozzi	no	non accolta	
+272	VII	197	esplicita	mescita_di_zamira	NUOVO	laboratorio_zamira	transformed	pestalozzi; diomede_lanciani	no	accolta	ref_00480
+273	VII	197	esplicita	due_santi	ESISTENTE	gaz_due_santi	imported	pestalozzi; diomede_lanciani	no	non accolta	
+274	VII	197	anaforica	scaluccia_di_zamira	NUOVO	laboratorio_zamira	transformed	diomede_lanciani; pestalozzi	no	non accolta	
+275	VII	197	allusiva	abisso	SCARTATO			diomede_lanciani	no	non accolta	
+276	VII	197	anaforica	abisso	SCARTATO			diomede_lanciani; zamira_pacori	no	non accolta	
+277	VII	197	esplicita	marche	NUOVO	gaz_marche (da creare)	imported	pittore_delle_marche	no	non accolta	
+278	VII	197	allusiva	cielo_degli_angeli	SCARTATO			narrator	no	non accolta	
+279	VII	198	esplicita	roma	ESISTENTE	gaz_roma	imported	diomede_lanciani	si	non accolta	
+280	VII	198	perifrastica	bottega_di_elettricista	NUOVO	gaz_roma	imported	diomede_lanciani	no	non accolta	
+281	VII	198	perifrastica	case_dei_clienti	NUOVO	gaz_roma	imported	diomede_lanciani	no	non accolta	
+282	VII	198	deittica	luogo_indeterminato	NUOVO		imagined	diomede_lanciani	no	non accolta	
+283	VII	198	perifrastica	camera_generica	NUOVO	case_dei_clienti	imported	diomede_lanciani	no	non accolta	
+284	VII	198	perifrastica	appartamento_novo	NUOVO	case_dei_clienti	imported	diomede_lanciani	no	non accolta	
+285	VII	198	perifrastica	scala_a_pioli	SCARTATO			diomede_lanciani	no	non accolta	
+286	VII	198	perifrastica	soffitto	SCARTATO	camera_generica		diomede_lanciani	no	non accolta	
+287	VII	198	anaforica	scala_a_pioli	SCARTATO			diomede_lanciani	no	non accolta	
+288	VII	198	allusiva	milano	ESISTENTE	gaz_milano	imported	milanesi	no	non accolta	
+289	VII	198	anaforica	case_dei_clienti	NUOVO	gaz_roma	imported	diomede_lanciani	no	non accolta	
+290	VII	198	perifrastica	casa_della_contessa_veneziana	NUOVO	palazzo_219	transformed	diomede_lanciani; contessa_veneziana	no	non accolta	
+291	VII	198	perifrastica	terzo_piano_219	ESISTENTE	palazzo_219	transformed	diomede_lanciani; contessa_veneziana; menegazzi	no	non accolta	
+292	VII	198	allusiva	venezia	NUOVO	gaz_venezia (da creare)	imported	contessa_veneziana	no	non accolta	
+293	VII	199	esplicita	roma	ESISTENTE	gaz_roma	imported	diomede_lanciani	no	non accolta	
+294	VII	199	deittica	casa_della_contessa_veneziana	NUOVO	palazzo_219	transformed	contessa_veneziana	no	non accolta	
+295	VII	199	perifrastica	termini	ESISTENTE	gaz_termini	imported	contessa_veneziana	si	accolta	ref_00481
+296	VII	199	esplicita	piazza_vittorio_emanuele	ESISTENTE	gaz_piazza_vittorio_emanuele	imported	contessa_veneziana; diomede_lanciani	si	accolta	ref_00482
+297	VII	199	deittica	esquilino	ESISTENTE	gaz_esquilino	imported	ines_cionini	no	non accolta	
+298	VII	199	perifrastica	via_merulana	ESISTENTE	gaz_via_merulana	imported	contessa_veneziana; diomede_lanciani	si	accolta	ref_00483
+299	VII	199	esplicita	piazza_san_giovanni	ESISTENTE	gaz_piazza_san_giovanni	imported	contessa_veneziana; diomede_lanciani	si	accolta	ref_00484
+300	VII	199	esplicita	san_giovanni_in_laterano	ESISTENTE	gaz_san_giovanni_in_laterano	imported	contessa_veneziana; diomede_lanciani	si	non accolta	
+301	VII	199	perifrastica	cinema_generico	NUOVO	gaz_roma	imported	diomede_lanciani	no	non accolta	
+302	VII	199	perifrastica	tram	SCARTATO			diomede_lanciani	no	non accolta	
+303	VII	199	esplicita	piccarozzi	NUOVO	galleria_colonna	imported	diomede_lanciani	no	accolta	ref_00485
+304	VII	199	esplicita	galleria_colonna	ESISTENTE	gaz_galleria_colonna	imported	diomede_lanciani	no	non accolta	
+305	VII	199	perifrastica	fontanella_generica	NUOVO	gaz_roma	imported	diomede_lanciani	no	non accolta	
+306	VII	199	allusiva	acqua_pia_antica_marcia	ESISTENTE	gaz_acqua_pia_antica_marcia	imported	diomede_lanciani	no	accolta	ref_00486
+307	VII	199	esplicita	fontanella_della_scrofa	ESISTENTE	gaz_fontanella_della_scrofa	imported	diomede_lanciani	no	non accolta	
+308	VII	199	esplicita	via_della_scrofa	ESISTENTE	gaz_via_della_scrofa	imported	diomede_lanciani	no	non accolta	
+309	VII	199	esplicita	fontanella_di_borghese	ESISTENTE	gaz_fontanella_di_borghese	imported	diomede_lanciani	no	accolta	ref_00487
+310	VII	200	perifrastica	trattoria_de_lusso	NUOVO	gaz_roma	imported	diomede_lanciani	no	non accolta	
+311	VII	200	esplicita	bottaro	ESISTENTE	gaz_bottaro	imported	diomede_lanciani	no	accolta	ref_00488|ref_00489
+312	VII	200	perifrastica	ripetta	ESISTENTE	gaz_ripetta	imported	diomede_lanciani	no	non accolta	
+313	VII	200	esplicita	quattro_cantoni	ESISTENTE	gaz_quattro_cantoni	imported	diomede_lanciani	no	accolta	ref_00490
+314	VII	200	esplicita	aliciaro	ESISTENTE	gaz_aliciaro	imported	diomede_lanciani	no	accolta	ref_00491
+315	VII	200	esplicita	san_carlo_alle_quattro_fontane	ESISTENTE	gaz_san_carlo_alle_quattro_fontane	imported	diomede_lanciani	no	accolta	ref_00492
+316	VII	200	esplicita	vite	ESISTENTE	gaz_vite	imported	diomede_lanciani	no	accolta	ref_00493
+317	VII	200	perifrastica	altrove_indeterminato	NUOVO	nessun ancoraggio (non determinato)	imagined	americana_inglese	no	non accolta	
+318	VII	200	esplicita	buco_a_santignazio	ESISTENTE	gaz_buco_a_santignazio	imported	diomede_lanciani	no	accolta	ref_00494
+319	VII	200	allusiva	santignazio	ESISTENTE	gaz_santignazio	imported	diomede_lanciani	no	non accolta	
+320	VII	200	allusiva	toscana	NUOVO	gaz_toscana (da creare)	imported	toscani	no	non accolta	
+321	VII	200	esplicita	toscana	NUOVO	gaz_toscana (da creare)	imported	toscani	no	non accolta	
+322	VII	200	deittica	buco_a_santignazio	ESISTENTE	gaz_buco_a_santignazio	imported	diomede_lanciani; americana_inglese	no	non accolta	
+323	VII	200	allusiva	toscana	NUOVO	gaz_toscana (da creare)	imported	toscani	no	non accolta	
+324	VII	201	esplicita	villa_borghese	ESISTENTE	gaz_villa_borghese	imported	americana_inglese	no	non accolta	
+325	VII	201	esplicita	via_veneto	ESISTENTE	gaz_via_veneto	imported	americana_inglese; diomede_lanciani	no	accolta	ref_00495|ref_00496
+326	VII	201	perifrastica	archi_di_porta_pinciana	NUOVO	porta_pinciana	imported	americana_inglese; diomede_lanciani	no	non accolta	
+327	VII	201	esplicita	porta_pinciana	ESISTENTE	gaz_porta_pinciana	imported	americana_inglese; diomede_lanciani	no	accolta	ref_00497
+328	VII	201	deittica	porta_pinciana	ESISTENTE	gaz_porta_pinciana	imported	ines_cionini; americana_inglese	no	non accolta	
+329	VII	201	anaforica	via_veneto	ESISTENTE	gaz_via_veneto	imported	diomede_lanciani; americana_inglese	no	non accolta	
+330	VII	201	esplicita	porta_pinciana	ESISTENTE	gaz_porta_pinciana	imported	diomede_lanciani; americana_inglese	si	accolta	ref_00498|ref_00499|ref_00500
+331	VII	201	esplicita	giardino_del_lago	NUOVO	villa_borghese	imported	diomede_lanciani; americana_inglese	si	non accolta	
+332	VII	201	esplicita	terrazza_del_pincio	NUOVO	pincio	imported	diomede_lanciani; americana_inglese	si	non accolta	
+333	VII	201	perifrastica	strada_facenno	SCARTATO			diomede_lanciani; americana_inglese	no	non accolta	
+334	VII	201	perifrastica	tevere	NUOVO	gaz_tevere	imported	ines_cionini	no	non accolta	
+335	VII	201	deittica	assenza_di_luogo	SCARTATO			ines_cionini	no	non accolta	
+336	VII	201	perifrastica	entrata_del_bottaro	NUOVO	bottaro	imported	diomede_lanciani; americana_inglese	no	accolta	ref_00501
+337	VII	201	perifrastica	vetrina_del_bottaro	NUOVO	bottaro	imported	diomede_lanciani; americana_inglese	no	non accolta	
+338	VII	201	perifrastica	sotto_la_tovaglia	SCARTATO			diomede_lanciani; americana_inglese	no	non accolta	
+339	VII	201	esplicita	via_panisperna	ESISTENTE	gaz_via_panisperna	imported	diomede_lanciani	no	accolta	ref_00502
+340	VII	201	perifrastica	osterie_di_roma	NUOVO	gaz_roma	imported	diomede_lanciani	no	non accolta	
+341	VII	202	deittica	roma	ESISTENTE	gaz_roma	imported	diomede_lanciani; americana_inglese	no	non accolta	
+342	VII	202	esplicita	parigi	NUOVO	gaz_parigi (da creare)	imported	diomede_lanciani	no	non accolta	
+343	VII	202	allusiva	citta_del_vaticano	NUOVO	gaz_citta_del_vaticano (da creare)	imported	diomede_lanciani	no	non accolta	
+344	VII	202	anaforica	camerone_questura	NUOVO	santo_stefano_del_cacco_celio_santo_stefano	transformed	ines_cionini	no	non accolta	
+345	VII	202	perifrastica	casa_della_zia	NUOVO	gaz_roma	imported	diomede_lanciani; zia_di_diomede	no	non accolta	
+346	VII	202	perifrastica	luogo_dimenticato	NUOVO	nessun ancoraggio (non determinabile)	imagined	diomede_lanciani	no	non accolta	
+347	VII	202	allusiva	forno_del_fornaro	NUOVO	gaz_roma	imported	fornaro	no	non accolta	
+348	VII	202	anaforica	casa_della_zia	NUOVO	gaz_roma	imported	fornaro; zia_di_diomede	no	non accolta	
+349	VII	202	esplicita	africa	NUOVO	gaz_africa (da creare)	imported	zamira_pacori	no	non accolta	
+350	VII	202	allusiva	campagna_generica	NUOVO		imported	zamira_pacori	no	non accolta	
+351	VII	202	allusiva	roma	ESISTENTE	gaz_roma	imported	ines_cionini; diomede_lanciani	si	non accolta	
+352	VII	203	perifrastica	palazzo_219	ESISTENTE	gaz_via_merulana	transformed	ascanio_lanciani; contessa_veneziana; diomede_lanciani	no	accolta	ref_00503
+353	VII	203	perifrastica	casa_della_contessa_veneziana	NUOVO	palazzo_219	transformed	contessa_veneziana	no	non accolta	
+354	VII	203	allusiva	chiesa_generica	SCARTATO			ascanio_lanciani	no	non accolta	
+355	VII	203	deittica	forno_del_fornaro	NUOVO	esquilino	imported	ascanio_lanciani; fornaro	no	non accolta	
+356	VII	203	deittica	forno_del_fornaro	NUOVO	gaz_due_santi	imported	ascanio_lanciani; fornaro	no	non accolta	
+357	VII	203	perifrastica	bottega_dei_pizzicaroli	NUOVO	gaz_roma	imported	ascanio_lanciani	no	non accolta	
+358	VII	203	deittica	luogo_indeterminato	NUOVO		imagined	ascanio_lanciani	no	non accolta	
+359	VII	203	perifrastica	paesi_generici	NUOVO	gaz_lazio	imported	ascanio_lanciani; venditore_ambulante	no	non accolta	
+360	VII	203	allusiva	canestra	SCARTATO			dottor_fumi	no	non accolta	
+361	VII	204	perifrastica	bancarella_della_porchetta	NUOVO	piazza_vittorio_emanuele	imported	ascanio_lanciani; nonna_di_ascanio	no	non accolta	
+362	VII	204	esplicita	piazza_vittorio_emanuele	ESISTENTE	gaz_piazza_vittorio_emanuele	imported	ascanio_lanciani; nonna_di_ascanio; ines_cionini	no	accolta	ref_00504
+363	VII	204	perifrastica	sotto_il_grembiule	SCARTATO			ascanio_lanciani; ines_cionini	no	non accolta	
+364	VII	204	deittica	piazza_vittorio_emanuele	ESISTENTE	gaz_piazza_vittorio_emanuele	imported	ascanio_lanciani; ines_cionini	no	non accolta	
+365	VII	204	esplicita	santa_maria_maggiore	ESISTENTE	gaz_santa_maria_maggiore	imported	ines_cionini; ascanio_lanciani	no	accolta	ref_00505
+366	VII	204	deittica	camera_di_sicurezza_questura	NUOVO	santo_stefano_del_cacco_celio_santo_stefano	transformed	ines_cionini	no	non accolta	
+367	VII	204	allusiva	canofiena	SCARTATO			ines_cionini	no	non accolta	
+368	VII	204	deittica	camera_di_sicurezza_questura	NUOVO	santo_stefano_del_cacco_celio_santo_stefano	transformed	ines_cionini	no	non accolta	
+369	VII	205	anaforica	camerone_questura	NUOVO	santo_stefano_del_cacco_celio_santo_stefano	transformed	ingravallo; deviti	no	non accolta	
+370	VII	205	anaforica	bancarella_della_porchetta	NUOVO	piazza_vittorio_emanuele	imported	ascanio_lanciani; nonna_di_ascanio; deviti	no	non accolta	
+371	VII	205	esplicita	piazza_vittorio_emanuele	ESISTENTE	gaz_piazza_vittorio_emanuele	imported	ascanio_lanciani; nonna_di_ascanio; deviti	no	accolta	ref_00506
+372	VII	205	perifrastica	posteggio_della_bancarella	NUOVO	piazza_vittorio_emanuele	imported	ascanio_lanciani; nonna_di_ascanio	no	non accolta	
+373	VII	205	allusiva	canne	NUOVO	gaz_canne (da creare)	imported	narrator	no	non accolta	
+374	VII	205	allusiva	appartamento_menegazzi	NUOVO	palazzo_219	transformed	menegazzi	no	non accolta	
+375	VII	205	allusiva	area_padana	NUOVO	gaz_area_padana (da creare)	imported	menegazzi	no	non accolta	
+376	VII	205	allusiva	italia_centrale	NUOVO	gaz_italia_centrale (da creare)	imported	narrator	no	non accolta	
+377	VII	205	perifrastica	cofanetto_di_ferro	SCARTATO	terzo_piano_219		liliana	no	non accolta	
+378	VII	205	perifrastica	cassettone_del_como	SCARTATO	terzo_piano_219		liliana	no	non accolta	
+379	VII	205	allusiva	terzo_piano_219	ESISTENTE	palazzo_219	transformed	liliana	no	non accolta	
+380	VIII	206	perifrastica	orizzonte	SCARTATO			narrator	no	non accolta	
+381	VIII	206	perifrastica	tenenza_carabinieri_marino	ESISTENTE	gaz_marino	transformed	pestalozzi	si	accolta	ref_00507|ref_00509
+382	VIII	206	esplicita	marino	ESISTENTE	gaz_marino	imported	pestalozzi	no	non accolta	
+383	VIII	206	perifrastica	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	pestalozzi; zamira_pacori	si	accolta	ref_00508
+384	VIII	206	perifrastica	campagna_generica	NUOVO		imported	narrator	no	non accolta	
+385	VIII	206	perifrastica	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	zamira_pacori; santarella; pestalozzi	no	non accolta	
+386	VIII	206	perifrastica	soglia_della_bettola	NUOVO	mescita_di_zamira	transformed	santarella; pestalozzi	no	non accolta	
+387	VIII	206	perifrastica	banco_della_mescita	NUOVO	mescita_di_zamira	transformed	santarella; pestalozzi	no	non accolta	
+388	VIII	206	perifrastica	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	enea_retalli; zamira_pacori	no	non accolta	
+389	VIII	207	anaforica	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	pestalozzi; santarella	no	accolta	ref_00510|ref_00511
+390	VIII	207	perifrastica	casuccia_di_zamira	NUOVO	gaz_due_santi	imported	zamira_pacori	no	non accolta	
+391	VIII	207	perifrastica	macchina_da_maglieria	SCARTATO	laboratorio_zamira		zamira_pacori	no	non accolta	
+392	VIII	207	perifrastica	strada_di_santa_margherita_in_abitacolo	NUOVO	santa_margherita_in_abitacolo	imported	santarella; giovane_informatrice	no	non accolta	
+393	VIII	207	allusiva	santa_margherita_in_abitacolo	ESISTENTE	gaz_santa_margherita_in_abitacolo	imported	santarella; giovane_informatrice	no	accolta	ref_00512
+394	VIII	207	perifrastica	calesse	SCARTATO			enea_retalli	no	non accolta	
+395	VIII	207	perifrastica	catinella	SCARTATO			enea_retalli	no	non accolta	
+396	VIII	207	esplicita	ditta_ciurlani	ESISTENTE	gaz_marino	transformed	enea_retalli	no	accolta	ref_00513
+397	VIII	207	esplicita	marino	ESISTENTE	gaz_marino	imported	enea_retalli	no	non accolta	
+398	VIII	207	perifrastica	domicilio_di_retalli	NUOVO	gaz_marino	imported	enea_retalli	no	non accolta	
+399	VIII	208	esplicita	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	zamira_pacori; nipotine_zamira	no	accolta	ref_00514
+400	VIII	208	esplicita	due_santi	ESISTENTE	gaz_due_santi	imported	zamira_pacori; nipotine_zamira	no	non accolta	
+401	VIII	208	perifrastica	uscio_a_vetri_della_bottega	NUOVO	laboratorio_zamira	transformed	zamira_pacori	no	non accolta	
+402	VIII	208	perifrastica	tenenza_carabinieri_marino	ESISTENTE	gaz_marino	transformed	pestalozzi; fara_filiorum_petri	no	accolta	ref_00515
+403	VIII	208	esplicita	marino	ESISTENTE	gaz_marino	imported	pestalozzi; fara_filiorum_petri	no	non accolta	
+404	VIII	208	esplicita	cortile_della_caserma	NUOVO	tenenza_carabinieri_marino	transformed	fara_filiorum_petri	no	non accolta	
+405	VIII	208	perifrastica	volto_della_caserma	NUOVO	cortile_della_caserma	transformed	pestalozzi	no	non accolta	
+406	VIII	208	esplicita	motocicletta_di_pestalozzi	NUOVO	nessun ancoraggio geografico (entità mobile)	imported	pestalozzi; fara_filiorum_petri	no	non accolta	
+407	VIII	209	esplicita	torre_della_caserma	NUOVO	tenenza_carabinieri_marino	transformed	pestalozzi	no	non accolta	
+408	VIII	209	esplicita	torre_civica_di_marino	NUOVO	gaz_marino	imported	pestalozzi	no	non accolta	
+409	VIII	209	perifrastica	portone_della_caserma	NUOVO	tenenza_carabinieri_marino	transformed	pestalozzi; piantone	no	non accolta	
+410	VIII	209	allusiva	marino	ESISTENTE	gaz_marino	imported	narrator	no	non accolta	
+411	VIII	209	allusiva	roma	ESISTENTE	gaz_roma	imported	narrator	no	non accolta	
+412	VIII	209	perifrastica	soglia_della_caserma	NUOVO	tenenza_carabinieri_marino	transformed	pestalozzi; fara_filiorum_petri	si	non accolta	
+413	VIII	209	perifrastica	strada_del_borgo_di_marino	NUOVO	gaz_marino	imported	pestalozzi; fara_filiorum_petri	si	non accolta	
+414	VIII	209	perifrastica	muraglie_di_peperino	SCARTATO	strada_del_borgo_di_marino		pestalozzi	no	non accolta	
+415	VIII	209	perifrastica	finestrette_del_borgo	SCARTATO	strada_del_borgo_di_marino		narrator	no	non accolta	
+416	VIII	209	esplicita	porta_del_borgo_di_marino	NUOVO	gaz_marino	imported	pestalozzi; fara_filiorum_petri	si	non accolta	
+417	VIII	209	perifrastica	marino	ESISTENTE	gaz_marino	imported	narrator	no	non accolta	
+418	VIII	209	anaforica	strada_del_borgo_di_marino	NUOVO	gaz_marino	imported	narrator	no	non accolta	
+419	VIII	209	anaforica	porta_del_borgo_di_marino	NUOVO	gaz_marino	imported	pestalozzi; fara_filiorum_petri	si	accolta	ref_00516
+420	VIII	210	esplicita	archivolto_della_porta_del_borgo	NUOVO	porta_del_borgo_di_marino	imported	pestalozzi; fara_filiorum_petri	no	non accolta	
+421	VIII	210	perifrastica	strada_da_marino_allappia	NUOVO	gaz_marino	imported	pestalozzi; fara_filiorum_petri	si	non accolta	
+422	VIII	210	esplicita	via_appia	ESISTENTE	gaz_via_appia	imported	pestalozzi; fara_filiorum_petri	si	accolta	ref_00517
+423	VIII	210	perifrastica	uliveti_di_marino	NUOVO	strada_da_marino_allappia	imported	narrator	no	non accolta	
+424	VIII	210	perifrastica	vigne_di_marino	NUOVO	strada_da_marino_allappia	imported	narrator	no	non accolta	
+425	VIII	210	perifrastica	monte_di_marino	NUOVO	gaz_colli_albani	imported	pestalozzi	no	non accolta	
+426	VIII	210	esplicita	primo_tornante	NUOVO	strada_da_marino_allappia	imported	pestalozzi	no	non accolta	
+427	VIII	210	esplicita	monte_algido	NUOVO	gaz_monte_algido (da creare)	imported	pestalozzi	no	accolta	ref_00518|ref_00520
+428	VIII	210	esplicita	monti_carseolani	NUOVO	gaz_monti_carseolani (da creare)	imported	pestalozzi	no	accolta	ref_00519
+429	VIII	210	esplicita	monti_velini	NUOVO	gaz_monti_velini (da creare)	imported	pestalozzi	no	non accolta	
+430	VIII	210	esplicita	monte_soratte	NUOVO	gaz_monte_soratte (da creare)	imported	pestalozzi	no	accolta	ref_00521
+431	VIII	210	allusiva	rocca	SCARTATO			narrator	no	non accolta	
+432	VIII	210	esplicita	sabina	NUOVO	gaz_sabina (da creare)	imported	pestalozzi	no	non accolta	
+433	VIII	210	perifrastica	valichi_del_crinale	NUOVO	sabina	imported	pestalozzi	no	non accolta	
+434	VIII	210	allusiva	crogiuolo_del_profondo	SCARTATO			narrator	no	non accolta	
+435	VIII	210	esplicita	tivoli	ESISTENTE	gaz_tivoli	imported	pestalozzi	no	accolta	ref_00522
+436	VIII	210	esplicita	carsoli	NUOVO	gaz_carsoli (da creare)	imported	pestalozzi	no	accolta	ref_00523
+437	VIII	210	deittica	luogo_indeterminato	NUOVO		imagined	narrator	no	non accolta	
+438	VIII	210	perifrastica	montagne_degli_equi	NUOVO	gaz_montagne_degli_equi (da creare)	imported	pestalozzi	no	accolta	ref_00524
+439	VIII	210	esplicita	monte_velino	NUOVO	gaz_monte_velino (da creare)	imported	pestalozzi	no	accolta	ref_00525|ref_00526
+440	VIII	210	esplicita	marsica	ESISTENTE	gaz_marsica	imported	pestalozzi	no	non accolta	
+441	VIII	210	perifrastica	litorale_tirrenico	NUOVO	gaz_litorale_tirrenico (da creare)	imported	pestalozzi	no	accolta	ref_00527|ref_00528
+442	VIII	210	esplicita	fiumicino	NUOVO	gaz_fiumicino (da creare)	imported	pestalozzi	no	non accolta	
+443	VIII	210	esplicita	ladispoli	NUOVO	gaz_ladispoli (da creare)	imported	pestalozzi	no	non accolta	
+444	VIII	211	esplicita	la_fontana	NUOVO	gaz_la_fontana (da creare)	imported	pestalozzi	si	accolta	ref_00529
+445	VIII	211	perifrastica	pianura_romana	NUOVO	gaz_lazio	imported	pestalozzi	no	non accolta	
+446	VIII	211	perifrastica	tevere	NUOVO	gaz_tevere	imported	pestalozzi	no	non accolta	
+447	VIII	211	esplicita	roma	ESISTENTE	gaz_roma	imported	pestalozzi	no	non accolta	
+448	VIII	211	esplicita	porta_san_paolo	NUOVO	gaz_porta_san_paolo (da creare)	imported	pestalozzi	no	accolta	ref_00530
+449	VIII	211	perifrastica	palazzi_di_roma	NUOVO	gaz_roma	imported	pestalozzi	no	non accolta	
+450	VIII	211	perifrastica	cupola_di_san_pietro	NUOVO	piazza_san_pietro	imported	pestalozzi	no	accolta	ref_00531
+451	VIII	211	perifrastica	cupole_e_torri_di_roma	NUOVO	gaz_roma	imported	pestalozzi	no	non accolta	
+452	VIII	211	perifrastica	pineti_di_roma	NUOVO	gaz_roma	imported	pestalozzi	no	non accolta	
+453	VIII	211	allusiva	quadro_di_scialoia	SCARTATO			narrator	no	non accolta	
+454	VIII	211	perifrastica	roma	ESISTENTE	gaz_roma	imported	pestalozzi	no	non accolta	
+455	VIII	211	esplicita	acquedotto_claudio	NUOVO	gaz_acquedotto_claudio (da creare)	imported	pestalozzi	no	accolta	ref_00532
+456	VIII	211	perifrastica	fonti_del_sogno	NUOVO	nessun ancoraggio (non localizzabile)	imagined	pestalozzi	no	non accolta	
+457	VIII	211	deittica	comando_generale_dellarma	NUOVO	gaz_roma	imported	pestalozzi	no	non accolta	
+458	VIII	211	perifrastica	roma	ESISTENTE	gaz_roma	imported	narrator	no	non accolta	
+459	VIII	211	perifrastica	archivi_del_comando	NUOVO	comando_generale_dellarma	transformed	narrator	no	non accolta	
+460	VIII	211	esplicita	roma	ESISTENTE	gaz_roma	imported	narrator	no	non accolta	
+461	VIII	211	perifrastica	labirinto_decretale	SCARTATO			narrator	no	non accolta	
+462	VIII	211	allusiva	inferno	SCARTATO			narrator	no	non accolta	
+463	VIII	212	esplicita	due_santi	ESISTENTE	gaz_due_santi	imported	pestalozzi; fara_filiorum_petri	si	accolta	ref_00533
+464	VIII	212	esplicita	padule	NUOVO	gaz_lazio	imported	narrator	no	non accolta	
+465	VIII	212	anaforica	strada_per_li_du_santi	NUOVO	gaz_due_santi	imported	pestalozzi	no	non accolta	
+466	VIII	212	allusiva	venezia	NUOVO	gaz_venezia (da creare)	imported	marchesa_del_sogno	no	non accolta	
+467	VIII	212	allusiva	spagna	NUOVO	gaz_spagna (da creare)	imported	marchesa_del_sogno	no	non accolta	
+468	VIII	212	perifrastica	nessuna_strada	SCARTATO			marchesa_del_sogno	no	non accolta	
+469	VIII	212	esplicita	passaggio_a_livello_di_casal_bruciato	NUOVO	casal_bruciato	imagined	pestalozzi	no	non accolta	
+470	VIII	212	esplicita	casal_bruciato	NUOVO	gaz_casal_bruciato (da creare)	imagined	pestalozzi	no	accolta	ref_00534
+471	VIII	212	perifrastica	ferrovia_roma_napoli	NUOVO	gaz_ferrovia_roma_napoli (da creare)	imagined	pestalozzi	si	non accolta	
+472	VIII	212	perifrastica	linea_roma_napoli	NUOVO	gaz_ferrovia_roma_napoli (da creare)	imagined	pestalozzi	no	accolta	ref_00535
+473	VIII	212	allusiva	circeo	NUOVO	gaz_monte_circeo (da creare)	transformed	pestalozzi	no	non accolta	
+474	VIII	212	perifrastica	campagna_generica	NUOVO		imagined	pestalozzi	no	non accolta	
+475	VIII	212	perifrastica	gore_del_campo_morto	NUOVO	campo_morto	imagined	pestalozzi	si	non accolta	
+476	VIII	212	esplicita	campo_morto	NUOVO	gaz_campo_morto (da creare)	imagined	pestalozzi	no	accolta	ref_00536
+477	VIII	212	esplicita	litorale_pometino	NUOVO	gaz_litorale_pometino (da creare)	imagined	pestalozzi	si	non accolta	
+478	VIII	212	perifrastica	macchia_del_litorale_pometino	NUOVO	litorale_pometino	imagined	pestalozzi	no	non accolta	
+479	VIII	212	perifrastica	casello_di_casal_bruciato	NUOVO	passaggio_a_livello_di_casal_bruciato	imagined	pestalozzi	no	non accolta	
+480	VIII	213	anaforica	palude_pontina	NUOVO	litorale_pometino	imagined	pestalozzi	no	non accolta	
+481	VIII	213	perifrastica	giuncaia	NUOVO	palude_pontina	imagined	pestalozzi	no	non accolta	
+482	VIII	213	deittica	dove_i_nomi_si_diradano	NUOVO	nessun ancoraggio (soglia della toponomastica)	imagined	pestalozzi	no	accolta	ref_00537
+483	VIII	213	perifrastica	circeo	NUOVO	gaz_monte_circeo (da creare)	transformed	contessa_circia	no	non accolta	
+484	VIII	213	perifrastica	altane_di_castel_porcano	NUOVO	castel_porcano	imagined	contessa_circia	no	non accolta	
+485	VIII	213	perifrastica	mar_tirreno	NUOVO	gaz_mar_tirreno (da creare)	imagined	narrator	no	non accolta	
+486	VIII	213	deittica	castel_porcano	NUOVO	gaz_castel_porcano (da creare)	invented	contessa_circia	no	non accolta	
+487	VIII	213	esplicita	castel_porcano	NUOVO	gaz_castel_porcano (da creare)	invented	contessa_circia	no	accolta	ref_00538
+488	VIII	213	esplicita	castel_porcano	NUOVO	gaz_castel_porcano (da creare)	invented	zamira_pacori; contessa_circia	no	accolta	ref_00539
+489	VIII	213	allusiva	scuola_del_manganello	SCARTATO			mussolini	no	non accolta	
+490	VIII	213	allusiva	abisso	SCARTATO			narrator	no	non accolta	
+491	VIII	213	perifrastica	piancito	SCARTATO	castel_porcano		contessa_circia	no	non accolta	
+492	VIII	214	deittica	luogo_indeterminato	NUOVO		imagined	contessa_circia	no	non accolta	
+493	VIII	214	anaforica	padule	NUOVO	gaz_lazio	imagined	contessa_circia	no	non accolta	
+494	VIII	214	anaforica	giuncaia	NUOVO	palude_pontina	imagined	contessa_circia	no	non accolta	
+495	VIII	214	anaforica	macchia_del_litorale_pometino	NUOVO	litorale_pometino	imagined	contessa_circia	no	non accolta	
+496	VIII	214	perifrastica	pineta_del_lido	NUOVO	litorale_pometino	imagined	contessa_circia	no	non accolta	
+497	VIII	214	perifrastica	lido	NUOVO	litorale_pometino	imagined	contessa_circia	no	non accolta	
+498	VIII	214	perifrastica	scogliere_del_circeo	NUOVO	circeo	transformed	contessa_circia	no	non accolta	
+499	VIII	214	anaforica	mar_tirreno	NUOVO	gaz_mar_tirreno (da creare)	imagined	contessa_circia	no	non accolta	
+500	VIII	214	allusiva	teresa_berniniana	SCARTATO			contessa_circia	no	non accolta	
+501	VIII	214	allusiva	aleppo	SCARTATO			contessa_circia	no	non accolta	
+502	VIII	214	allusiva	italia	NUOVO	gaz_italia (da creare)	imported	mussolini	no	non accolta	
+503	VIII	215	perifrastica	via_del_dovere	SCARTATO			pestalozzi	no	non accolta	
+504	VIII	215	esplicita	due_santi	ESISTENTE	gaz_due_santi	imported	pestalozzi; fara_filiorum_petri	no	accolta	ref_00540
+505	VIII	215	perifrastica	scogliere_dell_oriente	NUOVO	montagne_degli_equi	imported	pestalozzi	no	non accolta	
+506	VIII	215	esplicita	monti_ernici	NUOVO	gaz_monti_ernici (da creare)	imported	pestalozzi	no	accolta	ref_00541
+507	VIII	215	esplicita	monti_simbruini	NUOVO	gaz_monti_simbruini (da creare)	imported	pestalozzi	no	accolta	ref_00542
+508	VIII	215	esplicita	lazio	ESISTENTE	gaz_lazio	imported	pestalozzi	no	non accolta	
+509	VIII	215	perifrastica	torri_senza_nome	NUOVO	gaz_lazio	imported	pestalozzi	no	non accolta	
+510	VIII	215	allusiva	miliari	SCARTATO			narrator	no	non accolta	
+511	VIII	215	esplicita	due_santi	ESISTENTE	gaz_due_santi	imported	pestalozzi; fara_filiorum_petri	si	accolta	ref_00543
+512	VIII	216	esplicita	via_appia	ESISTENTE	gaz_via_appia	imported	narrator	no	accolta	ref_00545
+513	VIII	216	esplicita	albano_laziale	ESISTENTE	gaz_albano_laziale	imported	narrator	no	accolta	ref_00546
+514	VIII	216	anaforica	uscio_a_vetri_della_bottega	NUOVO	laboratorio_zamira	transformed	narrator	no	non accolta	
+515	VIII	216	perifrastica	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	zamira_pacori	no	accolta	ref_00547
+516	VIII	216	perifrastica	limitare_della_bottega	NUOVO	laboratorio_zamira	transformed	narrator	no	non accolta	
+517	VIII	216	anaforica	via_appia	ESISTENTE	gaz_via_appia	imported	narrator	no	non accolta	
+518	VIII	216	perifrastica	via_appia	ESISTENTE	gaz_via_appia	imported	narrator	no	accolta	ref_00548|ref_00549
+519	VIII	216	perifrastica	bivio_dei_due_santi	NUOVO	due_santi	imported	narrator	no	non accolta	
+520	VIII	216	anaforica	strada_da_marino_allappia	NUOVO	gaz_marino	imported	pestalozzi; fara_filiorum_petri	si	non accolta	
+521	VIII	216	perifrastica	orto_presso_i_due_santi	NUOVO	due_santi	imported	narrator	no	non accolta	
+522	VIII	216	perifrastica	vigna_presso_i_due_santi	NUOVO	due_santi	imported	narrator	no	non accolta	
+523	VIII	216	perifrastica	muriccio_dei_due_santi	NUOVO	due_santi	imported	narrator	no	non accolta	
+524	VIII	216	esplicita	edicola_dei_due_santi	NUOVO	due_santi	imported	narrator	no	accolta	ref_00550
+525	VIII	216	perifrastica	davanzale_delledicola	NUOVO	edicola_dei_due_santi	imported	narrator	no	non accolta	
+526	VIII	216	allusiva	pulvinare	SCARTATO			narrator	no	non accolta	
+527	VIII	216	anaforica	via_appia	ESISTENTE	gaz_via_appia	imported	narrator	no	accolta	ref_00551
+528	VIII	216	perifrastica	arco_delledicola	NUOVO	edicola_dei_due_santi	imported	narrator	no	non accolta	
+529	VIII	216	allusiva	fara_filiorum_petri	NUOVO	gaz_fara_filiorum_petri (da creare)	imported	fara_filiorum_petri	no	non accolta	
+530	VIII	217	esplicita	via_appia	ESISTENTE	gaz_via_appia	imported	san_pietro; san_paolo	si	non accolta	
+531	VIII	217	allusiva	babylon	NUOVO	gaz_roma	transformed	san_pietro; san_paolo	si	non accolta	
+532	VIII	217	allusiva	babilonia	NUOVO	gaz_babilonia (da creare)	imported	san_pietro; san_paolo	no	non accolta	
+533	VIII	217	allusiva	roma	ESISTENTE	gaz_roma	imported	san_pietro; san_paolo	no	non accolta	
+534	VIII	217	esplicita	due_santi	ESISTENTE	gaz_due_santi	imported	manieroni	no	accolta	ref_00552
+535	VIII	217	esplicita	italia	NUOVO	gaz_italia (da creare)	imported	narrator	no	non accolta	
+536	VIII	218	esplicita	galleria_palatina	NUOVO	gaz_galleria_palatina (da creare)	imported	narrator	no	non accolta	
+537	VIII	218	allusiva	eternita	SCARTATO			narrator	no	non accolta	
+538	VIII	218	esplicita	pinacoteca_di_brera	NUOVO	gaz_pinacoteca_di_brera (da creare)	imported	narrator	no	non accolta	
+539	VIII	218	allusiva	urbino	NUOVO	gaz_urbino (da creare)	imported	raffaello	no	non accolta	
+540	VIII	218	perifrastica	lastrico_dello_sposalizio	NUOVO	pinacoteca_di_brera	imagined	raffaello	no	non accolta	
+541	VIII	218	allusiva	domus	SCARTATO			narrator	no	non accolta	
+542	VIII	219	esplicita	edicola_dei_due_santi	NUOVO	due_santi	imported	manieroni	no	accolta	ref_00553
+543	VIII	219	esplicita	due_santi	ESISTENTE	gaz_due_santi	imported	manieroni	no	non accolta	
+544	VIII	219	perifrastica	ponteggio_del_pittore	SCARTATO	edicola_dei_due_santi		manieroni	no	non accolta	
+545	VIII	219	anaforica	via_appia	ESISTENTE	gaz_via_appia	imported	fara_filiorum_petri	si	accolta	ref_00554
+546	VIII	219	anaforica	edicola_dei_due_santi	NUOVO	due_santi	imported	fara_filiorum_petri	si	non accolta	
+547	VIII	219	perifrastica	pianura_romana	NUOVO	gaz_lazio	imported	fara_filiorum_petri	no	non accolta	
+548	VIII	219	perifrastica	strada_verso_le_frattocchie	NUOVO	frattocchie	imported	pestalozzi; fara_filiorum_petri	si	non accolta	
+549	VIII	219	esplicita	frattocchie	ESISTENTE	gaz_frattocchie	imported	fara_filiorum_petri	si	accolta	ref_00555
+550	VIII	219	perifrastica	luce_di_sotterra	SCARTATO	edicola_dei_due_santi		manieroni	no	non accolta	
+551	VIII	220	perifrastica	cartigli_delledicola	SCARTATO	edicola_dei_due_santi		fara_filiorum_petri	no	non accolta	
+552	VIII	220	allusiva	roma	ESISTENTE	gaz_roma	imported	san_paolo; fara_filiorum_petri	no	non accolta	
+553	VIII	220	anaforica	motocicletta_di_pestalozzi	NUOVO	nessun ancoraggio geografico (entità mobile)	imported	pestalozzi	no	non accolta	
+554	VIII	221	perifrastica	finestra_della_bottega	NUOVO	laboratorio_zamira	transformed	zamira_pacori	no	non accolta	
+555	VIII	221	anaforica	via_appia	ESISTENTE	gaz_via_appia	imported	pestalozzi	no	non accolta	
+556	VIII	221	anaforica	limitare_della_bottega	NUOVO	laboratorio_zamira	transformed	pestalozzi	no	non accolta	
+557	VIII	221	perifrastica	macchina_da_maglieria	SCARTATO	laboratorio_zamira		pestalozzi	no	non accolta	
+558	VIII	221	esplicita	pozzofondo	NUOVO	gaz_pozzofondo (da creare)	invented	clelia_farcioni	no	accolta	ref_00556
+559	VIII	221	esplicita	pavona	ESISTENTE	gaz_pavona	imported	camilla_mattonari	no	accolta	ref_00557
+560	VIII	221	deittica	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	pestalozzi; clelia_farcioni; camilla_mattonari	no	non accolta	
+561	VIII	222	deittica	credenza_della_bottega	SCARTATO	laboratorio_zamira		zamira_pacori	no	non accolta	
+562	VIII	222	anaforica	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	zamira_pacori; pestalozzi	no	accolta	ref_00558
+563	VIII	222	deittica	seggiola_della_bottega	SCARTATO	laboratorio_zamira		zamira_pacori; pestalozzi	no	non accolta	
+564	VIII	222	allusiva	tenenza_carabinieri_marino	ESISTENTE	gaz_marino	transformed	zamira_pacori; pestalozzi	no	non accolta	
+565	VIII	222	esplicita	santa_maria_novella	NUOVO	gaz_santa_maria_novella (da creare)	imported	pestalozzi	no	accolta	ref_00559
+566	VIII	222	perifrastica	scuola_allievi_carabinieri	NUOVO	santa_maria_novella	transformed	pestalozzi	no	non accolta	
+567	VIII	222	allusiva	monti_natii_di_pestalozzi	NUOVO	nessun ancoraggio (non determinato)	imported	pestalozzi	no	non accolta	
+568	VIII	223	anaforica	finestra_della_bottega	NUOVO	laboratorio_zamira	transformed	fara_filiorum_petri; pestalozzi	no	non accolta	
+569	VIII	223	allusiva	cocullo	NUOVO	gaz_cocullo (da creare)	imported	fara_filiorum_petri	no	non accolta	
+570	VIII	223	deittica	cantone_della_bottega	NUOVO	laboratorio_zamira	transformed	fara_filiorum_petri	no	non accolta	
+571	VIII	223	perifrastica	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	pestalozzi	no	non accolta	
+572	VIII	223	perifrastica	strada_provinciale	NUOVO	gaz_due_santi	imported	pestalozzi	si	non accolta	
+573	VIII	223	esplicita	torraccio	ESISTENTE	gaz_torraccio	imported	pestalozzi	si	accolta	ref_00560
+574	VIII	223	perifrastica	cessi_delle_case_dei_due_santi	NUOVO	due_santi	imported	narrator	no	non accolta	
+575	VIII	223	perifrastica	case_dei_due_santi	NUOVO	due_santi	imported	narrator	no	non accolta	
+576	VIII	223	perifrastica	acquaio	NUOVO	case_dei_due_santi	imported	narrator	no	non accolta	
+577	VIII	223	anaforica	strada_provinciale	NUOVO	gaz_due_santi	imported	narrator	no	non accolta	
+578	VIII	223	allusiva	pretura	NUOVO	gaz_lazio	imported	zamira_pacori	no	non accolta	
+579	VIII	224	perifrastica	case_delle_ragazze	NUOVO	due_santi	imported	clelia_farcioni; camilla_mattonari	no	non accolta	
+580	VIII	224	perifrastica	parete_della_bottega	SCARTATO	laboratorio_zamira		pestalozzi; zamira_pacori	no	non accolta	
+581	VIII	224	allusiva	studio_del_geometra	SCARTATO			narrator	no	non accolta	
+582	VIII	224	perifrastica	sala_di_consulto	NUOVO	cantina_di_zamira	transformed	zamira_pacori	no	non accolta	
+583	VIII	224	deittica	cantina_di_zamira	NUOVO	casuccia_di_zamira	transformed	zamira_pacori	no	non accolta	
+584	VIII	224	perifrastica	credenza_della_cantina	SCARTATO	sala_di_consulto		zamira_pacori	no	non accolta	
+585	VIII	225	esplicita	libia	NUOVO	gaz_libia (da creare)	imported	giovanni_pascoli	no	non accolta	
+586	VIII	225	esplicita	ain_zara	NUOVO	gaz_ain_zara (da creare)	imported	giovanni_pascoli	no	non accolta	
+587	VIII	225	perifrastica	posti_dove_cresce_lerba	NUOVO	nessun ancoraggio (categoria generica)	imagined	zamira_pacori	no	non accolta	
+588	VIII	225	allusiva	prati	SCARTATO			zamira_pacori	no	non accolta	
+589	VIII	225	perifrastica	posti_dove_cresce_lerba	NUOVO	nessun ancoraggio (categoria generica)	imagined	zamira_pacori	no	non accolta	
+590	VIII	225	anaforica	posti_dove_cresce_lerba	NUOVO	nessun ancoraggio (categoria generica)	imagined	pestalozzi	no	non accolta	
+591	VIII	226	allusiva	piagge_arse	SCARTATO			narrator	no	non accolta	
+592	VIII	226	allusiva	egitto	SCARTATO			pestalozzi	no	non accolta	
+593	VIII	226	perifrastica	usciolo_della_scaluccia	NUOVO	scaluccia_di_zamira	transformed	zamira_pacori	no	non accolta	
+594	VIII	226	esplicita	scaluccia_di_zamira	NUOVO	casuccia_di_zamira	transformed	zamira_pacori	si	non accolta	
+595	VIII	226	allusiva	cantina_di_zamira	NUOVO	casuccia_di_zamira	transformed	zamira_pacori; nipotine_zamira	no	non accolta	
+596	VIII	226	perifrastica	mattonato_della_bottega	SCARTATO	laboratorio_zamira		gallina	si	non accolta	
+597	VIII	226	perifrastica	cumuli_di_maglie	NUOVO	laboratorio_zamira	transformed	gallina; zamira_pacori	no	non accolta	
+598	VIII	226	allusiva	oceano	SCARTATO			narrator	no	non accolta	
+599	VIII	226	allusiva	abisso	SCARTATO			narrator	no	non accolta	
+600	VIII	227	anaforica	cumuli_di_maglie	NUOVO	laboratorio_zamira	transformed	gallina	si	non accolta	
+601	VIII	227	anaforica	mattonato_della_bottega	SCARTATO	laboratorio_zamira		gallina	si	non accolta	
+602	VIII	227	allusiva	acque_albule	NUOVO	gaz_acque_albule (da creare)	imported	narrator	no	non accolta	
+603	VIII	227	allusiva	architettura_borrominiana	SCARTATO			narrator	no	non accolta	
+604	VIII	228	perifrastica	credenza_della_bottega	SCARTATO	laboratorio_zamira		gallina	si	non accolta	
+605	VIII	228	perifrastica	soffitto_della_bottega	SCARTATO	laboratorio_zamira		gallina	no	non accolta	
+606	VIII	228	anaforica	uscio_a_vetri_della_bottega	NUOVO	laboratorio_zamira	transformed	lavinia_mattonari	no	non accolta	
+607	VIII	228	perifrastica	esterno_della_bottega	NUOVO	via_appia	imported	lavinia_mattonari	no	non accolta	
+608	VIII	228	anaforica	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	lavinia_mattonari	no	non accolta	
+609	VIII	228	anaforica	limitare_della_bottega	NUOVO	laboratorio_zamira	transformed	lavinia_mattonari	no	non accolta	
+610	VIII	228	perifrastica	cantone_della_bottega	NUOVO	laboratorio_zamira	transformed	fara_filiorum_petri	no	non accolta	
+611	VIII	229	allusiva	sala_da_ballo	SCARTATO			pestalozzi; lavinia_mattonari	no	non accolta	
+612	VIII	229	allusiva	palcoscenico	SCARTATO			pestalozzi	no	non accolta	
+613	VIII	229	allusiva	fanale_di_treno	SCARTATO			lavinia_mattonari	no	non accolta	
+614	VIII	229	perifrastica	cielo_marzolino	SCARTATO			narrator	no	non accolta	
+615	VIII	230	allusiva	toscana	NUOVO	gaz_toscana (da creare)	imported	lavinia_mattonari	no	non accolta	
+616	VIII	230	allusiva	lombardia	NUOVO	gaz_lombardia (da creare)	imported	lavinia_mattonari	no	non accolta	
+617	VIII	230	allusiva	gotha	NUOVO	gaz_gotha (da creare)	imported	narrator	no	non accolta	
+618	VIII	230	allusiva	coburgo	NUOVO	gaz_coburgo (da creare)	imported	narrator	no	non accolta	
+619	VIII	230	allusiva	meclemburgo	NUOVO	gaz_meclemburgo (da creare)	imported	narrator	no	non accolta	
+620	VIII	230	deittica	campagna_generica	NUOVO		imported	zamira_pacori	no	non accolta	
+621	VIII	230	deittica	esterno_della_bottega	NUOVO	via_appia	imported	zamira_pacori	no	non accolta	
+622	VIII	230	anaforica	uscio_a_vetri_della_bottega	NUOVO	laboratorio_zamira	transformed	zamira_pacori	no	non accolta	
+623	VIII	231	deittica	dentro_e_fuori_dellinverno	SCARTATO			zamira_pacori	no	non accolta	
+624	VIII	231	anaforica	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	zamira_pacori	no	non accolta	
+625	VIII	231	deittica	macchina_da_maglieria	SCARTATO	laboratorio_zamira		gallina; zamira_pacori	no	non accolta	
+626	VIII	231	anaforica	cumuli_di_maglie	NUOVO	laboratorio_zamira	transformed	zamira_pacori; pestalozzi	no	non accolta	
+627	VIII	232	esplicita	via_merulana	ESISTENTE	gaz_via_merulana	imported	menegazzi	no	accolta	ref_00561
+628	VIII	232	allusiva	appartamento_menegazzi	NUOVO	palazzo_219	transformed	menegazzi	no	non accolta	
+629	VIII	232	esplicita	questura_di_roma	NUOVO	santo_stefano_del_cacco_celio_santo_stefano	transformed	pestalozzi; lavinia_mattonari	no	non accolta	
+630	VIII	233	allusiva	via_del_gobbo	ESISTENTE	gaz_via_del_gobbo	imported	narrator	no	accolta	ref_00562
+631	VIII	233	allusiva	fosse_oceaniche	SCARTATO			narrator	no	non accolta	
+632	VIII	233	perifrastica	campagna_generica	NUOVO		imported	pestalozzi	no	non accolta	
+633	VIII	233	deittica	luogo_indeterminato	NUOVO		imagined	enea_retalli; lavinia_mattonari	no	non accolta	
+634	VIII	233	allusiva	bosco	SCARTATO			enea_retalli	no	non accolta	
+635	VIII	233	esplicita	roma	ESISTENTE	gaz_roma	imported	lavinia_mattonari	no	non accolta	
+636	VIII	233	perifrastica	paesi_generici	NUOVO	gaz_lazio	imported	venditore_ambulante	si	non accolta	
+637	VIII	233	perifrastica	strade_dei_paesi	NUOVO	gaz_lazio	imported	venditore_ambulante	no	non accolta	
+638	VIII	233	anaforica	uscio_a_vetri_della_bottega	NUOVO	laboratorio_zamira	transformed	pestalozzi; lavinia_mattonari	no	non accolta	
+639	VIII	233	anaforica	cantone_della_bottega	NUOVO	laboratorio_zamira	transformed	fara_filiorum_petri	no	non accolta	
+640	VIII	233	deittica	luogo_indeterminato	NUOVO		imagined	gallina	no	non accolta	
+641	VIII	234	deittica	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	camilla_mattonari; lavinia_mattonari	no	non accolta	
+642	VIII	234	anaforica	motocicletta_di_pestalozzi	NUOVO	nessun ancoraggio geografico (entità mobile)	imported	pestalozzi; zamira_pacori	no	non accolta	
+643	VIII	234	anaforica	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	zamira_pacori	no	accolta	ref_00563
+644	VIII	234	perifrastica	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	pestalozzi; lavinia_mattonari; fara_filiorum_petri	si	non accolta	
+645	VIII	234	anaforica	banco_della_mescita	NUOVO	mescita_di_zamira	transformed	narrator	no	non accolta	
+646	VIII	234	anaforica	uscio_a_vetri_della_bottega	NUOVO	laboratorio_zamira	transformed	pestalozzi; lavinia_mattonari	no	non accolta	
+647	VIII	234	esplicita	due_santi	ESISTENTE	gaz_due_santi	imported	zamira_pacori; pestalozzi	no	accolta	ref_00564|ref_00565
+648	VIII	234	perifrastica	tenenza_carabinieri_marino	ESISTENTE	gaz_marino	transformed	santarella; zamira_pacori	no	non accolta	
+649	VIII	234	perifrastica	rocca_di_marino	NUOVO	gaz_marino	transformed	santarella; zamira_pacori	no	non accolta	
+650	VIII	234	esplicita	marino	ESISTENTE	gaz_marino	imported	santarella; zamira_pacori	no	non accolta	
+651	VIII	235	perifrastica	tutte_le_terre	NUOVO	nessun ancoraggio (totalità del territorio)	imagined	santarella	no	non accolta	
+652	VIII	235	perifrastica	aia	NUOVO	gaz_lazio	imported	santarella	no	non accolta	
+653	VIII	235	perifrastica	prato	NUOVO	gaz_lazio	imported	santarella	no	non accolta	
+654	VIII	235	perifrastica	campagna_generica	NUOVO		imported	santarella	no	non accolta	
+655	VIII	235	esplicita	tanganika	NUOVO	gaz_tanganika (da creare)	imported	preti_stregoni	no	non accolta	
+656	VIII	235	allusiva	africa	NUOVO	gaz_africa (da creare)	imported	preti_stregoni	no	non accolta	
+657	VIII	235	anaforica	tanganika	NUOVO	gaz_tanganika (da creare)	imported	preti_stregoni	no	non accolta	
+658	VIII	236	allusiva	fara_filiorum_petri	NUOVO	gaz_fara_filiorum_petri (da creare)	imported	fara_filiorum_petri	no	non accolta	
+659	VIII	236	allusiva	arianello	NUOVO	gaz_arianello (da creare)	imported	gaetano_filangieri	no	non accolta	
+660	VIII	236	allusiva	regno_di_napoli	NUOVO	gaz_regno_di_napoli (da creare)	imported	gaetano_filangieri	no	non accolta	
+661	VIII	236	perifrastica	utero_interiore	SCARTATO			narrator	no	non accolta	
+662	VIII	236	deittica	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	pestalozzi; zamira_pacori	no	non accolta	
+663	VIII	236	anaforica	banco_della_mescita	NUOVO	mescita_di_zamira	transformed	zamira_pacori	no	non accolta	
+664	VIII	236	allusiva	fortilizi	SCARTATO			zamira_pacori	no	non accolta	
+665	VIII	237	deittica	luogo_indeterminato	NUOVO		imagined	enea_retalli	no	non accolta	
+666	VIII	237	deittica	casa_di_camilla_mattonari	NUOVO	casello_di_casal_bruciato	imported	camilla_mattonari	no	non accolta	
+667	VIII	237	esplicita	passaggio_a_livello_di_casal_bruciato	NUOVO	casal_bruciato	imported	camilla_mattonari; zamira_pacori	no	non accolta	
+668	VIII	237	perifrastica	casello_di_casal_bruciato	NUOVO	passaggio_a_livello_di_casal_bruciato	imported	camilla_mattonari; casellante	no	non accolta	
+669	VIII	237	esplicita	strada_del_divino_amore	NUOVO	gaz_lazio	imported	pestalozzi; lavinia_mattonari	si	accolta	ref_00567|ref_00729
+670	VIII	237	esplicita	castel_di_leva	NUOVO	gaz_castel_di_leva (da creare)	imported	pestalozzi; lavinia_mattonari	no	accolta	ref_00566
+671	VIII	237	esplicita	ponte_al_divino_amore	ESISTENTE	gaz_ponte_al_divino_amore	imported	pestalozzi; lavinia_mattonari	si	non accolta	
+672	VIII	237	esplicita	casal_bruciato	NUOVO	gaz_casal_bruciato (da creare)	imported	pestalozzi; lavinia_mattonari	si	accolta	ref_00568
+673	VIII	237	anaforica	via_appia	ESISTENTE	gaz_via_appia	imported	lavinia_mattonari	no	non accolta	
+674	VIII	237	anaforica	limitare_della_bottega	NUOVO	laboratorio_zamira	transformed	fara_filiorum_petri; zamira_pacori	no	non accolta	
+675	VIII	237	esplicita	strada_del_divino_amore	NUOVO	gaz_lazio	imported	pestalozzi; lavinia_mattonari	si	accolta	ref_00569|ref_00570
+676	VIII	237	deittica	esterno_della_bottega	NUOVO	via_appia	imported	lavinia_mattonari	no	non accolta	
+677	VIII	237	esplicita	ponte_al_divino_amore	ESISTENTE	gaz_ponte_al_divino_amore	imported	zamira_pacori; pestalozzi	no	accolta	ref_00571
+678	VIII	237	allusiva	forcella	SCARTATO			zamira_pacori	no	non accolta	
+679	VIII	237	deittica	esterno_della_bottega	NUOVO	via_appia	imported	pestalozzi	no	non accolta	
+680	VIII	237	anaforica	uscio_a_vetri_della_bottega	NUOVO	laboratorio_zamira	transformed	zamira_pacori; pestalozzi; lavinia_mattonari; fara_filiorum_petri	no	non accolta	
+681	IX	238	esplicita	ponte_divino_amore	ESISTENTE	gaz_ponte_divino_amore	imported	pestalozzi;lavinia_mattonari;cocullo	si	accolta	ref_00572|ref_00580
+682	IX	238	perifrastica	—	SCARTATO	—	—	pestalozzi;lavinia_mattonari;cocullo	si	non accolta	
+683	IX	238	esplicita	appennino	NUOVO	gaz_appennino (da creare)	imported	narrator	no	non accolta	
+684	IX	238	esplicita	via_appia	ESISTENTE	gaz_via_appia	imported	pestalozzi;lavinia_mattonari;cocullo	si	accolta	ref_00573|ref_00575
+685	IX	238	perifrastica	strada_falcognana	NUOVO	gaz_falcognana (da creare)	imported	pestalozzi;lavinia_mattonari;cocullo	no	non accolta	
+686	IX	238	esplicita	falcognana	NUOVO	gaz_falcognana (da creare)	imported	narrator	no	accolta	ref_00574
+687	IX	238	deittica	bivio_appia_falcognana	NUOVO	via_appia	transformed	narrator	no	non accolta	
+688	IX	238	esplicita	sentiero_diagonale_maggesi	NUOVO	bivio_appia_falcognana	imagined	narrator	no	non accolta	
+689	IX	238	esplicita	maggesi_agro	NUOVO	agro_romano	imagined	narrator	no	non accolta	
+690	IX	238	perifrastica	strada_falcognana	NUOVO	gaz_falcognana (da creare)	imported	camilla_mattonari;lavinia_mattonari	no	accolta	ref_00576
+691	IX	238	esplicita	strada_falcognana	NUOVO	gaz_falcognana (da creare)	imported	camilla_mattonari;pestalozzi;lavinia_mattonari;cocullo	no	non accolta	
+692	IX	238	esplicita	agro_romano	NUOVO	gaz_agro_romano (da creare)	imported	narrator	no	non accolta	
+693	IX	239	esplicita	osteriuccia_del_bivio	NUOVO	gaz_frattocchie	imagined	pestalozzi	no	non accolta	
+694	IX	239	anaforica	bivio_appia_falcognana	NUOVO	via_appia	transformed	pestalozzi	no	non accolta	
+695	IX	239	perifrastica	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	pestalozzi;zamira_pacori	si	non accolta	
+696	IX	239	esplicita	—	SCARTATO	—	—	lavinia_mattonari;cocullo	no	non accolta	
+697	IX	239	allusiva	castelli_romani	NUOVO	gaz_castelli_romani (da creare)	imported	narrator	no	non accolta	
+698	IX	239	esplicita	vigne_agro	NUOVO	agro_romano	imagined	pestalozzi;lavinia_mattonari;cocullo	no	non accolta	
+699	IX	239	esplicita	prato_bivio	NUOVO	bivio_falcognana_casal_bruciato	imagined	pestalozzi;lavinia_mattonari;cocullo	no	non accolta	
+700	IX	239	esplicita	bivio_falcognana_casal_bruciato	NUOVO	strada_falcognana	transformed	pestalozzi;lavinia_mattonari;cocullo	no	accolta	ref_00577
+701	IX	239	esplicita	ponte_divino_amore	ESISTENTE	gaz_ponte_divino_amore	imported	pestalozzi;lavinia_mattonari;cocullo	no	non accolta	
+702	IX	239	anaforica	strada_falcognana	NUOVO	gaz_falcognana (da creare)	imported	narrator	no	non accolta	
+703	IX	239	esplicita	ferrovia_roma_velletri	NUOVO	gaz_ferrovia_roma_velletri (da creare)	imported	narrator	no	non accolta	
+704	IX	239	esplicita	divino_amore	ESISTENTE	gaz_divino_amore	imported	narrator	no	accolta	ref_00578
+705	IX	239	perifrastica	chiesina_divino_amore	NUOVO	divino_amore	transformed	narrator	no	non accolta	
+706	IX	239	esplicita	casipole_divino_amore	NUOVO	divino_amore	imagined	narrator	no	non accolta	
+707	IX	239	allusiva	lazio	ESISTENTE	gaz_lazio	imported	narrator	no	non accolta	
+708	IX	239	esplicita	castel_di_leva	ESISTENTE	gaz_castel_di_leva	imported	narrator	no	accolta	ref_00579
+709	IX	239	perifrastica	torracchio_castel_di_leva	NUOVO	castel_di_leva	transformed	narrator	no	non accolta	
+710	IX	239	perifrastica	recinto_castel_di_leva	NUOVO	castel_di_leva	transformed	narrator	no	non accolta	
+711	IX	239	perifrastica	—	SCARTATO	—	—	narrator	no	non accolta	
+712	IX	239	deittica	bivio_falcognana_casal_bruciato	NUOVO	strada_falcognana	transformed	pestalozzi;lavinia_mattonari;cocullo	no	accolta	ref_00581
+713	IX	239	deittica	agro_romano	NUOVO	gaz_agro_romano (da creare)	imported	pestalozzi	no	non accolta	
+714	IX	240	perifrastica	strada_falcognana	NUOVO	gaz_falcognana (da creare)	imported	narrator	no	non accolta	
+715	IX	240	esplicita	strada_falcognana	NUOVO	gaz_falcognana (da creare)	imported	pestalozzi	no	accolta	ref_00582|ref_00584|ref_00585
+716	IX	240	esplicita	ponte_divino_amore	ESISTENTE	gaz_ponte_divino_amore	imported	narrator	no	accolta	ref_00583
+717	IX	240	perifrastica	trincera_ferroviaria	NUOVO	ferrovia_roma_velletri	transformed	narrator	no	non accolta	
+718	IX	240	esplicita	vicinale_casal_bruciato	NUOVO	gaz_casal_bruciato	imported	pestalozzi;lavinia_mattonari;cocullo	si	non accolta	
+719	IX	240	esplicita	casal_bruciato	ESISTENTE	gaz_casal_bruciato	imported	narrator	no	non accolta	
+720	IX	240	anaforica	ferrovia_roma_velletri	NUOVO	gaz_ferrovia_roma_velletri (da creare)	imported	narrator	no	non accolta	
+721	IX	240	perifrastica	passaggio_livello_casal_bruciato	NUOVO	casello_km_20_25	transformed	narrator	no	non accolta	
+722	IX	240	perifrastica	casello_km_20_25	NUOVO	gaz_casal_bruciato	transformed	narrator	no	non accolta	
+723	IX	240	perifrastica	agro_romano	NUOVO	gaz_agro_romano (da creare)	imported	narrator	no	non accolta	
+724	IX	240	esplicita	—	SCARTATO	—	—	narrator	no	non accolta	
+725	IX	240	perifrastica	agro_romano	NUOVO	gaz_agro_romano (da creare)	imported	narrator	no	non accolta	
+726	IX	240	deittica	casello_km_20_25	NUOVO	gaz_casal_bruciato	transformed	lavinia_mattonari;pestalozzi	no	non accolta	
+727	IX	241	deittica	bivio_falcognana_casal_bruciato	NUOVO	strada_falcognana	transformed	lavinia_mattonari;pestalozzi	no	non accolta	
+728	IX	241	esplicita	ripa_bivio	NUOVO	bivio_falcognana_casal_bruciato	imagined	pestalozzi;vetturale	no	non accolta	
+729	IX	241	esplicita	cunetta_bivio	NUOVO	bivio_falcognana_casal_bruciato	imagined	narrator	no	non accolta	
+730	IX	241	perifrastica	prato_bivio	NUOVO	bivio_falcognana_casal_bruciato	imagined	narrator	no	non accolta	
+731	IX	241	esplicita	casello_km_20_25	NUOVO	gaz_casal_bruciato	transformed	pestalozzi;cocullo	si	accolta	ref_00586
+732	IX	241	perifrastica	ferrovia_roma_velletri	NUOVO	gaz_ferrovia_roma_velletri (da creare)	imported	narrator	no	non accolta	
+733	IX	241	perifrastica	passaggio_livello_casal_bruciato	NUOVO	casello_km_20_25	transformed	nonna_mattonari	no	non accolta	
+734	IX	241	anaforica	vicinale_casal_bruciato	NUOVO	gaz_casal_bruciato	imported	narrator	no	non accolta	
+735	IX	241	esplicita	frattocchie	ESISTENTE	gaz_frattocchie	imported	narrator	no	accolta	ref_00588
+736	IX	241	esplicita	—	SCARTATO	—	—	narrator	no	non accolta	
+737	IX	241	esplicita	casello_km_20_25	NUOVO	gaz_casal_bruciato	transformed	narrator	no	accolta	ref_00589
+738	IX	241	esplicita	livelletta_negroni	NUOVO	ferrovia_roma_velletri	transformed	narrator	no	non accolta	
+739	IX	241	esplicita	specola_arcetri	NUOVO	gaz_arcetri (da creare)	imported	narrator	no	non accolta	
+740	IX	241	esplicita	osservatorio_monte_palomar	NUOVO	gaz_monte_palomar (da creare)	imported	narrator	no	non accolta	
+741	IX	241	esplicita	—	SCARTATO	—	—	narrator	no	non accolta	
+742	IX	241	esplicita	casal_bruciato	ESISTENTE	gaz_casal_bruciato	imported	narrator	no	accolta	ref_00590|ref_00723
+743	IX	241	perifrastica	casello_km_20_25	NUOVO	gaz_casal_bruciato	transformed	nonna_mattonari;pestalozzi;cocullo	no	non accolta	
+744	IX	242	allusiva	padova	ESISTENTE	gaz_padova	imported	nonna_mattonari	no	non accolta	
+745	IX	242	esplicita	banchina_casello	NUOVO	casello_km_20_25	transformed	nonna_mattonari	no	accolta	ref_00591
+746	IX	242	esplicita	casal_bruciato	ESISTENTE	gaz_casal_bruciato	imported	narrator	no	non accolta	
+747	IX	242	anaforica	banchina_casello	NUOVO	casello_km_20_25	transformed	nonna_mattonari;pestalozzi;cocullo	no	non accolta	
+748	IX	242	perifrastica	varco_pedonale_passaggio	NUOVO	passaggio_livello_casal_bruciato	transformed	pestalozzi;cocullo	no	non accolta	
+749	IX	242	anaforica	banchina_casello	NUOVO	casello_km_20_25	transformed	pestalozzi;cocullo	si	non accolta	
+750	IX	242	esplicita	casello_km_20_25	NUOVO	gaz_casal_bruciato	transformed	pestalozzi;cocullo	no	accolta	ref_00592
+751	IX	243	esplicita	ciampino	ESISTENTE	gaz_ciampino	imported	narrator	si	accolta	ref_00593
+752	IX	243	esplicita	livelletta_negroni	NUOVO	ferrovia_roma_velletri	transformed	narrator	no	non accolta	
+753	IX	243	esplicita	casello_km_20_25	NUOVO	gaz_casal_bruciato	transformed	narrator	no	non accolta	
+754	IX	243	esplicita	sentiero_breccia_casello	NUOVO	casello_km_20_25	imagined	narrator	no	non accolta	
+755	IX	243	esplicita	massicciata_ferroviaria	NUOVO	ferrovia_roma_velletri	transformed	narrator	no	non accolta	
+756	IX	243	esplicita	binario_casello	NUOVO	ferrovia_roma_velletri	transformed	narrator	no	non accolta	
+757	IX	243	perifrastica	speco_ferroviario	NUOVO	ferrovia_roma_velletri	imagined	narrator	no	non accolta	
+758	IX	244	perifrastica	—	SCARTATO	—	—	narrator	no	non accolta	
+759	IX	244	allusiva	colli_albani	ESISTENTE	gaz_colli_albani	imported	narrator	no	non accolta	
+760	IX	244	esplicita	paduli_agro	NUOVO	agro_romano	imagined	narrator	no	non accolta	
+761	IX	244	esplicita	—	SCARTATO	—	—	narrator	no	non accolta	
+762	IX	244	anaforica	banchina_casello	NUOVO	casello_km_20_25	transformed	camilla_mattonari	no	non accolta	
+763	IX	244	esplicita	—	SCARTATO	—	—	macchinista	no	non accolta	
+764	IX	244	esplicita	—	SCARTATO	—	—	narrator	no	non accolta	
+765	IX	245	esplicita	scalo_ferroviario	NUOVO	ferrovia_roma_velletri	transformed	narrator	no	non accolta	
+766	IX	245	esplicita	livelletta_negroni_71	NUOVO	ferrovia_roma_velletri	transformed	narrator	no	non accolta	
+767	IX	245	esplicita	livelletta_negroni_73	NUOVO	ferrovia_roma_velletri	transformed	narrator	no	non accolta	
+768	IX	245	perifrastica	ruderi_agro	NUOVO	agro_romano	imagined	narrator	no	non accolta	
+769	IX	245	esplicita	ponte_divino_amore	ESISTENTE	gaz_ponte_divino_amore	imported	narrator	si	accolta	ref_00594
+770	IX	245	anaforica	casello_km_20_25	NUOVO	gaz_casal_bruciato	transformed	narrator	no	accolta	ref_00595
+771	IX	245	deittica	agro_romano	NUOVO	gaz_agro_romano (da creare)	imported	narrator	no	non accolta	
+772	IX	246	esplicita	novali_agro	NUOVO	agro_romano	imagined	narrator	no	non accolta	
+773	IX	246	perifrastica	—	SCARTATO	—	—	narrator	no	non accolta	
+774	IX	246	anaforica	massicciata_ferroviaria	NUOVO	ferrovia_roma_velletri	transformed	narrator	no	non accolta	
+775	IX	246	esplicita	teatro_generico	NUOVO	—	imagined	narrator	no	non accolta	
+776	IX	246	anaforica	sentiero_breccia_casello	NUOVO	casello_km_20_25	imagined	narrator	no	non accolta	
+777	IX	247	perifrastica	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	pestalozzi;zamira_pacori	no	accolta	ref_00596
+778	IX	247	esplicita	due_santi	ESISTENTE	gaz_due_santi	imported	camilla_mattonari;pestalozzi	no	accolta	ref_00597
+779	IX	247	anaforica	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	pestalozzi	no	non accolta	
+780	IX	247	allusiva	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	camilla_mattonari;pestalozzi	no	non accolta	
+781	IX	247	perifrastica	nascondiglio_indeterminato	NUOVO	casello_km_20_25	imagined	pestalozzi;camilla_mattonari	no	non accolta	
+782	IX	248	esplicita	ciampino	ESISTENTE	gaz_ciampino	imported	zio_cantoniere;camilla_mattonari	si	accolta	ref_00598
+783	IX	248	perifrastica	ufficio_capo_ciampino	NUOVO	gaz_ciampino	imagined	zio_cantoniere	no	non accolta	
+784	IX	248	perifrastica	casello_km_20_25	NUOVO	gaz_casal_bruciato	transformed	camilla_mattonari;zio_cantoniere	no	non accolta	
+785	IX	248	perifrastica	casello_km_20_25	NUOVO	gaz_casal_bruciato	transformed	pestalozzi;camilla_mattonari	no	non accolta	
+786	IX	248	perifrastica	camera_casello	NUOVO	casello_km_20_25	transformed	pestalozzi;camilla_mattonari	no	non accolta	
+787	IX	248	esplicita	orto_casello	NUOVO	casello_km_20_25	transformed	nonna_mattonari	no	non accolta	
+788	IX	249	perifrastica	casello_km_20_25	NUOVO	gaz_casal_bruciato	transformed	camilla_mattonari;pestalozzi;cocullo	si	accolta	ref_00599
+789	IX	249	perifrastica	stanza_terreno_casello	NUOVO	casello_km_20_25	transformed	camilla_mattonari;pestalozzi;cocullo	no	non accolta	
+790	IX	249	perifrastica	scala_casello	NUOVO	casello_km_20_25	transformed	camilla_mattonari;pestalozzi;cocullo	no	non accolta	
+791	IX	249	perifrastica	camera_casello	NUOVO	casello_km_20_25	transformed	camilla_mattonari;pestalozzi;cocullo	no	accolta	ref_00600
+792	IX	249	esplicita	—	SCARTATO	—	—	narrator	no	non accolta	
+793	IX	249	esplicita	posterula_castel_di_leva	NUOVO	castel_di_leva	transformed	narrator	no	non accolta	
+794	IX	249	allusiva	divino_amore	ESISTENTE	gaz_divino_amore	imported	pestalozzi;camilla_mattonari	no	non accolta	
+795	IX	249	anaforica	recinto_castel_di_leva	NUOVO	castel_di_leva	transformed	narrator	no	non accolta	
+796	IX	249	esplicita	agro_romano	NUOVO	gaz_agro_romano (da creare)	imported	narrator	no	non accolta	
+797	IX	249	perifrastica	italia	NUOVO	gaz_italia (da creare)	imported	narrator	no	non accolta	
+798	IX	250	deittica	sottoletto_camera_casello	NUOVO	camera_casello	transformed	camilla_mattonari;pestalozzi;cocullo	no	non accolta	
+799	IX	250	perifrastica	camera_casello	NUOVO	casello_km_20_25	transformed	pestalozzi;camilla_mattonari	no	non accolta	
+800	IX	250	esplicita	—	SCARTATO	—	—	camilla_mattonari;pestalozzi	no	non accolta	
+801	IX	250	esplicita	siepe_biancospino	NUOVO	—	imagined	narrator	no	non accolta	
+802	IX	251	anaforica	camera_casello	NUOVO	casello_km_20_25	transformed	pestalozzi	no	non accolta	
+803	IX	251	perifrastica	sottoletto_camera_casello	NUOVO	camera_casello	transformed	camilla_mattonari	no	non accolta	
+804	IX	251	allusiva	capodimonte	NUOVO	gaz_capodimonte (da creare)	imported	narrator	no	non accolta	
+805	IX	251	allusiva	—	SCARTATO	—	—	narrator	no	non accolta	
+806	IX	251	anaforica	camera_casello	NUOVO	casello_km_20_25	transformed	pestalozzi;camilla_mattonari	no	non accolta	
+807	IX	252	perifrastica	—	SCARTATO	—	—	cocullo;pestalozzi	no	non accolta	
+808	IX	252	perifrastica	nascondiglio_indeterminato	NUOVO	casello_km_20_25	imagined	pestalozzi	no	non accolta	
+809	IX	252	anaforica	camera_casello	NUOVO	casello_km_20_25	transformed	cocullo;pestalozzi;camilla_mattonari	no	non accolta	
+810	IX	252	perifrastica	—	SCARTATO	—	—	camilla_mattonari;pestalozzi	no	non accolta	
+811	IX	253	perifrastica	camera_casello	NUOVO	casello_km_20_25	transformed	pestalozzi;nonna_mattonari	no	non accolta	
+812	IX	253	deittica	sottoletto_camera_casello	NUOVO	camera_casello	transformed	narrator	no	non accolta	
+813	IX	253	allusiva	drogheria_generica	NUOVO	—	imagined	nonna_mattonari	no	non accolta	
+814	IX	254	perifrastica	gioielliere_catellani	ESISTENTE	gaz_roma	imagined	narrator	no	non accolta	
+815	IX	254	esplicita	egitto	NUOVO	gaz_egitto (da creare)	imported	narrator	no	non accolta	
+816	IX	254	esplicita	piramidi_egitto	NUOVO	gaz_piramidi_egitto (da creare)	imported	narrator	no	non accolta	
+817	IX	254	perifrastica	—	SCARTATO	—	—	narrator	no	non accolta	
+818	IX	254	esplicita	piazza_garibaldi	ESISTENTE	gaz_piazza_garibaldi	imported	pestalozzi;cocullo	no	non accolta	
+819	IX	254	perifrastica	immondezzaio_generico	NUOVO	—	imagined	narrator	no	non accolta	
+820	IX	254	perifrastica	marina_generica	NUOVO	—	imagined	narrator	no	non accolta	
+821	IX	255	esplicita	ceylon	NUOVO	gaz_ceylon (da creare)	imported	narrator	si	non accolta	
+822	IX	255	esplicita	birmania	NUOVO	gaz_birmania (da creare)	imported	narrator	no	non accolta	
+823	IX	255	esplicita	siam	NUOVO	gaz_siam (da creare)	imported	narrator	no	non accolta	
+824	IX	255	perifrastica	camera_casello	NUOVO	casello_km_20_25	transformed	pestalozzi;cocullo	no	non accolta	
+825	IX	255	perifrastica	—	SCARTATO	—	—	narrator	no	non accolta	
+826	IX	256	esplicita	revello	NUOVO	gaz_revello (da creare)	imported	narrator	no	non accolta	
+827	IX	256	esplicita	ramengo	SCARTATO	—	invented	narrator	no	non accolta	
+828	IX	256	allusiva	italia	NUOVO	gaz_italia (da creare)	imported	narrator	no	non accolta	
+829	IX	256	esplicita	italia	NUOVO	gaz_italia (da creare)	imported	narrator	no	non accolta	
+830	IX	256	esplicita	cesso_menegazzi	NUOVO	gaz_roma	imagined	menegazzi	no	non accolta	
+831	IX	256	perifrastica	—	SCARTATO	—	—	narrator	no	non accolta	
+832	IX	257	perifrastica	punto_di_vista_elevato	NUOVO	—	imagined	narrator	no	non accolta	
+833	IX	257	esplicita	riviera	NUOVO	gaz_riviera (da creare)	imported	narrator	no	non accolta	
+834	IX	257	esplicita	botafogo	NUOVO	gaz_botafogo (da creare)	imported	narrator	no	non accolta	
+835	IX	257	perifrastica	litoranea_botafogo	NUOVO	botafogo	imported	narrator	no	non accolta	
+836	IX	257	esplicita	pao_de_azucar	NUOVO	gaz_pao_de_azucar (da creare)	imported	narrator	no	non accolta	
+837	IX	257	esplicita	marino	ESISTENTE	gaz_marino	imported	pestalozzi	si	accolta	ref_00601
+838	IX	257	perifrastica	—	SCARTATO	—	—	pestalozzi	si	non accolta	
+839	IX	258	allusiva	palazzo_219	ESISTENTE	gaz_via_merulana	transformed	portinaia;giuliano_valdarena;liliana	no	non accolta	
+840	IX	258	perifrastica	—	SCARTATO	—	—	narrator	no	non accolta	
+841	IX	258	allusiva	obitorio	NUOVO	gaz_roma	imagined	liliana	no	non accolta	
+842	IX	258	perifrastica	appartamento_menegazzi	NUOVO	palazzo_219	transformed	menegazzi;pestalozzi	no	non accolta	
+843	IX	258	allusiva	appartamento_menegazzi	NUOVO	palazzo_219	transformed	menegazzi	no	non accolta	
+844	IX	258	perifrastica	—	SCARTATO	—	—	liliana;pestalozzi	no	non accolta	
+845	IX	258	perifrastica	tenenza_carabinieri_marino	ESISTENTE	gaz_marino	transformed	pestalozzi	si	accolta	ref_00602
+846	IX	258	esplicita	marino	ESISTENTE	gaz_marino	imported	pestalozzi	no	accolta	ref_00603
+847	IX	258	esplicita	santo_stefano_del_cacco_celio_santo_stefano	ESISTENTE	gaz_santo_stefano_del_cacco_celio_santo_stefano	imported	ingravallo;pestalozzi	no	accolta	ref_00604
+848	IX	258	esplicita	roma	ESISTENTE	gaz_roma	imported	pestalozzi	no	non accolta	
+849	IX	259	deittica	camera_casello	NUOVO	casello_km_20_25	transformed	camilla_mattonari;pestalozzi	no	non accolta	
+850	IX	259	esplicita	roma	ESISTENTE	gaz_roma	imported	ingravallo;pestalozzi	no	accolta	ref_00605
+851	IX	259	deittica	camera_casello	NUOVO	casello_km_20_25	transformed	pestalozzi;camilla_mattonari	si	accolta	ref_00606
+852	IX	259	esplicita	marino	ESISTENTE	gaz_marino	imported	pestalozzi;camilla_mattonari;santarella	no	non accolta	
+853	IX	259	esplicita	agro_romano	NUOVO	gaz_agro_romano (da creare)	imported	narrator;camilla_mattonari	no	non accolta	
+854	IX	259	perifrastica	tenenza_carabinieri_marino	ESISTENTE	gaz_marino	transformed	pestalozzi;camilla_mattonari;santarella	no	accolta	ref_00607
+855	IX	259	deittica	tenenza_carabinieri_marino	ESISTENTE	gaz_marino	transformed	pestalozzi;camilla_mattonari	no	non accolta	
+856	IX	260	esplicita	sottoletto_camera_casello	NUOVO	camera_casello	transformed	pestalozzi;cocullo;camilla_mattonari	no	non accolta	
+857	IX	260	allusiva	divino_amore	ESISTENTE	gaz_divino_amore	imported	narrator	no	non accolta	
+858	IX	260	esplicita	banchina_casello	NUOVO	casello_km_20_25	transformed	pestalozzi;cocullo	si	non accolta	
+859	IX	260	perifrastica	agro_romano	NUOVO	gaz_agro_romano (da creare)	imported	pestalozzi;cocullo	no	non accolta	
+860	IX	260	anaforica	agro_romano	NUOVO	gaz_agro_romano (da creare)	imported	pestalozzi;cocullo	no	non accolta	
+861	IX	260	anaforica	castelli_romani	NUOVO	gaz_castelli_romani (da creare)	imported	pestalozzi;cocullo	no	non accolta	
+862	IX	260	esplicita	orto_casello	NUOVO	casello_km_20_25	transformed	camilla_mattonari	no	non accolta	
+863	IX	261	perifrastica	casello_km_20_25	NUOVO	gaz_casal_bruciato	transformed	camilla_mattonari	no	non accolta	
+864	IX	261	esplicita	stoppie_casello	NUOVO	agro_romano	imagined	narrator	no	non accolta	
+865	IX	261	perifrastica	agro_romano	NUOVO	gaz_agro_romano (da creare)	imported	narrator	no	non accolta	
+866	IX	261	esplicita	via_veneto	ESISTENTE	gaz_via_veneto	imported	camilla_mattonari	no	accolta	ref_00608
+867	IX	261	esplicita	stanza_terreno_casello	NUOVO	casello_km_20_25	transformed	camilla_mattonari	no	non accolta	
+868	IX	261	esplicita	ciampino	ESISTENTE	gaz_ciampino	imported	zio_cantoniere	no	accolta	ref_00609
+869	IX	261	esplicita	cecchina	ESISTENTE	gaz_cecchina	imported	zio_cantoniere	no	accolta	ref_00610
+870	IX	261	perifrastica	gabinetto_generico	NUOVO	—	imagined	narrator	no	non accolta	
+871	IX	261	anaforica	stanza_terreno_casello	NUOVO	casello_km_20_25	transformed	camilla_mattonari	no	non accolta	
+872	IX	261	esplicita	recinto_canne_casello	NUOVO	orto_casello	transformed	camilla_mattonari	no	non accolta	
+873	IX	262	perifrastica	casello_km_20_25	NUOVO	gaz_casal_bruciato	transformed	narrator	no	accolta	ref_00611
+874	IX	262	perifrastica	agro_romano	NUOVO	gaz_agro_romano (da creare)	imported	narrator	no	non accolta	
+875	IX	262	esplicita	orto_casello	NUOVO	casello_km_20_25	transformed	nonna_mattonari	no	non accolta	
+876	IX	262	esplicita	marino	ESISTENTE	gaz_marino	imported	camilla_mattonari;santarella;zio_cantoniere	si	accolta	ref_00612|ref_00613
+877	IX	262	anaforica	casello_km_20_25	NUOVO	gaz_casal_bruciato	transformed	zio_cantoniere;camilla_mattonari	no	non accolta	
+878	IX	262	esplicita	casal_bruciato	ESISTENTE	gaz_casal_bruciato	imported	zio_cantoniere	si	accolta	ref_00614
+879	IX	262	esplicita	ciampino	ESISTENTE	gaz_ciampino	imported	camilla_mattonari	si	non accolta	
+880	IX	262	esplicita	termini	ESISTENTE	gaz_termini	imported	camilla_mattonari	no	non accolta	
+881	IX	262	esplicita	europa	NUOVO	gaz_europa (da creare)	imported	narrator	no	non accolta	
+882	IX	263	perifrastica	italia	NUOVO	gaz_italia (da creare)	imported	narrator	no	non accolta	
+883	IX	263	esplicita	agro_romano	NUOVO	gaz_agro_romano (da creare)	imported	narrator	no	non accolta	
+884	IX	263	perifrastica	casello_km_20_25	NUOVO	gaz_casal_bruciato	transformed	zio_cantoniere	no	non accolta	
+885	IX	263	allusiva	contrada_della_torre	NUOVO	gaz_contrada_della_torre (da creare)	imported	narrator	no	non accolta	
+886	IX	263	allusiva	contrada_della_tartuca	NUOVO	gaz_contrada_della_tartuca (da creare)	imported	narrator	no	non accolta	
+887	IX	263	allusiva	contrada_delloca	NUOVO	gaz_contrada_delloca (da creare)	imported	narrator	no	non accolta	
+888	IX	263	esplicita	velletri	ESISTENTE	gaz_velletri	imported	nonna_mattonari	si	accolta	ref_00615
+889	IX	263	anaforica	bivio_falcognana_casal_bruciato	NUOVO	strada_falcognana	transformed	camilla_mattonari;pestalozzi;cocullo;lavinia_mattonari;vetturale	si	accolta	ref_00616
+890	IX	263	esplicita	margine_prato_bivio	NUOVO	bivio_falcognana_casal_bruciato	imagined	vetturale	no	non accolta	
+891	IX	263	anaforica	vicinale_casal_bruciato	NUOVO	gaz_casal_bruciato	imported	narrator	no	non accolta	
+892	IX	264	perifrastica	cunetta_bivio	NUOVO	bivio_falcognana_casal_bruciato	imagined	vetturale	no	non accolta	
+893	IX	264	perifrastica	cunetta_bivio	NUOVO	bivio_falcognana_casal_bruciato	imagined	vetturale	no	non accolta	
+894	IX	264	esplicita	balcone_generico	NUOVO	—	imagined	narrator	no	non accolta	
+895	IX	264	esplicita	lago_generico	NUOVO	—	imagined	narrator	no	non accolta	
+896	IX	264	perifrastica	agro_romano	NUOVO	gaz_agro_romano (da creare)	imported	narrator	no	non accolta	
+897	IX	264	perifrastica	—	SCARTATO	—	—	narrator	no	non accolta	
+898	IX	265	perifrastica	regina_coeli	ESISTENTE	gaz_regina_coeli	imported	camilla_mattonari;pestalozzi;cocullo	no	accolta	ref_00617
+899	IX	265	deittica	vicinale_casal_bruciato	NUOVO	gaz_casal_bruciato	imported	camilla_mattonari;lavinia_mattonari	no	non accolta	
+900	IX	265	perifrastica	—	SCARTATO	—	—	camilla_mattonari;lavinia_mattonari	no	non accolta	
+901	IX	265	perifrastica	agro_romano	NUOVO	gaz_agro_romano (da creare)	imported	narrator	no	non accolta	
+902	IX	266	esplicita	marino	ESISTENTE	gaz_marino	imported	lavinia_mattonari;camilla_mattonari;pestalozzi	si	accolta	ref_00618
+903	IX	266	deittica	margine_prato_bivio	NUOVO	bivio_falcognana_casal_bruciato	imagined	narrator	no	non accolta	
+904	IX	266	anaforica	strada_falcognana	NUOVO	gaz_falcognana (da creare)	imported	pestalozzi;lavinia_mattonari;camilla_mattonari;vetturale;cocullo	no	non accolta	
+905	IX	266	perifrastica	—	SCARTATO	—	—	camilla_mattonari;lavinia_mattonari	no	non accolta	
+906	IX	267	anaforica	strada_falcognana	NUOVO	gaz_falcognana (da creare)	imported	camilla_mattonari	no	non accolta	
+907	IX	267	allusiva	agro_romano	NUOVO	gaz_agro_romano (da creare)	imported	lavinia_mattonari;camilla_mattonari	no	non accolta	
+908	IX	267	esplicita	frattocchie	ESISTENTE	gaz_frattocchie	imported	vetturale	no	accolta	ref_00619
+909	IX	267	perifrastica	osteria_dar_marinese	NUOVO	gaz_frattocchie	imagined	vetturale	no	non accolta	
+910	IX	267	esplicita	fraschetta	NUOVO	gaz_frattocchie	imagined	vetturale	no	non accolta	
+911	IX	268	esplicita	due_santi	ESISTENTE	gaz_due_santi	imported	vetturale;zamira_pacori	no	accolta	ref_00620
+912	IX	268	perifrastica	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	vetturale;zamira_pacori	no	non accolta	
+913	IX	268	anaforica	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	zamira_pacori;vetturale	no	non accolta	
+914	IX	268	esplicita	strade_agro	NUOVO	agro_romano	imagined	vetturale	no	non accolta	
+915	IX	269	esplicita	casello_km_20_25	NUOVO	gaz_casal_bruciato	transformed	enea_retalli;lavinia_mattonari;camilla_mattonari	si	accolta	ref_00621
+916	IX	269	esplicita	casal_bruciato	ESISTENTE	gaz_casal_bruciato	imported	enea_retalli	no	non accolta	
+917	IX	269	perifrastica	nascondiglio_interrato	NUOVO	agro_romano	imagined	enea_retalli;lavinia_mattonari	no	non accolta	
+918	IX	269	perifrastica	palazzo_219	ESISTENTE	gaz_via_merulana	transformed	liliana;enea_retalli;lavinia_mattonari	no	non accolta	
+919	IX	269	perifrastica	terzo_piano_219	ESISTENTE	palazzo_219	transformed	liliana;enea_retalli	no	non accolta	
+920	IX	269	esplicita	marino	ESISTENTE	gaz_marino	imported	santarella;lavinia_mattonari	no	non accolta	
+921	IX	269	deittica	luogo_promessa_lavinia_iginio	NUOVO	agro_romano	imagined	lavinia_mattonari;enea_retalli;santarella	no	non accolta	
+922	IX	270	perifrastica	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	lavinia_mattonari;camilla_mattonari;clelia_farcioni;zamira_pacori	no	non accolta	
+923	IX	270	perifrastica	—	SCARTATO	—	—	camilla_mattonari;lavinia_mattonari	no	non accolta	
+924	IX	270	esplicita	santa_rita_invitacolo	ESISTENTE	gaz_santa_rita_invitacolo	imported	clelia_farcioni	si	accolta	ref_00622
+925	IX	270	perifrastica	santa_rita_invitacolo	ESISTENTE	gaz_santa_rita_invitacolo	imported	clelia_farcioni;lavinia_mattonari	no	non accolta	
+926	IX	270	allusiva	piemonte	NUOVO	gaz_piemonte (da creare)	imported	pestalozzi;lavinia_mattonari	no	non accolta	
+927	IX	270	esplicita	torraccio	ESISTENTE	gaz_torraccio	imported	santarella	si	accolta	ref_00623
+928	IX	270	anaforica	ponte_divino_amore	ESISTENTE	gaz_ponte_divino_amore	imported	santarella	no	accolta	ref_00624|ref_00626
+929	IX	270	esplicita	santa_palomba	ESISTENTE	gaz_santa_palomba	imported	santarella	no	accolta	ref_00625
+930	IX	270	perifrastica	pali_radio_santa_palomba	NUOVO	santa_palomba	transformed	santarella	no	non accolta	
+931	IX	270	esplicita	santa_rita_invitacolo	ESISTENTE	gaz_santa_rita_invitacolo	imported	santarella	no	non accolta	
+932	IX	270	esplicita	passaggi_livello_agro	NUOVO	ferrovia_roma_velletri	imagined	santarella	no	non accolta	
+933	IX	270	perifrastica	strade_agro	NUOVO	agro_romano	imagined	santarella	no	non accolta	
+934	IX	270	allusiva	strade_agro	NUOVO	agro_romano	imagined	santarella	no	non accolta	
+935	IX	271	anaforica	santa_rita_invitacolo	ESISTENTE	gaz_santa_rita_invitacolo	imported	lavinia_mattonari	no	non accolta	
+936	IX	271	esplicita	casa_rosa_torraccio	NUOVO	gaz_torraccio	imagined	spia_senza_volto;santarella	no	non accolta	
+937	IX	271	esplicita	torraccio	ESISTENTE	gaz_torraccio	imported	spia_senza_volto	no	accolta	ref_00627
+938	IX	271	perifrastica	strade_agro	NUOVO	agro_romano	imagined	spia_senza_volto	no	non accolta	
+939	IX	271	esplicita	luogo_promessa_lavinia_iginio	NUOVO	agro_romano	imagined	lavinia_mattonari;enea_retalli;santarella	no	non accolta	
+940	IX	271	perifrastica	gabinetto_casa_rosa	NUOVO	casa_rosa_torraccio	imagined	spia_senza_volto;santarella	no	non accolta	
+941	IX	271	deittica	gabinetto_casa_rosa	NUOVO	casa_rosa_torraccio	imagined	spia_senza_volto;santarella	no	non accolta	
+942	IX	271	allusiva	vigne_agro	NUOVO	agro_romano	imagined	spia_senza_volto	no	non accolta	
+943	IX	272	allusiva	roma	ESISTENTE	gaz_roma	imported	pestalozzi;ingravallo	no	non accolta	
+944	IX	272	esplicita	agro_romano	NUOVO	gaz_agro_romano (da creare)	imported	enea_retalli;pestalozzi	no	non accolta	
+945	IX	272	esplicita	roma	ESISTENTE	gaz_roma	imported	enea_retalli;pestalozzi	si	non accolta	
+946	IX	272	perifrastica	strade_agro	NUOVO	agro_romano	imagined	enea_retalli	no	non accolta	
+947	IX	272	perifrastica	tenenza_carabinieri_marino	ESISTENTE	gaz_marino	transformed	pestalozzi;santarella	no	non accolta	
+948	IX	273	esplicita	gerace	NUOVO	gaz_gerace (da creare)	imported	pestalozzi	no	non accolta	
+949	IX	273	perifrastica	gerace_marina	NUOVO	gaz_gerace_marina (da creare)	imported	pestalozzi	no	non accolta	
+950	IX	273	esplicita	orta	NUOVO	gaz_orta (da creare)	imported	pestalozzi	no	non accolta	
+951	IX	273	esplicita	marino	ESISTENTE	gaz_marino	imported	pestalozzi	no	non accolta	
+952	IX	273	allusiva	india	SCARTATO	gaz_india	imported	pestalozzi	no	non accolta	
+953	IX	273	esplicita	italia	NUOVO	gaz_italia (da creare)	imported	pestalozzi	no	non accolta	
+954	IX	273	esplicita	castelli_romani	NUOVO	gaz_castelli_romani (da creare)	imported	pestalozzi	si	accolta	ref_00628
+955	IX	273	perifrastica	castelli_romani	NUOVO	gaz_castelli_romani (da creare)	imported	pestalozzi	no	non accolta	
+956	IX	273	esplicita	cenobi_castelli	NUOVO	castelli_romani	imagined	pestalozzi	no	non accolta	
+957	IX	273	perifrastica	agro_romano	NUOVO	gaz_agro_romano (da creare)	imported	pestalozzi	no	non accolta	
+958	IX	273	perifrastica	castelli_romani	NUOVO	gaz_castelli_romani (da creare)	imported	pestalozzi	no	non accolta	
+959	IX	273	esplicita	tranvie_dei_castelli	ESISTENTE	gaz_tranvie_dei_castelli	imported	pestalozzi	no	non accolta	
+960	IX	273	perifrastica	via_appia	ESISTENTE	gaz_via_appia	imported	pestalozzi	no	non accolta	
+961	IX	273	esplicita	duna_litorale	NUOVO	lido_laziale	imagined	pestalozzi	no	non accolta	
+962	IX	273	deittica	lido_laziale	NUOVO	—	imagined	pestalozzi	no	non accolta	
+963	IX	273	esplicita	valloncelli_agro	NUOVO	agro_romano	imagined	pestalozzi	no	non accolta	
+964	IX	273	esplicita	marane_agro	NUOVO	valloncelli_agro	imagined	pestalozzi	no	non accolta	
+965	IX	273	esplicita	canneto_marane	NUOVO	marane_agro	imagined	pestalozzi	no	non accolta	
+966	IX	273	esplicita	torracchio_agro	NUOVO	agro_romano	imagined	pestalozzi	no	non accolta	
+967	IX	273	esplicita	tumulo_agro	NUOVO	agro_romano	imagined	pestalozzi	no	non accolta	
+968	IX	273	perifrastica	casello_km_20_25	NUOVO	gaz_casal_bruciato	transformed	pestalozzi;enea_retalli;cocullo	no	non accolta	
+969	IX	273	esplicita	via_appia	ESISTENTE	gaz_via_appia	imported	enea_retalli;pestalozzi	no	accolta	ref_00629
+970	IX	273	esplicita	via_anziate	ESISTENTE	gaz_via_anziate	imported	enea_retalli;pestalozzi	no	accolta	ref_00630
+971	IX	273	allusiva	stazioni_carabinieri_agro	NUOVO	agro_romano	imagined	pestalozzi	no	non accolta	
+972	IX	274	anaforica	casello_km_20_25	NUOVO	gaz_casal_bruciato	transformed	enea_retalli;pestalozzi	si	accolta	ref_00631|ref_00633|ref_00634
+973	IX	274	esplicita	casal_bruciato	ESISTENTE	gaz_casal_bruciato	imported	enea_retalli	no	accolta	ref_00632
+974	IX	274	esplicita	via_ardeatina	ESISTENTE	gaz_via_ardeatina	imported	enea_retalli	no	non accolta	
+975	IX	274	perifrastica	spalti_arenaria_ardea	NUOVO	gaz_ardea (da creare)	imported	enea_retalli	no	non accolta	
+976	IX	274	esplicita	ardea	NUOVO	gaz_ardea (da creare)	imported	enea_retalli	no	non accolta	
+977	IX	274	perifrastica	antro_dio_caprigno	NUOVO	ardea	imagined	narrator	no	non accolta	
+978	IX	274	esplicita	direttissima_roma_napoli	ESISTENTE	gaz_direttissima_roma_napoli	imported	enea_retalli;pestalozzi	si	accolta	ref_00635|ref_00636
+979	IX	274	esplicita	stazione_santa_palomba	NUOVO	santa_palomba	transformed	enea_retalli	no	non accolta	
+980	IX	274	deittica	stazione_santa_palomba	NUOVO	santa_palomba	transformed	enea_retalli	no	non accolta	
+981	IX	274	esplicita	solforata	ESISTENTE	gaz_solforata	imported	enea_retalli;pestalozzi	si	accolta	ref_00637
+982	IX	274	perifrastica	macchia_grande	NUOVO	gaz_pratica_di_mare	imported	enea_retalli	no	non accolta	
+983	IX	274	esplicita	pratica_di_mare	ESISTENTE	gaz_pratica_di_mare	imported	enea_retalli	no	accolta	ref_00638
+984	IX	274	esplicita	lido_laziale	NUOVO	—	imagined	enea_retalli	no	non accolta	
+985	IX	274	esplicita	capanne_litorale	NUOVO	lido_laziale	imagined	enea_retalli	no	non accolta	
+986	IX	274	esplicita	ostia	ESISTENTE	gaz_ostia	imported	enea_retalli	no	accolta	ref_00640
+987	IX	274	esplicita	anzio	ESISTENTE	gaz_anzio	imported	enea_retalli	no	accolta	ref_00639
+988	IX	274	esplicita	roma	ESISTENTE	gaz_roma	imported	enea_retalli;pestalozzi	no	non accolta	
+989	IX	274	perifrastica	biglietteria_stazione	NUOVO	stazione_santa_palomba	imagined	enea_retalli	no	non accolta	
+990	IX	274	esplicita	via_anziate	ESISTENTE	gaz_via_anziate	imported	pestalozzi;lavinia_mattonari;camilla_mattonari;vetturale;cocullo	si	accolta	ref_00641
+991	IX	274	anaforica	strada_falcognana	NUOVO	gaz_falcognana (da creare)	imported	pestalozzi	no	non accolta	
+992	IX	274	perifrastica	tenenza_carabinieri_marino	ESISTENTE	gaz_marino	transformed	pestalozzi;camilla_mattonari	no	non accolta	
+993	IX	274	esplicita	casello_km_20_25	NUOVO	gaz_casal_bruciato	transformed	enea_retalli;pestalozzi;santarella	no	accolta	ref_00642
+994	IX	275	perifrastica	casello_km_20_25	NUOVO	gaz_casal_bruciato	transformed	enea_retalli;santarella;camilla_mattonari	no	accolta	ref_00643
+995	IX	275	esplicita	casello_km_20_25	NUOVO	gaz_casal_bruciato	transformed	camilla_mattonari;enea_retalli	no	non accolta	
+996	IX	275	esplicita	agro_romano	NUOVO	gaz_agro_romano (da creare)	imported	pestalozzi	no	non accolta	
+997	IX	275	perifrastica	casa_retalli	NUOVO	gaz_due_santi	imagined	enea_retalli	no	non accolta	
+998	IX	275	anaforica	casa_retalli	NUOVO	gaz_due_santi	imagined	enea_retalli	no	non accolta	
+999	IX	275	esplicita	—	SCARTATO	—	—	enea_retalli	no	non accolta	
+1000	IX	275	esplicita	santo_stefano_del_cacco_celio_santo_stefano	ESISTENTE	gaz_santo_stefano_del_cacco_celio_santo_stefano	imported	ascanio_lanciani;ines_cionini;ingravallo	no	accolta	ref_00644
+1001	IX	275	perifrastica	—	SCARTATO	—	—	pestalozzi	no	non accolta	
+1002	IX	276	perifrastica	tenenza_carabinieri_marino	ESISTENTE	gaz_marino	transformed	pestalozzi;camilla_mattonari;lavinia_mattonari;santarella	no	non accolta	
+1003	IX	276	perifrastica	pollaio_metaforico	NUOVO	tenenza_carabinieri_marino	imagined	pestalozzi;camilla_mattonari;lavinia_mattonari	no	non accolta	
+1004	IX	276	perifrastica	piemonte	NUOVO	gaz_piemonte (da creare)	imported	pestalozzi	no	non accolta	
+1005	IX	276	esplicita	roma	ESISTENTE	gaz_roma	imported	narrator	no	non accolta	
+1006	IX	277	esplicita	fiandre	NUOVO	gaz_fiandre (da creare)	imported	narrator	no	non accolta	
+1007	IX	277	anaforica	strada_falcognana	NUOVO	gaz_falcognana (da creare)	imported	cocullo	no	non accolta	
+1008	IX	277	perifrastica	laghetto_ippurico	NUOVO	strada_falcognana	imagined	cocullo	no	non accolta	
+1009	IX	277	anaforica	laghetto_ippurico	NUOVO	strada_falcognana	imagined	cocullo;vetturale;lavinia_mattonari;camilla_mattonari	no	non accolta	
+1010	X	278	esplicita	torraccio	ESISTENTE	gaz_torraccio	imported	enea_retalli;santarella	no	accolta	ref_00645
+1011	X	278	perifrastica	strada_marino_albano	NUOVO	gaz_marino	imported	santarella	si	accolta	ref_00647|ref_00648
+1012	X	278	esplicita	marino	ESISTENTE	gaz_marino	imported	santarella	no	accolta	ref_00646
+1013	X	278	esplicita	albano_laziale	ESISTENTE	gaz_albano_laziale	imported	santarella	no	non accolta	
+1014	X	278	esplicita	giardini_parchi_castelli	NUOVO	colli_albani	imagined	narrator	no	non accolta	
+1015	X	278	perifrastica	colli_albani	ESISTENTE	gaz_colli_albani	imported	narrator	no	non accolta	
+1016	X	278	esplicita	—	SCARTATO	—	—	narrator	no	non accolta	
+1017	X	278	esplicita	villa_generica	NUOVO	colli_albani	imagined	narrator	no	non accolta	
+1018	X	278	esplicita	pavona	ESISTENTE	gaz_pavona	imported	enea_retalli;santarella	si	accolta	ref_00649
+1019	X	278	esplicita	palazzo	ESISTENTE	gaz_palazzo	imported	enea_retalli;santarella	no	accolta	ref_00650
+1020	X	278	esplicita	strade_agro	NUOVO	agro_romano	imagined	enea_retalli	no	non accolta	
+1021	X	278	perifrastica	via_appia	ESISTENTE	gaz_via_appia	imported	enea_retalli	no	non accolta	
+1022	X	278	esplicita	—	SCARTATO	—	—	santarella	no	non accolta	
+1023	X	279	perifrastica	—	SCARTATO	—	—	enea_retalli;santarella	no	non accolta	
+1024	X	279	esplicita	castello	ESISTENTE	gaz_castello	imported	santarella	no	non accolta	
+1025	X	279	esplicita	castel_gandolfo	ESISTENTE	gaz_castel_gandolfo	imported	santarella	no	non accolta	
+1026	X	279	perifrastica	stazione_carabinieri_castello	NUOVO	castello	transformed	santarella	no	accolta	ref_00651
+1027	X	279	esplicita	pavona	ESISTENTE	gaz_pavona	imported	santarella	no	accolta	ref_00652
+1028	X	279	perifrastica	esquilino	ESISTENTE	gaz_esquilino	imported	deviti	no	non accolta	
+1029	X	279	perifrastica	case_umbertine_esquilino	NUOVO	esquilino	imagined	narrator	no	non accolta	
+1030	X	279	perifrastica	trofei_di_mario	NUOVO	piazza_vittorio_emanuele	transformed	narrator	no	non accolta	
+1031	X	279	perifrastica	—	SCARTATO	—	—	narrator	no	non accolta	
+1032	X	279	esplicita	—	SCARTATO	—	—	narrator	no	non accolta	
+1033	X	279	esplicita	esercizi_esquilino	NUOVO	esquilino	imagined	deviti	no	non accolta	
+1034	X	279	perifrastica	giardini_piazza_vittorio	NUOVO	piazza_vittorio_emanuele	transformed	deviti	no	non accolta	
+1035	X	279	esplicita	fontane_piazza_vittorio	NUOVO	piazza_vittorio_emanuele	transformed	narrator	no	non accolta	
+1036	X	279	esplicita	santa_maria_della_neve	ESISTENTE	gaz_santa_maria_della_neve	imported	narrator	no	accolta	ref_00653
+1037	X	279	perifrastica	arco_di_gallieno_mura_serviane	NUOVO	esquilino	transformed	narrator	no	non accolta	
+1038	X	279	perifrastica	—	SCARTATO	—	—	narrator	no	non accolta	
+1039	X	280	esplicita	santa_maria_maggiore	ESISTENTE	gaz_santa_maria_maggiore	imported	ines_cionini;ascanio_lanciani	no	accolta	ref_00654
+1040	X	280	anaforica	santo_stefano_del_cacco_celio_santo_stefano	ESISTENTE	gaz_santo_stefano_del_cacco_celio_santo_stefano	imported	deviti;dottor_fumi	no	non accolta	
+1041	X	280	perifrastica	—	SCARTATO	—	—	narrator	no	non accolta	
+1042	X	280	esplicita	esquilino	ESISTENTE	gaz_esquilino	imported	deviti;dottor_fumi	si	accolta	ref_00655|ref_00657
+1043	X	280	esplicita	via_carlo_alberto	ESISTENTE	gaz_via_carlo_alberto	imported	deviti;dottor_fumi	no	accolta	ref_00656
+1044	X	280	esplicita	piazza_vittorio_emanuele	ESISTENTE	gaz_piazza_vittorio_emanuele	imported	deviti;ascanio_lanciani;dottor_fumi	no	non accolta	
+1045	X	280	deittica	trofei_di_mario	NUOVO	piazza_vittorio_emanuele	transformed	dottor_fumi;deviti	no	non accolta	
+1046	X	280	deittica	piazza_vittorio_emanuele	ESISTENTE	gaz_piazza_vittorio_emanuele	imported	deviti	no	accolta	ref_00658
+1047	X	280	perifrastica	giardini_piazza_vittorio	NUOVO	piazza_vittorio_emanuele	transformed	deviti	no	non accolta	
+1048	X	280	esplicita	mercato_piazza_vittorio	NUOVO	piazza_vittorio_emanuele	transformed	narrator	no	non accolta	
+1049	X	280	esplicita	mercato_piazza_vittorio	NUOVO	piazza_vittorio_emanuele	transformed	narrator	no	non accolta	
+1050	X	280	esplicita	—	SCARTATO	—	—	narrator	no	non accolta	
+1051	X	281	esplicita	banchi_abbacchiari	NUOVO	mercato_piazza_vittorio	imagined	deviti	no	non accolta	
+1052	X	281	perifrastica	—	SCARTATO	—	—	deviti	no	non accolta	
+1053	X	281	perifrastica	settore_ortofrutticolo_mercato	NUOVO	mercato_piazza_vittorio	imagined	deviti	no	non accolta	
+1054	X	281	perifrastica	banchi_castagne	NUOVO	mercato_piazza_vittorio	imagined	deviti	no	non accolta	
+1055	X	281	perifrastica	—	SCARTATO	—	—	narrator	no	non accolta	
+1056	X	281	esplicita	provenza	NUOVO	gaz_provenza (da creare)	imported	deviti	no	non accolta	
+1057	X	281	esplicita	california	NUOVO	gaz_california (da creare)	imported	deviti	no	non accolta	
+1058	X	281	perifrastica	banchi_porchetta	NUOVO	mercato_piazza_vittorio	imagined	deviti	no	non accolta	
+1059	X	281	esplicita	mercati_e_fiere_generici	NUOVO	—	imagined	narrator	no	non accolta	
+1060	X	282	esplicita	banco_porchetta_lanciani	NUOVO	banchi_porchetta	imagined	ascanio_lanciani;deviti;nonna_lanciani	no	non accolta	
+1061	X	282	esplicita	rena_generica	NUOVO	—	imagined	narrator	no	non accolta	
+1062	X	282	deittica	banco_porchetta_lanciani	NUOVO	banchi_porchetta	imagined	deviti;ascanio_lanciani	no	non accolta	
+1063	X	282	esplicita	ariccia	ESISTENTE	gaz_ariccia	imported	ascanio_lanciani	no	non accolta	
+1064	X	282	perifrastica	—	SCARTATO	—	—	ascanio_lanciani	no	non accolta	
+1065	X	282	esplicita	macchia_di_galloro	NUOVO	gaz_galloro (da creare)	imported	ascanio_lanciani	no	non accolta	
+1066	X	282	esplicita	castelli_romani	NUOVO	gaz_castelli_romani (da creare)	imported	ascanio_lanciani	no	non accolta	
+1067	X	282	allusiva	marino	ESISTENTE	gaz_marino	imported	ascanio_lanciani	no	non accolta	
+1068	X	282	allusiva	albano_laziale	ESISTENTE	gaz_albano_laziale	imported	ascanio_lanciani	no	non accolta	
+1069	X	282	esplicita	levati_da_li_piedi	NUOVO	—	invented	ascanio_lanciani	no	non accolta	
+1070	X	282	esplicita	duomo_di_marino	NUOVO	marino	transformed	ascanio_lanciani	no	non accolta	
+1071	X	283	deittica	banco_porchetta_lanciani	NUOVO	banchi_porchetta	imagined	ascanio_lanciani	no	non accolta	
+1072	X	283	deittica	banco_porchetta_lanciani	NUOVO	banchi_porchetta	imagined	ascanio_lanciani	no	non accolta	
+1073	X	283	deittica	banco_porchetta_lanciani	NUOVO	banchi_porchetta	imagined	ascanio_lanciani;deviti	no	non accolta	
+1074	X	283	allusiva	teatro_generico	NUOVO	—	imagined	ascanio_lanciani	no	non accolta	
+1075	X	283	anaforica	banco_porchetta_lanciani	NUOVO	banchi_porchetta	imagined	nonna_lanciani	no	non accolta	
+1076	X	283	esplicita	—	SCARTATO	—	—	ascanio_lanciani	no	non accolta	
+1077	X	284	perifrastica	—	SCARTATO	—	—	narrator	no	non accolta	
+1078	X	284	esplicita	questura_roma	NUOVO	gaz_roma	transformed	deviti;ascanio_lanciani	no	non accolta	
+1079	X	284	perifrastica	santo_stefano_del_cacco_celio_santo_stefano	ESISTENTE	gaz_santo_stefano_del_cacco_celio_santo_stefano	imported	deviti;ascanio_lanciani	no	accolta	ref_00659
+1080	X	284	anaforica	questura_roma	NUOVO	gaz_roma	transformed	deviti;ascanio_lanciani;nonna_lanciani	no	accolta	ref_00660
+1081	X	284	perifrastica	banco_porchetta_lanciani	NUOVO	banchi_porchetta	imagined	nonna_lanciani	no	non accolta	
+1082	X	284	perifrastica	banco_porchetta_lanciani	NUOVO	banchi_porchetta	imagined	nonna_lanciani;deviti	no	non accolta	
+1083	X	284	perifrastica	casa_lanciani_via_popolonia	NUOVO	via_popolonia	imagined	nonna_lanciani;ascanio_lanciani	no	non accolta	
+1084	X	284	esplicita	grottaferrata	NUOVO	gaz_grottaferrata (da creare)	imported	nonna_lanciani;ascanio_lanciani	no	accolta	ref_00661
+1085	X	284	esplicita	torraccio	ESISTENTE	gaz_torraccio	imported	nonna_lanciani;ascanio_lanciani;enea_retalli	si	accolta	ref_00662
+1086	X	284	esplicita	frattocchie	ESISTENTE	gaz_frattocchie	imported	nonna_lanciani	no	accolta	ref_00663
+1087	X	284	esplicita	roma	ESISTENTE	gaz_roma	imported	nonna_lanciani;ascanio_lanciani	no	non accolta	
+1088	X	284	esplicita	porta_latina	ESISTENTE	gaz_porta_latina	imported	nonna_lanciani;ascanio_lanciani	no	accolta	ref_00664
+1089	X	284	esplicita	via_popolonia	ESISTENTE	gaz_via_populonia	imported	nonna_lanciani;ascanio_lanciani	no	accolta	ref_00665
+1090	X	285	esplicita	baracche_via_popolonia	NUOVO	via_popolonia	imagined	nonna_lanciani;ascanio_lanciani	no	non accolta	
+1091	X	285	deittica	casa_lanciani_via_popolonia	NUOVO	via_popolonia	imagined	nonna_lanciani;ascanio_lanciani	no	non accolta	
+1092	X	285	esplicita	ferrovia_porta_latina	NUOVO	gaz_roma	imported	nonna_lanciani	no	accolta	ref_00666
+1093	X	285	deittica	canneto_caffarella	NUOVO	marana_della_caffarella	imagined	nonna_lanciani	no	non accolta	
+1094	X	285	esplicita	marana_della_caffarella	NUOVO	gaz_via_della_caffarella	imported	nonna_lanciani	no	non accolta	
+1095	X	285	perifrastica	casa_lanciani_via_popolonia	NUOVO	via_popolonia	imagined	nonna_lanciani;ascanio_lanciani	no	non accolta	
+1096	X	285	esplicita	orti_via_popolonia	NUOVO	via_popolonia	imagined	nonna_lanciani	no	non accolta	
+1097	X	285	anaforica	casa_lanciani_via_popolonia	NUOVO	via_popolonia	imagined	ascanio_lanciani;nonna_lanciani	no	non accolta	
+1098	X	285	anaforica	piazza_vittorio_emanuele	ESISTENTE	gaz_piazza_vittorio_emanuele	imported	ascanio_lanciani;nonna_lanciani	no	non accolta	
+1099	X	285	deittica	mercato_piazza_vittorio	NUOVO	piazza_vittorio_emanuele	transformed	deviti	no	non accolta	
+1100	X	285	esplicita	banco_porchetta_lanciani	NUOVO	banchi_porchetta	imagined	ascanio_lanciani	no	non accolta	
+1101	X	285	deittica	piazza_vittorio_emanuele	ESISTENTE	gaz_piazza_vittorio_emanuele	imported	deviti	no	non accolta	
+1102	X	285	esplicita	via_mamiani	ESISTENTE	gaz_via_mamiani	imported	deviti;ascanio_lanciani	si	accolta	ref_00667
+1103	X	285	esplicita	via_ricasoli	ESISTENTE	gaz_via_ricasoli	imported	deviti;ascanio_lanciani	no	accolta	ref_00668
+1104	X	285	perifrastica	varco_mercato	NUOVO	mercato_piazza_vittorio	imagined	deviti;ascanio_lanciani	no	non accolta	
+1105	X	285	esplicita	banchi_pescheria	NUOVO	mercato_piazza_vittorio	imagined	deviti;ascanio_lanciani	no	non accolta	
+1106	X	285	esplicita	banchi_pollame	NUOVO	mercato_piazza_vittorio	imagined	deviti;ascanio_lanciani	no	non accolta	
+1107	X	285	perifrastica	mare_generico	NUOVO	—	imagined	narrator	no	non accolta	
+1108	X	285	esplicita	darsene_generiche	NUOVO	—	imagined	deviti;ascanio_lanciani	no	non accolta	
+1109	X	286	esplicita	banchi_macelleria	NUOVO	mercato_piazza_vittorio	imagined	deviti;ascanio_lanciani	no	non accolta	
+1110	X	286	esplicita	sorrento	NUOVO	gaz_sorrento (da creare)	imported	narrator	no	non accolta	
+1111	X	286	esplicita	vignanello	NUOVO	gaz_vignanello (da creare)	imported	narrator	no	non accolta	
+1112	X	286	allusiva	—	SCARTATO	—	—	narrator	no	non accolta	
+1113	X	286	allusiva	—	SCARTATO	—	—	narrator	no	non accolta	
+1114	X	286	esplicita	spacci_mercato	NUOVO	mercato_piazza_vittorio	imagined	narrator	no	non accolta	
+1115	X	286	perifrastica	—	SCARTATO	—	—	narrator	no	non accolta	
+1116	X	286	perifrastica	mercato_piazza_vittorio	NUOVO	piazza_vittorio_emanuele	transformed	narrator	no	non accolta	
+1117	X	286	perifrastica	casa_sora_margherita	NUOVO	gaz_roma	imagined	ingravallo	no	non accolta	
+1118	X	286	allusiva	pastarellaro_dirimpetto	NUOVO	casa_sora_margherita	imagined	narrator	no	non accolta	
+1119	X	286	allusiva	norcia	NUOVO	gaz_norcia (da creare)	imported	narrator	no	non accolta	
+1120	X	286	esplicita	santa_maria_della_neve	ESISTENTE	gaz_santa_maria_della_neve	imported	ingravallo	no	accolta	ref_00669
+1121	X	286	anaforica	camera_ingravallo	NUOVO	casa_sora_margherita	transformed	ingravallo	no	non accolta	
+1122	X	286	anaforica	casa_sora_margherita	NUOVO	gaz_roma	imagined	ingravallo;margherita_celli	no	non accolta	
+1123	X	287	perifrastica	camera_margherita_celli	NUOVO	casa_sora_margherita	transformed	margherita_celli;ingravallo	no	non accolta	
+1124	X	287	anaforica	camera_ingravallo	NUOVO	casa_sora_margherita	transformed	ingravallo	no	non accolta	
+1125	X	287	esplicita	camera_ingravallo	NUOVO	casa_sora_margherita	transformed	ingravallo	no	non accolta	
+1126	X	287	perifrastica	appartamento_piano_sotto	NUOVO	palazzo_ingravallo	imagined	ingravallo	no	non accolta	
+1127	X	287	anaforica	camera_ingravallo	NUOVO	casa_sora_margherita	transformed	ingravallo	no	non accolta	
+1128	X	287	perifrastica	—	SCARTATO	—	—	ingravallo	no	non accolta	
+1129	X	288	esplicita	bagno_casa_sora_margherita	NUOVO	casa_sora_margherita	transformed	ingravallo	si	non accolta	
+1130	X	288	deittica	bagno_casa_sora_margherita	NUOVO	casa_sora_margherita	transformed	ingravallo	no	non accolta	
+1131	X	288	esplicita	—	SCARTATO	—	—	ingravallo	no	non accolta	
+1132	X	288	anaforica	bagno_casa_sora_margherita	NUOVO	casa_sora_margherita	transformed	ingravallo	no	non accolta	
+1133	X	288	esplicita	—	SCARTATO	—	—	ingravallo	no	non accolta	
+1134	X	288	anaforica	bagno_casa_sora_margherita	NUOVO	casa_sora_margherita	transformed	ingravallo;margherita_celli	no	non accolta	
+1135	X	288	perifrastica	corridoio_casa_sora_margherita	NUOVO	casa_sora_margherita	transformed	margherita_celli;ingravallo	no	non accolta	
+1136	X	288	esplicita	corridoio_casa_sora_margherita	NUOVO	casa_sora_margherita	transformed	margherita_celli	no	non accolta	
+1137	X	288	esplicita	cucina_casa_sora_margherita	NUOVO	casa_sora_margherita	transformed	margherita_celli	si	non accolta	
+1138	X	289	anaforica	corridoio_casa_sora_margherita	NUOVO	casa_sora_margherita	transformed	margherita_celli	no	non accolta	
+1139	X	289	esplicita	casa_sora_margherita	NUOVO	gaz_roma	imagined	margherita_celli	no	non accolta	
+1140	X	289	allusiva	palazzo_ingravallo	NUOVO	gaz_roma	imagined	margherita_celli	no	non accolta	
+1141	X	289	esplicita	santo_stefano_del_cacco_celio_santo_stefano	ESISTENTE	gaz_santo_stefano_del_cacco_celio_santo_stefano	imported	ingravallo;margherita_celli	si	non accolta	
+1142	X	289	esplicita	santo_stefano_del_cacco_celio_santo_stefano	ESISTENTE	gaz_santo_stefano_del_cacco_celio_santo_stefano	imported	margherita_celli	no	non accolta	
+1143	X	289	anaforica	cucina_casa_sora_margherita	NUOVO	casa_sora_margherita	transformed	margherita_celli;ingravallo	no	non accolta	
+1144	X	289	esplicita	—	SCARTATO	—	—	margherita_celli	no	non accolta	
+1145	X	289	allusiva	—	SCARTATO	—	—	margherita_celli	no	non accolta	
+1146	X	290	perifrastica	ufficio_ingravallo	NUOVO	santo_stefano_del_cacco_celio_santo_stefano	transformed	ingravallo	no	non accolta	
+1147	X	290	allusiva	questura_roma	NUOVO	gaz_roma	transformed	ingravallo	no	non accolta	
+1148	X	290	allusiva	divisione_politica_questura	NUOVO	questura_roma	transformed	ingravallo	no	non accolta	
+1149	X	290	esplicita	—	SCARTATO	—	—	ingravallo	no	non accolta	
+1150	X	290	anaforica	bagno_casa_sora_margherita	NUOVO	casa_sora_margherita	transformed	margherita_celli;ingravallo	no	non accolta	
+1151	X	290	allusiva	—	SCARTATO	—	—	ingravallo	no	non accolta	
+1152	X	291	allusiva	questura_roma	NUOVO	gaz_roma	transformed	narrator	no	non accolta	
+1153	X	291	esplicita	olevano_romano	NUOVO	gaz_olevano_romano (da creare)	imported	narrator	no	non accolta	
+1154	X	291	allusiva	reggio_emilia	NUOVO	gaz_reggio_emilia (da creare)	imported	narrator	no	non accolta	
+1155	X	291	allusiva	roma	ESISTENTE	gaz_roma	imported	narrator	no	non accolta	
+1156	X	291	esplicita	—	SCARTATO	—	—	narrator	no	non accolta	
+1157	X	292	esplicita	pensione_burgess	ESISTENTE	gaz_pensione_burgess	imported	narrator	no	accolta	ref_00671
+1158	X	292	esplicita	piazza_vittorio_emanuele	ESISTENTE	gaz_piazza_vittorio_emanuele	imported	deviti	no	accolta	ref_00672
+1159	X	292	esplicita	benevento	NUOVO	gaz_benevento (da creare)	imported	ingravallo	no	accolta	ref_00670
+1160	X	292	esplicita	piazza_di_spagna	ESISTENTE	gaz_piazza_di_spagna	imported	narrator	no	accolta	ref_00673
+1161	X	292	perifrastica	fontana_della_barcaccia	NUOVO	piazza_di_spagna	transformed	narrator	no	non accolta	
+1162	X	292	esplicita	via_lanza	ESISTENTE	gaz_via_lanza	imported	ingravallo;maresciallo_di_pietrantonio;autista_questura	si	accolta	ref_00674
+1163	X	292	esplicita	marciapiede_via_lanza	NUOVO	via_lanza	transformed	narrator	no	non accolta	
+1164	X	292	esplicita	largo_brancaccio	ESISTENTE	gaz_largo_brancaccio	imported	ingravallo	no	accolta	ref_00675|ref_00678
+1165	X	292	esplicita	via_merulana	ESISTENTE	gaz_via_merulana	imported	ingravallo	no	accolta	ref_00676
+1166	X	292	esplicita	piazza_san_giovanni	ESISTENTE	gaz_piazza_san_giovanni	imported	ingravallo	no	accolta	ref_00677
+1167	X	292	esplicita	santa_maria_maggiore	ESISTENTE	gaz_santa_maria_maggiore	imported	ingravallo	no	accolta	ref_00679
+1168	X	292	perifrastica	loggia_santa_maria_maggiore	NUOVO	santa_maria_maggiore	transformed	narrator	no	non accolta	
+1169	X	292	esplicita	viminale	ESISTENTE	gaz_viminale	imported	narrator	no	accolta	ref_00680
+1170	X	292	perifrastica	via_merulana	ESISTENTE	gaz_via_merulana	imported	ingravallo	no	non accolta	
+1171	X	292	esplicita	campanile_santa_maria_maggiore	NUOVO	santa_maria_maggiore	transformed	ingravallo	no	non accolta	
+1172	X	292	esplicita	—	SCARTATO	—	—	ingravallo	no	non accolta	
+1173	X	293	esplicita	via_merulana	ESISTENTE	gaz_via_merulana	imported	ingravallo	no	accolta	ref_00681
+1174	X	293	perifrastica	linea_tranviaria_merulana	NUOVO	via_merulana	transformed	ingravallo	no	non accolta	
+1175	X	293	esplicita	campanile_santa_maria_maggiore	NUOVO	santa_maria_maggiore	transformed	ingravallo	no	non accolta	
+1176	X	293	perifrastica	cella_campanaria	NUOVO	campanile_santa_maria_maggiore	transformed	narrator	no	non accolta	
+1177	X	293	esplicita	tetti_case_esquilino	NUOVO	esquilino	imagined	narrator	no	non accolta	
+1178	X	293	deittica	scuola_generica	NUOVO	esquilino	imagined	narrator	no	non accolta	
+1179	X	293	anaforica	via_merulana	ESISTENTE	gaz_via_merulana	imported	ingravallo	no	non accolta	
+1180	X	293	perifrastica	—	SCARTATO	—	—	narrator	no	non accolta	
+1181	X	294	esplicita	scuola_generica	NUOVO	esquilino	imagined	narrator	no	non accolta	
+1182	X	294	perifrastica	aule_scuola_generica	NUOVO	scuola_generica	imagined	narrator	no	non accolta	
+1183	X	294	allusiva	aule_scuola_generica	NUOVO	scuola_generica	imagined	narrator	no	non accolta	
+1184	X	294	esplicita	marino	ESISTENTE	gaz_marino	imported	ingravallo;maresciallo_di_pietrantonio;autista_questura	si	accolta	ref_00682
+1185	X	294	esplicita	tenenza_carabinieri_marino	ESISTENTE	gaz_marino	transformed	ingravallo;autista_questura	no	accolta	ref_00683
+1186	X	294	esplicita	rocca_orsina	ESISTENTE	gaz_marino	imported	ingravallo;autista_questura	no	non accolta	
+1187	X	294	esplicita	—	SCARTATO	—	—	narrator	no	non accolta	
+1188	X	294	perifrastica	portone_rocca_marino	NUOVO	tenenza_carabinieri_marino	transformed	ingravallo;autista_questura	no	non accolta	
+1189	X	294	perifrastica	agro_romano	NUOVO	gaz_agro_romano (da creare)	imported	ingravallo;autista_questura	no	non accolta	
+1190	X	294	perifrastica	via_della_rocca_marino	NUOVO	marino	transformed	ingravallo;autista_questura	no	non accolta	
+1191	X	294	esplicita	muri_speronati_marino	NUOVO	via_della_rocca_marino	transformed	narrator	no	non accolta	
+1192	X	294	esplicita	via_dazeglio_marino	NUOVO	marino	imported	ingravallo	no	accolta	ref_00684
+1193	X	295	esplicita	due_santi	ESISTENTE	gaz_due_santi	imported	pestalozzi	no	accolta	ref_00685
+1194	X	295	perifrastica	laboratorio_zamira	ESISTENTE	gaz_due_santi	imagined	pestalozzi;zamira_pacori;santarella	no	non accolta	
+1195	X	295	perifrastica	agro_romano	NUOVO	gaz_agro_romano (da creare)	imported	santarella;enea_retalli	no	non accolta	
+1196	X	295	perifrastica	tenenza_carabinieri_marino	ESISTENTE	gaz_marino	transformed	santarella;enea_retalli	no	non accolta	
+1197	X	295	perifrastica	casa_crocchiapani	NUOVO	tor_di_gheppio	imagined	assunta;ingravallo	no	non accolta	
+1198	X	295	esplicita	tor_di_gheppio	NUOVO	gaz_tor_di_gheppio (da creare)	imported	assunta;ingravallo;santarella	no	accolta	ref_00686
+1199	X	295	perifrastica	tor_di_gheppio	NUOVO	gaz_tor_di_gheppio (da creare)	imported	ingravallo	no	non accolta	
+1200	X	295	deittica	tor_di_gheppio	NUOVO	gaz_tor_di_gheppio (da creare)	imported	ingravallo	no	non accolta	
+1201	X	296	deittica	agro_romano	NUOVO	gaz_agro_romano (da creare)	imported	ometto_guida	no	non accolta	
+1202	X	296	esplicita	cortile_rocca_marino	NUOVO	tenenza_carabinieri_marino	transformed	ingravallo;autista_questura	no	non accolta	
+1203	X	296	perifrastica	via_dazeglio_marino	NUOVO	marino	imported	ingravallo;autista_questura	no	accolta	ref_00687
+1204	X	296	esplicita	ponte_generico	NUOVO	—	imagined	ingravallo	no	non accolta	
+1205	X	296	esplicita	uliveti_castelli	NUOVO	colli_albani	imagined	narrator	no	non accolta	
+1206	X	296	esplicita	vigne_castelli	NUOVO	colli_albani	imagined	narrator	no	non accolta	
+1207	X	296	esplicita	dossi_clivi_castelli	NUOVO	colli_albani	imagined	narrator	no	non accolta	
+1208	X	296	esplicita	seminativi_castelli	NUOVO	colli_albani	imagined	narrator	no	non accolta	
+1209	X	296	esplicita	stalla_generica	NUOVO	—	imagined	narrator	no	non accolta	
+1210	X	296	esplicita	toronto	NUOVO	gaz_toronto (da creare)	imported	narrator	no	non accolta	
+1211	X	296	esplicita	canada	NUOVO	gaz_canada (da creare)	imported	narrator	no	non accolta	
+1212	X	296	allusiva	canada	NUOVO	gaz_canada (da creare)	imported	narrator	no	non accolta	
+1213	X	297	esplicita	torraccio	ESISTENTE	gaz_torraccio	imported	ingravallo;maresciallo_di_pietrantonio;ometto_guida;autista_questura	si	accolta	ref_00688
+1214	X	297	esplicita	via_appia	ESISTENTE	gaz_via_appia	imported	ingravallo;ometto_guida	no	accolta	ref_00689|ref_00691
+1215	X	297	esplicita	due_santi	ESISTENTE	gaz_due_santi	imported	ingravallo;pestalozzi	no	accolta	ref_00690
+1216	X	297	esplicita	roma	ESISTENTE	gaz_roma	imported	ingravallo	no	non accolta	
+1217	X	297	esplicita	strada_falcognana	NUOVO	gaz_falcognana (da creare)	imported	ingravallo;ometto_guida	no	non accolta	
+1218	X	297	esplicita	via_anziate	ESISTENTE	gaz_via_anziate	imported	ingravallo;ometto_guida	no	accolta	ref_00692
+1219	X	297	esplicita	via_anziate	ESISTENTE	gaz_via_anziate	imported	narrator	no	non accolta	
+1220	X	297	esplicita	albano_laziale	ESISTENTE	gaz_albano_laziale	imported	ometto_guida	no	non accolta	
+1221	X	297	esplicita	via_anziate	ESISTENTE	gaz_via_anziate	imported	ingravallo;ometto_guida	no	non accolta	
+1222	X	297	esplicita	santa_fumia	NUOVO	gaz_santa_fumia (da creare)	imported	ometto_guida;ingravallo	si	non accolta	
+1223	X	297	esplicita	ponte_santa_fumia	NUOVO	santa_fumia	transformed	ingravallo;ometto_guida	no	accolta	ref_00693|ref_00694
+1224	X	297	esplicita	casale_abbrusciato	NUOVO	gaz_casale_abbrusciato (da creare)	imported	ingravallo;ometto_guida	no	non accolta	
+1225	X	297	esplicita	casal_bruciato	ESISTENTE	gaz_casal_bruciato	imported	ingravallo;ometto_guida	no	accolta	ref_00695
+1226	X	297	esplicita	straducola_santa_fumia	NUOVO	santa_fumia	imagined	ingravallo;autista_questura	no	non accolta	
+1227	X	297	esplicita	straducola_santa_fumia	NUOVO	santa_fumia	imagined	narrator	no	non accolta	
+1228	X	297	perifrastica	agro_romano	NUOVO	gaz_agro_romano (da creare)	imported	narrator	no	non accolta	
+1229	X	297	esplicita	ferrovia_roma_velletri	NUOVO	gaz_ferrovia_roma_velletri (da creare)	imported	ingravallo;autista_questura	no	accolta	ref_00696
+1230	X	297	esplicita	passaggio_livello_santa_fumia	NUOVO	ferrovia_roma_velletri	transformed	ingravallo;autista_questura	no	non accolta	
+1231	X	297	esplicita	ponte_divino_amore	ESISTENTE	gaz_ponte_divino_amore	imported	narrator	no	accolta	ref_00697
+1232	X	297	esplicita	massicciata_ferroviaria	NUOVO	ferrovia_roma_velletri	transformed	narrator	no	non accolta	
+1233	X	297	anaforica	ferrovia_roma_velletri	NUOVO	gaz_ferrovia_roma_velletri (da creare)	imported	narrator	no	non accolta	
+1234	X	297	esplicita	speco_ferroviario	NUOVO	ferrovia_roma_velletri	imagined	narrator	no	non accolta	
+1235	X	298	perifrastica	antro_del_nero_personaggio	NUOVO	—	imagined	narrator	no	non accolta	
+1236	X	298	esplicita	agro_romano	NUOVO	gaz_agro_romano (da creare)	imported	narrator	no	non accolta	
+1237	X	298	deittica	tor_di_gheppio	NUOVO	gaz_tor_di_gheppio (da creare)	imported	ometto_guida;ingravallo	no	accolta	ref_00699|ref_00700
+1238	X	298	esplicita	masseria_del_palazzo	NUOVO	palazzo	transformed	ometto_guida	no	non accolta	
+1239	X	298	deittica	borgata_tor_di_gheppio	NUOVO	tor_di_gheppio	imagined	ometto_guida;assunta;ingravallo	no	non accolta	
+1240	X	298	perifrastica	maggesi_agro	NUOVO	agro_romano	imagined	narrator	no	non accolta	
+1241	X	298	perifrastica	torre_tor_di_gheppio	NUOVO	tor_di_gheppio	transformed	narrator	no	non accolta	
+1242	X	298	perifrastica	borgata_tor_di_gheppio	NUOVO	tor_di_gheppio	imagined	narrator	no	non accolta	
+1243	X	298	esplicita	coltivi_tor_di_gheppio	NUOVO	tor_di_gheppio	imagined	narrator	no	non accolta	
+1244	X	298	esplicita	pavona	ESISTENTE	gaz_pavona	imported	ingravallo;ometto_guida	no	non accolta	
+1245	X	298	deittica	stazione_pavona	NUOVO	pavona	transformed	ometto_guida;ingravallo	no	accolta	ref_00701|ref_00702
+1246	X	298	esplicita	prati_pavona	NUOVO	pavona	imagined	ometto_guida	si	non accolta	
+1247	X	298	esplicita	direttissima_roma_napoli	ESISTENTE	gaz_direttissima_roma_napoli	imported	ingravallo;ometto_guida	no	accolta	ref_00703
+1248	X	298	esplicita	casal_bruciato	ESISTENTE	gaz_casal_bruciato	imported	ometto_guida;ingravallo	si	accolta	ref_00704|ref_00705|ref_00706|ref_00707
+1249	X	298	esplicita	via_ardeatina	ESISTENTE	gaz_via_ardeatina	imported	ometto_guida	no	non accolta	
+1250	X	298	esplicita	ardea	NUOVO	gaz_ardea (da creare)	imported	ometto_guida	no	accolta	ref_00708
+1251	X	298	esplicita	santa_palomba	ESISTENTE	gaz_santa_palomba	imported	ometto_guida;ingravallo	no	accolta	ref_00709
+1252	X	298	perifrastica	pali_radio_santa_palomba	NUOVO	santa_palomba	transformed	ometto_guida	no	non accolta	
+1253	X	298	esplicita	solforata	ESISTENTE	gaz_solforata	imported	ometto_guida	no	non accolta	
+1254	X	298	esplicita	pratica_di_mare	ESISTENTE	gaz_pratica_di_mare	imported	ometto_guida	no	accolta	ref_00712
+1255	X	298	perifrastica	strada_solforata_pratica	NUOVO	gaz_solforata	imported	ometto_guida	no	non accolta	
+1256	X	298	esplicita	palazzo	ESISTENTE	gaz_palazzo	imported	ometto_guida;ingravallo	no	accolta	ref_00713
+1257	X	298	esplicita	tor_di_gheppio	NUOVO	gaz_tor_di_gheppio (da creare)	imported	ingravallo;ometto_guida	no	accolta	ref_00716
+1258	X	299	esplicita	sentiero_tor_di_gheppio	NUOVO	tor_di_gheppio	imagined	ingravallo;maresciallo_di_pietrantonio;agente_runzato	si	non accolta	
+1259	X	299	esplicita	borgata_tor_di_gheppio	NUOVO	tor_di_gheppio	imagined	ingravallo	no	non accolta	
+1260	X	299	esplicita	—	SCARTATO	—	—	assunta	no	non accolta	
+1261	X	299	esplicita	casa_crocchiapani	NUOVO	tor_di_gheppio	imagined	assunta;ingravallo;agente_runzato	no	accolta	ref_00717
+1262	X	299	esplicita	casa_crocchiapani	NUOVO	tor_di_gheppio	imagined	assunta	no	accolta	ref_00718
+1263	X	299	perifrastica	borgata_tor_di_gheppio	NUOVO	tor_di_gheppio	imagined	narrator	no	non accolta	
+1264	X	299	esplicita	soglia_casa_crocchiapani	NUOVO	casa_crocchiapani	transformed	narrator	no	non accolta	
+1265	X	299	perifrastica	lato_nord_casa_crocchiapani	NUOVO	casa_crocchiapani	transformed	ingravallo;maresciallo_di_pietrantonio	no	non accolta	
+1266	X	300	esplicita	—	SCARTATO	—	—	ingravallo	no	non accolta	
+1267	X	300	esplicita	tetto_casa_crocchiapani	NUOVO	casa_crocchiapani	transformed	ingravallo	no	non accolta	
+1268	X	300	anaforica	tetto_casa_crocchiapani	NUOVO	casa_crocchiapani	transformed	ingravallo	no	non accolta	
+1269	X	300	anaforica	tetto_casa_crocchiapani	NUOVO	casa_crocchiapani	transformed	ingravallo	no	non accolta	
+1270	X	300	esplicita	—	SCARTATO	—	—	narrator	no	non accolta	
+1271	X	300	perifrastica	andito_casa_crocchiapani	NUOVO	casa_crocchiapani	transformed	assunta;ingravallo	no	non accolta	
+1272	X	300	esplicita	tetto_casa_crocchiapani	NUOVO	casa_crocchiapani	transformed	ingravallo	no	non accolta	
+1273	X	300	esplicita	tetto_casa_crocchiapani	NUOVO	casa_crocchiapani	transformed	ingravallo	no	non accolta	
+1274	X	301	allusiva	colli_albani	ESISTENTE	gaz_colli_albani	imported	assunta	no	non accolta	
+1275	X	301	perifrastica	terzo_piano_219	ESISTENTE	palazzo_219	transformed	assunta;liliana;ingravallo	no	non accolta	
+1276	X	301	perifrastica	—	SCARTATO	—	—	liliana	no	non accolta	
+1277	X	301	esplicita	andito_casa_crocchiapani	NUOVO	casa_crocchiapani	transformed	assunta;ingravallo	no	non accolta	
+1278	X	301	anaforica	sentiero_tor_di_gheppio	NUOVO	tor_di_gheppio	imagined	agente_runzato;maresciallo_di_pietrantonio;assunta	no	non accolta	
+1279	X	301	perifrastica	casa_crocchiapani	NUOVO	tor_di_gheppio	imagined	ingravallo;assunta	no	non accolta	
+1280	X	301	deittica	andito_casa_crocchiapani	NUOVO	casa_crocchiapani	transformed	ingravallo;assunta	no	non accolta	
+1281	X	302	esplicita	tor_di_gheppio	NUOVO	gaz_tor_di_gheppio (da creare)	imported	veronica_migliarini;assunta	no	accolta	ref_00719
+1282	X	302	deittica	borgata_tor_di_gheppio	NUOVO	tor_di_gheppio	imagined	assunta;ingravallo	no	non accolta	
+1283	X	302	esplicita	casa_crocchiapani	NUOVO	tor_di_gheppio	imagined	ingravallo;assunta	no	accolta	ref_00720
+1284	X	302	esplicita	scala_casa_crocchiapani	NUOVO	casa_crocchiapani	transformed	ingravallo;assunta;maresciallo_di_pietrantonio	si	non accolta	
+1285	X	302	esplicita	casa_crocchiapani	NUOVO	tor_di_gheppio	imagined	agente_runzato;ometto_guida	no	non accolta	
+1286	X	302	esplicita	roma	ESISTENTE	gaz_roma	imported	assunta;ingravallo	si	non accolta	
+1287	X	302	allusiva	—	SCARTATO	—	—	assunta;liliana	no	non accolta	
+1288	X	302	esplicita	giungla_generica	NUOVO	—	imagined	ingravallo	no	non accolta	
+1289	X	302	esplicita	africa	NUOVO	gaz_africa (da creare)	imported	ingravallo	no	non accolta	
+1290	X	302	deittica	tor_di_gheppio	NUOVO	gaz_tor_di_gheppio (da creare)	imported	assunta;ingravallo	no	accolta	ref_00721
+1291	X	302	anaforica	scala_casa_crocchiapani	NUOVO	casa_crocchiapani	transformed	ingravallo;assunta;maresciallo_di_pietrantonio	no	non accolta	
+1292	X	303	esplicita	stanza_grande_casa_crocchiapani	NUOVO	casa_crocchiapani	transformed	ingravallo;assunta;maresciallo_di_pietrantonio;veronica_migliarini	no	non accolta	
+1293	X	303	deittica	stanza_grande_casa_crocchiapani	NUOVO	casa_crocchiapani	transformed	narrator	no	non accolta	
+1294	X	303	allusiva	—	SCARTATO	—	—	narrator	no	non accolta	
+1295	X	303	esplicita	museo_egizio	NUOVO	—	imagined	narrator	no	non accolta	
+1296	X	303	allusiva	egitto	NUOVO	gaz_egitto (da creare)	imported	narrator	no	non accolta	
+1297	X	303	esplicita	—	SCARTATO	—	—	narrator	no	non accolta	
+1298	X	303	anaforica	stanza_grande_casa_crocchiapani	NUOVO	casa_crocchiapani	transformed	veronica_migliarini	no	non accolta	
+1299	X	304	esplicita	selciato_ipotetico	NUOVO	tor_di_gheppio	imagined	ingravallo	no	non accolta	
+1300	X	304	allusiva	chiesa_generica	NUOVO	tor_di_gheppio	imagined	ingravallo	no	non accolta	
+1301	X	304	perifrastica	—	SCARTATO	—	—	narrator	no	non accolta	
+1302	X	304	esplicita	—	SCARTATO	—	—	ingravallo	no	non accolta	
+1303	X	305	perifrastica	—	SCARTATO	—	—	veronica_migliarini;narrator	no	non accolta	
+1304	X	305	allusiva	—	SCARTATO	—	—	veronica_migliarini	no	non accolta	
+1305	X	305	esplicita	clinica_generica	NUOVO	—	imagined	narrator	no	non accolta	
+1306	X	305	esplicita	stanza_grande_casa_crocchiapani	NUOVO	casa_crocchiapani	transformed	narrator	no	non accolta	
+1307	X	305	esplicita	—	SCARTATO	—	—	veronica_migliarini	no	non accolta	
+1308	X	306	deittica	casa_crocchiapani	NUOVO	tor_di_gheppio	imagined	assunta	no	non accolta	
+1309	X	306	allusiva	parrocchia_tor_di_gheppio	NUOVO	tor_di_gheppio	imagined	assunta	no	non accolta	
+1310	X	306	perifrastica	terzo_piano_219	ESISTENTE	palazzo_219	transformed	assunta;liliana	no	non accolta	
+1311	X	306	perifrastica	tenenza_carabinieri_marino	ESISTENTE	gaz_marino	transformed	ingravallo;assunta;pestalozzi	no	accolta	ref_00722
+1312	X	306	esplicita	marino	ESISTENTE	gaz_marino	imported	ingravallo;pestalozzi;assunta	no	non accolta	
+1313	X	306	deittica	—	SCARTATO	—	—	ingravallo;assunta	no	non accolta	
+1314	X	307	perifrastica	—	SCARTATO	—	—	assunta;ingravallo	no	non accolta	
+1315	X	307	deittica	stanza_grande_casa_crocchiapani	NUOVO	casa_crocchiapani	transformed	ingravallo;assunta	no	non accolta	

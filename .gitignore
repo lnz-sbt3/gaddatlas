@@ -30,3 +30,15 @@ data/dist/atlas.json
 
 # NOTA: _archivio/ NON e' ignorato. Il notebook Observable e' il prototipo
 # che la tesi documenta: fa parte del record scientifico e va versionato.
+
+# Output del pilota di riconoscimento automatico (docs/esperimenti/pilota/codice,
+# D-093): gli script scrivono con percorsi relativi in data/ e cache/ e i file
+# contengono righe del romanzo. Riservati: non entrano nella repository.
+# Solo questi percorsi, non data/ nel suo insieme.
+data/geocoded.json
+data/entities_merged.json
+data/ner_xlmr.json
+data/blocks.json
+data/atlante_pilot.geojson
+data/atlante_pilot.ttl
+cache/

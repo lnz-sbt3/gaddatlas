@@ -1896,6 +1896,37 @@ Non si modifica il criterio di inclusione per raggiungere artificialmente 59.
 
 ---
 
+## D-093 — `docs/esperimenti/`: materiali di verifica dell'Appendice A, senza testo del romanzo (16 ottobre 2026)
+
+- Requisito/i: R12, R21 · Ipotesi: — · Data check: DC-35 · Audit: `docs/alignment/AUDIT_3e.md` (fase 3e)
+- Stato precedente: l'Appendice A della tesi (*Cicli del dataset ed esperimenti di estrazione*, richiamata dal § 6.3) non aveva nella repository un supporto verificabile.
+- Decisione (di Lorenzo, 16/10/2026):
+  - **scopo:** la cartella `docs/esperimenti/` raccoglie i materiali di verifica dell'Appendice A. È documentazione: non tocca dati, ontologia, app, test né derivati;
+  - **contenuto** (dall'archivio `esperimenti_pkg.zip`, preparato e controllato fuori dalla repository, aggiunto senza modifiche):
+    - `README.md`: guida;
+    - `pilota/codice/`: `run_pipeline.py`, `07_geocode_nominatim.py`, `08_export_geojson_rdf.py`, cioè gli script del pilota di riconoscimento automatico (ottobre 2025): modello `Davlan/xlm-roberta-base-ner-hrl`, regole per odonimi e quartieri, geocodifica Nominatim, esportazione GeoJSON e RDF;
+    - `pilota/candidati.tsv` (31 candidati su QP 11–24, con giudizio e piano dell'errore), `pilota/occorrenze.tsv` (le 30 occorrenze del dataset in QP 11–24 con l'esito nel pilota), `pilota/geocodifiche.tsv`;
+    - `individuazione/protocollo.md` (ricostruzione del protocollo dell'individuazione assistita, capp. VI–X), `individuazione/proposte.tsv` (1.315 proposte, pp. 166–307, senza forme, estratti e note), `individuazione/riepilogo.tsv`;
+    - `confronto/confronta.py`: confronto fra proposte e occorrenze;
+  - **che cosa resta riservato e perché:** il testo per righe delle pagine elaborate dal pilota (`blocks.json`), gli altri suoi output con righe di testo (`entities_merged.json`, `ner_xlmr.json`, `atlante_pilot.geojson`, `atlante_pilot.ttl`, la cache di geocodifica) e i fogli `.xlsx` dell'individuazione assistita con forme, estratti e note. Contengono testo del romanzo, protetto fino al 31/12/2043: l'autore li conserva come materiale di lavoro secondo le condizioni dell'art. 70-ter L. 633/1941 (§ 6.2 della tesi; PARTII-ARCH-13), e non si pubblicano. `confronta.py` li legge da `ESTRAZIONE_DIR`, quindi non è riproducibile dalla sola repository: le tabelle pubblicate ne sono l'esito;
+  - **fine riga:** `.gitattributes` impone `* text=auto eol=lf`. Sei file dell'archivio avevano a capo CRLF e sono stati normalizzati a LF: i tre script del pilota, `individuazione/proposte.tsv`, `individuazione/riepilogo.tsv` e `pilota/geocodifiche.tsv`. Differiscono dall'archivio **solo per gli a capo**: tolti i CR, il contenuto è identico, verificato file per file con l'impronta SHA-1. Gli altri cinque file sono identici al byte. L'approvazione riguardava i tre script; l'audit, che aveva controllato solo i `.py`, è stato corretto;
+  - **`.gitignore`:** gli script del pilota scrivono con percorsi relativi in `data/` e `cache/`, e i loro output contengono righe del romanzo. Sono ignorati i singoli percorsi `data/geocoded.json`, `data/entities_merged.json`, `data/ner_xlmr.json`, `data/blocks.json`, `data/atlante_pilot.geojson`, `data/atlante_pilot.ttl` e `cache/`, non `data/` nel suo insieme. Nessun file già tracciato risulta escluso (`git ls-files -ci --exclude-standard`: 0). `CLAUDE.md` avverte di non eseguire gli script dalla radice;
+  - **rinvii:** `README.md` (struttura del repository), `CLAUDE.md` (vincolo «Estratti gaddiani»), `NOTICE-EXCERPTS.md` (la cartella non contiene estratti);
+  - **`NOTICE-EXCERPTS.md`, conteggi corretti:** «722 estratti brevi» diventa «738 estratti brevi (le occorrenze del testimone di riferimento, QP Adelphi 2018)». Sui file attuali dei brani (`data/dist/passages/ch01–ch10.json`, 738 brani) l'estratto mediano è **23,5 parole (140 caratteri)**, non 24 (141), e il massimo resta **93 parole** (573 caratteri).
+- **Controllo del testo protetto (A1).** Per i 744 estratti di `References.tsv`, tutte le sequenze di 6 parole consecutive (9.335), normalizzate per maiuscole, apostrofi e punteggiatura, cercate in tutti gli 11 file: **nessuna corrispondenza**, sia sull'archivio sia sulla copia nella repository. Il rilevatore, provato su un file con un estratto vero alterato in maiuscole, apostrofo e punteggiatura, lo riconosce. I campi TSV oltre i 120 caratteri sono 4, tutti indirizzi di Nominatim in `pilota/geocodifiche.tsv`.
+- **Coerenza con il dataset (A2).** I 360 identificatori `ref_…` del pacchetto esistono tutti su `main` (`978afb9`) e sono occorrenze di QPa. Le pagine coincidono con `Source_Reference`, tranne 14 abbinamenti di `proposte.tsv` a ±1 pagina, conformi al criterio «stessa pagina ±1» del confronto. Il pilota copre esattamente le 30 occorrenze QPa delle pp. 11–24.
+- **Codice (A3).** Nessuna credenziale, e-mail o percorso personale. Il namespace del pilota `https://atlantegadda.org/id/` è storico (precede D-008 e D-013) e non è stato cambiato; anche lo User-Agent delle richieste a Nominatim, senza recapito, è storico.
+- **Zagarolo (DC-35, aperta).** Il pilota riconosce «Zagarolo» a QP 20 («da verificare», nessuna occorrenza abbinata). Il luogo esiste nel dataset con occorrenze a partire da QPa 108, ma a p. 20 non ne ha. Lorenzo verifica sul volume se il passo andava annotato secondo la soglia di D-091.
+- Alternative scartate: un'eccezione `-text` in `.gitattributes` per conservare i CRLF; ignorare `data/` nel suo insieme.
+- Fase in cui è maturata: revisione critica (documentazione dell'Appendice A)
+- File toccati (manifest):
+  - aggiunti: `docs/esperimenti/` (11 file);
+  - `.gitignore` r. 33–44; `CLAUDE.md` r. 23, 25, 285–290; `NOTICE-EXCERPTS.md` r. 3, 6–7, 24; `README.md` r. 57–58; `docs/thesis/DATA_CHECKS_GaddAtlas.md` r. 3, 76 (DC-35), 162–168 (§ H);
+  - `docs/alignment/AUDIT_3e.md` (nuovo); `docs/DECISIONS.md` (questa voce).
+- Effetto su KG: nessuno. `make all && make audit && make shacl`: derivati invariati, 45.624 triple, SHACL conforme, audit superato.
+
+---
+
 ## Voci da compilare durante lo sviluppo
 
 - criterio di attribuzione della tessera propria ai `NarrativePlace`
