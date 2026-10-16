@@ -1,0 +1,32 @@
+pagina	forma	origine	giudizio	piano_errore	occorrenza_abbinata	esito_geocodifica
+11	Italia	modello	falso positivo	criterio (uso figurato)	—	sede di una società, via Monte Zebio
+12	Roma	modello	falso positivo	criterio (nessuna funzione)	—	Roma
+12	stra	modello	falso positivo	riconoscimento	—	—
+14	Sant’Eleuterio	modello	falso positivo	riconoscimento (santo)	—	piazzale a Velletri
+14	Re	modello	falso positivo	riconoscimento	—	basilica di Cristo Re
+14	San	modello	frammento	riconoscimento	ref_00002 (San Martino ai Monti)	ambasciata di Germania
+14	Monti	regola (quartiere)	frammento	riconoscimento	ref_00002 (San Martino ai Monti)	rione Monti
+14	Santo Stefano del Cacco	modello	corretto	—	ref_00004	chiesa di Santo Stefano del Cacco
+15	Cen	modello	falso positivo	riconoscimento	—	—
+15	Ventimiglia	modello	falso positivo	criterio (iperbole)	—	viale Ventimiglia, Roma (omonimo)
+15	Capo Lilibeo	modello	falso positivo	criterio (iperbole)	—	—
+15	San Fran-	modello	falso positivo	riconoscimento	—	—
+16	Vicenza	modello	corretto	—	ref_00006	via Vicenza, Roma (omonimo)
+17	Agone	modello	frammento	riconoscimento	ref_00018 (Sant’Agnese in Agone)	via di Sant’Agnese in Agone
+17	Santa Maria	modello	frammento	riconoscimento	ref_00019 (Santa Maria in Porta Paradisi)	esercizio commerciale, via Gioberti
+17	Porta Paradisi	modello	corretto	—	ref_00019	Santa Maria in Porta Paradisi
+17	Candelora	modello	falso positivo	riconoscimento (ricorrenza)	—	—
+20	Pic	modello	frammento	riconoscimento	ref_00015 (Piceno)	area di sosta, via Pontina
+20	San	modello	frammento	riconoscimento	ref_00016 (Sannio)	ambasciata di Germania
+20	terbo	modello	falso positivo	riconoscimento	—	—
+20	Zagarolo	modello	da verificare	—	assente dal dataset	Zagarolo
+21	sant’Antonio	modello	falso positivo	riconoscimento (santo)	—	esercizio commerciale, Cerveteri
+21	Roma	modello	falso positivo	criterio (nessuna funzione)	—	Roma
+21	Monte	modello	frammento	riconoscimento	ref_00023 (Monteleone)	località Monte, Ciciliano
+21	Anzio	modello	corretto	—	ref_00024	Anzio
+21	Tevere	modello	corretto	—	ref_00025	fiume Tevere, Fiumicino
+21	Italia	modello	falso positivo	criterio (uso figurato)	—	sede di una società, via Monte Zebio
+22	via Merulana 219	modello	corretto	—	ref_00026, ref_00027	via Merulana 219
+22	Milano	modello	falso positivo	criterio (nessuna funzione)	—	via Milano, Roma (omonimo)
+22	via delle Oche	modello	corretto	—	ref_00028	nessun risultato
+24	Roma	modello	falso positivo	criterio (nessuna funzione)	—	Roma

@@ -1,0 +1,16 @@
+dimensione	valore	proposte	accolte	percentuale
+capitolo	VI	60	13	21.7
+capitolo	VII	319	65	20.4
+capitolo	VIII	301	56	18.6
+capitolo	IX	329	63	19.1
+capitolo	X	306	63	20.6
+modalita	perifrastica	410	34	8.3
+modalita	esplicita	521	200	38.4
+modalita	allusiva	165	7	4.2
+modalita	anaforica	128	12	9.4
+modalita	deittica	91	7	7.7
+stato_proposto	NUOVO	813	88	10.8
+stato_proposto	ESISTENTE	327	171	52.3
+stato_proposto	SCARTATO	172	0	0.0
+stato_proposto	ESISTENTE/NUOVO	3	1	33.3
+occorrenze_dataset	pagine_conservate	333	315	94.6

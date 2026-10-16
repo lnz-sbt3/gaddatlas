@@ -1,7 +1,9 @@
 # Avvertenza sugli estratti testuali
 
-La cartella `data/dist/passages/` contiene 722 estratti brevi da *Quer
+La cartella `data/dist/passages/` contiene 738 estratti brevi (le occorrenze del testimone di riferimento, QP Adelphi 2018) da *Quer
 pasticciaccio brutto de via Merulana* di Carlo Emilio Gadda.
+
+La cartella `docs/esperimenti/` (materiali di verifica dell'Appendice A della tesi) non contiene estratti del romanzo: solo numeri di pagina, forme brevi, identificatori delle occorrenze e giudizi. Il controllo è registrato in D-093.
 
 ## Regime giuridico
 
@@ -19,7 +21,7 @@ costituiscano concorrenza all'utilizzazione economica dell'opera».
 
 Questi vincoli sono parte del design, non raccomandazioni:
 
-1. **Brevità.** Estratto mediano: 24 parole (141 caratteri). Massimo nel
+1. **Brevità.** Estratto mediano: 23,5 parole (140 caratteri). Massimo nel
    dataset: 93 parole. Lo script `tools/build_passages.py` applica un tetto
    di 700 caratteri per riferimento.
 2. **Frammentarietà.** I brani sono non contigui e legati ciascuno a un

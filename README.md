@@ -54,7 +54,8 @@ gaddatlas/
 ├── tools/                         ETL, build, audit, migrazione namespace
 ├── w3id/                          configurazione dei redirect w3id.org
 ├── docs/DECISIONS.md              registro delle decisioni
-└── docs/EXCLUSIONS.md             esclusioni dichiarate e copertura parziale (R12)
+├── docs/EXCLUSIONS.md             esclusioni dichiarate e copertura parziale (R12)
+└── docs/esperimenti/              esperimenti di estrazione: materiali di verifica dell'Appendice A, senza testo del romanzo
 ```
 
 ### Il principio architetturale
