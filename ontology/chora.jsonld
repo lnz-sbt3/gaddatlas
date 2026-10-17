@@ -278,9 +278,6 @@
           "@id": "chora:LocationAssertion"
         },
         {
-          "@id": "chora:MemoryAssertion"
-        },
-        {
           "@id": "chora:NamingAssertion"
         },
         {
@@ -335,31 +332,6 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "Attribution role"
-      }
-    },
-    {
-      "@id": "chora:AuthorMemory",
-      "@type": [
-        "owl:NamedIndividual",
-        "skos:Concept"
-      ],
-      "skos:altLabel": {
-        "@language": "it",
-        "@value": "memoria dell'autore"
-      },
-      "skos:definition": {
-        "@language": "en",
-        "@value": "The remembered space belongs to the author's memory."
-      },
-      "skos:inScheme": {
-        "@id": "chora:MemoryAttributionScheme"
-      },
-      "skos:prefLabel": {
-        "@language": "en",
-        "@value": "Author's memory"
-      },
-      "skos:topConceptOf": {
-        "@id": "chora:MemoryAttributionScheme"
       }
     },
     {
@@ -455,31 +427,6 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "Character"
-      }
-    },
-    {
-      "@id": "chora:CharacterMemory",
-      "@type": [
-        "owl:NamedIndividual",
-        "skos:Concept"
-      ],
-      "skos:altLabel": {
-        "@language": "it",
-        "@value": "memoria del personaggio"
-      },
-      "skos:definition": {
-        "@language": "en",
-        "@value": "The remembered space belongs to the character's memory."
-      },
-      "skos:inScheme": {
-        "@id": "chora:MemoryAttributionScheme"
-      },
-      "skos:prefLabel": {
-        "@language": "en",
-        "@value": "Character's memory"
-      },
-      "skos:topConceptOf": {
-        "@id": "chora:MemoryAttributionScheme"
       }
     },
     {
@@ -912,10 +859,16 @@
     {
       "@id": "chora:FocalizingAgent",
       "@type": "owl:Class",
-      "rdfs:comment": {
-        "@language": "it",
-        "@value": "Entità attraverso cui lo spazio è percepito/descritto"
-      },
+      "rdfs:comment": [
+        {
+          "@language": "en",
+          "@value": "The agent to whom the place belongs at that point of the narrative (who lives in it, acts in it, remembers it or is implicated in it), regardless of who utters the mention."
+        },
+        {
+          "@language": "it",
+          "@value": "L'agente a cui il luogo appartiene in quel punto del racconto (che vi abita, vi agisce, lo ricorda o vi è implicato), a prescindere da chi pronunci la menzione."
+        }
+      ],
       "skos:altLabel": {
         "@language": "it",
         "@value": "Agente Focalizzatore"
@@ -1462,66 +1415,6 @@
       },
       "skos:topConceptOf": {
         "@id": "chora:NarrativeRoleScheme"
-      }
-    },
-    {
-      "@id": "chora:MemoryAssertion",
-      "@type": [
-        "hico:InterpretationType",
-        "owl:NamedIndividual",
-        "skos:Concept"
-      ],
-      "chora:reifiesProperty": {
-        "@id": "chora:memoryAttribution"
-      },
-      "skos:altLabel": {
-        "@language": "it",
-        "@value": "memoria"
-      },
-      "skos:definition": {
-        "@language": "en",
-        "@value": "Attributes a remembered or projected space to the author, to a character, or declares it undecidable."
-      },
-      "skos:inScheme": {
-        "@id": "chora:AssertionTypeScheme"
-      },
-      "skos:notation": "memory",
-      "skos:prefLabel": {
-        "@language": "en",
-        "@value": "Memory assertion"
-      },
-      "skos:topConceptOf": {
-        "@id": "chora:AssertionTypeScheme"
-      }
-    },
-    {
-      "@id": "chora:MemoryAttributionScheme",
-      "@type": [
-        "owl:NamedIndividual",
-        "skos:ConceptScheme"
-      ],
-      "rdfs:label": {
-        "@language": "en",
-        "@value": "Memory attribution"
-      },
-      "skos:altLabel": {
-        "@language": "it",
-        "@value": "Attribuzione della memoria"
-      },
-      "skos:hasTopConcept": [
-        {
-          "@id": "chora:AuthorMemory"
-        },
-        {
-          "@id": "chora:CharacterMemory"
-        },
-        {
-          "@id": "chora:UndecidableMemory"
-        }
-      ],
-      "skos:prefLabel": {
-        "@language": "en",
-        "@value": "Memory attribution"
       }
     },
     {
@@ -3090,35 +2983,6 @@
       }
     },
     {
-      "@id": "chora:UndecidableMemory",
-      "@type": [
-        "owl:NamedIndividual",
-        "skos:Concept"
-      ],
-      "skos:altLabel": {
-        "@language": "it",
-        "@value": "attribuzione indecidibile"
-      },
-      "skos:definition": {
-        "@language": "en",
-        "@value": "The text does not allow the memory to be attributed to author or character."
-      },
-      "skos:inScheme": {
-        "@id": "chora:MemoryAttributionScheme"
-      },
-      "skos:prefLabel": {
-        "@language": "en",
-        "@value": "Undecidable"
-      },
-      "skos:scopeNote": {
-        "@language": "en",
-        "@value": "A reading that superimposes the two memories asserts both AuthorMemory and CharacterMemory."
-      },
-      "skos:topConceptOf": {
-        "@id": "chora:MemoryAttributionScheme"
-      }
-    },
-    {
       "@id": "chora:Vagueness",
       "@type": [
         "owl:NamedIndividual",
@@ -3781,10 +3645,16 @@
     {
       "@id": "chora:hasFocalizer",
       "@type": "owl:ObjectProperty",
-      "rdfs:comment": {
-        "@language": "it",
-        "@value": "Collega una SpatialInterpretation all'agente attraverso cui lo spazio è percepito; la coppia luogo×focalizzatore è l'unità base del dataset."
-      },
+      "rdfs:comment": [
+        {
+          "@language": "en",
+          "@value": "Links a SpatialInterpretation to its focalizer: the agent to whom the place belongs at that point of the narrative (who lives in it, acts in it, remembers it or is implicated in it), regardless of who utters the mention. The place × focalizer pair is the basic unit of the dataset."
+        },
+        {
+          "@language": "it",
+          "@value": "Collega una SpatialInterpretation al suo focalizzatore: l'agente a cui il luogo appartiene in quel punto del racconto (che vi abita, vi agisce, lo ricorda o vi è implicato), a prescindere da chi pronunci la menzione. La coppia luogo × focalizzatore è l'unità base del dataset."
+        }
+      ],
       "rdfs:domain": {
         "@id": "chora:SpatialInterpretation"
       },
@@ -3855,28 +3725,6 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "has interpretation"
-      }
-    },
-    {
-      "@id": "chora:hasNarratingVoice",
-      "@type": "owl:ObjectProperty",
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "The voice that utters the passage of a spatial interpretation (who speaks), distinct from the focalizer (who perceives). Annotated only where a critical source discusses it; an interpretation without this property is «not annotated», which does not mean that voice and focalizer coincide."
-      },
-      "rdfs:domain": {
-        "@id": "chora:SpatialInterpretation"
-      },
-      "rdfs:range": {
-        "@id": "chora:FocalizingAgent"
-      },
-      "skos:altLabel": {
-        "@language": "it",
-        "@value": "ha voce narrante"
-      },
-      "skos:prefLabel": {
-        "@language": "en",
-        "@value": "has narrating voice"
       }
     },
     {
@@ -4310,31 +4158,6 @@
       "skos:prefLabel": {
         "@language": "en",
         "@value": "localization status"
-      }
-    },
-    {
-      "@id": "chora:memoryAttribution",
-      "@type": "owl:ObjectProperty",
-      "dcterms:references": {
-        "@id": "chora:MemoryAttributionScheme"
-      },
-      "rdfs:comment": {
-        "@language": "en",
-        "@value": "Whose memory a remembered space belongs to, for an occurrence."
-      },
-      "rdfs:domain": {
-        "@id": "chora:PlaceReference"
-      },
-      "rdfs:range": {
-        "@id": "skos:Concept"
-      },
-      "skos:altLabel": {
-        "@language": "it",
-        "@value": "attribuzione della memoria"
-      },
-      "skos:prefLabel": {
-        "@language": "en",
-        "@value": "memory attribution"
       }
     },
     {

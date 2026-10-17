@@ -289,7 +289,8 @@ chora:groundedIn a owl:ObjectProperty ;
     skos:prefLabel "grounded in"@en .
 
 chora:hasFocalizer a owl:ObjectProperty ;
-    rdfs:comment "Collega una SpatialInterpretation all'agente attraverso cui lo spazio è percepito; la coppia luogo×focalizzatore è l'unità base del dataset."@it ;
+    rdfs:comment "Links a SpatialInterpretation to its focalizer: the agent to whom the place belongs at that point of the narrative (who lives in it, acts in it, remembers it or is implicated in it), regardless of who utters the mention. The place × focalizer pair is the basic unit of the dataset."@en,
+        "Collega una SpatialInterpretation al suo focalizzatore: l'agente a cui il luogo appartiene in quel punto del racconto (che vi abita, vi agisce, lo ricorda o vi è implicato), a prescindere da chi pronunci la menzione. La coppia luogo × focalizzatore è l'unità base del dataset."@it ;
     rdfs:domain chora:SpatialInterpretation ;
     rdfs:range chora:FocalizingAgent ;
     skos:altLabel "ha focalizzatore"@it ;
@@ -313,13 +314,6 @@ chora:hasInterpretation a owl:ObjectProperty ;
     rdfs:range chora:SpatialInterpretation ;
     owl:inverseOf chora:interpretsReference ;
     skos:prefLabel "has interpretation"@en .
-
-chora:hasNarratingVoice a owl:ObjectProperty ;
-    rdfs:comment "The voice that utters the passage of a spatial interpretation (who speaks), distinct from the focalizer (who perceives). Annotated only where a critical source discusses it; an interpretation without this property is «not annotated», which does not mean that voice and focalizer coincide."@en ;
-    rdfs:domain chora:SpatialInterpretation ;
-    rdfs:range chora:FocalizingAgent ;
-    skos:altLabel "ha voce narrante"@it ;
-    skos:prefLabel "has narrating voice"@en .
 
 chora:hasPlaceCategory a owl:ObjectProperty ;
     dcterms:references chora:PlaceCategoryScheme ;
@@ -599,6 +593,24 @@ chora:witnessType a owl:ObjectProperty ;
     rdfs:range skos:Concept ;
     skos:altLabel "tipo di testimone"@it ;
     skos:prefLabel "witness type"@en .
+
+<https://w3id.org/gaddatlas/id/agent/cortellessa> a prov:Agent,
+        prov:Person,
+        chora:Scholar ;
+    rdfs:comment "Archeologia con pescecane (Cortellessa 2023)"@it ;
+    schema:name "Andrea Cortellessa" .
+
+<https://w3id.org/gaddatlas/id/agent/lugnani> a prov:Agent,
+        prov:Person,
+        chora:Scholar ;
+    rdfs:comment "Citato in Perosa 2023a, p. 104, n. 97"@it ;
+    schema:name "Lucio Lugnani" .
+
+<https://w3id.org/gaddatlas/id/agent/perosa> a prov:Agent,
+        prov:Person,
+        chora:Scholar ;
+    rdfs:comment "Gadda e il paesaggio (Perosa 2023a)"@it ;
+    schema:name "Giulia Perosa" .
 
 <https://w3id.org/gaddatlas/id/assertion/A-0001> a chora:Assertion ;
     rdfs:comment "Sostituisce owl:sameAs gaz_castello <-> gaz_castel_gandolfo (D-044)"@it ;
@@ -931,62 +943,6 @@ chora:witnessType a owl:ObjectProperty ;
     chora:adoptedByProject false ;
     chora:assertsValue <https://w3id.org/gaddatlas/id/geometry/L-0002> ;
     chora:reviewStatus chora:Validated .
-
-<https://w3id.org/gaddatlas/id/assertion/M-0001> a chora:Assertion ;
-    rdfs:comment "Cap. 4, § 4.3: le tre letture convivono, nessuna è adottata dal progetto."@it ;
-    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/perosa> ;
-    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/M-0001> ;
-    chora:aboutSubject <https://w3id.org/gaddatlas/id/reference/ref_00144> ;
-    chora:adoptedByProject false ;
-    chora:assertsValue chora:AuthorMemory ;
-    chora:reviewStatus chora:Draft .
-
-<https://w3id.org/gaddatlas/id/assertion/M-0002> a chora:Assertion ;
-    rdfs:comment "Cap. 4, § 4.3: le tre letture convivono, nessuna è adottata dal progetto. Lugnani 2001, cit. in Perosa 2023a, p. 104, n. 97."@it ;
-    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/lugnani> ;
-    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/M-0002> ;
-    chora:aboutSubject <https://w3id.org/gaddatlas/id/reference/ref_00144> ;
-    chora:adoptedByProject false ;
-    chora:assertsValue chora:CharacterMemory ;
-    chora:reviewStatus chora:Draft .
-
-<https://w3id.org/gaddatlas/id/assertion/M-0003> a chora:Assertion ;
-    rdfs:comment "Cap. 4, § 4.3: le tre letture convivono, nessuna è adottata dal progetto."@it ;
-    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/cortellessa> ;
-    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/M-0003> ;
-    chora:aboutSubject <https://w3id.org/gaddatlas/id/reference/ref_00144> ;
-    chora:adoptedByProject false ;
-    chora:assertsValue chora:AuthorMemory,
-        chora:CharacterMemory ;
-    chora:reviewStatus chora:Draft .
-
-<https://w3id.org/gaddatlas/id/assertion/M-0004> a chora:Assertion ;
-    rdfs:comment "Cap. 4, § 4.3: le tre letture convivono, nessuna è adottata dal progetto."@it ;
-    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/perosa> ;
-    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/M-0004> ;
-    chora:aboutSubject <https://w3id.org/gaddatlas/id/reference/ref_00145> ;
-    chora:adoptedByProject false ;
-    chora:assertsValue chora:AuthorMemory ;
-    chora:reviewStatus chora:Draft .
-
-<https://w3id.org/gaddatlas/id/assertion/M-0005> a chora:Assertion ;
-    rdfs:comment "Cap. 4, § 4.3: le tre letture convivono, nessuna è adottata dal progetto. Lugnani 2001, cit. in Perosa 2023a, p. 104, n. 97."@it ;
-    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/lugnani> ;
-    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/M-0005> ;
-    chora:aboutSubject <https://w3id.org/gaddatlas/id/reference/ref_00145> ;
-    chora:adoptedByProject false ;
-    chora:assertsValue chora:CharacterMemory ;
-    chora:reviewStatus chora:Draft .
-
-<https://w3id.org/gaddatlas/id/assertion/M-0006> a chora:Assertion ;
-    rdfs:comment "Cap. 4, § 4.3: le tre letture convivono, nessuna è adottata dal progetto."@it ;
-    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/agent/cortellessa> ;
-    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/M-0006> ;
-    chora:aboutSubject <https://w3id.org/gaddatlas/id/reference/ref_00145> ;
-    chora:adoptedByProject false ;
-    chora:assertsValue chora:AuthorMemory,
-        chora:CharacterMemory ;
-    chora:reviewStatus chora:Draft .
 
 <https://w3id.org/gaddatlas/id/assertion/N-0001> a chora:Assertion ;
     rdfs:comment "Loci critici (D-087)."@it ;
@@ -5578,48 +5534,6 @@ chora:witnessType a owl:ObjectProperty ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:wasInformedBy <https://w3id.org/gaddatlas/id/act/L-0002> .
 
-<https://w3id.org/gaddatlas/id/encoding/M-0001> a chora:EncodingActivity ;
-    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/M-0001-encoder-lorenzo_sabatino> ;
-    prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
-    prov:used <https://w3id.org/gaddatlas/id/source/perosa_2023a> ;
-    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:wasInformedBy <https://w3id.org/gaddatlas/id/act/M-0001> .
-
-<https://w3id.org/gaddatlas/id/encoding/M-0002> a chora:EncodingActivity ;
-    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/M-0002-encoder-lorenzo_sabatino> ;
-    prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
-    prov:used <https://w3id.org/gaddatlas/id/source/perosa_2023a> ;
-    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:wasInformedBy <https://w3id.org/gaddatlas/id/act/M-0002> .
-
-<https://w3id.org/gaddatlas/id/encoding/M-0003> a chora:EncodingActivity ;
-    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/M-0003-encoder-lorenzo_sabatino> ;
-    prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
-    prov:used <https://w3id.org/gaddatlas/id/source/cortellessa_2023> ;
-    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:wasInformedBy <https://w3id.org/gaddatlas/id/act/M-0003> .
-
-<https://w3id.org/gaddatlas/id/encoding/M-0004> a chora:EncodingActivity ;
-    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/M-0004-encoder-lorenzo_sabatino> ;
-    prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
-    prov:used <https://w3id.org/gaddatlas/id/source/perosa_2023a> ;
-    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:wasInformedBy <https://w3id.org/gaddatlas/id/act/M-0004> .
-
-<https://w3id.org/gaddatlas/id/encoding/M-0005> a chora:EncodingActivity ;
-    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/M-0005-encoder-lorenzo_sabatino> ;
-    prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
-    prov:used <https://w3id.org/gaddatlas/id/source/perosa_2023a> ;
-    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:wasInformedBy <https://w3id.org/gaddatlas/id/act/M-0005> .
-
-<https://w3id.org/gaddatlas/id/encoding/M-0006> a chora:EncodingActivity ;
-    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/M-0006-encoder-lorenzo_sabatino> ;
-    prov:startedAtTime "2026-10-09T00:00:00"^^xsd:dateTime ;
-    prov:used <https://w3id.org/gaddatlas/id/source/cortellessa_2023> ;
-    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:wasInformedBy <https://w3id.org/gaddatlas/id/act/M-0006> .
-
 <https://w3id.org/gaddatlas/id/encoding/N-0001> a chora:EncodingActivity ;
     prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/N-0001-encoder-lorenzo_sabatino> ;
     prov:startedAtTime "2026-10-10T00:00:00"^^xsd:dateTime ;
@@ -8512,7 +8426,6 @@ chora:witnessType a owl:ObjectProperty ;
     chora:assignsNarrativeRole chora:ProjectedSpace ;
     chora:assignsSpatialDetermination chora:Relative ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/ingravallo> ;
-    chora:hasNarratingVoice <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00144> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/dosso_faiti> .
 
@@ -8526,7 +8439,6 @@ chora:witnessType a owl:ObjectProperty ;
     chora:assignsSpatialDetermination chora:Relative ;
     chora:criticalNote "La visione del sangue produce uno slittamento semantico tra il personaggio di Ingravallo e un elemento biografico centrale dell'esperienza di Gadda, l'esperienza del fronte e la morte del fratello, attraverso il referente topografico del Cengio e del Faiti"@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/ingravallo> ;
-    chora:hasNarratingVoice <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00145> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/monte_cengio> .
 
@@ -12589,9 +12501,8 @@ chora:witnessType a owl:ObjectProperty ;
     chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_ciampino> ;
     chora:assignsNarrativeRole chora:Marker ;
     chora:assignsSpatialDetermination chora:Approximate ;
-    chora:criticalNote "Voce narrante distinta dal focalizzatore: la voce «tradisce l'incursione del narratore gaddiano» (Perosa 2023a, p. 238)."@it ;
+    chora:criticalNote "La critica vi osserva l’incursione del narratore gaddiano nello sguardo del personaggio (Perosa 2023a, p. 238)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/santarella> ;
-    chora:hasNarratingVoice <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00432> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/ciampino> .
 
@@ -12603,9 +12514,8 @@ chora:witnessType a owl:ObjectProperty ;
     chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_santa_palomba> ;
     chora:assignsNarrativeRole chora:Marker ;
     chora:assignsSpatialDetermination chora:Approximate ;
-    chora:criticalNote "Voce narrante distinta dal focalizzatore: la voce «tradisce l'incursione del narratore gaddiano» (Perosa 2023a, p. 238)."@it ;
+    chora:criticalNote "La critica vi osserva l’incursione del narratore gaddiano nello sguardo del personaggio (Perosa 2023a, p. 238)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/santarella> ;
-    chora:hasNarratingVoice <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00433> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/santa_palomba> .
 
@@ -14200,9 +14110,8 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_porta_san_paolo> ;
     chora:assignsNarrativeRole chora:Marker ;
     chora:assignsSpatialDetermination chora:Approximate ;
-    chora:criticalNote "Voce narrante distinta dal focalizzatore: «divaricazione tra voce e punto di vista» (Savettieri 2020, p. 44)."@it ;
+    chora:criticalNote "La critica vi osserva una divaricazione tra voce e punto di vista (Savettieri 2020, p. 44)."@it ;
     chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/pestalozzi> ;
-    chora:hasNarratingVoice <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00530> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/porta_san_paolo> .
 
@@ -18410,6 +18319,34 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00671> ;
     chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/pensione_burgess> .
 
+<https://w3id.org/gaddatlas/id/interpretation/interp_00983> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00983> ;
+    chora:adoptedByProject true ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_dosso_faiti> ;
+    chora:annotationMethod "close_reading"^^xsd:string ;
+    chora:assignsNarrativeRole chora:ProjectedSpace ;
+    chora:assignsSpatialDetermination chora:Relative ;
+    chora:criticalNote "Luogo attribuito anche al narratore: la critica vi riconosce una memoria autobiografica dell'autore, il lutto per il fratello Enrico, che affiora attraverso Ingravallo (Perosa 2023a, pp. 103–104; Cortellessa 2023, p. 669; cfr. Lugnani in Perosa 2023a, p. 104, n. 97). Discussione nella tesi, cap. 4 e § 6.4."@it ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00144> ;
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/dosso_faiti> .
+
+<https://w3id.org/gaddatlas/id/interpretation/interp_00984> a prov:Entity,
+        chora:SpatialInterpretation ;
+    prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:wasGeneratedBy <https://w3id.org/gaddatlas/id/act/interp_00984> ;
+    chora:adoptedByProject true ;
+    chora:anchorsToEntity <https://w3id.org/gaddatlas/id/gazetteer/gaz_monte_cengio> ;
+    chora:annotationMethod "close_reading"^^xsd:string ;
+    chora:assignsNarrativeRole chora:ProjectedSpace ;
+    chora:assignsSpatialDetermination chora:Relative ;
+    chora:criticalNote "Luogo attribuito anche al narratore: la critica vi riconosce una memoria autobiografica dell'autore, il lutto per il fratello Enrico, che affiora attraverso Ingravallo (Perosa 2023a, pp. 103–104; Cortellessa 2023, p. 669; cfr. Lugnani in Perosa 2023a, p. 104, n. 97). Discussione nella tesi, cap. 4 e § 6.4."@it ;
+    chora:hasFocalizer <https://w3id.org/gaddatlas/id/focalizer/narrator> ;
+    chora:interpretsReference <https://w3id.org/gaddatlas/id/reference/ref_00145> ;
+    chora:targetsPlace <https://w3id.org/gaddatlas/id/narrativeplace/monte_cengio> .
+
 <https://w3id.org/gaddatlas/id/reference/ref_00723> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
@@ -18422,6 +18359,22 @@ Manzotti ricava l’identificazione dalla guida del Touring Italia centrale I, p
     dcterms:bibliographicCitation "GeoNames, base di dati geografica. https://www.geonames.org"@it ;
     dcterms:type "repertorio"@it ;
     rdfs:comment "Come sopra (D-068)."@it .
+
+<https://w3id.org/gaddatlas/id/source/lugnani_2001> a chora:Source ;
+    rdfs:label "Lugnani 2001" ;
+    dcterms:bibliographicCitation "Lugnani, L. (2001). Racconto ed esperienza umana del tempo. The Edinburgh Journal of Gadda Studies, 1."@it ;
+    dcterms:creator "Lucio Lugnani"@it ;
+    dcterms:date "2001"^^xsd:gYear ;
+    dcterms:type "articolo"@it ;
+    rdfs:comment "Fonte citata di seconda mano, non letta direttamente: la lettura e' estratta da Perosa 2023a, p. 104, n. 97 (D-071)."@it .
+
+<https://w3id.org/gaddatlas/id/source/perosa_2023a> a chora:Source ;
+    rdfs:label "Perosa 2023a" ;
+    dcterms:bibliographicCitation "Perosa, G. (2023a). Gadda e il paesaggio: Modi, funzioni, prospettive. Mimesis."@it ;
+    dcterms:creator "Giulia Perosa"@it ;
+    dcterms:date "2023"^^xsd:gYear ;
+    dcterms:type "monografia"@it ;
+    rdfs:comment "Vi è citata la lettura di Lugnani (2001), p. 104, n. 97."@it .
 
 <https://w3id.org/gaddatlas/id/source/terzoli_2008> a chora:Source ;
     rdfs:label "Terzoli 2008" ;
@@ -18708,15 +18661,6 @@ chora:Threshold a owl:NamedIndividual,
     skos:prefLabel "Threshold"@en ;
     skos:topConceptOf chora:SpatialRelationTypeScheme .
 
-chora:UndecidableMemory a owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "attribuzione indecidibile"@it ;
-    skos:definition "The text does not allow the memory to be attributed to author or character."@en ;
-    skos:inScheme chora:MemoryAttributionScheme ;
-    skos:prefLabel "Undecidable"@en ;
-    skos:scopeNote "A reading that superimposes the two memories asserts both AuthorMemory and CharacterMemory."@en ;
-    skos:topConceptOf chora:MemoryAttributionScheme .
-
 chora:Vagueness a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "vaghezza"@it ;
@@ -18835,14 +18779,6 @@ chora:interpretsReference a owl:ObjectProperty ;
     rdfs:range chora:PlaceReference ;
     skos:altLabel "interpreta il riferimento"@it ;
     skos:prefLabel "interprets reference"@en .
-
-chora:memoryAttribution a owl:ObjectProperty ;
-    dcterms:references chora:MemoryAttributionScheme ;
-    rdfs:comment "Whose memory a remembered space belongs to, for an occurrence."@en ;
-    rdfs:domain chora:PlaceReference ;
-    rdfs:range skos:Concept ;
-    skos:altLabel "attribuzione della memoria"@it ;
-    skos:prefLabel "memory attribution"@en .
 
 chora:nameReading a owl:ObjectProperty ;
     dcterms:references chora:NamingMechanismScheme ;
@@ -28999,6 +28935,22 @@ chora:witnessOf a owl:ObjectProperty ;
     prov:startedAtTime "2026-10-15T00:00:00"^^xsd:dateTime ;
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
 
+<https://w3id.org/gaddatlas/id/act/interp_00983> a hico:InterpretationAct ;
+    dcterms:date "2026-10-17"^^xsd:date ;
+    hico:hasInterpretationType chora:SpatialReading ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00983-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/interp_00983-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-17T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
+
+<https://w3id.org/gaddatlas/id/act/interp_00984> a hico:InterpretationAct ;
+    dcterms:date "2026-10-17"^^xsd:date ;
+    hico:hasInterpretationType chora:SpatialReading ;
+    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/interp_00984-encoder-lorenzo_sabatino>,
+        <https://w3id.org/gaddatlas/id/association/interp_00984-readingauthor-lorenzo_sabatino> ;
+    prov:startedAtTime "2026-10-17T00:00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> .
+
 <https://w3id.org/gaddatlas/id/assertion/C-casal_bruciato> a chora:Assertion ;
     rdfs:comment "L'entità gaz_casal_bruciato è stata eliminata (D-029): l'IRI resta come valore di questa lettura superata. Passaggio intermedio D-029 (luogo trasformato senza referente, ancorato a Marino, Albano, Pavona e Santa Palomba), superato da D-037."@it ;
     prov:wasAttributedTo <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
@@ -29412,54 +29364,6 @@ chora:witnessOf a owl:ObjectProperty ;
 
 <https://w3id.org/gaddatlas/id/association/L-0002-readingauthor-manzotti> a prov:Association ;
     prov:agent <https://w3id.org/gaddatlas/id/agent/manzotti> ;
-    prov:hadRole chora:ReadingAuthor .
-
-<https://w3id.org/gaddatlas/id/association/M-0001-encoder-lorenzo_sabatino> a prov:Association ;
-    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:hadRole chora:Encoder .
-
-<https://w3id.org/gaddatlas/id/association/M-0001-readingauthor-perosa> a prov:Association ;
-    prov:agent <https://w3id.org/gaddatlas/id/agent/perosa> ;
-    prov:hadRole chora:ReadingAuthor .
-
-<https://w3id.org/gaddatlas/id/association/M-0002-encoder-lorenzo_sabatino> a prov:Association ;
-    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:hadRole chora:Encoder .
-
-<https://w3id.org/gaddatlas/id/association/M-0002-readingauthor-lugnani> a prov:Association ;
-    prov:agent <https://w3id.org/gaddatlas/id/agent/lugnani> ;
-    prov:hadRole chora:ReadingAuthor .
-
-<https://w3id.org/gaddatlas/id/association/M-0003-encoder-lorenzo_sabatino> a prov:Association ;
-    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:hadRole chora:Encoder .
-
-<https://w3id.org/gaddatlas/id/association/M-0003-readingauthor-cortellessa> a prov:Association ;
-    prov:agent <https://w3id.org/gaddatlas/id/agent/cortellessa> ;
-    prov:hadRole chora:ReadingAuthor .
-
-<https://w3id.org/gaddatlas/id/association/M-0004-encoder-lorenzo_sabatino> a prov:Association ;
-    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:hadRole chora:Encoder .
-
-<https://w3id.org/gaddatlas/id/association/M-0004-readingauthor-perosa> a prov:Association ;
-    prov:agent <https://w3id.org/gaddatlas/id/agent/perosa> ;
-    prov:hadRole chora:ReadingAuthor .
-
-<https://w3id.org/gaddatlas/id/association/M-0005-encoder-lorenzo_sabatino> a prov:Association ;
-    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:hadRole chora:Encoder .
-
-<https://w3id.org/gaddatlas/id/association/M-0005-readingauthor-lugnani> a prov:Association ;
-    prov:agent <https://w3id.org/gaddatlas/id/agent/lugnani> ;
-    prov:hadRole chora:ReadingAuthor .
-
-<https://w3id.org/gaddatlas/id/association/M-0006-encoder-lorenzo_sabatino> a prov:Association ;
-    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
-    prov:hadRole chora:Encoder .
-
-<https://w3id.org/gaddatlas/id/association/M-0006-readingauthor-cortellessa> a prov:Association ;
-    prov:agent <https://w3id.org/gaddatlas/id/agent/cortellessa> ;
     prov:hadRole chora:ReadingAuthor .
 
 <https://w3id.org/gaddatlas/id/association/N-0001-encoder-lorenzo_sabatino> a prov:Association ;
@@ -40398,6 +40302,22 @@ chora:witnessOf a owl:ObjectProperty ;
     prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
     prov:hadRole chora:ReadingAuthor .
 
+<https://w3id.org/gaddatlas/id/association/interp_00983-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/interp_00983-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
+<https://w3id.org/gaddatlas/id/association/interp_00984-encoder-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:Encoder .
+
+<https://w3id.org/gaddatlas/id/association/interp_00984-readingauthor-lorenzo_sabatino> a prov:Association ;
+    prov:agent <https://w3id.org/gaddatlas/id/annotator/lorenzo_sabatino> ;
+    prov:hadRole chora:ReadingAuthor .
+
 <https://w3id.org/gaddatlas/id/focalizer/barbezzi_gallo> a chora:Character,
         chora:FocalizingAgent ;
     chora:characterName "Barbezzi Gallo"@it ;
@@ -40969,29 +40889,6 @@ chora:witnessOf a owl:ObjectProperty ;
     geo1:long 12.49926878303822 ;
     chora:presentLocation "Via Cavour, 18, 00185"@it .
 
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_dosso_faiti> a chora:GazetteerEntity ;
-    rdfs:label "Dosso Faiti"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "coordinates": [
-          13.649815236363924,
-          45.884990244121546
-        ],
-        "type": "Point"
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 45.884990244121546 ;
-    geo1:long 13.649815236363924 ;
-    chora:presentLocation "Collina nel Carso"@it .
-
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_esquilino> a chora:GazetteerEntity ;
     rdfs:label "Esquilino"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -41310,29 +41207,6 @@ chora:witnessOf a owl:ObjectProperty ;
     geo1:lat 41.75024597370798 ;
     geo1:long 12.774504127034607 ;
     chora:presentLocation "Colli Albani"@it .
-
-<https://w3id.org/gaddatlas/id/gazetteer/gaz_monte_cengio> a chora:GazetteerEntity ;
-    rdfs:label "Monte Cengio"@it ;
-    geosparql:hasGeometry [ a geosparql:Geometry ;
-            geosparql:asGeoJSON """{
-  "type": "FeatureCollection",
-  "features": [
-    {
-      "type": "Feature",
-      "properties": {},
-      "geometry": {
-        "coordinates": [
-          11.395000000000001,
-          45.83464690564686
-        ],
-        "type": "Point"
-      }
-    }
-  ]
-}"""^^geosparql:geoJSONLiteral ] ;
-    geo1:lat 45.83464690564686 ;
-    geo1:long 11.395 ;
-    chora:presentLocation "Monte dell'Altipiano Veneto"@it .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_monte_matese> a chora:GazetteerEntity ;
     rdfs:label "Monte Matese"@it ;
@@ -43532,6 +43406,13 @@ chora:witnessOf a owl:ObjectProperty ;
     chora:relationalType chora:Below ;
     chora:relatum <https://w3id.org/gaddatlas/id/narrativeplace/laboratorio_zamira> .
 
+<https://w3id.org/gaddatlas/id/source/cortellessa_2023> a chora:Source ;
+    rdfs:label "Cortellessa 2023" ;
+    dcterms:bibliographicCitation "Cortellessa, A. (2023). Archeologia con pescecane: Detriti della Grande Guerra nel «Pasticciaccio». Strumenti critici, 38(3), 659–686. https://doi.org/10.1419/108808"@it ;
+    dcterms:creator "Andrea Cortellessa"@it ;
+    dcterms:date "2023"^^xsd:gYear ;
+    dcterms:type "articolo"@it .
+
 <https://w3id.org/gaddatlas/id/source/igm_150_iii_so> a chora:Source ;
     rdfs:label "IGM, F. 150 III SO" ;
     dcterms:bibliographicCitation "Istituto Geografico Militare, F. 150 III SO, 1:25.000, rilievo 1872, aggiornamenti 1931 e 1940 (riprodotta in Manzotti 2010, Tav. VII, p. 301)."@it ;
@@ -44159,68 +44040,6 @@ chora:village a owl:NamedIndividual,
     prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/agent/manzotti> ;
     chora:rationale "La tavoletta IGM colloca «Casale Abbruciato» a ovest della Roma–Napoli: reticolo UTM 33 della tavola, E 297,7 N 4621,3 km."@it ;
     chora:sourcePage "268–269; Tavv. VI–VII, pp. 300–301"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/act/M-0001> a hico:InterpretationAct ;
-    dcterms:date "2023"^^xsd:gYear ;
-    hico:hasInterpretationCriterion chora:CriticalReading ;
-    hico:hasInterpretationType chora:MemoryAssertion ;
-    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/source/perosa_2023a> ;
-    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/M-0001-readingauthor-perosa> ;
-    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/agent/perosa> ;
-    chora:rationale "«Gadda sembra infatti proiettare sul personaggio di Ingravallo una propria tessera autobiografica»: la memoria della morte del fratello Enrico e del lutto materno (QPa 61, Dosso Faiti)."@it ;
-    chora:sourcePage "103–104"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/act/M-0002> a hico:InterpretationAct ;
-    dcterms:date "2001"^^xsd:gYear ;
-    hico:hasInterpretationCriterion chora:CriticalReading ;
-    hico:hasInterpretationType chora:MemoryAssertion ;
-    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/source/perosa_2023a> ;
-    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/M-0002-readingauthor-lugnani> ;
-    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/agent/lugnani> ;
-    chora:originalSource <https://w3id.org/gaddatlas/id/source/lugnani_2001> ;
-    chora:rationale "La «mamma» rinvia al «figlio e fante don Ciccio», e forse ai suoi fratelli caduti in guerra (QPa 61, Dosso Faiti)."@it ;
-    chora:sourcePage "104, n. 97"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/act/M-0003> a hico:InterpretationAct ;
-    dcterms:date "2023"^^xsd:gYear ;
-    hico:hasInterpretationCriterion chora:CriticalReading ;
-    hico:hasInterpretationType chora:MemoryAssertion ;
-    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/source/cortellessa_2023> ;
-    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/M-0003-readingauthor-cortellessa> ;
-    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/agent/cortellessa> ;
-    chora:rationale "La sequenza «sovrappone la memoria del personaggio, anzi la sovrimprime, a quella dell'autore» (QPa 61, Dosso Faiti)."@it ;
-    chora:sourcePage "669"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/act/M-0004> a hico:InterpretationAct ;
-    dcterms:date "2023"^^xsd:gYear ;
-    hico:hasInterpretationCriterion chora:CriticalReading ;
-    hico:hasInterpretationType chora:MemoryAssertion ;
-    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/source/perosa_2023a> ;
-    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/M-0004-readingauthor-perosa> ;
-    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/agent/perosa> ;
-    chora:rationale "«Gadda sembra infatti proiettare sul personaggio di Ingravallo una propria tessera autobiografica»: la memoria della morte del fratello Enrico e del lutto materno (QPa 61, Monte Cengio)."@it ;
-    chora:sourcePage "103–104"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/act/M-0005> a hico:InterpretationAct ;
-    dcterms:date "2001"^^xsd:gYear ;
-    hico:hasInterpretationCriterion chora:CriticalReading ;
-    hico:hasInterpretationType chora:MemoryAssertion ;
-    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/source/perosa_2023a> ;
-    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/M-0005-readingauthor-lugnani> ;
-    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/agent/lugnani> ;
-    chora:originalSource <https://w3id.org/gaddatlas/id/source/lugnani_2001> ;
-    chora:rationale "La «mamma» rinvia al «figlio e fante don Ciccio», e forse ai suoi fratelli caduti in guerra (QPa 61, Monte Cengio)."@it ;
-    chora:sourcePage "104, n. 97"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/act/M-0006> a hico:InterpretationAct ;
-    dcterms:date "2023"^^xsd:gYear ;
-    hico:hasInterpretationCriterion chora:CriticalReading ;
-    hico:hasInterpretationType chora:MemoryAssertion ;
-    hico:isExtractedFrom <https://w3id.org/gaddatlas/id/source/cortellessa_2023> ;
-    prov:qualifiedAssociation <https://w3id.org/gaddatlas/id/association/M-0006-readingauthor-cortellessa> ;
-    prov:wasAssociatedWith <https://w3id.org/gaddatlas/id/agent/cortellessa> ;
-    chora:rationale "La sequenza «sovrappone la memoria del personaggio, anzi la sovrimprime, a quella dell'autore» (QPa 61, Monte Cengio)."@it ;
-    chora:sourcePage "669"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/act/N-0001> a hico:InterpretationAct ;
     dcterms:date "2015"^^xsd:gYear ;
@@ -44892,6 +44711,29 @@ chora:village a owl:NamedIndividual,
     chora:historicalLocation "Corso Umberto I"@it ;
     chora:presentLocation "via del Corso"@it .
 
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_dosso_faiti> a chora:GazetteerEntity ;
+    rdfs:label "Dosso Faiti"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          13.649815236363924,
+          45.884990244121546
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 45.884990244121546 ;
+    geo1:long 13.649815236363924 ;
+    chora:presentLocation "Collina nel Carso"@it .
+
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_frascati> a chora:GazetteerEntity ;
     rdfs:label "Frascati"@it ;
     geosparql:hasGeometry [ a geosparql:Geometry ;
@@ -45003,6 +44845,29 @@ chora:village a owl:NamedIndividual,
 }"""^^geosparql:geoJSONLiteral ] ;
     geo1:lat 41.667749 ;
     geo1:long 14.573358 .
+
+<https://w3id.org/gaddatlas/id/gazetteer/gaz_monte_cengio> a chora:GazetteerEntity ;
+    rdfs:label "Monte Cengio"@it ;
+    geosparql:hasGeometry [ a geosparql:Geometry ;
+            geosparql:asGeoJSON """{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          11.395000000000001,
+          45.83464690564686
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+}"""^^geosparql:geoJSONLiteral ] ;
+    geo1:lat 45.83464690564686 ;
+    geo1:long 11.395 ;
+    chora:presentLocation "Monte dell'Altipiano Veneto"@it .
 
 <https://w3id.org/gaddatlas/id/gazetteer/gaz_monte_circeo> a chora:GazetteerEntity ;
     rdfs:label "Monte Circeo"@it ;
@@ -46039,11 +45904,6 @@ chora:village a owl:NamedIndividual,
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
-<https://w3id.org/gaddatlas/id/narrativeplace/dosso_faiti> a chora:NarrativePlace ;
-    rdfs:label "Dosso Faiti"@it ;
-    chora:hasPlaceCategory chora:mountain ;
-    chora:hasRealityStatus chora:Imported .
-
 <https://w3id.org/gaddatlas/id/narrativeplace/esquilino> a chora:NarrativePlace ;
     rdfs:label "Esquilino"@it ;
     chora:hasPlaceCategory chora:district ;
@@ -46137,12 +45997,6 @@ chora:village a owl:NamedIndividual,
     chora:hasPlaceCategory chora:mountain ;
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
-
-<https://w3id.org/gaddatlas/id/narrativeplace/monte_cengio> a chora:NarrativePlace ;
-    rdfs:label "Monte Cengio"@it ;
-    dcterms:description "monte dell'Altipiano veneto"@it ;
-    chora:hasPlaceCategory chora:mountain ;
-    chora:hasRealityStatus chora:Imported .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/monte_manno> a chora:NarrativePlace ;
     rdfs:label "Monte Manno"@it ;
@@ -49889,14 +49743,6 @@ chora:village a owl:NamedIndividual,
     dcterms:type "commento"@it ;
     rdfs:comment "Citati di seconda mano in Terzoli 2015, pp. 535–537 (chora:originalSource); vale anche per «G.L.M., Commento» citato da Manzotti 2010 (D-086)."@it .
 
-<https://w3id.org/gaddatlas/id/source/lugnani_2001> a chora:Source ;
-    rdfs:label "Lugnani 2001" ;
-    dcterms:bibliographicCitation "Lugnani, L. (2001). Racconto ed esperienza umana del tempo. The Edinburgh Journal of Gadda Studies, 1."@it ;
-    dcterms:creator "Lucio Lugnani"@it ;
-    dcterms:date "2001"^^xsd:gYear ;
-    dcterms:type "articolo"@it ;
-    rdfs:comment "Fonte citata di seconda mano, non letta direttamente: la lettura e' estratta da Perosa 2023a, p. 104, n. 97 (D-071)."@it .
-
 <https://w3id.org/gaddatlas/id/source/rr2> a chora:Source ;
     rdfs:label "RR II" ;
     dcterms:bibliographicCitation "Gadda, C. E. (1989). Romanzi e racconti II (G. Pinotti, D. Isella, R. Rodondi, a cura di). Garzanti."@it ;
@@ -50560,6 +50406,11 @@ chora:temple a owl:NamedIndividual,
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
+<https://w3id.org/gaddatlas/id/narrativeplace/dosso_faiti> a chora:NarrativePlace ;
+    rdfs:label "Dosso Faiti"@it ;
+    chora:hasPlaceCategory chora:mountain ;
+    chora:hasRealityStatus chora:Imported .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/frascati> a chora:NarrativePlace ;
     rdfs:label "Frascati"@it ;
     dcterms:description "Località che indica il paesaggio aereo dei Colli Albani/Castelli Romani"@it ;
@@ -50581,6 +50432,12 @@ chora:temple a owl:NamedIndividual,
     dcterms:description "Luogo generico nel territorio dell'Abruzzo"@it ;
     chora:hasFuzzinessLevel 3.0 ;
     chora:hasPlaceCategory chora:locality ;
+    chora:hasRealityStatus chora:Imported .
+
+<https://w3id.org/gaddatlas/id/narrativeplace/monte_cengio> a chora:NarrativePlace ;
+    rdfs:label "Monte Cengio"@it ;
+    dcterms:description "monte dell'Altipiano veneto"@it ;
+    chora:hasPlaceCategory chora:mountain ;
     chora:hasRealityStatus chora:Imported .
 
 <https://w3id.org/gaddatlas/id/narrativeplace/monte_circeo> a chora:NarrativePlace ;
@@ -50970,6 +50827,21 @@ chora:temple a owl:NamedIndividual,
     chora:excerpt "Giunti a via Merulana, la folla. Davanti il portone il nero della folla, con la sua corona de rote de bicicletta. «Fate passare, polizia.» Ognuno si scostò. Er portone era chiuso."@it ;
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_II> ;
     chora:sourceReference "A 59"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00144> a chora:PlaceReference ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:attestedForm "Faiti"@it ;
+    chora:excerpt "Er sangue aveva impiastrato tutto er collo, er davanti de la camicetta, una manica: la mano: una spaventevole colatura d’un rosso nero, da Faiti o da Cengio (don Ciccio rammemorò subito, con un lontano pianto nell’anima, povera mamma!)."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_II> ;
+    chora:sourceReference "A 61"^^xsd:string .
+
+<https://w3id.org/gaddatlas/id/reference/ref_00145> a chora:PlaceReference ;
+    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
+    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
+    chora:excerpt "Er sangue aveva impiastrato tutto er collo, er davanti de la camicetta, una manica: la mano: una spaventevole colatura d’un rosso nero, da Faiti o da Cengio (don Ciccio rammemorò subito, con un lontano pianto nell’anima, povera mamma!)."@it ;
+    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_II> ;
+    chora:sourceReference "A 61"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/reference/ref_00168> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
@@ -53580,22 +53452,6 @@ chora:police_station a owl:NamedIndividual,
     chora:witnessOf <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
     chora:witnessType chora:PeriodicalRedaction .
 
-chora:AuthorMemory a owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "memoria dell'autore"@it ;
-    skos:definition "The remembered space belongs to the author's memory."@en ;
-    skos:inScheme chora:MemoryAttributionScheme ;
-    skos:prefLabel "Author's memory"@en ;
-    skos:topConceptOf chora:MemoryAttributionScheme .
-
-chora:CharacterMemory a owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "memoria del personaggio"@it ;
-    skos:definition "The remembered space belongs to the character's memory."@en ;
-    skos:inScheme chora:MemoryAttributionScheme ;
-    skos:prefLabel "Character's memory"@en ;
-    skos:topConceptOf chora:MemoryAttributionScheme .
-
 chora:IdentificationAxis a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "identificazione"@it ;
@@ -54086,21 +53942,6 @@ chora:retail_business a owl:NamedIndividual,
     chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_I> ;
     chora:sourceReference "A 49"^^xsd:string .
 
-<https://w3id.org/gaddatlas/id/reference/ref_00144> a chora:PlaceReference ;
-    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:attestedForm "Faiti"@it ;
-    chora:excerpt "Er sangue aveva impiastrato tutto er collo, er davanti de la camicetta, una manica: la mano: una spaventevole colatura d’un rosso nero, da Faiti o da Cengio (don Ciccio rammemorò subito, con un lontano pianto nell’anima, povera mamma!)."@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_II> ;
-    chora:sourceReference "A 61"^^xsd:string .
-
-<https://w3id.org/gaddatlas/id/reference/ref_00145> a chora:PlaceReference ;
-    chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
-    chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
-    chora:excerpt "Er sangue aveva impiastrato tutto er collo, er davanti de la camicetta, una manica: la mano: una spaventevole colatura d’un rosso nero, da Faiti o da Cengio (don Ciccio rammemorò subito, con un lontano pianto nell’anima, povera mamma!)."@it ;
-    chora:mentionedInChapter <https://w3id.org/gaddatlas/id/chapter/capitolo_II> ;
-    chora:sourceReference "A 61"^^xsd:string .
-
 <https://w3id.org/gaddatlas/id/reference/ref_00367> a chora:PlaceReference ;
     chora:appearsInWitness <https://w3id.org/gaddatlas/id/witness/qpa> ;
     chora:appearsInWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> ;
@@ -54307,20 +54148,7 @@ chora:retail_business a owl:NamedIndividual,
 <https://w3id.org/gaddatlas/id/route/tragitto_policlinico_san_lorenzo_al_verano> a chora:NarrativeRoute ;
     chora:hasRouteType chora:CompletedRoute .
 
-<https://w3id.org/gaddatlas/id/source/cortellessa_2023> a chora:Source ;
-    rdfs:label "Cortellessa 2023" ;
-    dcterms:bibliographicCitation "Cortellessa, A. (2023). Archeologia con pescecane: Detriti della Grande Guerra nel «Pasticciaccio». Strumenti critici, 38(3), 659–686. https://doi.org/10.1419/108808"@it ;
-    dcterms:creator "Andrea Cortellessa"@it ;
-    dcterms:date "2023"^^xsd:gYear ;
-    dcterms:type "articolo"@it .
-
 chora:LiteraryWork a owl:Class .
-
-<https://w3id.org/gaddatlas/id/agent/cortellessa> a prov:Agent,
-        prov:Person,
-        chora:Scholar ;
-    rdfs:comment "Archeologia con pescecane (Cortellessa 2023)"@it ;
-    schema:name "Andrea Cortellessa" .
 
 <https://w3id.org/gaddatlas/id/agent/grassadonia> a prov:Agent,
         prov:Person,
@@ -54340,23 +54168,11 @@ chora:LiteraryWork a owl:Class .
     rdfs:comment "Grassadonia, Lagossi e Marchetti 1997a"@it ;
     schema:name "Paola Lagossi" .
 
-<https://w3id.org/gaddatlas/id/agent/lugnani> a prov:Agent,
-        prov:Person,
-        chora:Scholar ;
-    rdfs:comment "Citato in Perosa 2023a, p. 104, n. 97"@it ;
-    schema:name "Lucio Lugnani" .
-
 <https://w3id.org/gaddatlas/id/agent/marchetti> a prov:Agent,
         prov:Person,
         chora:Scholar ;
     rdfs:comment "Grassadonia, Lagossi e Marchetti 1997a"@it ;
     schema:name "Mario Marchetti" .
-
-<https://w3id.org/gaddatlas/id/agent/perosa> a prov:Agent,
-        prov:Person,
-        chora:Scholar ;
-    rdfs:comment "Gadda e il paesaggio (Perosa 2023a)"@it ;
-    schema:name "Giulia Perosa" .
 
 <https://w3id.org/gaddatlas/id/focalizer/americana_inglese> a chora:Character,
         chora:FocalizingAgent ;
@@ -54786,26 +54602,6 @@ chora:LocalizationStatusScheme a owl:NamedIndividual,
         chora:SuspendedWithReason ;
     skos:prefLabel "Localization status"@en .
 
-chora:MemoryAssertion a hico:InterpretationType,
-        owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "memoria"@it ;
-    skos:definition "Attributes a remembered or projected space to the author, to a character, or declares it undecidable."@en ;
-    skos:inScheme chora:AssertionTypeScheme ;
-    skos:notation "memory" ;
-    skos:prefLabel "Memory assertion"@en ;
-    skos:topConceptOf chora:AssertionTypeScheme ;
-    chora:reifiesProperty chora:memoryAttribution .
-
-chora:MemoryAttributionScheme a owl:NamedIndividual,
-        skos:ConceptScheme ;
-    rdfs:label "Memory attribution"@en ;
-    skos:altLabel "Attribuzione della memoria"@it ;
-    skos:hasTopConcept chora:AuthorMemory,
-        chora:CharacterMemory,
-        chora:UndecidableMemory ;
-    skos:prefLabel "Memory attribution"@en .
-
 chora:RationaleTypeScheme a owl:NamedIndividual,
         skos:ConceptScheme ;
     rdfs:label "Rationale type"@en ;
@@ -55184,14 +54980,6 @@ chora:restaurant a owl:NamedIndividual,
     dcterms:creator "L. Matt; Giorgio Pinotti"@it ;
     dcterms:date "2022"^^xsd:gYear ;
     dcterms:type "articolo"@it .
-
-<https://w3id.org/gaddatlas/id/source/perosa_2023a> a chora:Source ;
-    rdfs:label "Perosa 2023a" ;
-    dcterms:bibliographicCitation "Perosa, G. (2023a). Gadda e il paesaggio: Modi, funzioni, prospettive. Mimesis."@it ;
-    dcterms:creator "Giulia Perosa"@it ;
-    dcterms:date "2023"^^xsd:gYear ;
-    dcterms:type "monografia"@it ;
-    rdfs:comment "Vi è citata la lettura di Lugnani (2001), p. 104, n. 97."@it .
 
 <https://w3id.org/gaddatlas/id/source/pinotti_2025> a chora:Source ;
     rdfs:label "Pinotti 2025" ;
@@ -55579,6 +55367,10 @@ chora:WitnessTypeScheme a owl:NamedIndividual,
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/roma_citta> .
 
+hico:InterpretationType a owl:Class ;
+    rdfs:isDefinedBy <http://purl.org/emmedi/hico> ;
+    rdfs:subClassOf skos:Concept .
+
 <https://w3id.org/gaddatlas/id/agent/matt> a prov:Agent,
         prov:Person,
         chora:Scholar ;
@@ -55614,10 +55406,6 @@ chora:WitnessTypeScheme a owl:NamedIndividual,
     chora:hasPlaceCategory chora:frazione ;
     chora:hasRealityStatus chora:Imported ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
-
-hico:InterpretationType a owl:Class ;
-    rdfs:isDefinedBy <http://purl.org/emmedi/hico> ;
-    rdfs:subClassOf skos:Concept .
 
 chora:NamingMechanismScheme a owl:NamedIndividual,
         skos:ConceptScheme ;
@@ -55870,6 +55658,8 @@ prov:Agent a owl:Class ;
     chora:hasRealityStatus chora:Invented ;
     chora:inPartitionZone <https://w3id.org/gaddatlas/id/zone/campagna_romana> .
 
+skos:ConceptScheme a owl:Class .
+
 chora:Overlaps a owl:NamedIndividual,
         skos:Concept ;
     dcterms:description "A e B condividono una porzione di spazio senza che l'uno contenga l'altro. Sovrapposizione parziale."@it ;
@@ -55928,8 +55718,6 @@ chora:basilica a owl:NamedIndividual,
 }"""^^geosparql:geoJSONLiteral ] ;
     geo1:lat 41.73247489501876 ;
     geo1:long 12.58446168893847 .
-
-skos:ConceptScheme a owl:Class .
 
 <https://w3id.org/gaddatlas/id/focalizer/giuliano_valdarena> a chora:Character,
         chora:FocalizingAgent ;
@@ -56032,6 +55820,23 @@ chora:Source a owl:Class ;
     skos:altLabel "Fonte"@it ;
     skos:prefLabel "Source"@en .
 
+chora:AssertionTypeScheme a owl:NamedIndividual,
+        skos:ConceptScheme ;
+    rdfs:label "Assertion type"@en ;
+    skos:altLabel "Tipo di asserzione"@it ;
+    skos:hasTopConcept chora:CommentaryAssertion,
+        chora:IdentificationAssertion,
+        chora:LocationAssertion,
+        chora:NamingAssertion,
+        chora:PartitionAssertion,
+        chora:RepertoryAttestation,
+        chora:RouteTypeAssertion,
+        chora:SpatialReading,
+        chora:StatusAssertion,
+        chora:UncertaintyAssertion,
+        chora:VariantAssertion ;
+    skos:prefLabel "Assertion type"@en .
+
 <https://w3id.org/gaddatlas/id/focalizer/cocullo> a chora:Character,
         chora:FocalizingAgent ;
     dcterms:description "Agente Cocullo, accompagna il brigadiere Pestalozzi in moto dalla tenenza dei carabinieri di Marino alla casa di Camilla Mattonari"@it ;
@@ -56131,24 +55936,6 @@ chora:NarrativeRoute a owl:Class ;
     chora:hasPlaceCategory chora:street ;
     chora:hasRealityStatus chora:Imported .
 
-chora:AssertionTypeScheme a owl:NamedIndividual,
-        skos:ConceptScheme ;
-    rdfs:label "Assertion type"@en ;
-    skos:altLabel "Tipo di asserzione"@it ;
-    skos:hasTopConcept chora:CommentaryAssertion,
-        chora:IdentificationAssertion,
-        chora:LocationAssertion,
-        chora:MemoryAssertion,
-        chora:NamingAssertion,
-        chora:PartitionAssertion,
-        chora:RepertoryAttestation,
-        chora:RouteTypeAssertion,
-        chora:SpatialReading,
-        chora:StatusAssertion,
-        chora:UncertaintyAssertion,
-        chora:VariantAssertion ;
-    skos:prefLabel "Assertion type"@en .
-
 chora:RepertoryAttestation a hico:InterpretationType,
         owl:NamedIndividual,
         skos:Concept ;
@@ -56231,6 +56018,14 @@ chora:CompletedRoute a owl:NamedIndividual,
     skos:prefLabel "Completed"@en ;
     skos:topConceptOf chora:RouteTypeScheme .
 
+chora:Draft a owl:NamedIndividual,
+        skos:Concept ;
+    skos:altLabel "bozza"@it ;
+    skos:definition "Prepared from the existing documents (sheet descriptions, Chapter 4), not yet validated."@en ;
+    skos:inScheme chora:ReviewStatusScheme ;
+    skos:prefLabel "Draft"@en ;
+    skos:topConceptOf chora:ReviewStatusScheme .
+
 <https://w3id.org/gaddatlas/id/narrativeplace/due_santi> a chora:NarrativePlace ;
     rdfs:label "Due Santi"@it ;
     dcterms:description "Frazione di Marino (Castelli Romani)"@it ;
@@ -56305,14 +56100,6 @@ chora:AdjacentTo a owl:NamedIndividual,
     dcterms:description "Zamira Pàcori, tenutaria di un laboratorio-osteria a Marino, figura ambigua legata al sottobosco criminale dei Colli Albani"@it ;
     chora:characterName "Zamira Pacori"@it ;
     chora:hasGender "female"^^xsd:string .
-
-chora:Draft a owl:NamedIndividual,
-        skos:Concept ;
-    skos:altLabel "bozza"@it ;
-    skos:definition "Prepared from the existing documents (sheet descriptions, Chapter 4), not yet validated."@en ;
-    skos:inScheme chora:ReviewStatusScheme ;
-    skos:prefLabel "Draft"@en ;
-    skos:topConceptOf chora:ReviewStatusScheme .
 
 <https://w3id.org/gaddatlas/id/chapter/capitolo_III> a chora:Chapter ;
     dcterms:title "Capitolo III"@it ;
@@ -56435,12 +56222,6 @@ chora:Invented a owl:NamedIndividual,
     geo1:long 12.66366867693179 ;
     chora:attestedInRepertory <https://w3id.org/gaddatlas/id/source/bertarelli_1925> .
 
-<https://w3id.org/gaddatlas/id/focalizer/santarella> a chora:Character,
-        chora:FocalizingAgent ;
-    dcterms:description "Maresciallo Santarella, conduce le indagini nell'area dei Castelli, dalla tenenza dei carabinieri di Marino"@it ;
-    chora:characterName "Santarella"@it ;
-    chora:hasGender "male"^^xsd:string .
-
 chora:CriticalReading a hico:InterpretationCriterion,
         owl:NamedIndividual,
         skos:Concept ;
@@ -56449,6 +56230,12 @@ chora:CriticalReading a hico:InterpretationCriterion,
     skos:inScheme chora:RationaleTypeScheme ;
     skos:prefLabel "Critical reading"@en ;
     skos:topConceptOf chora:RationaleTypeScheme .
+
+<https://w3id.org/gaddatlas/id/focalizer/santarella> a chora:Character,
+        chora:FocalizingAgent ;
+    dcterms:description "Maresciallo Santarella, conduce le indagini nell'area dei Castelli, dalla tenenza dei carabinieri di Marino"@it ;
+    chora:characterName "Santarella"@it ;
+    chora:hasGender "male"^^xsd:string .
 
 <https://w3id.org/gaddatlas/id/chapter/capitolo_II> a chora:Chapter ;
     dcterms:title "Capitolo II"@it ;
@@ -56553,6 +56340,12 @@ chora:Transformed a owl:NamedIndividual,
     chora:pageRange "92-131"^^xsd:string ;
     chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
 
+chora:EncodingActivity a owl:Class ;
+    rdfs:comment "The encoding of a reading in the knowledge graph by an annotator, distinct from the interpretation act when the author of the reading is someone else. It uses the source (prov:used) and is informed by the interpretation act (prov:wasInformedBy); its date is the date of the encoding."@en ;
+    rdfs:subClassOf prov:Activity ;
+    skos:altLabel "Codifica"@it ;
+    skos:prefLabel "Encoding activity"@en .
+
 chora:street a owl:NamedIndividual,
         skos:Concept ;
     skos:altLabel "Via"@it ;
@@ -56580,6 +56373,11 @@ chora:street a owl:NamedIndividual,
     chora:characterName "Pestalozzi"@it ;
     chora:hasGender "male"^^xsd:string .
 
+<https://w3id.org/gaddatlas/id/focalizer/narrator> a chora:FocalizingAgent,
+        chora:Narrator ;
+    dcterms:description "Focalizzatore quando il luogo non appartiene a un personaggio o gruppo riconoscibile, oppure, come in QP 61, quando rappresenta l'autore."@it ;
+    chora:narratorType "onnisciente-eterodiegetico"^^xsd:string .
+
 chora:TextualEvidence a hico:InterpretationCriterion,
         owl:NamedIndividual,
         skos:Concept ;
@@ -56595,24 +56393,14 @@ chora:TextualEvidence a hico:InterpretationCriterion,
     chora:pageRange "278-307"^^xsd:string ;
     chora:partOfWork <https://w3id.org/gaddatlas/id/work/quer_pasticciaccio> .
 
-chora:EncodingActivity a owl:Class ;
-    rdfs:comment "The encoding of a reading in the knowledge graph by an annotator, distinct from the interpretation act when the author of the reading is someone else. It uses the source (prov:used) and is informed by the interpretation act (prov:wasInformedBy); its date is the date of the encoding."@en ;
-    rdfs:subClassOf prov:Activity ;
-    skos:altLabel "Codifica"@it ;
-    skos:prefLabel "Encoding activity"@en .
-
-<https://w3id.org/gaddatlas/id/focalizer/narrator> a chora:FocalizingAgent,
-        chora:Narrator ;
-    dcterms:description "Voce narrante gaddiana: onnisciente ma pervasa di digressioni, ironia e plurilinguismo; focalizzatore a pieno titolo."@it ;
-    chora:narratorType "onnisciente-eterodiegetico"^^xsd:string .
-
 chora:Character a owl:Class ;
     rdfs:subClassOf chora:FocalizingAgent ;
     skos:altLabel "Personaggio" ;
     skos:prefLabel "Character"@en .
 
 chora:FocalizingAgent a owl:Class ;
-    rdfs:comment "Entità attraverso cui lo spazio è percepito/descritto"@it ;
+    rdfs:comment "The agent to whom the place belongs at that point of the narrative (who lives in it, acts in it, remembers it or is implicated in it), regardless of who utters the mention."@en,
+        "L'agente a cui il luogo appartiene in quel punto del racconto (che vi abita, vi agisce, lo ricorda o vi è implicato), a prescindere da chi pronunci la menzione."@it ;
     skos:altLabel "Agente Focalizzatore"@it ;
     skos:prefLabel "Focalizing Agent"@en .
 
@@ -56733,11 +56521,11 @@ chora:PlaceCategoryScheme a owl:NamedIndividual,
     rdfs:comment "Commento a «Quer pasticciaccio brutto de via Merulana» (Terzoli 2015)"@it ;
     schema:name "Maria Antonietta Terzoli" .
 
+skos:Concept a owl:Class .
+
 <https://w3id.org/gaddatlas/id/zone/roma_citta> a chora:PartitionZone ;
     rdfs:label "Roma città"@it ;
     skos:definition "La città di Roma: i luoghi la cui ancora primaria dista al più 10 km dal Campidoglio."@it .
-
-skos:Concept a owl:Class .
 
 chora:Setting a owl:NamedIndividual,
         skos:Concept ;

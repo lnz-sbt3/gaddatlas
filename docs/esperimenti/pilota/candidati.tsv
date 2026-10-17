@@ -19,7 +19,7 @@ pagina	forma	origine	giudizio	piano_errore	occorrenza_abbinata	esito_geocodifica
 20	Pic	modello	frammento	riconoscimento	ref_00015 (Piceno)	area di sosta, via Pontina
 20	San	modello	frammento	riconoscimento	ref_00016 (Sannio)	ambasciata di Germania
 20	terbo	modello	falso positivo	riconoscimento	—	—
-20	Zagarolo	modello	da verificare	—	assente dal dataset	Zagarolo
+20	Zagarolo	modello	falso positivo	criterio (nessuna funzione)	—	Zagarolo
 21	sant’Antonio	modello	falso positivo	riconoscimento (santo)	—	esercizio commerciale, Cerveteri
 21	Roma	modello	falso positivo	criterio (nessuna funzione)	—	Roma
 21	Monte	modello	frammento	riconoscimento	ref_00023 (Monteleone)	località Monte, Ciciliano

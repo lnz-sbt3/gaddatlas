@@ -42,7 +42,6 @@ Ogni tipo è un `hico:InterpretationType` e dichiara la proprietà del modello c
 | IdentificationAssertion | `chora:identifiedWith` | NarrativePlace | GazetteerEntity | sì, le adottate | occorrenze del luogo |
 | LocationAssertion | `geo:hasGeometry` | GazetteerEntity | `geo:Geometry` (WKT, repertorio, locatore) | no (IQ19 verifica la coordinata) | nessuno |
 | PartitionAssertion | `chora:hasZone` | Partition | PartitionZone | (dal foglio delle zone) | nessuno |
-| MemoryAssertion | `chora:memoryAttribution` | PlaceReference | MemoryAttributionScheme | sì, le adottate | l'occorrenza |
 | UncertaintyAssertion | `chora:hasUncertaintyType` | occorrenza (asse nome), luogo (identificazione), entità (geometria) | UncertaintyTypeScheme | no | per asse |
 | VariantAssertion | `chora:hasVariant` | PlaceReference del testimone di riferimento | PlaceReference di altro testimone | sì, tutte | l'occorrenza |
 | RouteTypeAssertion | `chora:hasRouteType` | NarrativeRoute | RouteTypeScheme | sì, le adottate | occorrenze portatrici |
@@ -66,7 +65,7 @@ Le sorgenti sono i TSV di `data/source/tables/`; la sezione `documentation` di `
 | colonna | tripla prodotta | regola ETL | shape |
 |---|---|---|---|
 | Assertion_ID | `id:assertion/{id} a chora:Assertion`; atto `id:act/{id}` | obbligatorio | AssertionShape |
-| Assertion_Type | atto `hico:hasInterpretationType` | status, identification, location, partition, memory, uncertainty, variant, route, repertory, naming, commentary | AssertionShape |
+| Assertion_Type | atto `hico:hasInterpretationType` | status, identification, location, partition, uncertainty, variant, route, repertory, naming, commentary | AssertionShape |
 | Subject | `chora:aboutSubject` | `tipo/id` o `chora:Termine` | ReifiedTypeShape e shape per tipo |
 | Value | `chora:assertsValue` (più valori con «\|») | obbligatorio salvo per i commenti | AssertionShape, ReifiedTypeShape |
 | Author_ID | associazione ReadingAuthor sull'atto; `prov:wasAttributedTo` | agente di Agents.tsv; più autori con «\|» | ReadingProvenanceShape |

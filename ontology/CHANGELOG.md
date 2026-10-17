@@ -31,6 +31,15 @@ internamente come «GaddAtlas Ontology» fino alla v4.1.1.
   `chora:hasRealityStatus` precisa che l'ordine 1–4 è un ordinamento del
   vocabolario, non una scala di precisione o di affidabilità. Imagined resta
   un concetto dello schema con notazione 4 (D-090).
+- `chora:hasFocalizer` e `chora:FocalizingAgent`: il focalizzatore è definito per
+  inerenza, come l'agente a cui il luogo appartiene in quel punto del racconto, a
+  prescindere da chi pronunci la menzione; commenti in italiano e in inglese (D-094).
+
+### Rimosso
+- `chora:hasNarratingVoice`, `chora:MemoryAssertion`, `chora:MemoryAttributionScheme`
+  (`AuthorMemory`, `CharacterMemory`, `UndecidableMemory`) e `chora:memoryAttribution`:
+  il focalizzatore è definito per inerenza, e voce e memoria restano nella tesi e nel
+  commento critico (D-094).
 
 ### Corretto
 - Dieci categorie di luogo presenti nei dati e assenti da `mapping.yaml`

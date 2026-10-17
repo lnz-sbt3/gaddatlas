@@ -317,7 +317,7 @@ ga:AssertionShape
         sh:path ( prov:wasGeneratedBy hico:hasInterpretationType ) ;
         sh:minCount 1 ; sh:maxCount 1 ;
         sh:in ( ga:StatusAssertion ga:IdentificationAssertion ga:LocationAssertion
-                ga:PartitionAssertion ga:MemoryAssertion ga:UncertaintyAssertion
+                ga:PartitionAssertion ga:UncertaintyAssertion
                 ga:VariantAssertion ga:RouteTypeAssertion ga:RepertoryAttestation
                 ga:NamingAssertion ga:CommentaryAssertion ) ;
         sh:message "Ogni Assertion ha esattamente un tipo dello schema AssertionType." ;
@@ -487,33 +487,9 @@ ga:LocalizationStatusShape
 
 
 # =============================================================================
-# SHAPE 11 — Livelli enunciativi (D-049, work order T-36)
-# La voce narrante e' facoltativa: la sua assenza vale «non annotato».
-# Un'asserzione di memoria usa i valori dello schema MemoryAttribution.
+# SHAPE 11 — rimossa (D-094): voce narrante e attribuzione della memoria non
+# sono piu' nel modello. Il numero non si riassegna.
 # =============================================================================
-
-ga:NarratingVoiceShape
-    a sh:NodeShape ;
-    sh:targetClass ga:SpatialInterpretation ;
-    sh:property [
-        sh:path ga:hasNarratingVoice ;
-        sh:maxCount 1 ;
-        sh:class ga:FocalizingAgent ;
-        sh:message "hasNarratingVoice: al piu' una voce, che sia un FocalizingAgent." ;
-    ] .
-
-ga:MemoryAssertionShape
-    a sh:NodeShape ;
-    sh:targetClass ga:Assertion ;
-    sh:or (
-        [ sh:not [ sh:path ( prov:wasGeneratedBy hico:hasInterpretationType ) ; sh:hasValue ga:MemoryAssertion ] ]
-        [ sh:and (
-            [ sh:path ga:aboutSubject ; sh:class ga:PlaceReference ]
-            [ sh:path ga:assertsValue ; sh:minCount 1 ;
-              sh:in ( ga:AuthorMemory ga:CharacterMemory ga:UndecidableMemory ) ]
-          ) ]
-    ) ;
-    sh:message "Un'asserzione di memoria riguarda un'occorrenza e ha valori dello schema MemoryAttribution (D-070)." .
 
 
 # =============================================================================

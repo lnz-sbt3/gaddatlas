@@ -446,14 +446,6 @@ mappings:
         # (relanchor/{Interpretation_ID}). Non producono geometria: la posizione
         # sta solo in Anchors_To_Entity_ID. Li legge tools/etl.py. ***
 
-        # *** D-049 (T-36): voce narrante, distinta dal focalizzatore. Si
-        # annota solo dove una fonte critica ne discute; cella vuota = «non
-        # annotato», non «voce = focalizzatore». ***
-        - property: "chora:hasNarratingVoice"
-          column: "Narrating_Voice_ID"
-          to: "@Focalizer_ID"
-          optional: true
-
         - property: "chora:anchorsToEntity"
           column: "Anchors_To_Entity_ID"
           to: "@GazetteerEntity_ID"
@@ -676,7 +668,7 @@ mappings:
 #   gazetteer/gaz_castel_gandolfo, annotator/lorenzo_sabatino) oppure
 #   'chora:Termine' (es. chora:Invented). Value ed Encoder_ID ammettono piu'
 #   valori separati da '|'. Assertion_Type: status | identification | location |
-#   partition | memory | uncertainty | variant | route. Adopted: si | no.
+#   partition | uncertainty | variant | route. Adopted: si | no.
 # ============================================================
 
 # FILE: Chapters.tsv (Capitoli dell'opera)
@@ -789,7 +781,7 @@ documentation:
       Encoder_ID ammettono piu' valori separati da '|'.
     columns:
       Assertion_ID:   "IRI assertion/{id}; rdf:type chora:Assertion; atto act/{id}"
-      Assertion_Type: "atto: hico:hasInterpretationType: status | identification | location | partition | memory | uncertainty | variant | route"
+      Assertion_Type: "atto: hico:hasInterpretationType: status | identification | location | partition | uncertainty | variant | route"
       Subject:        "lettura: chora:aboutSubject"
       Value:          "lettura: chora:assertsValue (uno per valore)"
       Author_ID:      "atto: prov:qualifiedAssociation (prov:hadRole chora:ReadingAuthor) + prov:wasAssociatedWith; lettura: prov:wasAttributedTo"
@@ -811,7 +803,7 @@ documentation:
       Plays_On:       "lettura: chora:playsOn gazetteer/{id}: il toponimo reale su cui il nome gioca (naming, D-085)"
       Variant_Kind:   "lettura: chora:variantKind: forma (stesso luogo, D-054) | sostituzione (luoghi diversi, D-085); obbligatorio per le varianti"
       Disagrees_With: "lettura: cito:disagreesWith assertion/{id} (D-085)"
-    derived: "per le letture adottate: chora:hasRouteType (route), chora:identifiedWith (identification), chora:memoryAttribution (memory); per tutte le varianti: chora:hasVariant (D-070)"
+    derived: "per le letture adottate: chora:hasRouteType (route), chora:identifiedWith (identification); per tutte le varianti: chora:hasVariant (D-070)"
 
   Sources:
     source_file: "Sources.tsv"

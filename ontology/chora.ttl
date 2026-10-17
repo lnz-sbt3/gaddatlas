@@ -344,7 +344,8 @@ chora:excerpt a owl:DatatypeProperty ;
     skos:prefLabel "excerpt"@en .
 
 chora:hasFocalizer a owl:ObjectProperty ;
-    rdfs:comment "Collega una SpatialInterpretation all'agente attraverso cui lo spazio è percepito; la coppia luogo×focalizzatore è l'unità base del dataset."@it ;
+    rdfs:comment "Links a SpatialInterpretation to its focalizer: the agent to whom the place belongs at that point of the narrative (who lives in it, acts in it, remembers it or is implicated in it), regardless of who utters the mention. The place × focalizer pair is the basic unit of the dataset."@en,
+        "Collega una SpatialInterpretation al suo focalizzatore: l'agente a cui il luogo appartiene in quel punto del racconto (che vi abita, vi agisce, lo ricorda o vi è implicato), a prescindere da chi pronunci la menzione. La coppia luogo × focalizzatore è l'unità base del dataset."@it ;
     rdfs:domain chora:SpatialInterpretation ;
     rdfs:range chora:FocalizingAgent ;
     skos:altLabel "ha focalizzatore"@it ;
@@ -731,7 +732,8 @@ chora:Transformed a owl:NamedIndividual,
     skos:topConceptOf chora:RealityStatusScheme .
 
 chora:FocalizingAgent a owl:Class ;
-    rdfs:comment "Entità attraverso cui lo spazio è percepito/descritto"@it ;
+    rdfs:comment "The agent to whom the place belongs at that point of the narrative (who lives in it, acts in it, remembers it or is implicated in it), regardless of who utters the mention."@en,
+        "L'agente a cui il luogo appartiene in quel punto del racconto (che vi abita, vi agisce, lo ricorda o vi è implicato), a prescindere da chi pronunci la menzione."@it ;
     skos:altLabel "Agente Focalizzatore"@it ;
     skos:prefLabel "Focalizing Agent"@en .
 
@@ -820,7 +822,7 @@ skos:Concept a owl:Class .
 # =============================================================================
 # ASSERZIONI ATTRIBUITE (D-042, work order T-30)
 # Ogni lettura che il progetto registra (statuto, identificazione, posizione,
-# partizione, memoria, incertezza, variante) e' un nodo chora:Assertion: chi
+# partizione, incertezza, variante) e' un nodo chora:Assertion: chi
 # l'ha formulata, chi l'ha codificata, su quale fonte, quando, quale versione
 # rivede, e se e' la lettura adottata dal progetto. Nessuna lettura e' il
 # default del modello: quella adottata e' attribuita come le altre.
@@ -899,7 +901,6 @@ chora:AssertionTypeScheme a owl:NamedIndividual,
         chora:IdentificationAssertion,
         chora:LocationAssertion,
         chora:PartitionAssertion,
-        chora:MemoryAssertion,
         chora:UncertaintyAssertion,
         chora:VariantAssertion,
         chora:RouteTypeAssertion,
@@ -943,15 +944,6 @@ chora:PartitionAssertion a owl:NamedIndividual, skos:Concept, hico:Interpretatio
     skos:inScheme chora:AssertionTypeScheme ;
     skos:notation "partition" ;
     skos:prefLabel "Partition assertion"@en ;
-    skos:topConceptOf chora:AssertionTypeScheme .
-
-chora:MemoryAssertion a owl:NamedIndividual, skos:Concept, hico:InterpretationType ;
-    chora:reifiesProperty chora:memoryAttribution ;
-    skos:altLabel "memoria"@it ;
-    skos:definition "Attributes a remembered or projected space to the author, to a character, or declares it undecidable."@en ;
-    skos:inScheme chora:AssertionTypeScheme ;
-    skos:notation "memory" ;
-    skos:prefLabel "Memory assertion"@en ;
     skos:topConceptOf chora:AssertionTypeScheme .
 
 chora:UncertaintyAssertion a owl:NamedIndividual, skos:Concept, hico:InterpretationType ;
@@ -1287,48 +1279,12 @@ chora:NotApplicable a owl:NamedIndividual, skos:Concept ;
     skos:topConceptOf chora:LocalizationStatusScheme .
 
 # =============================================================================
-# LIVELLI ENUNCIATIVI (D-049, work order T-36, R08, R19)
-# Percezione (chora:hasFocalizer), enunciazione (chora:hasNarratingVoice) e
-# persistenza memoriale (asserzione chora:MemoryAssertion) sono piani distinti.
-# Il momento del racconto e' la posizione dell'occorrenza nel testo (capitolo,
-# pagina del riferimento): la temporalita' della storia non e' modellata
-# (docs/EXCLUSIONS.md).
+# MOMENTO DEL RACCONTO
+# La temporalita' ricostruita e' quella dell'intreccio: la posizione
+# dell'occorrenza nel testo (capitolo, pagina del riferimento). La temporalita'
+# della storia non e' modellata; il referente e' collocato in un'unica
+# sincronia, la Roma 1925-1927 della guida TCI (docs/EXCLUSIONS.md).
 # =============================================================================
-
-chora:hasNarratingVoice a owl:ObjectProperty ;
-    rdfs:comment "The voice that utters the passage of a spatial interpretation (who speaks), distinct from the focalizer (who perceives). Annotated only where a critical source discusses it; an interpretation without this property is «not annotated», which does not mean that voice and focalizer coincide."@en ;
-    rdfs:domain chora:SpatialInterpretation ;
-    rdfs:range chora:FocalizingAgent ;
-    skos:altLabel "ha voce narrante"@it ;
-    skos:prefLabel "has narrating voice"@en .
-
-chora:MemoryAttributionScheme a owl:NamedIndividual, skos:ConceptScheme ;
-    rdfs:label "Memory attribution"@en ;
-    skos:altLabel "Attribuzione della memoria"@it ;
-    skos:hasTopConcept chora:AuthorMemory, chora:CharacterMemory, chora:UndecidableMemory ;
-    skos:prefLabel "Memory attribution"@en .
-
-chora:AuthorMemory a owl:NamedIndividual, skos:Concept ;
-    skos:altLabel "memoria dell'autore"@it ;
-    skos:definition "The remembered space belongs to the author's memory."@en ;
-    skos:inScheme chora:MemoryAttributionScheme ;
-    skos:prefLabel "Author's memory"@en ;
-    skos:topConceptOf chora:MemoryAttributionScheme .
-
-chora:CharacterMemory a owl:NamedIndividual, skos:Concept ;
-    skos:altLabel "memoria del personaggio"@it ;
-    skos:definition "The remembered space belongs to the character's memory."@en ;
-    skos:inScheme chora:MemoryAttributionScheme ;
-    skos:prefLabel "Character's memory"@en ;
-    skos:topConceptOf chora:MemoryAttributionScheme .
-
-chora:UndecidableMemory a owl:NamedIndividual, skos:Concept ;
-    skos:altLabel "attribuzione indecidibile"@it ;
-    skos:definition "The text does not allow the memory to be attributed to author or character."@en ;
-    skos:inScheme chora:MemoryAttributionScheme ;
-    skos:prefLabel "Undecidable"@en ;
-    skos:scopeNote "A reading that superimposes the two memories asserts both AuthorMemory and CharacterMemory."@en ;
-    skos:topConceptOf chora:MemoryAttributionScheme .
 
 # =============================================================================
 # PARTIZIONI INTERPRETATIVE (D-050, work order T-37, R20)
@@ -1709,14 +1665,6 @@ chora:hasVariant a owl:ObjectProperty ;
     rdfs:range chora:PlaceReference ;
     skos:altLabel "ha variante"@it ;
     skos:prefLabel "has variant"@en .
-
-chora:memoryAttribution a owl:ObjectProperty ;
-    dcterms:references chora:MemoryAttributionScheme ;
-    rdfs:comment "Whose memory a remembered space belongs to, for an occurrence."@en ;
-    rdfs:domain chora:PlaceReference ;
-    rdfs:range skos:Concept ;
-    skos:altLabel "attribuzione della memoria"@it ;
-    skos:prefLabel "memory attribution"@en .
 
 chora:hasUncertaintyType a owl:ObjectProperty ;
     dcterms:references chora:UncertaintyTypeScheme ;

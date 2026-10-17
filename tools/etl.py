@@ -1000,16 +1000,6 @@ class GaddaETL:
                                 gid in self.id_cache['GazetteerEntity_ID']:
                             self.graph.add((interp_uri, CHORA.anchorsToEntity, rel))
 
-                # *** VOCE NARRANTE (D-049, T-36): chi parla, distinto da chi
-                # percepisce. Facoltativa: l'assenza vale «non annotato». ***
-                voice_id = str(row.get('Narrating_Voice_ID') or '').strip()
-                if voice_id:
-                    if voice_id not in self.id_cache['Focalizer_ID']:
-                        raise ValueError(f"Interpretation {interp_id}: voce narrante "
-                                         f"{voice_id!r} assente da FocalizingAgents.tsv")
-                    self.graph.add((interp_uri, CHORA.hasNarratingVoice,
-                                    self.resolve_lookup(voice_id, '@Focalizer_ID')))
-
                 # *** ANCHOR MODEL: v4.1.1, anchorsToEntity è l'unica property ***
                 # Alcune celle contengono più ID separati da "|" (es.
                 # "gaz_monte_manno | gaz_palestrina"): un anchorsToEntity
@@ -1263,7 +1253,7 @@ class GaddaETL:
     ASSERTION_TYPES = {
         "status": "StatusAssertion", "identification": "IdentificationAssertion",
         "location": "LocationAssertion", "partition": "PartitionAssertion",
-        "memory": "MemoryAssertion", "uncertainty": "UncertaintyAssertion",
+        "uncertainty": "UncertaintyAssertion",
         "variant": "VariantAssertion", "route": "RouteTypeAssertion",
         "repertory": "RepertoryAttestation", "naming": "NamingAssertion",
         "commentary": "CommentaryAssertion",
@@ -1406,7 +1396,7 @@ class GaddaETL:
         Processa Assertions.tsv (facoltativo). Una riga = una lettura attribuita.
 
         Colonne: Assertion_ID, Assertion_Type (status | identification | location |
-        partition | memory | uncertainty | variant), Subject, Value (anche piu'
+        partition | uncertainty | variant), Subject, Value (anche piu'
         valori separati da '|'), Author_ID, Encoder_ID (anche piu' codificatori
         separati da '|'), Source_Work, Source_Page, Adopted (si | no), Rationale,
         Revision_Of (Assertion_ID), Date (AAAA-MM-GG), Note, Rationale_Type
@@ -1687,7 +1677,6 @@ class GaddaETL:
     # tipo -> (proprieta' reificata, classe del soggetto, solo le adottate?)
     MATERIALIZED = {"RouteTypeAssertion": (CHORA.hasRouteType, CHORA.NarrativeRoute, True),
                     "IdentificationAssertion": (CHORA.identifiedWith, CHORA.NarrativePlace, True),
-                    "MemoryAssertion": (CHORA.memoryAttribution, CHORA.PlaceReference, True),
                     # le varianti non sono letture alternative: tutte (D-070)
                     "VariantAssertion": (CHORA.hasVariant, CHORA.PlaceReference, False),
                     # le attestazioni nel repertorio nemmeno (D-085)

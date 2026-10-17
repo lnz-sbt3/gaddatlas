@@ -20,9 +20,9 @@ FICLIT, XXXIX ciclo.
 
 | | |
 |---|---|
-| Ontologia | CHORA — 19 classi proprie, 78 proprietà, 84 concetti SKOS in 17 schemi (più le categorie di luogo) |
-| Dataset | 45.624 triple · 271 entità di gazetteer · 313 luoghi narrativi |
-| Annotazione | 744 riferimenti testuali (738 nel testimone di riferimento) · 972 interpretazioni (968 adottate) · 432 letture attribuite · 83 focalizzatori · 21 percorsi |
+| Ontologia | CHORA — 19 classi proprie, 76 proprietà, 80 concetti SKOS in 16 schemi (più le categorie di luogo) |
+| Dataset | 45.441 triple · 271 entità di gazetteer · 313 luoghi narrativi |
+| Annotazione | 744 riferimenti testuali (738 nel testimone di riferimento) · 974 interpretazioni (970 adottate) · 426 letture attribuite · 83 focalizzatori · 21 percorsi |
 | Copertura testuale | 738/738 riferimenti del testimone di riferimento con estratto (100%) |
 | Qualità | SHACL conforme · 12/12 competency · 21/21 integrity · 7/7 loci critici · audit 16/16 |
 | Interfaccia | in migrazione da prototipo Observable a applicazione statica |
@@ -54,7 +54,7 @@ gaddatlas/
 ├── tools/                         ETL, build, audit, migrazione namespace
 ├── w3id/                          configurazione dei redirect w3id.org
 ├── docs/DECISIONS.md              registro delle decisioni
-├── docs/EXCLUSIONS.md             esclusioni dichiarate e copertura parziale (R12)
+├── docs/EXCLUSIONS.md             esclusioni dichiarate (R12)
 └── docs/esperimenti/              esperimenti di estrazione: materiali di verifica dell'Appendice A, senza testo del romanzo
 ```
 
