@@ -21,7 +21,7 @@
   "ontologyVersion": "1.0.0",
   "buildVersion": "4.3",
   "source": "gaddatlas-full.ttl",
-  "tripleCount": 45624,
+  "tripleCount": 45441,
   "projection": {
    "type": "equirectangular",
    "center": [
@@ -111,13 +111,13 @@
   "counts": {
    "gazetteer": 266,
    "narrativePlaces": 313,
-   "interpretations": 968,
+   "interpretations": 970,
    "references": 738,
    "routes": 21,
    "chapters": 10,
    "agents": 83,
    "derivedSequences": 104,
-   "reliefRows": 937,
+   "reliefRows": 939,
    "ownTiles": 50
   }
  },
@@ -2338,9 +2338,9 @@
    "presentLocation": "Collina nel Carso",
    "historicalLocation": null,
    "distanceFromRomeKm": 452.3,
-   "refCountAnchored": 1,
+   "refCountAnchored": 2,
    "planeCount": 1,
-   "interpCount": 1,
+   "interpCount": 2,
    "narrativePlaceCount": 1,
    "densityClass": "hapax",
    "densityLevel": 0
@@ -2661,9 +2661,9 @@
    "presentLocation": "Monte dell'Altipiano Veneto",
    "historicalLocation": null,
    "distanceFromRomeKm": 446.0,
-   "refCountAnchored": 1,
+   "refCountAnchored": 2,
    "planeCount": 1,
-   "interpCount": 1,
+   "interpCount": 2,
    "narrativePlaceCount": 1,
    "densityClass": "hapax",
    "densityLevel": 0
@@ -10587,7 +10587,7 @@
    "description": null,
    "fuzziness": null,
    "partOf": null,
-   "interpCount": 1,
+   "interpCount": 2,
    "planeCount": 1,
    "targets": [
     {
@@ -10598,13 +10598,13 @@
    "roles": [
     {
      "role": "ProjectedSpace",
-     "n": 1
+     "n": 2
     }
    ],
    "determinations": [
     {
      "determination": "Relative",
-     "n": 1
+     "n": 2
     }
    ],
    "anchorInherited": false,
@@ -11207,7 +11207,7 @@
    "description": "monte dell'Altipiano veneto",
    "fuzziness": null,
    "partOf": null,
-   "interpCount": 1,
+   "interpCount": 2,
    "planeCount": 1,
    "targets": [
     {
@@ -11218,13 +11218,13 @@
    "roles": [
     {
      "role": "ProjectedSpace",
-     "n": 1
+     "n": 2
     }
    ],
    "determinations": [
     {
      "determination": "Relative",
-     "n": 1
+     "n": 2
     }
    ],
    "anchorInherited": false,
@@ -23699,7 +23699,7 @@
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
-   "criticalNote": "Voce narrante distinta dal focalizzatore: la voce «tradisce l'incursione del narratore gaddiano» (Perosa 2023a, p. 238)."
+   "criticalNote": "La critica vi osserva l’incursione del narratore gaddiano nello sguardo del personaggio (Perosa 2023a, p. 238)."
   },
   {
    "id": "interp_00504",
@@ -23715,7 +23715,7 @@
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
-   "criticalNote": "Voce narrante distinta dal focalizzatore: la voce «tradisce l'incursione del narratore gaddiano» (Perosa 2023a, p. 238)."
+   "criticalNote": "La critica vi osserva l’incursione del narratore gaddiano nello sguardo del personaggio (Perosa 2023a, p. 238)."
   },
   {
    "id": "interp_00505",
@@ -25779,7 +25779,7 @@
    "confidence": 1.0,
    "isNodeOfRoute": null,
    "routeOrder": null,
-   "criticalNote": "Voce narrante distinta dal focalizzatore: «divaricazione tra voce e punto di vista» (Savettieri 2020, p. 44)."
+   "criticalNote": "La critica vi osserva una divaricazione tra voce e punto di vista (Savettieri 2020, p. 44)."
   },
   {
    "id": "interp_00637",
@@ -31220,6 +31220,38 @@
    "isNodeOfRoute": null,
    "routeOrder": null,
    "criticalNote": null
+  },
+  {
+   "id": "interp_00983",
+   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00983",
+   "referenceId": "ref_00144",
+   "narrativePlaceId": "dosso_faiti",
+   "routeId": null,
+   "gazetteerId": "gaz_dosso_faiti",
+   "narrativeRole": "ProjectedSpace",
+   "spatialDetermination": "Relative",
+   "spatialRelation": null,
+   "focalizerId": "narrator",
+   "confidence": 1.0,
+   "isNodeOfRoute": null,
+   "routeOrder": null,
+   "criticalNote": "Luogo attribuito anche al narratore: la critica vi riconosce una memoria autobiografica dell'autore, il lutto per il fratello Enrico, che affiora attraverso Ingravallo (Perosa 2023a, pp. 103–104; Cortellessa 2023, p. 669; cfr. Lugnani in Perosa 2023a, p. 104, n. 97). Discussione nella tesi, cap. 4 e § 6.4."
+  },
+  {
+   "id": "interp_00984",
+   "iri": "https://w3id.org/gaddatlas/id/interpretation/interp_00984",
+   "referenceId": "ref_00145",
+   "narrativePlaceId": "monte_cengio",
+   "routeId": null,
+   "gazetteerId": "gaz_monte_cengio",
+   "narrativeRole": "ProjectedSpace",
+   "spatialDetermination": "Relative",
+   "spatialRelation": null,
+   "focalizerId": "narrator",
+   "confidence": 1.0,
+   "isNodeOfRoute": null,
+   "routeOrder": null,
+   "criticalNote": "Luogo attribuito anche al narratore: la critica vi riconosce una memoria autobiografica dell'autore, il lutto per il fratello Enrico, che affiora attraverso Ingravallo (Perosa 2023a, pp. 103–104; Cortellessa 2023, p. 669; cfr. Lugnani in Perosa 2023a, p. 104, n. 97). Discussione nella tesi, cap. 4 e § 6.4."
   }
  ],
  "references": [
@@ -40918,20 +40950,20 @@
    "refCount": 111
   },
   {
+   "id": "narrator",
+   "iri": "https://w3id.org/gaddatlas/id/focalizer/narrator",
+   "name": "narrator",
+   "gender": null,
+   "description": "Focalizzatore quando il luogo non appartiene a un personaggio o gruppo riconoscibile, oppure, come in QP 61, quando rappresenta l'autore.",
+   "refCount": 77
+  },
+  {
    "id": "pestalozzi",
    "iri": "https://w3id.org/gaddatlas/id/focalizer/pestalozzi",
    "name": "Pestalozzi",
    "gender": "male",
    "description": "Brigadiere Pestalozzi, conduce le indagini nell'area dei Castelli, dalla tenenza dei carabinieri di Marino",
    "refCount": 76
-  },
-  {
-   "id": "narrator",
-   "iri": "https://w3id.org/gaddatlas/id/focalizer/narrator",
-   "name": "narrator",
-   "gender": null,
-   "description": "Voce narrante gaddiana: onnisciente ma pervasa di digressioni, ironia e plurilinguismo; focalizzatore a pieno titolo.",
-   "refCount": 75
   },
   {
    "id": "santarella",
@@ -43275,9 +43307,9 @@
    "agentName": "narrator",
    "chapterId": "capitolo_II",
    "chapter": 2,
-   "length": 9,
-   "distinctTargets": 8,
-   "dispersion": 0.889,
+   "length": 11,
+   "distinctTargets": 10,
+   "dispersion": 0.909,
    "pageRange": [
     56,
     67
@@ -43342,6 +43374,26 @@
      "interpretationId": "interp_00162",
      "role": "Marker",
      "simultaneous": false
+    },
+    {
+     "page": 61,
+     "referenceId": "ref_00144",
+     "targetId": "gaz_dosso_faiti",
+     "narrativePlaceId": "dosso_faiti",
+     "gazetteerId": "gaz_dosso_faiti",
+     "interpretationId": "interp_00983",
+     "role": "ProjectedSpace",
+     "simultaneous": true
+    },
+    {
+     "page": 61,
+     "referenceId": "ref_00145",
+     "targetId": "gaz_monte_cengio",
+     "narrativePlaceId": "monte_cengio",
+     "gazetteerId": "gaz_monte_cengio",
+     "interpretationId": "interp_00984",
+     "role": "ProjectedSpace",
+     "simultaneous": true
     },
     {
      "page": 62,
@@ -53796,6 +53848,18 @@
    "isRouteNode": null
   },
   {
+   "targetId": "gaz_dosso_faiti",
+   "interpretationId": "interp_00983",
+   "referenceId": "ref_00144",
+   "page": 61,
+   "chapter": 2,
+   "agentId": "narrator",
+   "role": "ProjectedSpace",
+   "determination": "Relative",
+   "criticalNote": "Luogo attribuito anche al narratore: la critica vi riconosce una memoria autobiografica dell'autore, il lutto per il fratello Enrico, che affiora attraverso Ingravallo (Perosa 2023a, pp. 103–104; Cortellessa 2023, p. 669; cfr. Lugnani in Perosa 2023a, p. 104, n. 97). Discussione nella tesi, cap. 4 e § 6.4.",
+   "isRouteNode": null
+  },
+  {
    "targetId": "gaz_monte_cengio",
    "interpretationId": "interp_00169",
    "referenceId": "ref_00145",
@@ -53805,6 +53869,18 @@
    "role": "ProjectedSpace",
    "determination": "Relative",
    "criticalNote": "La visione del sangue produce uno slittamento semantico tra il personaggio di Ingravallo e un elemento biografico centrale dell'esperienza di Gadda, l'esperienza del fronte e la morte del fratello, attraverso il referente topografico del Cengio e del Faiti",
+   "isRouteNode": null
+  },
+  {
+   "targetId": "gaz_monte_cengio",
+   "interpretationId": "interp_00984",
+   "referenceId": "ref_00145",
+   "page": 61,
+   "chapter": 2,
+   "agentId": "narrator",
+   "role": "ProjectedSpace",
+   "determination": "Relative",
+   "criticalNote": "Luogo attribuito anche al narratore: la critica vi riconosce una memoria autobiografica dell'autore, il lutto per il fratello Enrico, che affiora attraverso Ingravallo (Perosa 2023a, pp. 103–104; Cortellessa 2023, p. 669; cfr. Lugnani in Perosa 2023a, p. 104, n. 97). Discussione nella tesi, cap. 4 e § 6.4.",
    "isRouteNode": null
   },
   {
@@ -57788,7 +57864,7 @@
    "agentId": "santarella",
    "role": "Marker",
    "determination": "Approximate",
-   "criticalNote": "Voce narrante distinta dal focalizzatore: la voce «tradisce l'incursione del narratore gaddiano» (Perosa 2023a, p. 238).",
+   "criticalNote": "La critica vi osserva l’incursione del narratore gaddiano nello sguardo del personaggio (Perosa 2023a, p. 238).",
    "isRouteNode": null
   },
   {
@@ -57800,7 +57876,7 @@
    "agentId": "santarella",
    "role": "Marker",
    "determination": "Approximate",
-   "criticalNote": "Voce narrante distinta dal focalizzatore: la voce «tradisce l'incursione del narratore gaddiano» (Perosa 2023a, p. 238).",
+   "criticalNote": "La critica vi osserva l’incursione del narratore gaddiano nello sguardo del personaggio (Perosa 2023a, p. 238).",
    "isRouteNode": null
   },
   {
@@ -59408,7 +59484,7 @@
    "agentId": "pestalozzi",
    "role": "Marker",
    "determination": "Approximate",
-   "criticalNote": "Voce narrante distinta dal focalizzatore: «divaricazione tra voce e punto di vista» (Savettieri 2020, p. 44).",
+   "criticalNote": "La critica vi osserva una divaricazione tra voce e punto di vista (Savettieri 2020, p. 44).",
    "isRouteNode": null
   },
   {

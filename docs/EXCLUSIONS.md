@@ -71,6 +71,8 @@ mappate.
 - **Dove sta:** nel grafo c'è solo l'ipotesi metrica del progetto (P-0001, D-050),
   dichiarata come tale: una partizione per distanza dal Campidoglio, non una
   lettura critica.
+- **Nota sull'ipotesi metrica P-0001:** 224 luoghi assegnati (163 Roma città,
+  61 campagna romana); i casi di confine non sono assegnati.
 - **Decisione:** Lorenzo Sabatino, 10 ottobre 2026 (D-088).
 
 ## 6. Frizione dei luoghi di soglia
@@ -81,17 +83,3 @@ evento narrativo) non è mappata.
 - **Dove sta:** il concetto `chora:Threshold` esiste nella TBox (D-058), senza
   istanze.
 - **Decisione:** Lorenzo Sabatino, 10 ottobre 2026 (D-088).
-
----
-
-## Copertura parziale dichiarata
-
-Non sono esclusioni: il modello prevede il fenomeno, ma i dati lo coprono solo
-in parte. L'assenza del valore vale «non annotato».
-
-| Fenomeno | Annotato | Il resto | Decisione |
-|---|---|---|---|
-| Voce narrante (`chora:hasNarratingVoice`) | 5 interpretazioni, i casi discussi nel Cap. 4 (QP 61, 175, 211) | «non annotato»: non vuol dire che voce e focalizzatore coincidano | D-049 |
-| Attribuzione della memoria (`chora:MemoryAssertion`) | QP 61, Dosso Faiti e Monte Cengio (Perosa, Lugnani, Cortellessa) | non annotato | D-049 |
-| Partizione Roma città / campagna romana | 221 luoghi assegnati dal criterio di distanza | casi di confine e luoghi senza ancora non assegnati, in revisione | D-050 |
-| Varianti di testimone | le quattro documentate dal Cap. 4 | le altre varianti non sono registrate | D-053 |

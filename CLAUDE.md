@@ -20,20 +20,20 @@ Due artefatti distinti nello stesso repository:
 
 ## Le decisioni sono già prese
 
-`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-093; quelle dell'allineamento al
+`docs/DECISIONS.md` contiene le decisioni motivate D-001…D-095; quelle dell'allineamento al
 Capitolo 4 partono da D-019 (D-015…D-018 sono del porting, su `main`). Nel file sono in
-ordine cronologico, non numerico. Prossimo numero libero: **D-094**. **Leggile
+ordine cronologico, non numerico. Prossimo numero libero: **D-096**. **Leggile
 prima di proporre alternative architetturali.** Se una scelta ti sembra
 sbagliata, dillo citando la decisione — non aggirarla in silenzio.
 
-**Stato dei dati: allineato (fase 3d, statuti dei casi vicini e indice di forma, 15 ottobre 2026).**
-`data/dist/gaddatlas.geojson` dichiara `tripleCount 45624`, `buildVersion 4.3`,
-`ontology CHORA`. ABox 43.434 triple, TBox 1.620; 313 luoghi (Imported 263 ·
+**Stato dei dati: allineato (fase 3g, voce narrante e memoria fuori dal modello, 18 ottobre 2026).**
+`data/dist/gaddatlas.geojson` dichiara `tripleCount 45441`, `buildVersion 4.3`,
+`ontology CHORA`. ABox 43.303 triple, TBox 1.568; 313 luoghi (Imported 263 ·
 Transformed 32 · Invented 18 · Imagined 0: categoria del vocabolario senza
 istanze nel *Pasticciaccio*, D-090), 271 entità del gazetteer (5 senza
-coordinate, nessuna usata come ancora), 972 interpretazioni (968 adottate), 744
-occorrenze (738 nel testimone di riferimento QPa), 21 percorsi tipizzati, 432
-letture attribuite (173 esplicite in `Assertions.tsv`, 259 statuti generati
+coordinate, nessuna usata come ancora), 974 interpretazioni (970 adottate), 744
+occorrenze (738 nel testimone di riferimento QPa), 21 percorsi tipizzati, 426
+letture attribuite (167 esplicite in `Assertions.tsv`, 259 statuti generati
 dall'ETL), 5 testimoni (QPL, dtsFG, bzFG, QP, QPa), 18 fonti, 12 agenti. 304
 feature; **nessun luogo annotato fuori dall'interfaccia** (300 su 300, D-084);
 verifica visiva della fase 3 chiusa (D-084: lo slittamento lungo l'arco delle

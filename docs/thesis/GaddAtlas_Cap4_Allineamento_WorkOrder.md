@@ -361,6 +361,8 @@ Su SpatialInterpretation (o PlaceReference):
 - `chora:narrativeTime` (momento del racconto);
 - per i casi di memoria autobiografica, un'asserzione attribuita `chora:MemoryAttributionAssessment`: autore / personaggio / indecidibile, con autore della lettura.
 
+> **Nota (D-094, 17/10/2026):** voce narrante (`chora:hasNarratingVoice`) e attribuzione della memoria sono state rimosse dal modello. Il focalizzatore è definito per inerenza: l'agente a cui il luogo appartiene in quel punto del racconto, a prescindere da chi parli. La questione resta nella tesi e nel commento critico.
+
 ### T-37 · Partizioni interpretative (R20) — `DECISO`
 
 - Entità «Campagna» / «Città» come **ipotesi attribuite** (PartitionAssessment):

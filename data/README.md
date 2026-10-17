@@ -58,19 +58,19 @@ pubblicabile e il dato citabile senza dover eseguire la pipeline. La CI in
 
 ## Stato verificato
 
-Al 2026-10-15 (fase 3d, D-092), con `make all && make audit && make shacl`:
+Al 2026-10-18 (fase 3g, D-094), con `make all && make audit && make shacl`:
 
 | | |
 |---|---|
-| Triple (full) | 45.624 (ABox 43.434, TBox 1.620) |
+| Triple (full) | 45.441 (ABox 43.303, TBox 1.568) |
 | GazetteerEntity | 271, di cui 254 con tessera in mappa (5 senza coordinate) |
 | NarrativePlace | 313, di cui 50 con tessera propria |
 | Reality Status | Imported 263 · Transformed 32 · Invented 18 · Imagined 0 |
 | PlaceReference | 744 — 738 del testimone di riferimento QPa, tutte con `chora:excerpt`, confrontate con il volume a stampa (D-092); 6 di altri testimoni |
-| SpatialInterpretation | 972 (968 adottate) — 941 verso luoghi, 31 verso route |
+| SpatialInterpretation | 974 (970 adottate) — 943 verso luoghi, 31 verso route |
 | FocalizingAgent | 83 · NarrativeRoute 21 · Chapter 10 |
-| criticalNote | 77 · hasPlaceCategory 312 |
-| Righe di `relief` | 937 — tutte risolvono a una feature |
+| criticalNote | 79 · hasPlaceCategory 312 |
+| Righe di `relief` | 939 — tutte risolvono a una feature |
 | Audit | 16 invarianti su 16 |
 | SHACL | conforme, nessun risultato |
 | Query | 12/12 competency, 21/21 integrity, 7/7 loci critici |
