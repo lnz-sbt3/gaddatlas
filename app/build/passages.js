@@ -5,6 +5,14 @@ import {createHash,randomBytes} from 'node:crypto';
 const ID='virtual:passage-access',RESOLVED='\0'+ID;
 // Modalità di build pubblica (`vite build --mode pubblica`): nessun estratto entra nel sito.
 export const PUBLIC_MODE='pubblica';
+// Servizio dei passi della build pubblica (e dello sviluppo senza estratti): un passo per richiesta. Unico punto di
+// configurazione; la variabile PASSAGE_SERVICE lo sostituisce per una prova, vuota lo disattiva.
+export const PASSAGE_SERVICE='https://gaddatlas-servizio.netlify.app';
+export function passageService(value=process.env.PASSAGE_SERVICE??PASSAGE_SERVICE){
+ if(!value)return null;
+ if(!/^https?:\/\/[^/?#]+$/.test(value))throw Error('Servizio dei passi: indirizzo non valido');
+ return value;
+}
 const chapterFiles=dir=>existsSync(dir)?readdirSync(dir).filter(n=>/^ch\d{2}\.json$/.test(n)):[];
 export const fragmentName=(salt,id)=>createHash('sha256').update(salt+'\0'+id).digest('hex')+'.json';
 
@@ -27,7 +35,7 @@ export function collectFragments(root,salt){
 }
 
 // Modalità rigida (predefinita): la build si ferma se manca un riferimento. Modalità pubblica, e sviluppo senza
-// estratti: nessun frammento, nessuna richiesta; il pannello rinvia all'edizione di riferimento.
+// estratti: nessun frammento; il pannello chiede il passo al servizio e, senza risposta, rinvia all'edizione.
 export default function passageAccess(){
  const salt=randomBytes(24).toString('hex');let root,fragments,withheld=false;
  const load=()=>fragments??=collectFragments(root,salt);
@@ -36,8 +44,8 @@ export default function passageAccess(){
   configResolved(config){root=config.root;withheld=config.mode===PUBLIC_MODE||(config.command==='serve'&&!chapterFiles(resolve(root,'../data/dist/passages')).length);},
   resolveId(id){if(id===ID)return RESOLVED;},
   load(id){if(id!==RESOLVED)return;
-   if(withheld)return 'export const passagesAvailable=false;export async function passagePath(){return null;}';
-   return `export const passagesAvailable=true;export async function passagePath(id){
+   if(withheld)return `export const passagesAvailable=false;export const passageService=${JSON.stringify(passageService())};export async function passagePath(){return null;}`;
+   return `export const passagesAvailable=true;export const passageService=null;export async function passagePath(id){
    if(!/^ref_\\d{5}$/.test(id))throw Error('Riferimento non valido');
    const bytes=new TextEncoder().encode(${JSON.stringify(salt)}+'\\0'+id);
    const hash=await crypto.subtle.digest('SHA-256',bytes);

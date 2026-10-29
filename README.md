@@ -2,7 +2,7 @@
 
 Interfaccia di GaddAtlas, atlante interattivo della spazialità narrativa di *Quer pasticciaccio brutto de via Merulana* di Carlo Emilio Gadda. L'atlante, in italiano, è scritto in JavaScript con D3 e Canvas; Vite risolve i moduli e produce il sito statico. Il grafo RDF da cui derivano i dati non serve al rendering nel browser: l'interfaccia legge file GeoJSON già esportati.
 
-L'interfaccia pubblicata si consulta all'indirizzo https://lnz-sbt3.github.io/gaddatlas/. I testi dei passi non sono inclusi nella pubblicazione: per ogni riferimento il pannello del testo indica capitolo e pagina del testimone di riferimento (QP Adelphi 2018), e gli stessi riferimenti sono nei dati, in `app/public/data/gaddatlas.geojson`.
+L'interfaccia pubblicata si consulta all'indirizzo https://lnz-sbt3.github.io/gaddatlas/. I testi dei passi non sono inclusi nella pubblicazione: il pannello del testo chiede il passo selezionato, uno per volta, al servizio di consultazione dei passi (https://gaddatlas-servizio.netlify.app). Se il servizio non risponde, il pannello indica capitolo e pagina del testimone di riferimento (QP Adelphi 2018); gli stessi riferimenti sono nei dati, in `app/public/data/gaddatlas.geojson`.
 
 Le carte storiche del 1925 (Dintorni di Roma, Roma, Castelli Romani) sono incluse in `app/carte-storiche/` e compaiono sotto la figura, nella geografia, con il comando «Carta 1925»: un cursore ne regola la visibilità e «Interrogare» ne sceglie il trattamento.
 
@@ -36,7 +36,7 @@ Servono Node.js e npm (la build e i test sono stati verificati con Node.js 22).
 
    Vite apre l'atlante nel browser, normalmente sulla porta 5173. Non servire i sorgenti con un semplice server di file: le dipendenze dei moduli richiedono Vite.
 
-Senza gli estratti l'atlante funziona: al posto del passo il pannello del testo rinvia al testimone di riferimento (vedi «Senza estratti»).
+Senza gli estratti l'atlante funziona: il pannello del testo chiede il passo al servizio di consultazione e, se non risponde, rinvia al testimone di riferimento (vedi «Senza estratti»).
 
 ## Build
 
@@ -50,6 +50,8 @@ Il percorso base è configurabile, per esempio `BASE_PATH=/gaddatlas/ npm run bu
 
 `npm run build` richiede gli estratti e si ferma se ne manca uno. `npm run build:pubblica` (`vite build --mode pubblica`) non li usa: è la build che il workflow `.github/workflows/pages.yml` pubblica su GitHub Pages.
 
+L'indirizzo del servizio dei passi è la costante `PASSAGE_SERVICE` in `app/build/passages.js`, l'unico punto in cui compare. La variabile d'ambiente `PASSAGE_SERVICE` lo sostituisce per una prova; vuota, lo disattiva.
+
 Entrambe le build copiano le immagini elencate in `app/carte-storiche/manifest.json` nella cartella `carte-storiche/` del sito; il workflow non ha bisogno di altri file.
 
 ## Test
@@ -60,7 +62,7 @@ Dalla cartella `app/`:
 node --test
 ```
 
-Senza estratti 65 test passano e uno è saltato: quello che controlla i frammenti prodotti dagli estratti reali.
+Senza estratti 67 test passano e uno è saltato: quello che controlla i frammenti prodotti dagli estratti reali.
 
 ## Senza estratti
 
@@ -69,11 +71,11 @@ Gli estratti del romanzo non si distribuiscono: `data/dist/passages/` contiene s
 | Operazione | Con gli estratti | Senza estratti |
 |---|---|---|
 | `npm run dev` | l'atlante si avvia | l'atlante si avvia |
-| Pannello del testo | mostra il passo con edizione e pagina, accompagnato dall'apparato (ruolo, focalizzatore, determinazione, nota critica) | al posto del passo mostra «Il testo del passo non è distribuito con questa pubblicazione.», il rinvio al testimone di riferimento con capitolo e pagina, e l'apparato |
-| Server di sviluppo | serve un frammento per riferimento | non serve frammenti; il pannello non li richiede |
+| Pannello del testo | mostra il passo con edizione e pagina, accompagnato dall'apparato (ruolo, focalizzatore, determinazione, nota critica) | chiede il passo selezionato al servizio di consultazione e lo mostra allo stesso modo; se il servizio non risponde entro 6 secondi o rifiuta la richiesta, mostra «Il testo del passo non è distribuito con questa pubblicazione.», il rinvio al testimone di riferimento con capitolo e pagina, e l'apparato |
+| Server di sviluppo | serve un frammento per riferimento | non serve frammenti; il pannello chiede il passo al servizio |
 | `npm run build` | produce `app/dist/` con un frammento per riferimento | si interrompe con «Riferimenti testuali incompleti» |
 | `npm run build:pubblica` | produce `app/dist/` senza estratti | produce `app/dist/` senza estratti |
-| `node --test` | 66 test superati | 65 superati, 1 saltato |
+| `node --test` | 68 test superati | 67 superati, 1 saltato |
 
 Chi dispone degli estratti li mette in `data/dist/passages/`, un file per capitolo (`ch01.json` … `ch10.json`), con il formato che legge `app/build/passages.js`. La build pubblica un file per riferimento con un nome opaco, senza capitoli completi né indice degli indirizzi; i nomi opachi non sono un controllo d'accesso.
 
@@ -111,7 +113,7 @@ Le carte storiche sono in `app/carte-storiche/`. Per ciascuna delle tre carte ci
 - **Dati di GaddAtlas** (`app/public/data/gaddatlas.geojson`, `data/dist/atlas.slim.json`): licenza Creative Commons Attribuzione 4.0 Internazionale (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/deed.it, con attribuzione a Lorenzo Sabatino, GaddAtlas.
 - **Dati OpenStreetMap**: `app/public/data/roma.geojson`, `app/src/assets/fondo/orientamento-osm.json` e `app/src/dev/fondo/tratti-osm.json` sono estratti da OpenStreetMap tramite Overpass API, licenza Open Database License 1.0 (ODbL), © OpenStreetMap contributors. L'interfaccia mostra l'attribuzione quando disegna il fondo derivato da OpenStreetMap.
 - **Caratteri** (`app/src/assets/fonts/`): SIL Open Font License 1.1 (vedi «Attribuzioni»).
-- **Estratti del romanzo**: non sono inclusi. L'opera è protetta dal diritto d'autore; gli estratti, dove l'interfaccia li mostra, sono citazioni ai sensi dell'art. 70 della legge 633/1941 e le licenze MIT e CC BY 4.0 non si applicano a essi.
+- **Estratti del romanzo**: non sono inclusi; l'interfaccia li riceve uno per volta dal servizio di consultazione. L'opera è protetta dal diritto d'autore; gli estratti, dove l'interfaccia li mostra, sono citazioni ai sensi dell'art. 70 della legge 633/1941 e le licenze MIT e CC BY 4.0 non si applicano a essi.
 
 ## Attribuzioni
 

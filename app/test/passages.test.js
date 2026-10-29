@@ -4,7 +4,7 @@ import {existsSync,mkdtempSync,mkdirSync,readdirSync,writeFileSync} from 'node:f
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {fileURLToPath} from 'node:url';
-import passageAccess,{collectFragments,fragmentName,PUBLIC_MODE} from '../build/passages.js';
+import passageAccess,{collectFragments,fragmentName,passageService,PASSAGE_SERVICE,PUBLIC_MODE} from '../build/passages.js';
 const root=fileURLToPath(new URL('../',import.meta.url));
 const passagesDir=fileURLToPath(new URL('../../data/dist/passages/',import.meta.url));
 const hasExcerpts=existsSync(passagesDir)&&readdirSync(passagesDir).some(n=>/^ch\d{2}\.json$/.test(n));
@@ -41,14 +41,27 @@ test('Modalità rigida: con gli estratti un frammento opaco per riferimento',()=
  assert.deepEqual(emitted.slice(0,2),['data/gaddatlas.geojson','data/roma.geojson']);
  assert.equal(emitted.length,3);assert.match(emitted[2],/^data\/readings\/[a-f0-9]{64}\.json$/);
 });
-test('Modalità pubblica: nessun estratto emesso, nessuna richiesta dal client',()=>{
+const service=client=>JSON.parse(client.match(/passageService=(null|"[^"]*")/)[1]);
+test('Modalità pubblica: nessun estratto emesso; il client conosce solo l’indirizzo del servizio',()=>{
  for(const withExcerpt of [false,true]){
   const {client,emitted}=run(fixture(withExcerpt),{mode:PUBLIC_MODE});
   assert.deepEqual(emitted,['data/gaddatlas.geojson','data/roma.geojson']);
   assert.match(client,/passagesAvailable=false/);assert.doesNotMatch(client,/readings|digest/);
+  assert.equal(service(client),process.env.PASSAGE_SERVICE??PASSAGE_SERVICE);
  }
 });
+test('Modalità rigida e sviluppo con gli estratti: nessun servizio',()=>{
+ assert.equal(service(run(fixture(true)).client),null);
+ assert.equal(service(run(fixture(true),{mode:'development',command:'serve'}).client),null);
+});
 test('Sviluppo senza estratti: stesso comportamento della modalità pubblica',()=>{
- assert.match(run(fixture(false),{mode:'development',command:'serve'}).client,/passagesAvailable=false/);
+ const client=run(fixture(false),{mode:'development',command:'serve'}).client;
+ assert.match(client,/passagesAvailable=false/);assert.equal(service(client),process.env.PASSAGE_SERVICE??PASSAGE_SERVICE);
  assert.match(run(fixture(true),{mode:'development',command:'serve'}).client,/passagesAvailable=true/);
+});
+test('Indirizzo del servizio: una sola origine, sostituibile per le prove, vuoto lo disattiva',()=>{
+ assert.equal(PASSAGE_SERVICE,'https://gaddatlas-servizio.netlify.app');
+ assert.equal(passageService('http://127.0.0.1:8888'),'http://127.0.0.1:8888');
+ assert.equal(passageService(''),null);
+ for(const bad of ['https://gaddatlas-servizio.netlify.app/','https://x/passage','gaddatlas-servizio.netlify.app','javascript:alert(1)'])assert.throws(()=>passageService(bad),/indirizzo non valido/,bad);
 });

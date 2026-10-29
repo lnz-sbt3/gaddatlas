@@ -42,7 +42,7 @@
   // sotto i tratti.
   PAPER: {mode: 'orientamento', grain: true, ringAlpha: .32, grainAlpha: .05},
   // Pannello della citazione: 'scheda' | 'margine' | 'edizione'.
-  PANEL: {variant: 'edizione'},
+  PANEL: {variant: 'edizione', serviceTimeoutMs: 6000},
   // Granularità del cursore per pagina: 'interruttore' un gruppo
   // pagina | riga sotto il cursore; 'tre-tempi' capitolo | pagina | riga in un solo gruppo; 'modificatore' nessun
   // comando, il cursore va per pagina e Maiuscolo con le frecce per riga. initial: passo all'apertura.

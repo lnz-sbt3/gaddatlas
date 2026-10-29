@@ -1,5 +1,5 @@
 import {html} from 'htl';
-import {passagePath,passagesAvailable} from 'virtual:passage-access';
+import {passagePath,passagesAvailable,passageService} from 'virtual:passage-access';
 import it from '../strings-it.js';
 import atlasConfig from '../model/config.js';
 
@@ -42,10 +42,22 @@ export default function createTextPanel({relief,entities,agents,aliasGroups=[],l
   if(variant==='edizione')return[html`<p class="ref-running-head">${it.runningHead(row.chapter,passage.page??row.page)}</p>`,html`<blockquote class="ref-edition">${highlight(passage.excerpt,toponym)}</blockquote>`,source,html`<section class="ref-apparatus" aria-label=${it.apparatusLabel}><h3>${it.apparatusLabel}</h3>${apparatus(rows)}</section>`];
   return[html`<blockquote>${passage.excerpt}</blockquote>`,source,...apparatus(rows)];
  }
- // Senza estratti (modalità pubblica): nessuna richiesta; restano il rinvio all'edizione e l'apparato.
+ // Senza il passo (servizio assente o senza risposta): restano il rinvio all'edizione e l'apparato.
  function withheld(rows){
   const row=rows[0],where=it.chapterPage(row.chapter,row.page);
   return[html`<p class="text-withheld">${it.passageWithheld}</p>`,html`<p class="text-source">${it.author}, <cite>${it.work}</cite> · ${it.referenceWitness}${where?` · ${where}`:''}</p>`,...apparatus(rows)];
+ }
+ const cited=passage=>html`<p class="text-source">${it.author}, <cite>${it.work}</cite> · ${passage.witnessLabel?`${passage.witnessLabel} · `:''}${passage.sourceReference}</p>`;
+ // Modalità pubblica: un passo per richiesta, solo alla selezione. Errore, rifiuto (429) o attesa oltre il limite
+ // valgono come assenza: null, senza eccezioni.
+ async function fromService(id){
+  const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),atlasConfig.PANEL.serviceTimeoutMs);
+  try{
+   const res=await fetch(`${passageService}/passage?id=${encodeURIComponent(id)}`,{signal:controller.signal,credentials:'omit'});
+   if(!res.ok)return null;
+   const passage=await res.json();
+   return passage?.id===id&&passage.excerpt&&passage.sourceReference?{...passage,referenceId:id}:null;
+  }catch{return null;}finally{clearTimeout(timer);}
  }
  async function show(tile,referenceId=null,{focusReturn=null}={}){
   const current=++revision;request++;
@@ -76,15 +88,19 @@ export default function createTextPanel({relief,entities,agents,aliasGroups=[],l
    for(const [key,s] of slots)s.article.classList.toggle('selected',explicit&&key===id);
    if(explicit){selection.reference=id;onSelect();}
    const reveal=()=>{if(explicit){body.scrollTop+=article.getBoundingClientRect().top-body.getBoundingClientRect().top;article.focus({preventScroll:true});}};
-   if(!passagesAvailable){content.replaceChildren(...withheld(rows));reveal();return;}
+   if(!passagesAvailable&&!passageService){content.replaceChildren(...withheld(rows));reveal();return;}
    content.replaceChildren(html`<p role="status">${it.loadingPassage}</p>`);pendingLoads++;
+   if(!passagesAvailable)try{
+    const passage=await fromService(id);if(token!==request||current!==revision)return;
+    content.replaceChildren(...(passage?quotation(passage,rows,feature.properties.Toponym,cited(passage)):withheld(rows)));
+    reveal();return;
+   }finally{pendingLoads--;}
    try{
     const path=await passagePath(id);if(token!==request||current!==revision)return;
     const passage=await loadJSON(path);
     if(token!==request||current!==revision)return;
     const available=passage.referenceId===id&&passage.excerpt&&passage.sourceReference;
-    const source=available&&html`<p class="text-source">${it.author}, <cite>${it.work}</cite> · ${passage.witnessLabel?`${passage.witnessLabel} · `:''}${passage.sourceReference}</p>`;
-    content.replaceChildren(...(available?quotation(passage,rows,feature.properties.Toponym,source):[html`<p>${it.missingPassage(id)}</p>`,...apparatus(rows)]));
+    content.replaceChildren(...(available?quotation(passage,rows,feature.properties.Toponym,cited(passage)):[html`<p>${it.missingPassage(id)}</p>`,...apparatus(rows)]));
     reveal();
    }catch(error){if(token!==request||current!==revision)return;const retry=html`<button type="button">${it.retry}</button>`;retry.onclick=()=>read(id,explicit);content.replaceChildren(html`<p role="alert">${it.passageError}</p>`,retry);if(import.meta.env.DEV)console.error(error);
    }finally{pendingLoads--;}
