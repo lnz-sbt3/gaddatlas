@@ -8,7 +8,7 @@ export function createHistoricalMap(options){
   const {manifest,config,onChange=()=>{}}=options;
   if(manifest.version!==2)return createHistoricalSource(options);
   const parts=[...manifest.sources].sort((a,b)=>a.order-b.order).map((source,i)=>createHistoricalSource({...options,
-    manifest:{...source,sphere_radius_m:manifest.sphere_radius_m,default_treatment:manifest.default_treatment,levels:source.levels},silent:i>0}));
+    manifest:{...source,sphere_radius_m:manifest.sphere_radius_m,default_treatment:manifest.default_treatment,assetBase:manifest.assetBase,levels:source.levels},silent:i>0}));
   const first=parts[0];
   if(config.HISTORICAL.stack==='pila')return createStack(parts,{config,onChange});
   return {element:first.element,
@@ -94,7 +94,8 @@ function createHistoricalSource({manifest,projection,cellRings,config,onChange=(
   input.addEventListener('input',()=>setOpacity(+input.value/100),{signal:controller.signal});
   async function load(level){
     if(cache.has(level.file))return cache.get(level.file);
-    const res=await fetch(import.meta.env.BASE_URL+'__local_basemap/'+level.file,{signal:controller.signal});
+    // Prefisso dal manifest: __local_basemap/ in sviluppo, carte-storiche/ nella build.
+    const res=await fetch(import.meta.env.BASE_URL+(manifest.assetBase??'__local_basemap/')+level.file,{signal:controller.signal});
     if(!res.ok)throw Error('Historical resource unavailable');
     let bitmap=await createImageBitmap(await res.blob());if(disposed){bitmap.close();return null;}
     // Amplificazione dell'inchiostro (config HISTORICAL.gain per trattamento): i trattamenti sono quasi bianchi per

@@ -19,7 +19,9 @@ export default function createHistoricalUi({historical, variant = 'strato', cont
  const names = {tenue: it.historicalTreatments.tenue, leggibile: it.historicalTreatments.leggibile, minimo: it.historicalTreatments.minimo};
  const treatments = html`<span class="ctl-pair historical-treatments" role="group" aria-label=${it.historicalTreatmentLabel}>${historical.treatments.map(t => html`<button type="button" class="ctl" data-treatment=${t} data-legend="historical">${names[t] || t}</button>`)}</span>`;
  const section = html`<section class="historical-section"><h3>${it.historicalQuestion}</h3><div class="ctl-row">${treatments}</div></section>`;
- const credit = html`<p class="historical-credit" hidden>${it.historicalCredit}</p>`;
+ // Con la carta accesa il fondo di orientamento è spento, ma il contorno di Roma (OpenStreetMap) resta: la sua
+ // attribuzione accompagna il credito della carta.
+ const credit = html`<p class="historical-credit" hidden>${it.historicalCredit} · ${it.osmCredit}</p>`;
  panel?.querySelector('.atlas-controls')?.append(section);
  container.append(credit);
  // Lo strato sta sotto la Bussola, dopo i luoghi narrativi; nella cornice prima di «Interrogare».

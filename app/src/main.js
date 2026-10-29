@@ -46,10 +46,11 @@ async function boot() {
     if(import.meta.env.DEV){
       // Varianti di sviluppo della determinazione (tensione, appoggi): solo con ?lab=, mai nel build.
       if(['tensione','appoggi'].includes(atlasConfig.DETERMINATION.mode))atlasConfig.DETERMINATION.devPaint=(await import('./dev/determinazione/contours.js')).paintContour;
-      const {default:manifest}=await import('virtual:historical-manifest');
-      if(manifest){const {createHistoricalMap}=await import('./render/historical-map.js');
-        historical=createHistoricalMap({manifest,projection,cellRings:model.atlasVoronoi.cellRings,config:atlasConfig,onChange:()=>atlas?.invalidateHistorical()});}
     }
+    // Carte storiche: in sviluppo dalla cartella locale, nella build da carte-storiche/ se il manifest c'è.
+    const {default:manifest}=await import('virtual:historical-manifest');
+    if(manifest){const {createHistoricalMap}=await import('./render/historical-map.js');
+      historical=createHistoricalMap({manifest,projection,cellRings:model.atlasVoronoi.cellRings,config:atlasConfig,onChange:()=>atlas?.invalidateHistorical()});}
 
     const codec = createUrlStateCodec(model, atlasConfig);
     let restoring = true;

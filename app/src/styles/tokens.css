@@ -41,6 +41,8 @@
   --historical-touch: 44px;
   --historical-track-min: 8rem;
   --historical-credit-measure: 100ch;
+  --credit-top-offset: 52px; /* tablet: sotto i comandi dell'intestazione */
+  --credit-scale-clearance: 104px; /* il credito si ferma prima della scala, centrata in basso (fino a 147 px con il suo velo) */
 }
 
 * { box-sizing: border-box; }
@@ -725,8 +727,12 @@ body { --fit-top: 56px; --fit-bottom: 40px; --fit-left: 232px; --fit-right: 232p
 .historical-controls.is-retired { display: none !important; }
 .historical-toggle.sheet-pad-narrative small { visibility: visible; }
 .historical-toggle.sheet-pad-narrative::before { border-style: double; border-width: 3px; }
-.historical-credit { position: absolute; left: var(--frame-x); bottom: 4px; z-index: 3; max-width: min(720px, calc(100% - 2 * var(--frame-x) - 180px)); margin: 0; font: 11px/1.35 var(--font-ui); color: var(--muted); }
+.historical-credit { position: absolute; left: var(--frame-x); bottom: 4px; z-index: 3; max-width: min(720px, calc(50% - var(--frame-x) - var(--credit-scale-clearance))); margin: 0; font: 11px/1.35 var(--font-ui); color: var(--muted); }
 .historical-credit[hidden], .historical-section[hidden] { display: none; }
+/* Tablet: il margine basso è occupato da didascalia, scala e indice; il credito della carta sta sotto l'intestazione. */
+@media (max-width: 1100px), (max-aspect-ratio: 1/1) {
+  .historical-credit:not(.fondo-credit) { top: calc(var(--frame-y) + var(--credit-top-offset)); bottom: auto; max-width: calc(100% - 2 * var(--frame-x)); font-size: 10.5px; line-height: 1.25; background: var(--veil); box-shadow: 0 0 8px 6px var(--veil); }
+}
 
 /* Pannello della citazione: varianti «margine» ed «edizione». Nessun colore di ruolo fuori dalla figura. */
 .ref-margin { display: grid; grid-template-columns: 56px 1fr; gap: 12px; align-items: start; }

@@ -4,13 +4,14 @@ Interfaccia di GaddAtlas, atlante interattivo della spazialità narrativa di *Qu
 
 L'interfaccia pubblicata si consulta all'indirizzo https://lnz-sbt3.github.io/gaddatlas/. I testi dei passi non sono inclusi nella pubblicazione: per ogni riferimento il pannello del testo indica capitolo e pagina del testimone di riferimento (QP Adelphi 2018), e gli stessi riferimenti sono nei dati, in `app/public/data/gaddatlas.geojson`.
 
-Le carte storiche del 1925 (Dintorni di Roma, Roma, Castelli Romani) non sono incluse in questa copia: senza di esse il comando della carta non compare e la figura poggia sul fondo di orientamento.
+Le carte storiche del 1925 (Dintorni di Roma, Roma, Castelli Romani) sono incluse in `app/carte-storiche/` e compaiono sotto la figura, nella geografia, con il comando «Carta 1925»: un cursore ne regola la visibilità e «Interrogare» ne sceglie il trattamento.
 
 ## Struttura
 
 - `app/index.html`, `app/src/`: l'applicazione (`main.js` carica i dati e monta l'atlante; `model/` dati e geometria, `render/` disegno, `interaction/` selezione, `motion/` transizioni, `ui/` comandi e pannelli, `styles/tokens.css` valori visivi, `strings-it.js` etichette).
 - `app/src/dev/`: strumenti che il codice carica soltanto in sviluppo (profilazione, varianti di regia e di resa).
-- `app/build/`: estensioni di Vite per i brani e per la carta storica locale.
+- `app/build/`: estensioni di Vite per i brani e per le carte storiche.
+- `app/carte-storiche/`: le tre carte storiche, in WebP, con il loro `manifest.json`.
 - `app/test/`: test con `node:test`.
 - `.github/workflows/pages.yml`: costruisce la versione pubblica e la pubblica su GitHub Pages.
 - `app/public/data/`: dati letti dall'interfaccia.
@@ -49,6 +50,8 @@ Il percorso base è configurabile, per esempio `BASE_PATH=/gaddatlas/ npm run bu
 
 `npm run build` richiede gli estratti e si ferma se ne manca uno. `npm run build:pubblica` (`vite build --mode pubblica`) non li usa: è la build che il workflow `.github/workflows/pages.yml` pubblica su GitHub Pages.
 
+Entrambe le build copiano le immagini elencate in `app/carte-storiche/manifest.json` nella cartella `carte-storiche/` del sito; il workflow non ha bisogno di altri file.
+
 ## Test
 
 Dalla cartella `app/`:
@@ -57,7 +60,7 @@ Dalla cartella `app/`:
 node --test
 ```
 
-Senza estratti 61 test passano e uno è saltato: quello che controlla i frammenti prodotti dagli estratti reali.
+Senza estratti 65 test passano e uno è saltato: quello che controlla i frammenti prodotti dagli estratti reali.
 
 ## Senza estratti
 
@@ -70,7 +73,7 @@ Gli estratti del romanzo non si distribuiscono: `data/dist/passages/` contiene s
 | Server di sviluppo | serve un frammento per riferimento | non serve frammenti; il pannello non li richiede |
 | `npm run build` | produce `app/dist/` con un frammento per riferimento | si interrompe con «Riferimenti testuali incompleti» |
 | `npm run build:pubblica` | produce `app/dist/` senza estratti | produce `app/dist/` senza estratti |
-| `node --test` | 62 test superati | 61 superati, 1 saltato |
+| `node --test` | 66 test superati | 65 superati, 1 saltato |
 
 Chi dispone degli estratti li mette in `data/dist/passages/`, un file per capitolo (`ch01.json` … `ch10.json`), con il formato che legge `app/build/passages.js`. La build pubblica un file per riferimento con un nome opaco, senza capitoli completi né indice degli indirizzi; i nomi opachi non sono un controllo d'accesso.
 
@@ -82,10 +85,11 @@ Chi dispone degli estratti li mette in `data/dist/passages/`, un file per capito
 | `app/public/data/gaddatlas.geojson` | luoghi, tessere, interpretazioni e rilievo di GaddAtlas | sì |
 | `data/dist/atlas.slim.json` | atlante ridotto, senza estratti; usato da un test | sì |
 | `data/dist/passages/` | brani del romanzo, un file per capitolo; solo per `npm run build` | no: non si distribuiscono (vedi «Senza estratti») |
+| `app/carte-storiche/` | tre carte storiche del 1925: 36 immagini WebP e `manifest.json` | sì |
 
 `gaddatlas.geojson` e `atlas.slim.json` sono derivati dal grafo di GaddAtlas e appartengono al profilo pubblico dei dati. In questa copia una nota critica che citava il romanzo è riformulata senza citazione.
 
-Le carte storiche non fanno parte della copia: in sviluppo il codice le cerca in `app/local-basemap/` (descritte da un `manifest.json`, una piramide per carta) e, senza, l'atlante funziona senza carta. La fonte, la Guida Rossa del Touring Club Italiano del 1925, non dichiara una licenza: le sue immagini non sono distribuite.
+Le carte storiche sono in `app/carte-storiche/`. Per ciascuna delle tre carte ci sono tre trattamenti tonali (tenue, leggibile, minimo) e quattro livelli di risoluzione (divisori 1, 2, 4, 8), in WebP senza perdita sui pixel visibili: 36 immagini. `manifest.json` descrive le tre fonti (titolo, anno, risoluzione al suolo), la georeferenziazione nel piano di Mercatore, la cornice e l'ellisse di ritaglio. In sviluppo il codice usa `app/local-basemap/` se esiste, altrimenti questa cartella.
 
 ## Moduli di sviluppo
 
@@ -97,7 +101,7 @@ Le carte storiche non fanno parte della copia: in sviluppo il codice le cerca in
 | Sovrascritture dei parametri (`src/model/config.js`) | parametro `?lab=` con un oggetto JSON di parametri, oppure la chiave `gaddatlas:lab` della memoria locale del browser | togliere il parametro e cancellare la chiave `gaddatlas:lab` |
 | Varianti della determinazione (`src/dev/determinazione/`) | con `?lab=` che imposta la determinazione in modalità `tensione` o `appoggi` | come sopra |
 | Fondi «raster» e «tratti» (`src/render/fondo.js`, `src/dev/fondo/`) | con `?lab=` che sceglie il fondo `raster` (tessere chieste a `tile.openstreetmap.org`) o `tratti` | come sopra |
-| Carta storica locale (`build/local-basemap.js`) | con un `manifest.json` in `app/local-basemap/` o nella cartella indicata da `LOCAL_BASEMAP_DIR` | togliere la cartella o la variabile |
+| Carta storica locale (`build/local-basemap.js`) | con un `manifest.json` in `app/local-basemap/` o nella cartella indicata da `LOCAL_BASEMAP_DIR`, al posto di `app/carte-storiche/` | togliere la cartella o la variabile |
 | Interfaccia di prova (`window.__GADDATLAS_TEST__`, `src/dev/scrubbing.js`) | sempre presente in sviluppo, dalla console del browser | non ha effetti senza una chiamata esplicita |
 | Registro dei tempi di disegno (`src/dev/profile-log.js`) | è incluso anche nella build, ma scrive in console solo con `PROFILE: true` in `src/model/config.js` | `PROFILE` vale `false` |
 
@@ -116,7 +120,7 @@ Le carte storiche non fanno parte della copia: in sviluppo il codice le cerca in
   - Public Sans, Copyright 2015 The Public Sans Project Authors (https://github.com/uswds/public-sans);
   - Literata, Copyright 2017 The Literata Project Authors (https://github.com/googlefonts/literata), in un sottoinsieme latino; il testo della licenza è in `app/src/assets/fonts/literata-OFL.txt`, perché il sottoinsieme non lo porta nei metadati.
 - **Fondo di orientamento**: © OpenStreetMap contributors (ODbL).
-- **Carte storiche** (solo in sviluppo, non incluse): Guida Rossa del Touring Club Italiano, Roma e dintorni, 1925: carte dei Dintorni di Roma, di Roma e dei Castelli Romani (Ufficio Cartografico TCI; stampa G. Ricordi & C., Milano; scansione dalla Collezione Valerio Varriale, stagniweb.it).
+- **Carte storiche** (`app/carte-storiche/`): Touring Club Italiano, Guida d'Italia, Italia centrale e Roma e dintorni, 1925 (prima edizione); riproduzioni dalla Collezione Valerio Varriale, stagniweb.it.
 - **Fondo «raster»** (solo in sviluppo): tessere standard di OpenStreetMap, © OpenStreetMap contributors.
 
 ## Come citare

@@ -22,5 +22,5 @@ data/dist/passages/*
 !data/dist/passages/LEGGIMI.md
 app/public/data/passages/
 
-# Carte storiche locali (solo sviluppo): piramidi e manifest non si distribuiscono
+# Cartella di lavoro delle carte storiche (solo sviluppo); la copia pubblicata è app/carte-storiche/
 app/local-basemap/
