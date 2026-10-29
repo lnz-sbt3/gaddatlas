@@ -1,11 +1,11 @@
 import * as d3 from "d3";
-import s4Config from "./config.js";
+import atlasConfig from "./config.js";
 
 // Delaunay/Voronoi, bordi campionati e normalizzazione cognitiva delle celle.
-export default function s4Voronoi(s4Projection, s4Entities) {
-  const { SAMPLE, REF_TILE_RADIUS_TARGET, REF_TILE_VARIANCE, REF_TILE_RADIUS_MIN, REF_TILE_RADIUS_MAX, OFFMAP_TILE_RADIUS, TILE_SIZE, TILE_AREA_GAIN, TILE_CORE_REACH, TILE_EQUA_GAIN, TILE_EQUA_REACH, TILE_EQUA_FLOOR } = s4Config;
-  const { pts, bbox } = s4Projection;
-  const { allData, N_INMAP, N_GEO } = s4Entities;
+export default function atlasVoronoi(atlasProjection, atlasEntities) {
+  const { SAMPLE, REF_TILE_RADIUS_TARGET, REF_TILE_VARIANCE, REF_TILE_RADIUS_MIN, REF_TILE_RADIUS_MAX, OFFMAP_TILE_RADIUS, TILE_SIZE, TILE_AREA_GAIN, TILE_CORE_REACH, TILE_EQUA_GAIN, TILE_EQUA_REACH, TILE_EQUA_FLOOR } = atlasConfig;
+  const { pts, bbox } = atlasProjection;
+  const { allData, N_INMAP, N_GEO } = atlasEntities;
 
   function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
 

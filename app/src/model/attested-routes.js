@@ -1,5 +1,5 @@
 import * as d3 from "d3";
-import s4Config from "./config.js";
+import atlasConfig from "./config.js";
 
 // Precalcolo delle route attestate, segmentate per focalizzatore.
 // Un percorso senza tipo resta disegnato.
@@ -7,16 +7,16 @@ export function isDrawnRoute(route) {
   return !route.routeType || route.routeType === "CompletedRoute";
 }
 
-export default function s4AttestedRoutes(gadda_real, s4Entities, s4Sequence) {
-  const { allDataById } = s4Entities;
-  const { sequence, chapterOfCursor } = s4Sequence;
+export default function atlasAttestedRoutes(gadda_real, atlasEntities, atlasSequence) {
+  const { allDataById } = atlasEntities;
+  const { sequence, chapterOfCursor } = atlasSequence;
   const sequenceByRefId = new Map(sequence.map(row => [String(row.referenceId || ""), row]));
-  const routeRgb = s4Config.ROLE_COLORS.Route;
+  const routeRgb = atlasConfig.ROLE_COLORS.Route;
   // Le linee sono riservate ai percorsi compiuti;
   // indicati, sognati, inferiti, direzionali e proposti restano nel grafo.
   const routeSource = (gadda_real.paths?.routes || gadda_real.routes || [])
     .filter(isDrawnRoute);
-  const aliasTargetById = new Map((s4Config.ALIAS_GROUPS || []).flatMap(g => g.ids.map(id => [id, g.canonical])));
+  const aliasTargetById = new Map((atlasConfig.ALIAS_GROUPS || []).flatMap(g => g.ids.map(id => [id, g.canonical])));
 
   function tileIndexOf(targetId) {
     return allDataById.get(targetId) ?? allDataById.get(aliasTargetById.get(targetId));

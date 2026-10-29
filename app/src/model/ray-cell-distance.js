@@ -3,7 +3,7 @@
 // una volta. Si scorrono i lati del poligono GREZZO (pochi vertici) e si risolve il sistema
 // lineare raggio<->segmento; si restituisce la distanza minima positiva trovata (= dove
 // il trattino deve fermarsi per restare dentro).
-const s4RayCellDistance = function rayCellDistance(gx, gy, dx, dy, cell){
+const atlasRayCellDistance = function rayCellDistance(gx, gy, dx, dy, cell){
   let best = Infinity;
   for (let k=0;k<cell.length-1;k++){
     const ax=cell[k][0], ay=cell[k][1], bx=cell[k+1][0], by=cell[k+1][1];
@@ -17,4 +17,4 @@ const s4RayCellDistance = function rayCellDistance(gx, gy, dx, dy, cell){
   return best === Infinity ? 0 : best;
 };
 
-export default s4RayCellDistance;
+export default atlasRayCellDistance;

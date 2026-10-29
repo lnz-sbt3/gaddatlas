@@ -1,7 +1,7 @@
 import * as d3 from "d3";
 
 // Stato compatto dei colori e delle identita' delle terrazze.
-const s4RoleBands = (() => {
+const atlasRoleBands = (() => {
   function create({allDataLength, roleCap, bandsMax, bandsLogBase, bandsCap}) {
     const CAP = roleCap ?? bandsCap;
     const NB = bandsMax ?? bandsCap;
@@ -172,7 +172,7 @@ const s4RoleBands = (() => {
   return { create };
 })();
 
-export default s4RoleBands;
+export default atlasRoleBands;
 
 // Riga della sequenza rappresentata dalla terrazza band (da 1) della tessera, nell'ordinamento di destinazione.
 // null con «tutti», per le bande aggregate e per una riga che non sia del personaggio, della tessera e della posizione.

@@ -1,9 +1,9 @@
 import * as d3 from "d3";
-import s4Config from "./config.js";
+import atlasConfig from "./config.js";
 
 // fusione alias + separazione referenziali/fittizi + indice unificato
-export default function s4Entities(gadda_real) {
-  const { ALIAS_GROUPS, GEO_RADIUS_KM, ROME_CENTER, N_CHAPTERS } = s4Config;
+export default function atlasEntities(gadda_real) {
+  const { ALIAS_GROUPS, GEO_RADIUS_KM, ROME_CENTER, N_CHAPTERS } = atlasConfig;
   const dataAll = gadda_real.features;
   // occorrenze come pubblicate nel GeoJSON, prima della fusione degli alias:
   // servono al criterio d'ordine esplicito piu' sotto
@@ -103,7 +103,7 @@ export default function s4Entities(gadda_real) {
 
   // Ogni tessera fittizia deve avere uno statuto che ha un glifo.
   // qui si ferma il caricamento con un errore che dice quale tessera e quale valore.
-  const { FICT_GLYPH_PATHS } = s4Config;
+  const { FICT_GLYPH_PATHS } = atlasConfig;
   const badStatus = fictData.filter(d => !FICT_GLYPH_PATHS[d.properties.reality_status]);
   if (badStatus.length) {
     throw new Error(

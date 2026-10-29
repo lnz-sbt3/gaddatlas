@@ -1,14 +1,14 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import s4Entities from "../src/model/entities.js";
-import s4Chapters from "../src/model/chapters.js";
-import s4Projection from "../src/model/projection-fit.js";
-import s4Voronoi from "../src/model/voronoi.js";
-import s4Satellites from "../src/model/satellites.js";
-import s4NarrativeGeometry from "../src/model/narrative-geometry.js";
-import s4RadialLayout from "../src/model/radial-layout.js";
-import s4NarrativeCells from "../src/model/narrative-cells.js";
+import atlasEntities from "../src/model/entities.js";
+import atlasChapters from "../src/model/chapters.js";
+import atlasProjection from "../src/model/projection-fit.js";
+import atlasVoronoi from "../src/model/voronoi.js";
+import atlasSatellites from "../src/model/satellites.js";
+import atlasNarrativeGeometry from "../src/model/narrative-geometry.js";
+import atlasRadialLayout from "../src/model/radial-layout.js";
+import atlasNarrativeCells from "../src/model/narrative-cells.js";
 
 // La forma delle celle e del rilievo usa un indice di forma congelato
 // (data/source/shape_index.json), non la posizione della tessera in allData.
@@ -25,20 +25,20 @@ test("ogni feature pubblicata ha un indice di forma intero e unico", () => {
 test("un indice di forma mancante produce un errore esplicito", () => {
   const data = structuredClone(gaddaReal);
   delete data.features.find(f => !f.geometry).properties.shapeIndex;
-  assert.throws(() => s4Entities(data), /indice di forma mancante/);
+  assert.throws(() => atlasEntities(data), /indice di forma mancante/);
 });
 
 test("un indice di forma ripetuto produce un errore esplicito", () => {
   const data = structuredClone(gaddaReal);
   const [a, b] = data.features.filter(f => !f.geometry);
   b.properties.shapeIndex = a.properties.shapeIndex;
-  assert.throws(() => s4Entities(data), /indice di forma .* ripetuto/);
+  assert.throws(() => atlasEntities(data), /indice di forma .* ripetuto/);
 });
 
 function cellsById(data) {
-  const e = s4Entities(data), c = s4Chapters(data, e), p = s4Projection(e), v = s4Voronoi(p, e);
-  const s = s4Satellites(e, c, v), ng = s4NarrativeGeometry(e, v, s, c);
-  const rl = s4RadialLayout(e, p, v, c, s, ng), nc = s4NarrativeCells(e, v, p, rl, s, ng);
+  const e = atlasEntities(data), c = atlasChapters(data, e), p = atlasProjection(e), v = atlasVoronoi(p, e);
+  const s = atlasSatellites(e, c, v), ng = atlasNarrativeGeometry(e, v, s, c);
+  const rl = atlasRadialLayout(e, p, v, c, s, ng), nc = atlasNarrativeCells(e, v, p, rl, s, ng);
   const out = new Map();
   for (const [i, rec] of nc.assignments) out.set(e.allData[i].properties.GazetteerEntity_ID, rec.polygon);
   return out;

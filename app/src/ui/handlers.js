@@ -1,8 +1,8 @@
 import it from "../strings-it.js";
-import s4Config from "../model/config.js";
+import atlasConfig from "../model/config.js";
 // Installa gli handler dei controlli. Tiene fuori da createAtlas il wiring UI,
 // lasciando li' solo le funzioni che mutano lo stato locale.
-const s4ChartHandlers = (() => {
+const atlasHandlers = (() => {
   function install({shell, constants, state, actions}) {
     const {
       PLAY_ICON, PAUSE_ICON,
@@ -10,7 +10,7 @@ const s4ChartHandlers = (() => {
       stagePrevBtn, stageNextBtn, seqChapterBtn, seqPageBtn, orderBtn, seqSlider,
       ribbonPrevBtn, ribbonNextBtn, roleButtons, rotLeftBtn, rotRightBtn, rotResetBtn, grainToggle, seqRowBtn, ribbonWrap
     } = shell;
-    const {stepDeg} = s4Config.ROTATION;
+    const {stepDeg} = atlasConfig.ROTATION;
     const {SEQ_PLAY_MS, PLAY_MS, N_CHAPTERS} = constants;
 
     function clearPlayback() {
@@ -55,7 +55,7 @@ const s4ChartHandlers = (() => {
     }
     // Modificatore: con Maiuscolo le frecce sul cursore delle pagine vanno per riga.
     seqSlider.onkeydown = e => {
-      if (s4Config.GRAIN.variant !== "modificatore" || !e.shiftKey) return;
+      if (atlasConfig.GRAIN.variant !== "modificatore" || !e.shiftKey) return;
       const d = {ArrowLeft: -1, ArrowDown: -1, ArrowRight: 1, ArrowUp: 1}[e.key];
       if (d) { e.preventDefault(); stepCursor(d, "row"); }
     };
@@ -116,7 +116,7 @@ const s4ChartHandlers = (() => {
     }
     seqChapterBtn.onclick = () => setSeqModeExplicit(false);
     // Nei «tre tempi» pagina e riga sono due modi del cursore; altrove «per pagina» lascia la granularità scelta.
-    seqPageBtn.onclick = () => { if (s4Config.GRAIN.variant === "tre-tempi") state.setSeqGrain("page"); setSeqModeExplicit(true); };
+    seqPageBtn.onclick = () => { if (atlasConfig.GRAIN.variant === "tre-tempi") state.setSeqGrain("page"); setSeqModeExplicit(true); };
     if (seqRowBtn) seqRowBtn.onclick = () => { state.setSeqGrain("row"); setSeqModeExplicit(true); };
     if (ribbonPrevBtn) ribbonPrevBtn.onclick = () => actions.moveSeqChapter(-1);
     if (ribbonNextBtn) ribbonNextBtn.onclick = () => actions.moveSeqChapter(1);
@@ -215,4 +215,4 @@ const s4ChartHandlers = (() => {
   return { install };
 })();
 
-export default s4ChartHandlers;
+export default atlasHandlers;

@@ -1,15 +1,15 @@
 import * as d3 from "d3";
-import s4Config from "./config.js";
+import atlasConfig from "./config.js";
 
 // Tessere narrative a incastro: usa i poligoni del collare, senza Voronoi locale.
-export default function s4NarrativeCells(s4Entities, s4Voronoi, s4Projection, s4RadialLayout, s4Satellites, s4NarrativeGeometry) {
-  const { N_CHAPTERS, SAMPLE, REF_TILE_RADIUS_TARGET, NARR_GLYPH_SCALE } = s4Config;
-  const { allData, N_GEO } = s4Entities;
-  const { cognitiveTileRadius, FICT_TILE_RADIUS } = s4Voronoi;
-  const { poleIndex } = s4Projection;
-  const { rankedRadialFullByChapter, angleToXY } = s4RadialLayout;
-  const { satellitesByHost, primaryHostOf } = s4Satellites;
-  const { buildHostTiles } = s4NarrativeGeometry;
+export default function atlasNarrativeCells(atlasEntities, atlasVoronoi, atlasProjection, atlasRadialLayout, atlasSatellites, atlasNarrativeGeometry) {
+  const { N_CHAPTERS, SAMPLE, REF_TILE_RADIUS_TARGET, NARR_GLYPH_SCALE } = atlasConfig;
+  const { allData, N_GEO } = atlasEntities;
+  const { cognitiveTileRadius, FICT_TILE_RADIUS } = atlasVoronoi;
+  const { poleIndex } = atlasProjection;
+  const { rankedRadialFullByChapter, angleToXY } = atlasRadialLayout;
+  const { satellitesByHost, primaryHostOf } = atlasSatellites;
+  const { buildHostTiles } = atlasNarrativeGeometry;
 
   const state = rankedRadialFullByChapter[N_CHAPTERS];
   const hostItems = new Map(state.items.map(it => [it.index, it]));

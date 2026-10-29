@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { bandRow } from "../src/render/role-bands.js";
-import s4Config from "../src/model/config.js";
+import atlasConfig from "../src/model/config.js";
 
 // Determinazione sulle terrazze (Continuità): la classe è della riga del personaggio, mai del luogo.
 const gaddaReal = JSON.parse(readFileSync(new URL("../public/data/gaddatlas.geojson", import.meta.url), "utf8"));
@@ -30,14 +30,14 @@ test("tutti, bande aggregate e righe di altro personaggio, tessera o posizione n
 });
 
 test("i token sono quelli del prototipo Continuità, in px CSS", () => {
-  const {width, dash} = s4Config.DETERMINATION;
+  const {width, dash} = atlasConfig.DETERMINATION;
   assert.equal(width, 1.05);
   assert.deepEqual(dash, {Precise: [], Relative: [6, 2], Approximate: [5, 2, 0.15, 2], Indeterminate: [0.15, 2.5]});
-  assert.equal(s4Config.DETERMINATION.mode, "continuita");
+  assert.equal(atlasConfig.DETERMINATION.mode, "continuita");
 });
 
 test("i dati pubblici usano solo le quattro classi o il dato mancante", () => {
-  const classes = new Set(Object.keys(s4Config.DETERMINATION.dash));
+  const classes = new Set(Object.keys(atlasConfig.DETERMINATION.dash));
   for (const row of gaddaReal.relief) assert.ok(row.determination == null || classes.has(row.determination), row.interpretationId);
   assert.ok(gaddaReal.relief.some(row => row.determination == null), "il dato mancante esiste e resta tale");
 });

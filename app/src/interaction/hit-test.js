@@ -1,14 +1,14 @@
 import * as d3 from "d3";
-import s4Config from "../model/config.js";
+import atlasConfig from "../model/config.js";
 
 // Interazioni e conversioni geometriche parametrizzate: transform, centro, tilt,
 // rotazione e buffer di frame restano in createAtlas e vengono passati a ogni chiamata.
-export default function s4Interaction(s4Entities, s4Projection, s4Voronoi, s4NarrativeCells) {
-  const { BIRTH_EPSILON, STRENGTH } = s4Config;
-  const { allData, N_INMAP, N_GEO } = s4Entities;
-  const { pts, bbox, width, height, geographicAngle } = s4Projection;
-  const { delaunay, cellRings: baseCellRings, cognitiveTileRadius: baseCognitiveTileRadius } = s4Voronoi;
-  const { narrativeCellRings, narrativeTileRadius } = s4NarrativeCells;
+export default function atlasInteraction(atlasEntities, atlasProjection, atlasVoronoi, atlasNarrativeCells) {
+  const { BIRTH_EPSILON, STRENGTH } = atlasConfig;
+  const { allData, N_INMAP, N_GEO } = atlasEntities;
+  const { pts, bbox, width, height, geographicAngle } = atlasProjection;
+  const { delaunay, cellRings: baseCellRings, cognitiveTileRadius: baseCognitiveTileRadius } = atlasVoronoi;
+  const { narrativeCellRings, narrativeTileRadius } = atlasNarrativeCells;
   const cellRings = baseCellRings.map((cr, i) => narrativeCellRings[i] || cr);
   const cognitiveTileRadius = baseCognitiveTileRadius.map((r, i) => narrativeCellRings[i] ? narrativeTileRadius[i] : r);
   const cellRingBBoxes = cellRings.map(cr => {

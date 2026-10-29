@@ -1,10 +1,10 @@
 import * as d3 from "d3";
-import s4Config from "./config.js";
+import atlasConfig from "./config.js";
 
 // Occorrenze cumulative e capitolo di prima comparsa.
-export default function s4Chapters(gadda_real, s4Entities) {
-  const { N_CHAPTERS } = s4Config;
-  const { allData, N_GEO, allDataById } = s4Entities;
+export default function atlasChapters(gadda_real, atlasEntities) {
+  const { N_CHAPTERS } = atlasConfig;
+  const { allData, N_GEO, allDataById } = atlasEntities;
 
   // occorrenze cumulative del luogo i fino al capitolo c (1-based): mentionsByChapter
   // NON è cumulativo: lo storico si somma qui.

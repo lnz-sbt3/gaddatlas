@@ -1,6 +1,6 @@
 // Stato persistente della route selezionata. Isolato da createAtlas per tenere insieme
 // gate di interrogabilita', risoluzione referenceId e terrazza sorgente evidenziata.
-const s4ChartRouteSelection = (() => {
+const atlasRouteSelection = (() => {
   function create({getFocalizer, getLodEased, getHostIndex, getHoverTerrace, getRoleSortTarget, roleBands, sequence, routeIdByReferenceId, onReferenceSelect = () => {}}) {
     let id = null;
     let tileIndex = -1;
@@ -54,4 +54,4 @@ const s4ChartRouteSelection = (() => {
   return { create };
 })();
 
-export default s4ChartRouteSelection;
+export default atlasRouteSelection;

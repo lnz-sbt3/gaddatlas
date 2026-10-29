@@ -1,13 +1,13 @@
 import it from "../strings-it.js";
-import s4Config from "./config.js";
+import atlasConfig from "./config.js";
 
 // Piano cumulativo per riferimento distinto e viste per focalizzatore.
-export default function s4Terrain(gadda_real, s4Entities) {
-  const { N_CHAPTERS } = s4Config;
-  const { allData, allDataById } = s4Entities;
+export default function atlasTerrain(gadda_real, atlasEntities) {
+  const { N_CHAPTERS } = atlasConfig;
+  const { allData, allDataById } = atlasEntities;
   const reliefRows = Array.isArray(gadda_real.relief) ? gadda_real.relief : [];
   const agentNameById = new Map((gadda_real.paths?.agents || []).map(a => [a.id, a.name || a.label || a.id]));
-  const aliasTargetById = new Map((s4Config.ALIAS_GROUPS || []).flatMap(g => g.ids.map(id => [id, g.canonical])));
+  const aliasTargetById = new Map((atlasConfig.ALIAS_GROUPS || []).flatMap(g => g.ids.map(id => [id, g.canonical])));
 
   function tileIndexOf(targetId) {
     return allDataById.get(targetId) ?? allDataById.get(aliasTargetById.get(targetId));

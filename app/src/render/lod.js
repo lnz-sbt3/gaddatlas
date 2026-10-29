@@ -1,13 +1,13 @@
 import * as d3 from "d3";
-import s4Config from "../model/config.js";
-import s4ProfileLog from "../dev/profile-log.js";
+import atlasConfig from "../model/config.js";
+import atlasProfileLog from "../dev/profile-log.js";
 
   // Misure LOD e risoluzione della terrazza interrogata.
-  const s4LodPicking = (() => {
+  const atlasLodPicking = (() => {
   // Misura in pixel l'alzata e la pedata disponibili sullo schermo.
-  function lodMetrics({s4Painters, tiltNow, transform, isoProfileMed, displayCellScale, N_INMAP, zScaleNow}) {
+  function lodMetrics({atlasPainters, tiltNow, transform, isoProfileMed, displayCellScale, N_INMAP, zScaleNow}) {
     const invTilt = 1 / Math.max(0.001, tiltNow);
-    const alzataPx = s4Painters.AXON_Z_STEP * zScaleNow * transform.k * invTilt;
+    const alzataPx = atlasPainters.AXON_Z_STEP * zScaleNow * transform.k * invTilt;
     let acc = 0, n = 0;
     for (let i = 0; i < N_INMAP; i++) {
       const m = isoProfileMed[i];
@@ -16,7 +16,7 @@ import s4ProfileLog from "../dev/profile-log.js";
       n++;
     }
     const rMedAvg = n ? acc / n : 0;
-    const pedataPx = s4Painters.TER_STEP_FRAC * rMedAvg * transform.k;
+    const pedataPx = atlasPainters.TER_STEP_FRAC * rMedAvg * transform.k;
     return { alzataPx, pedataPx };
   }
 
@@ -26,7 +26,7 @@ import s4ProfileLog from "../dev/profile-log.js";
     if (!c.curves || c.index < 0) return -1;
     if (c.index !== hostIndex) return -1;
     const f = {tiltNow: c.tiltNow, rotSinNow: c.rotSinNow, rotCosNow: c.rotCosNow};
-    const tol = (s4Config.PICK_TOLERANCE_PX || 0) * (c.invK || 1);
+    const tol = (atlasConfig.PICK_TOLERANCE_PX || 0) * (c.invK || 1);
     const dilate = poly => {
       if (!(tol > 0) || !poly.length) return poly;
       let center = d3.polygonCentroid(poly);
@@ -77,7 +77,7 @@ import s4ProfileLog from "../dev/profile-log.js";
           radii[distinctCapRadii++] = r;
         }
       }
-      s4ProfileLog.pick({
+      atlasProfileLog.pick({
         hostIndex: cache.index,
         regime,
         crimpEased: +cache.crimpEased.toFixed(3),
@@ -97,4 +97,4 @@ import s4ProfileLog from "../dev/profile-log.js";
   return { lodMetrics, pickTerrace, makePickLogger };
 })();
 
-export default s4LodPicking;
+export default atlasLodPicking;

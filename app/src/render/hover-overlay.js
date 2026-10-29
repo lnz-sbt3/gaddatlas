@@ -1,5 +1,5 @@
 import it from "../strings-it.js";
-  const s4HoverOverlay = (() => {
+  const atlasHoverOverlay = (() => {
   function draw({
     context, hostIndex, crimpEased, transform, K2, allData, N_GEO,
     birthEased, fictBirthEased, BIRTH_EPSILON, cellRings, cellPoint, displayPts,
@@ -60,4 +60,4 @@ import it from "../strings-it.js";
   return { draw };
 })();
 
-export default s4HoverOverlay;
+export default atlasHoverOverlay;

@@ -1,9 +1,9 @@
 import { html } from "htl";
 import it from "../strings-it.js";
-import s4ConfigShell from "../model/config.js";
+import atlasConfig from "../model/config.js";
 
 // Costruzione DOM dei controlli e degli overlay; gli handler restano in createAtlas.
-const s4ChartShell = (() => {
+const atlasShell = (() => {
   function create({canvas, width, nChapters, inkColor, bgColor, terrainAgents, sequenceLength, roleOrder, roleColors, rolePluralColor}) {
     const PLAY_ICON = it.playIcon;
     const PAUSE_ICON = it.pauseIcon;
@@ -29,7 +29,7 @@ const s4ChartShell = (() => {
     const seqSlider = html`<input class="ctl-range" data-legend="page" type=range min=0 max=${Math.max(0, sequenceLength - 1)} step=1 value=0 style="display:none">`;
     const seqLabel = html`<span class="ctl-value" style="display:none">${it.emptyCursor}</span>`;
     // Forma dei filtri di ruolo (config ROLE_BUTTONS.style): 'quadrati' | 'filetto' | 'tacca' | 'etichetta'.
-    const roleLegend = html`<span class="ctl-roles" data-legend="roles" data-style=${s4ConfigShell.ROLE_BUTTONS.style} style="display:none">
+    const roleLegend = html`<span class="ctl-roles" data-legend="roles" data-style=${atlasConfig.ROLE_BUTTONS.style} style="display:none">
       ${roleOrder.map(r => html`<button type=button class="ctl-role" data-role=${r}><span class="ctl-swatch" style="background:${roleColors[r]}"></span><span>${r}</span></button>`)}
       <span class="ctl-role"><span class="ctl-swatch" style="background:${rolePluralColor}"></span>${it.pluralRole}</span>
     </span>`;
@@ -113,4 +113,4 @@ const s4ChartShell = (() => {
   return { create };
 })();
 
-export default s4ChartShell;
+export default atlasShell;

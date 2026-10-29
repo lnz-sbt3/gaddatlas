@@ -1,5 +1,5 @@
 // Registro dei tempi di disegno, stampato ogni 60 fotogrammi durante la profilazione.
-  const s4ProfileLog = (() => {
+  const atlasProfileLog = (() => {
   // Uscite di profilo (config PROFILE): un solo punto di scrittura, prefisso [PROFILE].
   const log = (label, data) => console.log(`[PROFILE] ${label}`, data);
   const pick = data => log("selezione", data);
@@ -42,4 +42,4 @@
   return { atlas, pick, halo };
 })();
 
-export default s4ProfileLog;
+export default atlasProfileLog;

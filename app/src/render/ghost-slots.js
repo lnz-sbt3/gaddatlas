@@ -1,5 +1,5 @@
 // Overlay diagnostico dei ghost slots; non modifica la geometria principale.
-const s4GhostSlotsOverlay = (() => {
+const atlasGhostSlots = (() => {
   function draw({
     context, PROFILE, SHOW_GHOST_SLOTS, crimpEased, chapter,
     ghostSlotsLoggedChapter, ghostSlots, primaryHostOf, fictBirthEased, birthEased,
@@ -118,4 +118,4 @@ const s4GhostSlotsOverlay = (() => {
   return { draw };
 })();
 
-export default s4GhostSlotsOverlay;
+export default atlasGhostSlots;

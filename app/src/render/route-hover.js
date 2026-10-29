@@ -1,11 +1,11 @@
-import s4Config from "../model/config.js";
+import atlasConfig from "../model/config.js";
 
-  const s4RouteHoverDrawing = (() => {
+  const atlasRouteHoverDrawing = (() => {
   let lastRouteArcs = [];
   const {
     ARC_RISE, ARC_RISE_MIN_PX, ARC_RISE_MAX_PX, ARC_SAMPLES,
     ARC_WIDTH_MIN, ARC_WIDTH_MAX, ARC_CASING_PX, ARC_JOINT_R, ARC_JOINT_RING_PX, BG_COLOR
-  } = s4Config;
+  } = atlasConfig;
 
   function buildStepPoints({ routes, routePointOf, birthEased, fictBirthEased, N_GEO, BIRTH_EPSILON }) {
     const routeStepPoints = [];
@@ -163,4 +163,4 @@ import s4Config from "../model/config.js";
   return { buildStepPoints, drawArcs, drawJoints, drawOrdinals };
 })();
 
-export default s4RouteHoverDrawing;
+export default atlasRouteHoverDrawing;

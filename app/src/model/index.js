@@ -1,59 +1,59 @@
 // Assembla ogni factory una sola volta, secondo il grafo delle dipendenze.
 // Chiamare dopo il caricamento del GeoJSON.
-import s4Entities from "./entities.js";
-import s4Chapters from "./chapters.js";
-import s4Projection from "./projection-fit.js";
-import s4Voronoi from "./voronoi.js";
-import s4Satellites from "./satellites.js";
-import s4Terrain from "./terrain.js";
-import s4Sequence from "./sequence.js";
-import s4NarrativeGeometry from "./narrative-geometry.js";
-import s4RadialLayout from "./radial-layout.js";
-import s4NarrativeCells from "./narrative-cells.js";
-import s4IsoEngine from "../render/iso-engine.js";
-import s4Painters from "../render/painters.js";
-import s4Interaction from "../interaction/hit-test.js";
-import s4AttestedRoutes from "./attested-routes.js";
-import s4RouteNodes from "./route-nodes.js";
-import s4ChartSupport from "./chart-support.js";
-import s4LodPicking from "../render/lod.js";
-import s4ProfileLog from "../dev/profile-log.js";
+import atlasEntities from "./entities.js";
+import atlasChapters from "./chapters.js";
+import atlasProjection from "./projection-fit.js";
+import atlasVoronoi from "./voronoi.js";
+import atlasSatellites from "./satellites.js";
+import atlasTerrain from "./terrain.js";
+import atlasSequence from "./sequence.js";
+import atlasNarrativeGeometry from "./narrative-geometry.js";
+import atlasRadialLayout from "./radial-layout.js";
+import atlasNarrativeCells from "./narrative-cells.js";
+import atlasIsoEngine from "../render/iso-engine.js";
+import atlasPainters from "../render/painters.js";
+import atlasInteraction from "../interaction/hit-test.js";
+import atlasAttestedRoutes from "./attested-routes.js";
+import atlasRouteNodes from "./route-nodes.js";
+import atlasSupport from "./chart-support.js";
+import atlasLodPicking from "../render/lod.js";
+import atlasProfileLog from "../dev/profile-log.js";
 
 export default function buildModel(gaddaReal) {
-  const entities = s4Entities(gaddaReal);
-  const chapters = s4Chapters(gaddaReal, entities);
-  const projectionFit = s4Projection(entities);
-  const voronoi = s4Voronoi(projectionFit, entities);
-  const satellites = s4Satellites(entities, chapters, voronoi);
-  const terrain = s4Terrain(gaddaReal, entities);
-  const sequence = s4Sequence(gaddaReal, entities);
-  const narrativeGeometry = s4NarrativeGeometry(entities, voronoi, satellites, chapters);
-  const radialLayout = s4RadialLayout(entities, projectionFit, voronoi, chapters, satellites, narrativeGeometry);
-  const narrativeCells = s4NarrativeCells(entities, voronoi, projectionFit, radialLayout, satellites, narrativeGeometry);
-  const isoEngine = s4IsoEngine(voronoi, narrativeCells);
-  const painters = s4Painters(entities, chapters, voronoi);
-  const interaction = s4Interaction(entities, projectionFit, voronoi, narrativeCells);
-  const attestedRoutes = s4AttestedRoutes(gaddaReal, entities, sequence);
-  const routeNodes = s4RouteNodes(attestedRoutes);
+  const entities = atlasEntities(gaddaReal);
+  const chapters = atlasChapters(gaddaReal, entities);
+  const projectionFit = atlasProjection(entities);
+  const voronoi = atlasVoronoi(projectionFit, entities);
+  const satellites = atlasSatellites(entities, chapters, voronoi);
+  const terrain = atlasTerrain(gaddaReal, entities);
+  const sequence = atlasSequence(gaddaReal, entities);
+  const narrativeGeometry = atlasNarrativeGeometry(entities, voronoi, satellites, chapters);
+  const radialLayout = atlasRadialLayout(entities, projectionFit, voronoi, chapters, satellites, narrativeGeometry);
+  const narrativeCells = atlasNarrativeCells(entities, voronoi, projectionFit, radialLayout, satellites, narrativeGeometry);
+  const isoEngine = atlasIsoEngine(voronoi, narrativeCells);
+  const painters = atlasPainters(entities, chapters, voronoi);
+  const interaction = atlasInteraction(entities, projectionFit, voronoi, narrativeCells);
+  const attestedRoutes = atlasAttestedRoutes(gaddaReal, entities, sequence);
+  const routeNodes = atlasRouteNodes(attestedRoutes);
 
   return {
-    s4Entities: entities,
-    s4Chapters: chapters,
-    s4Projection: projectionFit,
-    s4Voronoi: voronoi,
-    s4Satellites: satellites,
-    s4Terrain: terrain,
-    s4Sequence: sequence,
-    s4NarrativeGeometry: narrativeGeometry,
-    s4RadialLayout: radialLayout,
-    s4NarrativeCells: narrativeCells,
-    s4IsoEngine: isoEngine,
-    s4Painters: painters,
-    s4Interaction: interaction,
-    s4AttestedRoutes: attestedRoutes,
-    s4RouteNodes: routeNodes,
-    s4ChartSupport,
-    s4LodPicking,
-    s4ProfileLog,
+    atlasEntities: entities,
+    atlasChapters: chapters,
+    atlasProjection: projectionFit,
+    atlasVoronoi: voronoi,
+    atlasSatellites: satellites,
+    atlasTerrain: terrain,
+    atlasSequence: sequence,
+    atlasNarrativeGeometry: narrativeGeometry,
+    atlasRadialLayout: radialLayout,
+    atlasNarrativeCells: narrativeCells,
+    atlasIsoEngine: isoEngine,
+    atlasPainters: painters,
+    atlasInteraction: interaction,
+    atlasAttestedRoutes: attestedRoutes,
+    atlasRouteNodes: routeNodes,
+    atlasSupport,
+    atlasLodPicking,
+    atlasProfileLog,
   };
 }

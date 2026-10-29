@@ -1,18 +1,18 @@
 import * as d3 from "d3";
-import s4Config from "../model/config.js";
-import s4RayCellDistance from "../model/ray-cell-distance.js";
+import atlasConfig from "../model/config.js";
+import atlasRayCellDistance from "../model/ray-cell-distance.js";
 
 // Motore isolinee senza stato di frame: profili, armoniche e buffer sono cache
 // geometriche invarianti. traceIsoline riceve posizione, scala e livello dal
 // chiamante, cosi' createAtlas conserva tutto lo stato mutabile della lettura.
-export default function s4IsoEngine(s4Voronoi, s4NarrativeCells) {
+export default function atlasIsoEngine(atlasVoronoi, atlasNarrativeCells) {
   const {
     ISO_ANGLES, ISO_OUTER, ISO_INNER, ISO_SUMMIT_BIAS, ISO_DRIFT,
     ISO_WOBBLE, ISO_MARGIN, ISO_ECC_DAMP
-  } = s4Config;
-  const { cellRings: baseCellRings } = s4Voronoi;
-  const { narrativeCellRings } = s4NarrativeCells;
-  const rayCellDistance = s4RayCellDistance;
+  } = atlasConfig;
+  const { cellRings: baseCellRings } = atlasVoronoi;
+  const { narrativeCellRings } = atlasNarrativeCells;
+  const rayCellDistance = atlasRayCellDistance;
   const cellRings = baseCellRings.map((cr, i) => narrativeCellRings[i] || cr);
 
   // Profilo radiale grezzo di ogni cella: distanza generatore->bordo su

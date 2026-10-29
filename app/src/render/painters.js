@@ -1,10 +1,10 @@
 import * as d3 from "d3";
-import s4Config from "../model/config.js";
+import atlasConfig from "../model/config.js";
 
 // Fabbrica di primitive pittoriche senza stato di frame: il context e le costanti
 // sono dipendenze statiche, mentre scala, rotazione, quote e buffer correnti
 // arrivano sempre dal parametro frame costruito in draw().
-export default function s4Painters(s4Entities, s4Chapters, s4Voronoi) {
+export default function atlasPainters(atlasEntities, atlasChapters, atlasVoronoi) {
   const {
     BG_COLOR, HUE_RGB, FICT_HUE_RGB, ISO_ALPHA, ISO_WIDTH, ISO_FILL,
     FICT_GLYPH_WIDTH, FICT_RELIEF_ALPHA, FICT_GLYPH_PATHS, FICT_GLYPH_BOX,
@@ -14,10 +14,10 @@ export default function s4Painters(s4Entities, s4Chapters, s4Voronoi) {
     AXON_EDGE_TOP, AXON_EDGE_BOT, AXON_EDGE_PICK, CONSTELLATION_RADIUS_GAIN,
     HALO_ALPHA_PEAK, HALO_FALLOFF_GAMMA, HALO_FALLOFF_STOPS, HALO_POOL_OFFSET,
     AXON_MAP_FOOTPRINT_MAX, ROLE_MIX_BASE, ROLE_MIX_TOP
-  } = s4Config;
-  const { N_GEO, N_INMAP } = s4Entities;
-  const { BANDS_MAX } = s4Chapters;
-  const { reliefReferenceRadius } = s4Voronoi;
+  } = atlasConfig;
+  const { N_GEO, N_INMAP } = atlasEntities;
+  const { BANDS_MAX } = atlasChapters;
+  const { reliefReferenceRadius } = atlasVoronoi;
   function hexToRgb(hex) {
     const h = String(hex || "#000000").replace("#", "");
     const v = h.length === 3
@@ -55,8 +55,8 @@ export default function s4Painters(s4Entities, s4Chapters, s4Voronoi) {
     }
 
     // Il colore codifica il ruolo e la luminosita' la quota.
-    const ROLE_RGB = s4Config.ROLE_ORDER.map(r => hexToRgb(s4Config.ROLE_COLORS[r]));
-    const ROLE_PLURAL_RGB = hexToRgb(s4Config.ROLE_PLURAL_COLOR);
+    const ROLE_RGB = atlasConfig.ROLE_ORDER.map(r => hexToRgb(atlasConfig.ROLE_COLORS[r]));
+    const ROLE_PLURAL_RGB = hexToRgb(atlasConfig.ROLE_PLURAL_COLOR);
     function mixRgb(a, b, t) {
       return a.map((v, j) => Math.round(v + (b[j] - v) * t));
     }
@@ -83,13 +83,13 @@ export default function s4Painters(s4Entities, s4Chapters, s4Voronoi) {
       if (!(idx >= 0) || idx >= ROLE_RGB.length) return treadRgb(k);
       const t = BANDS_MAX <= 1 ? 0 : Math.min(1, Math.max(0, (k - 1) / (BANDS_MAX - 1)));
       // Attenuazione minima della tinta (TERRACE.roleTintScale) perché la carta storica resti percepibile.
-      const mix = (ROLE_MIX_BASE + (ROLE_MIX_TOP - ROLE_MIX_BASE) * t) * (s4Config.TERRACE.roleTintScale ?? 1);
+      const mix = (ROLE_MIX_BASE + (ROLE_MIX_TOP - ROLE_MIX_BASE) * t) * (atlasConfig.TERRACE.roleTintScale ?? 1);
       return mixRgb(BG_RGB, ROLE_RGB[idx], mix);
     }
 
     function rolePluralTreadRgb(k) {
       const t = BANDS_MAX <= 1 ? 0 : Math.min(1, Math.max(0, (k - 1) / (BANDS_MAX - 1)));
-      const mix = (ROLE_MIX_BASE + (ROLE_MIX_TOP - ROLE_MIX_BASE) * t) * (s4Config.TERRACE.roleTintScale ?? 1);
+      const mix = (ROLE_MIX_BASE + (ROLE_MIX_TOP - ROLE_MIX_BASE) * t) * (atlasConfig.TERRACE.roleTintScale ?? 1);
       return mixRgb(BG_RGB, ROLE_PLURAL_RGB, mix);
     }
 
@@ -146,10 +146,10 @@ export default function s4Painters(s4Entities, s4Chapters, s4Voronoi) {
 
     // Impronta in mappa delle forme 'tumuli' e 'curve': raccolta entro un raggio massimo e arrotondata
     // verso la mediana; pesata da (1 - crimpEased), così nel diagramma resta la sagoma della tessera.
-    const REF_RGB_ARR = s4Config.HUE_RGB.split(',').map(Number), FICT_RGB_ARR = s4Config.FICT_HUE_RGB.split(',').map(Number);
+    const REF_RGB_ARR = atlasConfig.HUE_RGB.split(',').map(Number), FICT_RGB_ARR = atlasConfig.FICT_HUE_RGB.split(',').map(Number);
     const MAP_MEDIAN_R = d3.median(reliefReferenceRadius.slice(0, N_INMAP));
     function gatherFootprint(frame, radii) {
-      const T = s4Config.TERRACE, w = 1 - frame.crimpEased;
+      const T = atlasConfig.TERRACE, w = 1 - frame.crimpEased;
       if (!(w > 0) || (T.footprint == null && !T.roundness)) return radii;
       const cap = T.footprint == null ? Infinity : T.footprint * MAP_MEDIAN_R, med = Math.min(cap, d3.median(radii));
       return radii.map(r => { const g = Math.min(r, cap), q = g + (med - g) * (T.roundness || 0); return r + (q - r) * w; });
@@ -426,7 +426,7 @@ export default function s4Painters(s4Entities, s4Chapters, s4Voronoi) {
     }
 
     function noteSubpath(strokeGroups, group, pts, kind) {
-      const dash = kind == null ? null : s4Config.DETERMINATION.dash[kind];
+      const dash = kind == null ? null : atlasConfig.DETERMINATION.dash[kind];
       if (kind != null && !dash) throw new Error(`determinazione non ammessa: ${JSON.stringify(kind)}`);
       const sub = {pts, kind, dash, rgb: group.rgb, alpha: group.alpha};
       (group.subs ??= []).push(sub);
@@ -444,7 +444,7 @@ export default function s4Painters(s4Entities, s4Chapters, s4Voronoi) {
       const sMin = Math.sqrt(Math.max(1e-12, sum / 2 - root)), sMax = Math.sqrt(sum / 2 + root);
       const column = Math.max(1e-6, Math.min(Math.hypot(a, b), Math.hypot(c, d)));
       // Il margine resta sotto i 2 px per lato del contorno conservativo.
-      const margin = Math.min(s4Config.DETERMINATION.corridorPx / sMin, 1.9 / column);
+      const margin = Math.min(atlasConfig.DETERMINATION.corridorPx / sMin, 1.9 / column);
       const W = context.canvas.width, H = context.canvas.height;
       let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity, padMax = 0;
       const path = new Path2D();
@@ -528,7 +528,7 @@ export default function s4Painters(s4Entities, s4Chapters, s4Voronoi) {
     }
     // Ritmo della lettura in px CSS: un contorno per volta, estremità e giunzioni tonde.
     function paintDeterminations(frame, coded) {
-      const DET = s4Config.DETERMINATION, devPaint = import.meta.env.DEV ? DET.devPaint : null;
+      const DET = atlasConfig.DETERMINATION, devPaint = import.meta.env.DEV ? DET.devPaint : null;
       const m = context.getTransform(), {a, b, c, d, e, f} = m, css = context.canvas.width / parseFloat(context.canvas.style.width);
       context.save();
       context.setTransform(css, 0, 0, css, 0, 0);
@@ -598,7 +598,7 @@ export default function s4Painters(s4Entities, s4Chapters, s4Voronoi) {
         ((frame.motionGeometry||(import.meta.env.DEV&&frame.devMotion))?false:frame.tiltEased >= 0.999) ? axonAlpha : planarAlpha + (axonAlpha - planarAlpha) * frame.tiltEased;
       const strokeGroups = new Map();
       // Con un personaggio la terrazza individuale porta la determinazione della sua riga (mai la silhouette LOD).
-      const determinationOf = s4Config.DETERMINATION.mode !== "off" && frame.roleMode && !frame.lodCollapse ? roleMarks?.determination : null;
+      const determinationOf = atlasConfig.DETERMINATION.mode !== "off" && frame.roleMode && !frame.lodCollapse ? roleMarks?.determination : null;
       if (determinationOf) { strokeGroups.coding = true; strokeGroups.coded = []; }
       const footprint = axonFootprint(frame, radii, rMin, sCell);
       const axRadii = footprint.radii, axRMin = footprint.rMin, axRMed = footprint.rMed, axSCell = footprint.sCell;
@@ -630,7 +630,7 @@ export default function s4Painters(s4Entities, s4Chapters, s4Voronoi) {
         let tread = tint ? tint[0] : treadRgb(0);
         let wall = tint ? tint[1] : wallRgb(0);
         // Stessa regola della tinta del ruolo anche nella sagoma a basso dettaglio (TERRACE.roleFace).
-        const roleFace = s4Config.TERRACE.roleFace, ring = tint && roleFace && roleFace !== 'campitura' ? tint[0] : null;
+        const roleFace = atlasConfig.TERRACE.roleFace, ring = tint && roleFace && roleFace !== 'campitura' ? tint[0] : null;
         if (ring) { tread = mixRgb(tint[0], BG_RGB, .86); if (roleFace === 'anello') wall = wallRgb(0); }
         const collapsedAlpha = fillAlphaNow(focalAlpha, isoFillAlpha(B) * focalAlpha);
         fillQuadStrip(frame, curves[0], 0, curves[0], zTop, rgbString(wall), collapsedAlpha, true);
@@ -664,7 +664,7 @@ export default function s4Painters(s4Entities, s4Chapters, s4Voronoi) {
           tread = mixRgb(tread, BG_RGB, 0.34);
           wall = wallFromTreadRgb(tread);
         }
-        const terraceStrokeRgb = strokeRgb, style = s4Config.TERRACE;
+        const terraceStrokeRgb = strokeRgb, style = atlasConfig.TERRACE;
         // Tinta del ruolo (TERRACE.roleFace): 'campitura' faccia piena; 'alzate' faccia quasi carta,
         // tinta sulle alzate e sul bordo superiore; 'anello' faccia quasi carta e pareti neutre, anello colorato sul bordo.
         let ringRgb = null;

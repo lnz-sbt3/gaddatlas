@@ -1,7 +1,7 @@
 import {html} from 'htl';
 import {passagePath,passagesAvailable} from 'virtual:passage-access';
 import it from '../strings-it.js';
-import s4Config from '../model/config.js';
+import atlasConfig from '../model/config.js';
 
 // Solo il riferimento corrente richiede un estratto. Nessun caricamento per capitolo.
 export default function createTextPanel({relief,entities,agents,aliasGroups=[],loadJSON,onClose=()=>{},onSelect=()=>{},onLocate=null}){
@@ -37,7 +37,7 @@ export default function createTextPanel({relief,entities,agents,aliasGroups=[],l
   return[text];
  }
  function quotation(passage,rows,toponym,source){
-  const variant=s4Config.PANEL.variant,row=rows[0];
+  const variant=atlasConfig.PANEL.variant,row=rows[0];
   if(variant==='margine')return[html`<div class="ref-margin"><p class="ref-folio" aria-label=${it.folioLabel(passage.page??row.page,row.chapter)}>${passage.page??row.page}<small>${it.chapterShort(row.chapter)}</small></p><blockquote>${passage.excerpt}</blockquote></div>`,source,html`<div class="ref-apparatus-row">${apparatus(rows)}</div>`];
   if(variant==='edizione')return[html`<p class="ref-running-head">${it.runningHead(row.chapter,passage.page??row.page)}</p>`,html`<blockquote class="ref-edition">${highlight(passage.excerpt,toponym)}</blockquote>`,source,html`<section class="ref-apparatus" aria-label=${it.apparatusLabel}><h3>${it.apparatusLabel}</h3>${apparatus(rows)}</section>`];
   return[html`<blockquote>${passage.excerpt}</blockquote>`,source,...apparatus(rows)];

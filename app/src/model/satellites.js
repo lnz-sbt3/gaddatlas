@@ -1,10 +1,10 @@
 import * as d3 from "d3";
 
 // Alberi meronimici dei luoghi narrativi: host referenziale -> satelliti fittizi.
-export default function s4Satellites(s4Entities, s4Chapters, s4Voronoi) {
-  const { allData, N_GEO, allDataById } = s4Entities;
-  const { birthChapter } = s4Chapters;
-  const { cognitiveTileRadius } = s4Voronoi;
+export default function atlasSatellites(atlasEntities, atlasChapters, atlasVoronoi) {
+  const { allData, N_GEO, allDataById } = atlasEntities;
+  const { birthChapter } = atlasChapters;
+  const { cognitiveTileRadius } = atlasVoronoi;
 
   const parentOf = allData.map(() => null);
   for (let i = N_GEO; i < allData.length; i++) {

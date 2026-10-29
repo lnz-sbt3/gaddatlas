@@ -1,17 +1,17 @@
 import * as d3 from "d3";
-import s4Config from "./config.js";
+import atlasConfig from "./config.js";
 
 // Costruzione a incastro: ogni tessera narrativa condivide uno spigolo intero
 // con il referenziale o con la tessera padre. Niente Voronoi locale.
-export default function s4NarrativeGeometry(s4Entities, s4Voronoi, s4Satellites, s4Chapters) {
+export default function atlasNarrativeGeometry(atlasEntities, atlasVoronoi, atlasSatellites, atlasChapters) {
   const {
     N_CHAPTERS, COLLAR_DEPTH, COLLAR_DEPTH_DECAY, COLLAR_MITER_MAX,
     CHILD_DEPTH, SHAPE_MIN_V, SHAPE_MAX_V, SHAPE_AMP, REF_TILE_RADIUS_TARGET
-  } = s4Config;
-  const { allData } = s4Entities;
-  const { cellRings: baseCellRings, normalizedCellScale, cognitiveTileRadius } = s4Voronoi;
-  const { satellitesByHost, effectiveParent } = s4Satellites;
-  const { cumOcc, isBorn } = s4Chapters;
+  } = atlasConfig;
+  const { allData } = atlasEntities;
+  const { cellRings: baseCellRings, normalizedCellScale, cognitiveTileRadius } = atlasVoronoi;
+  const { satellitesByHost, effectiveParent } = atlasSatellites;
+  const { cumOcc, isBorn } = atlasChapters;
 
   function signedArea(P) {
     let a = 0;

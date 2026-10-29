@@ -1,7 +1,7 @@
 import * as d3 from "d3";
 
 // Anelli metrici, confini delle celle e cerchi dei referenziali fuori mappa.
-const s4ChartMapBackdrop = (() => {
+const atlasMapBackdrop = (() => {
   function radiusForDistance(dKm, rings) {
     if (!rings.length) return null;
     let prevD = 0, prevR = 0;
@@ -113,4 +113,4 @@ const s4ChartMapBackdrop = (() => {
   return { draw };
 })();
 
-export default s4ChartMapBackdrop;
+export default atlasMapBackdrop;

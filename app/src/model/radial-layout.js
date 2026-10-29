@@ -1,20 +1,20 @@
 import * as d3 from "d3";
-import s4Config from "./config.js";
+import atlasConfig from "./config.js";
 
 // Layout radiale per bande equipopolate del rango di distanza, con azimut conservato.
 // Il collare narrativo e' congelato sul corpus completo: i fittizi non ancora
 // nati lasciano vuoto il proprio alloggiamento invece di ricollocare il gruppo.
-export default function s4RadialLayout(s4Entities, s4Projection, s4Voronoi, s4Chapters, s4Satellites, s4NarrativeGeometry) {
-  const { RADIAL_BANDS, BAND_FILL, BAND_STEP_MIN, BAND_START_RADIUS, TILE_GAP, REF_TILE_RADIUS_MAX, N_CHAPTERS, LABEL_GAP_WIDTH_PX } = s4Config;
-  // cognitiveTileRadius (s4Voronoi) e' gia' limitato da REF_TILE_RADIUS_MAX:
+export default function atlasRadialLayout(atlasEntities, atlasProjection, atlasVoronoi, atlasChapters, atlasSatellites, atlasNarrativeGeometry) {
+  const { RADIAL_BANDS, BAND_FILL, BAND_STEP_MIN, BAND_START_RADIUS, TILE_GAP, REF_TILE_RADIUS_MAX, N_CHAPTERS, LABEL_GAP_WIDTH_PX } = atlasConfig;
+  // cognitiveTileRadius (atlasVoronoi) e' gia' limitato da REF_TILE_RADIUS_MAX:
   // la soglia dell'invariante e il margine esterno del diagramma seguono quel tetto.
-  const { allData, N_GEO } = s4Entities;
-  const { pts, geographicAngle, poleDistanceKm, poleIndex, distanceRank, cogCenterInit } = s4Projection;
-  const { cognitiveTileRadius, normalizedCellScale } = s4Voronoi;
-  const { cumOcc, bornIndicesByChapter, isBorn } = s4Chapters;
-  const { satellitesByHost, primaryHostOf } = s4Satellites;
-  const { buildHostTiles, groupRadius } = s4NarrativeGeometry;
-  const FREEZE = s4Config.COLLAR_FREEZE_CHAPTER ?? N_CHAPTERS;
+  const { allData, N_GEO } = atlasEntities;
+  const { pts, geographicAngle, poleDistanceKm, poleIndex, distanceRank, cogCenterInit } = atlasProjection;
+  const { cognitiveTileRadius, normalizedCellScale } = atlasVoronoi;
+  const { cumOcc, bornIndicesByChapter, isBorn } = atlasChapters;
+  const { satellitesByHost, primaryHostOf } = atlasSatellites;
+  const { buildHostTiles, groupRadius } = atlasNarrativeGeometry;
+  const FREEZE = atlasConfig.COLLAR_FREEZE_CHAPTER ?? N_CHAPTERS;
 
   // I referenziali partono dalla posizione geografica, i fittizi dal centro del diagramma.
   function baseWorldPt(i) {

@@ -1,5 +1,5 @@
 // Parametri visivi, geometrici e temporali della visualizzazione.
-  const s4Config = {
+  const atlasConfig = {
 
   MARGIN: 0.08,        // buffer attorno al bbox dei punti, come frazione della diagonale
   GEO_RADIUS_KM: 100,  // solo i luoghi entro questa distanza da Roma: esclude
@@ -148,7 +148,7 @@
   // Isoipse.
   // La densita' e' codificata dal numero di curve di livello.
   // nL (numero di curve di livello per cella) = B = bandsFor(occ), soglie assolute
-  // log sull'occorrenza cumulativa (vedi bandsFor in s4Chapters).
+  // log sull'occorrenza cumulativa (vedi bandsFor in atlasChapters).
   ISO_INNER: 0.16,      // frazione del raggio a cui si chiude la curva più interna (la "vetta")
   ISO_OUTER: 0.88,      // frazione del raggio del bordo a cui sta la curva più esterna:
                         // <1 così la curva di base non si incolla al confine di cella
@@ -364,14 +364,14 @@ if (import.meta.env?.DEV && typeof localStorage !== 'undefined') {
     // Prima il parametro ?lab= dell'indirizzo (un riquadro per variante), poi la memoria locale del laboratorio.
     const lab = JSON.parse(new URLSearchParams(location.search).get('lab') || localStorage.getItem('gaddatlas:lab') || 'null');
     if (lab) for (const [path, value] of Object.entries(lab)) {
-      const keys = path.split('.'), last = keys.pop(); let target = s4Config;
+      const keys = path.split('.'), last = keys.pop(); let target = atlasConfig;
       for (const k of keys) target = target[k];
       if (target && last in target) target[last] = value;
     }
   } catch { /* sovrascritture illeggibili: si resta ai valori predefiniti */ }
 }
 // La tinta del ruolo sulle facce (roleFace) può essere scelta a parte dal laboratorio.
-Object.assign(s4Config.TERRACE, TERRACE_PRESETS[s4Config.TERRACE.style], {style: s4Config.TERRACE.style}, s4Config.TERRACE.roleFaceOverride ? {roleFace: s4Config.TERRACE.roleFaceOverride} : {});
-Object.assign(s4Config, CHROMA_PRESETS[s4Config.CHROMA]);
+Object.assign(atlasConfig.TERRACE, TERRACE_PRESETS[atlasConfig.TERRACE.style], {style: atlasConfig.TERRACE.style}, atlasConfig.TERRACE.roleFaceOverride ? {roleFace: atlasConfig.TERRACE.roleFaceOverride} : {});
+Object.assign(atlasConfig, CHROMA_PRESETS[atlasConfig.CHROMA]);
 
-export default s4Config;
+export default atlasConfig;

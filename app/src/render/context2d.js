@@ -1,10 +1,10 @@
 import it from "../strings-it.js";
-import s4Config from "../model/config.js";
+import atlasConfig from "../model/config.js";
 
 // Il bitmap segue i pixel CSS e il DPR; le coordinate del modello restano canoniche.
 // fit, ox, oy: scala e posizione del riquadro del modello nel canvas (px CSS); senza, il canvas è il riquadro.
 export function resizeContext2d(context, {cssWidth, cssHeight, width, height, dpi = devicePixelRatio, fit = cssWidth / width, ox = 0, oy = 0}) {
-  const {CANVAS_MAX_PIXELS, CANVAS_MAX_EDGE} = s4Config;
+  const {CANVAS_MAX_PIXELS, CANVAS_MAX_EDGE} = atlasConfig;
   const density = Math.min(dpi, Math.sqrt(CANVAS_MAX_PIXELS / (cssWidth * cssHeight)),
     CANVAS_MAX_EDGE / cssWidth, CANVAS_MAX_EDGE / cssHeight);
   const canvas = context.canvas;

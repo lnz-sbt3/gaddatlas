@@ -1,6 +1,6 @@
 import it from "../strings-it.js";
 // Aggiornamento DOM per-frame dei soli indicatori che cambiano con la molla del rilievo.
-const s4ChartFrameUi = (() => {
+const atlasFrameUi = (() => {
   function update({reliefBtn, lodLabel, roleButtons, roleFilter, roleOrder, roleColors, diagramOpenedOnce, tiltTarget, focalizer, inkColor, bgColor, cache}) {
     if (reliefBtn) {
       const key = `${diagramOpenedOnce ? 1 : 0}:${tiltTarget > 0 ? 1 : 0}`;
@@ -48,4 +48,4 @@ const s4ChartFrameUi = (() => {
   return { update };
 })();
 
-export default s4ChartFrameUi;
+export default atlasFrameUi;

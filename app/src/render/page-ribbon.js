@@ -2,7 +2,7 @@ import it from "../strings-it.js";
 import * as d3 from "d3";
 
 // Registro per pagina delle occorrenze, con filtri, cardinalita' e cursore corrente.
-const s4PageRibbon = (() => {
+const atlasPageRibbon = (() => {
   const NS = "http://www.w3.org/2000/svg";
 
   function el(tag, attrs) {
@@ -428,4 +428,4 @@ const s4PageRibbon = (() => {
   return { update };
 })();
 
-export default s4PageRibbon;
+export default atlasPageRibbon;

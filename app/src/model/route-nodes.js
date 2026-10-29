@@ -1,6 +1,6 @@
 // Una route compare soltanto quando viene selezionata dall'utente.
-export default function s4RouteNodes(s4AttestedRoutes) {
-  const { attestedRoutes, routeRgb } = s4AttestedRoutes;
+export default function atlasRouteNodes(atlasAttestedRoutes) {
+  const { attestedRoutes, routeRgb } = atlasAttestedRoutes;
 
   const routeById = new Map();
 

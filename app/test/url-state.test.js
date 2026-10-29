@@ -5,7 +5,7 @@ import buildModel from "../src/model/index.js";
 import config from "../src/model/config.js";
 import {createUrlStateCodec} from "../src/ui/url-state.js";
 const data = JSON.parse(fs.readFileSync(new URL("../public/data/gaddatlas.geojson", import.meta.url)));
-const model = buildModel(data), codec = createUrlStateCodec(model, config), rows = model.s4Sequence.sequence;
+const model = buildModel(data), codec = createUrlStateCodec(model, config), rows = model.atlasSequence.sequence;
 
 test("identificatori pubblici da IRI e cursori univoci", () => {
   const slim = JSON.parse(fs.readFileSync(new URL("../../data/dist/atlas.slim.json", import.meta.url)));
@@ -60,7 +60,7 @@ test("cursore estraneo al focalizzatore e capitolo senza righe", () => {
   const other = rows.find(r=>r.agentId!=="ingravallo");
   const s = codec.parse("#view=diagram&mode=page&chapter=10&focalizer=ingravallo&cursor="+other.interpretationId);
   assert.equal(s.chapter,10); assert.equal(rows.find(r=>r.interpretationId===s.cursor).agentId,"ingravallo");
-  const agent=model.s4Terrain.agents.find(a=>a.id && a.total>=10 && !rows.some(r=>r.agentId===a.id && Number(r.chapter)===1));
+  const agent=model.atlasTerrain.agents.find(a=>a.id && a.total>=10 && !rows.some(r=>r.agentId===a.id && Number(r.chapter)===1));
   assert.equal(codec.normalize({view:"diagram",mode:"page",focalizer:agent.id}).mode,"chapter");
 });
 test("pagina in mappa, rotazione in pianta e ordine senza agente", () => {
@@ -73,15 +73,15 @@ test("maschera canonica non vuota, conservata senza focalizzatore", () => {
   assert.deepEqual(codec.parse("#roles=").roles,config.ROLE_ORDER);
 });
 test("pannello indipendente dal capitolo e riferimento pertinente al luogo", () => {
-  const r=rows.find(r=>Number(r.chapter)===10), place=model.s4Entities.allData[r.tileIndex].properties.GazetteerEntity_ID;
+  const r=rows.find(r=>Number(r.chapter)===10), place=model.atlasEntities.allData[r.tileIndex].properties.GazetteerEntity_ID;
   const s=codec.normalize({place,reference:r.referenceId,chapter:1});
   assert.equal(s.place,place); assert.equal(s.reference,r.referenceId); assert.equal(s.chapter,1);
   assert.equal(codec.normalize({place,reference:"missing"}).reference,null);
   assert.equal(codec.normalize({reference:r.referenceId}).reference,null);
 });
 test("route e place coesistono, route incompatibile ignorata", () => {
-  const route=model.s4AttestedRoutes.attestedRoutes.find(r=>r.stepsByFocalizer.has("ingravallo"));
-  const place=model.s4Entities.allData[0].properties.GazetteerEntity_ID;
+  const route=model.atlasAttestedRoutes.attestedRoutes.find(r=>r.stepsByFocalizer.has("ingravallo"));
+  const place=model.atlasEntities.allData[0].properties.GazetteerEntity_ID;
   const s=codec.normalize({route:route.id,place,focalizer:"ingravallo",chapter:10});
   assert.equal(s.route,route.id); assert.equal(s.place,place);
   assert.equal(codec.normalize({route:route.id,chapter:10}).route,null);

@@ -1,13 +1,13 @@
 import * as d3 from "d3";
-import s4Config from "./config.js";
+import atlasConfig from "./config.js";
 import projection from "./projection.js";
 
 // Proiezione dei generatori, deduplicazione, scala, bounding box e azimut.
-export default function s4Projection(s4Entities) {
-  const { MARGIN, VIEW_SIZE } = s4Config;
+export default function atlasProjection(atlasEntities) {
+  const { MARGIN, VIEW_SIZE } = atlasConfig;
   // Il polo cognitivo e' distinto dal centro cartografico usato per il filtro geografico.
-  const SECONDSPACE_POLE = s4Config.SECONDSPACE_POLES[s4Config.SECONDSPACE_POLE_KEY];
-  const { geoData, geoDataAll } = s4Entities;
+  const SECONDSPACE_POLE = atlasConfig.SECONDSPACE_POLES[atlasConfig.SECONDSPACE_POLE_KEY];
+  const { geoData, geoDataAll } = atlasEntities;
 
   // Un jitter deterministico evita celle degeneri per coordinate duplicate.
   const EPS_DUP = 0.01;
@@ -48,7 +48,7 @@ export default function s4Projection(s4Entities) {
   // i fittizi non hanno coordinate geografiche: usano `voidSeed` (proprieta' presente
   // solo su di loro nel geojson, uniforme in [0,1]) come sostituto deterministico
   // dell'azimut, cosi' da poter comunque entrare nell'ordinamento/impacchettamento angolare
-  const { allData, N_GEO } = s4Entities;
+  const { allData, N_GEO } = atlasEntities;
   const geographicAngle = allData.map((d, i) =>
     i < N_GEO ? angleFromNorthClockwise(pts[i]) : (d.properties.voidSeed ?? 0) * Math.PI * 2
   );

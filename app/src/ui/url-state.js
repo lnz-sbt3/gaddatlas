@@ -2,11 +2,11 @@
 export const URL_KEYS = ["view", "axon", "narrative", "focalizer", "chapter", "mode", "cursor", "roles", "order", "rotation", "place", "reference", "route", "tour"];
 
 export function createUrlStateCodec(model, config) {
-  const {allData, allDataById} = model.s4Entities;
-  const rows = model.s4Sequence.sequence;
+  const {allData, allDataById} = model.atlasEntities;
+  const rows = model.atlasSequence.sequence;
   const byCursor = new Map(rows.map(r => [r.interpretationId, r]));
-  const focalizers = new Set(model.s4Terrain.agents.filter(a => a.id != null && a.total >= 10).map(a => a.id));
-  const routes = new Map(model.s4AttestedRoutes.attestedRoutes.map(r => [r.id, r]));
+  const focalizers = new Set(model.atlasTerrain.agents.filter(a => a.id != null && a.total >= 10).map(a => a.id));
+  const routes = new Map(model.atlasAttestedRoutes.attestedRoutes.map(r => [r.id, r]));
   const aliases = new Map(config.ALIAS_GROUPS.flatMap(g => g.ids.map(id => [id, g.canonical])));
   const references = new Map(allData.map(d => [d.properties.GazetteerEntity_ID, new Set()]));
   for (const row of rows) references.get(allData[row.tileIndex].properties.GazetteerEntity_ID).add(row.referenceId);

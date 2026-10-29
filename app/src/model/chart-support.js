@@ -1,5 +1,5 @@
   // Funzioni matematiche pure usate da createAtlas (atlas.js).
-  const s4ChartSupport = (() => {
+  const atlasSupport = (() => {
   function bandsOfTile({i, occEased, focalizer, BANDS_MAX, bandsFor}) {
     const occ = occEased[i] || 0;
     return focalizer != null ? Math.min(BANDS_MAX, Math.round(occ)) : bandsFor(occ);
@@ -96,4 +96,4 @@
   };
 })();
 
-export default s4ChartSupport;
+export default atlasSupport;

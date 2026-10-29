@@ -1,14 +1,14 @@
 import * as d3 from "d3";
-import s4Config from "./config.js";
+import atlasConfig from "./config.js";
 
 // Indice sequenziale dei riferimenti a livello pagina. La chiave di lettura e'
 // (page, referenceId), con referenceId
 // confrontato come stringa zero-padded: niente parsing numerico del riferimento.
-export default function s4Sequence(gadda_real, s4Entities) {
-  const { N_CHAPTERS } = s4Config;
-  const { allData, allDataById } = s4Entities;
+export default function atlasSequence(gadda_real, atlasEntities) {
+  const { N_CHAPTERS } = atlasConfig;
+  const { allData, allDataById } = atlasEntities;
   const reliefRows = Array.isArray(gadda_real.relief) ? gadda_real.relief : [];
-  const aliasTargetById = new Map((s4Config.ALIAS_GROUPS || []).flatMap(g => g.ids.map(id => [id, g.canonical])));
+  const aliasTargetById = new Map((atlasConfig.ALIAS_GROUPS || []).flatMap(g => g.ids.map(id => [id, g.canonical])));
 
   function tileIndexOf(targetId) {
     return allDataById.get(targetId) ?? allDataById.get(aliasTargetById.get(targetId));
@@ -53,7 +53,7 @@ export default function s4Sequence(gadda_real, s4Entities) {
   }
 
   // Route e' un ruolo relazionale, rappresentato da isRouteNode quando role e' nullo.
-  const ROLE_IDX = new Map(s4Config.ROLE_ORDER.map((r, k) => [r, k]));
+  const ROLE_IDX = new Map(atlasConfig.ROLE_ORDER.map((r, k) => [r, k]));
   function effRoleIdx(row) {
     const r = row.role || (row.isRouteNode ? "Route" : null);
     if (r == null) return -1;

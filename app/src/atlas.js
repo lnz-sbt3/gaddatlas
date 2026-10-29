@@ -1,32 +1,32 @@
 import it from "./strings-it.js";
 import * as d3 from "d3";
-import s4Config from "./model/config.js";
+import atlasConfig from "./model/config.js";
 import projection from "./model/projection.js";
 import context2d, {resizeContext2d} from "./render/context2d.js";
 import observeCanvasLayout from "./ui/canvas-layout.js";
-import s4RoleBands, {readRoleSnapshot, bandRow} from "./render/role-bands.js";
+import atlasRoleBands, {readRoleSnapshot, bandRow} from "./render/role-bands.js";
 import {evaluateFrame,contentAlphaOf} from "./motion/evaluate.js";
 import {advanceLayout} from "./motion/advance.js";
 import {prepareDirectionD,evaluateDirectionD,project as projectMotion} from "./motion/direction-d.js";
 import {createAxisTransport,axesKey} from "./motion/transport.js";
 import {attachMotionRendering,createIsolineTracer} from "./render/motion.js";
-import s4ChartRouteSelection from "./interaction/route-selection.js";
-import s4PageRibbon from "./render/page-ribbon.js";
-import s4RouteHoverDrawing from "./render/route-hover.js";
-import s4ChartMapBackdrop from "./render/map-backdrop.js";
-import s4GhostSlotsOverlay from "./render/ghost-slots.js";
-import s4ChartOverlays from "./render/overlays.js";
-import s4ProfileLog from "./dev/profile-log.js";
+import atlasRouteSelection from "./interaction/route-selection.js";
+import atlasPageRibbon from "./render/page-ribbon.js";
+import atlasRouteHoverDrawing from "./render/route-hover.js";
+import atlasMapBackdrop from "./render/map-backdrop.js";
+import atlasGhostSlots from "./render/ghost-slots.js";
+import atlasOverlays from "./render/overlays.js";
+import atlasProfileLog from "./dev/profile-log.js";
 import {createFondo} from "./render/fondo.js";
-import s4ChartFrameUi from "./ui/frame-ui.js";
-import s4ChartShell from "./ui/shell.js";
+import atlasFrameUi from "./ui/frame-ui.js";
+import atlasShell from "./ui/shell.js";
 import {createPlaceRose} from "./ui/place-index.js";
 import createSheetHandle from "./ui/sheet-handle.js";
 import createSheetPad from "./ui/sheet-pad.js";
-import s4ChartHandlers from "./ui/handlers.js";
+import atlasHandlers from "./ui/handlers.js";
 
 export default function createAtlas(model, roma, { historical = null, onTileSelect = () => {}, onStateChange = () => {} } = {}) {
-  const { s4Entities, s4Projection, s4Voronoi, s4NarrativeCells, s4Chapters, s4Satellites, s4Terrain, s4RadialLayout, s4IsoEngine, s4Sequence, s4AttestedRoutes, s4Painters, s4Interaction, s4ChartSupport, s4LodPicking, s4RouteNodes } = model;
+  const { atlasEntities, atlasProjection, atlasVoronoi, atlasNarrativeCells, atlasChapters, atlasSatellites, atlasTerrain, atlasRadialLayout, atlasIsoEngine, atlasSequence, atlasAttestedRoutes, atlasPainters, atlasInteraction, atlasSupport, atlasLodPicking, atlasRouteNodes } = model;
   const listeners = new AbortController();
   const {
     BG_COLOR, HUE_RGB, FICT_HUE_RGB, ISO_ALPHA, ISO_WIDTH, ISO_FILL, ISO_FILL_A0, ISO_FILL_A1, ISO_FILL_GAMMA, GRID_COLOR, GRID_ALPHA, SHOW_GHOST_SLOTS, PROFILE,
@@ -45,20 +45,20 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     LAYOUT_MORPH_SLOW, LAYOUT_MORPH_FAST,
     FICT_CRIMP_THRESHOLD, FICT_RELIEF_ALPHA,
     DIAG_SCREEN_FRAC
-  } = s4Config;
-  const METRIC_ISOLINES_KM = s4Config.METRIC_ISOLINES_KM;
+  } = atlasConfig;
+  const METRIC_ISOLINES_KM = atlasConfig.METRIC_ISOLINES_KM;
   const INFLUENCE_RADIUS = RADIUS * 3; // usato solo da nearDrop per il bbox-test dei segmenti condivisi;
                                         // deform si annulla gia' oltre RADIUS (falloff compatto)
 
-  const { geoData, allData, allDataById, N_INMAP, N_GEO } = s4Entities;
-  const { pts, bbox, width, height, cogCenterInit, geographicAngle, poleDistanceKm, poleIndex } = s4Projection;
-  const { segments, cellRings: baseCellRings, normalizedCellScale: baseNormalizedCellScale, cognitiveTileRadius: baseCognitiveTileRadius, areaTarget } = s4Voronoi;
-  const { narrativeCellRings, narrativeTileRadius, ghostSlots } = s4NarrativeCells;
+  const { geoData, allData, allDataById, N_INMAP, N_GEO } = atlasEntities;
+  const { pts, bbox, width, height, cogCenterInit, geographicAngle, poleDistanceKm, poleIndex } = atlasProjection;
+  const { segments, cellRings: baseCellRings, normalizedCellScale: baseNormalizedCellScale, cognitiveTileRadius: baseCognitiveTileRadius, areaTarget } = atlasVoronoi;
+  const { narrativeCellRings, narrativeTileRadius, ghostSlots } = atlasNarrativeCells;
   const cellRings = baseCellRings.map((cr, i) => narrativeCellRings[i] || cr);
   // 'area-tutte' e 'area-equa': le tessere narrative più grandi scendono a un multiplo dell'area comune (1 o
   // TILE_NARRATIVE_CAP), così nessuna pesa molto più delle altre.
   // Le narrative si riducono soltanto: la loro collocazione è calcolata sul raggio d'origine, quindi non possono crescere.
-  const narrativeCap = {"area-tutte": 1, "area-equa": s4Config.TILE_NARRATIVE_CAP}[s4Config.TILE_SIZE];
+  const narrativeCap = {"area-tutte": 1, "area-equa": atlasConfig.TILE_NARRATIVE_CAP}[atlasConfig.TILE_SIZE];
   const narrativeScale = i => narrativeCap && areaTarget ? Math.min(1, Math.sqrt(narrativeCap * areaTarget / Math.max(1e-9, Math.abs(d3.polygonArea(narrativeCellRings[i].ring))))) : 1;
   const cognitiveTileRadius = baseCognitiveTileRadius.map((r, i) => narrativeCellRings[i] ? narrativeTileRadius[i] * narrativeScale(i) : r);
   const normalizedCellScale = baseNormalizedCellScale.map((s, i) => narrativeCellRings[i] ? narrativeScale(i) : s);
@@ -73,8 +73,8 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     }
     inscribedCache.set(i, min);return min;
   }
-  const { birthChapter, isBorn, bandsFor, BANDS_MAX } = s4Chapters;
-  const { primaryHostOf } = s4Satellites;
+  const { birthChapter, isBorn, bandsFor, BANDS_MAX } = atlasChapters;
+  const { primaryHostOf } = atlasSatellites;
   // Ricalco: la traccia geografica del luogo reale a cui la tessera narrativa è ancorata, in miniatura.
   // Il filo di cella resta uguale per tutti gli statuti: la differenza la fanno i segni di statuto.
   const cellOutline = () => 1;
@@ -84,7 +84,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
   function hostTrace(i, cx, cy, radius) {
     const hr = baseCellRings[primaryHostOf[i]];
     if (!hr?.ring || hr.ring.length < 3) return null;
-    const {ricalcoScale, ricalcoMinWorld, ricalcoAspect} = s4Config.STATUS;
+    const {ricalcoScale, ricalcoMinWorld, ricalcoAspect} = atlasConfig.STATUS;
     const xs = hr.ring.map(p => p[0] - hr.gx), ys = hr.ring.map(p => p[1] - hr.gy);
     const w = Math.max(...xs) - Math.min(...xs), h = Math.max(...ys) - Math.min(...ys), long = Math.max(w, h);
     const squeeze = long / Math.max(1e-9, Math.min(w, h)) > ricalcoAspect ? [w > h ? ricalcoAspect * h / w : 1, h > w ? ricalcoAspect * w / h : 1] : [1, 1];
@@ -93,21 +93,21 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     const size = radius * 2 * ricalcoScale, k = size / long;
     return hr.ring.map(([x, y]) => [cx + (x - hr.gx) * k * squeeze[0], cy + (y - hr.gy) * k * squeeze[1]]);
   }
-  const { agents: terrainAgents, occAt } = s4Terrain;
-  const { rankedRadialByChapter, rankedRadialFullByChapter, extentBase } = s4RadialLayout;
-  const { isoProfile, isoProfileMin, isoProfileMed, traceIsoline: traceModelIsoline } = s4IsoEngine;
+  const { agents: terrainAgents, occAt } = atlasTerrain;
+  const { rankedRadialByChapter, rankedRadialFullByChapter, extentBase } = atlasRadialLayout;
+  const { isoProfile, isoProfileMin, isoProfileMed, traceIsoline: traceModelIsoline } = atlasIsoEngine;
   const traceRestingIsoline=createIsolineTracer(traceModelIsoline);
   const {
     sequence, sequenceByAgent, chapterOfCursor, occUpTo, birthPos, lastPosByChapter,
     roleStack, rolePosStack, roleLen, BANDS_CAP: SEQ_BANDS_CAP
-  } = s4Sequence;
+  } = atlasSequence;
   const seqAllPositions = sequence.map(d => d.pos);
-  const { routeRgb } = s4AttestedRoutes;
+  const { routeRgb } = atlasAttestedRoutes;
 
   const context = context2d(width, height);
   const canvas = context.canvas;
-  const painters = s4Painters.makePainters(context);
-  const interaction = s4Interaction;
+  const painters = atlasPainters.makePainters(context);
+  const interaction = atlasInteraction;
   let baseTransform = context.getTransform();
   let fitScale = 1;
   // Area visibile del canvas nelle coordinate del riquadro del modello; offset del riquadro in px CSS.
@@ -125,7 +125,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
   }
   let viewRect = {x0: 0, y0: 0, x1: width, y1: height}, frameOffset = {x: 0, y: 0}, cssSize = [width, height];
   function bandsOfTile(i) {
-    return s4ChartSupport.bandsOfTile({i, occEased, focalizer, BANDS_MAX, bandsFor});
+    return atlasSupport.bandsOfTile({i, occEased, focalizer, BANDS_MAX, bandsFor});
   }
   const geoPath = d3.geoPath(projection, context);
 
@@ -133,7 +133,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
   let rotPivot = cogCenter.slice();
 
   function baseWorldPt(i) {
-    return s4ChartSupport.baseWorldPt({i, N_GEO, pts, cogCenter});
+    return atlasSupport.baseWorldPt({i, N_GEO, pts, cogCenter});
   }
 
   let displayPts = allData.map((d, i) => i < pts.length ? pts[i].slice() : cogCenterInit.slice());
@@ -150,19 +150,19 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
   let transform = d3.zoomIdentity; // camera utente: k=1 e pan=0 rispetto al fit
   let rotPivotSyncing = false;
 
-  // stato della goccia (i parametri SPRING/S_STIFF/S_DAMP/STRENGTH/RADIUS sono in s4Config)
+  // stato della goccia (i parametri SPRING/S_STIFF/S_DAMP/STRENGTH/RADIUS sono in atlasConfig)
   const drop = { x:-1e4, y:-1e4, tx:-1e4, ty:-1e4, s:0, ts:0, vs:0 };
 
   let effRadius = RADIUS, effInfluence = INFLUENCE_RADIUS;
 
   function deform(px, py){
     if (tiltEased > 0.01) return [px, py];
-    return s4ChartSupport.deformPoint({px, py, drop, effRadius, transform, crimpEased});
+    return atlasSupport.deformPoint({px, py, drop, effRadius, transform, crimpEased});
   }
 
   function nearDrop(bbox){
     if (tiltEased > 0.01) return false;
-    return s4ChartSupport.nearDropBBox({box: bbox, drop, effInfluence});
+    return atlasSupport.nearDropBBox({box: bbox, drop, effInfluence});
   }
 
   let hostIndex = -1;
@@ -186,7 +186,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
   const INK_RGB_STR = d3.color(INK_COLOR).rgb().toString().replace(/rgba?\(|\)/g, '');
   let terraceCurveCache = {index: -1, curves: null, tiltNow: 1, rotSinNow: 0, rotCosNow: 1, zScale: 1, invK: 1};
   let hoverTerrace = -1;
-  const logPickDiagnostics = s4LodPicking.makePickLogger({PROFILE, painters});
+  const logPickDiagnostics = atlasLodPicking.makePickLogger({PROFILE, painters});
 
   let chapter = 1;                 
   let occEased = allData.map(() => 0);
@@ -216,25 +216,25 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
   let tiltNow = 1;            // scala y effettiva del frame corrente
   let planRot = 0;            // rotazione della pianta, radianti
   let focalizer = null;       // null = vista "tutti" (misura del piano)
-  let seqGrain = s4Config.GRAIN.initial;  // passo del cursore per pagina: 'page' (ultima riga di ogni pagina) o 'row'
+  let seqGrain = atlasConfig.GRAIN.initial;  // passo del cursore per pagina: 'page' (ultima riga di ogni pagina) o 'row'
   let seqMode = false;        // false = timeline capitoli; true = timeline sequenziale per riferimento
-  let seqPos = 0;             // posizione ordinale globale dentro s4Sequence.sequence
+  let seqPos = 0;             // posizione ordinale globale dentro atlasSequence.sequence
   // occSeq e' il buffer riusato restituito da occUpTo: si aggiorna solo quando
   // cambiano seqPos, focalizer o seqMode, mai per frame.
   let occSeq = new Float32Array(allData.length);
   const occSeqBuf = new Float32Array(allData.length);
   let seqOccDirty = true;
-  const roleBands = s4RoleBands.create({
+  const roleBands = atlasRoleBands.create({
     allDataLength: allData.length,
     roleCap: SEQ_BANDS_CAP,
     bandsMax: BANDS_MAX,
-    bandsLogBase: s4Chapters.BANDS_LOG_BASE
+    bandsLogBase: atlasChapters.BANDS_LOG_BASE
   });
   let roleSortTarget = 0;
   let roleSortEased = 0;
   let lodTarget = 0;
   let lodEased = 0;
-  const routeSelection = s4ChartRouteSelection.create({
+  const routeSelection = atlasRouteSelection.create({
     getFocalizer: () => focalizer,
     getLodEased: () => lodEased,
     getHostIndex: () => hostIndex,
@@ -242,7 +242,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     getRoleSortTarget: () => roleSortTarget,
     roleBands,
     sequence,
-    routeIdByReferenceId: s4AttestedRoutes.routeIdByReferenceId,
+    routeIdByReferenceId: atlasAttestedRoutes.routeIdByReferenceId,
     onReferenceSelect: onTileSelect
   });
   let seqOccCalls = 0;
@@ -261,7 +261,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
   let playing = false;
   let playTimer = null;
   let showFictitious = false;   // gate del secondo bottone "luoghi narrativi"
-  const roleFilter = s4Config.ROLE_ORDER.map(() => true);
+  const roleFilter = atlasConfig.ROLE_ORDER.map(() => true);
   let fictSpawnPt = allData.map(() => null); // punto di riposo world-space (angolo viewport piu' vicino) per i fittizi assenti
   let ghostSlotsLoggedChapter = null;
   // Layout radiale attivo: solo referenziali oppure referenziali e fittizi.
@@ -275,7 +275,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     if (import.meta.env.DEV) stableFrames = 0;
     if (readyToPublish && !suppressUrl) onStateChange(source);
   }
-  const axisTransport=createAxisTransport({view:'map',axon:0,narrative:0},s4Config.MOTION);
+  const axisTransport=createAxisTransport({view:'map',axon:0,narrative:0},atlasConfig.MOTION);
   const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
   let pendingMotion=null,prepareTimer=null,lastAxesRequest='',lastPassage=null,lastReducedReading='',pendingDiagramCamera=false;
   let axisFrame=null,referenceLayout=null,layoutOffset=null,axisGeneration=0;
@@ -305,7 +305,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
   const t0 = performance.now();          // clock monotono per la fase del pulse
 
   function interactionFrame() {
-    if((axisTransport.active||pendingMotion)&&evaluatedFrame){const f=evaluatedFrame;return{transform:f.transform,cogCenter:f.cogCenter,rotPivot:f.rotPivot,crimpEased:f.crimpEased,tiltEased:f.tiltEased,tiltNow:f.tiltNow,planRot:f.planRot,displayPts:f.displayPts,displayCellScale:f.displayCellScale,birthEased:f.birthEased,fictBirthEased:f.fictBirthEased,rotSinNow:f.rotSinNow,rotCosNow:f.rotCosNow,zStep:s4Painters.AXON_Z_STEP*f.zScaleDraw/Math.max(.001,f.tiltNow)};}
+    if((axisTransport.active||pendingMotion)&&evaluatedFrame){const f=evaluatedFrame;return{transform:f.transform,cogCenter:f.cogCenter,rotPivot:f.rotPivot,crimpEased:f.crimpEased,tiltEased:f.tiltEased,tiltNow:f.tiltNow,planRot:f.planRot,displayPts:f.displayPts,displayCellScale:f.displayCellScale,birthEased:f.birthEased,fictBirthEased:f.fictBirthEased,rotSinNow:f.rotSinNow,rotCosNow:f.rotCosNow,zStep:atlasPainters.AXON_Z_STEP*f.zScaleDraw/Math.max(.001,f.tiltNow)};}
     const rotNow = tiltEased > 0.01 ? planRot : 0;
     return {
       transform,
@@ -322,7 +322,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
       rotSinNow: Math.sin(rotNow),
       rotCosNow: Math.cos(rotNow),
       // Il picking usa la quota nel piano precedente alla compressione verticale.
-      zStep: s4Painters.AXON_Z_STEP
+      zStep: atlasPainters.AXON_Z_STEP
              * (1 + (lastCogScaleDyn - 1) * crimpEased)
              * (tiltEased >= 0.999 ? 1 : tiltEased)
              / Math.max(0.001, tiltNow)
@@ -330,11 +330,11 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
   }
 
   function focalAlpha(i) {
-    return s4ChartSupport.focalAlpha(focalEased, i);
+    return atlasSupport.focalAlpha(focalEased, i);
   }
 
   function offmapPresence() {
-    return s4ChartSupport.offmapPresence(crimpEased, FICT_CRIMP_THRESHOLD);
+    return atlasSupport.offmapPresence(crimpEased, FICT_CRIMP_THRESHOLD);
   }
 
   function routeAlphaOf(i) {
@@ -351,23 +351,23 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
   }
 
   function alphaBucket(alpha) {
-    return s4ChartSupport.alphaBucket(alpha);
+    return atlasSupport.alphaBucket(alpha);
   }
 
   function clamp01(v) {
-    return s4ChartSupport.clamp01(v);
+    return atlasSupport.clamp01(v);
   }
 
   function seqPage(row) {
-    return s4ChartSupport.seqPage(row);
+    return atlasSupport.seqPage(row);
   }
 
   function effRoleName(row) {
-    return s4ChartSupport.effRoleName(row);
+    return atlasSupport.effRoleName(row);
   }
 
   function effRoleIdx(row) {
-    return s4ChartSupport.effRoleIdx(row, s4Config.ROLE_ORDER);
+    return atlasSupport.effRoleIdx(row, atlasConfig.ROLE_ORDER);
   }
 
   function roleMaskComplete() {
@@ -658,7 +658,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
   function rebuildRolePermutations() {
     roleBands.rebuild({
       roleStack, rolePosStack, roleCounts: roleLen,
-      roleOrder: s4Config.ROLE_ORDER,
+      roleOrder: atlasConfig.ROLE_ORDER,
       linear: focalizer != null
     });
   }
@@ -689,7 +689,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
           terrazze: roleBands.bandCountOf[i],
           stratigrafia: Array.from({length: roleBands.bandCountOf[i]}, (_, k) => {
             const r = roleBands.bandRoleChrono[i * BANDS_MAX + k];
-            return r >= 0 ? s4Config.ROLE_ORDER[r] : "-";
+            return r >= 0 ? atlasConfig.ROLE_ORDER[r] : "-";
           }).join(" -> ")
         }))
     );
@@ -728,7 +728,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     roleFilter[roleIndex] = !roleFilter[roleIndex];
     seqOccDirty = true;
     ribbonStateKey = "";
-    if (!roleFilter[s4Config.ROLE_ORDER.indexOf("Route")]) routeSelection.clear();
+    if (!roleFilter[atlasConfig.ROLE_ORDER.indexOf("Route")]) routeSelection.clear();
     refreshOccSeq();
     updateSeqUi("roles");
   }
@@ -770,7 +770,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     seqSlider.disabled = !seqMode || !track.length;
     seqSlider.value = grainIndex(seqPos, track);
     // Granularità: «interruttore» sotto il cursore, «tre tempi» come terzo bottone del gruppo, «modificatore» con Maiuscolo.
-    const grainVariant = s4Config.GRAIN.variant;
+    const grainVariant = atlasConfig.GRAIN.variant;
     if (shellRef.rowGrain) shellRef.rowGrain.hidden = !(seqMode && grainVariant === "interruttore");
     for (const b of shellRef.grainToggle?.querySelectorAll("button") || []) b.setAttribute("aria-pressed", String(b.dataset.grain === seqGrain));
     if (shellRef.seqRowBtn) {
@@ -838,12 +838,12 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
         return seqMode && c === chapter && roleAllowed(row);
       });
     const roleMaskKey = activeRoleMask() ? roleFilter.map(v => v ? 1 : 0).join("") : "all";
-    const result = s4PageRibbon.update({
+    const result = atlasPageRibbon.update({
       pageRibbon, pageRibbonWrap: pageRibbonShell, seqMode, rows, stateKey: ribbonStateKey, chapter, focalizer, seqPos,
-      width, inkColor: INK_COLOR, roleColors: s4Config.ROLE_COLORS,
+      width, inkColor: INK_COLOR, roleColors: atlasConfig.ROLE_COLORS,
       gapMin: GAP_MIN, blockDelta: SEQ_BLOCK_DELTA,
       seqPage, effRoleName, setSeqPos, focalDimAlpha: FOCAL_DIM_ALPHA,
-      allData, roleMaskKey, ...s4Config.RIBBON, cellRings, grain: seqGrain
+      allData, roleMaskKey, ...atlasConfig.RIBBON, cellRings, grain: seqGrain
     });
     if (!result.unchanged) {
       ribbonStateKey = result.stateKey;
@@ -852,8 +852,8 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
   }
 
   const evaluationModel={width,height,extentBase,N_GEO,N_INMAP,pts,cellRings,normalizedCellScale,
-    isoProfileMed,axonZStep:s4Painters.AXON_Z_STEP,terraceStep:s4Painters.TER_STEP_FRAC,
-    config:{...s4Config,TILT_REST,TILT_MORPH},bandsFor,BANDS_MAX,geographicAngle,
+    isoProfileMed,axonZStep:atlasPainters.AXON_Z_STEP,terraceStep:atlasPainters.TER_STEP_FRAC,
+    config:{...atlasConfig,TILT_REST,TILT_MORPH},bandsFor,BANDS_MAX,geographicAngle,
     spawnPointAlongAzimuth:interaction.spawnPointAlongAzimuth};
   function motionSnapshot(pulse=.5) {
     return {
@@ -899,9 +899,9 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
   // stava guardando nel diagramma, così che il passaggio li porti dentro la vista invece che fuori.
   // Senza ingrandimento resta la camera corrente (comportamento della regia D).
   function framingCamera(from,end){
-    const C=s4Config.MOTION.framing;if(!C||transform.k<diagramScaleBaseK*C.minZoomRatio)return null;
+    const C=atlasConfig.MOTION.framing;if(!C||transform.k<diagramScaleBaseK*C.minZoomRatio)return null;
     const m=C.margin,inside=([x,y])=>x>=width*m&&x<=width*(1-m)&&y>=height*m&&y<=height*(1-m),seen=[];
-    for(let i=0;i<N_GEO;i++)if(cellRings[i]&&(birthEased[i]||0)>BIRTH_EPSILON&&inside(projectMotion(from,{projection:s4Projection},from.displayPts[i])))seen.push(i);
+    for(let i=0;i<N_GEO;i++)if(cellRings[i]&&(birthEased[i]||0)>BIRTH_EPSILON&&inside(projectMotion(from,{projection:atlasProjection},from.displayPts[i])))seen.push(i);
     if(seen.length<C.minPlaces)return null;
     const tilt=1-(1-TILT_REST)*end.tiltEased,rot=end.tiltEased>.01?planRot:0,cos=Math.cos(rot),sin=Math.sin(rot),[px,py]=end.rotPivot;
     const q=seen.map(i=>{const dx=end.points[i][0]-px,dy=end.points[i][1]-py;return[px+cos*dx-sin*dy-bbox[0],py+(sin*dx+cos*dy)*tilt-bbox[1]];});
@@ -928,17 +928,17 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     let b=endpointFor(target,live);
     const framed=target.view==='map'&&axisTransport.current.view==='diagram'?framingCamera(from,b):null;
     if(framed)b=endpointFor(target,live,framed);
-    const context={start:a,end:b,model:evaluationModel,projection:s4Projection,fit:fitScale,
-      readingKey:readingContextKey(),token:s4Config.MOTION,narrativePlacement:rankedRadialFullByChapter,gestureCamera:{...transform},axisFrom:axesKey(axisTransport.current),
+    const context={start:a,end:b,model:evaluationModel,projection:atlasProjection,fit:fitScale,
+      readingKey:readingContextKey(),token:atlasConfig.MOTION,narrativePlacement:rankedRadialFullByChapter,gestureCamera:{...transform},axisFrom:axesKey(axisTransport.current),
       gains:gravRamp.map(v=>LAYOUT_MORPH_SLOW+(LAYOUT_MORPH_FAST-LAYOUT_MORPH_SLOW)*v),
-      ranks:s4Projection.distanceRank.map((v,i)=>v??s4Projection.distanceRank[primaryHostOf[i]]??0)};
+      ranks:atlasProjection.distanceRank.map((v,i)=>v??atlasProjection.distanceRank[primaryHostOf[i]]??0)};
     const iterator=prepareDirectionD(context),generation=++axisGeneration;
     pendingMotion={context,target,iterator,generation,key:readingContextKey()};
     referenceLayout=a.layoutPtsEased.map(p=>p.slice());layoutPtsEased=referenceLayout.map(p=>p.slice());layoutOffset=referenceLayout.map(()=>[0,0]);
     function prepareChunk(){
       if(generation!==axisGeneration)return;
       const start=performance.now();let result;
-      do{result=iterator.next();}while(!result.done&&performance.now()-start<s4Config.MOTION.prepareBudget);
+      do{result=iterator.next();}while(!result.done&&performance.now()-start<atlasConfig.MOTION.prepareBudget);
       if(import.meta.env.DEV)motionStats.preparation.push(performance.now()-start);
       if(result.done){pendingMotion=null;prepareTimer=null;axisTransport.start(result.value,target,performance.now());if(import.meta.env.DEV)motionStats.starts.push({at:performance.now(),target});}
       else schedulePreparation(prepareChunk);
@@ -977,7 +977,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
   }
   function frameForMotion(snapshot){
     const a=axisTransport.active;
-    if(a){snapshot.layoutOffset=layoutOffset;const f=readyAxisFrame||evaluateDirectionD(a.context,a.p,snapshot);readyAxisFrame=null;f.roleSortEased=roleSortEased;f.profileTickMs=profileTickMs;return attachMotionRendering(f,{config:s4Config,context,model:evaluationModel,traceIsoline:traceModelIsoline,passage:a.context});}
+    if(a){snapshot.layoutOffset=layoutOffset;const f=readyAxisFrame||evaluateDirectionD(a.context,a.p,snapshot);readyAxisFrame=null;f.roleSortEased=roleSortEased;f.profileTickMs=profileTickMs;return attachMotionRendering(f,{config:atlasConfig,context,model:evaluationModel,traceIsoline:traceModelIsoline,passage:a.context});}
     if(pendingMotion){const e=pendingMotion.context.start,o=pendingMotion.context.gestureCamera,r=snapshot.transform.k/o.k,camera={k:e.transform.k*r,x:snapshot.transform.x+(e.transform.x-o.x)*r,y:snapshot.transform.y+(e.transform.y-o.y)*r};return evaluateFrame(evaluationModel,{...snapshot,transform:camera,crimpEased:e.crimpEased,tiltEased:e.tiltEased,
       layoutPtsEased:e.layoutPtsEased,fictBirthEased:e.fictBirthEased,cogCenter:e.cogCenter,rotPivot:e.rotPivot,diagramScaleBaseK:e.diagramScaleBaseK},fitScale);}
     return evaluateFrame(evaluationModel,snapshot,fitScale);
@@ -1045,12 +1045,12 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     const drawMotion=evaluated.transition||(import.meta.env.DEV?evaluated.motionLab:null);
     const traceIsoline=drawMotion?.traceIsoline||traceRestingIsoline;
     let contentAlpha=(i,opts)=>contentAlphaOf(evaluated,i,opts);
-    let drawBackdrop=s4ChartMapBackdrop.draw,axonRendering=tiltEased>.01;
+    let drawBackdrop=atlasMapBackdrop.draw,axonRendering=tiltEased>.01;
     if(drawMotion){contentAlpha=drawMotion.alpha;drawBackdrop=drawMotion.backdrop;axonRendering=tiltEased>0;}
     const bandsOfTile=i=>evaluated.bands[i];
     const offmapPresence=()=>evaluated.offmapPresenceValue;
-    const deform=(px,py)=>tiltEased>.01?[px,py]:s4ChartSupport.deformPoint({px,py,drop:evaluated.drop,effRadius:evaluated.effRadius,transform,crimpEased});
-    const nearDrop=box=>tiltEased>.01?false:s4ChartSupport.nearDropBBox({box,drop:evaluated.drop,effInfluence:evaluated.effInfluence});
+    const deform=(px,py)=>tiltEased>.01?[px,py]:atlasSupport.deformPoint({px,py,drop:evaluated.drop,effRadius:evaluated.effRadius,transform,crimpEased});
+    const nearDrop=box=>tiltEased>.01?false:atlasSupport.nearDropBBox({box,drop:evaluated.drop,effInfluence:evaluated.effInfluence});
     const profileT0=evaluated.profileT0;
     let profileTiles=0,profileCurves=0,profileFills=0,profileStrokes=0;
     let profileDisplayMs=evaluated.profileEvaluationMs||0,profileDrawOrderMs=0,profileReliefMs=0,profileBordersMs=0,profileRulerMs=0;
@@ -1071,10 +1071,10 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
         highlight,
         terrace: routeTerrace >= 1 ? routeTerrace : (hoverIsolate ? hoverTerrace : -1),
         isolate: hoverIsolate,
-        highlightColor: ri >= 0 ? s4Config.ROLE_COLORS[s4Config.ROLE_ORDER[ri]] : INK_COLOR,
+        highlightColor: ri >= 0 ? atlasConfig.ROLE_COLORS[atlasConfig.ROLE_ORDER[ri]] : INK_COLOR,
         ribbonLinked: currentRibbonTick != null && currentRibbonTick.tileIndex === i,
         isRouteHot: routeHotSet.has(i),
-        routeRgb: s4RouteNodes.routeRgb,
+        routeRgb: atlasRouteNodes.routeRgb,
         // Determinazione della riga del personaggio rappresentata dalla terrazza k, mai della banda o del luogo.
         determination: k => bandRow(evaluated.roleData, sequence, focalizer, roleSortTarget > 0.5, i, k)?.determination ?? null
       };
@@ -1168,13 +1168,13 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     figureChain();
 
     // Fondo a carta storica spenta: orientamento o varianti di sviluppo, solo nella geografia.
-    const fondoMode = s4Config.PAPER.mode, mapOn = !!historical && historical.opacity > 0 && !historical.failed;
+    const fondoMode = atlasConfig.PAPER.mode, mapOn = !!historical && historical.opacity > 0 && !historical.failed;
     fondoCredit.textContent = !mapOn && crimpEased < .5 ? fondo.credit(fondoMode) : ""; fondoCredit.hidden = !fondoCredit.textContent;
     updateScaleBar(true, crimpEased, tiltEased);
     // Carta storica: con il ritaglio per tessera si disegna dopo le terrazze (qui sotto); altrimenti sotto la figura.
-    if(historical&&!s4Config.HISTORICAL.perTile)historical.draw(context,evaluated,evaluated.historical||historical.snapshot(),fitScale);
+    if(historical&&!atlasConfig.HISTORICAL.perTile)historical.draw(context,evaluated,evaluated.historical||historical.snapshot(),fitScale);
     const paper=historical?.reserve();
-    frame.historicalReserve=paper&&{...paper,width:s4Config.HISTORICAL.reserveCSS*invK/fitScale};
+    frame.historicalReserve=paper&&{...paper,width:atlasConfig.HISTORICAL.reserveCSS*invK/fitScale};
     // Orientamento (acque, mura, costa): sotto i bordi delle celle e le terrazze, ritagliato al riquadro della
     // tassellazione, così sfuma al bordo insieme alla figura.
     if (!mapOn && fondoMode === "orientamento" && crimpEased < .99) {
@@ -1187,7 +1187,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
       RING_GUIDE_WIDTH, BORDER_WIDTH, segments, nearDrop, deform, cellRings,
       N_INMAP, N_GEO, fictBirthEased, birthEased, BIRTH_EPSILON, isBorn,
       contentAlpha, cellPoint, displayPts, cognitiveTileRadius, displayCellScale,
-      offmapPresence, cellOutline, ringLevel: s4Config.RINGS.levels[s4Config.RINGS.level], cssUnit: invK / fitScale
+      offmapPresence, cellOutline, ringLevel: atlasConfig.RINGS.levels[atlasConfig.RINGS.level], cssUnit: invK / fitScale
     });
     ringLabelsFrame = backdrop.ringLabels;
     const metricTicks = backdrop.metricTicks;
@@ -1210,7 +1210,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
         context.fillStyle = `rgba(${HUE_RGB},${isoFillAlpha(k)})`;
         context.fill(fillPaths[k]);
         if (PROFILE) profileFills++;
-        context.fillStyle = `rgba(${FICT_HUE_RGB},${isoFillAlpha(k) * s4Config.FICT_FILL_SCALE})`;
+        context.fillStyle = `rgba(${FICT_HUE_RGB},${isoFillAlpha(k) * atlasConfig.FICT_FILL_SCALE})`;
         context.fill(fillPathsFict[k]);
         if (PROFILE) profileFills++;
       }
@@ -1247,7 +1247,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
       return {point, z: painters.axonZOf(bandsOfTile(i)) * zScaleDraw};
     };
     const routeStepPoints = routeHoverEased > 0.01
-      ? s4RouteHoverDrawing.buildStepPoints({ routes: routeHoverRoutes, routePointOf, birthEased, fictBirthEased, N_GEO, BIRTH_EPSILON })
+      ? atlasRouteHoverDrawing.buildStepPoints({ routes: routeHoverRoutes, routePointOf, birthEased, fictBirthEased, N_GEO, BIRTH_EPSILON })
       : [];
     const haloProfile = PROFILE && profileFrame % 60 === 0 ? {calls: 0, samples: []} : null;
     if (roleMode && seqMode && crimpEased > 0.99) {
@@ -1275,8 +1275,8 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
               radius: +radius.toFixed(2),
               strength: +markHighlight.toFixed(3),
               rTilePx: +(radius * transform.k).toFixed(1),
-              rHaloPx: +(radius * s4Config.CONSTELLATION_RADIUS_GAIN * transform.k).toFixed(1),
-              offPx: +(radius * s4Config.HALO_POOL_OFFSET * tiltEased * transform.k).toFixed(1),
+              rHaloPx: +(radius * atlasConfig.CONSTELLATION_RADIUS_GAIN * transform.k).toFixed(1),
+              offPx: +(radius * atlasConfig.HALO_POOL_OFFSET * tiltEased * transform.k).toFixed(1),
               displayPt: displayPts[i]?.slice()
             });
           }
@@ -1303,7 +1303,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
       haloProfile.k = +transform.k.toFixed(2);
       haloProfile.tilt = +tiltEased.toFixed(2);
     }
-    if (haloProfile) s4ProfileLog.halo(haloProfile);
+    if (haloProfile) atlasProfileLog.halo(haloProfile);
     for (const i of drawOrder){
       if(drawMotion&&!evaluated.reliefVisible[i])continue;
       const cr = cellRings[i];
@@ -1324,21 +1324,21 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
         const status = allData[i].properties.reality_status;
         // Glifo inscritto: dentro la propria tessera, alla quota della cima, tratto in px CSS.
         let inscribe = null, ring = null;
-        if (s4Config.GLYPH.mode === "inscribed" && cr?.ring) {
+        if (atlasConfig.GLYPH.mode === "inscribed" && cr?.ring) {
           const s = displayCellScale[i] * (1 + (cognitiveBirthScale[i] - 1) * crimpEased), dx = cx - px, dy = cy - py, clip = new Path2D();
           ring = cr.ring.map(([x, y]) => [px + (x - cr.gx) * s + dx, py + (y - cr.gy) * s + dy]);
           ring.forEach(([X, Y], k) => { if (k) clip.lineTo(X, Y); else clip.moveTo(X, Y); });
           clip.closePath();
-          inscribe = {clip, radius: inscribedRadius(i) * s * s4Config.GLYPH.inscribedFraction, width: s4Config.GLYPH.strokeCSS * invK / fitScale};
+          inscribe = {clip, radius: inscribedRadius(i) * s * atlasConfig.GLYPH.inscribedFraction, width: atlasConfig.GLYPH.strokeCSS * invK / fitScale};
         }
         context.save();
         context.globalAlpha = contentAlpha(i, {presence: fictBirthEased[i]});
-        const statusMode = s4Config.STATUS.mode;
+        const statusMode = atlasConfig.STATUS.mode;
         if (statusMode === "glifo" || !ring) {
           // il glifo segue il nome dello statuto; niente ripiego su «invented»
           painters.drawFictGlyph(frame, cx, cy, gr, status, inscribe);
-        } else painters.drawStatusMark(frame, statusMode, status, cx, cy, ring, inscribe, statusMode === "ricalco" ? hostTrace(i, cx, cy, inscribe.radius) : null, {...s4Config.STATUS, axon: axonRendering, offsetPx: s4Config.STATUS.offsetCSS * invK / fitScale, minInscribedPx: s4Config.STATUS.minInscribedCSS * invK / fitScale, lineWidth: BORDER_WIDTH * invK,
-            reservePx: s4Config.STATUS.inventedReserveCSS * invK / fitScale, siglaMinPx: s4Config.STATUS.siglaMinCSS * invK / fitScale});
+        } else painters.drawStatusMark(frame, statusMode, status, cx, cy, ring, inscribe, statusMode === "ricalco" ? hostTrace(i, cx, cy, inscribe.radius) : null, {...atlasConfig.STATUS, axon: axonRendering, offsetPx: atlasConfig.STATUS.offsetCSS * invK / fitScale, minInscribedPx: atlasConfig.STATUS.minInscribedCSS * invK / fitScale, lineWidth: BORDER_WIDTH * invK,
+            reservePx: atlasConfig.STATUS.inventedReserveCSS * invK / fitScale, siglaMinPx: atlasConfig.STATUS.siglaMinCSS * invK / fitScale});
         context.restore();
       };
       if (B <= 0 && !axonRendering) {
@@ -1422,7 +1422,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
         }
         if (ISO_FILL) {
           for (let k = 1; k <= nL; k++) {
-            context.fillStyle = `rgba(${isFict ? FICT_HUE_RGB : HUE_RGB},${isoFillAlpha(k) * focal * (isFict ? s4Config.FICT_FILL_SCALE : 1)})`;
+            context.fillStyle = `rgba(${isFict ? FICT_HUE_RGB : HUE_RGB},${isoFillAlpha(k) * focal * (isFict ? atlasConfig.FICT_FILL_SCALE : 1)})`;
             context.fill(tileFillPaths[k]);
             if (PROFILE) profileFills++;
           }
@@ -1443,8 +1443,8 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
           context.globalAlpha = 0.95 * focal;
           context.lineWidth = 3 * invK;
           context.lineJoin = "round";
-          context.strokeStyle = s4RouteNodes.routeRgb;
-          context.shadowColor = s4RouteNodes.routeRgb;
+          context.strokeStyle = atlasRouteNodes.routeRgb;
+          context.shadowColor = atlasRouteNodes.routeRgb;
           context.shadowBlur = 14;
           context.stroke();
           context.restore();
@@ -1481,7 +1481,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     if (PROFILE) profileReliefMs = performance.now() - profileReliefT0;
 
     // contorno di Roma: geografico, quindi sfuma nello stato cognitivo
-    if (historical && s4Config.HISTORICAL.perTile) {
+    if (historical && atlasConfig.HISTORICAL.perTile) {
       // Ogni tessera reale porta il ritaglio della carta: posizione e scala con cui la tessera è disegnata ora.
       const tiles = [];
       for (let i = 0; i < N_GEO; i++) {
@@ -1494,12 +1494,12 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     }
     // Carta spenta (PAPER.mode): 'corone' cerchi delle distanze del diagramma attorno al polo, nella
     // geografia; 'grana' grana di carta deterministica, fissa allo schermo; 'piana' il fondo attuale.
-    const paperMode = s4Config.PAPER.mode, geoAlpha = 1 - crimpEased;
+    const paperMode = atlasConfig.PAPER.mode, geoAlpha = 1 - crimpEased;
     if (paperMode === "corone" && geoAlpha > 0.01 && poleIndex >= 0) {
       const center = pts[poleIndex], [lon, lat] = projection.invert(center), unit = invK / fitScale;
       context.save(); context.globalAlpha = geoAlpha;
-      context.strokeStyle = `rgba(${GRID_COLOR},${s4Config.PAPER.ringAlpha})`; context.lineWidth = 0.8 * unit; context.setLineDash([2 * unit, 4 * unit]);
-      context.font = `500 ${11 * unit}px ${s4Config.ANNOTATION.family}`; context.fillStyle = `rgba(${GRID_COLOR},0.9)`; context.textAlign = "center"; context.textBaseline = "bottom";
+      context.strokeStyle = `rgba(${GRID_COLOR},${atlasConfig.PAPER.ringAlpha})`; context.lineWidth = 0.8 * unit; context.setLineDash([2 * unit, 4 * unit]);
+      context.font = `500 ${11 * unit}px ${atlasConfig.ANNOTATION.family}`; context.fillStyle = `rgba(${GRID_COLOR},0.9)`; context.textAlign = "center"; context.textBaseline = "bottom";
       for (const km of METRIC_ISOLINES_KM) {
         const edge = projection([lon, lat + km / 110.574]), r = Math.hypot(edge[0] - center[0], edge[1] - center[1]);
         context.beginPath(); context.arc(center[0], center[1], r, 0, 2 * Math.PI); context.stroke();
@@ -1508,9 +1508,9 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
       context.restore();
     }
     // A tutto schermo la tassellazione sfuma verso il fondo al bordo del suo riquadro: nessun filo di cornice.
-    const edgeAlpha = s4Config.FRAME.mode === "pieno" ? 1 - crimpEased : 0;
+    const edgeAlpha = atlasConfig.FRAME.mode === "pieno" ? 1 - crimpEased : 0;
     if (edgeAlpha > 0.001) {
-      const [x0, y0, x1, y1] = bbox, band = Math.min(x1 - x0, y1 - y0) * s4Config.FRAME.fadeFraction;
+      const [x0, y0, x1, y1] = bbox, band = Math.min(x1 - x0, y1 - y0) * atlasConfig.FRAME.fadeFraction;
       const bg = d3.color(BG_COLOR), solid = `rgba(${bg.r},${bg.g},${bg.b},1)`, clear = `rgba(${bg.r},${bg.g},${bg.b},0)`;
       context.save(); context.globalAlpha = edgeAlpha;
       for (const [ax, ay, bx, by, rx, ry, rw, rh] of [[x0, 0, x0 + band, 0, x0 - 1, y0 - 1, band + 1, y1 - y0 + 2], [x1, 0, x1 - band, 0, x1 - band, y0 - 1, band + 1, y1 - y0 + 2],
@@ -1523,9 +1523,9 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     // Il fondo attuale (varianti di sviluppo) sta dopo la sfumatura del bordo, fuso per moltiplica: nessuna cornice chiara.
     if (!mapOn && (fondoMode === "raster" || fondoMode === "tratti")) fondo.draw(context, {mode: fondoMode, alpha: 1 - crimpEased, unit: invK / fitScale});
     // La grana segue la sfumatura del bordo: copre in modo uniforme tutta la finestra.
-    if (paperMode === "grana" || s4Config.PAPER.grain) {
+    if (paperMode === "grana" || atlasConfig.PAPER.grain) {
       paperGrain ??= makePaperGrain();
-      context.save(); context.setTransform(1, 0, 0, 1, 0, 0); context.globalAlpha = s4Config.PAPER.grainAlpha;
+      context.save(); context.setTransform(1, 0, 0, 1, 0, 0); context.globalAlpha = atlasConfig.PAPER.grainAlpha;
       context.fillStyle = context.createPattern(paperGrain, "repeat"); context.fillRect(0, 0, canvas.width, canvas.height); context.restore();
     }
     const romaAlpha = evaluated.layers.romaAlpha;
@@ -1537,19 +1537,19 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
       context.restore();
     }
 
-    ({ghostSlotsLoggedChapter} = s4GhostSlotsOverlay.draw({
+    ({ghostSlotsLoggedChapter} = atlasGhostSlots.draw({
       context, PROFILE, SHOW_GHOST_SLOTS, crimpEased, chapter,
       ghostSlotsLoggedChapter, ghostSlots, primaryHostOf, fictBirthEased, birthEased,
       contentAlpha, BIRTH_EPSILON, allData, birthChapter,
       cogCenter, cogScaleDyn, displayPts, invK, BORDER_WIDTH, GRID_COLOR,
-      style: s4Config.GHOST.style, cssUnit: invK / fitScale, active: activePlace,
-      glyph: {paths: s4Config.FICT_GLYPH_PATHS, box: s4Config.FICT_GLYPH_BOX, ink: INK_RGB_STR, statusOf: j => allData[j].properties.reality_status}
+      style: atlasConfig.GHOST.style, cssUnit: invK / fitScale, active: activePlace,
+      glyph: {paths: atlasConfig.FICT_GLYPH_PATHS, box: atlasConfig.FICT_GLYPH_BOX, ink: INK_RGB_STR, statusOf: j => allData[j].properties.reality_status}
     }));
 
     // Etichette sulle corone (livello «marcato»): a 45° in alto a destra, diritte, con alone di carta.
     if (ringLabelsFrame && crimpEased > .01) {
       const unit = invK / fitScale; context.save(); context.globalAlpha = crimpEased;
-      context.font = `500 ${12 * unit}px ${s4Config.ANNOTATION.family}`; context.textAlign = "left"; context.textBaseline = "middle";
+      context.font = `500 ${12 * unit}px ${atlasConfig.ANNOTATION.family}`; context.textAlign = "left"; context.textBaseline = "middle";
       for (const [dKm, r] of ringLabelsFrame) {
         const a = -Math.PI / 4 - rotNow, x = cogCenter[0] + Math.cos(a) * r, y = cogCenter[1] + Math.sin(a) * r;
         context.save(); context.translate(x, y); context.rotate(-rotNow); context.scale(1, 1 / Math.max(.2, tiltNow));
@@ -1561,7 +1561,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     // Tessera attiva (ACTIVE.style): resta distinguibile in ogni vista; per un luogo con più ancore si accende il gruppo.
     activeScreen = null;
     if (activePlace != null && allData[activePlace]) {
-      const unit = invK / fitScale, style = s4Config.ACTIVE.style, i = activePlace, diag = crimpEased > .5;
+      const unit = invK / fitScale, style = atlasConfig.ACTIVE.style, i = activePlace, diag = crimpEased > .5;
       const polyOf = j => { const cr = cellRings[j]; if (!cr?.ring) return null; return cr.ring.map(([x, y]) => cellPoint(j, x, y, false)); };
       const others = [], links = [];
       let main = null, mainPt = null;
@@ -1577,7 +1577,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
         if (style === "attenua") {
           const veil = new Path2D(); veil.rect(viewRect.x0 * 4 - 1e5, viewRect.y0 * 4 - 1e5, 2e5 + (viewRect.x1 - viewRect.x0) * 8, 2e5 + (viewRect.y1 - viewRect.y0) * 8);
           for (const poly of [main, ...others]) veil.addPath(path(poly));
-          context.fillStyle = `rgba(241,231,208,${s4Config.ACTIVE.veil})`; context.fill(veil, "evenodd");
+          context.fillStyle = `rgba(241,231,208,${atlasConfig.ACTIVE.veil})`; context.fill(veil, "evenodd");
         }
         if (style === "retro") { context.shadowColor = `rgba(${INK_RGB_STR},.5)`; context.shadowBlur = 16 * (window.devicePixelRatio || 1); }
         // Alone di carta sotto il filo d'inchiostro: il filo si legge anche sopra la carta storica e le terrazze.
@@ -1589,7 +1589,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
         }
         // Cerchio di richiamo: con tessere piccole (vista intera) la tessera attiva si trova a colpo d'occhio.
         const radiusOf = poly => Math.max(...poly.map(([x, y]) => Math.hypot(x - mainPt[0], y - mainPt[1])));
-        const minR = s4Config.ACTIVE.minRingCSS * unit, rMain = radiusOf(main);
+        const minR = atlasConfig.ACTIVE.minRingCSS * unit, rMain = radiusOf(main);
         if (rMain < minR * 1.6) for (const [poly, current] of [[main, true], ...others.map(o => [o, false])]) {
           const c = current ? mainPt : [poly.reduce((a, p) => a + p[0], 0) / poly.length, poly.reduce((a, p) => a + p[1], 0) / poly.length];
           const r = Math.max(minR * (current ? 1 : .75), (current ? rMain : 0) * 1.25);
@@ -1600,13 +1600,13 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
         if (links.length) { context.setLineDash([.1 * unit, 3.4 * unit]); context.lineCap = "round"; context.strokeStyle = `rgba(${INK_RGB_STR},.75)`; context.lineWidth = 1.6 * unit;
           for (const [a, b] of links) { context.beginPath(); context.moveTo(a[0], a[1]); context.lineTo(b[0], b[1]); context.stroke(); } context.setLineDash([]); }
         context.restore();
-        const [sx, sy] = projectMotion(evaluated, {projection: s4Projection}, mainPt);
+        const [sx, sy] = projectMotion(evaluated, {projection: atlasProjection}, mainPt);
         activeScreen = {x: frameOffset.x + sx * fitScale, y: frameOffset.y + sy * fitScale};
       }
     }
     updateActivePointer();
     return {finish(environment){
-    const overlayProfile = s4ChartOverlays.draw({
+    const overlayProfile = atlasOverlays.draw({
       context, PROFILE, profileRulerMs, profileT0, profileFrame, cssUnit: invK / fitScale,
       crimpEased, transform, K2, chapter, pulse:environment.pulse, N_INMAP, N_GEO,
       geoData, allData, pts, displayPts, birthEased, fictBirthEased,
@@ -1677,8 +1677,8 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     lodEased += (lodTarget - lodEased) * (snapNextFrame ? 1 : CRIMP_MORPH * 3);
     observe(lodTarget - lodEased);
     // ospite dell'hover: calcolato una volta per frame, condiviso da tutti i loop di draw
-    const hitState = s4ChartSupport.hitState({drop, chapter, crimpEased, tiltEased, planRot, rotPivot, transform, showFictitious, seqMode, seqPos});
-    const sameHitState = s4ChartSupport.sameHitState(lastHitState, hitState);
+    const hitState = atlasSupport.hitState({drop, chapter, crimpEased, tiltEased, planRot, rotPivot, transform, showFictitious, seqMode, seqPos});
+    const sameHitState = atlasSupport.sameHitState(lastHitState, hitState);
     const tickInteractionFrame = interactionFrame();
     const profileHitT0 = PROFILE ? performance.now() : 0;
     if (sameHitState) {
@@ -1699,9 +1699,9 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
       lastHitState = {...hitState, hostIndex};
     }
     hoverTerrace = (tickInteractionFrame.tiltEased > 0.01 && hostIndex >= 0 && drop.s > 0.5)
-      ? s4LodPicking.pickTerrace({terraceCurveCache, hostIndex, painters, x: drop.x, y: drop.y}) : -1;
+      ? atlasLodPicking.pickTerrace({terraceCurveCache, hostIndex, painters, x: drop.x, y: drop.y}) : -1;
     profileHitMs = PROFILE ? performance.now() - profileHitT0 : 0;
-    const routeFrameState = s4RouteNodes.frameState({selectedRouteId: routeSelection.id, focalizer, seqMode, seqPos, chapter});
+    const routeFrameState = atlasRouteNodes.frameState({selectedRouteId: routeSelection.id, focalizer, seqMode, seqPos, chapter});
     routeHotSet = routeFrameState.hot; routeHoverRoutes = routeFrameState.routes;
     routeHoverEased += ((routeSelection.id != null ? 1 : 0) - routeHoverEased) * (snapNextFrame ? 1 : ROUTE_HOVER_MORPH);
     observe((routeSelection.id != null ? 1 : 0) - routeHoverEased);
@@ -1788,9 +1788,9 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     }
     // Crossfade cromatico fra ordine cronologico e ordine per ruolo.
     roleSortEased += (roleSortTarget - roleSortEased) * (snapNextFrame ? 1 : ROLE_SORT_MORPH);
-    s4ChartFrameUi.update({
+    atlasFrameUi.update({
       reliefBtn, lodLabel, roleButtons, roleFilter,
-      roleOrder: s4Config.ROLE_ORDER, roleColors: s4Config.ROLE_COLORS,
+      roleOrder: atlasConfig.ROLE_ORDER, roleColors: atlasConfig.ROLE_COLORS,
       diagramOpenedOnce, tiltTarget, focalizer,
       inkColor: INK_COLOR, bgColor: BG_COLOR, cache: frameUiCache
     });
@@ -1838,7 +1838,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
   }
   // Al tocco: le tessere trovate dal picking nel disco di 44 px CSS attorno al dito, dal centro verso il bordo.
   function touchCandidates(frame, clientX, clientY) {
-    const radius = s4Config.TOUCH_TARGET_CSS / 2, hosts = [];
+    const radius = atlasConfig.TOUCH_TARGET_CSS / 2, hosts = [];
     const add = (cx, cy) => { const [x, y] = interaction.toCanvas(frame, canvas, cx, cy), h = hostAt(frame, x, y); if (h >= 0 && !hosts.includes(h)) hosts.push(h); };
     add(clientX, clientY);
     for (const [r, n] of [[radius / 2, 8], [radius, 16]]) for (let k = 0; k < n; k++) add(clientX + r * Math.cos(2 * Math.PI * k / n), clientY + r * Math.sin(2 * Math.PI * k / n));
@@ -1874,10 +1874,10 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
   };
   document.addEventListener("keydown", routeKeydown);
 
-  const shell = s4ChartShell.create({
+  const shell = atlasShell.create({
     canvas, width, nChapters: N_CHAPTERS, inkColor: INK_COLOR, bgColor: BG_COLOR,
     terrainAgents, sequenceLength: sequence.length,
-    roleOrder: s4Config.ROLE_ORDER, roleColors: s4Config.ROLE_COLORS, rolePluralColor: s4Config.ROLE_PLURAL_COLOR
+    roleOrder: atlasConfig.ROLE_ORDER, roleColors: atlasConfig.ROLE_COLORS, rolePluralColor: atlasConfig.ROLE_PLURAL_COLOR
   });
   const {
     PLAY_ICON, wrap,
@@ -1898,12 +1898,12 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
   const romaVertices = roma.features[0].geometry.coordinates.flat(2).map(c => projection(c)).filter(Boolean);
   const miniature = {width, height, outline: d3.geoPath(projection)(roma.features[0]), outlineBounds: [[d3.min(romaVertices, v => v[0]), d3.min(romaVertices, v => v[1])], [d3.max(romaVertices, v => v[0]), d3.max(romaVertices, v => v[1])]], points: pts.slice(0, N_GEO).map(p => p.slice()),
     polar: d3.range(N_GEO).map(i => [geographicAngle[i], poleDistanceKm[i]])};
-  const sheetOptions = {container: shell.viewBox, canvas, obstacle: historical?.element, config: s4Config.SHEET, controller: sheetController, miniature};
-  sheetHandle = s4Config.SHEET.variant === "angolo" ? createSheetHandle(sheetOptions) : createSheetPad({...sheetOptions, variant: s4Config.SHEET.variant});
+  const sheetOptions = {container: shell.viewBox, canvas, obstacle: historical?.element, config: atlasConfig.SHEET, controller: sheetController, miniature};
+  sheetHandle = atlasConfig.SHEET.variant === "angolo" ? createSheetHandle(sheetOptions) : createSheetPad({...sheetOptions, variant: atlasConfig.SHEET.variant});
   placeRose = createPlaceRose({container: shell.viewBox, onChoose: tile => { try { selectHost(tile); } finally { notify("selection"); } }});
   ({mapBtn, pasticciaccioBtn, reliefBtn, stagePrevBtn, stageNextBtn, stageLabel, seqModeToggle, seqChapterBtn, seqPageBtn, orderBtn, seqSlider, seqLabel, roleLegend, roleButtons, pageRibbon, ribbonWrap: pageRibbonShell, ribbonPrevBtn, ribbonNextBtn, legendRow, lodLabel} = shell);
 
-  const disposeHandlers = s4ChartHandlers.install({
+  const disposeHandlers = atlasHandlers.install({
     shell,
     constants: {SEQ_ENABLED_IN_MAP, SEQ_PLAY_MS, PLAY_MS, N_CHAPTERS},
     state: {
@@ -1931,7 +1931,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     }
   });
 
-  const disposeLayout = observeCanvasLayout({wrap, viewBox: shell.viewBox, width, height, mode: s4Config.FRAME.mode, onResize(size) {
+  const disposeLayout = observeCanvasLayout({wrap, viewBox: shell.viewBox, width, height, mode: atlasConfig.FRAME.mode, onResize(size) {
     fitScale = size.fit; frameOffset = {x: size.ox, y: size.oy}; cssSize = [size.cssWidth, size.cssHeight];
     viewRect = {x0: -size.ox / size.fit, y0: -size.oy / size.fit, x1: (size.cssWidth - size.ox) / size.fit, y1: (size.cssHeight - size.oy) / size.fit};
     interaction.setView({...viewRect, ox: size.ox, oy: size.oy, fit: size.fit});
@@ -1958,16 +1958,16 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     narrative: showFictitious ? 1 : 0, focalizer, chapter,
     mode: seqMode || pendingPageMode ? "page" : "chapter",
     cursor: sequence[seqPos]?.interpretationId,
-    roles: s4Config.ROLE_ORDER.filter((_, i) => roleFilter[i]),
+    roles: atlasConfig.ROLE_ORDER.filter((_, i) => roleFilter[i]),
     order: roleSortTarget > 0.5 ? "role" : "time",
     rotation: Math.round(planRot * 18000 / Math.PI) / 100, route: routeSelection.id
   });
   wrap.selectReading = (tile,reference,options={}) => {
     if(!allData[tile])return;
     const row=reference?sequence.find(r=>r.tileIndex===tile&&r.referenceId===reference):null;
-    const routeId=row?s4AttestedRoutes.routeIdByReferenceId.get(String(row.referenceId)):null;
-    const eligible=routeId&&roleFilter[s4Config.ROLE_ORDER.indexOf('Route')]&&
-      s4RouteNodes.frameState({selectedRouteId:routeId,focalizer,seqMode,seqPos,chapter}).routes.length;
+    const routeId=row?atlasAttestedRoutes.routeIdByReferenceId.get(String(row.referenceId)):null;
+    const eligible=routeId&&roleFilter[atlasConfig.ROLE_ORDER.indexOf('Route')]&&
+      atlasRouteNodes.frameState({selectedRouteId:routeId,focalizer,seqMode,seqPos,chapter}).routes.length;
     routeSelection.restore(eligible?routeId:null);
     const reading=onTileSelect(tile,row?.referenceId||null,options);
     notify('selection');return reading;
@@ -1999,7 +1999,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     seqPos = Math.max(0, sequence.findIndex(r => r.interpretationId === state.cursor));
     pendingPageMode = state.mode === "page" && !immediate && !seqEnabledNow();
     seqMode = state.mode === "page" && !pendingPageMode;
-    roleFilter.forEach((_, i) => { roleFilter[i] = state.roles.includes(s4Config.ROLE_ORDER[i]); });
+    roleFilter.forEach((_, i) => { roleFilter[i] = state.roles.includes(atlasConfig.ROLE_ORDER[i]); });
     roleSortTarget = state.order === "role" ? 1 : 0;
     planRot = state.rotation * Math.PI / 180;
     if (rotSlider) rotSlider.value = String(state.rotation);
@@ -2058,7 +2058,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
           checkpoint=capture();cancelAnimationFrame(raf);
           const initial=wrap.getUrlState();
           wrap.applyUrlState({...initial,...target},{immediate:false});
-          const start=motionSnapshot(.5),config={...s4Config};
+          const start=motionSnapshot(.5),config={...atlasConfig};
           const end={...start,crimpEased:crimpTarget,tiltEased:tiltTarget>0?1:0,roleSortEased:roleSortTarget};
           const primary=initial.view!==(crimpTarget===1?'diagram':'map')?'crimp':initial.axon!==(tiltTarget>0?1:0)?'tilt':'narrative';
           const primaryGain=primary==='crimp'?CRIMP_MORPH:primary==='tilt'?TILT_MORPH:BIRTH_MORPH;
@@ -2099,7 +2099,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
   }
   if(import.meta.env.DEV){
     wrap.motionLabBridge={
-      canvas,context,model:evaluationModel,projection:s4Projection,entities:s4Entities,config:s4Config,primaryHostOf,
+      canvas,context,model:evaluationModel,projection:atlasProjection,entities:atlasEntities,config:atlasConfig,primaryHostOf,
       halt:()=>cancelAnimationFrame(raf),state:()=>wrap.getUrlState(),
       endpoint(state){
         wrap.applyUrlState({...wrap.getUrlState(),...state,chapter:10,mode:'chapter'},{immediate:true});
@@ -2127,13 +2127,13 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
       resume(){cancelAnimationFrame(raf);tick()},setCamera(value){transform=d3.zoomIdentity.translate(value.x,value.y).scale(value.k);lastPassage=null;draw()},
       setState(state,immediate=false){wrap.applyUrlState({...wrap.getUrlState(),...state},{immediate})},halt(){cancelAnimationFrame(raf)},
       // Misura di continuità: luoghi reali nati il cui centro cade nell'area visibile del canvas.
-      visible(){const f=evaluatedFrame,out=[];if(!f)return out;for(let i=0;i<N_GEO;i++){if(!cellRings[i]||(birthEased[i]||0)<=BIRTH_EPSILON)continue;const [x,y]=projectMotion(f,{projection:s4Projection},f.displayPts[i]);if(x>=viewRect.x0&&x<=viewRect.x1&&y>=viewRect.y0&&y<=viewRect.y1)out.push(i);}return out;},
+      visible(){const f=evaluatedFrame,out=[];if(!f)return out;for(let i=0;i<N_GEO;i++){if(!cellRings[i]||(birthEased[i]||0)<=BIRTH_EPSILON)continue;const [x,y]=projectMotion(f,{projection:atlasProjection},f.displayPts[i]);if(x>=viewRect.x0&&x<=viewRect.x1&&y>=viewRect.y0&&y<=viewRect.y1)out.push(i);}return out;},
       get active(){return {place:activePlace,screen:activeScreen&&{...activeScreen},pointer:!activePointer.hidden,size:[...cssSize]}},
       get camera(){return {...transform}},get diagramBaseK(){return diagramScaleBaseK},
       // Ammasso al centro: quota di tessere reali nate il cui centro cade nel disco centrale della vista (raggio
       // frac del lato corto), sul totale delle tessere visibili; e quota di tessere sovrapposte (centri a meno di minCSS).
       crowd(frac=.08,minCSS=6){const f=evaluatedFrame;if(!f)return null;const cx=(viewRect.x0+viewRect.x1)/2,cy=(viewRect.y0+viewRect.y1)/2,R=frac*Math.min(viewRect.x1-viewRect.x0,viewRect.y1-viewRect.y0),pts2=[];
-        for(let i=0;i<N_GEO;i++){if(!cellRings[i]||(birthEased[i]||0)<=BIRTH_EPSILON)continue;const [x,y]=projectMotion(f,{projection:s4Projection},f.displayPts[i]);if(x>=viewRect.x0&&x<=viewRect.x1&&y>=viewRect.y0&&y<=viewRect.y1)pts2.push([x,y]);}
+        for(let i=0;i<N_GEO;i++){if(!cellRings[i]||(birthEased[i]||0)<=BIRTH_EPSILON)continue;const [x,y]=projectMotion(f,{projection:atlasProjection},f.displayPts[i]);if(x>=viewRect.x0&&x<=viewRect.x1&&y>=viewRect.y0&&y<=viewRect.y1)pts2.push([x,y]);}
         const inC=pts2.filter(([x,y])=>Math.hypot(x-cx,y-cy)<=R).length,d=minCSS/fitScale;let close=0;
         for(let a=0;a<pts2.length;a++)for(let b=a+1;b<pts2.length;b++)if(Math.abs(pts2[a][0]-pts2[b][0])<d&&Math.hypot(pts2[a][0]-pts2[b][0],pts2[a][1]-pts2[b][1])<d){close++;}
         return{visibili:pts2.length,centro:pts2.length?inC/pts2.length:0,coppieVicine:close,altezza:f.heightPhase??1};}};
@@ -2145,11 +2145,11 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     if (activePlace == null || !evaluatedFrame) return;
     let j = activePlace;
     if (j >= N_GEO && !(crimpTarget > .5)) j = allDataById.get((allData[j].properties.refers_to_entity_ID || [])[0]) ?? j;
-    const [sx, sy] = projectMotion(evaluatedFrame, {projection: s4Projection}, evaluatedFrame.displayPts[j]);
+    const [sx, sy] = projectMotion(evaluatedFrame, {projection: atlasProjection}, evaluatedFrame.displayPts[j]);
     const next = d3.zoomIdentity.translate(transform.x + width / 2 - sx, transform.y + height / 2 - sy).scale(transform.k);
     const target = gestureTransform(next), sel = d3.select(canvas);
     if (reducedMotion.matches) sel.call(zoomBehavior.transform, target);
-    else sel.transition().duration(s4Config.ACTIVE.focusMs).ease(d3.easeCubicInOut).call(zoomBehavior.transform, target);
+    else sel.transition().duration(atlasConfig.ACTIVE.focusMs).ease(d3.easeCubicInOut).call(zoomBehavior.transform, target);
   };
   if(historical){shell.viewBox.append(historical.element);wrap.invalidateHistorical=()=>{lastPaintedFrame=null;draw();};}
   readyToPublish = true;

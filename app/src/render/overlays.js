@@ -1,13 +1,13 @@
 import it from "../strings-it.js";
 import * as d3 from "d3";
-import s4Config from "../model/config.js";
-import s4RouteHoverDrawing from "./route-hover.js";
-import s4HoverOverlay from "./hover-overlay.js";
-import s4ProfileLog from "../dev/profile-log.js";
+import atlasConfig from "../model/config.js";
+import atlasRouteHoverDrawing from "./route-hover.js";
+import atlasHoverOverlay from "./hover-overlay.js";
+import atlasProfileLog from "../dev/profile-log.js";
 
   // Disegni di overlay in coda al disegno dell'atlante (createAtlas): pulse, punti generatori,
   // righello, polo, route-hover e label hover.
-  const s4ChartOverlays = (() => {
+  const atlasOverlays = (() => {
   const radiusCache = new WeakMap();
   function draw({
     context, PROFILE, profileRulerMs, profileT0, profileFrame,
@@ -25,7 +25,7 @@ import s4ProfileLog from "../dev/profile-log.js";
     formatMetricIsoline, cssUnit = invK
   }) {
     // Le annotazioni della figura hanno corpo costante in px CSS (cssUnit), qualunque sia il riquadro o lo zoom.
-    const {rulerCSS, poleCSS, family} = s4Config.ANNOTATION;
+    const {rulerCSS, poleCSS, family} = atlasConfig.ANNOTATION;
     function drawUprightText(text, x, y) {
       context.lineJoin = "round";
       context.lineWidth = 3 * cssUnit;
@@ -123,18 +123,18 @@ import s4ProfileLog from "../dev/profile-log.js";
       context.restore();
     }
 
-    s4RouteHoverDrawing.drawArcs({
+    atlasRouteHoverDrawing.drawArcs({
       context, routeStepPoints, routeHoverEased, routeRgb, frame
     });
-    s4RouteHoverDrawing.drawJoints({
+    atlasRouteHoverDrawing.drawJoints({
       context, routeHoverEased, routeRgb, rotNow, tiltNow, invK
     });
-    s4RouteHoverDrawing.drawOrdinals({
+    atlasRouteHoverDrawing.drawOrdinals({
       context, routeStepPoints, routeHoverEased, rotNow, tiltNow,
       labelSize: LABEL_SIZE, invK, bgColor: BG_COLOR, routeRgb
     });
     // Durante la regia di un passaggio l'etichetta di passaggio del puntatore tace: le tessere si muovono sotto di esso.
-    if (!frame.transition) s4HoverOverlay.draw({
+    if (!frame.transition) atlasHoverOverlay.draw({
       context, hostIndex, crimpEased, transform, K2, allData, N_GEO,
       birthEased, fictBirthEased, BIRTH_EPSILON, cellRings, cellPoint, displayPts,
       roleMode, occSeq, occEased,
@@ -151,7 +151,7 @@ import s4ProfileLog from "../dev/profile-log.js";
           .map((count, roleIndex) => ({count, roleIndex}))
           .filter(d => d.count > 0)
           .sort((a, b) => d3.descending(a.count, b.count) || d3.ascending(a.roleIndex, b.roleIndex))
-          .map(d => `${d.count} ${s4Config.ROLE_ORDER[d.roleIndex]}`);
+          .map(d => `${d.count} ${atlasConfig.ROLE_ORDER[d.roleIndex]}`);
       })(),
       rotNow, tiltNow, invK, glowWidth: GLOW_WIDTH, glowBlur: GLOW_BLUR,
       inkColor: INK_COLOR, bgColor: BG_COLOR, labelSize: LABEL_SIZE
@@ -165,12 +165,12 @@ import s4ProfileLog from "../dev/profile-log.js";
       const matrix = context.getTransform();
       const density = context.canvas.width / parseFloat(context.canvas.style.width);
       const cellScale = Math.max(Math.hypot(matrix.a,matrix.b),Math.hypot(matrix.c,matrix.d)) / density;
-      const r = s4Config.CENTER_MARKER.radiusCSS;
+      const r = atlasConfig.CENTER_MARKER.radiusCSS;
       const inverse = matrix.inverse();
       const dots = [];
       for (let i = 0; i < pts.length; i++) {
         if (crimpEased > 0.01 && birthEased[i] <= BIRTH_EPSILON) continue;
-        if (!radii[i] || radii[i]*frame.displayCellScale[i]*cellScale < s4Config.CENTER_MARKER.minimumCellRadiusCSS) continue;
+        if (!radii[i] || radii[i]*frame.displayCellScale[i]*cellScale < atlasConfig.CENTER_MARKER.minimumCellRadiusCSS) continue;
         const alpha = alphaBucket(contentAlpha(i));
         if (alpha <= BIRTH_EPSILON) continue;
         const point = matrix.transformPoint(new DOMPoint(...displayPts[i]));
@@ -185,7 +185,7 @@ import s4ProfileLog from "../dev/profile-log.js";
     }
 
     if (PROFILE) {
-      profileFrame = s4ProfileLog.atlas({
+      profileFrame = atlasProfileLog.atlas({
         profileFrame, profileTiles, profileCurves, profileFills, profileStrokes,
         profileDisplayMs, profileDrawOrderMs, profileReliefMs, profileBordersMs,
         profileRulerMs, profileTickMs, profileHitMs, seqOccCallsPerSecond, frame, profileT0
@@ -197,4 +197,4 @@ import s4ProfileLog from "../dev/profile-log.js";
   return { draw };
 })();
 
-export default s4ChartOverlays;
+export default atlasOverlays;
