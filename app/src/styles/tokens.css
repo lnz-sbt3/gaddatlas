@@ -1,0 +1,818 @@
+/* Caratteri del contorno (licenza SIL Open Font License): Bodoni Moda per i titoli,
+   Public Sans per l'interfaccia, Literata per la lettura dei passi. */
+@font-face { font-family: "Bodoni Moda"; src: url("../assets/fonts/bodonimoda.ttf") format("truetype"); font-weight: 400 900; font-display: swap; }
+@font-face { font-family: "Public Sans"; src: url("../assets/fonts/publicsans.ttf") format("truetype"); font-weight: 100 900; font-display: swap; }
+/* Literata nel build: sottoinsieme latino (base, Latin-1, Latin Extended-A, punteggiatura), assi opsz e wght; il file completo resta la sorgente. */
+@font-face { font-family: "Literata"; src: url("../assets/fonts/literata-sottoinsieme.woff") format("woff"); font-weight: 200 900; font-display: swap; unicode-range: U+0020-007E, U+00A0-017F, U+2010-2027, U+2030-203A, U+20AC; }
+
+/* Palette del guscio; i valori del canvas sono in model/config.js. */
+:root {
+  --bg:            #F1E7D0;  /* BG_COLOR — fondo pergamena */
+  --ink:           #2A1F18;  /* INK_COLOR — inchiostro neutro caldo */
+  --hue-ref:       #9B2335;  /* HUE_RGB — densita' dei referenziali */
+  --hue-fict:      #1F6F6B;  /* FICT_HUE_RGB — densita' dei narrativi */
+  --grid:          #785A46;  /* GRID_COLOR — confine di cella */
+  --touch-target:  44px;     /* area minima dei controlli al tocco */
+  --surface:       #FCFAF4;  /* carta della piega e dei riscontri */
+  /* Contorno: inchiostro dei comandi, testo secondario, linea. */
+  --ui-ink:        #2B2C27;
+  --muted:         #595A50;
+  --line:          #7C7C6E;
+  --font-display:  "Bodoni Moda", Georgia, serif;
+  --font-ui:       "Public Sans", system-ui, sans-serif;
+  --font-reading:  "Literata", Georgia, serif;
+  --ease:          cubic-bezier(.16, 1, .3, 1);
+  --t-fast:        140ms;
+  --t-turn:        380ms;
+
+  /* Ruoli narrativi: tinta categoriale. Non usarli altrove nell'interfaccia. */
+  --role-setting:         #B32B40;
+  --role-zoneofaction:    #A45228;
+  --role-route:           #7A5E1E;
+  --role-marker:          #74519A;
+  --role-projectedspace:  #1F6F6B;
+  --role-plural:          #666666;
+  --historical-pad-block: .35rem;
+  --historical-space: .75rem;
+  --historical-gap-small: .25rem;
+  --historical-gap: 1rem;
+  --historical-text-size: .75rem;
+  --historical-line-height: 1.35;
+  --historical-touch: 44px;
+  --historical-track-min: 8rem;
+  --historical-credit-measure: 100ch;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ui-ink);
+  font: 16px/1.6 var(--font-ui);
+  --frame-x: 32px;   /* margine laterale della cornice */
+  --frame-y: 24px;   /* margine verticale della cornice */
+  --pad-bottom: 96px; /* il Foglio sta sopra l'indice dei luoghi */
+}
+.boot { padding: 3rem; color: var(--muted); }
+:focus-visible { outline: 3px solid var(--ui-ink); outline-offset: 3px; }
+
+/* Comandi: spigolo vivo, filo d'inchiostro di 1 px, area di 44 px; attivo = inchiostro pieno. */
+.ctl { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-width: var(--touch-target); min-height: var(--touch-target); padding: 8px 12px; border: 1px solid var(--line); border-radius: 0; background: var(--surface); color: var(--ui-ink); font: 400 14px/1.35 var(--font-ui); cursor: pointer; transition: background-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease); }
+.ctl:disabled { cursor: not-allowed; color: var(--muted); background: var(--bg); }
+.ctl[aria-expanded="true"], .ctl[aria-pressed="true"] { background: var(--ui-ink); color: var(--surface); border-color: var(--ui-ink); }
+.ctl-primary { outline: 1px solid var(--ui-ink); outline-offset: 3px; border-color: var(--ui-ink); }
+.ctl-primary:focus-visible { outline-width: 3px; }
+.ctl-icon { font-size: 12px; letter-spacing: .1em; }
+.ctl-pair { display: inline-flex; }
+.ctl-pair .ctl + .ctl { border-left: 0; }
+.ctl-select { width: 100%; min-height: var(--touch-target); max-width: 100%; padding: 0 12px; border: 1px solid var(--line); border-radius: 0; background: var(--surface); color: var(--ui-ink); font: 14px var(--font-ui); accent-color: var(--ui-ink); }
+.ctl-range { flex: 1 1 140px; min-width: 100px; min-height: var(--touch-target); accent-color: var(--ui-ink); cursor: pointer; }
+.ctl-value { min-width: 2ch; font: 400 14px/1 var(--font-ui); font-variant-numeric: tabular-nums; }
+.ctl-label, .ctl-note { color: var(--muted); font-size: 13px; }
+.ctl-stage { font-size: 13px; color: var(--muted); }
+.ctl-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 12px; }
+.ctl-field { display: grid; gap: 4px; font-size: 13px; color: var(--muted); }
+.ctl-roles { display: flex; flex-wrap: wrap; gap: 4px 12px; }
+.ctl-role { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 0; border: 0; background: none; color: var(--ui-ink); font: 13px var(--font-ui); cursor: pointer; }
+.ctl-swatch { width: 12px; height: 12px; border: 1px solid var(--ui-ink); }
+.atlas-ribbon { position: relative; max-width: 100%; margin: 4px auto 0; }
+.ctl-ribbon { position: absolute; top: var(--ribbon-axis, 78px); transform: translateY(-50%); min-width: 32px; padding: 0; font-size: 18px; }
+
+/* Cornice: la figura riempie la pagina, i comandi stanno agli angoli. */
+.atlas-figure > * { z-index: 3; }
+.atlas-figure > canvas { z-index: auto; }
+.frame-wordmark { position: absolute; left: var(--frame-x); top: var(--frame-y); margin: 0; display: grid; font: 500 30px/1.1 var(--font-display); letter-spacing: -.03em; pointer-events: none; }
+.frame-wordmark small { font: 400 12px/1.4 var(--font-ui); letter-spacing: 0; color: var(--muted); }
+.frame-orient { position: absolute; right: var(--frame-x); top: var(--frame-y); display: flex; gap: 8px; }
+.frame-orient .ctl { background: var(--bg); }
+.frame-index { position: absolute; right: var(--frame-x); bottom: var(--frame-y); background: var(--bg); }
+.frame-panel { position: absolute; left: var(--frame-x); top: calc(var(--frame-y) + 72px); z-index: 6; width: min(380px, calc(100% - 2 * var(--frame-x))); max-height: calc(100% - 200px); overflow: auto; padding: 24px; border: 1px solid var(--line); background: var(--surface); }
+.frame-panel-head { display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 12px; }
+.frame-panel-head .ctl { order: 2; }
+.frame-panel h2 { margin: 0; font: 500 30px/1.04 var(--font-display); letter-spacing: -.025em; }
+.atlas-controls section { margin-top: 20px; padding-top: 12px; border-top: 1px solid var(--line); }
+.atlas-controls h3 { margin: 0 0 8px; font: 500 21px/1.1 var(--font-display); letter-spacing: -.02em; }
+.atlas-controls .ctl-row:first-of-type { margin-top: 4px; }
+
+/* Lettura affiancata: il pannello occupa spazio nel layout, senza coprire la mappa. */
+.atlas-layout { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; }
+.atlas-layout:has(.text-panel:not([hidden])) { grid-template-columns: minmax(0, 1fr) minmax(340px, 420px); }
+.atlas-view { min-width: 0; position: relative; }
+.text-panel { position: sticky; top: 0; height: 100vh; border-left: 1px solid var(--line); display: flex; flex-direction: column; background: var(--surface); color: var(--ui-ink); }
+.text-panel[hidden] { display: none; }
+.text-panel header { padding: 24px 24px 16px; border-bottom: 1px solid var(--line); }
+.text-panel h2 { font: 500 2.1rem/1.04 var(--font-display); letter-spacing: -.025em; margin: 12px 0 4px; }
+.text-panel-count { margin: 8px 0 0; font-size: 13px; color: var(--muted); }
+.text-panel button { min-height: var(--touch-target); color: var(--ui-ink); background: var(--surface); border: 1px solid var(--line); border-radius: 0; padding: 8px 12px; font: 14px var(--font-ui); cursor: pointer; }
+.text-panel header button { float: right; }
+.text-panel-body { overflow-y: auto; padding: 0 24px 32px; position: relative; }
+.text-chapter { border-bottom: 1px solid var(--line); }
+.text-chapter summary { cursor: pointer; padding: 16px 0; font-size: 13px; font-weight: 600; }
+.text-reference { padding: 16px 0; }
+.text-reference + .text-reference { border-top: 1px solid var(--line); }
+.text-reference.selected { border-left: 3px solid var(--ui-ink); padding-left: 12px; }
+.text-reference blockquote { margin: 0 0 12px; font: 1.15rem/1.6 var(--font-reading); white-space: pre-line; }
+.text-source { font-size: 13px; line-height: 1.5; margin: 0 0 16px; color: var(--muted); }
+.text-interpretation { font-size: 13px; line-height: 1.5; margin-top: 12px; }
+.text-interpretation dl { margin: 0; }
+.text-interpretation dt { display: inline; font-weight: 600; }
+.text-interpretation dt::after { content: ": "; }
+.text-interpretation dd { display: inline; margin: 0; }
+.text-interpretation dd::after { content: ""; display: block; }
+.critical-note { margin-bottom: 0; }
+@media (max-width: 700px) {
+  .atlas-layout:has(.text-panel:not([hidden])) { grid-template-columns: minmax(0, 1fr); }
+  .text-panel { position: static; height: 70vh; border-left: 0; border-top: 1px solid var(--line); }
+}
+
+.place-index { color: var(--ui-ink); background: var(--surface); border: 1px solid var(--ui-ink); border-radius: 0; width: min(36rem, calc(100% - 2rem)); max-height: calc(100dvh - 2rem); padding: 32px; overflow: auto; }
+.place-index::backdrop { background: rgb(43 44 39 / .35); }
+.place-index h2 { font: 500 2rem/1.04 var(--font-display); letter-spacing: -.025em; margin: 0 0 16px; }
+.place-index label { display: grid; gap: 4px; margin-block: 16px; font-size: 13px; color: var(--muted); }
+.place-index input, .place-index select, .place-index button { font: 14px var(--font-ui); color: var(--ui-ink); background: var(--surface); border: 1px solid var(--line); border-radius: 0; min-height: 44px; max-width: 100%; padding: 8px 12px; }
+.place-index form > div { display: flex; gap: 16px; flex-wrap: wrap; }
+.text-reference-open { min-height: 44px; max-width: 100%; white-space: normal; }
+.place-index option { padding: .6rem; min-height: 44px; }
+
+.place-rose { position: absolute; z-index: 5; width: max-content; min-width: 12rem; max-width: min(20rem, calc(100% - 1rem)); max-height: calc(100% - 1rem); overflow: auto; padding: 16px; color: var(--ui-ink); background: var(--surface); border: 1px solid var(--ui-ink); border-radius: 0; font: 14px/1.35 var(--font-ui); }
+.place-rose[hidden] { display: none; }
+.place-rose h2 { font: 500 1.25rem/1.1 var(--font-display); margin: 0 0 4px; }
+.place-rose p { margin: 0 0 8px; color: var(--muted); }
+.place-rose ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.place-rose button { display: block; width: 100%; min-height: var(--touch-target); padding: 8px 12px; text-align: left; font: inherit; color: inherit; background: var(--surface); border: 1px solid var(--line); border-radius: 0; }
+.place-rose .place-rose-close { margin-top: 8px; text-align: center; }
+
+/* Riga di stato in basso a sinistra: lo stato in inchiostro, l'unità in grigio. */
+.legend-dock { position: absolute; left: var(--frame-x); bottom: var(--frame-y); max-width: min(640px, calc(100% - 2 * var(--frame-x) - 220px)); color: var(--ui-ink); }
+.legend-status-line { margin: 0; font: 600 15px/1.35 var(--font-ui); }
+.legend-unit { margin: 2px 0 0; font: 400 13px/1.4 var(--font-ui); color: var(--muted); }
+.legend-close { flex: none; }
+.legend-sheet { position: absolute; right: var(--frame-x); top: calc(var(--frame-y) + 64px); z-index: 6; width: min(28rem, calc(100% - 2 * var(--frame-x))); max-height: calc(100% - 200px); overflow: auto; padding: 24px; color: var(--ui-ink); background: var(--surface); border: 1px solid var(--line); font: 14px/1.5 var(--font-ui); }
+.legend-sheet[hidden] { display: none; }
+.legend-head { display: flex; justify-content: space-between; align-items: start; gap: 16px; }
+.legend-sheet h2 { font: 500 1.75rem/1.04 var(--font-display); letter-spacing: -.025em; margin: 0; }
+.legend-sheet h3 { font: 500 1.2rem/1.1 var(--font-display); margin: 20px 0 6px; padding-top: 12px; border-top: 1px solid var(--line); }
+.legend-sheet p { margin: 0 0 8px; }
+.legend-status { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.legend-status li { display: flex; align-items: center; gap: 8px; }
+.legend-glyph { width: 1.4rem; height: 1.4rem; flex: none; fill: none; stroke: var(--ink); stroke-width: 5; stroke-linejoin: round; }
+
+/* Frattura. */
+.frattura-entry { min-height: var(--touch-target); padding: 8px 12px; font: 14px/1.35 var(--font-ui); color: var(--ui-ink); background: var(--bg); border: 1px solid var(--line); border-radius: 0; cursor: pointer; }
+.frattura { position: absolute; left: var(--frame-x); top: calc(var(--frame-y) + 72px); z-index: 5; width: min(22rem, calc(100% - 2 * var(--frame-x))); padding: 24px; color: var(--ui-ink); background: var(--surface); border: 1px solid var(--line); font: 14px/1.5 var(--font-ui); }
+.frattura[hidden], .frattura-entry[hidden] { display: none; }
+.frattura h2 { font: 500 1.6rem/1.04 var(--font-display); margin: 4px 0 8px; }
+.frattura-counter { margin: 0; font-size: 12px; color: var(--muted); }
+.frattura-text { margin: 0 0 8px; }
+.frattura-status { margin: 0 0 8px; font-size: 13px; }
+.frattura-status:empty { display: none; }
+.frattura-controls { display: flex; flex-wrap: wrap; gap: 8px; }
+.frattura-controls button { min-height: var(--touch-target); padding: 8px 12px; font: inherit; color: inherit; background: var(--surface); border: 1px solid var(--line); border-radius: 0; cursor: pointer; }
+.frattura-controls button:disabled { color: var(--muted); border-style: dashed; cursor: default; }
+.sheet-handle { position: absolute; z-index: 4; width: var(--sheet-size, 56px); height: var(--sheet-size, 56px); pointer-events: none; }
+.sheet-grip { position: absolute; inset: 0; padding: 0; border: 0; background: none; cursor: grab; touch-action: none; pointer-events: auto; }
+.sheet-grip:active { cursor: grabbing; }
+.sheet-grip:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.sheet-fold { position: absolute; right: 0; bottom: 0; overflow: visible; pointer-events: none; }
+.sheet-under { fill: var(--grid); fill-opacity: .2; }
+.sheet-flap { fill: var(--surface); stroke: var(--ink); stroke-width: 1; stroke-linejoin: round; }
+.sheet-crease { stroke: var(--ink); stroke-width: 1; stroke-dasharray: 2 2; }
+.sheet-hint { position: absolute; z-index: 1; right: calc(100% + .4rem); bottom: .35rem; margin: 0; white-space: nowrap; font: .75rem/1.2 var(--font-ui); color: var(--ink); background: var(--bg); padding: .15rem .4rem; border: 1px solid var(--grid); border-radius: 3px; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .sheet-flap, .sheet-under { transition: none; } }
+
+.boot-error { color: var(--hue-ref); opacity: 1; }
+
+.historical-controls { position: absolute; inset: auto 0 0; padding: var(--historical-pad-block) var(--historical-space); background: var(--bg); color: var(--ink); font: var(--historical-text-size)/var(--historical-line-height) var(--font-ui); }
+.historical-controls[hidden], .historical-controls [hidden] { display: none; }
+.historical-controls label { display: flex; align-items: center; flex-wrap: wrap; gap: var(--historical-gap-small) var(--historical-gap); }
+.historical-controls input { flex: 1; min-width: var(--historical-track-min); min-height: var(--historical-touch); accent-color: var(--ink); cursor: pointer; }
+.historical-ends { display: flex; justify-content: space-between; gap: var(--historical-gap); }
+.historical-controls small { display: block; max-width: var(--historical-credit-measure); margin-top: var(--historical-gap-small); font: inherit; }
+
+::selection { background: var(--ui-ink); color: var(--surface); }
+
+/* Foglio a quattro quadranti: sta nella banda riservata a destra della figura, a coordinate fisse.
+   Le misure delle celle sono token per variante: il gesto le legge da qui. */
+.sheet-pad { --pad-w: 96px; --pad-h: 52px; }
+.sheet-pad[data-variant="bussola"] { --pad-w: 48px; --pad-h: 48px; }
+.sheet-pad[data-variant="mirino"] { --pad-w: 116px; --pad-h: 88px; }
+.sheet-pad { position: absolute; right: var(--frame-x); top: var(--figure-top); z-index: 4; width: var(--band-content); display: flex; flex-direction: column; align-items: flex-end; justify-content: center; gap: 14px; color: var(--ui-ink); font: 13px/1.3 var(--font-ui); }
+.sheet-pad-help { align-self: stretch; margin: 0 0 4px; font: 400 21px/1.2 var(--font-display); letter-spacing: -.01em; text-wrap: pretty; }
+.sheet-pad-field { position: relative; display: grid; grid-template-columns: repeat(2, var(--pad-w)); grid-template-rows: repeat(2, var(--pad-h)); border: 1px solid var(--line); background: var(--surface); }
+.sheet-pad-caption { margin: 0; color: var(--muted); font-size: 13px; }
+.sheet-pad[data-variant="piega"] .sheet-pad-caption { display: none; }
+.sheet-pad-cell { position: relative; display: grid; place-items: center; padding: 0; border: 0; background: none; color: var(--muted); cursor: pointer; transition: background-color var(--t-fast) var(--ease); }
+.sheet-pad-cell:nth-child(odd) { border-right: 1px solid var(--line); }
+.sheet-pad-cell:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+@media (hover: hover) and (pointer: fine) { .sheet-pad-cell:not([aria-current]):hover { background: rgb(43 44 39 / .06); color: var(--ui-ink); } }
+.sheet-pad-name { display: grid; text-align: left; font: 400 12.5px/1.25 var(--font-ui); transition: opacity var(--t-fast) var(--ease); }
+.sheet-pad[data-variant="piega"][data-moving="true"] .sheet-pad-cell .sheet-pad-name { opacity: .3; }
+.sheet-pad-name b { font-weight: 600; }
+.sheet-pad-knob { position: absolute; left: 0; top: 0; width: calc(var(--pad-w) - 6px); height: calc(var(--pad-h) - 6px); margin: calc(3px - var(--pad-h) / 2) 0 0 calc(3px - var(--pad-w) / 2); display: grid; place-items: center; padding: 0; border: 0; color: var(--surface); background: var(--ui-ink); cursor: grab; touch-action: none; transition: transform var(--t-turn) var(--ease); }
+.sheet-pad[data-moving="true"] .sheet-pad-knob { transition: none; }
+.sheet-pad-knob:active { cursor: grabbing; }
+.sheet-pad-knob:focus-visible, .sheet-pad-narrative:focus-visible { outline: 3px solid var(--ui-ink); outline-offset: 3px; }
+.sheet-pad-narrative { position: relative; display: grid; justify-items: start; align-content: center; min-height: 48px; padding: 6px 14px 6px 36px; color: var(--ui-ink); background: var(--surface); border: 1px solid var(--line); font: 14px/1.2 var(--font-ui); text-align: left; cursor: pointer; }
+.sheet-pad-narrative small { visibility: hidden; font-size: 12px; color: var(--muted); }
+.sheet-pad-narrative::before { content: ""; position: absolute; left: 12px; top: 50%; width: 14px; height: 14px; margin-top: -7px; border: 1px solid currentColor; transition: background-color var(--t-fast) var(--ease); }
+.sheet-pad-narrative[aria-pressed="true"]::before { background: var(--ui-ink); box-shadow: inset 0 0 0 2px var(--surface); }
+/* Fuori dalle relazioni il comando dichiara perché non agisce, senza abbassare il contrasto. */
+.sheet-pad-narrative:disabled { cursor: not-allowed; color: var(--muted); background: var(--bg); }
+.sheet-pad-narrative:disabled small { visibility: visible; }
+/* Bussola: il centro resta fermo, i bracci sono i poli fissi dei due assi. */
+.sheet-pad[data-variant="bussola"] .sheet-pad-field { grid-template-columns: repeat(3, var(--pad-w)); grid-template-rows: repeat(3, var(--pad-h)); margin: 26px 84px 34px 0; border: 0; background: none; }
+.sheet-pad[data-variant="bussola"] .sheet-pad-knob { width: 44px; height: 44px; margin: -22px 0 0 -22px; }
+.sheet-pad-arm { position: relative; padding: 0; border: 1px solid var(--ui-ink); background: var(--surface); cursor: pointer; transition: background-color var(--t-fast) var(--ease); }
+@media (hover: hover) and (pointer: fine) { .sheet-pad-arm:not(:disabled):hover { background: rgb(43 44 39 / .08); } }
+.sheet-pad-arm[aria-current] { border-color: var(--line); background: var(--bg); cursor: default; }
+.sheet-pad-arm[aria-current]::after { content: ""; position: absolute; inset: 50% 14px auto; height: 2px; margin-top: -1px; background: var(--line); }
+.sheet-pad-arm-up[aria-current]::after, .sheet-pad-arm-down[aria-current]::after { inset: 14px auto 14px 50%; width: 2px; height: auto; margin: 0 0 0 -1px; }
+.sheet-pad-arm-label { position: absolute; white-space: nowrap; font: 400 12.5px/1 var(--font-ui); color: var(--ui-ink); pointer-events: none; }
+.sheet-pad-arm[aria-current] .sheet-pad-arm-label { font-weight: 600; }
+.sheet-pad-arm-up .sheet-pad-arm-label { bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); }
+.sheet-pad-arm-down .sheet-pad-arm-label { top: calc(100% + 6px); left: 50%; transform: translateX(-50%); }
+.sheet-pad-arm-left .sheet-pad-arm-label { right: calc(100% + 8px); top: 50%; transform: translateY(-50%); }
+.sheet-pad-arm-right .sheet-pad-arm-label { left: calc(100% + 8px); top: 50%; transform: translateY(-50%); }
+.sheet-pad-arm-diagonal { border: 0; background: none; pointer-events: none; cursor: default; }
+.sheet-pad-arm-diagonal::before { content: ""; position: absolute; inset: 10px; border: 1px solid var(--ui-ink); background: var(--surface); }
+.sheet-pad-arm-diagonal .sheet-pad-arm-label { font-weight: 400; color: var(--muted); max-width: 6.5rem; white-space: normal; line-height: 1.2; }
+.sheet-pad-arm-diagonal[data-corner^="t"] .sheet-pad-arm-label { bottom: calc(100% + 6px); }
+.sheet-pad-arm-diagonal[data-corner^="b"] .sheet-pad-arm-label { top: calc(100% + 6px); }
+.sheet-pad-arm-diagonal[data-corner$="l"] .sheet-pad-arm-label { right: 50%; text-align: right; }
+.sheet-pad-arm-diagonal[data-corner$="r"] .sheet-pad-arm-label { left: 50%; }
+.sheet-pad[data-variant="bussola"] .sheet-pad-caption { display: none; }
+.sheet-pad-mini { width: 24px; height: 24px; }
+.sheet-pad-mini rect { fill: none; stroke: var(--surface); stroke-width: 1; }
+.sheet-pad-mini rect.on { fill: var(--surface); }
+/* Mirino: miniature della figura con intestazioni di tavola; un mirino d'inchiostro le inquadra. */
+.sheet-pad-board { display: grid; grid-template-columns: repeat(2, var(--pad-w)) auto; grid-template-rows: auto repeat(2, var(--pad-h)); column-gap: 6px; row-gap: 4px; }
+.sheet-pad-board .sheet-pad-field { grid-area: 2 / 1 / 4 / 3; }
+.sheet-pad-col, .sheet-pad-row { font: 600 12.5px/1.2 var(--font-ui); color: var(--ui-ink); white-space: nowrap; }
+.sheet-pad-col { grid-row: 1; padding-left: 6px; }
+.sheet-pad-col:nth-child(1) { grid-column: 1; } .sheet-pad-col:nth-child(2) { grid-column: 2; }
+.sheet-pad-row { grid-column: 3; align-self: center; writing-mode: vertical-rl; }
+.sheet-pad-row:nth-child(3) { grid-row: 2; } .sheet-pad-row:nth-child(4) { grid-row: 3; }
+.sheet-pad-miniature { width: calc(var(--pad-w) - 14px); height: calc(var(--pad-h) - 12px); overflow: hidden; fill: none; stroke: var(--muted); stroke-width: 1.1; }
+.sheet-pad-miniature * { vector-effect: non-scaling-stroke; }
+.sheet-pad-miniature .dot { fill: var(--muted); stroke: none; }
+.sheet-pad-miniature .stem { stroke-width: 1.4; }
+.sheet-pad-cell[aria-current] .sheet-pad-miniature { stroke: var(--ui-ink); }
+.sheet-pad-cell[aria-current] .sheet-pad-miniature .dot { fill: var(--ui-ink); }
+.sheet-pad-miniature .shape { stroke-width: 1.6; }
+.sheet-pad[data-variant="mirino"] .sheet-pad-knob { width: calc(var(--pad-w) - 12px); height: calc(var(--pad-h) - 12px); margin: calc(6px - var(--pad-h) / 2) 0 0 calc(6px - var(--pad-w) / 2); background: none; }
+.sheet-pad[data-variant="mirino"] .sheet-pad-knob:focus-visible { outline: 3px solid var(--ui-ink); outline-offset: 6px; }
+.sheet-pad-crop { position: absolute; width: 14px; height: 14px; border: 0 solid var(--ui-ink); }
+.sheet-pad-crop-tl { left: 0; top: 0; border-width: 3px 0 0 3px; }
+.sheet-pad-crop-tr { right: 0; top: 0; border-width: 3px 3px 0 0; }
+.sheet-pad-crop-bl { left: 0; bottom: 0; border-width: 0 0 3px 3px; }
+.sheet-pad-crop-br { right: 0; bottom: 0; border-width: 0 3px 3px 0; }
+@media (prefers-reduced-motion: reduce) { .sheet-pad-knob, .sheet-pad-cell, .sheet-pad-narrative::before { transition: none; } }
+/* Banda della cornice: la figura lascia margini fissi e simmetrici; i comandi non poggiano mai su di essa.
+   In orizzontale il foglio vive nella banda destra, «Interrogare» nella sinistra; in verticale, o con il
+   pannello su schermo stretto, il foglio scende nella banda bassa. */
+.atlas-figure { padding: var(--figure-top) var(--figure-right) var(--figure-bottom) var(--figure-left); }
+/* Segni di registro agli angoli della figura. */
+.frame-marks { position: absolute; z-index: 1 !important; pointer-events: none; }
+.frame-marks i { position: absolute; width: 14px; height: 14px; border: 0 solid var(--line); }
+.frame-marks i:nth-child(1) { left: -14px; top: -14px; border-width: 0 1px 1px 0; }
+.frame-marks i:nth-child(2) { right: -14px; top: -14px; border-width: 0 0 1px 1px; }
+.frame-marks i:nth-child(3) { left: -14px; bottom: -14px; border-width: 1px 1px 0 0; }
+.frame-marks i:nth-child(4) { right: -14px; bottom: -14px; border-width: 1px 0 0 1px; }
+/* Didascalia della vista: nel margine sinistro, allineata al piede della figura. */
+@media (min-width: 1101px) and (min-aspect-ratio: 1/1) {
+  .legend-dock { bottom: var(--figure-bottom); width: calc(var(--figure-left) - var(--frame-x) - 32px); max-width: none; }
+  .legend-status-line { font: 500 24px/1.1 var(--font-display); letter-spacing: -.015em; }
+  .legend-status-line span { display: block; }
+  .legend-status-line .sep { display: none; }
+  .legend-status-line span + .sep + span { font-size: 18px; color: var(--muted); }
+  .legend-unit { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--line); }
+}
+body { --figure-top: 88px; --figure-bottom: 88px; --figure-left: 296px; --figure-right: 296px; --band-content: 248px; }
+.frame-panel { width: calc(var(--figure-left) - var(--frame-x) - 16px); max-height: calc(100% - var(--figure-top) - 96px); padding: 20px; }
+.frame-panel h2 { font-size: 24px; }
+@media (max-width: 1100px) {
+  body { --frame-x: 16px; --frame-y: 16px; --pad-bottom: 76px; --figure-top: 72px; --figure-bottom: 72px; --figure-left: var(--frame-x); --figure-right: 228px; --band-content: 200px; }
+  .frame-panel { width: min(340px, calc(100% - 2 * var(--frame-x))); }
+  .sheet-pad-help { font-size: 18px; }
+  .frame-wordmark { font-size: 22px; }
+  .atlas-layout:has(.text-panel:not([hidden])) { --figure-right: var(--frame-x); --figure-bottom: 232px; }
+  .atlas-layout:has(.text-panel:not([hidden])) .sheet-pad { top: auto; width: auto; flex-direction: row; align-items: flex-end; --pad-bottom: 72px; }
+  .atlas-layout:has(.text-panel:not([hidden])) .sheet-pad[data-variant="mirino"] { --pad-w: 84px; --pad-h: 60px; }
+  .sheet-pad[data-variant="mirino"] { --pad-w: 92px; --pad-h: 70px; }
+  .atlas-layout:has(.text-panel:not([hidden])) .sheet-pad-help { display: none; }
+}
+@media (max-aspect-ratio: 1/1) {
+  body { --figure-left: var(--frame-x); --figure-right: var(--frame-x); --figure-bottom: 300px; }
+  .atlas-figure { place-items: start center !important; }
+  .sheet-pad { top: auto; width: auto; max-width: calc(100% - 2 * var(--frame-x)); flex-direction: row; align-items: flex-end; }
+  .sheet-pad-help { width: 15rem; align-self: flex-start; }
+  .sheet-pad-narrative { order: -1; flex: none; white-space: nowrap; }
+}
+/* Cursori a spigolo vivo: filo d'inchiostro e cursore quadrato. */
+.ctl-range { appearance: none; -webkit-appearance: none; height: var(--touch-target); background: transparent; }
+.ctl-range::-webkit-slider-runnable-track { height: 1px; background: var(--ui-ink); }
+.ctl-range::-moz-range-track { height: 1px; background: var(--ui-ink); }
+.ctl-range::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 14px; margin-top: -7px; border: 0; border-radius: 0; background: var(--ui-ink); }
+.ctl-range::-moz-range-thumb { width: 14px; height: 14px; border: 0; border-radius: 0; background: var(--ui-ink); }
+.ctl-range:focus-visible { outline-offset: 0; }
+.frame-orient .ctl[aria-expanded="true"] { background: var(--ui-ink); color: var(--surface); border-color: var(--ui-ink); }
+
+/* Frattura a scorrimento. I testi stanno nei margini riservati della cornice, mai sopra la figura. */
+.frattura-story[hidden], .frattura-bookmark[hidden] { display: none; }
+.frattura-story { position: absolute; inset: 0; z-index: 2; }
+.frattura-scroll { position: absolute; inset: 0; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: none; }
+.frattura-scroll::-webkit-scrollbar { display: none; }
+.frattura-scroll:focus { outline: none; }
+.frattura-step { display: flex; height: 100%; pointer-events: none; }
+.frattura-copy { pointer-events: auto; }
+.frattura-title { margin: 0 0 16px; font: 500 var(--story-title, 56px)/.98 var(--font-display); letter-spacing: -.035em; text-wrap: balance; }
+.frattura-title.is-first { font-size: var(--story-first, 88px); line-height: .92; }
+.frattura-title:focus { outline: none; }
+.frattura-text { margin: 0 0 20px; font: 400 17px/1.5 var(--font-ui); text-wrap: pretty; }
+.frattura-counter { margin: 16px 0 0; font: 400 13px/1.4 var(--font-ui); color: var(--muted); font-variant-numeric: tabular-nums; }
+/* Durante il percorso il contorno si riduce: restano il foglio, «Interrogare» e la didascalia. */
+.atlas-figure.is-story .frame-index, .atlas-figure.is-story .legend-toggle, .atlas-figure.is-story .frattura-entry,
+.atlas-figure.is-story .sheet-pad-help, .atlas-figure.is-story .sheet-pad-narrative { display: none; }
+.atlas-figure.is-story .sheet-pad { justify-content: flex-end; }
+.atlas-figure.is-story .sheet-pad .sheet-pad-cell .sheet-pad-name { opacity: 1; }
+.atlas-figure.is-story .sheet-pad-knob { transition: transform var(--t-turn) var(--ease); }
+body { --story-band: calc(var(--figure-left) - var(--frame-x) - 24px); }
+/* Numerali delle soglie: una riga sotto il marchio. */
+.frattura-nav { position: absolute; left: calc(var(--frame-x) - 12px); top: calc(var(--frame-y) + 52px); display: flex; }
+.frattura-nav button { position: relative; min-width: 36px; min-height: var(--touch-target); padding: 0; border: 0; background: none; color: var(--muted); font: 400 15px/1 var(--font-ui); font-variant-numeric: tabular-nums; cursor: pointer; }
+.frattura-nav button[aria-current] { color: var(--ui-ink); font-weight: 700; text-decoration: underline; text-underline-offset: 6px; }
+/* Colonna: titoli monumentali nei margini, a sinistra le soglie dispari e a destra le pari. */
+.frattura-story[data-variant="colonna"] .frattura-scroll { scroll-snap-type: y proximity; }
+.frattura-story[data-variant="colonna"] .frattura-step { scroll-snap-align: start; align-items: flex-start; padding: calc(var(--figure-top) + 48px) var(--frame-x) var(--figure-bottom); }
+.frattura-story[data-variant="colonna"] .frattura-copy { width: var(--story-band); }
+.frattura-story[data-variant="colonna"] .frattura-step:nth-child(even) { justify-content: flex-end; }
+/* Sipario: la figura lascia sotto di sé una banda per il titolo; un regolo a sinistra segue lo scorrimento. */
+.atlas-layout:has(.frattura-story[data-variant="sipario"]:not([hidden])) { --figure-bottom: 212px; }
+.frattura-band { position: absolute; left: var(--figure-left); right: var(--figure-right); bottom: calc(var(--frame-y) + 8px); display: grid; pointer-events: none; }
+.frattura-band .frattura-copy { grid-area: 1 / 1; align-self: end; opacity: 0; visibility: hidden; transition: opacity var(--t-turn) var(--ease), visibility 0s linear var(--t-turn); }
+.frattura-band .frattura-copy.is-current { opacity: 1; visibility: visible; transition: opacity var(--t-turn) var(--ease); pointer-events: auto; }
+.frattura-story[data-variant="sipario"] .frattura-title, .frattura-story[data-variant="sipario"] .frattura-title.is-first { font-size: clamp(40px, 4.6vw, 68px); line-height: 1; margin-bottom: 8px; white-space: nowrap; }
+.frattura-story[data-variant="sipario"] .frattura-text { margin: 0; max-width: 60ch; }
+.frattura-story[data-variant="sipario"] .frattura-counter { margin-top: 6px; }
+.frattura-story[data-variant="sipario"] .frattura-nav { left: var(--frame-x); top: calc(var(--figure-top) + 24px); bottom: calc(var(--figure-bottom) + 40px); flex-direction: column; justify-content: space-between; border-left: 1px solid var(--ui-ink); }
+.frattura-story[data-variant="sipario"] .frattura-nav button { justify-content: flex-start; min-height: var(--touch-target); padding-left: 16px; text-align: left; font-size: 15px; text-decoration: none; }
+.frattura-story[data-variant="sipario"] .frattura-nav button::before { content: ""; position: absolute; left: 0; top: 50%; width: 8px; height: 1px; background: var(--ui-ink); }
+.frattura-marker { position: absolute; left: -6px; top: calc(22px + var(--progress, 0) * (100% - 44px)); width: 11px; height: 11px; margin-top: -5.5px; background: var(--ui-ink); pointer-events: none; }
+.frattura-leave { position: absolute; right: var(--figure-right); bottom: calc(var(--frame-y) + 8px); }
+.atlas-layout:has(.frattura-story[data-variant="sipario"]:not([hidden])) .legend-dock { bottom: var(--frame-y); }
+/* Margine: una colonna di carta accanto alla figura, come una nota a fianco della tavola. */
+.atlas-layout:has(.frattura-story[data-variant="margine"]:not([hidden])) { grid-template-columns: minmax(0, 1fr) minmax(340px, 400px); --figure-left: var(--frame-x); }
+.atlas-layout:has(.frattura-story[data-variant="margine"]:not([hidden])) .legend-dock { bottom: var(--frame-y); width: auto; max-width: calc(100% - 2 * var(--frame-x) - 220px); }
+.atlas-layout:has(.frattura-story[data-variant="margine"]:not([hidden])) .legend-status-line { font: 600 15px/1.35 var(--font-ui); }
+.atlas-layout:has(.frattura-story[data-variant="margine"]:not([hidden])) .legend-status-line span { display: inline; font-size: inherit; color: inherit; }
+.atlas-layout:has(.frattura-story[data-variant="margine"]:not([hidden])) .legend-status-line .sep { display: inline; }
+.atlas-layout:has(.frattura-story[data-variant="margine"]:not([hidden])) .legend-unit { border: 0; padding: 0; margin-top: 2px; }
+.frattura-story[data-variant="margine"] { position: sticky; top: 0; inset: auto; height: 100vh; display: flex; flex-direction: column; border-left: 1px solid var(--line); background: var(--bg); }
+.frattura-story[data-variant="margine"] .frattura-scroll { position: relative; inset: auto; flex: 1; }
+.frattura-story[data-variant="margine"] .frattura-nav { display: none; }
+.frattura-head { position: sticky; top: 0; z-index: 1; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: var(--frame-y) 32px 16px; background: var(--bg); }
+.frattura-head p { margin: 0; font: 400 13px/1.3 var(--font-ui); color: var(--muted); }
+.frattura-story[data-variant="margine"] .frattura-step { display: block; height: auto; min-height: calc(100vh - 80px); padding: 32px 32px 24px; pointer-events: auto; }
+.frattura-numeral { margin: 0 0 8px; font: 500 56px/1 var(--font-display); color: var(--line); }
+.frattura-story[data-variant="margine"] .frattura-title, .frattura-story[data-variant="margine"] .frattura-title.is-first { font-size: 40px; line-height: 1; letter-spacing: -.025em; color: var(--muted); transition: color var(--t-turn) var(--ease); }
+.frattura-story[data-variant="margine"] .frattura-text { color: var(--muted); transition: color var(--t-turn) var(--ease); }
+.frattura-story[data-variant="margine"] .is-current .frattura-title, .frattura-story[data-variant="margine"] .is-current .frattura-text, .frattura-story[data-variant="margine"] .is-current .frattura-numeral { color: var(--ui-ink); }
+.frattura-state { margin: 0 0 16px; padding-top: 8px; border-top: 1px solid var(--line); font: 400 13px/1.4 var(--font-ui); color: var(--muted); }
+.frattura-tail { height: 40vh; }
+.frattura-suspended { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 32px; padding: 12px 0; border-bottom: 1px solid var(--ui-ink); }
+.frattura-suspended[hidden] { display: none; }
+.frattura-suspended p { margin: 0; font: 400 14px/1.35 var(--font-ui); }
+
+/* Segnalibro del percorso sospeso: nel margine sinistro, sopra la didascalia. */
+.frattura-bookmark { position: absolute; left: var(--frame-x); top: calc(var(--figure-top) + 48px); width: var(--story-band); padding-top: 12px; border-top: 1px solid var(--ui-ink); }
+.frattura-bookmark p { margin: 0 0 4px; font: 400 13px/1.4 var(--font-ui); color: var(--muted); }
+.frattura-bookmark h3 { margin: 0 0 12px; font: 500 26px/1.05 var(--font-display); letter-spacing: -.02em; }
+@media (min-width: 1101px) and (min-aspect-ratio: 1/1) { body { --story-title: clamp(40px, 3.7vw, 53px); --story-first: clamp(60px, 6vw, 88px); } }
+/* Senza banda sinistra la didascalia cede il posto al testo della soglia, che dice la stessa vista. */
+/* Schermo stretto: niente banda sinistra, i testi stanno nella banda destra sopra il foglio. */
+@media (max-width: 1100px) and (min-aspect-ratio: 1/1) {
+  body { --story-band: calc(var(--figure-right) - 2 * var(--frame-x)); --story-title: 36px; --story-first: 50px; --figure-top: 84px; }
+  .frattura-band { bottom: calc(var(--frame-y) + 64px); }
+  .frattura-story[data-variant="colonna"] .frattura-step { justify-content: flex-end !important; }
+  .atlas-layout:has(.frattura-story[data-variant="margine"]:not([hidden])) { --figure-right: var(--frame-x); --figure-bottom: 232px; grid-template-columns: minmax(0, 1fr) 320px; }
+  .atlas-layout:has(.frattura-story[data-variant="margine"]:not([hidden])) .sheet-pad { top: auto; width: auto; flex-direction: row; align-items: flex-end; }
+  .frattura-story[data-variant="sipario"] .frattura-nav { top: calc(var(--frame-y) + 52px); bottom: auto; left: var(--frame-x); flex-direction: row; border-left: 0; border-top: 1px solid var(--ui-ink); gap: 4px; }
+  .frattura-story[data-variant="sipario"] .frattura-nav button { padding: 10px 6px 0; }
+  .frattura-story[data-variant="sipario"] .frattura-nav button::before { left: 50%; top: 0; width: 1px; height: 8px; }
+  .frattura-marker { display: none; }
+  .frattura-bookmark { left: auto; right: var(--frame-x); width: var(--story-band); }
+}
+/* Verticale: i testi scendono nella banda bassa, a sinistra del foglio; la colonna di margine diventa una fascia. */
+@media (max-aspect-ratio: 1/1) {
+  body { --story-band: calc(100% - 2 * var(--frame-x) - 260px); --story-title: 36px; --story-first: 48px; }
+  .atlas-layout:has(.frattura-story:not([hidden])) { --figure-top: 124px; }
+  .frattura-story[data-variant="colonna"] .frattura-step, .frattura-story[data-variant="colonna"] .frattura-step:nth-child(even) { justify-content: flex-start; align-items: flex-end; padding: var(--figure-top) var(--frame-x) calc(var(--frame-y) + 64px); }
+  .frattura-story[data-variant="colonna"] .frattura-copy { width: min(440px, calc(100vw - 2 * var(--frame-x) - 260px)); }
+  .atlas-layout:has(.frattura-story[data-variant="sipario"]:not([hidden])) { --figure-bottom: 280px; }
+  .frattura-band { left: var(--frame-x); right: 260px; bottom: calc(var(--frame-y) + 64px); }
+  .frattura-story[data-variant="sipario"] .frattura-title, .frattura-story[data-variant="sipario"] .frattura-title.is-first { font-size: 36px; white-space: normal; }
+  .frattura-story[data-variant="sipario"] .frattura-nav { top: calc(var(--frame-y) + 52px); bottom: auto; flex-direction: row; border-left: 0; border-top: 1px solid var(--ui-ink); gap: 4px; }
+  .frattura-story[data-variant="sipario"] .frattura-nav button { padding: 10px 6px 0; }
+  .frattura-story[data-variant="sipario"] .frattura-nav button::before { left: 50%; top: 0; width: 1px; height: 8px; }
+  .frattura-marker { display: none; }
+  .frattura-leave { bottom: auto; right: var(--frame-x); left: auto; top: calc(var(--frame-y) + 60px); }
+  .atlas-layout:has(.frattura-story[data-variant="margine"]:not([hidden])) { grid-template-columns: minmax(0, 1fr); --figure-bottom: calc(40vh + 196px); --pad-bottom: calc(40vh + 16px); }
+  .atlas-layout:has(.frattura-story[data-variant="margine"]:not([hidden])) .legend-dock { display: none; }
+  .frattura-story[data-variant="margine"] { position: fixed; inset: auto 0 0; height: 40vh; z-index: 7; border-left: 0; border-top: 1px solid var(--line); }
+  .frattura-story[data-variant="margine"] .frattura-step { min-height: 30vh; padding-top: 16px; }
+  .frattura-numeral { font-size: 40px; }
+  .frattura-story[data-variant="margine"] .frattura-title, .frattura-story[data-variant="margine"] .frattura-title.is-first { font-size: 30px; }
+  .frattura-bookmark { top: auto; bottom: calc(var(--frame-y) + 48px); }
+}
+@media (prefers-reduced-motion: reduce) { .frattura-title, .frattura-text { transition: none; } }
+
+/* Legenda per comando: una nota con domanda, regola e chiave; tre modi di comparire. */
+.legend-note[hidden], .note-leader[hidden], .legend-note-inline[hidden] { display: none; }
+.legend-note { position: absolute; z-index: 5; color: var(--ui-ink); font: 14px/1.5 var(--font-ui); }
+.note-body h3 { margin: 4px 0 8px; font: 500 22px/1.08 var(--font-display); letter-spacing: -.015em; padding-right: 36px; }
+.note-body p { margin: 0 0 10px; }
+.note-label { font-size: 12.5px; color: var(--muted); }
+.note-label b { font-weight: 600; color: var(--ui-ink); }
+.note-hint { font-size: 12.5px; color: var(--muted); }
+.note-close { position: absolute; right: -8px; top: 0; min-width: 44px; min-height: 44px; padding: 0; border: 0; background: none; font-size: 18px; }
+.note-key { list-style: none; margin: 8px 0 12px; padding: 0; }
+.note-key-caption { margin: 6px 0 0 !important; font-size: 12px; color: var(--muted); }
+.note-roles { display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 4px 12px; font-size: 12.5px; }
+.note-roles li, .note-status li { display: flex; align-items: center; gap: 8px; }
+.note-roles .note-tile { width: 20px; height: 18px; }
+.note-status { display: grid; gap: 6px; font-size: 12.5px; line-height: 1.3; }
+.note-tile { width: 30px; height: 26px; flex: none; overflow: visible; }
+.note-cell { fill: none; stroke: var(--grid); stroke-width: .8; }
+.note-reserve { fill: none; stroke: var(--bg); stroke-width: 1.2; stroke-linejoin: round; }
+.note-mark { fill: none; stroke: var(--grid); stroke-opacity: .85; stroke-width: 1.1; stroke-linejoin: round; }
+.note-glyph-path { fill: none; stroke: var(--ink); stroke-width: 9; stroke-linejoin: round; }
+.note-sigla { font: 600 13px var(--font-display); fill: var(--ui-ink); fill-opacity: .8; text-anchor: middle; }
+.note-terraces { display: flex; align-items: flex-end; gap: 7px; }
+.note-terraces span { display: grid; justify-items: center; gap: 4px; }
+.note-terraces i { width: 14px; border: 1px solid var(--ui-ink); border-bottom-width: 2px; background: var(--surface); }
+.note-terraces small { font-size: 10.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.note-det { margin-top: 12px; padding-top: 8px; border-top: 1px solid var(--line); }
+.note-det-title { margin: 0 0 6px !important; font-weight: 600; font-size: 12.5px; }
+.note-det-list { display: grid; gap: 3px; margin: 0 0 6px; font-size: 12px; line-height: 1.25; }
+.note-det-list li { display: flex; align-items: center; gap: 8px; }
+.note-det-list small { color: var(--muted); font-size: 11.5px; }
+.note-det-sample { width: 36px; height: 14px; flex: none; overflow: visible; }
+.note-det-sample line { stroke: var(--ink); fill: none; }
+.note-rows { margin-top: 12px; }
+.note-rows .note-entry { border-top: 1px solid var(--line); }
+.note-entry { display: flex; justify-content: space-between; gap: 8px; width: 100%; min-height: 44px; padding: 8px 0; border: 0; background: none; color: var(--ui-ink); font: 13px/1.3 var(--font-ui); text-align: left; cursor: pointer; }
+.note-entry b { font-weight: 600; text-align: right; }
+.legend-note-inline { margin: 8px 0 4px; padding-top: 8px; border-top: 1px solid var(--line); font: 13.5px/1.5 var(--font-ui); }
+.legend-note-inline p { margin: 0 0 8px; }
+/* Margine e registro: nel margine sinistro, sopra la didascalia. */
+.legend-note[data-variant="margine"], .legend-note[data-variant="registro"] { left: var(--frame-x); top: calc(var(--figure-top) + 48px); width: calc(var(--figure-left) - var(--frame-x) - 32px); max-height: calc(100% - var(--figure-top) - var(--figure-bottom) - 120px); overflow: auto; padding-top: 12px; border-top: 1px solid var(--ui-ink); }
+/* Cartiglio: foglio chiaro a filo d'inchiostro, unito al comando da un filo. */
+.legend-note[data-variant="cartiglio"] { width: 260px; padding: 16px 20px; background: var(--surface); border: 1px solid var(--ui-ink); }
+.note-leader { position: absolute; z-index: 5; background: var(--ui-ink); pointer-events: none; }
+.note-kicker { margin: 0 0 8px; font-size: 12.5px; color: var(--muted); }
+.legend-note[data-variant="registro"] section { border-top: 1px solid var(--line); }
+.legend-note[data-variant="registro"] section.is-current { border-top-color: var(--ui-ink); }
+.legend-note[data-variant="registro"] section:not(.is-current) .note-entry { color: var(--muted); }
+.frame-panel { max-height: calc(100% - var(--figure-top) - 24px); }
+/* Schermo stretto: le note stanno nella banda destra sopra il foglio; in verticale, nella banda bassa. */
+@media (max-width: 1100px) and (min-aspect-ratio: 1/1) {
+  .legend-note[data-variant="margine"], .legend-note[data-variant="registro"] { left: auto; right: var(--frame-x); top: var(--figure-top); width: calc(var(--figure-right) - 2 * var(--frame-x)); max-height: calc(100% - var(--figure-top) - 300px); }
+  .atlas-figure.has-note .sheet-pad-help { display: none; }
+  /* La croce resta ancorata in basso con o senza nota: aprire la nota al primo comando non la sposta sotto il dito. */
+  .sheet-pad { justify-content: flex-end; }
+}
+@media (max-aspect-ratio: 1/1) {
+  .legend-note[data-variant="margine"], .legend-note[data-variant="registro"] { top: auto; bottom: calc(var(--frame-y) + 56px); width: calc(100% - 2 * var(--frame-x) - 400px); max-height: calc(var(--figure-bottom) - 72px); }
+  .atlas-figure.has-note .sheet-pad-help { display: none; }
+}
+.atlas-figure.is-story .legend-note, .atlas-figure.is-story .note-leader { display: none; }
+/* «Come si legge» aperto non pesa come un comando primario: filo d'inchiostro e sottolineatura. */
+.frame-orient .legend-toggle[aria-expanded="true"] { background: var(--bg); color: var(--ui-ink); border-color: var(--ui-ink); box-shadow: inset 0 -2px 0 var(--ui-ink); }
+/* Percorso: un solo pannello alla volta nel margine (il segnalibro prevale sulla nota della legenda). */
+.atlas-figure:has(.frattura-bookmark:not([hidden])) .legend-note { display: none; }
+/* Durante il percorso il foglio si fa piccolo e muto: resta il quadrato, i nomi tornano quando lo si prende. */
+.atlas-figure.is-story .sheet-pad[data-variant="piega"] { --pad-w: 56px; --pad-h: 40px; }
+.atlas-figure.is-story .sheet-pad[data-variant="mirino"] { --pad-w: 60px; --pad-h: 46px; }
+.atlas-figure.is-story .sheet-pad .sheet-pad-name, .atlas-figure.is-story .sheet-pad-board > span { display: none; }
+/* Colonna: numerali nel margine destro, come nelle tavole; le soglie pari lasciano loro lo spazio. */
+.frattura-story[data-variant="colonna"] .frattura-nav { left: auto; right: calc(var(--frame-x) - 4px); top: calc(var(--figure-top) + 40px); flex-direction: column; }
+.frattura-story[data-variant="colonna"] .frattura-step:nth-child(even) .frattura-copy { margin-right: 44px; width: calc(var(--story-band) - 44px); }
+/* Sipario: il regolo si registra sul filo della figura. */
+.frattura-story[data-variant="sipario"] .frattura-nav { top: var(--figure-top); bottom: var(--figure-bottom); }
+/* «Entra subito nella carta» come collegamento nella banda, non come riquadro. */
+.frattura-leave { min-height: var(--touch-target); padding: 0; border: 0; background: none; text-decoration: underline; text-underline-offset: 4px; font-size: 14px; }
+@media (max-width: 1100px), (max-aspect-ratio: 1/1) {
+  .atlas-layout:has(.frattura-story:not([hidden])) { --figure-top: 124px; }
+  .frattura-story[data-variant="colonna"] .frattura-nav { right: auto; left: calc(var(--frame-x) - 12px); top: calc(var(--frame-y) + 52px); flex-direction: row; }
+  .frattura-story[data-variant="colonna"] .frattura-step:nth-child(even) .frattura-copy { margin-right: 0; width: var(--story-band); }
+  .frattura-story[data-variant="sipario"] .frattura-nav { top: calc(var(--frame-y) + 52px); bottom: auto; }
+  .frattura-leave { top: calc(var(--frame-y) + 52px) !important; bottom: auto !important; left: calc(var(--frame-x) + 5 * 40px + 16px) !important; right: auto !important; }
+}
+/* Segnalibro su schermo stretto: nella banda destra sopra il foglio; in verticale nella banda bassa. */
+@media (max-width: 1100px) and (min-aspect-ratio: 1/1) {
+  .frattura-bookmark { top: var(--figure-top) !important; left: auto !important; right: var(--frame-x); width: var(--story-band); }
+  .atlas-figure:has(.frattura-bookmark:not([hidden])) .sheet-pad-help { display: none; }
+}
+@media (max-aspect-ratio: 1/1) {
+  .frattura-bookmark { top: auto !important; bottom: calc(var(--frame-y) + 60px); left: var(--frame-x) !important; right: auto; width: min(300px, 45%); }
+  .atlas-figure:has(.frattura-bookmark:not([hidden])) .sheet-pad-help { display: none; }
+}
+.atlas-figure:has(.frattura-bookmark:not([hidden])) .sheet-pad-help { display: none; }
+/* Il foglio del percorso: piccolo (circa 64 px), con il quadrato toccabile su 44 px. */
+.atlas-figure.is-story .sheet-pad[data-variant] { --pad-w: 32px; --pad-h: 32px; }
+.atlas-figure.is-story .sheet-pad-knob::after { content: ""; position: absolute; inset: -10px; }
+.atlas-figure.is-story .sheet-pad-board { grid-template-columns: repeat(2, var(--pad-w)); }
+.atlas-figure.is-story .sheet-pad-miniature { display: none; }
+/* Collegamenti d'uscita: testo sottolineato, non riquadro. */
+.frattura-story[data-variant="colonna"] .frattura-enter { min-height: var(--touch-target); padding: 0; border: 0; background: none; text-decoration: underline; text-underline-offset: 4px; }
+.frattura-story[data-variant="colonna"] .frattura-step:nth-child(even) .frattura-title { font-size: calc(var(--story-title) * .9); }
+/* Sipario: la figura si allarga, il regolo sta a ridosso del suo filo sinistro, la didascalia è secondaria. */
+@media (min-width: 1101px) and (min-aspect-ratio: 1/1) {
+  .atlas-layout:has(.frattura-story[data-variant="sipario"]:not([hidden])) { --figure-left: 120px; --figure-right: 152px; }
+  .frattura-story[data-variant="sipario"] .frattura-nav { left: calc(var(--figure-left) - 52px); }
+}
+.frattura-band { bottom: calc(var(--frame-y) + 44px); }
+.frattura-leave { bottom: calc(var(--frame-y) + 44px); }
+.atlas-layout:has(.frattura-story[data-variant="sipario"]:not([hidden])) .legend-dock { bottom: var(--frame-y); width: auto; max-width: none; }
+.atlas-layout:has(.frattura-story[data-variant="sipario"]:not([hidden])) .legend-status-line { font: 600 13px/1.35 var(--font-ui); }
+.atlas-layout:has(.frattura-story[data-variant="sipario"]:not([hidden])) .legend-status-line span { display: inline; font-size: inherit; color: inherit; }
+.atlas-layout:has(.frattura-story[data-variant="sipario"]:not([hidden])) .legend-status-line .sep { display: inline; }
+.atlas-layout:has(.frattura-story[data-variant="sipario"]:not([hidden])) .legend-unit { display: none; }
+@media (max-width: 1100px) and (min-aspect-ratio: 1/1) {
+  .atlas-layout:has(.frattura-story[data-variant="sipario"]:not([hidden])) { --figure-bottom: 250px; }
+  .frattura-band { bottom: calc(var(--frame-y) + 56px); }
+}
+@media (max-aspect-ratio: 1/1) {
+  .atlas-layout:has(.frattura-story[data-variant="colonna"]:not([hidden])) { --figure-bottom: 330px; }
+  .atlas-layout:has(.frattura-story[data-variant="sipario"]:not([hidden])) { --figure-bottom: 320px; }
+}
+.atlas-figure.has-note:has(.legend-note[data-variant="cartiglio"]) .sheet-pad-help { visibility: hidden; }
+/* Su schermo stretto le chiavi degli statuti stanno su una riga: solo il nome. */
+@media (max-width: 1100px), (max-aspect-ratio: 1/1) {
+  .note-status { grid-auto-flow: column; justify-content: start; gap: 12px; }
+  .note-status small { display: none; }
+  .note-body h3 { font-size: 19px; }
+}
+.frame-panel { overscroll-behavior: contain; }
+/* Frattura: unità sempre dichiarata, niente segni di registro sotto il titolo, regolo e banda
+   registrati sul riquadro reale della figura (variabili --canvas-* della cornice). */
+.atlas-layout:has(.frattura-story[data-variant="sipario"]:not([hidden])) .legend-unit { display: block; margin: 0; padding: 0; border: 0; }
+.atlas-figure.is-story .frame-marks i:nth-child(n+3) { display: none; }
+.frattura-story[data-variant="sipario"] .frattura-nav { left: calc(var(--canvas-left, 120px) - 56px) !important; top: var(--canvas-top, var(--figure-top)) !important; bottom: calc(100% - var(--canvas-bottom, 100%)) !important; flex-direction: column !important; border-top: 0 !important; border-left: 1px solid var(--ui-ink) !important; gap: 0 !important; }
+.frattura-story[data-variant="sipario"] .frattura-nav button { padding: 0 0 0 16px !important; }
+.frattura-story[data-variant="sipario"] .frattura-nav button::before { left: 0 !important; top: 50% !important; width: 8px !important; height: 1px !important; }
+.frattura-story[data-variant="sipario"] .frattura-marker { display: block !important; }
+.frattura-band { left: var(--canvas-left, var(--figure-left)); right: calc(100% - var(--canvas-right, 100%)); }
+.frattura-story[data-variant="sipario"] .frattura-leave { position: static; justify-self: end; align-self: end; grid-area: 1 / 1; pointer-events: auto; }
+@media (max-width: 1100px), (max-aspect-ratio: 1/1) {
+  .atlas-layout:has(.frattura-story[data-variant="sipario"]:not([hidden])) { --figure-left: 72px; --figure-top: 84px; }
+}
+@media (max-aspect-ratio: 1/1) {
+  .atlas-layout:has(.frattura-story[data-variant="sipario"]:not([hidden])) { --figure-bottom: 260px; }
+  .frattura-band { right: calc(var(--frame-x) + 96px); }
+}
+
+/* Inquadratura a tutto schermo: il canvas copre la finestra, la figura è inquadrata fra i comandi.
+   Senza segni di registro: nessun bordo attorno alla figura. */
+.atlas-figure[data-frame="pieno"] > canvas { position: absolute; left: 0; top: 0; }
+.atlas-figure[data-frame="pieno"] .frame-marks { display: none; }
+/* Riquadro d'inquadratura (dove la figura si adatta alla prima apertura): più ampio dei margini dei comandi,
+   che le galleggiano sopra. I margini dei comandi restano --figure-*. */
+body { --fit-top: 56px; --fit-bottom: 40px; --fit-left: 232px; --fit-right: 232px; }
+@media (max-width: 1100px) { body { --fit-top: 64px; --fit-bottom: 40px; --fit-left: 16px; --fit-right: 200px; } }
+@media (max-aspect-ratio: 1/1) { body { --fit-top: 72px; --fit-bottom: 280px; --fit-left: 16px; --fit-right: 16px; } }
+.atlas-figure[data-frame="pieno"] { padding: var(--fit-top) var(--fit-right) var(--fit-bottom) var(--fit-left); }
+/* A tutto schermo i testi stanno sopra la figura: un foglio di carta appena velato li separa dal disegno,
+   senza ombre né raggi. Il pannello dei passi si sovrappone alla mappa invece di restringerla. */
+:root { --veil: rgb(241 231 208 / .9); --panel-w: min(420px, 40vw); }
+.atlas-layout:has([data-frame="pieno"]) .legend-note[data-variant="margine"],
+.atlas-layout:has([data-frame="pieno"]) .legend-dock,
+.atlas-layout:has([data-frame="pieno"]) .sheet-pad-help { background: var(--veil); box-shadow: 0 0 0 12px var(--veil); }
+.atlas-layout:has([data-frame="pieno"]) .sheet-pad-help { font-size: 17px; line-height: 1.25; }
+.atlas-layout:has([data-frame="pieno"]):has(.text-panel:not([hidden])) { grid-template-columns: minmax(0, 1fr); }
+.atlas-layout:has([data-frame="pieno"]) .text-panel { position: fixed; right: 0; top: 0; bottom: 0; z-index: 8; width: var(--panel-w); height: auto; }
+.atlas-layout:has([data-frame="pieno"]):has(.text-panel:not([hidden])) :is(.frame-orient, .frame-index, .sheet-pad) { right: calc(var(--frame-x) + var(--panel-w)); }
+@media (max-width: 700px), (max-aspect-ratio: 1/1) {
+  :root { --panel-w: 0px; }
+  .atlas-layout:has([data-frame="pieno"]) .text-panel { top: auto; left: 0; width: auto; height: 62vh; border-left: 0; border-top: 1px solid var(--line); }
+}
+
+/* Bussola: il polo in cui si trova la figura è il braccio pieno d'inchiostro;
+   l'altro polo dello stesso asse è carta con il filo; la diagonale è una cella vera, con il filo tratteggiato
+   e un tratto obliquo verso l'angolo. Le misure non cambiano durante il percorso. */
+.sheet-pad[data-variant="bussola"] .sheet-pad-arm[aria-current] { background: var(--ui-ink); border-color: var(--ui-ink); }
+.sheet-pad[data-variant="bussola"] .sheet-pad-arm[aria-current]::after { display: none; }
+.sheet-pad[data-variant="bussola"] .sheet-pad-knob { background: var(--ui-ink); outline: 3px solid var(--surface); outline-offset: -5px; }
+.sheet-pad[data-variant="bussola"] .sheet-pad-arm-diagonal { border: 1px dashed var(--ui-ink); background: var(--surface); }
+.sheet-pad[data-variant="bussola"] .sheet-pad-arm-diagonal::before { inset: 50% auto auto 50%; width: 20px; height: 1px; border: 0; background: var(--ui-ink); transform-origin: 0 0; }
+.sheet-pad[data-variant="bussola"] .sheet-pad-arm-diagonal[data-corner="tl"]::before { transform: translate(-50%, 0) rotate(-135deg) translate(-10px, 0); }
+.sheet-pad[data-variant="bussola"] .sheet-pad-arm-diagonal[data-corner="tr"]::before { transform: rotate(-45deg) translate(-10px, 0); }
+.sheet-pad[data-variant="bussola"] .sheet-pad-arm-diagonal[data-corner="bl"]::before { transform: rotate(135deg) translate(-10px, 0); }
+.sheet-pad[data-variant="bussola"] .sheet-pad-arm-diagonal[data-corner="br"]::before { transform: rotate(45deg) translate(-10px, 0); }
+.atlas-figure.is-story .sheet-pad[data-variant="bussola"] { --pad-w: 48px; --pad-h: 48px; }
+.frame-orient .legend-toggle[aria-expanded="true"] { background: var(--ui-ink); color: var(--surface); border-color: var(--ui-ink); box-shadow: none; }
+
+/* Colonna integrata. I testi dei passi stanno tutti a sinistra, su un velo di carta, e
+   sfumano entrando nelle bande alta e bassa, senza passare sopra il marchio né sotto la Bussola, che resta a
+   destra con le sue misure. Il comando del percorso resta nella cornice («Esci dal percorso», «Riavvolgi»).
+   La legenda del passo sale nella banda destra, sopra la Bussola. */
+.frattura-controls { display: contents; }
+.frattura-rewind[hidden] { display: none; }
+.atlas-figure.is-story .frattura-entry { display: inline-flex; }
+.frattura-keys { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.frattura-story[data-variant="colonna"][data-drive="scorrimento"] .frattura-scroll { scroll-snap-type: none; }
+.frattura-story[data-variant="colonna"] .frattura-step:nth-child(even) { justify-content: flex-start; }
+.frattura-story[data-variant="colonna"] .frattura-scroll { -webkit-mask-image: linear-gradient(to bottom, transparent calc(var(--figure-top) - 8px), #000 calc(var(--figure-top) + 40px), #000 calc(100% - 120px), transparent calc(100% - 40px)); mask-image: linear-gradient(to bottom, transparent calc(var(--figure-top) - 8px), #000 calc(var(--figure-top) + 40px), #000 calc(100% - 120px), transparent calc(100% - 40px)); }
+.frattura-story[data-variant="colonna"] .frattura-copy { background: var(--veil); box-shadow: 0 0 0 16px var(--veil); }
+.frattura-nav button { min-width: var(--touch-target); }
+.frattura-bookmark { background: var(--veil); box-shadow: 0 0 0 16px var(--veil); }
+.frattura-bookmark-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.atlas-figure.is-story .legend-note[data-variant="margine"]:not([hidden]) { display: block; left: auto; right: var(--frame-x); top: calc(var(--figure-top) + 48px); width: var(--band-content); max-height: calc(100% - var(--figure-top) - 400px); overflow: auto; }
+.atlas-layout:has(.frattura-story[data-variant="colonna"]:not([hidden])) { --fit-left: calc(var(--story-band) + 2 * var(--frame-x) + 24px); }
+/* Tablet orizzontale: la colonna resta a sinistra, più stretta; la figura si inquadra alla sua destra. */
+@media (max-width: 1100px) and (min-aspect-ratio: 1/1) {
+  body { --story-band: 300px; }
+  .frattura-story[data-variant="colonna"] .frattura-step { justify-content: flex-start !important; }
+  .atlas-figure.is-story .legend-note[data-variant="margine"]:not([hidden]) { display: none; }
+}
+/* Sotto i 900 px e in verticale la colonna diventa un pannello in basso: la figura sta sopra, la Bussola sopra il pannello. */
+@media (max-width: 899px), (max-aspect-ratio: 1/1) {
+  .frattura-story[data-variant="colonna"] { inset: auto 0 0 0; height: 42vh; z-index: 7; background: var(--surface); border-top: 1px solid var(--line); }
+  .frattura-story[data-variant="colonna"] .frattura-scroll { -webkit-mask-image: none; mask-image: none; }
+  .frattura-story[data-variant="colonna"] .frattura-step, .frattura-story[data-variant="colonna"] .frattura-step:nth-child(even) { height: 100%; padding: 56px var(--frame-x) 24px; align-items: flex-start; justify-content: flex-start; }
+  .frattura-story[data-variant="colonna"] .frattura-copy { width: auto; max-width: 60ch; background: none; box-shadow: none; }
+  .frattura-story[data-variant="colonna"] .frattura-title, .frattura-story[data-variant="colonna"] .frattura-title.is-first { font-size: 32px; line-height: 1; }
+  .frattura-story[data-variant="colonna"] .frattura-nav { top: 4px; left: var(--frame-x); }
+  .atlas-layout:has(.frattura-story[data-variant="colonna"]:not([hidden])) { --fit-left: var(--frame-x); --fit-bottom: calc(42vh + 16px); --pad-bottom: calc(42vh + 16px); }
+  .atlas-figure.is-story .legend-note[data-variant="margine"]:not([hidden]) { display: none; }
+  .atlas-layout:has(.frattura-story[data-variant="colonna"]:not([hidden])) .legend-dock { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .frattura-story .frattura-scroll { scroll-behavior: auto; } }
+/* Numerali dei passi in riga sotto il marchio; tutti i passi uguali, a sinistra. */
+.frattura-story[data-variant="colonna"] .frattura-nav { right: auto; left: calc(var(--frame-x) - 12px); top: calc(var(--frame-y) + 52px); flex-direction: row; }
+.frattura-story[data-variant="colonna"] .frattura-step:nth-child(even) .frattura-copy { margin-right: 0; width: var(--story-band); }
+.frattura-story[data-variant="colonna"] .frattura-step:nth-child(even) .frattura-title { font-size: var(--story-title); }
+@media (max-width: 899px), (max-aspect-ratio: 1/1) {
+  .frattura-story[data-variant="colonna"] .frattura-nav { top: 4px; left: calc(var(--frame-x) - 12px); }
+  .frattura-story[data-variant="colonna"] .frattura-step:nth-child(even) .frattura-copy { width: auto; }
+  .frattura-story[data-variant="colonna"] .frattura-step:nth-child(even) .frattura-title { font-size: 32px; }
+}
+/* Il segnalibro del percorso sta sempre in alto a sinistra, sopra il pannello dei passi. */
+.frattura-bookmark { z-index: 9; left: var(--frame-x); right: auto; top: calc(var(--frame-y) + 72px); bottom: auto; width: min(var(--story-band), calc(100% - 2 * var(--frame-x))); }
+@media (max-width: 1100px), (max-aspect-ratio: 1/1) { .frattura-bookmark { width: min(340px, calc(100% - 2 * var(--frame-x))); } }
+
+/* Comandi del guscio: bersagli di 44 px anche dove il segno è piccolo. */
+.ctl-role { min-height: var(--touch-target); }
+.ctl-ribbon { min-width: var(--touch-target); }
+.ctl-grain .ctl { min-width: 96px; }
+.ctl-rotate { align-items: center; }
+.ctl-needle { width: 44px; height: 44px; flex: none; }
+.ctl-needle circle { fill: var(--surface); stroke: var(--line); }
+.ctl-needle path { fill: var(--line); }
+.ctl-needle path.north { fill: var(--ui-ink); }
+.ctl-needle text { font: 600 7px var(--font-ui); fill: var(--ui-ink); }
+.ctl-needle g { transition: transform var(--t-turn) var(--ease); }
+@media (prefers-reduced-motion: reduce) { .ctl-needle g { transition: none; } }
+.ctl-timeline { touch-action: pan-y; }
+/* «Interrogare» aperto: la nota del margine cede il posto alle note sotto i comandi, e il pannello lascia
+   libera la didascalia in basso. */
+.atlas-figure:has(.frame-panel:not([hidden])) .legend-note[data-variant="margine"] { display: none; }
+.frame-panel { max-height: calc(100% - var(--frame-y) - 72px - 150px); }
+.ctl[hidden], .ctl-row[hidden] { display: none; }
+.ctl-rotate .ctl-icon { font-size: 20px; letter-spacing: 0; }
+.frame-panel { max-height: calc(100% - var(--frame-y) - 72px - 240px); }
+
+/* Velo morbido: il bordo del foglio di carta sfuma sulla figura invece di fare un gradino. */
+.atlas-layout:has([data-frame="pieno"]) .legend-note[data-variant="margine"],
+.atlas-layout:has([data-frame="pieno"]) .legend-dock,
+.atlas-layout:has([data-frame="pieno"]) .sheet-pad-help,
+.frattura-story[data-variant="colonna"] .frattura-copy, .frattura-bookmark { box-shadow: 0 0 24px 20px var(--veil); }
+/* L'istruzione della Bussola si ritira dopo il primo uso. */
+/* L'istruzione si ritira senza lasciare il suo posto: la croce non salta sotto il dito dopo la prima pressione. */
+.sheet-pad[data-used="true"] .sheet-pad-help { visibility: hidden; }
+/* Percorso su schermo largo: colonna di 320 px (i titoli non si spezzano parola per parola), didascalia ritirata:
+   la nota a destra dichiara unità e scala. */
+@media (min-width: 1101px) and (min-aspect-ratio: 1/1) {
+  body { --story-band: 320px; }
+  .atlas-layout:has(.frattura-story[data-variant="colonna"]:not([hidden])) .legend-dock { display: none; }
+}
+/* Pannello del luogo a tutto schermo: la colonna destra in alto, la Bussola e l'indice restano al loro posto in basso. */
+@media (min-width: 900px) and (min-aspect-ratio: 1/1) {
+  .atlas-layout:has([data-frame="pieno"]) .text-panel { bottom: 400px; border-bottom: 1px solid var(--line); }
+  .atlas-layout:has([data-frame="pieno"]):has(.text-panel:not([hidden])) :is(.frame-index, .sheet-pad) { right: var(--frame-x); }
+  .atlas-layout:has([data-frame="pieno"]):has(.text-panel:not([hidden])) .sheet-pad { top: auto; justify-content: flex-end; }
+  .atlas-layout:has([data-frame="pieno"]):has(.text-panel:not([hidden])) .sheet-pad-help { display: none; }
+}
+/* Sotto i 900 px: il pannello del luogo è una scheda in basso; la Bussola le sta sopra. Nel percorso la scheda
+   prende l'altezza della colonna e le si alterna (chiuderla torna al passo). */
+@media (max-width: 899px), (max-aspect-ratio: 1/1) {
+  .atlas-layout:has(.text-panel:not([hidden])) { --pad-bottom: calc(62vh + 16px); }
+  .atlas-layout:has(.frattura-story:not([hidden])) .text-panel { height: 42vh; }
+  .atlas-layout:has(.frattura-story:not([hidden])):has(.text-panel:not([hidden])) { --pad-bottom: calc(42vh + 16px); }
+}
+@media (max-width: 899px), (max-aspect-ratio: 1/1) {
+  .atlas-layout:has(.text-panel:not([hidden])) .sheet-pad { --pad-bottom: calc(62vh + 16px); }
+  .atlas-layout:has(.frattura-story:not([hidden])):has(.text-panel:not([hidden])) .sheet-pad { --pad-bottom: calc(42vh + 16px); }
+}
+/* «Interrogare» su schermo largo: due colonne; le domande restano titoli di sezione. */
+@media (min-width: 1101px) and (min-aspect-ratio: 1/1) {
+  .frame-panel { width: min(620px, calc(100% - 2 * var(--frame-x) - 300px)); }
+  .frame-panel .atlas-controls { display: grid; grid-template-columns: 1fr 1fr; column-gap: 28px; align-items: start; }
+  .frame-panel .atlas-controls section:first-child { grid-row: span 2; }
+}
+
+/* Carta storica nel guscio. */
+.historical-controls.is-retired { display: none !important; }
+.historical-toggle.sheet-pad-narrative small { visibility: visible; }
+.historical-toggle.sheet-pad-narrative::before { border-style: double; border-width: 3px; }
+.historical-credit { position: absolute; left: var(--frame-x); bottom: 4px; z-index: 3; max-width: min(720px, calc(100% - 2 * var(--frame-x) - 180px)); margin: 0; font: 11px/1.35 var(--font-ui); color: var(--muted); }
+.historical-credit[hidden], .historical-section[hidden] { display: none; }
+
+/* Pannello della citazione: varianti «margine» ed «edizione». Nessun colore di ruolo fuori dalla figura. */
+.ref-margin { display: grid; grid-template-columns: 56px 1fr; gap: 12px; align-items: start; }
+.ref-folio { margin: 4px 0 0; display: grid; font: 500 32px/1 var(--font-display); letter-spacing: -.02em; font-variant-numeric: oldstyle-nums; }
+.ref-folio small { font: 400 12px/1.4 var(--font-ui); color: var(--muted); letter-spacing: 0; }
+.ref-apparatus-row { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.ref-apparatus-row .text-interpretation { margin-top: 4px; }
+.ref-running-head { margin: 4px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--line); font: 400 12px/1.4 var(--font-ui); letter-spacing: .04em; color: var(--muted); font-variant: small-caps; }
+.ref-edition { text-indent: 1.4em; hyphens: auto; }
+.ref-edition mark { background: none; color: inherit; font-weight: 600; box-shadow: inset 0 -.38em 0 rgb(43 44 39 / .12); }
+.ref-apparatus { margin-top: 12px; padding-top: 8px; border-top: 1px solid var(--line); }
+.ref-apparatus h3 { margin: 0 0 4px; font: 400 12px/1.4 var(--font-ui); letter-spacing: .06em; font-variant: small-caps; color: var(--muted); }
+.text-anchors { margin: 6px 0 0; font: 400 14px/1.5 var(--font-ui); color: var(--ui-ink); }
+.text-anchors[hidden] { display: none; }
+.text-anchors small { display: block; color: var(--muted); font-size: 12.5px; }
+.text-panel .text-anchor { display: inline-flex; align-items: center; min-height: 44px; padding: 0 2px; border: 0; border-bottom: 1px solid var(--ui-ink); background: none; font: inherit; cursor: pointer; }
+.text-panel header .text-anchor { float: none; vertical-align: baseline; min-height: 0; padding: 10px 2px; margin: -10px 0; }
+.text-panel header .text-anchor { border: 0; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+
+/* Bussola: nero soltanto l'ultimo braccio attivato; il polo corrente si legge dall'etichetta in
+   neretto e da una tacca interna. Tutti i bracci restano premibili. */
+.sheet-pad[data-variant="bussola"] .sheet-pad-arm[aria-current] { background: var(--surface); border-color: var(--ui-ink); cursor: pointer; }
+.sheet-pad[data-variant="bussola"] .sheet-pad-arm[aria-current]::after { display: block; content: ""; position: absolute; background: var(--ui-ink); }
+.sheet-pad[data-variant="bussola"] .sheet-pad-arm-left[aria-current]::after { inset: 6px auto 6px 6px; width: 3px; height: auto; margin: 0; }
+.sheet-pad[data-variant="bussola"] .sheet-pad-arm-right[aria-current]::after { inset: 6px 6px 6px auto; width: 3px; height: auto; margin: 0; }
+.sheet-pad[data-variant="bussola"] .sheet-pad-arm-up[aria-current]::after { inset: 6px 6px auto 6px; height: 3px; width: auto; margin: 0; }
+.sheet-pad[data-variant="bussola"] .sheet-pad-arm-down[aria-current]::after { inset: auto 6px 6px 6px; height: 3px; width: auto; margin: 0; }
+.sheet-pad[data-variant="bussola"] .sheet-pad-arm[data-active="true"] { background: var(--ui-ink); border-color: var(--ui-ink); }
+.sheet-pad[data-variant="bussola"] .sheet-pad-arm[data-active="true"]::after { background: var(--surface); }
+.sheet-pad[data-variant="bussola"] .sheet-pad-arm-diagonal[data-active="true"] { border-style: solid; }
+.sheet-pad[data-variant="bussola"] .sheet-pad-arm-diagonal[data-active="true"]::before { background: var(--surface); }
+.sheet-pad[data-variant="bussola"] .sheet-pad-field { touch-action: none; }
+/* Carta storica: cursore della visibilità dentro il comando, visibile solo a carta accesa. */
+.historical-control { display: grid; justify-items: stretch; background: var(--surface); border: 1px solid var(--line); }
+.historical-control .historical-toggle { border: 0; }
+.historical-control .historical-slider { margin: 0 12px 4px 36px; min-height: var(--touch-target); }
+.historical-control .historical-slider[hidden] { display: none; }
+.historical-control[data-variant="cornice"] { display: inline-grid; }
+/* Barra di scala della geografia in pianta e credito del fondo attuale. */
+.scale-bar { position: absolute; left: 50%; bottom: calc(var(--frame-y) + 6px); z-index: 3; display: grid; justify-items: start; gap: 2px; transform: translateX(-50%); pointer-events: none; background: var(--veil); box-shadow: 0 0 12px 10px var(--veil); }
+.scale-bar[hidden] { display: none; }
+.scale-bar i { display: block; height: 6px; border: 1px solid var(--ui-ink); border-top: 0; }
+.scale-bar span { font: 500 12px/1 var(--font-ui); color: var(--ui-ink); font-variant-numeric: tabular-nums; }
+.fondo-credit { bottom: 20px; }
+/* Tablet: la didascalia scende fino al margine; l'attribuzione di OpenStreetMap sta nella fascia sotto di essa. */
+@media (max-width: 1100px), (max-aspect-ratio: 1/1) { .fondo-credit { bottom: 2px; font-size: 10.5px; line-height: 1.2; } }
+/* Tessera attiva fuori campo: indicatore a bordo figura; «Ritrova nella figura» nel pannello. */
+.active-pointer { position: absolute; z-index: 4; display: inline-flex; align-items: center; gap: 6px; min-height: var(--touch-target); padding: 0 12px; transform: translate(-50%, -50%); border: 1px solid var(--ui-ink); background: var(--surface); color: var(--ui-ink); font: 500 13px var(--font-ui); cursor: pointer; }
+.active-pointer[hidden] { display: none; }
+.active-pointer i { font-style: normal; display: inline-block; }
+.text-panel header .text-locate { float: none; margin-top: 10px; }
+.text-panel header .text-locate[hidden] { display: none; }
+/* Nastro: i segni entrano con una breve dissolvenza quando cambiano capitolo, granularità o forma. */
+.ribbon-mark { animation: ribbon-in 180ms var(--ease) both; }
+/* Nastro: il fuoco da tastiera è un riquadro d'inchiostro disegnato nel nastro (gli SVG non hanno un contorno
+   affidabile in WebKit); la lente di pagina porta le righe di una pagina a bersagli pieni, sopra la pila. */
+.ribbon-mark:focus { outline: none; }
+/* Fili, tacche, etichette e aloni non intercettano il puntatore: passano alla pagina e ai segni sotto. */
+.atlas-ribbon svg > :not(.ribbon-mark):not([data-page]) { pointer-events: none; }
+.ribbon-lens { position: absolute; z-index: 6; margin: 0; padding: 8px 10px 10px; background: var(--surface); border: 1px solid var(--ui-ink); box-shadow: 0 1px 0 var(--ui-ink); }
+.ribbon-lens[hidden] { display: none; }
+.ribbon-lens-title { margin: 0 0 6px; font: 600 11px/1.2 var(--font-ui); color: var(--ui-ink); font-variant-numeric: tabular-nums; }
+.ribbon-lens-grid { display: grid; gap: 0; }
+.ribbon-lens-cell { display: grid; place-items: center; padding: 0; border: 0; background: none; cursor: pointer; }
+.ribbon-lens-cell:disabled { cursor: default; }
+@media (hover: hover) and (pointer: fine) { .ribbon-lens-cell:not(:disabled):hover { background: rgb(43 44 39 / .08); } }
+.ribbon-lens-cell[aria-current="true"] { box-shadow: inset 0 0 0 1.5px var(--ui-ink); }
+.ribbon-lens-cell[data-focus="true"] { box-shadow: inset 0 0 0 1.5px var(--ui-ink), inset 0 0 0 3px var(--surface); background: rgb(43 44 39 / .06); }
+.ribbon-lens-cell:focus-visible { outline: 2px solid var(--ui-ink); outline-offset: -2px; }
+@keyframes ribbon-in { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .ribbon-mark { animation: none; } }
+
+/* Filtri di ruolo: tre forme senza campitura di categoria; lo stato si legge anche senza colore. */
+.ctl-roles[data-style]:not([data-style="quadrati"]) .ctl-swatch { display: none; }
+.ctl-roles[data-style="filetto"] .ctl-role[data-role] { padding: 0 2px; border-bottom: 3px solid var(--role-color); }
+.ctl-roles[data-style="filetto"] .ctl-role[data-role][aria-pressed="false"] { border-bottom: 2px dashed var(--line); }
+.ctl-roles[data-style="tacca"] .ctl-role[data-role] { position: relative; padding-left: 12px; }
+.ctl-roles[data-style="tacca"] .ctl-role[data-role]::before { content: ""; position: absolute; left: 0; top: 50%; width: 4px; height: 16px; margin-top: -8px; background: var(--role-color); border: 1px solid var(--role-color); }
+.ctl-roles[data-style="tacca"] .ctl-role[data-role][aria-pressed="false"]::before { background: transparent; border-color: var(--line); }
+.ctl-roles[data-style="etichetta"] .ctl-role[data-role] { padding: 0 10px; border: 1px solid var(--ui-ink); border-left: 4px solid var(--role-color); background: var(--surface); }
+.ctl-roles[data-style="etichetta"] .ctl-role[data-role][aria-pressed="false"] { border-style: dashed; border-left: 4px solid var(--line); }
+.ctl-roles[data-style]:not([data-style="quadrati"]) .ctl-role[data-role][aria-pressed="false"] span:last-child { text-decoration: line-through; text-decoration-thickness: 1px; }
+.ctl-roles[data-style]:not([data-style="quadrati"]) .ctl-role:not([data-role]) .ctl-swatch { display: inline-block; width: 4px; height: 16px; border-width: 0; }
+/* Indice dei luoghi a due blocchi. */
+.place-index { width: min(48rem, calc(100% - 2rem)); }
+.place-index-blocks { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.place-index-blocks h3 { margin: 0 0 6px; font: 500 20px/1.1 var(--font-display); }
+.place-index-blocks select { width: 100%; }
+@media (max-width: 700px) { .place-index-blocks { grid-template-columns: 1fr; } }

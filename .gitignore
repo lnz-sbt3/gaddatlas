@@ -1,0 +1,26 @@
+# Dipendenze
+node_modules/
+
+# Build
+app/dist/
+
+# File di ambiente
+.env
+.env.*
+
+# Cache
+.vite/
+.cache/
+.eslintcache
+
+# Log
+*.log
+npm-debug.log*
+
+# Estratti privati: si conserva solo il file che spiega perché la cartella è vuota
+data/dist/passages/*
+!data/dist/passages/LEGGIMI.md
+app/public/data/passages/
+
+# Carte storiche locali (solo sviluppo): piramidi e manifest non si distribuiscono
+app/local-basemap/

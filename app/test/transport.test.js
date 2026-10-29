@@ -1,0 +1,7 @@
+import{test}from'node:test';import assert from'node:assert/strict';import{createAxisTransport}from'../src/motion/transport.js';
+const a={view:'map',axon:0,narrative:0},b={view:'diagram',axon:0,narrative:0},c={...b,axon:1},d={...c,narrative:1};
+const motor=()=>createAxisTransport(a,{duration:1300,catchup:300});
+test('trasporto: durata finita e riavvolgimento del medesimo contesto senza salto',()=>{const m=motor(),context={id:1};m.request(b,0);m.start(context,b,0);assert.equal(m.advance(650).p,.5);m.request(a,650);assert.equal(m.active.p,.5);assert.equal(m.active.context,context);assert.equal(m.advance(975).p,.25);assert.equal(m.advance(1300).p,0);assert.deepEqual(m.current,a);assert.equal(m.active,null);});
+test('trasporto: ultima richiesta e completamento entro 300 ms, senza azzerare p',()=>{const m=motor();m.start({},b,0);m.advance(130);m.request(c,130);const p=m.active.p;m.request(d,140);assert.ok(m.active.p>=p);assert.deepEqual(m.requested,d);assert.equal(m.advance(430).p,1);assert.deepEqual(m.current,b);});
+test('trasporto: inversione dell’accelerazione e ripartenza sullo stesso p',()=>{const m=motor();m.start({},b,0);m.advance(500);m.request(c,500);m.advance(600);const p=m.active.p;m.request(a,600);assert.equal(m.active.p,p);assert.equal(m.active.fast,false);assert.equal(m.active.rate,-1/1300);});
+test('trasporto: reset immediato rimuove passaggio e coda',()=>{const m=motor();m.start({},b,0);m.request(c,400);m.reset(d);assert.equal(m.active,null);assert.deepEqual(m.current,d);assert.deepEqual(m.requested,d);});
