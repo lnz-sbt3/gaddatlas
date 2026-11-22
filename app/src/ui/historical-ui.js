@@ -2,7 +2,7 @@ import {html} from 'htl';
 import it from '../strings-it.js';
 
 // Carta storica nel guscio (solo dove esiste la carta locale). Tre varianti (config HISTORICAL_UI.variant):
-// 'strato'  un interruttore «Carta 1925» sotto la Bussola, accanto ai luoghi narrativi: due strati della figura;
+// 'strato'  un interruttore «Carta 1925» sotto la ghiera, accanto ai luoghi narrativi: due strati della figura;
 // 'cornice' lo stesso interruttore fra i comandi in alto a destra;
 // 'lente'   l'interruttore accende una lente: la carta si vede solo attorno al puntatore (o al dito).
 // In tutte, «Interrogare» ha la domanda «Su quale carta?» con trattamento e visibilità, e il credito compare
@@ -11,7 +11,7 @@ export default function createHistoricalUi({historical, variant = 'strato', cont
  if (!historical) return {dispose(){}};
  historical.element.hidden = true; historical.element.classList.add('is-retired');
  let on = true, remembered = Math.max(.35, historical.opacity || 1);
- const button = html`<button type="button" class=${variant === 'cornice' ? 'ctl historical-toggle' : 'sheet-pad-narrative historical-toggle'} aria-pressed="true" data-legend="historical">${it.historicalToggle}${variant === 'cornice' ? '' : html`<small>${variant === 'lente' ? it.historicalLensHint : it.historicalToggleHint}</small>`}</button>`;
+ const button = html`<button type="button" class=${variant === 'cornice' ? 'ctl historical-toggle' : 'view-layer-toggle historical-toggle'} aria-pressed="true" data-legend="historical">${it.historicalToggle}${variant === 'cornice' ? '' : html`<small>${variant === 'lente' ? it.historicalLensHint : it.historicalToggleHint}</small>`}</button>`;
  // Il cursore della visibilità sta nello stesso comando che accende la carta: compare a carta accesa, sparisce
  // a carta spenta, così comparsa e scomparsa si misurano nello stesso punto.
  const slider = html`<input class="ctl-range historical-slider" type="range" min="0" max="100" step="1" data-legend="historical" aria-label=${it.historicalSlider}>`;
@@ -24,10 +24,10 @@ export default function createHistoricalUi({historical, variant = 'strato', cont
  const credit = html`<p class="historical-credit" hidden>${it.historicalCredit} · ${it.osmCredit}</p>`;
  panel?.querySelector('.atlas-controls')?.append(section);
  container.append(credit);
- // Lo strato sta sotto la Bussola, dopo i luoghi narrativi; nella cornice prima di «Interrogare».
+ // Lo strato sta sotto la ghiera, dopo i luoghi narrativi; nella cornice prima di «Interrogare».
  const place = () => {
   if (variant === 'cornice') { orient.prepend(toggle); return; }
-  const pad = container.querySelector('.sheet-pad'); if (pad && !pad.contains(toggle)) pad.append(toggle);
+  const pad = container.querySelector('.view-layers'); if (pad && !pad.contains(toggle)) pad.append(toggle);
  };
  place();
  function render(){

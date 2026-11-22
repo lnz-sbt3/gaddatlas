@@ -21,8 +21,7 @@ import {createFondo} from "./render/fondo.js";
 import atlasFrameUi from "./ui/frame-ui.js";
 import atlasShell from "./ui/shell.js";
 import {createPlaceRose} from "./ui/place-index.js";
-import createSheetHandle from "./ui/sheet-handle.js";
-import createSheetPad from "./ui/sheet-pad.js";
+import createIncisa, {CYCLE, cyclePosition} from "./ui/ghiera-incisa.js";
 import atlasHandlers from "./ui/handlers.js";
 
 export default function createAtlas(model, roma, { historical = null, onTileSelect = () => {}, onStateChange = () => {} } = {}) {
@@ -440,45 +439,21 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     applyStage(next);
   }
 
-  // Foglio: l'angolo governa il p dello stesso passaggio della regia D. Un asse per gesto:
-  // orizzontale = relazioni/geografia, verticale = rilievo/pianta; i narrativi restano un comando esplicito.
-  const SHEET_TARGET = {
-    left: {map2d: () => showFictitious ? "diagram2d_fict" : "diagram2d", map_axon: () => "diagram_axon"},
-    right: {diagram2d: () => "map2d", diagram2d_fict: () => "map2d", diagram_axon: () => "map_axon"},
-    up: {map2d: () => "map_axon", diagram2d: () => "diagram_axon", diagram2d_fict: () => "diagram_axon"},
-    down: {map_axon: () => "map2d", diagram_axon: () => showFictitious ? "diagram2d_fict" : "diagram2d"}
-  };
-  const OPPOSITE = {left: "right", right: "left", up: "down", down: "up"};
   const stageOfAxes = ax => ax.view === "diagram"
     ? (ax.axon ? "diagram_axon" : (ax.narrative ? "diagram2d_fict" : "diagram2d"))
     : (ax.axon ? "map_axon" : "map2d");
-  const passageDirection = (from, to) => from.view !== to.view ? (to.view === "diagram" ? "left" : "right")
-    : from.axon !== to.axon ? (to.axon ? "up" : "down") : (to.narrative ? "left" : "right");
-  let sheet = null, sheetHandle = null;
+  let sheet = null, incisa = null, viewDock = null, viewResize = null, narrativeButton = null;
   // Estremi del passaggio in corso o in preparazione; il motore può riavvolgerlo con from/to scambiati.
   const passageEnds = () => axisTransport.active ? [axisTransport.active.from, axisTransport.active.to]
     : pendingMotion ? [axisTransport.current, pendingMotion.target] : null;
   // Progresso del motore verso l'estremo indicato dalla chiave.
   const progressToward = (a, key) => axesKey(a.to) === key ? a.p : 1 - a.p;
-  const sheetController = {
-    // sheet.p è il progresso verso sheet.toKey, lo stato verso cui il dito tira.
-    start(direction) {
-      if (reducedMotion.matches) { const next = SHEET_TARGET[direction]?.[stage]; if (next) applyStage(next()); return false; }
-      const ends = passageEnds();
-      if (ends) {
-        const [x, y] = ends, toward = passageDirection(x, y) === direction ? y : passageDirection(y, x) === direction ? x : null;
-        if (!toward) return false;
-        const key = axesKey(toward), p = axisTransport.active ? progressToward(axisTransport.active, key) : (key === axesKey(ends[1]) ? 0 : 1);
-        sheet = {toKey: key, p0: p, p};
-        return true;
-      }
-      const next = SHEET_TARGET[direction]?.[stage];
-      if (!next) return false;
-      applyStage(next());
-      sheet = {toKey: axesKey(desiredAxes()), p0: 0, p: 0};
-      return true;
+  const passageController = {
+    // Alla presa manuale il fotogramma resta fermo finché arriva il nuovo bersaglio.
+    detach() {
+      const a = axisTransport.active;
+      if (a) { axisTransport.hold(a.p, performance.now()); sheet = {toKey: axesKey(a.to), p: a.p, guided: true}; }
     },
-    move(fraction) { if (sheet) sheet.p = Math.max(0, Math.min(1, sheet.p0 + fraction)); },
     end(flick) {
       const s = sheet; sheet = null;
       const ends = passageEnds();
@@ -488,20 +463,9 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
       if (axesKey(end) !== axesKey(desiredAxes())) applyStage(stageOfAxes(end));
       else if (axisTransport.active) axisTransport.release(axesKey(axisTransport.active.to) === axesKey(end) ? 1 : -1, performance.now());
     },
-    key(key) {
-      const direction = {ArrowLeft: "left", ArrowRight: "right", ArrowUp: "up", ArrowDown: "down"}[key];
-      if (direction) { const next = SHEET_TARGET[direction]?.[stage]; if (next) applyStage(next()); return true; }
-      if (key === "Home") { if (stage !== "map2d") applyStage("map2d"); return true; }
-      if (key === "Enter" || key === " ") { const next = (SHEET_TARGET.left[stage] || SHEET_TARGET.right[stage]); applyStage(next()); return true; }
-      return false;
-    },
-    // Clic su un quadrante: transizione automatica, anche in diagonale; il diagramma ricorda i narrativi.
-    goto(quadrant) {
-      const next = quadrant === "diagram" ? (showFictitious ? "diagram2d_fict" : "diagram2d") : quadrant;
-      if (next !== stage) applyStage(next);
-    },
     // Passaggio trattenuto verso uno stato qualunque: la Frattura lo usa per seguire lo scorrimento.
     holdToward(target) {
+      dialDrive = null;
       if (reducedMotion.matches) { if (target !== stage) applyStage(target); return false; }
       const ends = passageEnds();
       if (ends) {
@@ -517,7 +481,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
       return true;
     },
     seek(p) { if (sheet) sheet.p = Math.max(0, Math.min(1, p)); },
-    // I luoghi narrativi restano un asse distinto: si accendono e spengono senza cambiare quadrante.
+    // I luoghi narrativi restano un asse distinto: si accendono e spengono senza ruotare la ghiera.
     toggleNarrative() {
       showFictitious = !showFictitious;
       applyStage(crimpTarget > 0.5 ? (tiltTarget > 0 ? "diagram_axon" : (showFictitious ? "diagram2d_fict" : "diagram2d")) : stage);
@@ -525,16 +489,114 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     }
   };
   const quadrantOf = name => name === "diagram2d_fict" ? "diagram2d" : name;
-  function sheetState() {
+  const modView = n => ((n % CYCLE.length) + CYCLE.length) % CYCLE.length;
+  const nearView = (q, reference) => q + Math.round((reference - q) / CYCLE.length) * CYCLE.length;
+  const viewStage = q => CYCLE[modView(Math.round(q))] === "diagram2d" && showFictitious ? "diagram2d_fict" : CYCLE[modView(Math.round(q))];
+  let dialDrive = null, dialPosition = 0;
+  function dialPair(from, to, p = 0) {
+    const x = CYCLE.indexOf(quadrantOf(stageOfAxes(from))), y = CYCLE.indexOf(quadrantOf(stageOfAxes(to)));
+    const d = modView(y - x) === 1 ? 1 : modView(y - x) === CYCLE.length - 1 ? -1 : 0;
+    return {start: nearView(x, dialPosition - d * p), direction: d};
+  }
+  function dialFrame() {
+    const a = axisTransport.active, current = quadrantOf(stageOfAxes(axisTransport.current));
+    if (!a) { dialPosition = nearView(CYCLE.indexOf(current), dialPosition); return {from: current, to: current, p: 0, rest: current}; }
+    const from = quadrantOf(stageOfAxes(a.from)), to = quadrantOf(stageOfAxes(a.to)), pair = dialPair(a.from, a.to, a.p);
+    // I cambi dei soli narrativi non ruotano la ghiera. Un indirizzo può cambiare entrambi gli assi.
+    if (!pair.direction) {
+      const shown = from === to || a.p < .5 ? from : to;
+      dialPosition = nearView(CYCLE.indexOf(shown), dialPosition);
+      return {from: shown, to: shown, p: 0, rest: shown};
+    }
+    dialPosition = pair.start + pair.direction * a.p;
+    return {from, to, p: a.p, rest: current};
+  }
+  function releaseDialToward(a, end) {
+    sheet = null;
+    const target = end ? a.to : a.from;
+    if (axesKey(desiredAxes()) !== axesKey(target)) applyStage(stageOfAxes(target));
+    else if (a.rate === 0) axisTransport.release(end ? 1 : -1, performance.now());
+  }
+  function driveDial() {
+    const drive = dialDrive;
+    if (!drive || reducedMotion.matches) return;
     const a = axisTransport.active;
     if (a) {
-      // La piega misura il progresso verso lo stato richiesto, anche quando il passaggio è riavvolto.
-      const want = sheet ? sheet.toKey : axesKey(desiredAxes()), target = axesKey(a.to) === want ? a.to : a.from, origin = target === a.to ? a.from : a.to;
-      return {p: progressToward(a, axesKey(target)), direction: passageDirection(origin, target), label: it.sheetMoving(STAGE_LABELS[stageOfAxes(target)] || ""),
-        from: quadrantOf(stageOfAxes(origin)), to: quadrantOf(stageOfAxes(target)), stage: quadrantOf(stage), narrative: showFictitious, moving: true};
+      const pair = dialPair(a.from, a.to, a.p);
+      if (!pair.direction) { releaseDialToward(a, axesKey(desiredAxes()) === axesKey(a.to) ? 1 : 0); return; }
+      const p = (drive.target - pair.start) / pair.direction;
+      if (drive.mode === "automatic") { releaseDialToward(a, p >= .5 ? 1 : 0); return; }
+      sheet = {toKey: axesKey(a.to), p: Math.max(0, Math.min(1, p)), guided: true};
+      // Il giro attraversa un estremo prima di aprire la coppia successiva, anche se il dito corre avanti.
+      if (p > 1 && a.p === 1) releaseDialToward(a, 1);
+      else if (p < 0 && a.p === 0) releaseDialToward(a, 0);
+      return;
     }
-    const horizontal = crimpTarget > 0.5 ? it.sheetGeography : it.sheetRelations, vertical = tiltTarget > 0 ? it.sheetPlan : it.sheetRelief;
-    return {p: 0, direction: null, label: it.sheetHint(horizontal, vertical), from: quadrantOf(stage), to: quadrantOf(stage), stage: quadrantOf(stage), narrative: showFictitious, moving: false};
+    if (pendingMotion) {
+      const pair = dialPair(axisTransport.current, pendingMotion.target);
+      if (drive.mode === "drag" && pair.direction) sheet = {toKey: axesKey(pendingMotion.target), p: Math.max(0, Math.min(1, (drive.target - pair.start) / pair.direction)), guided: true};
+      return;
+    }
+    const q = nearView(CYCLE.indexOf(quadrantOf(stageOfAxes(axisTransport.current))), dialPosition), delta = drive.target - q;
+    if (Math.abs(delta) < 1e-8) { sheet = null; if (drive.mode === "automatic") dialDrive = null; return; }
+    applyStage(viewStage(q + Math.sign(delta)));
+    sheet = drive.mode === "drag" ? {toKey: axesKey(desiredAxes()), p: Math.min(1, Math.abs(delta)), guided: true} : null;
+  }
+  function releaseViewControl() {
+    if (!viewDock?.dataset.held) return;
+    const before = incisa.element.getBoundingClientRect();
+    delete viewDock.dataset.held;
+    for (const key of ["top", "left", "bottom", "right"]) viewDock.style.removeProperty(key);
+    const after = incisa.element.getBoundingClientRect();
+    if (!reducedMotion.matches && (before.x !== after.x || before.y !== after.y)) viewDock.animate([
+      {transform: `translate(${before.x - after.x}px, ${before.y - after.y}px)`}, {transform: "translate(0, 0)"}
+    ], {duration: parseFloat(atlasConfig.INCISA["feedback-duration"]), easing: atlasConfig.INCISA["feedback-ease"]});
+  }
+  function snapDial(target) {
+    dialDrive = null; sheet = null;
+    const name = viewStage(target), view = name.startsWith("diagram") ? "diagram" : "map";
+    wrap.applyUrlState({...wrap.getUrlState(), view, axon: +name.endsWith("axon")}, {immediate: true});
+    notify("view");
+  }
+  const dialController = {
+    takeControl({source}) { if (source === "pointer" && viewDock.getAnimations().length) wrap.freezeViewControl(); },
+    begin() {
+      const frame = dialFrame(), a = axisTransport.active;
+      if (a) { axisTransport.hold(a.p, performance.now()); sheet = {toKey: axesKey(a.to), p: a.p, guided: true}; }
+      dialDrive = {mode: "drag", target: dialPosition, rest: nearView(CYCLE.indexOf(frame.rest), dialPosition)};
+      incisa.update(frame);
+      return true;
+    },
+    seek(request) {
+      if (!dialDrive) return;
+      dialDrive.target = nearView(cyclePosition(request), dialDrive.target);
+      driveDial();
+    },
+    release(request) {
+      releaseViewControl();
+      if (!dialDrive) return;
+      const q = nearView(cyclePosition(request), dialDrive.target), target = request.from === request.to ? Math.round(q) : Math.floor(q) + request.end;
+      if (reducedMotion.matches) { snapDial(target); return; }
+      dialDrive = {...dialDrive, mode: "automatic", target}; sheet = null; driveDial();
+    },
+    go(request) {
+      releaseViewControl();
+      const from = nearView(CYCLE.indexOf(request.from), dialPosition), target = from + request.direction;
+      if (request.source === "keyboard" || reducedMotion.matches) { snapDial(target); return; }
+      dialDrive = {mode: "automatic", target}; sheet = null; driveDial();
+    },
+    cancel(request) {
+      releaseViewControl();
+      const target = dialDrive?.rest ?? nearView(CYCLE.indexOf(request.restore), dialPosition);
+      if (reducedMotion.matches) { snapDial(target); return; }
+      dialDrive = {mode: "automatic", target}; sheet = null; driveDial();
+    }
+  };
+  function updateDial() {
+    if (!incisa) return;
+    dialFrame(); driveDial(); incisa.update(dialFrame());
+    narrativeButton.setAttribute("aria-pressed", String(showFictitious));
+    narrativeButton.disabled = crimpTarget <= .5;
   }
 
   function seqTrack() {
@@ -1882,7 +1944,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
       inkColor: INK_COLOR, bgColor: BG_COLOR, cache: frameUiCache
     });
     refreshSeqOccRate();
-    sheetHandle?.update(sheetState());
+    updateDial();
     profileTickMs = PROFILE ? performance.now() - profileTickT0 : 0;
     return remainingMotion;
   }
@@ -1978,15 +2040,17 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     shell.rotNeedle.setAttribute("aria-label", it.rotationIndicator(deg));
     shell.rotResetBtn.disabled = deg === 0;
   }
-  // Foglio: campo a quattro quadranti; l'angolo di pagina resta come variante 'angolo'.
-  // Miniature del mirino: estratti della figura nelle coordinate del canvas (contorno di Roma, generatori,
-  // azimut e distanza dal polo per le relazioni).
-  // I limiti si leggono dai vertici proiettati: il verso degli anelli del confine non conta.
-  const romaVertices = roma.features[0].geometry.coordinates.flat(2).map(c => projection(c)).filter(Boolean);
-  const miniature = {width, height, outline: d3.geoPath(projection)(roma.features[0]), outlineBounds: [[d3.min(romaVertices, v => v[0]), d3.min(romaVertices, v => v[1])], [d3.max(romaVertices, v => v[0]), d3.max(romaVertices, v => v[1])]], points: pts.slice(0, N_GEO).map(p => p.slice()),
-    polar: d3.range(N_GEO).map(i => [geographicAngle[i], poleDistanceKm[i]])};
-  const sheetOptions = {container: shell.viewBox, canvas, obstacle: historical?.element, config: atlasConfig.SHEET, controller: sheetController, miniature};
-  sheetHandle = atlasConfig.SHEET.variant === "angolo" ? createSheetHandle(sheetOptions) : createSheetPad({...sheetOptions, variant: atlasConfig.SHEET.variant});
+  viewDock = document.createElement("div"); viewDock.className = "view-dock";
+  shell.viewBox.append(viewDock);
+  incisa = createIncisa({container: viewDock, controller: dialController, labels: it.incisa, tokens: atlasConfig.INCISA});
+  const layers = document.createElement("div"); layers.className = "view-layers"; layers.setAttribute("aria-label", it.viewLayers);
+  narrativeButton = document.createElement("button"); narrativeButton.type = "button"; narrativeButton.className = "view-layer-toggle"; narrativeButton.dataset.legend = "narrative";
+  const reason = document.createElement("small"); reason.textContent = it.narrativeToggleReason;
+  narrativeButton.append(it.narrativeToggle, reason); layers.append(narrativeButton); viewDock.append(layers);
+  narrativeButton.addEventListener("click", () => passageController.toggleNarrative(), {signal: listeners.signal});
+  viewResize = new ResizeObserver(() => shell.viewBox.style.setProperty("--view-dock-height", `${viewDock.offsetHeight}px`));
+  viewResize.observe(viewDock);
+  updateDial();
   placeRose = createPlaceRose({container: shell.viewBox, onChoose: tile => { try { selectHost(tile); } finally { notify("selection"); } }});
   ({mapBtn, pasticciaccioBtn, reliefBtn, stagePrevBtn, stageNextBtn, stageLabel, seqModeToggle, seqChapterBtn, seqPageBtn, orderBtn, seqSlider, seqLabel, roleLegend, roleButtons, pageRibbon, ribbonWrap: pageRibbonShell, ribbonPrevBtn, ribbonNextBtn, legendRow, lodLabel} = shell);
 
@@ -2033,13 +2097,23 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     finally { rotPivotSyncing = false; }
     lastHitState = null;
     if (import.meta.env.DEV) stableFrames = 0;
-    sheetHandle?.place();
     draw();
   }});
   updateSeqUi();
   wrap.clearUrlRoute = () => routeSelection.clear();
-  // Presa del passaggio per la Frattura che segue lo scorrimento: stessa meccanica del Foglio.
-  wrap.passage = {holdToward: sheetController.holdToward, seek: sheetController.seek, end: sheetController.end, get stage() { return stage; }};
+  // La guida pubblica lo stesso progresso usato dal controllo delle viste.
+  wrap.freezeViewControl = () => {
+    const box = incisa.element.getBoundingClientRect(), parent = shell.viewBox.getBoundingClientRect();
+    viewDock.getAnimations().forEach(animation => animation.cancel());
+    viewDock.dataset.held = "true";
+    Object.assign(viewDock.style, {top: `${box.top - parent.top}px`, left: `${box.left - parent.left}px`, right: "auto", bottom: "auto"});
+  };
+  if (import.meta.env.DEV) wrap.readViewControl = () => {
+    const a = axisTransport.active;
+    return {p: a?.p ?? null, at: a?.at ?? null, pair: a ? `${axesKey(a.from)}>${axesKey(a.to)}` : null,
+      held: !!sheet, target: sheet?.p ?? null, mode: dialDrive?.mode ?? null, position: dialPosition};
+  };
+  wrap.passage = {detach: passageController.detach, holdToward: passageController.holdToward, seek: passageController.seek, end: passageController.end, get stage() { return stage; }};
   wrap.getUrlState = () => ({
     view: crimpTarget > 0.5 ? "diagram" : "map", axon: tiltTarget > 0 ? 1 : 0,
     narrative: showFictitious ? 1 : 0, focalizer, chapter,
@@ -2249,7 +2323,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     disposeHandlers();
     listeners.abort();
     placeRose.dispose();
-    sheetHandle.dispose();
+    viewResize?.disconnect(); incisa?.dispose(); viewDock?.remove();
     document.removeEventListener("keydown", routeKeydown);
     d3.select(canvas).on(".zoom", null);
   };

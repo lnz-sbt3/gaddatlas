@@ -65,8 +65,8 @@ export default function createContextLegend({container, toggle, variant = 'margi
   const who = s.focalizer == null ? null : names.get(s.focalizer) || s.focalizer;
   const view = s.view === 'diagram' ? 'diagram' : 'map', axon = !!s.axon, narrative = view === 'diagram' && !!s.narrative;
   switch (id) {
-   case 'view': return {label: L.viewLabel, question: L.viewQuestion, value: it.padName[`${view}${axon ? '_axon' : '2d'}`].join(' '),
-    text: axon ? (who ? L.reliefAgent(who) : L.reliefAll(String(reliefBands.logBase).replace('.', ','))) : view === 'diagram' ? L.diagram : L.map,
+   case 'view': return {label: L.viewLabel, question: L.viewQuestion, value: it.incisa.names[`${view}${axon ? '_axon' : '2d'}`].join(' '),
+    hint: L.viewHint, text: axon ? (who ? L.reliefAgent(who) : L.reliefAll(String(reliefBands.logBase).replace('.', ','))) : view === 'diagram' ? L.diagram : L.map,
     key: axon ? html`${terraces(!!who)}${who ? determinationKey() : ''}` : density(narrative)};
    case 'narrative': return {label: L.narrativeLabel, question: L.narrativeQuestion, value: s.narrative ? L.on : L.off,
     text: s.view === 'diagram' ? L.narrative : `${L.narrative} ${L.narrativeOnlyDiagram}`, key: statuses(), hint: statusMode === 'ricalco' ? `${L.ricalcoFallback} ${L.imagined}` : L.imagined};
@@ -134,7 +134,7 @@ export default function createContextLegend({container, toggle, variant = 'margi
    return;
   }
   element.replaceChildren(close, body(n, {label: id !== 'view'}));
-  placeCartouche((anchor?.dataset.legend === 'view' ? anchor.querySelector('.sheet-pad-field') : anchor) || anchorOf('view'));
+  placeCartouche((anchor?.dataset.legend === 'view' ? anchor.querySelector('.incisa-wheel') : anchor) || anchorOf('view'));
  }
  const inline = html`<div class="legend-note-inline" hidden></div>`;
  // Cartiglio: nella banda libera più vicina al comando, con un filo che li unisce; mai sopra la figura.
@@ -168,8 +168,8 @@ export default function createContextLegend({container, toggle, variant = 'margi
  }
  // Ogni comando dichiara il suo argomento con data-legend; la nota segue l'ultimo comando toccato.
  const onTouch = e => { const el = e.target.closest?.('[data-legend]'); if (el && !element.contains(el)) touch(el.dataset.legend); };
- // Il foglio si trascina senza clic: alla fine del gesto la nota segue la vista.
- const onDrag = e => { if (e.target.closest?.('.sheet-pad-knob')) touch('view'); };
+ // La ghiera si trascina senza clic: alla fine del gesto la nota segue la vista.
+ const onDrag = e => { if (e.target.closest?.('.incisa-wheel')) touch('view'); };
  const onKey = e => { if (e.key === 'Escape' && variant === 'cartiglio' && topic) { topic = null; open = false; render(); } else if (e.key !== 'Escape') onTouch(e); };
  // Al clic, non alla pressione: la nota non sposta i comandi prima che il gesto sia compiuto.
  document.addEventListener('click', onTouch, true);

@@ -150,9 +150,15 @@ async function boot() {
       agents: gaddaReal.paths.agents, glyphPaths: atlasConfig.FICT_GLYPH_PATHS, roleOrder: atlasConfig.ROLE_ORDER, roleColors: atlasConfig.ROLE_COLORS,
       statusMode: atlasConfig.STATUS.mode, chroma: atlasConfig.CHROMA, densityColors: {reference: `rgb(${atlasConfig.HUE_RGB})`, narrative: `rgb(${atlasConfig.FICT_HUE_RGB})`},
       determination: atlasConfig.DETERMINATION.mode === "off" ? null : {...atlasConfig.DETERMINATION, edge: {top: atlasConfig.AXON_EDGE_TOP, bottom: atlasConfig.AXON_EDGE_BOT}}});
-    // Una presa sulla figura sospende il percorso; al passo interattivo solo la Bussola lo sospende.
+    // La presa sulla ghiera conserva il fotogramma della guida; al passo interattivo gli altri comandi restano liberi.
     for (const type of ["pointerdown", "wheel", "keydown"])
-      atlas.addEventListener(type, event => { if (guidedPath.contains(event.target)) return; if (guidedPath.interactive && !event.target.closest?.(".sheet-pad")) return; guidedPath.interrupt(); }, {capture: true, passive: true});
+      atlas.addEventListener(type, event => {
+        if (guidedPath.contains(event.target)) return;
+        if (guidedPath.interactive && !event.target.closest?.(".view-dock")) return;
+        const dial = !!event.target.closest?.(".incisa");
+        if (dial && type === "pointerdown" && guidedPath.active) atlas.freezeViewControl();
+        guidedPath.interrupt({preserve: dial});
+      }, {capture: true, passive: true});
     restore(true);
     if (import.meta.env.DEV) {
       window.__GADDATLAS_TEST__ = {
@@ -162,6 +168,7 @@ async function boot() {
         get production() { return atlas.motionProduction; },
         get settled() { return atlas.isSettled() && !textPanel.busy; },
         get state() { return read(); },
+        get viewControl() { return atlas.readViewControl(); },
         get motion() { return atlas.motionError(); },
         get errors() { return [...textPanel.element.querySelectorAll('[role="alert"]')].map(n => n.textContent); }
       };

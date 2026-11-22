@@ -132,11 +132,14 @@ export default function createFrattura({container, layout, variant = 'colonna', 
   // La colonna si misura dopo essere comparsa: lo scorrimento al passo aspetta il fotogramma successivo.
   requestAnimationFrame(() => { scrollTo(i, false); titles[i].focus({preventScroll: true}); });
  }
- function suspend(){
+ function suspend({preserve = false} = {}){
   if (!active || suspended) return;
-  suspended = true; if (held) { passage.end(0); held = null; }
+  suspended = true; clearTimeout(settleTimer);
+  if (held) { if (preserve) passage.detach(); else passage.end(0); held = null; }
   if (variant === 'margine') { banner.hidden = false; panel.classList.add('is-suspended'); onSuspend(); return; }
-  panel.hidden = true; container.classList.remove('is-story');
+  // La presa conserva anche il riquadro della figura: nascondere la colonna non deve rifare l'inquadratura.
+  panel.hidden = !preserve; panel.toggleAttribute('data-preserve', preserve); panel.classList.toggle('is-suspended', preserve);
+  container.classList.remove('is-story');
   entry.setAttribute('aria-expanded', 'false'); entry.textContent = it.tourStart; rewind.hidden = true;
   bookmark.querySelector('p').textContent = copy.bookmark(index + 1, n); bookmark.querySelector('h3').textContent = copy.steps[steps[index].id].title.join(' '); bookmark.hidden = false; relayout();
   onSuspend();
@@ -178,7 +181,7 @@ export default function createFrattura({container, layout, variant = 'colonna', 
   else if (e.target.closest('.frattura-ask')) container.querySelector('.frame-orient .ctl[aria-controls="frame-panel"]')?.click();
  });
  panel.addEventListener('keydown', e => { if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); stop(); entry.focus(); } });
- // La Bussola sposta la figura mentre il percorso è fermo: il segnalibro segue il passo che coincide con lo stato.
+ // La ghiera sposta la figura mentre il percorso è fermo: il segnalibro segue il passo che coincide con lo stato.
  function sync(state){
   if (!active || !suspended) return;
   let best = -1;

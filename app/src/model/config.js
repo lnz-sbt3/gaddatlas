@@ -13,7 +13,6 @@
   HISTORICAL: {maxDeviceTexel:1.2, fadeStart:1, fadeEnd:2, reserveCSS:1.5, blend:'multiply', gain:{leggibile:3.5, tenue:5, minimo:7}, perTile:true, stack:'pila'}, // riserva: sottotratto del rilievo, px CSS oltre il tratto
   CENTER_MARKER: {radiusCSS:1.5, minimumCellRadiusCSS:5},
   TOUCH_TARGET_CSS: 44, // diametro del bersaglio al tocco per la rosa di scelta
-  // Angolo del foglio: presa, piega a riposo, corsa per p=1, soglia di blocco dell'asse, velocità di lancio.
   // Percorso guidato: durata di un passo del riquadro 'scatola'; 'colonna' | 'margine' | 'sipario' scorrono.
   // drive: 'scorrimento' lo scorrimento tiene il passaggio fra due passi, 'soglia' la figura scatta al passo;
   // settleMs: pausa dopo la quale figura e colonna si assestano sul passo più vicino.
@@ -51,10 +50,66 @@
   ROTATION: {stepDeg: 15},
   // Legenda: 'margine' | 'cartiglio' | 'registro' (una nota per comando); 'unica' = foglio unico.
   LEGEND: {variant: 'margine'},
-  SHEET: {sizeCSS:56, foldCSS:22, travelCSS:160, lockCSS:8, flickCSSPerMs:0.5,
-    // Foglio a quattro quadranti: 'piega' | 'bussola' | 'mirino'; 'angolo' = angolo di pagina.
-    // Le misure delle celle sono token CSS (--pad-w, --pad-h) per variante e per banda.
-    variant: 'bussola', pad: {lockCSS: 6, flickCSSPerMs: 0.5}},
+  // Geometria, inchiostri e risposta del controllo radiale delle viste.
+  INCISA: {
+    "size-small": "224px",
+    "size-medium": "280px",
+    "view": 280,
+    "hit-outer": 137,
+    "hit-inner": 47,
+    "sector-gap": 0.015,
+    "rim-inner": 113,
+    "rim-outer": 126,
+    "tick-count": 64,
+    "major-every": 4,
+    "tick-inner": 119,
+    "tick-major-inner": 116,
+    "tick-outer": 124,
+    "label-radius": 91,
+    "label-width": 92,
+    "label-height": 43,
+    "label-top": 23,
+    "text-offset": 5,
+    "line-gap": 18,
+    "trace-radius": 107,
+    "trace-half": 0.12,
+    "trace-active-half": 0.29,
+    "index-top": 3,
+    "index-bottom": 17,
+    "index-half": 4,
+    "font": "\"Public Sans\", sans-serif",
+    "font-size": "15px",
+    "line-height": "normal",
+    "font-weight": 400,
+    "font-weight-current": 600,
+    "ink-light": "#3A4859",
+    "muted-light": "#585E64",
+    "label-paper-light": "rgba(241, 231, 208, .96)",
+    "rule-light": "rgba(58, 72, 89, .47)",
+    "ink-dark": "#F5F0E5",
+    "muted-dark": "#D9D4C8",
+    "label-paper-dark": "rgba(54, 55, 51, .96)",
+    "rule-dark": "rgba(245, 240, 229, .62)",
+    "stroke": 1,
+    "stroke-current": 2,
+    "stroke-focus": 3,
+    "rim-stroke": 0.7,
+    "rim-opacity": 0.8,
+    "tick-stroke": 0.8,
+    "major-stroke": 1.4,
+    "index-stroke": 1.4,
+    "opposite-opacity": 0.5,
+    "focus-width": "2px",
+    "focus-offset": "5px",
+    "lock-px": 6,
+    "flick-per-ms": 0.0024,
+    "velocity-age": "90ms",
+    "release-duration": "280ms",
+    "automatic-duration": "560ms",
+    "feedback-duration": "140ms",
+    "feedback-ease": "cubic-bezier(.16, 1, .3, 1)",
+    "settle-damping": 7
+},
   VIEW_SIZE: 1150,     // lato lungo del canvas (px)
 
   MOTION: {duration:1300, catchup:280, tableSamples:256, prepareBudget:1.5, chaseSteps:100, planarHandoff:[0,0.08],
