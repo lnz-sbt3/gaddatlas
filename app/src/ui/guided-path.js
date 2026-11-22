@@ -1,7 +1,7 @@
 import {html} from 'htl';
 import it from '../strings-it.js';
 
-// Frattura: percorso guidato facoltativo sullo stesso motore del foglio. Ogni passo porta la vista in uno
+// Frattura: percorso guidato facoltativo sullo stesso motore dei passaggi. Ogni passo porta la vista in uno
 // stato citabile e seleziona un luogo documentato; le didascalie descrivono l'operazione, non il testo.
 // Il lettore interrompe con qualunque presa sull'atlante, riavvolge, riprende o esce in ogni momento.
 export const FRATTURA_STEPS = [

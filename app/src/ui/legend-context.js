@@ -144,7 +144,7 @@ export default function createContextLegend({container, toggle, variant = 'margi
   const cs = getComputedStyle(container), bandRight = parseFloat(cs.paddingRight), bandLeft = parseFloat(cs.paddingLeft);
   const inRight = a.left - box.left > box.width - bandRight - 8, panel = anchor.closest('.frame-panel');
   let x, y, vertical = false;
-  // Nella banda destra il cartiglio sta in alto, sotto i comandi della cornice; il foglio resta libero.
+  // Nella banda destra il cartiglio sta in alto, sotto i comandi della cornice; la ghiera resta libera.
   if (inRight) { x = box.width - w - 16; y = parseFloat(cs.paddingTop); vertical = true; }
   else if (panel) { const p = panel.getBoundingClientRect(); x = p.left - box.left; y = p.bottom - box.top + 28; vertical = true; }
   else { x = Math.max(16, bandLeft - w - 16); y = a.top - box.top + a.height / 2 - h / 2; }

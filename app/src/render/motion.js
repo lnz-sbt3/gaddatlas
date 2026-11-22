@@ -1,7 +1,7 @@
 import backdrop from './map-backdrop.js';
 import {windowAt} from '../motion/direction-d.js';
 
-// Regia D: usa path, isoipse, colori e glifi del renderer esistente.
+// La regia dei passaggi usa path, isoipse, colori e glifi del renderer esistente.
 export function attachMotionRendering(f,{config,context,model,traceIsoline,passage}){
   const lab=f.transition,geo=model.N_GEO,local=model.N_INMAP;
   const geometry=geometryFor(config,context);

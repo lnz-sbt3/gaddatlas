@@ -427,10 +427,10 @@ const TERRACE_PRESETS = {
   tumuli: {footprint: 1.5, roundness: .8, walls: 'tinta', tintBase: .06, tintStep: .035, edges: 'cima'},
   curve: {footprint: 1.5, roundness: .45, walls: 'carta', edges: 'quote'}
 };
-// Laboratorio di sviluppo: sovrascritture locali dei parametri, mai nel build di produzione.
+// Sovrascritture locali dei parametri in sviluppo, mai nel build di produzione.
 if (import.meta.env?.DEV && typeof localStorage !== 'undefined') {
   try {
-    // Prima il parametro ?lab= dell'indirizzo (un riquadro per variante), poi la memoria locale del laboratorio.
+    // Prima il parametro ?lab= dell'indirizzo (un riquadro per variante), poi la memoria locale del browser.
     const lab = JSON.parse(new URLSearchParams(location.search).get('lab') || localStorage.getItem('gaddatlas:lab') || 'null');
     if (lab) for (const [path, value] of Object.entries(lab)) {
       const keys = path.split('.'), last = keys.pop(); let target = atlasConfig;
@@ -439,7 +439,7 @@ if (import.meta.env?.DEV && typeof localStorage !== 'undefined') {
     }
   } catch { /* sovrascritture illeggibili: si resta ai valori predefiniti */ }
 }
-// La tinta del ruolo sulle facce (roleFace) può essere scelta a parte dal laboratorio.
+// La tinta del ruolo sulle facce (roleFace) può essere scelta a parte in sviluppo.
 Object.assign(atlasConfig.TERRACE, TERRACE_PRESETS[atlasConfig.TERRACE.style], {style: atlasConfig.TERRACE.style}, atlasConfig.TERRACE.roleFaceOverride ? {roleFace: atlasConfig.TERRACE.roleFaceOverride} : {});
 Object.assign(atlasConfig, CHROMA_PRESETS[atlasConfig.CHROMA]);
 

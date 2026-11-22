@@ -53,7 +53,7 @@ body {
   font: 16px/1.6 var(--font-ui);
   --frame-x: 32px;   /* margine laterale della cornice */
   --frame-y: 24px;   /* margine verticale della cornice */
-  --view-bottom: 96px; /* il Foglio sta sopra l'indice dei luoghi */
+  --view-bottom: 96px; /* la ghiera sta sopra l'indice dei luoghi */
 }
 .boot { padding: 3rem; color: var(--muted); }
 :focus-visible { outline: 3px solid var(--ui-ink); outline-offset: 3px; }
@@ -192,8 +192,8 @@ body {
 .view-layer-toggle:disabled small { visibility: visible; }
 @media (prefers-reduced-motion: reduce) { .view-layer-toggle::before { transition: none; } }
 /* Banda della cornice: la figura lascia margini fissi e simmetrici; i comandi non poggiano mai su di essa.
-   In orizzontale il foglio vive nella banda destra, «Interrogare» nella sinistra; in verticale, o con il
-   pannello su schermo stretto, il foglio scende nella banda bassa. */
+   In orizzontale la ghiera vive nella banda destra, «Interrogare» nella sinistra; in verticale, o con il
+   pannello su schermo stretto, la ghiera scende nella banda bassa. */
 .atlas-figure { padding: var(--figure-top) var(--figure-right) var(--figure-bottom) var(--figure-left); }
 /* Segni di registro agli angoli della figura. */
 .frame-marks { position: absolute; z-index: 1 !important; pointer-events: none; }
@@ -247,7 +247,7 @@ body { --figure-top: 88px; --figure-bottom: 88px; --figure-left: 296px; --figure
 .frattura-title:focus { outline: none; }
 .frattura-text { margin: 0 0 20px; font: 400 17px/1.5 var(--font-ui); text-wrap: pretty; }
 .frattura-counter { margin: 16px 0 0; font: 400 13px/1.4 var(--font-ui); color: var(--muted); font-variant-numeric: tabular-nums; }
-/* Durante il percorso il contorno si riduce: restano il foglio, «Interrogare» e la didascalia. */
+/* Durante il percorso il contorno si riduce: restano la ghiera, «Interrogare» e la didascalia. */
 .atlas-figure.is-story .frame-index, .atlas-figure.is-story .legend-toggle, .atlas-figure.is-story .frattura-entry, .atlas-figure.is-story .view-layer-toggle { display: none; }
 body { --story-band: calc(var(--figure-left) - var(--frame-x) - 24px); }
 /* Numerali delle soglie: una riga sotto il marchio. */
@@ -302,7 +302,7 @@ body { --story-band: calc(var(--figure-left) - var(--frame-x) - 24px); }
 .frattura-bookmark h3 { margin: 0 0 12px; font: 500 26px/1.05 var(--font-display); letter-spacing: -.02em; }
 @media (min-width: 1101px) and (min-aspect-ratio: 1/1) { body { --story-title: clamp(40px, 3.7vw, 53px); --story-first: clamp(60px, 6vw, 88px); } }
 /* Senza banda sinistra la didascalia cede il posto al testo della soglia, che dice la stessa vista. */
-/* Schermo stretto: niente banda sinistra, i testi stanno nella banda destra sopra il foglio. */
+/* Schermo stretto: niente banda sinistra, i testi stanno nella banda destra sopra la ghiera. */
 @media (max-width: 1100px) and (min-aspect-ratio: 1/1) {
   body { --story-band: calc(var(--figure-right) - 2 * var(--frame-x)); --story-title: 36px; --story-first: 50px; --figure-top: 84px; }
   .frattura-band { bottom: calc(var(--frame-y) + 64px); }
@@ -314,7 +314,7 @@ body { --story-band: calc(var(--figure-left) - var(--frame-x) - 24px); }
   .frattura-marker { display: none; }
   .frattura-bookmark { left: auto; right: var(--frame-x); width: var(--story-band); }
 }
-/* Verticale: i testi scendono nella banda bassa, a sinistra del foglio; la colonna di margine diventa una fascia. */
+/* Verticale: i testi scendono nella banda bassa, a sinistra della ghiera; la colonna di margine diventa una fascia. */
 @media (max-aspect-ratio: 1/1) {
   body { --story-band: calc(100% - 2 * var(--frame-x) - 260px); --story-title: 36px; --story-first: 48px; }
   .atlas-layout:has(.frattura-story:not([hidden])) { --figure-top: 124px; }
@@ -386,7 +386,7 @@ body { --story-band: calc(var(--figure-left) - var(--frame-x) - 24px); }
 .legend-note[data-variant="registro"] section.is-current { border-top-color: var(--ui-ink); }
 .legend-note[data-variant="registro"] section:not(.is-current) .note-entry { color: var(--muted); }
 .frame-panel { max-height: calc(100% - var(--figure-top) - 24px); }
-/* Schermo stretto: le note stanno nella banda destra sopra il foglio; in verticale, nella banda bassa. */
+/* Schermo stretto: le note stanno nella banda destra sopra la ghiera; in verticale, nella banda bassa. */
 @media (max-width: 1100px) and (min-aspect-ratio: 1/1) {
   .legend-note[data-variant="margine"], .legend-note[data-variant="registro"] { left: auto; right: var(--frame-x); top: var(--figure-top); width: calc(var(--figure-right) - 2 * var(--frame-x)); max-height: calc(100% - var(--figure-top) - 300px); }
 }
@@ -412,7 +412,7 @@ body { --story-band: calc(var(--figure-left) - var(--frame-x) - 24px); }
   .frattura-story[data-variant="sipario"] .frattura-nav { top: calc(var(--frame-y) + 52px); bottom: auto; }
   .frattura-leave { top: calc(var(--frame-y) + 52px) !important; bottom: auto !important; left: calc(var(--frame-x) + 5 * 40px + 16px) !important; right: auto !important; }
 }
-/* Segnalibro su schermo stretto: nella banda destra sopra il foglio; in verticale nella banda bassa. */
+/* Segnalibro su schermo stretto: nella banda destra sopra la ghiera; in verticale nella banda bassa. */
 @media (max-width: 1100px) and (min-aspect-ratio: 1/1) {
   .frattura-bookmark { top: var(--figure-top) !important; left: auto !important; right: var(--frame-x); width: var(--story-band); }
 }

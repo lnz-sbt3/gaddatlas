@@ -91,7 +91,7 @@ const atlasShell = (() => {
       <section hidden><h3>${it.askHow}</h3>${rowRelief}${rowRotate}${rowOrder}</section>
     </div>`;
 
-    // Scorciatoie fra i cinque stadi: restano collegate ai gestori ma fuori dalla pagina, il foglio le sostituisce.
+    // Scorciatoie fra i cinque stadi: restano collegate ai gestori ma fuori dalla pagina, la ghiera le sostituisce.
     const shortcuts = html`<div hidden>${rowShortcuts}${rowProgress}</div>`;
     const wrap = html`<div class="atlas-wrap" style="position:relative">
       ${viewBox}

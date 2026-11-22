@@ -960,7 +960,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
   }
   // Dalle relazioni ingrandite alla geografia: la camera d'arrivo inquadra nella mappa i luoghi che il lettore
   // stava guardando nel diagramma, così che il passaggio li porti dentro la vista invece che fuori.
-  // Senza ingrandimento resta la camera corrente (comportamento della regia D).
+  // Senza ingrandimento resta la camera corrente, come nel passaggio ordinario.
   function framingCamera(from,end,fallback=null,gate=true){
     const C=atlasConfig.MOTION.framing;if(!C||(gate&&transform.k<diagramScaleBaseK*C.minZoomRatio))return null;
     const m=C.margin,inside=([x,y])=>x>=width*m&&x<=width*(1-m)&&y>=height*m&&y<=height*(1-m),seen=[];

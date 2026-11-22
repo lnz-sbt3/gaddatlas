@@ -29,7 +29,7 @@ test("tutti, bande aggregate e righe di altro personaggio, tessera o posizione n
   assert.equal(bandRow(data, shifted, "a", false, 0, 1), null);
 });
 
-test("i token sono quelli del prototipo Continuità, in px CSS", () => {
+test("i token sono quelli della determinazione Continuità, in px CSS", () => {
   const {width, dash} = atlasConfig.DETERMINATION;
   assert.equal(width, 1.05);
   assert.deepEqual(dash, {Precise: [], Relative: [6, 2], Approximate: [5, 2, 0.15, 2], Indeterminate: [0.15, 2.5]});

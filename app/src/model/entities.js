@@ -136,7 +136,7 @@ export default function atlasEntities(gadda_real) {
   const N_INMAP = geoData.length;
   const N_GEO = geoDataAll.length;
   const allData = [...geoDataAll, ...fictData];
-  // risolve refers_to_entity_ID (bussola) senza scandire allData ad ogni click
+  // risolve refers_to_entity_ID senza scandire allData a ogni clic
   const allDataById = new Map(allData.map((d, i) => [d.properties.GazetteerEntity_ID, i]));
 
   return { geoData, geoDataAll, allData, N_INMAP, N_GEO, allDataById };

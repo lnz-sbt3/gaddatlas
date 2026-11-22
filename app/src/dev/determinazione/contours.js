@@ -39,6 +39,6 @@ export function paintContour(ctx,points,kind,option){
    else{ctx.moveTo(...point(2,-1.5));ctx.lineTo(...point(2,1.5))}
    ctx.stroke();
   }
- }else throw Error('Proposta non ammessa');
+ }else throw Error('Variante non ammessa');
  ctx.restore();return sampled.length;
 }

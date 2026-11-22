@@ -2,7 +2,7 @@ import {html} from 'htl';
 import it from '../strings-it.js';
 
 // Frattura: percorso guidato facoltativo, scritto come una colonna da scorrere. Ogni soglia porta la figura in
-// uno stato citabile dello stesso motore del Foglio; una presa del lettore sulla figura sospende il percorso.
+// uno stato citabile dello stesso motore dei passaggi; una presa del lettore sulla figura sospende il percorso.
 // Tre varianti:
 // 'colonna' passi a pagina intera sopra la figura, titoli monumentali alternati, numerali nel margine;
 // 'margine' una colonna di lettura accanto alla figura, che resta esplorabile mentre si legge;
@@ -100,7 +100,7 @@ export default function createFrattura({container, layout, variant = 'colonna', 
  function scrub(){
   if (!active || suspended || syncing) return;
   const pos = Math.max(0, Math.min(n - 1, scroller.scrollTop / Math.max(1, stepHeight())));
-  // Regolo, banda, foglio e didascalia cambiano insieme, a metà strada fra due soglie.
+  // Regolo, banda, ghiera e didascalia cambiano insieme, a metà strada fra due soglie.
   const near = Math.round(pos); nav.style.setProperty('--progress', String(pos / (n - 1)));
   if (near !== shownMark) { shownMark = near; markCopy(near); onMark(steps[near]); }
   clearTimeout(settleTimer); settleTimer = setTimeout(settle, settleMs);

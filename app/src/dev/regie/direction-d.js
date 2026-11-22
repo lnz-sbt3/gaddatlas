@@ -1,4 +1,4 @@
-// Il pannello di sviluppo usa la stessa regia D del build; le regie A, B e C esistono solo in sviluppo.
+// Il pannello di sviluppo usa la stessa regia del build; le regie alternative esistono solo in sviluppo.
 import {prepareDirectionD,evaluateDirectionD,distributedProgress as progress,project} from '../../motion/direction-d.js';
 import config from '../../model/config.js';
 export {project};

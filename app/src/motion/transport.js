@@ -40,7 +40,7 @@ export function createAxisTransport(initial,token) {
    if(a.p===0&&a.rate<0||a.p===1&&a.rate>0){current={...(a.p===1?a.to:a.from)};active=null;return{...a,finished:true};}
    return a;
   },
-  // Foglio: il gesto tiene p con velocità nulla; il rilascio riprende il moto verso un
+  // Presa manuale: il gesto tiene p con velocità nulla; il rilascio riprende il moto verso un
   // estremo. Con una velocità massima (scorrimento guidato) p insegue il bersaglio senza
   // superarla, nei due versi: la corsa resta reversibile anche a metà passaggio.
   hold(p,now,maxRate=0){
