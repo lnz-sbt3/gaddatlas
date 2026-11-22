@@ -1006,7 +1006,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
       else if(a.crimpEased>.5&&b.crimpEased<=.5)adopt(b,a);
     }
     const context={start:a,end:b,model:evaluationModel,projection:atlasProjection,fit:fitScale,
-      readingKey:readingContextKey(),token:atlasConfig.MOTION,narrativePlacement:rankedRadialFullByChapter,gestureCamera:{...transform},axisFrom:axesKey(axisTransport.current),
+      readingKey:readingContextKey(),token:atlasConfig.MOTION,narrativePlacement:rankedRadialFullByChapter,gestureCamera:{...transform},axisFrom:axesKey(axisTransport.current),axisTo:axesKey(target),
       gains:gravRamp.map(v=>LAYOUT_MORPH_SLOW+(LAYOUT_MORPH_FAST-LAYOUT_MORPH_SLOW)*v),
       ranks:atlasProjection.distanceRank.map((v,i)=>v??atlasProjection.distanceRank[primaryHostOf[i]]??0),
       sguardoF:looked,view:{...viewRect},
@@ -1824,7 +1824,10 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
         ty = Laz[i][1];
       }
       // molla per-tessera: vicine al centro viewport = lente, lontane = rapide
-      const m = snapNextFrame ? 1 : (LAYOUT_MORPH_SLOW + (LAYOUT_MORPH_FAST - LAYOUT_MORPH_SLOW) * gravRamp[i]) * morphScale;
+      let m = snapNextFrame ? 1 : (LAYOUT_MORPH_SLOW + (LAYOUT_MORPH_FAST - LAYOUT_MORPH_SLOW) * gravRamp[i]) * morphScale;
+      // I luoghi narrativi non viaggiano mai in vista: da invisibili si
+      // ricollocano subito sul bersaglio, mentre svaniscono restano fermi.
+      if (i >= N_GEO) m = fictBirthEased[i] <= BIRTH_EPSILON ? 1 : (showFictitious ? m : 0);
       const prevX = layoutPtsEased[i][0], prevY = layoutPtsEased[i][1];
       advanceLayout(layoutPtsEased[i],[tx,ty],m);
       if(referenceLayout&&passageEndpoint){advanceLayout(referenceLayout[i],passageEndpoint.layoutPtsEased[i],m);layoutOffset[i][0]=layoutPtsEased[i][0]-referenceLayout[i][0];layoutOffset[i][1]=layoutPtsEased[i][1]-referenceLayout[i][1];}

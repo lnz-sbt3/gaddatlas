@@ -55,19 +55,24 @@ export function* prepareDirectionD(input){
  const paths=Array.from({length:N},()=>[]),lengths=Array.from({length:N},()=>[0]),scales=Array.from({length:N},()=>[]),global=[0];
  const sf=seed(c,0),ef=seed(c,1),offmap=[];
  for(let i=c.model.N_INMAP;i<c.model.N_GEO;i++)if(!c.model.cellRings[i])offmap.push(i);
- const stationary=new Set(offmap),viewChanged=c.start.crimpEased!==c.end.crimpEased;
+ // Gli elementi che esistono solo nelle relazioni (periferici senza sagoma e
+ // luoghi narrativi) non partecipano alla cordata: restano al proprio posto
+ // nel diagramma e non contribuiscono alla lunghezza d'arco collettiva.
+ const fermi=new Set(offmap);
+ for(let i=c.model.N_GEO;i<c.start.points.length;i++)fermi.add(i);
+ const viewChanged=c.start.crimpEased!==c.end.crimpEased;
  for(let k=0;k<=n;k++){
   const f=seed(c,k/n);let distance=0;
   for(let i=0;i<N;i++){
    let point=project(f,c,f.displayPts[i]);
-   if(stationary.has(i)&&viewChanged){const endpoint=c.end.crimpEased>.5?ef:sf;point=project(endpoint,c,endpoint.displayPts[i]);}
+   if(fermi.has(i)&&viewChanged){const endpoint=c.end.crimpEased>.5?ef:sf;point=project(endpoint,c,endpoint.displayPts[i]);}
    paths[i].push(point);scales[i].push(f.displayCellScale[i]);
-   if(k){const step=Math.hypot(...point.map((v,j)=>v-paths[i][k-1][j]));lengths[i].push(lengths[i][k-1]+step);if(!stationary.has(i))distance+=step;}
+   if(k){const step=Math.hypot(...point.map((v,j)=>v-paths[i][k-1][j]));lengths[i].push(lengths[i][k-1]+step);if(!fermi.has(i))distance+=step;}
   }
   if(k)global.push(global[k-1]+distance);
   yield k;
  }
- const context={...c,dPath:{paths,lengths,scales,global},offmap:stationary,stationary: lengths.map((v,i)=>v.at(-1)<1e-9&&Math.abs(scales[i][0]-scales[i].at(-1))<1e-9)};
+ const context={...c,dPath:{paths,lengths,scales,global},offmap:new Set(offmap),stationary: lengths.map((v,i)=>v.at(-1)<1e-9&&Math.abs(scales[i][0]-scales[i].at(-1))<1e-9)};
  // Finestra in p, ancorata all'attraversamento effettivo, estremi mai alterati.
  const startFull=c.start.lodEased>=.5,endFull=c.end.lodEased>=.5;
  if(startFull!==endFull){
@@ -126,16 +131,29 @@ export function evaluateDirectionD(c,p,live=c.start){
  const annotationAlpha=crossing?(a.crimpEased>.5?1-windowAt(p,t.geoOut):windowAt(p,t.geoIn)):(a.crimpEased>.5?1:0);
  const gridBlend=crossing?(a.crimpEased>.5?1-windowAt(p,t.geoIn):windowAt(p,t.border)):(a.crimpEased>.5?1:0);
  const diagSide=a.crimpEased>.5?a:b;
+ // Gli assi del trasporto dicono da quale stato con i narrativi mostrati si
+ // parte o a quale si arriva: il commutatore vivo cambia prima che il
+ // passaggio cominci, quindi non basta leggere gli estremi.
+ const naFrom=c.axisFrom?+c.axisFrom.split('/')[2]:+(a.showFictitious&&a.crimpEased>.5);
+ const naTo=c.axisTo?+c.axisTo.split('/')[2]:+(b.showFictitious&&b.crimpEased>.5);
+ // Il lato che colloca i luoghi narrativi: quello dove sono mostrati.
+ const fictSide=naFrom&&a.crimpEased>.5?a:naTo&&b.crimpEased>.5?b:diagSide;
  const presence=[],tileTilt=[],borderAlpha=[];
  for(let i=0;i<f.displayPts.length;i++){
   const fict=i>=c.model.N_GEO,off=c.offmap.has(i);
   const local=rankAt(s,c.ranks[i],t),x=c.stationary[i]?0:inverseLength(table.lengths[i],local),k=Math.min(t.tableSamples-1,Math.floor(x));
-  if(off&&crossing){
-   // Luoghi senza sagoma: nessuna traiettoria. Restano al proprio posto nel
-   // diagramma, solidali con la camera, e compaiono o svaniscono in
-   // dissolvenza con la finestra già usata dalle annotazioni.
-   f.displayPts[i]=diagSide.points[i].slice();
-   f.displayCellScale[i]=diagSide.scales[i];
+  if(fict||(off&&crossing)){
+   // Elementi che esistono solo nelle relazioni: nessuna traiettoria. Restano
+   // al proprio posto nel diagramma e vi compaiono o svaniscono in
+   // dissolvenza. Quando l'inquadratura d'arrivo muove la camera, il posto è
+   // ancorato allo schermo con la camera del lato delle relazioni: la breve
+   // dissolvenza non viene trascinata dalla panoramica.
+   const side=fict?fictSide:diagSide;
+   if(c.cameraAt&&crossing){
+    const camEdge=c.cameraAt(a.crimpEased>.5?0:1);
+    f.displayPts[i]=unproject(f,c,project({...f,transform:camEdge},c,side.points[i]));
+   }else f.displayPts[i]=side.points[i].slice();
+   f.displayCellScale[i]=side.scales[i];
   }else{
    if(!c.stationary[i]||off){
     // La tessera segue il proprio percorso campionato sullo schermo (che
@@ -144,16 +162,28 @@ export function evaluateDirectionD(c,p,live=c.start){
     // fra i due resta entro lo scaglionamento dei ranghi.
     f.displayPts[i]=unproject(f,c,[curve(table.paths[i],x,0),curve(table.paths[i],x,1)]);
    }
-   const delta=live.layoutOffset?.[i];if(delta){f.displayPts[i][0]+=delta[0]*f.cogScaleDyn*(fict?1:f.crimpEased);f.displayPts[i][1]+=delta[1]*f.cogScaleDyn*(fict?1:f.crimpEased);}
+   const delta=live.layoutOffset?.[i];if(delta){f.displayPts[i][0]+=delta[0]*f.cogScaleDyn*f.crimpEased;f.displayPts[i][1]+=delta[1]*f.cogScaleDyn*f.crimpEased;}
    f.displayCellScale[i]=lerp(table.scales[i][k],table.scales[i][k+1],x-k);
   }
-  const from=fict?+(a.showFictitious&&a.crimpEased>.5):off?+(a.crimpEased>.5):1;
-  const to=fict?+(b.showFictitious&&b.crimpEased>.5):off?+(b.crimpEased>.5):1;
-  let born=changedTilt&&to>from?windowAt(p,[end,1]):changedTilt&&to<from?windowAt(p,t.withdraw):rankAt(distributedProgress(p,t),c.ranks[i],t);
-  if(fict&&to>from)born=-Math.expm1(-t.narrativeLead*born)/-Math.expm1(-t.narrativeLead);
+  const from=fict?+(naFrom&&a.crimpEased>.5):off?+(a.crimpEased>.5):1;
+  const to=fict?+(naTo&&b.crimpEased>.5):off?+(b.crimpEased>.5):1;
   const placed=!fict||!!(c.narrativePlacement?c.narrativePlacement[live.chapter].placedFict.has(i):a.fictBirthEased[i]>0||b.fictBirthEased[i]>0);
-  presence[i]=off&&crossing?annotationAlpha:lerp(from,to,born)*(fict?(placed?(live.birthEased[i]||0):0):1);
-  f.fictBirthEased[i]=fict&&presence[i]>0?1:0;
+  if(fict){
+   // Dissolvenza pura sul posto, simmetrica nei due versi. Cambiando vista si
+   // usa la finestra già propria delle annotazioni del diagramma (si spegne
+   // all'inizio del ritorno, si accende alla fine dell'andata); accendendo o
+   // spegnendo il comando dei luoghi narrativi a diagramma aperto, l'intero
+   // passaggio è la dissolvenza.
+   const diagValue=a.crimpEased>.5?from:to;
+   const fade=crossing?annotationAlpha*diagValue:from===to?from:lerp(from,to,windowAt(p,[0,1]));
+   presence[i]=fade*(placed?(live.birthEased[i]||0):0);
+  }else if(off&&crossing){
+   presence[i]=annotationAlpha;
+  }else{
+   const born=changedTilt&&to>from?windowAt(p,[end,1]):changedTilt&&to<from?windowAt(p,t.withdraw):rankAt(distributedProgress(p,t),c.ranks[i],t);
+   presence[i]=lerp(from,to,born);
+  }
+  f.fictBirthEased[i]=fict?presence[i]:0;
   tileTilt[i]=changedTilt?lerp(a.tiltEased,b.tiltEased,height):a.tiltEased;
   borderAlpha[i]=lerp(a.crimpEased>.5?.42:c.model.config.GRID_ALPHA,b.crimpEased>.5?.42:c.model.config.GRID_ALPHA,local)*presence[i];
  }
