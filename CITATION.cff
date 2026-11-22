@@ -10,7 +10,7 @@ authors:
     given-names: Lorenzo
     affiliation: "Università di Bologna, FICLIT"
     orcid: "https://orcid.org/0009-0007-1496-722X"
-version: "1.3.0"
+version: "1.3.1"
 date-released: "2026-11-22"
 license:
   - CC-BY-4.0
