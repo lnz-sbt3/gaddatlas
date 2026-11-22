@@ -67,7 +67,21 @@
     axonPhases:[.15,.85], heightFloor:.1,
     // Dalle relazioni ingrandite alla geografia: inquadra i luoghi visti (quantili robusti, margine e riempimento
     // come frazioni del riquadro); vale da 1,15 volte lo zoom d'apertura del diagramma in su.
-    framing:{minZoomRatio:1.15, margin:.04, quantile:0, fill:.1, minPlaces:3}},
+    framing:{minZoomRatio:1.15, margin:.04, quantile:0, fill:.1, minPlaces:3},
+    // Frenata del trasporto all'arrivo: finestra in frazione dell'asse e velocità minima
+    // residua. La curva geometrica decelera solo verso il diagramma; la frenata copre il
+    // verso opposto e le richieste concluse in fretta.
+    arrivalBrake:0.12, arrivalBrakeFloor:0.12,
+    // Velocità massima del parametro quando lo scorrimento guidato tiene il passaggio,
+    // come multiplo della velocità nominale: lo scroll rapido resta leggibile e
+    // reversibile a metà corsa.
+    scrubRate:4,
+    // Camera dei passaggi fra relazioni e geografia: scala monotona fra partenza e
+    // arrivo, ancorata alle tessere con il centro in vista alla partenza (margine in
+    // px CSS); verso il diagramma l'arrivo lo mostra per intero (riempimento del
+    // riquadro sui contorni delle tessere), verso la geografia torna alla camera
+    // precedente della mappa oppure inquadra i luoghi guardati.
+    sguardo:{marginCSS:8, fill:.96}},
 
   // Tavolozza.
   BG_COLOR: "#F1E7D0",     // fondo pergamena

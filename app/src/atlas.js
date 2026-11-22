@@ -7,7 +7,7 @@ import observeCanvasLayout from "./ui/canvas-layout.js";
 import atlasRoleBands, {readRoleSnapshot, bandRow} from "./render/role-bands.js";
 import {evaluateFrame,contentAlphaOf} from "./motion/evaluate.js";
 import {advanceLayout} from "./motion/advance.js";
-import {prepareDirectionD,evaluateDirectionD,project as projectMotion} from "./motion/direction-d.js";
+import {prepareDirectionD,evaluateDirectionD,buildCameraTrack,project as projectMotion} from "./motion/direction-d.js";
 import {createAxisTransport,axesKey} from "./motion/transport.js";
 import {attachMotionRendering,createIsolineTracer} from "./render/motion.js";
 import atlasRouteSelection from "./interaction/route-selection.js";
@@ -278,6 +278,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
   const axisTransport=createAxisTransport({view:'map',axon:0,narrative:0},atlasConfig.MOTION);
   const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
   let pendingMotion=null,prepareTimer=null,lastAxesRequest='',lastPassage=null,lastReducedReading='',pendingDiagramCamera=false;
+  let diagramRestCamera=null; // camera del diagramma come consegnata dall'ultimo passaggio
   let axisFrame=null,referenceLayout=null,layoutOffset=null,axisGeneration=0;
   const prepareChannel=new MessageChannel();
   prepareChannel.port1.onmessage=()=>{const task=prepareTimer;prepareTimer=null;if(typeof task==='function')task();};
@@ -507,12 +508,12 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
         const toward = ends.find(e => stageOfAxes(e) === target);
         if (!toward) return false;
         const key = axesKey(toward), p = axisTransport.active ? progressToward(axisTransport.active, key) : (key === axesKey(ends[1]) ? 0 : 1);
-        sheet = {toKey: key, p0: p, p};
+        sheet = {toKey: key, p0: p, p, guided: true};
         return true;
       }
       if (target === stage) return false;
       applyStage(target);
-      sheet = {toKey: axesKey(desiredAxes()), p0: 0, p: 0};
+      sheet = {toKey: axesKey(desiredAxes()), p0: 0, p: 0, guided: true};
       return true;
     },
     seek(p) { if (sheet) sheet.p = Math.max(0, Math.min(1, p)); },
@@ -898,11 +899,13 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
   // Dalle relazioni ingrandite alla geografia: la camera d'arrivo inquadra nella mappa i luoghi che il lettore
   // stava guardando nel diagramma, così che il passaggio li porti dentro la vista invece che fuori.
   // Senza ingrandimento resta la camera corrente (comportamento della regia D).
-  function framingCamera(from,end){
-    const C=atlasConfig.MOTION.framing;if(!C||transform.k<diagramScaleBaseK*C.minZoomRatio)return null;
+  function framingCamera(from,end,fallback=null,gate=true){
+    const C=atlasConfig.MOTION.framing;if(!C||(gate&&transform.k<diagramScaleBaseK*C.minZoomRatio))return null;
     const m=C.margin,inside=([x,y])=>x>=width*m&&x<=width*(1-m)&&y>=height*m&&y<=height*(1-m),seen=[];
     for(let i=0;i<N_GEO;i++)if(cellRings[i]&&(birthEased[i]||0)>BIRTH_EPSILON&&inside(projectMotion(from,{projection:atlasProjection},from.displayPts[i])))seen.push(i);
-    if(seen.length<C.minPlaces)return null;
+    // Sotto la soglia dei luoghi inquadrabili l'inquadratura ricade sulle tessere
+    // guardate alla partenza, così il ritorno conserva lo sguardo anche a zoom alto.
+    if(seen.length<C.minPlaces){if(!fallback?.length)return null;seen.length=0;for(const i of fallback)seen.push(i);}
     const tilt=1-(1-TILT_REST)*end.tiltEased,rot=end.tiltEased>.01?planRot:0,cos=Math.cos(rot),sin=Math.sin(rot),[px,py]=end.rotPivot;
     const q=seen.map(i=>{const dx=end.points[i][0]-px,dy=end.points[i][1]-py;return[px+cos*dx-sin*dy-bbox[0],py+(sin*dx+cos*dy)*tilt-bbox[1]];});
     const range=axis=>{const v=q.map(p=>p[axis]).sort((a,b)=>a-b),at=f=>v[Math.round(f*(v.length-1))];return[at(C.quantile),at(1-C.quantile)];};
@@ -910,10 +913,54 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     const k=Math.max(ZOOM_MIN,Math.min(ZOOM_MAX,transform.k,width*pad/Math.max(1e-6,x1-x0),height*pad/Math.max(1e-6,y1-y0)));
     return{k,x:width/2-k*(x0+x1)/2,y:height/2-k*(y0+y1)/2};
   }
+  // Tessere geografiche vive con il centro in vista alla partenza (margine in px CSS).
+  // Se l'insieme è vuoto, la tessera più vicina al centro della vista.
+  function lookedTiles(from){
+    const m=(atlasConfig.MOTION.sguardo?.marginCSS??8)/fitScale,out=[];
+    const cx=(viewRect.x0+viewRect.x1)/2,cy=(viewRect.y0+viewRect.y1)/2;
+    let best=-1,bestD=Infinity;
+    for(let i=0;i<N_GEO;i++){
+      if(!cellRings[i]||(birthEased[i]||0)<=BIRTH_EPSILON)continue;
+      const [x,y]=projectMotion(from,{projection:atlasProjection},from.displayPts[i]);
+      if(x>=viewRect.x0-m&&x<=viewRect.x1+m&&y>=viewRect.y0-m&&y<=viewRect.y1+m)out.push(i);
+      const d=(x-cx)**2+(y-cy)**2;if(d<bestD){bestD=d;best=i;}
+    }
+    if(!out.length&&best>=0)out.push(best);
+    return out;
+  }
+  // Camera d'arrivo che mostra il diagramma per intero: inquadra i contorni
+  // delle tessere disposte dal diagramma (centro più raggio massimo della
+  // sagoma, scalato) con il riempimento scelto, così l'anello esterno non
+  // sporge dal riquadro.
+  let maxCellRadiusCache=null;
+  function maxCellRadius(i){
+    maxCellRadiusCache??=cellRings.map((cr,j)=>{
+      if(!cr?.ring||j>=pts.length)return 0;
+      let m=0;for(const v of cr.ring){const d=Math.hypot(v[0]-pts[j][0],v[1]-pts[j][1]);if(d>m)m=d;}
+      return m;
+    });
+    return maxCellRadiusCache[i]||0;
+  }
+  function frameWholeDiagram(end){
+    const fill=atlasConfig.MOTION.sguardo?.fill??.96;
+    const tilt=1-(1-TILT_REST)*end.tiltEased,rot=end.tiltEased>.01?planRot:0,cos=Math.cos(rot),sin=Math.sin(rot),[px,py]=end.rotPivot;
+    let x0=Infinity,y0=Infinity,x1=-Infinity,y1=-Infinity;
+    for(let i=0;i<allData.length;i++){
+      const geo=i<N_GEO;
+      if(geo&&(!cellRings[i]||(birthEased[i]||0)<=BIRTH_EPSILON))continue;
+      if(!geo&&!(end.fictBirthEased?.[i]>0))continue;
+      const dx=end.points[i][0]-px,dy=end.points[i][1]-py;
+      const qx=px+cos*dx-sin*dy-bbox[0],qy=py+(sin*dx+cos*dy)*tilt-bbox[1];
+      const r=geo?maxCellRadius(i)*(end.scales?.[i]??1):0;
+      if(qx-r<x0)x0=qx-r;if(qx+r>x1)x1=qx+r;if(qy-r*tilt<y0)y0=qy-r*tilt;if(qy+r*tilt>y1)y1=qy+r*tilt;
+    }
+    if(!(x1>x0&&y1>y0))return null;
+    const k=Math.min(ZOOM_MAX,fill*Math.min(width/(x1-x0),height/(y1-y0)));
+    return{k,x:width/2-k*(x0+x1)/2,y:height/2-k*(y0+y1)/2};
+  }
+  const sameTransform=(u,v)=>u&&v&&['x','y','k'].every(f=>Math.abs(u[f]-v[f])<1e-9);
   function readingContextKey(){return[chapter,focalizer,seqMode,seqPos,roleFilter.join(','),planRot,fitScale].join('|');}
   function beginAxisPassage(target,now){
-    const live=motionSnapshot(),from=evaluatedFrame||evaluateFrame(evaluationModel,live,fitScale);
-    const a={...from,points:from.displayPts.map(p=>p.slice()),scales:from.displayCellScale.slice(),transform:{...from.transform}};
     // Una trasformazione completata si riavvolge sul medesimo contesto solo
     // finché lettura, fit e camera non sono cambiati.
     if(lastPassage&&lastPassage.key===readingContextKey()&&axesKey(lastPassage.from)===axesKey(target)&&axesKey(lastPassage.to)===axesKey(axisTransport.current)&&
@@ -925,13 +972,46 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     lastPassage=null;
     if(pendingDiagramCamera&&axisTransport.current.view==='map'&&target.view==='diagram')prepareDiagramCamera();
     pendingDiagramCamera=false;
+    const live=motionSnapshot();
+    // Gli estremi nascono dallo stesso stato appena aggiornato, non dal
+    // fotogramma del tick precedente.
+    const from=evaluateFrame(evaluationModel,live,fitScale);
+    const a={...from,points:from.displayPts.map(p=>p.slice()),scales:from.displayCellScale.slice(),transform:{...from.transform}};
     let b=endpointFor(target,live);
-    const framed=target.view==='map'&&axisTransport.current.view==='diagram'?framingCamera(from,b):null;
-    if(framed)b=endpointFor(target,live,framed);
+    const crossToMap=target.view==='map'&&axisTransport.current.view==='diagram';
+    const crossToDiagram=target.view==='diagram'&&axisTransport.current.view==='map';
+    const looked=lookedTiles(from);
+    let arrivalCam=null;
+    if(crossToMap){
+      // Verso la geografia: la camera torna a quella che la mappa aveva prima,
+      // se nel diagramma non si è cambiato né zoom né posizione; altrimenti si
+      // inquadrano le posizioni geografiche dei luoghi guardati.
+      arrivalCam=sameTransform(transform,diagramRestCamera)&&mapTransformBeforeDiagram
+        ?{x:mapTransformBeforeDiagram.x,y:mapTransformBeforeDiagram.y,k:mapTransformBeforeDiagram.k}
+        :framingCamera(from,b,looked,false);
+    }else if(crossToDiagram){
+      // Verso le relazioni: l'arrivo mostra il diagramma per intero, quando
+      // alla camera corrente non lo è già.
+      const whole=frameWholeDiagram(b);
+      arrivalCam=whole&&whole.k<transform.k-1e-9?whole:null;
+    }
+    if(arrivalCam&&!sameTransform(arrivalCam,transform))b=endpointFor(target,live,arrivalCam);
+    // Estremi coerenti: il lato in pianta adotta centro, scala del diagramma e
+    // layout del lato che li mostra. A crimp zero quei parametri non entrano nel
+    // disegno, ma interpolarli piegherebbe ogni traiettoria.
+    {
+      const adopt=(dst,src)=>{dst.cogCenter=src.cogCenter.slice();dst.diagramScaleBaseK=src.diagramScaleBaseK;
+        dst.layoutPtsEased=dst.layoutPtsEased.map((p,i)=>i<N_GEO?src.layoutPtsEased[i].slice():p);};
+      if(a.crimpEased<=.5&&b.crimpEased>.5)adopt(a,b);
+      else if(a.crimpEased>.5&&b.crimpEased<=.5)adopt(b,a);
+    }
     const context={start:a,end:b,model:evaluationModel,projection:atlasProjection,fit:fitScale,
       readingKey:readingContextKey(),token:atlasConfig.MOTION,narrativePlacement:rankedRadialFullByChapter,gestureCamera:{...transform},axisFrom:axesKey(axisTransport.current),
       gains:gravRamp.map(v=>LAYOUT_MORPH_SLOW+(LAYOUT_MORPH_FAST-LAYOUT_MORPH_SLOW)*v),
-      ranks:atlasProjection.distanceRank.map((v,i)=>v??atlasProjection.distanceRank[primaryHostOf[i]]??0)};
+      ranks:atlasProjection.distanceRank.map((v,i)=>v??atlasProjection.distanceRank[primaryHostOf[i]]??0),
+      sguardoF:looked,view:{...viewRect},
+      aliveGeo:cellRings.map((cr,i)=>!!cr&&(birthEased[i]||0)>BIRTH_EPSILON)};
+    context.cameraAt=buildCameraTrack(context);
     const iterator=prepareDirectionD(context),generation=++axisGeneration;
     pendingMotion={context,target,iterator,generation,key:readingContextKey()};
     referenceLayout=a.layoutPtsEased.map(p=>p.slice());layoutPtsEased=referenceLayout.map(p=>p.slice());layoutOffset=referenceLayout.map(()=>[0,0]);
@@ -956,7 +1036,10 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     if(!axisTransport.active&&!pendingMotion&&key!==axesKey(axisTransport.current))beginAxisPassage(target,now);
   }
   function advanceAxisFrame(now){
-    if(sheet&&axisTransport.active)axisTransport.hold(axesKey(axisTransport.active.to)===sheet.toKey?sheet.p:1-sheet.p,now);
+    // Nello scorrimento guidato il parametro insegue la soglia con velocità
+    // limitata: lo scroll rapido resta leggibile e reversibile a metà corsa.
+    if(sheet&&axisTransport.active)axisTransport.hold(axesKey(axisTransport.active.to)===sheet.toKey?sheet.p:1-sheet.p,now,
+      sheet.guided?(atlasConfig.MOTION.scrubRate||0)/atlasConfig.MOTION.duration:0);
     const a=axisTransport.advance(now);axisFrame=a;
     if(!a)return;
     const c=a.context,live=motionSnapshot();live.layoutOffset=layoutOffset;
@@ -968,7 +1051,8 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
       fictBirthEased=allData.map((_,i)=>e.crimpEased===1&&e.showFictitious&&i>=N_GEO&&rankedRadialFullByChapter[chapter].placedFict.has(i)?(birthEased[i]||0):0);
       lodEased=e.lodEased;transform=d3.zoomIdentity.translate(f.transform.x,f.transform.y).scale(f.transform.k);
       rotPivotSyncing=true;try{d3.select(canvas).call(zoomBehavior.transform,gestureTransform(transform));}finally{rotPivotSyncing=false;}
-      pendingRestoreMapCamera=false;updateZoomLimits(e.crimpEased>.5?diagramScaleBaseK:1);
+      diagramRestCamera=e.crimpEased>.5?{x:transform.x,y:transform.y,k:transform.k}:null;
+      pendingRestoreMapCamera=false;updateZoomLimits(e.crimpEased>.5?Math.min(diagramScaleBaseK,e.transform.k):1);
       const sameGestureCamera=['x','y','k'].every(k=>Math.abs(live.transform[k]-(c.gestureCamera||c.start.transform)[k])<1e-9);
       lastPassage=sameGestureCamera?{context:c,from:a.p===1?a.from:a.to,to:a.p===1?a.to:a.from,key:c.readingKey,camera:{...transform}}:null;
       if(import.meta.env.DEV)motionStats.finishes.push({at:now,p:a.p,target:axisTransport.current});
@@ -2120,7 +2204,9 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
   if (import.meta.env.DEV) {
     wrap.isSettled = () => stableFrames >= 3 && !playing;
     wrap.motionError = () => motionError;
-    wrap.motionProduction={get active(){return axisTransport.active},get preparing(){return !!pendingMotion},
+    // «active» è la tessera attiva (definita più sotto); lo stato del
+    // trasporto si legge dal frame valutato (transition.p).
+    wrap.motionProduction={get preparing(){return !!pendingMotion},
       get frame(){return evaluatedFrame},get stats(){return motionStats},
       seek(p){const a=axisTransport.active;if(!a)throw Error('Passaggio non attivo');cancelAnimationFrame(raf);a.p=p;a.at=performance.now();draw();return evaluatedFrame},
       step(ms){const a=axisTransport.active;if(a)a.at-=ms;tick();cancelAnimationFrame(raf);return evaluatedFrame},

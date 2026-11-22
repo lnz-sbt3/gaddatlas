@@ -28,7 +28,9 @@ function seed(c,p,live=c.start){
  layoutPtsEased:a.layoutPtsEased.map((v,i)=>{const w=b.layoutPtsEased[i];if(v[0]===w[0]&&v[1]===w[1])return v.slice();const k=chase(p,c.gains[i],c.token.chaseSteps);return[lerp(v[0],w[0],k),lerp(v[1],w[1],k)];}),
  cogCenter:a.cogCenter.map((v,k)=>lerp(v,b.cogCenter[k],q)),rotPivot:a.rotPivot.map((v,k)=>lerp(v,b.rotPivot[k],q)),
  diagramScaleBaseK:lerp(a.diagramScaleBaseK,b.diagramScaleBaseK,q),
- transform:{x:lerp(a.transform.x,b.transform.x,q),y:lerp(a.transform.y,b.transform.y,q),k:lerp(a.transform.k,b.transform.k,q)},
+ // La camera del passaggio è una funzione pura di p quando il contesto porta
+ // una traccia di camera; altrimenti interpola fra gli estremi.
+ transform:c.cameraAt?c.cameraAt(p):{x:lerp(a.transform.x,b.transform.x,q),y:lerp(a.transform.y,b.transform.y,q),k:lerp(a.transform.k,b.transform.k,q)},
  lodEased:lerp(a.lodEased,b.lodEased,q)};
  const f=evaluateFrame(c.model,s,c.fit);
  if(p===0||p===1){const e=p===0?a:b;f.displayPts=e.points.map(v=>v.slice());f.displayCellScale=e.scales.slice();}
@@ -84,24 +86,73 @@ function movement(c,p){
  const t=c.token;if(axonToAxon(c)){const [c0,c1]=t.axonPhases;return clamp((p-c0)/(c1-c0));}
  return clamp(p/(c.start.tiltEased!==c.end.tiltEased?t.positionEnd:1));
 }
+// Camera dei passaggi fra relazioni e geografia: una funzione pura del
+// parametro del seme (il tempo d'arco del passaggio), valutabile nei due
+// versi, con estremi esatti sulle camere di partenza e d'arrivo. Rotazione e
+// inclinazione del piano restano costanti in questi passaggi, quindi la
+// proiezione senza camera è la stessa ai due estremi; nei passaggi fra i due
+// rilievi il parametro del seme resta fermo fuori dalla fase di spostamento,
+// perciò la scala varia soltanto con le terrazze richiuse. La traccia
+// condivide la legge di avanzamento delle tessere (la rincorsa della
+// piegatura): una camera con un'altra legge se ne scosterebbe e piegherebbe
+// i percorsi sullo schermo.
+export function buildCameraTrack(c){
+ const a=c.start,b=c.end,v=c.view;
+ if(!v||a.crimpEased===b.crimpEased||a.tiltEased!==b.tiltEased)return null;
+ const sameCam=Math.abs(a.transform.x-b.transform.x)<1e-9&&Math.abs(a.transform.y-b.transform.y)<1e-9&&Math.abs(a.transform.k-b.transform.k)<1e-9;
+ if(sameCam)return null;
+ const morph=c.model.config.CRIMP_MORPH,steps=c.token.chaseSteps;
+ const la=Math.log(a.transform.k),lb=Math.log(b.transform.k);
+ // Scala in interpolazione logaritmica fra partenza e arrivo, senza superare
+ // né l'una né l'altra; il punto del mondo al centro della vista interpola in
+ // linea retta. Una sola legge di avanzamento (la rincorsa della piegatura)
+ // per scala e centro: nessuna panoramica indipendente dallo sguardo, le
+ // tessere guardate restano fra le due inquadrature che le contengono.
+ const vcx=(v.x0+v.x1)/2,vcy=(v.y0+v.y1)/2;
+ const c0x=(vcx-a.transform.x)/a.transform.k,c0y=(vcy-a.transform.y)/a.transform.k;
+ const c1x=(vcx-b.transform.x)/b.transform.k,c1y=(vcy-b.transform.y)/b.transform.k;
+ return p=>{
+  const g=chase(clamp(p),morph,steps),k=Math.exp(la+(lb-la)*g);
+  return{k,x:vcx-k*(c0x+(c1x-c0x)*g),y:vcy-k*(c0y+(c1y-c0y)*g)};
+ };
+}
 export function evaluateDirectionD(c,p,live=c.start){
  if(!Number.isFinite(p)||p<0||p>1)throw RangeError('Parametro fuori intervallo');
  const a=c.start,b=c.end,t=c.token,changedTilt=a.tiltEased!==b.tiltEased,end=changedTilt?t.positionEnd:1;
  const s=distributedProgress(movement(c,p),t),table=c.dPath,q=inverseLength(table.global,s)/t.tableSamples;
  const f=seed(c,q,live),height=changedTilt?windowAt(p,[end,1]):0;
+ const sourcePlanar=a.tiltEased===0,targetPlanar=b.tiltEased===0,crossing=a.crimpEased!==b.crimpEased;
+ const geographicAlpha=crossing?(a.crimpEased>.5?windowAt(p,t.geoIn):1-windowAt(p,t.geoOut)):(a.crimpEased>.5?0:1);
+ const annotationAlpha=crossing?(a.crimpEased>.5?1-windowAt(p,t.geoOut):windowAt(p,t.geoIn)):(a.crimpEased>.5?1:0);
+ const gridBlend=crossing?(a.crimpEased>.5?1-windowAt(p,t.geoIn):windowAt(p,t.border)):(a.crimpEased>.5?1:0);
+ const diagSide=a.crimpEased>.5?a:b;
  const presence=[],tileTilt=[],borderAlpha=[];
  for(let i=0;i<f.displayPts.length;i++){
-  const local=rankAt(s,c.ranks[i],t),x=c.stationary[i]?0:inverseLength(table.lengths[i],local),k=Math.min(t.tableSamples-1,Math.floor(x));
-  if(!c.stationary[i]||c.offmap.has(i))f.displayPts[i]=unproject(f,c,[curve(table.paths[i],x,0),curve(table.paths[i],x,1)]);
-  const delta=live.layoutOffset?.[i];if(delta){f.displayPts[i][0]+=delta[0]*f.cogScaleDyn*(i>=c.model.N_GEO?1:f.crimpEased);f.displayPts[i][1]+=delta[1]*f.cogScaleDyn*(i>=c.model.N_GEO?1:f.crimpEased);}
-  f.displayCellScale[i]=lerp(table.scales[i][k],table.scales[i][k+1],x-k);
   const fict=i>=c.model.N_GEO,off=c.offmap.has(i);
+  const local=rankAt(s,c.ranks[i],t),x=c.stationary[i]?0:inverseLength(table.lengths[i],local),k=Math.min(t.tableSamples-1,Math.floor(x));
+  if(off&&crossing){
+   // Luoghi senza sagoma: nessuna traiettoria. Restano al proprio posto nel
+   // diagramma, solidali con la camera, e compaiono o svaniscono in
+   // dissolvenza con la finestra già usata dalle annotazioni.
+   f.displayPts[i]=diagSide.points[i].slice();
+   f.displayCellScale[i]=diagSide.scales[i];
+  }else{
+   if(!c.stationary[i]||off){
+    // La tessera segue il proprio percorso campionato sullo schermo (che
+    // incorpora la traccia di camera): il tragitto resta monotono anche con
+    // la camera in moto. Il fondale usa la camera del fotogramma: lo scarto
+    // fra i due resta entro lo scaglionamento dei ranghi.
+    f.displayPts[i]=unproject(f,c,[curve(table.paths[i],x,0),curve(table.paths[i],x,1)]);
+   }
+   const delta=live.layoutOffset?.[i];if(delta){f.displayPts[i][0]+=delta[0]*f.cogScaleDyn*(fict?1:f.crimpEased);f.displayPts[i][1]+=delta[1]*f.cogScaleDyn*(fict?1:f.crimpEased);}
+   f.displayCellScale[i]=lerp(table.scales[i][k],table.scales[i][k+1],x-k);
+  }
   const from=fict?+(a.showFictitious&&a.crimpEased>.5):off?+(a.crimpEased>.5):1;
   const to=fict?+(b.showFictitious&&b.crimpEased>.5):off?+(b.crimpEased>.5):1;
   let born=changedTilt&&to>from?windowAt(p,[end,1]):changedTilt&&to<from?windowAt(p,t.withdraw):rankAt(distributedProgress(p,t),c.ranks[i],t);
   if(fict&&to>from)born=-Math.expm1(-t.narrativeLead*born)/-Math.expm1(-t.narrativeLead);
   const placed=!fict||!!(c.narrativePlacement?c.narrativePlacement[live.chapter].placedFict.has(i):a.fictBirthEased[i]>0||b.fictBirthEased[i]>0);
-  presence[i]=lerp(from,to,born)*(fict?(placed?(live.birthEased[i]||0):0):1);
+  presence[i]=off&&crossing?annotationAlpha:lerp(from,to,born)*(fict?(placed?(live.birthEased[i]||0):0):1);
   f.fictBirthEased[i]=fict&&presence[i]>0?1:0;
   tileTilt[i]=changedTilt?lerp(a.tiltEased,b.tiltEased,height):a.tiltEased;
   borderAlpha[i]=lerp(a.crimpEased>.5?.42:c.model.config.GRID_ALPHA,b.crimpEased>.5?.42:c.model.config.GRID_ALPHA,local)*presence[i];
@@ -109,10 +160,6 @@ export function evaluateDirectionD(c,p,live=c.start){
  if(p===0||p===1){const e=p===0?a:b;f.displayPts=e.points.map(v=>v.slice());f.displayCellScale=e.scales.slice();}
  const planeTilt=f.tiltEased;f.tiltEased=Math.max(f.tiltEased,...tileTilt);f.zScaleDraw=f.zScaleNow*tileTilt[0];
  if(axonToAxon(c)){const [c0,c1]=t.axonPhases,floor=t.heightFloor??.1,h=p<=c0?1-windowAt(p,[0,c0])*(1-floor):p>=c1?floor+windowAt(p,[c1,1])*(1-floor):floor;f.zScaleDraw*=h;f.heightPhase=h;}
- const sourcePlanar=a.tiltEased===0,targetPlanar=b.tiltEased===0;
- const geographicAlpha=a.crimpEased===b.crimpEased?(a.crimpEased>.5?0:1):a.crimpEased>.5?windowAt(p,t.geoIn):1-windowAt(p,t.geoOut);
- const annotationAlpha=a.crimpEased===b.crimpEased?(a.crimpEased>.5?1:0):a.crimpEased>.5?1-windowAt(p,t.geoOut):windowAt(p,t.geoIn);
- const gridBlend=a.crimpEased===b.crimpEased?(a.crimpEased>.5?1:0):a.crimpEased>.5?1-windowAt(p,t.geoIn):windowAt(p,t.border);
  f.transition={p,planeTilt,presence,tileTilt,borderAlpha,geographicAlpha,annotationAlpha,gridBlend,
  endpointPaint:{enabled:!(sourcePlanar&&targetPlanar),planar:sourcePlanar?1-windowAt(p,t.pigmentOut):targetPlanar?windowAt(p,t.pigmentIn):0}};
  if(c.lodBlend){const w=c.lodBlend;f.transition.lodMix=lerp(w.start,w.end,windowAt(p,[w.from,w.to]));}
