@@ -1317,10 +1317,60 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     const fondoMode = atlasConfig.PAPER.mode, mapOn = !!historical && historical.opacity > 0 && !historical.failed;
     fondoCredit.textContent = !mapOn && crimpEased < .5 ? fondo.credit(fondoMode) : ""; fondoCredit.hidden = !fondoCredit.textContent;
     updateScaleBar(true, crimpEased, tiltEased);
-    // Carta storica: con il ritaglio per tessera si disegna dopo le terrazze (qui sotto); altrimenti sotto la figura.
-    if(historical&&!atlasConfig.HISTORICAL.perTile)historical.draw(context,evaluated,evaluated.historical||historical.snapshot(),fitScale);
+    // Cursore fra carta e resa geometrica: presenza della carta in questo fotogramma, uguale in tutte
+    // le viste. Il principio del progetto: il diagramma rompe la mappa e ogni tessera porta con sé la
+    // propria impronta di carta, ritagliata sulla sagoma, lungo la stessa traiettoria e alla stessa scala.
+    const paperLever = mapOn ? historical.opacity : 0;
+    // Carta storica: strato del suolo, sotto confini, isoipse e terrazze; in rilievo risale poi sulla
+    // pedata sommitale. Nella geografia a riposo è uno strato unico; appena il ritaglio della mappa si
+    // apre (crimp) diventa l'insieme delle impronte per tessera, che viaggiano con le tessere.
+    // La fusione sopra l'intera figura ('drappo') resta come riserva, più sotto.
+    const drappoRiserva = atlasConfig.HISTORICAL.rilievo === 'drappo';
+    const paperTileOf = [];
+    if (historical && !drappoRiserva) {
+      const paperTiles = [];
+      for (let i = 0; i < N_GEO; i++) {
+        const cr = cellRings[i]; if (!cr) continue;
+        const born = (birthEased[i] || 0) > BIRTH_EPSILON, alpha = born ? 1 : 1 - crimpEased; if (alpha <= 0.002) continue;
+        const s = displayCellScale[i] * (1 + (cognitiveBirthScale[i] - 1) * crimpEased);
+        const tile = {ring: cr.ring, g: [cr.gx, cr.gy], at: displayPts[i], s, alpha};
+        paperTiles.push(tile); paperTileOf[i] = tile;
+      }
+      historical.draw(context, evaluated, evaluated.historical || historical.snapshot(), fitScale, paperTiles);
+    }
     const paper=historical?.reserve();
     frame.historicalReserve=paper&&{...paper,width:atlasConfig.HISTORICAL.reserveCSS*invK/fitScale};
+    // Proiezione della carta sulla pedata sommitale: il pittore consegna il ritaglio della faccia, il suo
+    // riquadro e lo scostamento dell'estrusione; qui lo strato del suolo viene traslato di quello
+    // scostamento, così ogni pedata porta il frammento geografico del proprio luogo. Nessun bitmap nuovo:
+    // si riusa lo strato già composto in questo fotogramma.
+    if (historical?.projectTread && !drappoRiserva && paperLever > 0 && axonRendering) {
+      frame.treadPaper = (i, capPath, box, off, faceAlpha = 1) => {
+        if (i >= N_INMAP || !cellRings[i]) return;
+        const m = context.getTransform();
+        const dx = m.a * off[0] + m.c * off[1], dy = m.b * off[0] + m.d * off[1];
+        let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+        for (const [cx, cy] of [[box[0], box[1]], [box[2], box[1]], [box[0], box[3]], [box[2], box[3]]]) {
+          const px = m.a * cx + m.c * cy + m.e, py = m.b * cx + m.d * cy + m.f;
+          if (px < x0) x0 = px; if (px > x1) x1 = px; if (py < y0) y0 = py; if (py > y1) y1 = py;
+        }
+        context.save();
+        context.clip(capPath);
+        // La copia dallo strato vale finché il suolo della faccia è in larga parte dentro
+        // il canvas; a zoom alto l'estrusione lo porta fuori, e il frammento si ridisegna
+        // dalle sorgenti, traslato sulla faccia (solo la tessera interessata nelle impronte).
+        const sx0 = Math.max(0, x0 - dx), sy0 = Math.max(0, y0 - dy);
+        const sx1 = Math.min(context.canvas.width, x1 - dx), sy1 = Math.min(context.canvas.height, y1 - dy);
+        const copertura = Math.max(0, sx1 - sx0) * Math.max(0, sy1 - sy0) / Math.max(1, (x1 - x0) * (y1 - y0));
+        if (copertura > 0.95 || !historical.drawTread) {
+          historical.projectTread(context, [x0 - 2, y0 - 2, x1 + 2, y1 + 2], dx, dy, faceAlpha);
+        } else {
+          const tiles = crimpEased > 0.001 && paperTileOf[i] ? [paperTileOf[i]] : null;
+          historical.drawTread(context, evaluated, evaluated.historical || historical.snapshot(), fitScale, off, faceAlpha, tiles);
+        }
+        context.restore();
+      };
+    }
     // Orientamento (acque, mura, costa): sotto i bordi delle celle e le terrazze, ritagliato al riquadro della
     // tassellazione, così sfuma al bordo insieme alla figura.
     if (!mapOn && fondoMode === "orientamento" && crimpEased < .99) {
@@ -1333,7 +1383,13 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
       RING_GUIDE_WIDTH, BORDER_WIDTH, segments, nearDrop, deform, cellRings,
       N_INMAP, N_GEO, fictBirthEased, birthEased, BIRTH_EPSILON, isBorn,
       contentAlpha, cellPoint, displayPts, cognitiveTileRadius, displayCellScale,
-      offmapPresence, cellOutline, ringLevel: atlasConfig.RINGS.levels[atlasConfig.RINGS.level], cssUnit: invK / fitScale
+      offmapPresence, cellOutline, ringLevel: atlasConfig.RINGS.levels[atlasConfig.RINGS.level], cssUnit: invK / fitScale,
+      // Confini come selettori al polo carta: attenuazione del filo e riserva di carta sotto il tratto.
+      paper: paperLever > 0 ? {
+        lever: paperLever, floor: atlasConfig.LEVA.borderFloor,
+        reserveAlpha: atlasConfig.LEVA.reserve * Math.min(1, (frame.historicalReserve?.alpha ?? 0) * 2),
+        reserveWidthCSS: atlasConfig.LEVA.reserveWidthCSS, bg: BG_COLOR
+      } : null
     });
     ringLabelsFrame = backdrop.ringLabels;
     const metricTicks = backdrop.metricTicks;
@@ -1345,9 +1401,12 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     let fillPaths     = Array.from({length: BANDS_MAX + 1}, () => new Path2D());
     let fillPathsFict = Array.from({length: BANDS_MAX + 1}, () => new Path2D());
 
+    // Al polo carta la figura arretra: le campiture si ritirano (la densità resta affidata al numero
+    // di curve) e le curve si fanno più lievi. Al polo tessere tutto torna al valore ordinario.
+    const isoStrokeScale = 1 - atlasConfig.LEVA.strokeFade * paperLever;
     function isoFillAlpha(k) {
       const t = (k - 1) / (BANDS_MAX - 1);
-      return ISO_FILL_A0 + (ISO_FILL_A1 - ISO_FILL_A0) * Math.pow(t, ISO_FILL_GAMMA);
+      return (ISO_FILL_A0 + (ISO_FILL_A1 - ISO_FILL_A0) * Math.pow(t, ISO_FILL_GAMMA)) * (1 - atlasConfig.LEVA.fillFade * paperLever);
     }
 
     function flushIsoFill() {
@@ -1497,11 +1556,11 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
       if (focalizer == null && profileTiles > 0 && profileTiles % 20 === 0) {
         flushIsoFill();
         context.lineWidth = ISO_WIDTH * invK;
-        context.strokeStyle = `rgba(${HUE_RGB},${ISO_ALPHA})`;
+        context.strokeStyle = `rgba(${HUE_RGB},${ISO_ALPHA * isoStrokeScale})`;
         context.stroke(reliefFull);
         if (PROFILE) profileStrokes++;
         reliefFull = new Path2D();
-        context.strokeStyle = `rgba(${FICT_HUE_RGB},${FICT_RELIEF_ALPHA})`;
+        context.strokeStyle = `rgba(${FICT_HUE_RGB},${FICT_RELIEF_ALPHA * isoStrokeScale})`;
         context.stroke(reliefFictFull);
         if (PROFILE) profileStrokes++;
         reliefFictFull = new Path2D();
@@ -1574,7 +1633,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
           }
         }
         context.lineWidth=ISO_WIDTH*invK;
-        context.strokeStyle = `rgba(${isFict ? FICT_HUE_RGB : HUE_RGB},${(isFict ? FICT_RELIEF_ALPHA : ISO_ALPHA) * focal})`;
+        context.strokeStyle = `rgba(${isFict ? FICT_HUE_RGB : HUE_RGB},${(isFict ? FICT_RELIEF_ALPHA : ISO_ALPHA) * isoStrokeScale * focal})`;
         context.stroke(tileTarget);
         if (roleMode && cr && cr.ring && cr.ring.length >= 3 && routeHotSet.has(i)) {
           context.save();
@@ -1613,10 +1672,10 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     if (focalizer == null) {
       flushIsoFill();
       context.lineWidth=ISO_WIDTH*invK;
-      context.strokeStyle = `rgba(${HUE_RGB},${ISO_ALPHA})`;
+      context.strokeStyle = `rgba(${HUE_RGB},${ISO_ALPHA * isoStrokeScale})`;
       context.stroke(reliefFull);
       if (PROFILE) profileStrokes++;
-      context.strokeStyle = `rgba(${FICT_HUE_RGB},${FICT_RELIEF_ALPHA})`;
+      context.strokeStyle = `rgba(${FICT_HUE_RGB},${FICT_RELIEF_ALPHA * isoStrokeScale})`;
       context.stroke(reliefFictFull);
       if (PROFILE) profileStrokes++;
     }
@@ -1627,8 +1686,8 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     if (PROFILE) profileReliefMs = performance.now() - profileReliefT0;
 
     // contorno di Roma: geografico, quindi sfuma nello stato cognitivo
-    if (historical && atlasConfig.HISTORICAL.perTile) {
-      // Ogni tessera reale porta il ritaglio della carta: posizione e scala con cui la tessera è disegnata ora.
+    if (historical && drappoRiserva) {
+      // Riserva 'drappo': la carta fusa sopra l'intera figura, ritagliata per tessera.
       const tiles = [];
       for (let i = 0; i < N_GEO; i++) {
         const cr = cellRings[i]; if (!cr) continue;
@@ -1754,6 +1813,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     return {finish(environment){
     const overlayProfile = atlasOverlays.draw({
       context, PROFILE, profileRulerMs, profileT0, profileFrame, cssUnit: invK / fitScale,
+      paperLever,
       crimpEased, transform, K2, chapter, pulse:environment.pulse, N_INMAP, N_GEO,
       geoData, allData, pts, displayPts, birthEased, fictBirthEased,
       BIRTH_EPSILON, HUE_RGB, GRID_COLOR, INK_COLOR, BG_COLOR,

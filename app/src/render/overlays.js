@@ -22,7 +22,7 @@ import atlasProfileLog from "../dev/profile-log.js";
     profileTiles, profileCurves, profileFills, profileStrokes,
     profileDisplayMs, profileDrawOrderMs, profileReliefMs, profileBordersMs,
     profileTickMs, profileHitMs, seqOccCallsPerSecond,
-    formatMetricIsoline, cssUnit = invK
+    formatMetricIsoline, cssUnit = invK, paperLever = 0
   }) {
     // Le annotazioni della figura hanno corpo costante in px CSS (cssUnit), qualunque sia il riquadro o lo zoom.
     const {rulerCSS, poleCSS, family} = atlasConfig.ANNOTATION;
@@ -176,7 +176,20 @@ import atlasProfileLog from "../dev/profile-log.js";
         const point = matrix.transformPoint(new DOMPoint(...displayPts[i]));
         const x = point.x/density, y = point.y/density;
         const dot = new Path2D(); dot.arc(x*density,y*density,r*density,0,2*Math.PI);
-        const path = new Path2D(); path.addPath(dot,inverse);dots.push({alpha,path});
+        const path = new Path2D(); path.addPath(dot,inverse);
+        // Riserva di carta sotto il marcatore: sugli inchiostri della carta il punto resta leggibile
+        // senza aggiungere inchiostro alla figura.
+        let halo = null;
+        if (paperLever > 0.01) {
+          const h = new Path2D(); h.arc(x*density,y*density,r*density*2,0,2*Math.PI);
+          halo = new Path2D(); halo.addPath(h,inverse);
+        }
+        dots.push({alpha,path,halo});
+      }
+      for (const {alpha,halo} of dots) {
+        if (!halo) continue;
+        context.fillStyle = `rgba(${BG_COLOR.slice(1).match(/../g).map(v=>parseInt(v,16)).join(',')},${(0.9*Math.min(1,paperLever*1.2)*alpha).toFixed(3)})`;
+        context.fill(halo);
       }
       for (const {alpha,path} of dots) {
         context.fillStyle = alpha >= 0.999 ? `rgb(${HUE_RGB})` : `rgba(${HUE_RGB},${alpha})`;

@@ -55,8 +55,10 @@ async function boot() {
     const codec = createUrlStateCodec(model, atlasConfig);
     let restoring = true;
     let previous = codec.parse(location.hash);
-    // Il passo del percorso entra nell'indirizzo solo mentre il percorso guida la figura.
-    const read = () => codec.normalize({...atlas.getUrlState(), ...textPanel.getSelection(), tour: guidedPath?.step ?? null});
+    // Il passo del percorso entra nell'indirizzo solo mentre il percorso guida la figura; il cursore
+    // della carta entra come «carta», in centesimi, con il valore predefinito omesso.
+    const read = () => codec.normalize({...atlas.getUrlState(), ...textPanel.getSelection(), tour: guidedPath?.step ?? null,
+      carta: historical ? Math.round((historical.opacity ?? 0) * 100) : undefined});
     function locationState() {
       const state = codec.parse(location.hash);
       const saved = history.state?.gaddatlas;
@@ -97,6 +99,8 @@ async function boot() {
     function restore(immediate) {
       restoring = true;
       const state = locationState();
+      if (historical && Math.round((historical.opacity ?? 0) * 100) !== state.carta) historical.setOpacity(state.carta / 100);
+      historicalUi?.sync?.();
       atlas.applyUrlState(state, {immediate});
       const tile = state.place == null ? null : model.atlasEntities.allDataById.get(state.place);
       if (tile == null) textPanel.close();
@@ -143,7 +147,7 @@ async function boot() {
         onMark(step) { notes?.focus?.(step.id === "narrativi" ? "narrative" : "view"); const s = codec.normalize({...read(), ...step.state}); legend?.update(s); notes?.update(s); }});
     frame = createFrame({container: canvas.parentElement, controls: atlas.querySelector(".atlas-controls"), orient: guidedPath.entry, index: placeIndex.trigger, canvas});
     historicalUi = createHistoricalUi({historical, variant: atlasConfig.HISTORICAL_UI.variant, lensCSS: atlasConfig.HISTORICAL_UI.lensCSS, container: canvas.parentElement,
-      panel: frame.panel, orient: canvas.parentElement.querySelector(".frame-orient"), canvas});
+      panel: frame.panel, orient: canvas.parentElement.querySelector(".frame-orient"), canvas, onCommit: () => publish("carta")});
     const legendVariant = atlasConfig.LEGEND.variant;
     legend = createLegend({container: canvas.parentElement, reliefBands: gaddaReal.meta.reliefBands, agents: gaddaReal.paths.agents, glyphPaths: atlasConfig.FICT_GLYPH_PATHS, variant: legendVariant});
     if (legendVariant !== "unica") notes = createContextLegend({container: canvas.parentElement, toggle: legend.toggle, variant: legendVariant, reliefBands: gaddaReal.meta.reliefBands,

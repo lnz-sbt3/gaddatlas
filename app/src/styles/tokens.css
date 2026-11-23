@@ -612,9 +612,12 @@ body { --fit-top: 56px; --fit-bottom: 40px; --fit-left: 232px; --fit-right: 232p
 .text-panel header .text-anchor { border: 0; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
 /* Carta storica: cursore della visibilità dentro il comando, visibile solo a carta accesa. */
 .historical-control { display: grid; justify-items: stretch; background: var(--surface); border: 1px solid var(--line); }
-.historical-control .historical-toggle { border: 0; }
-.historical-control .historical-slider { margin: 0 12px 4px 36px; min-height: var(--touch-target); }
-.historical-control .historical-slider[hidden] { display: none; }
+.historical-control[hidden] { display: none; }
+.historical-control .historical-title { margin: 6px 14px 0; font: 14px/1.2 var(--font-ui); color: var(--ui-ink); }
+.historical-control .historical-title small { display: block; font-size: 12px; color: var(--muted); }
+.historical-control .historical-slider { margin: 0 12px; min-height: var(--touch-target); }
+/* Estremità del cursore: la resa geometrica a sinistra, la carta del 1925 a destra. */
+.historical-control .historical-poles { display: flex; justify-content: space-between; margin: 0 12px 6px; font: 10.5px/1.2 var(--font-ui); color: var(--muted); letter-spacing: .02em; }
 .historical-control[data-variant="cornice"] { display: inline-grid; }
 /* Barra di scala della geografia in pianta e credito del fondo attuale. */
 .scale-bar { position: absolute; left: 50%; bottom: calc(var(--frame-y) + 6px); z-index: 3; display: grid; justify-items: start; gap: 2px; transform: translateX(-50%); pointer-events: none; background: var(--veil); box-shadow: 0 0 12px 10px var(--veil); }

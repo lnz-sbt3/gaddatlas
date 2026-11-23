@@ -24,7 +24,7 @@ const atlasMapBackdrop = (() => {
     RING_GUIDE_WIDTH, BORDER_WIDTH, segments, nearDrop, deform, cellRings,
     N_INMAP, N_GEO, fictBirthEased, birthEased, BIRTH_EPSILON, isBorn,
     contentAlpha, cellPoint, displayPts, cognitiveTileRadius, displayCellScale, offmapPresence, cellOutline = () => 1, cellWidth = () => 1,
-    ringLevel = null, cssUnit = null
+    ringLevel = null, cssUnit = null, paper = null
   }) {
     let ringLabels = null;
     let metricTicks = [];
@@ -58,15 +58,29 @@ const atlasMapBackdrop = (() => {
         const p0 = near ? deform(poly[0][0],poly[0][1]) : poly[0]; context.moveTo(p0[0],p0[1]);
         for (let i=1;i<poly.length;i++){ const p = near ? deform(poly[i][0],poly[i][1]) : poly[i]; context.lineTo(p[0],p[1]); }
       }
-      context.lineWidth=BORDER_WIDTH*invK;
-      context.strokeStyle=`rgba(${GRID_COLOR},${GRID_ALPHA})`;
       context.lineJoin="round";
       context.lineCap="round";
+      // Riserva di carta sotto i confini: con la carta visibile il tratto incide il suolo del 1925
+      // invece di aggiungere inchiostro; sulla pergamena nuda il sottotratto è invisibile.
+      if (paper && paper.reserveAlpha > 0.003) {
+        const bg = typeof paper.bg === 'string' && paper.bg.startsWith('#')
+          ? `${parseInt(paper.bg.slice(1, 3), 16)},${parseInt(paper.bg.slice(3, 5), 16)},${parseInt(paper.bg.slice(5, 7), 16)}`
+          : paper.bg;
+        context.lineWidth = (BORDER_WIDTH + paper.reserveWidthCSS) * invK;
+        context.strokeStyle = `rgba(${bg},${paper.reserveAlpha})`;
+        context.stroke();
+      }
+      // Al polo carta i confini restano come selettori: dal valore ordinario a un filo minimo.
+      const borderAlpha = paper ? GRID_ALPHA * (1 - paper.lever) + paper.floor * paper.lever : GRID_ALPHA;
+      context.lineWidth=BORDER_WIDTH*invK;
+      context.strokeStyle=`rgba(${GRID_COLOR},${borderAlpha})`;
       context.stroke();
     } else {
       context.lineWidth=BORDER_WIDTH*invK;
       context.lineJoin="round";
       context.lineCap="round";
+      // Anche nelle relazioni il cursore della carta fa arretrare i contorni: le impronte restano leggibili.
+      const paperScale = paper ? (1 - paper.lever) + paper.lever * Math.min(1, paper.floor / GRID_ALPHA) : 1;
       for (let i=0;i<cellRings.length;i++){
         const cr = cellRings[i];
         if (!cr || !cr.ring || cr.ring.length < 3) continue;
@@ -74,7 +88,7 @@ const atlasMapBackdrop = (() => {
         if (!isBorn(i, chapter) && birthEased[i] <= BIRTH_EPSILON) continue;
         const entering = birthEased[i] < 0.999;
         const visible = i >= N_GEO ? fictBirthEased[i] : (entering ? birthEased[i] : 1);
-        const cellAlpha = 0.42 * contentAlpha(i, {presence: visible, crimp: true}) * cellOutline(i);
+        const cellAlpha = 0.42 * paperScale * contentAlpha(i, {presence: visible, crimp: true}) * cellOutline(i);
         if (cellAlpha <= 0.001) continue;
         context.beginPath();
         const p0 = cellPoint(i, cr.ring[0][0], cr.ring[0][1], true);

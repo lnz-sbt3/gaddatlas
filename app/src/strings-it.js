@@ -1,8 +1,9 @@
 // Unica fonte delle etichette applicative; nomi e identificatori dei dati restano nei dati.
 const it={
  language:'it',
- historicalSection:'Carta storica',historicalSlider:'Carta storica: visibilità',
- historicalToggle:'Carta 1925',historicalToggleHint:'Guida Rossa TCI, sotto la figura',historicalLensHint:'una lente segue il puntatore',historicalQuestion:'Su quale carta?',historicalTreatmentLabel:'Trattamento della carta',historicalOpacity:'Visibilità',
+ historicalSection:'Carta storica',historicalSlider:'Fra la resa geometrica e la carta del 1925',
+ historicalToggle:'Carta 1925',historicalToggleHint:'Guida Rossa TCI, sotto la figura',historicalLensHint:'una lente segue il puntatore',historicalQuestion:'Fra tessere e carta?',historicalTreatmentLabel:'Trattamento della carta',historicalOpacity:'Visibilità',
+ historicalPoleTiles:'Tessere e tracce',historicalPoleMap:'Carta 1925',
  historicalTreatments:{tenue:'tenue',leggibile:'leggibile',minimo:'minimo'},
  currentBase:'Base attuale',historicalBase:'TCI 1925',osmCredit:'© OpenStreetMap contributors',
  historicalCredit:'Touring Club Italiano, Guida d’Italia, Italia centrale e Roma e dintorni, 1925 (prima edizione); riproduzioni dalla Collezione Valerio Varriale, stagniweb.it',
@@ -88,7 +89,7 @@ const it={
   determinationHint:'Metafora della definizione, non misura d’errore; si legge da vicino, terrazza per terrazza.',
   densityReference:'Luoghi di riferimento: isoipse rosse, più curve più riferimenti',
   densityNarrativeBy:{storica:'Luoghi narrativi: isoipse petrolio',ardesia:'Luoghi narrativi: isoipse grigio ardesia',inchiostro:'Luoghi narrativi: isoipse seppia',risparmio:'Luoghi narrativi: isoipse rosse, senza riempimento'},
-  historical:'La carta della Guida Rossa del 1925 sta sotto la figura, solo nella geografia: è un supporto per riconoscere i luoghi, non un dato. Il trattamento tenue lascia leggere isoipse e terrazze; leggibile e minimo spostano l’equilibrio verso la carta o verso la figura.',
+  historical:'La carta della Guida Rossa del 1925 sta sotto la figura: è un supporto per riconoscere i luoghi, non un dato. Il cursore va dalla resa geometrica (tessere e tracce di orientamento) alla carta del 1925; nelle relazioni e nei passaggi ogni tessera porta con sé la propria impronta di carta, ritagliata sulla sagoma. In rilievo la carta resta a terra e sale sulla pedata più alta di ogni terrazza; le facce con la tinta del personaggio e i luoghi senza coordinate restano senza carta.',
   tourLabel:'Percorso',tourQuestion:'Come si attraversa il percorso?',
   tour:'Lo scorrimento della colonna porta la figura da un passo al successivo, con la stessa transizione della ghiera; le frecce e Pagina giù fanno lo stesso. Toccare la ghiera sospende il percorso: «Riprendi da qui» lo riapre dal passo che coincide con la figura. «Riavvolgi» torna al primo passo.',
   tourHint:'Il passo è nell’indirizzo: un collegamento riapre il percorso a quel passo.',

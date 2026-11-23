@@ -1,5 +1,5 @@
 // Stato pubblico della lettura: nessun indice del renderer entra nei link.
-export const URL_KEYS = ["view", "axon", "narrative", "focalizer", "chapter", "mode", "cursor", "roles", "order", "rotation", "place", "reference", "route", "tour"];
+export const URL_KEYS = ["view", "axon", "narrative", "focalizer", "chapter", "mode", "cursor", "roles", "order", "rotation", "place", "reference", "route", "tour", "carta"];
 
 export function createUrlStateCodec(model, config) {
   const {allData, allDataById} = model.atlasEntities;
@@ -23,7 +23,9 @@ export function createUrlStateCodec(model, config) {
       cursor: null, roles: config.ROLE_ORDER.slice(), order: "time", rotation: 0,
       place: null, reference: null, route: null,
       // Passo del percorso guidato (1-based); il percorso stesso limita il valore al numero dei passi.
-      tour: /^[1-9]\d?$/.test(String(raw.tour)) ? +raw.tour : null
+      tour: /^[1-9]\d?$/.test(String(raw.tour)) ? +raw.tour : null,
+      // Cursore fra carta storica e resa geometrica, in centesimi (0 = solo geometrica).
+      carta: /^\d{1,3}$/.test(String(raw.carta)) && +raw.carta <= 100 ? +raw.carta : Math.round((config.LEVA?.initial ?? 1) * 100)
     };
     const roles = Array.isArray(raw.roles) ? raw.roles : typeof raw.roles === "string" ? raw.roles.split(",") : [];
     if (roles.length && roles.every(r => config.ROLE_ORDER.includes(r))) s.roles = config.ROLE_ORDER.filter(r => roles.includes(r));
@@ -71,6 +73,7 @@ export function createUrlStateCodec(model, config) {
     if (s.rotation) p.set("rotation", String(s.rotation));
     for (const key of ["place", "reference", "route"]) if (s[key]) p.set(key, s[key]);
     if (s.tour) p.set("tour", String(s.tour));
+    if (s.carta !== Math.round((config.LEVA?.initial ?? 1) * 100)) p.set("carta", String(s.carta));
     return p.size ? "#" + p.toString() : "";
   }
   return {parse, serialize, normalize};

@@ -7,10 +7,41 @@
                         // Grande Guerra...) che altrimenti farebbero esplodere il bbox
   CANVAS_MAX_PIXELS: 8388608, // massimo 32 MiB RGBA per il singolo bitmap
   CANVAS_MAX_EDGE: 8192,      // limite anche per contenitori molto allungati
-  // gain: amplificazione dell'inchiostro di ciascun trattamento al caricamento (la carta resta bianca). perTile: la
-  // carta segue le tessere in ogni stato e si disegna sopra le terrazze, per moltiplica. stack: con più carte, 'pila'
-  // le compone in uno strato unico che entra nella figura una volta; 'sovrapposte' le fonde una per una.
-  HISTORICAL: {maxDeviceTexel:1.2, fadeStart:1, fadeEnd:2, reserveCSS:1.5, blend:'multiply', gain:{leggibile:3.5, tenue:5, minimo:7}, perTile:true, stack:'pila'}, // riserva: sottotratto del rilievo, px CSS oltre il tratto
+  // Carta storica. Al caricamento ogni livello è normalizzato: inchiostro pieno (1/forza del trattamento
+  // di base, inkBase) e punto di bianco dal p90 della sorgente (whitePoint), così la moltiplica porta solo
+  // gli inchiostri del 1925 e mai un velo sul fondo. La quantità d'inchiostro a schermo la decide la leva
+  // (LEVA). Lo zoom non spegne mai la carta: oltre la propria grana scende fino a fadeFloor, l'opacità
+  // minima garantita, e oltre la risoluzione nativa resta il livello più fine, interpolato morbido.
+  // appear: comparsa per scala di una sorgente (texel CSS da→a), così
+  // la carta di dettaglio non copre quella d'insieme quando è ancora rimpicciolita. neatline: filetto del
+  // dominio di ciascuna carta. rilievo: 'pedata' proietta la carta sulla pedata sommitale delle terrazze e
+  // la lascia a terra altrove; 'drappo' (riserva) è la fusione storica sopra l'intera figura, con i gain
+  // dei tre trattamenti e il ritaglio per tessera (perTile). stack 'pila': le carte si compongono in uno
+  // strato unico che entra nella figura una volta.
+  // resa 'inchiostro' (predefinita): la densità d'inchiostro della scansione diventa trasparenza, senza
+  // foglio, posata su ciò che sta sotto. Al caricamento ogni livello si autocalibra (il percentile
+  // 99,9 della densità vale 1: la stampa TCI ha inchiostro medio-grigio e le tre carte escono con lo
+  // stesso peso), poi i due token di ink: weight è l'alpha dell'inchiostro pieno (intorno a 3:1 sul
+  // fondo), midtone la curvatura delle velature (alpha = weight · densità^(1+midtone)); con midtone a
+  // zero la curva è lineare (resta il solo inchiostro estratto). lodReinforceTexel: sotto questa soglia di
+  // px CSS per texel l'impronta si rinforza con una seconda passata. overTint: alpha della carta sopra
+  // le facce con la tinta del ruolo (0 = la carta non sale mai sulla tinta).
+  // resa 'moltiplica' (riserva): fusione dei grigi rinforzati con inkBoost.
+  HISTORICAL: {maxDeviceTexel:1.2, fadeStart:1, fadeEnd:2, fadeFloor:0.3,
+    reserveCSS:1.5, blend:'multiply', inkBase:'leggibile', whitePoint:true,
+    resa:'inchiostro', ink:{weight:0.72, midtone:1.1, rgb:'51,41,33'}, lodReinforceTexel:0.5, overTint:0,
+    inkBoost:2.2,
+    neatline:{widthCSS:0.7, alpha:0.5}, appear:{centro:{from:0.12, to:0.28}},
+    rilievo:'pedata', stack:'pila',
+    gain:{leggibile:3.5, tenue:5, minimo:7}, perTile:true}, // inkBoost, gain e perTile: solo per le riserve
+  // Cursore fra carta e resa geometrica (lo slider del comando «Carta 1925»). 0 = solo la resa
+  // geometrica (tessere e tracce di orientamento), 1 = carta protagonista (inchiostro pieno, figura
+  // arretrata); fra i due, l'inchiostro parte da inkMin. fillFade e strokeFade: ritiro di campiture e
+  // curve delle isoipse verso il polo carta; i confini di cella scendono dal valore ordinario a
+  // borderFloor; reserve: riserva di carta sotto i confini quando la carta è visibile.
+  // initial: posizione all'apertura (la carta ben visibile); è anche il valore predefinito del
+  // parametro «carta» nell'indirizzo.
+  LEVA: {inkMin:0.25, fillFade:1, strokeFade:0.55, borderFloor:0.06, reserve:0.85, reserveWidthCSS:1.5, initial:0.8},
   CENTER_MARKER: {radiusCSS:1.5, minimumCellRadiusCSS:5},
   TOUCH_TARGET_CSS: 44, // diametro del bersaglio al tocco per la rosa di scelta
   // Percorso guidato: durata di un passo del riquadro 'scatola'; 'colonna' | 'margine' | 'sipario' scorrono.
@@ -264,7 +295,11 @@
   // Zoom e livello di dettaglio.
   K2: 4,          // sopra: anche pallino generatore + etichetta al hover
   ZOOM_MIN: 1,    // zoom utente minimo: 1 × fit del contenitore
-  ZOOM_MAX: 32,   // abbastanza per isolare le bande di un singolo luogo
+  // Tetto misurato sulla carta del centro (1:12.000): al fit di 1440×900 un px CSS copre ≈204 m al
+  // suolo; a 104× ne copre ≈1,96 e un texel della piramide (2 m) raggiunge il rapporto 1:1 con lo
+  // schermo, dove comincia la dissolvenza oltre la grana. Oltre il dominio del centro, a questo zoom,
+  // restano la pergamena e i filetti dei domini.
+  ZOOM_MAX: 104,
 
   // Goccia: molla che insegue il cursore, effetto elastico sui bordi di cella.
   SPRING: 0.18,     // rincorsa posizione: piu' alto = la goccia raggiunge il cursore piu' in fretta
@@ -414,7 +449,8 @@
 const ROLES_EQ = {Setting: "#A53B86", ZoneOfAction: "#9F4D24", Route: "#7C6020", Marker: "#78549E", ProjectedSpace: "#206F6B"};
 // Rilievo come carta (preso dal risparmio): pedate del colore del fondo, fianchi appena ombreggiati.
 // Il tono sta sulle pareti, le sommità restano carta: l'altezza si legge dai fianchi.
-const PAPER_RELIEF = {AXON_TREAD_TINT: 0, AXON_WALL_SHADE: 0.22};
+// Pareti al 30%: con la carta al suolo i fianchi devono staccarsi dal terreno inchiostrato.
+const PAPER_RELIEF = {AXON_TREAD_TINT: 0, AXON_WALL_SHADE: 0.30};
 const CHROMA_PRESETS = {
   storica: {},
   // Ardesia neutra (#3A4859, L* 30, croma 12; ΔE 27 dal petrolio, 41 dal viola); isoipse narrative a 0,75, contrasto 4,1:1.

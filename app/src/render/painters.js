@@ -396,6 +396,7 @@ export default function atlasPainters(atlasEntities, atlasChapters, atlasVoronoi
         frame.profile.fillRasterMs += performance.now() - fillT0;
         frame.profile.fillCalls++;
       }
+      return capPath;
     }
 
     // determination: classe della riga a cui appartiene il contorno, o null. Con strokeGroups.coding ogni
@@ -575,6 +576,18 @@ export default function atlasPainters(atlasEntities, atlasChapters, atlasVoronoi
       if (strokeGroups.coded?.length) paintDeterminations(frame, strokeGroups.coded);
     }
 
+    // Carta sulla pedata sommitale: consegna al disegno della carta il ritaglio della faccia appena
+    // campita, con lo scostamento dell'estrusione e il riquadro della faccia (coordinate della figura),
+    // così il frammento proiettato è quello geografico del luogo. Le facce con la tinta del ruolo
+    // restano pure: lì la carta sta solo a terra.
+    function offerTreadPaper(frame, i, pts, z, capPath, faceAlpha) {
+      if (!frame.treadPaper || !capPath || !pts || pts.length < 3) return;
+      const off = zPoint(frame, 0, 0, z);
+      let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+      for (const [x, y] of pts) { if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; }
+      frame.treadPaper(i, capPath, [x0 + off[0], y0 + off[1], x1 + off[0], y1 + off[1]], off, faceAlpha);
+    }
+
     function drawAxonReliefTile(frame,...args) {
       const mix=frame.lodMix;
       if(mix==null)return paintAxonReliefTile(frame,...args);
@@ -634,7 +647,9 @@ export default function atlasPainters(atlasEntities, atlasChapters, atlasVoronoi
         if (ring) { tread = mixRgb(tint[0], BG_RGB, .86); if (roleFace === 'anello') wall = wallRgb(0); }
         const collapsedAlpha = fillAlphaNow(focalAlpha, isoFillAlpha(B) * focalAlpha);
         fillQuadStrip(frame, curves[0], 0, curves[0], zTop, rgbString(wall), collapsedAlpha, true);
-        fillClosedContour(frame, curves[0], zTop, rgbString(tread), collapsedAlpha);
+        const collapsedCap = fillClosedContour(frame, curves[0], zTop, rgbString(tread), collapsedAlpha);
+        const collapsedPaper = tint ? (atlasConfig.HISTORICAL.overTint || 0) : 1;
+        if (collapsedPaper) offerTreadPaper(frame, i, curves[0], zTop, collapsedCap, collapsedAlpha * collapsedPaper);
         strokePts(frame, strokeGroups, curves[0], 0, strokeRgb, strokeAlpha, baseWidth);
         strokePts(frame, strokeGroups, curves[0], zTop, ring ? rgbString(ring) : strokeRgb, strokeAlpha, ring ? (roleFace === 'anello' ? 2.4 : 1.4) * frame.invK : edgeTopWidth);
         flushStrokeGroups(frame, strokeGroups, true);
@@ -648,6 +663,7 @@ export default function atlasPainters(atlasEntities, atlasChapters, atlasVoronoi
         else fillNestedBand(frame, curves[0], curves[1], 0, baseRgb, baseAlpha);
       }
       strokePts(frame, strokeGroups, curves[0], 0, strokeRgb, 0.55 * strokeAlpha, baseWidth);
+      let topCap = null, topZ = 0, topAlpha = 1, topPaper = false;
       for (let k = 1; k < curves.length; k++) {
         const z0 = axonZOf(k - 1) * zScale, z1 = axonZOf(k) * zScale;
         const tint = bandTint ? bandTint(k, B) : null;
@@ -680,12 +696,19 @@ export default function atlasPainters(atlasEntities, atlasChapters, atlasVoronoi
         fillQuadStrip(frame, k === 1 ? curves[0] : curves[k], z0, curves[k], z1, rgbString(wall), fillAlphaNow(focalAlpha, planarAlpha), true);
         if (ISO_FILL) {
           const fillAlpha = fillAlphaNow(AXON_OPAQUE ? focalAlpha : isoFillAlpha(k + 1) * focalAlpha, planarAlpha);
+          const isLast = k === curves.length - 1;
+          // La pedata sommitale conserva il proprio ritaglio: porta il frammento di carta del luogo.
+          // Sulle facce con la tinta del ruolo la carta entra solo con HISTORICAL.overTint > 0, attenuata.
+          const paperFace = style.walls === 'tinta' ? 0 : tint ? (atlasConfig.HISTORICAL.overTint || 0) : 1;
           if (solidCaps) {
-            fillClosedContour(frame, curves[k], z1, rgbString(tread), fillAlpha);
-          } else if (k < curves.length - 1) {
+            const cap = fillClosedContour(frame, curves[k], z1, rgbString(tread), fillAlpha);
+            if (isLast) { topCap = cap; topZ = z1; topAlpha = fillAlpha; topPaper = paperFace; }
+          } else if (!isLast) {
             fillNestedBand(frame, curves[k], curves[k + 1], z1, rgbString(tread), fillAlpha);
           } else {
-            fillClosedContour(frame, curves[k], z1, rgbString(tread), fillAlphaNow(AXON_OPAQUE ? focalAlpha : isoFillAlpha(k) * focalAlpha, planarAlpha));
+            const lastAlpha = fillAlphaNow(AXON_OPAQUE ? focalAlpha : isoFillAlpha(k) * focalAlpha, planarAlpha);
+            topCap = fillClosedContour(frame, curves[k], z1, rgbString(tread), lastAlpha);
+            topZ = z1; topAlpha = lastAlpha; topPaper = paperFace;
           }
         }
         const wBot = isPicked ? AXON_EDGE_PICK * frame.invK : edgeBotWidth;
@@ -699,6 +722,8 @@ export default function atlasPainters(atlasEntities, atlasChapters, atlasVoronoi
         if (edges !== 'cima' || lastLevel || isPicked) strokePts(frame, strokeGroups, curves[k], z1, cBot, strokeAlpha, edges === 'cima' && !isPicked ? wTop * .8 : wTop, kind);
         if (ringRgb) strokePts(frame, strokeGroups, curves[k], z1, rgbString(ringRgb), strokeAlpha, (style.roleFace === 'anello' ? 2.4 : 1.4) * frame.invK);
       }
+      // La carta sale sulla pedata prima dei tratti, che restano incisi sopra di essa.
+      if (topPaper && topCap) offerTreadPaper(frame, i, curves[curves.length - 1], topZ, topCap, topAlpha * topPaper);
       flushStrokeGroups(frame, strokeGroups, true);
       if (roleMarks && roleMarks.isRouteHot && curves.length) {
         const ring = new Path2D();
