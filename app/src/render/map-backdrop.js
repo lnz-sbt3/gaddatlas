@@ -24,7 +24,7 @@ const atlasMapBackdrop = (() => {
     RING_GUIDE_WIDTH, BORDER_WIDTH, segments, nearDrop, deform, cellRings,
     N_INMAP, N_GEO, fictBirthEased, birthEased, BIRTH_EPSILON, isBorn,
     contentAlpha, cellPoint, displayPts, cognitiveTileRadius, displayCellScale, offmapPresence, cellOutline = () => 1, cellWidth = () => 1,
-    ringLevel = null, cssUnit = null, paper = null
+    ringLevel = null, cssUnit = null, paper = null, ringVisibility = 1
   }) {
     let ringLabels = null;
     let metricTicks = [];
@@ -34,13 +34,15 @@ const atlasMapBackdrop = (() => {
       // Corone metriche (RINGS.level): 'tenue' tratteggio a 1,26:1; 'medio' filo a 2,4:1 e bande alterne;
       // 'marcato' filo a 3,3:1, bande alterne ed etichetta su ogni corona. Le bande sono velature, non campiture.
       const L = ringLevel || {dash: true, alpha: RING_GUIDE_ALPHA * 0.58, width: RING_GUIDE_WIDTH * 0.7, band: 0}, unit = cssUnit || invK;
+      // Attenuazione delle corone: opacità e spessore scendono insieme, ciascuno della radice della visibilità.
+      const fade = Math.sqrt(Math.max(0, Math.min(1, ringVisibility)));
       const drawn = [];
       for (const dKm of METRIC_ISOLINES_KM) { const rMetric = radiusForDistance(dKm, ringsArr); if (rMetric != null) { metricTicks.push({dKm, rMetric}); drawn.push([dKm, rMetric * cogScaleDyn]); } }
-      if (L.band > 0) drawn.forEach(([, r], k) => { if (k % 2) return; const inner = k ? drawn[k - 1][1] : 0; context.beginPath(); context.arc(cogCenter[0], cogCenter[1], r, 0, Math.PI * 2); if (inner > 0) context.arc(cogCenter[0], cogCenter[1], inner, 0, Math.PI * 2, true); context.fillStyle = `rgba(${GRID_COLOR},${L.band * crimpEased})`; context.fill("evenodd"); });
+      if (L.band > 0) drawn.forEach(([, r], k) => { if (k % 2) return; const inner = k ? drawn[k - 1][1] : 0; context.beginPath(); context.arc(cogCenter[0], cogCenter[1], r, 0, Math.PI * 2); if (inner > 0) context.arc(cogCenter[0], cogCenter[1], inner, 0, Math.PI * 2, true); context.fillStyle = `rgba(${GRID_COLOR},${L.band * fade * fade * crimpEased})`; context.fill("evenodd"); });
       if (L.dash) context.setLineDash([3 * invK, 7 * invK]);
-      context.lineWidth = L.dash ? L.width * invK : L.width * unit;
+      context.lineWidth = (L.dash ? L.width * invK : L.width * unit) * fade;
       for (const [dKm, rDraw] of drawn) {
-        context.strokeStyle = `rgba(${GRID_COLOR},${L.alpha * crimpEased})`;
+        context.strokeStyle = `rgba(${GRID_COLOR},${L.alpha * fade * crimpEased})`;
         context.beginPath();
         context.arc(cogCenter[0], cogCenter[1], rDraw, 0, Math.PI * 2);
         context.stroke();

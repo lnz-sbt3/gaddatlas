@@ -26,12 +26,14 @@ import atlasProfileLog from "../dev/profile-log.js";
   }) {
     // Le annotazioni della figura hanno corpo costante in px CSS (cssUnit), qualunque sia il riquadro o lo zoom.
     const {rulerCSS, poleCSS, family} = atlasConfig.ANNOTATION;
-    function drawUprightText(text, x, y) {
+    // ink < 1 attenua il solo inchiostro: l'alone di carta resta pieno e continua a staccare il testo dal fondo.
+    function drawUprightText(text, x, y, ink = 1) {
       context.lineJoin = "round";
       context.lineWidth = 3 * cssUnit;
       context.strokeStyle = BG_COLOR;
       context.strokeText(text, x, y);
-      context.fillText(text, x, y);
+      if (ink < 1) { const alpha = context.globalAlpha; context.globalAlpha = alpha * ink; context.fillText(text, x, y); context.globalAlpha = alpha; }
+      else context.fillText(text, x, y);
     }
 
     function withUprightAnnotation(drawFn) {
@@ -70,11 +72,18 @@ import atlasProfileLog from "../dev/profile-log.js";
       const tickHalf = 4 * cssUnit;
       const maxR = d3.max(metricTicks, d => d.rMetric) * cogScaleDyn;
       const poleName = poleIndex >= 0 ? allData[poleIndex].properties.Toponym : it.poleFallback;
+      // L'asse segue l'attenuazione delle corone. Le etichette si dispongono dalla più esterna: tace quella che
+      // toccherebbe la precedente o il nome del polo. Il titolo fa da seconda riga all'etichetta più esterna,
+      // dentro la corona: così non sale mai verso i margini della figura né sotto i testi di cornice.
+      const R = atlasConfig.RINGS, visibility = Math.max(0, Math.min(1, R.visibility)), fade = Math.sqrt(visibility);
+      const ink = R.labelFloor + (1 - R.labelFloor) * visibility;
+      const titleDrop = (rulerCSS / 2 + R.titleGapCSS) * cssUnit, titleClear = titleDrop + (rulerCSS * 1.5 + R.labelGapCSS) * cssUnit;
+      const clear = (rulerCSS + R.labelGapCSS) * cssUnit, poleClear = (poleCSS + 7 + rulerCSS / 2 + R.labelGapCSS) * cssUnit;
       context.save();
       context.globalAlpha = crimpEased;
       withUprightAnnotation(() => {
-        context.strokeStyle = `rgba(${GRID_COLOR},${0.55 * crimpEased})`;
-        context.lineWidth = 0.7 * invK;
+        context.strokeStyle = `rgba(${GRID_COLOR},${0.55 * fade * crimpEased})`;
+        context.lineWidth = 0.7 * fade * invK;
         context.beginPath();
         context.moveTo(rulerX, cogCenter[1]);
         context.lineTo(rulerX, cogCenter[1] - maxR);
@@ -83,18 +92,33 @@ import atlasProfileLog from "../dev/profile-log.js";
         context.textAlign = "left";
         context.textBaseline = "middle";
         context.fillStyle = INK_COLOR;
-        for (const {dKm, rMetric} of metricTicks) {
-          const y = cogCenter[1] - rMetric * cogScaleDyn;
-          context.strokeStyle = `rgba(${GRID_COLOR},${0.55 * crimpEased})`;
-          context.lineWidth = 0.7 * invK;
+        // Ingombri delle etichette a 45° sulle corone, nel piano della figura: un'etichetta dell'asse che ne
+        // toccherebbe una tace (accade solo con corone molto strette, a figura intera su schermi piccoli).
+        const squash = Math.max(.2, tiltNow), gap = R.labelGapCSS * cssUnit;
+        const diagonal = R.levels[R.level]?.labels ? metricTicks.map(({dKm, rMetric}) => {
+          const d = rMetric * cogScaleDyn * Math.SQRT1_2, x = rulerX + d + 4 * cssUnit;
+          return [x, x + context.measureText(formatMetricIsoline(dKm)).width, cogCenter[1] - d, rulerCSS * cssUnit / 2 / squash];
+        }) : [];
+        const meets = (x0, x1, y, half) => diagonal.some(([a0, a1, b, h]) => x0 < a1 + gap && x1 > a0 - gap && Math.abs(y - b) < half + h + gap);
+        let outer = Infinity, titled = 0;
+        for (let n = metricTicks.length - 1; n >= 0; n--) {
+          const {dKm, rMetric} = metricTicks[n], r = rMetric * cogScaleDyn;
+          const y = cogCenter[1] - r;
           context.beginPath();
           context.moveTo(rulerX - tickHalf, y);
           context.lineTo(rulerX + tickHalf, y);
           context.stroke();
-          drawUprightText(formatMetricIsoline(dKm), labelX, y);
+          if (outer - r < (titled === 1 ? titleClear : clear) || r < poleClear) continue;
+          const label = formatMetricIsoline(dKm);
+          if (meets(labelX, labelX + context.measureText(label).width, y, rulerCSS * cssUnit / 2)) continue;
+          outer = r;
+          drawUprightText(label, labelX, y, ink);
+          if (titled++ === 0 && r > poleClear + titleClear) {
+            context.textBaseline = "top";
+            drawUprightText(it.metricAxisTitle(poleName), labelX, y + titleDrop, ink);
+            context.textBaseline = "middle";
+          } else if (titled === 1) titled = 2;
         }
-        context.textBaseline = "bottom";
-        drawUprightText(`distanza da ${poleName}`, labelX, cogCenter[1] - maxR - 8 * cssUnit);
       });
       context.restore();
     }

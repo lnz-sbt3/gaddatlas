@@ -20,7 +20,7 @@ const it={
  indexStreets:n=>`Stradario · ${n} ${n===1?'voce':'voci'}`,indexPlaces:n=>`Luoghi · ${n} ${n===1?'voce':'voci'}`,indexCount:(a,b)=>`${a+b} luoghi dell’indice: ${a} nello Stradario, ${b} nei Luoghi.`,
  findInFigure:n=>`Ritrova ${n} nella figura`,findButton:'Ritrova nella figura',
  scaleBarLabel:l=>`Scala: la barra misura ${l}`,
- metricDistance:km=>km<1?`${Math.round(km*1000)} m`:`${km} km`,
+ metricAxisTitle:pole=>`distanza da ${pole}`,metricDistance:km=>km<1?`${Math.round(km*1000)} m`:`${km} km`,
  mutePages:n=>`${n} pagine mute`,page:p=>`p. ${p}`,pagePlace:(p,name)=>`p. ${p} · ${name}`,roleSuffix:role=>` · ${role}`,
  pageCount:(page,n)=>n>1?`${page} · ${n}`:String(page),pageRows:n=>` · ${n} ${n===1?'riga':'righe'} nella pagina`,lensTitle:(page,n)=>`p. ${page} · ${n} ${n===1?'riga':'righe'}`,poleFallback:'via Merulana',
  terraceHover:(band,total)=>` · occ. ${band} di ${total}`,hoverPage:p=>` · p. ${p}`,
@@ -46,7 +46,8 @@ const it={
  noPlaces:'Nessun luogo corrisponde alla ricerca.',placeCount:n=>`${n} luoghi`,
  incisa:{
   group: 'Cambia vista',
-  keyboard: 'Ruota fra le quattro viste. Frecce destra e giù: vista successiva; sinistra e su: precedente. Invio: successiva. Home: geografia in pianta. Escape: annulla.',
+  keyboard: 'Ghiera delle viste. Tieni premuto e ruota, oppure scegli la vista successiva o la precedente. Frecce destra e giù: vista successiva; sinistra e su: precedente. Invio: successiva. Home: geografia in pianta. Escape: annulla.',
+  hint: 'Ruota la ghiera o scegli una vista',
   names: {
     map2d: ['Geografia', 'in pianta'],
     diagram2d: ['Relazioni', 'in pianta'],

@@ -42,7 +42,7 @@ export default function createIncisa({container, controller, labels, tokens, ini
     if (!Number.isFinite(value)) throw new TypeError(`Token della ghiera mancante: ${name}`);
     return value;
   };
-  const t = Object.fromEntries(['view', 'hit-outer', 'hit-inner', 'sector-gap', 'rim-inner', 'rim-outer', 'tick-count', 'major-every', 'tick-inner', 'tick-major-inner', 'tick-outer', 'label-radius', 'label-width', 'label-height', 'label-top', 'text-offset', 'line-gap', 'trace-radius', 'trace-half', 'trace-active-half', 'index-top', 'index-bottom', 'index-half', 'lock-px', 'flick-per-ms', 'velocity-age', 'release-duration', 'automatic-duration', 'settle-damping'].map(k => [k, token(k)]));
+  const t = Object.fromEntries(['view', 'hit-outer', 'hit-inner', 'sector-gap', 'rim-inner', 'rim-outer', 'tick-count', 'major-every', 'tick-inner', 'tick-major-inner', 'tick-outer', 'label-radius', 'label-width', 'label-height', 'label-top', 'text-offset', 'line-gap', 'trace-radius', 'trace-half', 'trace-active-half', 'index-top', 'index-bottom', 'index-half', 'cue-radius', 'cue-start', 'cue-end', 'cue-head', 'notch-count', 'hint-duration', 'lock-px', 'flick-per-ms', 'velocity-age', 'release-duration', 'automatic-duration', 'settle-damping'].map(k => [k, token(k)]));
   cyclePosition(initial);
   const doc = container.ownerDocument, win = doc.defaultView;
   const abort = new win.AbortController(), motion = win.matchMedia('(prefers-reduced-motion: reduce)');
@@ -78,16 +78,32 @@ export default function createIncisa({container, controller, labels, tokens, ini
   }
   const sectors = CYCLE.map((state, index) => {
     const g = svg('g', {class: 'incisa-sector', 'data-incisa-index': index, role: 'button', tabindex: 0}, wheel);
-    const hit = svg('path', {class: 'incisa-hit'}, g), trace = svg('path', {class: 'incisa-trace'}, g);
+    const hit = svg('path', {class: 'incisa-hit'}, g), trace = svg('path', {class: 'incisa-trace'}, g), notch = svg('path', {class: 'incisa-notch'}, g);
     const plate = svg('rect', {class: 'incisa-plate', width: t['label-width'], height: t['label-height'], rx: 0}, g);
     const text = svg('text', {class: 'incisa-text'}, g);
     const lines = labels.names[state].map((line, row) => {
       const span = svg('tspan', {dy: row ? t['line-gap'] : 0}, text); span.textContent = line; return span;
     });
-    return {g, hit, trace, plate, text, lines};
+    return {g, hit, trace, notch, plate, text, lines};
   });
   const north = svg('g', {class: 'incisa-index', 'aria-hidden': true}, wheel);
   svg('path', {d: `M${c} ${t['index-top']}V${t['index-bottom']} M${c - t['index-half']} ${t['index-top']}H${c + t['index-half']}`}, north);
+  // Segni di direzione verso le due viste adiacenti: fermi rispetto all'indice, compaiono al passaggio, al focus e con il suggerimento.
+  const cues = svg('g', {class: 'incisa-cues', 'aria-hidden': true}, wheel);
+  for (const side of [-1, 1]) {
+    const from = -Math.PI / 2 + side * t['cue-start'], to = -Math.PI / 2 + side * t['cue-end'], r = t['cue-radius'], h = t['cue-head'];
+    const [x, y] = point(r, to), tx = -Math.sin(to) * side, ty = Math.cos(to) * side, nx = Math.cos(to), ny = Math.sin(to);
+    svg('path', {d: `M${point(r, from)} A${r} ${r} 0 0 ${side > 0 ? 1 : 0} ${x} ${y} M${x - tx * h + nx * h * .6} ${y - ty * h + ny * h * .6}L${x} ${y}L${x - tx * h - nx * h * .6} ${y - ty * h - ny * h * .6}`}, cues);
+  }
+  // Suggerimento d'uso: una sola volta per visita, al primo passaggio, al primo tocco o al primo focus da tastiera.
+  const hint = doc.createElement('p'); hint.className = 'incisa-hint'; hint.setAttribute('aria-hidden', 'true'); hint.textContent = labels.hint || ''; root.append(hint);
+  let hintTimer = 0, hintSeen = !labels.hint;
+  function showHint() {
+    if (hintSeen) return;
+    hintSeen = true;
+    try { if (win.sessionStorage.getItem('gaddatlas:incisa-hint')) return; win.sessionStorage.setItem('gaddatlas:incisa-hint', '1'); } catch { /* senza memoria della visita vale la singola pagina */ }
+    root.dataset.hint = 'true'; hintTimer = win.setTimeout(() => { root.dataset.hint = 'false'; }, t['hint-duration']);
+  }
   const live = doc.createElement('p'); live.className = 'incisa-live'; live.setAttribute('role', 'status'); live.setAttribute('aria-live', 'polite'); live.setAttribute('aria-atomic', 'true'); root.append(live);
   let position = cyclePosition(initial), rest = initial.rest || CYCLE[mod(Math.round(position))];
   let drag = null, disposed = false, announcement = '';
@@ -98,7 +114,7 @@ export default function createIncisa({container, controller, labels, tokens, ini
     const visual = motion.matches ? nearestPosition(CYCLE.indexOf(rest)) : position;
     const selected = mod(Math.round(visual));
     ticks.setAttribute('transform', `rotate(${-360 * visual / CYCLE.length} ${c} ${c})`);
-    sectors.forEach(({g, hit, trace, plate, text, lines}, i) => {
+    sectors.forEach(({g, hit, trace, notch, plate, text, lines}, i) => {
       const angle = (i - visual) * quarter - Math.PI / 2, low = angle - quarter / 2 + t['sector-gap'], high = angle + quarter / 2 - t['sector-gap'];
       hit.setAttribute('d', `M${point(t['hit-outer'], low)} A${t['hit-outer']} ${t['hit-outer']} 0 0 1 ${point(t['hit-outer'], high)} L${point(t['hit-inner'], high)} A${t['hit-inner']} ${t['hit-inner']} 0 0 0 ${point(t['hit-inner'], low)} Z`);
       const [x, y] = point(t['label-radius'], angle), here = i === selected, diff = mod(i - Math.round(position)), opposite = diff === CYCLE.length / 2;
@@ -108,6 +124,9 @@ export default function createIncisa({container, controller, labels, tokens, ini
       text.setAttribute('x', x); text.setAttribute('y', y - t['text-offset']); lines.forEach(span => span.setAttribute('x', x));
       plate.setAttribute('x', x - t['label-width'] / 2); plate.setAttribute('y', y - t['label-top']);
       const half = here ? t['trace-active-half'] : t['trace-half']; trace.setAttribute('d', arc(t['trace-radius'], angle - half, angle + half));
+      let marks = '';
+      for (let k = -t['notch-count']; k <= t['notch-count']; k++) { const a = angle + k * TAU / t['tick-count']; marks += `M${point(k ? t['tick-inner'] : t['tick-major-inner'], a)}L${point(t['tick-outer'], a)}`; }
+      notch.setAttribute('d', marks);
     });
     root.setAttribute('aria-label', labels.group);
   }
@@ -134,9 +153,14 @@ export default function createIncisa({container, controller, labels, tokens, ini
     const d = drag; drag = null;
     if (wheel.hasPointerCapture(d.id)) wheel.releasePointerCapture(d.id);
     controller.cancel(payload(d.position, 'pointer', {restore: d.rest, durationMs: motion.matches ? 0 : t['release-duration']}));
-    root.dataset.dragging = 'false'; return true;
+    root.dataset.dragging = 'false'; root.dataset.turning = 'false'; return true;
   }
   const listen = (type, fn) => wheel.addEventListener(type, fn, {signal: abort.signal});
+  // La cornice del focus è riservata alla tastiera: il puntatore (mouse, penna, tocco) la sospende, un tasto la ripristina.
+  listen('pointerdown', () => { root.dataset.input = 'pointer'; });
+  doc.addEventListener('keydown', () => { root.dataset.input = 'keyboard'; }, {capture: true, signal: abort.signal});
+  listen('pointerenter', showHint);
+  listen('focusin', () => { if (root.dataset.input !== 'pointer') showHint(); });
   listen('pointerdown', event => {
     if (disposed || drag || event.button > 0 || !event.isPrimary) return;
     event.preventDefault(); controller.takeControl?.({source: 'pointer'});
@@ -149,7 +173,7 @@ export default function createIncisa({container, controller, labels, tokens, ini
     if (!drag || event.pointerId !== drag.id) return;
     const d = drag;
     if (!d.moved && Math.hypot(event.clientX - d.x, event.clientY - d.y) < t['lock-px']) return;
-    d.moved = true;
+    d.moved = true; root.dataset.turning = 'true';
     const x = event.clientX - d.box.x - d.box.width / 2, y = event.clientY - d.box.y - d.box.height / 2, angle = Math.atan2(y, x);
     let delta = angle - d.angle; if (delta > Math.PI) delta -= TAU; if (delta < -Math.PI) delta += TAU; d.angle = angle;
     if (Math.hypot(x, y) >= t['hit-inner'] * d.box.width / t.view) { d.rotation -= delta; d.value = d.position + d.rotation / quarter; }
@@ -158,7 +182,7 @@ export default function createIncisa({container, controller, labels, tokens, ini
   });
   listen('pointerup', event => {
     if (!drag || event.pointerId !== drag.id) return;
-    const d = drag; drag = null; root.dataset.dragging = 'false';
+    const d = drag; drag = null; root.dataset.dragging = 'false'; root.dataset.turning = 'false';
     if (wheel.hasPointerCapture(d.id)) wheel.releasePointerCapture(d.id);
     if (!d.moved && d.index !== undefined && choose(Number(d.index), 'pointer')) return;
     const velocity = event.timeStamp - d.time < t['velocity-age'] ? d.velocity : 0;
@@ -204,6 +228,6 @@ export default function createIncisa({container, controller, labels, tokens, ini
   return {
     element: root, update, setAppearance,
     timings: Object.freeze({releaseMs: t['release-duration'], automaticMs: t['automatic-duration'], damping: t['settle-damping']}),
-    dispose() { if (disposed) return; cancel(); disposed = true; abort.abort(); motion.removeEventListener('change', onMotion); root.remove(); },
+    dispose() { if (disposed) return; cancel(); disposed = true; win.clearTimeout(hintTimer); abort.abort(); motion.removeEventListener('change', onMotion); root.remove(); },
   };
 }

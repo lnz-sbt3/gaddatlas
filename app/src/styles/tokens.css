@@ -690,19 +690,31 @@ body { --fit-top: 56px; --fit-bottom: 40px; --fit-left: 232px; --fit-right: 232p
 .incisa { position: relative; width: var(--incisa-size); height: var(--incisa-size); }
 .incisa-wheel { position: relative; display: block; width: 100%; height: 100%; overflow: visible; touch-action: none; user-select: none; cursor: grab; }
 .incisa-wheel:active { cursor: grabbing; }
+.incisa[data-turning="true"] :is(.incisa-wheel, .incisa-plate) { cursor: grabbing; }
 .incisa-sector { outline: none; }
 .incisa-hit { fill: transparent; stroke: none; pointer-events: all; }
 .incisa-trace { fill: none; stroke: var(--incisa-rule); stroke-width: var(--incisa-stroke); pointer-events: none; }
 .incisa-sector.is-current .incisa-trace { stroke: var(--incisa-ink); stroke-width: var(--incisa-stroke-current); }
 .incisa-plate { fill: var(--incisa-label-paper); stroke: none; pointer-events: none; }
+.incisa-sector[aria-disabled="false"] .incisa-plate { pointer-events: all; cursor: pointer; }
+.incisa-notch { fill: none; stroke: var(--incisa-ink); stroke-width: var(--incisa-notch-stroke); pointer-events: none; opacity: 0; transition: opacity var(--incisa-feedback-duration) var(--incisa-feedback-ease); }
+.incisa-cues { fill: none; stroke: var(--incisa-ink); stroke-width: var(--incisa-stroke); stroke-linecap: round; stroke-linejoin: round; pointer-events: none; opacity: 0; transition: opacity var(--incisa-feedback-duration) var(--incisa-feedback-ease); }
+.incisa-hint { position: absolute; left: 50%; top: var(--incisa-hint-top); z-index: 1; width: max-content; max-width: 62%; margin: 0; padding: 3px 8px; transform: translate(-50%, -50%); font-family: var(--incisa-font); font-size: calc(var(--incisa-size) * var(--incisa-hint-scale)); line-height: 1.3; font-weight: var(--incisa-font-weight); text-align: center; text-wrap: balance; color: var(--incisa-ink); background: var(--incisa-label-paper); pointer-events: none; opacity: 0; visibility: hidden; transition: opacity var(--incisa-feedback-duration) var(--incisa-feedback-ease), visibility 0s var(--incisa-feedback-duration); }
+.incisa[data-hint="true"] .incisa-hint { opacity: 1; visibility: visible; transition-delay: 0s; }
+.incisa[data-hint="true"]:not([data-dragging="true"]) .incisa-cues { opacity: var(--incisa-cue-opacity); }
 .incisa-text { font-family: var(--incisa-font); font-size: var(--incisa-font-size); line-height: var(--incisa-line-height); font-weight: var(--incisa-font-weight); fill: var(--incisa-muted); text-anchor: middle; pointer-events: none; }
 .incisa-sector.is-current .incisa-text { font-weight: var(--incisa-font-weight-current); fill: var(--incisa-ink); }
 .incisa-sector[data-opposite="true"] .incisa-text,
 .incisa-sector[data-opposite="true"] .incisa-plate { display: none; }
 .incisa-sector[data-opposite="true"] .incisa-trace { stroke-width: var(--incisa-stroke); opacity: var(--incisa-opposite-opacity); }
-.incisa-wheel:focus-visible { outline: var(--incisa-focus-width) solid var(--incisa-ink); outline-offset: var(--incisa-focus-offset); border-radius: 50%; }
-.incisa-sector:focus-visible .incisa-plate { stroke: var(--incisa-ink); stroke-width: var(--incisa-stroke-current); }
-.incisa-sector:focus-visible .incisa-trace { stroke: var(--incisa-ink); stroke-width: var(--incisa-stroke-focus); }
+/* Il focus si mostra solo da tastiera: un filo sottile attorno alla ghiera e le corone a inchiostro pieno. */
+.incisa-wheel:focus { outline: none; }
+.incisa:not([data-input="pointer"]) .incisa-wheel:focus-visible { outline: var(--incisa-focus-width) solid var(--incisa-ink); outline-offset: var(--incisa-focus-offset); border-radius: 50%; }
+.incisa:not([data-input="pointer"]) .incisa-wheel:focus-visible .incisa-rim { stroke: var(--incisa-ink); opacity: 1; }
+.incisa:not([data-input="pointer"]) .incisa-wheel:focus-visible .incisa-cues { opacity: var(--incisa-cue-opacity); }
+.incisa:not([data-input="pointer"]) .incisa-sector:focus-visible .incisa-plate { stroke: var(--incisa-ink); stroke-width: var(--incisa-stroke); }
+.incisa:not([data-input="pointer"]) .incisa-sector:focus-visible .incisa-trace { stroke: var(--incisa-ink); stroke-width: var(--incisa-stroke-focus); }
+.incisa:not([data-input="pointer"]) .incisa-sector:focus-visible .incisa-notch { opacity: 1; }
 .incisa-instrument { pointer-events: none; fill: none; stroke: var(--incisa-rule); stroke-width: var(--incisa-stroke); }
 .incisa-rim { stroke-width: var(--incisa-rim-stroke); opacity: var(--incisa-rim-opacity); }
 .incisa-ticks { stroke-width: var(--incisa-tick-stroke); fill: none; }
@@ -712,6 +724,9 @@ body { --fit-top: 56px; --fit-bottom: 40px; --fit-left: 232px; --fit-right: 232p
 @media (hover: hover) and (pointer: fine) {
   .incisa-sector:not([data-opposite="true"]):hover .incisa-text { fill: var(--incisa-ink); }
   .incisa-sector:not([data-opposite="true"]):hover .incisa-trace { stroke: var(--incisa-ink); stroke-width: var(--incisa-stroke-current); }
+  .incisa-sector[aria-disabled="false"]:hover .incisa-notch { opacity: 1; }
+  .incisa-sector[aria-disabled="false"]:hover .incisa-text { font-weight: var(--incisa-font-weight-hover); }
+  .incisa:not([data-dragging="true"]) .incisa-wheel:hover .incisa-cues { opacity: var(--incisa-cue-opacity); }
 }
 @media (prefers-reduced-motion: reduce) { .incisa * { transition: none; } }
 

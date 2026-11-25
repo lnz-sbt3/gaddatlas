@@ -1552,7 +1552,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
       RING_GUIDE_WIDTH, BORDER_WIDTH, segments, nearDrop, deform, cellRings,
       N_INMAP, N_GEO, fictBirthEased, birthEased, BIRTH_EPSILON, isBorn,
       contentAlpha, cellPoint, displayPts, cognitiveTileRadius, displayCellScale,
-      offmapPresence, cellOutline, ringLevel: atlasConfig.RINGS.levels[atlasConfig.RINGS.level], cssUnit: invK / fitScale,
+      offmapPresence, cellOutline, ringLevel: atlasConfig.RINGS.levels[atlasConfig.RINGS.level], ringVisibility: atlasConfig.RINGS.visibility, cssUnit: invK / fitScale,
       // Confini come selettori al polo carta: attenuazione del filo e riserva di carta sotto il tratto.
       paper: paperLever > 0 ? {
         lever: paperLever, floor: atlasConfig.LEVA.borderFloor,
@@ -1943,15 +1943,23 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
       glyph: {paths: atlasConfig.FICT_GLYPH_PATHS, box: atlasConfig.FICT_GLYPH_BOX, ink: INK_RGB_STR, statusOf: j => allData[j].properties.reality_status}
     }));
 
-    // Etichette sulle corone (livello «marcato»): a 45° in alto a destra, diritte, con alone di carta.
+    // Etichette sulle corone: a 45° in alto a destra, diritte, con alone di carta. L'inchiostro arretra con la
+    // visibilità delle corone; un'etichetta che toccherebbe quella della corona più esterna, o il nome del polo, tace.
     if (ringLabelsFrame && crimpEased > .01) {
-      const unit = invK / fitScale; context.save(); context.globalAlpha = crimpEased;
-      context.font = `500 ${12 * unit}px ${atlasConfig.ANNOTATION.family}`; context.textAlign = "left"; context.textBaseline = "middle";
-      for (const [dKm, r] of ringLabelsFrame) {
+      const unit = invK / fitScale, R = atlasConfig.RINGS, size = atlasConfig.ANNOTATION.rulerCSS, squash = Math.max(.2, tiltNow);
+      const ink = R.labelFloor + (1 - R.labelFloor) * Math.max(0, Math.min(1, R.visibility));
+      const rise = Math.SQRT1_2 * squash, clear = (size + R.labelGapCSS) * unit, poleClear = (atlasConfig.ANNOTATION.poleCSS + 7 + size / 2 + R.labelGapCSS) * unit;
+      context.save();
+      context.font = `500 ${size * unit}px ${atlasConfig.ANNOTATION.family}`; context.textAlign = "left"; context.textBaseline = "middle";
+      let outer = Infinity;
+      for (let n = ringLabelsFrame.length - 1; n >= 0; n--) {
+        const [dKm, r] = ringLabelsFrame[n];
+        if ((outer - r) * rise < clear || r * rise < poleClear) continue;
+        outer = r;
         const a = -Math.PI / 4 - rotNow, x = cogCenter[0] + Math.cos(a) * r, y = cogCenter[1] + Math.sin(a) * r;
-        context.save(); context.translate(x, y); context.rotate(-rotNow); context.scale(1, 1 / Math.max(.2, tiltNow));
-        context.lineWidth = 3 * unit; context.strokeStyle = BG_COLOR; context.strokeText(it.metricDistance(dKm), 4 * unit, 0);
-        context.fillStyle = INK_COLOR; context.fillText(it.metricDistance(dKm), 4 * unit, 0); context.restore();
+        context.save(); context.translate(x, y); context.rotate(-rotNow); context.scale(1, 1 / squash);
+        context.globalAlpha = crimpEased; context.lineWidth = 3 * unit; context.strokeStyle = BG_COLOR; context.strokeText(it.metricDistance(dKm), 4 * unit, 0);
+        context.globalAlpha = crimpEased * ink; context.fillStyle = INK_COLOR; context.fillText(it.metricDistance(dKm), 4 * unit, 0); context.restore();
       }
       context.restore();
     }

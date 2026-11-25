@@ -108,11 +108,22 @@
     "index-top": 3,
     "index-bottom": 17,
     "index-half": 4,
+    "cue-radius": 107,
+    "cue-start": 0.52,
+    "cue-end": 0.72,
+    "cue-head": 4,
+    "cue-opacity": 0.8,
+    "notch-count": 3,
+    "notch-stroke": 1.4,
+    "hint-duration": "4200ms",
+    "hint-scale": 0.054,
+    "hint-top": "69%",
     "font": "\"Public Sans\", sans-serif",
     "font-size": "15px",
     "line-height": "normal",
     "font-weight": 400,
     "font-weight-current": 600,
+    "font-weight-hover": 500,
     "ink-light": "#3A4859",
     "muted-light": "#585E64",
     "label-paper-light": "rgba(241, 231, 208, .96)",
@@ -130,8 +141,8 @@
     "major-stroke": 1.4,
     "index-stroke": 1.4,
     "opposite-opacity": 0.5,
-    "focus-width": "2px",
-    "focus-offset": "5px",
+    "focus-width": "1.5px",
+    "focus-offset": "4px",
     "lock-px": 6,
     "flick-per-ms": 0.0024,
     "velocity-age": "90ms",
@@ -235,7 +246,11 @@
   SEQ_BLOCK_DELTA: 2,
   // Corone metriche del diagramma: tre livelli (contrasto del filo sulla pergamena).
   // Livello in uso: filo continuo a 1,60:1 sulla pergamena (opacità 0,345), senza bande né tratteggio.
-  RINGS: {level: 'autore', levels: {
+  // visibility attenua le corone rispetto al livello scelto: opacità e spessore del filo si riducono
+  // ciascuno della radice del valore, così il loro prodotto (il peso del tratto) vale la frazione indicata.
+  // Le etichette arretrano in proporzione ma non scendono sotto labelFloor, soglia di leggibilità.
+  // labelGapCSS è l'aria minima fra due etichette; titleGapCSS stacca il titolo dell'asse dall'etichetta più esterna.
+  RINGS: {level: 'autore', visibility: 0.4, labelFloor: 0.55, labelGapCSS: 4, titleGapCSS: 4, levels: {
     autore: {dash: false, alpha: 0.345, width: 0.8, band: 0, labels: true},
     tenue: {dash: true, alpha: 0.174, width: 0.42, band: 0},
     medio: {dash: false, alpha: 0.6, width: 0.9, band: 0.035},
