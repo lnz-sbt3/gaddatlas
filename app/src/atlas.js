@@ -17,6 +17,7 @@ import atlasMapBackdrop from "./render/map-backdrop.js";
 import atlasGhostSlots from "./render/ghost-slots.js";
 import atlasOverlays from "./render/overlays.js";
 import atlasProfileLog from "./dev/profile-log.js";
+import {buildField, traceLevels, chaikin, dissolveZoom} from "./render/oro-field.js";
 import {createFondo} from "./render/fondo.js";
 import atlasFrameUi from "./ui/frame-ui.js";
 import atlasShell from "./ui/shell.js";
@@ -36,14 +37,14 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     ROLE_SORT_MORPH,
     RING_GUIDE_ALPHA, RING_GUIDE_WIDTH, INK_COLOR,
     K2, ZOOM_MIN, ZOOM_MAX,
-    ISO_INNER, ISO_OUTER, ISO_MIN_SPACING,
+    ISO_INNER, ISO_OUTER,
     SPRING, S_STIFF, S_DAMP, STRENGTH, RADIUS,
     DOT_RADIUS, BORDER_WIDTH, GLOW_WIDTH, GLOW_BLUR, ROMA_WIDTH, LABEL_SIZE,
     N_CHAPTERS, MORPH, PULSE_R, PLAY_MS,
     CRIMP_MORPH, BIRTH_MORPH, BIRTH_EPSILON,
     LAYOUT_MORPH_SLOW, LAYOUT_MORPH_FAST,
     FICT_CRIMP_THRESHOLD, FICT_RELIEF_ALPHA,
-    DIAG_SCREEN_FRAC
+    DIAG_SCREEN_FRAC, OROGRAFIA
   } = atlasConfig;
   const METRIC_ISOLINES_KM = atlasConfig.METRIC_ISOLINES_KM;
   const INFLUENCE_RADIUS = RADIUS * 3; // usato solo da nearDrop per il bbox-test dei segmenti condivisi;
@@ -304,8 +305,16 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
   }
   const t0 = performance.now();          // clock monotono per la fase del pulse
 
+  // Quota di un livello della tessera i nel piano precedente alla compressione
+  // verticale: la stessa legge del disegno (raggio dell'impronta col pavimento).
+  function tileZStepOf(i, scales, k, crimp, closure, tilt) {
+    const rMedDisp = (cellRings[i] ? isoProfileMed[i] : cognitiveTileRadius[i]) * (scales[i] || 1);
+    return atlasPainters.tileRise(rMedDisp, k, fitScale, crimp) * closure / Math.max(0.001, tilt);
+  }
+
   function interactionFrame() {
-    if((axisTransport.active||pendingMotion)&&evaluatedFrame){const f=evaluatedFrame;return{transform:f.transform,cogCenter:f.cogCenter,rotPivot:f.rotPivot,crimpEased:f.crimpEased,tiltEased:f.tiltEased,tiltNow:f.tiltNow,planRot:f.planRot,displayPts:f.displayPts,displayCellScale:f.displayCellScale,birthEased:f.birthEased,fictBirthEased:f.fictBirthEased,rotSinNow:f.rotSinNow,rotCosNow:f.rotCosNow,zStep:atlasPainters.AXON_Z_STEP*f.zScaleDraw/Math.max(.001,f.tiltNow)};}
+    if((axisTransport.active||pendingMotion)&&evaluatedFrame){const f=evaluatedFrame;return{transform:f.transform,cogCenter:f.cogCenter,rotPivot:f.rotPivot,crimpEased:f.crimpEased,tiltEased:f.tiltEased,tiltNow:f.tiltNow,planRot:f.planRot,displayPts:f.displayPts,displayCellScale:f.displayCellScale,birthEased:f.birthEased,fictBirthEased:f.fictBirthEased,rotSinNow:f.rotSinNow,rotCosNow:f.rotCosNow,
+      zStepOf:i=>tileZStepOf(i,f.displayCellScale,f.transform.k,f.crimpEased,f.zScaleDraw/Math.max(.001,f.zScaleNow),f.tiltNow)};}
     const rotNow = tiltEased > 0.01 ? planRot : 0;
     return {
       transform,
@@ -321,11 +330,8 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
       fictBirthEased,
       rotSinNow: Math.sin(rotNow),
       rotCosNow: Math.cos(rotNow),
-      // Il picking usa la quota nel piano precedente alla compressione verticale.
-      zStep: atlasPainters.AXON_Z_STEP
-             * (1 + (lastCogScaleDyn - 1) * crimpEased)
-             * (tiltEased >= 0.999 ? 1 : tiltEased)
-             / Math.max(0.001, tiltNow)
+      zStepOf: i => tileZStepOf(i, displayCellScale, transform.k, crimpEased,
+        tiltEased >= 0.999 ? 1 : tiltEased, tiltNow)
     };
   }
 
@@ -1178,6 +1184,168 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     terraceCurveCache=result.terraceCurveCache;ghostSlotsLoggedChapter=result.ghostSlotsLoggedChapter;
     profileFrame=result.profileFrame;
   }
+  // --- Campo orografico delle catene fuse (geografia a riposo, «tutti») ---
+  // I monti più piccoli del pavimento di schermo si fondono in un campo comune;
+  // il campo si ricostruisce solo al cambio di stato o di ottava di zoom, con
+  // una dissolvenza fra le generazioni. I monti sciolti restano per tessera.
+  let oroCache = null, oroPrev = null, oroFade = 1, oroLastBuild = 0, oroLastFrameTs = 0;
+
+  function oroOctaveOf(k) {
+    let octave = 1;
+    while (octave * 2 <= k) octave *= 2;
+    return octave;
+  }
+
+  function ensureOroField(evaluated) {
+    const {bands, transform, chapter, displayPts} = evaluated;
+    const kOct = oroOctaveOf(transform.k);
+    const floorOct = OROGRAFIA.pavimentoCSS / (kOct * fitScale);
+    const mounds = [];
+    let sig = 0;
+    for (let i = 0; i < N_INMAP; i++) {
+      const B = bands[i];
+      if (!(B > 0) || !cellRings[i]) continue;
+      const rEff = isoProfileMed[i];
+      if (floorOct <= rEff * OROGRAFIA.scioglimento) continue; // sciolto: resta per tessera
+      sig = (sig * 31 + i * 9 + B) >>> 0;
+      mounds.push({i, x: displayPts[i][0], y: displayPts[i][1],
+        R: OROGRAFIA.kernel * Math.max(rEff, floorOct), B, rEff});
+    }
+    // Un monte senza vicini nel campo resta per tessera: la fusione serve alle
+    // catene, non ai rilievi isolati, la cui sagoma resta quella della cella.
+    for (let changed = true; changed;) {
+      changed = false;
+      for (let a = mounds.length - 1; a >= 0; a--) {
+        let touched = false;
+        for (let b = 0; b < mounds.length && !touched; b++) {
+          if (b === a) continue;
+          const m = mounds[a], n = mounds[b];
+          touched = Math.hypot(m.x - n.x, m.y - n.y) < m.R + n.R;
+        }
+        if (!touched) { mounds.splice(a, 1); changed = true; }
+      }
+    }
+    sig = 0;
+    for (const m of mounds) sig = (sig * 31 + m.i * 9 + m.B) >>> 0;
+    const key = `${kOct}|${chapter}|${fitScale.toFixed(4)}|${mounds.length}|${sig}`;
+    if (!oroCache || oroCache.key !== key) {
+      const now = performance.now();
+      // L'intervallo minimo assorbe le soglie attraversate durante le molle dei capitoli.
+      if (!oroCache || now - oroLastBuild >= OROGRAFIA.ricostruzioneMs) {
+        oroLastBuild = now;
+        const t0 = performance.now();
+        let levels = [], cells = 0, components = 0;
+        if (mounds.length) {
+          const field = buildField(mounds, {gridKernel: OROGRAFIA.grigliaKernel, gridMax: OROGRAFIA.grigliaMax});
+          if (field) {
+            cells = (field.N + 1) * (field.M + 1);
+            levels = traceLevels(field, mounds, BANDS_MAX);
+            for (const rows of levels) {
+              components += rows.length;
+              for (const row of rows) row.pts = chaikin(row.pts, 1);
+            }
+          }
+        }
+        if (oroCache) { oroPrev = oroCache; oroFade = 0; }
+        oroCache = {key, mounds, levels, fused: new Set(mounds.map(m => m.i)),
+          stats: {ms: performance.now() - t0, celle: cells, componenti: components, monti: mounds.length}};
+      }
+    }
+    return oroCache;
+  }
+
+  function paintOroGeneration(frame, generation, alpha) {
+    if (!generation || !generation.levels.length || alpha <= 0.01) return;
+    const phase = frame.zScaleDraw / Math.max(0.001, frame.zScaleNow);
+    const unit = frame.invK / fitScale;
+    const bg = d3.color(BG_COLOR), ink = d3.color(INK_COLOR);
+    const veloStyle = `rgba(${Math.round(bg.r * (1 - OROGRAFIA.pendio))},${Math.round(bg.g * (1 - OROGRAFIA.pendio))},${Math.round(bg.b * (1 - OROGRAFIA.pendio))},${OROGRAFIA.veloAlpha})`;
+    context.save();
+    context.globalAlpha *= alpha;
+    context.lineJoin = "round";
+    for (let L = 1; L <= generation.levels.length; L++) {
+      const rows = generation.levels[L - 1];
+      if (!rows || !rows.length) continue;
+      const mixL = Math.min(1, OROGRAFIA.ipsometria * L);
+      const capStyle = `rgba(${Math.round(bg.r + (ink.r - bg.r) * mixL)},${Math.round(bg.g + (ink.g - bg.g) * mixL)},${Math.round(bg.b + (ink.b - bg.b) * mixL)},1)`;
+      for (const row of rows) {
+        const owner = generation.mounds[row.owner];
+        if (!owner) continue;
+        const dz = painters.tileRise(owner.rEff, frame.transform.k, fitScale, frame.crimpEased) * phase;
+        const z = L * dz;
+        // Velo di pendio: la sola mezzaluna fra le due quote (differenza
+        // pari-dispari), cioè il fianco della catena; poi la calotta.
+        const velo = new Path2D(), cap = new Path2D();
+        for (let q = 0; q < row.pts.length; q++) {
+          const [x, y] = row.pts[q];
+          const pv = painters.zPoint(frame, x, y, z - dz);
+          if (q === 0) velo.moveTo(pv[0], pv[1]); else velo.lineTo(pv[0], pv[1]);
+        }
+        velo.closePath();
+        for (let q = row.pts.length - 1; q >= 0; q--) {
+          const [x, y] = row.pts[q];
+          const pc = painters.zPoint(frame, x, y, z);
+          if (q === row.pts.length - 1) { velo.moveTo(pc[0], pc[1]); cap.moveTo(pc[0], pc[1]); }
+          else { velo.lineTo(pc[0], pc[1]); cap.lineTo(pc[0], pc[1]); }
+        }
+        velo.closePath(); cap.closePath();
+        context.fillStyle = veloStyle;
+        context.fill(velo, "evenodd");
+        context.fillStyle = capStyle;
+        context.fill(cap);
+        context.lineWidth = Math.max(OROGRAFIA.filoCSS * unit, ISO_WIDTH * frame.invK);
+        context.strokeStyle = `rgba(${ink.r},${ink.g},${ink.b},0.55)`;
+        context.stroke(cap);
+      }
+    }
+    context.restore();
+  }
+
+  // Pianta fusa (OROGRAFIA.piantaFusa): le stesse isolinee del campo, a quota
+  // zero, con la campitura ipsometrica della densità. Le curve viste dall'alto
+  // coincidono così con i terrazzamenti del rilievo.
+  function paintOroFlat(frame, generation, alpha, isoFillAlpha, strokeScale) {
+    if (!generation || !generation.levels.length || alpha <= 0.01) return;
+    context.save();
+    context.globalAlpha *= alpha;
+    context.lineJoin = "round";
+    context.lineWidth = ISO_WIDTH * frame.invK;
+    for (let L = 1; L <= generation.levels.length; L++) {
+      const rows = generation.levels[L - 1];
+      if (!rows || !rows.length) continue;
+      const path = new Path2D();
+      for (const row of rows) {
+        row.pts.forEach(([x, y], q) => q ? path.lineTo(x, y) : path.moveTo(x, y));
+        path.closePath();
+      }
+      if (ISO_FILL) {
+        context.fillStyle = `rgba(${HUE_RGB},${isoFillAlpha(L)})`;
+        context.fill(path);
+      }
+      context.strokeStyle = `rgba(${HUE_RGB},${ISO_ALPHA * strokeScale})`;
+      context.stroke(path);
+    }
+    context.restore();
+  }
+
+  function drawOroGenerations(painter) {
+    const now = performance.now();
+    const dt = Math.min(64, now - (oroLastFrameTs || now));
+    oroLastFrameTs = now;
+    if (oroPrev && oroFade < 1) {
+      oroFade = Math.min(1, oroFade + dt / OROGRAFIA.dissolvenzaMs);
+      painter(oroPrev, 1 - oroFade);
+      painter(oroCache, oroFade);
+      if (oroFade >= 1) oroPrev = null;
+    } else {
+      painter(oroCache, 1);
+    }
+  }
+
+  function drawOroField(frame) {
+    drawOroGenerations((generation, alpha) => paintOroGeneration(frame, generation, alpha));
+  }
+
   function drawEvaluated(evaluated){
     lastPaintedFrame=null; // Anche le catture DEV dirette invalidano il raster precedente.
     const {transform,cogCenter,rotPivot,crimpEased,tiltEased,planRot,displayPts,displayCellScale,
@@ -1241,6 +1409,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
       offmapPresence: offmapPresence(),
       contentAlpha,
       invK,
+      fitScale,
       rotSinNow,
       rotCosNow,
       zScaleNow,
@@ -1248,12 +1417,12 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
       painters,
       lodCollapse: lodEased < 0.5,
       pickTile: hostIndex,
-      stashCurves: (i, curves) => {
+      stashCurves: (i, curves, zStep) => {
         if (i !== hostIndex) return;
         const pickMetrics = pickMetricsForTile || {};
         terraceCurveCache = {
           index: i, curves,
-          tiltNow, rotSinNow, rotCosNow, zScale: frame.zScaleDraw, invK,
+          tiltNow, rotSinNow, rotCosNow, zScale: frame.zScaleDraw, zStep: zStep || 0, invK,
           B: pickMetrics.B || Math.max(0, curves.length - 1),
           packing: pickMetrics.packing || 0,
           rMed: pickMetrics.rMed || 0,
@@ -1449,7 +1618,10 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     const routePointOf = i => {
       const cr = cellRings[i];
       const point = cr ? cellPoint(i, cr.gx, cr.gy, false) : displayPts[i];
-      return {point, z: painters.axonZOf(bandsOfTile(i)) * zScaleDraw};
+      const sCell = displayCellScale[i] * (1 + (cognitiveBirthScale[i] - 1) * crimpEased);
+      const rMedDisp = (cr ? isoProfileMed[i] : cognitiveTileRadius[i]) * sCell;
+      const rise = painters.tileRise(rMedDisp, transform.k, fitScale, crimpEased);
+      return {point, z: bandsOfTile(i) * rise * (zScaleDraw / Math.max(0.001, zScaleNow))};
     };
     const routeStepPoints = routeHoverEased > 0.01
       ? atlasRouteHoverDrawing.buildStepPoints({ routes: routeHoverRoutes, routePointOf, birthEased, fictBirthEased, N_GEO, BIRTH_EPSILON })
@@ -1509,7 +1681,20 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
       haloProfile.tilt = +tiltEased.toFixed(2);
     }
     if (haloProfile) atlasProfileLog.halo(haloProfile);
+    // Catene fuse: solo nella geografia a riposo con «tutti». Durante i
+    // passaggi, col personaggio e nel diagramma ogni monte resta per tessera.
+    // In pianta vale la stessa legge dietro OROGRAFIA.piantaFusa: curve fuse a
+    // zoom basso, identiche ai terrazzamenti, che tornano per luogo ingrandendo.
+    let fusedSet = null;
+    const fieldRest = !drawMotion && focalizer == null && crimpEased <= 0.01;
+    if (fieldRest && (axonRendering ? tiltEased >= 0.999 : (OROGRAFIA.piantaFusa && tiltEased <= 0.01))) {
+      const generation = ensureOroField(evaluated);
+      fusedSet = generation.fused;
+      if (axonRendering) drawOroField(frame);
+      else drawOroGenerations((g, a) => paintOroFlat(frame, g, a, isoFillAlpha, isoStrokeScale));
+    }
     for (const i of drawOrder){
+      if (fusedSet && fusedSet.has(i)) continue; // il monte è nel campo delle catene
       if(drawMotion&&!evaluated.reliefVisible[i])continue;
       const cr = cellRings[i];
       const isFict = i >= N_GEO;
@@ -1524,7 +1709,12 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
       const [px, py] = displayPts[i];
       const drawFictSummitGlyph = () => {
         const glyphB = axonRendering ? B : 0;
-        const [cx, cy] = painters.zPoint(frame, px, py, painters.axonZOf(glyphB) * (drawMotion?zScaleNow*drawMotion.tileTilt[i]:zScaleDraw));
+        // Il glifo sta alla quota della cima: stessa legge delle terrazze.
+        const glyphZ = glyphB > 0 && rMed > 0
+          ? glyphB * painters.tileRise(rMed, transform.k, fitScale, crimpEased)
+            * ((drawMotion ? zScaleNow * drawMotion.tileTilt[i] : zScaleDraw) / Math.max(0.001, zScaleNow))
+          : 0;
+        const [cx, cy] = painters.zPoint(frame, px, py, glyphZ);
         const gr = cognitiveTileRadius[i] * displayCellScale[i] * 0.5;
         const status = allData[i].properties.reality_status;
         // Glifo inscritto: dentro la propria tessera, alla quota della cima, tratto in px CSS.
@@ -1590,8 +1780,10 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
       const nL = B;
       profileTiles++;
       profileCurves += nL;
-      const bandPx = Math.max(1, nL) * ISO_MIN_SPACING * invK;
-      const packing = Math.min(1, bandPx / (rMed * (ISO_OUTER - ISO_INNER)));
+      // Le quote sono sempre distese sull'intero intervallo del raggio: il
+      // rientro di ogni livello è proporzionale all'impronta, in pianta come in
+      // rilievo, e le curve non si addossano più al bordo delle tessere estese.
+      const packing = 1;
 
       if (axonRendering) {
         const bandTint = roleMode
@@ -1813,6 +2005,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     return {finish(environment){
     const overlayProfile = atlasOverlays.draw({
       context, PROFILE, profileRulerMs, profileT0, profileFrame, cssUnit: invK / fitScale,
+      campo: oroCache ? oroCache.stats : null,
       paperLever,
       crimpEased, transform, K2, chapter, pulse:environment.pulse, N_INMAP, N_GEO,
       geoData, allData, pts, displayPts, birthEased, fictBirthEased,
@@ -2045,6 +2238,38 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     if (!routeSelection.enabled()) return;
     routeSelection.selectFromTerrace();
   }
+  // Il clic su un monte fuso non apre la scheda: scioglie la catena. La camera
+  // va alla prima ottava di zoom in cui ogni luogo del componente torna al suo
+  // monte (zoom di scioglimento in forma chiusa); lì la scelta della terrazza
+  // procede come sempre. Vale in geografia con «tutti», dove il campo esiste.
+  function dissolveChainAt(clickHost) {
+    if (!oroCache || !oroCache.fused.has(clickHost)) return false;
+    if (crimpEased > 0.01 || focalizer != null || axisTransport.active || !evaluatedFrame) return false;
+    const rows = oroCache.levels[0] || [];
+    const row = rows.find(r => r.members && r.members.some(q => oroCache.mounds[q].i === clickHost));
+    if (!row) return false;
+    let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity, rHost = Infinity;
+    for (const q of row.members) {
+      const m = oroCache.mounds[q];
+      if (m.x < x0) x0 = m.x; if (m.x > x1) x1 = m.x;
+      if (m.y < y0) y0 = m.y; if (m.y > y1) y1 = m.y;
+      if (m.i === clickHost) rHost = m.rEff;
+    }
+    // Scioglimento progressivo: si zooma fino all'ottava in cui il monte
+    // cliccato si separa; un clic sui vicini più piccoli scioglie oltre.
+    const kFree = dissolveZoom({rEffMin: rHost, floorCSS: OROGRAFIA.pavimentoCSS, fit: fitScale, dissolve: OROGRAFIA.scioglimento});
+    let k = 1;
+    while (k < kFree) k *= 2;            // la prima ottava che scioglie
+    k = Math.max(transform.k, Math.min(k, ZOOM_MAX));
+    if (!(k > transform.k * 1.01)) return false;
+    const [sx, sy] = projectMotion(evaluatedFrame, {projection: atlasProjection}, [(x0 + x1) / 2, (y0 + y1) / 2]);
+    const qx = (sx - transform.x) / transform.k, qy = (sy - transform.y) / transform.k;
+    const next = d3.zoomIdentity.translate(width / 2 - qx * k, height / 2 - qy * k).scale(k);
+    const sel = d3.select(canvas), target = gestureTransform(next);
+    if (reducedMotion.matches) sel.call(zoomBehavior.transform, target);
+    else sel.transition().duration(atlasConfig.ACTIVE.focusMs).ease(d3.easeCubicInOut).call(zoomBehavior.transform, target);
+    return true;
+  }
   // Al tocco: le tessere trovate dal picking nel disco di 44 px CSS attorno al dito, dal centro verso il bordo.
   function touchCandidates(frame, clientX, clientY) {
     const radius = atlasConfig.TOUCH_TARGET_CSS / 2, hosts = [];
@@ -2069,6 +2294,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
     }
     const clickHost = hostAt(clickFrame, x, y);
     if (clickHost < 0) return;
+    if (dissolveChainAt(clickHost)) return;
     selectHost(clickHost);
     } finally { notify("selection"); }
   }, {signal: listeners.signal});
@@ -2111,7 +2337,7 @@ export default function createAtlas(model, roma, { historical = null, onTileSele
   viewResize = new ResizeObserver(() => shell.viewBox.style.setProperty("--view-dock-height", `${viewDock.offsetHeight}px`));
   viewResize.observe(viewDock);
   updateDial();
-  placeRose = createPlaceRose({container: shell.viewBox, onChoose: tile => { try { selectHost(tile); } finally { notify("selection"); } }});
+  placeRose = createPlaceRose({container: shell.viewBox, onChoose: tile => { try { if (!dissolveChainAt(tile)) selectHost(tile); } finally { notify("selection"); } }});
   ({mapBtn, pasticciaccioBtn, reliefBtn, stagePrevBtn, stageNextBtn, stageLabel, seqModeToggle, seqChapterBtn, seqPageBtn, orderBtn, seqSlider, seqLabel, roleLegend, roleButtons, pageRibbon, ribbonWrap: pageRibbonShell, ribbonPrevBtn, ribbonNextBtn, legendRow, lodLabel} = shell);
 
   const disposeHandlers = atlasHandlers.install({

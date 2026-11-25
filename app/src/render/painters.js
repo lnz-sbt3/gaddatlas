@@ -1,19 +1,20 @@
 import * as d3 from "d3";
 import atlasConfig from "../model/config.js";
+import {chaikin} from "./oro-field.js";
 
 // Fabbrica di primitive pittoriche senza stato di frame: il context e le costanti
 // sono dipendenze statiche, mentre scala, rotazione, quote e buffer correnti
 // arrivano sempre dal parametro frame costruito in draw().
 export default function atlasPainters(atlasEntities, atlasChapters, atlasVoronoi) {
   const {
-    BG_COLOR, HUE_RGB, FICT_HUE_RGB, ISO_ALPHA, ISO_WIDTH, ISO_FILL,
-    FICT_GLYPH_WIDTH, FICT_RELIEF_ALPHA, FICT_GLYPH_PATHS, FICT_GLYPH_BOX,
+    BG_COLOR, FICT_HUE_RGB, ISO_WIDTH,
+    FICT_GLYPH_WIDTH, FICT_GLYPH_PATHS, FICT_GLYPH_BOX,
     FICT_GLYPH_GAIN, INK_COLOR, GRID_COLOR, ISO_ANGLES, ISO_WOBBLE, ISO_DRIFT,
     ISO_ECC_DAMP, ISO_OUTER, ISO_INNER, ISO_MARGIN, AXON_STACK_ALIGN, TER_SLOPE,
-    TER_BANDS_SPAN, AXON_OPAQUE, AXON_SOLID_CAPS, AXON_TREAD_TINT, AXON_WALL_SHADE, AXON_WALL_MIN_LUM,
-    AXON_EDGE_TOP, AXON_EDGE_BOT, AXON_EDGE_PICK, CONSTELLATION_RADIUS_GAIN,
+    TER_BANDS_SPAN, AXON_TREAD_TINT,
+    AXON_EDGE_TOP, AXON_EDGE_PICK, CONSTELLATION_RADIUS_GAIN,
     HALO_ALPHA_PEAK, HALO_FALLOFF_GAMMA, HALO_FALLOFF_STOPS, HALO_POOL_OFFSET,
-    AXON_MAP_FOOTPRINT_MAX, ROLE_MIX_BASE, ROLE_MIX_TOP
+    ROLE_MIX_BASE, ROLE_MIX_TOP, OROGRAFIA
   } = atlasConfig;
   const { N_GEO, N_INMAP } = atlasEntities;
   const { BANDS_MAX } = atlasChapters;
@@ -26,8 +27,16 @@ export default function atlasPainters(atlasEntities, atlasChapters, atlasVoronoi
     return [0, 2, 4].map(o => parseInt(v.slice(o, o + 2), 16) || 0);
   }
   const TER_STEP_FRAC = (ISO_OUTER - ISO_INNER) / TER_BANDS_SPAN;
-  // La quota assonometrica deriva da una pendenza globale uniforme.
+  // Riferimento globale per le misure del livello di dettaglio: la quota di un
+  // livello su una tessera di raggio mediano cognitivo, a pavimento spento.
   const AXON_Z_STEP = TER_SLOPE * TER_STEP_FRAC * d3.median(reliefReferenceRadius.slice(0, N_INMAP));
+  // Quota di un livello per tessera: rapporto·max(raggio dell'impronta, pavimento)/9.
+  // Il raggio è nelle unità della figura (scala della vista compresa); il pavimento
+  // è in px CSS, convertito con zoom e adattamento, e svanisce verso il diagramma.
+  function tileRise(rMedDisplay, k, fitScale, crimpEased) {
+    const floorW = OROGRAFIA.pavimentoCSS / Math.max(1e-9, k * (fitScale || 1)) * (1 - (crimpEased || 0));
+    return OROGRAFIA.rapporto * Math.max(rMedDisplay || 0, floorW) / TER_BANDS_SPAN;
+  }
   const BG_RGB = hexToRgb(BG_COLOR);
   const INK_RGB = hexToRgb(INK_COLOR);
 
@@ -61,23 +70,6 @@ export default function atlasPainters(atlasEntities, atlasChapters, atlasVoronoi
       return a.map((v, j) => Math.round(v + (b[j] - v) * t));
     }
 
-    function relLum(rgb) {
-      return 0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2];
-    }
-
-    function shadeWall(rgb) {
-      const shaded = shadeRgb(rgb, AXON_WALL_SHADE);
-      const minLum = AXON_WALL_MIN_LUM * relLum(BG_RGB);
-      const lum = relLum(shaded);
-      if (lum >= minLum) return shaded;
-      const bgLum = relLum(BG_RGB);
-      const t = (minLum - lum) / Math.max(0.001, bgLum - lum);
-      return mixRgb(shaded, BG_RGB, Math.max(0, Math.min(1, t)));
-    }
-
-    function wallRgb(k) {
-      return shadeWall(treadRgb(k));
-    }
     // La luminosita' e' normalizzata sulla quota assoluta, non sulla singola tessera.
     function roleTreadRgb(idx, k) {
       if (!(idx >= 0) || idx >= ROLE_RGB.length) return treadRgb(k);
@@ -91,10 +83,6 @@ export default function atlasPainters(atlasEntities, atlasChapters, atlasVoronoi
       const t = BANDS_MAX <= 1 ? 0 : Math.min(1, Math.max(0, (k - 1) / (BANDS_MAX - 1)));
       const mix = (ROLE_MIX_BASE + (ROLE_MIX_TOP - ROLE_MIX_BASE) * t) * (atlasConfig.TERRACE.roleTintScale ?? 1);
       return mixRgb(BG_RGB, ROLE_PLURAL_RGB, mix);
-    }
-
-    function wallFromTreadRgb(rgb) {
-      return shadeWall(rgb);
     }
 
     function drawGroundHalo(frame, cx, cy, radius, color, strength) {
@@ -128,10 +116,6 @@ export default function atlasPainters(atlasEntities, atlasChapters, atlasVoronoi
       context.restore();
     }
 
-    function axonZOf(k) {
-      return k * AXON_Z_STEP;
-    }
-
     function axonLevelForBand(k, packing) {
       const inner = ISO_OUTER - (ISO_OUTER - ISO_INNER) * packing;
       const target = Math.max(ISO_INNER, ISO_OUTER - (k - 1) * TER_STEP_FRAC);
@@ -142,39 +126,6 @@ export default function atlasPainters(atlasEntities, atlasChapters, atlasVoronoi
 
     function planarLevelForBand(k, B) {
       return B > 0 ? (B - k + 1) / B : 1;
-    }
-
-    // Impronta in mappa delle forme 'tumuli' e 'curve': raccolta entro un raggio massimo e arrotondata
-    // verso la mediana; pesata da (1 - crimpEased), così nel diagramma resta la sagoma della tessera.
-    const REF_RGB_ARR = atlasConfig.HUE_RGB.split(',').map(Number), FICT_RGB_ARR = atlasConfig.FICT_HUE_RGB.split(',').map(Number);
-    const MAP_MEDIAN_R = d3.median(reliefReferenceRadius.slice(0, N_INMAP));
-    function gatherFootprint(frame, radii) {
-      const T = atlasConfig.TERRACE, w = 1 - frame.crimpEased;
-      if (!(w > 0) || (T.footprint == null && !T.roundness)) return radii;
-      const cap = T.footprint == null ? Infinity : T.footprint * MAP_MEDIAN_R, med = Math.min(cap, d3.median(radii));
-      return radii.map(r => { const g = Math.min(r, cap), q = g + (med - g) * (T.roundness || 0); return r + (q - r) * w; });
-    }
-    function mapFootprintRadius(frame, rawR) {
-      if (AXON_MAP_FOOTPRINT_MAX == null) return rawR;
-      const cap = AXON_MAP_FOOTPRINT_MAX * frame.invK;
-      if (!(rawR > cap)) return rawR;
-      return cap + (rawR - cap) * frame.crimpEased;
-    }
-
-    const footprintCache=new WeakMap();
-    function axonFootprint(frame, radii, rConst, sCell) {
-      if (!radii) {
-        const r = mapFootprintRadius(frame, rConst);
-        return {radii: null, rMin: r, rMed: r, sCell: 1};
-      }
-      const previous=footprintCache.get(radii);
-      if(previous&&previous.sCell===sCell&&previous.crimp===frame.crimpEased&&previous.invK===frame.invK)return previous.value;
-      const out = new Float64Array(radii.length);
-      for (let k = 0; k < radii.length; k++) out[k] = mapFootprintRadius(frame, radii[k] * sCell);
-      const gathered = gatherFootprint(frame, out); if (gathered !== out) out.set(gathered);
-      const value={radii: out, rMin: Math.min(...out), rMed: d3.median(out), sCell: 1};
-      footprintCache.set(radii,{sCell,crimp:frame.crimpEased,invK:frame.invK,value});
-      return value;
     }
 
     function drawFictGlyph(frame, cx, cy, r, status, inscribe = null) {
@@ -279,52 +230,6 @@ export default function atlasPainters(atlasEntities, atlasChapters, atlasVoronoi
       return pts;
     }
 
-    function fillQuadStrip(frame, a, za, b, zb, rgb, alpha, cullBackfaces = false) {
-      const motionGeometry=frame.motionGeometry||(import.meta.env.DEV?frame.devMotion:null);
-      if(motionGeometry)return motionGeometry.quadStrip(frame,a,za,b,zb,rgb,alpha,cullBackfaces);
-      const n = Math.min(a.length, b.length);
-      if (n < 2 || alpha <= 0) return;
-      const buildT0 = frame.profile ? performance.now() : 0;
-      const stripPath = new Path2D();
-      const area = cullBackfaces ? d3.polygonArea(a) : 0;
-      let drawn = 0;
-      context.fillStyle = `rgba(${rgb},${alpha})`;
-      for (let j = 0; j < n; j++) {
-        const j2 = (j + 1) % n;
-        if (cullBackfaces) {
-          const dx = a[j2][0] - a[j][0], dy = a[j2][1] - a[j][1];
-          const nx = area >= 0 ? dy : -dy;
-          const ny = area >= 0 ? -dx : dx;
-          const screenNy = frame.tiltNow * (nx * frame.rotSinNow + ny * frame.rotCosNow);
-          if (screenNy <= 0) continue;
-        }
-        const aj = zPoint(frame, a[j][0], a[j][1], za);
-        const aj2 = zPoint(frame, a[j2][0], a[j2][1], za);
-        const bj2 = zPoint(frame, b[j2][0], b[j2][1], zb);
-        const bj = zPoint(frame, b[j][0], b[j][1], zb);
-        stripPath.moveTo(aj[0], aj[1]);
-        stripPath.lineTo(aj2[0], aj2[1]);
-        stripPath.lineTo(bj2[0], bj2[1]);
-        stripPath.lineTo(bj[0], bj[1]);
-        stripPath.closePath();
-        drawn++;
-      }
-      if (!drawn) return;
-      if (frame.profile) {
-        frame.profile.quadCount += drawn;
-        frame.profile.fillLenASum += a.length;
-        frame.profile.fillLenBSum += b.length;
-        frame.profile.fillLenCalls++;
-      }
-      const fillT0 = frame.profile ? performance.now() : 0;
-      if (frame.profile) frame.profile.fillBuildMs += fillT0 - buildT0;
-      context.fill(stripPath);
-      if (frame.profile) {
-        frame.profile.fillRasterMs += performance.now() - fillT0;
-        frame.profile.fillCalls++;
-      }
-    }
-
     function addClosedPolygon(path, pts, z, reverse, frame) {
       const motionGeometry=frame.motionGeometry||(import.meta.env.DEV?frame.devMotion:null);
       if(motionGeometry)return motionGeometry.closedPolygon(path,pts,z,reverse,frame);
@@ -340,41 +245,6 @@ export default function atlasPainters(atlasEntities, atlasChapters, atlasVoronoi
       }
       path.closePath();
       return true;
-    }
-
-    function annulusLooksNested(outer, inner) {
-      if (!outer || !inner || outer.length < 3 || inner.length < 3) return false;
-      for (const p of inner) {
-        if (!d3.polygonContains(outer, p)) return false;
-      }
-      return true;
-    }
-
-    function fillNestedBand(frame, outer, inner, z, rgb, alpha) {
-      if (!outer || !inner || outer.length < 2 || inner.length < 2 || alpha <= 0) return;
-      if (!annulusLooksNested(outer, inner)) {
-        if (frame.profile) frame.profile.nestedFallbacks++;
-        fillQuadStrip(frame, outer, z, inner, z, rgb, alpha);
-        return;
-      }
-      if (frame.profile) {
-        frame.profile.nestedBandCount++;
-        frame.profile.fillLenASum += outer.length;
-        frame.profile.fillLenBSum += inner.length;
-        frame.profile.fillLenCalls++;
-      }
-      const buildT0 = frame.profile ? performance.now() : 0;
-      const bandPath = new Path2D();
-      addClosedPolygon(bandPath, outer, z, false, frame);
-      addClosedPolygon(bandPath, inner, z, true, frame);
-      const fillT0 = frame.profile ? performance.now() : 0;
-      if (frame.profile) frame.profile.fillBuildMs += fillT0 - buildT0;
-      context.fillStyle = `rgba(${rgb},${alpha})`;
-      context.fill(bandPath, "evenodd");
-      if (frame.profile) {
-        frame.profile.fillRasterMs += performance.now() - fillT0;
-        frame.profile.fillCalls++;
-      }
     }
 
     function fillClosedContour(frame, pts, z, rgb, alpha) {
@@ -595,132 +465,127 @@ export default function atlasPainters(atlasEntities, atlasChapters, atlasVoronoi
       if(mix<1){context.save();context.globalAlpha*=1-mix;const values=args.slice();if(tint?.collapsed)values[13]=tint.collapsed;paintAxonReliefTile({...frame,lodCollapse:true},...values);context.restore();}
       if(mix>0){context.save();context.globalAlpha*=mix;const values=args.slice();if(tint?.full)values[13]=tint.full;paintAxonReliefTile({...frame,lodCollapse:false},...values);context.restore();}
     }
+    // Resa a plastico inciso: calotte di carta sovrapposte senza pareti, un velo
+    // di pendio sotto ogni calotta, un filo d'inchiostro per quota, un'ombra
+    // leggera a terra. La sagoma è la tessera (il tetto d'impronta sta nel
+    // profilo delle isoipse): le curve viste dall'alto sono i terrazzamenti.
     function paintAxonReliefTile(frame, traceIsoline, isoFillAlpha, i, B, px, py, radii, rMin, sCell, rMed, seed, packing, isFict, bandTint = null, roleMarks = null) {
       const focalAlpha = frame.contentAlpha ? frame.contentAlpha(i) : (frame.focalEased ? frame.focalEased[i] : 1);
       // In modalita' ruolo il contorno resta neutro: il colore e' gia' sulla terrazza.
       let strokeRgb = (frame.roleMode || !isFict) ? rgbString(INK_RGB) : FICT_HUE_RGB;
       let strokeAlpha = focalAlpha;
-      if(frame.motionGeometry||(import.meta.env.DEV&&frame.devMotion)){
-        const geometry=frame.motionGeometry||(import.meta.env.DEV?frame.devMotion:null);
-        strokeRgb=rgbString(mixRgb(geometry.planarRgb,(frame.roleMode||!isFict)?INK_RGB:geometry.planarRgb,frame.tiltEased));
-        strokeAlpha*=geometry.planarStroke+(1-geometry.planarStroke)*frame.tiltEased;
+      const motionGeometry = frame.motionGeometry || (import.meta.env.DEV ? frame.devMotion : null);
+      if (motionGeometry) {
+        strokeRgb = rgbString(mixRgb(motionGeometry.planarRgb, (frame.roleMode || !isFict) ? INK_RGB : motionGeometry.planarRgb, frame.tiltEased));
+        strokeAlpha *= motionGeometry.planarStroke + (1 - motionGeometry.planarStroke) * frame.tiltEased;
       }
       const stackAlign = AXON_STACK_ALIGN * frame.tiltEased;
-      const zScale = frame.zScaleDraw;
+      // Frazione della quota a regime: chiusura dei tre tempi e del passaggio
+      // pianta/rilievo. La scala della vista è già nel raggio dell'impronta.
+      const phase = frame.zScaleDraw / Math.max(0.001, frame.zScaleNow);
+      const dz = tileRise(rMed, 1 / Math.max(1e-9, frame.invK), frame.fitScale, frame.crimpEased) * phase;
       const fillAlphaNow = (axonAlpha, planarAlpha) =>
-        ((frame.motionGeometry||(import.meta.env.DEV&&frame.devMotion))?false:frame.tiltEased >= 0.999) ? axonAlpha : planarAlpha + (axonAlpha - planarAlpha) * frame.tiltEased;
+        (motionGeometry ? false : frame.tiltEased >= 0.999) ? axonAlpha : planarAlpha + (axonAlpha - planarAlpha) * frame.tiltEased;
       const strokeGroups = new Map();
       // Con un personaggio la terrazza individuale porta la determinazione della sua riga (mai la silhouette LOD).
       const determinationOf = atlasConfig.DETERMINATION.mode !== "off" && frame.roleMode && !frame.lodCollapse ? roleMarks?.determination : null;
       if (determinationOf) { strokeGroups.coding = true; strokeGroups.coded = []; }
-      const footprint = axonFootprint(frame, radii, rMin, sCell);
-      const axRadii = footprint.radii, axRMin = footprint.rMin, axRMed = footprint.rMed, axSCell = footprint.sCell;
-      const curves = [baseContourPts(frame, px, py, axRMin, axRadii, axSCell, axRMed, seed, stackAlign)];
+      // La smussatura agisce sulla geometria: tratti, determinazione, corridoio
+      // e picking lavorano sugli stessi punti del disegno.
+      const liscia = pts => OROGRAFIA.smussatura > 0 ? chaikin(pts, OROGRAFIA.smussatura) : pts;
+      const curves = [liscia(baseContourPts(frame, px, py, rMin, radii, sCell, rMed, seed, stackAlign))];
       for (let k = 1; k <= B; k++) {
         const outPts = [];
         const axonLevel = axonLevelForBand(k, packing);
         const level2D = planarLevelForBand(k, B);
-        const level = ((frame.motionGeometry||(import.meta.env.DEV&&frame.devMotion))?false:frame.tiltEased >= 0.999) ? axonLevel : level2D + (axonLevel - level2D) * frame.tiltEased;
+        const level = (motionGeometry ? false : frame.tiltEased >= 0.999) ? axonLevel : level2D + (axonLevel - level2D) * frame.tiltEased;
         const traceT0 = frame.profile ? performance.now() : 0;
-        if (traceIsoline(null, null, px, py, axRadii, axRMin, axSCell, axRMin, axRMed, seed, level, packing, outPts, stackAlign)) {
-          curves.push(outPts);
+        if (traceIsoline(null, null, px, py, radii, rMin, sCell, rMin, rMed, seed, level, packing, outPts, stackAlign)) {
+          curves.push(liscia(outPts));
         }
         if (frame.profile) frame.profile.traceMs += performance.now() - traceT0;
       }
-      if (frame.stashCurves) frame.stashCurves(i, curves);
-      const edgeTopWidth = (bandTint ? AXON_EDGE_TOP : ISO_WIDTH * 0.9) * frame.invK;
-      const edgeBotWidth = (bandTint ? AXON_EDGE_BOT : ISO_WIDTH * 0.65) * frame.invK;
+      if (frame.stashCurves) frame.stashCurves(i, curves, dz);
+      const filoWidth = Math.max(OROGRAFIA.filoCSS * frame.invK / (frame.fitScale || 1), ISO_WIDTH * frame.invK);
       const baseWidth = ISO_WIDTH * 0.9 * frame.invK;
+      const veloRgb = rgbString(shadeRgb(BG_RGB, OROGRAFIA.pendio));
       if (B <= 0) {
         strokePts(frame, strokeGroups, curves[0], 0, strokeRgb, strokeAlpha, baseWidth);
         flushStrokeGroups(frame, strokeGroups, true);
         return;
       }
-      // A basso dettaglio la stratigrafia collassa in una silhouette del ruolo dominante.
-      if (frame.lodCollapse && B > 0) {
-        const zTop = axonZOf(B) * zScale;
-        const tint = bandTint ? bandTint(1, B) : null;
-        let tread = tint ? tint[0] : treadRgb(0);
-        let wall = tint ? tint[1] : wallRgb(0);
-        // Stessa regola della tinta del ruolo anche nella sagoma a basso dettaglio (TERRACE.roleFace).
-        const roleFace = atlasConfig.TERRACE.roleFace, ring = tint && roleFace && roleFace !== 'campitura' ? tint[0] : null;
-        if (ring) { tread = mixRgb(tint[0], BG_RGB, .86); if (roleFace === 'anello') wall = wallRgb(0); }
+      // Ombra a terra, sul lato opposto all'estrusione: il monte si stacca dalla
+      // carta. Leggermente ristretta, così sul lato in ombra non orla il contorno.
+      const shadowAlpha = OROGRAFIA.ombra * focalAlpha * fillAlphaNow(1, 0) * Math.min(1, phase);
+      if (shadowAlpha > 0.004) {
+        const sx = rMed * 0.12 * frame.rotSinNow, sy = rMed * 0.12 * frame.rotCosNow;
+        fillClosedContour(frame, curves[0].map(p => [px + (p[0] - px) * 0.94 + sx, py + (p[1] - py) * 0.94 + sy]), 0, rgbString(INK_RGB), shadowAlpha);
+      }
+      // A basso dettaglio la stratigrafia collassa in una sintesi a due quote:
+      // velo sotto la vetta e calotta sommitale ristretta, senza pareti. Vale
+      // nel diagramma, dove i monti sono molti e minuti, e in geografia per i
+      // soli monti piccoli sullo schermo: da ~14 px CSS di raggio in su la
+      // stratigrafia resta per esteso (i gradini vi si leggono).
+      const rMedCss = rMed * (frame.fitScale || 1) / Math.max(1e-9, frame.invK);
+      if (frame.lodCollapse && (frame.crimpEased > 0.5 || rMedCss < 14)) {
+        const zTop = B * dz;
+        const tread = bandTint ? bandTint(1, B) : treadRgb(0);
         const collapsedAlpha = fillAlphaNow(focalAlpha, isoFillAlpha(B) * focalAlpha);
-        fillQuadStrip(frame, curves[0], 0, curves[0], zTop, rgbString(wall), collapsedAlpha, true);
-        const collapsedCap = fillClosedContour(frame, curves[0], zTop, rgbString(tread), collapsedAlpha);
-        const collapsedPaper = tint ? (atlasConfig.HISTORICAL.overTint || 0) : 1;
-        if (collapsedPaper) offerTreadPaper(frame, i, curves[0], zTop, collapsedCap, collapsedAlpha * collapsedPaper);
+        // Qui il velo resta pieno: è il corpo del monte nella sintesi, e i
+        // monti del diagramma sono minuti.
+        fillClosedContour(frame, curves[0], Math.max(0, zTop - dz), veloRgb, OROGRAFIA.veloAlpha * collapsedAlpha);
+        const topPts = [];
+        const capTop = traceIsoline(null, null, px, py, radii, rMin, sCell, rMin, rMed, seed, 0.55, packing, topPts, stackAlign) ? liscia(topPts) : curves[0];
+        const collapsedCap = fillClosedContour(frame, capTop, zTop, rgbString(tread), collapsedAlpha);
+        const collapsedPaper = bandTint ? (atlasConfig.HISTORICAL.overTint || 0) : 1;
+        if (collapsedPaper) offerTreadPaper(frame, i, capTop, zTop, collapsedCap, collapsedAlpha * collapsedPaper);
         strokePts(frame, strokeGroups, curves[0], 0, strokeRgb, strokeAlpha, baseWidth);
-        strokePts(frame, strokeGroups, curves[0], zTop, ring ? rgbString(ring) : strokeRgb, strokeAlpha, ring ? (roleFace === 'anello' ? 2.4 : 1.4) * frame.invK : edgeTopWidth);
+        strokePts(frame, strokeGroups, capTop, zTop, strokeRgb, strokeAlpha, bandTint ? AXON_EDGE_TOP * frame.invK : filoWidth);
         flushStrokeGroups(frame, strokeGroups, true);
         return;
       }
-      const solidCaps = AXON_SOLID_CAPS && AXON_OPAQUE && focalAlpha > 0.98;
-      if (ISO_FILL && curves.length > 1) {
-        const baseRgb = rgbString(shadeRgb(BG_RGB, 0.10));
-        const baseAlpha = fillAlphaNow(AXON_OPAQUE ? focalAlpha : isoFillAlpha(1) * focalAlpha, isoFillAlpha(B) * focalAlpha);
-        if (solidCaps) fillClosedContour(frame, curves[0], 0, baseRgb, baseAlpha);
-        else fillNestedBand(frame, curves[0], curves[1], 0, baseRgb, baseAlpha);
-      }
       strokePts(frame, strokeGroups, curves[0], 0, strokeRgb, 0.55 * strokeAlpha, baseWidth);
-      let topCap = null, topZ = 0, topAlpha = 1, topPaper = false;
+      // Sotto il pixel il filo di quota si dirada: niente accumulo d'inchiostro.
+      const edgeFade = Math.min(1, (TER_STEP_FRAC * rMed * (frame.fitScale || 1)) / Math.max(1e-9, 1.2 * frame.invK));
+      let topCap = null, topZ = 0, topAlpha = 1, topPaper = 0;
       for (let k = 1; k < curves.length; k++) {
-        const z0 = axonZOf(k - 1) * zScale, z1 = axonZOf(k) * zScale;
+        const z0 = (k - 1) * dz, z1 = k * dz;
         const tint = bandTint ? bandTint(k, B) : null;
         // La terrazza interrogata varia per luminosita' e spessore, non per colore.
         const isPicked = roleMarks && roleMarks.terrace === k;
-        let tread = tint ? tint[0] : treadRgb(k);
-        let wall = tint ? tint[1] : wallRgb(k);
+        let tread = tint || treadRgb(k);
         if (roleMarks?.isolate) {
-          if (!isPicked) {
-            tread = mixRgb(tread, BG_RGB, 0.45);
-            wall = wallFromTreadRgb(tread);
-          }
+          if (!isPicked) tread = mixRgb(tread, BG_RGB, 0.45);
         } else if (isPicked) {
-          tread = mixRgb(tread, BG_RGB, 0.34);
-          wall = wallFromTreadRgb(tread);
+          tread = mixRgb(tread, INK_RGB, 0.06);
         }
-        const terraceStrokeRgb = strokeRgb, style = atlasConfig.TERRACE;
-        // Tinta del ruolo (TERRACE.roleFace): 'campitura' faccia piena; 'alzate' faccia quasi carta,
-        // tinta sulle alzate e sul bordo superiore; 'anello' faccia quasi carta e pareti neutre, anello colorato sul bordo.
-        let ringRgb = null;
-        if (tint && style.roleFace && style.roleFace !== 'campitura') {
-          ringRgb = tint[0]; tread = mixRgb(tint[0], BG_RGB, .86);
-          if (style.roleFace === 'anello') wall = wallRgb(k);
-        }
-        // 'carta': fianchi e pedate del colore del fondo (occludono), il disegno è affidato ai fili delle quote.
-        if (style.walls === 'carta' && !tint) { tread = BG_RGB; wall = BG_RGB; }
-        // 'tinta': il corpo del tumulo prende la tinta della densità del suo insieme, più piena a ogni quota.
-        if (style.walls === 'tinta' && !tint) { tread = mixRgb(BG_RGB, isFict ? FICT_RGB_ARR : REF_RGB_ARR, style.tintBase + style.tintStep * k); wall = wallFromTreadRgb(tread); }
         const planarAlpha = isoFillAlpha(B - k + 1) * focalAlpha;
-        fillQuadStrip(frame, k === 1 ? curves[0] : curves[k], z0, curves[k], z1, rgbString(wall), fillAlphaNow(focalAlpha, planarAlpha), true);
-        if (ISO_FILL) {
-          const fillAlpha = fillAlphaNow(AXON_OPAQUE ? focalAlpha : isoFillAlpha(k + 1) * focalAlpha, planarAlpha);
-          const isLast = k === curves.length - 1;
+        // Velo di pendio: il fianco del gradino, cioè la mezzaluna fra la
+        // calotta alla quota inferiore e la stessa calotta sollevata, nel tono
+        // ombreggiato della pedata che sostiene. La differenza pari-dispari
+        // rasterizza la sola mezzaluna, non l'intera faccia.
+        const veloAlphaNow = OROGRAFIA.veloAlpha * fillAlphaNow(focalAlpha, 0);
+        if (veloAlphaNow > 0.004) {
+          const slopeRgb = tint ? rgbString(shadeRgb(tread, OROGRAFIA.pendio)) : veloRgb;
+          const velo = new Path2D();
+          addClosedPolygon(velo, curves[k], z0, false, frame);
+          addClosedPolygon(velo, curves[k], z1, true, frame);
+          context.fillStyle = `rgba(${slopeRgb},${veloAlphaNow})`;
+          context.fill(velo, "evenodd");
+          if (frame.profile) frame.profile.fillCalls++;
+        }
+        const capAlpha = fillAlphaNow(focalAlpha, planarAlpha);
+        const cap = fillClosedContour(frame, curves[k], z1, rgbString(tread), capAlpha);
+        if (k === curves.length - 1) {
+          topCap = cap; topZ = z1; topAlpha = capAlpha;
           // La pedata sommitale conserva il proprio ritaglio: porta il frammento di carta del luogo.
           // Sulle facce con la tinta del ruolo la carta entra solo con HISTORICAL.overTint > 0, attenuata.
-          const paperFace = style.walls === 'tinta' ? 0 : tint ? (atlasConfig.HISTORICAL.overTint || 0) : 1;
-          if (solidCaps) {
-            const cap = fillClosedContour(frame, curves[k], z1, rgbString(tread), fillAlpha);
-            if (isLast) { topCap = cap; topZ = z1; topAlpha = fillAlpha; topPaper = paperFace; }
-          } else if (!isLast) {
-            fillNestedBand(frame, curves[k], curves[k + 1], z1, rgbString(tread), fillAlpha);
-          } else {
-            const lastAlpha = fillAlphaNow(AXON_OPAQUE ? focalAlpha : isoFillAlpha(k) * focalAlpha, planarAlpha);
-            topCap = fillClosedContour(frame, curves[k], z1, rgbString(tread), lastAlpha);
-            topZ = z1; topAlpha = lastAlpha; topPaper = paperFace;
-          }
+          topPaper = tint ? (atlasConfig.HISTORICAL.overTint || 0) : 1;
         }
-        const wBot = isPicked ? AXON_EDGE_PICK * frame.invK : edgeBotWidth;
-        const wTop = isPicked ? AXON_EDGE_PICK * frame.invK : edgeTopWidth;
-        const cBot = isPicked ? rgbString(INK_RGB) : terraceStrokeRgb;
-        // 'cima': solo il bordo della terrazza più alta e la base; 'quote': un filo per quota; 'tutte': tutti i fili.
-        const edges = style.edges, lastLevel = k === curves.length - 1;
-        // Ritmo della riga della terrazza: la classe sostituisce il contributo continuo dei due contorni.
+        // Ritmo della riga della terrazza: la classe sostituisce il filo continuo della quota.
         const kind = determinationOf ? determinationOf(k) : null;
-        if (edges === 'tutte' || isPicked) strokePts(frame, strokeGroups, k === 1 ? curves[0] : curves[k], z0, cBot, strokeAlpha, wBot, kind);
-        if (edges !== 'cima' || lastLevel || isPicked) strokePts(frame, strokeGroups, curves[k], z1, cBot, strokeAlpha, edges === 'cima' && !isPicked ? wTop * .8 : wTop, kind);
-        if (ringRgb) strokePts(frame, strokeGroups, curves[k], z1, rgbString(ringRgb), strokeAlpha, (style.roleFace === 'anello' ? 2.4 : 1.4) * frame.invK);
+        const w = isPicked ? AXON_EDGE_PICK * frame.invK : (tint ? AXON_EDGE_TOP * frame.invK : filoWidth);
+        strokePts(frame, strokeGroups, curves[k], z1, isPicked ? rgbString(INK_RGB) : strokeRgb, strokeAlpha * (isPicked ? 1 : edgeFade), w, kind);
       }
       // La carta sale sulla pedata prima dei tratti, che restano incisi sopra di essa.
       if (topPaper && topCap) offerTreadPaper(frame, i, curves[curves.length - 1], topZ, topCap, topAlpha * topPaper);
@@ -737,7 +602,7 @@ export default function atlasPainters(atlasEntities, atlasChapters, atlasVoronoi
         context.shadowBlur = 16;
         context.stroke(ring);
         const top = new Path2D();
-        addClosedPolygon(top, curves[curves.length - 1], axonZOf(curves.length - 1) * zScale, false, frame);
+        addClosedPolygon(top, curves[curves.length - 1], (curves.length - 1) * dz, false, frame);
         context.stroke(top);
         context.restore();
       }
@@ -745,11 +610,10 @@ export default function atlasPainters(atlasEntities, atlasChapters, atlasVoronoi
 
     return {
       drawFictGlyph, drawStatusMark, drawGroundHalo, drawAxonReliefTile, zPoint,
-      mixRgb, roleTreadRgb, rolePluralTreadRgb, wallFromTreadRgb,
-      axonZOf
+      mixRgb, roleTreadRgb, rolePluralTreadRgb, tileRise
     };
   }
 
   // Le costanti di quota sono condivise con il calcolo del livello di dettaglio.
-  return { makePainters, AXON_Z_STEP, TER_STEP_FRAC };
+  return { makePainters, AXON_Z_STEP, TER_STEP_FRAC, tileRise };
 }

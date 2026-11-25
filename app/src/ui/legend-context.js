@@ -1,5 +1,6 @@
 import {html, svg} from 'htl';
 import it from '../strings-it.js';
+import atlasConfig from '../model/config.js';
 import {FRATTURA_STORY} from './frattura.js';
 
 // Legenda per comando: ogni comando dell'atlante ha la sua nota, con domanda, regola di lettura e chiave grafica.
@@ -66,7 +67,9 @@ export default function createContextLegend({container, toggle, variant = 'margi
   const view = s.view === 'diagram' ? 'diagram' : 'map', axon = !!s.axon, narrative = view === 'diagram' && !!s.narrative;
   switch (id) {
    case 'view': return {label: L.viewLabel, question: L.viewQuestion, value: it.incisa.names[`${view}${axon ? '_axon' : '2d'}`].join(' '),
-    hint: L.viewHint, text: axon ? (who ? L.reliefAgent(who) : L.reliefAll(String(reliefBands.logBase).replace('.', ','))) : view === 'diagram' ? L.diagram : L.map,
+    hint: L.viewHint, text: axon
+     ? (who ? L.reliefAgent(who) : `${L.reliefAll(String(reliefBands.logBase).replace('.', ','))}${view === 'map' ? ` ${L.reliefFused}` : ''}`)
+     : view === 'diagram' ? L.diagram : (atlasConfig.OROGRAFIA.piantaFusa ? `${L.map} ${L.planFused}` : L.map),
     key: axon ? html`${terraces(!!who)}${who ? determinationKey() : ''}` : density(narrative)};
    case 'narrative': return {label: L.narrativeLabel, question: L.narrativeQuestion, value: s.narrative ? L.on : L.off,
     text: s.view === 'diagram' ? L.narrative : `${L.narrative} ${L.narrativeOnlyDiagram}`, key: statuses(), hint: statusMode === 'ricalco' ? `${L.ricalcoFallback} ${L.imagined}` : L.imagined};

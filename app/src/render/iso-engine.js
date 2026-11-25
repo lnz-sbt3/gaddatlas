@@ -10,7 +10,7 @@ export default function atlasIsoEngine(atlasVoronoi, atlasNarrativeCells) {
     ISO_ANGLES, ISO_OUTER, ISO_INNER, ISO_SUMMIT_BIAS, ISO_DRIFT,
     ISO_WOBBLE, ISO_MARGIN, ISO_ECC_DAMP
   } = atlasConfig;
-  const { cellRings: baseCellRings } = atlasVoronoi;
+  const { cellRings: baseCellRings, reliefReferenceRadius } = atlasVoronoi;
   const { narrativeCellRings } = atlasNarrativeCells;
   const rayCellDistance = atlasRayCellDistance;
   const cellRings = baseCellRings.map((cr, i) => narrativeCellRings[i] || cr);
@@ -26,6 +26,22 @@ export default function atlasIsoEngine(atlasVoronoi, atlasNarrativeCells) {
     }
     return prof;
   });
+  // Tetto dell'impronta: le tessere fuori misura sono rimpicciolite in scala
+  // (s = min(1, capRaggi·r̄ / r), stessa forma). Vale per ogni consumatore del
+  // profilo, quindi per le isoipse in pianta e per le terrazze in rilievo allo
+  // stesso modo: le curve di livello restano i terrazzamenti della montagna.
+  // Il confine di cella, il ritaglio della carta e l'hit test non cambiano.
+  {
+    const medians = isoProfile.map(p => p ? d3.median(p) : 0);
+    const reference = d3.median(baseCellRings.map((cr, i) => cr ? reliefReferenceRadius[i] : NaN).filter(Number.isFinite)) || 1;
+    const cap = atlasConfig.OROGRAFIA.capRaggi * reference;
+    for (let i = 0; i < isoProfile.length; i++) {
+      const p = isoProfile[i];
+      if (!p || medians[i] <= cap) continue;
+      const s = cap / medians[i];
+      for (let k = 0; k < p.length; k++) p[k] *= s;
+    }
+  }
   const isoProfileMin = isoProfile.map(p => p ? Math.min(...p) : 0);
   const isoProfileMed = isoProfile.map(p => p ? d3.median(p) : 0);
 

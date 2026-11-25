@@ -112,7 +112,7 @@ export default function atlasInteraction(atlasEntities, atlasProjection, atlasVo
         const r = cognitiveTileRadius[i] * frame.displayCellScale[i];
         let hit = false;
         for (let k = 0; k <= kMax && !hit; k++) {
-          const dz = k * frame.zStep;
+          const dz = k * (frame.zStepOf ? frame.zStepOf(i) : frame.zStep || 0);
           const qx = x + dz * frame.rotSinNow;
           const qy = y + dz * frame.rotCosNow;
           if (Math.hypot(qx - dx0, qy - dy0) <= r) hit = true;
@@ -132,7 +132,7 @@ export default function atlasInteraction(atlasEntities, atlasProjection, atlasVo
       const [dx0, dy0] = frame.displayPts[i];
       let hit = false;
       for (let k = 0; k <= kMax && !hit; k++) {
-        const dz = k * frame.zStep;
+        const dz = k * (frame.zStepOf ? frame.zStepOf(i) : frame.zStep || 0);
         const qx = x + dz * frame.rotSinNow;
         const qy = y + dz * frame.rotCosNow;
         const tx0 = dx0 + (bb[0] - cr.gx) * s, ty0 = dy0 + (bb[1] - cr.gy) * s;

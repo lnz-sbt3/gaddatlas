@@ -109,24 +109,6 @@ function geometryFor(config,context){
     if(frame.profile)frame.profile.baseContourMs+=performance.now()-started;
     return pts;
   };
-  const quadStrip=(frame,a,za,b,zb,rgb,alpha,cullBackfaces)=>{
-    const n=Math.min(a.length,b.length);if(n<2||alpha<=0)return;
-    const begin=frame.profile?performance.now():0,path=new Path2D();let drawn=0,area=0;
-    if(cullBackfaces){let j=a.length-1,p=a[j];for(let i=0;i<a.length;i++){const q=a[i];area+=p[1]*q[0]-p[0]*q[1];p=q;}}
-    const da=(za||0)/Math.max(.001,frame.tiltNow),db=(zb||0)/Math.max(.001,frame.tiltNow);
-    const ax=da*frame.rotSinNow,ay=da*frame.rotCosNow,bx=db*frame.rotSinNow,by=db*frame.rotCosNow;
-    context.fillStyle=`rgba(${rgb},${alpha})`;
-    for(let j=0;j<n;j++){
-      const j2=(j+1)%n;
-      if(cullBackfaces){const dx=a[j2][0]-a[j][0],dy=a[j2][1]-a[j][1],nx=area>=0?dy:-dy,ny=area>=0?-dx:dx;if(frame.tiltNow*(nx*frame.rotSinNow+ny*frame.rotCosNow)<=0)continue;}
-      path.moveTo(a[j][0]-ax,a[j][1]-ay);path.lineTo(a[j2][0]-ax,a[j2][1]-ay);path.lineTo(b[j2][0]-bx,b[j2][1]-by);path.lineTo(b[j][0]-bx,b[j][1]-by);path.closePath();drawn++;
-    }
-    if(!drawn)return;
-    const fill=frame.profile?performance.now():0;
-    if(frame.profile){frame.profile.quadCount+=drawn;frame.profile.fillLenASum+=a.length;frame.profile.fillLenBSum+=b.length;frame.profile.fillLenCalls++;frame.profile.fillBuildMs+=fill-begin;}
-    context.fill(path);
-    if(frame.profile){frame.profile.fillRasterMs+=performance.now()-fill;frame.profile.fillCalls++;}
-  };
   const closedPolygon=(path,pts,z,reverse,frame)=>{
     const n=pts.length;if(n<2)return false;
     const dz=(z||0)/Math.max(.001,frame.tiltNow),zx=dz*frame.rotSinNow,zy=dz*frame.rotCosNow;
@@ -142,6 +124,6 @@ function geometryFor(config,context){
     if(frame.profile)frame.profile.strokePtsMs+=performance.now()-started;
   };
   const hex=config.INK_COLOR.replace('#',''),inkRgb=[0,2,4].map(k=>parseInt(hex.slice(k,k+2),16));
-  entry={config,baseContour,quadStrip,closedPolygon,strokePoints,inkRgb,geoRgb:config.HUE_RGB.split(',').map(Number),fictRgb:config.FICT_HUE_RGB.split(',').map(Number)};
+  entry={config,baseContour,closedPolygon,strokePoints,inkRgb,geoRgb:config.HUE_RGB.split(',').map(Number),fictRgb:config.FICT_HUE_RGB.split(',').map(Number)};
   geometries.set(context,entry);return entry;
 }

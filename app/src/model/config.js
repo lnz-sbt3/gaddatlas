@@ -186,7 +186,6 @@
   ROLE_PLURAL_COLOR: "#666666", // pareggio nel prisma: INK_RGB desaturato alla luminanza media dei ruoli
   ROLE_MIX_BASE: 0.98,
   ROLE_MIX_TOP:  0.42,
-  AXON_SOLID_CAPS: true,  // terrazze come calotte piene sovrapposte, non anelli
   AXON_EDGE_TOP: 1.5,   // px schermo
   AXON_EDGE_BOT: 0.55,  // px schermo
   AXON_EDGE_PICK: 2.8,  // px schermo, terrazza interrogata
@@ -259,18 +258,14 @@
   AXON_STACK_ALIGN: 1.0, // 1 = contorni omotetici in assonometria
   TER_SLOPE: 1.5,
   TER_BANDS_SPAN: 9,
-  AXON_OPAQUE: true,    // superfici opache: occlusione reale
   AXON_TREAD_TINT: 0.035, // scurimento massimo della base: la vetta schiarisce verso BG_COLOR
-  AXON_WALL_SHADE: 0.28,
-  AXON_WALL_MIN_LUM: 0.46, // frazione minima della luminanza del fondo sotto cui una parete non puo' scendere
-  // Terrazze in mappa: 'gradoni' prismi sull'intera cella;
-  // 'tumuli' impronta raccolta attorno al luogo e arrotondata, fianchi in tono senza filo, solo il bordo della cima;
-  // 'curve' stessa impronta, superfici di carta e un filo d'inchiostro per ogni quota, come un plastico inciso.
-  // footprint: raggio massimo dell'impronta in mappa, in raggi mediani di cella; roundness: 0 cella, 1 cerchio.
-  // Nel diagramma la sagoma resta quella della tessera (continuità con Voronoi).
+  // Terrazze come plastico inciso: calotte di carta sovrapposte senza pareti,
+  // un velo di pendio sotto ogni calotta, un filo d'inchiostro per quota e
+  // un'ombra leggera a terra (parametri in OROGRAFIA). La sagoma è quella della
+  // tessera, in pianta come in rilievo.
   // roleTintScale: tinta del ruolo a faccia piena attenuata dell'8% perché la carta storica resti
   // percepibile; ΔE minimo fra due ruoli 10,46 → 9,57 sulla pergamena, 6,88 → 6,29 sotto l'inchiostro della carta (soglia 2,3).
-  TERRACE: {style: 'gradoni', roleFaceOverride: null, roleTintScale: 0.92},
+  TERRACE: {roleTintScale: 0.92},
   // Determinazione spaziale della lettura, solo con un personaggio e sui contorni superiore e inferiore
   // delle terrazze individuali in rilievo. width e dash in px CSS, costanti rispetto a zoom, fit e DPR; estremità
   // e giunzioni tonde. Il dato mancante conserva il bordo ordinario. corridorPx: margine in pixel del bitmap, oltre
@@ -278,7 +273,6 @@
   // 'tensione' e 'appoggi' sono disponibili solo in sviluppo.
   DETERMINATION: {mode: 'continuita', width: 1.05, corridorPx: 1.7,
     dash: {Precise: [], Relative: [6, 2], Approximate: [5, 2, 0.15, 2], Indeterminate: [0.15, 2.5]}},
-  AXON_MAP_FOOTPRINT_MAX: null, // limite disattivato: in mappa il rilievo torna a coincidere con la cella
   ISO_SUMMIT_BIAS: 0.18, // asimmetria della vetta, frazione del raggio MINIMO della cella
                          // (non del raggio direzionale: quello deformava le curve su celle allungate)
   ISO_MARGIN: 0.92,      // clamp duro: nessun punto della curva oltre questa frazione del bordo
@@ -286,6 +280,47 @@
                          // si riduce il numero di curve: su celle piccole 12 isoipse sono una macchia
   ISO_ECC_DAMP: 0.65,    // compressione dell'eccentricità verso il raggio mediano della cella:
                          // 1 = la curva segue esattamente la forma del tassello, 0 = circolare
+
+  // Orografia: il rilievo come colline e catene montuose, coerente fra pianta,
+  // mappa e diagramma. Il sistema delle isoipse di una tessera fuori misura è
+  // rimpicciolito in scala (stessa forma, nessun arrotondamento): capRaggi è il
+  // tetto del raggio mediano, in raggi mediani cognitivi, applicato identico in
+  // pianta e in rilievo così le curve viste dall'alto restano i terrazzamenti.
+  // rapporto: tetto del rapporto fra l'altezza delle nove terrazze e il raggio
+  // dell'impronta (la quota di un livello è rapporto·max(raggio, pavimento)/9).
+  // pavimentoCSS: pavimento di quota e kernel in px CSS; sotto questa dimensione
+  // i rilievi vicini si fondono in catena, e svanisce verso il diagramma.
+  // smussatura: passaggi di Chaikin sui contorni del rilievo, applicati alla
+  // geometria (tratti, determinazione, corridoio e picking restano identici).
+  // pendio e veloAlpha: tono e opacità del velo sotto ogni calotta; ombra:
+  // opacità dell'ombra a terra; filoCSS: filo d'inchiostro per quota, in px CSS.
+  // Campo delle catene fuse (solo geografia con «tutti»): kernel = raggio della
+  // campana in rapporti d'impronta; scioglimento = il monte esce dal campo quando
+  // il pavimento scende sotto raggio × questo valore; il pavimento del campo è
+  // quantizzato per ottave di zoom e il passaggio fra generazioni è dissolto in
+  // dissolvenzaMs; ricostruzioneMs è l'intervallo minimo fra ricostruzioni;
+  // grigliaKernel celle per kernel e grigliaMax celle per lato della griglia;
+  // ipsometria: scurimento per livello delle calotte fuse (tono di carta).
+  OROGRAFIA: {
+    capRaggi: 1.2,
+    rapporto: 1.4,
+    pavimentoCSS: 12,
+    smussatura: 2,
+    pendio: 0.16,
+    veloAlpha: 0.85,
+    ombra: 0.07,
+    filoCSS: 0.7,
+    kernel: 1.6,
+    scioglimento: 1.2,
+    ipsometria: 0.035,
+    grigliaKernel: 6,
+    grigliaMax: 1500,
+    dissolvenzaMs: 160,
+    ricostruzioneMs: 120,
+    // Anche la pianta segue il campo a zoom basso: le curve viste dall'alto
+    // coincidono con i terrazzamenti; false = curve sempre per tessera.
+    piantaFusa: true,
+  },
 
   // Soglie in pixel per il passaggio tra sintesi e stratigrafia completa.
   LOD_MIN: 0.9,
@@ -447,21 +482,15 @@
 // Ruoli equiluminanti a L* 42,5; Setting spostato dal cremisi al fucsia (ΔE 40,6 dal rosso della densità, 26,3 dal viola),
 // così il rosso significa soltanto densità.
 const ROLES_EQ = {Setting: "#A53B86", ZoneOfAction: "#9F4D24", Route: "#7C6020", Marker: "#78549E", ProjectedSpace: "#206F6B"};
-// Rilievo come carta (preso dal risparmio): pedate del colore del fondo, fianchi appena ombreggiati.
-// Il tono sta sulle pareti, le sommità restano carta: l'altezza si legge dai fianchi.
-// Pareti al 30%: con la carta al suolo i fianchi devono staccarsi dal terreno inchiostrato.
-const PAPER_RELIEF = {AXON_TREAD_TINT: 0, AXON_WALL_SHADE: 0.30};
+// Rilievo come carta: pedate del colore del fondo, l'altezza si legge dal
+// velo di pendio e dai fili delle quote.
+const PAPER_RELIEF = {AXON_TREAD_TINT: 0};
 const CHROMA_PRESETS = {
   storica: {},
   // Ardesia neutra (#3A4859, L* 30, croma 12; ΔE 27 dal petrolio, 41 dal viola); isoipse narrative a 0,75, contrasto 4,1:1.
   ardesia: {FICT_HUE_RGB: "58,72,89", FICT_RELIEF_ALPHA: 0.75, ISO_FILL_A1: 0.4, ...PAPER_RELIEF, ROLE_COLORS: ROLES_EQ},
-  inchiostro: {FICT_HUE_RGB: "75,58,46", ISO_FILL_A1: 0.38, AXON_WALL_SHADE: 0.2, AXON_TREAD_TINT: 0.022, ROLE_COLORS: ROLES_EQ},
+  inchiostro: {FICT_HUE_RGB: "75,58,46", ISO_FILL_A1: 0.38, AXON_TREAD_TINT: 0.022, ROLE_COLORS: ROLES_EQ},
   risparmio: {FICT_HUE_RGB: "155,35,53", FICT_FILL_SCALE: 0, ISO_FILL_A1: 0.42, ...PAPER_RELIEF, ROMA_WIDTH: 1.4, ROLE_COLORS: ROLES_EQ}
-};
-const TERRACE_PRESETS = {
-  gradoni: {footprint: null, roundness: 0, walls: 'tono', edges: 'tutte', roleFace: 'campitura'},
-  tumuli: {footprint: 1.5, roundness: .8, walls: 'tinta', tintBase: .06, tintStep: .035, edges: 'cima'},
-  curve: {footprint: 1.5, roundness: .45, walls: 'carta', edges: 'quote'}
 };
 // Sovrascritture locali dei parametri in sviluppo, mai nel build di produzione.
 if (import.meta.env?.DEV && typeof localStorage !== 'undefined') {
@@ -476,7 +505,6 @@ if (import.meta.env?.DEV && typeof localStorage !== 'undefined') {
   } catch { /* sovrascritture illeggibili: si resta ai valori predefiniti */ }
 }
 // La tinta del ruolo sulle facce (roleFace) può essere scelta a parte in sviluppo.
-Object.assign(atlasConfig.TERRACE, TERRACE_PRESETS[atlasConfig.TERRACE.style], {style: atlasConfig.TERRACE.style}, atlasConfig.TERRACE.roleFaceOverride ? {roleFace: atlasConfig.TERRACE.roleFaceOverride} : {});
 Object.assign(atlasConfig, CHROMA_PRESETS[atlasConfig.CHROMA]);
 
 export default atlasConfig;

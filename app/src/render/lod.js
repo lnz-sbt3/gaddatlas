@@ -39,13 +39,14 @@ import atlasProfileLog from "../dev/profile-log.js";
         return d > 1e-6 ? [center[0] + dx * (1 + tol / d), center[1] + dy * (1 + tol / d)] : p;
       });
     };
+    // La quota per livello è quella della tessera (c.zStep), fissata al disegno.
     for (let k = c.curves.length - 1; k >= 1; k--) {
-      const z = painters.axonZOf(k) * c.zScale;
+      const z = k * (c.zStep || 0);
       const poly = dilate(c.curves[k].map(p => painters.zPoint(f, p[0], p[1], z)));
       if (d3.polygonContains(poly, [x, y])) return k;
     }
     for (let k = c.curves.length - 1; k >= 1; k--) {
-      const z0 = painters.axonZOf(k - 1) * c.zScale;
+      const z0 = (k - 1) * (c.zStep || 0);
       const poly = dilate(c.curves[k].map(p => painters.zPoint(f, p[0], p[1], z0)));
       if (d3.polygonContains(poly, [x, y])) return k;
     }
@@ -88,7 +89,7 @@ import atlasProfileLog from "../dev/profile-log.js";
         rCurve1: +curveRadius(cache.curves[1]).toFixed(2),
         rCurveB: +curveRadius(cache.curves[B]).toFixed(2),
         distinctCapRadii,
-        dzPx: +(painters.axonZOf(1) * cache.zScale * cache.transformK / Math.max(0.001, cache.tiltNow)).toFixed(2)
+        dzPx: +((cache.zStep || 0) * cache.transformK / Math.max(0.001, cache.tiltNow)).toFixed(2)
       });
       lastPickLogKey = key;
     };

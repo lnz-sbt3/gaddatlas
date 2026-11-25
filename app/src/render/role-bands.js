@@ -132,23 +132,20 @@ const atlasRoleBands = (() => {
       }
     }
 
+    // La tinta della terrazza: senza pareti, il ruolo sta sulla sola pedata.
     function bandTint({tileIndex, painters, sortEased}) {
       const base = tileIndex * NB;
       return k => {
         const slot = Math.max(0, Math.min(NB - 1, k - 1));
         const chrono = painters.roleTreadRgb(bandRoleChrono[base + slot], k);
         const grouped = painters.roleTreadRgb(bandRoleGrouped[base + slot], k);
-        const tread = painters.mixRgb(chrono, grouped, sortEased);
-        return [tread, painters.wallFromTreadRgb(tread)];
+        return painters.mixRgb(chrono, grouped, sortEased);
       };
     }
 
     function dominantTint({tileIndex, painters}) {
       const idx = dominantRoleOf[tileIndex];
-      return () => {
-        const tread = idx === -2 ? painters.rolePluralTreadRgb(1) : painters.roleTreadRgb(idx, 1);
-        return [tread, painters.wallFromTreadRgb(tread)];
-      };
+      return () => idx === -2 ? painters.rolePluralTreadRgb(1) : painters.roleTreadRgb(idx, 1);
     }
 
     return {
@@ -191,11 +188,9 @@ export function readRoleSnapshot(data,painters) {
     bandTint:({tileIndex,sortEased})=>k=>{
       const slot=tileIndex*NB+Math.max(0,Math.min(NB-1,k-1));
       const a=painters.roleTreadRgb(data.bandRoleChrono[slot],k),b=painters.roleTreadRgb(data.bandRoleGrouped[slot],k);
-      const tread=painters.mixRgb(a,b,sortEased);return[tread,painters.wallFromTreadRgb(tread)];
+      return painters.mixRgb(a,b,sortEased);
     },
-    dominantTint:({tileIndex})=>()=>{
-      const idx=data.dominantRoleOf[tileIndex],tread=idx===-2?painters.rolePluralTreadRgb(1):painters.roleTreadRgb(idx,1);
-      return[tread,painters.wallFromTreadRgb(tread)];
-    }
+    dominantTint:({tileIndex})=>()=>
+      data.dominantRoleOf[tileIndex]===-2?painters.rolePluralTreadRgb(1):painters.roleTreadRgb(data.dominantRoleOf[tileIndex],1)
   };
 }

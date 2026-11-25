@@ -10,7 +10,7 @@ import atlasProfileLog from "../dev/profile-log.js";
   const atlasOverlays = (() => {
   const radiusCache = new WeakMap();
   function draw({
-    context, PROFILE, profileRulerMs, profileT0, profileFrame,
+    context, PROFILE, profileRulerMs, profileT0, profileFrame, campo,
     crimpEased, transform, K2, chapter, pulse, N_INMAP, N_GEO,
     geoData, allData, pts, displayPts, birthEased, fictBirthEased,
     BIRTH_EPSILON, HUE_RGB, GRID_COLOR, INK_COLOR, BG_COLOR,
@@ -201,7 +201,7 @@ import atlasProfileLog from "../dev/profile-log.js";
       profileFrame = atlasProfileLog.atlas({
         profileFrame, profileTiles, profileCurves, profileFills, profileStrokes,
         profileDisplayMs, profileDrawOrderMs, profileReliefMs, profileBordersMs,
-        profileRulerMs, profileTickMs, profileHitMs, seqOccCallsPerSecond, frame, profileT0
+        profileRulerMs, profileTickMs, profileHitMs, seqOccCallsPerSecond, frame, profileT0, campo
       });
     }
     return {profileFrame, profileRulerMs};

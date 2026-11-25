@@ -67,6 +67,9 @@ const it={
   map:'Ogni tessera è un luogo del gazetteer, ritagliata attorno alla sua posizione. Le isoipse contano i riferimenti distinti al luogo: più curve, più riferimenti.',
   diagram:'Le tessere lasciano la geografia e si dispongono in anelli per rango di distanza da via Merulana, conservando per quanto possibile la direzione dal polo. La distanza è un rango, non una misura: l’asse riporta le distanze di riferimento.',
   reliefAll:base=>`Il foglio si solleva: l’altezza di ogni terrazza è una banda logaritmica (base ${base}) dei riferimenti distinti al luogo, al massimo 9.`,
+  // Le due generalizzazioni di scala del rilievo, dichiarate in legenda.
+  reliefFused:'A zoom basso i rilievi dei luoghi vicini si fondono in catene e un picco basso può restare coperto da uno più alto; ingrandendo la catena si scioglie e ogni luogo torna al suo monte.',
+  planFused:'A zoom basso le curve dei luoghi vicini si fondono, come curve di livello di una catena viste dall’alto; ingrandendo tornano per luogo.',
   reliefAgent:who=>`Il foglio si solleva. Con ${who} il conteggio è lineare: una terrazza per ogni riferimento distinto del personaggio al luogo, al massimo 9.`,
   narrativeLabel:'Luoghi narrativi',narrativeQuestion:'Chi entra senza coordinate?',
   narrative:'I luoghi narrativi entrano accanto ai luoghi a cui il testo li ancora; il segno dichiara lo statuto rispetto alla traccia geografica.',narrativeOnlyDiagram:'Si accendono soltanto nelle relazioni.',

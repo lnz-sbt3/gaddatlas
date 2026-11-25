@@ -33,7 +33,9 @@
         tickOtherMs: +(args.profileTickMs - args.profileHitMs).toFixed(1),
         hitMs: +args.profileHitMs.toFixed(1),
         seqOccCallsPerSecond: +args.seqOccCallsPerSecond.toFixed(1),
-        drawMs: +(performance.now() - args.profileT0).toFixed(1)
+        drawMs: +(performance.now() - args.profileT0).toFixed(1),
+        // ultima ricostruzione del campo delle catene fuse (geografia, «tutti»)
+        campo: args.campo || null
       });
     }
     return nextFrame;
