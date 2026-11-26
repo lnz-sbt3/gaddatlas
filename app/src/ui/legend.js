@@ -27,7 +27,7 @@ export default function createLegend({container, reliefBands, agents, glyphPaths
  const element = html`<div class="legend-dock">${status}${unit}</div>`;
  container.append(element);
  if (variant === 'unica') container.append(sheet);
- const orient = container.querySelector('.frame-orient'); if (orient) orient.prepend(toggle); else element.append(toggle);
+ const help = container.querySelector('.frame-help'); if (help) help.prepend(toggle); else element.append(toggle);
  function setOpen(open, restore = true){
   sheet.hidden = !open; toggle.setAttribute('aria-expanded', String(open)); 
   if (open) close.focus(); else if (restore) toggle.focus();

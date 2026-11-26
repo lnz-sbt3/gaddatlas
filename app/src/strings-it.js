@@ -1,7 +1,7 @@
 // Unica fonte delle etichette applicative; nomi e identificatori dei dati restano nei dati.
 const it={
  language:'it',
- historicalSection:'Carta storica',historicalSlider:'Fra la resa geometrica e la carta del 1925',
+ historicalSection:'Carta storica',historicalSlider:'Carta 1925, Guida Rossa TCI: dalla resa geometrica alla carta',
  historicalToggle:'Carta 1925',historicalToggleHint:'Guida Rossa TCI, sotto la figura',historicalLensHint:'una lente segue il puntatore',historicalQuestion:'Fra tessere e carta?',historicalTreatmentLabel:'Trattamento della carta',historicalOpacity:'Visibilità',
  historicalPoleTiles:'Tessere e tracce',historicalPoleMap:'Carta 1925',
  historicalTreatments:{tenue:'tenue',leggibile:'leggibile',minimo:'minimo'},
@@ -30,6 +30,9 @@ const it={
  chapter:'Capitolo',cursor:'Posizione del nastro',rotation:'Rotazione del piano',play:'Riproduci',pause:'Pausa',previousView:'Vista precedente',nextView:'Vista successiva',previousChapter:'Capitolo precedente',nextChapter:'Capitolo successivo',
  ribbonReference:(page,name)=>`Pagina ${page} · ${name}`,
  close:'Chiudi',closeText:'Chiudi il pannello testuale',retry:'Riprova',
+ helpGroup:'Guida',toolsGroup:'Strumenti',
+ dock:{group:'Posizione e misura del pannello',left:'Sposta il pannello a sinistra',right:'Sposta il pannello a destra',wider:'Allarga il pannello',narrower:'Riduci il pannello',taller:'Alza il foglio',shorter:'Abbassa il foglio',reset:'Rimetti il pannello a posto',
+  state:{left:'Pannello agganciato a sinistra',right:'Pannello agganciato a destra',float:'Pannello libero',sheet:'Foglio dal basso'}},
  focalizer:'Focalizzatore',role:'Ruolo narrativo',determination:'Determinazione spaziale',notSpecified:'Non indicato',notSpecifiedFeminine:'Non indicata',
  loadingReferences:'Caricamento dei riferimenti…',loadingPassage:'Caricamento del riferimento…',noReferences:'Nessun riferimento testuale disponibile.',passageError:'Impossibile caricare il riferimento. Riprova.',
  folioLabel:(p,c)=>`Pagina ${p}, capitolo ${c}`,chapterShort:c=>`cap. ${c}`,runningHead:(c,p)=>`Capitolo ${c} · pagina ${p}`,apparatusLabel:'Apparato',

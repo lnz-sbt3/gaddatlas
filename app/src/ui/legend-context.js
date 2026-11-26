@@ -8,7 +8,7 @@ import {FRATTURA_STORY} from './frattura.js';
 // 'margine'   nel margine la nota del comando toccato è aperta; sotto, una riga per ogni canale visibile;
 // 'cartiglio' nota agganciata al comando toccato con un filo di richiamo, nella banda libera più vicina;
 // 'registro'  il margine raccoglie i comandi toccati, l'ultimo aperto, i precedenti in una riga ciascuno.
-export default function createContextLegend({container, toggle, variant = 'margine', statusMode = 'glifo', chroma = 'storica', reliefBands, agents, glyphPaths, roleOrder, roleColors, densityColors, determination = null}){
+export default function createContextLegend({container, toggle, retireMs = 7000, variant = 'margine', statusMode = 'glifo', chroma = 'storica', reliefBands, agents, glyphPaths, roleOrder, roleColors, densityColors, determination = null}){
  const names = new Map(agents.map(a => [a.id, a.name]));
  // Ogni terrazza è segnata dal numero di riferimenti da cui comincia: 1, 2, 3, 4, 5, 7, 11, 15, 22+.
  const t = reliefBands.thresholds, bands = t.map((v, i) => i < t.length - 1 ? String(v) : `${v}+`);
@@ -16,6 +16,10 @@ export default function createContextLegend({container, toggle, variant = 'margi
  // Con il margine sinistro la nota resta aperta; senza, sta in una banda libera e si apre quando si tocca un comando.
  const wide = matchMedia('(min-width: 1101px) and (min-aspect-ratio: 1/1)');
  let state = null, topic = null, open = wide.matches;
+ // Senza un margine proprio la nota aperta da un comando è di passaggio: si ritira retireMs dopo l'ultimo gesto,
+ // a meno che il puntatore o il fuoco la trattengano. Aperta da «Come si legge» resta finché non la si chiude.
+ let pinned = false, held = false, retireTimer = 0;
+ function arm(){ clearTimeout(retireTimer); if (open && !pinned && !wide.matches) retireTimer = setTimeout(() => { if (held || element.contains(document.activeElement)) arm(); else setOpen(false); }, retireMs); }
  const log = [];
 
  // Chiavi grafiche, disegnate come la figura le rende.
@@ -106,7 +110,8 @@ export default function createContextLegend({container, toggle, variant = 'margi
  const element = html`<aside class="legend-note" data-variant=${variant} aria-live="polite" aria-label=${L.name}></aside>`;
  const leader = html`<div class="note-leader" aria-hidden="true" hidden></div>`;
  container.append(element, leader);
- close.onclick = () => { setOpen(false); };
+ close.onclick = () => { pinned = false; setOpen(false); };
+ element.addEventListener('pointerenter', () => { held = true; }); element.addEventListener('pointerleave', () => { held = false; arm(); });
 
  function anchorOf(id){ return document.querySelector(`[data-legend="${id}"]`); }
  function render(){
@@ -162,18 +167,20 @@ export default function createContextLegend({container, toggle, variant = 'margi
   }
   leader.hidden = false;
  }
- function setOpen(next){ open = next; toggle.setAttribute('aria-expanded', String(open)); render(); }
+ function setOpen(next){ open = next; toggle.setAttribute('aria-expanded', String(open)); render(); arm(); }
  function touch(id){
   if (!id) return;
   topic = id; open = true; toggle.setAttribute('aria-expanded', 'true');
   const i = log.indexOf(id); if (i >= 0) log.splice(i, 1); log.unshift(id); log.length = Math.min(log.length, 5);
-  render();
+  render(); arm();
  }
  // Ogni comando dichiara il suo argomento con data-legend; la nota segue l'ultimo comando toccato.
  const onTouch = e => { const el = e.target.closest?.('[data-legend]'); if (el && !element.contains(el)) touch(el.dataset.legend); };
  // La ghiera si trascina senza clic: alla fine del gesto la nota segue la vista.
  const onDrag = e => { if (e.target.closest?.('.incisa-wheel')) touch('view'); };
- const onKey = e => { if (e.key === 'Escape' && variant === 'cartiglio' && topic) { topic = null; open = false; render(); } else if (e.key !== 'Escape') onTouch(e); };
+ // Da tastiera la nota segue solo i tasti che azionano un comando: attraversarli con Tab non li interroga.
+ const ACTS = new Set(['Enter', ' ', 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'Home', 'End', 'PageUp', 'PageDown']);
+ const onKey = e => { if (e.key === 'Escape' && variant === 'cartiglio' && topic) { topic = null; open = false; render(); } else if (ACTS.has(e.key)) onTouch(e); };
  // Al clic, non alla pressione: la nota non sposta i comandi prima che il gesto sia compiuto.
  document.addEventListener('click', onTouch, true);
  document.addEventListener('pointerup', onDrag, true);
@@ -182,12 +189,13 @@ export default function createContextLegend({container, toggle, variant = 'margi
  toggle.textContent = it.legendShort;
  if (variant === 'cartiglio') open = false;
  toggle.setAttribute('aria-expanded', String(open));
- toggle.onclick = () => { if (variant === 'cartiglio') { topic = topic ? null : 'view'; open = !!topic; toggle.setAttribute('aria-expanded', String(open)); render(); } else setOpen(!open); };
+ toggle.onclick = () => { if (variant === 'cartiglio') { topic = topic ? null : 'view'; open = !!topic; toggle.setAttribute('aria-expanded', String(open)); render(); } else { pinned = !open; setOpen(!open); } };
  return {
   element,
   update(next){ state = next; render(); },
   // Il percorso porta la nota sul comando che il passo esercita (la vista, o il focalizzatore).
   focus(id){ touch(id); },
-  dispose(){ document.removeEventListener('click', onTouch, true); document.removeEventListener('pointerup', onDrag, true); document.removeEventListener('change', onTouch, true); document.removeEventListener('keydown', onKey, true); element.remove(); leader.remove(); inline.remove(); container.classList.remove('has-note'); }
+  get open(){ return open; },
+  dispose(){ clearTimeout(retireTimer); document.removeEventListener('click', onTouch, true); document.removeEventListener('pointerup', onDrag, true); document.removeEventListener('change', onTouch, true); document.removeEventListener('keydown', onKey, true); element.remove(); leader.remove(); inline.remove(); container.classList.remove('has-note'); }
  };
 }

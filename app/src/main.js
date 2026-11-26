@@ -12,16 +12,17 @@ import createLegend from "./ui/legend.js";
 import createContextLegend from "./ui/legend-context.js";
 import createFrame from "./ui/frame.js";
 import createHistoricalUi from "./ui/historical-ui.js";
+import createTextDock from "./ui/text-dock.js";
 import { html } from "htl";
 import atlasConfig from "./model/config.js";
 import { createUrlStateCodec } from "./ui/url-state.js";
 
 let atlas;
 let textPanel;
-let placeIndex, guidedPath, legend, frame, notes, historicalUi;
+let placeIndex, guidedPath, legend, frame, notes, historicalUi, textDock;
 let historical;
 let removeHistoryListeners = () => {};
-function dispose() { removeHistoryListeners(); atlas?.dispose(); historical?.dispose(); textPanel?.dispose(); placeIndex?.dispose(); guidedPath?.dispose(); historicalUi?.dispose(); legend?.dispose(); notes?.dispose(); frame?.dispose(); }
+function dispose() { removeHistoryListeners(); atlas?.dispose(); historical?.dispose(); textPanel?.dispose(); placeIndex?.dispose(); guidedPath?.dispose(); historicalUi?.dispose(); textDock?.dispose(); legend?.dispose(); notes?.dispose(); frame?.dispose(); }
 if (import.meta.hot) import.meta.hot.dispose(dispose);
 window.addEventListener("pagehide", dispose, {once: true});
 
@@ -141,7 +142,7 @@ async function boot() {
         publish("tour");
       }};
     guidedPath = atlasConfig.FRATTURA.variant === "scatola" ? createGuidedPath(tour)
-      : createFrattura({...tour, variant: atlasConfig.FRATTURA.variant, drive: atlasConfig.FRATTURA.drive, settleMs: atlasConfig.FRATTURA.settleMs, layout: root.querySelector(".atlas-layout"), passage: atlas.passage,
+      : createFrattura({...tour, variant: atlasConfig.FRATTURA.variant, drive: atlasConfig.FRATTURA.drive, settleMs: atlasConfig.FRATTURA.settleMs, stowMs: atlasConfig.FRATTURA.stowMs, layout: root.querySelector(".atlas-layout"), passage: atlas.passage,
         onExit() { publish("tour"); }, onSuspend() { publish("tour"); },
         // La nota del margine mostra il contenuto del passo: statuti ai luoghi narrativi, la vista (bande o scala lineare) altrove.
         onMark(step) { notes?.focus?.(step.id === "narrativi" ? "narrative" : "view"); const s = codec.normalize({...read(), ...step.state}); legend?.update(s); notes?.update(s); }});
@@ -150,13 +151,24 @@ async function boot() {
       panel: frame.panel, orient: canvas.parentElement.querySelector(".frame-orient"), canvas, onCommit: () => publish("carta")});
     const legendVariant = atlasConfig.LEGEND.variant;
     legend = createLegend({container: canvas.parentElement, reliefBands: gaddaReal.meta.reliefBands, agents: gaddaReal.paths.agents, glyphPaths: atlasConfig.FICT_GLYPH_PATHS, variant: legendVariant});
-    if (legendVariant !== "unica") notes = createContextLegend({container: canvas.parentElement, toggle: legend.toggle, variant: legendVariant, reliefBands: gaddaReal.meta.reliefBands,
+    if (legendVariant !== "unica") notes = createContextLegend({container: canvas.parentElement, toggle: legend.toggle, variant: legendVariant, retireMs: atlasConfig.LEGEND.retireMs, reliefBands: gaddaReal.meta.reliefBands,
       agents: gaddaReal.paths.agents, glyphPaths: atlasConfig.FICT_GLYPH_PATHS, roleOrder: atlasConfig.ROLE_ORDER, roleColors: atlasConfig.ROLE_COLORS,
       statusMode: atlasConfig.STATUS.mode, chroma: atlasConfig.CHROMA, densityColors: {reference: `rgb(${atlasConfig.HUE_RGB})`, narrative: `rgb(${atlasConfig.FICT_HUE_RGB})`},
       determination: atlasConfig.DETERMINATION.mode === "off" ? null : {...atlasConfig.DETERMINATION, edge: {top: atlasConfig.AXON_EDGE_TOP, bottom: atlasConfig.AXON_EDGE_BOT}}});
+    // Ordine di tabulazione: intestazione e pannello, colonna del percorso, figura, ghiera e strati, testi guida;
+    // il pannello dei testi chiude la pagina.
+    const figure = canvas.parentElement;
+    if (guidedPath.panel?.parentElement === figure) canvas.before(guidedPath.panel);
+    if (guidedPath.bookmark?.parentElement === figure) figure.append(guidedPath.bookmark);
+    // Pannello dei testi agganciabile; la sponda sinistra passa alla nota di legenda quando il lettore la chiede.
+    textDock = createTextDock({panel: textPanel.element, layout: root.querySelector(".atlas-layout"), figure, tokens: atlasConfig.TEXT_DOCK, reducedMotion: tour.reducedMotion});
+    legend.toggle.addEventListener("click", event => { if (notes?.open && textDock.cede()) event.stopImmediatePropagation(); }, {capture: true});
+    legend.toggle.addEventListener("click", () => { if (notes?.open) textDock.cede(); });
     // La presa sulla ghiera conserva il fotogramma della guida; al passo interattivo gli altri comandi restano liberi.
+    // Spostare il fuoco con Tab o premere un modificatore non è una presa sulla figura.
     for (const type of ["pointerdown", "wheel", "keydown"])
       atlas.addEventListener(type, event => {
+        if (type === "keydown" && ["Tab", "Shift", "Control", "Alt", "Meta"].includes(event.key)) return;
         if (guidedPath.contains(event.target)) return;
         if (guidedPath.interactive && !event.target.closest?.(".view-dock")) return;
         const dial = !!event.target.closest?.(".incisa");

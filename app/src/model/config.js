@@ -47,7 +47,7 @@
   // Percorso guidato: durata di un passo del riquadro 'scatola'; 'colonna' | 'margine' | 'sipario' scorrono.
   // drive: 'scorrimento' lo scorrimento tiene il passaggio fra due passi, 'soglia' la figura scatta al passo;
   // settleMs: pausa dopo la quale figura e colonna si assestano sul passo più vicino.
-  FRATTURA: {stepMs: 8000, variant: 'colonna', drive: 'scorrimento', settleMs: 250},
+  FRATTURA: {stepMs: 8000, variant: 'colonna', drive: 'scorrimento', settleMs: 250, stowMs: 9000},
   // Inquadratura: 'pieno' la figura occupa tutta la finestra e i comandi stanno sopra di essa; 'riquadro'
   // la figura è un riquadro centrale con i comandi nei margini.
   FRAME: {mode: 'pieno', fadeFraction: .09},
@@ -73,6 +73,8 @@
   PAPER: {mode: 'orientamento', grain: true, ringAlpha: .32, grainAlpha: .05},
   // Pannello della citazione: 'scheda' | 'margine' | 'edizione'.
   PANEL: {variant: 'edizione', serviceTimeoutMs: 6000},
+  // Pannello dei testi agganciabile: misure in px CSS e quote della finestra; scatti del foglio in verticale.
+  TEXT_DOCK: {width: 420, widthShare: .4, minWidth: 344, maxWidthShare: .45, minHeight: 280, maxHeightShare: .9, floatHeightShare: .6, step: 60, snapEdge: 48, gap: 12, sheetSnaps: [.36, .58, .84], sheetInitial: 1},
   // Granularità del cursore per pagina: 'interruttore' un gruppo
   // pagina | riga sotto il cursore; 'tre-tempi' capitolo | pagina | riga in un solo gruppo; 'modificatore' nessun
   // comando, il cursore va per pagina e Maiuscolo con le frecce per riga. initial: passo all'apertura.
@@ -80,7 +82,7 @@
   // Rotazione del rilievo: scatto dei tasti, in gradi.
   ROTATION: {stepDeg: 15},
   // Legenda: 'margine' | 'cartiglio' | 'registro' (una nota per comando); 'unica' = foglio unico.
-  LEGEND: {variant: 'margine'},
+  LEGEND: {variant: 'margine', retireMs: 7000},
   // Geometria, inchiostri e risposta del controllo radiale delle viste.
   INCISA: {
     "size-small": "224px",

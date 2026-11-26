@@ -21,7 +21,7 @@ export const FRATTURA_STORY = [
 const matches = (step, s) => step.state.view === s.view && !!step.state.axon === !!s.axon &&
  (s.view !== 'diagram' || !!step.state.narrative === !!s.narrative) && (step.keepFocalizer || (step.state.focalizer ?? null) === (s.focalizer ?? null));
 
-export default function createFrattura({container, layout, variant = 'colonna', drive = 'scorrimento', settleMs = 420, steps = FRATTURA_STORY, reducedMotion, go, passage, onMark = () => {}, onExit = () => {}, onSuspend = () => {}}){
+export default function createFrattura({container, layout, variant = 'colonna', drive = 'scorrimento', settleMs = 420, stowMs = 9000, steps = FRATTURA_STORY, reducedMotion, go, passage, onMark = () => {}, onExit = () => {}, onSuspend = () => {}}){
  // Nella colonna lo scorrimento tiene il passaggio fra due passi, come nel sipario; 'soglia' scatta al passo.
  const scrubbing = variant === 'sipario' || (variant === 'colonna' && drive === 'scorrimento');
  const copy = it.story, n = steps.length;
@@ -59,6 +59,13 @@ export default function createFrattura({container, layout, variant = 'colonna', 
  (variant === 'margine' ? layout : container).append(panel);
  if (variant !== 'margine') container.append(bookmark);
  let index = -1, active = false, suspended = false, held = null, settleTimer = 0, syncing = false, shownMark = -1;
+ // Il segnalibro del percorso sospeso resta stowMs, poi si ripone nel comando, che dichiara il passo da cui si
+ // riprende; il puntatore o il fuoco sul segnalibro lo trattengono.
+ let stowTimer = 0, stowed = false;
+ const stowLabel = () => { entry.textContent = copy.resume(index + 1, n); };
+ function stow(){ if (!suspended || bookmark.hidden) return; if (bookmark.matches(':hover') || bookmark.contains(document.activeElement)) { armStow(); return; } stowed = true; bookmark.hidden = true; stowLabel(); relayout(); }
+ function armStow(){ clearTimeout(stowTimer); if (variant !== 'margine') stowTimer = setTimeout(stow, stowMs); }
+ const clearStow = () => { clearTimeout(stowTimer); stowed = false; };
  const reduce = () => reducedMotion.matches;
  // Aprire o chiudere il percorso cambia i margini della figura: il canvas si rimisura.
  const relayout = () => requestAnimationFrame(() => window.dispatchEvent(new Event('resize')));
@@ -126,7 +133,7 @@ export default function createFrattura({container, layout, variant = 'colonna', 
  if (scrubbing) scroller.addEventListener('scroll', scrub, {passive: true});
 
  function start(){
-  active = true; suspended = false; panel.hidden = false; panel.classList.remove('is-suspended'); banner.hidden = true;
+  clearStow(); active = true; suspended = false; panel.hidden = false; panel.classList.remove('is-suspended'); banner.hidden = true;
   entry.setAttribute('aria-expanded', 'true'); entry.textContent = copy.exit; rewind.hidden = false; container.classList.add('is-story'); bookmark.hidden = true;
   const i = Math.max(0, index); index = -1; show(i); relayout();
   // La colonna si misura dopo essere comparsa: lo scorrimento al passo aspetta il fotogramma successivo.
@@ -141,12 +148,12 @@ export default function createFrattura({container, layout, variant = 'colonna', 
   panel.hidden = !preserve; panel.toggleAttribute('data-preserve', preserve); panel.classList.toggle('is-suspended', preserve);
   container.classList.remove('is-story');
   entry.setAttribute('aria-expanded', 'false'); entry.textContent = it.tourStart; rewind.hidden = true;
-  bookmark.querySelector('p').textContent = copy.bookmark(index + 1, n); bookmark.querySelector('h3').textContent = copy.steps[steps[index].id].title.join(' '); bookmark.hidden = false; relayout();
+  bookmark.querySelector('p').textContent = copy.bookmark(index + 1, n); bookmark.querySelector('h3').textContent = copy.steps[steps[index].id].title.join(' '); bookmark.hidden = false; relayout(); armStow();
   onSuspend();
  }
  function resume(){ suspended = false; banner.hidden = true; panel.classList.remove('is-suspended'); const i = index; index = -1; show(i); }
  function stop(){
-  active = false; suspended = false; if (held) { passage.end(0); held = null; }
+  clearStow(); active = false; suspended = false; if (held) { passage.end(0); held = null; }
   panel.hidden = true; bookmark.hidden = true; container.classList.remove('is-story'); entry.setAttribute('aria-expanded', 'false'); entry.textContent = it.tourStart; rewind.hidden = true; index = -1; relayout();
   onExit();
  }
@@ -187,13 +194,14 @@ export default function createFrattura({container, layout, variant = 'colonna', 
   let best = -1;
   steps.forEach((step, k) => { if (matches(step, state) && (best < 0 || Math.abs(k - index) < Math.abs(best - index))) best = k; });
   if (best < 0 || best === index) return;
-  index = best; mark(best);
+  index = best; mark(best); if (stowed) stowLabel();
   bookmark.querySelector('p').textContent = copy.synced(best + 1, n); bookmark.querySelector('h3').textContent = copy.steps[steps[best].id].title.join(' ');
  }
  // Apertura da un indirizzo con il passo: stessa apertura del comando, al passo indicato.
  function open(i){ index = Math.max(0, Math.min(n - 1, i)); start(); }
+ bookmark.addEventListener('pointerleave', () => { if (suspended && !stowed) armStow(); });
  return {
-  entry: controls, panel, sync, open,
+  entry: controls, panel, bookmark, sync, open,
   get step(){ return active && !suspended && index >= 0 ? index + 1 : null; },
   // Al passo interattivo filtri e tessere non sospendono il percorso.
   get interactive(){ return active && !suspended && !!steps[index]?.interactive; },
@@ -203,6 +211,6 @@ export default function createFrattura({container, layout, variant = 'colonna', 
   contains: node => controls.contains(node) || panel.contains(node) || bookmark.contains(node),
   interrupt: suspend,
   stop,
-  dispose(){ document.removeEventListener('keydown', onDocKey); observer.disconnect(); clearTimeout(settleTimer); controls.remove(); panel.remove(); bookmark.remove(); container.classList.remove('is-story'); }
+  dispose(){ clearTimeout(stowTimer); document.removeEventListener('keydown', onDocKey); observer.disconnect(); clearTimeout(settleTimer); controls.remove(); panel.remove(); bookmark.remove(); container.classList.remove('is-story'); }
  };
 }
